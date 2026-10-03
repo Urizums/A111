@@ -9,6 +9,7 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 MUTABLE = {'state', 'runs', 'validation', '.git', '__pycache__'}
+MANIFEST_NAMES = {'artifact-manifest.json', 'delivery-manifest.json'}
 STATUSES = {'planned', 'in_progress', 'partial', 'done', 'blocked', 'cancelled'}
 
 
@@ -98,6 +99,11 @@ def validate_phase(phase, root):
             errors.append('transition done without actual-start evidence')
         try:
             nxt = read(safe_path(root, trans.get('todo_path')))
+            # The active frontier moves; a historical transition still binds its
+            # original successor, whose completed graph is archived unchanged.
+            if (trans.get('todo_path') == 'state/phase-todo.json'
+                    and nxt['phase_id'] != trans.get('next_phase_id')):
+                nxt = read(safe_path(root, 'state/history/' + trans['next_phase_id'] + '-todo.json'))
             first = nxt['tasks'][0]
             if nxt['phase_id'] != trans.get('next_phase_id') or first['id'] != trans.get('first_task_id'):
                 errors.append('transition next phase/first task mismatch')
@@ -108,6 +114,27 @@ def validate_phase(phase, root):
                     errors.append('missing start evidence: ' + rel)
         except (OSError, ValueError, KeyError, TypeError) as exc:
             errors.append('transition: ' + str(exc))
+    return errors
+
+
+def validate_checkpoint(checkpoint, phase):
+    errors = []
+    if checkpoint['active_phase'] != phase['phase_id']:
+        errors.append('checkpoint phase mismatch')
+    tasks = {t['id']: t for t in phase['tasks']}
+    if checkpoint.get('lifecycle') == 'delivered':
+        if checkpoint.get('next_task_id') is not None:
+            errors.append('delivered checkpoint must not select another task')
+        if any(t['status'] not in {'done', 'cancelled'} for t in tasks.values()):
+            errors.append('delivered checkpoint has unfinished phase work')
+        if not checkpoint.get('delivery_evidence'):
+            errors.append('delivered checkpoint requires delivery evidence')
+    else:
+        selected = tasks.get(checkpoint['next_task_id'])
+        if not selected or selected['status'] in {'done', 'cancelled'}:
+            errors.append('checkpoint next task is absent or terminal')
+        elif any(tasks[x]['status'] != 'done' for x in selected['depends_on']):
+            errors.append('checkpoint next task dependencies not ready')
     return errors
 
 
@@ -126,21 +153,25 @@ def main():
         expected = {r['path'] for r in manifest['entries']}
         actual = {p.relative_to(ROOT).as_posix() for p in ROOT.rglob('*') if p.is_file()
                   and not any(x in MUTABLE for x in p.relative_to(ROOT).parts)
-                  and p.name != 'artifact-manifest.json' and p.suffix not in {'.pyc','.bundle','.gz'}}
+                  and p.name not in MANIFEST_NAMES and p.suffix not in {'.pyc','.bundle','.gz'}}
         if actual != expected:
             errors.append('release manifest coverage differs: ' + repr(sorted(actual ^ expected)))
         phase = read(ROOT / 'state/phase-todo.json')
         errors += validate_phase(phase, ROOT)
-        errors += validate_phase(read(ROOT / 'state/history/S00-todo.json'), ROOT)
+        for history in sorted((ROOT / 'state/history').glob('S*-todo.json')):
+            errors += validate_phase(read(history), ROOT)
+        revision_files_checked = 0
+        revision_index = ROOT / 'state/revision-locks.json'
+        if revision_index.exists():
+            for rel in read(revision_index)['locks']:
+                entries = read(safe_path(ROOT, rel))['files']
+                errors += verify_entries(ROOT, entries)
+                revision_files_checked += len(entries)
         checkpoint = read(ROOT / 'state/checkpoint.json')
-        if checkpoint['active_phase'] != phase['phase_id']:
-            errors.append('checkpoint phase mismatch')
-        tasks = {t['id']:t for t in phase['tasks']}
-        selected = tasks.get(checkpoint['next_task_id'])
-        if not selected or selected['status'] in {'done','cancelled'}:
-            errors.append('checkpoint next task is absent or terminal')
-        elif any(tasks[x]['status'] != 'done' for x in selected['depends_on']):
-            errors.append('checkpoint next task dependencies not ready')
+        errors += validate_checkpoint(checkpoint, phase)
+        for rel in checkpoint.get('delivery_evidence', []):
+            if not safe_path(ROOT, rel).is_file():
+                errors.append('missing delivery evidence: ' + rel)
         for p in [ROOT/'README.md', ROOT/'START_HERE.md', *sorted((ROOT/'prompts').glob('*.md'))]:
             for target in re.findall(r'\[[^\]]*\]\(([^)]+)\)', p.read_text()):
                 if '://' not in target and not target.startswith('#'):
@@ -149,7 +180,8 @@ def main():
                         errors.append('broken entry link: ' + target)
         summary = {'schema':'forge-handoff-check/1','ok':not errors,'errors':errors,
                    'skill_files_checked':len(lock['entries']), 'cutoff_files_checked':len(cutoff['entries']),
-                   'release_files_checked':len(manifest['entries']), 'active_phase':phase['phase_id'],
+                   'release_files_checked':len(manifest['entries']), 'revision_files_checked':revision_files_checked,
+                   'active_phase':phase['phase_id'],
                    'next_task_id':checkpoint['next_task_id'],
                    'scope':'read-only hashes, paths, phase dependency/transition invariants; not live or semantic acceptance'}
     except (OSError, ValueError, KeyError, TypeError) as exc:

@@ -1,0 +1,35 @@
+name: Cloud delivery validation
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ['3.10', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Verify immutable evidence, revision and phase history
+        run: python scripts/verify_handoff.py --json
+      - name: Original controller regression
+        run: python -m unittest discover -s skills/forge-agent-flow/scripts -p 'test_*.py'
+      - name: Handoff and recorder regression
+        run: python -m unittest discover -s scripts -p 'test_*.py'
+      - name: Install and exercise CLI with fresh state
+        run: |
+          python scripts/deploy_cloud.py --prefix "$RUNNER_TEMP/agent-forge"
+          python scripts/smoke_cloud.py --prefix "$RUNNER_TEMP/agent-forge" --out "$RUNNER_TEMP/smoke"
+      - name: Package source and reports
+        run: python scripts/package_delivery.py --out "$RUNNER_TEMP/delivery/agent-forge.tar.gz"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: agent-forge-python-${{ matrix.python }}
+          path: |
+            ${{ runner.temp }}/delivery/
+            ${{ runner.temp }}/smoke/report.json

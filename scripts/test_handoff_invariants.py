@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from verify_handoff import validate_phase, safe_path
+from verify_handoff import validate_checkpoint, validate_phase, safe_path
 
 
 class HandoffInvariants(unittest.TestCase):
@@ -63,6 +63,32 @@ class HandoffInvariants(unittest.TestCase):
     def test_done_without_evidence_rejected(self):
         self.phase['tasks'][0]['status']='done'
         self.assertTrue(any('done without evidence' in x for x in validate_phase(self.phase,self.root)))
+
+    def test_historical_transition_resolves_archived_successor(self):
+        for t in self.phase['tasks']:
+            t.update(status='done', evidence=['actual.json'])
+        successor=copy.deepcopy(self.phase);successor['phase_id']='P2'
+        frontier=copy.deepcopy(successor);frontier['phase_id']='P3'
+        (self.root/'state/history').mkdir(parents=True)
+        (self.root/'state/phase-todo.json').write_text(json.dumps(frontier))
+        (self.root/'state/history/P2-todo.json').write_text(json.dumps(successor))
+        self.phase['tasks'][-1]['transition']={'next_phase_id':'P2','todo_path':'state/phase-todo.json',
+                                             'first_task_id':'a','start_evidence':['actual.json']}
+        self.assertEqual(validate_phase(self.phase,self.root), [])
+        (self.root/'state/history/P2-todo.json').unlink()
+        self.assertTrue(any('transition:' in e for e in validate_phase(self.phase,self.root)))
+
+    def test_delivered_checkpoint_requires_terminal_phase_and_evidence(self):
+        checkpoint=dict(active_phase='P1', next_task_id=None, lifecycle='delivered', delivery_evidence=['actual.json'])
+        self.assertTrue(validate_checkpoint(checkpoint, self.phase))
+        self.phase['tasks'][0]['status']='done'
+        self.phase['tasks'][-1]['status']='cancelled'
+        self.assertEqual(validate_checkpoint(checkpoint, self.phase), [])
+        checkpoint['delivery_evidence']=[]
+        self.assertTrue(validate_checkpoint(checkpoint, self.phase))
+
+    def test_unfinished_checkpoint_cannot_select_no_task(self):
+        self.assertTrue(validate_checkpoint(dict(active_phase='P1', next_task_id=None), self.phase))
 
 
 if __name__=='__main__':unittest.main()
