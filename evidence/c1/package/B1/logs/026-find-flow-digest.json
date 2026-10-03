@@ -1,0 +1,29 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "rg",
+    "-n",
+    "-C",
+    "3",
+    "def digest|digest\\(",
+    "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/flowctl.py"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:00:24.073266+00:00",
+    "monotonic_ns": 1173189480649,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:00:24.075231+00:00",
+    "monotonic_ns": 1173191438473,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.001957824,
+  "stdout": "34-    return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(\",\", \":\"), allow_nan=False)\n35-\n36-\n37:def digest(value):\n38:    return hashlib.sha256(canonical(value).encode()).hexdigest()\n39-\n40-\n41-def load(path):\n--\n271-def start(spec, inputs):\n272-    require_valid(spec)\n273-    values_match(spec, inputs, spec[\"inputs\"])\n274:    return {\"state_version\": \"1.0\", \"flow_hash\": digest(spec), \"run_id\": uuid.uuid4().hex,\n275-            \"status\": \"running\", \"node\": spec[\"entry\"], \"steps\": 0, \"visits\": {},\n276-            \"artifacts\": copy.deepcopy(inputs), \"trace\": []}\n277-\n278-\n279-def pending(spec, state):\n280-    require_valid(spec)\n281:    if state.get(\"flow_hash\") != digest(spec):\n282-        raise FlowError(\"Flow changed: create a new run or explicitly migrate the checkpoint\")\n283-    if state.get(\"status\") != \"running\":\n284-        return {\"status\": state.get(\"status\"), \"steps\": state.get(\"steps\")}\n--\n301-            return {\"status\": \"blocked\", \"reason\": f\"Capability unavailable: {name}\", \"node\": nid}\n302-        if cap[\"authorization\"] == \"required\":\n303-            return {\"status\": \"blocked\", \"reason\": f\"Capability authorization required: {name}\", \"node\": nid}\n304:    invocation = digest([state[\"run_id\"], state[\"steps\"], nid])[:32]\n305-    return {\"status\": \"ready\", \"node\": nid, \"kind\": node[\"kind\"], \"invocation_id\": invocation,\n306-            \"prompt\": node[\"prompt\"], \"inputs\": copy.deepcopy(inputs),\n307-            \"capabilities\": {k: spec[\"capabilities\"][k] for k in node[\"tools\"]},\n--\n330-    result[\"artifacts\"].update(copy.deepcopy(response[\"artifacts\"]))\n331-    result[\"trace\"].append({\"step\": result[\"steps\"], \"node\": node[\"id\"],\n332-                            \"invocation_id\": response[\"invocation_id\"], \"outcome\": outcome,\n333:                            \"input_hash\": digest(dispatch[\"inputs\"]),\n334:                            \"output_hash\": digest(response[\"artifacts\"]),\n335-                            \"evidence\": response[\"evidence\"]})\n336-    target = node[\"routes\"][outcome]\n337-    result[\"node\"] = target\n",
+  "stderr": "",
+  "stdout_base64": "MzQtICAgIHJldHVybiBqc29uLmR1bXBzKHZhbHVlLCBlbnN1cmVfYXNjaWk9RmFsc2UsIHNvcnRfa2V5cz1UcnVlLCBzZXBhcmF0b3JzPSgiLCIsICI6IiksIGFsbG93X25hbj1GYWxzZSkKMzUtCjM2LQozNzpkZWYgZGlnZXN0KHZhbHVlKToKMzg6ICAgIHJldHVybiBoYXNobGliLnNoYTI1NihjYW5vbmljYWwodmFsdWUpLmVuY29kZSgpKS5oZXhkaWdlc3QoKQozOS0KNDAtCjQxLWRlZiBsb2FkKHBhdGgpOgotLQoyNzEtZGVmIHN0YXJ0KHNwZWMsIGlucHV0cyk6CjI3Mi0gICAgcmVxdWlyZV92YWxpZChzcGVjKQoyNzMtICAgIHZhbHVlc19tYXRjaChzcGVjLCBpbnB1dHMsIHNwZWNbImlucHV0cyJdKQoyNzQ6ICAgIHJldHVybiB7InN0YXRlX3ZlcnNpb24iOiAiMS4wIiwgImZsb3dfaGFzaCI6IGRpZ2VzdChzcGVjKSwgInJ1bl9pZCI6IHV1aWQudXVpZDQoKS5oZXgsCjI3NS0gICAgICAgICAgICAic3RhdHVzIjogInJ1bm5pbmciLCAibm9kZSI6IHNwZWNbImVudHJ5Il0sICJzdGVwcyI6IDAsICJ2aXNpdHMiOiB7fSwKMjc2LSAgICAgICAgICAgICJhcnRpZmFjdHMiOiBjb3B5LmRlZXBjb3B5KGlucHV0cyksICJ0cmFjZSI6IFtdfQoyNzctCjI3OC0KMjc5LWRlZiBwZW5kaW5nKHNwZWMsIHN0YXRlKToKMjgwLSAgICByZXF1aXJlX3ZhbGlkKHNwZWMpCjI4MTogICAgaWYgc3RhdGUuZ2V0KCJmbG93X2hhc2giKSAhPSBkaWdlc3Qoc3BlYyk6CjI4Mi0gICAgICAgIHJhaXNlIEZsb3dFcnJvcigiRmxvdyBjaGFuZ2VkOiBjcmVhdGUgYSBuZXcgcnVuIG9yIGV4cGxpY2l0bHkgbWlncmF0ZSB0aGUgY2hlY2twb2ludCIpCjI4My0gICAgaWYgc3RhdGUuZ2V0KCJzdGF0dXMiKSAhPSAicnVubmluZyI6CjI4NC0gICAgICAgIHJldHVybiB7InN0YXR1cyI6IHN0YXRlLmdldCgic3RhdHVzIiksICJzdGVwcyI6IHN0YXRlLmdldCgic3RlcHMiKX0KLS0KMzAxLSAgICAgICAgICAgIHJldHVybiB7InN0YXR1cyI6ICJibG9ja2VkIiwgInJlYXNvbiI6IGYiQ2FwYWJpbGl0eSB1bmF2YWlsYWJsZToge25hbWV9IiwgIm5vZGUiOiBuaWR9CjMwMi0gICAgICAgIGlmIGNhcFsiYXV0aG9yaXphdGlvbiJdID09ICJyZXF1aXJlZCI6CjMwMy0gICAgICAgICAgICByZXR1cm4geyJzdGF0dXMiOiAiYmxvY2tlZCIsICJyZWFzb24iOiBmIkNhcGFiaWxpdHkgYXV0aG9yaXphdGlvbiByZXF1aXJlZDoge25hbWV9IiwgIm5vZGUiOiBuaWR9CjMwNDogICAgaW52b2NhdGlvbiA9IGRpZ2VzdChbc3RhdGVbInJ1bl9pZCJdLCBzdGF0ZVsic3RlcHMiXSwgbmlkXSlbOjMyXQozMDUtICAgIHJldHVybiB7InN0YXR1cyI6ICJyZWFkeSIsICJub2RlIjogbmlkLCAia2luZCI6IG5vZGVbImtpbmQiXSwgImludm9jYXRpb25faWQiOiBpbnZvY2F0aW9uLAozMDYtICAgICAgICAgICAgInByb21wdCI6IG5vZGVbInByb21wdCJdLCAiaW5wdXRzIjogY29weS5kZWVwY29weShpbnB1dHMpLAozMDctICAgICAgICAgICAgImNhcGFiaWxpdGllcyI6IHtrOiBzcGVjWyJjYXBhYmlsaXRpZXMiXVtrXSBmb3IgayBpbiBub2RlWyJ0b29scyJdfSwKLS0KMzMwLSAgICByZXN1bHRbImFydGlmYWN0cyJdLnVwZGF0ZShjb3B5LmRlZXBjb3B5KHJlc3BvbnNlWyJhcnRpZmFjdHMiXSkpCjMzMS0gICAgcmVzdWx0WyJ0cmFjZSJdLmFwcGVuZCh7InN0ZXAiOiByZXN1bHRbInN0ZXBzIl0sICJub2RlIjogbm9kZVsiaWQiXSwKMzMyLSAgICAgICAgICAgICAgICAgICAgICAgICAgICAiaW52b2NhdGlvbl9pZCI6IHJlc3BvbnNlWyJpbnZvY2F0aW9uX2lkIl0sICJvdXRjb21lIjogb3V0Y29tZSwKMzMzOiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiaW5wdXRfaGFzaCI6IGRpZ2VzdChkaXNwYXRjaFsiaW5wdXRzIl0pLAozMzQ6ICAgICAgICAgICAgICAgICAgICAgICAgICAgICJvdXRwdXRfaGFzaCI6IGRpZ2VzdChyZXNwb25zZVsiYXJ0aWZhY3RzIl0pLAozMzUtICAgICAgICAgICAgICAgICAgICAgICAgICAgICJldmlkZW5jZSI6IHJlc3BvbnNlWyJldmlkZW5jZSJdfSkKMzM2LSAgICB0YXJnZXQgPSBub2RlWyJyb3V0ZXMiXVtvdXRjb21lXQozMzctICAgIHJlc3VsdFsibm9kZSJdID0gdGFyZ2V0Cg==",
+  "stderr_base64": ""
+}

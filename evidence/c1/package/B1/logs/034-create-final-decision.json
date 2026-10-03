@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nimport hashlib,json\nroot=Path.cwd()\nrequest=json.loads((root/\"package/B1/job/request.json\").read_text(encoding=\"utf-8\"))\nreply=json.loads((root/\"package/B1/artifacts/worker-reply.json\").read_text(encoding=\"utf-8\"))\nassessment_record=json.loads((root/\"package/B1/review/package-assess-corrected.json\").read_text(encoding=\"utf-8\"))\nassessment=json.loads(assessment_record[\"stdout\"])\nassert assessment[\"verdict\"]==\"pass\"\ndecision={\n\"schema_version\":\"forge-host-decision/1\",\n\"request_hash\":request[\"request_hash\"],\n\"reply_sha256\":hashlib.sha256((root/\"package/B1/artifacts/worker-reply.json\").read_bytes()).hexdigest(),\n\"outcome\":\"done\",\n\"results\":reply[\"result\"],\n\"reason\":None\n}\nPath(\"package/B1/review/coordinator-decision.json\").write_text(json.dumps(decision,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:02:58.169455+00:00",
+    "monotonic_ns": 1327285674647,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:02:58.194876+00:00",
+    "monotonic_ns": 1327311094673,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.025420026,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

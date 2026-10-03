@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; s=json.loads(Path(\"package/B2/state.json\").read_text()); r=json.loads(Path(\"package/B2/job/request.json\").read_text()); print(json.dumps({\"package_hash\":s[\"package_hash\"],\"request_package_hash\":r[\"request\"][\"target_binding\"][\"package_hash\"],\"flow_status\":s[\"flow_state\"][\"status\"],\"steps\":s[\"flow_state\"][\"steps\"]},indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:43:20.182247+00:00",
+    "monotonic_ns": 3749298462207,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:43:20.203447+00:00",
+    "monotonic_ns": 3749319660227,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.02119802,
+  "stdout": "{\n  \"package_hash\": \"bd95dfb88fbdf32cc659a0629110da26aef591b1c6f1ba1a24a84b7157db4d75\",\n  \"request_package_hash\": \"bd95dfb88fbdf32cc659a0629110da26aef591b1c6f1ba1a24a84b7157db4d75\",\n  \"flow_status\": \"running\",\n  \"steps\": 0\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwYWNrYWdlX2hhc2giOiAiYmQ5NWRmYjg4ZmJkZjMyY2M2NTlhMDYyOTExMGRhMjZhZWY1OTFiMWM2ZjFiYTFhMjRhODRiNzE1N2RiNGQ3NSIsCiAgInJlcXVlc3RfcGFja2FnZV9oYXNoIjogImJkOTVkZmI4OGZiZGYzMmNjNjU5YTA2MjkxMTBkYTI2YWVmNTkxYjFjNmYxYmExYTI0YTg0YjcxNTdkYjRkNzUiLAogICJmbG93X3N0YXR1cyI6ICJydW5uaW5nIiwKICAic3RlcHMiOiAwCn0K",
+  "stderr_base64": ""
+}

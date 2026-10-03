@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib\nbase=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003\")\nnotes=(base/\"materials/notes.txt\").read_text(encoding=\"utf-8\")\nactions=json.loads((base/\"package/A2/artifacts/actions.json\").read_text(encoding=\"utf-8\"))\nexpected=[\n{\"task\":\"更新部署文档\",\"owner\":\"赵宁\",\"due\":\"周五\",\"source_quote\":\"赵宁负责更新部署文档，截止周五。\"},\n{\"task\":\"补充回归用例\",\"owner\":\"许静\",\"due\":\"2026-10-09\",\"source_quote\":\"许静负责补充回归用例，截止2026-10-09。\"},\n{\"task\":\"补充日志告警\",\"owner\":None,\"due\":None,\"source_quote\":\"决定补充日志告警。\"},\n]\nassert actions==expected\nassert all(item[\"source_quote\"] in notes for item in actions)\nassert all(set(item)=={\"task\",\"owner\",\"due\",\"source_quote\"} for item in actions)\nassert all(\"更换配色\" not in item[\"task\"] for item in actions)\nprint(\"business acceptance passed: 3 explicit actions; every exact source quote is present; missing owner/date are null; suggestion excluded\")\n"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:18:55.568248+00:00",
+    "monotonic_ns": 2284684466070,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:18:55.591132+00:00",
+    "monotonic_ns": 2284707347663,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.022881593,
+  "stdout": "business acceptance passed: 3 explicit actions; every exact source quote is present; missing owner/date are null; suggestion excluded\n",
+  "stderr": "",
+  "stdout_base64": "YnVzaW5lc3MgYWNjZXB0YW5jZSBwYXNzZWQ6IDMgZXhwbGljaXQgYWN0aW9uczsgZXZlcnkgZXhhY3Qgc291cmNlIHF1b3RlIGlzIHByZXNlbnQ7IG1pc3Npbmcgb3duZXIvZGF0ZSBhcmUgbnVsbDsgc3VnZ2VzdGlvbiBleGNsdWRlZAo=",
+  "stderr_base64": ""
+}

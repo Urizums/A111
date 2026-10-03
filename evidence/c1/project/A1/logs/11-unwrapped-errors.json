@@ -1,0 +1,32 @@
+{
+  "schema": "forge-comparison-auxiliary-errors/1",
+  "sample": "A1",
+  "errors": [
+    {
+      "event": "functions.exec source parse error while forming the first create-dirs command",
+      "observed": "Script error: SyntaxError: Unexpected token /",
+      "subprocess_invoked": false,
+      "capture_wrapper_entered": false
+    },
+    {
+      "event": "shell quoting error on the first work.json authoring attempt",
+      "observed": "bash syntax error near unexpected token '('; capture wrapper was not entered and no capture.py record exists for this attempted shell invocation",
+      "attempted_target_record": "project/A1/logs/11-write-work.json",
+      "capture_wrapper_entered": false,
+      "exit_code": null
+    },
+    {
+      "event": "functions.exec runtime error while trying to base64 encode work.json",
+      "observed": "ReferenceError: btoa is not defined",
+      "subprocess_invoked": false,
+      "capture_wrapper_entered": false
+    },
+    {
+      "event": "functions.exec source parse error while preparing the first recovery-audit write command",
+      "observed": "Script error: SyntaxError: Invalid or unexpected token",
+      "subprocess_invoked": false,
+      "capture_wrapper_entered": false
+    }
+  ],
+  "recovery": "The Python authoring command was corrected once using shell-safe quoting and successfully captured in logs/12-write-work.json. Failed attempts were not replayed as protocol work and are retained here."
+}

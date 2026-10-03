@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; import json; a=json.loads(Path(\"package/A1/native/host-status-query.json\").read_text(encoding=\"utf-8\")); Path(\"package/A1/native/host-status-query-call-03.json\").write_text(json.dumps(a,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:10:06.073412+00:00",
+    "monotonic_ns": 1755189626425,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:10:06.093879+00:00",
+    "monotonic_ns": 1755210093364,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020466939,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

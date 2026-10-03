@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_7711875bcfc1",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "import csv,json,os; from decimal import Decimal; base=\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts\"; src=\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv\"; expected={}; f=open(src,newline=\"\",encoding=\"utf-8\"); exec(\"for row in csv.DictReader(f):\\n g=expected.setdefault(row[\\\"category\\\"],{\\\"row_count\\\":0,\\\"total_amount_fen\\\":0,\\\"source_ids\\\":[]})\\n g[\\\"row_count\\\"]+=1\\n g[\\\"total_amount_fen\\\"]+=int((Decimal(row[\\\"amount_yuan\\\"])*Decimal(100)).to_integral_exact())\\n g[\\\"source_ids\\\"].append(row[\\\"id\\\"])\\n\"); f.close(); expected={\"categories\":{k:expected[k] for k in sorted(expected)}}; actual=json.load(open(os.path.join(base,\"summary.json\"),encoding=\"utf-8\")); assert actual==expected,(actual,expected); md=open(os.path.join(base,\"summary_zh.md\"),encoding=\"utf-8\").read(); assert all(k in md for k in expected[\"categories\"]); print(json.dumps(actual,ensure_ascii=False,indent=2)); print(md)"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:54:06.926587+00:00",
+    "monotonic_ns": 796042804702,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:54:06.948335+00:00",
+    "monotonic_ns": 796064549825,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 0.021745123,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 293, in load\n    return loads(fp.read(),\n           ^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 346, in loads\n    return _default_decoder.decode(s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 341, in decode\n    raise JSONDecodeError(\"Extra data\", s, end)\njson.decoder.JSONDecodeError: Extra data: line 28 column 2 (char 431)\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIjxzdHJpbmc+IiwgbGluZSAxLCBpbiA8bW9kdWxlPgogIEZpbGUgIi9vcHQvY29kZXgvcnVudGltZXMvY29kZXgtcHJpbWFyeS1ydW50aW1lL2RlcGVuZGVuY2llcy9weXRob24vbGliL3B5dGhvbjMuMTIvanNvbi9fX2luaXRfXy5weSIsIGxpbmUgMjkzLCBpbiBsb2FkCiAgICByZXR1cm4gbG9hZHMoZnAucmVhZCgpLAogICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvb3B0L2NvZGV4L3J1bnRpbWVzL2NvZGV4LXByaW1hcnktcnVudGltZS9kZXBlbmRlbmNpZXMvcHl0aG9uL2xpYi9weXRob24zLjEyL2pzb24vX19pbml0X18ucHkiLCBsaW5lIDM0NiwgaW4gbG9hZHMKICAgIHJldHVybiBfZGVmYXVsdF9kZWNvZGVyLmRlY29kZShzKQogICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eCiAgRmlsZSAiL29wdC9jb2RleC9ydW50aW1lcy9jb2RleC1wcmltYXJ5LXJ1bnRpbWUvZGVwZW5kZW5jaWVzL3B5dGhvbi9saWIvcHl0aG9uMy4xMi9qc29uL2RlY29kZXIucHkiLCBsaW5lIDM0MSwgaW4gZGVjb2RlCiAgICByYWlzZSBKU09ORGVjb2RlRXJyb3IoIkV4dHJhIGRhdGEiLCBzLCBlbmQpCmpzb24uZGVjb2Rlci5KU09ORGVjb2RlRXJyb3I6IEV4dHJhIGRhdGE6IGxpbmUgMjggY29sdW1uIDIgKGNoYXIgNDMxKQo="
+}

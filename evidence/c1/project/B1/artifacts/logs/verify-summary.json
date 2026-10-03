@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "import csv,json; from collections import defaultdict; from decimal import Decimal; from pathlib import Path; root=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts\"); src=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv\"); expected=defaultdict(lambda:{\"row_count\":0,\"total_fen\":0,\"source_ids\":[]})\nwith src.open(newline=\"\",encoding=\"utf-8\") as f:\n for row in csv.DictReader(f):\n  v=Decimal(row[\"amount_yuan\"])*Decimal(100); assert v==v.to_integral_exact(); g=expected[row[\"category\"]]; g[\"row_count\"]+=1; g[\"total_fen\"]+=int(v); g[\"source_ids\"].append(row[\"id\"])\nactual=json.loads((root/\"summary.json\").read_text(encoding=\"utf-8\")); assert actual=={\"categories\":{k:expected[k] for k in sorted(expected)}}; md=(root/\"summary_zh.md\").read_text(encoding=\"utf-8\"); assert all(k in md for k in sorted(expected)); print(\"PASS: JSON matches Decimal-based source aggregation; categories sorted; all source IDs retained in source order; Markdown contains each category.\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:08:56.040585+00:00",
+    "monotonic_ns": 1685156799938,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:08:56.061760+00:00",
+    "monotonic_ns": 1685177971356,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.021171418,
+  "stdout": "PASS: JSON matches Decimal-based source aggregation; categories sorted; all source IDs retained in source order; Markdown contains each category.\n",
+  "stderr": "",
+  "stdout_base64": "UEFTUzogSlNPTiBtYXRjaGVzIERlY2ltYWwtYmFzZWQgc291cmNlIGFnZ3JlZ2F0aW9uOyBjYXRlZ29yaWVzIHNvcnRlZDsgYWxsIHNvdXJjZSBJRHMgcmV0YWluZWQgaW4gc291cmNlIG9yZGVyOyBNYXJrZG93biBjb250YWlucyBlYWNoIGNhdGVnb3J5Lgo=",
+  "stderr_base64": ""
+}

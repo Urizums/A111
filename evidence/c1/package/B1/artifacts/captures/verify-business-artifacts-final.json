@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_c98df856ea9d",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; import json; notes=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt\").read_text(encoding=\"utf-8\"); acts=json.loads(Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/actions.json\").read_text(encoding=\"utf-8\")); assert isinstance(acts,list) and len(acts)==3; assert all(set(x)=={\"task\",\"owner\",\"due\",\"source_quote\"} and x[\"source_quote\"] in notes for x in acts); assert acts[0]=={\"task\":\"更新部署文档\",\"owner\":\"赵宁\",\"due\":\"周五\",\"source_quote\":\"赵宁负责更新部署文档，截止周五。\"}; assert acts[1]=={\"task\":\"补充回归用例\",\"owner\":\"许静\",\"due\":\"2026-10-09\",\"source_quote\":\"许静负责补充回归用例，截止2026-10-09。\"}; assert acts[2]=={\"task\":\"补充日志告警\",\"owner\":None,\"due\":None,\"source_quote\":\"决定补充日志告警。\"}; assert all(\"更换配色\" not in x[\"task\"] and \"外部通知\" not in x[\"task\"] for x in acts); assert Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/解释.md\").is_file(); print(\"PASS: 3 actions, exact quote substrings, literal due dates, null unstated fields, suggestion/information excluded.\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:53:54.079076+00:00",
+    "monotonic_ns": 783195291654,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:53:54.098832+00:00",
+    "monotonic_ns": 783215050048,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.019758394,
+  "stdout": "PASS: 3 actions, exact quote substrings, literal due dates, null unstated fields, suggestion/information excluded.\n",
+  "stderr": "",
+  "stdout_base64": "UEFTUzogMyBhY3Rpb25zLCBleGFjdCBxdW90ZSBzdWJzdHJpbmdzLCBsaXRlcmFsIGR1ZSBkYXRlcywgbnVsbCB1bnN0YXRlZCBmaWVsZHMsIHN1Z2dlc3Rpb24vaW5mb3JtYXRpb24gZXhjbHVkZWQuCg==",
+  "stderr_base64": ""
+}

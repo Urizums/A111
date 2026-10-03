@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import hashlib,json,pathlib; base=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1\"); request=json.loads((base/\"job/request.json\").read_text(encoding=\"utf-8\")); state=json.loads((base/\"state.json\").read_text(encoding=\"utf-8\")); task_id=request[\"request\"][\"target_binding\"][\"task_id\"]; task=next(x for x in state[\"plan\"][\"tasks\"] if x[\"id\"]==task_id); definitions={x[\"id\"]:x for x in state[\"plan\"][\"acceptance\"]}; review=json.loads((base/\"review/source-check-output.json\").read_text(encoding=\"utf-8\")); assert review[\"pass\"] is True; paths=[base/\"review/source-review.md\",base/\"review/source-check-output.json\",base/\"artifacts/summary.json\",base/\"artifacts/summary_zh.md\"]; evidence=[{\"path\":str(p.resolve()),\"sha256\":hashlib.sha256(p.read_bytes()).hexdigest()} for p in paths]; results={\"acceptance_results\":{aid:{\"status\":\"pass\",\"level\":definitions[aid][\"level\"],\"evidence\":evidence} for aid in task[\"acceptance_ids\"]}}; reply=base/\"artifacts/worker-reply.json\"; decision={\"schema_version\":\"forge-host-decision/1\",\"request_hash\":request[\"request_hash\"],\"reply_sha256\":hashlib.sha256(reply.read_bytes()).hexdigest(),\"outcome\":\"done\",\"results\":results,\"reason\":None}; (base/\"coordinator-decision.json\").write_text(json.dumps(decision,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:04:05.951062+00:00",
+    "monotonic_ns": 1395067281500,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:04:05.973617+00:00",
+    "monotonic_ns": 1395089833490,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.02255199,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

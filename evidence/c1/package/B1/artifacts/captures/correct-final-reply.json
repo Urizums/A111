@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_c98df856ea9d",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; import json; base=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts\"); target=base/\"worker-reply.json\"; (base/\"worker-reply.preflight-rejected.json\").write_bytes(target.read_bytes()); reply=json.loads((base/\"worker-reply.draft.json\").read_text(encoding=\"utf-8\")); actions=json.loads((base/\"actions.json\").read_text(encoding=\"utf-8\")); reply[\"outcome\"]=\"done\"; reply[\"result\"]={\"invocation_id\":\"effdf28894dd763006de01d952807d97\",\"outcome\":\"ok\",\"artifacts\":{\"actions\":actions},\"evidence\":[\"artifacts/actions.json: three extracted records with source quotes checked against supplied notes\",\"artifacts/解释.md: Chinese explanation of included actions and excluded suggestion/information\",\"artifacts/captures/verify-business-artifacts-final.json: PASS for exact source substrings, literal due values, null unstated fields, and exclusion of suggestion/information\"]}; reply[\"reason\"]=None; target.write_text(json.dumps(reply,ensure_ascii=False,indent=2),encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:54:57.277223+00:00",
+    "monotonic_ns": 846393437507,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:54:57.307607+00:00",
+    "monotonic_ns": 846423822843,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.030385336,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

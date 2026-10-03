@@ -1,0 +1,71 @@
+# Agent Forge C1 对照测试结果（2026-10-03）
+
+八个原始 Luna/max worker 均实际调用；七个完成原始 receive、独立来源验收、决定预检查及 commit/reconcile。project A2 的第五次原始查询仍为 running，未接收或审批。本轮性能比较不成立，不能据此声称提速。
+
+Root 负责冻结、方法设计和最终判定；两路 Luna 操作员按原顺序执行，第三路 Luna 独立审计。没有替换样本或重发未知创建。
+
+## 范围与候选
+
+T1 候选保持在 Git c238b00bf83ea1b5eaf1654baaa1ae794c20c325；83 份候选文件哈希及冻结输入/协议文件哈希未变。沿用此前 368 项测试结果，本轮未修改功能代码、未新增功能修复。项目顺序 A1/B1/B2/A2，package 顺序 B1/A1/A2/B2；A 手工构造未完成草稿，B 使用原 hostdraft。两组均要求原始预检查和独立验收。
+
+输入是重复的六行费用 CSV 和同一份会议记录，并非八类未知业务。请求参数为 gpt-6-luna/max/fork_turns none；内部 provider 身份、tokens、成本和模型活跃时间均未知。没有验证浏览器 UI、Android、provider SDK、全局资源限额、真实网络延迟或外部业务副作用。
+
+## 八个原始样本
+
+| 样本 | 原始流程终态 | 来源字段 | 回复阶段秒 | 决定阶段秒 | 保存的目标命令 | 原协调者状态查询 |
+| --- | --- | --- | ---: | ---: | ---: | ---: |
+| project A1 | committed | 一致 | 52.71 | 45.75 | 52 | 4 |
+| project B1 | committed | 一致 | 37.65 | 142.29 | 33 | 4 |
+| project B2 | committed | 一致 | 53.57 | 33.60 | 32 | 5 |
+| project A2 | accepted；Q5 running 截止 | 一致，仅部分产出 | 未知 | 未知 | 11 | 5 |
+| package B1 | committed | 一致 | 72.72 | 42.51 | 59 | 5 |
+| package A1 | committed | 一致 | 55.86 | 40.58 | 39 | 3 |
+| package A2 | committed | 一致 | 139.78 | 未知 | 58 | 4 |
+| package B2 | committed | 一致 | 135.43 | 33.71 | 47 | 4 |
+
+Root 从原 CSV 用 Decimal ×100 重算：design 1行/1600分/C604；dev 2行/946分/C602、C605；ops 3行/1464分/C601、C603、C606，共6行4010分。四份项目文件内容和中文表格一致。JSON 包装与字段名称未被业务需求固定，等价结构不判业务失败。
+
+四份 package 输出均包含原文的三项明确行动，精确引用、未说明字段 null、相对日期“周五”保持原样，并排除配色建议和通知情况说明；原 v1 quotes/commitments 验收及四个原 checkpoint 均通过。未测试 no-action 分支。
+
+A2 的正确业务文件来自截止副本，不能替代缺失的 reply/preflight/receive/commit。project 快照于 2026-10-03T12:41:28Z 开始读取；375份文件逐个读前后 stat 未变、审计哈希/大小全部一致，但快照非原子，worker_stopped=false，后续文件不纳入本轮判定。
+
+## 计时只作描述
+
+| 配对 | A 回复＋决定秒 | B 回复＋决定秒 | B−A 秒 | 合规效能比较 |
+| --- | ---: | ---: | ---: | --- |
+| project 1 | 98.46 | 179.94 | 81.48 | 无效 |
+| project 2 | 未知 | 87.17 | 未知 | 无效 |
+| package 1 | 96.44 | 115.24 | 18.80 | 无效 |
+| package 2 | 未知 | 169.14 | 未知 | 无效 |
+
+| 阶段/模式 | 已知数/选择数 | 中位数秒 | 范围秒 |
+| --- | ---: | ---: | --- |
+| worker_reply/A | 3/4 | 55.86 | 52.71–139.78 |
+| worker_reply/B | 4/4 | 63.15 | 37.65–135.43 |
+| decision/A | 2/4 | 43.16 | 40.58–45.75 |
+| decision/B | 4/4 | 38.11 | 33.60–142.29 |
+
+缺失不是0；组内已知数不相同，未删除失败样本来制造可比性。这些跨度包含 actor、工具和等待间隔，不是 provider 活跃时间。两个有数值的配对中 B 的组合跨度更长，但采集/协议条件不合规，不能归因于 helper 或外推为稳定性能结论。
+
+独立原件索引共 580 行：343 条保存的 CLI 目标记录、84 条原生事件 observer、153 条 marker。八个样本内保存目标命令331条，另12条为共同准备等操作；42个原协调者 native calls=8创建+34 own-subtree 查询。observer、wait、CLI目标不是同一种计数；另有未采集操作、worker自行查询披露及 Root 管理/分析活动，不把这些数称为全部调用或全局额度。
+
+## 关键不合规与限制
+
+- C06 原文要求每个子进程完整留证，但冻结指令豁免 marker/native observer 自身；它们只有事件记录，没有该命令完整 argv、输出、exit 和起止。有效阶段边界也不能修复这个合同矛盾。
+- 首组 setup 因重启/缺失无法核实；package A2 缺 decision begin，B2 有过早/重复 setup end。未回填或重置原时间。
+- 多名 worker 披露最初读文件/help/mkdir 等未采集。project B2 披露查询其他 agent 的完成摘要，违反不读先前结果条件；缺失原 receipt 不伪造。
+- project A1 保留域外初始 capture 和 cleanup 尝试；具体效果由原件分项核实。project A2 截止副本证实 capture 写到 shared/，超出 artifacts 写域。协议预检查不是权限执行器。
+- project 协调者没有保存 required running observe 调用/receipt；原始 completed 接收与审批通过不能证明此前观察步骤合规。部分 wait 返回没有原始存档。
+- package B1 早期 running observe 是迟到导入。B2 先误 observe 再误用状态 receipt 做 accepted；真实创建 receipt 恢复后原链通过。失败、Root 协议提醒和局部修正均保留。
+- package B2 的索引/解析修正属于原每协调者两次上限范围，超过上限不能事后豁免。操作员索引漏最后 audit、脚本哈希过期、README 引用未执行037；原版本不覆盖，Root 另生成原件索引。
+- Root 分析器曾漏 .jsonl 单对象、实际 worker alias、null worker 和等价业务结构；已修正只读分析逻辑，所有修正写入 Root_Analysis_Corrections.json，未改冻结协议或候选。
+
+## 独立审计与下一步
+
+独立 Luna 审计以冻结 C01–C10 与 public 原入口为标准；Q1 局部采集调用方式 Q01–Q05 通过：成功/失败 marker、明确模拟的 native observer 目标、exit7 普通目标四份记录都保留原始 bytes/argv/exit/同boot起止。Q1 不是真实 native 或普通 worker 测试，冻结目录缺独立执行时代码哈希和冻结时间证据，限制保留。
+
+下一步由 Root 完善协议，Luna 独立验证：提供首条可执行且域内的 bootstrap 采集命令；显式 worker 工具边界；按原 receipt 类型执行 accepted/observe/receive；预先界定外层 instrumentation 与修正分母；保留最后查询额度；在真正完成普通 worker 合规烟测后再冻结新性能试验。不因缺失 setup 数据新增初始化助手。简单一次性任务继续用直接流程。
+
+既有前端预设任务、两项真实 UI 阻塞和三项 SDK/全局资源/网络/外部效果 partial 工作保留。C1 overhead comparison 记录为 partial/inconclusive；没有宣称完整系统、运行时安全隔离或整体 agent infra 已完成。
+
+详细原件、source review、Q1审计、截止 manifest 和 Root补充索引见本次证据归档。最终审计结论以 audit/final-review.md 和 Root_Verification.json 为准。

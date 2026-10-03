@@ -1,0 +1,3678 @@
+{
+  "at": "2026-10-03T13:03:08.587132+00:00",
+  "read_only": true,
+  "selected_samples": 8,
+  "source_unchanged": true,
+  "study_files_unchanged": true,
+  "samples": [
+    {
+      "block": "project",
+      "sample": "A1",
+      "evidence_scope": "project cutoff snapshot; worker may still run",
+      "treatment": "A",
+      "pair": 1,
+      "phase": "committed",
+      "worker": "/root/luna_compare_project/luna_forge_7711875bcfc1",
+      "attempt_id": "7711875bcfc149d8bf947055587b9ba8",
+      "timing": {
+        "setup": {
+          "verified": false,
+          "seconds": null,
+          "reason": "different boot or reversed clock",
+          "begin": {
+            "path": "coordinator/cutoff-snapshot/project/A1/observations/966421378875_ddaeff912ee0427ab5f072d47e2698d9.json",
+            "schema": "forge-comparison-marker/1",
+            "actor": "coordinator",
+            "stage": "setup",
+            "event": "begin",
+            "utc": "2026-10-03T08:55:10.122457+00:00",
+            "monotonic_ns": 966421378875,
+            "boot_id": "830450b4-c62a-4f02-a43b-24114a1c7a7a"
+          },
+          "end": {
+            "path": "coordinator/cutoff-snapshot/project/A1/observations/597553348123_cb36adc7cf6c4ec3a284576d0cf046e7.json",
+            "schema": "forge-comparison-marker/1",
+            "actor": "coordinator",
+            "stage": "setup",
+            "event": "end",
+            "utc": "2026-10-03T11:50:48.437131+00:00",
+            "monotonic_ns": 597553348123,
+            "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+          }
+        },
+        "receive": {
+          "verified": true,
+          "seconds": 305.197207426,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 680968947994,
+          "end_ns": 986166155420
+        },
+        "review": {
+          "verified": true,
+          "seconds": 340.333312244,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1000401641123,
+          "end_ns": 1340734953367
+        },
+        "decision": {
+          "verified": true,
+          "seconds": 45.747668928,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1361247218298,
+          "end_ns": 1406994887226
+        },
+        "commit": {
+          "verified": true,
+          "seconds": 28.243770286,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1415710593925,
+          "end_ns": 1443954364211
+        },
+        "worker_work": {
+          "verified": true,
+          "seconds": 171.123076851,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 718238319619,
+          "end_ns": 889361396470
+        },
+        "worker_reply": {
+          "verified": true,
+          "seconds": 52.707509917,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 893044627268,
+          "end_ns": 945752137185
+        }
+      },
+      "worker_reply_plus_decision_seconds": 98.455178845,
+      "captured_subprocess_count": 52,
+      "outside_shared_worker_capture_paths": [],
+      "capture_integrity": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/author-business-outputs.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/author-final-reply.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/author-manual-reply-scaffold.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/captured-check-reply.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/check-business-outputs-v2.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/check-business-outputs.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/cleanup-stray.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/correct-business-outputs-v2.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/hash-business-outputs.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/preserve-rejected-v1.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/read-hostdraft.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/read-input.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/read-skill.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/worker-capture.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/job/worker_capture.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/00-create-dirs.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/01-projectctl-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/02-hostbridge-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/03-hostbridge-source-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/04-projectctl-source-init.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/05-projectctl-init-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/06-hostbridge-prepare-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/07-hostbridge-issue-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/08-projectctl-init.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/09-hostbridge-source-prepare-rest.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/10-hostdraft-source-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/12-write-work.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/13-recovery-inspect.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/14-write-recovery-note.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/15-hostbridge-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/16-hostbridge-issue.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/19-extract-issue-arguments.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/20-hostbridge-accepted.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/21-record-wait-1.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/22-hostbridge-receive.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/23-read-source-preview.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/24-read-worker-output.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/25-write-review-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/26-source-check.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/27-worker-artifact-tree.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/28-inspect-worker-captures.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/29-inspect-worker-jsonl-heads.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/30-inspect-worker-captures.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/31-worker-capture-summary.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/32-review-hashes.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/33-write-source-review.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/34-author-manual-decision-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/35-author-final-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/36-check-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/37-hostbridge-commit.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/38-hostbridge-reconcile.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/39-projectctl-status.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        }
+      ],
+      "pending_or_invalid_json": [
+        "coordinator/cutoff-snapshot/project/A1/artifacts/summary.rejected-v1.json"
+      ],
+      "native_intent_counts": {
+        "spawn_agent": 1,
+        "list_agents": 4
+      },
+      "native_return_counts": {
+        "spawn_agent": 1,
+        "list_agents": 4
+      },
+      "native_capture_integrity": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/spawn-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/spawn-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/status-1-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/status-1-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/status-2-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/status-2-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/status-3-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/status-3-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/status-4-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/native/status-4-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        }
+      ],
+      "bound_reference_integrity": [
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/job/request.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/capture.py",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/job/receipts/421453eac388f4b672874ca81400c047c03673a17a6db07f3d21977fb4a108ed.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/job/receipts/8f88aa212458ffdfa39304ded7baeef317036c61f7ffc43e41aa2dad7d7bf7f0.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/job/receipts/8f88aa212458ffdfa39304ded7baeef317036c61f7ffc43e41aa2dad7d7bf7f0.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/job/receipts/6bf6bde47f3647a314bd000eba8518093029484ae1db94f75551b94a709d0e12.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts/worker-reply.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts/summary.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts/summary_zh.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/coordinator-decision.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/review/source-review.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/review/source-check-output.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts/summary.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts/summary_zh.md",
+          "hash_valid": true
+        }
+      ],
+      "worker_preflight_order": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/captured-check-reply.jsonl",
+          "payload_valid": true,
+          "inside_worker_reply_span": true,
+          "before_actual_completed_snapshot_import": true
+        }
+      ],
+      "decision_preflight_capture_paths": [
+        "coordinator/cutoff-snapshot/project/A1/logs/36-check-decision.json"
+      ],
+      "scaffold_generator_calls": [],
+      "nonzero_cli": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/artifacts/check-business-outputs.jsonl",
+          "argv": [
+            "python3",
+            "-c",
+            "import csv,json,os; from decimal import Decimal; base=\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts\"; src=\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv\"; expected={}; f=open(src,newline=\"\",encoding=\"utf-8\"); exec(\"for row in csv.DictReader(f):\\n g=expected.setdefault(row[\\\"category\\\"],{\\\"row_count\\\":0,\\\"total_amount_fen\\\":0,\\\"source_ids\\\":[]})\\n g[\\\"row_count\\\"]+=1\\n g[\\\"total_amount_fen\\\"]+=int((Decimal(row[\\\"amount_yuan\\\"])*Decimal(100)).to_integral_exact())\\n g[\\\"source_ids\\\"].append(row[\\\"id\\\"])\\n\"); f.close(); expected={\"categories\":{k:expected[k] for k in sorted(expected)}}; actual=json.load(open(os.path.join(base,\"summary.json\"),encoding=\"utf-8\")); assert actual==expected,(actual,expected); md=open(os.path.join(base,\"summary_zh.md\"),encoding=\"utf-8\").read(); assert all(k in md for k in expected[\"categories\"]); print(json.dumps(actual,ensure_ascii=False,indent=2)); print(md)"
+          ],
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 293, in load\n    return loads(fp.read(),\n           ^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 346, in loads\n    return _default_decoder.decode(s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 341, in decode\n    raise JSONDecodeError(\"Extra data\", s, end)\njson.decoder.JSONDecodeError: Extra data: line 28 column 2 (char 431)\n"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A1/logs/21-record-wait-1.json",
+          "argv": [
+            "python3",
+            "-c",
+            "import json,pathlib; p=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/native/waits/wait-1.json\"); p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps({\"schema\":\"forge-comparison-notification-wait/1\",\"sample\":\"A1\",\"actor\":\"coordinator\",\"tool\":\"collaboration.wait_agent\",\"input\":{\"timeout_ms\":45000},\"raw_return\":{\"message\":\"Wait timed out.\",\"timed_out\":true},\"target_worker\":\"/root/luna_compare_project/luna_forge_7711875bcfc1\",\"marker_begin\":\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/observations/719755547621_9d64aedd96e44029a5d602af85770b70.json\",\"marker_end\":\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/observations/770146562738_afb5c72b7d8f4308bc7acc666106d860.json\",\"elapsed_interpretation\":\"Marker bracket includes tool and response overhead; exact native wait duration is unknown. The tool returned timed_out=true for the requested 45000ms.\"},ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+          ],
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nNameError: name 'true' is not defined. Did you mean: 'True'?\n"
+        }
+      ],
+      "captured_subprocess_elapsed_seconds": 1.263410272
+    },
+    {
+      "block": "project",
+      "sample": "B1",
+      "evidence_scope": "project cutoff snapshot; worker may still run",
+      "treatment": "B",
+      "pair": 1,
+      "phase": "committed",
+      "worker": "/root/luna_compare_project/luna_forge_123338d3bfce",
+      "attempt_id": "123338d3bfce415e9483ecbf737aedca",
+      "timing": {
+        "setup": {
+          "verified": true,
+          "seconds": 45.999356694,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1513601088729,
+          "end_ns": 1559600445423
+        },
+        "receive": {
+          "verified": true,
+          "seconds": 189.537759533,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1597712123953,
+          "end_ns": 1787249883486
+        },
+        "review": {
+          "verified": true,
+          "seconds": 223.667714019,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1807666447425,
+          "end_ns": 2031334161444
+        },
+        "decision": {
+          "verified": true,
+          "seconds": 142.291806379,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2044742522602,
+          "end_ns": 2187034328981
+        },
+        "commit": {
+          "verified": true,
+          "seconds": 36.70108845,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2187067456009,
+          "end_ns": 2223768544459
+        },
+        "worker_work": {
+          "verified": true,
+          "seconds": 90.034837066,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1604667489550,
+          "end_ns": 1694702326616
+        },
+        "worker_reply": {
+          "verified": true,
+          "seconds": 37.64716103,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1697685052914,
+          "end_ns": 1735332213944
+        }
+      },
+      "worker_reply_plus_decision_seconds": 179.938967409,
+      "captured_subprocess_count": 33,
+      "outside_shared_worker_capture_paths": [],
+      "capture_integrity": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/author-final-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/author-summary-correction1.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/author-summary.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/check-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/hostdraft-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/read-csv.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/read-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/read-skill-ref.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/verify-summary.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/00-bootstrap-inspection.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/01-projectctl-init.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/02-write-work.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/03-hostbridge-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/04-hostbridge-issue.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/05-extract-issue-arguments.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/06-hostbridge-accepted.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/07-hostbridge-receive.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/08-write-review-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/09-source-check.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/10-preserve-review-v1.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/11-write-review-checker-v2.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/12-source-check-v2.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/13-inspect-worker-evidence.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/14-worker-artifact-tree.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/15-inspect-worker-captures.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/16-review-hashes.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/17-write-source-review.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/18-hostdraft-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/19-author-final-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/20-check-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/21-hostbridge-commit.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/22-hostbridge-reconcile.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/23-projectctl-status.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        }
+      ],
+      "pending_or_invalid_json": [],
+      "native_intent_counts": {
+        "spawn_agent": 1,
+        "list_agents": 4
+      },
+      "native_return_counts": {
+        "spawn_agent": 1,
+        "list_agents": 4
+      },
+      "native_capture_integrity": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/spawn-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/spawn-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/status-1-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/status-1-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/status-2-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/status-2-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/status-3-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/status-3-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/status-4-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/native/status-4-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        }
+      ],
+      "bound_reference_integrity": [
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/job/request.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/capture.py",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/job/receipts/98ff959e76a71f54930e8eae83ee81a13921f4b5a4ad1b065b689a249e6d23ed.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/job/receipts/e0088d9114b1e5339dd7315c23dcc6e1fd94b127d976fdf3f11d15f0f92be9d7.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/job/receipts/e0088d9114b1e5339dd7315c23dcc6e1fd94b127d976fdf3f11d15f0f92be9d7.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/job/receipts/38a3808c0af30e6a04fb96fc9690cc50122738f9625c236b5b0bfd2a8bbbf52b.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/worker-reply.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/summary.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/summary_zh.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/coordinator-decision.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/review/source-review.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/review/source-check-output.v2.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/summary.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/summary_zh.md",
+          "hash_valid": true
+        }
+      ],
+      "worker_preflight_order": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/check-reply.json",
+          "payload_valid": true,
+          "inside_worker_reply_span": true,
+          "before_actual_completed_snapshot_import": true
+        }
+      ],
+      "decision_preflight_capture_paths": [
+        "coordinator/cutoff-snapshot/project/B1/logs/20-check-decision.json"
+      ],
+      "scaffold_generator_calls": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/hostdraft-reply.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+            "reply",
+            "--request",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/job/request.json",
+            "--artifact",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/summary.json",
+            "--artifact",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/summary_zh.md",
+            "--out",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/worker-reply.draft.json"
+          ],
+          "exit_code": 0,
+          "actor": "worker"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/logs/18-hostdraft-decision.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+            "decision",
+            "--job",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/job",
+            "--evidence",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/review/source-review.md",
+            "--evidence",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/review/source-check-output.v2.json",
+            "--out",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/coordinator-decision.draft.json"
+          ],
+          "exit_code": 0,
+          "actor": "coordinator"
+        }
+      ],
+      "nonzero_cli": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B1/artifacts/logs/author-summary.json",
+          "argv": [
+            "python3",
+            "-c",
+            "import csv,json; from collections import defaultdict; from decimal import Decimal; from pathlib import Path; src=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv\"); out=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts\"); groups=defaultdict(lambda: {\"row_count\":0,\"total_fen\":0,\"source_ids\":[]}); row_total=0\nwith src.open(newline=\"\",encoding=\"utf-8\") as f:\n for row in csv.DictReader(f):\n  amount_fen=Decimal(row[\"amount_yuan\"])*Decimal(100)\n  if amount_fen != amount_fen.to_integral_exact(): raise ValueError(\"amount cannot be represented as integer fen: \"+row[\"id\"])\n  g=groups[row[\"category\"]]; g[\"row_count\"]+=1; g[\"total_fen\"]+=int(amount_fen); g[\"source_ids\"].append(row[\"id\"]); row_total+=1\nresult={\"categories\":{key:groups[key] for key in sorted(groups)}}\nif sum(v[\"row_count\"] for v in result[\"categories\"].values()) != row_total: raise AssertionError(\"row count mismatch\")\n(out/\"summary.json\").write_text(json.dumps(result,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")\nlines=[\"# 费用分类汇总\",\"\",f\"共处理 {row_total} 行。金额使用十进制精确换算，1 元 = 100 分；分类按字典序排列，来源 ID 保持 CSV 原始行序。\",\"\",\"| 分类 | 行数 | 总金额（分） | 来源 ID |\",\"|---|---:|---:|---|\"]\nfor key, val in result[\"categories\"].items(): lines.append(f\"| {key} | {val[\\\"row_count\\\"]} | {val[\\\"total_fen\\\"]} | {\\\", \".join(val[\\\"source_ids\\\"])} |\")\n(out/\"summary_zh.md\").write_text(\"\\n\".join(lines)+\"\\n\",encoding=\"utf-8\")\nprint(json.dumps(result,ensure_ascii=False,indent=2)); print((out/\"summary_zh.md\").read_text())"
+          ],
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "  File \"<string>\", line 11\n    for key, val in result[\"categories\"].items(): lines.append(f\"| {key} | {val[\\\"row_count\\\"]} | {val[\\\"total_fen\\\"]} | {\\\", \".join(val[\\\"source_ids\\\"])} |\")\n                                                                                 ^\nSyntaxError: unexpected character after line continuation character\n"
+        }
+      ],
+      "captured_subprocess_elapsed_seconds": 0.966181654
+    },
+    {
+      "block": "project",
+      "sample": "B2",
+      "evidence_scope": "project cutoff snapshot; worker may still run",
+      "treatment": "B",
+      "pair": 2,
+      "phase": "committed",
+      "worker": "/root/luna_compare_project/luna_forge_6e153853d17f",
+      "attempt_id": "6e153853d17f4a04bc1e812e5d6ac0bf",
+      "timing": {
+        "setup": {
+          "verified": true,
+          "seconds": 83.475423347,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2258502071988,
+          "end_ns": 2341977495335
+        },
+        "receive": {
+          "verified": true,
+          "seconds": 379.394750365,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2418776388242,
+          "end_ns": 2798171138607
+        },
+        "review": {
+          "verified": true,
+          "seconds": 194.646233238,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2798205854173,
+          "end_ns": 2992852087411
+        },
+        "decision": {
+          "verified": true,
+          "seconds": 33.598435833,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2992887680024,
+          "end_ns": 3026486115857
+        },
+        "commit": {
+          "verified": true,
+          "seconds": 26.201027176,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 3026524608212,
+          "end_ns": 3052725635388
+        },
+        "worker_work": {
+          "verified": true,
+          "seconds": 127.683809603,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2511282777840,
+          "end_ns": 2638966587443
+        },
+        "worker_reply": {
+          "verified": true,
+          "seconds": 53.572382438,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2639003657610,
+          "end_ns": 2692576040048
+        }
+      },
+      "worker_reply_plus_decision_seconds": 87.170818271,
+      "captured_subprocess_count": 32,
+      "outside_shared_worker_capture_paths": [],
+      "capture_integrity": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/author-business.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/author-final-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/check-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/hostdraft-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/read-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/read-expenses.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/read-request.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/verify-business.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/worker_capture_luna_forge_6e153853d17f.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/01-projectctl-init.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/02-write-work.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/03-hostbridge-prepare-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/04-hostbridge-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/05-hostbridge-issue-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/06-hostbridge-issue.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/07-extract-issue-arguments.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/08-hostbridge-accepted-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/09-inspect-accepted-doc.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/10-hostbridge-accepted.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/11-hostbridge-receive.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/12-inspect-worker-captures.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/13-read-worker-check-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/14-write-source-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/15-source-check.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/16-save-source-check-output.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/18-write-source-review.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/19-hostdraft-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/20-author-final-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/21-check-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/22-hostbridge-commit.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/23-hostbridge-reconcile.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/24-projectctl-status.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        }
+      ],
+      "pending_or_invalid_json": [],
+      "native_intent_counts": {
+        "spawn_agent": 1,
+        "list_agents": 5
+      },
+      "native_return_counts": {
+        "spawn_agent": 1,
+        "list_agents": 5
+      },
+      "native_capture_integrity": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/spawn-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/spawn-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-1-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-1-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-2-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-2-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-3-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-3-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-4-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-4-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-5-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/native/status-5-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        }
+      ],
+      "bound_reference_integrity": [
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/job/request.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/capture.py",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/job/receipts/b2c463f34956ca65523c5ad2da9d4eb45d9dae29ae9d137c8942774670482520.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/job/receipts/fc06f0d471825296f1efb6c98b86e8a7d48635e2fd25bc0dad36e4be87e2a583.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/job/receipts/fc06f0d471825296f1efb6c98b86e8a7d48635e2fd25bc0dad36e4be87e2a583.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/job/receipts/399ccadb968a68b90a122f47eb1f79188454c57cc5bbf98b190501c294c38634.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/worker-reply.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary_zh.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/coordinator-decision.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/review/source-review.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/review/source-check-output.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary_zh.md",
+          "hash_valid": true
+        }
+      ],
+      "worker_preflight_order": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/check-reply.json",
+          "payload_valid": true,
+          "inside_worker_reply_span": true,
+          "before_actual_completed_snapshot_import": true
+        }
+      ],
+      "decision_preflight_capture_paths": [
+        "coordinator/cutoff-snapshot/project/B2/logs/21-check-decision.json"
+      ],
+      "scaffold_generator_calls": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/artifacts/logs/hostdraft-reply.json",
+          "argv": [
+            "python",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+            "reply",
+            "--request",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/job/request.json",
+            "--artifact",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary.json",
+            "--artifact",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary_zh.md",
+            "--out",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/worker-reply.draft.json"
+          ],
+          "exit_code": 0,
+          "actor": "luna_forge_6e153853d17f"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/B2/logs/19-hostdraft-decision.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+            "decision",
+            "--job",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/job",
+            "--evidence",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/review/source-review.md",
+            "--evidence",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/review/source-check-output.json",
+            "--out",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/coordinator-decision.draft.json"
+          ],
+          "exit_code": 0,
+          "actor": "coordinator"
+        }
+      ],
+      "nonzero_cli": [],
+      "captured_subprocess_elapsed_seconds": 1.051542735
+    },
+    {
+      "block": "project",
+      "sample": "A2",
+      "evidence_scope": "project cutoff snapshot; worker may still run",
+      "treatment": "A",
+      "pair": 2,
+      "phase": "accepted",
+      "worker": "/root/luna_compare_project/luna_forge_01576d11c27a",
+      "attempt_id": "01576d11c27a41f6930d3baf79bf7c49",
+      "timing": {
+        "setup": {
+          "verified": true,
+          "seconds": 56.219432642,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 3078613697192,
+          "end_ns": 3134833129834
+        },
+        "receive": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 1,
+          "end_count": 0
+        },
+        "review": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 0,
+          "end_count": 0
+        },
+        "decision": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 0,
+          "end_count": 0
+        },
+        "commit": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 0,
+          "end_count": 0
+        },
+        "worker_work": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 1,
+          "end_count": 0
+        },
+        "worker_reply": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 0,
+          "end_count": 0
+        }
+      },
+      "worker_reply_plus_decision_seconds": null,
+      "captured_subprocess_count": 11,
+      "outside_shared_worker_capture_paths": [
+        "coordinator/cutoff-snapshot/shared/luna_forge_01576d11c27a_read_request.jsonl"
+      ],
+      "capture_integrity": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/artifacts/logs/aggregate_expenses.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/artifacts/logs/aggregate_expenses_retry.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/artifacts/logs/read_expenses.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/artifacts/luna_forge_01576d11c27a_read_protocol.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/logs/01-projectctl-init.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/logs/02-write-work.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/logs/03-hostbridge-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/logs/04-hostbridge-issue.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/logs/05-extract-issue-arguments.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/logs/06-hostbridge-accepted.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/shared/luna_forge_01576d11c27a_read_request.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        }
+      ],
+      "pending_or_invalid_json": [],
+      "native_intent_counts": {
+        "spawn_agent": 1,
+        "list_agents": 5
+      },
+      "native_return_counts": {
+        "spawn_agent": 1,
+        "list_agents": 5
+      },
+      "native_capture_integrity": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/spawn-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/spawn-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-1-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-1-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-2-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-2-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-3-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-3-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-4-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-4-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-5-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/native/status-5-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        }
+      ],
+      "bound_reference_integrity": [
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/job/request.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/capture.py",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/job/receipts/c2f8e97710021db6d3c557bf63734f54c17b596e3fd3912e72e1044ddb850231.json",
+          "hash_valid": true
+        }
+      ],
+      "worker_preflight_order": [],
+      "decision_preflight_capture_paths": [],
+      "scaffold_generator_calls": [],
+      "nonzero_cli": [
+        {
+          "path": "coordinator/cutoff-snapshot/project/A2/artifacts/logs/aggregate_expenses.json",
+          "argv": [
+            "python3",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/artifacts/aggregate_expenses.py"
+          ],
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "python3: can't open file '/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/artifacts/aggregate_expenses.py': [Errno 2] No such file or directory\n"
+        }
+      ],
+      "captured_subprocess_elapsed_seconds": 0.248351484
+    },
+    {
+      "block": "package",
+      "sample": "B1",
+      "evidence_scope": "original package records",
+      "treatment": "B",
+      "pair": 1,
+      "phase": "committed",
+      "worker": "/root/luna_compare_package/luna_forge_c98df856ea9d",
+      "attempt_id": "c98df856ea9d434189686fdc314dbad0",
+      "timing": {
+        "setup": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 1,
+          "end_count": 0
+        },
+        "receive": {
+          "verified": true,
+          "seconds": 376.996644899,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 561848858589,
+          "end_ns": 938845503488
+        },
+        "review": {
+          "verified": true,
+          "seconds": 352.499150545,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 942187797525,
+          "end_ns": 1294686948070
+        },
+        "decision": {
+          "verified": true,
+          "seconds": 42.513790633,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1300367577626,
+          "end_ns": 1342881368259
+        },
+        "commit": {
+          "verified": true,
+          "seconds": 15.527732436,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1349232531054,
+          "end_ns": 1364760263490
+        },
+        "worker_work": {
+          "verified": true,
+          "seconds": 118.380272338,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 670043028857,
+          "end_ns": 788423301195
+        },
+        "worker_reply": {
+          "verified": true,
+          "seconds": 72.723277766,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 796887807694,
+          "end_ns": 869611085460
+        }
+      },
+      "worker_reply_plus_decision_seconds": 115.237068399,
+      "captured_subprocess_count": 59,
+      "outside_shared_worker_capture_paths": [],
+      "capture_integrity": [
+        {
+          "path": "package/B1/artifacts/captures/check-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/correct-business-json.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/correct-final-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/create-reply-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/inspect-explanation.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/inspect-invalid-business-artifact.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/inspect-reply-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/preflight.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/read-bound-materials.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/verify-business-artifacts-final.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/verify-business-artifacts.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/verify-final-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/write-business-artifacts.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/artifacts/captures/write-final-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/001-create-inputs.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/002-package-validate.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/003-package-start.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/004-create-work.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/005-bridge-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/006-bridge-issue.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/007-inspect-issue-record.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/008-save-status-query.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/009-read-status-observer.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/010-write-recovery-record.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/011-save-original-arguments.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/012-bridge-accepted.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/013-copy-status-query-01.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/014-copy-status-query-02.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/015-copy-status-query-03.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/016-copy-status-query-04.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/017-bridge-receive.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/018-inventory-worker-artifacts.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/019-read-worker-final-materials.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/020-create-independent-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/021-summary-worker-captures.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/022-read-retained-failures.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/023-write-v1-results.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/024-packagectl-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/024-read-results.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/025-search-packagectl-assess.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/026-find-flow-digest.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/027-compute-canonical-package-hash.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/028-preserve-rejected-results.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/029-correct-results-hash.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/030-write-source-review.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/031-correct-source-review-reference.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/032-hostdraft-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/033-read-decision-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/034-create-final-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/035-bridge-commit.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/036-bridge-reconcile.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/037-package-next-terminal.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/observe-status-01-late.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/observe-status-02-late.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/logs/observe-status-03-late.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/review/check-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/review/package-assess-corrected.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/review/package-assess.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B1/review/source-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        }
+      ],
+      "pending_or_invalid_json": [
+        "package/B1/artifacts/actions.rejected.json",
+        "package/B1/artifacts/worker-reply.preflight-rejected.json"
+      ],
+      "native_intent_counts": {
+        "spawn_agent": 1,
+        "list_agents": 5
+      },
+      "native_return_counts": {
+        "spawn_agent": 1,
+        "list_agents": 5
+      },
+      "native_capture_integrity": [
+        {
+          "path": "package/B1/native/spawn-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "intent"
+        },
+        {
+          "path": "package/B1/native/spawn-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "return"
+        },
+        {
+          "path": "package/B1/native/status-call-01-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B1/native/status-call-01-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/B1/native/status-call-02-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B1/native/status-call-02-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/B1/native/status-call-03-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B1/native/status-call-03-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/B1/native/status-call-04-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B1/native/status-call-04-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/B1/native/status-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B1/native/status-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        }
+      ],
+      "bound_reference_integrity": [
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/job/request.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/package.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/capture.py",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/job/receipts/a0d525261ea51b8aa3ee382041aa2cf14ca4c0fb38e145873c81b516e62fd60a.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/job/receipts/9bf2392d8b98f1f37b06fda80582bb4c79fbc3768b55b909f37ab2be0a098d35.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/job/receipts/c2ae7195d2050c5152ed3123b4ff2dbbedb9d6e9dc6112e67dfef0cfc7abd3f8.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/job/receipts/9f2c7cfd387396735b1f033f6efb423a730a96f1dac425a0865c98a778e7b4bf.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/worker-reply.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/actions.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/解释.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/review/coordinator-decision.json",
+          "hash_valid": true
+        }
+      ],
+      "worker_preflight_order": [
+        {
+          "path": "package/B1/artifacts/captures/check-reply.json",
+          "payload_valid": true,
+          "inside_worker_reply_span": true,
+          "before_actual_completed_snapshot_import": true
+        }
+      ],
+      "decision_preflight_capture_paths": [
+        "package/B1/review/check-decision.json"
+      ],
+      "scaffold_generator_calls": [
+        {
+          "path": "package/B1/artifacts/captures/create-reply-draft.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+            "reply",
+            "--request",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/job/request.json",
+            "--artifact",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/actions.json",
+            "--artifact",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/解释.md",
+            "--out",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/worker-reply.draft.json"
+          ],
+          "exit_code": 0,
+          "actor": "luna_forge_c98df856ea9d"
+        },
+        {
+          "path": "package/B1/logs/032-hostdraft-decision.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+            "decision",
+            "--job",
+            "package/B1/job",
+            "--out",
+            "package/B1/review/coordinator-decision.draft.json"
+          ],
+          "exit_code": 0,
+          "actor": "coordinator"
+        }
+      ],
+      "nonzero_cli": [
+        {
+          "path": "package/B1/artifacts/captures/verify-business-artifacts.json",
+          "argv": [
+            "python3",
+            "-c",
+            "from pathlib import Path; import json; notes=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt\").read_text(encoding=\"utf-8\"); acts=json.loads(Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/actions.json\").read_text(encoding=\"utf-8\")); assert isinstance(acts,list) and len(acts)==3; assert all(set(x)=={\"task\",\"owner\",\"due\",\"source_quote\"} and x[\"source_quote\"] in notes for x in acts); assert acts[0]=={\"task\":\"更新部署文档\",\"owner\":\"赵宁\",\"due\":\"周五\",\"source_quote\":\"赵宁负责更新部署文档，截止周五。\"}; assert acts[1]=={\"task\":\"补充回归用例\",\"owner\":\"许静\",\"due\":\"2026-10-09\",\"source_quote\":\"许静负责补充回归用例，截止2026-10-09。\"}; assert acts[2]=={\"task\":\"补充日志告警\",\"owner\":None,\"due\":None,\"source_quote\":\"决定补充日志告警。\"}; assert all(\"更换配色\" not in x[\"task\"] and \"外部通知\" not in x[\"task\"] for x in acts); assert Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/解释.md\").is_file(); print(\"PASS: 3 actions, exact quote substrings, literal due dates, null unstated fields, suggestion/information excluded.\")"
+          ],
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 346, in loads\n    return _default_decoder.decode(s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 341, in decode\n    raise JSONDecodeError(\"Extra data\", s, end)\njson.decoder.JSONDecodeError: Extra data: line 20 column 2 (char 329)\n"
+        },
+        {
+          "path": "package/B1/review/package-assess.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/packagectl.py",
+            "assess",
+            "materials/package.json",
+            "--results",
+            "package/B1/review/results.json"
+          ],
+          "exit_code": 2,
+          "stdout": "",
+          "stderr": "{\"error\": \"Results must contain the exact package_hash and checks\"}\n"
+        }
+      ],
+      "captured_subprocess_elapsed_seconds": 1.6808198
+    },
+    {
+      "block": "package",
+      "sample": "A1",
+      "evidence_scope": "original package records",
+      "treatment": "A",
+      "pair": 1,
+      "phase": "committed",
+      "worker": "/root/luna_compare_package/luna_forge_765e31c228f3",
+      "attempt_id": "765e31c228f34ff8bb1704f9022f140a",
+      "timing": {
+        "setup": {
+          "verified": true,
+          "seconds": 46.774898436,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1398865644811,
+          "end_ns": 1445640543247
+        },
+        "receive": {
+          "verified": true,
+          "seconds": 291.245761681,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1483749469575,
+          "end_ns": 1774995231256
+        },
+        "review": {
+          "verified": true,
+          "seconds": 139.196544522,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1783955961336,
+          "end_ns": 1923152505858
+        },
+        "decision": {
+          "verified": true,
+          "seconds": 40.576306263,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1936373991593,
+          "end_ns": 1976950297856
+        },
+        "commit": {
+          "verified": true,
+          "seconds": 2.244841593,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1977506347064,
+          "end_ns": 1979751188657
+        },
+        "worker_work": {
+          "verified": true,
+          "seconds": 86.839603396,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1532237337632,
+          "end_ns": 1619076941028
+        },
+        "worker_reply": {
+          "verified": true,
+          "seconds": 55.86081739,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 1619606441282,
+          "end_ns": 1675467258672
+        }
+      },
+      "worker_reply_plus_decision_seconds": 96.437123653,
+      "captured_subprocess_count": 39,
+      "outside_shared_worker_capture_paths": [],
+      "capture_integrity": [
+        {
+          "path": "package/A1/artifacts/captures/check-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/inspect-business-artifacts.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/inspect-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/read-bound-files.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/write-author-source.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/write-business-artifacts.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/write-draft-author-source.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/write-final-author-source.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/write-final-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/artifacts/captures/write-incomplete-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/001-create-inputs.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/002-package-validate.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/003-package-start.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/004-create-work.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/005-bridge-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/006-bridge-issue.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/007-save-native-arguments.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/008-bridge-accepted.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/009-copy-status-query-01.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/010-bridge-observe-01.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/011-copy-status-query-02.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/012-bridge-observe-02.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/013-copy-status-query-03.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/014-bridge-receive.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/015-inventory-worker-artifacts.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/016-read-worker-final-materials.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/017-create-independent-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/018-write-v1-results.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/019-write-source-review.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/020-create-decision-draft-author.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/021-author-coordinator-decision-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/022-create-final-decision-author.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/023-author-final-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/024-bridge-commit.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/025-bridge-reconcile.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/logs/026-package-next-terminal.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/review/check-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/review/package-assess.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A1/review/source-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        }
+      ],
+      "pending_or_invalid_json": [],
+      "native_intent_counts": {
+        "spawn_agent": 1,
+        "list_agents": 3
+      },
+      "native_return_counts": {
+        "spawn_agent": 1,
+        "list_agents": 3
+      },
+      "native_capture_integrity": [
+        {
+          "path": "package/A1/native/spawn-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "intent"
+        },
+        {
+          "path": "package/A1/native/spawn-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "return"
+        },
+        {
+          "path": "package/A1/native/status-call-01-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/A1/native/status-call-01-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/A1/native/status-call-02-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/A1/native/status-call-02-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/A1/native/status-call-03-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/A1/native/status-call-03-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        }
+      ],
+      "bound_reference_integrity": [
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/job/request.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/package.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/capture.py",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/job/receipts/1f780a346aa4639e5a8fe51536b63b818ca383cd957199b71f5c25ec67d2d9ee.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/job/receipts/b32c2b053e466ccc98d50d49662cecd2eda4056375395c57dcd3a129d1dc4638.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/job/receipts/7d0e96632eb076eeeb8750a4d0b46ae09ef46ae073a1719c78c6269aa7689a5a.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/job/receipts/17513cfda6604e6ae1f22435d8dcea4a494afea21feb3f2d475c14b321b94090.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts/worker-reply.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts/actions.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts/解释.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/review/coordinator-decision.json",
+          "hash_valid": true
+        }
+      ],
+      "worker_preflight_order": [
+        {
+          "path": "package/A1/artifacts/captures/check-reply.json",
+          "payload_valid": true,
+          "inside_worker_reply_span": true,
+          "before_actual_completed_snapshot_import": true
+        }
+      ],
+      "decision_preflight_capture_paths": [
+        "package/A1/review/check-decision.json"
+      ],
+      "scaffold_generator_calls": [],
+      "nonzero_cli": [],
+      "captured_subprocess_elapsed_seconds": 1.064838971
+    },
+    {
+      "block": "package",
+      "sample": "A2",
+      "evidence_scope": "original package records",
+      "treatment": "A",
+      "pair": 2,
+      "phase": "committed",
+      "worker": "/root/luna_compare_package/luna_forge_59628fe29518",
+      "attempt_id": "59628fe295184a47b6aefbf1f5c8a7d7",
+      "timing": {
+        "setup": {
+          "verified": true,
+          "seconds": 38.337105546,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2003393674801,
+          "end_ns": 2041730780347
+        },
+        "receive": {
+          "verified": true,
+          "seconds": 305.240274283,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2075419560829,
+          "end_ns": 2380659835112
+        },
+        "review": {
+          "verified": true,
+          "seconds": 336.393274383,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2387060243577,
+          "end_ns": 2723453517960
+        },
+        "decision": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 0,
+          "end_count": 1
+        },
+        "commit": {
+          "verified": true,
+          "seconds": 28.702692785,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2878849725030,
+          "end_ns": 2907552417815
+        },
+        "worker_work": {
+          "verified": true,
+          "seconds": 22.164401939,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2132963146504,
+          "end_ns": 2155127548443
+        },
+        "worker_reply": {
+          "verified": true,
+          "seconds": 139.779842037,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 2158369264536,
+          "end_ns": 2298149106573
+        }
+      },
+      "worker_reply_plus_decision_seconds": null,
+      "captured_subprocess_count": 58,
+      "outside_shared_worker_capture_paths": [],
+      "capture_integrity": [
+        {
+          "path": "package/A2/artifacts/author-business-artifacts.capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/artifacts/business-acceptance.capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/artifacts/check-reply.capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/artifacts/inspect.capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/artifacts/read-inputs.capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/artifacts/reply-construction.capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/artifacts/write-reply-authoring-source.capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/001-create-inputs.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/002-package-validate.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/003-package-start.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/004-create-work.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/005-bridge-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/006-bridge-issue.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/007-save-native-arguments.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/008-bridge-accepted.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/009-copy-status-query-01.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/010-bridge-observe-01.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/011-copy-status-query-02.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/012-bridge-observe-02.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/013-copy-status-query-03.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/014-bridge-observe-03.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/015-copy-status-query-04.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/016-bridge-receive.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/017-inventory-worker-artifacts.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/018-read-worker-final-materials.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/019-list.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/019-read-worker-capture-summary.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/020-create-independent-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/020-read-current.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/021-list-logs.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/022-read-own-setup.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/023-package-assess-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/024-read-packagectl-assess-schema.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/025-locate-assess-code.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/026-read-assess-implementation.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/027-read-raw-package-acceptance.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/028-list-marker-and-review-files.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/029-read-marker-implementation.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/030-read-marker-target.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/031-read-operator-marker-rules.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/032-inspect-own-observation.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/033-summarize-own-markers-before-end.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/034-list-coordinator-files.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/035-read-own-bridge-details.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/036-hostbridge-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/037-hostdraft-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/038-hostdraft-check-decision-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/039-read-hostdraft-decision-contract.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/040-read-decision-draft-schema.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/041-read-worker-reply-for-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/042-read-bridge-decision-commit-contract.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/043-bridge-commit.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/044-package-next-help.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/045-bridge-reconcile.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/logs/046-package-next.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/review/decision-preflight.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/review/package-assess.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/A2/review/source-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        }
+      ],
+      "pending_or_invalid_json": [],
+      "native_intent_counts": {
+        "spawn_agent": 1,
+        "list_agents": 4
+      },
+      "native_return_counts": {
+        "spawn_agent": 1,
+        "list_agents": 4
+      },
+      "native_capture_integrity": [
+        {
+          "path": "package/A2/native/spawn-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "intent"
+        },
+        {
+          "path": "package/A2/native/spawn-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "return"
+        },
+        {
+          "path": "package/A2/native/status-call-01-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/A2/native/status-call-01-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/A2/native/status-call-02-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/A2/native/status-call-02-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/A2/native/status-call-03-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/A2/native/status-call-03-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/A2/native/status-call-04-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/A2/native/status-call-04-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        }
+      ],
+      "bound_reference_integrity": [
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/job/request.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/package.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/capture.py",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/job/receipts/a6e60135c5e2eee267e055850fb1e48a0bed9480af7d8bb029a5f5d3962ba6c8.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/job/receipts/98563b1e63da9737cade72aed9104c5a4187313ab6fee62f6e943e960037ada3.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/job/receipts/03a36bed724e80f24c29299e5bbbd8caaffc4de367fbda55f163e072bc94722e.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/job/receipts/c8b5f69467c164caa6ede610db6750588e9e8c1d3bd4b8bb17ef52f499e3f461.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/worker-reply.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/actions.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/explanation.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/review/decision.json",
+          "hash_valid": true
+        }
+      ],
+      "worker_preflight_order": [
+        {
+          "path": "package/A2/artifacts/check-reply.capture.json",
+          "payload_valid": true,
+          "inside_worker_reply_span": true,
+          "before_actual_completed_snapshot_import": true
+        }
+      ],
+      "decision_preflight_capture_paths": [
+        "package/A2/logs/038-hostdraft-check-decision-help.json",
+        "package/A2/review/decision-preflight.json"
+      ],
+      "scaffold_generator_calls": [],
+      "nonzero_cli": [
+        {
+          "path": "package/A2/logs/018-read-worker-final-materials.json",
+          "argv": [
+            "python3",
+            "-c",
+            "from pathlib import Path\nfor name in [\"actions.json\",\"explanation.md\",\"worker-reply.json\",\"worker-reply.draft.json\",\"captures/check-reply.json\"]:\n p=Path(\"package/A2/artifacts\")/name\n print(\"===== \"+str(p)+\" =====\")\n print(p.read_text(encoding=\"utf-8\"))"
+          ],
+          "exit_code": 1,
+          "stdout": "===== package/A2/artifacts/actions.json =====\n[\n  {\n    \"task\": \"更新部署文档\",\n    \"owner\": \"赵宁\",\n    \"due\": \"周五\",\n    \"source_quote\": \"赵宁负责更新部署文档，截止周五。\"\n  },\n  {\n    \"task\": \"补充回归用例\",\n    \"owner\": \"许静\",\n    \"due\": \"2026-10-09\",\n    \"source_quote\": \"许静负责补充回归用例，截止2026-10-09。\"\n  },\n  {\n    \"task\": \"补充日志告警\",\n    \"owner\": null,\n    \"due\": null,\n    \"source_quote\": \"决定补充日志告警。\"\n  }\n]\n\n===== package/A2/artifacts/explanation.md =====\n从会议记录中抽取到三项明确行动：更新部署文档、补充回归用例、补充日志告警。前两项按原文保留负责人和截止日期；“周五”保持原样，不推算为具体日期。补充日志告警是明确决定，但记录未指定负责人或截止日期，因此两项均记为 null。\n\n“建议以后考虑更换配色”表达的是建议，不作为承诺；“本周没有新增外部通知”是状态说明，不是行动项。没有向任何人发送任务或通知。\n\n===== package/A2/artifacts/worker-reply.json =====\n{\n  \"schema_version\": \"forge-host-reply/1\",\n  \"job_id\": \"job_ff02f4902ff141aab793a5657b8c81d7\",\n  \"attempt_id\": \"59628fe295184a47b6aefbf1f5c8a7d7\",\n  \"request_hash\": \"8ef79aa97223c830c1eee82f223321c8a8a1a7d2d4c338a3b20fe1ba5abe8d2b\",\n  \"outcome\": \"done\",\n  \"result\": {\n    \"invocation_id\": \"30c3df730e13319200770469e341ade2\",\n    \"outcome\": \"ok\",\n    \"artifacts\": {\n      \"actions\": [\n        {\n          \"task\": \"更新部署文档\",\n          \"owner\": \"赵宁\",\n          \"due\": \"周五\",\n          \"source_quote\": \"赵宁负责更新部署文档，截止周五。\"\n        },\n        {\n          \"task\": \"补充回归用例\",\n          \"owner\": \"许静\",\n          \"due\": \"2026-10-09\",\n          \"source_quote\": \"许静负责补充回归用例，截止2026-10-09。\"\n        },\n        {\n          \"task\": \"补充日志告警\",\n          \"owner\": null,\n          \"due\": null,\n          \"source_quote\": \"决定补充日志告警。\"\n        }\n      ]\n    },\n    \"evidence\": [\n      \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/actions.json\",\n      \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/explanation.md\"\n    ]\n  },\n  \"artifacts\": [\n    {\n      \"path\": \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/actions.json\",\n      \"sha256\": \"49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce\"\n    },\n    {\n      \"path\": \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/explanation.md\",\n      \"sha256\": \"00249fd0af705c6aed80d5dc39d5edaf55d9e89aa9dd5a66d32c9eb44cc40926\"\n    }\n  ],\n  \"reason\": null\n}\n\n===== package/A2/artifacts/worker-reply.draft.json =====\n{\n  \"schema_version\": \"forge-host-reply/1\",\n  \"job_id\": \"job_ff02f4902ff141aab793a5657b8c81d7\",\n  \"attempt_id\": \"59628fe295184a47b6aefbf1f5c8a7d7\",\n  \"request_hash\": \"8ef79aa97223c830c1eee82f223321c8a8a1a7d2d4c338a3b20fe1ba5abe8d2b\",\n  \"outcome\": null,\n  \"result\": {\n    \"invocation_id\": \"30c3df730e13319200770469e341ade2\",\n    \"outcome\": null,\n    \"artifacts\": {},\n    \"evidence\": []\n  },\n  \"artifacts\": [\n    {\n      \"path\": \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/actions.json\",\n      \"sha256\": \"49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce\"\n    },\n    {\n      \"path\": \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/explanation.md\",\n      \"sha256\": \"00249fd0af705c6aed80d5dc39d5edaf55d9e89aa9dd5a66d32c9eb44cc40926\"\n    }\n  ],\n  \"reason\": null\n}\n\n===== package/A2/artifacts/captures/check-reply.json =====\n",
+          "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 5, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1027, in read_text\n    with self.open(mode='r', encoding=encoding, errors=errors) as f:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/pathlib.py\", line 1013, in open\n    return io.open(self, mode, buffering, encoding, errors, newline)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: 'package/A2/artifacts/captures/check-reply.json'\n"
+        }
+      ],
+      "captured_subprocess_elapsed_seconds": 1.652933042
+    },
+    {
+      "block": "package",
+      "sample": "B2",
+      "evidence_scope": "original package records",
+      "treatment": "B",
+      "pair": 2,
+      "phase": "committed",
+      "worker": "/root/luna_compare_package/luna_forge_684e8398b926",
+      "attempt_id": "684e8398b9264668823666074e8fd1f4",
+      "timing": {
+        "setup": {
+          "verified": false,
+          "seconds": null,
+          "reason": "missing or multiple markers",
+          "begin_count": 1,
+          "end_count": 2
+        },
+        "receive": {
+          "verified": true,
+          "seconds": 349.367287038,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 3174826789777,
+          "end_ns": 3524194076815
+        },
+        "review": {
+          "verified": true,
+          "seconds": 270.591456847,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 3531819263006,
+          "end_ns": 3802410719853
+        },
+        "decision": {
+          "verified": true,
+          "seconds": 33.705176106,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 3808461683766,
+          "end_ns": 3842166859872
+        },
+        "commit": {
+          "verified": true,
+          "seconds": 17.8455247,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 3847137699933,
+          "end_ns": 3864983224633
+        },
+        "worker_work": {
+          "verified": true,
+          "seconds": 57.387442643,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 3247250902571,
+          "end_ns": 3304638345214
+        },
+        "worker_reply": {
+          "verified": true,
+          "seconds": 135.430277652,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+          "begin_ns": 3308057508383,
+          "end_ns": 3443487786035
+        }
+      },
+      "worker_reply_plus_decision_seconds": 169.135453758,
+      "captured_subprocess_count": 47,
+      "outside_shared_worker_capture_paths": [],
+      "capture_integrity": [
+        {
+          "path": "package/B2/artifacts/logs/check-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/artifacts/logs/hostdraft-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/artifacts/logs/semantic-check.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/artifacts/logs/write-business.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/artifacts/logs/write-reply.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/artifacts/mkdir-logs.capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/artifacts/process-captures.jsonl",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/001-package-validate.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/002-package-start.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/003-bridge-prepare.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/004-read-stage-rules.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/005-bridge-issue.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/006-save-exact-issue-arguments.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/007-bridge-observe-01.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/008-bridge-accepted-01.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/009-bridge-accepted-spawn-return.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/010-bridge-observe-01-recovered.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/011-bridge-observe-02.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/012-bridge-observe-03.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/013-bridge-receive.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/014-worker-artifact-inventory.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/015-read-sources-and-worker-output.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/016-read-request-fields.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/017-read-nested-request-fields.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/018-worker-capture-index-draft.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/019-inspect-worker-captures-format.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/020-inspect-worker-capture-tail.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/021-summarize-worker-capture.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/022-worker-process-summary.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/023-read-current-checkpoint-hash.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/024-bridge-commit.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/025-bridge-reconcile.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/026-package-next.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/027-index-input-inventory.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/028-build-block-indexes.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/029-index-audit.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/030-inspect-index-script.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/031-validate-index-script.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/032-build-block-indexes.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/033-build-block-indexes-corrected.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/034-audit-final-index.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/035-build-block-indexes-corrected.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/logs/036-audit-corrected-index.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/review/decision-preflight.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/review/hostdraft-decision.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/review/package-assess.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        },
+        {
+          "path": "package/B2/review/source-checker.json",
+          "raw_bytes_valid": true,
+          "duration_valid": true
+        }
+      ],
+      "pending_or_invalid_json": [],
+      "native_intent_counts": {
+        "spawn_agent": 1,
+        "list_agents": 4
+      },
+      "native_return_counts": {
+        "spawn_agent": 1,
+        "list_agents": 4
+      },
+      "native_capture_integrity": [
+        {
+          "path": "package/B2/native/spawn-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "intent"
+        },
+        {
+          "path": "package/B2/native/spawn-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "spawn_agent",
+          "event": "return"
+        },
+        {
+          "path": "package/B2/native/status-query-01-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B2/native/status-query-01-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/B2/native/status-query-02-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B2/native/status-query-02-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/B2/native/status-query-03-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B2/native/status-query-03-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        },
+        {
+          "path": "package/B2/native/status-query-04-intent-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "intent"
+        },
+        {
+          "path": "package/B2/native/status-query-04-return-observer.json",
+          "payload_bytes_valid": true,
+          "tool": "list_agents",
+          "event": "return"
+        }
+      ],
+      "bound_reference_integrity": [
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/job/request.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/package.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/capture.py",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/job/receipts/658aa8d2a3f999a5aeda60aba0ae34107a5fd0cfed00246ae03ad8854117fd6f.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/job/receipts/f409c0c5c55d427afdff9545c4ce259f7a4afa7ca3d699690e86a44da0f5271c.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/job/receipts/f428cd09e1b18c8abf16ab459aaa73da1350583e534e1c8923482cf57d93c496.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/job/receipts/1112af8a63f71a411653f17a7b89ed6e7c175c521d2c86e6c91bf82f19cb023e.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/worker-reply.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/actions.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/explanation.zh.md",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/verification.json",
+          "hash_valid": true
+        },
+        {
+          "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/review/decision.json",
+          "hash_valid": true
+        }
+      ],
+      "worker_preflight_order": [
+        {
+          "path": "package/B2/artifacts/logs/check-reply.json",
+          "payload_valid": true,
+          "inside_worker_reply_span": true,
+          "before_actual_completed_snapshot_import": true
+        }
+      ],
+      "decision_preflight_capture_paths": [
+        "package/B2/review/decision-preflight.json"
+      ],
+      "scaffold_generator_calls": [
+        {
+          "path": "package/B2/artifacts/logs/hostdraft-reply.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+            "reply",
+            "--request",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/job/request.json",
+            "--artifact",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/actions.json",
+            "--artifact",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/explanation.zh.md",
+            "--out",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/worker-reply.draft.json"
+          ],
+          "exit_code": 0,
+          "actor": "worker"
+        },
+        {
+          "path": "package/B2/review/hostdraft-decision.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+            "decision",
+            "--job",
+            "package/B2/job",
+            "--out",
+            "package/B2/review/decision.draft.json"
+          ],
+          "exit_code": 0,
+          "actor": "coordinator"
+        }
+      ],
+      "nonzero_cli": [
+        {
+          "path": "package/B2/logs/007-bridge-observe-01.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostbridge.py",
+            "observe",
+            "--job",
+            "package/B2/job",
+            "--receipt",
+            "package/B2/native/status-query-01-return.json"
+          ],
+          "exit_code": 2,
+          "stdout": "{\n  \"status\": \"reconcile_required\",\n  \"error\": \"Only active jobs can observe running status\",\n  \"next_action\": \"Inspect the bound checkpoint, job journal and actual host before any retry.\",\n  \"automatic_host_call\": false\n}\n",
+          "stderr": ""
+        },
+        {
+          "path": "package/B2/logs/008-bridge-accepted-01.json",
+          "argv": [
+            "python3",
+            "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostbridge.py",
+            "accepted",
+            "--job",
+            "package/B2/job",
+            "--receipt",
+            "package/B2/native/status-query-01-return.json"
+          ],
+          "exit_code": 2,
+          "stdout": "{\n  \"status\": \"reconcile_required\",\n  \"error\": \"Creation receipt task_name does not bind to requested worker\",\n  \"next_action\": \"Inspect the bound checkpoint, job journal and actual host before any retry.\",\n  \"automatic_host_call\": false\n}\n",
+          "stderr": ""
+        },
+        {
+          "path": "package/B2/logs/018-worker-capture-index-draft.json",
+          "argv": [
+            "python3",
+            "-c",
+            "import json; from pathlib import Path; p=Path(\"package/B2/artifacts/process-captures.jsonl\"); rows=[json.loads(line) for line in p.read_text().splitlines()];\nfor i,r in enumerate(rows,1):\n out=r.get(\"stdout\",\"\").replace(\"\\n\",\" \"); err=r.get(\"stderr\",\"\").replace(\"\\n\",\" \"); print(json.dumps({\"i\":i,\"actor\":r.get(\"actor\"),\"argv\":r.get(\"argv\"),\"exit_code\":r.get(\"exit_code\"),\"elapsed_seconds\":r.get(\"elapsed_seconds\"),\"stdout_prefix\":out[:180],\"stderr_prefix\":err[:180]},ensure_ascii=False))"
+          ],
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 346, in loads\n    return _default_decoder.decode(s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 338, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 354, in raw_decode\n    obj, end = self.scan_once(s, idx)\n               ^^^^^^^^^^^^^^^^^^^^^^\njson.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\n"
+        },
+        {
+          "path": "package/B2/logs/034-audit-final-index.json",
+          "argv": [
+            "python3",
+            "-c",
+            "import json; from pathlib import Path; b=json.loads(Path(\"package/block-summary.json\").read_text());\nassert b[\"record_counts\"][\"cli_captures\"]==199\nassert b[\"record_counts\"][\"native_observers\"]==40\nassert b[\"record_counts\"][\"markers\"]==83\nassert b[\"record_counts\"][\"native_status_queries\"]==16\nassert b[\"record_counts\"][\"notification_waits\"]==14\nfor s in b[\"samples\"]:\n assert s[\"business_acceptance\"]==\"pass\", s[\"sample\"]\n assert s[\"original_terminal_state\"][\"flow_status\"]==\"completed\", s[\"sample\"]\n assert s[\"original_terminal_state\"][\"bridge_phase\"]==\"committed\", s[\"sample\"]\n assert s[\"original_terminal_state\"][\"ledger_state\"]==\"completed\", (s[\"sample\"],s[\"original_terminal_state\"])\n assert s[\"worker_check_reply_passed\"], (s[\"sample\"],s[\"worker_check_reply\"])\n assert s[\"v1_package_assessments\"] and s[\"v1_package_assessments\"][-1][\"verdict\"]==\"pass\", (s[\"sample\"],s[\"v1_package_assessments\"])\n assert s[\"decision_preflights\"] and s[\"decision_preflights\"][-1][\"status\"]==\"controller_compatible\", (s[\"sample\"],s[\"decision_preflights\"])\n assert s[\"bridge_commits\"] and s[\"bridge_commits\"][-1][\"phase\"]==\"committed\", (s[\"sample\"],s[\"bridge_commits\"])\n assert s[\"package_checkpoint_queries\"] and s[\"package_checkpoint_queries\"][-1][\"status\"]==\"completed\", (s[\"sample\"],s[\"package_checkpoint_queries\"])\nassert next(s for s in b[\"samples\"] if s[\"sample\"]==\"B2\")[\"coordinator_stage_spans\"][-1][\"status\"] in {\"duplicate_end_unverified\",\"same_boot_pair\"}\ncli=json.loads(Path(\"package/cli-index.json\").read_text()); native=json.loads(Path(\"package/native-index.json\").read_text()); markers=json.loads(Path(\"package/marker-index.json\").read_text());\nassert cli[\"record_count\"]==b[\"record_counts\"][\"cli_captures\"]\nassert native[\"observer_count\"]==b[\"record_counts\"][\"native_observers\"]\nassert markers[\"marker_count\"]==b[\"record_counts\"][\"markers\"]\nprint(json.dumps({\"audit\":\"pass\",\"sample_checks\":{s[\"sample\"]:{\"source\":\"pass\",\"terminal\":\"completed\",\"worker_check\":s[\"worker_check_reply\"],\"assessments\":s[\"v1_package_assessments\"],\"decision_preflight\":s[\"decision_preflights\"],\"queries\":s[\"native_status_query_count\"],\"waits\":s[\"notification_wait_count\"]} for s in b[\"samples\"]},\"cli_records\":cli[\"record_count\"],\"native_observers\":native[\"observer_count\"],\"markers\":markers[\"marker_count\"]},ensure_ascii=False,indent=2))"
+          ],
+          "exit_code": 1,
+          "stdout": "",
+          "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 13, in <module>\nAssertionError: ('B1', [{'path': 'package/B1/logs/024-packagectl-help.json', 'exit_code': 0, 'verdict': None, 'stderr': ''}, {'path': 'package/B1/review/package-assess-corrected.json', 'exit_code': 0, 'verdict': 'pass', 'stderr': ''}, {'path': 'package/B1/review/package-assess.json', 'exit_code': 2, 'verdict': None, 'stderr': '{\"error\": \"Results must contain the exact package_hash and checks\"}\\n'}])\n"
+        }
+      ],
+      "captured_subprocess_elapsed_seconds": 1.956159694
+    }
+  ],
+  "pairs": [
+    {
+      "block": "project",
+      "pair": 1,
+      "A_observed_seconds": 98.455178845,
+      "B_observed_seconds": 179.938967409,
+      "B_minus_A_observed_seconds": 81.48378856400001,
+      "B_over_A_observed_ratio": 1.8276231836649406,
+      "interval_and_terminal_candidate_valid": false,
+      "efficacy_grade": "not decided; source correctness, treatment, assistance and all frozen capture clauses require independent Root review"
+    },
+    {
+      "block": "project",
+      "pair": 2,
+      "A_observed_seconds": null,
+      "B_observed_seconds": 87.170818271,
+      "B_minus_A_observed_seconds": null,
+      "B_over_A_observed_ratio": null,
+      "interval_and_terminal_candidate_valid": false,
+      "efficacy_grade": "not decided; source correctness, treatment, assistance and all frozen capture clauses require independent Root review"
+    },
+    {
+      "block": "package",
+      "pair": 1,
+      "A_observed_seconds": 96.437123653,
+      "B_observed_seconds": 115.237068399,
+      "B_minus_A_observed_seconds": 18.799944745999994,
+      "B_over_A_observed_ratio": 1.1949451003292668,
+      "interval_and_terminal_candidate_valid": false,
+      "efficacy_grade": "not decided; source correctness, treatment, assistance and all frozen capture clauses require independent Root review"
+    },
+    {
+      "block": "package",
+      "pair": 2,
+      "A_observed_seconds": null,
+      "B_observed_seconds": 169.135453758,
+      "B_minus_A_observed_seconds": null,
+      "B_over_A_observed_ratio": null,
+      "interval_and_terminal_candidate_valid": false,
+      "efficacy_grade": "not decided; source correctness, treatment, assistance and all frozen capture clauses require independent Root review"
+    }
+  ],
+  "stage_scope": "Observed actor/tool/wait spans, not provider or active model duration",
+  "capture_scope": "Actual capture.py cli targets only. Marker/native observer invocations lack full subprocess fields: frozen C06 gap retained.",
+  "tokens": null,
+  "cost": null,
+  "provider_identity_verified": false,
+  "speed_gain_claimed": false
+}

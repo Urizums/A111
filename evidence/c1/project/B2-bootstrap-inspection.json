@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib,subprocess,sys\nr=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003\")\nbase=r/\"project/B2\"\nif base.exists():\n print(json.dumps({\"base_exists\":True,\"state_exists\":(base/\"state.json\").exists(),\"job_exists\":(base/\"job\"/\"control.json\").exists(),\"native_files\":[str(x.relative_to(base)) for x in (base/\"native\").glob(\"*\")] if (base/\"native\").exists() else []},ensure_ascii=False))\n raise SystemExit(3)\nfor d in [\"artifacts\",\"review\",\"logs\",\"observations\",\"native\"]:\n (base/d).mkdir(parents=True,exist_ok=False)\np=subprocess.run([\"python3\",str(r/\"shared/capture.py\"),\"mark\",\"--events\",str(base/\"observations\"),\"--actor\",\"coordinator\",\"--stage\",\"setup\",\"--event\",\"begin\"],text=True,capture_output=True)\nprint(p.stdout,end=\"\")\nif p.returncode: print(p.stderr,file=sys.stderr)\nraise SystemExit(p.returncode)"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:18:29.337247+00:00",
+    "monotonic_ns": 2258453461553,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:18:29.394956+00:00",
+    "monotonic_ns": 2258511196080,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.057734527,
+  "stdout": "{\"marker\": \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/observations/2258502071988_041471ebb2ed4dabb6d5295dbd1b1771.json\", \"schema\": \"forge-comparison-marker/1\", \"actor\": \"coordinator\", \"stage\": \"setup\", \"event\": \"begin\", \"utc\": \"2026-10-03T12:18:29.385857+00:00\", \"monotonic_ns\": 2258502071988, \"boot_id\": \"e7c60fd9-bfe3-4f0d-b09f-75ad1396db98\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJtYXJrZXIiOiAiL3dvcmtzcGFjZS9zY3JhdGNoLzczNzE0NDk0YWQyZi9mb3JnZS1wcm90b2NvbC1jb21wYXJpc29uLTIwMjYxMDAzL3Byb2plY3QvQjIvb2JzZXJ2YXRpb25zLzIyNTg1MDIwNzE5ODhfMDQxNDcxZWJiMmVkNGRhYmI2ZDUyOTVkYmQxYjE3NzEuanNvbiIsICJzY2hlbWEiOiAiZm9yZ2UtY29tcGFyaXNvbi1tYXJrZXIvMSIsICJhY3RvciI6ICJjb29yZGluYXRvciIsICJzdGFnZSI6ICJzZXR1cCIsICJldmVudCI6ICJiZWdpbiIsICJ1dGMiOiAiMjAyNi0xMC0wM1QxMjoxODoyOS4zODU4NTcrMDA6MDAiLCAibW9ub3RvbmljX25zIjogMjI1ODUwMjA3MTk4OCwgImJvb3RfaWQiOiAiZTdjNjBmZDktYmZlMy00ZjBkLWIwOWYtNzVhZDEzOTZkYjk4In0K",
+  "stderr_base64": ""
+}

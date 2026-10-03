@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import pathlib\np=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/review/check_expenses.py\")\np.write_text(\"import csv, hashlib, json, pathlib\\nRUN = pathlib.Path(__file__).resolve().parents[1]\\nROOT = RUN.parent.parent\\nSOURCE = ROOT / \\\"materials\\\" / \\\"expenses.csv\\\"\\nSUMMARY = RUN / \\\"artifacts\\\" / \\\"summary.json\\\"\\nMARKDOWN = RUN / \\\"artifacts\\\" / \\\"summary_zh.md\\\"\\nREPLY = RUN / \\\"artifacts\\\" / \\\"worker-reply.json\\\"\\nREQUEST = RUN / \\\"job\\\" / \\\"request.json\\\"\\nCHECK_REPLY = RUN / \\\"artifacts\\\" / \\\"logs\\\" / \\\"check-reply.json\\\"\\ndef digest(path):\\n    return hashlib.sha256(path.read_bytes()).hexdigest()\\ngrouped = {}\\nwith SOURCE.open(encoding=\\\"utf-8\\\", newline=\\\"\\\") as f:\\n    for row in csv.DictReader(f):\\n        fen = __import__(\\\"decimal\\\").Decimal(row[\\\"amount_yuan\\\"]) * 100\\n        if fen != fen.to_integral_value():\\n            raise ValueError(\\\"source amount is not an exact integer fen\\\")\\n        item = grouped.setdefault(row[\\\"category\\\"], {\\\"row_count\\\": 0, \\\"total_fen\\\": 0, \\\"ids\\\": []})\\n        item[\\\"row_count\\\"] += 1\\n        item[\\\"total_fen\\\"] += int(fen)\\n        item[\\\"ids\\\"].append(row[\\\"id\\\"])\\nexpected = {key: grouped[key] for key in sorted(grouped)}\\nactual = json.loads(SUMMARY.read_text(encoding=\\\"utf-8\\\"))\\nmarkdown = MARKDOWN.read_text(encoding=\\\"utf-8\\\")\\nrequest = json.loads(REQUEST.read_text(encoding=\\\"utf-8\\\"))\\nreply = json.loads(REPLY.read_text(encoding=\\\"utf-8\\\"))\\ncaptured_check = json.loads(CHECK_REPLY.read_text(encoding=\\\"utf-8\\\"))\\nchecks = {\\n    \\\"json_exactly_matches_raw_csv\\\": actual == expected,\\n    \\\"category_keys_sorted\\\": list(actual) == sorted(actual),\\n    \\\"all_ids_and_row_counts_match\\\": all(actual.get(k) == expected[k] for k in expected),\\n    \\\"markdown_rows_match_raw_csv\\\": all(\\\"| {} | {} | {} | {} |\\\".format(k, v[\\\"row_count\\\"], v[\\\"total_fen\\\"], \\\", \\\".join(v[\\\"ids\\\"])) in markdown for k, v in expected.items()),\\n    \\\"markdown_chinese_explanation_present\\\": \\\"费用分类汇总\\\" in markdown and \\\"金额以 Decimal 按 1 元 = 100 分精确换算\\\" in markdown,\\n    \\\"reply_binds_to_actual_request\\\": reply.get(\\\"schema_version\\\") == \\\"forge-host-reply/1\\\" and reply.get(\\\"job_id\\\") == request[\\\"request\\\"][\\\"job_id\\\"] and reply.get(\\\"attempt_id\\\") == request[\\\"request\\\"][\\\"attempt_id\\\"] and reply.get(\\\"request_hash\\\") == request[\\\"request_hash\\\"],\\n    \\\"reply_result_matches_json\\\": reply.get(\\\"result\\\") == actual,\\n    \\\"reply_artifact_hashes_match\\\": all(pathlib.Path(x[\\\"path\\\"]).is_file() and digest(pathlib.Path(x[\\\"path\\\"])) == x[\\\"sha256\\\"] for x in reply.get(\\\"artifacts\\\", [])),\\n    \\\"captured_check_reply_payload_valid\\\": captured_check.get(\\\"exit_code\\\") == 0 and json.loads(captured_check.get(\\\"stdout\\\", \\\"{}\\\")).get(\\\"status\\\") == \\\"payload_valid\\\",\\n}\\nresult = {\\n    \\\"schema_version\\\": \\\"forge-independent-source-check/1\\\",\\n    \\\"source_sha256\\\": digest(SOURCE),\\n    \\\"summary_sha256\\\": digest(SUMMARY),\\n    \\\"markdown_sha256\\\": digest(MARKDOWN),\\n    \\\"reply_sha256\\\": digest(REPLY),\\n    \\\"checks\\\": checks,\\n    \\\"pass\\\": all(checks.values()),\\n    \\\"source_derived\\\": expected,\\n}\\nprint(json.dumps(result, ensure_ascii=False, indent=2))\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:28:34.745573+00:00",
+    "monotonic_ns": 2863861788817,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:28:34.766808+00:00",
+    "monotonic_ns": 2863883026865,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.021238048,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

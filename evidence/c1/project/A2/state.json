@@ -1,0 +1,78 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-03T12:32:16Z",
+  "updated_at": "2026-10-03T12:32:39Z",
+  "revision": 1,
+  "status": "active",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "expense_summary_forward",
+    "goal": "Summarize the supplied expenses.csv by category with exact integer-fen totals, row counts, and all IDs.",
+    "deliverable_kind": "scoped_task",
+    "requirements": [
+      {
+        "id": "req_category_summary",
+        "text": "For every category, report the number of rows, the total amount in exact integer fen, and every source ID.",
+        "origin": "explicit",
+        "basis": "expenses.csv 按 category 汇总条数、金额（精确转整数分）、全部 ID",
+        "acceptance_ids": [
+          "acc_category_summary"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "acc_category_summary",
+        "assertion": "Output contains every source category exactly once; each category's row count, integer-fen sum, and complete ID list match a coordinator recomputation from expenses.csv.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "aggregate_expenses",
+        "title": "Aggregate expense rows by category",
+        "depends_on": [],
+        "owner": "native_worker",
+        "write_paths": [
+          "artifacts/"
+        ],
+        "acceptance_ids": [
+          "acc_category_summary"
+        ]
+      }
+    ],
+    "defaults": [
+      "Sort category keys lexicographically and preserve source row order within each ID list.",
+      "Use integer fen and a concise Chinese Markdown explanation."
+    ],
+    "unknowns": []
+  },
+  "plan_hash": "874493b404d3071de51e62e2dd95811d0f1ec8a2a1626b2a22380ed065f4541e",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "aggregate_expenses": {
+      "status": "running",
+      "attempts": [
+        {
+          "attempt_id": "01576d11c27a41f6930d3baf79bf7c49",
+          "plan_hash": "874493b404d3071de51e62e2dd95811d0f1ec8a2a1626b2a22380ed065f4541e",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "acc_category_summary"
+          ],
+          "started_at": "2026-10-03T12:32:39Z",
+          "finished_at": null,
+          "outcome": "running",
+          "reason": null,
+          "acceptance_results": null
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": "01576d11c27a41f6930d3baf79bf7c49",
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

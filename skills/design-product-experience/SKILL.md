@@ -1,0 +1,20 @@
+---
+name: design-product-experience
+description: Design and improve user-facing product experiences across UI/UX, visual systems, layouts, interaction behavior, component states, motion, design references or presets, and frontend visual implementation. Use when shaping or reviewing a product interface, specifying its visual and interaction system, or improving the appearance and behavior of an existing frontend.
+---
+
+# Product experience design
+
+Shape interfaces around the user’s task, audience, platform, and content. Own task and audience framing, reference sampling, visual and interaction specifications, semantic tokens, component states, motion, and frontend implementation review. Do not replace business rules, system runtime architecture, backend capacity planning, authorization, deployment, or Forge project orchestration.
+
+Start from the real user journey and inspect the target platform. Prefer Refero Styles as a lead for discovering token and component vocabulary, then inspect the specific relevant material. A catalog or landing page alone is not evidence that a product or design system was observed. Record what was directly seen separately from inference, and preserve each source’s access and reuse limits. Before reusing code, a mature `DESIGN.md`, components, or assets, check the exact revision, applicable terms, and required notices. When those facts are unknown, create an original design from observations instead of claiming reuse is permitted or categorically forbidden. See [design references](references/design-references.md).
+
+When creating or revising a reusable skill, keep its architecture, generalization, core instructions and repairs with the coordinator as author. Use an available Luna worker for website search, source collection, frontend/interaction preprocessing and separate validation. Have research workers return the packet in [design references](references/design-references.md#research-packet-handoff) to their own output paths; their observations and design proposals are inputs for the coordinator's decision, not permission to edit or finalize the skill. Ordinary scoped frontend implementation may still be delegated when authorized.
+
+Specify regions, hierarchy, density, palette, semantic tokens, component states, navigation, and interaction outcomes together. Consider representative content, empty and error cases, keyboard and pointer use, and relevant viewport sizes. Use [experience design](references/experience-design.md) for the reusable workflow and [motion design](references/motion-design.md) for motion decisions and verification.
+
+For a consequential or multi-state journey, challenge the handoff with counterexamples before implementation: a different control opens the same panel, overlapping layers open, input arrives during save, the route changes, or an old response arrives after a new edit. Resolve the state owner, trigger-specific focus, modality, and asynchronous result contract in both the design and its acceptance case. Scale this review to the change; a small palette edit does not require a complete architecture specification.
+
+When asked to implement, use the actual existing frontend stack and components, make a proportionate change, and inspect the real journey in the running target app. Distinguish source, code, or fixture inspection from browser/device acceptance; report unavailable checks plainly. When asked only for design, return a traceable specification or visual artifact and do not describe a static result as a runnable product.
+
+Forge coordinates shared requirements, TODOs, interface status, integration, and acceptance. Return design decisions, assumptions, states, motion behavior, and affected journeys in a traceable form for Forge to integrate; do not create a competing task plan or require mutual skill invocation. If implementation crosses into frontend state, performance, or accessibility choices, state the specific impact for Forge without expanding into an unrequested application-wide refactor.

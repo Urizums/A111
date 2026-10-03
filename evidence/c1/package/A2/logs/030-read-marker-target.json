@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; s=Path(\"shared/capture.py\").read_text().splitlines(); print(\"\\n\".join(f\"{i+1}: {s[i]}\" for i in range(24,38)))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:25:43.618528+00:00",
+    "monotonic_ns": 2692734746626,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:25:43.638518+00:00",
+    "monotonic_ns": 2692754737826,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.0199912,
+  "stdout": "25:     p=argparse.ArgumentParser(description=__doc__)\n26:     sub=p.add_subparsers(dest='command',required=True)\n27:     c=sub.add_parser('cli');c.add_argument('--record',required=True);c.add_argument('--actor',required=True);c.add_argument('argv',nargs=argparse.REMAINDER)\n28:     m=sub.add_parser('mark');m.add_argument('--events',required=True);m.add_argument('--actor',required=True);m.add_argument('--stage',required=True);m.add_argument('--event',choices=['begin','end'],required=True)\n29:     n=sub.add_parser('native');n.add_argument('--record',required=True);n.add_argument('--actor',required=True);n.add_argument('--tool',required=True);n.add_argument('--event',choices=['intent','return'],required=True);n.add_argument('--payload',required=True)\n30:     a=p.parse_args()\n31:     if a.command=='mark':\n32:         s=stamp();value={'schema':'forge-comparison-marker/1','actor':a.actor,'stage':a.stage,'event':a.event,**s}\n33:         target=Path(a.events)/(str(s['monotonic_ns'])+'_'+uuid.uuid4().hex+'.json')\n34:         exclusive(target,value);print(json.dumps({'marker':str(target),**value}));return 0\n35:     if a.command=='native':\n36:         raw=Path(a.payload).read_bytes()\n37:         value={'schema':'forge-comparison-native-observer/1','actor':a.actor,'tool':a.tool,'event':a.event,**stamp(),'payload_path':str(Path(a.payload).resolve()),'payload_sha256':hashlib.sha256(raw).hexdigest(),'payload':json.loads(raw),'raw_base64':base64.b64encode(raw).decode(),'scope':'Local before-call intent or after-import observation, not provider timing or authenticated tool evidence'}\n38:         exclusive(a.record,value);print(json.dumps({'record':str(Path(a.record).resolve()),'tool':a.tool,'event':a.event}));return 0\n",
+  "stderr": "",
+  "stdout_base64": "MjU6ICAgICBwPWFyZ3BhcnNlLkFyZ3VtZW50UGFyc2VyKGRlc2NyaXB0aW9uPV9fZG9jX18pCjI2OiAgICAgc3ViPXAuYWRkX3N1YnBhcnNlcnMoZGVzdD0nY29tbWFuZCcscmVxdWlyZWQ9VHJ1ZSkKMjc6ICAgICBjPXN1Yi5hZGRfcGFyc2VyKCdjbGknKTtjLmFkZF9hcmd1bWVudCgnLS1yZWNvcmQnLHJlcXVpcmVkPVRydWUpO2MuYWRkX2FyZ3VtZW50KCctLWFjdG9yJyxyZXF1aXJlZD1UcnVlKTtjLmFkZF9hcmd1bWVudCgnYXJndicsbmFyZ3M9YXJncGFyc2UuUkVNQUlOREVSKQoyODogICAgIG09c3ViLmFkZF9wYXJzZXIoJ21hcmsnKTttLmFkZF9hcmd1bWVudCgnLS1ldmVudHMnLHJlcXVpcmVkPVRydWUpO20uYWRkX2FyZ3VtZW50KCctLWFjdG9yJyxyZXF1aXJlZD1UcnVlKTttLmFkZF9hcmd1bWVudCgnLS1zdGFnZScscmVxdWlyZWQ9VHJ1ZSk7bS5hZGRfYXJndW1lbnQoJy0tZXZlbnQnLGNob2ljZXM9WydiZWdpbicsJ2VuZCddLHJlcXVpcmVkPVRydWUpCjI5OiAgICAgbj1zdWIuYWRkX3BhcnNlcignbmF0aXZlJyk7bi5hZGRfYXJndW1lbnQoJy0tcmVjb3JkJyxyZXF1aXJlZD1UcnVlKTtuLmFkZF9hcmd1bWVudCgnLS1hY3RvcicscmVxdWlyZWQ9VHJ1ZSk7bi5hZGRfYXJndW1lbnQoJy0tdG9vbCcscmVxdWlyZWQ9VHJ1ZSk7bi5hZGRfYXJndW1lbnQoJy0tZXZlbnQnLGNob2ljZXM9WydpbnRlbnQnLCdyZXR1cm4nXSxyZXF1aXJlZD1UcnVlKTtuLmFkZF9hcmd1bWVudCgnLS1wYXlsb2FkJyxyZXF1aXJlZD1UcnVlKQozMDogICAgIGE9cC5wYXJzZV9hcmdzKCkKMzE6ICAgICBpZiBhLmNvbW1hbmQ9PSdtYXJrJzoKMzI6ICAgICAgICAgcz1zdGFtcCgpO3ZhbHVlPXsnc2NoZW1hJzonZm9yZ2UtY29tcGFyaXNvbi1tYXJrZXIvMScsJ2FjdG9yJzphLmFjdG9yLCdzdGFnZSc6YS5zdGFnZSwnZXZlbnQnOmEuZXZlbnQsKipzfQozMzogICAgICAgICB0YXJnZXQ9UGF0aChhLmV2ZW50cykvKHN0cihzWydtb25vdG9uaWNfbnMnXSkrJ18nK3V1aWQudXVpZDQoKS5oZXgrJy5qc29uJykKMzQ6ICAgICAgICAgZXhjbHVzaXZlKHRhcmdldCx2YWx1ZSk7cHJpbnQoanNvbi5kdW1wcyh7J21hcmtlcic6c3RyKHRhcmdldCksKip2YWx1ZX0pKTtyZXR1cm4gMAozNTogICAgIGlmIGEuY29tbWFuZD09J25hdGl2ZSc6CjM2OiAgICAgICAgIHJhdz1QYXRoKGEucGF5bG9hZCkucmVhZF9ieXRlcygpCjM3OiAgICAgICAgIHZhbHVlPXsnc2NoZW1hJzonZm9yZ2UtY29tcGFyaXNvbi1uYXRpdmUtb2JzZXJ2ZXIvMScsJ2FjdG9yJzphLmFjdG9yLCd0b29sJzphLnRvb2wsJ2V2ZW50JzphLmV2ZW50LCoqc3RhbXAoKSwncGF5bG9hZF9wYXRoJzpzdHIoUGF0aChhLnBheWxvYWQpLnJlc29sdmUoKSksJ3BheWxvYWRfc2hhMjU2JzpoYXNobGliLnNoYTI1NihyYXcpLmhleGRpZ2VzdCgpLCdwYXlsb2FkJzpqc29uLmxvYWRzKHJhdyksJ3Jhd19iYXNlNjQnOmJhc2U2NC5iNjRlbmNvZGUocmF3KS5kZWNvZGUoKSwnc2NvcGUnOidMb2NhbCBiZWZvcmUtY2FsbCBpbnRlbnQgb3IgYWZ0ZXItaW1wb3J0IG9ic2VydmF0aW9uLCBub3QgcHJvdmlkZXIgdGltaW5nIG9yIGF1dGhlbnRpY2F0ZWQgdG9vbCBldmlkZW5jZSd9CjM4OiAgICAgICAgIGV4Y2x1c2l2ZShhLnJlY29yZCx2YWx1ZSk7cHJpbnQoanNvbi5kdW1wcyh7J3JlY29yZCc6c3RyKFBhdGgoYS5yZWNvcmQpLnJlc29sdmUoKSksJ3Rvb2wnOmEudG9vbCwnZXZlbnQnOmEuZXZlbnR9KSk7cmV0dXJuIDAK",
+  "stderr_base64": ""
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nimport json\nroot=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003\")\nart=root/\"package/B2/artifacts\"\nnotes=(root/\"materials/notes.txt\").read_text(encoding=\"utf-8\")\nactions=json.loads((art/\"actions.json\").read_text(encoding=\"utf-8\"))\nassert isinstance(actions,list) and len(actions)==3\nassert all(set(item)=={\"task\",\"owner\",\"due\",\"source_quote\"} for item in actions)\nassert all(item[\"source_quote\"] in notes for item in actions)\nassert actions[0]=={\"task\":\"更新部署文档\",\"owner\":\"赵宁\",\"due\":\"周五\",\"source_quote\":\"赵宁负责更新部署文档，截止周五。\"}\nassert actions[1]=={\"task\":\"补充回归用例\",\"owner\":\"许静\",\"due\":\"2026-10-09\",\"source_quote\":\"许静负责补充回归用例，截止2026-10-09。\"}\nassert actions[2]=={\"task\":\"补充日志告警\",\"owner\":None,\"due\":None,\"source_quote\":\"决定补充日志告警。\"}\nassert all(\"配色\" not in item[\"task\"] for item in actions)\nreport={\"schema\":\"local-extraction-check/1\",\"passed\":True,\"checks\":{\"three_explicit_actions_only\":True,\"each_quote_is_an_exact_source_substring\":True,\"unstated_owner_and_due_are_null\":True,\"relative_due_preserved_literally\":True,\"suggestion_excluded\":True},\"sources\":[str(root/\"materials/notes.txt\"),str(art/\"actions.json\")]}\n(art/\"verification.json\").write_text(json.dumps(report,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")\nprint(json.dumps(report,ensure_ascii=False,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:37:23.729301+00:00",
+    "monotonic_ns": 3392845515744,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:37:23.749745+00:00",
+    "monotonic_ns": 3392865957250,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020441506,
+  "stdout": "{\n  \"schema\": \"local-extraction-check/1\",\n  \"passed\": true,\n  \"checks\": {\n    \"three_explicit_actions_only\": true,\n    \"each_quote_is_an_exact_source_substring\": true,\n    \"unstated_owner_and_due_are_null\": true,\n    \"relative_due_preserved_literally\": true,\n    \"suggestion_excluded\": true\n  },\n  \"sources\": [\n    \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt\",\n    \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/actions.json\"\n  ]\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAibG9jYWwtZXh0cmFjdGlvbi1jaGVjay8xIiwKICAicGFzc2VkIjogdHJ1ZSwKICAiY2hlY2tzIjogewogICAgInRocmVlX2V4cGxpY2l0X2FjdGlvbnNfb25seSI6IHRydWUsCiAgICAiZWFjaF9xdW90ZV9pc19hbl9leGFjdF9zb3VyY2Vfc3Vic3RyaW5nIjogdHJ1ZSwKICAgICJ1bnN0YXRlZF9vd25lcl9hbmRfZHVlX2FyZV9udWxsIjogdHJ1ZSwKICAgICJyZWxhdGl2ZV9kdWVfcHJlc2VydmVkX2xpdGVyYWxseSI6IHRydWUsCiAgICAic3VnZ2VzdGlvbl9leGNsdWRlZCI6IHRydWUKICB9LAogICJzb3VyY2VzIjogWwogICAgIi93b3Jrc3BhY2Uvc2NyYXRjaC83MzcxNDQ5NGFkMmYvZm9yZ2UtcHJvdG9jb2wtY29tcGFyaXNvbi0yMDI2MTAwMy9tYXRlcmlhbHMvbm90ZXMudHh0IiwKICAgICIvd29ya3NwYWNlL3NjcmF0Y2gvNzM3MTQ0OTRhZDJmL2ZvcmdlLXByb3RvY29sLWNvbXBhcmlzb24tMjAyNjEwMDMvcGFja2FnZS9CMi9hcnRpZmFjdHMvYWN0aW9ucy5qc29uIgogIF0KfQo=",
+  "stderr_base64": ""
+}

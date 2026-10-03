@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nsrc=Path(\"package/B1/review/source-review.md\")\nold=src.read_text(encoding=\"utf-8\")\nPath(\"package/B1/review/source-review.before-correction.md\").write_text(old,encoding=\"utf-8\")\nold_line=\"That failed call is retained in logs/023-write-v1-results.json / review/package-assess.json, with the first results file copied to results.rejected.json; the corrected canonical digest produced the passing assessment above.\"\nnew_line=\"That failed call is retained in review/package-assess.json; its first results file is copied to review/results.rejected.json. The corrected canonical digest produced the passing assessment above.\"\nassert old_line in old\nsrc.write_text(old.replace(old_line,new_line),encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:02:13.282726+00:00",
+    "monotonic_ns": 1282398942736,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:02:13.302231+00:00",
+    "monotonic_ns": 1282418447594,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.019504858,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

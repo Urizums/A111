@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import hashlib,json,pathlib\nr=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003\"); b=r/\"project/B2\"\ndef sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()\nrequest=json.loads((b/\"job/request.json\").read_text(encoding=\"utf-8\"))\nstate=json.loads((b/\"state.json\").read_text(encoding=\"utf-8\"))\ntask_id=request[\"request\"][\"target_binding\"][\"task_id\"]\ntask=next(x for x in state[\"plan\"][\"tasks\"] if x[\"id\"]==task_id)\ndefs={x[\"id\"]:x for x in state[\"plan\"][\"acceptance\"]}\ncheck=json.loads((b/\"review/source-check-output.json\").read_text(encoding=\"utf-8\"))\nassert check[\"pass\"] is True\npaths=[b/\"review/source-review.md\",b/\"review/source-check-output.json\",b/\"artifacts/summary.json\",b/\"artifacts/summary_zh.md\"]\nevidence=[{\"path\":str(p.resolve()),\"sha256\":sha(p)} for p in paths]\nresults={\"acceptance_results\":{aid:{\"status\":\"pass\",\"level\":defs[aid][\"level\"],\"evidence\":evidence} for aid in task[\"acceptance_ids\"]}}\nreply=b/\"artifacts/worker-reply.json\"\ndecision={\"schema_version\":\"forge-host-decision/1\",\"request_hash\":request[\"request_hash\"],\"reply_sha256\":sha(reply),\"outcome\":\"done\",\"results\":results,\"reason\":None}\n(b/\"coordinator-decision.json\").write_text(json.dumps(decision,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")\nprint(json.dumps({\"outcome\":decision[\"outcome\"],\"acceptance_results\":list(results[\"acceptance_results\"]),\"reply_sha256\":decision[\"reply_sha256\"]}))\n"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:31:04.023515+00:00",
+    "monotonic_ns": 3013139729905,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:31:04.048703+00:00",
+    "monotonic_ns": 3013164916725,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.02518682,
+  "stdout": "{\"outcome\": \"done\", \"acceptance_results\": [\"acc_category_summary\"], \"reply_sha256\": \"399ccadb968a68b90a122f47eb1f79188454c57cc5bbf98b190501c294c38634\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJvdXRjb21lIjogImRvbmUiLCAiYWNjZXB0YW5jZV9yZXN1bHRzIjogWyJhY2NfY2F0ZWdvcnlfc3VtbWFyeSJdLCAicmVwbHlfc2hhMjU2IjogIjM5OWNjYWRiOTY4YTY4YjkwYTEyMmY0N2ViMWY3OTE4ODQ1NGM1N2NjNWJiZjk4YjE5MDUwMWMyOTRjMzg2MzQifQo=",
+  "stderr_base64": ""
+}

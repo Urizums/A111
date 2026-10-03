@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; p=Path(\"package/B1/native/status-intent-observer.json\"); print(json.dumps(json.loads(p.read_text(encoding=\"utf-8\")),ensure_ascii=False,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:48:11.932269+00:00",
+    "monotonic_ns": 441048489100,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:48:11.954951+00:00",
+    "monotonic_ns": 441071168877,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.022679777,
+  "stdout": "{\n  \"schema\": \"forge-comparison-native-observer/1\",\n  \"actor\": \"coordinator\",\n  \"tool\": \"list_agents\",\n  \"event\": \"intent\",\n  \"utc\": \"2026-10-03T11:47:39.322791+00:00\",\n  \"monotonic_ns\": 408439010969,\n  \"boot_id\": \"e7c60fd9-bfe3-4f0d-b09f-75ad1396db98\",\n  \"payload_path\": \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/native/host-status-query.json\",\n  \"payload_sha256\": \"4f0fa8dff20b345fac5e68516db264e4c2d0bec3e2278ae3044325d3ecd40470\",\n  \"payload\": {\n    \"path_prefix\": \"/root/luna_compare_package/luna_forge_c98df856ea9d\"\n  },\n  \"raw_base64\": \"ewogICJwYXRoX3ByZWZpeCI6ICIvcm9vdC9sdW5hX2NvbXBhcmVfcGFja2FnZS9sdW5hX2ZvcmdlX2M5OGRmODU2ZWE5ZCIKfQo=\",\n  \"scope\": \"Local before-call intent or after-import observation, not provider timing or authenticated tool evidence\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtY29tcGFyaXNvbi1uYXRpdmUtb2JzZXJ2ZXIvMSIsCiAgImFjdG9yIjogImNvb3JkaW5hdG9yIiwKICAidG9vbCI6ICJsaXN0X2FnZW50cyIsCiAgImV2ZW50IjogImludGVudCIsCiAgInV0YyI6ICIyMDI2LTEwLTAzVDExOjQ3OjM5LjMyMjc5MSswMDowMCIsCiAgIm1vbm90b25pY19ucyI6IDQwODQzOTAxMDk2OSwKICAiYm9vdF9pZCI6ICJlN2M2MGZkOS1iZmUzLTRmMGQtYjA5Zi03NWFkMTM5NmRiOTgiLAogICJwYXlsb2FkX3BhdGgiOiAiL3dvcmtzcGFjZS9zY3JhdGNoLzczNzE0NDk0YWQyZi9mb3JnZS1wcm90b2NvbC1jb21wYXJpc29uLTIwMjYxMDAzL3BhY2thZ2UvQjEvbmF0aXZlL2hvc3Qtc3RhdHVzLXF1ZXJ5Lmpzb24iLAogICJwYXlsb2FkX3NoYTI1NiI6ICI0ZjBmYThkZmYyMGIzNDVmYWM1ZTY4NTE2ZGIyNjRlNGMyZDBiZWMzZTIyNzhhZTMwNDQzMjVkM2VjZDQwNDcwIiwKICAicGF5bG9hZCI6IHsKICAgICJwYXRoX3ByZWZpeCI6ICIvcm9vdC9sdW5hX2NvbXBhcmVfcGFja2FnZS9sdW5hX2ZvcmdlX2M5OGRmODU2ZWE5ZCIKICB9LAogICJyYXdfYmFzZTY0IjogImV3b2dJQ0p3WVhSb1gzQnlaV1pwZUNJNklDSXZjbTl2ZEM5c2RXNWhYMk52YlhCaGNtVmZjR0ZqYTJGblpTOXNkVzVoWDJadmNtZGxYMk01T0dSbU9EVTJaV0U1WkNJS2ZRbz0iLAogICJzY29wZSI6ICJMb2NhbCBiZWZvcmUtY2FsbCBpbnRlbnQgb3IgYWZ0ZXItaW1wb3J0IG9ic2VydmF0aW9uLCBub3QgcHJvdmlkZXIgdGltaW5nIG9yIGF1dGhlbnRpY2F0ZWQgdG9vbCBldmlkZW5jZSIKfQo=",
+  "stderr_base64": ""
+}

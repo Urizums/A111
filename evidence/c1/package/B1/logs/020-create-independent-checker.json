@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; Path(\"package/B1/review/check_package_output.py\").write_text(\"from pathlib import Path\\nimport hashlib, json\\n\\nroot = Path.cwd()\\npkg_path = root / \\\"materials/package.json\\\"\\nnotes_path = root / \\\"materials/notes.txt\\\"\\nfreeze_path = root / \\\"coordinator/Study_Freeze.json\\\"\\nactions_path = root / \\\"package/B1/artifacts/actions.json\\\"\\nexplanation_path = root / \\\"package/B1/artifacts/解释.md\\\"\\nreply_path = root / \\\"package/B1/artifacts/worker-reply.json\\\"\\npackage = json.loads(pkg_path.read_text(encoding=\\\"utf-8\\\"))\\nnotes = notes_path.read_text(encoding=\\\"utf-8\\\")\\nactions = json.loads(actions_path.read_text(encoding=\\\"utf-8\\\"))\\nexplanation = explanation_path.read_text(encoding=\\\"utf-8\\\")\\nreply = json.loads(reply_path.read_text(encoding=\\\"utf-8\\\"))\\nfreeze = json.loads(freeze_path.read_text(encoding=\\\"utf-8\\\"))\\nfrozen = {row[\\\"path\\\"]: row[\\\"sha256\\\"] for row in freeze[\\\"study_files\\\"]}\\ndigest = lambda path: hashlib.sha256(path.read_bytes()).hexdigest()\\nassert digest(pkg_path) == frozen[\\\"materials/package.json\\\"]\\nassert digest(notes_path) == frozen[\\\"materials/notes.txt\\\"]\\nassert package[\\\"schema\\\"] == \\\"forge-package/1\\\"\\ncriteria = {row[\\\"id\\\"]: row for row in package[\\\"acceptance\\\"][\\\"criteria\\\"]}\\nassert set(criteria) == {\\\"quotes\\\", \\\"commitments\\\"}\\nassert all(row[\\\"required\\\"] is True for row in criteria.values())\\nassert criteria[\\\"quotes\\\"][\\\"assertion\\\"] == \\\"Every source_quote is an exact substring of the supplied notes.\\\"\\nassert criteria[\\\"commitments\\\"][\\\"assertion\\\"] == \\\"Only explicit action items are included; unstated owners and due dates remain null.\\\"\\nexpected = [\\n    {\\\"task\\\": \\\"更新部署文档\\\", \\\"owner\\\": \\\"赵宁\\\", \\\"due\\\": \\\"周五\\\", \\\"source_quote\\\": \\\"赵宁负责更新部署文档，截止周五。\\\"},\\n    {\\\"task\\\": \\\"补充回归用例\\\", \\\"owner\\\": \\\"许静\\\", \\\"due\\\": \\\"2026-10-09\\\", \\\"source_quote\\\": \\\"许静负责补充回归用例，截止2026-10-09。\\\"},\\n    {\\\"task\\\": \\\"补充日志告警\\\", \\\"owner\\\": None, \\\"due\\\": None, \\\"source_quote\\\": \\\"决定补充日志告警。\\\"},\\n]\\nassert actions == expected\\nassert all(item[\\\"source_quote\\\"] in notes for item in actions)\\nassert len({item[\\\"source_quote\\\"] for item in actions}) == len(actions)\\nassert \\\"建议以后考虑更换配色。\\\" not in [item[\\\"source_quote\\\"] for item in actions]\\nassert \\\"本周没有新增外部通知。\\\" not in [item[\\\"source_quote\\\"] for item in actions]\\nfor phrase in [\\\"3 项明确的行动\\\", \\\"周五\\\", \\\"null\\\", \\\"建议以后考虑更换配色。\\\", \\\"本周没有新增外部通知。\\\"]:\\n    assert phrase in explanation, phrase\\nassert reply[\\\"result\\\"][\\\"invocation_id\\\"] == \\\"effdf28894dd763006de01d952807d97\\\"\\nassert reply[\\\"result\\\"][\\\"outcome\\\"] == \\\"ok\\\"\\nassert reply[\\\"result\\\"][\\\"artifacts\\\"] == {\\\"actions\\\": actions}\\nassert reply[\\\"reason\\\"] is None\\nassert {entry[\\\"path\\\"]: entry[\\\"sha256\\\"] for entry in reply[\\\"artifacts\\\"]} == {\\n    str(actions_path.resolve()): digest(actions_path),\\n    str(explanation_path.resolve()): digest(explanation_path),\\n}\\nresult = {\\n    \\\"review\\\": \\\"pass\\\",\\n    \\\"v1_acceptance\\\": {\\n        \\\"quotes\\\": \\\"pass: all three source_quote values are exact note substrings\\\",\\n        \\\"commitments\\\": \\\"pass: the two assigned actions and explicit decision are included; the suggestion and status statement are excluded; unstated owner/due are null\\\",\\n    },\\n    \\\"explicit_actions\\\": len(actions),\\n    \\\"original_package_sha256\\\": digest(pkg_path),\\n    \\\"notes_sha256\\\": digest(notes_path),\\n    \\\"actions_sha256\\\": digest(actions_path),\\n    \\\"explanation_sha256\\\": digest(explanation_path),\\n    \\\"reply_sha256\\\": digest(reply_path),\\n    \\\"frozen_case_coverage\\\": \\\"not assessed; this was a new input, and the no-action input was not run\\\",\\n}\\nprint(json.dumps(result, ensure_ascii=False, indent=2))\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:58:15.280075+00:00",
+    "monotonic_ns": 1044396293707,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:58:15.299902+00:00",
+    "monotonic_ns": 1044416116557,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.01982285,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

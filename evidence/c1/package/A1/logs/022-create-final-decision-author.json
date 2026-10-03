@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; Path(\"package/A1/review/author_final_decision.py\").write_text(\"from pathlib import Path\\nimport hashlib,json\\nroot=Path.cwd()\\nrequest=json.loads((root/\\\"package/A1/job/request.json\\\").read_text(encoding=\\\"utf-8\\\"))\\nreply_path=root/\\\"package/A1/artifacts/worker-reply.json\\\"\\nreply=json.loads(reply_path.read_text(encoding=\\\"utf-8\\\"))\\nassessment=json.loads(json.loads((root/\\\"package/A1/review/package-assess.json\\\").read_text(encoding=\\\"utf-8\\\"))[\\\"stdout\\\"])\\nassert assessment[\\\"verdict\\\"]==\\\"pass\\\"\\ndecision={\\n\\\"schema_version\\\":\\\"forge-host-decision/1\\\",\\n\\\"request_hash\\\":request[\\\"request_hash\\\"],\\n\\\"reply_sha256\\\":hashlib.sha256(reply_path.read_bytes()).hexdigest(),\\n\\\"outcome\\\":\\\"done\\\",\\n\\\"results\\\":reply[\\\"result\\\"],\\n\\\"reason\\\":None\\n}\\n(root/\\\"package/A1/review/coordinator-decision.json\\\").write_text(json.dumps(decision,ensure_ascii=False,indent=2)+\\\"\\\\n\\\",encoding=\\\"utf-8\\\")\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:13:34.343395+00:00",
+    "monotonic_ns": 1963459612002,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:13:34.361993+00:00",
+    "monotonic_ns": 1963478205258,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.018593256,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

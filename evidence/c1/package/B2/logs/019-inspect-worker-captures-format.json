@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; p=Path(\"package/B2/artifacts/process-captures.jsonl\"); print(repr(p.read_text()[:1000])); print(\"lines\",len(p.read_text().splitlines()))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:41:59.647504+00:00",
+    "monotonic_ns": 3668763718196,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:41:59.667323+00:00",
+    "monotonic_ns": 3668783534829,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.019816633,
+  "stdout": "'{\\n  \"schema\": \"forge-comparison-cli/1\",\\n  \"actor\": \"luna_worker\",\\n  \"cwd\": \"/workspace/scratch/73714494ad2f\",\\n  \"argv\": [\\n    \"python\",\\n    \"-c\",\\n    \"from pathlib import Path\\\\npaths=[\\\\\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md\\\\\",\\\\\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/package.json\\\\\",\\\\\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt\\\\\",\\\\\"/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/references/task-entry.md\\\\\",\\\\\"/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/references/host-drafts.md\\\\\",\\\\\"/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/references/host-execution.md\\\\\"]\\\\nfor p in paths:\\\\n print(\\\\\"\\\\\\\\\\\\\\\\n--- \\\\\"+p+\\\\\" ---\\\\\")\\\\n print(Path(p).read_text())\"\\n  ],\\n  \"begin\": {\\n    \"utc\": \"2026-10-03T12:34:15.249442+00:00\",\\n    \"monotonic_ns\": 3204365657591,\\n    \"boot_id\": \"e7c60fd9-bfe3-4f0d-b09f-7'\nlines 26\n",
+  "stderr": "",
+  "stdout_base64": "J3tcbiAgInNjaGVtYSI6ICJmb3JnZS1jb21wYXJpc29uLWNsaS8xIixcbiAgImFjdG9yIjogImx1bmFfd29ya2VyIixcbiAgImN3ZCI6ICIvd29ya3NwYWNlL3NjcmF0Y2gvNzM3MTQ0OTRhZDJmIixcbiAgImFyZ3YiOiBbXG4gICAgInB5dGhvbiIsXG4gICAgIi1jIixcbiAgICAiZnJvbSBwYXRobGliIGltcG9ydCBQYXRoXFxucGF0aHM9W1xcIi93b3Jrc3BhY2Uvc2NyYXRjaC83MzcxNDQ5NGFkMmYvZm9yZ2UtcHJvdG9jb2wtY29tcGFyaXNvbi0yMDI2MTAwMy9zaGFyZWQvV29ya2VyX1Byb3RvY29sLm1kXFwiLFxcIi93b3Jrc3BhY2Uvc2NyYXRjaC83MzcxNDQ5NGFkMmYvZm9yZ2UtcHJvdG9jb2wtY29tcGFyaXNvbi0yMDI2MTAwMy9tYXRlcmlhbHMvcGFja2FnZS5qc29uXFwiLFxcIi93b3Jrc3BhY2Uvc2NyYXRjaC83MzcxNDQ5NGFkMmYvZm9yZ2UtcHJvdG9jb2wtY29tcGFyaXNvbi0yMDI2MTAwMy9tYXRlcmlhbHMvbm90ZXMudHh0XFwiLFxcIi9yb290Ly5jb2RleC9za2lsbHMvcmVtb3RlLXNraWxscy9za2lsbC02YWIzMjNiN2MyYTA4MTkxOWI5NTUwMmU4ZTcyOTdmMC9yZWZlcmVuY2VzL3Rhc2stZW50cnkubWRcXCIsXFwiL3Jvb3QvLmNvZGV4L3NraWxscy9yZW1vdGUtc2tpbGxzL3NraWxsLTZhYjMyM2I3YzJhMDgxOTE5Yjk1NTAyZThlNzI5N2YwL3JlZmVyZW5jZXMvaG9zdC1kcmFmdHMubWRcXCIsXFwiL3Jvb3QvLmNvZGV4L3NraWxscy9yZW1vdGUtc2tpbGxzL3NraWxsLTZhYjMyM2I3YzJhMDgxOTE5Yjk1NTAyZThlNzI5N2YwL3JlZmVyZW5jZXMvaG9zdC1leGVjdXRpb24ubWRcXCJdXFxuZm9yIHAgaW4gcGF0aHM6XFxuIHByaW50KFxcIlxcXFxcXFxcbi0tLSBcXCIrcCtcXCIgLS0tXFwiKVxcbiBwcmludChQYXRoKHApLnJlYWRfdGV4dCgpKSJcbiAgXSxcbiAgImJlZ2luIjoge1xuICAgICJ1dGMiOiAiMjAyNi0xMC0wM1QxMjozNDoxNS4yNDk0NDIrMDA6MDAiLFxuICAgICJtb25vdG9uaWNfbnMiOiAzMjA0MzY1NjU3NTkxLFxuICAgICJib290X2lkIjogImU3YzYwZmQ5LWJmZTMtNGYwZC1iMDlmLTcnCmxpbmVzIDI2Cg==",
+  "stderr_base64": ""
+}

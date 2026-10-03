@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import hashlib,json,pathlib; base=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1\"); request=json.loads((base/\"job/request.json\").read_text(encoding=\"utf-8\")); state=json.loads((base/\"state.json\").read_text(encoding=\"utf-8\")); task_id=request[\"request\"][\"target_binding\"][\"task_id\"]; task=next(x for x in state[\"plan\"][\"tasks\"] if x[\"id\"]==task_id); definitions={x[\"id\"]:x for x in state[\"plan\"][\"acceptance\"]}; paths=[base/\"review/source-review.md\",base/\"review/source-check-output.json\",base/\"artifacts/summary.json\",base/\"artifacts/summary_zh.md\"]; evidence=[{\"path\":str(p.resolve()),\"sha256\":hashlib.sha256(p.read_bytes()).hexdigest()} for p in paths]; results={\"acceptance_results\":{aid:{\"status\":\"not_run\",\"level\":definitions[aid][\"level\"],\"evidence\":evidence} for aid in task[\"acceptance_ids\"]}}; reply=base/\"artifacts/worker-reply.json\"; draft={\"schema_version\":\"forge-host-decision/1\",\"request_hash\":request[\"request_hash\"],\"reply_sha256\":hashlib.sha256(reply.read_bytes()).hexdigest(),\"outcome\":None,\"results\":results,\"reason\":None}; (base/\"coordinator-decision.draft.json\").write_text(json.dumps(draft,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:03:43.999257+00:00",
+    "monotonic_ns": 1373115470805,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:03:44.021829+00:00",
+    "monotonic_ns": 1373138040394,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.022569589,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; Path(\"package/A2/review/check_package_output.py\").write_text(\"from pathlib import Path\\nimport hashlib,json\\nroot=Path.cwd()\\npkg_path=root/\\\"materials/package.json\\\"\\nnotes_path=root/\\\"materials/notes.txt\\\"\\nfreeze_path=root/\\\"coordinator/Study_Freeze.json\\\"\\nbusiness_path=root/\\\"package/A2/artifacts/actions.json\\\"\\nexplanation_path=root/\\\"package/A2/artifacts/explanation.md\\\"\\nreply_path=root/\\\"package/A2/artifacts/worker-reply.json\\\"\\npackage=json.loads(pkg_path.read_text(encoding=\\\"utf-8\\\"))\\nnotes=notes_path.read_text(encoding=\\\"utf-8\\\")\\nstored=json.loads(business_path.read_text(encoding=\\\"utf-8\\\"))\\nexplanation=explanation_path.read_text(encoding=\\\"utf-8\\\")\\nreply=json.loads(reply_path.read_text(encoding=\\\"utf-8\\\"))\\nfreeze=json.loads(freeze_path.read_text(encoding=\\\"utf-8\\\"))\\nfrozen={row[\\\"path\\\"]:row[\\\"sha256\\\"] for row in freeze[\\\"study_files\\\"]}\\nsha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()\\nassert sha(pkg_path)==frozen[\\\"materials/package.json\\\"]\\nassert sha(notes_path)==frozen[\\\"materials/notes.txt\\\"]\\nassert package[\\\"schema\\\"]==\\\"forge-package/1\\\"\\ncriteria={row[\\\"id\\\"]:row for row in package[\\\"acceptance\\\"][\\\"criteria\\\"]}\\nassert set(criteria)=={\\\"quotes\\\",\\\"commitments\\\"} and all(row[\\\"required\\\"] for row in criteria.values())\\nassert criteria[\\\"quotes\\\"][\\\"assertion\\\"]==\\\"Every source_quote is an exact substring of the supplied notes.\\\"\\nassert criteria[\\\"commitments\\\"][\\\"assertion\\\"]==\\\"Only explicit action items are included; unstated owners and due dates remain null.\\\"\\nif isinstance(stored,list):\\n actions=stored\\n shape=\\\"direct actions array\\\"\\nelse:\\n assert isinstance(stored,dict) and stored.get(\\\"outcome\\\")==\\\"ok\\\" and set(stored)=={\\\"outcome\\\",\\\"artifacts\\\"}\\n assert set(stored[\\\"artifacts\\\"])=={\\\"actions\\\"}\\n actions=stored[\\\"artifacts\\\"][\\\"actions\\\"]\\n shape=\\\"Flow response envelope with actions array nested under artifacts\\\"\\nexpected=[\\n {\\\"task\\\":\\\"更新部署文档\\\",\\\"owner\\\":\\\"赵宁\\\",\\\"due\\\":\\\"周五\\\",\\\"source_quote\\\":\\\"赵宁负责更新部署文档，截止周五。\\\"},\\n {\\\"task\\\":\\\"补充回归用例\\\",\\\"owner\\\":\\\"许静\\\",\\\"due\\\":\\\"2026-10-09\\\",\\\"source_quote\\\":\\\"许静负责补充回归用例，截止2026-10-09。\\\"},\\n {\\\"task\\\":\\\"补充日志告警\\\",\\\"owner\\\":None,\\\"due\\\":None,\\\"source_quote\\\":\\\"决定补充日志告警。\\\"},\\n]\\nassert actions==expected\\nassert all(x[\\\"source_quote\\\"] in notes for x in actions)\\nassert len({x[\\\"source_quote\\\"] for x in actions})==len(actions)\\nfor phrase in [\\\"三项明确行动\\\",\\\"周五\\\",\\\"null\\\",\\\"建议以后考虑更换配色\\\",\\\"本周没有新增外部通知\\\"]:\\n assert phrase in explanation,phrase\\nassert reply[\\\"result\\\"][\\\"invocation_id\\\"]==\\\"30c3df730e13319200770469e341ade2\\\"\\nassert reply[\\\"result\\\"][\\\"outcome\\\"]==\\\"ok\\\" and reply[\\\"result\\\"][\\\"artifacts\\\"]=={\\\"actions\\\":actions}\\nassert reply[\\\"reason\\\"] is None\\nassert {a[\\\"path\\\"]:a[\\\"sha256\\\"] for a in reply[\\\"artifacts\\\"]}=={\\n str(business_path.resolve()):sha(business_path),\\n str(explanation_path.resolve()):sha(explanation_path)\\n}\\nprint(json.dumps({\\n \\\"review\\\":\\\"pass\\\",\\\"business_file_shape\\\":shape,\\n \\\"v1_acceptance\\\":{\\\"quotes\\\":\\\"pass\\\",\\\"commitments\\\":\\\"pass\\\"},\\n \\\"explicit_actions\\\":len(actions),\\n \\\"package_source_sha256\\\":sha(pkg_path),\\\"notes_sha256\\\":sha(notes_path),\\n \\\"business_file_sha256\\\":sha(business_path),\\\"explanation_sha256\\\":sha(explanation_path),\\n \\\"reply_sha256\\\":sha(reply_path),\\n \\\"frozen_case_coverage\\\":\\\"not assessed; this was a new input, and the no-action input was not run\\\"\\n},ensure_ascii=False,indent=2))\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:22:03.360197+00:00",
+    "monotonic_ns": 2472476416028,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:22:03.379952+00:00",
+    "monotonic_ns": 2472496168431,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.019752403,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

@@ -1,0 +1,54 @@
+{
+  "scope": "local targets only, not C1 samples or real native calls",
+  "checks": [
+    {
+      "target": "marker-success",
+      "argv_match": true,
+      "exit_matches": true,
+      "stdout_matches": true,
+      "stderr_matches": true,
+      "same_boot": true,
+      "nonnegative_span": true,
+      "exit_code": 0
+    },
+    {
+      "target": "marker-failure",
+      "argv_match": true,
+      "exit_matches": true,
+      "stdout_matches": true,
+      "stderr_matches": true,
+      "same_boot": true,
+      "nonnegative_span": true,
+      "exit_code": 2
+    },
+    {
+      "target": "synthetic-native",
+      "argv_match": true,
+      "exit_matches": true,
+      "stdout_matches": true,
+      "stderr_matches": true,
+      "same_boot": true,
+      "nonnegative_span": true,
+      "exit_code": 0
+    },
+    {
+      "target": "target-failure",
+      "argv_match": true,
+      "exit_matches": true,
+      "stdout_matches": true,
+      "stderr_matches": true,
+      "same_boot": true,
+      "nonnegative_span": true,
+      "exit_code": 7
+    }
+  ],
+  "marker_event_count": 1,
+  "ordinary_workers": 0,
+  "actual_native_calls": 0,
+  "future_worker_compliance": "unverified",
+  "native_payload_bytes_match": true,
+  "native_payload_hash_matches": true,
+  "native_payload_json_matches": true,
+  "failed_marker_creates_no_extra_event": true,
+  "qualification_status": "Root local checks pass; independent audit pending"
+}

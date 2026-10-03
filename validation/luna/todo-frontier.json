@@ -1,0 +1,53 @@
+{
+  "schema": "luna-todo-frontier-check/1",
+  "phase_graph": {
+    "task_count": 4,
+    "unique_ids": true,
+    "missing_dependencies": [],
+    "cycles": [],
+    "status_counts": {
+      "done": 1,
+      "planned": 3
+    }
+  },
+  "project_graph": {
+    "task_count": 46,
+    "unique_ids": true,
+    "missing_dependencies": [],
+    "cycles": [],
+    "status_counts": {
+      "done": 39,
+      "blocked": 1,
+      "planned": 1,
+      "partial": 5
+    }
+  },
+  "frontier": {
+    "checkpoint_active_phase": "S01",
+    "phase_id": "S01",
+    "checkpoint_next_task_id": "S01-02",
+    "checkpoint_matches_phase": true,
+    "next_task_status": "planned",
+    "next_task_dependencies": [
+      "S01-01"
+    ],
+    "next_task_dependencies_ready": true,
+    "next_task_write_paths": [
+      "runs/S01/"
+    ],
+    "audit_plan_inputs_present": true,
+    "missing_audit_plan_inputs": [],
+    "final_task_id": "S01-next",
+    "final_task_dependencies": [
+      "S01-01",
+      "S01-02",
+      "S01-03"
+    ],
+    "final_task_dependencies_done_now": false,
+    "final_task_status": "planned",
+    "transition_todo_path": null,
+    "transition_first_task_id": null,
+    "transition_start_evidence": [],
+    "transition_metadata_complete": false
+  }
+}

@@ -1,0 +1,529 @@
+{
+  "schema": "luna-bounded-a04-readonly/1",
+  "created_at_utc": "2026-10-03T18:17:45.424675+00:00",
+  "finished_at_utc": "2026-10-03T18:17:45.429053+00:00",
+  "scope": "One sample only: frozen project/A2 marker/wait/cutoff completeness pass; not full A04 and not full C1 audit.",
+  "requirements": {
+    "audit_plan": "runs/S01/audit-plan.json:A04",
+    "study_plan": "evidence/c1/Study_Plan.md:C06 and frozen operating protocol",
+    "study_plan_relevant_phrases_found": [
+      "at most 45-second native notification waits"
+    ],
+    "evidence_mapping": "docs/EVIDENCE_MAP.md: original project paths map to evidence/c1/project; originals are not rewritten."
+  },
+  "sample_state_at_cutoff": {
+    "project_state_status": "active",
+    "task_status": "running",
+    "attempt_outcome": "running",
+    "attempt_finished_at": null,
+    "active_attempt_id": "01576d11c27a41f6930d3baf79bf7c49",
+    "ledger_event_statuses": [
+      "requested"
+    ]
+  },
+  "markers": [
+    {
+      "stage": "notification_wait_1",
+      "begin_count": 1,
+      "end_count": 1,
+      "begin_utc": "2026-10-03T12:34:27.235025+00:00",
+      "end_utc": "2026-10-03T12:34:59.308473+00:00",
+      "begin_monotonic_ns": 3216351239349,
+      "end_monotonic_ns": 3248424688224,
+      "boot_ids": [
+        "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+      ],
+      "same_boot_pair": true,
+      "marker_span_seconds": 32.073449
+    },
+    {
+      "stage": "notification_wait_2",
+      "begin_count": 1,
+      "end_count": 1,
+      "begin_utc": "2026-10-03T12:35:40.449902+00:00",
+      "end_utc": "2026-10-03T12:36:40.618422+00:00",
+      "begin_monotonic_ns": 3289566122314,
+      "end_monotonic_ns": 3349734638597,
+      "boot_ids": [
+        "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+      ],
+      "same_boot_pair": true,
+      "marker_span_seconds": 60.168516
+    },
+    {
+      "stage": "notification_wait_3",
+      "begin_count": 1,
+      "end_count": 1,
+      "begin_utc": "2026-10-03T12:37:20.270351+00:00",
+      "end_utc": "2026-10-03T12:38:15.811163+00:00",
+      "begin_monotonic_ns": 3389386567493,
+      "end_monotonic_ns": 3444927379140,
+      "boot_ids": [
+        "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+      ],
+      "same_boot_pair": true,
+      "marker_span_seconds": 55.540812
+    },
+    {
+      "stage": "notification_wait_4",
+      "begin_count": 1,
+      "end_count": 1,
+      "begin_utc": "2026-10-03T12:38:49.306138+00:00",
+      "end_utc": "2026-10-03T12:39:21.921107+00:00",
+      "begin_monotonic_ns": 3478422354983,
+      "end_monotonic_ns": 3511037322431,
+      "boot_ids": [
+        "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+      ],
+      "same_boot_pair": true,
+      "marker_span_seconds": 32.614967
+    },
+    {
+      "stage": "receive",
+      "begin_count": 1,
+      "end_count": 0,
+      "begin_utc": "2026-10-03T12:33:58.327636+00:00",
+      "end_utc": null,
+      "begin_monotonic_ns": 3187443852891,
+      "end_monotonic_ns": null,
+      "boot_ids": [
+        "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+      ],
+      "same_boot_pair": false,
+      "marker_span_seconds": null
+    },
+    {
+      "stage": "setup",
+      "begin_count": 1,
+      "end_count": 1,
+      "begin_utc": "2026-10-03T12:32:09.497481+00:00",
+      "end_utc": "2026-10-03T12:33:05.716914+00:00",
+      "begin_monotonic_ns": 3078613697192,
+      "end_monotonic_ns": 3134833129834,
+      "boot_ids": [
+        "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+      ],
+      "same_boot_pair": true,
+      "marker_span_seconds": 56.219433
+    }
+  ],
+  "required_coordinator_stage_completeness": [
+    {
+      "stage": "setup",
+      "begin_present": true,
+      "end_present": true,
+      "complete_pair": true
+    },
+    {
+      "stage": "receive",
+      "begin_present": true,
+      "end_present": false,
+      "complete_pair": false
+    },
+    {
+      "stage": "review",
+      "begin_present": false,
+      "end_present": false,
+      "complete_pair": false
+    },
+    {
+      "stage": "decision",
+      "begin_present": false,
+      "end_present": false,
+      "complete_pair": false
+    },
+    {
+      "stage": "commit",
+      "begin_present": false,
+      "end_present": false,
+      "complete_pair": false
+    }
+  ],
+  "status_calls": [
+    {
+      "index": 1,
+      "tool": "list_agents",
+      "intent_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "return_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "same_boot": true,
+      "raw_statuses": [
+        "running"
+      ],
+      "intent_path_prefix": "/root/luna_compare_project/luna_forge_01576d11c27a",
+      "return_payload_sha256_matches": true
+    },
+    {
+      "index": 2,
+      "tool": "list_agents",
+      "intent_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "return_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "same_boot": true,
+      "raw_statuses": [
+        "running"
+      ],
+      "intent_path_prefix": "/root/luna_compare_project/luna_forge_01576d11c27a",
+      "return_payload_sha256_matches": true
+    },
+    {
+      "index": 3,
+      "tool": "list_agents",
+      "intent_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "return_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "same_boot": true,
+      "raw_statuses": [
+        "running"
+      ],
+      "intent_path_prefix": "/root/luna_compare_project/luna_forge_01576d11c27a",
+      "return_payload_sha256_matches": true
+    },
+    {
+      "index": 4,
+      "tool": "list_agents",
+      "intent_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "return_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "same_boot": true,
+      "raw_statuses": [
+        "running"
+      ],
+      "intent_path_prefix": "/root/luna_compare_project/luna_forge_01576d11c27a",
+      "return_payload_sha256_matches": true
+    },
+    {
+      "index": 5,
+      "tool": "list_agents",
+      "intent_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "return_boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+      "same_boot": true,
+      "raw_statuses": [
+        "running"
+      ],
+      "intent_path_prefix": "/root/luna_compare_project/luna_forge_01576d11c27a",
+      "return_payload_sha256_matches": true
+    }
+  ],
+  "notification_waits": [
+    {
+      "index": 1,
+      "raw_return": {
+        "message": "Wait completed.",
+        "timed_out": false
+      },
+      "marker_span_seconds": 32.073449,
+      "configured_wait_parameter_record_present": false,
+      "marker_begin_end_pair_present": true
+    },
+    {
+      "index": 2,
+      "raw_return": {
+        "message": "Wait timed out.",
+        "timed_out": true
+      },
+      "marker_span_seconds": 60.168516,
+      "configured_wait_parameter_record_present": false,
+      "marker_begin_end_pair_present": true
+    },
+    {
+      "index": 3,
+      "raw_return": {
+        "message": "Wait timed out.",
+        "timed_out": true
+      },
+      "marker_span_seconds": 55.540812,
+      "configured_wait_parameter_record_present": false,
+      "marker_begin_end_pair_present": true
+    },
+    {
+      "index": 4,
+      "raw_return": {
+        "message": "Wait completed.",
+        "timed_out": false
+      },
+      "marker_span_seconds": 32.614967,
+      "configured_wait_parameter_record_present": false,
+      "marker_begin_end_pair_present": true
+    }
+  ],
+  "audit_observations": [
+    "The five saved list_agents return records each report the original A2 worker as running; the frozen query cap is five.",
+    "The receive marker has a begin and no end; the state and ledger remain running/requested with no finish/response.",
+    "Setup has one same-boot begin/end pair. Review, decision and commit markers are absent in this sample.",
+    "All four saved notification-wait return records are present. No wait argument/intent record is present, so configured wait values cannot be verified from the cutoff evidence.",
+    "Two wait marker spans exceed 45 seconds; without configured parameters and separate invocation boundaries, this is an observed span only, not proof of a native argument violation.",
+    "The pass is limited to project/A2 and does not complete A04 across the eight-sample study or complete the C1 audit."
+  ],
+  "manifest_validation": {
+    "files_checked": 38,
+    "all_match": true,
+    "errors": []
+  },
+  "file_evidence": [
+    {
+      "path": "evidence/c1/project/A2/state.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/state.json",
+      "sha256": "06d1c1c23754b9949212cb42dc0a1c11306c387ac55ede6ef6f2ec0cd48d31e0",
+      "size_bytes": 2545,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/work.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/work.json",
+      "sha256": "e6962799fc9a437ddc535d13b26d08ce38c512e7e560c22eee72bd4c42dc6288",
+      "size_bytes": 2519,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/job/ledger.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/job/ledger.json",
+      "sha256": "5063491d94352c5ae46a1ac74cf06f6f6b683bc72dfb1d5f3ecd4818345e2736",
+      "size_bytes": 955,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3078613697192_256cb8f38ef34693ad6c9426a6e1cf00.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3078613697192_256cb8f38ef34693ad6c9426a6e1cf00.json",
+      "sha256": "984f9901028e7e7f6ca6db92b2f422e62d3a24f3f734789be6ba30e6832b5087",
+      "size_bytes": 241,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3134833129834_34678eec0e7c4b0db45ed52a905246b2.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3134833129834_34678eec0e7c4b0db45ed52a905246b2.json",
+      "sha256": "bf08af2a136bad88e112f7956efb37880cbbca6ca8f7ed59384b8aab94a3e1f4",
+      "size_bytes": 239,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3187443852891_c92184da7ab84680be4dacdf4e6d64d6.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3187443852891_c92184da7ab84680be4dacdf4e6d64d6.json",
+      "sha256": "3b7500c21fa99a487afffd7ba21d4cbd05a161c56fc87dd4c3374927df9d126e",
+      "size_bytes": 243,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3216351239349_95d18fbf61414f4697930d3d92f54ebd.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3216351239349_95d18fbf61414f4697930d3d92f54ebd.json",
+      "sha256": "690f74d4d138d3e0ed2eb697e14e4f3e81841b57030827118d3b489e4ddc307f",
+      "size_bytes": 255,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3248424688224_cb5f48aef52340eb99f912dd5f027067.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3248424688224_cb5f48aef52340eb99f912dd5f027067.json",
+      "sha256": "9df73aaa805effbdb8862e95734384b344f742093b3939f5f9c970f82e5a2f0f",
+      "size_bytes": 253,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3289566122314_54a3062df5e643eb97628cdd86d0a3c2.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3289566122314_54a3062df5e643eb97628cdd86d0a3c2.json",
+      "sha256": "b806c559592bbc4c50a4c2cfbe663c12c454546525365731ccdb9d32280ca705",
+      "size_bytes": 255,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3349734638597_6075608dcbe84f8b9dc79187c8fc47ca.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3349734638597_6075608dcbe84f8b9dc79187c8fc47ca.json",
+      "sha256": "770091a1fbd93c231353a576940979ae3f01b14e89763ec16d30ceb77460be0b",
+      "size_bytes": 253,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3389386567493_b9e87f6e3403458f9168d523f3e50bc5.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3389386567493_b9e87f6e3403458f9168d523f3e50bc5.json",
+      "sha256": "432dc1489a0bd8bbd2bccdab0b3eb4c7a72a292995ae5151538a0ffe4e1eb52d",
+      "size_bytes": 255,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3444927379140_0a2571dae9f04f48bab3b71871797275.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3444927379140_0a2571dae9f04f48bab3b71871797275.json",
+      "sha256": "8271cce0b8a7c5d454151ab7ea82aa8e4f1394af2df14bf4d76419a366e977b8",
+      "size_bytes": 253,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3478422354983_2ed4f4de678c49b98ab24ef9601719bb.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3478422354983_2ed4f4de678c49b98ab24ef9601719bb.json",
+      "sha256": "497041613a9dcff8553b9f06ea4ce23c234e9afba5e7258d637701101f35c06a",
+      "size_bytes": 255,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/observations/3511037322431_fdae799cbced46ec9e9200058370f53d.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/observations/3511037322431_fdae799cbced46ec9e9200058370f53d.json",
+      "sha256": "a0fb4a029e8e30bfea0673d689b3aee4a51aa9d0d92f99981f8018005234b245",
+      "size_bytes": 253,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/spawn-arguments.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/spawn-arguments.json",
+      "sha256": "47b971dfd33f8273a3082008d50695160c735b752aec27a3ee518e0aed23deca",
+      "size_bytes": 2542,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/spawn-intent-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/spawn-intent-observer.json",
+      "sha256": "d77e712b48913a866d3be07296d28d3d862e73a9e3488822d3b239c18d20bbd8",
+      "size_bytes": 6570,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/spawn-return-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/spawn-return-observer.json",
+      "sha256": "44ff4adec48be9cd71ebcbb7d808787407672421725178d2e072a75ea292049e",
+      "size_bytes": 793,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/spawn-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/spawn-return.json",
+      "sha256": "c2f8e97710021db6d3c557bf63734f54c17b596e3fd3912e72e1044ddb850231",
+      "size_bytes": 72,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/host-status-query.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/host-status-query.json",
+      "sha256": "bf84b73c0685e7fe3321f2102ea3da9748b0191d09c62afdb64f8f5c029937d1",
+      "size_bytes": 74,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-1-intent-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-1-intent-observer.json",
+      "sha256": "400a5d9d73d9a5418b6741919a7df744ab2a5bcd602843ad9532e2298f38cde7",
+      "size_bytes": 804,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-1-return-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-1-return-observer.json",
+      "sha256": "2c0ab0bde20a9a3a6aaa2c2a2f72c9716ea166c268f83b473c0ad99ba2178960",
+      "size_bytes": 966,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-1-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-1-return.json",
+      "sha256": "081b60fb8a6ac9b40ea9287a635b5feee7bc98d2a38fc0800dd5efa01d923200",
+      "size_bytes": 140,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-2-intent-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-2-intent-observer.json",
+      "sha256": "3ae6a447b4bea451b650c3ac347e5ef6f92c0adba29108c4547086b516c7619c",
+      "size_bytes": 804,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-2-return-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-2-return-observer.json",
+      "sha256": "7a5cb8e4196b4d6b2c4c5786168207225cd562ab87cb915ca2c2b20972e372ba",
+      "size_bytes": 966,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-2-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-2-return.json",
+      "sha256": "081b60fb8a6ac9b40ea9287a635b5feee7bc98d2a38fc0800dd5efa01d923200",
+      "size_bytes": 140,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-3-intent-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-3-intent-observer.json",
+      "sha256": "c288762e7f7960818a1b87f0cc6baf723f4fd974310d4c3dba9002cbbfc18f9d",
+      "size_bytes": 804,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-3-return-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-3-return-observer.json",
+      "sha256": "52d6b7a6ea93b61e930cd5576b4042b28a5e60e43af39e0caeb89f03d96debaa",
+      "size_bytes": 966,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-3-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-3-return.json",
+      "sha256": "081b60fb8a6ac9b40ea9287a635b5feee7bc98d2a38fc0800dd5efa01d923200",
+      "size_bytes": 140,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-4-intent-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-4-intent-observer.json",
+      "sha256": "5c5357045c22445e55cf6fc96ce91c42a912f43b6387176ae2520e34685de39f",
+      "size_bytes": 804,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-4-return-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-4-return-observer.json",
+      "sha256": "e948e1f07b38c767ccd42479285b542456400720044afb30c0287c469019e59c",
+      "size_bytes": 966,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-4-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-4-return.json",
+      "sha256": "081b60fb8a6ac9b40ea9287a635b5feee7bc98d2a38fc0800dd5efa01d923200",
+      "size_bytes": 140,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-5-intent-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-5-intent-observer.json",
+      "sha256": "68aa2854d582c2309f49732de041b70010e1db14261691cc4b053078445f0ad0",
+      "size_bytes": 804,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-5-return-observer.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-5-return-observer.json",
+      "sha256": "9068b14c3c4de6e9eed319c10899b7db51920c205a76cb2399c7a0fff09f8886",
+      "size_bytes": 966,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/status-5-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/status-5-return.json",
+      "sha256": "081b60fb8a6ac9b40ea9287a635b5feee7bc98d2a38fc0800dd5efa01d923200",
+      "size_bytes": 140,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/wait-1-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/wait-1-return.json",
+      "sha256": "1d40e40ce2ff89ef41f132f726903bde4d740a78f4e314a924ca007ce3354415",
+      "size_bytes": 57,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/wait-2-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/wait-2-return.json",
+      "sha256": "fdd94d5888156bfacdd234f76645b4c5fd0a0b14f84c2d2debcfca4a1ce5ea00",
+      "size_bytes": 56,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/wait-3-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/wait-3-return.json",
+      "sha256": "fdd94d5888156bfacdd234f76645b4c5fd0a0b14f84c2d2debcfca4a1ce5ea00",
+      "size_bytes": 56,
+      "manifest_match": true
+    },
+    {
+      "path": "evidence/c1/project/A2/native/wait-4-return.json",
+      "original_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A2/native/wait-4-return.json",
+      "sha256": "1d40e40ce2ff89ef41f132f726903bde4d740a78f4e314a924ca007ce3354415",
+      "size_bytes": 57,
+      "manifest_match": true
+    }
+  ],
+  "native_calls_made_by_this_audit": 0,
+  "historical_controller_commands_run": 0
+}

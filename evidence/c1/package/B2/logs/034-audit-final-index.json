@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; b=json.loads(Path(\"package/block-summary.json\").read_text());\nassert b[\"record_counts\"][\"cli_captures\"]==199\nassert b[\"record_counts\"][\"native_observers\"]==40\nassert b[\"record_counts\"][\"markers\"]==83\nassert b[\"record_counts\"][\"native_status_queries\"]==16\nassert b[\"record_counts\"][\"notification_waits\"]==14\nfor s in b[\"samples\"]:\n assert s[\"business_acceptance\"]==\"pass\", s[\"sample\"]\n assert s[\"original_terminal_state\"][\"flow_status\"]==\"completed\", s[\"sample\"]\n assert s[\"original_terminal_state\"][\"bridge_phase\"]==\"committed\", s[\"sample\"]\n assert s[\"original_terminal_state\"][\"ledger_state\"]==\"completed\", (s[\"sample\"],s[\"original_terminal_state\"])\n assert s[\"worker_check_reply_passed\"], (s[\"sample\"],s[\"worker_check_reply\"])\n assert s[\"v1_package_assessments\"] and s[\"v1_package_assessments\"][-1][\"verdict\"]==\"pass\", (s[\"sample\"],s[\"v1_package_assessments\"])\n assert s[\"decision_preflights\"] and s[\"decision_preflights\"][-1][\"status\"]==\"controller_compatible\", (s[\"sample\"],s[\"decision_preflights\"])\n assert s[\"bridge_commits\"] and s[\"bridge_commits\"][-1][\"phase\"]==\"committed\", (s[\"sample\"],s[\"bridge_commits\"])\n assert s[\"package_checkpoint_queries\"] and s[\"package_checkpoint_queries\"][-1][\"status\"]==\"completed\", (s[\"sample\"],s[\"package_checkpoint_queries\"])\nassert next(s for s in b[\"samples\"] if s[\"sample\"]==\"B2\")[\"coordinator_stage_spans\"][-1][\"status\"] in {\"duplicate_end_unverified\",\"same_boot_pair\"}\ncli=json.loads(Path(\"package/cli-index.json\").read_text()); native=json.loads(Path(\"package/native-index.json\").read_text()); markers=json.loads(Path(\"package/marker-index.json\").read_text());\nassert cli[\"record_count\"]==b[\"record_counts\"][\"cli_captures\"]\nassert native[\"observer_count\"]==b[\"record_counts\"][\"native_observers\"]\nassert markers[\"marker_count\"]==b[\"record_counts\"][\"markers\"]\nprint(json.dumps({\"audit\":\"pass\",\"sample_checks\":{s[\"sample\"]:{\"source\":\"pass\",\"terminal\":\"completed\",\"worker_check\":s[\"worker_check_reply\"],\"assessments\":s[\"v1_package_assessments\"],\"decision_preflight\":s[\"decision_preflights\"],\"queries\":s[\"native_status_query_count\"],\"waits\":s[\"notification_wait_count\"]} for s in b[\"samples\"]},\"cli_records\":cli[\"record_count\"],\"native_observers\":native[\"observer_count\"],\"markers\":markers[\"marker_count\"]},ensure_ascii=False,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:57:18.370578+00:00",
+    "monotonic_ns": 4587486794209,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:57:18.394700+00:00",
+    "monotonic_ns": 4587510912476,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 0.024118267,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 13, in <module>\nAssertionError: ('B1', [{'path': 'package/B1/logs/024-packagectl-help.json', 'exit_code': 0, 'verdict': None, 'stderr': ''}, {'path': 'package/B1/review/package-assess-corrected.json', 'exit_code': 0, 'verdict': 'pass', 'stderr': ''}, {'path': 'package/B1/review/package-assess.json', 'exit_code': 2, 'verdict': None, 'stderr': '{\"error\": \"Results must contain the exact package_hash and checks\"}\\n'}])\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIjxzdHJpbmc+IiwgbGluZSAxMywgaW4gPG1vZHVsZT4KQXNzZXJ0aW9uRXJyb3I6ICgnQjEnLCBbeydwYXRoJzogJ3BhY2thZ2UvQjEvbG9ncy8wMjQtcGFja2FnZWN0bC1oZWxwLmpzb24nLCAnZXhpdF9jb2RlJzogMCwgJ3ZlcmRpY3QnOiBOb25lLCAnc3RkZXJyJzogJyd9LCB7J3BhdGgnOiAncGFja2FnZS9CMS9yZXZpZXcvcGFja2FnZS1hc3Nlc3MtY29ycmVjdGVkLmpzb24nLCAnZXhpdF9jb2RlJzogMCwgJ3ZlcmRpY3QnOiAncGFzcycsICdzdGRlcnInOiAnJ30sIHsncGF0aCc6ICdwYWNrYWdlL0IxL3Jldmlldy9wYWNrYWdlLWFzc2Vzcy5qc29uJywgJ2V4aXRfY29kZSc6IDIsICd2ZXJkaWN0JzogTm9uZSwgJ3N0ZGVycic6ICd7ImVycm9yIjogIlJlc3VsdHMgbXVzdCBjb250YWluIHRoZSBleGFjdCBwYWNrYWdlX2hhc2ggYW5kIGNoZWNrcyJ9XG4nfV0pCg=="
+}

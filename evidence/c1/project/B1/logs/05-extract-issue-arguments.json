@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib; base=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1\"); record=json.loads((base/\"logs/04-hostbridge-issue.json\").read_text()); packet=json.loads(record[\"stdout\"]); (base/\"native/spawn-arguments.json\").write_text(json.dumps(packet[\"spawn_arguments\"],ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\"); (base/\"native/host-status-query.json\").write_text(json.dumps(packet[\"host_status_query\"],ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\"); (base/\"native/dispatch-packet.json\").write_text(json.dumps(packet,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:06:46.512085+00:00",
+    "monotonic_ns": 1555628300731,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:06:46.531295+00:00",
+    "monotonic_ns": 1555647509088,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.019208357,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

@@ -1,0 +1,105 @@
+{
+  "schema": "forge-expense-source-review/1",
+  "source": {
+    "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv",
+    "sha256": "f1a6914eae07b97537e809c9e9fa5000acd02b391ca64484927596a19c2b3bfb",
+    "rows": 6
+  },
+  "outputs": {
+    "summary_json_sha256": "5954bfd47d9d563ebb8a9832cf6f6a84221083c7286abddd6749eed46d2bd527",
+    "summary_zh_sha256": "753c6fc1fd7bc503043f1d5f5763caa2f2c57e9eb052d57764b1b64986e5bcd3"
+  },
+  "computed_from_raw_csv_with_decimal_fen": {
+    "design": {
+      "row_count": 1,
+      "total_amount_fen": 1600,
+      "source_ids": [
+        "C604"
+      ]
+    },
+    "dev": {
+      "row_count": 2,
+      "total_amount_fen": 946,
+      "source_ids": [
+        "C602",
+        "C605"
+      ]
+    },
+    "ops": {
+      "row_count": 3,
+      "total_amount_fen": 1464,
+      "source_ids": [
+        "C601",
+        "C603",
+        "C606"
+      ]
+    }
+  },
+  "worker_summary": {
+    "categories": {
+      "design": {
+        "row_count": 1,
+        "total_amount_fen": 1600,
+        "source_ids": [
+          "C604"
+        ]
+      },
+      "dev": {
+        "row_count": 2,
+        "total_amount_fen": 946,
+        "source_ids": [
+          "C602",
+          "C605"
+        ]
+      },
+      "ops": {
+        "row_count": 3,
+        "total_amount_fen": 1464,
+        "source_ids": [
+          "C601",
+          "C603",
+          "C606"
+        ]
+      }
+    }
+  },
+  "markdown_rows": [
+    {
+      "category": "design",
+      "row_count": 1,
+      "total_amount_fen": 1600,
+      "source_ids": [
+        "C604"
+      ]
+    },
+    {
+      "category": "dev",
+      "row_count": 2,
+      "total_amount_fen": 946,
+      "source_ids": [
+        "C602",
+        "C605"
+      ]
+    },
+    {
+      "category": "ops",
+      "row_count": 3,
+      "total_amount_fen": 1464,
+      "source_ids": [
+        "C601",
+        "C603",
+        "C606"
+      ]
+    }
+  ],
+  "checks": {
+    "json_shape": true,
+    "category_set_exactly_once": true,
+    "row_counts": true,
+    "exact_integer_fen_sums": true,
+    "complete_ordered_ids": true,
+    "chinese_heading": true,
+    "markdown_rows_agree": true
+  },
+  "pass": true
+}

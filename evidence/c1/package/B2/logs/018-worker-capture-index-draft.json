@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; p=Path(\"package/B2/artifacts/process-captures.jsonl\"); rows=[json.loads(line) for line in p.read_text().splitlines()];\nfor i,r in enumerate(rows,1):\n out=r.get(\"stdout\",\"\").replace(\"\\n\",\" \"); err=r.get(\"stderr\",\"\").replace(\"\\n\",\" \"); print(json.dumps({\"i\":i,\"actor\":r.get(\"actor\"),\"argv\":r.get(\"argv\"),\"exit_code\":r.get(\"exit_code\"),\"elapsed_seconds\":r.get(\"elapsed_seconds\"),\"stdout_prefix\":out[:180],\"stderr_prefix\":err[:180]},ensure_ascii=False))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:41:51.882623+00:00",
+    "monotonic_ns": 3660998838749,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:41:51.906195+00:00",
+    "monotonic_ns": 3661022408903,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 0.023570154,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 346, in loads\n    return _default_decoder.decode(s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 338, in decode\n    obj, end = self.raw_decode(s, idx=_w(s, 0).end())\n               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/decoder.py\", line 354, in raw_decode\n    obj, end = self.scan_once(s, idx)\n               ^^^^^^^^^^^^^^^^^^^^^^\njson.decoder.JSONDecodeError: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIjxzdHJpbmc+IiwgbGluZSAxLCBpbiA8bW9kdWxlPgogIEZpbGUgIi9vcHQvY29kZXgvcnVudGltZXMvY29kZXgtcHJpbWFyeS1ydW50aW1lL2RlcGVuZGVuY2llcy9weXRob24vbGliL3B5dGhvbjMuMTIvanNvbi9fX2luaXRfXy5weSIsIGxpbmUgMzQ2LCBpbiBsb2FkcwogICAgcmV0dXJuIF9kZWZhdWx0X2RlY29kZXIuZGVjb2RlKHMpCiAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvb3B0L2NvZGV4L3J1bnRpbWVzL2NvZGV4LXByaW1hcnktcnVudGltZS9kZXBlbmRlbmNpZXMvcHl0aG9uL2xpYi9weXRob24zLjEyL2pzb24vZGVjb2Rlci5weSIsIGxpbmUgMzM4LCBpbiBkZWNvZGUKICAgIG9iaiwgZW5kID0gc2VsZi5yYXdfZGVjb2RlKHMsIGlkeD1fdyhzLCAwKS5lbmQoKSkKICAgICAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvb3B0L2NvZGV4L3J1bnRpbWVzL2NvZGV4LXByaW1hcnktcnVudGltZS9kZXBlbmRlbmNpZXMvcHl0aG9uL2xpYi9weXRob24zLjEyL2pzb24vZGVjb2Rlci5weSIsIGxpbmUgMzU0LCBpbiByYXdfZGVjb2RlCiAgICBvYmosIGVuZCA9IHNlbGYuc2Nhbl9vbmNlKHMsIGlkeCkKICAgICAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXgpqc29uLmRlY29kZXIuSlNPTkRlY29kZUVycm9yOiBFeHBlY3RpbmcgcHJvcGVydHkgbmFtZSBlbmNsb3NlZCBpbiBkb3VibGUgcXVvdGVzOiBsaW5lIDEgY29sdW1uIDIgKGNoYXIgMSkK"
+}

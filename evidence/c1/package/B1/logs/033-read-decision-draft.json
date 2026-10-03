@@ -1,0 +1,25 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "cat",
+    "package/B1/review/coordinator-decision.draft.json"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:02:43.087886+00:00",
+    "monotonic_ns": 1312204105515,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:02:43.089099+00:00",
+    "monotonic_ns": 1312205306631,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.001201116,
+  "stdout": "{\n  \"schema_version\": \"forge-host-decision/1\",\n  \"request_hash\": \"55e701dd6b9e14d21fe3a2e5b1ed6dddcd9ed383df29fea0925a3adc04585483\",\n  \"reply_sha256\": \"9f2c7cfd387396735b1f033f6efb423a730a96f1dac425a0865c98a778e7b4bf\",\n  \"outcome\": null,\n  \"results\": {\n    \"invocation_id\": \"effdf28894dd763006de01d952807d97\",\n    \"outcome\": \"ok\",\n    \"artifacts\": {\n      \"actions\": [\n        {\n          \"task\": \"更新部署文档\",\n          \"owner\": \"赵宁\",\n          \"due\": \"周五\",\n          \"source_quote\": \"赵宁负责更新部署文档，截止周五。\"\n        },\n        {\n          \"task\": \"补充回归用例\",\n          \"owner\": \"许静\",\n          \"due\": \"2026-10-09\",\n          \"source_quote\": \"许静负责补充回归用例，截止2026-10-09。\"\n        },\n        {\n          \"task\": \"补充日志告警\",\n          \"owner\": null,\n          \"due\": null,\n          \"source_quote\": \"决定补充日志告警。\"\n        }\n      ]\n    },\n    \"evidence\": [\n      \"artifacts/actions.json: three extracted records with source quotes checked against supplied notes\",\n      \"artifacts/解释.md: Chinese explanation of included actions and excluded suggestion/information\",\n      \"artifacts/captures/verify-business-artifacts-final.json: PASS for exact source substrings, literal due values, null unstated fields, and exclusion of suggestion/information\"\n    ]\n  },\n  \"reason\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWFfdmVyc2lvbiI6ICJmb3JnZS1ob3N0LWRlY2lzaW9uLzEiLAogICJyZXF1ZXN0X2hhc2giOiAiNTVlNzAxZGQ2YjllMTRkMjFmZTNhMmU1YjFlZDZkZGRjZDllZDM4M2RmMjlmZWEwOTI1YTNhZGMwNDU4NTQ4MyIsCiAgInJlcGx5X3NoYTI1NiI6ICI5ZjJjN2NmZDM4NzM5NjczNWIxZjAzM2Y2ZWZiNDIzYTczMGE5NmYxZGFjNDI1YTA4NjVjOThhNzc4ZTdiNGJmIiwKICAib3V0Y29tZSI6IG51bGwsCiAgInJlc3VsdHMiOiB7CiAgICAiaW52b2NhdGlvbl9pZCI6ICJlZmZkZjI4ODk0ZGQ3NjMwMDZkZTAxZDk1MjgwN2Q5NyIsCiAgICAib3V0Y29tZSI6ICJvayIsCiAgICAiYXJ0aWZhY3RzIjogewogICAgICAiYWN0aW9ucyI6IFsKICAgICAgICB7CiAgICAgICAgICAidGFzayI6ICLmm7TmlrDpg6jnvbLmlofmoaMiLAogICAgICAgICAgIm93bmVyIjogIui1teWugSIsCiAgICAgICAgICAiZHVlIjogIuWRqOS6lCIsCiAgICAgICAgICAic291cmNlX3F1b3RlIjogIui1teWugei0n+i0o+abtOaWsOmDqOe9suaWh+aho++8jOaIquatouWRqOS6lOOAgiIKICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICJ0YXNrIjogIuihpeWFheWbnuW9kueUqOS+iyIsCiAgICAgICAgICAib3duZXIiOiAi6K646Z2ZIiwKICAgICAgICAgICJkdWUiOiAiMjAyNi0xMC0wOSIsCiAgICAgICAgICAic291cmNlX3F1b3RlIjogIuiuuOmdmei0n+i0o+ihpeWFheWbnuW9kueUqOS+i++8jOaIquatojIwMjYtMTAtMDnjgIIiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAidGFzayI6ICLooaXlhYXml6Xlv5flkYroraYiLAogICAgICAgICAgIm93bmVyIjogbnVsbCwKICAgICAgICAgICJkdWUiOiBudWxsLAogICAgICAgICAgInNvdXJjZV9xdW90ZSI6ICLlhrPlrprooaXlhYXml6Xlv5flkYrorabjgIIiCiAgICAgICAgfQogICAgICBdCiAgICB9LAogICAgImV2aWRlbmNlIjogWwogICAgICAiYXJ0aWZhY3RzL2FjdGlvbnMuanNvbjogdGhyZWUgZXh0cmFjdGVkIHJlY29yZHMgd2l0aCBzb3VyY2UgcXVvdGVzIGNoZWNrZWQgYWdhaW5zdCBzdXBwbGllZCBub3RlcyIsCiAgICAgICJhcnRpZmFjdHMv6Kej6YeKLm1kOiBDaGluZXNlIGV4cGxhbmF0aW9uIG9mIGluY2x1ZGVkIGFjdGlvbnMgYW5kIGV4Y2x1ZGVkIHN1Z2dlc3Rpb24vaW5mb3JtYXRpb24iLAogICAgICAiYXJ0aWZhY3RzL2NhcHR1cmVzL3ZlcmlmeS1idXNpbmVzcy1hcnRpZmFjdHMtZmluYWwuanNvbjogUEFTUyBmb3IgZXhhY3Qgc291cmNlIHN1YnN0cmluZ3MsIGxpdGVyYWwgZHVlIHZhbHVlcywgbnVsbCB1bnN0YXRlZCBmaWVsZHMsIGFuZCBleGNsdXNpb24gb2Ygc3VnZ2VzdGlvbi9pbmZvcm1hdGlvbiIKICAgIF0KICB9LAogICJyZWFzb24iOiBudWxsCn0K",
+  "stderr_base64": ""
+}

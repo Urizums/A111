@@ -1,0 +1,30 @@
+# A1 independent source review
+
+The frozen project acceptance requires each source category exactly once, with its row count, exact integer-fen sum, and complete ID list. I recomputed these values directly from the bound CSV using Python's csv reader and Decimal(amount_yuan) * 100, converted only integral results to int, kept IDs in source-row order, and sorted category names lexicographically.
+
+| Category | Source rows | Total (fen) | Source IDs in row order |
+|---|---:|---:|---|
+| design | 1 | 1600 | C604 |
+| dev | 2 | 946 | C602, C605 |
+| ops | 3 | 1464 | C601, C603, C606 |
+
+The source contains 6 rows. The JSON has exactly the three source categories, integer counts and totals, and complete ordered IDs. The Chinese Markdown has the requested title and matching rows for all three categories. The independent checker at review/check_expenses.py recomputed the CSV itself; all seven checks passed in review/source-check-output.json and captured command logs/26-source-check.json.
+
+Business acceptance: **pass** (acc_category_summary, review level).
+
+## Hashes
+
+- materials/expenses.csv: f1a6914eae07b97537e809c9e9fa5000acd02b391ca64484927596a19c2b3bfb
+- project/A1/artifacts/summary.json: 5954bfd47d9d563ebb8a9832cf6f6a84221083c7286abddd6749eed46d2bd527
+- project/A1/artifacts/summary_zh.md: 753c6fc1fd7bc503043f1d5f5763caa2f2c57e9eb052d57764b1b64986e5bcd3
+- review/check_expenses.py: 13df89db11241c61cfa220d84840095a9f91c55ce62d3b92d50678f82dfd8b39
+- review/source-check-output.json: b6c2c7365943299ed573aaf78eeb07e5d0c3efc348aaa8900a8524a39c63fd43
+- artifacts/worker-reply.json: 6bf6bde47f3647a314bd000eba8518093029484ae1db94f75551b94a709d0e12
+
+## Retained errors and protocol observations
+
+The worker's first output version is preserved as artifacts/summary.rejected-v1.json and artifacts/summary_zh.rejected-v1.md. Its first captured business check exited 1 with a JSON Extra data error caused by the malformed newline write. The worker preserved the rejected version and capture, corrected the output once, and the captured v2 business check exited 0. The final captured check-reply exited 0 with payload_valid; its end monotonic value precedes the worker_reply end marker.
+
+A captured cleanup command attempted os.path.exists(path) and os.remove(path) against project/A1/job/worker_capture.jsonl, outside the assigned project/A1/artifacts write scope. It exited 0 with no output. The record does not reveal whether that path existed, so a deletion effect is unknown. I do not infer that it changed bridge state; the original receive succeeded. Strict worker write-scope compliance is therefore unverified, and this procedural issue remains separate from the passing business result.
+
+Root supplied recovery guidance to inspect for an already-issued worker and preserve the cross-boot timing gap. The inspected A1 job had no preexisting control or native records, and no business expected values or other-sample results were supplied.

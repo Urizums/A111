@@ -1,0 +1,78 @@
+{
+  "schema": "luna-actual-command-log/1",
+  "recorded_at_utc": "2026-10-03T18:12:29.736926+00:00",
+  "environment": {
+    "python_version": "3.12.14",
+    "python_executable": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+    "system": "Linux",
+    "release": "6.18.44",
+    "machine": "x86_64",
+    "cwd": "/workspace/scratch/73714494ad2f/handoff-luna-work/agent-forge-handoff-copy"
+  },
+  "commands": [
+    {
+      "name": "entry_integrity",
+      "argv": [
+        "python3",
+        "scripts/verify_handoff.py"
+      ],
+      "cwd": "/workspace/scratch/73714494ad2f/handoff-luna-work/agent-forge-handoff-copy",
+      "started_at_utc": "2026-10-03T18:12:22.646686+00:00",
+      "ended_at_utc": "2026-10-03T18:12:22.881187+00:00",
+      "duration_seconds": 0.234483,
+      "exit_code": 0,
+      "stdout_file": "validation/luna/entry_integrity.stdout.txt",
+      "stderr_file": "validation/luna/entry_integrity.stderr.txt",
+      "stdout_bytes": 312,
+      "stderr_bytes": 0,
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    },
+    {
+      "name": "full_skill_regression",
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "skills/forge-agent-flow/scripts",
+        "-p",
+        "test_*.py"
+      ],
+      "cwd": "/workspace/scratch/73714494ad2f/handoff-luna-work/agent-forge-handoff-copy",
+      "started_at_utc": "2026-10-03T18:12:22.881426+00:00",
+      "ended_at_utc": "2026-10-03T18:12:29.690909+00:00",
+      "duration_seconds": 6.809476,
+      "exit_code": 0,
+      "stdout_file": "validation/luna/full_skill_regression.stdout.txt",
+      "stderr_file": "validation/luna/full_skill_regression.stderr.txt",
+      "stdout_bytes": 0,
+      "stderr_bytes": 468,
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    },
+    {
+      "name": "handoff_invariants",
+      "argv": [
+        "python3",
+        "scripts/test_handoff_invariants.py"
+      ],
+      "cwd": "/workspace/scratch/73714494ad2f/handoff-luna-work/agent-forge-handoff-copy",
+      "started_at_utc": "2026-10-03T18:12:29.691147+00:00",
+      "ended_at_utc": "2026-10-03T18:12:29.736721+00:00",
+      "duration_seconds": 0.045566,
+      "exit_code": 0,
+      "stdout_file": "validation/luna/handoff_invariants.stdout.txt",
+      "stderr_file": "validation/luna/handoff_invariants.stderr.txt",
+      "stdout_bytes": 0,
+      "stderr_bytes": 106,
+      "env_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1"
+      }
+    }
+  ]
+}

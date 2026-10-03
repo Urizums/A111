@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; p=Path(\"shared/capture.py\"); s=p.read_text().splitlines(); print(\"\\n\".join(f\"{i+1}: {line}\" for i,line in enumerate(s) if \"mark\" in line or \"stage\" in line or \"marker\" in line))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:25:38.875055+00:00",
+    "monotonic_ns": 2687991272497,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:25:38.895921+00:00",
+    "monotonic_ns": 2688012133862,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020861365,
+  "stdout": "2: \"\"\"Observer only: exclusive captures and same-boot monotonic stage markers.\"\"\"\n28:     m=sub.add_parser('mark');m.add_argument('--events',required=True);m.add_argument('--actor',required=True);m.add_argument('--stage',required=True);m.add_argument('--event',choices=['begin','end'],required=True)\n31:     if a.command=='mark':\n32:         s=stamp();value={'schema':'forge-comparison-marker/1','actor':a.actor,'stage':a.stage,'event':a.event,**s}\n34:         exclusive(target,value);print(json.dumps({'marker':str(target),**value}));return 0\n",
+  "stderr": "",
+  "stdout_base64": "MjogIiIiT2JzZXJ2ZXIgb25seTogZXhjbHVzaXZlIGNhcHR1cmVzIGFuZCBzYW1lLWJvb3QgbW9ub3RvbmljIHN0YWdlIG1hcmtlcnMuIiIiCjI4OiAgICAgbT1zdWIuYWRkX3BhcnNlcignbWFyaycpO20uYWRkX2FyZ3VtZW50KCctLWV2ZW50cycscmVxdWlyZWQ9VHJ1ZSk7bS5hZGRfYXJndW1lbnQoJy0tYWN0b3InLHJlcXVpcmVkPVRydWUpO20uYWRkX2FyZ3VtZW50KCctLXN0YWdlJyxyZXF1aXJlZD1UcnVlKTttLmFkZF9hcmd1bWVudCgnLS1ldmVudCcsY2hvaWNlcz1bJ2JlZ2luJywnZW5kJ10scmVxdWlyZWQ9VHJ1ZSkKMzE6ICAgICBpZiBhLmNvbW1hbmQ9PSdtYXJrJzoKMzI6ICAgICAgICAgcz1zdGFtcCgpO3ZhbHVlPXsnc2NoZW1hJzonZm9yZ2UtY29tcGFyaXNvbi1tYXJrZXIvMScsJ2FjdG9yJzphLmFjdG9yLCdzdGFnZSc6YS5zdGFnZSwnZXZlbnQnOmEuZXZlbnQsKipzfQozNDogICAgICAgICBleGNsdXNpdmUodGFyZ2V0LHZhbHVlKTtwcmludChqc29uLmR1bXBzKHsnbWFya2VyJzpzdHIodGFyZ2V0KSwqKnZhbHVlfSkpO3JldHVybiAwCg==",
+  "stderr_base64": ""
+}

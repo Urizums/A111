@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python",
+    "-c",
+    "import json; from pathlib import Path; r=json.loads(Path(\"package/A2/artifacts/worker-reply.json\").read_text()); print(json.dumps({\"request_hash\":r[\"request_hash\"],\"reply_sha256\":__import__(\"hashlib\").sha256(Path(\"package/A2/artifacts/worker-reply.json\").read_bytes()).hexdigest(),\"result\":r[\"result\"]},ensure_ascii=False,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:27:34.588735+00:00",
+    "monotonic_ns": 2803704954773,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:27:34.613236+00:00",
+    "monotonic_ns": 2803729453215,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.024498442,
+  "stdout": "{\n  \"request_hash\": \"8ef79aa97223c830c1eee82f223321c8a8a1a7d2d4c338a3b20fe1ba5abe8d2b\",\n  \"reply_sha256\": \"c8b5f69467c164caa6ede610db6750588e9e8c1d3bd4b8bb17ef52f499e3f461\",\n  \"result\": {\n    \"invocation_id\": \"30c3df730e13319200770469e341ade2\",\n    \"outcome\": \"ok\",\n    \"artifacts\": {\n      \"actions\": [\n        {\n          \"task\": \"更新部署文档\",\n          \"owner\": \"赵宁\",\n          \"due\": \"周五\",\n          \"source_quote\": \"赵宁负责更新部署文档，截止周五。\"\n        },\n        {\n          \"task\": \"补充回归用例\",\n          \"owner\": \"许静\",\n          \"due\": \"2026-10-09\",\n          \"source_quote\": \"许静负责补充回归用例，截止2026-10-09。\"\n        },\n        {\n          \"task\": \"补充日志告警\",\n          \"owner\": null,\n          \"due\": null,\n          \"source_quote\": \"决定补充日志告警。\"\n        }\n      ]\n    },\n    \"evidence\": [\n      \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/actions.json\",\n      \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/explanation.md\"\n    ]\n  }\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJyZXF1ZXN0X2hhc2giOiAiOGVmNzlhYTk3MjIzYzgzMGMxZWVlODJmMjIzMzIxYzhhOGExYTdkMmQ0YzMzOGEzYjIwZmUxYmE1YWJlOGQyYiIsCiAgInJlcGx5X3NoYTI1NiI6ICJjOGI1ZjY5NDY3YzE2NGNhYTZlZGU2MTBkYjY3NTA1ODhlOWU4YzFkM2JkNGI4YmIxN2VmNTJmNDk5ZTNmNDYxIiwKICAicmVzdWx0IjogewogICAgImludm9jYXRpb25faWQiOiAiMzBjM2RmNzMwZTEzMzE5MjAwNzcwNDY5ZTM0MWFkZTIiLAogICAgIm91dGNvbWUiOiAib2siLAogICAgImFydGlmYWN0cyI6IHsKICAgICAgImFjdGlvbnMiOiBbCiAgICAgICAgewogICAgICAgICAgInRhc2siOiAi5pu05paw6YOo572y5paH5qGjIiwKICAgICAgICAgICJvd25lciI6ICLotbXlroEiLAogICAgICAgICAgImR1ZSI6ICLlkajkupQiLAogICAgICAgICAgInNvdXJjZV9xdW90ZSI6ICLotbXlroHotJ/otKPmm7TmlrDpg6jnvbLmlofmoaPvvIzmiKrmraLlkajkupTjgIIiCiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAidGFzayI6ICLooaXlhYXlm57lvZLnlKjkvosiLAogICAgICAgICAgIm93bmVyIjogIuiuuOmdmSIsCiAgICAgICAgICAiZHVlIjogIjIwMjYtMTAtMDkiLAogICAgICAgICAgInNvdXJjZV9xdW90ZSI6ICLorrjpnZnotJ/otKPooaXlhYXlm57lvZLnlKjkvovvvIzmiKrmraIyMDI2LTEwLTA544CCIgogICAgICAgIH0sCiAgICAgICAgewogICAgICAgICAgInRhc2siOiAi6KGl5YWF5pel5b+X5ZGK6K2mIiwKICAgICAgICAgICJvd25lciI6IG51bGwsCiAgICAgICAgICAiZHVlIjogbnVsbCwKICAgICAgICAgICJzb3VyY2VfcXVvdGUiOiAi5Yaz5a6a6KGl5YWF5pel5b+X5ZGK6K2m44CCIgogICAgICAgIH0KICAgICAgXQogICAgfSwKICAgICJldmlkZW5jZSI6IFsKICAgICAgIi93b3Jrc3BhY2Uvc2NyYXRjaC83MzcxNDQ5NGFkMmYvZm9yZ2UtcHJvdG9jb2wtY29tcGFyaXNvbi0yMDI2MTAwMy9wYWNrYWdlL0EyL2FydGlmYWN0cy9hY3Rpb25zLmpzb24iLAogICAgICAiL3dvcmtzcGFjZS9zY3JhdGNoLzczNzE0NDk0YWQyZi9mb3JnZS1wcm90b2NvbC1jb21wYXJpc29uLTIwMjYxMDAzL3BhY2thZ2UvQTIvYXJ0aWZhY3RzL2V4cGxhbmF0aW9uLm1kIgogICAgXQogIH0KfQo=",
+  "stderr_base64": ""
+}

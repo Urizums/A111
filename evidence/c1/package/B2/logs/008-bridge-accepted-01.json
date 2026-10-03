@@ -1,0 +1,30 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostbridge.py",
+    "accepted",
+    "--job",
+    "package/B2/job",
+    "--receipt",
+    "package/B2/native/status-query-01-return.json"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:34:35.924818+00:00",
+    "monotonic_ns": 3225041035691,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:34:35.966420+00:00",
+    "monotonic_ns": 3225082636500,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 2,
+  "elapsed_seconds": 0.041600809,
+  "stdout": "{\n  \"status\": \"reconcile_required\",\n  \"error\": \"Creation receipt task_name does not bind to requested worker\",\n  \"next_action\": \"Inspect the bound checkpoint, job journal and actual host before any retry.\",\n  \"automatic_host_call\": false\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzdGF0dXMiOiAicmVjb25jaWxlX3JlcXVpcmVkIiwKICAiZXJyb3IiOiAiQ3JlYXRpb24gcmVjZWlwdCB0YXNrX25hbWUgZG9lcyBub3QgYmluZCB0byByZXF1ZXN0ZWQgd29ya2VyIiwKICAibmV4dF9hY3Rpb24iOiAiSW5zcGVjdCB0aGUgYm91bmQgY2hlY2twb2ludCwgam9iIGpvdXJuYWwgYW5kIGFjdHVhbCBob3N0IGJlZm9yZSBhbnkgcmV0cnkuIiwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlCn0K",
+  "stderr_base64": ""
+}

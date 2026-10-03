@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; p=Path(\"package/B2/artifacts/process-captures.jsonl\"); r=json.loads(p.read_text()); out=r.get(\"stdout\",\"\").replace(\"\\n\",\" \"); err=r.get(\"stderr\",\"\").replace(\"\\n\",\" \"); print(json.dumps({\"schema\":r.get(\"schema\"),\"actor\":r.get(\"actor\"),\"cwd\":r.get(\"cwd\"),\"argv\":r.get(\"argv\"),\"exit_code\":r.get(\"exit_code\"),\"elapsed_seconds\":r.get(\"elapsed_seconds\"),\"stdout_prefix\":out[:300],\"stderr_prefix\":err[:300],\"file_bytes\":p.stat().st_size},ensure_ascii=False,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:42:21.296741+00:00",
+    "monotonic_ns": 3690412955083,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:42:21.319468+00:00",
+    "monotonic_ns": 3690435680845,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.022725762,
+  "stdout": "{\n  \"schema\": \"forge-comparison-cli/1\",\n  \"actor\": \"luna_worker\",\n  \"cwd\": \"/workspace/scratch/73714494ad2f\",\n  \"argv\": [\n    \"python\",\n    \"-c\",\n    \"from pathlib import Path\\npaths=[\\\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md\\\",\\\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/package.json\\\",\\\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/notes.txt\\\",\\\"/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/references/task-entry.md\\\",\\\"/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/references/host-drafts.md\\\",\\\"/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/references/host-execution.md\\\"]\\nfor p in paths:\\n print(\\\"\\\\\\\\n--- \\\"+p+\\\" ---\\\")\\n print(Path(p).read_text())\"\n  ],\n  \"exit_code\": 0,\n  \"elapsed_seconds\": 0.019273906,\n  \"stdout_prefix\": \"\\\\n--- /workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/shared/Worker_Protocol.md --- # Worker measurement instructions  The original immutable request and its work.prompt define your business task. Read only your own assigned source material, request, current public Forge skill and\",\n  \"stderr_prefix\": \"\",\n  \"file_bytes\": 78672\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtY29tcGFyaXNvbi1jbGkvMSIsCiAgImFjdG9yIjogImx1bmFfd29ya2VyIiwKICAiY3dkIjogIi93b3Jrc3BhY2Uvc2NyYXRjaC83MzcxNDQ5NGFkMmYiLAogICJhcmd2IjogWwogICAgInB5dGhvbiIsCiAgICAiLWMiLAogICAgImZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aFxucGF0aHM9W1wiL3dvcmtzcGFjZS9zY3JhdGNoLzczNzE0NDk0YWQyZi9mb3JnZS1wcm90b2NvbC1jb21wYXJpc29uLTIwMjYxMDAzL3NoYXJlZC9Xb3JrZXJfUHJvdG9jb2wubWRcIixcIi93b3Jrc3BhY2Uvc2NyYXRjaC83MzcxNDQ5NGFkMmYvZm9yZ2UtcHJvdG9jb2wtY29tcGFyaXNvbi0yMDI2MTAwMy9tYXRlcmlhbHMvcGFja2FnZS5qc29uXCIsXCIvd29ya3NwYWNlL3NjcmF0Y2gvNzM3MTQ0OTRhZDJmL2ZvcmdlLXByb3RvY29sLWNvbXBhcmlzb24tMjAyNjEwMDMvbWF0ZXJpYWxzL25vdGVzLnR4dFwiLFwiL3Jvb3QvLmNvZGV4L3NraWxscy9yZW1vdGUtc2tpbGxzL3NraWxsLTZhYjMyM2I3YzJhMDgxOTE5Yjk1NTAyZThlNzI5N2YwL3JlZmVyZW5jZXMvdGFzay1lbnRyeS5tZFwiLFwiL3Jvb3QvLmNvZGV4L3NraWxscy9yZW1vdGUtc2tpbGxzL3NraWxsLTZhYjMyM2I3YzJhMDgxOTE5Yjk1NTAyZThlNzI5N2YwL3JlZmVyZW5jZXMvaG9zdC1kcmFmdHMubWRcIixcIi9yb290Ly5jb2RleC9za2lsbHMvcmVtb3RlLXNraWxscy9za2lsbC02YWIzMjNiN2MyYTA4MTkxOWI5NTUwMmU4ZTcyOTdmMC9yZWZlcmVuY2VzL2hvc3QtZXhlY3V0aW9uLm1kXCJdXG5mb3IgcCBpbiBwYXRoczpcbiBwcmludChcIlxcXFxuLS0tIFwiK3ArXCIgLS0tXCIpXG4gcHJpbnQoUGF0aChwKS5yZWFkX3RleHQoKSkiCiAgXSwKICAiZXhpdF9jb2RlIjogMCwKICAiZWxhcHNlZF9zZWNvbmRzIjogMC4wMTkyNzM5MDYsCiAgInN0ZG91dF9wcmVmaXgiOiAiXFxuLS0tIC93b3Jrc3BhY2Uvc2NyYXRjaC83MzcxNDQ5NGFkMmYvZm9yZ2UtcHJvdG9jb2wtY29tcGFyaXNvbi0yMDI2MTAwMy9zaGFyZWQvV29ya2VyX1Byb3RvY29sLm1kIC0tLSAjIFdvcmtlciBtZWFzdXJlbWVudCBpbnN0cnVjdGlvbnMgIFRoZSBvcmlnaW5hbCBpbW11dGFibGUgcmVxdWVzdCBhbmQgaXRzIHdvcmsucHJvbXB0IGRlZmluZSB5b3VyIGJ1c2luZXNzIHRhc2suIFJlYWQgb25seSB5b3VyIG93biBhc3NpZ25lZCBzb3VyY2UgbWF0ZXJpYWwsIHJlcXVlc3QsIGN1cnJlbnQgcHVibGljIEZvcmdlIHNraWxsIGFuZCIsCiAgInN0ZGVycl9wcmVmaXgiOiAiIiwKICAiZmlsZV9ieXRlcyI6IDc4NjcyCn0K",
+  "stderr_base64": ""
+}

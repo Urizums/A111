@@ -1,0 +1,38 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "expense_summary_forward",
+  "goal": "Summarize the supplied expenses.csv by category with exact integer-fen totals, row counts, and all IDs.",
+  "deliverable_kind": "scoped_task",
+  "requirements": [
+    {
+      "id": "req_category_summary",
+      "text": "For every category, report the number of rows, the total amount in exact integer fen, and every source ID.",
+      "origin": "explicit",
+      "basis": "expenses.csv 按 category 汇总条数、金额（精确转整数分）、全部 ID",
+      "acceptance_ids": ["acc_category_summary"]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "acc_category_summary",
+      "assertion": "Output contains every source category exactly once; each category's row count, integer-fen sum, and complete ID list match a coordinator recomputation from expenses.csv.",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "aggregate_expenses",
+      "title": "Aggregate expense rows by category",
+      "depends_on": [],
+      "owner": "native_worker",
+      "write_paths": ["artifacts/"],
+      "acceptance_ids": ["acc_category_summary"]
+    }
+  ],
+  "defaults": [
+    "Sort category keys lexicographically and preserve source row order within each ID list.",
+    "Use integer fen and a concise Chinese Markdown explanation."
+  ],
+  "unknowns": []
+}

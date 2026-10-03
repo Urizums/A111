@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nimport json\nrecord=json.loads(Path(\"package/B1/logs/006-bridge-issue.json\").read_text(encoding=\"utf-8\"))\nissue=json.loads(record[\"stdout\"])\nPath(\"package/B1/native/spawn-arguments.json\").write_text(json.dumps(issue[\"spawn_arguments\"],ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")\n# Retain the issue-derived status query too, as its own exact argument object.\nPath(\"package/B1/native/host-status-query.json\").write_text(json.dumps(issue[\"host_status_query\"],ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:49:20.930331+00:00",
+    "monotonic_ns": 510046546595,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:49:20.950715+00:00",
+    "monotonic_ns": 510066934185,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.02038759,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

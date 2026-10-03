@@ -1,0 +1,340 @@
+{
+  "schema": "forge-continuation-verification/1",
+  "at": "2026-10-03T04:59:25.947896+00:00",
+  "grader": "/root",
+  "candidate": "O3",
+  "verdict": "pass for frozen O01–O09 local scope",
+  "saved_commit": "338a26378dc65380add4f89b6a8e5dd88104ef58",
+  "saved_files_currently_exact": 80,
+  "regression": {
+    "argv": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "............................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 348 tests in 5.254s\n\nOK\n",
+    "baseline": 328,
+    "added": 20,
+    "functional_repair_round": 2,
+    "max_functional_repairs": 2
+  },
+  "acceptance": {
+    "O01": {
+      "required": "初始与重复 inspect 只读",
+      "tests": [
+        "initial_and_proposed_inspection_never_schedules_or_claims"
+      ],
+      "actual": [
+        "coordinator/Fresh_Forward_Source_Grade.json",
+        "overview-forward/inspection-observations/index.json"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    },
+    "O02": {
+      "required": "区分 proposed / claimed / ack_pending，保持身份且不授权调用",
+      "tests": [
+        "initial_and_proposed_inspection_never_schedules_or_claims",
+        "claimed_creation_inspection_and_resume_only_query",
+        "ack_pending_inspect_keeps_saved_ack_until_resume"
+      ],
+      "independent": [
+        "overview-audit/case-results.json"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    },
+    "O03": {
+      "required": "本地容量概览只读，准确显示 slot",
+      "tests": [
+        "capacity_inspect_never_admits_or_releases"
+      ],
+      "independent": [
+        "audit/probe-run/evidence.json"
+      ],
+      "actual": [
+        "forward/tickets/control/execution-record.json",
+        "forward/readings/control/execution-record.json"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    },
+    "O04": {
+      "required": "同 boot monotonic 观察，显式时钟异常且不推断终态",
+      "tests": [
+        "deadline_observation_is_not_a_persisted_expiry",
+        "clock_change_backwards_or_unavailable_is_visible"
+      ],
+      "actual": [
+        "root-live/Live_Conclusion.json",
+        "overview-forward/execution-record.json"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    },
+    "O05": {
+      "required": "inspect 不回放 pending journal，resume 使用原 intent",
+      "tests": [
+        "bridge_journal_inspect_never_replays_and_resume_reuses_it"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    },
+    "O06": {
+      "required": "exact run 守卫，未知创建只查询、不重建",
+      "tests": [
+        "wrong_run_id_rejected_before_any_mutation",
+        "claimed_creation_inspection_and_resume_only_query",
+        "cli_inspection_and_wrong_run_resume"
+      ],
+      "independent": [
+        "overview-audit/case-results.json",
+        "audit/probe-run/evidence.json"
+      ],
+      "actual": [
+        "coordinator/Fresh_Forward_Source_Grade.json"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    },
+    "O07": {
+      "required": "不补充预算、不解锁 blocked、不推进 completed",
+      "tests": [
+        "failed_run_remains_blocked_and_does_not_retry",
+        "completed_resume_does_not_advance_original_checkpoint",
+        "exhausted_limits_not_refilled_by_resume"
+      ],
+      "independent": [
+        "overview-audit/case-results.json"
+      ],
+      "actual": [
+        "coordinator/actual-review-recovery/Conclusion.json"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    },
+    "O08": {
+      "required": "fresh Luna 两个真实普通任务，经原始验收提交",
+      "actual": [
+        "overview-forward/execution-record.json",
+        "coordinator/Fresh_Forward_Source_Grade.json"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    },
+    "O09": {
+      "required": "仅显式拒绝确定无效、未提交的本地 review，保留原 ack/attempt/预算",
+      "tests": [
+        "invalid_local_review_ack_can_be_explicitly_rejected_with_old_bytes_retained",
+        "valid_pending_review_ack_cannot_be_discarded",
+        "invalid_ack_rejection_needs_correct_run_action_and_reason",
+        "native_ack_and_committed_review_ack_cannot_be_discarded",
+        "review_ack_with_pending_bridge_transaction_cannot_be_discarded",
+        "explicit_rejection_does_not_refill_original_budget",
+        "wrapped_unavailable_review_evidence_is_not_discardable"
+      ],
+      "independent": [
+        "overview-audit/case-results.json",
+        "coordinator/Independent_Audit_Record_Grade.json"
+      ],
+      "actual": [
+        "coordinator/actual-review-recovery/Conclusion.json"
+      ],
+      "verdict": "pass in frozen local scope",
+      "evidence_kind": {
+        "tests": "root-authored unit/process/fault fixtures",
+        "independent": "Luna synthetic-receipt CLI probes",
+        "actual": "native tools and original source checks"
+      }
+    }
+  },
+  "current_business_native_accounting": {
+    "workers": 5,
+    "spawn": 5,
+    "query": 9,
+    "interrupt": 1,
+    "native_calls": 15,
+    "review_claims": 5,
+    "successful_source_commits": 4,
+    "invalid_local_review_retained": 1,
+    "excluded": "parent setup/admin calls, notification waits, auditor/material agents and all synthetic fixtures",
+    "tokens": null,
+    "cost": null
+  },
+  "drivers": [
+    {
+      "directory": "root-live/driver",
+      "run_id": "driver_60570b4e6e1947c4983170a51ac97582",
+      "phase": "blocked",
+      "counts": {
+        "spawn": 1,
+        "query": 2,
+        "interrupt": 1
+      }
+    },
+    {
+      "directory": "forward/tickets/control/driver",
+      "run_id": "driver_2cd552b533fa4280bb61550557521a6c",
+      "phase": "completed",
+      "counts": {
+        "spawn": 1,
+        "query": 2,
+        "review": 2
+      }
+    },
+    {
+      "directory": "forward/readings/control/driver",
+      "run_id": "driver_d4f79b268e2e425aba370b397852c4d8",
+      "phase": "completed",
+      "counts": {
+        "spawn": 1,
+        "query": 2,
+        "review": 1
+      }
+    },
+    {
+      "directory": "overview-forward/events/driver",
+      "run_id": "driver_dead012bdcf24113b0edaa753673d379",
+      "phase": "completed",
+      "counts": {
+        "spawn": 1,
+        "query": 2,
+        "review": 1
+      }
+    },
+    {
+      "directory": "overview-forward/measurements/driver",
+      "run_id": "driver_02cbc682bcae435fbfd6c066ba6dd458",
+      "phase": "completed",
+      "counts": {
+        "spawn": 1,
+        "query": 1,
+        "review": 1
+      }
+    }
+  ],
+  "fresh_forward_source_grade": {
+    "path": "coordinator/Fresh_Forward_Source_Grade.json",
+    "sha256": "bb925c954af807932acec32d198f3a6d10ea64e32cde1a7d251c299761b7d7e6"
+  },
+  "independent_audit_record_grade": {
+    "grader": "/root",
+    "native_calls": 0,
+    "method": "Read and cross-check retained CLI captures, never execute or rewrite independent audit fixtures",
+    "overview_runs": [
+      {
+        "directory": "overview-audit",
+        "original_index_rows": 49,
+        "original_index_sha256": "6d0efc2c941794e6b46c342c90596bfb7b17702f8f6153e8f193b78dcc8d0642",
+        "complete_per_command_records": 55,
+        "derived_index_sha256": "3133d51055054b7f38d504815e92d9730940e7d807cd12e7d7f277aedc2798ed",
+        "sampled_case_groups": 5,
+        "verified_actual_exit_codes": true,
+        "classification": "synthetic receipts only"
+      },
+      {
+        "directory": "overview-audit/runs/20261003T044702Z-3c341245",
+        "original_index_rows": 47,
+        "original_index_sha256": "b01771f57d4f30a11c68b4d3d9f5b7448b74fb1272492a0262923b16e921d755",
+        "complete_per_command_records": 55,
+        "derived_index_sha256": "f700bac02959ce6ac58c4554247879b009b4aefe4125c8c4d93be8a5dce1ff6b",
+        "sampled_case_groups": 5,
+        "verified_actual_exit_codes": true,
+        "classification": "synthetic receipts only"
+      }
+    ],
+    "resource": {
+      "retained_cli_records": 40,
+      "source_unchanged_during_probes": true,
+      "sampled_scenarios": [
+        "recovery",
+        "capacity",
+        "deadline"
+      ],
+      "classification": "synthetic receipts only"
+    },
+    "index_inconsistency": "Original overview indexes retain 49 and 47 rows, each run has 55 complete command captures; cause undetermined. Original indexes preserved; separate derived locators checked against all files.",
+    "root_reader_correction": "Initial display command resolved isolated-run record_dir against the run directory twice and failed to locate a file; corrected to the documented overview-audit base. No audit or business command rerun.",
+    "coverage_limit": "Independent CLI sampling is narrower than O01–O09; root integrates unit/fault fixtures and actual task evidence separately.",
+    "verdict": "pass for retained sampled cases; archival index inconsistency disclosed"
+  },
+  "functional_repairs": {
+    "used": 2,
+    "limit": 2,
+    "records": [
+      {
+        "path": "coordinator/Repair_1.json",
+        "sha256": "132750d3b07afdf7d938764a18007cc135f604b47d33a20a726cde4a7ee0f8c8"
+      },
+      {
+        "path": "coordinator/Repair_2.json",
+        "sha256": "63e8ac50828d5387f9227e63a362ae2e14192dc05c0ca9deed7085303740bd42"
+      }
+    ]
+  },
+  "assistance_history": {
+    "baseline": "Readings raw reply had an unsupported invocation_id; parent retained and normalized it. Tickets wrong-SHA review was rejected and immutable; Root recovered the same original attempt with one additional independent review, no new native call.",
+    "fresh_O3": "Parent reports no ack normalization, retry-review, respawn or interrupt; all retained current refs and original commits verified by Root."
+  },
+  "historical_R2_raw_workspace_restored": false,
+  "historical_counts_separate": "Prior 9 workers / 27 native calls / 7 reviews are conversation summary only; excluded from current counts.",
+  "scope_limits": [
+    "No provider SDK runtime or global quota validation",
+    "No internal model identity or token/cost telemetry",
+    "No natural network delay/loss claim",
+    "No proof of shell termination from native interrupt",
+    "No external business-effect idempotency claim",
+    "No UI/browser acceptance; existing blockers retained",
+    "No measured speed improvement claim"
+  ],
+  "next_work": "Separate frozen host reply/decision draft helpers; no automatic business result or acceptance, reuse original validators and compare like-for-like tasks.",
+  "independent_audit_public_report": {
+    "path": "overview-audit/audit-report.md",
+    "scope": "Five sampled synthetic-receipt case groups; detailed O01–O09 partial/unassessed mapping retained",
+    "sha256": "fb74afda14a6753e39f03dc2b07556b956ac01cbc044ad923de96fefc1426e8c"
+  },
+  "root_audit_mapping_note": "Raw capture 53 is completed and capture 54 resumes the already-completed original run. Independent report has corrected its initial understated coverage without changing raw files. Checkpoint byte-stability is supported separately by Root fixtures and original recovery evidence.",
+  "validation_agents_final": {
+    "fresh_forward": "completed; no protocol repairs reported",
+    "independent_overview_audit": "completed; no confirmed required gap in sampled scope; explicit coverage limits"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostbridge.py",
+    "receive",
+    "--job",
+    "package/A1/job",
+    "--receipt",
+    "package/A1/native/status-call-03-return.json",
+    "--reply",
+    "package/A1/artifacts/worker-reply.json"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:10:25.309067+00:00",
+    "monotonic_ns": 1774425285724,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:10:25.351148+00:00",
+    "monotonic_ns": 1774467370776,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.042085052,
+  "stdout": "{\n  \"phase\": \"received\",\n  \"job_id\": \"job_3f3ba4c06aff4a49b4d2f2b01c5b6ac8\",\n  \"attempt_id\": \"765e31c228f34ff8bb1704f9022f140a\",\n  \"request_hash\": \"ddd3dcdb5dfaead04b8319a2b5eb6e8ec62991ba2e3560c1e55f8028621d043a\",\n  \"action\": \"coordinator_verify_then_commit\",\n  \"worker\": \"/root/luna_compare_package/luna_forge_765e31c228f3\",\n  \"commit\": null,\n  \"coordinator_outcome\": null,\n  \"automatic_host_call\": false,\n  \"internal_model_identity_verified\": false,\n  \"tokens\": null,\n  \"cost\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwaGFzZSI6ICJyZWNlaXZlZCIsCiAgImpvYl9pZCI6ICJqb2JfM2YzYmE0YzA2YWZmNGE0OWI0ZDJmMmIwMWM1YjZhYzgiLAogICJhdHRlbXB0X2lkIjogIjc2NWUzMWMyMjhmMzRmZjhiYjE3MDRmOTAyMmYxNDBhIiwKICAicmVxdWVzdF9oYXNoIjogImRkZDNkY2RiNWRmYWVhZDA0YjgzMTlhMmI1ZWI2ZThlYzYyOTkxYmEyZTM1NjBjMWU1NWY4MDI4NjIxZDA0M2EiLAogICJhY3Rpb24iOiAiY29vcmRpbmF0b3JfdmVyaWZ5X3RoZW5fY29tbWl0IiwKICAid29ya2VyIjogIi9yb290L2x1bmFfY29tcGFyZV9wYWNrYWdlL2x1bmFfZm9yZ2VfNzY1ZTMxYzIyOGYzIiwKICAiY29tbWl0IjogbnVsbCwKICAiY29vcmRpbmF0b3Jfb3V0Y29tZSI6IG51bGwsCiAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwKICAiaW50ZXJuYWxfbW9kZWxfaWRlbnRpdHlfdmVyaWZpZWQiOiBmYWxzZSwKICAidG9rZW5zIjogbnVsbCwKICAiY29zdCI6IG51bGwKfQo=",
+  "stderr_base64": ""
+}

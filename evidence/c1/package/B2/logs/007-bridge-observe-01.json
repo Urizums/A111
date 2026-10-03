@@ -1,0 +1,30 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostbridge.py",
+    "observe",
+    "--job",
+    "package/B2/job",
+    "--receipt",
+    "package/B2/native/status-query-01-return.json"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:34:08.665850+00:00",
+    "monotonic_ns": 3197782065881,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:34:08.707355+00:00",
+    "monotonic_ns": 3197823571851,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 2,
+  "elapsed_seconds": 0.04150597,
+  "stdout": "{\n  \"status\": \"reconcile_required\",\n  \"error\": \"Only active jobs can observe running status\",\n  \"next_action\": \"Inspect the bound checkpoint, job journal and actual host before any retry.\",\n  \"automatic_host_call\": false\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzdGF0dXMiOiAicmVjb25jaWxlX3JlcXVpcmVkIiwKICAiZXJyb3IiOiAiT25seSBhY3RpdmUgam9icyBjYW4gb2JzZXJ2ZSBydW5uaW5nIHN0YXR1cyIsCiAgIm5leHRfYWN0aW9uIjogIkluc3BlY3QgdGhlIGJvdW5kIGNoZWNrcG9pbnQsIGpvYiBqb3VybmFsIGFuZCBhY3R1YWwgaG9zdCBiZWZvcmUgYW55IHJldHJ5LiIsCiAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZQp9Cg==",
+  "stderr_base64": ""
+}

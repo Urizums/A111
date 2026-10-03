@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; p=json.loads(Path(\"materials/package.json\").read_text()); print(json.dumps({\"schema\":p[\"schema\"],\"acceptance\":p[\"acceptance\"]},ensure_ascii=False,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:24:44.341173+00:00",
+    "monotonic_ns": 2633457389864,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:24:44.361221+00:00",
+    "monotonic_ns": 2633477435833,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020045969,
+  "stdout": "{\n  \"schema\": \"forge-package/1\",\n  \"acceptance\": {\n    \"criteria\": [\n      {\n        \"id\": \"quotes\",\n        \"kind\": \"machine\",\n        \"required\": true,\n        \"assertion\": \"Every source_quote is an exact substring of the supplied notes.\"\n      },\n      {\n        \"id\": \"commitments\",\n        \"kind\": \"human\",\n        \"required\": true,\n        \"assertion\": \"Only explicit action items are included; unstated owners and due dates remain null.\"\n      }\n    ]\n  }\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtcGFja2FnZS8xIiwKICAiYWNjZXB0YW5jZSI6IHsKICAgICJjcml0ZXJpYSI6IFsKICAgICAgewogICAgICAgICJpZCI6ICJxdW90ZXMiLAogICAgICAgICJraW5kIjogIm1hY2hpbmUiLAogICAgICAgICJyZXF1aXJlZCI6IHRydWUsCiAgICAgICAgImFzc2VydGlvbiI6ICJFdmVyeSBzb3VyY2VfcXVvdGUgaXMgYW4gZXhhY3Qgc3Vic3RyaW5nIG9mIHRoZSBzdXBwbGllZCBub3Rlcy4iCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAiaWQiOiAiY29tbWl0bWVudHMiLAogICAgICAgICJraW5kIjogImh1bWFuIiwKICAgICAgICAicmVxdWlyZWQiOiB0cnVlLAogICAgICAgICJhc3NlcnRpb24iOiAiT25seSBleHBsaWNpdCBhY3Rpb24gaXRlbXMgYXJlIGluY2x1ZGVkOyB1bnN0YXRlZCBvd25lcnMgYW5kIGR1ZSBkYXRlcyByZW1haW4gbnVsbC4iCiAgICAgIH0KICAgIF0KICB9Cn0K",
+  "stderr_base64": ""
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_c98df856ea9d",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; import json,hashlib; base=Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts\"); req=json.loads(Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/job/request.json\").read_text(encoding=\"utf-8\"))[\"request\"]; rep=json.loads((base/\"worker-reply.json\").read_text(encoding=\"utf-8\")); assert set(rep)=={\"schema_version\",\"job_id\",\"attempt_id\",\"request_hash\",\"outcome\",\"result\",\"artifacts\",\"reason\"}; assert rep[\"schema_version\"]==\"forge-host-reply/1\" and rep[\"job_id\"]==req[\"job_id\"] and rep[\"attempt_id\"]==req[\"attempt_id\"] and rep[\"request_hash\"]==\"55e701dd6b9e14d21fe3a2e5b1ed6dddcd9ed383df29fea0925a3adc04585483\"; assert rep[\"outcome\"]==\"done\" and rep[\"reason\"] is None; result=rep[\"result\"]; assert set(result)=={\"invocation_id\",\"outcome\",\"artifacts\",\"evidence\"} and result[\"invocation_id\"]==\"effdf28894dd763006de01d952807d97\" and result[\"outcome\"]==\"ok\" and list(result[\"artifacts\"])==[\"actions\"] and result[\"evidence\"]; assert all(set(x)=={\"path\",\"sha256\"} and hashlib.sha256(Path(x[\"path\"]).read_bytes()).hexdigest()==x[\"sha256\"] for x in rep[\"artifacts\"]); assert len(rep[\"artifacts\"])==2; print(\"PASS: host reply shape, copied identities, package result contract, and outer artifact hashes.\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:55:09.633475+00:00",
+    "monotonic_ns": 858749689544,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:55:09.654300+00:00",
+    "monotonic_ns": 858770512106,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020822562,
+  "stdout": "PASS: host reply shape, copied identities, package result contract, and outer artifact hashes.\n",
+  "stderr": "",
+  "stdout_base64": "UEFTUzogaG9zdCByZXBseSBzaGFwZSwgY29waWVkIGlkZW50aXRpZXMsIHBhY2thZ2UgcmVzdWx0IGNvbnRyYWN0LCBhbmQgb3V0ZXIgYXJ0aWZhY3QgaGFzaGVzLgo=",
+  "stderr_base64": ""
+}

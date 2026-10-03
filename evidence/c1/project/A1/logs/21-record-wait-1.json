@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib; p=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/native/waits/wait-1.json\"); p.parent.mkdir(parents=True,exist_ok=True); p.write_text(json.dumps({\"schema\":\"forge-comparison-notification-wait/1\",\"sample\":\"A1\",\"actor\":\"coordinator\",\"tool\":\"collaboration.wait_agent\",\"input\":{\"timeout_ms\":45000},\"raw_return\":{\"message\":\"Wait timed out.\",\"timed_out\":true},\"target_worker\":\"/root/luna_compare_project/luna_forge_7711875bcfc1\",\"marker_begin\":\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/observations/719755547621_9d64aedd96e44029a5d602af85770b70.json\",\"marker_end\":\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/observations/770146562738_afb5c72b7d8f4308bc7acc666106d860.json\",\"elapsed_interpretation\":\"Marker bracket includes tool and response overhead; exact native wait duration is unknown. The tool returned timed_out=true for the requested 45000ms.\"},ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:54:01.540435+00:00",
+    "monotonic_ns": 790656653904,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:54:01.564305+00:00",
+    "monotonic_ns": 790680522073,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 0.023868169,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<string>\", line 1, in <module>\nNameError: name 'true' is not defined. Did you mean: 'True'?\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIjxzdHJpbmc+IiwgbGluZSAxLCBpbiA8bW9kdWxlPgpOYW1lRXJyb3I6IG5hbWUgJ3RydWUnIGlzIG5vdCBkZWZpbmVkLiBEaWQgeW91IG1lYW46ICdUcnVlJz8K"
+}

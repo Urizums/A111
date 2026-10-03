@@ -1,0 +1,46 @@
+{
+  "scope": "Root analysis only; no canonical or frozen study change",
+  "corrections": [
+    {
+      "issue": "single complete JSON capture with .jsonl extension omitted",
+      "fix": "schema discovery includes .json and .jsonl",
+      "retention": "raw extensions and records unchanged"
+    },
+    {
+      "issue": "worker role uses actual worker task name rather than role literal",
+      "fix": "bind alias from original control.worker for analysis and preserve raw actor",
+      "grade": "protocol actor deviation is separately visible"
+    },
+    {
+      "issue": "no completed snapshot during running was reported false",
+      "fix": "pending completion-order result is null"
+    },
+    {
+      "issue": "control.worker null while newly dispatching caused AttributeError",
+      "original_exit": 1,
+      "original_exception": "AttributeError: 'NoneType' object has no attribute 'split'",
+      "fix": "explicit null-to-empty normalization",
+      "retention": "no measurements replaced; rerun read-only analyzer"
+    },
+    {
+      "issue": "Root business-field reader assumed categories wrapper/source_ids key",
+      "fix": "recognize actual equivalent direct category mapping and ids alias after human source review",
+      "grade": "no new output-format acceptance imposed; business values checked against same source"
+    },
+    {
+      "issue": "original project worker may continue writing after Q5 running",
+      "fix": "analysis selects manifest-backed project/shared cutoff copy, not later live files",
+      "scope": "non-atomic per-file stable snapshot; no terminal claim"
+    },
+    {
+      "issue": "A2 worker capture lies in shared rather than sample tree",
+      "fix": "include actual same-worker shared capture explicitly with outside_write_scope label",
+      "scope": "original outside write retained, not normalized into compliant output"
+    },
+    {
+      "issue": "operator full indexes omit final own audit, contain stale script hash and nonexistent037 reference",
+      "fix": "Root supplemental actual-schema record index after operator stopped; originals unchanged",
+      "scope": "no retrospective operator conformance"
+    }
+  ]
+}

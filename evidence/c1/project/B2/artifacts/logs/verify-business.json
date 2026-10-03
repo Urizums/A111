@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_6e153853d17f",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python",
+    "-c",
+    "import csv,json\nfrom decimal import Decimal\nsource = \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv\"\njson_path = \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary.json\"\nmd_path = \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary_zh.md\"\nexpected = {}\nwith open(source, encoding=\"utf-8\", newline=\"\") as source_file:\n    for row in csv.DictReader(source_file):\n        fen = Decimal(row[\"amount_yuan\"]) * Decimal(100)\n        assert fen == fen.to_integral_value()\n        item = expected.setdefault(row[\"category\"], {\"row_count\": 0, \"total_fen\": 0, \"ids\": []})\n        item[\"row_count\"] += 1\n        item[\"total_fen\"] += int(fen)\n        item[\"ids\"].append(row[\"id\"])\nexpected = {key: expected[key] for key in sorted(expected)}\nwith open(json_path, encoding=\"utf-8\") as result_file:\n    actual = json.load(result_file)\nassert list(actual) == sorted(actual)\nassert actual == expected\nwith open(md_path, encoding=\"utf-8\") as markdown_file:\n    markdown = markdown_file.read()\nfor key, item in expected.items():\n    row = \"| {} | {} | {} | {} |\".format(key, item[\"row_count\"], item[\"total_fen\"], \", \".join(item[\"ids\"]))\n    assert row in markdown\nprint(\"business_validation=passed; categories={}; rows={}\".format(len(expected), sum(item[\"row_count\"] for item in expected.values())))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:24:42.062389+00:00",
+    "monotonic_ns": 2631178604842,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:24:42.080584+00:00",
+    "monotonic_ns": 2631196794584,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.018189742,
+  "stdout": "business_validation=passed; categories=3; rows=6\n",
+  "stderr": "",
+  "stdout_base64": "YnVzaW5lc3NfdmFsaWRhdGlvbj1wYXNzZWQ7IGNhdGVnb3JpZXM9Mzsgcm93cz02Cg==",
+  "stderr_base64": ""
+}

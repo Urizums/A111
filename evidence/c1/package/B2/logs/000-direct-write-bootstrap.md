@@ -1,0 +1,1 @@
+Coordinator direct-write bootstrap: this file created the sample log directory with the patch tool before subprocess capture began. No shell subprocess was used for this write. Later process invocations are captured with shared/capture.py.

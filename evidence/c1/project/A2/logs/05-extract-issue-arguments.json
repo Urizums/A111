@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib\nr=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003\"); b=r/\"project/A2\"\ncap=json.loads((b/\"logs/04-hostbridge-issue.json\").read_text())\no=json.loads(cap[\"stdout\"])\nfor key,name in [(\"spawn_arguments\",\"spawn-arguments.json\"),(\"host_status_query\",\"host-status-query.json\")]:\n (b/\"native\"/name).write_text(json.dumps(o[key],ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")\n(b/\"native\"/\"dispatch-packet.json\").write_text(json.dumps(o,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")\nprint(json.dumps({\"task_name\":o[\"spawn_arguments\"][\"task_name\"],\"host_status_query\":o[\"host_status_query\"],\"phase\":o[\"phase\"],\"action\":o[\"action\"]},ensure_ascii=False))\n"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:32:56.499958+00:00",
+    "monotonic_ns": 3125616214346,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:32:56.519934+00:00",
+    "monotonic_ns": 3125636144589,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.019930243,
+  "stdout": "{\"task_name\": \"luna_forge_01576d11c27a\", \"host_status_query\": {\"path_prefix\": \"/root/luna_compare_project/luna_forge_01576d11c27a\"}, \"phase\": \"dispatching\", \"action\": \"reconcile_host_before_any_retry\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJ0YXNrX25hbWUiOiAibHVuYV9mb3JnZV8wMTU3NmQxMWMyN2EiLCAiaG9zdF9zdGF0dXNfcXVlcnkiOiB7InBhdGhfcHJlZml4IjogIi9yb290L2x1bmFfY29tcGFyZV9wcm9qZWN0L2x1bmFfZm9yZ2VfMDE1NzZkMTFjMjdhIn0sICJwaGFzZSI6ICJkaXNwYXRjaGluZyIsICJhY3Rpb24iOiAicmVjb25jaWxlX2hvc3RfYmVmb3JlX2FueV9yZXRyeSJ9Cg==",
+  "stderr_base64": ""
+}

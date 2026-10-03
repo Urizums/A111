@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib; p=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts\"); print((p/\"summary.json\").read_text()); print(\"\\n--- Chinese explanation ---\\n\"); print((p/\"summary_zh.md\").read_text())"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:57:49.037131+00:00",
+    "monotonic_ns": 1018153348922,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:57:49.058663+00:00",
+    "monotonic_ns": 1018174878896,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.021529974,
+  "stdout": "{\n  \"categories\": {\n    \"design\": {\n      \"row_count\": 1,\n      \"total_amount_fen\": 1600,\n      \"source_ids\": [\n        \"C604\"\n      ]\n    },\n    \"dev\": {\n      \"row_count\": 2,\n      \"total_amount_fen\": 946,\n      \"source_ids\": [\n        \"C602\",\n        \"C605\"\n      ]\n    },\n    \"ops\": {\n      \"row_count\": 3,\n      \"total_amount_fen\": 1464,\n      \"source_ids\": [\n        \"C601\",\n        \"C603\",\n        \"C606\"\n      ]\n    }\n  }\n}\n\n\n--- Chinese explanation ---\n\n# 费用分类汇总\n\n金额以人民币分为单位，按十进制精确换算；来源 ID 按 CSV 行序排列。\n\n| 类别 | 行数 | 合计（分） | 来源 ID |\n|---|---:|---:|---|\n| design | 1 | 1600 | C604 |\n| dev | 2 | 946 | C602、C605 |\n| ops | 3 | 1464 | C601、C603、C606 |\n\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJjYXRlZ29yaWVzIjogewogICAgImRlc2lnbiI6IHsKICAgICAgInJvd19jb3VudCI6IDEsCiAgICAgICJ0b3RhbF9hbW91bnRfZmVuIjogMTYwMCwKICAgICAgInNvdXJjZV9pZHMiOiBbCiAgICAgICAgIkM2MDQiCiAgICAgIF0KICAgIH0sCiAgICAiZGV2IjogewogICAgICAicm93X2NvdW50IjogMiwKICAgICAgInRvdGFsX2Ftb3VudF9mZW4iOiA5NDYsCiAgICAgICJzb3VyY2VfaWRzIjogWwogICAgICAgICJDNjAyIiwKICAgICAgICAiQzYwNSIKICAgICAgXQogICAgfSwKICAgICJvcHMiOiB7CiAgICAgICJyb3dfY291bnQiOiAzLAogICAgICAidG90YWxfYW1vdW50X2ZlbiI6IDE0NjQsCiAgICAgICJzb3VyY2VfaWRzIjogWwogICAgICAgICJDNjAxIiwKICAgICAgICAiQzYwMyIsCiAgICAgICAgIkM2MDYiCiAgICAgIF0KICAgIH0KICB9Cn0KCgotLS0gQ2hpbmVzZSBleHBsYW5hdGlvbiAtLS0KCiMg6LS555So5YiG57G75rGH5oC7Cgrph5Hpop3ku6XkurrmsJHluIHliIbkuLrljZXkvY3vvIzmjInljYHov5vliLbnsr7noa7mjaLnrpfvvJvmnaXmupAgSUQg5oyJIENTViDooYzluo/mjpLliJfjgIIKCnwg57G75YirIHwg6KGM5pWwIHwg5ZCI6K6h77yI5YiG77yJIHwg5p2l5rqQIElEIHwKfC0tLXwtLS06fC0tLTp8LS0tfAp8IGRlc2lnbiB8IDEgfCAxNjAwIHwgQzYwNCB8CnwgZGV2IHwgMiB8IDk0NiB8IEM2MDLjgIFDNjA1IHwKfCBvcHMgfCAzIHwgMTQ2NCB8IEM2MDHjgIFDNjAz44CBQzYwNiB8Cgo=",
+  "stderr_base64": ""
+}

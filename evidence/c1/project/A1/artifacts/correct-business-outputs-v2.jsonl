@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_7711875bcfc1",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "import csv,json,os; from decimal import Decimal; source=\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv\"; out=\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts\"; groups={}; f=open(source,newline=\"\",encoding=\"utf-8\"); rows=csv.DictReader(f); exec(\"for row in rows:\\n category=row[\\\"category\\\"]\\n amount_fen=int((Decimal(row[\\\"amount_yuan\\\"])*Decimal(100)).to_integral_exact())\\n group=groups.setdefault(category,{\\\"row_count\\\":0,\\\"total_amount_fen\\\":0,\\\"source_ids\\\":[]})\\n group[\\\"row_count\\\"]+=1\\n group[\\\"total_amount_fen\\\"]+=amount_fen\\n group[\\\"source_ids\\\"].append(row[\\\"id\\\"])\\n\"); f.close(); result={\"categories\":{category:groups[category] for category in sorted(groups)}}; open(os.path.join(out,\"summary.json\"),\"w\",encoding=\"utf-8\").write(json.dumps(result,ensure_ascii=False,indent=2)+chr(10)); md=[\"# 费用分类汇总\",\"\",\"金额以人民币分为单位，按十进制精确换算；来源 ID 按 CSV 行序排列。\",\"\",\"| 类别 | 行数 | 合计（分） | 来源 ID |\",\"|---|---:|---:|---|\"]+[\"| {} | {} | {} | {} |\".format(category,groups[category][\"row_count\"],groups[category][\"total_amount_fen\"],\"、\".join(groups[category][\"source_ids\"])) for category in sorted(groups)]; open(os.path.join(out,\"summary_zh.md\"),\"w\",encoding=\"utf-8\").write(chr(10).join(md)+chr(10))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:54:49.945503+00:00",
+    "monotonic_ns": 839061716950,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:54:49.964806+00:00",
+    "monotonic_ns": 839081018341,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.019301391,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

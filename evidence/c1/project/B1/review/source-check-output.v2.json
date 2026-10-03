@@ -1,0 +1,117 @@
+{
+  "schema": "forge-expense-source-review/1",
+  "sample": "B1",
+  "source": {
+    "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv",
+    "sha256": "f1a6914eae07b97537e809c9e9fa5000acd02b391ca64484927596a19c2b3bfb",
+    "rows": 6
+  },
+  "outputs": {
+    "summary_json_sha256": "8bc08ffb153c2526f200e733bbe5d404d203519b285fa37b6082ae47b090d543",
+    "summary_zh_sha256": "37485756b39849b3cc7401fdcda42a4c0b83bb5140ec55858d5c69e5f892f8c6"
+  },
+  "computed_from_raw_csv_with_decimal_fen": {
+    "design": {
+      "row_count": 1,
+      "total_amount_fen": 1600,
+      "source_ids": [
+        "C604"
+      ]
+    },
+    "dev": {
+      "row_count": 2,
+      "total_amount_fen": 946,
+      "source_ids": [
+        "C602",
+        "C605"
+      ]
+    },
+    "ops": {
+      "row_count": 3,
+      "total_amount_fen": 1464,
+      "source_ids": [
+        "C601",
+        "C603",
+        "C606"
+      ]
+    }
+  },
+  "worker_fen_fields": {
+    "design": [
+      "total_fen"
+    ],
+    "dev": [
+      "total_fen"
+    ],
+    "ops": [
+      "total_fen"
+    ]
+  },
+  "worker_summary": {
+    "categories": {
+      "design": {
+        "row_count": 1,
+        "total_fen": 1600,
+        "source_ids": [
+          "C604"
+        ]
+      },
+      "dev": {
+        "row_count": 2,
+        "total_fen": 946,
+        "source_ids": [
+          "C602",
+          "C605"
+        ]
+      },
+      "ops": {
+        "row_count": 3,
+        "total_fen": 1464,
+        "source_ids": [
+          "C601",
+          "C603",
+          "C606"
+        ]
+      }
+    }
+  },
+  "markdown_rows": [
+    {
+      "category": "design",
+      "row_count": 1,
+      "total_amount_fen": 1600,
+      "source_ids": [
+        "C604"
+      ]
+    },
+    {
+      "category": "dev",
+      "row_count": 2,
+      "total_amount_fen": 946,
+      "source_ids": [
+        "C602",
+        "C605"
+      ]
+    },
+    {
+      "category": "ops",
+      "row_count": 3,
+      "total_amount_fen": 1464,
+      "source_ids": [
+        "C601",
+        "C603",
+        "C606"
+      ]
+    }
+  ],
+  "checks": {
+    "json_shape": true,
+    "category_set_exactly_once": true,
+    "row_counts": true,
+    "exact_integer_fen_sums": true,
+    "complete_ordered_ids": true,
+    "chinese_heading": true,
+    "markdown_rows_agree": true
+  },
+  "pass": true
+}

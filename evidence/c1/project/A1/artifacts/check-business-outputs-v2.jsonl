@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_7711875bcfc1",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "import csv,json,os; from decimal import Decimal; base=\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/artifacts\"; src=\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv\"; expected={}; f=open(src,newline=\"\",encoding=\"utf-8\"); exec(\"for row in csv.DictReader(f):\\n g=expected.setdefault(row[\\\"category\\\"],{\\\"row_count\\\":0,\\\"total_amount_fen\\\":0,\\\"source_ids\\\":[]})\\n g[\\\"row_count\\\"]+=1\\n g[\\\"total_amount_fen\\\"]+=int((Decimal(row[\\\"amount_yuan\\\"])*Decimal(100)).to_integral_exact())\\n g[\\\"source_ids\\\"].append(row[\\\"id\\\"])\\n\"); f.close(); expected={\"categories\":{k:expected[k] for k in sorted(expected)}}; actual=json.load(open(os.path.join(base,\"summary.json\"),encoding=\"utf-8\")); assert actual==expected,(actual,expected); assert list(actual[\"categories\"])==sorted(expected[\"categories\"]); md=open(os.path.join(base,\"summary_zh.md\"),encoding=\"utf-8\").read(); lines=md.splitlines(); wanted=[\"| {} | {} | {} | {} |\".format(k,v[\"row_count\"],v[\"total_amount_fen\"],\"、\".join(v[\"source_ids\"])) for k,v in expected[\"categories\"].items()]; assert lines[-3:]==wanted,(lines[-3:],wanted); print(json.dumps(actual,ensure_ascii=False,indent=2)); print(md)"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:55:02.114780+00:00",
+    "monotonic_ns": 851230993748,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:55:02.132703+00:00",
+    "monotonic_ns": 851248914580,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.017920832,
+  "stdout": "{\n  \"categories\": {\n    \"design\": {\n      \"row_count\": 1,\n      \"total_amount_fen\": 1600,\n      \"source_ids\": [\n        \"C604\"\n      ]\n    },\n    \"dev\": {\n      \"row_count\": 2,\n      \"total_amount_fen\": 946,\n      \"source_ids\": [\n        \"C602\",\n        \"C605\"\n      ]\n    },\n    \"ops\": {\n      \"row_count\": 3,\n      \"total_amount_fen\": 1464,\n      \"source_ids\": [\n        \"C601\",\n        \"C603\",\n        \"C606\"\n      ]\n    }\n  }\n}\n# 费用分类汇总\n\n金额以人民币分为单位，按十进制精确换算；来源 ID 按 CSV 行序排列。\n\n| 类别 | 行数 | 合计（分） | 来源 ID |\n|---|---:|---:|---|\n| design | 1 | 1600 | C604 |\n| dev | 2 | 946 | C602、C605 |\n| ops | 3 | 1464 | C601、C603、C606 |\n\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJjYXRlZ29yaWVzIjogewogICAgImRlc2lnbiI6IHsKICAgICAgInJvd19jb3VudCI6IDEsCiAgICAgICJ0b3RhbF9hbW91bnRfZmVuIjogMTYwMCwKICAgICAgInNvdXJjZV9pZHMiOiBbCiAgICAgICAgIkM2MDQiCiAgICAgIF0KICAgIH0sCiAgICAiZGV2IjogewogICAgICAicm93X2NvdW50IjogMiwKICAgICAgInRvdGFsX2Ftb3VudF9mZW4iOiA5NDYsCiAgICAgICJzb3VyY2VfaWRzIjogWwogICAgICAgICJDNjAyIiwKICAgICAgICAiQzYwNSIKICAgICAgXQogICAgfSwKICAgICJvcHMiOiB7CiAgICAgICJyb3dfY291bnQiOiAzLAogICAgICAidG90YWxfYW1vdW50X2ZlbiI6IDE0NjQsCiAgICAgICJzb3VyY2VfaWRzIjogWwogICAgICAgICJDNjAxIiwKICAgICAgICAiQzYwMyIsCiAgICAgICAgIkM2MDYiCiAgICAgIF0KICAgIH0KICB9Cn0KIyDotLnnlKjliIbnsbvmsYfmgLsKCumHkemineS7peS6uuawkeW4geWIhuS4uuWNleS9je+8jOaMieWNgei/m+WItueyvuehruaNoueul++8m+adpea6kCBJRCDmjIkgQ1NWIOihjOW6j+aOkuWIl+OAggoKfCDnsbvliKsgfCDooYzmlbAgfCDlkIjorqHvvIjliIbvvIkgfCDmnaXmupAgSUQgfAp8LS0tfC0tLTp8LS0tOnwtLS18CnwgZGVzaWduIHwgMSB8IDE2MDAgfCBDNjA0IHwKfCBkZXYgfCAyIHwgOTQ2IHwgQzYwMuOAgUM2MDUgfAp8IG9wcyB8IDMgfCAxNDY0IHwgQzYwMeOAgUM2MDPjgIFDNjA2IHwKCg==",
+  "stderr_base64": ""
+}

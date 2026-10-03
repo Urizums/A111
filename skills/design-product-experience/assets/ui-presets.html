@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en" data-palette="clear" data-density="balanced" data-motion="none">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>Experience design preset — run workspace</title>
+  <link rel="stylesheet" href="ui-presets.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to runs</a>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Northstar Studio home">
+        <span class="brand-mark" aria-hidden="true">N</span>
+        <span>Northstar Studio</span>
+      </a>
+      <p class="sidebar-label">Workspace</p>
+      <nav class="primary-nav" aria-label="Sample workspace sections">
+        <a href="#overview">Overview</a>
+        <a href="#runs" aria-current="location">Runs</a>
+        <a href="#workflows">Workflows</a>
+        <a href="#settings">Preferences</a>
+      </nav>
+      <p class="sidebar-note">A local, fictional interface sample. No account or network connection is used.</p>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="#overview">Operations</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Run workspace</span>
+        </nav>
+        <div class="topbar-actions">
+          <span class="eyebrow">Demo controls</span>
+          <label class="sr-only" for="palette-choice">Color palette</label>
+          <select id="palette-choice" aria-label="Color palette">
+            <option value="clear">Clear light</option>
+            <option value="night">Night console</option>
+          </select>
+        </div>
+      </header>
+
+      <main id="main-content">
+        <section id="overview" aria-labelledby="page-title">
+          <div class="page-heading">
+            <div>
+              <p class="eyebrow">Operations / automation</p>
+              <h1 id="page-title">Run workspace</h1>
+              <p>Review recent activity, open the run you need, then repeat or remove it with a clear confirmation.</p>
+            </div>
+            <div class="heading-actions">
+              <button class="button-primary" id="create-run" type="button">Run workflow</button>
+            </div>
+          </div>
+
+          <p class="context-line">
+            <span><strong>Workflow</strong> Release checks</span>
+            <span><strong>Environment</strong> Preview</span>
+            <span><strong>Updated</strong> <time id="last-updated">just now</time></span>
+          </p>
+
+          <div id="runs" class="workspace">
+            <section class="run-section" aria-labelledby="runs-heading">
+              <div class="section-heading">
+                <div>
+                  <h2 id="runs-heading">Recent runs</h2>
+                  <p id="run-count">3 runs</p>
+                </div>
+                <button id="refresh-runs" type="button">Refresh runs</button>
+              </div>
+
+              <form class="filter-bar" id="filter-form">
+                <div class="field">
+                  <label for="run-search">Find a run</label>
+                  <input id="run-search" type="search" placeholder="Name or run ID">
+                </div>
+                <div class="field">
+                  <label for="status-filter">Status</label>
+                  <select id="status-filter">
+                    <option value="all">All statuses</option>
+                    <option value="succeeded">Succeeded</option>
+                    <option value="failed">Failed</option>
+                    <option value="queued">Queued</option>
+                  </select>
+                </div>
+                <button type="reset" id="clear-filters">Clear filters</button>
+              </form>
+
+              <div class="table-wrap">
+                <table aria-describedby="table-note">
+                  <caption class="sr-only">Recent workflow runs and their status</caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Run</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Started</th>
+                      <th scope="col"><span class="sr-only">Actions</span></th>
+                    </tr>
+                  </thead>
+                  <tbody id="run-list" aria-live="polite">
+                    <tr data-run-id="r-1842" data-status="succeeded" data-workflow="Release checks">
+                      <td><span class="run-name">release-check</span><span class="run-meta">Run r-1842 · main</span></td>
+                      <td><span class="status status-success">Succeeded</span></td>
+                      <td><time datetime="2026-10-02T14:32:00Z">14:32 UTC</time></td>
+                      <td><div class="inline-actions"><button type="button" data-view-run="r-1842">View</button></div></td>
+                    </tr>
+                    <tr data-run-id="r-1841" data-status="failed" data-workflow="Release checks">
+                      <td><span class="run-name">release-check</span><span class="run-meta">Run r-1841 · main</span></td>
+                      <td><span class="status status-failed">Failed</span></td>
+                      <td><time datetime="2026-10-02T14:11:00Z">14:11 UTC</time></td>
+                      <td><div class="inline-actions"><button type="button" data-view-run="r-1841">View</button></div></td>
+                    </tr>
+                    <tr data-run-id="r-1840" data-status="succeeded" data-workflow="Dependency audit">
+                      <td><span class="run-name">dependency-audit</span><span class="run-meta">Run r-1840 · main</span></td>
+                      <td><span class="status status-success">Succeeded</span></td>
+                      <td><time datetime="2026-10-02T13:48:00Z">13:48 UTC</time></td>
+                      <td><div class="inline-actions"><button type="button" data-view-run="r-1840">View</button></div></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="empty-state" id="empty-state" role="status" hidden>
+                <strong id="empty-title">No runs match these filters.</strong>
+                <p id="empty-copy">Try another workflow name, run ID, or status.</p>
+                <button type="button" id="clear-empty-filters">Clear filters</button>
+              </div>
+              <p class="demo-note" id="table-note">Sample data is local to this page. Refresh simulates a request; it does not contact a service.</p>
+
+              <div class="status-region" id="load-status" role="status" aria-live="polite" aria-atomic="true"></div>
+              <div class="inline-actions" id="load-actions" hidden>
+                <button type="button" id="cancel-refresh">Cancel refresh</button>
+                <button type="button" id="retry-refresh" hidden>Retry refresh</button>
+              </div>
+              <div class="error-message" id="load-error" role="alert" hidden>
+                <p>Runs could not be refreshed. The current list is still available.</p>
+                <button type="button" id="retry-error">Retry refresh</button>
+              </div>
+              <div class="inline-actions" style="margin-top: 0.75rem">
+                <button type="button" id="preview-error">Preview recoverable error</button>
+              </div>
+            </section>
+
+            <aside class="activity-rail" aria-labelledby="activity-heading">
+              <div class="section-heading">
+                <h2 id="activity-heading">Activity</h2>
+                <span class="eyebrow">Today</span>
+              </div>
+              <div class="activity-line">
+                <strong>Release checks passed</strong>
+                <time datetime="2026-10-02T14:32:00Z">14:32 UTC · main</time>
+              </div>
+              <div class="activity-line">
+                <strong>One run needs attention</strong>
+                <time datetime="2026-10-02T14:11:00Z">14:11 UTC · open run r-1841</time>
+              </div>
+              <div class="activity-line">
+                <strong>Dependency audit finished</strong>
+                <time datetime="2026-10-02T13:48:00Z">13:48 UTC · main</time>
+              </div>
+            </aside>
+          </div>
+        </section>
+
+        <section class="settings-section" id="workflows" aria-labelledby="workflow-heading">
+          <h2 id="workflow-heading">Appearance and motion</h2>
+          <p>Palette, information density, and drawer motion are independent. These controls change this local preview only.</p>
+          <div class="settings-controls" id="settings">
+            <div class="field">
+              <label for="density-choice">Information density</label>
+              <select id="density-choice">
+                <option value="balanced">Balanced</option>
+                <option value="condensed">Condensed</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="motion-choice">Drawer entrance</label>
+              <select id="motion-choice" aria-describedby="motion-hint">
+                <option value="none">No animation</option>
+                <option value="quiet-slide">Quiet side slide</option>
+                <option value="light-elastic">Light elastic</option>
+              </select>
+              <p id="motion-hint">Applies only when opening run details. Reduced-motion preferences always disable it.</p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <dialog class="drawer" id="run-drawer" aria-labelledby="drawer-title">
+    <div class="drawer-header">
+      <div>
+        <p class="eyebrow">Run details</p>
+        <h2 id="drawer-title">Run details</h2>
+      </div>
+      <button type="button" class="button-quiet" id="close-drawer" aria-label="Close run details">Close</button>
+    </div>
+    <div class="drawer-content">
+      <p id="drawer-summary">Choose a run from the table to inspect it.</p>
+      <dl>
+        <dt>Workflow</dt><dd id="drawer-workflow">Release checks</dd>
+        <dt>Branch</dt><dd>main</dd>
+        <dt>Environment</dt><dd>Preview</dd>
+        <dt>Result</dt><dd id="drawer-result">Succeeded</dd>
+      </dl>
+      <div class="dialog-actions start">
+        <button class="button-primary" type="button" id="run-again">Run again</button>
+        <button class="button-danger" type="button" id="request-delete">Delete run…</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog class="confirm-dialog" id="delete-dialog" aria-labelledby="delete-title" aria-describedby="delete-copy">
+    <h2 id="delete-title">Delete this run?</h2>
+    <p id="delete-copy">This removes the run from the local sample list. It cannot be undone in this demo.</p>
+    <div class="dialog-actions">
+      <button class="button-primary" type="button" id="cancel-delete">Keep run</button>
+      <button class="button-danger" type="button" id="confirm-delete">Delete run</button>
+    </div>
+  </dialog>
+
+  <script>
+    const root = document.documentElement;
+    const paletteChoice = document.getElementById("palette-choice");
+    const densityChoice = document.getElementById("density-choice");
+    const motionChoice = document.getElementById("motion-choice");
+    const runList = document.getElementById("run-list");
+    const runCount = document.getElementById("run-count");
+    const emptyState = document.getElementById("empty-state");
+    const loadStatus = document.getElementById("load-status");
+    const loadActions = document.getElementById("load-actions");
+    const loadError = document.getElementById("load-error");
+    const refreshButton = document.getElementById("refresh-runs");
+    const drawer = document.getElementById("run-drawer");
+    const deleteDialog = document.getElementById("delete-dialog");
+    let activeRunId = null;
+    let activeController = null;
+    let latestRequestId = 0;
+    let nextRunNumber = 1843;
+
+    paletteChoice.addEventListener("change", () => {
+      root.dataset.palette = paletteChoice.value;
+    });
+    densityChoice.addEventListener("change", () => {
+      root.dataset.density = densityChoice.value;
+    });
+    motionChoice.addEventListener("change", () => {
+      root.dataset.motion = motionChoice.value;
+    });
+
+    function visibleRows() {
+      return Array.from(runList.querySelectorAll("tr")).filter((row) => !row.hidden);
+    }
+
+    function updateRunCount() {
+      const count = visibleRows().length;
+      runCount.textContent = count + (count === 1 ? " run" : " runs");
+    }
+
+    function applyFilters() {
+      const query = document.getElementById("run-search").value.trim().toLowerCase();
+      const status = document.getElementById("status-filter").value;
+      const rows = Array.from(runList.querySelectorAll("tr"));
+      rows.forEach((row) => {
+        const name = row.querySelector(".run-name").textContent;
+        const runId = row.dataset.runId;
+        const matchesText = (name + " " + runId).toLowerCase().includes(query);
+        const matchesStatus = status === "all" || row.dataset.status === status;
+        row.hidden = !(matchesText && matchesStatus);
+      });
+      updateRunCount();
+      const totalRows = rows.length;
+      const hasMatches = visibleRows().length > 0;
+      emptyState.hidden = hasMatches;
+      document.getElementById("empty-title").textContent =
+        totalRows === 0 ? "No runs yet." : "No runs match these filters.";
+      document.getElementById("empty-copy").textContent = totalRows === 0
+        ? "Start a workflow to see its runs here."
+        : "Try another workflow name, run ID, or status.";
+      document.getElementById("clear-empty-filters").hidden = totalRows === 0;
+    }
+
+    document.getElementById("run-search").addEventListener("input", applyFilters);
+    document.getElementById("status-filter").addEventListener("change", applyFilters);
+    document.getElementById("filter-form").addEventListener("submit", (event) => event.preventDefault());
+    document.getElementById("filter-form").addEventListener("reset", () => {
+      setTimeout(applyFilters, 0);
+    });
+    document.getElementById("clear-empty-filters").addEventListener("click", () => {
+      document.getElementById("filter-form").reset();
+    });
+
+    function openRun(runId) {
+      const row = runList.querySelector('[data-run-id="' + runId + '"]');
+      if (!row) return;
+      activeRunId = runId;
+      const name = row.querySelector(".run-name").textContent;
+      const status = row.dataset.status;
+      document.getElementById("drawer-title").textContent = "Run " + runId;
+      document.getElementById("drawer-summary").textContent = name + " · " + runId;
+      document.getElementById("drawer-workflow").textContent = row.dataset.workflow;
+      document.getElementById("drawer-result").textContent =
+        status.charAt(0).toUpperCase() + status.slice(1);
+      drawer.showModal();
+      document.getElementById("close-drawer").focus();
+    }
+
+    runList.addEventListener("click", (event) => {
+      const viewButton = event.target.closest("[data-view-run]");
+      if (viewButton) openRun(viewButton.dataset.viewRun);
+    });
+
+    document.getElementById("close-drawer").addEventListener("click", () => drawer.close());
+    drawer.addEventListener("click", (event) => {
+      if (event.target === drawer) drawer.close();
+    });
+
+    function addRun(workflow = "Release checks", runName = "release-check") {
+      const runId = "r-" + nextRunNumber++;
+      const row = document.createElement("tr");
+      row.dataset.runId = runId;
+      row.dataset.status = "queued";
+      row.dataset.workflow = workflow;
+      const runCell = document.createElement("td");
+      const name = document.createElement("span");
+      name.className = "run-name";
+      name.textContent = runName;
+      const meta = document.createElement("span");
+      meta.className = "run-meta";
+      meta.textContent = "Run " + runId + " · main";
+      runCell.append(name, meta);
+
+      const statusCell = document.createElement("td");
+      const statusLabel = document.createElement("span");
+      statusLabel.className = "status status-queued";
+      statusLabel.textContent = "Queued";
+      statusCell.append(statusLabel);
+
+      const timeCell = document.createElement("td");
+      const time = document.createElement("time");
+      time.textContent = "just now";
+      timeCell.append(time);
+
+      const actionCell = document.createElement("td");
+      const actionGroup = document.createElement("div");
+      actionGroup.className = "inline-actions";
+      const view = document.createElement("button");
+      view.type = "button";
+      view.dataset.viewRun = runId;
+      view.textContent = "View";
+      actionGroup.append(view);
+      actionCell.append(actionGroup);
+
+      row.append(runCell, statusCell, timeCell, actionCell);
+      runList.prepend(row);
+      document.getElementById("run-search").value = "";
+      document.getElementById("status-filter").value = "all";
+      applyFilters();
+      loadStatus.textContent = "Run " + runId + " was added to the local sample queue.";
+    }
+
+    document.getElementById("create-run").addEventListener("click", () => addRun());
+    document.getElementById("run-again").addEventListener("click", () => {
+      const selectedRow = activeRunId
+        ? runList.querySelector('[data-run-id="' + activeRunId + '"]')
+        : null;
+      if (!selectedRow) return;
+      const workflow = selectedRow.dataset.workflow;
+      const runName = selectedRow.querySelector(".run-name").textContent;
+      drawer.close();
+      addRun(workflow, runName);
+      document.getElementById("run-count").scrollIntoView({ block: "center" });
+    });
+
+    document.getElementById("request-delete").addEventListener("click", () => {
+      deleteDialog.showModal();
+      document.getElementById("cancel-delete").focus();
+    });
+    document.getElementById("cancel-delete").addEventListener("click", () => deleteDialog.close());
+    document.getElementById("confirm-delete").addEventListener("click", () => {
+      if (activeRunId) {
+        const row = runList.querySelector('[data-run-id="' + activeRunId + '"]');
+        if (row) row.remove();
+        applyFilters();
+        loadStatus.textContent = "Run " + activeRunId + " was removed from the local sample.";
+        activeRunId = null;
+      }
+      deleteDialog.close();
+      drawer.close();
+    });
+
+    function simulateRequest(shouldFail, signal) {
+      return new Promise((resolve, reject) => {
+        const timer = setTimeout(() => {
+          signal.removeEventListener("abort", onAbort);
+          if (shouldFail) reject(new Error("Simulated network failure"));
+          else resolve();
+        }, 1100);
+        function onAbort() {
+          clearTimeout(timer);
+          reject(new DOMException("Request canceled", "AbortError"));
+        }
+        if (signal.aborted) onAbort();
+        else signal.addEventListener("abort", onAbort, { once: true });
+      });
+    }
+
+    async function refreshRuns(shouldFail) {
+      if (activeController) activeController.abort();
+      const controller = new AbortController();
+      activeController = controller;
+      const requestId = ++latestRequestId;
+      refreshButton.disabled = true;
+      loadError.hidden = true;
+      loadActions.hidden = false;
+      document.getElementById("cancel-refresh").hidden = false;
+      document.getElementById("retry-refresh").hidden = true;
+      runList.setAttribute("aria-busy", "true");
+      loadStatus.innerHTML = '<span class="status-row"><span class="spinner" aria-hidden="true"></span><span>Refreshing runs. Current results stay available.</span></span>';
+
+      try {
+        await simulateRequest(shouldFail, controller.signal);
+        if (requestId !== latestRequestId) return;
+        const now = new Date();
+        document.getElementById("last-updated").textContent =
+          now.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        loadStatus.textContent = "Runs are up to date. Existing results were retained.";
+      } catch (error) {
+        if (requestId !== latestRequestId) return;
+        if (error.name === "AbortError") {
+          loadStatus.textContent = "Refresh canceled. Current results stay available.";
+          document.getElementById("retry-refresh").hidden = false;
+        } else {
+          loadError.hidden = false;
+          loadStatus.textContent = "";
+          loadActions.hidden = true;
+        }
+      } finally {
+        if (requestId === latestRequestId) {
+          activeController = null;
+          refreshButton.disabled = false;
+          runList.removeAttribute("aria-busy");
+          loadActions.hidden = true;
+        }
+      }
+    }
+
+    refreshButton.addEventListener("click", () => refreshRuns(false));
+    document.getElementById("preview-error").addEventListener("click", () => refreshRuns(true));
+    document.getElementById("retry-error").addEventListener("click", () => refreshRuns(false));
+    document.getElementById("retry-refresh").addEventListener("click", () => {
+      document.getElementById("retry-refresh").hidden = true;
+      document.getElementById("cancel-refresh").hidden = false;
+      refreshRuns(false);
+    });
+    document.getElementById("cancel-refresh").addEventListener("click", () => {
+      if (activeController) {
+        latestRequestId += 1;
+        activeController.abort();
+        activeController = null;
+        refreshButton.disabled = false;
+        runList.removeAttribute("aria-busy");
+        loadActions.hidden = false;
+        document.getElementById("cancel-refresh").hidden = true;
+        document.getElementById("retry-refresh").hidden = false;
+        loadStatus.textContent = "Refresh canceled. Current results stay available.";
+      }
+    });
+  </script>
+</body>
+</html>

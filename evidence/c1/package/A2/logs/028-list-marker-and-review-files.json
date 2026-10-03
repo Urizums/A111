@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python",
+    "-c",
+    "from pathlib import Path; root=Path(\"package/A2\");\nfor part in [\"observations\",\"review\"]:\n p=root/part; print(\"---\",part,\"---\"); print(\"\\n\".join(sorted(str(x.relative_to(root)) for x in p.rglob(\"*\") if x.is_file())))\nprint(\"--- marker candidates ---\"); print(\"\\n\".join(sorted(str(x.relative_to(root)) for x in root.rglob(\"*\") if x.is_file() and (\"marker\" in x.name or \"begin\" in x.name or \"end\" in x.name))))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:25:30.319648+00:00",
+    "monotonic_ns": 2679435867755,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:25:30.344632+00:00",
+    "monotonic_ns": 2679460848145,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.02498039,
+  "stdout": "--- observations ---\nobservations/2003393674801_c1eadbbc9c924decba559281203991dc.json\nobservations/2041730780347_18d050b0d6e7466a8d3605079887ad0e.json\nobservations/2075419560829_e3a37af253884700a4c6bcd547be7117.json\nobservations/2080815954971_c5285cdaa3d94905840124abac31be58.json\nobservations/2135618236940_6c760959db034c839332d5be08819292.json\nobservations/2161143460849_3354ebc6cde34b1daf127be25f06aa3f.json\nobservations/2215849064346_d6c8e9b13337489094971147b26c4e4c.json\nobservations/2241749445913_79298ef810c24189ab0ce4a48a6d2219.json\nobservations/2296090723790_1bf15a801979419ebb2861fea0f68ce1.json\nobservations/2322271684449_57a6a834fd42413f98e3b1c77d06ea66.json\nobservations/2348906345021_0fb88d7c6f144c5db4c6d9dbf713fc2c.json\nobservations/2380659835112_b35a6d34d1d94ed7a361ee2305d63880.json\nobservations/2387060243577_2f91864b9dd84f58a543cd76d52d7033.json\n--- review ---\nreview/check_package_output.py\nreview/package-assess.json\nreview/results.json\nreview/source-checker.json\nreview/source-review.md\n--- marker candidates ---\nlogs/020-create-independent-checker.json\n",
+  "stderr": "",
+  "stdout_base64": "LS0tIG9ic2VydmF0aW9ucyAtLS0Kb2JzZXJ2YXRpb25zLzIwMDMzOTM2NzQ4MDFfYzFlYWRiYmM5YzkyNGRlY2JhNTU5MjgxMjAzOTkxZGMuanNvbgpvYnNlcnZhdGlvbnMvMjA0MTczMDc4MDM0N18xOGQwNTBiMGQ2ZTc0NjZhOGQzNjA1MDc5ODg3YWQwZS5qc29uCm9ic2VydmF0aW9ucy8yMDc1NDE5NTYwODI5X2UzYTM3YWYyNTM4ODQ3MDBhNGM2YmNkNTQ3YmU3MTE3Lmpzb24Kb2JzZXJ2YXRpb25zLzIwODA4MTU5NTQ5NzFfYzUyODVjZGFhM2Q5NDkwNTg0MDEyNGFiYWMzMWJlNTguanNvbgpvYnNlcnZhdGlvbnMvMjEzNTYxODIzNjk0MF82Yzc2MDk1OWRiMDM0YzgzOTMzMmQ1YmUwODgxOTI5Mi5qc29uCm9ic2VydmF0aW9ucy8yMTYxMTQzNDYwODQ5XzMzNTRlYmM2Y2RlMzRiMWRhZjEyN2JlMjVmMDZhYTNmLmpzb24Kb2JzZXJ2YXRpb25zLzIyMTU4NDkwNjQzNDZfZDZjOGU5YjEzMzM3NDg5MDk0OTcxMTQ3YjI2YzRlNGMuanNvbgpvYnNlcnZhdGlvbnMvMjI0MTc0OTQ0NTkxM183OTI5OGVmODEwYzI0MTg5YWIwY2U0YTQ4YTZkMjIxOS5qc29uCm9ic2VydmF0aW9ucy8yMjk2MDkwNzIzNzkwXzFiZjE1YTgwMTk3OTQxOWViYjI4NjFmZWEwZjY4Y2UxLmpzb24Kb2JzZXJ2YXRpb25zLzIzMjIyNzE2ODQ0NDlfNTdhNmE4MzRmZDQyNDEzZjk4ZTNiMWM3N2QwNmVhNjYuanNvbgpvYnNlcnZhdGlvbnMvMjM0ODkwNjM0NTAyMV8wZmI4OGQ3YzZmMTQ0YzVkYjRjNmQ5ZGJmNzEzZmMyYy5qc29uCm9ic2VydmF0aW9ucy8yMzgwNjU5ODM1MTEyX2IzNWE2ZDM0ZDFkOTRlZDdhMzYxZWUyMzA1ZDYzODgwLmpzb24Kb2JzZXJ2YXRpb25zLzIzODcwNjAyNDM1NzdfMmY5MTg2NGI5ZGQ4NGY1OGE1NDNjZDc2ZDUyZDcwMzMuanNvbgotLS0gcmV2aWV3IC0tLQpyZXZpZXcvY2hlY2tfcGFja2FnZV9vdXRwdXQucHkKcmV2aWV3L3BhY2thZ2UtYXNzZXNzLmpzb24KcmV2aWV3L3Jlc3VsdHMuanNvbgpyZXZpZXcvc291cmNlLWNoZWNrZXIuanNvbgpyZXZpZXcvc291cmNlLXJldmlldy5tZAotLS0gbWFya2VyIGNhbmRpZGF0ZXMgLS0tCmxvZ3MvMDIwLWNyZWF0ZS1pbmRlcGVuZGVudC1jaGVja2VyLmpzb24K",
+  "stderr_base64": ""
+}

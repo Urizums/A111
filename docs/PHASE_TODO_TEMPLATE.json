@@ -1,0 +1,68 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "<下一阶段>",
+  "goal": "<可验证结果>",
+  "tasks": [
+    {
+      "id": "<阶段>-01",
+      "title": "<首项实际工作>",
+      "owner": "coordinator",
+      "depends_on": [],
+      "write_paths": [
+        "runs/<阶段>/"
+      ],
+      "acceptance": [
+        "<具体可核验条件>"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "<明确首步>"
+    },
+    {
+      "id": "<阶段>-02",
+      "title": "<实现或验证>",
+      "owner": "coordinator",
+      "depends_on": [
+        "<阶段>-01"
+      ],
+      "write_paths": [
+        "runs/<阶段>/"
+      ],
+      "acceptance": [
+        "<具体可核验条件>"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "<动作>"
+    },
+    {
+      "id": "<阶段>-next",
+      "title": "启动下一阶段任务",
+      "owner": "coordinator",
+      "depends_on": [
+        "<阶段>-01",
+        "<阶段>-02"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "下一阶段TODO已保存",
+        "下一阶段首项真实执行且有返回证据"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "完成此前任务后执行转换",
+      "transition": {
+        "next_phase_id": null,
+        "todo_path": null,
+        "first_task_id": null,
+        "start_evidence": []
+      }
+    }
+  ]
+}

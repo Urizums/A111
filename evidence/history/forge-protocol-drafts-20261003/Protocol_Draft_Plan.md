@@ -1,0 +1,24 @@
+# Host protocol draft assistance — frozen H01–H10
+
+Root owns interfaces, core implementation, repairs and final grading. Luna gathers exact local source/case materials, then fresh ordinary execution and independent CLI audit. Separate scoped_change iteration based on saved O3; at most two functional repairs after initial candidate verification. Keep all failures and candidate hashes. No changes to existing request, controller schemas, driver action/budget/recovery semantics or native receipt authoring.
+
+Provide `scripts/hostdraft.py reply --request REQUEST [--artifact FILE ...] [--flow-outcome OUTCOME] --out NEW_JSON` for a worker-readable immutable prepared request. Copy host IDs/hash, compute only existing in-scope artifact SHA values, leave outer outcome null; project result null, package result uses original invocation and empty declared values/evidence. An explicitly selected package outcome may scaffold emitted names through existing forge_template; it does not choose a business branch. Never produce a native receipt or semantic answer.
+
+Provide `decision --job SETTLED_RECEIVED_JOB [--evidence FILE ...] --out NEW_JSON` for the coordinator. Use evidence-checked, read-only bridge state; copy captured reply hash and original project acceptance IDs/minimum levels/evaluation lock. Outcome remains null and project statuses not_run; supplied evidence candidates get actual SHA but do not establish coverage. For package work copy the actual received inner Flow response. Never set pass/done or repair a rejected/stale reply. Require a received bridge with no journal; do not recover or write the bridge.
+
+Provide `check-reply --request REQUEST --reply ASSIGNED_REPLY` and `check-decision --job JOB --decision JSON`. Reuse pure extraction of existing host reply checks and `commit_plan` respectively; strict finite duplicate-free JSON. Reply check covers the existing outer protocol and actual artifact refs, not package semantic advance or native completion. Decision check covers original controller compatibility and stored local evidence, not independent semantic truth or tool authenticity. Reports never grant a native call, commit or alter bytes. Deterministic invalid and unreadable evidence remain distinct.
+
+| ID | Frozen requirement | Required evidence |
+| --- | --- | --- |
+| H01 | Copies original request IDs/hash; rejects malformed request, hash mismatch, nonfinite/duplicate JSON, changed or newly appeared bound input | Unit/process negative cases; actual project |
+| H02 | Project/package reply draft cannot pass unchanged, even with real artifacts; package inner/outer contract remains distinct | Existing validators; package fixture and actual task |
+| H03 | Hash only existing regular files within resolved worker scopes; reject outside paths, symlink escapes and missing files; artifacts cannot reference the reply itself | Negative process fixtures; actual artifact hashes |
+| H04 | Draft creation is atomic/exclusive, never replaces existing file or protected input/checkpoint/job metadata; retained source bytes unchanged | Byte comparisons and existing writer reuse |
+| H05 | Project decision uses original acceptance IDs/minimum levels and authoritative evaluation lock; every status remains not_run, supplied evidence is only a candidate | Bound/unbound project fixtures; original controller rejection |
+| H06 | Package decision copies captured response exactly and remains ungraded; original controller rejects stale/invalid/mismatched inner responses | Package fixtures; actual original advance |
+| H07 | Decision draft/precheck rejects unreceived, committed, drifted state and pending journals without recovery or state writes | Negative fixtures with all byte snapshots |
+| H08 | Reply/decision precheck reuses original checks; rejects wrong identity/SHA, missing refs and incomplete drafts; distinguishes unavailable IO; no claim/native/commit/semantic acceptance | Process captures and byte comparisons |
+| H09 | Fresh Luna performs one project source task and one existing-package task with actual native workers, helpers, independent original review/commit; Root recomputes raw sources | Fresh minimal task-local prompts, original inputs/outputs/receipts, assistance disclosed |
+| H10 | Record CLI/native counts and observed preparation/execution/review/recovery intervals with scope; do not claim speed gain without frozen comparable trials | Local records; tokens/cost null; next measurement plan |
+
+Existing 348 tests remain required regressions. New tests exercise meaningful boundary interactions; independent audit samples are explicitly fixtures. Current tests prove cooperating local POSIX behavior, not adversarial authenticated isolation, distributed capacity or provider-wide quota. Existing UI/browser blockers and prior evidence gaps remain unchanged. Ordinary one-time tasks outside this execution boundary keep the direct proportional path.

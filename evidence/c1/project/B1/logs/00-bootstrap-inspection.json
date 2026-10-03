@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib; root=pathlib.Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1\"); files={\"state.json\":(root/\"state.json\").exists(),\"work.json\":(root/\"work.json\").exists(),\"job/control.json\":(root/\"job/control.json\").exists(),\"job/request.json\":(root/\"job/request.json\").exists()}; native=[str(p.relative_to(root)) for p in sorted((root/\"native\").glob(\"*\")) if p.is_file()] if (root/\"native\").exists() else []; prior=any(files.values()) or bool(native); \nif not prior:\n for name in (\"artifacts\",\"review\",\"logs\",\"observations\",\"native\"): (root/name).mkdir(parents=True,exist_ok=True)\nprint(json.dumps({\"preexisting\":files,\"native_files\":native,\"prior_sample_state_present\":prior},indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:06:00.816524+00:00",
+    "monotonic_ns": 1509932740723,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:06:00.837920+00:00",
+    "monotonic_ns": 1509954134159,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.021393436,
+  "stdout": "{\n  \"preexisting\": {\n    \"state.json\": false,\n    \"work.json\": false,\n    \"job/control.json\": false,\n    \"job/request.json\": false\n  },\n  \"native_files\": [],\n  \"prior_sample_state_present\": false\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwcmVleGlzdGluZyI6IHsKICAgICJzdGF0ZS5qc29uIjogZmFsc2UsCiAgICAid29yay5qc29uIjogZmFsc2UsCiAgICAiam9iL2NvbnRyb2wuanNvbiI6IGZhbHNlLAogICAgImpvYi9yZXF1ZXN0Lmpzb24iOiBmYWxzZQogIH0sCiAgIm5hdGl2ZV9maWxlcyI6IFtdLAogICJwcmlvcl9zYW1wbGVfc3RhdGVfcHJlc2VudCI6IGZhbHNlCn0K",
+  "stderr_base64": ""
+}

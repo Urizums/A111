@@ -1,0 +1,35 @@
+{
+  "schema": "forge-handoff-author-check/1",
+  "at": "2026-10-03T18:11:59.311004+00:00",
+  "source_author": "/root",
+  "source_changed": false,
+  "skill_files": 91,
+  "cutoff_files": 375,
+  "canonical_git_head": "c238b00bf83ea1b5eaf1654baaa1ae794c20c325",
+  "invariant_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_handoff_invariants.py"
+    ],
+    "exit_code": 0,
+    "tests": 8,
+    "evidence": "validation/root/invariant-tests.txt"
+  },
+  "secret_scan": {
+    "scope": "targeted signed URL/GitHub token/private-key patterns",
+    "hits": 0,
+    "comprehensive": false
+  },
+  "independent_validation": "passed stated portability scope; read and verified original command logs",
+  "independence_limit": {
+    "material_opened": "runs/S01/cutoff-integrity.json",
+    "scope": "Previously authored S01-01 hash-integrity receipt stating 375 cutoff files had no hash errors; it contains no A04 or business-output verdict.",
+    "mitigation": "A04 was recomputed from 38 selected raw project/A2 files and the frozen Snapshot_Manifest; all 38 hashes and sizes matched. This report does not claim a completely blind review of all existing repository history."
+  }
+}

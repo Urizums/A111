@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; r=json.loads(Path(\"package/B2/job/request.json\").read_text())[\"request\"]; print(json.dumps({\"keys\":list(r),\"invocation_id\":r.get(\"invocation_id\"),\"target_binding\":r.get(\"target_binding\"),\"kind\":r.get(\"kind\"),\"job_id\":r.get(\"job_id\"),\"attempt_id\":r.get(\"attempt_id\")},ensure_ascii=False,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:41:13.725559+00:00",
+    "monotonic_ns": 3622841777257,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:41:13.746334+00:00",
+    "monotonic_ns": 3622862550376,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020773119,
+  "stdout": "{\n  \"keys\": [\n    \"schema_version\",\n    \"job_id\",\n    \"attempt_id\",\n    \"invocation_id\",\n    \"kind\",\n    \"target_binding\",\n    \"dispatch\",\n    \"work\",\n    \"reply_contract\",\n    \"host\",\n    \"resource_limits\"\n  ],\n  \"invocation_id\": \"f88af0850658c82f19f494424d05ec22\",\n  \"target_binding\": {\n    \"node\": \"extract\",\n    \"package_hash\": \"bd95dfb88fbdf32cc659a0629110da26aef591b1c6f1ba1a24a84b7157db4d75\",\n    \"plan_hash\": null,\n    \"input_hash\": null\n  },\n  \"kind\": \"package\",\n  \"job_id\": \"job_c6d23337e55e44a886f07d38708f60e5\",\n  \"attempt_id\": \"684e8398b9264668823666074e8fd1f4\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJrZXlzIjogWwogICAgInNjaGVtYV92ZXJzaW9uIiwKICAgICJqb2JfaWQiLAogICAgImF0dGVtcHRfaWQiLAogICAgImludm9jYXRpb25faWQiLAogICAgImtpbmQiLAogICAgInRhcmdldF9iaW5kaW5nIiwKICAgICJkaXNwYXRjaCIsCiAgICAid29yayIsCiAgICAicmVwbHlfY29udHJhY3QiLAogICAgImhvc3QiLAogICAgInJlc291cmNlX2xpbWl0cyIKICBdLAogICJpbnZvY2F0aW9uX2lkIjogImY4OGFmMDg1MDY1OGM4MmYxOWY0OTQ0MjRkMDVlYzIyIiwKICAidGFyZ2V0X2JpbmRpbmciOiB7CiAgICAibm9kZSI6ICJleHRyYWN0IiwKICAgICJwYWNrYWdlX2hhc2giOiAiYmQ5NWRmYjg4ZmJkZjMyY2M2NTlhMDYyOTExMGRhMjZhZWY1OTFiMWM2ZjFiYTFhMjRhODRiNzE1N2RiNGQ3NSIsCiAgICAicGxhbl9oYXNoIjogbnVsbCwKICAgICJpbnB1dF9oYXNoIjogbnVsbAogIH0sCiAgImtpbmQiOiAicGFja2FnZSIsCiAgImpvYl9pZCI6ICJqb2JfYzZkMjMzMzdlNTVlNDRhODg2ZjA3ZDM4NzA4ZjYwZTUiLAogICJhdHRlbXB0X2lkIjogIjY4NGU4Mzk4YjkyNjQ2Njg4MjM2NjYwNzRlOGZkMWY0Igp9Cg==",
+  "stderr_base64": ""
+}

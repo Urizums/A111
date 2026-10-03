@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_6e153853d17f",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python",
+    "-c",
+    "import csv,json\nfrom decimal import Decimal\nsource = \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/materials/expenses.csv\"\njson_path = \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary.json\"\nmd_path = \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary_zh.md\"\ngrouped = {}\nwith open(source, encoding=\"utf-8\", newline=\"\") as source_file:\n    for row in csv.DictReader(source_file):\n        fen_decimal = Decimal(row[\"amount_yuan\"]) * Decimal(100)\n        if fen_decimal != fen_decimal.to_integral_value():\n            raise ValueError(\"amount does not convert to an integer fen\")\n        entry = grouped.setdefault(row[\"category\"], {\"row_count\": 0, \"total_fen\": 0, \"ids\": []})\n        entry[\"row_count\"] += 1\n        entry[\"total_fen\"] += int(fen_decimal)\n        entry[\"ids\"].append(row[\"id\"])\nresult = {category: grouped[category] for category in sorted(grouped)}\nwith open(json_path, \"w\", encoding=\"utf-8\") as output_file:\n    json.dump(result, output_file, ensure_ascii=False, indent=2)\n    output_file.write(\"\\n\")\nlines = [\"# 费用分类汇总\", \"\", \"金额以 Decimal 按 1 元 = 100 分精确换算；ID 按 CSV 原始行序排列。\", \"\", \"| 类别 | 行数 | 合计（分） | 来源 ID |\", \"| --- | ---: | ---: | --- |\"]\nfor category, entry in result.items():\n    lines.append(\"| {} | {} | {} | {} |\".format(category, entry[\"row_count\"], entry[\"total_fen\"], \", \".join(entry[\"ids\"])))\nwith open(md_path, \"w\", encoding=\"utf-8\") as output_file:\n    output_file.write(\"\\n\".join(lines) + \"\\n\")\nprint(json.dumps(result, ensure_ascii=False, sort_keys=True))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:24:28.138041+00:00",
+    "monotonic_ns": 2617254257947,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:24:28.157997+00:00",
+    "monotonic_ns": 2617274214713,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.019956766,
+  "stdout": "{\"design\": {\"ids\": [\"C604\"], \"row_count\": 1, \"total_fen\": 1600}, \"dev\": {\"ids\": [\"C602\", \"C605\"], \"row_count\": 2, \"total_fen\": 946}, \"ops\": {\"ids\": [\"C601\", \"C603\", \"C606\"], \"row_count\": 3, \"total_fen\": 1464}}\n",
+  "stderr": "",
+  "stdout_base64": "eyJkZXNpZ24iOiB7ImlkcyI6IFsiQzYwNCJdLCAicm93X2NvdW50IjogMSwgInRvdGFsX2ZlbiI6IDE2MDB9LCAiZGV2IjogeyJpZHMiOiBbIkM2MDIiLCAiQzYwNSJdLCAicm93X2NvdW50IjogMiwgInRvdGFsX2ZlbiI6IDk0Nn0sICJvcHMiOiB7ImlkcyI6IFsiQzYwMSIsICJDNjAzIiwgIkM2MDYiXSwgInJvd19jb3VudCI6IDMsICJ0b3RhbF9mZW4iOiAxNDY0fX0K",
+  "stderr_base64": ""
+}

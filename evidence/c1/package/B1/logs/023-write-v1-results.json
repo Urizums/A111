@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nimport hashlib,json\nroot=Path.cwd()\npkg=root/\"materials/package.json\"\nactions=root/\"package/B1/artifacts/actions.json\"\nexplain=root/\"package/B1/artifacts/解释.md\"\nchecker=root/\"package/B1/review/source-checker.json\"\nsha=lambda p: hashlib.sha256(p.read_bytes()).hexdigest()\nresults={\n\"package_hash\":sha(pkg),\n\"checks\":[\n {\"id\":\"quotes\",\"kind\":\"machine\",\"status\":\"pass\",\"evidence\":[f\"materials/notes.txt sha256:{sha(root/'materials/notes.txt')}\",f\"package/B1/artifacts/actions.json sha256:{sha(actions)}\",f\"package/B1/review/source-checker.json sha256:{sha(checker)}\"]},\n {\"id\":\"commitments\",\"kind\":\"human\",\"status\":\"pass\",\"evidence\":[f\"package/B1/artifacts/actions.json sha256:{sha(actions)}\",f\"package/B1/artifacts/解释.md sha256:{sha(explain)}\",f\"package/B1/review/source-checker.json sha256:{sha(checker)}\"]}\n]}\nPath(\"package/B1/review/results.json\").write_text(json.dumps(results,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:59:40.000592+00:00",
+    "monotonic_ns": 1129116811173,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:59:40.022671+00:00",
+    "monotonic_ns": 1129138885904,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.022074731,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

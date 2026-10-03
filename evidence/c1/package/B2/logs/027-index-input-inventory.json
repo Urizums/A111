@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; root=Path(\"package\");\nfor sample in [\"B1\",\"A1\",\"A2\",\"B2\"]:\n p=root/sample; print(sample,\"exists\",p.exists()); print(\"  indexes\",[str(x.relative_to(root)) for x in p.rglob(\"index.json\")]);\n for part in [\"logs\",\"native\",\"observations\",\"artifacts\",\"review\"]:\n  q=p/part; print(\" \",part,\"files\",sum(1 for x in q.rglob(\"*\") if x.is_file()) if q.exists() else None)"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:47:20.653415+00:00",
+    "monotonic_ns": 3989769632184,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:47:20.675270+00:00",
+    "monotonic_ns": 3989791482951,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.021850767,
+  "stdout": "B1 exists True\n  indexes []\n  logs files 41\n  native files 30\n  observations files 17\n  artifacts files 24\n  review files 11\nA1 exists True\n  indexes []\n  logs files 26\n  native files 22\n  observations files 16\n  artifacts files 21\n  review files 10\nA2 exists True\n  indexes []\n  logs files 48\n  native files 26\n  observations files 17\n  artifacts files 16\n  review files 8\nB2 exists True\n  indexes []\n  logs files 27\n  native files 22\n  observations files 18\n  artifacts files 16\n  review files 9\n",
+  "stderr": "",
+  "stdout_base64": "QjEgZXhpc3RzIFRydWUKICBpbmRleGVzIFtdCiAgbG9ncyBmaWxlcyA0MQogIG5hdGl2ZSBmaWxlcyAzMAogIG9ic2VydmF0aW9ucyBmaWxlcyAxNwogIGFydGlmYWN0cyBmaWxlcyAyNAogIHJldmlldyBmaWxlcyAxMQpBMSBleGlzdHMgVHJ1ZQogIGluZGV4ZXMgW10KICBsb2dzIGZpbGVzIDI2CiAgbmF0aXZlIGZpbGVzIDIyCiAgb2JzZXJ2YXRpb25zIGZpbGVzIDE2CiAgYXJ0aWZhY3RzIGZpbGVzIDIxCiAgcmV2aWV3IGZpbGVzIDEwCkEyIGV4aXN0cyBUcnVlCiAgaW5kZXhlcyBbXQogIGxvZ3MgZmlsZXMgNDgKICBuYXRpdmUgZmlsZXMgMjYKICBvYnNlcnZhdGlvbnMgZmlsZXMgMTcKICBhcnRpZmFjdHMgZmlsZXMgMTYKICByZXZpZXcgZmlsZXMgOApCMiBleGlzdHMgVHJ1ZQogIGluZGV4ZXMgW10KICBsb2dzIGZpbGVzIDI3CiAgbmF0aXZlIGZpbGVzIDIyCiAgb2JzZXJ2YXRpb25zIGZpbGVzIDE4CiAgYXJ0aWZhY3RzIGZpbGVzIDE2CiAgcmV2aWV3IGZpbGVzIDkK",
+  "stderr_base64": ""
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nimport json\nrecord={\n\"schema\":\"forge-c1-sample-recovery/1\",\n\"sample\":\"B1\",\n\"phase_at_interruption\":\"hostbridge issue persisted dispatching state; original native creation had not been invoked\",\n\"original_job\":\"package/B1/job\",\n\"original_issue_capture\":\"package/B1/logs/006-bridge-issue.json\",\n\"call_history_review\":{\n\"scope\":\"This operator branch's visible actual tool-call history from assignment through the issue capture and post-resumption check.\",\n\"finding\":\"No collaboration.spawn_agent invocation occurred in this branch before recovery. The only collaboration native query made during recovery was the single exact own-subtree list_agents query recorded in native/status-intent-observer.json and native/status-return-observer.json.\",\n\"basis\":\"Direct review of the branch's actual tool-call transcript; absence of a prior native intent/return file is supporting inventory only, not the basis for concluding no creation.\"\n},\n\"root_assistance\":\"Root directed reconciliation after restart and independently confirmed the visible original branch call history showed no creation. Root authorized using the unchanged original issue arguments for the first creation call; this assistance is part of the record.\",\n\"current_status_observation\":{\n\"query\":\"package/B1/native/host-status-query.json\",\n\"intent\":\"package/B1/native/status-intent-observer.json\",\n\"raw_return\":\"package/B1/native/status-return.json\",\n\"return_observer\":\"package/B1/native/status-return-observer.json\",\n\"observed\":\"agents=[] for the original bound task subtree at query time.\",\n\"terminal_evidence\":False,\n\"interpretation\":\"An empty current subtree is not treated as proof of historical non-creation or terminal failure; the no-prior-creation determination comes from the call history review.\"\n},\n\"recovery_decision\":\"Preserve the original dispatch and checkpoint. Extract the exact spawn_arguments from the captured original hostbridge issue output and perform one first-ever collaboration.spawn_agent call with those unchanged arguments. Do not reissue hostbridge issue.\",\n\"timing\":\"The original setup-begin marker is from the frozen boot and has no same-boot setup-end marker. Current boot differs; setup span remains unverified and is not backfilled or reset.\",\n\"frozen_boot_id\":\"830450b4-c62a-4f02-a43b-24114a1c7a7a\",\n\"current_boot_id\":\"e7c60fd9-bfe3-4f0d-b09f-75ad1396db98\",\n\"old_setup_begin\":\"package/B1/observations/971934796635_d1ce01fa86eb4b68bcca23bbe009cace.json\"\n}\nPath(\"package/B1/native/recovery.json\").write_text(json.dumps(record,ensure_ascii=False,indent=2)+\"\\n\",encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T11:49:12.641387+00:00",
+    "monotonic_ns": 501757599547,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T11:49:12.661668+00:00",
+    "monotonic_ns": 501777880276,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020280729,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-03T12:06:09Z",
+  "updated_at": "2026-10-03T12:17:31Z",
+  "revision": 2,
+  "status": "completed",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "expense_summary_forward",
+    "goal": "Summarize the supplied expenses.csv by category with exact integer-fen totals, row counts, and all IDs.",
+    "deliverable_kind": "scoped_task",
+    "requirements": [
+      {
+        "id": "req_category_summary",
+        "text": "For every category, report the number of rows, the total amount in exact integer fen, and every source ID.",
+        "origin": "explicit",
+        "basis": "expenses.csv 按 category 汇总条数、金额（精确转整数分）、全部 ID",
+        "acceptance_ids": [
+          "acc_category_summary"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "acc_category_summary",
+        "assertion": "Output contains every source category exactly once; each category's row count, integer-fen sum, and complete ID list match a coordinator recomputation from expenses.csv.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "aggregate_expenses",
+        "title": "Aggregate expense rows by category",
+        "depends_on": [],
+        "owner": "native_worker",
+        "write_paths": [
+          "artifacts/"
+        ],
+        "acceptance_ids": [
+          "acc_category_summary"
+        ]
+      }
+    ],
+    "defaults": [
+      "Sort category keys lexicographically and preserve source row order within each ID list.",
+      "Use integer fen and a concise Chinese Markdown explanation."
+    ],
+    "unknowns": []
+  },
+  "plan_hash": "874493b404d3071de51e62e2dd95811d0f1ec8a2a1626b2a22380ed065f4541e",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "aggregate_expenses": {
+      "status": "done",
+      "attempts": [
+        {
+          "attempt_id": "123338d3bfce415e9483ecbf737aedca",
+          "plan_hash": "874493b404d3071de51e62e2dd95811d0f1ec8a2a1626b2a22380ed065f4541e",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "acc_category_summary"
+          ],
+          "started_at": "2026-10-03T12:06:33Z",
+          "finished_at": "2026-10-03T12:17:31Z",
+          "outcome": "done",
+          "reason": null,
+          "acceptance_results": {
+            "acc_category_summary": {
+              "status": "pass",
+              "level": "review",
+              "evidence": [
+                {
+                  "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/review/source-review.md",
+                  "sha256": "3cb9aa3d8a1bc6f7c1ee6508a4f11d834a6b728436a010cc30f9b535f130aa19"
+                },
+                {
+                  "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/review/source-check-output.v2.json",
+                  "sha256": "8d4f5d88a1ee04f4ef5f418ca65a2839bb489286e1018ff42ee93f0427a0af49"
+                },
+                {
+                  "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/summary.json",
+                  "sha256": "8bc08ffb153c2526f200e733bbe5d404d203519b285fa37b6082ae47b090d543"
+                },
+                {
+                  "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/summary_zh.md",
+                  "sha256": "37485756b39849b3cc7401fdcda42a4c0b83bb5140ec55858d5c69e5f892f8c6"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

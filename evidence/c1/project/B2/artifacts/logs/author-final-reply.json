@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "luna_forge_6e153853d17f",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python",
+    "-c",
+    "import hashlib,json\nrequest_path = \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/job/request.json\"\nartifact_paths = [\n    \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary.json\",\n    \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/summary_zh.md\"\n]\nreply_path = \"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B2/artifacts/worker-reply.json\"\nwith open(request_path, encoding=\"utf-8\") as request_file:\n    host = json.load(request_file)\nwith open(artifact_paths[0], encoding=\"utf-8\") as result_file:\n    result = json.load(result_file)\nartifacts = []\nfor path in artifact_paths:\n    digest = hashlib.sha256(open(path, \"rb\").read()).hexdigest()\n    artifacts.append({\"path\": path, \"sha256\": digest})\nreply = {\n    \"schema_version\": \"forge-host-reply/1\",\n    \"job_id\": host[\"request\"][\"job_id\"],\n    \"attempt_id\": host[\"request\"][\"attempt_id\"],\n    \"request_hash\": host[\"request_hash\"],\n    \"outcome\": \"done\",\n    \"result\": result,\n    \"artifacts\": artifacts,\n    \"reason\": None\n}\nwith open(reply_path, \"w\", encoding=\"utf-8\") as output_file:\n    json.dump(reply, output_file, ensure_ascii=False, indent=2)\n    output_file.write(\"\\n\")\nprint(json.dumps({\"outcome\": reply[\"outcome\"], \"artifact_count\": len(artifacts)}, ensure_ascii=False))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:25:30.387917+00:00",
+    "monotonic_ns": 2679504134427,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:25:30.406219+00:00",
+    "monotonic_ns": 2679522435718,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.018301291,
+  "stdout": "{\"outcome\": \"done\", \"artifact_count\": 2}\n",
+  "stderr": "",
+  "stdout_base64": "eyJvdXRjb21lIjogImRvbmUiLCAiYXJ0aWZhY3RfY291bnQiOiAyfQo=",
+  "stderr_base64": ""
+}

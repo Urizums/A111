@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-recovery-audit/1",
+  "sample": "A1",
+  "observation": "Same original initialized A1 state and work were resumed; they were not reset.",
+  "previous_setup_marker": {
+    "path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/observations/966421378875_ddaeff912ee0427ab5f072d47e2698d9.json",
+    "boot_id": "830450b4-c62a-4f02-a43b-24114a1c7a7a"
+  },
+  "current_boot_at_recovery": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98",
+  "inspected_files_record": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/A1/logs/13-recovery-inspect.json",
+  "inspected_job_control": null,
+  "inspected_native_records": [],
+  "native_creation_issued_before_recovery": false,
+  "status_query_needed_before_first_creation": false,
+  "root_recovery_assistance": "Root instructed us to inspect any existing job/native status before creating, preserve captures, disclose the cross-boot timing gap and continue the fixed order without resetting state.",
+  "call_history_before_first_native_creation": [
+    "A1 sample directories created and captured in logs/00-create-dirs.json",
+    "Original CLI/help/source inspections captured in logs/01 through logs/10",
+    "projectctl initialized state at project/A1/state.json in logs/08-projectctl-init.json",
+    "work.json first failed before the capture wrapper due shell quoting, then succeeded and was captured in logs/12-write-work.json",
+    "local recovery inspection captured in logs/13-recovery-inspect.json",
+    "recovery note write captured in logs/14-write-recovery-note.json",
+    "hostbridge prepare and issue were captured in logs/15-hostbridge-prepare.json and logs/16-hostbridge-issue.json; one issue is persisted and no native call has occurred yet"
+  ],
+  "timing": "The original setup begin marker and later setup end marker have different boot IDs; do not calculate a setup span from them."
+}

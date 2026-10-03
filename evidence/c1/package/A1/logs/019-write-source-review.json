@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nimport hashlib,json\nroot=Path.cwd()\nsha=lambda rel:hashlib.sha256((root/rel).read_bytes()).hexdigest()\nassessment=json.loads(json.loads((root/\"package/A1/review/package-assess.json\").read_text(encoding=\"utf-8\"))[\"stdout\"])\nresults=json.loads((root/\"package/A1/review/results.json\").read_text(encoding=\"utf-8\"))\ndoc=f\"\"\"# A1 independent source review\n\nThis review checked the actual A1 output against the unchanged forge-package/1 package and supplied meeting notes. Source-byte hashes match the freeze: package {sha('materials/package.json')}; notes {sha('materials/notes.txt')}. The packagectl v1 canonical package digest used in results.json is {results['package_hash']}.\n\n## Original v1 acceptance\n\n- quotes — pass (machine): Each of the three source_quote values is an exact substring of the supplied notes. The business JSON file SHA-256 is {sha('package/A1/artifacts/actions.json')}.\n- commitments — pass (human): The first line assigns updating deployment documentation to 赵宁 and says “周五”; that relative date remains literal. The second assigns adding regression cases to 许静 and gives “2026-10-09”. “决定补充日志告警。” is an explicit decision and is included with owner and due set to null. “建议以后考虑更换配色” is a suggestion and is excluded. “本周没有新增外部通知” is a status statement and is excluded.\n- The business file stores the standard Flow response envelope with its actions array nested under artifacts. The inner host reply result carries the same array under result.artifacts.actions. The values satisfy the package output contract and both v1 acceptance rows.\n- Chinese explanation — pass: 解释.md (SHA-256 {sha('package/A1/artifacts/解释.md')}) describes the three included items, literal date, null fields and exclusions without contradiction.\n- The independent executable review at check_package_output.py (SHA-256 {sha('package/A1/review/check_package_output.py')}) returned pass in source-checker.json (SHA-256 {sha('package/A1/review/source-checker.json')}). Original v1 results.json (SHA-256 {sha('package/A1/review/results.json')}) were assessed by packagectl as {assessment['verdict']} in package-assess.json (SHA-256 {sha('package/A1/review/package-assess.json')}).\n\n## Protocol evidence\n\nThe incomplete manual reply draft is preserved in artifacts/worker-reply.draft.json. The worker's captured hostdraft.py check-reply in artifacts/captures/check-reply.json (SHA-256 {sha('package/A1/artifacts/captures/check-reply.json')}) returned payload_valid; this validates the outer host reply only. The original hostbridge receive succeeded separately. The worker did not invoke a scaffold generator; its captured authoring scripts and final reply are preserved.\n\nThe worker reported one uncaptured setup subprocess: an initial mkdir -p artifacts/captures command was combined with a wrapped read. No capture was fabricated after the fact. Later subprocesses were captured. The worker report is retained in native/worker-progress-message.txt and native/worker-final-message.txt.\n\n## Scope\n\nThis is a new-input check, not frozen-case coverage. The no-action input branch was not run; frozen-case coverage remains not assessed. No acceptance row was weakened.\n\"\"\"\n(root/\"package/A1/review/source-review.md\").write_text(doc,encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:12:48.308692+00:00",
+    "monotonic_ns": 1917424906675,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:12:48.330147+00:00",
+    "monotonic_ns": 1917446361477,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.021454802,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

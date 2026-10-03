@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace/scratch/73714494ad2f",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; Path(\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts/author_draft.py\").write_text(\"from pathlib import Path\\nimport hashlib\\nimport json\\n\\nrequest_path = Path(\\\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/job/request.json\\\")\\nartifact_dir = Path(\\\"/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts\\\")\\nenvelope = json.loads(request_path.read_text(encoding=\\\"utf-8\\\"))\\nrequest = envelope[\\\"request\\\"]\\nartifact_refs = []\\nfor name in (\\\"actions.json\\\", \\\"解释.md\\\"):\\n    path = artifact_dir / name\\n    artifact_refs.append({\\n        \\\"path\\\": str(path),\\n        \\\"sha256\\\": hashlib.sha256(path.read_bytes()).hexdigest()\\n    })\\ndraft = {\\n    \\\"schema_version\\\": \\\"forge-host-reply/1\\\",\\n    \\\"job_id\\\": request[\\\"job_id\\\"],\\n    \\\"attempt_id\\\": request[\\\"attempt_id\\\"],\\n    \\\"request_hash\\\": envelope[\\\"request_hash\\\"],\\n    \\\"outcome\\\": None,\\n    \\\"result\\\": {\\n        \\\"invocation_id\\\": request[\\\"invocation_id\\\"],\\n        \\\"outcome\\\": None,\\n        \\\"artifacts\\\": {},\\n        \\\"evidence\\\": []\\n    },\\n    \\\"artifacts\\\": artifact_refs,\\n    \\\"reason\\\": None\\n}\\n(artifact_dir / \\\"worker-reply.draft.json\\\").write_text(\\n    json.dumps(draft, ensure_ascii=False, indent=2) + \\\"\\\\n\\\",\\n    encoding=\\\"utf-8\\\"\\n)\\n\", encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:08:03.217956+00:00",
+    "monotonic_ns": 1632334203492,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:08:03.238503+00:00",
+    "monotonic_ns": 1632354722063,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020518571,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

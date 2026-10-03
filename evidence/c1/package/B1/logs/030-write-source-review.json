@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path\nimport hashlib,json\nroot=Path.cwd()\nsha=lambda rel: hashlib.sha256((root/rel).read_bytes()).hexdigest()\nassessment_record=json.loads((root/\"package/B1/review/package-assess-corrected.json\").read_text(encoding=\"utf-8\"))\nassessment=json.loads(assessment_record[\"stdout\"])\npackage_obj=json.loads((root/\"package/B1/review/results.json\").read_text(encoding=\"utf-8\"))\npkg_hash=sha(\"materials/package.json\")\nnotes_hash=sha(\"materials/notes.txt\")\nactions_hash=sha(\"package/B1/artifacts/actions.json\")\nexplain_hash=sha(\"package/B1/artifacts/解释.md\")\nchecker_hash=sha(\"package/B1/review/check_package_output.py\")\nchecker_record_hash=sha(\"package/B1/review/source-checker.json\")\nresults_hash=sha(\"package/B1/review/results.json\")\nreply_hash=sha(\"package/B1/artifacts/worker-reply.json\")\nreply_capture_hash=sha(\"package/B1/artifacts/captures/check-reply.json\")\nassessment_capture_hash=sha(\"package/B1/review/package-assess-corrected.json\")\ntext=f\"\"\"# B1 independent source review\n\nThis review checked the actual B1 output against the unchanged forge-package/1 package and the supplied meeting notes. The source-byte hashes match the freeze: package {pkg_hash}; notes {notes_hash}. The packagectl v1 package_hash is its canonical package-object digest, {package_obj['package_hash']}; the first assessment attempt mistakenly supplied the source-byte hash and is preserved with its correction record.\n\n## Original v1 acceptance\n\n- quotes — pass (machine): All three source_quote strings are exact substrings of the supplied notes. actions.json SHA-256: {actions_hash}.\n- commitments — pass (human): The first line assigns updating deployment documentation to 赵宁 and says “周五”; the output preserves that literal relative date. The second line assigns adding regression cases to 许静 and preserves 2026-10-09. “决定补充日志告警。” is an explicit decision to add alerts, so it is included with owner and due set to null. “建议以后考虑更换配色。” is a suggestion and is excluded. “本周没有新增外部通知。” is a status statement and is excluded.\n- Chinese explanation — pass: 解释.md (SHA-256 {explain_hash}) describes those three included items, the missing fields, the literal relative date, and both exclusions without contradiction.\n- The independent executable review at check_package_output.py (SHA-256 {checker_hash}) returned pass in source-checker.json (SHA-256 {checker_record_hash}). Original v1 results are preserved in results.json (SHA-256 {results_hash}); packagectl assess returned {assessment['verdict']} in package-assess-corrected.json (SHA-256 {assessment_capture_hash}).\n\n## Protocol evidence and retained corrections\n\nThe final worker reply (SHA-256 {reply_hash}) carried the current invocation and the same business actions. The worker's captured hostdraft.py check-reply returned payload_valid (capture SHA-256 {reply_capture_hash}); this validates the outer host reply only. The original hostbridge receive succeeded separately.\n\nThe worker preserved an initial malformed actions.json as actions.rejected.json: it ended with literal backslash-n bytes, and the captured verifier failed with JSONDecodeError: Extra data. It then corrected the output; the final actions.json passes the independent check. The preserved worker-reply.preflight-rejected.json also ended with literal backslash-n bytes. No failed hostdraft.py check-reply invocation for that earlier version appears in the worker captures; the final captured check-reply passes. These are two worker correction attempts; both original versions and captures remain present.\n\nMy first packagectl assess attempt failed because I used the raw source-byte hash where v1 requires the canonical package-object digest. That failed call is retained in logs/023-write-v1-results.json / review/package-assess.json, with the first results file copied to results.rejected.json; the corrected canonical digest produced the passing assessment above.\n\n## Scope\n\nThis is a new-input check of the supplied notes, not frozen-case coverage. The no-action input branch was not run, and frozen-case coverage remains not assessed. No acceptance row was weakened.\n\"\"\"\n(root/\"package/B1/review/source-review.md\").write_text(text,encoding=\"utf-8\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:01:57.294706+00:00",
+    "monotonic_ns": 1266410923635,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:01:57.320260+00:00",
+    "monotonic_ns": 1266436479621,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.025555986,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

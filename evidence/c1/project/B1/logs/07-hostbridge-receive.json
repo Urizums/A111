@@ -1,0 +1,32 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostbridge.py",
+    "receive",
+    "--job",
+    "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/job",
+    "--receipt",
+    "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/native/status-4-return.json",
+    "--reply",
+    "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/project/B1/artifacts/worker-reply.json"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:10:34.246788+00:00",
+    "monotonic_ns": 1783363001654,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:10:34.293748+00:00",
+    "monotonic_ns": 1783409962386,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.046960732,
+  "stdout": "{\n  \"phase\": \"received\",\n  \"job_id\": \"job_b63492f5b63147e0b14c323d3cf25f29\",\n  \"attempt_id\": \"123338d3bfce415e9483ecbf737aedca\",\n  \"request_hash\": \"1980d7a254c482a84fef720ee0ccad6e270094015012ff99d51128823a0f8064\",\n  \"action\": \"coordinator_verify_then_commit\",\n  \"worker\": \"/root/luna_compare_project/luna_forge_123338d3bfce\",\n  \"commit\": null,\n  \"coordinator_outcome\": null,\n  \"automatic_host_call\": false,\n  \"internal_model_identity_verified\": false,\n  \"tokens\": null,\n  \"cost\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwaGFzZSI6ICJyZWNlaXZlZCIsCiAgImpvYl9pZCI6ICJqb2JfYjYzNDkyZjViNjMxNDdlMGIxNGMzMjNkM2NmMjVmMjkiLAogICJhdHRlbXB0X2lkIjogIjEyMzMzOGQzYmZjZTQxNWU5NDgzZWNiZjczN2FlZGNhIiwKICAicmVxdWVzdF9oYXNoIjogIjE5ODBkN2EyNTRjNDgyYTg0ZmVmNzIwZWUwY2NhZDZlMjcwMDk0MDE1MDEyZmY5OWQ1MTEyODgyM2EwZjgwNjQiLAogICJhY3Rpb24iOiAiY29vcmRpbmF0b3JfdmVyaWZ5X3RoZW5fY29tbWl0IiwKICAid29ya2VyIjogIi9yb290L2x1bmFfY29tcGFyZV9wcm9qZWN0L2x1bmFfZm9yZ2VfMTIzMzM4ZDNiZmNlIiwKICAiY29tbWl0IjogbnVsbCwKICAiY29vcmRpbmF0b3Jfb3V0Y29tZSI6IG51bGwsCiAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwKICAiaW50ZXJuYWxfbW9kZWxfaWRlbnRpdHlfdmVyaWZpZWQiOiBmYWxzZSwKICAidG9rZW5zIjogbnVsbCwKICAiY29zdCI6IG51bGwKfQo=",
+  "stderr_base64": ""
+}

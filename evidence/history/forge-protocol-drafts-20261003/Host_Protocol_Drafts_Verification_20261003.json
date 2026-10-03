@@ -1,0 +1,4675 @@
+{
+  "schema": "host-protocol-draft-verification/1",
+  "at": "2026-10-03T07:27:47.069730+00:00",
+  "candidate": "T1",
+  "root_owner": "/root",
+  "saved_commit": "c238b00bf83ea1b5eaf1654baaa1ae794c20c325",
+  "frozen_requirements": {
+    "path": "Protocol_Draft_Plan.md",
+    "sha256": "6360c5f44f5a0960da3ee38abb9cdff51b8c17e65f96b2818042eb5aa59392ed"
+  },
+  "status": "passed_in_frozen_scope",
+  "criteria": [
+    {
+      "id": "H01",
+      "requirement": "Original identity and frozen input binding",
+      "status": "passed",
+      "unit_cases": [
+        "test_request_binding_and_bound_inputs_are_not_rehashed_to_hide_drift",
+        "test_request_hash_mismatch_rejected_without_output",
+        "test_strict_duplicate_keys_and_nonfinite_request"
+      ],
+      "additional_evidence": [
+        "project audit 04/06",
+        "actual project/package requests and unchanged inputs"
+      ]
+    },
+    {
+      "id": "H02",
+      "requirement": "Incomplete drafts and separate inner/outer contract",
+      "status": "passed",
+      "unit_cases": [
+        "test_reply_draft_real_refs_cannot_be_received_unchanged",
+        "test_package_draft_keeps_inner_identity_and_real_work_unfilled",
+        "test_project_rejects_package_outcome_argument"
+      ],
+      "additional_evidence": [
+        "project audit 06/07/12",
+        "package audit 05/06/07",
+        "both retained actual drafts"
+      ]
+    },
+    {
+      "id": "H03",
+      "requirement": "Actual regular artifacts within resolved scopes",
+      "status": "passed",
+      "unit_cases": [
+        "test_artifact_missing_outside_symlink_escape_and_self_reference"
+      ],
+      "additional_evidence": [
+        "project audit 05/06",
+        "Root recomputed actual four business artifact hashes"
+      ]
+    },
+    {
+      "id": "H04",
+      "requirement": "Exclusive atomic output and retained protected bytes",
+      "status": "passed",
+      "unit_cases": [
+        "test_atomic_exclusive_writer_retains_existing_file_and_input",
+        "test_decision_destination_cannot_create_declared_absent_input_or_metadata"
+      ],
+      "additional_evidence": [
+        "original writer reuse",
+        "Root audit snapshots; only assigned new reply draft allowed",
+        "actual rejected draft destination 011"
+      ]
+    },
+    {
+      "id": "H05",
+      "requirement": "Original acceptance IDs/levels and authoritative evaluation lock",
+      "status": "passed",
+      "unit_cases": [
+        "test_decision_project_rows_not_run_and_original_controller_rejects",
+        "test_authoritative_evaluation_lock_copied_when_external_source_drifts"
+      ],
+      "additional_evidence": [
+        "project audit 14/15/16",
+        "actual unbound project decision draft not_run/review"
+      ]
+    },
+    {
+      "id": "H06",
+      "requirement": "Exact captured package response and original controller rejection",
+      "status": "passed",
+      "unit_cases": [
+        "test_package_decision_copies_exact_response_without_accepting_it",
+        "test_package_stale_inner_invocation_rejected_by_original_controller"
+      ],
+      "additional_evidence": [
+        "package audit 07/10/11/13",
+        "actual package original single-step commit and source review"
+      ]
+    },
+    {
+      "id": "H07",
+      "requirement": "Settled received state; no recovery or mutation",
+      "status": "passed",
+      "unit_cases": [
+        "test_unreceived_committed_and_pending_journal_are_never_replayed",
+        "test_decision_state_drift_and_missing_received_refs_fail_without_mutation"
+      ],
+      "additional_evidence": [
+        "project audit 11/14/16/18",
+        "package audit 11/12/13",
+        "Root verified original snapshot bytes"
+      ]
+    },
+    {
+      "id": "H08",
+      "requirement": "Original pure validators, strict preflight, invalid versus unavailable",
+      "status": "passed",
+      "unit_cases": [
+        "test_valid_reply_preflight_changes_no_bytes_or_lifecycle",
+        "test_reply_preflight_rejects_wrong_identity_wrong_sha_and_incomplete",
+        "test_unavailable_reply_evidence_is_not_deterministic_invalid",
+        "test_valid_decision_preflight_does_not_commit_then_original_commit_once",
+        "test_failed_task_cannot_be_upgraded_but_actual_rejection_preflights"
+      ],
+      "additional_evidence": [
+        "project audit 07/12/15/16",
+        "package audit 07/12/13",
+        "actual coordinator preflights and distinct original commits"
+      ]
+    },
+    {
+      "id": "H09",
+      "requirement": "Fresh actual project and unchanged existing-package execution",
+      "status": "passed",
+      "unit_cases": [],
+      "additional_evidence": [
+        "forward/execution-record.md",
+        "forward/cli-index.json",
+        "two actual original native workers/receipts, two controller commits",
+        "coordinator/Root_Source_Verification.json"
+      ]
+    },
+    {
+      "id": "H10",
+      "requirement": "Scoped observed counts and intervals; no unsupported speed claim",
+      "status": "passed",
+      "unit_cases": [],
+      "additional_evidence": [
+        "coordinator/Observed_Metrics.json",
+        "forward/execution-record.md",
+        "Next_Measurement_Plan.md"
+      ]
+    }
+  ],
+  "regression": {
+    "argv": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "output": "................................................................................................................................................................................................................................................................................................................................................................................\n----------------------------------------------------------------------\nRan 368 tests in 8.211s\n\nOK\n",
+    "baseline": 348,
+    "added": 20,
+    "skill_format_valid": true,
+    "functional_repairs_used": 0
+  },
+  "functional_repairs": {
+    "used": 0,
+    "limit": 2,
+    "frozen_source_unchanged": true,
+    "prior_O3_exhaustion_not_reopened": true
+  },
+  "actual_business_jobs": [
+    {
+      "kind": "project",
+      "job_id": "job_e5c893114dce4c18ac0ae121ec908336",
+      "attempt_id": "df7296464cfd4207aec12157aaaebf0b",
+      "invocation_id": "df7296464cfd4207aec12157aaaebf0b",
+      "worker": "/root/luna_draft_forward/luna_forge_df7296464cfd",
+      "phase": "committed",
+      "target_result": {
+        "task_id": "aggregate_expenses",
+        "attempt_id": "df7296464cfd4207aec12157aaaebf0b",
+        "outcome": "done",
+        "task_status": "done",
+        "reason": null,
+        "status": "completed",
+        "revision": 2,
+        "plan_hash": "874493b404d3071de51e62e2dd95811d0f1ec8a2a1626b2a22380ed065f4541e",
+        "evaluation_plan_hash": null
+      }
+    },
+    {
+      "kind": "package",
+      "job_id": "job_41eb81416be145c1ad1a839f32c3a021",
+      "attempt_id": "1570ea2fd2a04f1bb12e7b86db92123d",
+      "invocation_id": "62ba41276f9837407268378ae311b207",
+      "worker": "/root/luna_draft_forward/luna_forge_1570ea2fd2a0",
+      "phase": "committed",
+      "target_result": {
+        "flow_status": "completed",
+        "steps": 1,
+        "checkpoint_advanced": true,
+        "coordinator_outcome": "done"
+      }
+    }
+  ],
+  "root_verification": {
+    "at": "2026-10-03T07:24:20.191956+00:00",
+    "reviewer": "/root",
+    "read_only_source_recomputation": true,
+    "checks": [
+      {
+        "name": "frozen T1 source unchanged",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "complete saved manifest matches local source",
+        "pass": true,
+        "detail": {
+          "paths": 83,
+          "commit": "c238b00bf83ea1b5eaf1654baaa1ae794c20c325"
+        }
+      },
+      {
+        "name": "all three original inputs unchanged",
+        "pass": true,
+        "detail": {
+          "package.json": "5804faa670d9ba7475234170c7226c047c424adce761893b4aa039937b77c6bc",
+          "notes.txt": "2a6802a93f60d87cc1c66f9c0eeed402398dbe0e0ef8df000f4ae76c18bdafdf",
+          "expenses.csv": "f1a6914eae07b97537e809c9e9fa5000acd02b391ca64484927596a19c2b3bfb"
+        }
+      },
+      {
+        "name": "package is exact original example package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "source amount exact integer fen C601",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "source amount exact integer fen C602",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "source amount exact integer fen C603",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "source amount exact integer fen C604",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "source amount exact integer fen C605",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "source amount exact integer fen C606",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expense categories, counts, exact totals and IDs from raw CSV",
+        "pass": true,
+        "detail": [
+          {
+            "category": "design",
+            "row_count": 1,
+            "total_amount_fen": 1600,
+            "ids": [
+              "C604"
+            ]
+          },
+          {
+            "category": "dev",
+            "row_count": 2,
+            "total_amount_fen": 946,
+            "ids": [
+              "C602",
+              "C605"
+            ]
+          },
+          {
+            "category": "ops",
+            "row_count": 3,
+            "total_amount_fen": 1464,
+            "ids": [
+              "C601",
+              "C603",
+              "C606"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "expense unit metadata",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expense grand total",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "Chinese expense explanation includes actual groups and conversion",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "new notes commitments, owners, literal dates and null fields",
+        "pass": true,
+        "detail": {
+          "expected_source_semantics": [
+            {
+              "task": "更新部署文档",
+              "owner": "赵宁",
+              "due": "周五",
+              "source_quote": "赵宁负责更新部署文档，截止周五。"
+            },
+            {
+              "task": "补充回归用例",
+              "owner": "许静",
+              "due": "2026-10-09",
+              "source_quote": "许静负责补充回归用例，截止2026-10-09。"
+            },
+            {
+              "task": "补充日志告警",
+              "owner": null,
+              "due": null,
+              "source_quote": "决定补充日志告警。"
+            }
+          ],
+          "task_wording_is_not_a_protocol_constraint": true
+        }
+      },
+      {
+        "name": "every action quote appears exactly in raw notes",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "suggestion and absent external notification excluded",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "Chinese action explanation agrees with actual actions",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses original request hash and identities",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses retained reply draft incomplete",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses original native fresh Luna configuration",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses saved creation and completed native return match bridge worker",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses captured reply bytes match assigned final reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses artifact SHA and resolved worker scope",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses all bound bridge evidence hashes remain actual",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses decision retains captured request/reply identity and ungraded initial verdict",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expenses original bridge commit points at unchanged final decision",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expense original checkpoint completed, one retained successful attempt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "expense decision initially not_run with original minimum review",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package original request hash and identities",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package retained reply draft incomplete",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package original native fresh Luna configuration",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package saved creation and completed native return match bridge worker",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package captured reply bytes match assigned final reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package artifact SHA and resolved worker scope",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package all bound bridge evidence hashes remain actual",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package decision retains captured request/reply identity and ungraded initial verdict",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package original bridge commit points at unchanged final decision",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package inner and outer identities distinct",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package decision preserves captured actual inner response",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "package original checkpoint completed in one original step",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/01_project_plan_validate complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/01_project_plan_validate recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/01_project_plan_validate snapshot plan",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/01_project_plan_validate snapshot evaluation",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/01_project_plan_validate snapshot plan",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/01_project_plan_validate snapshot evaluation",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/02_project_init complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/02_project_init recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/02_project_init snapshot plan",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/02_project_init snapshot evaluation",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/02_project_init snapshot plan",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/02_project_init snapshot evaluation",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/02_project_init snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare snapshot input",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/03_project_prepare snapshot input",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot input",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot input",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/04_project_reply_input_drift original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape snapshot outside_artifact",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape snapshot worker_scope/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape snapshot outside_artifact",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape snapshot worker_scope/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/05_project_reply_scope_escape original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot input",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot output",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot worker_scope/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot input",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot output",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot worker_scope/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft snapshot worker_scope/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/06_project_reply_draft existing monitored bytes preserved; assigned new draft permitted",
+        "pass": true,
+        "detail": {
+          "only_allowed_new_file": "/workspace/scratch/73714494ad2f/forge-protocol-drafts-20261003/audit/luna-independent-20261003T070231Z/project_fixture/work/reply-draft.json",
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot output",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot output",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/07_project_check_reply_incomplete original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/08_project_issue snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/09_project_accepted_synthetic snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/10_project_observe_synthetic_running snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/11_project_decision_while_running original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot output",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot output",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/12_project_check_reply_complete original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/13_project_receive_synthetic snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/14_project_decision_draft existing monitored bytes preserved; assigned new draft permitted",
+        "pass": true,
+        "detail": {
+          "only_allowed_new_file": "/workspace/scratch/73714494ad2f/forge-protocol-drafts-20261003/audit/luna-independent-20261003T070231Z/decisions/project-decision-draft.json",
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/15_project_check_decision_incomplete original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/16_project_check_decision_controller original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/17_project_commit_fixture snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/SYNTHETIC_ONLY_running_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/receipts/0833987da8d33637c85162622be7d5b992135c9d08435fe6a36b452415db809e.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/receipts/361ea9c4fe56507e21155869b0264bcb1258b7aae5f813544a740a304e22e360.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/receipts/c514d51c651de02b3f7cf67db55d904c11823a8ee0d50ddb5d73427fb94033ee.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/receipts/f9b597f0a942461a1182972ed22622f032cff0a20733a6070b74be13f157cbb3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot job/project_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/bound_input.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/evaluation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/plan.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/state.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/state.json.hostbridge-reservation.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/state.json.hostbridge.lock",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/work/reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/work/reply.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/work/synthetic_output.txt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit snapshot project_root/project_fixture/work.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-independent-20261003T070231Z/18_project_decision_after_commit original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-independent-20261003T070231Z source before/after unchanged",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/01_package_validate complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/01_package_validate recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/01_package_validate snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/01_package_validate snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/02_package_start complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/02_package_start recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/02_package_start snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/02_package_start snapshot inputs",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/02_package_start snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/02_package_start snapshot inputs",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/02_package_start snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/03_package_next complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/03_package_next recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/03_package_next snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/03_package_next snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/03_package_next snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/03_package_next snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot work",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/04_package_prepare snapshot work",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default snapshot artifact",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default snapshot artifact",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/05_package_reply_default existing monitored bytes preserved; assigned new draft permitted",
+        "pass": true,
+        "detail": {
+          "only_allowed_new_file": "/workspace/scratch/73714494ad2f/forge-protocol-drafts-20261003/audit/luna-package-20261003T070923Z/package_fixture/work/reply-default-draft.json",
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome snapshot artifact",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome snapshot artifact",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/06_package_reply_selected_flow_outcome existing monitored bytes preserved; assigned new draft permitted",
+        "pass": true,
+        "detail": {
+          "only_allowed_new_file": "/workspace/scratch/73714494ad2f/forge-protocol-drafts-20261003/audit/luna-package-20261003T070923Z/package_fixture/work/reply-ok-draft.json",
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot output",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot request",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot output",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/07_package_check_reply_outer_only original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/08_package_issue snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/09_package_accepted_synthetic snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/receipts/db304df02ec1e77e4c61859314d3f840b971e3606452cdda1191175e6b373b62.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/receipts/e54cb3a8ae6dc8bd5f7c30c6a31a18dcd7995c73e3baabdce59820ab90dda9c3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot reply",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/10_package_receive_synthetic snapshot receipt",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/receipts/db304df02ec1e77e4c61859314d3f840b971e3606452cdda1191175e6b373b62.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/receipts/e54cb3a8ae6dc8bd5f7c30c6a31a18dcd7995c73e3baabdce59820ab90dda9c3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/receipts/db304df02ec1e77e4c61859314d3f840b971e3606452cdda1191175e6b373b62.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/receipts/e54cb3a8ae6dc8bd5f7c30c6a31a18dcd7995c73e3baabdce59820ab90dda9c3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/11_package_decision_draft existing monitored bytes preserved; assigned new draft permitted",
+        "pass": true,
+        "detail": {
+          "only_allowed_new_file": "/workspace/scratch/73714494ad2f/forge-protocol-drafts-20261003/audit/luna-package-20261003T070923Z/decisions/package-decision-draft.json",
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/receipts/db304df02ec1e77e4c61859314d3f840b971e3606452cdda1191175e6b373b62.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/receipts/e54cb3a8ae6dc8bd5f7c30c6a31a18dcd7995c73e3baabdce59820ab90dda9c3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/receipts/db304df02ec1e77e4c61859314d3f840b971e3606452cdda1191175e6b373b62.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/receipts/e54cb3a8ae6dc8bd5f7c30c6a31a18dcd7995c73e3baabdce59820ab90dda9c3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/12_package_check_decision_incomplete original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller complete original capture",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller recorded argv/exit agree",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/receipts/db304df02ec1e77e4c61859314d3f840b971e3606452cdda1191175e6b373b62.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/receipts/e54cb3a8ae6dc8bd5f7c30c6a31a18dcd7995c73e3baabdce59820ab90dda9c3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/SYNTHETIC_ONLY_completed_status.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/SYNTHETIC_ONLY_create_return.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/control.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/ledger.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/receipts/8f01b74ba95e60a605958977d9f98f994fd95db0f52b486bea89c45d6a5873cd.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/receipts/db304df02ec1e77e4c61859314d3f840b971e3606452cdda1191175e6b373b62.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/receipts/e54cb3a8ae6dc8bd5f7c30c6a31a18dcd7995c73e3baabdce59820ab90dda9c3.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot job/package_main/request.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot state",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller snapshot package",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "luna-package-20261003T070923Z/13_package_check_decision_original_controller original monitored bytes unchanged",
+        "pass": true,
+        "detail": {
+          "snapshot_paths_are_copy_locations": true
+        }
+      },
+      {
+        "name": "luna-package-20261003T070923Z source before/after unchanged",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward original CLI index covers every captured log once",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 001-project-validate.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 002-package-validate.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 003-project-init.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 004-package-start.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 005-package-next.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 006-expense-driver-init.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 007-expense-driver-next.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 008-expense-driver-status-after-error.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 009-expense-project-status-after-error.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 010-expense-bridge-prepare.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 011-expense-reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 012-expense-reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 013-expense-bridge-issue.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 014-expense-bridge-accepted.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 015-expense-bridge-observe.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 016-expense-bridge-receive.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 017-expense-reply-preflight.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 018-expense-decision-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 019-expense-decision-preflight.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 020-expense-bridge-commit.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 021-expense-bridge-reconcile.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 022-expense-project-status-final.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 023-package-bridge-prepare.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 024-package-reply-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 025-package-bridge-issue.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 026-package-bridge-accepted.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 027-package-bridge-receive.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 028-package-assess-help.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 029-package-quote-check.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 030-package-assess.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 031-package-reply-preflight.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 032-package-decision-draft.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 033-package-decision-preflight.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 034-package-bridge-commit.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 035-package-next-final.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 036-package-bridge-reconcile.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 037-final-hashes.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "forward CLI index preserves original capture 038-final-protocol-hashes.json",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "both original coordinator reply preflights are outer-valid after receive",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "both original decision preflights are controller-compatible",
+        "pass": true,
+        "detail": null
+      },
+      {
+        "name": "retained failed setup driver has no claims or native call claims",
+        "pass": true,
+        "detail": null
+      }
+    ],
+    "passed": true,
+    "check_count": 697,
+    "jobs": [
+      {
+        "kind": "project",
+        "job_id": "job_e5c893114dce4c18ac0ae121ec908336",
+        "attempt_id": "df7296464cfd4207aec12157aaaebf0b",
+        "invocation_id": "df7296464cfd4207aec12157aaaebf0b",
+        "worker": "/root/luna_draft_forward/luna_forge_df7296464cfd",
+        "phase": "committed",
+        "target_result": {
+          "task_id": "aggregate_expenses",
+          "attempt_id": "df7296464cfd4207aec12157aaaebf0b",
+          "outcome": "done",
+          "task_status": "done",
+          "reason": null,
+          "status": "completed",
+          "revision": 2,
+          "plan_hash": "874493b404d3071de51e62e2dd95811d0f1ec8a2a1626b2a22380ed065f4541e",
+          "evaluation_plan_hash": null
+        }
+      },
+      {
+        "kind": "package",
+        "job_id": "job_41eb81416be145c1ad1a839f32c3a021",
+        "attempt_id": "1570ea2fd2a04f1bb12e7b86db92123d",
+        "invocation_id": "62ba41276f9837407268378ae311b207",
+        "worker": "/root/luna_draft_forward/luna_forge_1570ea2fd2a0",
+        "phase": "committed",
+        "target_result": {
+          "flow_status": "completed",
+          "steps": 1,
+          "checkpoint_advanced": true,
+          "coordinator_outcome": "done"
+        }
+      }
+    ],
+    "audits": [
+      {
+        "run": "luna-independent-20261003T070231Z",
+        "synthetic_receipts": true,
+        "commands": [
+          {
+            "command_id": "01_project_plan_validate",
+            "exit_code": 0,
+            "status": true,
+            "purpose": "Validate minimal bound project fixture before hostbridge use.\n"
+          },
+          {
+            "command_id": "02_project_init",
+            "exit_code": 0,
+            "status": "active",
+            "purpose": "Initialize bound project state for a local CLI fixture.\n"
+          },
+          {
+            "command_id": "03_project_prepare",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Prepare actual project request/checkpoint through the public local bridge CLI.\n"
+          },
+          {
+            "command_id": "04_project_reply_input_drift",
+            "exit_code": 2,
+            "status": "invalid",
+            "purpose": "Change a SHA-bound input after prepare; observe public reply refusal.\n"
+          },
+          {
+            "command_id": "05_project_reply_scope_escape",
+            "exit_code": 2,
+            "status": "invalid",
+            "purpose": "Offer an existing regular artifact outside resolved worker scope.\n"
+          },
+          {
+            "command_id": "06_project_reply_draft",
+            "exit_code": 0,
+            "status": "draft",
+            "purpose": "Create incomplete project host reply with one actual fixture file hash.\n"
+          },
+          {
+            "command_id": "07_project_check_reply_incomplete",
+            "exit_code": 2,
+            "status": "invalid",
+            "purpose": "Preflight unchanged draft at the assigned reply path.\n"
+          },
+          {
+            "command_id": "08_project_issue",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Persist issue intent only; no native host call is made in this fixture.\n"
+          },
+          {
+            "command_id": "09_project_accepted_synthetic",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Import explicitly synthetic fixture receipt; not a native creation result.\n"
+          },
+          {
+            "command_id": "10_project_observe_synthetic_running",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Import explicitly synthetic running status for unresolved-state check.\n"
+          },
+          {
+            "command_id": "11_project_decision_while_running",
+            "exit_code": 2,
+            "status": "invalid",
+            "purpose": "Attempt decision generation before host completion/receive.\n"
+          },
+          {
+            "command_id": "12_project_check_reply_complete",
+            "exit_code": 0,
+            "status": "payload_valid",
+            "purpose": "Preflight filled outer reply with actual fixture artifact reference.\n"
+          },
+          {
+            "command_id": "13_project_receive_synthetic",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Receive reply against explicitly synthetic completed status; not native evidence.\n"
+          },
+          {
+            "command_id": "14_project_decision_draft",
+            "exit_code": 0,
+            "status": "draft",
+            "purpose": "Create project decision draft with candidate evidence; state/job snapshots test read-only.\n"
+          },
+          {
+            "command_id": "15_project_check_decision_incomplete",
+            "exit_code": 2,
+            "status": "invalid",
+            "purpose": "Check the generated not_run decision without grading it.\n"
+          },
+          {
+            "command_id": "16_project_check_decision_controller",
+            "exit_code": 0,
+            "status": "controller_compatible",
+            "purpose": "Run pure original project controller preflight; snapshot state/job.\n"
+          },
+          {
+            "command_id": "17_project_commit_fixture",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Complete only the isolated local project fixture to test settled-state rejection.\n"
+          },
+          {
+            "command_id": "18_project_decision_after_commit",
+            "exit_code": 2,
+            "status": "invalid",
+            "purpose": "Attempt decision generation after local fixture commit.\n"
+          }
+        ]
+      },
+      {
+        "run": "luna-package-20261003T070923Z",
+        "synthetic_receipts": true,
+        "commands": [
+          {
+            "command_id": "01_package_validate",
+            "exit_code": 0,
+            "status": true,
+            "purpose": "Validate supplied small v1 package fixture.\n"
+          },
+          {
+            "command_id": "02_package_start",
+            "exit_code": 0,
+            "status": "ready",
+            "purpose": "Start existing package invocation with local synthetic inputs.\n"
+          },
+          {
+            "command_id": "03_package_next",
+            "exit_code": 0,
+            "status": "ready",
+            "purpose": "Read current package dispatch through public packagectl CLI.\n"
+          },
+          {
+            "command_id": "04_package_prepare",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Prepare actual existing-package invocation through public local bridge CLI.\n"
+          },
+          {
+            "command_id": "05_package_reply_default",
+            "exit_code": 0,
+            "status": "draft",
+            "purpose": "Generate default package reply scaffold with a real fixture artifact hash.\n"
+          },
+          {
+            "command_id": "06_package_reply_selected_flow_outcome",
+            "exit_code": 0,
+            "status": "draft",
+            "purpose": "Explicitly scaffold one declared Flow branch without business evidence.\n"
+          },
+          {
+            "command_id": "07_package_check_reply_outer_only",
+            "exit_code": 0,
+            "status": "payload_valid",
+            "purpose": "Check whether outer preflight intentionally leaves package inner Flow validation to original controller.\n"
+          },
+          {
+            "command_id": "08_package_issue",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Persist issue intent only; no native host call follows.\n"
+          },
+          {
+            "command_id": "09_package_accepted_synthetic",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Import synthetic local acceptance fixture; not native worker evidence.\n"
+          },
+          {
+            "command_id": "10_package_receive_synthetic",
+            "exit_code": 0,
+            "status": null,
+            "purpose": "Receive outer reply against synthetic completion fixture; package response is not advanced.\n"
+          },
+          {
+            "command_id": "11_package_decision_draft",
+            "exit_code": 0,
+            "status": "draft",
+            "purpose": "Create package decision draft and compare exact captured Flow response; decision is ungraded.\n"
+          },
+          {
+            "command_id": "12_package_check_decision_incomplete",
+            "exit_code": 2,
+            "status": "invalid",
+            "purpose": "Preflight generated ungraded package decision without treating it as pass.\n"
+          },
+          {
+            "command_id": "13_package_check_decision_original_controller",
+            "exit_code": 2,
+            "status": "invalid",
+            "purpose": "Preflight done decision carrying actual captured but invalid Flow response.\n"
+          }
+        ]
+      }
+    ],
+    "tokens": null,
+    "cost": null,
+    "internal_provider_identity_verified": false
+  },
+  "observed_metrics": {
+    "at": "2026-10-03T07:20:53.200900+00:00",
+    "scope": "Only captured parent/coordinator CLI subprocesses; worker internal CLI/tool steps and Root/admin calls are outside this denominator. Final parent index reconciles count.",
+    "captured_cli_count": 38,
+    "draft_helper_cli_count": 9,
+    "nonzero_cli_count": 4,
+    "nonzero_cli": [
+      {
+        "record": "forward/logs/007-expense-driver-next.json",
+        "exit_code": 2,
+        "stdout": {
+          "status": "reconcile_required",
+          "error": "Reply path outside assigned write scope",
+          "automatic_host_call": false,
+          "next_action": "Inspect saved driver intent and bridge evidence; never repeat a claimed spawn."
+        }
+      },
+      {
+        "record": "forward/logs/008-expense-driver-status-after-error.json",
+        "exit_code": 2,
+        "stdout": {
+          "status": "reconcile_required",
+          "error": "Cannot read JSON file /workspace/scratch/73714494ad2f/forge-protocol-drafts-20261003/forward/expenses/driver/jobs/job-0001/bridge/control.json: [Errno 2] No such file or directory: '/workspace/scratch/73714494ad2f/forge-protocol-drafts-20261003/forward/expenses/driver/jobs/job-0001/bridge/control.json'",
+          "automatic_host_call": false,
+          "next_action": "Inspect saved driver intent and bridge evidence; never repeat a claimed spawn."
+        }
+      },
+      {
+        "record": "forward/logs/011-expense-reply-draft.json",
+        "exit_code": 2,
+        "stdout": {
+          "status": "invalid",
+          "error": "Reply draft output outside worker scope",
+          "read_only": false,
+          "automatic_host_call": false,
+          "call_allowed": false
+        }
+      },
+      {
+        "record": "forward/logs/015-expense-bridge-observe.json",
+        "exit_code": 2,
+        "stdout": {
+          "status": "reconcile_required",
+          "error": "Use receive for completed or terminate for terminal host failure",
+          "next_action": "Inspect the bound checkpoint, job journal and actual host before any retry.",
+          "automatic_host_call": false
+        }
+      }
+    ],
+    "sum_captured_subprocess_monotonic_elapsed_seconds": 2.471502327,
+    "stage_observation_intervals": [
+      {
+        "label": "expense preparation including rejected setup and corrected bridge configuration",
+        "begin_cli": "006-expense-driver-init.json",
+        "end_cli": "013-expense-bridge-issue.json",
+        "begin_utc": "2026-10-03T07:02:07.018583+00:00",
+        "end_utc": "2026-10-03T07:05:02.542703+00:00",
+        "observed_start_to_start_seconds": 175.52412,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      },
+      {
+        "label": "expense issued-intent to successful received CLI",
+        "begin_cli": "013-expense-bridge-issue.json",
+        "end_cli": "016-expense-bridge-receive.json",
+        "begin_utc": "2026-10-03T07:05:02.542703+00:00",
+        "end_utc": "2026-10-03T07:07:42.486025+00:00",
+        "observed_start_to_start_seconds": 159.943322,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      },
+      {
+        "label": "expense received to original commit including coordinator review",
+        "begin_cli": "016-expense-bridge-receive.json",
+        "end_cli": "020-expense-bridge-commit.json",
+        "begin_utc": "2026-10-03T07:07:42.486025+00:00",
+        "end_utc": "2026-10-03T07:09:22.058916+00:00",
+        "observed_start_to_start_seconds": 99.572891,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      },
+      {
+        "label": "package original bridge preparation to issued intent",
+        "begin_cli": "023-package-bridge-prepare.json",
+        "end_cli": "025-package-bridge-issue.json",
+        "begin_utc": "2026-10-03T07:10:25.401084+00:00",
+        "end_utc": "2026-10-03T07:10:36.673284+00:00",
+        "observed_start_to_start_seconds": 11.2722,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      },
+      {
+        "label": "package issued-intent to successful received CLI",
+        "begin_cli": "025-package-bridge-issue.json",
+        "end_cli": "027-package-bridge-receive.json",
+        "begin_utc": "2026-10-03T07:10:36.673284+00:00",
+        "end_utc": "2026-10-03T07:11:52.197358+00:00",
+        "observed_start_to_start_seconds": 75.524074,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      },
+      {
+        "label": "package received to original commit including coordinator review",
+        "begin_cli": "027-package-bridge-receive.json",
+        "end_cli": "034-package-bridge-commit.json",
+        "begin_utc": "2026-10-03T07:11:52.197358+00:00",
+        "end_utc": "2026-10-03T07:15:04.411244+00:00",
+        "observed_start_to_start_seconds": 192.213886,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      },
+      {
+        "label": "configuration rejection to corrected original bridge preparation",
+        "begin_cli": "007-expense-driver-next.json",
+        "end_cli": "010-expense-bridge-prepare.json",
+        "begin_utc": "2026-10-03T07:02:26.397217+00:00",
+        "end_utc": "2026-10-03T07:04:34.048671+00:00",
+        "observed_start_to_start_seconds": 127.651454,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      },
+      {
+        "label": "rejected draft destination to permitted new destination",
+        "begin_cli": "011-expense-reply-draft.json",
+        "end_cli": "012-expense-reply-draft.json",
+        "begin_utc": "2026-10-03T07:04:45.173753+00:00",
+        "end_utc": "2026-10-03T07:04:55.930839+00:00",
+        "observed_start_to_start_seconds": 10.757086,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      },
+      {
+        "label": "rejected terminal observe to correct receive; same native completed receipt",
+        "begin_cli": "015-expense-bridge-observe.json",
+        "end_cli": "016-expense-bridge-receive.json",
+        "begin_utc": "2026-10-03T07:07:34.586796+00:00",
+        "end_utc": "2026-10-03T07:07:42.486025+00:00",
+        "observed_start_to_start_seconds": 7.899229,
+        "bounds": "Recorded coordinator subprocess start timestamps; includes coordinator/tool/waiting gaps. Not provider start/end or model active duration."
+      }
+    ],
+    "comparable_A_B_trials_performed": false,
+    "speed_gain_measured": false,
+    "tokens": null,
+    "cost": null,
+    "provider_active_duration": null,
+    "functional_repairs": 0,
+    "native_business_counts": {
+      "spawn_agent": 2,
+      "list_agents": 2,
+      "interrupt_agent": 0,
+      "notification_waits": 2,
+      "native_creation_and_query_calls": 4
+    },
+    "native_counts_basis": "Completed executor execution-record.md, two distinct actual creation returns and completed subtree returns; no provider-wide call/usage telemetry. Root/material/audit/admin calls excluded.",
+    "native_receipt_refs": [
+      {
+        "path": "forward/expenses/bridge/job-0001/native-create-return.json",
+        "sha256": "8ca51f12e2308e6df364a378dcb3319aa1c3f09ff2b8a1a1de83b0abad7a07b6"
+      },
+      {
+        "path": "forward/expenses/bridge/job-0001/native-status-return.json",
+        "sha256": "e8a36c62db74cec489fb696bda9185da1eaa56649046da3a5f59e10c9ebf64eb"
+      },
+      {
+        "path": "forward/package/bridge/job-0001/native-create-return.json",
+        "sha256": "a33e50c9c082d65f26b149b4a72330ea6955a81dc8bea37dcb2ee996c3fd5553"
+      },
+      {
+        "path": "forward/package/bridge/job-0001/native-status-return.json",
+        "sha256": "fff2390f0b726abef1131556887e33e130b98a74bb53fb2d6e2a799467ac2410"
+      }
+    ]
+  },
+  "independent_audit": {
+    "commands": 31,
+    "project_commands": 18,
+    "package_commands": 13,
+    "synthetic_only": true,
+    "no_native_host_events": true,
+    "public_required_defects_reproduced": 0,
+    "report": "audit/hostdraft-independent-audit-report.md",
+    "corrected_capture_verification": {
+      "runs": [
+        {
+          "run_id": "luna-independent-20261003T070231Z",
+          "command_count": 18,
+          "command_directory_count": 18,
+          "commands": [
+            {
+              "id": "01_project_plan_validate",
+              "exit_code": 0,
+              "argv_sha256": "486dd4445674de2e52595381bb0e2329e69fc5727fe68df7f1eb018b39a2bd30",
+              "stdout_bytes": 36,
+              "stdout_sha256": "655823ac7f996b259837b1279f4757264aac1ab82808d9b562c06a9f640f36af",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "458a5ebb0ae8b54dea5b8c5930475470c7db440d2a1c5d896ef822fd4d75fa6f",
+              "after_manifest_sha256": "03c388a3154402138cba6b818d756aee5e8eb3a326d33675680acb16bca8f960"
+            },
+            {
+              "id": "02_project_init",
+              "exit_code": 0,
+              "argv_sha256": "8f130ec0718124e9ef314510ed2980a6282be285924210dda808ddd6a3c7fe19",
+              "stdout_bytes": 690,
+              "stdout_sha256": "fc0aa229d61c188a786a09ea1838e8a3e43858ed42e2d65f9db326f2af50d728",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "49834aa29b837b4bd8cb21d80b5d7f8d0a52f42380e29628d127e9cce9e9020d",
+              "after_manifest_sha256": "aa09e84d92b70e43c284070949418c2d1ec86ecc71c3b41697e5ff374b227445"
+            },
+            {
+              "id": "03_project_prepare",
+              "exit_code": 0,
+              "argv_sha256": "0072c3745676523d1e8d41ce2282d6b3c859d301950258ec194423936c739ac0",
+              "stdout_bytes": 594,
+              "stdout_sha256": "9906acfc0cde27642b2c3e9430c4f47731118d96ac81698d54ae27951d324304",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "4b471ef7e738b58f9075e8996a33e070123ab728248a59e43d1574cf7a4c74a4",
+              "after_manifest_sha256": "aeec6162c1239ce649f5eccef8ed15ba866f9887b6b26dd63699974fe80a30a9"
+            },
+            {
+              "id": "04_project_reply_input_drift",
+              "exit_code": 2,
+              "argv_sha256": "3fa09aa42e9041072b2143ea2afc51302803899ff5bf313627594b0f6c032ebe",
+              "stdout_bytes": 298,
+              "stdout_sha256": "a3493a2d9f3911d10e39d58c40217251f5d07f19f1092c9437ca0550c76ed114",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "51c769ee7ee75a8c731653aa5baedb90e15c01c92dd13b0f8623e534cd0c3823",
+              "after_manifest_sha256": "4a59ecfc9f6f880c27843d7010e7b22ef4ad736fb9b7c1861d26320c9a3f3eef"
+            },
+            {
+              "id": "05_project_reply_scope_escape",
+              "exit_code": 2,
+              "argv_sha256": "03b5acdc2cdfacb74f37643ba2c1c72911e3c66e00952a1945e4b55bd2c5952b",
+              "stdout_bytes": 158,
+              "stdout_sha256": "789fe3f8534e464537bfcabe97e9977c5d1ef225a9d25dcd0d1e6491ea46f811",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "013b0e484129e4f2b53ca6ce9985635e3f15c7ab2066b616ca3efaf594c953d7",
+              "after_manifest_sha256": "970b8b1a912b65b60e1271837322ddf41d3a9549cf451f900b8a5ada35d0b86a"
+            },
+            {
+              "id": "06_project_reply_draft",
+              "exit_code": 0,
+              "argv_sha256": "e50f541a373154d2d96da369d30e3ad4c4f2489f37e73e51d428cabe6ffbcade",
+              "stdout_bytes": 366,
+              "stdout_sha256": "715d229d51e55ab1045d97a688ecce5bfa61f94114b59f63bacdd05901a7a91a",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "7b03c7814b8908288cabd3a8e981893a461c5c78c7272b5467453eb9f7bd5dd5",
+              "after_manifest_sha256": "cd317ec5d9ca00258c39c55d132b624f21efbc557ef589956cdb4de3998c47b9"
+            },
+            {
+              "id": "07_project_check_reply_incomplete",
+              "exit_code": 2,
+              "argv_sha256": "079de2aecb1d00c7c5b3b30fae1acd6bc905b9fd916773dd4ab00058d95a88d2",
+              "stdout_bytes": 150,
+              "stdout_sha256": "fd5ab9a7248cb4f58ce51bf61b06a9b2bc846382dfb31394944a168cd73e7473",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "871c298e50edf7ad4339dfb25b040f7bf87e4adc8b770db25390df346ccc8040",
+              "after_manifest_sha256": "1e3a40f25f9cb79bc65fab0dc96724e7b6310982c22906a66e4fc1c64e276c15"
+            },
+            {
+              "id": "08_project_issue",
+              "exit_code": 0,
+              "argv_sha256": "9cf552bb4d17fa99658eee9a28468d0b25efac13fb6077f6abe3011de92a53cd",
+              "stdout_bytes": 1901,
+              "stdout_sha256": "c8bcf4058a1ff994da91d6b9e00c8e7a8b732b8c7a0b008b947356bb7bfb1e29",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "bb73206d8d0e978a17162b1610a967aa62d84d6ed64c29d24cf3dd86987e122d",
+              "after_manifest_sha256": "5c04958c24d7df1a3a370ddb1a40ddcf17efee183350d382f58b5ca5107ed632"
+            },
+            {
+              "id": "09_project_accepted_synthetic",
+              "exit_code": 0,
+              "argv_sha256": "1cd53eb40341947b3a5742f720b2f60f9808f87c25d0534614b6590f2420e243",
+              "stdout_bytes": 453,
+              "stdout_sha256": "0b60cf4bd4c67370814e0e8bdb5ec50458deb4ab35f709f2de3bd82a42bbd4f9",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "bf80f60728b1040816fef212f3aec810b8ac0f39fb252a521ac275d920650821",
+              "after_manifest_sha256": "e5beb558501b40e9b05686e8b01a3bfcac82c6a6eb85f660d7b32614ea670762"
+            },
+            {
+              "id": "10_project_observe_synthetic_running",
+              "exit_code": 0,
+              "argv_sha256": "9a3bbf595b21a134d478e1aadcabf38850c9056740d1289b0d54611802b7cc66",
+              "stdout_bytes": 452,
+              "stdout_sha256": "d9040306e85b2d3513fd05d784360d9c07b7997fea3780ed24e13402932b8cf4",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "a303b23c0ceb22803cb7e7a869364ea2c8134c30a965b2c43477746c082594a1",
+              "after_manifest_sha256": "aa0dfa70f219beeea8450b7998c0e45a0caca1ea3a4a12320356bd1bb0619bb7"
+            },
+            {
+              "id": "11_project_decision_while_running",
+              "exit_code": 2,
+              "argv_sha256": "13c38e244511d0a28bb245c0d7a30dc9338378659962f43976a0a7e5c0f6d104",
+              "stdout_bytes": 178,
+              "stdout_sha256": "37c63028d2ba9a0c54e5502b8abf90aadd34de53798c3aa8e8687ad98c4d702c",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "bdce9e0d2eb0c63ccab35bae26b2ffe2e81ada6663fd1ed5ac48ae7d69c6f6ca",
+              "after_manifest_sha256": "32104c6a6a000efe2be63f55a6233605afe2f0ba567d18542db9d15d2a598138"
+            },
+            {
+              "id": "12_project_check_reply_complete",
+              "exit_code": 0,
+              "argv_sha256": "079de2aecb1d00c7c5b3b30fae1acd6bc905b9fd916773dd4ab00058d95a88d2",
+              "stdout_bytes": 290,
+              "stdout_sha256": "8e92537b46446f85c55a4d9cc2895cf1926b2c57a056a9037e2edde7ac381a26",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "f7e038f0c837b1ded568acbd063a5934a13c1ef4b9904c2e42fe2f07075d73b1",
+              "after_manifest_sha256": "ebfe156a27e704be7dd1d737583fa2133a040d1efb8fbf1ac9d5cb4eef0f9d2c"
+            },
+            {
+              "id": "13_project_receive_synthetic",
+              "exit_code": 0,
+              "argv_sha256": "473da10dc1833589089c709aa833ac53e961e9244b07c7d49861e96dc33f6157",
+              "stdout_bytes": 467,
+              "stdout_sha256": "10a868a1a162d5161a05594821dfbb4c9083b903baac449e7208ebd7abe88ecc",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "14e713e6bf8b566b43c2815739e2ffcf1c5e6f06259e42b45160a236bae2c3ab",
+              "after_manifest_sha256": "b9475365dee5617a91784f1d1d034c13036ac9b1ed02ad4c3360b9dc543a9bbf"
+            },
+            {
+              "id": "14_project_decision_draft",
+              "exit_code": 0,
+              "argv_sha256": "7759b7c524c10c0766743d715fc69adcf4135ee9f5558f16091576240cbea4b3",
+              "stdout_bytes": 366,
+              "stdout_sha256": "269109635ab80e87f35412dc91cd55aac5bd803075cfec844c4c948ea553bdf6",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "b9991c4f7dd3b69ebf5d01b012fb10dfdfc28c48e3f7746fe1da275ae25e8877",
+              "after_manifest_sha256": "923db790933906231010c261ca958c571a88fc359f113e6f906f8c5226be786a"
+            },
+            {
+              "id": "15_project_check_decision_incomplete",
+              "exit_code": 2,
+              "argv_sha256": "447b78c9985088b39ab41be1ad7954f11d86e4c32c6fab28a0c82835a49058dc",
+              "stdout_bytes": 159,
+              "stdout_sha256": "cd972e67871338b3fa6c816c45f4e8cb2fbfa4b1a666e4109f3abb4958258375",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "3392dac8b44bb2d38b667b9c1a3269291246635b9ccc9dbd78684588053ed2bd",
+              "after_manifest_sha256": "71f3b7064fb8749464509d53ec572fe468f4b462d8779e98ec8ddbf2d2731013"
+            },
+            {
+              "id": "16_project_check_decision_controller",
+              "exit_code": 0,
+              "argv_sha256": "b06a72412bb81be54752b587d5037679ea65d8e892c81d1bd823bbbe82206715",
+              "stdout_bytes": 283,
+              "stdout_sha256": "b1025d83aee9a19e36b81e6398e27cec54b9fa3a3cf95b8101177d1c56c759a5",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "72af9d591e788da50bf74c328b08e543fba068570854f6b99c44a4ad1348fa1c",
+              "after_manifest_sha256": "9552f68ce2d6590cb7d260af6854e9195b2744d02e92b5372d41fc8bdba095bb"
+            },
+            {
+              "id": "17_project_commit_fixture",
+              "exit_code": 0,
+              "argv_sha256": "ebcc06dd4bf9d359a4a95c598cd6667a78dbe1c24ca0b8bdf04bb3ee452977d1",
+              "stdout_bytes": 1273,
+              "stdout_sha256": "c7037c363d9081d4f59906885f259cba8dd64d04d1578381ef2802595282bef1",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "168edebc9561e12e8ab8bbd03cfa13a8723cbdc4563870f473d97bb57ceb575c",
+              "after_manifest_sha256": "c45b363a3ba9100a898681437f8bfe32284f180eb1f10341fbf6d699f2c60b68"
+            },
+            {
+              "id": "18_project_decision_after_commit",
+              "exit_code": 2,
+              "argv_sha256": "6c5f8a83568b34383a7fd93a5df11c8c6d035df00401ba3429bf9df69a2f9ad2",
+              "stdout_bytes": 178,
+              "stdout_sha256": "37c63028d2ba9a0c54e5502b8abf90aadd34de53798c3aa8e8687ad98c4d702c",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "71714375c1b915b07341d5d93c05593dcdc6ce23bc4a1c0e7c8f5c549d407ddb",
+              "after_manifest_sha256": "a02258a8d65cbf99a20b15284858ae5271ed9cf7060d92254cf96c3aac6cb8d1"
+            }
+          ],
+          "source_hashes_pre_post_match": true,
+          "problems": [],
+          "verified": true
+        },
+        {
+          "run_id": "luna-package-20261003T070923Z",
+          "command_count": 13,
+          "command_directory_count": 13,
+          "commands": [
+            {
+              "id": "01_package_validate",
+              "exit_code": 0,
+              "argv_sha256": "9f5f4d71f38a074c6470c80c0b623932e639769d3987746d38c97f8b42dcf0ed",
+              "stdout_bytes": 190,
+              "stdout_sha256": "769ea09fbe27e0b1a9803c0264016264351a365591b697c9b9dac6025298e005",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "6d2d3a97da4fcc1cca1a034cac5e29baa5c7cd2045572d89a4cd07a128b6f235",
+              "after_manifest_sha256": "6875c70f6c421edb8095e1124a92d591c52692a5705169adb6a3dedd8f66ae92"
+            },
+            {
+              "id": "02_package_start",
+              "exit_code": 0,
+              "argv_sha256": "31f31217f43d9ec34207286eb420b55a7adc4650edbd30bd54f34137528f56c3",
+              "stdout_bytes": 1237,
+              "stdout_sha256": "7b0f8febefe2caa80172a14df159666e1398a2c04d7bd58dd7c83659ee73d77e",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "b79fb97d6eefb2d8a766d181df1e589d1b52d9f8b547d8550942faca36593f0b",
+              "after_manifest_sha256": "48d8611807765fbc41aafc145f96772d05f5ab2a5f2815f67681ab73cacc2d0d"
+            },
+            {
+              "id": "03_package_next",
+              "exit_code": 0,
+              "argv_sha256": "3340650ac1bab5907cd060985c6e3b543e8fe6dfd685618b8e5c02c37b022582",
+              "stdout_bytes": 1237,
+              "stdout_sha256": "7b0f8febefe2caa80172a14df159666e1398a2c04d7bd58dd7c83659ee73d77e",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "babe3aca5f89e388b0b5d77f5388cead76ee16515ab09ba95555e6a7848d8b64",
+              "after_manifest_sha256": "032872d319e4c557011dd69e1e238e71ed03a8382c6bec45aedefa3f51a86268"
+            },
+            {
+              "id": "04_package_prepare",
+              "exit_code": 0,
+              "argv_sha256": "2fe3358d64722cc443f17d1836225a0abb5f7f999953ca39e390035eaa09023e",
+              "stdout_bytes": 590,
+              "stdout_sha256": "d714b52731bd702c2e227bc550f6321534bf449653f98efb02991140808994ed",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "b1dccb57680f72e36c15af72669cc8401fe8ca8b0edeffc1dd14f87afb074edb",
+              "after_manifest_sha256": "bcc62767ba3eb3622ac6c09ee275d1f5bb0a40ef1564daf8ce63f5b2c808f406"
+            },
+            {
+              "id": "05_package_reply_default",
+              "exit_code": 0,
+              "argv_sha256": "9ab0714038f5d850c2e15df52d8e596d8c306e932fc79287e5e00e6f80a8cee8",
+              "stdout_bytes": 370,
+              "stdout_sha256": "dd1c18b021f4b1279010f0ae1c696e853b204325f9db009ddbfa2c042671b338",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "961aaff92cb56151a4002370ef764529b8ad46bd61bbf5c30b29d44364fd3c4b",
+              "after_manifest_sha256": "f2dadec35ffbff33f732caacf5935f0988e6645f7d63e7a36bbedadeb0e0b21e"
+            },
+            {
+              "id": "06_package_reply_selected_flow_outcome",
+              "exit_code": 0,
+              "argv_sha256": "0be9b728e87fda707278da3e708cae01114c309d39cf5d81bd100736152b8cd2",
+              "stdout_bytes": 365,
+              "stdout_sha256": "c56c55b5d21b1769ef8550977949a885cb1623384a18364ccfc6ab5da0128197",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "800caf0b2694670e07374f5868771583dc3f976a29e0e68871261ba952932633",
+              "after_manifest_sha256": "e2e38ce486e7d7145c0086fe7433c1ad56cfbf7f36536b75b984621eff807a63"
+            },
+            {
+              "id": "07_package_check_reply_outer_only",
+              "exit_code": 0,
+              "argv_sha256": "a8bc62e736361bbf54c2723641cede4e88f0a0aa1d87873d70c97cc25923776f",
+              "stdout_bytes": 290,
+              "stdout_sha256": "8e92537b46446f85c55a4d9cc2895cf1926b2c57a056a9037e2edde7ac381a26",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "eb8f81185d11f5fae95fbe27fbbbcf6e464a79a7d0ba02371f25dad3964defe3",
+              "after_manifest_sha256": "de6e2272e4ea5ba44ef354dd3ad1a1fa863bc64db7c9848d20a1670aae66dc6b"
+            },
+            {
+              "id": "08_package_issue",
+              "exit_code": 0,
+              "argv_sha256": "100d073e787416488d0d4edcc569b664f25cef7fc8d2b19a8e11430565ccaecd",
+              "stdout_bytes": 2523,
+              "stdout_sha256": "5356cb6a1514d0452e57ded5d9fa797c3412d711d0d7c322fef9036ddc59cbc6",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "7557f3ddc9ac9d6c66da1831020f3bdc55f74f8152bd4a0feb330c7b3cb6ab99",
+              "after_manifest_sha256": "2e2b163473e32f82e4f01d11ef16045ae64158b1fe40c413ed94d22018a0f69a"
+            },
+            {
+              "id": "09_package_accepted_synthetic",
+              "exit_code": 0,
+              "argv_sha256": "5dad30481ccb575ab0acbb403f6e41f221fd35042a04dbec289cb153c8ed2b25",
+              "stdout_bytes": 453,
+              "stdout_sha256": "f47e832d9ae62d32a645b866dea8e2583ee8dab8be3a5ace6a82fbfdda8e116b",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "88341d327059411bb60b6c7957bfe0babdc3fb9ff06ed42cdd7e23ebcdb561af",
+              "after_manifest_sha256": "7d37195899a0c7f31107aee941f3404741dd6f0cf359824348fad93591ac383a"
+            },
+            {
+              "id": "10_package_receive_synthetic",
+              "exit_code": 0,
+              "argv_sha256": "e5a3ce4b3b09c84f87133b2ca5d0241e1d4cd3389670aab3f11d586204e92532",
+              "stdout_bytes": 467,
+              "stdout_sha256": "5514ed040b221b8b5d5ae4b216aec8ab96736cb91659360bfb7ca460bebbc33e",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "8cd82e02e31c1cf1a74d6a2fd0d029570f523ae430cc9fef9cc05eb6bbf9a6f4",
+              "after_manifest_sha256": "b13280015266ee202b3b23e9b016598759219a89becebe8403db79a670cff1b5"
+            },
+            {
+              "id": "11_package_decision_draft",
+              "exit_code": 0,
+              "argv_sha256": "14c54860c4dbd730a814fc391a290ed17c4a777f8af6fc22e6f774c475b73b51",
+              "stdout_bytes": 362,
+              "stdout_sha256": "5589a81fa1713a8796227eb3bb4b1985d117087fb7a9e0398622871c33e10387",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "5118de3d482c3330d53a5b3c59bf5432876c36d604bacb85dbca726f6a65ba32",
+              "after_manifest_sha256": "a942ae8a7243e567f6c125cc48ce4b18304870c854cc5a4c884cf55deb78f4a9"
+            },
+            {
+              "id": "12_package_check_decision_incomplete",
+              "exit_code": 2,
+              "argv_sha256": "63502c61a72718733846fab26ef139fc896e8b2a924120b71aa365fa299fcce5",
+              "stdout_bytes": 215,
+              "stdout_sha256": "32deb8bf360fe1c01075fa8d6d0f1ba8e250d8b9c2862c0cfd02ae961fb02321",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "478bc72595125a979775e7d784fc0883a4f92826cd8d34076acb92a93a2e7fc0",
+              "after_manifest_sha256": "4128ca0670f4aeb46a0bdca5034ce02afe4108311130ffc53439b47f26206da3"
+            },
+            {
+              "id": "13_package_check_decision_original_controller",
+              "exit_code": 2,
+              "argv_sha256": "5613b8f06c9a6d5848ef21bc15ffe69d363f1a2b0b28ef80485707eb07952fd0",
+              "stdout_bytes": 151,
+              "stdout_sha256": "2a94fb924946bee4a7f73658f681756892017bde1bffbabca922c14877a1761c",
+              "stderr_bytes": 0,
+              "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+              "before_manifest_sha256": "a2faf29839db656d421cfae941d60fc5bb5daad5f8cf8ac0d5c68120d851adfa",
+              "after_manifest_sha256": "bd815e30fcfd0c239b688935c5d6f8ff5fe77eb1619f20d1af5c79313ac309af"
+            }
+          ],
+          "source_hashes_pre_post_match": true,
+          "problems": [],
+          "verified": true
+        }
+      ],
+      "read_only_snapshot_checks": [
+        {
+          "run_id": "luna-independent-20261003T070231Z",
+          "command_id": "14_project_decision_draft",
+          "state_and_job_content_equal": true,
+          "comparison": "compares each original source path, kind, length, target and SHA-256; ignores the different path used to store the before/after copy"
+        },
+        {
+          "run_id": "luna-independent-20261003T070231Z",
+          "command_id": "15_project_check_decision_incomplete",
+          "state_and_job_content_equal": true,
+          "comparison": "compares each original source path, kind, length, target and SHA-256; ignores the different path used to store the before/after copy"
+        },
+        {
+          "run_id": "luna-independent-20261003T070231Z",
+          "command_id": "16_project_check_decision_controller",
+          "state_and_job_content_equal": true,
+          "comparison": "compares each original source path, kind, length, target and SHA-256; ignores the different path used to store the before/after copy"
+        },
+        {
+          "run_id": "luna-independent-20261003T070231Z",
+          "command_id": "18_project_decision_after_commit",
+          "state_and_job_content_equal": true,
+          "comparison": "compares each original source path, kind, length, target and SHA-256; ignores the different path used to store the before/after copy"
+        },
+        {
+          "run_id": "luna-package-20261003T070923Z",
+          "command_id": "11_package_decision_draft",
+          "state_and_job_content_equal": true,
+          "comparison": "compares each original source path, kind, length, target and SHA-256; ignores the different path used to store the before/after copy"
+        },
+        {
+          "run_id": "luna-package-20261003T070923Z",
+          "command_id": "12_package_check_decision_incomplete",
+          "state_and_job_content_equal": true,
+          "comparison": "compares each original source path, kind, length, target and SHA-256; ignores the different path used to store the before/after copy"
+        },
+        {
+          "run_id": "luna-package-20261003T070923Z",
+          "command_id": "13_package_check_decision_original_controller",
+          "state_and_job_content_equal": true,
+          "comparison": "compares each original source path, kind, length, target and SHA-256; ignores the different path used to store the before/after copy"
+        }
+      ],
+      "cross_run_source_hashes_identical": true,
+      "all_checks_passed": true,
+      "project_observation_corrections": [
+        {
+          "observation": "project plan fixture validates",
+          "original_recorder_issue": "result_status() looked for a status key; projectctl validate emits valid:true.",
+          "corrected_actual": null,
+          "raw_stdout_file": "luna-independent-20261003T070231Z/commands/01_project_plan_validate/stdout.bin",
+          "corrected_result": true
+        },
+        {
+          "observation": "decision state/job bytes unchanged",
+          "original_recorder_issue": "raw before/after manifests include distinct snapshot-copy paths, so direct JSON equality was false.",
+          "corrected_read_only_check_ids": [
+            "14_project_decision_draft",
+            "15_project_check_decision_incomplete",
+            "16_project_check_decision_controller",
+            "18_project_decision_after_commit"
+          ],
+          "corrected_result": "all normalized source-path/kind/byte-length/SHA comparisons are equal"
+        }
+      ]
+    },
+    "coverage_limit": "Independent samples do not cover all H01-H08; meaningful unit cases listed separately cover additional local boundaries."
+  },
+  "assistance_and_corrections": {
+    "forward_not_unassisted": true,
+    "forward_nonzero_cli": [
+      "007-expense-driver-next.json",
+      "008-expense-driver-status-after-error.json",
+      "011-expense-reply-draft.json",
+      "015-expense-bridge-observe.json"
+    ],
+    "failed_driver": {
+      "run_id": "driver_299ee4a277f04d31894c7fbf116d1b48",
+      "claims": 0,
+      "native_call_claims": 0,
+      "remained_unused": true,
+      "successful_bridge_jobs_are_not_successful_driver_runs": true
+    },
+    "runtime_core_repaired": false,
+    "root_unit_fixture_collision": "coordinator/Initial_Harness_Failure.json",
+    "root_recorder_correction": {
+      "initial_failure": "coordinator/Root_Initial_Recorder_Failure.json",
+      "explanation": "coordinator/Recorder_Correction.md",
+      "corrected_verification": "coordinator/Root_Source_Verification.json"
+    },
+    "audit_recorder_corrections": "audit/capture_verification.json; original observations retained",
+    "irrelevant_parent_test_status_message": "Executor disclosed and did not use as task input or acceptance; prompts contained no expected business answers."
+  },
+  "limits": [
+    "Actual coordinator reply preflight occurred after receive. Worker pre-completion preflight was not independently captured; complete instruction-order conformance is unverified.",
+    "Actual v1 package new caller input has no frozen case plan; no-action input branch was not executed.",
+    "Hashes/receipts are cooperating local evidence, not authenticated distributed isolation.",
+    "Elapsed subprocess spans and ledger observations are not provider start/end or model active duration.",
+    "No paired overhead comparison yet; tokens/cost null and internal provider identity unverified.",
+    "Original browser blockers, partial provider SDK/global limits/external-effect recovery, and historical raw R2 evidence gap remain."
+  ],
+  "next_iteration": "host_protocol_overhead_comparison; freeze comparable conditions before eight actual workers"
+}

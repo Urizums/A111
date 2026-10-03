@@ -1,0 +1,26 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; r=json.loads(Path(\"package/B2/job/request.json\").read_text()); print(json.dumps({\"keys\":list(r),\"invocation_id\":r.get(\"invocation_id\"),\"bindings\":r.get(\"target_binding\"),\"kind\":r.get(\"kind\")},ensure_ascii=False,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T12:41:05.936296+00:00",
+    "monotonic_ns": 3615052512778,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "end": {
+    "utc": "2026-10-03T12:41:05.956376+00:00",
+    "monotonic_ns": 3615072590420,
+    "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020077642,
+  "stdout": "{\n  \"keys\": [\n    \"request\",\n    \"request_hash\"\n  ],\n  \"invocation_id\": null,\n  \"bindings\": null,\n  \"kind\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJrZXlzIjogWwogICAgInJlcXVlc3QiLAogICAgInJlcXVlc3RfaGFzaCIKICBdLAogICJpbnZvY2F0aW9uX2lkIjogbnVsbCwKICAiYmluZGluZ3MiOiBudWxsLAogICJraW5kIjogbnVsbAp9Cg==",
+  "stderr_base64": ""
+}

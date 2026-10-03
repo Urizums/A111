@@ -1,0 +1,2815 @@
+{
+  "schema": "forge-audit-inventory/1",
+  "started_at": "2026-10-03T18:25:11.394805+00:00",
+  "finished_at": "2026-10-03T18:25:11.500581+00:00",
+  "actual_operation": "Read repository C1 JSON/JSONL; identify schema; independently decode raw CLI streams and compare same-boot elapsed fields.",
+  "schema_counts": {
+    "forge-c1-sample-recovery/1": 1,
+    "forge-comparison-auxiliary-errors/1": 1,
+    "forge-comparison-cli-index/1": 1,
+    "forge-comparison-cli/1": 348,
+    "forge-comparison-cutoff-snapshot/1": 1,
+    "forge-comparison-marker-index/1": 1,
+    "forge-comparison-marker/1": 156,
+    "forge-comparison-native-index/1": 1,
+    "forge-comparison-native-observer/1": 85,
+    "forge-comparison-recovery-audit/1": 1,
+    "forge-comparison-root-final-index/1": 1,
+    "forge-comparison-sample-index/1": 4,
+    "forge-comparison-wait-observation/1": 2,
+    "forge-expense-source-review/1": 4,
+    "forge-package/1": 1,
+    "forge-protocol-comparison-block-summary/1": 1,
+    "local-extraction-check/1": 1
+  },
+  "cli_records": [
+    {
+      "path": "evidence/c1/coordinator/recording-qualification/marker-failure.json",
+      "sha256": "3bf3de3a69631d1b8605a551600b595b8dd6e6dfc1f3ecf3716d7b4cdb6df2aa",
+      "actor": "coordinator",
+      "exit_code": 2,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/coordinator/recording-qualification/marker-success.json",
+      "sha256": "73d2e28a7b202a3edb44326e726bffda47c7333310051cf4756a2b3f2cc77b51",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/coordinator/recording-qualification/synthetic-native.json",
+      "sha256": "683adbc1bde16f5b382221c872ca816094e7bf7e52f2c57007f8597dc219e4de",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/coordinator/recording-qualification/target-failure.json",
+      "sha256": "263380837aaddcd90aaf7aba5efdcd7383e8d3496cb1dee4d64362163b2e3723",
+      "actor": "coordinator",
+      "exit_code": 7,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/check-reply.json",
+      "sha256": "6ff43b1f2044da71b9ac0856278ab463b6a9babccf094ef798321def0c99c078",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/inspect-business-artifacts.json",
+      "sha256": "e91cbe24e4093af94f4922c302a377cb0b03486bad6fa5cee179c0c9ae919b4e",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/inspect-draft.json",
+      "sha256": "a5008d59e03fc4d388ea4c519ad6712d5bd0f01a63ebd1420ca98fa0a4087bb3",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/read-bound-files.json",
+      "sha256": "fc4850a2198a7086941f0eede9673b0e0f717cfb640cbeb5839cc5ce6f4fee37",
+      "actor": "luna_forge_765e31c228f3",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/write-author-source.json",
+      "sha256": "9b215ba53b66da71d3530a0db0a0ab12d1e3a6dab89e774ddabd6c3099702aa8",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/write-business-artifacts.json",
+      "sha256": "688664e9ff9b60c64d7c815bdcbe015ce4ee01af9aae35ce6cede8cc9d5a2977",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/write-draft-author-source.json",
+      "sha256": "f47d80ac9973b8640c7fbf395f41c0113b1f6606c8fb69bbcda16567c279791e",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/write-final-author-source.json",
+      "sha256": "2d2405f59069ff58d6bc02c9ce875c2cdc3ba629930d5b035ca509ef5997ff4d",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/write-final-reply.json",
+      "sha256": "0e8b6e1ca4b880a19a0271f9e9e13256ea578397f9ff00e231a4b4cabb696181",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/artifacts/captures/write-incomplete-draft.json",
+      "sha256": "cb843ccc21b25acbfe319715fd81481386b441caee52b69737350c28d327612a",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/001-create-inputs.json",
+      "sha256": "4718fd2e5001e2e7ef1e1c3f46ef38d03ce2eca05597076b671d31d3f9ee462b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/002-package-validate.json",
+      "sha256": "45a165d4afffd0a3c50f434c701f2a7fa9253885498dcab1deb159f337ceda61",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/003-package-start.json",
+      "sha256": "0e6a77474a4593b72ee16be95e6c7184d0a60d81e9aacac28f222cfaead42808",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/004-create-work.json",
+      "sha256": "204615a1a2a4a514d5ccdbf478f70dd7111e9c7828c12691b7cd8465d97684c9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/005-bridge-prepare.json",
+      "sha256": "fda6afe0d3d0122fed05ba21ddb8a42389eb76e46afded05fd3c0def14e39720",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/006-bridge-issue.json",
+      "sha256": "bdf7313096a97d916ca5380eecf82b4e937a5794e8c89f7ef2fc0444315b8fec",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/007-save-native-arguments.json",
+      "sha256": "3fe369cfd86ffbc417ca9f9f5adbb72b0ea210965890dc2ca0c6cfc0cd100b57",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/008-bridge-accepted.json",
+      "sha256": "a10d4ead54a4e94f76671bcc4f093d61894260d1c7b6de5af11ee43cbc907d01",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/009-copy-status-query-01.json",
+      "sha256": "33ee7c8d663f463b7142d361e914c99637db8ad8743c259f10c144cbe95a6e6a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/010-bridge-observe-01.json",
+      "sha256": "4f8e5d8ebeb34fbdf79ae95946fa1851ae002ebcdb4169a42a90e6ff05ab8952",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/011-copy-status-query-02.json",
+      "sha256": "61a6a721a06d6629dd65c44cbf056d7e57ec037cee0fb91bb9da8e4079884711",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/012-bridge-observe-02.json",
+      "sha256": "3d14e85937a282e9f8b28c6c68aa81a0e093072f7940dbc7ab831efc5b48977b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/013-copy-status-query-03.json",
+      "sha256": "427473e0a203b9296c9cef904d485bbf1f6220c71392c4fd2baad3caa8adb448",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/014-bridge-receive.json",
+      "sha256": "24614884251a20c810f67458dd8578c33a5885b4556e1746c93a8686f020856d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/015-inventory-worker-artifacts.json",
+      "sha256": "bf9c8f98f66023b068479a6eafdacfe80015eca36e129a517b94f9a1bfa5dd9a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/016-read-worker-final-materials.json",
+      "sha256": "d27488f5bdbc22f950d10fa2db6b39adb50a26c30546757ace9cd6dfc292ea7b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/017-create-independent-checker.json",
+      "sha256": "855604a813ae574123fdc72e822829ed9245cc6b9738136dc5498969c3dbdbe9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/018-write-v1-results.json",
+      "sha256": "522cbd1f59841ebc8859936273c18fe45de4a32edfc333211daf0acaafe128df",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/019-write-source-review.json",
+      "sha256": "554a2c06709f106dfbb847f457e31896a2cfcbc906095c190dc1b5c082104cbb",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/020-create-decision-draft-author.json",
+      "sha256": "b0fa72967d1feaf4ecacde5e7e78f34a10e4d1f7616b0af1f1bcd3b6f9e8871f",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/021-author-coordinator-decision-draft.json",
+      "sha256": "aa4a507ca30db65a78c815a2c1e3dc7d92e475370cb5388deea7377735897da4",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/022-create-final-decision-author.json",
+      "sha256": "fb60526097381270e9ede146093e201e6cb02ee0190b572018047ac4eed0b4b6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/023-author-final-decision.json",
+      "sha256": "db57a2912e3eb6de67362521c2b811ffa39835b36fb89010a092ac8390f1c5c1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/024-bridge-commit.json",
+      "sha256": "868f57a88af7944fb35de6f6abca59d0c812851583c7096987d5336b73493d6b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/025-bridge-reconcile.json",
+      "sha256": "4c68edc0e5b8c1dec3ccbdd5592473a009aef678fcf8a7cfff03b1dea9a7300d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/logs/026-package-next-terminal.json",
+      "sha256": "52ef48232165f8afaf42d5c25fd6e8d881a98363811f0f543314d1442f9b5a7b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/review/check-decision.json",
+      "sha256": "12d2a782bfa1f66aad199f668702cffaf0c7a8438c9623bc418eff2dde68e319",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/review/package-assess.json",
+      "sha256": "c885c8132119616c9cd10497f22c103e183005bb2936e032c6da71ab038cc775",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A1/review/source-checker.json",
+      "sha256": "c0af9f8fc1b1c3641d2dadd68a468c7556bca0128af0f1561ef867cd93adeeb8",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/artifacts/author-business-artifacts.capture.json",
+      "sha256": "aa83836ff23e1e0c032786b1c232f9aab5a5320ec793ec17a1c5847eef78a064",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/artifacts/business-acceptance.capture.json",
+      "sha256": "bbe0f67854e30a794d9a649bf6a1b0af69816eefe7fa6d4cd7645851a388a563",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/artifacts/check-reply.capture.json",
+      "sha256": "d47cb2cf95c8223a564e87dcfc276a293dac8e9f87bdca10b8c57b7d3e747707",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/artifacts/inspect.capture.json",
+      "sha256": "93a14ba737babe8e188013f13726456e74a864a61dd6c5c3b3d39f061f0dd29f",
+      "actor": "luna_forge_59628fe295184a47b6aefbf1f5c8a7d7",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/artifacts/read-inputs.capture.json",
+      "sha256": "8f6c551759f5fe376d1c93066845bedddd38927286645cf95d7cc59043f0a98d",
+      "actor": "luna_forge_59628fe295184a47b6aefbf1f5c8a7d7",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/artifacts/reply-construction.capture.json",
+      "sha256": "6c1a798e70a13744da1a18eeb39fb2df7ed316e037e584f78d6e60662a1767ea",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/artifacts/write-reply-authoring-source.capture.json",
+      "sha256": "34e7076671f2b1674fc36c7534b4aab873ffddaef0820e18b8e42d4547b13f28",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/001-create-inputs.json",
+      "sha256": "c1f9ae1a55003e354a0f230dc3b7a0cdf6fefe5e3336815a0621abe9850e8d4b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/002-package-validate.json",
+      "sha256": "d1a71e066b38c4d0a3a6df85de3e1e397aa97586549ed539080a0eb442b6933a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/003-package-start.json",
+      "sha256": "43f15e4781fc01743965fff68c55c80bc81431e2eb1195bb6e2e65e5f65297d1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/004-create-work.json",
+      "sha256": "04933f051c0ea612ec7056de9feb966f0a8e24ea8bbd0e6d078697139373c837",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/005-bridge-prepare.json",
+      "sha256": "0f6fee7440d34c7bccb86a606a881882c10227a9f3969a8719e44406a46881dd",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/006-bridge-issue.json",
+      "sha256": "2d8052e3c9c895945d01ddd71f3a7c9e00ce1810b8e8aaecb235eea8d1a3312a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/007-save-native-arguments.json",
+      "sha256": "22323216635fbf80584ade69ac594fb6fa65199f3eed4f6cb5f12defb4b8eb16",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/008-bridge-accepted.json",
+      "sha256": "f4000b9dbf88cddd8936bb98bdc52dcb79eb53cbcb8f811dffe02ca98d11848e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/009-copy-status-query-01.json",
+      "sha256": "4ab0b567ebeee40851a71ae25756f3e80d9a489d571c271d811527dd5a89a6d6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/010-bridge-observe-01.json",
+      "sha256": "fc463994d7c3f1a64cd42c5464b9d50e13daad8d274cf1ab1c15ca8db4aed111",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/011-copy-status-query-02.json",
+      "sha256": "35432a2a100ebda058a7dafc44a2c1535d2dd57d8ff22102eadeec5684c624d1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/012-bridge-observe-02.json",
+      "sha256": "1ee98f05235fe23d4d6cffe14704896ee8d0a3b83c8813c17d8a6cca76f54208",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/013-copy-status-query-03.json",
+      "sha256": "748d3afe3d53e2c905c5bddda0ad9a3063c68d3d0c191c41ac3af487ce6ce700",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/014-bridge-observe-03.json",
+      "sha256": "e864b91b191acd8fb87153d7f7dfc3f5875d330e674fc269d6a890b6282c9076",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/015-copy-status-query-04.json",
+      "sha256": "fc6b677c4e6bdbf450d8fd853023a7b1bc81ed3d64b08648e9aaa84a8990db8e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/016-bridge-receive.json",
+      "sha256": "65a8807885a7da1011eadc43263a0b8ab64c2e77aedeed3810f49e27a9d5a156",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/017-inventory-worker-artifacts.json",
+      "sha256": "3db247c6af38b35ffae95f1192cb8c967eb6318dda4f88ad1f67bd2cbbf99ca7",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/018-read-worker-final-materials.json",
+      "sha256": "e536ee955c344bd267578d2ea9fda1b21ea5a558296e0a0eb3dd5d8b3d37f4ef",
+      "actor": "coordinator",
+      "exit_code": 1,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/019-list.json",
+      "sha256": "fad55b7a2c954c9e394fb9b458f4d35dc5f2231c5ef0fed55fad9937eeabdf49",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/019-read-worker-capture-summary.json",
+      "sha256": "a263cc095e6dd3949c3ce45b213f7ea9b45b9a1faef5a04f01cc0a44b4519f7b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/020-create-independent-checker.json",
+      "sha256": "57d6e3a6ea8f5257f63134a4295627d50b301ae674f1955dce8c2c986d8fe7fe",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/020-read-current.json",
+      "sha256": "b9217bb68c8d979611f4a443dce002dbad7a7211a88a04aca8dfeffe638f09f2",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/021-list-logs.json",
+      "sha256": "ece59403d3ecccb29905add248adf57f5bf9ff2969490d7861596c5f83e63361",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/022-read-own-setup.json",
+      "sha256": "f6c4e75588b267db450b35cc1669c84427a1ad361cda6bf35f04f9d6226fda4d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/023-package-assess-help.json",
+      "sha256": "30b25b31bb507fd27041dabb222d9e19734975fa33ebc5b60680fdb468f13096",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/024-read-packagectl-assess-schema.json",
+      "sha256": "d04b7a392ededf81ad2e30b4c8d65d4d29d822a99ef80dda9a45c767cbf74f2b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/025-locate-assess-code.json",
+      "sha256": "a748212453864ebab24bb6240e557b047c6c4174ac95b5e5f12a4df9120d8d17",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/026-read-assess-implementation.json",
+      "sha256": "067259cac83767e2b53690308c38150695d43dcc41024ccd6c4223d4ffe177a1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/027-read-raw-package-acceptance.json",
+      "sha256": "2ba52836f941f2bbe9a58ccc521b44fb9d48c4a56e5737ce965b385790d42fb5",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/028-list-marker-and-review-files.json",
+      "sha256": "92d99f159c6b52b6354383a475df521706808ad2155a62853d5b1332e0db7aae",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/029-read-marker-implementation.json",
+      "sha256": "9925ea7220feb741b83e470f7c11e1e0574fbefbdba7da9a14d9ae3dec1dff81",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/030-read-marker-target.json",
+      "sha256": "e525a8422cc017446e1f1ee557b4cbb0cc41fdd1f6d40e19a7d58e47bbfb29ee",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/031-read-operator-marker-rules.json",
+      "sha256": "af51e17c001935029192506046a3e096d3537fd36a241f3cb54ccc43ace24297",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/032-inspect-own-observation.json",
+      "sha256": "9cd61a3fa523e1fe45cd95d1ff6139343525b9ddb5efac147c53dab85c2db2c1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/033-summarize-own-markers-before-end.json",
+      "sha256": "e1666c5b7b54b7676ffe42d601f17d9671c76ae34df5091c7e8a985efd38825a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/034-list-coordinator-files.json",
+      "sha256": "44fe7e1149345243d04e5ba0d85838803df4b83793e04593e1f62a9888a36ff4",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/035-read-own-bridge-details.json",
+      "sha256": "b1d4cad6e4403d606684c785cc17e5afe4445ac6a1b9ac1b72a07fd31c8d129b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/036-hostbridge-help.json",
+      "sha256": "8b0d1be7a30171389dc82f87dc9be928a4e50af5270d826432dc37ba8e8bbcea",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/037-hostdraft-help.json",
+      "sha256": "4d45e82715b5c53810b1c933b9f560524c6777359ff789cb2d81c5e04705d18b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/038-hostdraft-check-decision-help.json",
+      "sha256": "50647f4b5132a6b52ab17e68a8fe7d6ce3bb905fa8b30807926577b830191db5",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/039-read-hostdraft-decision-contract.json",
+      "sha256": "604f6321c6ad40d038b1f7e1ce00d78c4e4c39a9c245f88f3ed122fdffe8ef58",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/040-read-decision-draft-schema.json",
+      "sha256": "00fec22c293fcbc25f114b75f4f1de69e8b9de28cdd92b30e5f37b257f274968",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/041-read-worker-reply-for-decision.json",
+      "sha256": "f9462ba0ae3ffda8e145831450080e710eab0f2893b07c26daf9e8ec86d4cd82",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/042-read-bridge-decision-commit-contract.json",
+      "sha256": "740a9b78d21f0cbc3d4af01fc860d0605b816d60c71d6a287dec75925b071172",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/043-bridge-commit.json",
+      "sha256": "723d22bf6bd8970e51228f4d4dc133cd432949ecc36621e0fc982c7b3395c766",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/044-package-next-help.json",
+      "sha256": "2f912c2129348381e5ca1212b799294913badc46510eed64ab5eedc3d10bc73a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/045-bridge-reconcile.json",
+      "sha256": "319f481b828948e3f97070b3cd3cb52774f3f0951eb447d869b24f32dd4ee0cb",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/logs/046-package-next.json",
+      "sha256": "ec94d9e5186229b42d792f31b5fcc6042ced279e0e3f62a450705968a0174552",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/review/decision-preflight.json",
+      "sha256": "0347fc6b3367e7c9425fd8b8cfdca5426be95f0f0572b46208abe6ba8f4e01f3",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/review/package-assess.json",
+      "sha256": "cf50fa67397da58406d0d25e6b910df0ee6948cf824630005417f863886788ef",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/A2/review/source-checker.json",
+      "sha256": "0bf70b48054e3b7b30697b32e69044493f9cebd82d4d843a5bf3297c130305cd",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/check-reply.json",
+      "sha256": "602f571b02ab6f6be7f12f63e68adc608b862245418b8029e8ddb7328e79534b",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/correct-business-json.json",
+      "sha256": "8248be32fa18876789f083caf5e33514e13fcac05e5b51c76874ab1628bd95d5",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/correct-final-reply.json",
+      "sha256": "6d739c158f3386403f00c13f9ab8623836872452a563bc8cb01e9fb2ff0cead8",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/create-reply-draft.json",
+      "sha256": "b49714ae1ad2256201b5754575398c2dceca62cdfd7b9bdd44112dd1f17c1475",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/inspect-explanation.json",
+      "sha256": "c89dc9cfb5fbd3865aec0b2e6b009c0f57a1e7edb95d48b40bdebb193fff6ead",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/inspect-invalid-business-artifact.json",
+      "sha256": "c7c6dd795f63496cbec7ca9c5edbdf60d47df50763db5e67da0a13dd3e6f91e9",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/inspect-reply-draft.json",
+      "sha256": "6897c1f0c9fa17c309b0c44459cac673251d24ee4420c990863d62a4fce87ac0",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/preflight.json",
+      "sha256": "7b1e429a35d9479af6f30ccfad15ef43a073450ab13f71cd5a3f87787b1e98a1",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/read-bound-materials.json",
+      "sha256": "1208d58018fdfa04ac9906a43e2b43fcfcf850b13264b8114d450b5eed8aa3f5",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/verify-business-artifacts-final.json",
+      "sha256": "7c490e95d66e9ac1d0d96e674248cdb97a999c5d0aac4749ef0786022a30c846",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/verify-business-artifacts.json",
+      "sha256": "46aead6f02653edd4617435cf6847ebd15b3a0c3b741786ca1387d75c214acc6",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 1,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/verify-final-reply.json",
+      "sha256": "427f56e252f0994df345b4a57c2e62eaf932f636d0c478a2fc8cea30b456d5de",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/write-business-artifacts.json",
+      "sha256": "a23dcb0a649c5b9d2e5a3601cadf4b7cd538c1918631c0d2352b1c28198ae926",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/artifacts/captures/write-final-reply.json",
+      "sha256": "64e344bdc0c834f3b3f54513fd1a631bfbcfb3abd7df51cbe9f1fdc34c981a94",
+      "actor": "luna_forge_c98df856ea9d",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/001-create-inputs.json",
+      "sha256": "339645048f334fe3c20002931df21f8b76b4da458185b0eca3397a9905c601c6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/002-package-validate.json",
+      "sha256": "62a2e6ac5b93cd733185dbf59062bc1a05469f04ce474b5da06015e0d6f3c5e2",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/003-package-start.json",
+      "sha256": "2d654f9e38abe685aaa4eea540c22f78664b8e137938e45c216fa2e7b6092997",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/004-create-work.json",
+      "sha256": "3d657873d99ce90fce0a73780571b385b8981f175c918c33230fae2c8be83ba2",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/005-bridge-prepare.json",
+      "sha256": "ff8c0eafcfe4ae2325db20ace74574cc1eaa364fe525b625acc5c173e9269457",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/006-bridge-issue.json",
+      "sha256": "9dbe28e06d6ec41e596a87c383d718dba2a1b9008b6c850719c8dab089d6348b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/007-inspect-issue-record.json",
+      "sha256": "97ef4e2392bc53dad7a63ca4d11e19bd0194399e265373a34fe09c6f9d369e46",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/008-save-status-query.json",
+      "sha256": "032f5c2e5a799c7e6ab3eae41a2565da4b057b1c82145283464ecd66f3f24a72",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/009-read-status-observer.json",
+      "sha256": "bfa0f21c9005c227aaca75b958b9d5648ea37b237e1fce1f923ed240c528f061",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/010-write-recovery-record.json",
+      "sha256": "df316a6a8d3e14283e5a70848888771c302c1b344aeb79e36212e2819cd2b2cf",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/011-save-original-arguments.json",
+      "sha256": "14c6f75c8e9ebc0fd2b692d45e0ad1fb00c4609f5c524ff092405db092edd68e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/012-bridge-accepted.json",
+      "sha256": "bdae990c65672d19eccdadae0ae24aa1936adfd2053fad10d03df6d3f3d0d04a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/013-copy-status-query-01.json",
+      "sha256": "dd9f80f8af41bb04a0d08f79833358b571b222a58f5656e3c15aaa3fa663f032",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/014-copy-status-query-02.json",
+      "sha256": "cfa6db0f57042940f2c0f234c19181950141fc14e0947240a84bab32e6ba726c",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/015-copy-status-query-03.json",
+      "sha256": "3626c362f672f3506bcd59fc25751e0a2468b99bf865cdb7d65fd70f12c9b494",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/016-copy-status-query-04.json",
+      "sha256": "3ae92a0e2c928f489f3402824667a389f969b26a8bb07ac108f92fb67cf32f77",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/017-bridge-receive.json",
+      "sha256": "300cc5a5ac8ba122da9c8732b823ed6e96279880b92bf3ec001efa62d602ccd3",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/018-inventory-worker-artifacts.json",
+      "sha256": "f3b6728128d214ae791a3522705c65df2f4018ea1b397eddd6e1d659f853cf88",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/019-read-worker-final-materials.json",
+      "sha256": "75c88e54169a54029484b82757cab6e364516cd984a1c6e72cb652bc33b2a8b7",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/020-create-independent-checker.json",
+      "sha256": "5b92c2356a7010e56580511d43a9b47892d4cc8d1f3afaa10e026d99419cedb9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/021-summary-worker-captures.json",
+      "sha256": "0d4d72c66cde9be2e905fe3b17b20a8234d9573a15675c0c65f648aa900337c1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/022-read-retained-failures.json",
+      "sha256": "cd7c726c68df7d5780652b5997d6126bd6a21583410e869223608133d73fe9a4",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/023-write-v1-results.json",
+      "sha256": "17fe7a085e278d9d3b87372b5339d3c5aafc40615a33d6cb2a70850ce916750b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/024-packagectl-help.json",
+      "sha256": "b38982464c6976b772e9bf741229ee70942684e1eeba2558a9b282d09b72655c",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/024-read-results.json",
+      "sha256": "5215db73a895ee0ddf6172855e97883c6de11c725ab6900763e5d71ac9d61927",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/025-search-packagectl-assess.json",
+      "sha256": "94c738532dd0da6d51013dcb047b4a7523d06488b5799a4e240de8dc1747e414",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/026-find-flow-digest.json",
+      "sha256": "316aa65685886fcee88e2b60081c0e72858a6aff3219976449b4ea35cef848cf",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/027-compute-canonical-package-hash.json",
+      "sha256": "f9636814fc203dff06d40bafd30c872637a18201d8e4fe9a65d27b8ceccac64a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/028-preserve-rejected-results.json",
+      "sha256": "c1cc00051d73a5a30b4ec4bed29b50f5099638d17ef7b971cee360c78c699d70",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/029-correct-results-hash.json",
+      "sha256": "7709ab35c1072f39b718fc68754aca817ddd69e35483fc61c421ed80047ed9ae",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/030-write-source-review.json",
+      "sha256": "33381a22e96acb790b654b0dd159251c02cace5b866255c5aa40ab50ef969faf",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/031-correct-source-review-reference.json",
+      "sha256": "cdca76bd59bf2db9abb3e38030d235251f12fb1e90009fbd4273a1b526327274",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/032-hostdraft-decision.json",
+      "sha256": "d5f90d8ba42b2c98357b18461367d8eb078531bf663335cf9987f9cfc9d8147f",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/033-read-decision-draft.json",
+      "sha256": "00e11d00dd9a628239e64bbe44d5a031ba7c75bdfdfdee3a4fe563c45ec381ac",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/034-create-final-decision.json",
+      "sha256": "5c3a695501320b3c5963edd53035c6da5e3f5554b824d96a2c00058d4bbfc46e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/035-bridge-commit.json",
+      "sha256": "73d49d6a32a9271a8cbbca2dda19df8580397f25fad9857d51a27594b4bcb3c0",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/036-bridge-reconcile.json",
+      "sha256": "ae42f0780d7adfea431281482489c717088dac604dbb3169e46fa45a5ba10589",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/037-package-next-terminal.json",
+      "sha256": "6657fc35fe0d5c893fb3eb711d946d9d955d4b0d9c2a13373b3e63f77aa54e42",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/observe-status-01-late.json",
+      "sha256": "fecf3381c4b1f9a7162646d53d9240f6e4d8d9235b82e6227ddb436aa01e9d1f",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/observe-status-02-late.json",
+      "sha256": "7f745293a8b093f102c6131898865b75eb8bf63600afa867fc47a7fdadf7639b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/logs/observe-status-03-late.json",
+      "sha256": "577829046d6ada2998ceddb9b738ba2f3e5494e4c6a91cb416f3daa35c7b3b3b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/review/check-decision.json",
+      "sha256": "04db5d55059d3dce69ca4faa7b00ac251fbe5371dd92376c7336da2ef37fcc3e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/review/package-assess-corrected.json",
+      "sha256": "653539790866841bd0350224d4f175603ab08b97d52ca571dc08fa12b7201eb6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/review/package-assess.json",
+      "sha256": "658c9eab2859d5556bf735deb542ab9e77a80f3b91721fe3246d9a301a7c1398",
+      "actor": "coordinator",
+      "exit_code": 2,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B1/review/source-checker.json",
+      "sha256": "64d025fba4e0f484797b51374bb3d851fbf901c9b11b30d64226011ae6a5ebcd",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/artifacts/logs/check-reply.json",
+      "sha256": "335c312e6005bb759bf4e7a6b3fc16e47c7862457f78415eccaa80ed4d404473",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/artifacts/logs/hostdraft-reply.json",
+      "sha256": "2ccad78848a42fb23c9b5dc22b35e58980df3c973ed949df29fa19169428a090",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/artifacts/logs/semantic-check.json",
+      "sha256": "3048eb15e1f8e7aeeaca24f7d49fcb1d332a1efc09d15923dbb6ccf58564ce72",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/artifacts/logs/write-business.json",
+      "sha256": "24f73d3cbe57c59217e130ea8f4545cb99c5ad3cf793819a479f3cc292734d7a",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/artifacts/logs/write-reply.json",
+      "sha256": "9ac9113608585257c6f2e1ca5ae5ba4bc4c44da3de971dd4c8bfcaa33591ffb6",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/artifacts/mkdir-logs.capture.json",
+      "sha256": "c714d8a2bb04051a0aac1295f3c421faf31027e1cf08b506cfd7083f36692d6f",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/artifacts/process-captures.jsonl",
+      "sha256": "5619270bb3428cfecb35c71677a277d31ec4735afc53421ebe11576107f66880",
+      "actor": "luna_worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/001-package-validate.json",
+      "sha256": "60ff013fdddc983b7303b85809733733fb5dd0d57e6311a31b11a1e5adcb80a1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/002-package-start.json",
+      "sha256": "11165d38a7f22c4f3682e1d035c77d96716db9549216edce812484243fd8532b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/003-bridge-prepare.json",
+      "sha256": "cdda719bfeceef1eeaffb770bbb69c28d56c52b6529e3787a2df29dd0c685c0c",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/004-read-stage-rules.json",
+      "sha256": "4baf585c627bb9fcd67fa7fb1d4cd2a70e525cefc35173f1a98e40b8d9c5c9dc",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/005-bridge-issue.json",
+      "sha256": "1295991e02c6420d9e8de640bc275f733820a73db2ac716bb3409ca6a00ec144",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/006-save-exact-issue-arguments.json",
+      "sha256": "fa99930360e548e50111096aa0de2a2611474f26f75e5d53edeccc6f90cf079a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/007-bridge-observe-01.json",
+      "sha256": "59e2e1c877ad8eb786712771c409e02e86f5f3b562f2c80ea34382be7b49b3e1",
+      "actor": "coordinator",
+      "exit_code": 2,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/008-bridge-accepted-01.json",
+      "sha256": "ade085775a6eef21d117b49a53530e0895d85cd13f35a13d5f052ec87aa7c318",
+      "actor": "coordinator",
+      "exit_code": 2,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/009-bridge-accepted-spawn-return.json",
+      "sha256": "d9ace286c179d47a55bb7d5406d4c555bc1516f5cdd8c5db25977f4e9fd5cbd5",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/010-bridge-observe-01-recovered.json",
+      "sha256": "8756e155191ac81c14f237f58bfc86e50456d010967eb8c1bf023a0c31f0a8a6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/011-bridge-observe-02.json",
+      "sha256": "e150c181a21773ecdc0a1de0b57654476cb65117977da94c16f11889098d6eec",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/012-bridge-observe-03.json",
+      "sha256": "24be54da1225ed304019a3f2700d725b3466fc2c47b95ff9753ec5768c2034ef",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/013-bridge-receive.json",
+      "sha256": "2c0ae1844d5df96f996513b5243dd9398c549513c0836018b34a4db5c05b827c",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/014-worker-artifact-inventory.json",
+      "sha256": "7936cbfc0f04a9d4c1108fca2ebed938045427c2a2532688c1064c417ee01292",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/015-read-sources-and-worker-output.json",
+      "sha256": "40999a0062310be5a862842640fe550aef8635dae2884430034c17ede24a6170",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/016-read-request-fields.json",
+      "sha256": "cca858bd5dde13e7222a8b211d9ca78d6e308d7b94c4296dcdfac4233ba6e7d6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/017-read-nested-request-fields.json",
+      "sha256": "1b4f35545384b3264bd3fed4719349a034013d6b3270837ef6f02cff1ea7c3b4",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/018-worker-capture-index-draft.json",
+      "sha256": "cf8ac94e6caf69f1af455db8e9c932cb475aafb4319e61405af4d7977be3d08b",
+      "actor": "coordinator",
+      "exit_code": 1,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/019-inspect-worker-captures-format.json",
+      "sha256": "1ebfe5acc3631b9a6aabf29046b5712c57cf4978ecf54ed7825e2b57ea632949",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/020-inspect-worker-capture-tail.json",
+      "sha256": "d6637b7a1701ae182d8b522823f878563c099d0b0e11493599e93ef9144a5c1d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/021-summarize-worker-capture.json",
+      "sha256": "87c9bc863aefb41287cbcd069a1292423b5079f5177bea0467ad0a3424938034",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/022-worker-process-summary.json",
+      "sha256": "de383752efb065ba4e46ec2768c8cf5f95edf0c54763a094d7214a8ac5b247b6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/023-read-current-checkpoint-hash.json",
+      "sha256": "838fe4e76110a431b569ec8a5b04b2a141aa372308c7ec317ee89fcba2412727",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/024-bridge-commit.json",
+      "sha256": "587540c396aa447f1ce6b6e22816572d73bdab47ece14ddd5286a36438e5f51c",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/025-bridge-reconcile.json",
+      "sha256": "2954df415638be93e104209be230655603715d4b13c7e525205ddbd3cba50a03",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/026-package-next.json",
+      "sha256": "552c2aeaf3897c211582d45f40df4d7c2208392c4ee12aecca83e92132e01dd0",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/027-index-input-inventory.json",
+      "sha256": "848b902c96f55c88dc0190ca4f4c834a53f894d434e728fdeb3a9ed26139411b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/028-build-block-indexes.json",
+      "sha256": "d548b25f6648c63cdf1be9187d8c489adcc64bf2c20173cd0cf6820fda22c3a8",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/029-index-audit.json",
+      "sha256": "2495dfd4acc62771250aa26051b4bf73326b0ff842396209596d217dc869aa2a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/030-inspect-index-script.json",
+      "sha256": "ceedc967a172f7254cc9cd846c4f643b6d1ac71775391f0c2d394778db5b2d18",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/031-validate-index-script.json",
+      "sha256": "3bac3ed14fa0dc735efed630a787bb9e348257bf0cb9d286a54e8db980ad84b8",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/032-build-block-indexes.json",
+      "sha256": "d3d7268f5f12025cac112331aa4793b8c8e4021de9e2861310dc98a5d1ae0dc9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/033-build-block-indexes-corrected.json",
+      "sha256": "9fd211d3bbcae74d35d57e5d9e00b2f6cbedf835f9b0415792007ad926380600",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/034-audit-final-index.json",
+      "sha256": "7044c296fd2de59eb2e1e4809259ac178fec272b31d8de81c19da943464b2f1e",
+      "actor": "coordinator",
+      "exit_code": 1,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/035-build-block-indexes-corrected.json",
+      "sha256": "274e3db9b625d12ea3095cc3f6ce80fc0e2fb64156bbe783ea3c9ca4592c09de",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/logs/036-audit-corrected-index.json",
+      "sha256": "bf9fc8cd6acd26b73367333d1840747d743ab564381ea4246a676c77a3059ad3",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/review/decision-preflight.json",
+      "sha256": "f185b8b87ff992a6380c76014361f33c974ca27c7f0bcaf5cc71e9ed1077b84f",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/review/hostdraft-decision.json",
+      "sha256": "733c020bf352e19ee009f2554993b8593333f2a0c622fadcd77b2634bbdd072f",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/review/package-assess.json",
+      "sha256": "524c2066ac4783778c2f294cc9ef2a66497939e22dbc2cd89915a3323aa4d3f8",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/B2/review/source-checker.json",
+      "sha256": "dd8661ef6bf356013bb52f1eeb46c8b4bcddd49516a22cd5ee1a23b5a39a4188",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/bootstrap_A1-init.json",
+      "sha256": "d54c728962ee60b7798ec14bdfdd9447b8e5585883ec59a57b1ea556d167b8b4",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/bootstrap_A2-init.json",
+      "sha256": "2dbfe6a2e0b792b0c6cd7b13527f88dbd1d2cddb3071bf1b6dcbd8a0bc766847",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/bootstrap_B1-init.json",
+      "sha256": "52cbd6539b4e7009d6ad855a82c1d1aaafe464835b6eed6d10e72b11fbd0803f",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/prep_host-bridge.json",
+      "sha256": "f7facd3181789c92f325a393c05603793ea8d005f16551280f7a4868ab695653",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/prep_host-drafts.json",
+      "sha256": "eac6210e4cf624cac97e365af5b84907ca8e01d939b5216d7c06d06bfd565104",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/prep_host-execution.json",
+      "sha256": "6654cac30d73b25d833712a087638aa31d35edc08b279e4d2c3c3049485eb6df",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/prep_notes.json",
+      "sha256": "36dff656a2e2e19274f4ea30e5a063a49421f7e3cc8e9cbda8008f24fecc3912",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/prep_package-contract.json",
+      "sha256": "1f6c9db9a3220d16c775bc4e918d4d11ea4ddcb54f51844f6dd4be585d03ead0",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/prep_package-json.json",
+      "sha256": "8239ac6598dd7375fae2e6f5c970ee95c126baa057e21d4c438862e8385145a1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/package/prep_task-entry.json",
+      "sha256": "865a859762e4812132b07de1787ddbaba0829d56b4ad9a421cbc531d523d872a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/author-business-outputs.jsonl",
+      "sha256": "6c22ed7f07c4d21ddd30eca2f43df10cf472de3ffb7d30c468652bb384c530a9",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/author-final-reply.jsonl",
+      "sha256": "7ce50f0379c9de62fdff962c72ae1e88e4e98340fbec9e0c34d54d84e92693fb",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/author-manual-reply-scaffold.jsonl",
+      "sha256": "bee223f8e29061b538084503619faac4a2cf8172df6660dc27cd0d8e9c48a010",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/captured-check-reply.jsonl",
+      "sha256": "5150ab1dd9f6194f95bd2ccac00b604317c248eaed97ba3b0a2840f3f15c9450",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/check-business-outputs-v2.jsonl",
+      "sha256": "f57bfd21426cfb6cc86e45fd76b14a7844ad4a6f712d29b7b18e760eadd5a620",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/check-business-outputs.jsonl",
+      "sha256": "c0a9fc6a61174bcce5a033bf0b8fd3add5da41824f93bc9f3cfe59d5c33ff560",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 1,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/cleanup-stray.jsonl",
+      "sha256": "bbbf0a30c5488debbf0a05356c61386daa717f2aa641c47377367ef6423d1122",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/correct-business-outputs-v2.jsonl",
+      "sha256": "9f9a4585d85db1dde4207acdf87b9f6fa9a238763539fd24c6750c7c0780eca0",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/hash-business-outputs.jsonl",
+      "sha256": "9d894cdf93961596e100b3372245c20b8050afcf36a72c82b964f5770d648d86",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/preserve-rejected-v1.jsonl",
+      "sha256": "07d5b4050cb6def1bf6f090ce61fbfebbebd8f870366181ae9f2c829e4302666",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/read-hostdraft.jsonl",
+      "sha256": "c21f9bf2fada36e0858016743af6655068ef7608a9a5c1e7016c827ca96d66be",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/read-input.jsonl",
+      "sha256": "68ac72e037fd0958bfa9f7bf4e0e28365f6faa9a278df296cc8c4f0cff30b1eb",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/read-skill.jsonl",
+      "sha256": "b16ab36372d246195f29c87d91a205ee900045589eeda21bf55a6f615c9b4377",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/artifacts/worker-capture.jsonl",
+      "sha256": "33a7e7b4e38dcccbf57ab9e96e6cdaa37091b93ff56b38a7ad25756667612b9f",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/job/worker_capture.jsonl",
+      "sha256": "d57820f504b005e20af81830d0ad5db66b407f67aade06e72ae361939fb4b1ee",
+      "actor": "luna_forge_7711875bcfc1",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/00-create-dirs.json",
+      "sha256": "fb5b2b3e92dd4685295cfc31ad04b2188b4fc6060c1d8a8fd8ec8284ac9fa131",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/01-projectctl-help.json",
+      "sha256": "c34f7e3680384131fe8c6b15532e2a33525297fc30551906d1892cbc67543aef",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/02-hostbridge-help.json",
+      "sha256": "c406ef0f2313b932ef0ef4b51325d67f2a85f0fad77e6f1f2691fa6ad9da1263",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/03-hostbridge-source-prepare.json",
+      "sha256": "034ee3edfb51b7cac380d7291feef751d354b423f7644ac201de591cdd87c682",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/04-projectctl-source-init.json",
+      "sha256": "182d05360d057e5674f43159103e5daf7880a6b003ac85acec7fbd1479170cd6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/05-projectctl-init-help.json",
+      "sha256": "4719747a74449cde300b1591d1c701368c0290cf9f06fcaebae0e5812c546494",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/06-hostbridge-prepare-help.json",
+      "sha256": "a1b9537e20b9fc9622b6d07e7fe174a0929a5779875834bf866c8d1d1faebda9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/07-hostbridge-issue-help.json",
+      "sha256": "6f3bf1f39498e75a7a7d4f39ac79d53e2e4e594f9201ffca0e4f5027855639bd",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/08-projectctl-init.json",
+      "sha256": "bd0dc48f2e8994b90d1b18502123fe4d54deb09fea6aef9dda8a2bdc2fcfb48f",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/09-hostbridge-source-prepare-rest.json",
+      "sha256": "9b78972c7c5b4b3e5e88626b4c37fe969ce5ba5bc84475fb325ace290d3fd2ff",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/10-hostdraft-source-decision.json",
+      "sha256": "adc37b1cb74cabe90ba0bf64bad24030582b48fd91511eaed18c66a359d7823b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/12-write-work.json",
+      "sha256": "f425ceb697e348fb048b3fd9573f056de3b7302290a49f266990ae5cd1b3dedc",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/13-recovery-inspect.json",
+      "sha256": "f86ca2fe89a198e3f369b2797391a3c8cfed42fc5abeebdcd2c2fa1818e499d7",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/14-write-recovery-note.json",
+      "sha256": "7986215ee396f01efa347e3843bbbd64a1e74001a162e2ea44d1a8cc328f4c8b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/15-hostbridge-prepare.json",
+      "sha256": "8fb31d1ac4b16293e9a838f8e1dcd8dc3d1ee8e67bf2017fa93dee1859c82e8b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/16-hostbridge-issue.json",
+      "sha256": "32963752c3d8ecce226fb42679b54bbc78819f779e00e872e032dbbca67486dd",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/19-extract-issue-arguments.json",
+      "sha256": "f5a867c2cf6fb1097bbd37b3cfcb97c8113fefb509c340178f3afa9d92b78954",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/20-hostbridge-accepted.json",
+      "sha256": "fad12664ee6599b83ed548c19620f51a064e0293fdf60638d154692f08a22b35",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/21-record-wait-1.json",
+      "sha256": "75c7c7d5fcb83e9fef8f92a81cc4a99e4debc8bdc24004d3ed29c057d52aaf43",
+      "actor": "coordinator",
+      "exit_code": 1,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/22-hostbridge-receive.json",
+      "sha256": "ce131969cfda7b76a63919184f7850a03c93fe43263ccd35efa1bde684e404c1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/23-read-source-preview.json",
+      "sha256": "20eb7e73b113597f3716f2abd72a307f6dd4a5ca7e56aad220db32669a3fba71",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/24-read-worker-output.json",
+      "sha256": "852f24ea929d96b0274fa5d8c8fe6b88161863528e45b4238c6eda3dd62293f3",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/25-write-review-checker.json",
+      "sha256": "02814327eca65044c5d895f10587e52873231ce003ef20ca153e8c0948a664f0",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/26-source-check.json",
+      "sha256": "b54f0a88138e5e90ff0f7f60a68a99cb8a8744316a203d42865f4c92eb84648a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/27-worker-artifact-tree.json",
+      "sha256": "36edbc0dd2ccf1fd4f8ebcdfe1da1062fc3dfc532f399e0c441bf3c47ff607d9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/28-inspect-worker-captures.json",
+      "sha256": "6b64779365fccc5bcc8ef155c89b541a43f7cdf9675962cb7d94cc0e803fa9c1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/29-inspect-worker-jsonl-heads.json",
+      "sha256": "a7c340abf5e2b18bb42b7c386c561c35188eeefbf9af2462cce11f94f26ce0eb",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/30-inspect-worker-captures.json",
+      "sha256": "fcb89dabf97101b54c27b137fc1b1292e223a2cbdadd7eaa7b2542dd75f999b3",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/31-worker-capture-summary.json",
+      "sha256": "a596a84356283906be8204fdf6d8d7a38516b0d700fce847b860d954ce82e827",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/32-review-hashes.json",
+      "sha256": "781b2f5c1ff2385f5dd7cc54587516123abb929b480f4a4095b2a8881198aab6",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/33-write-source-review.json",
+      "sha256": "b939afa38e955cb679c97ad9495cb62f7832c096dd9ca4b9821304773d2a438e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/34-author-manual-decision-draft.json",
+      "sha256": "1c7cfd081c5228532ed6eed305efb0a917981d3071034f46148227eb999bc88a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/35-author-final-decision.json",
+      "sha256": "84dce360bea394e65f1f5cfdc637d11d5dc1acb5b7ade9264187b0110590fc5d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/36-check-decision.json",
+      "sha256": "fbf6e02a334cfe3db30c1ef2e2d846bf3aacaa0353423d43d96390251f7d675e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/37-hostbridge-commit.json",
+      "sha256": "55699de99851b65670bc169852d8c2bb35587551386df44052675fe92aee7c35",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/38-hostbridge-reconcile.json",
+      "sha256": "1e53c51ca85646f298bd2a8097bfc4c5ae9b8cb5cfd86224681b93c3113ec164",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A1/logs/39-projectctl-status.json",
+      "sha256": "c49f55c7331a5f3d63eacc418a54dbc9c965da56564b29781f15937d34628823",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/artifacts/logs/aggregate_expenses.json",
+      "sha256": "cc198f91ecf7eae8fb17d548cacd68d0207a834dd6c95f809a048818e21f6dbc",
+      "actor": "luna_forge_01576d11c27a",
+      "exit_code": 2,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/artifacts/logs/aggregate_expenses_retry.json",
+      "sha256": "f14ccb9b7c48965275f8c51239ea5547acd5dcd1d5ac5f7c6bb8cbe96a684418",
+      "actor": "luna_forge_01576d11c27a",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/artifacts/logs/read_expenses.json",
+      "sha256": "f7d95dbe71e7a94916ee8b0d0b200727d09ea53b0e9edbf1563fbd3d886a24db",
+      "actor": "luna_forge_01576d11c27a",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/artifacts/luna_forge_01576d11c27a_read_protocol.jsonl",
+      "sha256": "03bde0d854baa3b0291cdcd185b57702d3afb9440965f80d8686881528e3524e",
+      "actor": "luna_forge_01576d11c27a",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/logs/01-projectctl-init.json",
+      "sha256": "99843656a967942e281719ac39bb9398d0a530be1661d58dc92525e98ddd044e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/logs/02-write-work.json",
+      "sha256": "f036d8701665f3dc2cd71ccfc3aa4d47da1efce4217f05c4aa5637909b343676",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/logs/03-hostbridge-prepare.json",
+      "sha256": "74be5887219e174272ac3a624ce0358c608fd6f0cefc30eab5d1ea03fac340f9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/logs/04-hostbridge-issue.json",
+      "sha256": "8057bd46f838b9be5772b407ce14b19d594b255c0deeda8bba739dfc41624ba5",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/logs/05-extract-issue-arguments.json",
+      "sha256": "223adbb3aa18becee7b14a3d8e084fd192615474d0787f20600931dca9d32bea",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2/logs/06-hostbridge-accepted.json",
+      "sha256": "579de2e13e409995874937ce82da6eb0d7ba3c82a937bd4d832644b039ddc460",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/A2-bootstrap-inspection.json",
+      "sha256": "ecc390a954c9428520a2a3180215f3279c0c29f43654ba8ec12dd43dd32d9f35",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/author-final-reply.json",
+      "sha256": "390ba0369d53b711ddc8688617518d2446e386f9917955d92c8bef91ff8dcd73",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/author-summary-correction1.json",
+      "sha256": "b6a8d5f2e362507599c2a3040df1dc6422ae818df9e5ca73647e5a4857c2400a",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/author-summary.json",
+      "sha256": "6d59ea438f1d7af500545d686e96b9846b837a1440762f330b59e9aba449136a",
+      "actor": "worker",
+      "exit_code": 1,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/check-reply.json",
+      "sha256": "9315cad51c35d3c5d39915cff93bf957efded89e918b447dc6242de3c9ccbaad",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/hostdraft-reply.json",
+      "sha256": "663df422a4db8b2b44c11558bf696829e34d25d6514398d746d548a7c882e5da",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/read-csv.json",
+      "sha256": "18b562cac56ef00cbeb7ae800f50b2b24404f072f393ba5110763a06394d93c2",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/read-draft.json",
+      "sha256": "0468463d00246eb36da2ccf8a6bf3c8e79be655971a15742fe6cea5b7f20d121",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/read-skill-ref.json",
+      "sha256": "07fbc4805988ab548acb81067c4ebac7c3bdccc8c9c807f2994165bc8be6fab7",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/artifacts/logs/verify-summary.json",
+      "sha256": "d3fcbf885eabb89f1e8a10bcf6c50c3a15dae7271556d1255043ad246ea105b3",
+      "actor": "worker",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/00-bootstrap-inspection.json",
+      "sha256": "0d3159c983a41eea940391ae31104ffad4dfbeb2b26af5ea5ec00cc9659eebbb",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/01-projectctl-init.json",
+      "sha256": "fd4b46da5c442506e1f024dca0ae875c3e59cd4b9628ab4015ca6c3d5480b531",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/02-write-work.json",
+      "sha256": "0107530b371f88f063505da2071d441934142051c43536faaa22ae88c38c1ea9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/03-hostbridge-prepare.json",
+      "sha256": "50af48aa49d90693825e46827af8bafc91bd0b6d2a7abc216eec2a510fe44930",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/04-hostbridge-issue.json",
+      "sha256": "2a0f37b306a9ff4fb16d243d514028924eb537385296a79e77e7be0fa91961d3",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/05-extract-issue-arguments.json",
+      "sha256": "1729ab50c89e4d092596cbc850e1c90f15aa06de234f5e34772cd476772a87c4",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/06-hostbridge-accepted.json",
+      "sha256": "b044ab3dfda023bf31ce1da83f93161d664969acbc7fff5b35cd36dc470ffcea",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/07-hostbridge-receive.json",
+      "sha256": "75b464b21c8afd8764fb8b6e37b2ed85017505b2340848b15d02fa803aef7e87",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/08-write-review-checker.json",
+      "sha256": "badde3da46bddfabfb1909542345ec73232bb98a3c75088f95cd8f5039e4dce3",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/09-source-check.json",
+      "sha256": "c495b2e9b1f51b4daa1db5e6edb43bc152f6e9e7bc2d8771d96891f8f3cb4828",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/10-preserve-review-v1.json",
+      "sha256": "f146bcf581f1f4cfcccde49d79f4217a721040593025e2d78a55618b37fa775d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/11-write-review-checker-v2.json",
+      "sha256": "916c91fb24d0e9cc5fe6805dd4fd8e10343da9900d6fc666c91df4a57c3f527b",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/12-source-check-v2.json",
+      "sha256": "74c413d87c702279095fe5ae775b991622b74e1d942f7ee038de606754659f96",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/13-inspect-worker-evidence.json",
+      "sha256": "81a0af5e3711bc9ce8c582a8828570c6b086655414d34b26bb70d1274668b436",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/14-worker-artifact-tree.json",
+      "sha256": "e692508b82c9c40e3320ba9a90af541c91454d83acafaca6c0694148900a3f21",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/15-inspect-worker-captures.json",
+      "sha256": "1ccc37809b1ea25d04989501fc591c4ddb48e1e071786a10cf24604310af479a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/16-review-hashes.json",
+      "sha256": "b0fb35bd01fa61bd5aad79ccb23b9443ebb9bb5a4c1c789a342fd1c6f118b999",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/17-write-source-review.json",
+      "sha256": "d4b27113b8908cc1b7bcd2c9a80b0a4c781fbcc9dd9e50993c3e4f37ead5fdde",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/18-hostdraft-decision.json",
+      "sha256": "0841800625f6174ac7a117b498f11a65fbacd4c6b79d2e9f8549644f5cd81f72",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/19-author-final-decision.json",
+      "sha256": "e756d541ddff0218269524e25c87e4aad049af70aa7cebe1a08125c47c39b248",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/20-check-decision.json",
+      "sha256": "c3efb4984d2fda4589cf2616185105a6503338798a09fcfc15241292e82aec0a",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/21-hostbridge-commit.json",
+      "sha256": "7685da92d560e4ecafa7941181ad39791bab2d109990ab06d20b770120235db1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/22-hostbridge-reconcile.json",
+      "sha256": "c6fa9418a0317466c51bef0bc9706f2a3e2d8ab40b9f5e1ea360bad9d717bca2",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B1/logs/23-projectctl-status.json",
+      "sha256": "8d2cc479b2c9b28c8f50a5ad6d248c7c6e9a18526ceea3d169a2f0b78f922b4d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/logs/author-business.json",
+      "sha256": "910cad1c3ca7eaebf98e89079e25ddb3e55eb06e5ce88cc3adbbef0439b5601e",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/logs/author-final-reply.json",
+      "sha256": "dc68a5a078fe87d5a2bcca4c7a1581c4b389dac8270638257bdb2be71e217af8",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/logs/check-reply.json",
+      "sha256": "a3471145d47e4e2f104bc9cf42bdeb6ce56ce4cffc133a58e7b3bc027d08b6e5",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/logs/hostdraft-reply.json",
+      "sha256": "73537ea5d816b6802f0139b429120f12ef3cb28d9ae3aebd35eb4e2ac714d5ba",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/logs/read-draft.json",
+      "sha256": "d852077eeed78631446883268de83032d9e131f7bcbc86e9999e7005dcb507c8",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/logs/read-expenses.json",
+      "sha256": "1ebc92777d2b30867aa6270a6d206d740e0077ffffcb35f2a509ee754611c2a1",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/logs/read-request.json",
+      "sha256": "5eebeee561f47ef825c41b5713c6e92860ab1d8cd404a8f6da0dc0c5a18b8481",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/logs/verify-business.json",
+      "sha256": "0663bbda3ccf3c487a38c2d759a51cca3f68d0060adef4148ed58500058c28f4",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/artifacts/worker_capture_luna_forge_6e153853d17f.jsonl",
+      "sha256": "fbfcec5cba90519c4cb44afed41046667c132b81386945c5e23c2100e93d23fd",
+      "actor": "luna_forge_6e153853d17f",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/01-projectctl-init.json",
+      "sha256": "b787fc1e762ef5c5712f06dad33ca45b2069942ba42317ea9656c816fb4ecf7f",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/02-write-work.json",
+      "sha256": "30623d9d3e7b2666f1abb64482e4302a0696892a8da224e6d4c57566b59832dd",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/03-hostbridge-prepare-help.json",
+      "sha256": "8303a3634d717b6fde7477b2da23de57dee84d9c5f372add3538bd2b1d57d5e1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/04-hostbridge-prepare.json",
+      "sha256": "66b753d021549f020a283116355a84b189d2a3e2cc7beedffd1809cc3e88edf8",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/05-hostbridge-issue-help.json",
+      "sha256": "9be9ae0566db103ab3698aa513486cd392b0087adefe18a8adfd55b31b0639ac",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/06-hostbridge-issue.json",
+      "sha256": "71579ff7604160be0ddb4e65124e2a0797271da901aed993b436d6a9e75c163e",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/07-extract-issue-arguments.json",
+      "sha256": "e6b6d2f8410e3ab3f02969ae3670fa017b9841acfee7186410b79d72f06dcd4d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/08-hostbridge-accepted-help.json",
+      "sha256": "1016e139178b55db04f9c949400294611c6d17174318a6dbe44731a4b33506c1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/09-inspect-accepted-doc.json",
+      "sha256": "27112d71946e1442366a69ee4ce4e99c4916c35531840849a11a0240c6d1e0cb",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/10-hostbridge-accepted.json",
+      "sha256": "a05f14c8c3d776f86d70237e9a1f0fe2089b1785aeaef98ba1a3c201c2156582",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/11-hostbridge-receive.json",
+      "sha256": "bb1d1b3bc92249ee2bf5dad53602ce1a1408ea642182aa9b5802dfd6b11ea700",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/12-inspect-worker-captures.json",
+      "sha256": "971c9895b5b98c9c9bc1fdd3de6c4c42043347d7c026c2ad729ae5dffa036325",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/13-read-worker-check-reply.json",
+      "sha256": "c0b6f6e72b189a8a77e5dd21b1b968b24d866b12383843de1a67968e855e3fa7",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/14-write-source-checker.json",
+      "sha256": "c681947e455003cc29bf19f4b4d4b080ca4219a48814ce30693075dc2994f8c9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/15-source-check.json",
+      "sha256": "04f8911731fb60ec593455a9f92acb1253110afab1b843cfdf281ea0169d75b1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/16-save-source-check-output.json",
+      "sha256": "9b2a5c83539e4e6850719ca991043b40d894effce529d66058484704e2c167a1",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/18-write-source-review.json",
+      "sha256": "c6bd84c59e9be0eaca739126c87a68dc44529efdce3b9733e3de31c3f757fed9",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/19-hostdraft-decision.json",
+      "sha256": "92f266bfaa633661de7571c0213b667a9633e21771436e348136c58d9acadce7",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/20-author-final-decision.json",
+      "sha256": "1fa8cbd6a7ef83f3c812a10f8c5c3a00dc0b321b2dce3140dc6bc7053b86ccc0",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/21-check-decision.json",
+      "sha256": "1e8db417e1094a3d96d7e2516f52acb42d86e89dfa5f85af9fd7542d6a8979d4",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/22-hostbridge-commit.json",
+      "sha256": "70d18ce48a5aa1c3a3f59175ca5fbb2928457a8bf75f10eb7fb1c75072d3ec6d",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/23-hostbridge-reconcile.json",
+      "sha256": "480fee96b838621cd35d4ad410386012966cc7c79feedcda34c7166b7b976164",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2/logs/24-projectctl-status.json",
+      "sha256": "636f6f94e855003195ada73c5bbeea673c76f590f68cc1cb323b2740853a0d26",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/project/B2-bootstrap-inspection.json",
+      "sha256": "6999a07b63f94a308f206c2bcd080b38c900f59fb64841d482d7215e7aae6256",
+      "actor": "coordinator",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/shared/calibration/cli.json",
+      "sha256": "0f72c0802b01e6412bf9edf4436e73de0f24241bf56eaa5ff6aec9569326810f",
+      "actor": "root_calibration",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    },
+    {
+      "path": "evidence/c1/shared/luna_forge_01576d11c27a_read_request.jsonl",
+      "sha256": "c383be3b55d7dc70b69d005e7bb7e8b2a30779a46d570232fdb34481c9b8dd4e",
+      "actor": "luna_forge_01576d11c27a",
+      "exit_code": 0,
+      "same_boot": true,
+      "record_integrity_errors": []
+    }
+  ],
+  "errors": [],
+  "exit_code": 0,
+  "old_native_calls": 0,
+  "limits": "Top-level record inventory only. Invalid/non-object JSON is skipped and is not graded. Does not complete receipt/semantic/correction/marker/wait acceptance or prove every command was recorded."
+}

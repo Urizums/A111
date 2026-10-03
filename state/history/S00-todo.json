@@ -1,0 +1,88 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "S00",
+  "goal": "Produce a portable GitHub continuation workspace",
+  "tasks": [
+    {
+      "id": "S00-01",
+      "title": "整理并导出可接续仓库",
+      "owner": "coordinator",
+      "depends_on": [],
+      "write_paths": [
+        "docs/",
+        "skills/",
+        "state/",
+        "evidence/",
+        "prompts/"
+      ],
+      "acceptance": [
+        "源码 byte-identical，状态/提示词/证据可读"
+      ],
+      "status": "done",
+      "evidence": [
+        "README.md",
+        "state/source-lock.json",
+        "artifact-manifest.json"
+      ],
+      "blocker": null,
+      "next_action": "Portable workspace authored; source byte identity retained."
+    },
+    {
+      "id": "S00-02",
+      "title": "Luna 独立验证可移植接续",
+      "owner": "Luna independent reviewer",
+      "depends_on": [
+        "S00-01"
+      ],
+      "write_paths": [
+        "validation/"
+      ],
+      "acceptance": [
+        "原材料验证，不提供标准答案",
+        "换目录校验、回归和接续前沿检查有实际返回"
+      ],
+      "status": "done",
+      "evidence": [
+        "validation/luna/Handoff_Review.md",
+        "validation/luna/results.json",
+        "validation/luna/actual-command-log.json"
+      ],
+      "blocker": null,
+      "next_action": "Retain passing portability checks and partial/nonblind A04 audit limits."
+    },
+    {
+      "id": "S00-next",
+      "title": "启动下一阶段任务",
+      "owner": "coordinator",
+      "depends_on": [
+        "S00-01",
+        "S00-02"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/S01/"
+      ],
+      "acceptance": [
+        "S01 TODO 已保存",
+        "S01-01 截止证据校验实际运行"
+      ],
+      "status": "done",
+      "evidence": [
+        "state/phase-todo.json",
+        "runs/S01/record-inventory.json"
+      ],
+      "blocker": null,
+      "next_action": "S01 actually initiated. Continue S01-02; S02 has not started.",
+      "transition": {
+        "next_phase_id": "S01",
+        "todo_path": "state/phase-todo.json",
+        "first_task_id": "S01-01",
+        "start_evidence": [
+          "runs/S01/record-inventory.json",
+          "runs/S01/cutoff-integrity.json"
+        ]
+      }
+    }
+  ],
+  "updated_at": "2026-10-03T18:26:32.710000+00:00"
+}
