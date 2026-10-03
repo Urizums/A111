@@ -63,13 +63,14 @@
       "acceptance": [
         "waw1w1/A111 dev 包含最终文件；PR 指向 Urizums/A111 main 并附验证说明"
       ],
-      "status": "in_progress",
+      "status": "done",
       "evidence": [
-        "runs/cloud/github-access-resolved.json",
-        "runs/cloud/PULL_REQUEST.md"
+        "runs/cloud/github-pr.json",
+        "runs/cloud/github-publication-reports.json",
+        "runs/cloud/github-verification.json"
       ],
       "blocker": null,
-      "next_action": "推送 fork dev 并向原仓库提交 PR"
+      "next_action": "PR created and attached; leave merge to repository review."
     },
     {
       "id": "D00-next",
@@ -87,11 +88,16 @@
       "acceptance": [
         "目标交付完成后记录终态；不自动扩大为新性能实验"
       ],
-      "status": "planned",
-      "evidence": [],
+      "status": "cancelled",
+      "evidence": [
+        "runs/cloud/github-pr.json",
+        "runs/cloud/github-publication-reports.json",
+        "runs/cloud/github-verification.json"
+      ],
       "blocker": null,
-      "next_action": "启动下一阶段任务"
+      "next_action": "Requested delivery goal fulfilled. Await a new goal before any new performance/provider/UI phase.",
+      "cancellation_reason": "User-requested cloud deployment, validation, fixes and PR delivered; do not manufacture a further phase."
     }
   ],
-  "updated_at": "2026-10-03T19:58:13.841840+00:00"
+  "updated_at": "2026-10-03T20:00:09.250606+00:00"
 }

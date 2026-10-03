@@ -87,3 +87,17 @@ python3 scripts/package_delivery.py --out /tmp/agent-forge.tar.gz
 
 只运行新 state。不要把历史原生 worker ID、checkpoint 或绝对路径当作新环境的
 执行配置。CI 工作流只运行本地回归与安装/打包测试，不重放真实 worker。
+
+## 发布与交付记录
+
+已从 `waw1w1:dev` 向 `Urizums/A111:main` 创建
+[PR #1](https://github.com/Urizums/A111/pull/1)，保持 open，未执行合并。
+Git HTTPS 推送在云端返回 401 后，通过同一授权账号的 Git Data API 发布；
+每次更新均先核对远端树与本地已提交文件树相同，再非强制推进 `dev`。
+代码和报告发布返回在 `github-publication-code.json`、
+`github-publication-reports.json`，PR 返回及复核在 `github-pr.json`、
+`github-verification.json`。
+
+该次 GitHub 检查尚未出现 Actions run 或 check-run，不能将已配置的 CI 写成通过；
+上表通过结果均来自实际云端命令。`git diff --check` 仅提示已绑定哈希的独立审计
+报告末尾多一个空行；保留报告原字节，忽略该 EOF 空行规则后其余差异检查通过。

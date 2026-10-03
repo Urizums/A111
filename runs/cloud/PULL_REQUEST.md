@@ -7,4 +7,4 @@
 
 复核入口：[部署说明](docs/CLOUD_DEPLOYMENT.md)、[验证报告](runs/cloud/VERIFICATION_REPORT.md)、[问题与修复](runs/cloud/issues.json)、[C1 最终审计](runs/S01/final-review.md)、[S03 双次记录](runs/S03/validation.json)。
 
-本次运行安装位于已连接云环境 `/workspace/agent-forge-cloud`，不是 Web 服务或永久托管。CI 归档包含源码和报告；`scripts/package_delivery.py` 可本地重建完整交付包。
+本次运行安装位于已连接云环境 `/workspace/agent-forge-cloud`，不是 Web 服务或永久托管。已添加 CI 验证及归档工作流，但本次复核尚未出现 GitHub Actions run；上述通过结果来自实际云端执行。`scripts/package_delivery.py` 可重建包含源码和全部报告的完整交付包。

@@ -1,6 +1,6 @@
 {
   "schema": "upgrade-work-record/1",
-  "updated_at": "2026-10-03T19:58:13.841840+00:00",
+  "updated_at": "2026-10-03T20:00:09.250606+00:00",
   "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
   "todo": [
     {
@@ -1005,7 +1005,7 @@
     {
       "id": "cloud_deployment_and_delivery",
       "owner": "/root",
-      "status": "in_progress",
+      "status": "done",
       "depends_on": [
         "host_protocol_measurement_capture_and_scope"
       ],
@@ -1024,10 +1024,13 @@
       "evidence": [
         "runs/cloud/brief.json",
         "runs/cloud/VERIFICATION_REPORT.md",
-        "runs/cloud/issues.json"
+        "runs/cloud/issues.json",
+        "runs/cloud/github-pr.json",
+        "runs/cloud/github-publication-reports.json",
+        "runs/cloud/github-verification.json"
       ],
       "blocker": null,
-      "next_action": "Publish final fork dev and PR."
+      "next_action": "Review open PR #1; implementation and validation complete within documented scope."
     }
   ],
   "stop_conditions": [
@@ -1037,9 +1040,9 @@
     "Host bridge 2026-10-02: two repair rounds used; retain B1/B2 failures. No additional repair or performance-gain claim in this iteration.",
     "O3 2026-10-03: two functional repairs used; preserve actual wrong-SHA submission and wrapped-IO counterexample. New features need a separate frozen iteration."
   ],
-  "next_action": "Publish final dev to waw1w1/A111 through the authorized GitHub API and open PR to Urizums/A111 main.",
+  "next_action": "Requested goal delivered in PR #1. New development requires a new scoped goal; no background scheduler is active.",
   "final_trial_prompt": "使用最终 forge-agent-flow，在独立目录做一个小型本地导入系统：接收 JSONL 记录，校验后生成可查看的成功/错误报告，重复运行不丢先前结果。无需界面或云服务，普通选择自己推，不向用户提问。交可运行代码与实际运行验证，记录真实耗时和修复。",
-  "development_status": "cloud_cli_and_C2_verified; S01_audit_closed_with_gaps; original_C1_performance_inconclusive; fork_PR_pending",
+  "development_status": "requested_cloud_delivery_complete; C2_observed_conformance_verified; original_C1_performance_inconclusive; PR_open_not_merged",
   "remaining_capability_blockers": [
     {
       "task": "ticket browser UI journey",

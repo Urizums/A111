@@ -25,7 +25,7 @@ python3 scripts/smoke_cloud.py --prefix /workspace/agent-forge-cloud --out /tmp/
 
 ## GitHub 托管与复用
 
-上游仓库为 [Urizums/A111](https://github.com/Urizums/A111)。本次按用户指令提交到 [waw1w1/A111 的 dev 分支](https://github.com/waw1w1/A111/tree/dev)，再向上游 `main` 提 PR。此前发布记录 `state/github-publication.json` 属于原始交接历史；本次记录保存在 `runs/cloud/`。仓库当前访问权限以 GitHub 为准，原快照的私有描述不代表当前可见性。
+上游仓库为 [Urizums/A111](https://github.com/Urizums/A111)。本次已按用户指令提交到 [waw1w1/A111 的 dev 分支](https://github.com/waw1w1/A111/tree/dev)，并创建 [上游 PR #1](https://github.com/Urizums/A111/pull/1)，目标为 `main`，未合并。此前发布记录 `state/github-publication.json` 属于原始交接历史；本次记录保存在 `runs/cloud/`。仓库当前访问权限以 GitHub 为准，原快照的私有描述不代表当前可见性。
 
 若要复制到另一个 GitHub 仓库：
 
