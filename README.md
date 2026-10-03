@@ -17,7 +17,11 @@ python3 -m unittest discover -s skills/forge-agent-flow/scripts -p 'test_*.py'
 
 把 [prompts/CONTINUE_IN_WORK.md](prompts/CONTINUE_IN_WORK.md) 发给能够读取并写入本仓库的 agent。需要通用持续迭代行为时，使用 [prompts/CONTINUOUS_ITERATION.md](prompts/CONTINUOUS_ITERATION.md)。宿主是否支持原生子 agent、Luna、浏览器或持久后台执行，需要现场核实。提示词不能自行提供这些能力。
 
-## 上传 GitHub
+## GitHub 托管与复用
+
+当前仓库为 [Urizums/A111](https://github.com/Urizums/A111)，可见性为私有。新 agent 获取可读写的 checkout 后，从 START_HERE.md 接续；具体首项以 state/checkpoint.json 为准。发布核对记录见 state/github-publication.json。
+
+若要复制到另一个 GitHub 仓库：
 
 解压交接包，在 GitHub 创建空仓库，再在本目录执行：
 
@@ -30,7 +34,7 @@ git remote add origin <你的GitHub仓库地址>
 git push -u origin main
 ```
 
-若使用提供的 git bundle，可先 `git clone agent-forge-handoff.bundle agent-forge-handoff`，然后将 origin 改成自己的仓库。这里没有替你创建或发布 GitHub 仓库。
+若使用提供的 git bundle，可先 `git clone agent-forge-handoff.bundle agent-forge-handoff`，然后将 origin 改成自己的仓库。本次已按用户明确授权发布到 Urizums/A111；上述命令用于后续复制到其他仓库。
 
 ## 文件入口
 
