@@ -1,0 +1,117 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-03T19:28:39Z",
+  "updated_at": "2026-10-03T19:34:42Z",
+  "revision": 2,
+  "status": "completed",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "s03-native-smoke",
+    "goal": "One new ordinary worker verifies the revised C2 capture contract and exact CSV task.",
+    "deliverable_kind": "scoped_change",
+    "requirements": [
+      {
+        "id": "req_result",
+        "text": "All supplied expense rows aggregate exactly and source review records C2 conformance.",
+        "origin": "derived",
+        "basis": "Frozen S02 R01-R06 and S03 raw input",
+        "acceptance_ids": [
+          "a_business",
+          "a_protocol"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_business",
+        "assertion": "Source recomputation matches every amount, category and ID and Chinese explanation.",
+        "required": true,
+        "level": "review"
+      },
+      {
+        "id": "a_protocol",
+        "assertion": "R01-R06 recording/scope/lifecycle checks pass with actual native receipts and retained drafts.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "summarize",
+        "title": "New expense summary with measured native protocol",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_business",
+          "a_protocol"
+        ]
+      }
+    ],
+    "defaults": [
+      "One actual fresh Luna/max; no global containment or performance claim."
+    ],
+    "unknowns": [
+      "Provider identity/tokens/cost."
+    ]
+  },
+  "plan_hash": "1fbbae96a0a63a5a435b3cf09242e88cdc01b8921b116af72c03c540abf5db9d",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "summarize": {
+      "status": "done",
+      "attempts": [
+        {
+          "attempt_id": "fe59e381cb4d4e0695d5af0d9837c2d5",
+          "plan_hash": "1fbbae96a0a63a5a435b3cf09242e88cdc01b8921b116af72c03c540abf5db9d",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_business",
+            "a_protocol"
+          ],
+          "started_at": "2026-10-03T19:28:40Z",
+          "finished_at": "2026-10-03T19:34:42Z",
+          "outcome": "done",
+          "reason": null,
+          "acceptance_results": {
+            "a_business": {
+              "status": "pass",
+              "level": "review",
+              "evidence": [
+                {
+                  "path": "/workspace/A111/runs/S03/native/review.json",
+                  "sha256": "42fd4b997cc22d09b00d88eed0d1de4f3edd9a9526ec47f706573579b767f1c0"
+                },
+                {
+                  "path": "/workspace/A111/runs/S03/native/source-review.md",
+                  "sha256": "6e30af0f5a1b8e60de965e7953d4d34852723aa615ca1db1e210bd0b2617a399"
+                }
+              ]
+            },
+            "a_protocol": {
+              "status": "pass",
+              "level": "review",
+              "evidence": [
+                {
+                  "path": "/workspace/A111/runs/S03/native/review.json",
+                  "sha256": "42fd4b997cc22d09b00d88eed0d1de4f3edd9a9526ec47f706573579b767f1c0"
+                },
+                {
+                  "path": "/workspace/A111/runs/S03/native/source-review.md",
+                  "sha256": "6e30af0f5a1b8e60de965e7953d4d34852723aa615ca1db1e210bd0b2617a399"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

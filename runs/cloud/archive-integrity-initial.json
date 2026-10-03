@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "/workspace/archive-check-initial/agent-forge/scripts/verify_handoff.py",
+    "--json"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-03T19:35:50.861568+00:00",
+    "monotonic_ns": 789507945232,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:35:51.116477+00:00",
+    "monotonic_ns": 789762983796,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "stdout": "{\n  \"schema\": \"forge-handoff-check/1\",\n  \"ok\": false,\n  \"errors\": [\n    \"release manifest coverage differs: ['delivery-manifest.json']\"\n  ],\n  \"skill_files_checked\": 91,\n  \"cutoff_files_checked\": 375,\n  \"release_files_checked\": 1040,\n  \"revision_files_checked\": 85,\n  \"active_phase\": \"S01\",\n  \"next_task_id\": \"S01-02\",\n  \"scope\": \"read-only hashes, paths, phase dependency/transition invariants; not live or semantic acceptance\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtaGFuZG9mZi1jaGVjay8xIiwKICAib2siOiBmYWxzZSwKICAiZXJyb3JzIjogWwogICAgInJlbGVhc2UgbWFuaWZlc3QgY292ZXJhZ2UgZGlmZmVyczogWydkZWxpdmVyeS1tYW5pZmVzdC5qc29uJ10iCiAgXSwKICAic2tpbGxfZmlsZXNfY2hlY2tlZCI6IDkxLAogICJjdXRvZmZfZmlsZXNfY2hlY2tlZCI6IDM3NSwKICAicmVsZWFzZV9maWxlc19jaGVja2VkIjogMTA0MCwKICAicmV2aXNpb25fZmlsZXNfY2hlY2tlZCI6IDg1LAogICJhY3RpdmVfcGhhc2UiOiAiUzAxIiwKICAibmV4dF90YXNrX2lkIjogIlMwMS0wMiIsCiAgInNjb3BlIjogInJlYWQtb25seSBoYXNoZXMsIHBhdGhzLCBwaGFzZSBkZXBlbmRlbmN5L3RyYW5zaXRpb24gaW52YXJpYW50czsgbm90IGxpdmUgb3Igc2VtYW50aWMgYWNjZXB0YW5jZSIKfQo=",
+  "stderr_base64": ""
+}

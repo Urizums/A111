@@ -1,0 +1,140 @@
+{
+  "schema": "forge-s03-validation/1",
+  "status": "passed",
+  "business_acceptance": "passed",
+  "observed_protocol_conformance": "passed",
+  "native_worker": "/root/luna_forge_fe59e381cb4d",
+  "requested_model": "gpt-6-luna",
+  "reasoning_effort": "max",
+  "fork_turns": "none",
+  "actual_creations": 1,
+  "actual_status_queries": 2,
+  "notification_waits": 0,
+  "worker_targets": 11,
+  "worker_corrections": 0,
+  "coordinator_corrections": 0,
+  "source_review_checks": 16,
+  "coordinator_stages": {
+    "coordinator_setup": {
+      "elapsed_seconds": 0.30901924,
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_setup",
+        "event": "begin",
+        "utc": "2026-10-03T19:28:39.843793+00:00",
+        "monotonic_ns": 358490166368,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_setup",
+        "event": "end",
+        "utc": "2026-10-03T19:28:40.152807+00:00",
+        "monotonic_ns": 358799185608,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      }
+    },
+    "coordinator_receive": {
+      "elapsed_seconds": 298.902348966,
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_receive",
+        "event": "begin",
+        "utc": "2026-10-03T19:29:08.988137+00:00",
+        "monotonic_ns": 387634512530,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_receive",
+        "event": "end",
+        "utc": "2026-10-03T19:34:07.890486+00:00",
+        "monotonic_ns": 686536861496,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      }
+    },
+    "coordinator_review": {
+      "elapsed_seconds": 25.016246459,
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_review",
+        "event": "begin",
+        "utc": "2026-10-03T19:34:07.976234+00:00",
+        "monotonic_ns": 686622611522,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_review",
+        "event": "end",
+        "utc": "2026-10-03T19:34:32.992479+00:00",
+        "monotonic_ns": 711638857981,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      }
+    },
+    "coordinator_decision": {
+      "elapsed_seconds": 9.044380525,
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_decision",
+        "event": "begin",
+        "utc": "2026-10-03T19:34:33.062261+00:00",
+        "monotonic_ns": 711708640467,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_decision",
+        "event": "end",
+        "utc": "2026-10-03T19:34:42.106646+00:00",
+        "monotonic_ns": 720753020992,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      }
+    },
+    "coordinator_commit": {
+      "elapsed_seconds": 0.237017461,
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_commit",
+        "event": "begin",
+        "utc": "2026-10-03T19:34:42.183178+00:00",
+        "monotonic_ns": 720829553385,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "coordinator",
+        "stage": "coordinator_commit",
+        "event": "end",
+        "utc": "2026-10-03T19:34:42.420195+00:00",
+        "monotonic_ns": 721066570846,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      }
+    }
+  },
+  "evidence": [
+    "runs/S03/native/freeze.json",
+    "runs/S03/native/create-return.json",
+    "runs/S03/native/query-1-return.json",
+    "runs/S03/native/query-2-return.json",
+    "runs/S03/native/review.json",
+    "runs/S03/native/source-review.md",
+    "runs/S03/native/decision.json",
+    "runs/S03/native/logs/018-commit.json",
+    "runs/S03/native/logs/019-reconcile.json"
+  ],
+  "scope": "One new native worker, original bridge and source review. No causal performance comparison, provider-global quota/security, SDK, real UI or external business-effect claim.",
+  "provider_tokens": null,
+  "provider_cost": null,
+  "internal_provider_identity": null,
+  "worker_scope_enforcement": "instructions only; complete host-side trace not available"
+}

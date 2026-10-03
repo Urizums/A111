@@ -1,0 +1,21 @@
+{
+  "schema": "offline-hostdraft-command/1",
+  "mode": "reply",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/skills/forge-agent-flow/scripts/hostdraft.py",
+    "reply",
+    "--request",
+    "/workspace/A111/runs/S01/cloud-audit/job/request.json",
+    "--artifact",
+    "/workspace/A111/runs/S01/cloud-audit/worker/audit.json",
+    "--artifact",
+    "/workspace/A111/runs/S01/cloud-audit/worker/report.md",
+    "--out",
+    "/workspace/A111/runs/S01/cloud-audit/worker/hostdraft_reply_draft.json"
+  ],
+  "cwd": "/workspace/A111",
+  "exit_code": 0,
+  "stdout": "{\n  \"status\": \"draft\",\n  \"out\": \"/workspace/A111/runs/S01/cloud-audit/worker/hostdraft_reply_draft.json\",\n  \"ready_to_submit\": false,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"next_action\": \"Fill actual work or independent review; preflight then use original receive/commit.\"\n}\n",
+  "stderr": ""
+}

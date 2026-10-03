@@ -1,0 +1,33 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "skills/forge-agent-flow/scripts/hostdraft.py",
+    "decision",
+    "--job",
+    "runs/S01/cloud-audit/job",
+    "--evidence",
+    "runs/S01/final-review.json",
+    "--evidence",
+    "runs/S01/final-review.md",
+    "--out",
+    "runs/S01/cloud-audit/decision.draft.json"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-03T19:57:51.224071+00:00",
+    "monotonic_ns": 2109870449722,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:57:51.281542+00:00",
+    "monotonic_ns": 2109927922420,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"status\": \"draft\",\n  \"out\": \"/workspace/A111/runs/S01/cloud-audit/decision.draft.json\",\n  \"ready_to_submit\": false,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"next_action\": \"Fill actual work or independent review; preflight then use original receive/commit.\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzdGF0dXMiOiAiZHJhZnQiLAogICJvdXQiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvUzAxL2Nsb3VkLWF1ZGl0L2RlY2lzaW9uLmRyYWZ0Lmpzb24iLAogICJyZWFkeV90b19zdWJtaXQiOiBmYWxzZSwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICJjYWxsX2FsbG93ZWQiOiBmYWxzZSwKICAibmV4dF9hY3Rpb24iOiAiRmlsbCBhY3R1YWwgd29yayBvciBpbmRlcGVuZGVudCByZXZpZXc7IHByZWZsaWdodCB0aGVuIHVzZSBvcmlnaW5hbCByZWNlaXZlL2NvbW1pdC4iCn0K",
+  "stderr_base64": ""
+}

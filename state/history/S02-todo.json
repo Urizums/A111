@@ -1,0 +1,105 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "S02",
+  "goal": "Version and qualify a revised recording contract without changing immutable baseline.",
+  "tasks": [
+    {
+      "id": "S02-01",
+      "title": "检查原方法并冻结修订要求",
+      "owner": "coordinator",
+      "depends_on": [],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "R01–R06 和新候选范围已冻结"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/S02/source-inspection.json",
+        "runs/S02/requirements.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope."
+    },
+    {
+      "id": "S02-02",
+      "title": "保存新候选并修复记录器缺陷",
+      "owner": "coordinator",
+      "depends_on": [
+        "S02-01"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "原技能与旧失败保留，新候选有哈希及有界修复记录"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/S02/candidate-lock.json",
+        "runs/S02/repair-1.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope."
+    },
+    {
+      "id": "S02-03",
+      "title": "资格验证与控制器回归",
+      "owner": "coordinator",
+      "depends_on": [
+        "S02-02"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "五项 recorder 检查与 368 项候选回归通过"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/S02/qualification-after-fix.json",
+        "runs/S02/candidate-regression.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope."
+    },
+    {
+      "id": "S02-next",
+      "title": "启动下一阶段任务",
+      "owner": "coordinator",
+      "depends_on": [
+        "S02-01",
+        "S02-02",
+        "S02-03"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "下一阶段 TODO 已保存，首项已真实执行且证据存在"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/S03/native/freeze.json",
+        "runs/S03/native/logs/002-setup.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope.",
+      "transition": {
+        "next_phase_id": "S03",
+        "todo_path": "state/history/S03-todo.json",
+        "first_task_id": "S03-01",
+        "start_evidence": [
+          "runs/S03/native/freeze.json",
+          "runs/S03/native/logs/002-setup.json"
+        ]
+      }
+    }
+  ],
+  "updated_at": "2026-10-03T19:58:13.841840+00:00"
+}

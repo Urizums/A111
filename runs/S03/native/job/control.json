@@ -1,0 +1,179 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "eb15a4fe253a3b949714dd2d350f181c4915b521951eef56bb0a22043ed4499d",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_b0acf89671a046d8adb738f7eaceeb95",
+    "attempt_id": "fe59e381cb4d4e0695d5af0d9837c2d5",
+    "invocation_id": "fe59e381cb4d4e0695d5af0d9837c2d5",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "summarize",
+      "plan_hash": "1fbbae96a0a63a5a435b3cf09242e88cdc01b8921b116af72c03c540abf5db9d",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "summarize",
+      "title": "New expense summary with measured native protocol",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_business",
+        "a_protocol"
+      ]
+    },
+    "work": {
+      "prompt": "FIRST SHELL COMMAND: execute the following EXACT command before any other shell operation. Tool metadata discovery is not a shell command. Do not ask Root to recapture your first read.\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/capture.py cli --record /workspace/A111/runs/S03/native/worker/logs/000-bootstrap.json --actor worker -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -c 'from pathlib import Path;print('\"'\"'\\nSOURCE /workspace/A111/runs/S03/native/job/request.json\\n'\"'\"');print(Path('\"'\"'/workspace/A111/runs/S03/native/job/request.json'\"'\"').read_text()) ;print('\"'\"'\\nSOURCE /workspace/A111/runs/S02/candidate/forge-agent-flow/references/recording-protocol.md\\n'\"'\"');print(Path('\"'\"'/workspace/A111/runs/S02/candidate/forge-agent-flow/references/recording-protocol.md'\"'\"').read_text()) ;print('\"'\"'\\nSOURCE /workspace/A111/runs/S03/native/expenses.csv\\n'\"'\"');print(Path('\"'\"'/workspace/A111/runs/S03/native/expenses.csv'\"'\"').read_text()) ;print('\"'\"'\\nSOURCE /workspace/A111/AGENTS.md\\n'\"'\"');print(Path('\"'\"'/workspace/A111/AGENTS.md'\"'\"').read_text()) ;'\n\nTask: From the bound expenses.csv alone, produce totals.json and a Chinese explanation totals.md. totals.json must contain exactly row_count (integer), total_fen (integer), and categories (sorted by category); each category object has exactly category, total_fen, and ids (all original IDs in source order). Convert each decimal amount exactly to integer fen, including refunds/zero; preserve every ID once. Do not use binary floats. Do not read previous outputs or infer missing values. Independently author computation and outputs.\nUse this C2 recording protocol for the whole run. Only read this request, bound expenses.csv, public candidate skill/code and AGENTS.md. The continuation/audit tasks mentioned by AGENTS are not your assigned task. You may use installed Python standard library. Write only /workspace/A111/runs/S03/native/worker, including all scripts, logs, drafts, outputs and markers. Do not use network, status/creation/followup/interrupt/delegation tools, global agents listings, siblings, coordinator state/reviews or previous runs. Do not spawn another worker. Parent notification is for your own status/completion only.\nAfter the exact bootstrap command, capture every target command using the specified capture.py cli with a unique in-scope record. Marker commands are targets too and must be wrapped. The outer capture wrapper is excluded; children of a target share its aggregate span. Pure file-tool edits are allowed only in scope and must be disclosed in operations.json. Record worker_work begin before business computation, worker_work end after both outputs, worker_reply begin before incomplete hostdraft reply, worker_reply end after captured successful check-reply. Use the exact actor worker, keep marker boot IDs unchanged.\nCreate an incomplete reply draft with the public hostdraft.py reply command and retain it. Fill a separate final reply.json from real work, hash actual outputs. Run captured hostdraft.py check-reply BEFORE worker_reply end. Reply must reference totals.json and totals.md plus operations.json which lists all file-tool writes, captured commands and correction attempts. Do not mutate referenced files after final preflight.\nBudgets: one original worker, no delegation/network/status calls; at most 40 captured targets; at most two local corrective attempts INCLUDING analysis/readers/index/telemetry repairs. Preserve failed commands and initial versions. First authored candidate is not a correction. Root pure file edits/native intent saving are outside your denominator; all your corrective work counts. Report unknown provider tokens/cost/internal identity as null. Return your reply path and actual status, not a fabricated completion receipt.",
+      "inputs": {
+        "csv": "/workspace/A111/runs/S03/native/expenses.csv",
+        "rules": "Integer fen; sorted category totals; all IDs exactly once; Chinese explanation."
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/S03/native/expenses.csv",
+          "sha256": "a84e1a715ddee59771de9aea307c8ea5af3b38ee98ac262b3ff1751969a67834"
+        },
+        {
+          "path": "/workspace/A111/runs/S02/candidate/forge-agent-flow/references/recording-protocol.md",
+          "sha256": "57b65c5660e8aab5fc81a2e219530e0bcb5ff5a6125786018452c670d7895431"
+        },
+        {
+          "path": "/workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/capture.py",
+          "sha256": "8e7d8e9f6b1c9bb2311ec619d51f3a0c5c4fa02039d9adc7139b1bc52bd4cb77"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/S03/native/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/S03/native/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_fe59e381cb4d",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "cda0e391b313b243e4758a668f4871cfdeec404090bf5ed1b989a2d79bdb7149",
+  "target": "/workspace/A111/runs/S03/native/state.json",
+  "target_sha256": "d14201d43c201f37dd0742a46349d75bd806ae4c4bfbde9587a1f9d1e2fe15f6",
+  "target_before_sha256": "27553123ec056cb1d1118d2242c0fdb98cffec99cd791a6de6746e0c176bb70e",
+  "package_ref": null,
+  "phase": "committed",
+  "worker": "/root/luna_forge_fe59e381cb4d",
+  "reply_ref": {
+    "path": "/workspace/A111/runs/S03/native/job/receipts/444305617b700c3ca861093a6a1581aa9eec1d4e55efd9e45161e82609c92db2.json",
+    "sha256": "444305617b700c3ca861093a6a1581aa9eec1d4e55efd9e45161e82609c92db2"
+  },
+  "commit": {
+    "decision_ref": {
+      "path": "/workspace/A111/runs/S03/native/decision.json",
+      "sha256": "21f16f58bd4c50203f2b6d866cd31a36da7ad909e5942a010c53896708d7dd4f"
+    },
+    "target_result": {
+      "task_id": "summarize",
+      "attempt_id": "fe59e381cb4d4e0695d5af0d9837c2d5",
+      "outcome": "done",
+      "task_status": "done",
+      "reason": null,
+      "status": "completed",
+      "revision": 2,
+      "plan_hash": "1fbbae96a0a63a5a435b3cf09242e88cdc01b8921b116af72c03c540abf5db9d",
+      "evaluation_plan_hash": null
+    },
+    "worker_task_outcome": "done",
+    "coordinator_outcome": "done",
+    "recorded_at": "2026-10-03T19:34:42Z"
+  },
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/S03/native/job/request.json",
+      "sha256": "bce13de8ef9ab56b3d26953f209f1b9f771e5c03c9453c9afff5ac4253903ff4"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/expenses.csv",
+      "sha256": "a84e1a715ddee59771de9aea307c8ea5af3b38ee98ac262b3ff1751969a67834"
+    },
+    {
+      "path": "/workspace/A111/runs/S02/candidate/forge-agent-flow/references/recording-protocol.md",
+      "sha256": "57b65c5660e8aab5fc81a2e219530e0bcb5ff5a6125786018452c670d7895431"
+    },
+    {
+      "path": "/workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/capture.py",
+      "sha256": "8e7d8e9f6b1c9bb2311ec619d51f3a0c5c4fa02039d9adc7139b1bc52bd4cb77"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/job/receipts/3ccf59feb62912fcd40b2fc50ef32a6ee2d396824cec88d8d62b6acf4b796b90.json",
+      "sha256": "3ccf59feb62912fcd40b2fc50ef32a6ee2d396824cec88d8d62b6acf4b796b90"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/job/receipts/12a3626a129cc43a2500d6fac2f1d143ca3189076350fec07c2d7595bb3e1eeb.json",
+      "sha256": "12a3626a129cc43a2500d6fac2f1d143ca3189076350fec07c2d7595bb3e1eeb"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/job/receipts/aafe0245acfeb57a89eaec1d2a709d52e0a6f1eeef193abf5f539bdeca642382.json",
+      "sha256": "aafe0245acfeb57a89eaec1d2a709d52e0a6f1eeef193abf5f539bdeca642382"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/job/receipts/444305617b700c3ca861093a6a1581aa9eec1d4e55efd9e45161e82609c92db2.json",
+      "sha256": "444305617b700c3ca861093a6a1581aa9eec1d4e55efd9e45161e82609c92db2"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/worker/reply.json",
+      "sha256": "444305617b700c3ca861093a6a1581aa9eec1d4e55efd9e45161e82609c92db2"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/worker/totals.json",
+      "sha256": "2f7cbbdc411275c36586b8a815d4e7ecfa81e4b08c5f802d0df863be9817d3aa"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/worker/totals.md",
+      "sha256": "7834b4cbec95d7b6cb32c80408197f76a49ec50565f85057db6d0e1c660dd9b6"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/worker/operations.json",
+      "sha256": "dcab154c98b6a8be61c047a2ea8b8f02dc27bf04f008bf442f1c2293c3796b21"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/decision.json",
+      "sha256": "21f16f58bd4c50203f2b6d866cd31a36da7ad909e5942a010c53896708d7dd4f"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/review.json",
+      "sha256": "42fd4b997cc22d09b00d88eed0d1de4f3edd9a9526ec47f706573579b767f1c0"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/source-review.md",
+      "sha256": "6e30af0f5a1b8e60de965e7953d4d34852723aa615ca1db1e210bd0b2617a399"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/review.json",
+      "sha256": "42fd4b997cc22d09b00d88eed0d1de4f3edd9a9526ec47f706573579b767f1c0"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/source-review.md",
+      "sha256": "6e30af0f5a1b8e60de965e7953d4d34852723aa615ca1db1e210bd0b2617a399"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/S03/native/job/receipts/3ccf59feb62912fcd40b2fc50ef32a6ee2d396824cec88d8d62b6acf4b796b90.json",
+    "sha256": "3ccf59feb62912fcd40b2fc50ef32a6ee2d396824cec88d8d62b6acf4b796b90"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/S01/check_csv.py"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-03T19:32:37.349744+00:00",
+    "monotonic_ns": 595996122721,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:32:37.375878+00:00",
+    "monotonic_ns": 596022256385,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"source_sha256\": \"f1a6914eae07b97537e809c9e9fa5000acd02b391ca64484927596a19c2b3bfb\",\n  \"expected\": {\n    \"ops\": {\n      \"row_count\": 3,\n      \"total_fen\": 1464,\n      \"ids\": [\n        \"C601\",\n        \"C603\",\n        \"C606\"\n      ]\n    },\n    \"dev\": {\n      \"row_count\": 2,\n      \"total_fen\": 946,\n      \"ids\": [\n        \"C602\",\n        \"C605\"\n      ]\n    },\n    \"design\": {\n      \"row_count\": 1,\n      \"total_fen\": 1600,\n      \"ids\": [\n        \"C604\"\n      ]\n    }\n  },\n  \"samples\": [\n    {\n      \"sample\": \"A1\",\n      \"path\": \"evidence/c1/project/A1/artifacts/summary.json\",\n      \"sha256\": \"5954bfd47d9d563ebb8a9832cf6f6a84221083c7286abddd6749eed46d2bd527\",\n      \"matches\": true\n    },\n    {\n      \"sample\": \"B1\",\n      \"path\": \"evidence/c1/project/B1/artifacts/summary.json\",\n      \"sha256\": \"8bc08ffb153c2526f200e733bbe5d404d203519b285fa37b6082ae47b090d543\",\n      \"matches\": true\n    },\n    {\n      \"sample\": \"B2\",\n      \"path\": \"evidence/c1/project/B2/artifacts/summary.json\",\n      \"sha256\": \"373f70e1ba7cb5cc74bd33a51592ac109050cde29ec9c4c07c870edc540dbca3\",\n      \"matches\": true\n    },\n    {\n      \"sample\": \"A2\",\n      \"path\": \"evidence/c1/project/A2/artifacts/summary.json\",\n      \"sha256\": \"5954bfd47d9d563ebb8a9832cf6f6a84221083c7286abddd6749eed46d2bd527\",\n      \"matches\": true\n    }\n  ],\n  \"scope\": \"A2 is cutoff output only, never lifecycle completion; zero old native or controller calls.\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzb3VyY2Vfc2hhMjU2IjogImYxYTY5MTRlYWUwN2I5NzUzN2U4MDljOWU5ZmE1MDAwYWNkMDJiMzkxY2E2NDQ4NDkyNzU5NmExOWMyYjNiZmIiLAogICJleHBlY3RlZCI6IHsKICAgICJvcHMiOiB7CiAgICAgICJyb3dfY291bnQiOiAzLAogICAgICAidG90YWxfZmVuIjogMTQ2NCwKICAgICAgImlkcyI6IFsKICAgICAgICAiQzYwMSIsCiAgICAgICAgIkM2MDMiLAogICAgICAgICJDNjA2IgogICAgICBdCiAgICB9LAogICAgImRldiI6IHsKICAgICAgInJvd19jb3VudCI6IDIsCiAgICAgICJ0b3RhbF9mZW4iOiA5NDYsCiAgICAgICJpZHMiOiBbCiAgICAgICAgIkM2MDIiLAogICAgICAgICJDNjA1IgogICAgICBdCiAgICB9LAogICAgImRlc2lnbiI6IHsKICAgICAgInJvd19jb3VudCI6IDEsCiAgICAgICJ0b3RhbF9mZW4iOiAxNjAwLAogICAgICAiaWRzIjogWwogICAgICAgICJDNjA0IgogICAgICBdCiAgICB9CiAgfSwKICAic2FtcGxlcyI6IFsKICAgIHsKICAgICAgInNhbXBsZSI6ICJBMSIsCiAgICAgICJwYXRoIjogImV2aWRlbmNlL2MxL3Byb2plY3QvQTEvYXJ0aWZhY3RzL3N1bW1hcnkuanNvbiIsCiAgICAgICJzaGEyNTYiOiAiNTk1NGJmZDQ3ZDlkNTYzZWJiOGE5ODMyY2Y2ZjZhODQyMjEwODNjNzI4NmFiZGRkNjc0OWVlZDQ2ZDJiZDUyNyIsCiAgICAgICJtYXRjaGVzIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgInNhbXBsZSI6ICJCMSIsCiAgICAgICJwYXRoIjogImV2aWRlbmNlL2MxL3Byb2plY3QvQjEvYXJ0aWZhY3RzL3N1bW1hcnkuanNvbiIsCiAgICAgICJzaGEyNTYiOiAiOGJjMDhmZmIxNTNjMjUyNmYyMDBlNzMzYmJlNWQ0MDRkMjAzNTE5YjI4NWZhMzdiNjA4MmFlNDdiMDkwZDU0MyIsCiAgICAgICJtYXRjaGVzIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgInNhbXBsZSI6ICJCMiIsCiAgICAgICJwYXRoIjogImV2aWRlbmNlL2MxL3Byb2plY3QvQjIvYXJ0aWZhY3RzL3N1bW1hcnkuanNvbiIsCiAgICAgICJzaGEyNTYiOiAiMzczZjcwZTFiYTdjYjVjYzc0YmQzM2E1MTU5MmFjMTA5MDUwY2RlMjllYzljNGMwN2M4NzBlZGM1NDBkYmNhMyIsCiAgICAgICJtYXRjaGVzIjogdHJ1ZQogICAgfSwKICAgIHsKICAgICAgInNhbXBsZSI6ICJBMiIsCiAgICAgICJwYXRoIjogImV2aWRlbmNlL2MxL3Byb2plY3QvQTIvYXJ0aWZhY3RzL3N1bW1hcnkuanNvbiIsCiAgICAgICJzaGEyNTYiOiAiNTk1NGJmZDQ3ZDlkNTYzZWJiOGE5ODMyY2Y2ZjZhODQyMjEwODNjNzI4NmFiZGRkNjc0OWVlZDQ2ZDJiZDUyNyIsCiAgICAgICJtYXRjaGVzIjogdHJ1ZQogICAgfQogIF0sCiAgInNjb3BlIjogIkEyIGlzIGN1dG9mZiBvdXRwdXQgb25seSwgbmV2ZXIgbGlmZWN5Y2xlIGNvbXBsZXRpb247IHplcm8gb2xkIG5hdGl2ZSBvciBjb250cm9sbGVyIGNhbGxzLiIKfQo=",
+  "stderr_base64": ""
+}

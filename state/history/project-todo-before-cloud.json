@@ -1,0 +1,1205 @@
+{
+  "schema": "upgrade-work-record/1",
+  "updated_at": "2026-10-03T19:01:07.270375+00:00",
+  "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
+  "todo": [
+    {
+      "id": "diagnose",
+      "owner": "/root/luna_skill_diagnose",
+      "status": "done",
+      "evidence": "diagnosis.json"
+    },
+    {
+      "id": "project_engine",
+      "owner": "/root/luna_skill_project_engine",
+      "status": "done",
+      "write_scope": [
+        "scripts/projectctl.py",
+        "scripts/test_projectctl.py",
+        "assets/example-project-plan.json"
+      ],
+      "evidence": {
+        "agent": "/root/luna_skill_project_engine",
+        "source": "actual final response",
+        "tests": 9,
+        "claim_scope": "fixture and CLI validation"
+      }
+    },
+    {
+      "id": "usage_and_routing",
+      "owner": "/root/luna_skill_docs",
+      "status": "done",
+      "write_scope": [
+        "SKILL.md",
+        "agents/openai.yaml",
+        "references/project-execution.md",
+        "references/design-from-brief.md",
+        "references/software-delivery.md",
+        "references/host-execution.md",
+        "references/evaluation-plan.md"
+      ],
+      "evidence": "candidate-source-lock.json and regression-result.json; actual docs handoff received"
+    },
+    {
+      "id": "acceptance_coverage",
+      "owner": "/root/luna_skill_coverage",
+      "status": "done",
+      "write_scope": [
+        "scripts/coveragecheck.py",
+        "scripts/test_coveragecheck.py",
+        "assets/example-coverage.json"
+      ],
+      "evidence": {
+        "agent": "/root/luna_skill_coverage",
+        "source": "actual final response",
+        "tests": {
+          "test_coveragecheck": 16,
+          "test_evalplan": 7,
+          "test_factoryctl": 27
+        },
+        "claim_scope": "fixture validation only; no product runtime evidence"
+      }
+    },
+    {
+      "id": "baseline_infra",
+      "owner": "/root/luna_baseline_infra",
+      "status": "done",
+      "depends_on": [],
+      "evidence": "baseline-infra/run-summary.json; actual final reply received"
+    },
+    {
+      "id": "integrate_and_regress",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "project_engine",
+        "usage_and_routing",
+        "acceptance_coverage"
+      ],
+      "evidence": "candidate-source-lock.json and regression-result.json; actual docs handoff received"
+    },
+    {
+      "id": "fresh_system_trial",
+      "owner": "/root/luna_new_system",
+      "status": "done",
+      "depends_on": [
+        "integrate_and_regress"
+      ],
+      "evidence": "trial-system/run-summary.json: 4/5 actual tasks done, browser UI task remains capability-blocked; actual final reply received"
+    },
+    {
+      "id": "fresh_infra_trial",
+      "owner": "/root/luna_new_infra",
+      "status": "done",
+      "depends_on": [
+        "integrate_and_regress"
+      ],
+      "evidence": "trial-infra/run-summary.json and actual Luna final reply; candidate V1 pinned"
+    },
+    {
+      "id": "independent_runtime_assessment",
+      "owner": "/root/luna_runtime_assessor",
+      "status": "done",
+      "depends_on": [
+        "baseline_infra",
+        "fresh_system_trial",
+        "fresh_infra_trial"
+      ],
+      "evidence": "runtime-assessment/case-a.json:5 groups; case-b.json:5 groups; case-c.json:6 business groups pass after one documented evaluator harness repair; browser UI remains unverified"
+    },
+    {
+      "id": "repair_and_sync",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "independent_runtime_assessment"
+      ],
+      "evidence": "skill-save-receipt.json verified; Forge_Upgrade_Metrics.json created from actual reports"
+    },
+    {
+      "id": "fresh_skill_audit",
+      "owner": "/root/luna_skill_fresh_audit",
+      "status": "done",
+      "depends_on": [
+        "integrate_and_regress"
+      ],
+      "write_scope": [
+        "skill-audit/"
+      ],
+      "evidence": "skill-audit/audit.json:3 findings; skill-audit/audit-recheck.json:3 targeted post-fix fixtures pass"
+    },
+    {
+      "id": "repair_controller_bindings",
+      "owner": "/root/luna_skill_project_engine + /root/luna_skill_docs",
+      "status": "done",
+      "depends_on": [
+        "fresh_skill_audit"
+      ],
+      "repair_round": 1,
+      "findings": [
+        "evaluation-plan identity binding",
+        "active write path collision",
+        "historical evidence drift warnings"
+      ],
+      "evidence": "regression-v2-result.json; actual engine/doc handoffs; independent targeted recheck pending"
+    },
+    {
+      "id": "final_version_trial",
+      "owner": "/root/luna_final_import_system",
+      "status": "done",
+      "depends_on": [
+        "repair_controller_bindings"
+      ],
+      "goal": "Use final skill on an isolated small task; exercise applicable planning and real runtime without known failure labels",
+      "evidence": "final-import-system/run-summary.json and runtime-assessment/case-d/case-d.json: 4 independent new-input groups pass; bound controller completed; temporary-path test-driver exception retained"
+    },
+    {
+      "id": "layered_architecture_design",
+      "owner": "/root/luna_layered_architecture",
+      "status": "done",
+      "write_scope": [
+        "references/system-architecture.md"
+      ],
+      "evidence": "forge-design-upgrade/candidate-source-lock.json; actual author replies and integration link checks"
+    },
+    {
+      "id": "experience_design_and_presets",
+      "owner": "/root/luna_experience_presets",
+      "status": "done",
+      "write_scope": [
+        "references/experience-design.md",
+        "references/design-references.md",
+        "assets/ui-presets.css",
+        "assets/ui-presets.html"
+      ],
+      "evidence": "forge-design-upgrade/candidate-source-lock.json; actual author replies and integration link checks"
+    },
+    {
+      "id": "design_route_integration",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "layered_architecture_design",
+        "experience_design_and_presets"
+      ],
+      "evidence": "forge-design-upgrade/candidate-source-lock.json; actual author replies and integration link checks"
+    },
+    {
+      "id": "fresh_design_generalization_trials",
+      "owner": [
+        "/root/luna_mobile_inventory_design",
+        "/root/luna_import_service_design",
+        "/root/luna_preset_independent_check"
+      ],
+      "status": "done",
+      "depends_on": [
+        "design_route_integration"
+      ],
+      "evidence": "3 design-only tasks; independent reviews and targeted design rechecks; no product runtime/performance claim"
+    },
+    {
+      "id": "design_repair_verify_save",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "fresh_design_generalization_trials"
+      ],
+      "evidence": "forge-design-upgrade/final-validation.json; both skill-save receipts verified"
+    },
+    {
+      "id": "standalone_product_experience_skill",
+      "owner": "/root/luna_design_skill_module",
+      "status": "done",
+      "write_scope": [
+        "design-product-experience/"
+      ],
+      "evidence": "forge-design-upgrade/design-skill-save-receipt.json; installed Product Experience Design"
+    },
+    {
+      "id": "preset_behavior_repair",
+      "owner": "/root/luna_experience_presets",
+      "status": "done",
+      "depends_on": [
+        "experience_design_and_presets"
+      ],
+      "repair_round": 1,
+      "evidence": "forge-design-upgrade/preset-audit/RECHECK.md + raw logs; 33 post-fix fixture assertions pass against exact saved assets",
+      "write_scope": [
+        "assets/ui-presets.css",
+        "assets/ui-presets.html"
+      ]
+    },
+    {
+      "id": "standalone_design_forward_trial",
+      "owner": "new Luna",
+      "status": "done",
+      "depends_on": [
+        "standalone_product_experience_skill"
+      ],
+      "evidence": "forge-design-upgrade/trial-document-motion/check-record.md + design-review/motion-recheck.md; four design gaps addressed"
+    },
+    {
+      "id": "independent_design_review",
+      "owner": "/root/luna_design_independent_review",
+      "status": "done",
+      "evidence": "forge-design-upgrade/design-review/independent-review.md",
+      "depends_on": [
+        "fresh_design_generalization_trials"
+      ]
+    },
+    {
+      "id": "repair_design_contracts",
+      "owner": [
+        "/root/luna_mobile_inventory_design",
+        "/root/luna_import_service_design"
+      ],
+      "status": "done",
+      "evidence": "forge-design-upgrade/design-review/{import,mobile,motion}-recheck.md; nine gaps addressed at design level",
+      "depends_on": [
+        "independent_design_review"
+      ]
+    },
+    {
+      "id": "preset_browser_acceptance",
+      "owner": "supported browser/device host",
+      "status": "blocked",
+      "depends_on": [
+        "preset_behavior_repair"
+      ],
+      "blocker": "Chromium unavailable; download failed; cloud browser rejected data URL preview and browser route stopped.",
+      "evidence": "forge-design-upgrade/browser-capability.json",
+      "next_action": "Execute planned UI journeys only when the target app and permitted browser/device access are available; no workaround or inferred UI pass."
+    },
+    {
+      "id": "versioned_preset_catalog",
+      "owner": "/root",
+      "status": "planned",
+      "depends_on": [
+        "next_design_catalog_research",
+        "next_layer_architecture_plan"
+      ],
+      "goal": "Add task/platform variants with source revision, reuse terms, paired tokens, component states, motion and actual target evidence.",
+      "research_and_preprocessing_owner": "available Luna worker",
+      "core_authoring_owner": "/root",
+      "dependency_history": [
+        {
+          "at": "2026-10-02T06:49:20.613675+00:00",
+          "previous_depends_on": [
+            "preset_browser_acceptance"
+          ],
+          "reason": "Catalog construction/source/schema checks can run independently; target visual acceptance remains separately blocked and required for any visual_verified claim."
+        }
+      ],
+      "visual_verification_depends_on": [
+        "preset_browser_acceptance"
+      ],
+      "next_action": "Root authors a small task/platform catalog and checks based on verified research; do not mark target visuals passed without browser/device evidence."
+    },
+    {
+      "id": "real_agent_executor_integration",
+      "owner": "/root",
+      "status": "partial",
+      "goal": "Implement and exercise native task-to-worker dispatch and required-case grading; existing projectctl state and fixtures do not supply these capabilities.",
+      "next_action": "Preserve distinct remaining SDK/global resources/natural network/external-effect work. See docs/ROADMAP.md; C1 partial is not a hard success dependency for all development.",
+      "partial_completion": {
+        "local_required_case_grading": "done by /root",
+        "native_task_to_host_dispatch": "Host-agent native collaboration path done; independent embedded/provider SDK execution remains planned",
+        "host_driven_bridge_first_slice": "done: project/task and package/node request -> actual Luna -> source review -> controller commit/restart",
+        "typed_host_agent_driver": "done: persistent actions, actual native tools, receipt-loss reconciliation, source review and continuous original-controller scheduling",
+        "local_shared_capacity": "done: two actual separate-checkpoint drivers, shared limit=1; original denied action later admitted; terminal receipt releases",
+        "actual_local_deadline_control": "done: actual running → one native interrupt → command nonterminal → actual interrupted and capacity released",
+        "late_completion_observation": "done: actual ordinary worker completion observed after opted-in local cutoff; original review required; not natural network-lateness measurement",
+        "same_run_inspection_and_resume": "done in O3 scoped acceptance: immutable records, original IDs and budgets, no duplicated native creation",
+        "invalid_uncommitted_review_recovery": "done: retained actual wrong-SHA ack, one new independent review, same original attempt, zero new native calls",
+        "historical_raw_resource_directory": "not recovered after environment disconnection; historical conversation summary retained separately, fresh current evidence archived",
+        "host_protocol_draft_assistance": "done in frozen T1: optional incomplete drafts and original-controller preflight; actual assisted bridge tasks, not proven whole-workflow speed gain"
+      },
+      "evidence": [
+        "forge-method-refinement-20261002/Host_Worker_Bridge_Iteration_Brief.md",
+        "forge-host-bridge-20261002/Host_Bridge_Results.md",
+        "forge-host-bridge-20261002/Final_Verification_Record.json",
+        "forge-host-bridge-20261002/Host_Bridge_Saved_Source_Record.json",
+        "forge-host-driver-20261002/Driver_Results.md",
+        "forge-host-driver-20261002/Final_Verification_Record.json",
+        "forge-host-driver-20261002/Driver_Evidence.json",
+        "forge-host-driver-20261002/Driver_Saved_Source_Record.json",
+        "forge-resume-20261003/Forge_Continuation_Results_20261003.md",
+        "forge-resume-20261003/Forge_Continuation_Evidence_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Verification_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Results_20261003.md",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Verification_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Evidence_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md"
+      ],
+      "started_at": "2026-10-02T12:29:05.490803+00:00",
+      "write_scope": [
+        "Forge canonical scripts/hostbridge.py, scripts/test_hostbridge.py, references/host-bridge.md",
+        "forge-host-bridge-20261002/"
+      ],
+      "updated_at": "2026-10-03T07:27:47.069730+00:00",
+      "history": [
+        {
+          "at": "2026-10-03T04:59:35.945342+00:00",
+          "previous_status": "partial",
+          "previous_next_action": "Define prospective host deadline/cancel and shared-admission cases; keep embedded provider execution separate.",
+          "scope": "Resource R2 recovery evidence and frozen O3 local inspection/resume/review recovery; provider SDK/global limits remain distinct"
+        },
+        {
+          "at": "2026-10-03T07:27:47.069730+00:00",
+          "previous_status": "partial",
+          "previous_next_action": "Add deterministic host reply/decision drafts without automatic acceptance; measure comparable task overhead. Provider telemetry, provider runtime limits, natural network delays and external-effect reconciliation require their own adapters.",
+          "scope": "Draft/preflight first slice completed; provider SDK/global resource/external-effect remaining items unchanged"
+        }
+      ],
+      "remaining": [
+        "Embedded provider SDK and its independently observed behavior",
+        "Provider-wide concurrency and token/cost enforcement when actual telemetry exists",
+        "Naturally delayed/lost network events, distinguished from controlled waits and fixtures",
+        "External business-effect idempotency and effect reconciliation"
+      ]
+    },
+    {
+      "id": "skill_research_author_roles",
+      "owner": "/root",
+      "status": "done",
+      "write_scope": [
+        "Forge SKILL.md and host-execution.md",
+        "Design SKILL.md and design-references.md"
+      ],
+      "evidence": "forge-role-update/role-change-validation.json; 4 root-authored source files saved and exact-match verified"
+    },
+    {
+      "id": "luna_reference_packet_trial",
+      "owner": "/root/luna_ticket_reference_research",
+      "status": "done",
+      "depends_on": [
+        "skill_research_author_roles"
+      ],
+      "write_scope": [
+        "forge-role-update/Ticket_Approval_Reference_Packet.md"
+      ],
+      "acceptance": "Observed sources, readable scope and unknowns distinguished from preprocessing proposals; no skill edits or final design claim.",
+      "evidence": "forge-role-update/Ticket_Approval_Reference_Packet.md; actual final received and primary pages checked by coordinator; target UI not inspected"
+    },
+    {
+      "id": "executable_product_acceptance",
+      "status": "done",
+      "owner": "/root",
+      "depends_on": [
+        "skill_research_author_roles"
+      ],
+      "write_scope": [
+        "Forge canonical scripts, references and SKILL.md"
+      ],
+      "acceptance": [
+        "Run complete frozen cases against actual local process; no expected values passed to adapter",
+        "Fail crashes/timeouts/bad JSON/value drift; human criteria need review",
+        "Regrade reports from current bytes; reopen failures with retained history/budget"
+      ],
+      "evidence": [
+        "forge-execution-upgrade/Iteration_Brief.md",
+        "forge-execution-upgrade/Candidate_Record.json",
+        "forge-execution-upgrade/Final_Validation_Record.json",
+        "forge-execution-upgrade/independent-review/targeted-recheck/report.md"
+      ],
+      "next_action": null
+    },
+    {
+      "id": "fresh_local_system_forward_tasks",
+      "status": "done",
+      "owner": [
+        "/root/luna_ticket_system_forward",
+        "/root/luna_import_service_forward"
+      ],
+      "depends_on": [
+        "executable_product_acceptance"
+      ],
+      "write_scope": [
+        "forge-execution-upgrade/ticket-system/",
+        "forge-execution-upgrade/import-service/"
+      ],
+      "next_action": null,
+      "result": {
+        "ticket_v2_required": "10/10 pass",
+        "import_required": "6/6 pass",
+        "scope": "Actual local processes only; no production/UI/provider certification"
+      },
+      "evidence": [
+        "forge-execution-upgrade/Forward_Task_Verification.json",
+        "forge-execution-upgrade/Forward_System_Examples.zip"
+      ]
+    },
+    {
+      "id": "independent_execution_review",
+      "status": "done",
+      "owner": "/root/luna_execution_independent_review",
+      "depends_on": [
+        "executable_product_acceptance"
+      ],
+      "write_scope": [
+        "forge-execution-upgrade/independent-review/"
+      ],
+      "next_action": null,
+      "evidence": [
+        "forge-execution-upgrade/independent-review/report.md",
+        "forge-execution-upgrade/independent-review/targeted-recheck/report.md"
+      ],
+      "result": "Frozen candidate budget guidance mismatch retained; final byte-matching targeted recheck passed."
+    },
+    {
+      "id": "next_runtime_research",
+      "status": "done",
+      "owner": "/root/luna_next_runtime_research",
+      "depends_on": [],
+      "write_scope": [
+        "forge-execution-upgrade/next-layer/runtime-research/"
+      ],
+      "next_action": null
+    },
+    {
+      "id": "next_design_catalog_research",
+      "status": "done",
+      "owner": "/root/luna_next_design_catalog_research",
+      "depends_on": [],
+      "write_scope": [
+        "forge-execution-upgrade/next-layer/design-research/"
+      ],
+      "next_action": null
+    },
+    {
+      "id": "next_layer_architecture_plan",
+      "status": "done",
+      "owner": "/root",
+      "depends_on": [],
+      "write_scope": [
+        "forge-execution-upgrade/Next_Layer_Development_Plan.md"
+      ],
+      "evidence": [
+        "forge-execution-upgrade/Next_Layer_Development_Plan.md"
+      ],
+      "next_action": null
+    },
+    {
+      "id": "flow_generation_and_fresh_reuse",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "executable_product_acceptance"
+      ],
+      "worker_owners": [
+        "/root/luna_flow_simple_author",
+        "/root/luna_flow_review_author",
+        "/root/luna_flow_simple_reuse",
+        "/root/luna_flow_review_reuse",
+        "/root/luna_flow_one_off"
+      ],
+      "write_scope": [
+        "forge-flow-trial-20261002/"
+      ],
+      "goal": "Evaluate the meta-factory and actual generated-flow behavior separately; sparse simple and delegated goals followed by fresh-context reuse on new material.",
+      "acceptance": [
+        "Root freezes factory/target/proportionality/evidence criteria before candidates.",
+        "Fresh workers receive only raw task, installed read-only Forge and scoped synthetic artifacts.",
+        "Real execution and independent reuse; preserve critical failures without averaged score."
+      ],
+      "evidence": [
+        "forge-flow-trial-20261002/Forge_Flow_Test_Results.md",
+        "forge-flow-trial-20261002/Final_Verification_Record.json",
+        "forge-flow-trial-20261002/Flow_Trial_Evidence.json"
+      ],
+      "next_action": null,
+      "completed_at": "2026-10-02T10:21:21.936032+00:00",
+      "result": {
+        "simple_new_input_target": "pass",
+        "simple_original_plan_during_reuse": "pending: original cases not rerun",
+        "review_original_plan": "pass for review-flow task, not reviewed application",
+        "review_new_material_core_behavior": "pass within exercised branches",
+        "review_new_material_full_report": "limited: advisory classification needs calibration",
+        "strict_blind_review_reuse": false,
+        "simple_reuse_locator_assists": 1,
+        "worker_failure_injection": "fixture only; real worker failure not exercised",
+        "performance_improvement_proven": false,
+        "tokens": null,
+        "cost": null,
+        "internal_model_identity_verified": false
+      }
+    },
+    {
+      "id": "flow_execution_handoff_refinement",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "flow_generation_and_fresh_reuse"
+      ],
+      "goal": "Apply minimal generalized method fixes from observed handoff, v2 grading, resource scope and requirement/advisory calibration findings.",
+      "evidence": [
+        "forge-method-refinement-20261002/Candidate_Record.json",
+        "forge-method-refinement-20261002/coordinator/doc-link-check.json",
+        "forge-method-refinement-20261002/Candidate_Record_P3.json",
+        "forge-method-refinement-20261002/Skill_Save_Verification.json"
+      ],
+      "acceptance": "Root authors canonical changes; retain existing frozen standards and candidate history; targeted checks before fresh validation.",
+      "next_action": null,
+      "completed_at": "2026-10-02T11:51:00.891940+00:00",
+      "result": "Root-authored method changes saved and exact-source verified. Three immutable candidates retained; repair budget two rounds. Engine unchanged after 247 passing regressions."
+    },
+    {
+      "id": "amended_skill_fresh_recheck",
+      "owner": "/root",
+      "worker_role": "Fresh gpt-6-luna/max validation contexts",
+      "status": "done",
+      "depends_on": [
+        "flow_execution_handoff_refinement"
+      ],
+      "goal": "Recheck once-only, simple reusable, and delegated reusable paths with new inputs, bounded repairs and precise independent grading.",
+      "acceptance": "No answer leakage or locator intervention; actual execution/worker receipts; advice cannot silently become mandatory requirements; subtree-only status queries.",
+      "next_action": null,
+      "started_at": "2026-10-02T10:41:08.392603+00:00",
+      "worker_owners": [
+        "/root/luna_m1_direct",
+        "/root/luna_m2_creator",
+        "/root/luna_m3_delegated",
+        "/root/luna_m4_reuse",
+        "/root/luna_m6_calibration",
+        "/root/luna_m7_delegated_recheck",
+        "/root/luna_m8_final_calibration"
+      ],
+      "write_scope": [
+        "forge-method-refinement-20261002/"
+      ],
+      "evidence": [
+        "forge-method-refinement-20261002/Test_Plan.md",
+        "forge-method-refinement-20261002/Host_Receipts.json",
+        "forge-method-refinement-20261002/Forge_Method_Refinement_Results.md",
+        "forge-method-refinement-20261002/Final_Verification_Record.json",
+        "forge-method-refinement-20261002/Method_Refinement_Evidence.json"
+      ],
+      "observations": {
+        "simple_once_only": "pass",
+        "simple_factory_and_first_runs": "pass",
+        "fresh_same_package_new_inputs": "pass",
+        "targeted_missing_owner": "pass",
+        "P1_delegated_execution": "pass",
+        "P1_delegated_semantic_calibration": "limited",
+        "P2_targeted_calibration": "R4 update correct; R1 advisory calibration still fails",
+        "P2_complete_delegated_recheck": "completed four nodes, 23 CLI calls and two actual review contexts; R1 advice separated and R4 observed defect reconciled",
+        "P3_last_bounded_method_repair": "saved; final targeted review passed in supplied scope"
+      },
+      "completed_at": "2026-10-02T11:51:00.891940+00:00",
+      "result": {
+        "direct_simple_creation_and_reuse": "pass in supplied scope",
+        "P1_review_calibration": "limited; retained",
+        "P2_targeted_calibration": "failed R1; retained",
+        "P2_complete_flow_reexecution": "pass for review behavior; reviewed app R4 defect",
+        "P3_targeted_review": "pass in the supplied targeted scope",
+        "full_initial_suite_rerun_under_P3": false,
+        "performance_improvement_proven": false
+      }
+    },
+    {
+      "id": "real_worker_failure_recovery_trials",
+      "owner": "/root",
+      "worker_role": "Fresh Luna executors and independent validation after bridge integration",
+      "status": "partial",
+      "depends_on": [
+        "amended_skill_fresh_recheck",
+        "real_agent_executor_integration"
+      ],
+      "goal": "Exercise real worker failure, timeout/late or duplicate reply, retained checkpoints, and bounded recovery with actual host evidence.",
+      "acceptance": "Distinguish fixture tests from real host events; termination, state preservation and no repeated side effects; provider identity/cost only if measured.",
+      "next_action": "Preserve distinct remaining SDK/global resources/natural network/external-effect work. See docs/ROADMAP.md; C1 partial is not a hard success dependency for all development.",
+      "updated_at": "2026-10-03T07:27:47.069730+00:00",
+      "partial_completion": {
+        "real_task_error_and_bounded_fresh_retry": "done: actual FileNotFoundError, old attempt retained, corrected source and fresh Luna passed",
+        "real_host_interruption": "done: real running/interrupt/interrupted observations, old attempt retained",
+        "actual_result_duplicate_and_stale_import_probes": "done: controlled reimports of actual saved replies, not natural network arrival",
+        "local_commit_crash_and_legacy_journal": "done: explicitly labeled fault-injection fixtures",
+        "actual_creation_receipt_loss_reconciliation": "done: real create with controlled withheld import, real status observation; no duplicate spawn; not natural network loss",
+        "driver_duplicate_actual_status_import": "done: controlled CLI replay of actual saved completed-status return; old create return rejected; no checkpoint advance",
+        "local_shared_capacity": "done: two actual separate-checkpoint drivers, shared limit=1; original denied action later admitted; terminal receipt releases",
+        "actual_local_deadline_control": "done: actual running → one native interrupt → command nonterminal → actual interrupted and capacity released",
+        "late_completion_observation": "done: actual ordinary worker completion observed after opted-in local cutoff; original review required; not natural network-lateness measurement",
+        "same_run_inspection_and_resume": "done in O3 scoped acceptance: immutable records, original IDs and budgets, no duplicated native creation",
+        "invalid_uncommitted_review_recovery": "done: retained actual wrong-SHA ack, one new independent review, same original attempt, zero new native calls",
+        "historical_raw_resource_directory": "not recovered after environment disconnection; historical conversation summary retained separately, fresh current evidence archived",
+        "host_protocol_draft_assistance": "done in frozen T1: optional incomplete drafts and original-controller preflight; actual assisted bridge tasks, not proven whole-workflow speed gain"
+      },
+      "remaining": [
+        "Embedded provider SDK and its independently observed behavior",
+        "Provider-wide concurrency and token/cost enforcement when actual telemetry exists",
+        "Naturally delayed/lost network events, distinguished from controlled waits and fixtures",
+        "External business-effect idempotency and effect reconciliation"
+      ],
+      "evidence": [
+        "forge-host-bridge-20261002/Final_Verification_Record.json",
+        "forge-host-bridge-20261002/Bridge_Evidence.json",
+        "forge-host-driver-20261002/Driver_Results.md",
+        "forge-host-driver-20261002/Final_Verification_Record.json",
+        "forge-host-driver-20261002/Driver_Evidence.json",
+        "forge-host-driver-20261002/Driver_Saved_Source_Record.json",
+        "forge-resume-20261003/Forge_Continuation_Results_20261003.md",
+        "forge-resume-20261003/Forge_Continuation_Evidence_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Verification_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Results_20261003.md",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Verification_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Evidence_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md"
+      ],
+      "history": [
+        {
+          "at": "2026-10-03T04:59:35.945342+00:00",
+          "previous_status": "partial",
+          "previous_next_action": "Use the next host driver for actual timeout/cancellation and naturally late events, with enforced resource bounds and explicit effect reconciliation.",
+          "scope": "Resource R2 recovery evidence and frozen O3 local inspection/resume/review recovery; provider SDK/global limits remain distinct"
+        },
+        {
+          "at": "2026-10-03T07:27:47.069730+00:00",
+          "previous_status": "partial",
+          "previous_next_action": "Add deterministic host reply/decision drafts without automatic acceptance; measure comparable task overhead. Provider telemetry, provider runtime limits, natural network delays and external-effect reconciliation require their own adapters.",
+          "scope": "Draft/preflight first slice completed; provider SDK/global resource/external-effect remaining items unchanged"
+        }
+      ]
+    },
+    {
+      "id": "host_bridge_first_slice",
+      "owner": "/root",
+      "worker_role": "Luna research, ordinary executors, fresh parent/child execution and independent bounded fixtures",
+      "status": "done",
+      "deliverable_kind": "scoped_change",
+      "goal": "Host-driven local bridge for existing project tasks and package nodes without replacing the original controller schemas.",
+      "completed_at": "2026-10-02T13:45:47.753959+00:00",
+      "candidate": "B3",
+      "repair_rounds_used": 2,
+      "max_repair_rounds": 2,
+      "validation": {
+        "controller_tests": 277,
+        "actual_project": "pass",
+        "actual_package": "pass after retained B1 failure; B2 retry and B3 new input",
+        "actual_task_error_and_retry": "pass",
+        "actual_host_interruption": "observed and retained",
+        "independent_execution": "actual fresh parent and child, source checked",
+        "independent_review": "three B2 fixture probes; limits retained"
+      },
+      "evidence": [
+        "forge-host-bridge-20261002/Host_Bridge_Results.md",
+        "forge-host-bridge-20261002/Host_Bridge_Runbook.md",
+        "forge-host-bridge-20261002/Final_Verification_Record.json"
+      ]
+    },
+    {
+      "id": "native_host_driver",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "host_bridge_first_slice"
+      ],
+      "worker_role": "Luna source/protocol research and fresh validation; root authors adapter and recovery method",
+      "goal": "Typed host driver for prepare/action/dispatch/status/receive/acceptance/commit/reconcile, preserving real tool evidence and handling the creation-call receipt-loss window.",
+      "acceptance": [
+        "Ordinary simple tasks retain the smallest sufficient one-worker flow",
+        "Real host/provider mapping is explicit; unsupported scope/model is surfaced",
+        "Missing receipt is reconciled using actual host evidence before retry",
+        "No change to frozen package, evaluation plan or acceptance facts during execution"
+      ],
+      "next_action": null,
+      "history": [
+        {
+          "at": "2026-10-02T16:02:14.325307+00:00",
+          "previous_status": "planned",
+          "previous_next_action": "Freeze the host adapter interface and one small real canary before implementation; define its failure and receipt-loss test separately.",
+          "scope": "Typed host-agent driver first slice; embedded provider SDK remains separate"
+        }
+      ],
+      "completed_at": "2026-10-02T16:02:14.325307+00:00",
+      "candidate": "D1-final",
+      "functional_repairs_used": 0,
+      "max_repair_rounds": 2,
+      "evidence": [
+        "forge-host-driver-20261002/Driver_Results.md",
+        "forge-host-driver-20261002/Final_Verification_Record.json",
+        "forge-host-driver-20261002/Driver_Evidence.json",
+        "forge-host-driver-20261002/Driver_Saved_Source_Record.json"
+      ],
+      "execution_boundary": "Autonomous host agent executes actual typed collaboration actions; Python supplies persistence and controller adapter, not provider SDK",
+      "validation": {
+        "controller_tests": 306,
+        "added_driver_tests": 29,
+        "fresh_parent": "2 actual sequential Luna workers and independent source review",
+        "receipt_loss": "actual create; controlled withheld import; real status recovered; zero extra spawn",
+        "existing_package": "actual single worker, unchanged package, one original advance",
+        "independent_review": "3 explicitly non-live focused probes; live portions unassessed by this reviewer",
+        "final_revision": "TOC and 2 extra negative fixtures only; runtime code identical to live D1"
+      }
+    },
+    {
+      "id": "bridge_budget_timeout_validation",
+      "owner": "/root",
+      "status": "partial",
+      "depends_on": [
+        "native_host_driver"
+      ],
+      "worker_role": "Luna isolated task executors and independent reviewers; root authors limits and test criteria",
+      "goal": "Enforce and measure host capacity/timeout/budgets and recovery with actual worker status, distinguish cancellation from local process cleanup.",
+      "acceptance": [
+        "Actual timeout and terminal observations retained",
+        "Naturally late and duplicate events measured separately from injected reimports",
+        "Budget/admission limits enforced rather than merely declared",
+        "Tokens/cost reported only if supplied by host/provider"
+      ],
+      "next_action": "Preserve distinct remaining SDK/global resources/natural network/external-effect work. See docs/ROADMAP.md; C1 partial is not a hard success dependency for all development.",
+      "history": [
+        {
+          "at": "2026-10-02T16:02:14.325307+00:00",
+          "previous_status": "planned",
+          "previous_next_action": "Define controlled side-effect-free cases and a prospective evidence plan once the driver API is available."
+        },
+        {
+          "at": "2026-10-03T04:59:35.945342+00:00",
+          "previous_status": "partial",
+          "previous_next_action": "Root freezes deadline/interrupt and shared-capacity interfaces and cases; Luna supplies isolated actual workers and independent verification. Missing provider telemetry remains null.",
+          "scope": "Resource R2 recovery evidence and frozen O3 local inspection/resume/review recovery; provider SDK/global limits remain distinct"
+        },
+        {
+          "at": "2026-10-03T07:27:47.069730+00:00",
+          "previous_status": "partial",
+          "previous_next_action": "Add deterministic host reply/decision drafts without automatic acceptance; measure comparable task overhead. Provider telemetry, provider runtime limits, natural network delays and external-effect reconciliation require their own adapters.",
+          "scope": "Draft/preflight first slice completed; provider SDK/global resource/external-effect remaining items unchanged"
+        }
+      ],
+      "updated_at": "2026-10-03T07:27:47.069730+00:00",
+      "partial_completion": {
+        "action_poll_admission": "implemented and independently fixture-tested",
+        "prospective_evidence_plan": "root plan with Luna static-source materials, no live timeout claim",
+        "local_shared_capacity": "done: two actual separate-checkpoint drivers, shared limit=1; original denied action later admitted; terminal receipt releases",
+        "actual_local_deadline_control": "done: actual running → one native interrupt → command nonterminal → actual interrupted and capacity released",
+        "late_completion_observation": "done: actual ordinary worker completion observed after opted-in local cutoff; original review required; not natural network-lateness measurement",
+        "same_run_inspection_and_resume": "done in O3 scoped acceptance: immutable records, original IDs and budgets, no duplicated native creation",
+        "invalid_uncommitted_review_recovery": "done: retained actual wrong-SHA ack, one new independent review, same original attempt, zero new native calls",
+        "historical_raw_resource_directory": "not recovered after environment disconnection; historical conversation summary retained separately, fresh current evidence archived",
+        "host_protocol_draft_assistance": "done in frozen T1: optional incomplete drafts and original-controller preflight; actual assisted bridge tasks, not proven whole-workflow speed gain"
+      },
+      "remaining": [
+        "Embedded provider SDK and its independently observed behavior",
+        "Provider-wide concurrency and token/cost enforcement when actual telemetry exists",
+        "Naturally delayed/lost network events, distinguished from controlled waits and fixtures",
+        "External business-effect idempotency and effect reconciliation"
+      ],
+      "evidence": [
+        "forge-host-driver-20261002/Next_Layer_Plan.md",
+        "forge-host-driver-20261002/Driver_Results.md",
+        "forge-host-driver-20261002/Final_Verification_Record.json",
+        "forge-host-driver-20261002/Driver_Evidence.json",
+        "forge-host-driver-20261002/Driver_Saved_Source_Record.json",
+        "forge-resume-20261003/Forge_Continuation_Results_20261003.md",
+        "forge-resume-20261003/Forge_Continuation_Evidence_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Verification_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Results_20261003.md",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Verification_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Evidence_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md"
+      ]
+    },
+    {
+      "id": "shared_host_resource_boundaries",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "native_host_driver"
+      ],
+      "worker_role": "Luna material collection, actual isolated workers and independent CLI probes",
+      "goal": "Optional local shared admission and persisted monotonic wait cutoffs with actual terminal release evidence",
+      "acceptance": "Frozen original resource semantics; local/provider scope separated; unknown holds; once-only interrupt; actual terminal and original source review",
+      "completed_at": "2026-10-03T04:59:35.945342+00:00",
+      "evidence": [
+        "forge-resume-20261003/Forge_Continuation_Results_20261003.md",
+        "forge-resume-20261003/Forge_Continuation_Evidence_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Verification_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Source_20261003.json"
+      ],
+      "next_action": null,
+      "historical_archive_limit": "Original R2 raw workspace absent; current source, regressions and fresh live evidence independently retained"
+    },
+    {
+      "id": "host_execution_observability_and_bounded_resume",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "shared_host_resource_boundaries"
+      ],
+      "worker_role": "Fresh Luna ordinary execution and independent boundary audit; root owns repair and source grading",
+      "goal": "Read-only inspection and guarded original-run continuation, including explicit invalid uncommitted local-review rejection",
+      "acceptance": "Execution_Overview_Plan.md O01–O09, no native/valid/committed/uncertain-journal ack discard, unchanged originals and budgets",
+      "candidate": "O3",
+      "functional_repairs_used": 2,
+      "max_functional_repairs": 2,
+      "completed_at": "2026-10-03T04:59:35.945342+00:00",
+      "evidence": [
+        "forge-resume-20261003/Forge_Continuation_Results_20261003.md",
+        "forge-resume-20261003/Forge_Continuation_Evidence_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Verification_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Source_20261003.json"
+      ],
+      "next_action": null
+    },
+    {
+      "id": "host_protocol_draft_assistance",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "host_execution_observability_and_bounded_resume"
+      ],
+      "worker_role": "Luna source materials and new ordinary execution/independent checks; root architecture, core and repairs",
+      "goal": "Reduce manual host envelope/decision identity and SHA authoring while preserving actual work and independent acceptance",
+      "acceptance": "Incomplete drafts cannot pass, existing validators reused, original request/plan untouched; comparable measured scenarios before speed claims",
+      "evidence": [
+        "forge-resume-20261003/Next_Layer_Plan.md",
+        "forge-resume-20261003/protocol-materials/protocol-draft-capability.md",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Results_20261003.md",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Verification_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Evidence_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md"
+      ],
+      "next_action": "Run the separately frozen comparable overhead trial; worker pre-completion preflight capture remains required in that measurement.",
+      "history": [
+        {
+          "at": "2026-10-03T07:27:47.069730+00:00",
+          "previous_status": "planned",
+          "previous_next_action": "Root freeze host-reply/host-decision draft contracts and negative cases; implement smallest deterministic scaffold, then fresh Luna ordinary tasks",
+          "scope": "Frozen T1 draft/preflight interface, 368 regressions, actual bridge execution and independent CLI fixtures; no measured speed gain"
+        }
+      ],
+      "updated_at": "2026-10-03T07:27:47.069730+00:00",
+      "candidate": "T1",
+      "saved_commit": "c238b00bf83ea1b5eaf1654baaa1ae794c20c325",
+      "tests": 368,
+      "functional_repairs": 0,
+      "actual_business_workers": 2,
+      "independent_audit_cli": 31,
+      "assistance_disclosed": true
+    },
+    {
+      "id": "host_protocol_overhead_comparison",
+      "owner": "/root",
+      "status": "partial",
+      "depends_on": [
+        "host_protocol_draft_assistance"
+      ],
+      "worker_role": "Fresh Luna/max ordinary workers and independent source review; Root freezes trial and evaluates results",
+      "goal": "Compare manual protocol authoring and draft assistance with identical sources, acceptance and runtime path before deciding further workflow simplification",
+      "acceptance": [
+        "Two pairs per project/package block, eight actual business workers with independent original review/commit",
+        "Same candidate, source hashes, acceptance, native settings, allowed actions and preflight; preserve all failures and assistance",
+        "Retain original native returns and CLI; explicit observer timing scope and null missing telemetry",
+        "Capture worker pre-completion reply preflight, not just coordinator post-receive checks",
+        "Only descriptive paired results; no stable global speed or provider identity claim"
+      ],
+      "evidence": [
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md",
+        "forge-protocol-comparison-20261003/Host_Protocol_Comparison_Results_20261003.md",
+        "forge-protocol-comparison-20261003/coordinator/Final_Record_Index.json",
+        "forge-protocol-comparison-20261003/coordinator/cutoff-snapshot/Snapshot_Manifest.json",
+        "validation/luna/a04_project_a2_evidence.json"
+      ],
+      "next_action": "Root authors a revised evidence/bootstrap/receipt/scope contract; fresh Luna performs one conformance smoke before any new paired-performance freeze. Do not add initialization assistance without valid setup-bottleneck evidence.",
+      "outcome": "C1 attempted with eight original actual workers; seven original workflows committed, project A2 Q5 running cutoff; efficacy comparison invalid/inconclusive under frozen capture and conformance clauses",
+      "audit_progress": "Fresh continuation review performed one bounded project/A2 A04 step; final all-sample independent audit still pending."
+    },
+    {
+      "id": "host_protocol_measurement_capture_and_scope",
+      "owner": "/root",
+      "status": "partial",
+      "depends_on": [
+        "host_protocol_draft_assistance"
+      ],
+      "worker_role": "Root owns generalized protocol and architecture; fresh Luna independently verifies bounded local method and later ordinary-worker smoke",
+      "goal": "Make the recording denominator, first command, actual native receipt types, worker tool boundary and correction limits concrete before further measurement",
+      "acceptance": [
+        "Freeze revised protocol plus actual source hashes and independent freeze time before ordinary smoke",
+        "Supply a unique in-scope ready-to-run bootstrap command; retain raw target bytes/argv/exit and same-boot stage evidence",
+        "Explicitly distinguish instruction-only worker tool restrictions from host-enforced allowlists; no sibling result/status probes",
+        "Original accepted/observe/receive/commit transitions use true receipts; unknown budget exhaustion remains unknown without actor laundering or replacement",
+        "All correction attempts within declared scope include recorder/index tooling; preserve first failures and supplemental indexes",
+        "One fresh Luna conformance smoke is a new trial, not a replacement C1 sample; no new performance claim from local Q1"
+      ],
+      "verified_scope": "Q1 four local targets, Q01–Q05 independently pass; no ordinary-worker or real-native method validation",
+      "provenance_limits": [
+        "Q1 local freeze lacks an independently recorded freeze time and execution-time source hash; keep limits without adding retrospective criteria"
+      ],
+      "evidence": [
+        "forge-protocol-comparison-20261003/coordinator/Next_Recording_Method_Draft.md",
+        "forge-protocol-comparison-20261003/coordinator/recording-qualification/Results.json",
+        "forge-protocol-comparison-20261003/audit/qualification-review.md"
+      ],
+      "next_action": "Read current skill-creator before a canonical instruction change; Root writes the reusable minimal contract, versions it separately, then gives fresh Luna a bounded smoke with no expected business output.",
+      "dependency_history": [
+        {
+          "at": "2026-10-03T18:07:54.086407+00:00",
+          "previous_depends_on": [
+            "host_protocol_overhead_comparison"
+          ],
+          "reason": "C1 is an inconclusive observation, not a required successful prerequisite. Revised-contract work can use completed T1 plus C1 failures without falsely closing C1."
+        }
+      ]
+    },
+    {
+      "id": "portable_github_continuation_handoff",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "host_protocol_draft_assistance"
+      ],
+      "goal": "Prepare a GitHub-ready repository with source, history, continuous-iteration prompt, current phase and actual independent continuation validation.",
+      "acceptance": [
+        "Both skill snapshots exported byte-identically",
+        "History and C1 interrupted/inconclusive state preserved",
+        "Fresh Luna performs portable entry/run/continuation validation",
+        "Current stage final task launches next phase with actual evidence",
+        "Deliver an uploadable archive and repository bundle"
+      ],
+      "evidence": [
+        "README.md",
+        "prompts/CONTINUOUS_ITERATION.md",
+        "state/history/S00-todo.json",
+        "validation/luna/Handoff_Review.md",
+        "validation/luna/actual-command-log.json",
+        "runs/S01/record-inventory.json"
+      ],
+      "next_action": "Published to Urizums/A111 private repository. Continue S01-02 using START_HERE.md and state/checkpoint.json.",
+      "verification_limits": "New Luna portability test, not fully blind; no new performance/UI/provider claim; GitHub publishing not performed.",
+      "delivery_artifacts": [
+        "Agent_Forge_GitHub_Handoff_20261003.tar.gz",
+        "Agent_Forge_GitHub_Handoff_20261003.bundle"
+      ]
+    },
+    {
+      "id": "github_private_repository_publication",
+      "owner": "/root",
+      "status": "done",
+      "depends_on": [
+        "portable_github_continuation_handoff"
+      ],
+      "goal": "Upload the complete handoff to the user-authorized private repository Urizums/A111.",
+      "acceptance": [
+        "Complete tracked source uploaded to main",
+        "Remote tree identity matches local initial export",
+        "Default-branch continuation entry is readable",
+        "Repository remains private"
+      ],
+      "evidence": [
+        "state/github-publication.json"
+      ],
+      "next_action": "Other authorized agents checkout this repository and continue S01-02."
+    }
+  ],
+  "stop_conditions": [
+    "goal completed",
+    "genuine authority/capability blocker after completing independent work",
+    "bounded repair exhaustion",
+    "Host bridge 2026-10-02: two repair rounds used; retain B1/B2 failures. No additional repair or performance-gain claim in this iteration.",
+    "O3 2026-10-03: two functional repairs used; preserve actual wrong-SHA submission and wrapped-IO counterexample. New features need a separate frozen iteration."
+  ],
+  "next_action": "Complete A01 package receipt/review/preflight/commit traces; A02 package recomputation; A03 correction counts; remaining A04 samples and A05. Preserve the bounded A2 result and nonblind limit.",
+  "final_trial_prompt": "使用最终 forge-agent-flow，在独立目录做一个小型本地导入系统：接收 JSONL 记录，校验后生成可查看的成功/错误报告，重复运行不丢先前结果。无需界面或云服务，普通选择自己推，不向用户提问。交可运行代码与实际运行验证，记录真实耗时和修复。",
+  "development_status": "portable_handoff_ready; S00_closed_actual_S01_started; C1_final_audit_partial; performance_inconclusive",
+  "remaining_capability_blockers": [
+    {
+      "task": "ticket browser UI journey",
+      "status": "blocked",
+      "reason": "Cloud browser refused loopback before rendering",
+      "next_action": "Use a browser host capable of reaching this local service; do not claim UI acceptance from HTTP results."
+    },
+    {
+      "task": "UI preset rendered interaction and motion acceptance",
+      "status": "blocked",
+      "reason": "Browser capability probes failed; cloud data URL route was policy-blocked and stopped.",
+      "evidence": "forge-design-upgrade/browser-capability.json"
+    }
+  ],
+  "revisions": [
+    {
+      "at_utc": "2026-10-02T03:27:52.607279+00:00",
+      "reason": "User clarified operational reliability, frontend engineering, UX and visual design as coupled design concerns.",
+      "previous_development_status": "complete_with_explicit_runtime_limits",
+      "previous_next_action": "Deliver validated source files, report and evidence. No additional development scope is automatically added."
+    },
+    {
+      "at_utc": "2026-10-02T03:51:21.505120+00:00",
+      "reason": "User added directional/spring component motion and a separate reusable design skill; retain initial criteria."
+    },
+    {
+      "at_utc": "2026-10-02T05:08:19.963863+00:00",
+      "reason": "User clarified: Luna does website search/research and frontend/interaction preprocessing; coordinator authors skills and repairs; retain historical authorship records."
+    },
+    {
+      "at": "2026-10-02T06:10:14.166446+00:00",
+      "reason": "User requested further skill development and testing beyond role/design policy; root adds executable program-mode product acceptance and feedback",
+      "retained_prior_history": true
+    },
+    {
+      "at": "2026-10-02T06:25:03.874205+00:00",
+      "reason": "User explicitly requested additional parallel activities and next-layer planning during active development; two Luna research tracks added, root owns architecture",
+      "retained_prior_history": true
+    },
+    {
+      "at": "2026-10-02T06:49:20.613675+00:00",
+      "reason": "Final core saved and hash-verified; research and next-layer planning completed. Split catalog construction from blocked target visual acceptance, and mark local grading complete while native dispatch remains planned.",
+      "retained_prior_history": true
+    },
+    {
+      "at": "2026-10-02T06:57:04.326952+00:00",
+      "reason": "Core saved; 247 regressions and byte-matched targeted recheck passed. Fresh ticket v2 10/10 and importer 6/6 current runtime verdicts checked by root; next-layer research/plan completed.",
+      "retained_prior_history": true
+    },
+    {
+      "at": "2026-10-02T10:21:21.936032+00:00",
+      "reason": "Five forward tracks finished: proportional simple paths, actual delegation and same-package new-material reuse. Retain assisted/nonblind and advisory-calibration limits; prioritize root method fixes before fresh amended-version validation.",
+      "retained_prior_history": true,
+      "previous_next_action": "Root implements the planned task-to-host worker bridge; in parallel author the small versioned design-reference/preset catalog. Keep browser/device evidence and native provider claims gated on actual capabilities."
+    },
+    {
+      "at": "2026-10-02T11:51:00.891940+00:00",
+      "reason": "Root method refinement and fresh Luna tasks closed; preserve initial/P2 targeted failures, source versions, fixture corrections and scope-specific verification. Native bridge remains planned.",
+      "retained_prior_history": true,
+      "previous_next_action": "Complete amended-method forward tasks and fresh same-package reuse, independently inspect results, save canonical skill and update retained project history."
+    },
+    {
+      "id": "host_bridge_B3_20261002",
+      "at": "2026-10-02T13:45:47.753959+00:00",
+      "author": "/root",
+      "scope": "Host-driven first slice, two bounded repairs, actual Luna and independent fixture evidence",
+      "candidate": "B3",
+      "source_save_verified": true,
+      "controller_tests": 277,
+      "native_provider_driver_claimed": false,
+      "evidence": "forge-host-bridge-20261002/Host_Bridge_Results.md"
+    },
+    {
+      "id": "host_agent_driver_D1_20261002",
+      "at": "2026-10-02T16:02:14.325307+00:00",
+      "author": "/root",
+      "scope": "Typed autonomous host-agent driver with real project/package execution and status-based create-receipt recovery",
+      "controller_tests": 306,
+      "functional_repairs": 0,
+      "frozen_live_candidate": "D1",
+      "final_revision": "D1-final: same runtime/core instructions; TOC and 2 supplementary negative fixtures",
+      "retained_prior_history": true,
+      "embedded_provider_execution_claimed": false,
+      "evidence": "forge-host-driver-20261002/Driver_Results.md"
+    },
+    {
+      "id": "host_resource_recovery_and_observation_O3_20261003",
+      "at": "2026-10-03T04:59:35.945342+00:00",
+      "author": "/root",
+      "scope": "Recovered source, fresh resource tests, read-only inspection/original-run resume and explicit local review reconciliation",
+      "retained_prior_history": true,
+      "original_raw_R2_workspace_recovered": false,
+      "historical_summary_not_represented_as_raw_evidence": true,
+      "candidate": "O3",
+      "controller_tests": 348,
+      "functional_repairs": 2,
+      "embedded_provider_execution_claimed": false,
+      "evidence": "forge-resume-20261003/Forge_Continuation_Results_20261003.md"
+    },
+    {
+      "id": "host_protocol_drafts_T1_20261003",
+      "at": "2026-10-03T07:27:47.069730+00:00",
+      "author": "/root",
+      "scope": "Incomplete original host reply/decision drafts and read-only original-controller preflight",
+      "retained_prior_history": true,
+      "candidate": "T1",
+      "controller_tests": 368,
+      "functional_repairs": 0,
+      "actual_workers": 2,
+      "independent_audit_cli": 31,
+      "assistance_disclosed": true,
+      "worker_pre_completion_preflight_independently_captured": false,
+      "embedded_provider_execution_claimed": false,
+      "speed_gain_measured": false,
+      "evidence": "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Results_20261003.md"
+    },
+    {
+      "id": "host_protocol_overhead_C1_20261003",
+      "at": "2026-10-03T13:13:37.070433+00:00",
+      "author": "/root",
+      "scope": "Frozen T1 manual-vs-draft paired measurement and separate local observer-call qualification",
+      "retained_prior_history": true,
+      "candidate": "T1 c238b00",
+      "selected_actual_workers": 8,
+      "original_committed_workflows": 7,
+      "unknown_cutoff_samples": [
+        "project A2"
+      ],
+      "functional_repairs": 0,
+      "controller_tests_reused": 368,
+      "canonical_source_files_unchanged": 83,
+      "worker_pre_completion_preflight_captured": 7,
+      "independent_audit_status": "pending final C1 review; Q1 scoped local review pass",
+      "performance_comparison": "invalid/inconclusive under original frozen criteria",
+      "speed_gain_claimed": false,
+      "Q1_local_target_count": 4,
+      "Q1_actual_native_calls": 0,
+      "provider_identity_verified": false,
+      "evidence": "forge-protocol-comparison-20261003/Host_Protocol_Comparison_Results_20261003.md"
+    },
+    {
+      "id": "portable_github_handoff",
+      "at": "2026-10-03T18:07:54.086407+00:00",
+      "reason": "User requested portable GitHub continuation, continuous-iteration prompt and phase TODO. Preserve v9 history, interrupted C1, blockers, and separate partial tracks."
+    },
+    {
+      "id": "github_publication_20261004",
+      "at": "2026-10-03T19:01:07.270375+00:00",
+      "reason": "User explicitly authorized Urizums/A111 as the private destination; initial complete upload verified. C1 and other remaining work retained."
+    }
+  ],
+  "skill_development_roles": {
+    "skill_author": "/root",
+    "skill_author_scope": [
+      "requirements",
+      "architecture",
+      "generalization",
+      "core instructions",
+      "final design decisions",
+      "repairs",
+      "save"
+    ],
+    "luna_scope": [
+      "website search",
+      "source research",
+      "material collection",
+      "frontend and interaction preprocessing",
+      "fresh validation"
+    ],
+    "research_worker_skill_write_scope": [],
+    "observations_and_proposals": "Inputs for coordinator verification and decision, not final skill authorship",
+    "ordinary_application_implementation": "Can remain delegated when authorized; distinct from authoring a reusable skill"
+  },
+  "portable_handoff": {
+    "source_ledger_version": 9,
+    "local_C1_draft_merged": true,
+    "active_phase_file": "state/phase-todo.json",
+    "old_absolute_paths": "historical references; resolve through docs/EVIDENCE_MAP.md; never run historical checkpoints",
+    "historical_raw_missing": true,
+    "native_worker_ids_portable": false,
+    "authoritative_for_this_export": "this repository state; do not require the original conversation or private Library IDs",
+    "luna_validation": {
+      "regression_tests": 368,
+      "handoff_invariants": 8,
+      "relative_skill_references": 76,
+      "fully_blind": false,
+      "scope": "portable local runtime and bounded first audit step"
+    }
+  },
+  "github_repository": {
+    "full_name": "Urizums/A111",
+    "visibility": "private",
+    "publication_evidence": "state/github-publication.json"
+  }
+}

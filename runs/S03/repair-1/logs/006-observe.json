@@ -1,0 +1,31 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/A111",
+  "argv": [
+    "python3",
+    "runs/S02/candidate/forge-agent-flow/scripts/hostbridge.py",
+    "observe",
+    "--job",
+    "runs/S03/repair-1/job",
+    "--receipt",
+    "runs/S03/repair-1/query-1-return.json"
+  ],
+  "begin": {
+    "utc": "2026-10-03T19:38:28.201408+00:00",
+    "monotonic_ns": 946847787836,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:38:28.260610+00:00",
+    "monotonic_ns": 946906997740,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.059209904,
+  "stdout": "{\n  \"phase\": \"running\",\n  \"job_id\": \"job_015c4531718d4960bfb58d9cb5cc2324\",\n  \"attempt_id\": \"d847e131cd3a4906a033e4a7dc14f666\",\n  \"request_hash\": \"b05d560043bf09b0ba50b3feac5aa6e198885e96cce275a51c305bde6cfd2fc1\",\n  \"action\": \"query_own_worker\",\n  \"worker\": \"/root/luna_forge_d847e131cd3a\",\n  \"commit\": null,\n  \"coordinator_outcome\": null,\n  \"automatic_host_call\": false,\n  \"internal_model_identity_verified\": false,\n  \"tokens\": null,\n  \"cost\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwaGFzZSI6ICJydW5uaW5nIiwKICAiam9iX2lkIjogImpvYl8wMTVjNDUzMTcxOGQ0OTYwYmZiNThkOWNiNWNjMjMyNCIsCiAgImF0dGVtcHRfaWQiOiAiZDg0N2UxMzFjZDNhNDkwNmEwMzNlNGE3ZGMxNGY2NjYiLAogICJyZXF1ZXN0X2hhc2giOiAiYjA1ZDU2MDA0M2JmMDliMGJhNTBiM2ZlYWM1YWE2ZTE5ODg4NWU5NmNjZTI3NWE1MWMzMDViZGU2Y2ZkMmZjMSIsCiAgImFjdGlvbiI6ICJxdWVyeV9vd25fd29ya2VyIiwKICAid29ya2VyIjogIi9yb290L2x1bmFfZm9yZ2VfZDg0N2UxMzFjZDNhIiwKICAiY29tbWl0IjogbnVsbCwKICAiY29vcmRpbmF0b3Jfb3V0Y29tZSI6IG51bGwsCiAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwKICAiaW50ZXJuYWxfbW9kZWxfaWRlbnRpdHlfdmVyaWZpZWQiOiBmYWxzZSwKICAidG9rZW5zIjogbnVsbCwKICAiY29zdCI6IG51bGwKfQo=",
+  "stderr_base64": ""
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "c1-cloud-offline-audit",
+  "goal": "Complete frozen offline C1 audit A01-A05 from original sources without replay.",
+  "deliverable_kind": "scoped_change",
+  "requirements": [
+    {
+      "id": "audit",
+      "text": "Complete A01-A05 from frozen source clauses and immutable evidence.",
+      "origin": "derived",
+      "basis": "START_HERE.md and runs/S01/audit-plan.json",
+      "acceptance_ids": [
+        "audit_report"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "audit_report",
+      "assertion": "A01-A05 each has source-cited finding or explicit missing evidence; recomputation scripts and outputs exist; no old native calls.",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "audit",
+      "title": "Independent frozen C1 audit",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "audit_report"
+      ]
+    }
+  ],
+  "defaults": [
+    "Read-only historical evidence; local analysis only."
+  ],
+  "unknowns": [
+    "Provider internal identity, tokens and cost."
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/1",
-  "updated_at": "2026-10-03T19:01:07.270375+00:00",
-  "active_phase": "S01",
-  "next_task_id": "S01-02",
-  "next_action": "Complete A01 package receipt/review/preflight/commit traces; A02 package recomputation; A03 correction counts; remaining A04 samples and A05. Preserve the bounded A2 result and nonblind limit.",
+  "updated_at": "2026-10-03T19:58:13.841840+00:00",
+  "active_phase": "D00",
+  "next_task_id": "D00-03",
+  "next_action": "Publish final dev to waw1w1/A111 through the authorized GitHub API and open PR to Urizums/A111 main.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -24,15 +24,45 @@
   "provider_tokens": null,
   "provider_cost": null,
   "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
-  "termination": "checkpoint only; no permanent background scheduler",
+  "termination": "No permanent background scheduler; finish requested publication, then save delivered checkpoint.",
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
-  "remaining_audit_checks": [
-    "A01",
-    "A02",
-    "A03",
-    "A04_except_bounded_project_A2_step",
-    "A05"
-  ],
+  "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
-  "publication_evidence": "state/github-publication.json"
+  "publication_evidence": "state/github-publication.json",
+  "lifecycle": "active",
+  "c1_audit": "completed_with_historical_gaps; efficacy remains inconclusive",
+  "historical_handoff_repair_scope": "Existing functional_repairs fields describe S00 only; current candidate budgets are separate.",
+  "current_delivery_repair_budgets": {
+    "C2_recorder": {
+      "used": 1,
+      "limit": 2
+    },
+    "handoff_validator": {
+      "used": 2,
+      "limit": 2
+    },
+    "cloud_smoke_harness": {
+      "used": 1,
+      "limit": 2
+    },
+    "S03_coordinator": {
+      "used": 1,
+      "limit": 2
+    }
+  },
+  "native_calls_in_current_delivery": [
+    {
+      "worker": "/root/luna_forge_5630af6429d8",
+      "purpose": "fresh offline audit"
+    },
+    {
+      "worker": "/root/luna_forge_fe59e381cb4d",
+      "purpose": "original smoke; coordinator capture failed"
+    },
+    {
+      "worker": "/root/luna_forge_d847e131cd3a",
+      "purpose": "bounded conformance retest"
+    }
+  ],
+  "current_validation": "S01 offline audit; C2 recorder and original controllers; S03 native source review; CLI on Python 3.10/3.12"
 }

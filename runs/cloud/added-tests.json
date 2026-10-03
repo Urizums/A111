@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-03T19:32:39.131927+00:00",
+    "monotonic_ns": 597778304499,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:32:39.499928+00:00",
+    "monotonic_ns": 598146307579,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_existing_record_prevents_target_effect (test_capture_contract.CaptureContract.test_existing_record_prevents_target_effect) ... ok\ntest_invalid_marker_preserves_failure_without_event (test_capture_contract.CaptureContract.test_invalid_marker_preserves_failure_without_event) ... ok\ntest_missing_executable_is_recorded (test_capture_contract.CaptureContract.test_missing_executable_is_recorded) ... ok\ntest_raw_bytes_and_nonzero_exit (test_capture_contract.CaptureContract.test_raw_bytes_and_nonzero_exit) ... ok\ntest_successful_marker_target_is_captured (test_capture_contract.CaptureContract.test_successful_marker_target_is_captured) ... ok\ntest_cycle_rejected (test_handoff_invariants.HandoffInvariants.test_cycle_rejected) ... ok\ntest_delivered_checkpoint_requires_terminal_phase_and_evidence (test_handoff_invariants.HandoffInvariants.test_delivered_checkpoint_requires_terminal_phase_and_evidence) ... ok\ntest_done_without_evidence_rejected (test_handoff_invariants.HandoffInvariants.test_done_without_evidence_rejected) ... ok\ntest_false_transition_without_execution_rejected (test_handoff_invariants.HandoffInvariants.test_false_transition_without_execution_rejected) ... ok\ntest_historical_transition_resolves_archived_successor (test_handoff_invariants.HandoffInvariants.test_historical_transition_resolves_archived_successor) ... ok\ntest_path_escape_rejected (test_handoff_invariants.HandoffInvariants.test_path_escape_rejected) ... ok\ntest_ready_phase_allowed (test_handoff_invariants.HandoffInvariants.test_ready_phase_allowed) ... ok\ntest_successor_bound_transition_allowed (test_handoff_invariants.HandoffInvariants.test_successor_bound_transition_allowed) ... ok\ntest_transition_cannot_skip_prior_task (test_handoff_invariants.HandoffInvariants.test_transition_cannot_skip_prior_task) ... ok\ntest_unfinished_checkpoint_cannot_select_no_task (test_handoff_invariants.HandoffInvariants.test_unfinished_checkpoint_cannot_select_no_task) ... ok\ntest_unknown_dependency_rejected (test_handoff_invariants.HandoffInvariants.test_unknown_dependency_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.293s\n\nOK\n",
+  "stdout_base64": "",
+  "stderr_base64": "dGVzdF9leGlzdGluZ19yZWNvcmRfcHJldmVudHNfdGFyZ2V0X2VmZmVjdCAodGVzdF9jYXB0dXJlX2NvbnRyYWN0LkNhcHR1cmVDb250cmFjdC50ZXN0X2V4aXN0aW5nX3JlY29yZF9wcmV2ZW50c190YXJnZXRfZWZmZWN0KSAuLi4gb2sKdGVzdF9pbnZhbGlkX21hcmtlcl9wcmVzZXJ2ZXNfZmFpbHVyZV93aXRob3V0X2V2ZW50ICh0ZXN0X2NhcHR1cmVfY29udHJhY3QuQ2FwdHVyZUNvbnRyYWN0LnRlc3RfaW52YWxpZF9tYXJrZXJfcHJlc2VydmVzX2ZhaWx1cmVfd2l0aG91dF9ldmVudCkgLi4uIG9rCnRlc3RfbWlzc2luZ19leGVjdXRhYmxlX2lzX3JlY29yZGVkICh0ZXN0X2NhcHR1cmVfY29udHJhY3QuQ2FwdHVyZUNvbnRyYWN0LnRlc3RfbWlzc2luZ19leGVjdXRhYmxlX2lzX3JlY29yZGVkKSAuLi4gb2sKdGVzdF9yYXdfYnl0ZXNfYW5kX25vbnplcm9fZXhpdCAodGVzdF9jYXB0dXJlX2NvbnRyYWN0LkNhcHR1cmVDb250cmFjdC50ZXN0X3Jhd19ieXRlc19hbmRfbm9uemVyb19leGl0KSAuLi4gb2sKdGVzdF9zdWNjZXNzZnVsX21hcmtlcl90YXJnZXRfaXNfY2FwdHVyZWQgKHRlc3RfY2FwdHVyZV9jb250cmFjdC5DYXB0dXJlQ29udHJhY3QudGVzdF9zdWNjZXNzZnVsX21hcmtlcl90YXJnZXRfaXNfY2FwdHVyZWQpIC4uLiBvawp0ZXN0X2N5Y2xlX3JlamVjdGVkICh0ZXN0X2hhbmRvZmZfaW52YXJpYW50cy5IYW5kb2ZmSW52YXJpYW50cy50ZXN0X2N5Y2xlX3JlamVjdGVkKSAuLi4gb2sKdGVzdF9kZWxpdmVyZWRfY2hlY2twb2ludF9yZXF1aXJlc190ZXJtaW5hbF9waGFzZV9hbmRfZXZpZGVuY2UgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzLnRlc3RfZGVsaXZlcmVkX2NoZWNrcG9pbnRfcmVxdWlyZXNfdGVybWluYWxfcGhhc2VfYW5kX2V2aWRlbmNlKSAuLi4gb2sKdGVzdF9kb25lX3dpdGhvdXRfZXZpZGVuY2VfcmVqZWN0ZWQgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzLnRlc3RfZG9uZV93aXRob3V0X2V2aWRlbmNlX3JlamVjdGVkKSAuLi4gb2sKdGVzdF9mYWxzZV90cmFuc2l0aW9uX3dpdGhvdXRfZXhlY3V0aW9uX3JlamVjdGVkICh0ZXN0X2hhbmRvZmZfaW52YXJpYW50cy5IYW5kb2ZmSW52YXJpYW50cy50ZXN0X2ZhbHNlX3RyYW5zaXRpb25fd2l0aG91dF9leGVjdXRpb25fcmVqZWN0ZWQpIC4uLiBvawp0ZXN0X2hpc3RvcmljYWxfdHJhbnNpdGlvbl9yZXNvbHZlc19hcmNoaXZlZF9zdWNjZXNzb3IgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzLnRlc3RfaGlzdG9yaWNhbF90cmFuc2l0aW9uX3Jlc29sdmVzX2FyY2hpdmVkX3N1Y2Nlc3NvcikgLi4uIG9rCnRlc3RfcGF0aF9lc2NhcGVfcmVqZWN0ZWQgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzLnRlc3RfcGF0aF9lc2NhcGVfcmVqZWN0ZWQpIC4uLiBvawp0ZXN0X3JlYWR5X3BoYXNlX2FsbG93ZWQgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzLnRlc3RfcmVhZHlfcGhhc2VfYWxsb3dlZCkgLi4uIG9rCnRlc3Rfc3VjY2Vzc29yX2JvdW5kX3RyYW5zaXRpb25fYWxsb3dlZCAodGVzdF9oYW5kb2ZmX2ludmFyaWFudHMuSGFuZG9mZkludmFyaWFudHMudGVzdF9zdWNjZXNzb3JfYm91bmRfdHJhbnNpdGlvbl9hbGxvd2VkKSAuLi4gb2sKdGVzdF90cmFuc2l0aW9uX2Nhbm5vdF9za2lwX3ByaW9yX3Rhc2sgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzLnRlc3RfdHJhbnNpdGlvbl9jYW5ub3Rfc2tpcF9wcmlvcl90YXNrKSAuLi4gb2sKdGVzdF91bmZpbmlzaGVkX2NoZWNrcG9pbnRfY2Fubm90X3NlbGVjdF9ub190YXNrICh0ZXN0X2hhbmRvZmZfaW52YXJpYW50cy5IYW5kb2ZmSW52YXJpYW50cy50ZXN0X3VuZmluaXNoZWRfY2hlY2twb2ludF9jYW5ub3Rfc2VsZWN0X25vX3Rhc2spIC4uLiBvawp0ZXN0X3Vua25vd25fZGVwZW5kZW5jeV9yZWplY3RlZCAodGVzdF9oYW5kb2ZmX2ludmFyaWFudHMuSGFuZG9mZkludmFyaWFudHMudGVzdF91bmtub3duX2RlcGVuZGVuY3lfcmVqZWN0ZWQpIC4uLiBvawoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpSYW4gMTYgdGVzdHMgaW4gMC4yOTNzCgpPSwo="
+}

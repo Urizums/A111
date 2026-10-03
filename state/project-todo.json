@@ -1,6 +1,6 @@
 {
   "schema": "upgrade-work-record/1",
-  "updated_at": "2026-10-03T19:01:07.270375+00:00",
+  "updated_at": "2026-10-03T19:58:13.841840+00:00",
   "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
   "todo": [
     {
@@ -905,16 +905,18 @@
         "forge-protocol-comparison-20261003/Host_Protocol_Comparison_Results_20261003.md",
         "forge-protocol-comparison-20261003/coordinator/Final_Record_Index.json",
         "forge-protocol-comparison-20261003/coordinator/cutoff-snapshot/Snapshot_Manifest.json",
-        "validation/luna/a04_project_a2_evidence.json"
+        "validation/luna/a04_project_a2_evidence.json",
+        "runs/S01/final-review.json",
+        "runs/S01/cloud-audit/worker/audit.json"
       ],
-      "next_action": "Root authors a revised evidence/bootstrap/receipt/scope contract; fresh Luna performs one conformance smoke before any new paired-performance freeze. Do not add initialization assistance without valid setup-bottleneck evidence.",
+      "next_action": "Any later efficacy trial must be newly frozen; C1 remains partial/inconclusive and is never rerun to improve its score.",
       "outcome": "C1 attempted with eight original actual workers; seven original workflows committed, project A2 Q5 running cutoff; efficacy comparison invalid/inconclusive under frozen capture and conformance clauses",
-      "audit_progress": "Fresh continuation review performed one bounded project/A2 A04 step; final all-sample independent audit still pending."
+      "audit_progress": "A01-A05 completed with explicit missing evidence and independent-review limits; all eight original samples retained."
     },
     {
       "id": "host_protocol_measurement_capture_and_scope",
       "owner": "/root",
-      "status": "partial",
+      "status": "done",
       "depends_on": [
         "host_protocol_draft_assistance"
       ],
@@ -928,16 +930,19 @@
         "All correction attempts within declared scope include recorder/index tooling; preserve first failures and supplemental indexes",
         "One fresh Luna conformance smoke is a new trial, not a replacement C1 sample; no new performance claim from local Q1"
       ],
-      "verified_scope": "Q1 four local targets, Q01–Q05 independently pass; no ordinary-worker or real-native method validation",
+      "verified_scope": "Versioned C2 candidate, qualified recorder, real native source-review loop and one explicitly retained coordinator repair. Scope restrictions are instruction-only; no complete worker host trace or provider identity proof.",
       "provenance_limits": [
         "Q1 local freeze lacks an independently recorded freeze time and execution-time source hash; keep limits without adding retrospective criteria"
       ],
       "evidence": [
         "forge-protocol-comparison-20261003/coordinator/Next_Recording_Method_Draft.md",
         "forge-protocol-comparison-20261003/coordinator/recording-qualification/Results.json",
-        "forge-protocol-comparison-20261003/audit/qualification-review.md"
+        "forge-protocol-comparison-20261003/audit/qualification-review.md",
+        "runs/S02/candidate-lock.json",
+        "runs/S02/qualification-after-fix.json",
+        "runs/S03/validation.json"
       ],
-      "next_action": "Read current skill-creator before a canonical instruction change; Root writes the reusable minimal contract, versions it separately, then gives fresh Luna a bounded smoke with no expected business output.",
+      "next_action": "Use the C2 candidate for a separately frozen future study; do not infer performance or global enforcement.",
       "dependency_history": [
         {
           "at": "2026-10-03T18:07:54.086407+00:00",
@@ -996,6 +1001,33 @@
         "state/github-publication.json"
       ],
       "next_action": "Other authorized agents checkout this repository and continue S01-02."
+    },
+    {
+      "id": "cloud_deployment_and_delivery",
+      "owner": "/root",
+      "status": "in_progress",
+      "depends_on": [
+        "host_protocol_measurement_capture_and_scope"
+      ],
+      "write_paths": [
+        "scripts/",
+        "docs/",
+        "runs/",
+        "state/"
+      ],
+      "goal": "Deploy to the attached cloud environment; smoke, repair, package all source/reports and publish fork dev PR.",
+      "acceptance": [
+        "Versioned CLI installation and portable archive validated",
+        "Issues and failure/repair evidence retained",
+        "Fork dev PR opened against upstream main"
+      ],
+      "evidence": [
+        "runs/cloud/brief.json",
+        "runs/cloud/VERIFICATION_REPORT.md",
+        "runs/cloud/issues.json"
+      ],
+      "blocker": null,
+      "next_action": "Publish final fork dev and PR."
     }
   ],
   "stop_conditions": [
@@ -1005,9 +1037,9 @@
     "Host bridge 2026-10-02: two repair rounds used; retain B1/B2 failures. No additional repair or performance-gain claim in this iteration.",
     "O3 2026-10-03: two functional repairs used; preserve actual wrong-SHA submission and wrapped-IO counterexample. New features need a separate frozen iteration."
   ],
-  "next_action": "Complete A01 package receipt/review/preflight/commit traces; A02 package recomputation; A03 correction counts; remaining A04 samples and A05. Preserve the bounded A2 result and nonblind limit.",
+  "next_action": "Publish final dev to waw1w1/A111 through the authorized GitHub API and open PR to Urizums/A111 main.",
   "final_trial_prompt": "使用最终 forge-agent-flow，在独立目录做一个小型本地导入系统：接收 JSONL 记录，校验后生成可查看的成功/错误报告，重复运行不丢先前结果。无需界面或云服务，普通选择自己推，不向用户提问。交可运行代码与实际运行验证，记录真实耗时和修复。",
-  "development_status": "portable_handoff_ready; S00_closed_actual_S01_started; C1_final_audit_partial; performance_inconclusive",
+  "development_status": "cloud_cli_and_C2_verified; S01_audit_closed_with_gaps; original_C1_performance_inconclusive; fork_PR_pending",
   "remaining_capability_blockers": [
     {
       "task": "ticket browser UI journey",
@@ -1157,6 +1189,10 @@
       "id": "github_publication_20261004",
       "at": "2026-10-03T19:01:07.270375+00:00",
       "reason": "User explicitly authorized Urizums/A111 as the private destination; initial complete upload verified. C1 and other remaining work retained."
+    },
+    {
+      "at": "2026-10-03T19:58:13.841840+00:00",
+      "reason": "Current user requested cloud continuation, smoke/fixes and complete fork-dev PR. Preserve all original history, failure evidence and unrelated partial/UI tracks."
     }
   ],
   "skill_development_roles": {

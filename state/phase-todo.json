@@ -1,98 +1,97 @@
 {
   "schema": "forge-phase-todo/1",
-  "phase_id": "S01",
-  "goal": "Complete interrupted C1 audit without replay and initiate the revised-contract phase.",
+  "phase_id": "D00",
+  "goal": "Deliver the requested cloud installation, source, reports and fork dev PR.",
   "tasks": [
     {
-      "id": "S01-01",
-      "title": "冻结离线审计范围并实际检查截止证据",
+      "id": "D00-01",
+      "title": "云端 CLI 安装与搬迁验证",
       "owner": "coordinator",
       "depends_on": [],
       "write_paths": [
-        "runs/S01/"
+        "runs/",
+        "state/"
       ],
       "acceptance": [
-        "冻结 A01–A05，禁止旧 native 调用",
-        "逐文件校验 cutoff sha256/size 并保存实际返回"
+        "已连接云端环境有可运行 CLI；解压包可在不同路径安装"
       ],
       "status": "done",
       "evidence": [
-        "runs/S01/audit-plan.json",
-        "runs/S01/cutoff-integrity.json",
-        "runs/S01/record-inventory.json"
+        "runs/cloud/install-revised.json",
+        "runs/cloud/archive-install-fixed.json",
+        "runs/cloud/python310-install-cli.json"
       ],
       "blocker": null,
-      "next_action": "Continue S01-02 remaining original audit"
+      "next_action": "Preserve original evidence and review the recorded scope."
     },
     {
-      "id": "S01-02",
-      "title": "完成剩余离线独立审计",
-      "owner": "coordinator + available Luna independent reviewer",
-      "depends_on": [
-        "S01-01"
-      ],
-      "write_paths": [
-        "runs/S01/"
-      ],
-      "acceptance": [
-        "完成或明确缺失 A01–A05，引用原记录及冻结条款",
-        "保留 inconclusive 和审计局限，不重跑样本"
-      ],
-      "status": "partial",
-      "evidence": [
-        "validation/luna/a04_project_a2_evidence.json",
-        "validation/luna/a04_readonly_command-log.json"
-      ],
-      "blocker": null,
-      "next_action": "Complete A01 package receipt/review/preflight/commit traces; A02 package recomputation; A03 correction counts; remaining A04 samples and A05. Preserve the bounded A2 result and nonblind limit."
-    },
-    {
-      "id": "S01-03",
-      "title": "整合审计结论与原失败状态",
+      "id": "D00-02",
+      "title": "修复复测并整理完整交付内容",
       "owner": "coordinator",
       "depends_on": [
-        "S01-02"
+        "D00-01"
       ],
       "write_paths": [
-        "runs/S01/"
+        "runs/",
+        "state/"
       ],
       "acceptance": [
-        "更新完整台账，C1 不被伪装性能成功",
-        "保留 UI blockers、三个 partial 与原历史"
+        "原失败及修复前后记录完整；源码和报告可打包；本地冒烟通过"
       ],
-      "status": "planned",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "runs/cloud/VERIFICATION_REPORT.md",
+        "runs/cloud/issues.json",
+        "runs/cloud/archive-smoke-fixed/report.json",
+        "runs/cloud/python310-smoke/report.json"
+      ],
       "blocker": null,
-      "next_action": "整合审计结论与原失败状态"
+      "next_action": "Preserve original evidence and review the recorded scope."
     },
     {
-      "id": "S01-next",
+      "id": "D00-03",
+      "title": "推送 fork dev 并向原仓库提交 PR",
+      "owner": "coordinator",
+      "depends_on": [
+        "D00-01",
+        "D00-02"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "waw1w1/A111 dev 包含最终文件；PR 指向 Urizums/A111 main 并附验证说明"
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "runs/cloud/github-access-resolved.json",
+        "runs/cloud/PULL_REQUEST.md"
+      ],
+      "blocker": null,
+      "next_action": "推送 fork dev 并向原仓库提交 PR"
+    },
+    {
+      "id": "D00-next",
       "title": "启动下一阶段任务",
       "owner": "coordinator",
       "depends_on": [
-        "S01-01",
-        "S01-02",
-        "S01-03"
+        "D00-01",
+        "D00-02",
+        "D00-03"
       ],
       "write_paths": [
-        "state/",
-        "runs/S02/"
+        "runs/",
+        "state/"
       ],
       "acceptance": [
-        "S02 TODO 和新候选范围已保存",
-        "S02 首项真实执行并有证据"
+        "目标交付完成后记录终态；不自动扩大为新性能实验"
       ],
       "status": "planned",
       "evidence": [],
       "blocker": null,
-      "next_action": "启动下一阶段任务",
-      "transition": {
-        "next_phase_id": "S02",
-        "todo_path": null,
-        "first_task_id": null,
-        "start_evidence": []
-      }
+      "next_action": "启动下一阶段任务"
     }
   ],
-  "updated_at": "2026-10-03T18:26:32.710000+00:00"
+  "updated_at": "2026-10-03T19:58:13.841840+00:00"
 }

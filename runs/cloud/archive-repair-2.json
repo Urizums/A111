@@ -1,0 +1,11 @@
+{
+  "issue_id": "ISSUE-004",
+  "type": "archive_portability",
+  "observed": "A delivery archive adds delivery-manifest.json; the handoff checker incorrectly treated this transport envelope as unexpected release source.",
+  "reproduction": "runs/cloud/archive-integrity-initial.json",
+  "candidate_before": "runs/cloud/handoff-before-archive-fix.py",
+  "fix": "Exclude the transport manifest from release coverage and release freezing. Archive payload hashes remain verified by the installer, while state/runs remain intentionally mutable for continuation.",
+  "repair_round_for_handoff_validator": 2,
+  "repair_limit": 2,
+  "remaining": 0
+}
