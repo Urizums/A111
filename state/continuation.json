@@ -1,0 +1,1865 @@
+{
+  "schema": "forge-continuation/1",
+  "project_goal": {
+    "id": "agent-forge-rd",
+    "status": "active",
+    "text": "持续研发、扩展与实际效果验证；交付里程碑不关闭长期目标",
+    "stop_authority": "user"
+  },
+  "deliveries": {
+    "D00": {
+      "status": "delivered",
+      "evidence": "runs/cloud/github-pr.json"
+    }
+  },
+  "tasks": [
+    {
+      "id": "R01-01",
+      "title": "验证最小长期接续控制器",
+      "queue": "capabilities",
+      "category": "continuation",
+      "complexity": 1,
+      "priority": 0,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "scripts/",
+        "state/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Delivered milestones do not close long-term goal or hide ready tasks"
+        },
+        {
+          "id": "a2",
+          "assertion": "Frozen inputs/criteria, failed attempts and two-repair budgets are enforced"
+        },
+        {
+          "id": "a3",
+          "assertion": "Phase transition requires actual next first step"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R01/mechanism-result.json",
+          "sha256": "ce5fdef57be38254327fff32d631cb2a057193f66919c4b550af6565078f4cc8"
+        },
+        {
+          "path": "runs/R00/continuation-tests-initial.json",
+          "sha256": "50e6965bb74129ddbb0cfb94cd5d059fdb68d077d543c13cc707dee21bd46863"
+        },
+        {
+          "path": "runs/R00/continuation-tests-initial.json",
+          "sha256": "50e6965bb74129ddbb0cfb94cd5d059fdb68d077d543c13cc707dee21bd46863"
+        },
+        {
+          "path": "runs/R00/continuation-tests-initial.json",
+          "sha256": "50e6965bb74129ddbb0cfb94cd5d059fdb68d077d543c13cc707dee21bd46863"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R01-01-1",
+          "started_at": "2026-10-04T04:50:05.504002+00:00",
+          "requirements_hash": "e37b409e6adc17acf0ebc0e933b406fb0a844d848718727ad7db5b43126e7e0e",
+          "inputs": [
+            {
+              "path": "runs/R00/requirements.json",
+              "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R01/mechanism-first-step.json",
+            "sha256": "6bc262bcf2122ab388177ede04bcea53503563f8d12fb186c5334d86c339cd2a"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T04:50:57.162235+00:00",
+          "result": {
+            "path": "runs/R01/mechanism-result.json",
+            "sha256": "ce5fdef57be38254327fff32d631cb2a057193f66919c4b550af6565078f4cc8"
+          },
+          "evidence": [
+            {
+              "path": "runs/R01/mechanism-result.json",
+              "sha256": "ce5fdef57be38254327fff32d631cb2a057193f66919c4b550af6565078f4cc8"
+            },
+            {
+              "path": "runs/R00/continuation-tests-initial.json",
+              "sha256": "50e6965bb74129ddbb0cfb94cd5d059fdb68d077d543c13cc707dee21bd46863"
+            },
+            {
+              "path": "runs/R00/continuation-tests-initial.json",
+              "sha256": "50e6965bb74129ddbb0cfb94cd5d059fdb68d077d543c13cc707dee21bd46863"
+            },
+            {
+              "path": "runs/R00/continuation-tests-initial.json",
+              "sha256": "50e6965bb74129ddbb0cfb94cd5d059fdb68d077d543c13cc707dee21bd46863"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Execute the one-off calendar task on its frozen materials."
+    },
+    {
+      "id": "R01-02",
+      "title": "生成工作坊日历文件",
+      "queue": "challenges",
+      "category": "scoped_task",
+      "complexity": 1,
+      "priority": 10,
+      "depends_on": [
+        "R01-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R01/calendar/"
+      ],
+      "inputs": [
+        "runs/R01/calendar/input.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Produce one valid ICS event with exact source fields and timezone/duration"
+        },
+        {
+          "id": "a2",
+          "assertion": "Perform source check with no factory or reusable app scaffolding"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R01/calendar/result.json",
+          "sha256": "dc8031f8f371e826cb03c24ce24494734179f1acfe8d5f47de2ae731f1b4d238"
+        },
+        {
+          "path": "runs/R01/calendar/verify-command.json",
+          "sha256": "c9fe64021a033d800cfecfe858f9bf2b628ee43756cb31d5104c65acb3d2ebe8"
+        },
+        {
+          "path": "runs/R01/calendar/workshop.ics",
+          "sha256": "2d1f9b13812d982c873db754ef9d1f86d2d7c3f175a14680c9084084da667a1f"
+        },
+        {
+          "path": "runs/R01/calendar/verify-command.json",
+          "sha256": "c9fe64021a033d800cfecfe858f9bf2b628ee43756cb31d5104c65acb3d2ebe8"
+        },
+        {
+          "path": "runs/R01/calendar/workshop.ics",
+          "sha256": "2d1f9b13812d982c873db754ef9d1f86d2d7c3f175a14680c9084084da667a1f"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R01-02-1",
+          "started_at": "2026-10-04T04:50:57.265048+00:00",
+          "requirements_hash": "847bb6b4957cb4a45e57b370a1efc7b9ea3a58fe42d30565699951291ac56ed0",
+          "inputs": [
+            {
+              "path": "runs/R01/calendar/input.json",
+              "sha256": "c9da3af49cc0d401e049981065130d595f58531e74e328ea1a454fed05edbdcd"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R01/calendar/first-step.json",
+            "sha256": "e19835d813edd2732bd23cb8e0ee7ecb699451ef9f860032be671f4b53ca6695"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T04:51:19.066504+00:00",
+          "result": {
+            "path": "runs/R01/calendar/result.json",
+            "sha256": "dc8031f8f371e826cb03c24ce24494734179f1acfe8d5f47de2ae731f1b4d238"
+          },
+          "evidence": [
+            {
+              "path": "runs/R01/calendar/result.json",
+              "sha256": "dc8031f8f371e826cb03c24ce24494734179f1acfe8d5f47de2ae731f1b4d238"
+            },
+            {
+              "path": "runs/R01/calendar/verify-command.json",
+              "sha256": "c9fe64021a033d800cfecfe858f9bf2b628ee43756cb31d5104c65acb3d2ebe8"
+            },
+            {
+              "path": "runs/R01/calendar/workshop.ics",
+              "sha256": "2d1f9b13812d982c873db754ef9d1f86d2d7c3f175a14680c9084084da667a1f"
+            },
+            {
+              "path": "runs/R01/calendar/verify-command.json",
+              "sha256": "c9fe64021a033d800cfecfe858f9bf2b628ee43756cb31d5104c65acb3d2ebe8"
+            },
+            {
+              "path": "runs/R01/calendar/workshop.ics",
+              "sha256": "2d1f9b13812d982c873db754ef9d1f86d2d7c3f175a14680c9084084da667a1f"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Increase complexity to durable JSON-to-SQLite migration with transaction failure cases."
+    },
+    {
+      "id": "R01-03",
+      "title": "实现并验证馆藏设备迁移",
+      "queue": "challenges",
+      "category": "data_migration",
+      "complexity": 2,
+      "priority": 20,
+      "depends_on": [
+        "R01-02"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "challenges/inventory/",
+        "runs/R01/import/"
+      ],
+      "inputs": [
+        "runs/R01/import/legacy.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Source inventory and service relationships survive JSON-to-SQLite migration"
+        },
+        {
+          "id": "a2",
+          "assertion": "Identical retry is idempotent; conflicting same batch is rejected"
+        },
+        {
+          "id": "a3",
+          "assertion": "Late constraint failure rolls back complete existing-database transaction"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R01/import/result.json",
+          "sha256": "dc0237f0dd6f428dd76ef6ac77641fe3fa92d0131aa4e524a3e3083a55e96e26"
+        },
+        {
+          "path": "runs/R01/import/validation-command.json",
+          "sha256": "95ad1afa06a829f108146523cf7ca4314f0163c94cc782886748ffebf17664f4"
+        },
+        {
+          "path": "runs/R01/import/validation/report.json",
+          "sha256": "8d740e6b8baacb7b98e5b29c6a94b225c1874f09f61d8d2064c10cfae27b9090"
+        },
+        {
+          "path": "runs/R01/import/validation-command.json",
+          "sha256": "95ad1afa06a829f108146523cf7ca4314f0163c94cc782886748ffebf17664f4"
+        },
+        {
+          "path": "runs/R01/import/validation/report.json",
+          "sha256": "8d740e6b8baacb7b98e5b29c6a94b225c1874f09f61d8d2064c10cfae27b9090"
+        },
+        {
+          "path": "runs/R01/import/validation-command.json",
+          "sha256": "95ad1afa06a829f108146523cf7ca4314f0163c94cc782886748ffebf17664f4"
+        },
+        {
+          "path": "runs/R01/import/validation/report.json",
+          "sha256": "8d740e6b8baacb7b98e5b29c6a94b225c1874f09f61d8d2064c10cfae27b9090"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R01-03-1",
+          "started_at": "2026-10-04T04:51:19.177361+00:00",
+          "requirements_hash": "a11a602eac50ea21ad5be9b269bf62a5cd3a99da08c63d52e9ec6cbe5f4f5990",
+          "inputs": [
+            {
+              "path": "runs/R01/import/legacy.json",
+              "sha256": "7ae8a28ba10e4bde93fb9fefa7c9109e6eca63e96afc37a80f6177bf82c992bc"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R01/import/first-step.json",
+            "sha256": "369c76d834bd0c3eef7f37d242617d870a04a65da820d8030b38a68b991b8bac"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T04:55:22.803949+00:00",
+          "result": {
+            "path": "runs/R01/import/result.json",
+            "sha256": "dc0237f0dd6f428dd76ef6ac77641fe3fa92d0131aa4e524a3e3083a55e96e26"
+          },
+          "evidence": [
+            {
+              "path": "runs/R01/import/result.json",
+              "sha256": "dc0237f0dd6f428dd76ef6ac77641fe3fa92d0131aa4e524a3e3083a55e96e26"
+            },
+            {
+              "path": "runs/R01/import/validation-command.json",
+              "sha256": "95ad1afa06a829f108146523cf7ca4314f0163c94cc782886748ffebf17664f4"
+            },
+            {
+              "path": "runs/R01/import/validation/report.json",
+              "sha256": "8d740e6b8baacb7b98e5b29c6a94b225c1874f09f61d8d2064c10cfae27b9090"
+            },
+            {
+              "path": "runs/R01/import/validation-command.json",
+              "sha256": "95ad1afa06a829f108146523cf7ca4314f0163c94cc782886748ffebf17664f4"
+            },
+            {
+              "path": "runs/R01/import/validation/report.json",
+              "sha256": "8d740e6b8baacb7b98e5b29c6a94b225c1874f09f61d8d2064c10cfae27b9090"
+            },
+            {
+              "path": "runs/R01/import/validation-command.json",
+              "sha256": "95ad1afa06a829f108146523cf7ca4314f0163c94cc782886748ffebf17664f4"
+            },
+            {
+              "path": "runs/R01/import/validation/report.json",
+              "sha256": "8d740e6b8baacb7b98e5b29c6a94b225c1874f09f61d8d2064c10cfae27b9090"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Fresh-context handoff to command-worker crash recovery, then reusable renewal flow."
+    },
+    {
+      "id": "R02-01",
+      "title": "新上下文接续：运行失败恢复挑战",
+      "queue": "challenges",
+      "category": "worker_recovery",
+      "complexity": 3,
+      "priority": 30,
+      "depends_on": [
+        "R01-03"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R02/worker-recovery/"
+      ],
+      "inputs": [
+        "runs/R02/materials/recovery-batch.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Actual command worker exits during an uncommitted transaction; database has no partial write"
+        },
+        {
+          "id": "a2",
+          "assertion": "Fresh-context executor recovers original input, retries safely, retains raw failed attempt"
+        },
+        {
+          "id": "a3",
+          "assertion": "Choose route from repository, complete selected task and start next task with actual command evidence"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R02/handoff/accepted-task-result.json",
+          "sha256": "2215234937578758a95de0cb0fe33e08bd142afa8b29cad806eb49a1f6e8040f"
+        },
+        {
+          "path": "runs/R02/worker-recovery/02-seed-command.json",
+          "sha256": "17ace13fa684d5b9e4522cf9ed0e1953a6a107539af59435136048a27afa336e"
+        },
+        {
+          "path": "runs/R02/worker-recovery/04-crash-command.json",
+          "sha256": "0fea3859387e6ddb5cd4b12221095254e5495a23fea4cf3793df0db8bf65df92"
+        },
+        {
+          "path": "runs/R02/worker-recovery/05-post-crash-command.json",
+          "sha256": "c787ad575145b4353a9f8489f06d23b213d4fe39151b72bfd2243fac103a1c14"
+        },
+        {
+          "path": "runs/R02/handoff/root-review.json",
+          "sha256": "2c1cb1bf5161c36d09646b1ad2550048727ac7ef1d9946b14f501919318e1ac3"
+        },
+        {
+          "path": "runs/R02/worker-recovery/frozen-acceptance.json",
+          "sha256": "316c18e8d0a03709aeb8335b0ed151e68ef031dec41e0d2852165eb0f3f4a9b5"
+        },
+        {
+          "path": "runs/R02/materials/recovery-batch.json",
+          "sha256": "3b4541ce07fdb931e6cdc32a114c2320573baa404503563c58a38bdb86fff2cb"
+        },
+        {
+          "path": "runs/R02/worker-recovery/04-crash-command.json",
+          "sha256": "0fea3859387e6ddb5cd4b12221095254e5495a23fea4cf3793df0db8bf65df92"
+        },
+        {
+          "path": "runs/R02/worker-recovery/06-retry-original-command.json",
+          "sha256": "842a170e1887f7280fd91c75c4e54004c3d148f6465d5c2bb4d431d8e3559c66"
+        },
+        {
+          "path": "runs/R02/worker-recovery/07-after-apply-command.json",
+          "sha256": "e166f3ab31dc65b6cf77f124ad1aeff42953aea51f242eaacc3101900aa0f5ed"
+        },
+        {
+          "path": "runs/R02/worker-recovery/08-retry-identical-command.json",
+          "sha256": "a2a5fecc195914b4850a34f4a9f59ebfbdb77e7e1353878d777ed2c357b100d7"
+        },
+        {
+          "path": "runs/R02/handoff/root-review.json",
+          "sha256": "2c1cb1bf5161c36d09646b1ad2550048727ac7ef1d9946b14f501919318e1ac3"
+        },
+        {
+          "path": "runs/R02/worker-recovery/frozen-acceptance.json",
+          "sha256": "316c18e8d0a03709aeb8335b0ed151e68ef031dec41e0d2852165eb0f3f4a9b5"
+        },
+        {
+          "path": "runs/R02/worker-recovery/01-freeze-check-command.json",
+          "sha256": "245a8a4c762a4037fc03fee868b2182b830d741067c2f21662a253112e174c9a"
+        },
+        {
+          "path": "runs/R02/flow/frozen-acceptance.json",
+          "sha256": "34ad0e4df973f87561c445005e28cfd05cad1be0eac889d3121ce044581cf0fe"
+        },
+        {
+          "path": "runs/R02/flow/01-successor-first-step-command.json",
+          "sha256": "31e21cdd1d895c0243542f8b9afc5b1f87f99ade08ed5fa558a2c8ebb6ffa1fd"
+        },
+        {
+          "path": "runs/R02/flow/02-successor-start-command.json",
+          "sha256": "51a3f94d821e8d8b0e988c1afa37dfa97d8550d1f8484cfa7ec6623ea65b6016"
+        },
+        {
+          "path": "runs/R02/handoff/root-review.json",
+          "sha256": "2c1cb1bf5161c36d09646b1ad2550048727ac7ef1d9946b14f501919318e1ac3"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R02-01-1",
+          "started_at": "2026-10-04T05:16:25.546561+00:00",
+          "requirements_hash": "0bb945f65e9b25c01d08149013eed785f5a7eabe24fa89d966c3a8f01cce9a1c",
+          "inputs": [
+            {
+              "path": "runs/R02/materials/recovery-batch.json",
+              "sha256": "3b4541ce07fdb931e6cdc32a114c2320573baa404503563c58a38bdb86fff2cb"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R02/worker-recovery/01-freeze-check-command.json",
+            "sha256": "245a8a4c762a4037fc03fee868b2182b830d741067c2f21662a253112e174c9a"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T05:16:25.635757+00:00",
+          "result": {
+            "path": "runs/R02/handoff/accepted-task-result.json",
+            "sha256": "2215234937578758a95de0cb0fe33e08bd142afa8b29cad806eb49a1f6e8040f"
+          },
+          "evidence": [
+            {
+              "path": "runs/R02/handoff/accepted-task-result.json",
+              "sha256": "2215234937578758a95de0cb0fe33e08bd142afa8b29cad806eb49a1f6e8040f"
+            },
+            {
+              "path": "runs/R02/worker-recovery/02-seed-command.json",
+              "sha256": "17ace13fa684d5b9e4522cf9ed0e1953a6a107539af59435136048a27afa336e"
+            },
+            {
+              "path": "runs/R02/worker-recovery/04-crash-command.json",
+              "sha256": "0fea3859387e6ddb5cd4b12221095254e5495a23fea4cf3793df0db8bf65df92"
+            },
+            {
+              "path": "runs/R02/worker-recovery/05-post-crash-command.json",
+              "sha256": "c787ad575145b4353a9f8489f06d23b213d4fe39151b72bfd2243fac103a1c14"
+            },
+            {
+              "path": "runs/R02/handoff/root-review.json",
+              "sha256": "2c1cb1bf5161c36d09646b1ad2550048727ac7ef1d9946b14f501919318e1ac3"
+            },
+            {
+              "path": "runs/R02/worker-recovery/frozen-acceptance.json",
+              "sha256": "316c18e8d0a03709aeb8335b0ed151e68ef031dec41e0d2852165eb0f3f4a9b5"
+            },
+            {
+              "path": "runs/R02/materials/recovery-batch.json",
+              "sha256": "3b4541ce07fdb931e6cdc32a114c2320573baa404503563c58a38bdb86fff2cb"
+            },
+            {
+              "path": "runs/R02/worker-recovery/04-crash-command.json",
+              "sha256": "0fea3859387e6ddb5cd4b12221095254e5495a23fea4cf3793df0db8bf65df92"
+            },
+            {
+              "path": "runs/R02/worker-recovery/06-retry-original-command.json",
+              "sha256": "842a170e1887f7280fd91c75c4e54004c3d148f6465d5c2bb4d431d8e3559c66"
+            },
+            {
+              "path": "runs/R02/worker-recovery/07-after-apply-command.json",
+              "sha256": "e166f3ab31dc65b6cf77f124ad1aeff42953aea51f242eaacc3101900aa0f5ed"
+            },
+            {
+              "path": "runs/R02/worker-recovery/08-retry-identical-command.json",
+              "sha256": "a2a5fecc195914b4850a34f4a9f59ebfbdb77e7e1353878d777ed2c357b100d7"
+            },
+            {
+              "path": "runs/R02/handoff/root-review.json",
+              "sha256": "2c1cb1bf5161c36d09646b1ad2550048727ac7ef1d9946b14f501919318e1ac3"
+            },
+            {
+              "path": "runs/R02/worker-recovery/frozen-acceptance.json",
+              "sha256": "316c18e8d0a03709aeb8335b0ed151e68ef031dec41e0d2852165eb0f3f4a9b5"
+            },
+            {
+              "path": "runs/R02/worker-recovery/01-freeze-check-command.json",
+              "sha256": "245a8a4c762a4037fc03fee868b2182b830d741067c2f21662a253112e174c9a"
+            },
+            {
+              "path": "runs/R02/flow/frozen-acceptance.json",
+              "sha256": "34ad0e4df973f87561c445005e28cfd05cad1be0eac889d3121ce044581cf0fe"
+            },
+            {
+              "path": "runs/R02/flow/01-successor-first-step-command.json",
+              "sha256": "31e21cdd1d895c0243542f8b9afc5b1f87f99ade08ed5fa558a2c8ebb6ffa1fd"
+            },
+            {
+              "path": "runs/R02/flow/02-successor-start-command.json",
+              "sha256": "51a3f94d821e8d8b0e988c1afa37dfa97d8550d1f8484cfa7ec6623ea65b6016"
+            },
+            {
+              "path": "runs/R02/handoff/root-review.json",
+              "sha256": "2c1cb1bf5161c36d09646b1ad2550048727ac7ef1d9946b14f501919318e1ac3"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Start R02-02 (reusable book-renewal agent flow) from its frozen original brief; implement one policy case first."
+    },
+    {
+      "id": "R02-02",
+      "title": "构建并运行图书续借 agent flow",
+      "queue": "challenges",
+      "category": "agent_flow",
+      "complexity": 2,
+      "priority": 40,
+      "depends_on": [
+        "R02-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "challenges/renewal-flow/",
+        "runs/R02/flow/"
+      ],
+      "inputs": [
+        "runs/R02/materials/flow-brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Reusable policy flow executes all four frozen cases using original package controller"
+        },
+        {
+          "id": "a2",
+          "assertion": "Stale reply rejected without state mutation; all results match explicit policy"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R02/flow/task-result.json",
+          "sha256": "4012897a4f183fba9ea14475379f9b354c67aa431869c9083ae9de3a0d4a1786"
+        },
+        {
+          "path": "runs/R02/flow/report.json",
+          "sha256": "731f0ee6465e7790285efa68106e949cb122883321d0c19c52409cb2f4bf8c31"
+        },
+        {
+          "path": "runs/R02/flow/assessment.json",
+          "sha256": "3268747de5dcb0962bfe73e20481c9f1bc05c5efb36d868ed71a2ebca383a338"
+        },
+        {
+          "path": "runs/R02/flow/verify-command.json",
+          "sha256": "e76ec0aa297e1327a9f10ff2ce6b12d5b5c0e2b1ea920e5f6da6a9cbe7ffef97"
+        },
+        {
+          "path": "runs/R02/flow/verify-repair-1.json",
+          "sha256": "b66be1b8d57284b048a1a33b7a3af58c313b3df6b56f984d04deef5a57096e20"
+        },
+        {
+          "path": "runs/R02/flow/report.json",
+          "sha256": "731f0ee6465e7790285efa68106e949cb122883321d0c19c52409cb2f4bf8c31"
+        },
+        {
+          "path": "runs/R02/flow/assessment.json",
+          "sha256": "3268747de5dcb0962bfe73e20481c9f1bc05c5efb36d868ed71a2ebca383a338"
+        },
+        {
+          "path": "runs/R02/flow/verify-command.json",
+          "sha256": "e76ec0aa297e1327a9f10ff2ce6b12d5b5c0e2b1ea920e5f6da6a9cbe7ffef97"
+        },
+        {
+          "path": "runs/R02/flow/verify-repair-1.json",
+          "sha256": "b66be1b8d57284b048a1a33b7a3af58c313b3df6b56f984d04deef5a57096e20"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R02-02-1",
+          "started_at": "2026-10-04T05:16:25.682552+00:00",
+          "requirements_hash": "6d3a95c27efccdc814e87b7846549e5d18d90116095eac9533883b46e88c5e53",
+          "inputs": [
+            {
+              "path": "runs/R02/materials/flow-brief.json",
+              "sha256": "7b0682db565b8c689bfbbdda07166f45a05f8f3b585079e3919ab8be6cb8e105"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R02/flow/02-successor-start-command.json",
+            "sha256": "51a3f94d821e8d8b0e988c1afa37dfa97d8550d1f8484cfa7ec6623ea65b6016"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T05:16:25.750820+00:00",
+          "result": {
+            "path": "runs/R02/flow/task-result.json",
+            "sha256": "4012897a4f183fba9ea14475379f9b354c67aa431869c9083ae9de3a0d4a1786"
+          },
+          "evidence": [
+            {
+              "path": "runs/R02/flow/task-result.json",
+              "sha256": "4012897a4f183fba9ea14475379f9b354c67aa431869c9083ae9de3a0d4a1786"
+            },
+            {
+              "path": "runs/R02/flow/report.json",
+              "sha256": "731f0ee6465e7790285efa68106e949cb122883321d0c19c52409cb2f4bf8c31"
+            },
+            {
+              "path": "runs/R02/flow/assessment.json",
+              "sha256": "3268747de5dcb0962bfe73e20481c9f1bc05c5efb36d868ed71a2ebca383a338"
+            },
+            {
+              "path": "runs/R02/flow/verify-command.json",
+              "sha256": "e76ec0aa297e1327a9f10ff2ce6b12d5b5c0e2b1ea920e5f6da6a9cbe7ffef97"
+            },
+            {
+              "path": "runs/R02/flow/verify-repair-1.json",
+              "sha256": "b66be1b8d57284b048a1a33b7a3af58c313b3df6b56f984d04deef5a57096e20"
+            },
+            {
+              "path": "runs/R02/flow/report.json",
+              "sha256": "731f0ee6465e7790285efa68106e949cb122883321d0c19c52409cb2f4bf8c31"
+            },
+            {
+              "path": "runs/R02/flow/assessment.json",
+              "sha256": "3268747de5dcb0962bfe73e20481c9f1bc05c5efb36d868ed71a2ebca383a338"
+            },
+            {
+              "path": "runs/R02/flow/verify-command.json",
+              "sha256": "e76ec0aa297e1327a9f10ff2ce6b12d5b5c0e2b1ea920e5f6da6a9cbe7ffef97"
+            },
+            {
+              "path": "runs/R02/flow/verify-repair-1.json",
+              "sha256": "b66be1b8d57284b048a1a33b7a3af58c313b3df6b56f984d04deef5a57096e20"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Continue the complete support-desk application and actual browser acceptance."
+    },
+    {
+      "id": "R03-01",
+      "title": "实现完整工单应用",
+      "queue": "challenges",
+      "category": "software_system",
+      "complexity": 3,
+      "priority": 50,
+      "depends_on": [
+        "R02-02"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "challenges/ticket-desk/",
+        "runs/R03/app/"
+      ],
+      "inputs": [
+        "runs/R03/materials/ticket-brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Actual HTTP create/filter/state transitions persist across restart"
+        },
+        {
+          "id": "a2",
+          "assertion": "Validation, stale update and history retention preserve state on errors"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R03/app/task-result.json",
+          "sha256": "2096bd839514230056bf4a895cbcec932a01b39fee83d5cea4757827bc22326f"
+        },
+        {
+          "path": "runs/R03/app/api-cases/report.json",
+          "sha256": "3b37adc60985d47735a694da4b2567fcaf52148c8f590e10a45948440677617e"
+        },
+        {
+          "path": "runs/R03/app/api-raw/requests.json",
+          "sha256": "44f499c0cb6e5bee6a785c0f85ed33d699e2398e81af0fcacb8080f3a96c5379"
+        },
+        {
+          "path": "runs/R03/app/api-raw/processes.json",
+          "sha256": "3b8a4c88c7a0e1c777470326fa183771292d8c4a66cc12623b4242febdcee660"
+        },
+        {
+          "path": "runs/R03/app/api-cases-310/report.json",
+          "sha256": "c8b656c648c6b8b895b2eb7f77de9f3eb980a63f8c647ff4f07e4c6156201076"
+        },
+        {
+          "path": "runs/R03/app/api-cases/report.json",
+          "sha256": "3b37adc60985d47735a694da4b2567fcaf52148c8f590e10a45948440677617e"
+        },
+        {
+          "path": "runs/R03/app/api-raw/requests.json",
+          "sha256": "44f499c0cb6e5bee6a785c0f85ed33d699e2398e81af0fcacb8080f3a96c5379"
+        },
+        {
+          "path": "runs/R03/app/api-raw/processes.json",
+          "sha256": "3b8a4c88c7a0e1c777470326fa183771292d8c4a66cc12623b4242febdcee660"
+        },
+        {
+          "path": "runs/R03/app/api-cases-310/report.json",
+          "sha256": "c8b656c648c6b8b895b2eb7f77de9f3eb980a63f8c647ff4f07e4c6156201076"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R03-01-1",
+          "started_at": "2026-10-04T05:16:25.803354+00:00",
+          "requirements_hash": "d8a29db359cc353cf94a3f0dc6060180e00b7908881f23c0f30d2dd1af5132f9",
+          "inputs": [
+            {
+              "path": "runs/R03/materials/ticket-brief.json",
+              "sha256": "35e03b49b978adcc52efe1168a7e012d3e3eaaf7120e02a6c9c238d822497205"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R03/app/first-step.json",
+            "sha256": "0d532249c73f2ab393ed291abc3de7a9525526b03944fd27a4c6d0a32b37a108"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T05:16:25.939044+00:00",
+          "result": {
+            "path": "runs/R03/app/task-result.json",
+            "sha256": "2096bd839514230056bf4a895cbcec932a01b39fee83d5cea4757827bc22326f"
+          },
+          "evidence": [
+            {
+              "path": "runs/R03/app/task-result.json",
+              "sha256": "2096bd839514230056bf4a895cbcec932a01b39fee83d5cea4757827bc22326f"
+            },
+            {
+              "path": "runs/R03/app/api-cases/report.json",
+              "sha256": "3b37adc60985d47735a694da4b2567fcaf52148c8f590e10a45948440677617e"
+            },
+            {
+              "path": "runs/R03/app/api-raw/requests.json",
+              "sha256": "44f499c0cb6e5bee6a785c0f85ed33d699e2398e81af0fcacb8080f3a96c5379"
+            },
+            {
+              "path": "runs/R03/app/api-raw/processes.json",
+              "sha256": "3b8a4c88c7a0e1c777470326fa183771292d8c4a66cc12623b4242febdcee660"
+            },
+            {
+              "path": "runs/R03/app/api-cases-310/report.json",
+              "sha256": "c8b656c648c6b8b895b2eb7f77de9f3eb980a63f8c647ff4f07e4c6156201076"
+            },
+            {
+              "path": "runs/R03/app/api-cases/report.json",
+              "sha256": "3b37adc60985d47735a694da4b2567fcaf52148c8f590e10a45948440677617e"
+            },
+            {
+              "path": "runs/R03/app/api-raw/requests.json",
+              "sha256": "44f499c0cb6e5bee6a785c0f85ed33d699e2398e81af0fcacb8080f3a96c5379"
+            },
+            {
+              "path": "runs/R03/app/api-raw/processes.json",
+              "sha256": "3b8a4c88c7a0e1c777470326fa183771292d8c4a66cc12623b4242febdcee660"
+            },
+            {
+              "path": "runs/R03/app/api-cases-310/report.json",
+              "sha256": "c8b656c648c6b8b895b2eb7f77de9f3eb980a63f8c647ff4f07e4c6156201076"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Inspect actual browser journeys and independent visual/interaction evidence."
+    },
+    {
+      "id": "R03-02",
+      "title": "验证工单 UI 和交互",
+      "queue": "challenges",
+      "category": "ui_interaction",
+      "complexity": 3,
+      "priority": 60,
+      "depends_on": [
+        "R03-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "challenges/ticket-desk/",
+        "runs/R03/ui/"
+      ],
+      "inputs": [
+        "runs/R03/materials/ui-brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Actual browser completes create/filter/transition/reopen against real backend"
+        },
+        {
+          "id": "a2",
+          "assertion": "Desktop/mobile layout, keyboard, validation and conflict states are inspected in target"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R03/ui/task-result.json",
+          "sha256": "c644093cc8452c726b66986f5e90fd31c2e267e8a4f5ab3e0ec0a45ee11e5f5c"
+        },
+        {
+          "path": "runs/R03/ui-independent/worker/results.json",
+          "sha256": "a2673add413f516581f65e34183750cfb3cd84bf2f1fa62e00e4311a19a4855d"
+        },
+        {
+          "path": "runs/R03/ui-independent/root-review.json",
+          "sha256": "20b94445efed4812d75360a9b344225cdee6a69d796ded3e9141de6225eefd22"
+        },
+        {
+          "path": "runs/R03/ui-followup/observations.json",
+          "sha256": "71a6711941843a8743fb640f36e1a9c4f5eec6556d7d85498a24150accbdaf3b"
+        },
+        {
+          "path": "runs/R03/ui-followup/command.json",
+          "sha256": "cf30a06cf768a7f698074c7d201cad760077bbb5f712aa99352c4711b3640656"
+        },
+        {
+          "path": "runs/R03/ui/root-visual-review.json",
+          "sha256": "0cfce3ac3e9b0e4dbc557df93480480da18ddc676f583cc63474df6cf481086c"
+        },
+        {
+          "path": "runs/R03/ui-independent/worker/results.json",
+          "sha256": "a2673add413f516581f65e34183750cfb3cd84bf2f1fa62e00e4311a19a4855d"
+        },
+        {
+          "path": "runs/R03/ui-independent/root-review.json",
+          "sha256": "20b94445efed4812d75360a9b344225cdee6a69d796ded3e9141de6225eefd22"
+        },
+        {
+          "path": "runs/R03/ui-followup/observations.json",
+          "sha256": "71a6711941843a8743fb640f36e1a9c4f5eec6556d7d85498a24150accbdaf3b"
+        },
+        {
+          "path": "runs/R03/ui-followup/command.json",
+          "sha256": "cf30a06cf768a7f698074c7d201cad760077bbb5f712aa99352c4711b3640656"
+        },
+        {
+          "path": "runs/R03/ui/root-visual-review.json",
+          "sha256": "0cfce3ac3e9b0e4dbc557df93480480da18ddc676f583cc63474df6cf481086c"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R03-02-1",
+          "started_at": "2026-10-04T05:16:25.993896+00:00",
+          "requirements_hash": "fb6c4da40f34dc914077ce20c57ec71837c43bc21837511f65431eeadd54ddb4",
+          "inputs": [
+            {
+              "path": "runs/R03/materials/ui-brief.json",
+              "sha256": "98413cb9c9242cf92ad7d58b65b7e169d967b9e543aabd85533e5c369f77dd07"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R03/ui-independent/accepted-command.json",
+            "sha256": "472bda9fcbefc5dbf9e40c824ef206052c0c750d4bcdd74da907695c29f78685"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T05:25:53.798879+00:00",
+          "result": {
+            "path": "runs/R03/ui/task-result.json",
+            "sha256": "c644093cc8452c726b66986f5e90fd31c2e267e8a4f5ab3e0ec0a45ee11e5f5c"
+          },
+          "evidence": [
+            {
+              "path": "runs/R03/ui/task-result.json",
+              "sha256": "c644093cc8452c726b66986f5e90fd31c2e267e8a4f5ab3e0ec0a45ee11e5f5c"
+            },
+            {
+              "path": "runs/R03/ui-independent/worker/results.json",
+              "sha256": "a2673add413f516581f65e34183750cfb3cd84bf2f1fa62e00e4311a19a4855d"
+            },
+            {
+              "path": "runs/R03/ui-independent/root-review.json",
+              "sha256": "20b94445efed4812d75360a9b344225cdee6a69d796ded3e9141de6225eefd22"
+            },
+            {
+              "path": "runs/R03/ui-followup/observations.json",
+              "sha256": "71a6711941843a8743fb640f36e1a9c4f5eec6556d7d85498a24150accbdaf3b"
+            },
+            {
+              "path": "runs/R03/ui-followup/command.json",
+              "sha256": "cf30a06cf768a7f698074c7d201cad760077bbb5f712aa99352c4711b3640656"
+            },
+            {
+              "path": "runs/R03/ui/root-visual-review.json",
+              "sha256": "0cfce3ac3e9b0e4dbc557df93480480da18ddc676f583cc63474df6cf481086c"
+            },
+            {
+              "path": "runs/R03/ui-independent/worker/results.json",
+              "sha256": "a2673add413f516581f65e34183750cfb3cd84bf2f1fa62e00e4311a19a4855d"
+            },
+            {
+              "path": "runs/R03/ui-independent/root-review.json",
+              "sha256": "20b94445efed4812d75360a9b344225cdee6a69d796ded3e9141de6225eefd22"
+            },
+            {
+              "path": "runs/R03/ui-followup/observations.json",
+              "sha256": "71a6711941843a8743fb640f36e1a9c4f5eec6556d7d85498a24150accbdaf3b"
+            },
+            {
+              "path": "runs/R03/ui-followup/command.json",
+              "sha256": "cf30a06cf768a7f698074c7d201cad760077bbb5f712aa99352c4711b3640656"
+            },
+            {
+              "path": "runs/R03/ui/root-visual-review.json",
+              "sha256": "0cfce3ac3e9b0e4dbc557df93480480da18ddc676f583cc63474df6cf481086c"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Probe remaining runtime branches and advance only with actual successor start."
+    },
+    {
+      "id": "R04-01",
+      "title": "复核可用运行时并冻结下一轮扩展",
+      "queue": "capabilities",
+      "category": "runtime_boundaries",
+      "complexity": 4,
+      "priority": 70,
+      "depends_on": [
+        "R03-02"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R04/capability-probe/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Probe current provider/browser/background/CI capabilities without disclosing credentials"
+        },
+        {
+          "id": "a2",
+          "assertion": "Map each remaining historical capability to evidence, specific blocker or ready next experiment"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R04/capability-probe/task-result.json",
+          "sha256": "a77cb20fc2be1969ae5cc4cbdabab78d38f2c5d3a761f0327c301b551d11fa17"
+        },
+        {
+          "path": "runs/R04/capability-probe/probe.json",
+          "sha256": "6be410423fe39a58a0f70329bcfd51af2816f27c08c91ad3b10afb68f929a885"
+        },
+        {
+          "path": "runs/R04/capability-probe/environment-status.json",
+          "sha256": "00f8f0c5503ac19086fd6f58abe658dc3db94112a84244616c9ad5b6ff7b4671"
+        },
+        {
+          "path": "runs/R04/capability-probe/backlog-mapping.json",
+          "sha256": "b9adc2590dcb04e78b1631f5840fe52b6dc9096193ae66bcf5d59067b65c5ac5"
+        },
+        {
+          "path": "runs/R04/capability-probe/automation-create.json",
+          "sha256": "286bde03281146509d5d89e9bf510d1728b2015ee4849b1f5b7482db16b70ab9"
+        },
+        {
+          "path": "runs/R04/capability-probe/probe.json",
+          "sha256": "6be410423fe39a58a0f70329bcfd51af2816f27c08c91ad3b10afb68f929a885"
+        },
+        {
+          "path": "runs/R04/capability-probe/environment-status.json",
+          "sha256": "00f8f0c5503ac19086fd6f58abe658dc3db94112a84244616c9ad5b6ff7b4671"
+        },
+        {
+          "path": "runs/R04/capability-probe/backlog-mapping.json",
+          "sha256": "b9adc2590dcb04e78b1631f5840fe52b6dc9096193ae66bcf5d59067b65c5ac5"
+        },
+        {
+          "path": "runs/R04/capability-probe/automation-create.json",
+          "sha256": "286bde03281146509d5d89e9bf510d1728b2015ee4849b1f5b7482db16b70ab9"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R04-01-1",
+          "started_at": "2026-10-04T05:25:53.853194+00:00",
+          "requirements_hash": "a31260602137f10897c758a9d69232480a83a615d9a63b880a33bc537e086477",
+          "inputs": [
+            {
+              "path": "runs/R00/requirements.json",
+              "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R04/capability-probe/first-step.json",
+            "sha256": "c8ff7f0daacd4d068eec673397e605d0e7a43461e9d10b7e2e08f73491a45345"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T05:26:18.489141+00:00",
+          "result": {
+            "path": "runs/R04/capability-probe/task-result.json",
+            "sha256": "a77cb20fc2be1969ae5cc4cbdabab78d38f2c5d3a761f0327c301b551d11fa17"
+          },
+          "evidence": [
+            {
+              "path": "runs/R04/capability-probe/task-result.json",
+              "sha256": "a77cb20fc2be1969ae5cc4cbdabab78d38f2c5d3a761f0327c301b551d11fa17"
+            },
+            {
+              "path": "runs/R04/capability-probe/probe.json",
+              "sha256": "6be410423fe39a58a0f70329bcfd51af2816f27c08c91ad3b10afb68f929a885"
+            },
+            {
+              "path": "runs/R04/capability-probe/environment-status.json",
+              "sha256": "00f8f0c5503ac19086fd6f58abe658dc3db94112a84244616c9ad5b6ff7b4671"
+            },
+            {
+              "path": "runs/R04/capability-probe/backlog-mapping.json",
+              "sha256": "b9adc2590dcb04e78b1631f5840fe52b6dc9096193ae66bcf5d59067b65c5ac5"
+            },
+            {
+              "path": "runs/R04/capability-probe/automation-create.json",
+              "sha256": "286bde03281146509d5d89e9bf510d1728b2015ee4849b1f5b7482db16b70ab9"
+            },
+            {
+              "path": "runs/R04/capability-probe/probe.json",
+              "sha256": "6be410423fe39a58a0f70329bcfd51af2816f27c08c91ad3b10afb68f929a885"
+            },
+            {
+              "path": "runs/R04/capability-probe/environment-status.json",
+              "sha256": "00f8f0c5503ac19086fd6f58abe658dc3db94112a84244616c9ad5b6ff7b4671"
+            },
+            {
+              "path": "runs/R04/capability-probe/backlog-mapping.json",
+              "sha256": "b9adc2590dcb04e78b1631f5840fe52b6dc9096193ae66bcf5d59067b65c5ac5"
+            },
+            {
+              "path": "runs/R04/capability-probe/automation-create.json",
+              "sha256": "286bde03281146509d5d89e9bf510d1728b2015ee4849b1f5b7482db16b70ab9"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Start original preset browser target from frozen source and original journeys, then advance R05."
+    },
+    {
+      "id": "BACKLOG-preset_browser_acceptance",
+      "title": "Execute planned UI journeys only when the target app and permitted browser/device access are available; no workaround or inferred UI pass.",
+      "queue": "capabilities",
+      "category": "preset_browser_acceptance",
+      "complexity": 4,
+      "priority": 90,
+      "depends_on": [
+        "R04-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/future/preset_browser_acceptance/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Establish actual target evidence for this capability"
+        }
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "attempts": [
+        {
+          "id": "BACKLOG-preset_browser_acceptance-1",
+          "started_at": "2026-10-04T05:26:49.091815+00:00",
+          "requirements_hash": "bda88813825e31b0c26d2795efe49c222379c6f76a74e2829e6fb6278c6f63df",
+          "inputs": [
+            {
+              "path": "runs/R00/requirements.json",
+              "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/future/preset_browser_acceptance/first-step-command.json",
+            "sha256": "9f217be89fb7ad05bef6b8d6e0c46e7a2cb5c269806baf12cd34986798a276cc"
+          },
+          "status": "in_progress"
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Original preset has actually rendered in Chromium151 at 1440/390px and switched palette. Freeze full journeys from original design acceptance, then check filter/detail/focus/run-again/delete-confirm/cancel-refresh/error-retry/reduced-motion with original sample; preserve all failures, no effect/performance inference.",
+      "historical_task_id": "preset_browser_acceptance",
+      "historical_status": "blocked",
+      "historical_evidence": "forge-design-upgrade/browser-capability.json"
+    },
+    {
+      "id": "BACKLOG-versioned_preset_catalog",
+      "title": "Root authors a small task/platform catalog and checks based on verified research; do not mark target visuals passed without browser/device evidence.",
+      "queue": "capabilities",
+      "category": "versioned_preset_catalog",
+      "complexity": 4,
+      "priority": 91,
+      "depends_on": [
+        "R04-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/future/versioned_preset_catalog/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Add task/platform variants with source revision, reuse terms, paired tokens, component states, motion and actual target evidence."
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Root authors a small task/platform catalog and checks based on verified research; do not mark target visuals passed without browser/device evidence.",
+      "historical_task_id": "versioned_preset_catalog",
+      "historical_status": "planned",
+      "historical_evidence": []
+    },
+    {
+      "id": "BACKLOG-real_agent_executor_integration",
+      "title": "Preserve distinct remaining SDK/global resources/natural network/external-effect work. See docs/ROADMAP.md; C1 partial is not a hard success dependency for all development.",
+      "queue": "capabilities",
+      "category": "real_agent_executor_integration",
+      "complexity": 4,
+      "priority": 92,
+      "depends_on": [
+        "R04-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/future/real_agent_executor_integration/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Implement and exercise native task-to-worker dispatch and required-case grading; existing projectctl state and fixtures do not supply these capabilities."
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R04/capability-probe/backlog-mapping.json",
+          "sha256": "b9adc2590dcb04e78b1631f5840fe52b6dc9096193ae66bcf5d59067b65c5ac5"
+        }
+      ],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "No configured provider endpoint/identity/credential in current environment; native collaboration is available but is not an independent provider SDK.",
+      "next_action": "Resume this live branch when authorized provider endpoint/identity, observable termination/resources and isolated effect sandbox are configured; keep offline contract work eligible.",
+      "historical_task_id": "real_agent_executor_integration",
+      "historical_status": "partial",
+      "historical_evidence": [
+        "forge-method-refinement-20261002/Host_Worker_Bridge_Iteration_Brief.md",
+        "forge-host-bridge-20261002/Host_Bridge_Results.md",
+        "forge-host-bridge-20261002/Final_Verification_Record.json",
+        "forge-host-bridge-20261002/Host_Bridge_Saved_Source_Record.json",
+        "forge-host-driver-20261002/Driver_Results.md",
+        "forge-host-driver-20261002/Final_Verification_Record.json",
+        "forge-host-driver-20261002/Driver_Evidence.json",
+        "forge-host-driver-20261002/Driver_Saved_Source_Record.json",
+        "forge-resume-20261003/Forge_Continuation_Results_20261003.md",
+        "forge-resume-20261003/Forge_Continuation_Evidence_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Verification_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Results_20261003.md",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Verification_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Evidence_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md"
+      ]
+    },
+    {
+      "id": "BACKLOG-real_worker_failure_recovery_trials",
+      "title": "Preserve distinct remaining SDK/global resources/natural network/external-effect work. See docs/ROADMAP.md; C1 partial is not a hard success dependency for all development.",
+      "queue": "capabilities",
+      "category": "real_worker_failure_recovery_trials",
+      "complexity": 4,
+      "priority": 93,
+      "depends_on": [
+        "R04-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/future/real_worker_failure_recovery_trials/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Distinguish fixture tests from real host events; termination, state preservation and no repeated side effects; provider identity/cost only if measured."
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R04/capability-probe/backlog-mapping.json",
+          "sha256": "b9adc2590dcb04e78b1631f5840fe52b6dc9096193ae66bcf5d59067b65c5ac5"
+        }
+      ],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "Command-process crash recovery is measured; remaining provider-terminal acknowledgements, natural network events and authorized external-effect sandbox are not supplied.",
+      "next_action": "Resume this live branch when authorized provider endpoint/identity, observable termination/resources and isolated effect sandbox are configured; keep offline contract work eligible.",
+      "historical_task_id": "real_worker_failure_recovery_trials",
+      "historical_status": "partial",
+      "historical_evidence": [
+        "forge-host-bridge-20261002/Final_Verification_Record.json",
+        "forge-host-bridge-20261002/Bridge_Evidence.json",
+        "forge-host-driver-20261002/Driver_Results.md",
+        "forge-host-driver-20261002/Final_Verification_Record.json",
+        "forge-host-driver-20261002/Driver_Evidence.json",
+        "forge-host-driver-20261002/Driver_Saved_Source_Record.json",
+        "forge-resume-20261003/Forge_Continuation_Results_20261003.md",
+        "forge-resume-20261003/Forge_Continuation_Evidence_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Verification_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Results_20261003.md",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Verification_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Evidence_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md"
+      ]
+    },
+    {
+      "id": "BACKLOG-bridge_budget_timeout_validation",
+      "title": "Preserve distinct remaining SDK/global resources/natural network/external-effect work. See docs/ROADMAP.md; C1 partial is not a hard success dependency for all development.",
+      "queue": "capabilities",
+      "category": "bridge_budget_timeout_validation",
+      "complexity": 4,
+      "priority": 94,
+      "depends_on": [
+        "R04-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/future/bridge_budget_timeout_validation/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Actual timeout and terminal observations retained"
+        },
+        {
+          "id": "a2",
+          "assertion": "Naturally late and duplicate events measured separately from injected reimports"
+        },
+        {
+          "id": "a3",
+          "assertion": "Budget/admission limits enforced rather than merely declared"
+        },
+        {
+          "id": "a4",
+          "assertion": "Tokens/cost reported only if supplied by host/provider"
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R04/capability-probe/backlog-mapping.json",
+          "sha256": "b9adc2590dcb04e78b1631f5840fe52b6dc9096193ae66bcf5d59067b65c5ac5"
+        }
+      ],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "Current host does not expose provider-global token/admission/cancel-ack telemetry; local cooperative worker limit is not global enforcement.",
+      "next_action": "Resume this live branch when authorized provider endpoint/identity, observable termination/resources and isolated effect sandbox are configured; keep offline contract work eligible.",
+      "historical_task_id": "bridge_budget_timeout_validation",
+      "historical_status": "partial",
+      "historical_evidence": [
+        "forge-host-driver-20261002/Next_Layer_Plan.md",
+        "forge-host-driver-20261002/Driver_Results.md",
+        "forge-host-driver-20261002/Final_Verification_Record.json",
+        "forge-host-driver-20261002/Driver_Evidence.json",
+        "forge-host-driver-20261002/Driver_Saved_Source_Record.json",
+        "forge-resume-20261003/Forge_Continuation_Results_20261003.md",
+        "forge-resume-20261003/Forge_Continuation_Evidence_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Verification_20261003.json",
+        "forge-resume-20261003/Forge_Continuation_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Results_20261003.md",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Verification_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Evidence_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Source_20261003.json",
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md"
+      ]
+    },
+    {
+      "id": "BACKLOG-host_protocol_overhead_comparison",
+      "title": "Any later efficacy trial must be newly frozen; C1 remains partial/inconclusive and is never rerun to improve its score.",
+      "queue": "capabilities",
+      "category": "host_protocol_overhead_comparison",
+      "complexity": 4,
+      "priority": 95,
+      "depends_on": [
+        "R04-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/future/host_protocol_overhead_comparison/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Two pairs per project/package block, eight actual business workers with independent original review/commit"
+        },
+        {
+          "id": "a2",
+          "assertion": "Same candidate, source hashes, acceptance, native settings, allowed actions and preflight; preserve all failures and assistance"
+        },
+        {
+          "id": "a3",
+          "assertion": "Retain original native returns and CLI; explicit observer timing scope and null missing telemetry"
+        },
+        {
+          "id": "a4",
+          "assertion": "Capture worker pre-completion reply preflight, not just coordinator post-receive checks"
+        },
+        {
+          "id": "a5",
+          "assertion": "Only descriptive paired results; no stable global speed or provider identity claim"
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Any later efficacy trial must be newly frozen; C1 remains partial/inconclusive and is never rerun to improve its score.",
+      "historical_task_id": "host_protocol_overhead_comparison",
+      "historical_status": "partial",
+      "historical_evidence": [
+        "forge-protocol-drafts-20261003/Host_Protocol_Drafts_Next_20261003.md",
+        "forge-protocol-comparison-20261003/Host_Protocol_Comparison_Results_20261003.md",
+        "forge-protocol-comparison-20261003/coordinator/Final_Record_Index.json",
+        "forge-protocol-comparison-20261003/coordinator/cutoff-snapshot/Snapshot_Manifest.json",
+        "validation/luna/a04_project_a2_evidence.json",
+        "runs/S01/final-review.json",
+        "runs/S01/cloud-audit/worker/audit.json"
+      ]
+    },
+    {
+      "id": "CAP-sdk_adapter_contract",
+      "title": "定义独立 provider 适配器接口并验证本地协议边界",
+      "queue": "capabilities",
+      "category": "provider_adapter",
+      "complexity": 4,
+      "priority": 92,
+      "depends_on": [
+        "R04-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/future/provider-adapter/"
+      ],
+      "inputs": [
+        "runs/R00/requirements.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Freeze provider-neutral request/result/idempotency/cancel contract and implement local validation without claiming live SDK execution"
+        },
+        {
+          "id": "a2",
+          "assertion": "Keep live provider validation blocked separately until an authorized endpoint/identity and observation contract exist"
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "定义独立 provider 适配器接口并验证本地协议边界"
+    },
+    {
+      "id": "X01-concurrent_ticket_edits",
+      "title": "验证双客户端并发更新工单",
+      "queue": "challenges",
+      "category": "concurrent_application",
+      "complexity": 4,
+      "priority": 93,
+      "depends_on": [
+        "R04-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/future/concurrent-ticket/"
+      ],
+      "inputs": [
+        "runs/R04/capability-probe/concurrent-brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Two real clients issue updates from the same version; exactly one succeeds and one conflicts with no lost history"
+        },
+        {
+          "id": "a2",
+          "assertion": "Retain original requests, database and conflict UI evidence; do not infer load or provider guarantees"
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "验证双客户端并发更新工单"
+    }
+  ],
+  "execution": {
+    "mode": "cooperative_host",
+    "background_available": null,
+    "background_probe": "R04-01",
+    "native_pending": [],
+    "limit": "Current host executes real work. Hourly continuation/check is enabled, but a future run has not yet demonstrated checkout/command/native execution; it must probe and report that branch honestly. No daemon or permanent service is claimed.",
+    "monitor_configured": true,
+    "monitor_id": "6ac1e1f6159081919cd571f6fa15d397",
+    "monitor_schedule": "hourly",
+    "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
+    "background_code_execution_verified": false,
+    "session_state": "active_coordinator"
+  },
+  "events": [
+    {
+      "at": "2026-10-04T04:50:05.504534+00:00",
+      "command": "start",
+      "result": {
+        "id": "R01-01-1",
+        "started_at": "2026-10-04T04:50:05.504002+00:00",
+        "requirements_hash": "e37b409e6adc17acf0ebc0e933b406fb0a844d848718727ad7db5b43126e7e0e",
+        "inputs": [
+          {
+            "path": "runs/R00/requirements.json",
+            "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R01/mechanism-first-step.json",
+          "sha256": "6bc262bcf2122ab388177ede04bcea53503563f8d12fb186c5334d86c339cd2a"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T04:50:57.162336+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R01-01",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T04:50:57.265278+00:00",
+      "command": "start",
+      "result": {
+        "id": "R01-02-1",
+        "started_at": "2026-10-04T04:50:57.265048+00:00",
+        "requirements_hash": "847bb6b4957cb4a45e57b370a1efc7b9ea3a58fe42d30565699951291ac56ed0",
+        "inputs": [
+          {
+            "path": "runs/R01/calendar/input.json",
+            "sha256": "c9da3af49cc0d401e049981065130d595f58531e74e328ea1a454fed05edbdcd"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R01/calendar/first-step.json",
+          "sha256": "e19835d813edd2732bd23cb8e0ee7ecb699451ef9f860032be671f4b53ca6695"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T04:51:19.066612+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R01-02",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T04:51:19.177594+00:00",
+      "command": "start",
+      "result": {
+        "id": "R01-03-1",
+        "started_at": "2026-10-04T04:51:19.177361+00:00",
+        "requirements_hash": "a11a602eac50ea21ad5be9b269bf62a5cd3a99da08c63d52e9ec6cbe5f4f5990",
+        "inputs": [
+          {
+            "path": "runs/R01/import/legacy.json",
+            "sha256": "7ae8a28ba10e4bde93fb9fefa7c9109e6eca63e96afc37a80f6177bf82c992bc"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R01/import/first-step.json",
+          "sha256": "369c76d834bd0c3eef7f37d242617d870a04a65da820d8030b38a68b991b8bac"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T04:55:22.804057+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R01-03",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T04:57:35.012133+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T04:59:07.863798+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.546816+00:00",
+      "command": "start",
+      "result": {
+        "id": "R02-01-1",
+        "started_at": "2026-10-04T05:16:25.546561+00:00",
+        "requirements_hash": "0bb945f65e9b25c01d08149013eed785f5a7eabe24fa89d966c3a8f01cce9a1c",
+        "inputs": [
+          {
+            "path": "runs/R02/materials/recovery-batch.json",
+            "sha256": "3b4541ce07fdb931e6cdc32a114c2320573baa404503563c58a38bdb86fff2cb"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R02/worker-recovery/01-freeze-check-command.json",
+          "sha256": "245a8a4c762a4037fc03fee868b2182b830d741067c2f21662a253112e174c9a"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.591973+00:00",
+      "command": "advance",
+      "result": {
+        "closed_phase": "R01",
+        "active_phase": "R02",
+        "actual_start": {
+          "path": "runs/R02/worker-recovery/01-freeze-check-command.json",
+          "sha256": "245a8a4c762a4037fc03fee868b2182b830d741067c2f21662a253112e174c9a"
+        }
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.635862+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R02-01",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.682802+00:00",
+      "command": "start",
+      "result": {
+        "id": "R02-02-1",
+        "started_at": "2026-10-04T05:16:25.682552+00:00",
+        "requirements_hash": "6d3a95c27efccdc814e87b7846549e5d18d90116095eac9533883b46e88c5e53",
+        "inputs": [
+          {
+            "path": "runs/R02/materials/flow-brief.json",
+            "sha256": "7b0682db565b8c689bfbbdda07166f45a05f8f3b585079e3919ab8be6cb8e105"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R02/flow/02-successor-start-command.json",
+          "sha256": "51a3f94d821e8d8b0e988c1afa37dfa97d8550d1f8484cfa7ec6623ea65b6016"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.750930+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R02-02",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.803596+00:00",
+      "command": "start",
+      "result": {
+        "id": "R03-01-1",
+        "started_at": "2026-10-04T05:16:25.803354+00:00",
+        "requirements_hash": "d8a29db359cc353cf94a3f0dc6060180e00b7908881f23c0f30d2dd1af5132f9",
+        "inputs": [
+          {
+            "path": "runs/R03/materials/ticket-brief.json",
+            "sha256": "35e03b49b978adcc52efe1168a7e012d3e3eaaf7120e02a6c9c238d822497205"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R03/app/first-step.json",
+          "sha256": "0d532249c73f2ab393ed291abc3de7a9525526b03944fd27a4c6d0a32b37a108"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.857078+00:00",
+      "command": "advance",
+      "result": {
+        "closed_phase": "R02",
+        "active_phase": "R03",
+        "actual_start": {
+          "path": "runs/R03/app/first-step.json",
+          "sha256": "0d532249c73f2ab393ed291abc3de7a9525526b03944fd27a4c6d0a32b37a108"
+        }
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.939151+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R03-01",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T05:16:25.994266+00:00",
+      "command": "start",
+      "result": {
+        "id": "R03-02-1",
+        "started_at": "2026-10-04T05:16:25.993896+00:00",
+        "requirements_hash": "fb6c4da40f34dc914077ce20c57ec71837c43bc21837511f65431eeadd54ddb4",
+        "inputs": [
+          {
+            "path": "runs/R03/materials/ui-brief.json",
+            "sha256": "98413cb9c9242cf92ad7d58b65b7e169d967b9e543aabd85533e5c369f77dd07"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R03/ui-independent/accepted-command.json",
+          "sha256": "472bda9fcbefc5dbf9e40c824ef206052c0c750d4bcdd74da907695c29f78685"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T05:19:26.381081+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T05:20:11.361190+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T05:25:53.798983+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R03-02",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T05:25:53.853418+00:00",
+      "command": "start",
+      "result": {
+        "id": "R04-01-1",
+        "started_at": "2026-10-04T05:25:53.853194+00:00",
+        "requirements_hash": "a31260602137f10897c758a9d69232480a83a615d9a63b880a33bc537e086477",
+        "inputs": [
+          {
+            "path": "runs/R00/requirements.json",
+            "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R04/capability-probe/first-step.json",
+          "sha256": "c8ff7f0daacd4d068eec673397e605d0e7a43461e9d10b7e2e08f73491a45345"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T05:25:53.912243+00:00",
+      "command": "advance",
+      "result": {
+        "closed_phase": "R03",
+        "active_phase": "R04",
+        "actual_start": {
+          "path": "runs/R04/capability-probe/first-step.json",
+          "sha256": "c8ff7f0daacd4d068eec673397e605d0e7a43461e9d10b7e2e08f73491a45345"
+        }
+      }
+    },
+    {
+      "at": "2026-10-04T05:26:18.489248+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R04-01",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T05:26:18.563289+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "BACKLOG-real_agent_executor_integration",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-04T05:26:18.619351+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "BACKLOG-real_worker_failure_recovery_trials",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-04T05:26:18.673750+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "BACKLOG-bridge_budget_timeout_validation",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-04T05:26:49.092040+00:00",
+      "command": "start",
+      "result": {
+        "id": "BACKLOG-preset_browser_acceptance-1",
+        "started_at": "2026-10-04T05:26:49.091815+00:00",
+        "requirements_hash": "bda88813825e31b0c26d2795efe49c222379c6f76a74e2829e6fb6278c6f63df",
+        "inputs": [
+          {
+            "path": "runs/R00/requirements.json",
+            "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/future/preset_browser_acceptance/first-step-command.json",
+          "sha256": "9f217be89fb7ad05bef6b8d6e0c46e7a2cb5c269806baf12cd34986798a276cc"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T05:26:49.154306+00:00",
+      "command": "advance",
+      "result": {
+        "closed_phase": "R04",
+        "active_phase": "R05",
+        "actual_start": {
+          "path": "runs/future/preset_browser_acceptance/first-step-command.json",
+          "sha256": "9f217be89fb7ad05bef6b8d6e0c46e7a2cb5c269806baf12cd34986798a276cc"
+        }
+      }
+    },
+    {
+      "at": "2026-10-04T05:26:49.233177+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    }
+  ],
+  "task_expansion_basis": [
+    {
+      "task": "CAP-sdk_adapter_contract",
+      "basis": "Current configured provider credentials are absent; independent protocol design remains useful and executable.",
+      "evidence": "runs/R04/capability-probe/environment-status.json"
+    },
+    {
+      "task": "X01-concurrent_ticket_edits",
+      "basis": "R03 sequential stale-version rejection passed; simultaneous clients are a distinct higher-complexity untested application condition.",
+      "evidence": "runs/R03/app/api-cases/report.json"
+    }
+  ]
+}

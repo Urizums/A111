@@ -1,0 +1,99 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R03",
+  "goal": "Progress the long-term R&D loop with actual evidence.",
+  "tasks": [
+    {
+      "id": "R03-01",
+      "title": "实现完整工单应用",
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "challenges/ticket-desk/",
+        "runs/R03/app/"
+      ],
+      "acceptance": [
+        "Actual HTTP create/filter/state transitions persist across restart",
+        "Validation, stale update and history retention preserve state on errors"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R03/app/task-result.json",
+        "runs/R03/app/api-cases/report.json",
+        "runs/R03/app/api-raw/requests.json",
+        "runs/R03/app/api-raw/processes.json",
+        "runs/R03/app/api-cases-310/report.json",
+        "runs/R03/app/api-cases/report.json",
+        "runs/R03/app/api-raw/requests.json",
+        "runs/R03/app/api-raw/processes.json",
+        "runs/R03/app/api-cases-310/report.json",
+        "runs/R03/app/first-step.json"
+      ],
+      "blocker": null,
+      "next_action": "Inspect actual browser journeys and independent visual/interaction evidence."
+    },
+    {
+      "id": "R03-02",
+      "title": "验证工单 UI 和交互",
+      "owner": "root",
+      "depends_on": [
+        "R03-01"
+      ],
+      "write_paths": [
+        "challenges/ticket-desk/",
+        "runs/R03/ui/"
+      ],
+      "acceptance": [
+        "Actual browser completes create/filter/transition/reopen against real backend",
+        "Desktop/mobile layout, keyboard, validation and conflict states are inspected in target"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R03/ui/task-result.json",
+        "runs/R03/ui-independent/worker/results.json",
+        "runs/R03/ui-independent/root-review.json",
+        "runs/R03/ui-followup/observations.json",
+        "runs/R03/ui-followup/command.json",
+        "runs/R03/ui/root-visual-review.json",
+        "runs/R03/ui-independent/worker/results.json",
+        "runs/R03/ui-independent/root-review.json",
+        "runs/R03/ui-followup/observations.json",
+        "runs/R03/ui-followup/command.json",
+        "runs/R03/ui/root-visual-review.json",
+        "runs/R03/ui-independent/accepted-command.json"
+      ],
+      "blocker": null,
+      "next_action": "Probe remaining runtime branches and advance only with actual successor start."
+    },
+    {
+      "id": "R03-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R03-01",
+        "R03-02"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "Next phase first task has actual recorded execution; preserve current phase archive"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R04/capability-probe/first-step.json"
+      ],
+      "blocker": null,
+      "next_action": "Continue the already started successor task.",
+      "transition": {
+        "next_phase_id": "R04",
+        "todo_path": "state/phase-todo.json",
+        "first_task_id": "R04-01",
+        "start_evidence": [
+          "runs/R04/capability-probe/first-step.json"
+        ]
+      }
+    }
+  ]
+}

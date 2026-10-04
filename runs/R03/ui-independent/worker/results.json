@@ -1,0 +1,163 @@
+{
+  "schema_version": "ui-independent-results/1",
+  "task_outcome": "partial_acceptance_report_delivered",
+  "date_utc": "2026-10-04",
+  "requirements_source": [
+    "/workspace/A111/runs/R03/materials/ticket-brief.json",
+    "/workspace/A111/runs/R03/materials/ui-brief.json"
+  ],
+  "runtime": {
+    "python": "3.12.14",
+    "playwright": "installed Python Playwright package from /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/__init__.py",
+    "browser": "Chromium 151.0.7922.173",
+    "executable": "/usr/bin/chromium",
+    "headless": true
+  },
+  "source_hashes_sha256": {
+    "/workspace/A111/challenges/ticket-desk/app.py": "2dcfde075ba8308e95d2f46aa17ab3da2f1de082474611618376c52be6180ece",
+    "/workspace/A111/challenges/ticket-desk/index.html": "822b64fec5b0a73e13ed369f72df3e53ff8fd42ab7950db996d105958a8f9f82",
+    "/workspace/A111/challenges/ticket-desk/app.js": "cf1ed88501e347289db09f183c8a66e39d037da817a51421b6043cf3e239158b",
+    "/workspace/A111/challenges/ticket-desk/style.css": "f1c0ce6a7bc430a67f4217029a7015530d53936ce9e412aec7ea03362af9860c"
+  },
+  "browser_runs": [
+    {
+      "label": "attempt1",
+      "port": 43725,
+      "database": "/workspace/A111/runs/R03/ui-independent/worker/tickets.sqlite3",
+      "exit_code": 1,
+      "checks_passed_before_failure": 5,
+      "failure": "30-second locator timeout reading a second row removed by asynchronous search result replacement",
+      "preserved_evidence": "browser-evidence-attempt1.json"
+    },
+    {
+      "label": "correction1",
+      "port": 45511,
+      "database": "/workspace/A111/runs/R03/ui-independent/worker/tickets-correction1.sqlite3",
+      "exit_code": 1,
+      "checks_passed_before_failure": 5,
+      "failure": "Content Security Policy blocked Playwright wait_for_function string evaluation because unsafe-eval is disallowed",
+      "preserved_evidence": "browser-evidence-correction1.json"
+    },
+    {
+      "label": "final",
+      "port": 46559,
+      "database": "/workspace/A111/runs/R03/ui-independent/worker/tickets-final.sqlite3",
+      "exit_code": 1,
+      "checks_passed_before_failure": 6,
+      "failure": "Harness waited for the updated ticket to remain visible while the open-only filter correctly removed it after a successful transition",
+      "preserved_evidence": "browser-evidence-final.json",
+      "confirmed_browser_transition": {
+        "ticket_id": 1,
+        "from": "open",
+        "to": "in_progress",
+        "version": 2,
+        "http_status": 200
+      }
+    }
+  ],
+  "real_browser_checks": [
+    {
+      "check": "controlled loading feedback from actual backend response",
+      "status": "passed",
+      "details": "A disclosed 800 ms delay held a response fetched from the real GET /api/tickets endpoint."
+    },
+    {
+      "check": "initial empty state and zero counts",
+      "status": "passed"
+    },
+    {
+      "check": "semantic labels for title, description, priority, and search",
+      "status": "passed"
+    },
+    {
+      "check": "required-field validation and draft retention",
+      "status": "passed",
+      "details": "Blank description produced Chinese validation feedback, retained title and urgent priority, focused description, and set aria-invalid=true."
+    },
+    {
+      "check": "create supplied tickets and update counts through real HTTP/SQLite",
+      "status": "passed",
+      "fixtures": [
+        {"title": "打印队列卡住", "description": "二楼共享打印机无法继续", "priority": "normal"},
+        {"title": "会议室视频无声", "description": "音频输出设备丢失", "priority": "urgent"}
+      ],
+      "counts": {"all": 2, "open": 2, "in_progress": 0, "resolved": 0}
+    },
+    {
+      "check": "status filter and text search",
+      "status": "passed",
+      "details": "Open filter showed two persisted tickets; searching 打印队列卡住 returned one ticket."
+    },
+    {
+      "check": "browser status progression, reopen, history, stale conflict UI message",
+      "status": "partial",
+      "details": "Browser action open→in_progress succeeded. Harness then waited in the still-selected open filter and timed out. Remaining progression/history and stale conflict were verified through the post-restart API probe, not browser UI."
+    }
+  ],
+  "post_restart_api_checks": {
+    "server": "http://127.0.0.1:40053",
+    "database": "/workspace/A111/runs/R03/ui-independent/worker/tickets-final.sqlite3",
+    "all_checks_passed": true,
+    "persisted_ticket_1_after_restart": {"status": "in_progress", "version": 2},
+    "separate_client_stale_request": {"expected_version": 1, "http_status": 409, "state_unchanged": true},
+    "valid_updates": ["in_progress→resolved (200)", "resolved→open (200)"],
+    "invalid_update": {"transition": "open→resolved", "http_status": 400, "state_unchanged": true},
+    "final_state": {"status": "open", "version": 4},
+    "history_entries": 4
+  },
+  "visual_review": {
+    "screenshots_opened_and_viewed": [
+      "final-desktop-loading.png",
+      "final-desktop-empty.png",
+      "final-desktop-two-tickets.png"
+    ],
+    "desktop_notes": "Clear primary create action, status counts, readable compact rows, and useful empty/loading feedback. Visible title focus ring appears after create flow; no keyboard navigation was demonstrated.",
+    "narrow_mobile_390px": "not verified; no 390px screenshot or overflow measurement completed",
+    "keyboard_navigation": "not verified",
+    "reduced_motion": "not verified",
+    "contrast_source_palette_calculations": {
+      "body_text": 13.74,
+      "muted_text": 5.66,
+      "placeholder": 4.61,
+      "primary_button": 8.38,
+      "error_text": 7.69,
+      "urgent_badge": 6.25,
+      "unit": "contrast ratio :1",
+      "method_limit": "Calculated from inspected source CSS color values, not live rendered browser styles."
+    }
+  },
+  "network": {
+    "external_requests": 0,
+    "observed_browser_hosts": ["127.0.0.1:43725", "127.0.0.1:45511", "127.0.0.1:46559"],
+    "console_errors": [],
+    "page_errors": []
+  },
+  "failures_and_corrections": {
+    "failed_attempts_retained": [
+      "browser-evidence-attempt1.json",
+      "browser-evidence-correction1.json",
+      "browser-evidence-final.json"
+    ],
+    "corrective_rounds_used": 2,
+    "corrections": [
+      "Wait for list count after asynchronous search replacement and capture invalid state from the description input.",
+      "Replace CSP-blocked wait_for_function string evaluation with Python-side Playwright locator polling."
+    ],
+    "no_product_source_modified": true
+  },
+  "requirement_scope_note": "The frozen worksheet inferred a priority filter, but the original briefs do not specifically require a priority-filter control; status filtering and text search were exercised. No priority-specific filter was reported as a defect.",
+  "confirmed_product_defects": [],
+  "unavailable_measurements": {
+    "tokens": null,
+    "cost": null,
+    "model_active_time": null,
+    "user_study_usability": null,
+    "provider_speed_gain": null
+  },
+  "limits": [
+    "Browser stale-conflict feedback was not completed; the separate-client backend 409 was confirmed.",
+    "Resolve/reopen/history were completed through HTTP after restart, not fully through browser UI.",
+    "390px layout, keyboard navigation, and reduced-motion behavior remain unverified.",
+    "This is not a full accessibility audit or production certification."
+  ]
+}

@@ -1,0 +1,143 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T05:04:33Z",
+  "updated_at": "2026-10-04T05:06:17Z",
+  "revision": 3,
+  "status": "completed",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "ticket-desk",
+    "goal": "Complete local support desk",
+    "deliverable_kind": "software_system",
+    "requirements": [
+      {
+        "id": "req_ticket",
+        "text": "Implement the frozen original ticket requirements with a usable UI",
+        "origin": "explicit",
+        "basis": "runs/R03/materials/ticket-brief.json",
+        "acceptance_ids": [
+          "runtime"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "runtime",
+        "assertion": "Real HTTP CRUD, filters, transitions, optimistic conflict, history and restart preserve exact product state.",
+        "required": true,
+        "level": "runtime"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "implement",
+        "title": "Implement and validate local support desk",
+        "depends_on": [],
+        "owner": "root",
+        "write_paths": [
+          "challenges/ticket-desk/"
+        ],
+        "acceptance_ids": [
+          "runtime"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "d561dd1f018924a9c3d7d9d471d495f1e60ece4548acac2c2c814191b028045c",
+  "evaluation_plan_lock": {
+    "plan": {
+      "schema": "forge-eval/1",
+      "id": "ticket_desk",
+      "criteria": [
+        {
+          "id": "runtime",
+          "kind": "machine",
+          "required": true,
+          "assertion": "Real HTTP CRUD, filters, transitions, optimistic conflict, history and restart preserve exact product state."
+        }
+      ],
+      "cases": [
+        {
+          "id": "api_journey",
+          "inputs": {
+            "fixture": "runs/R03/materials/ticket-brief.json"
+          },
+          "expected": {
+            "passed": true,
+            "checks": [
+              "create_two",
+              "validation_unchanged",
+              "search_filter",
+              "transition",
+              "stale_unchanged",
+              "invalid_transition_unchanged",
+              "resolve_reopen",
+              "history",
+              "restart_persistence"
+            ]
+          },
+          "expected_status": "completed",
+          "criteria": [
+            "runtime"
+          ],
+          "required": true
+        }
+      ],
+      "baseline": "No support-desk service existed; frozen original ticket requirements define the workflow.",
+      "limitations": [
+        "Real loopback HTTP and SQLite, one local server; no production identity, load or external business effects.",
+        "UI evaluated separately in a real browser."
+      ]
+    },
+    "plan_hash": "9ae02e77e4ccf22bd3924170ed53f86f4f161688779222ba360a5345486514d8",
+    "source_path": "/workspace/A111/runs/R03/app/evaluation-plan.json"
+  },
+  "tasks": {
+    "implement": {
+      "status": "done",
+      "attempts": [
+        {
+          "attempt_id": "9090decc2c4745c3ae6306a3938712c8",
+          "plan_hash": "d561dd1f018924a9c3d7d9d471d495f1e60ece4548acac2c2c814191b028045c",
+          "evaluation_plan_hash": "9ae02e77e4ccf22bd3924170ed53f86f4f161688779222ba360a5345486514d8",
+          "acceptance_ids": [
+            "runtime"
+          ],
+          "started_at": "2026-10-04T05:05:04Z",
+          "finished_at": "2026-10-04T05:06:17Z",
+          "outcome": "done",
+          "reason": null,
+          "acceptance_results": {
+            "runtime": {
+              "status": "pass",
+              "level": "runtime",
+              "evidence": [
+                {
+                  "path": "/workspace/A111/runs/R03/app/api-cases/report.json",
+                  "sha256": "3b37adc60985d47735a694da4b2567fcaf52148c8f590e10a45948440677617e"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": [],
+  "case_assessments": [
+    {
+      "at": "2026-10-04T05:06:17Z",
+      "plan_hash": "d561dd1f018924a9c3d7d9d471d495f1e60ece4548acac2c2c814191b028045c",
+      "evaluation_plan_hash": "9ae02e77e4ccf22bd3924170ed53f86f4f161688779222ba360a5345486514d8",
+      "task_fingerprint": "62c8629eaa98612fdae769ea56fda5161de7a5e92373684effb1816d1794cd52",
+      "report": {
+        "path": "/workspace/A111/runs/R03/app/api-cases/report.json",
+        "sha256": "3b37adc60985d47735a694da4b2567fcaf52148c8f590e10a45948440677617e"
+      }
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/R02/worker-recovery/verify_recovery.py",
+    "snapshot",
+    "--database",
+    "runs/R02/worker-recovery/recovery.sqlite3",
+    "--output",
+    "runs/R02/worker-recovery/baseline-snapshot.json"
+  ],
+  "cwd": "/workspace/A111/runs/R02/handoff/worker/checkout",
+  "begin": {
+    "utc": "2026-10-04T05:03:57.979469+00:00",
+    "monotonic_ns": 34876625848128,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:03:58.009970+00:00",
+    "monotonic_ns": 34876656351438,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\"database_sha256\": \"3b1bf290873add72045ff301b8bb0b7f18cc05d08fe3225d1cf4b108b65fd0b5\", \"integrity_check\": \"ok\", \"row_counts\": {\"assets\": 1, \"import_batches\": 1, \"locations\": 1, \"service_events\": 0}}\n",
+  "stderr": "",
+  "stdout_base64": "eyJkYXRhYmFzZV9zaGEyNTYiOiAiM2IxYmYyOTA4NzNhZGQ3MjA0NWZmMzAxYjhiYjBiN2YxOGNjMDVkMDhmZTMyMjVkMWNmNGIxMDhiNjVmZDBiNSIsICJpbnRlZ3JpdHlfY2hlY2siOiAib2siLCAicm93X2NvdW50cyI6IHsiYXNzZXRzIjogMSwgImltcG9ydF9iYXRjaGVzIjogMSwgImxvY2F0aW9ucyI6IDEsICJzZXJ2aWNlX2V2ZW50cyI6IDB9fQo=",
+  "stderr_base64": ""
+}

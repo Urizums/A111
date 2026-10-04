@@ -1,0 +1,9 @@
+import json
+from pathlib import Path
+out=Path(__file__).parent
+criteria=[dict(id='runtime',kind='machine',required=True,assertion='Real HTTP CRUD, filters, transitions, optimistic conflict, history and restart preserve exact product state.')]
+checks=['create_two','validation_unchanged','search_filter','transition','stale_unchanged','invalid_transition_unchanged','resolve_reopen','history','restart_persistence']
+plan=dict(schema='forge-eval/1',id='ticket_desk',criteria=criteria,cases=[dict(id='api_journey',inputs=dict(fixture='runs/R03/materials/ticket-brief.json'),expected=dict(passed=True,checks=checks),expected_status='completed',criteria=['runtime'],required=True)],baseline='No support-desk service existed; frozen original ticket requirements define the workflow.',limitations=['Real loopback HTTP and SQLite, one local server; no production identity, load or external business effects.','UI evaluated separately in a real browser.'])
+project=dict(schema_version='forge-project-plan/1',id='ticket-desk',goal='Complete local support desk',deliverable_kind='software_system',requirements=[dict(id='req_ticket',text='Implement the frozen original ticket requirements with a usable UI',origin='explicit',basis='runs/R03/materials/ticket-brief.json',acceptance_ids=['runtime'])],acceptance=[dict(id='runtime',assertion=criteria[0]['assertion'],required=True,level='runtime')],tasks=[dict(id='implement',title='Implement and validate local support desk',depends_on=[],owner='root',write_paths=['challenges/ticket-desk/'],acceptance_ids=['runtime'])])
+for n,v in [('evaluation-plan.json',plan),('project-plan.json',project)]: (out/n).write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n')
+print('Frozen one self-contained journey with nine distinct product-state checks; no timestamp normalization hides data.')

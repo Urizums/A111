@@ -1,0 +1,45 @@
+{
+  "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+  "flow_state": {
+    "state_version": "1.0",
+    "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+    "run_id": "cd0376b5f0564d7ab7c3e7d40d1dc018",
+    "status": "completed",
+    "node": "$done",
+    "steps": 1,
+    "visits": {
+      "policy": 1
+    },
+    "artifacts": {
+      "borrower_id": "B-hold",
+      "book_id": "BK-hold",
+      "days_overdue": 0,
+      "holds": 1,
+      "renewals_used": 0,
+      "result": {
+        "borrower_id": "B-hold",
+        "book_id": "BK-hold",
+        "decision": "staff_review",
+        "renewal_days": 0,
+        "reasons": [
+          "reader_hold"
+        ]
+      }
+    },
+    "trace": [
+      {
+        "step": 1,
+        "node": "policy",
+        "invocation_id": "a6707c73e06cf864f50b84574e7049bd",
+        "outcome": "review",
+        "input_hash": "0ab7d00ba3052a5e6aab17470d4f6f3ee4546cc3dfdafbe9da836ea0e664bc29",
+        "output_hash": "fc5572449c71d1c1f18aaffb1b68ef6a20009353110db7ae76da78c45624c6bb",
+        "evidence": [
+          "Observed hold dispatch: one other-reader hold."
+        ]
+      }
+    ]
+  },
+  "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+  "input_hash": "0ab7d00ba3052a5e6aab17470d4f6f3ee4546cc3dfdafbe9da836ea0e664bc29"
+}

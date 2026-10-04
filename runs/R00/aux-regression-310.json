@@ -1,0 +1,30 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3.10",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_*.py"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T05:11:46.681155+00:00",
+    "monotonic_ns": 35345327532406,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:11:53.840806+00:00",
+    "monotonic_ns": 35352487188163,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": ".....................F...............\n======================================================================\nFAIL: test_cli_execution_then_reinstall_keeps_release_reusable (test_delivery_integrity.InstalledRelease)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/A111/scripts/test_delivery_integrity.py\", line 152, in test_cli_execution_then_reinstall_keeps_release_reusable\n    self.assertEqual(result.returncode, 0, result.stdout + result.stderr)\nAssertionError: 1 != 0 : Could not find platform independent libraries <prefix>\nCould not find platform dependent libraries <exec_prefix>\nConsider setting $PYTHONHOME to <prefix>[:<exec_prefix>]\nPython path configuration:\n  PYTHONHOME = (not set)\n  PYTHONPATH = (not set)\n  program name = '/tmp/tmp7sm83i9f/install/venv/bin/python'\n  isolated = 0\n  environment = 1\n  user site = 1\n  import site = 1\n  sys._base_executable = '/tmp/tmp7sm83i9f/install/venv/bin/python'\n  sys.base_prefix = '/install'\n  sys.base_exec_prefix = '/install'\n  sys.platlibdir = 'lib'\n  sys.executable = '/tmp/tmp7sm83i9f/install/venv/bin/python'\n  sys.prefix = '/install'\n  sys.exec_prefix = '/install'\n  sys.path = [\n    '/install/lib/python310.zip',\n    '/install/lib/python3.10',\n    '/install/lib/lib-dynload',\n  ]\nFatal Python error: init_fs_encoding: failed to get the Python codec of the filesystem encoding\nPython runtime state: core initialized\nModuleNotFoundError: No module named 'encodings'\n\nCurrent thread 0x00007fe84a2a5740 (most recent call first):\n  <no Python frame>\n\n\n----------------------------------------------------------------------\nRan 37 tests in 7.095s\n\nFAILED (failures=1)\n",
+  "stdout_base64": "",
+  "stderr_base64": "Li4uLi4uLi4uLi4uLi4uLi4uLi4uRi4uLi4uLi4uLi4uLi4uLgo9PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09CkZBSUw6IHRlc3RfY2xpX2V4ZWN1dGlvbl90aGVuX3JlaW5zdGFsbF9rZWVwc19yZWxlYXNlX3JldXNhYmxlICh0ZXN0X2RlbGl2ZXJ5X2ludGVncml0eS5JbnN0YWxsZWRSZWxlYXNlKQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRyYWNlYmFjayAobW9zdCByZWNlbnQgY2FsbCBsYXN0KToKICBGaWxlICIvd29ya3NwYWNlL0ExMTEvc2NyaXB0cy90ZXN0X2RlbGl2ZXJ5X2ludGVncml0eS5weSIsIGxpbmUgMTUyLCBpbiB0ZXN0X2NsaV9leGVjdXRpb25fdGhlbl9yZWluc3RhbGxfa2VlcHNfcmVsZWFzZV9yZXVzYWJsZQogICAgc2VsZi5hc3NlcnRFcXVhbChyZXN1bHQucmV0dXJuY29kZSwgMCwgcmVzdWx0LnN0ZG91dCArIHJlc3VsdC5zdGRlcnIpCkFzc2VydGlvbkVycm9yOiAxICE9IDAgOiBDb3VsZCBub3QgZmluZCBwbGF0Zm9ybSBpbmRlcGVuZGVudCBsaWJyYXJpZXMgPHByZWZpeD4KQ291bGQgbm90IGZpbmQgcGxhdGZvcm0gZGVwZW5kZW50IGxpYnJhcmllcyA8ZXhlY19wcmVmaXg+CkNvbnNpZGVyIHNldHRpbmcgJFBZVEhPTkhPTUUgdG8gPHByZWZpeD5bOjxleGVjX3ByZWZpeD5dClB5dGhvbiBwYXRoIGNvbmZpZ3VyYXRpb246CiAgUFlUSE9OSE9NRSA9IChub3Qgc2V0KQogIFBZVEhPTlBBVEggPSAobm90IHNldCkKICBwcm9ncmFtIG5hbWUgPSAnL3RtcC90bXA3c204M2k5Zi9pbnN0YWxsL3ZlbnYvYmluL3B5dGhvbicKICBpc29sYXRlZCA9IDAKICBlbnZpcm9ubWVudCA9IDEKICB1c2VyIHNpdGUgPSAxCiAgaW1wb3J0IHNpdGUgPSAxCiAgc3lzLl9iYXNlX2V4ZWN1dGFibGUgPSAnL3RtcC90bXA3c204M2k5Zi9pbnN0YWxsL3ZlbnYvYmluL3B5dGhvbicKICBzeXMuYmFzZV9wcmVmaXggPSAnL2luc3RhbGwnCiAgc3lzLmJhc2VfZXhlY19wcmVmaXggPSAnL2luc3RhbGwnCiAgc3lzLnBsYXRsaWJkaXIgPSAnbGliJwogIHN5cy5leGVjdXRhYmxlID0gJy90bXAvdG1wN3NtODNpOWYvaW5zdGFsbC92ZW52L2Jpbi9weXRob24nCiAgc3lzLnByZWZpeCA9ICcvaW5zdGFsbCcKICBzeXMuZXhlY19wcmVmaXggPSAnL2luc3RhbGwnCiAgc3lzLnBhdGggPSBbCiAgICAnL2luc3RhbGwvbGliL3B5dGhvbjMxMC56aXAnLAogICAgJy9pbnN0YWxsL2xpYi9weXRob24zLjEwJywKICAgICcvaW5zdGFsbC9saWIvbGliLWR5bmxvYWQnLAogIF0KRmF0YWwgUHl0aG9uIGVycm9yOiBpbml0X2ZzX2VuY29kaW5nOiBmYWlsZWQgdG8gZ2V0IHRoZSBQeXRob24gY29kZWMgb2YgdGhlIGZpbGVzeXN0ZW0gZW5jb2RpbmcKUHl0aG9uIHJ1bnRpbWUgc3RhdGU6IGNvcmUgaW5pdGlhbGl6ZWQKTW9kdWxlTm90Rm91bmRFcnJvcjogTm8gbW9kdWxlIG5hbWVkICdlbmNvZGluZ3MnCgpDdXJyZW50IHRocmVhZCAweDAwMDA3ZmU4NGEyYTU3NDAgKG1vc3QgcmVjZW50IGNhbGwgZmlyc3QpOgogIDxubyBQeXRob24gZnJhbWU+CgoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpSYW4gMzcgdGVzdHMgaW4gNy4wOTVzCgpGQUlMRUQgKGZhaWx1cmVzPTEpCg=="
+}

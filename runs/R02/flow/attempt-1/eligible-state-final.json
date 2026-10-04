@@ -1,0 +1,43 @@
+{
+  "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+  "flow_state": {
+    "state_version": "1.0",
+    "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+    "run_id": "ef7139c24f3546379bd29bb3b2aafebf",
+    "status": "completed",
+    "node": "$done",
+    "steps": 1,
+    "visits": {
+      "policy": 1
+    },
+    "artifacts": {
+      "borrower_id": "B-eligible",
+      "book_id": "BK-eligible",
+      "days_overdue": 0,
+      "holds": 0,
+      "renewals_used": 0,
+      "result": {
+        "borrower_id": "B-eligible",
+        "book_id": "BK-eligible",
+        "decision": "renew",
+        "renewal_days": 14,
+        "reasons": []
+      }
+    },
+    "trace": [
+      {
+        "step": 1,
+        "node": "policy",
+        "invocation_id": "a1557a2e89100151dad96f9d3017ff81",
+        "outcome": "renewed",
+        "input_hash": "ae9a23b947bd2e9d83919245859dc50b0fbc68bc86244a504148de3ab0df0f9f",
+        "output_hash": "b55debe67cd8309ab56c2464703c6c9128c959a395e4093f4138f53dae29ae52",
+        "evidence": [
+          "Observed eligible dispatch: zero overdue, zero holds, zero previous renewals."
+        ]
+      }
+    ]
+  },
+  "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+  "input_hash": "ae9a23b947bd2e9d83919245859dc50b0fbc68bc86244a504148de3ab0df0f9f"
+}

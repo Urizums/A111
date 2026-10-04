@@ -1,0 +1,121 @@
+{
+  "question": "For a versioned JSON equipment/location import, which explicit transaction and foreign-key sequence gives whole-import rollback on a later row conflict and permits an identical retry without duplicate assets or history?",
+  "source_limit": 3,
+  "sources": [
+    {
+      "url": "https://docs.python.org/3.10/library/sqlite3.html",
+      "document_version": "Python 3.10 documentation",
+      "accessed_at_utc": "2026-10-04T04:43:18.668190+00:00",
+      "sha256_of_local_snapshot": "991269751c5a456bd2746f482e000a3a817f866af7a85963001b720e642d5094",
+      "passages": [
+        {
+          "section": "Transaction control",
+          "support": "With isolation_level=None, sqlite3 does not implicitly open transactions, leaves SQLite in autocommit mode, and permits user-controlled transaction handling with explicit SQL statements. commit() and rollback() respectively commit and roll back pending transactions.",
+          "scope": "API contract documented for Python 3.10; local runtime is Python 3.12.14, so compatibility is a documentation-backed proposal rather than a run on Python 3.10."
+        },
+        {
+          "section": "Connection context manager",
+          "support": "Leaving a connection context commits when the body succeeds and rolls back when an uncaught exception leaves the body; the connection still needs to be closed manually.",
+          "scope": "Supports the alternative implicit DEFERRED transaction choice; an exception caught inside the with-body does not escape that body."
+        }
+      ]
+    },
+    {
+      "url": "https://www.sqlite.org/lang_transaction.html",
+      "document_version": "Current SQLite transaction documentation snapshot; the page does not state a release number",
+      "accessed_at_utc": "2026-10-04T04:43:19.277590+00:00",
+      "sha256_of_local_snapshot": "b65dc308fd9e0ce471844c97366a4f5ad3a1f42833a3b19486ad7d6555a8e24e",
+      "passages": [
+        {
+          "section": "Transactions and response to errors within a transaction",
+          "support": "A manually begun transaction normally persists until COMMIT or ROLLBACK. SQLite documents that errors may undo only the current statement while prior statements remain in the transaction; it says an application may explicitly issue ROLLBACK to normalize transaction state after errors.",
+          "scope": "Supports rolling back the batch after a row failure; exact constraint behavior is separately checked by the local probe."
+        },
+        {
+          "section": "DEFERRED, IMMEDIATE, and EXCLUSIVE transactions",
+          "support": "DEFERRED starts on first database access; if a read is upgraded to a write, the upgrade can fail SQLITE_BUSY. IMMEDIATE starts a write transaction at BEGIN and may fail SQLITE_BUSY if another writer is active. SQLite allows only one simultaneous write transaction.",
+          "scope": "Describes SQLite locking/transaction semantics; does not make provider-specific or multi-process performance guarantees."
+        }
+      ]
+    },
+    {
+      "url": "https://www.sqlite.org/foreignkeys.html",
+      "document_version": "Current SQLite foreign-key documentation snapshot; the page does not state a release number",
+      "accessed_at_utc": "2026-10-04T04:43:19.534445+00:00",
+      "sha256_of_local_snapshot": "f9cc6cefbdf18e07893b036365a2f3ca2a9a81fa41ed0849c7e4df214ccca8c0",
+      "passages": [
+        {
+          "section": "Enabling Foreign Key Support",
+          "support": "Foreign-key enforcement must be enabled at runtime with PRAGMA foreign_keys, is disabled by default in the documented behavior, and must be enabled separately on each database connection. The pragma reports 0 or 1. Changing it during a multi-statement transaction has no effect and does not return an error.",
+          "scope": "Requires setting and checking the pragma on each connection before BEGIN; the local probe checks the installed SQLite library."
+        }
+      ]
+    }
+  ],
+  "frozen_before_probe": {
+    "sequence": [
+      "Open the connection with isolation_level=None so Python does not implicitly start a transaction.",
+      "Before BEGIN and before import writes, execute PRAGMA foreign_keys=ON and read PRAGMA foreign_keys back; abort if the result is not 1.",
+      "Start one explicit BEGIN IMMEDIATE transaction for import-ledger, asset, location, and history changes. Keep row conflict detection and writes in this transaction.",
+      "On success issue COMMIT once. On any row or commit exception, issue ROLLBACK if a transaction remains active, then re-raise; do not catch a row conflict inside the transaction and continue.",
+      "Avoid executescript() inside this transaction because Python 3.10 docs state that it commits a pending transaction before executing the script."
+    ],
+    "transaction_choices": [
+      {
+        "choice": "isolation_level=None plus explicit BEGIN IMMEDIATE / COMMIT / ROLLBACK",
+        "benefits": "Makes the batch boundary visible and starts the write transaction before import DML, so an existing writer can cause SQLITE_BUSY before partial batch work.",
+        "costs": "Reserves SQLite's single writer position from the start of the transaction; keep parsing and non-database validation outside it."
+      },
+      {
+        "choice": "Python 3.10 connection context manager with the default DEFERRED transaction behavior",
+        "benefits": "An uncaught exception leaving with con: triggers rollback; normal completion commits.",
+        "costs": "The transaction begins implicitly at DML; a read-to-write upgrade can fail SQLITE_BUSY, and swallowing a row exception inside the with-body would make the body appear successful and permit commit."
+      }
+    ],
+    "recommendation": "Use the explicit isolation_level=None plus BEGIN IMMEDIATE sequence for a batch import. Validate/parse JSON before the transaction, then let SQLite constraints check database-dependent conflicts within the transaction and roll back the full batch on the first error. This recommendation follows the requirement for an explicit, reviewable batch boundary; concurrency and workload behavior remain unmeasured.",
+    "retry_proposal": "Give each accepted input a stable batch ID and canonical payload digest, enforced by a unique import-ledger key. If the same batch ID and digest already committed, return success without writes. Reject the same batch ID with a different digest. Also enforce unique stable external asset IDs and stable source event IDs in history; compare any pre-existing asset payload before treating it as a no-op. Put the ledger, locations, assets, and history writes in the same transaction. This is a proposal because the JSON key fields and production schema are unspecified.",
+    "probe_expectations": [
+      "A later unique-key conflict after an earlier successful insert is followed by explicit ROLLBACK; baseline database rows/counts remain unchanged.",
+      "A child row naming a missing location raises sqlite3.IntegrityError when foreign keys were enabled and verified before BEGIN.",
+      "An identical accepted batch retry performs no duplicate asset or history writes."
+    ]
+  },
+  "runtime_observation_before_probe": {
+    "python": "3.12.14",
+    "sqlite_runtime": "3.53.1",
+    "sqlite_runtime_tuple": [
+      3,
+      53,
+      1
+    ],
+    "command": "python3 -c 'import sqlite3,sys; print(f\"python={sys.version.split()[0]}\"); print(f\"sqlite_runtime={sqlite3.sqlite_version}\"); print(f\"sqlite_runtime_tuple={sqlite3.sqlite_version_info}\")'"
+  },
+  "probe_observations": {
+    "command": "python3 probe.py",
+    "working_directory": "/workspace/A111/runs/R01/sqlite-research/worker",
+    "exit_code": 0,
+    "storage": "Temporary file-backed SQLite database; the probe closed and reopened it, then its temporary directory was removed.",
+    "output_lines": [
+      "python=3.12.14",
+      "sqlite_runtime=3.53.1",
+      "foreign_keys_after_enable=1",
+      "later_conflict=IntegrityError; transaction_active_at_failure=True; explicit_rollback=True; baseline_unchanged=True; counts={locations:1, assets:1, imports:1, history:1}",
+      "foreign_key_violation=IntegrityError; missing_location_rejected=True; rollback_restored_baseline=True",
+      "identical_retry=first=committed; retry=identical-retry-noop; asset_count_stable=True; history_count_stable=True",
+      "close_reopen=foreign_keys=1; committed_state_persisted=True; assets=2; history=2",
+      "probe_status=PASS"
+    ],
+    "interpretation": "A later primary-key conflict occurred while the explicit transaction was active; explicit ROLLBACK restored every baseline table. A missing parent location was rejected. A successful batch committed once; repeating the same batch ID and digest produced no asset or history count change; committed rows survived connection close and reopen."
+  },
+  "unknowns": [
+    "No Python 3.10 interpreter was available; compatibility is based on the official Python 3.10 docs and syntax/API commonality, not a Python 3.10 execution.",
+    "No ORM, database provider, hosted SQLite service, multi-process race, WAL mode, or production concurrency behavior was tested.",
+    "The versioned JSON shape, stable IDs, conflict policy, and history event identity are unspecified; retry schema guidance is a proposal."
+  ],
+  "measurements": {
+    "tokens": null,
+    "cost": null,
+    "model_active_time": null
+  },
+  "research_state": "documented_expectations_frozen_before_probe; probe_completed"
+}

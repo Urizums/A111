@@ -1,0 +1,153 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "84e62b4268b7e1656e4e6aee06c8382da318ce5db072136f7b825f6f0af0217c",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_a017450681914b5b8e14ae7052259b64",
+    "attempt_id": "66ef7f034e2646efa74c7fec3d524759",
+    "invocation_id": "66ef7f034e2646efa74c7fec3d524759",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "b9532a4b25320eab6fa4e38c17a8bd3e794f86f918f64dfb1d00e196b6c1c97a",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "Resolve SQLite transaction and retry unknowns for inventory migration",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    },
+    "work": {
+      "prompt": "# Frozen research question — transactional equipment inventory import\n\nOriginal requirement: implement and actually validate a data import/migration\nchallenge distinct from earlier expense CSV and meeting-note tasks. Input will\nbe versioned JSON equipment/location records; output is a durable SQLite database.\n\nUnknown: with the installed Python sqlite3 runtime and Python 3.10 compatibility,\nwhat explicit transaction and foreign-key sequence keeps an existing database\nunchanged when a later input row conflicts, while allowing an identical import\nto be retried without duplicate assets or history?\n\nRead the official Python 3.10 sqlite3 documentation and SQLite's current\ntransaction/foreign-key documentation. Use at most three primary URLs. Record\nURL, version/access time, concrete supporting passage and scope. Do not collect\ngeneral agent architecture material. Compare two concrete transaction choices,\nrecommend one with reasons, and run a small harmless SQLite probe in your assigned\ndirectory that demonstrates both rollback and foreign-key enforcement. Freeze\nyour expectations from the documentation before running the probe.\n\nDeliver research.json, report.md (at most 100 lines), probe.py and actual command\nresults. Separate observed behavior from proposal; record unsupported concurrency\nor provider claims as unknown. Stop researching once those two questions have\ndirect source and runtime evidence. Do not inspect Root's new delivery fixes,\nfuture challenge implementations/answers, other runs, or other workers.\n\nWrite only /workspace/A111/runs/R01/sqlite-research/worker. You may author/run benign analysis and validation scripts there; do not modify core, skill, shared TODO/state or historical evidence. Record actual commands/results and all failed attempts, corrections, parent questions, and unavailable measurements (tokens/cost/model-active-time null). Do not spawn/delegate, inspect siblings or query unrelated workers. This is a new task, never execute old native IDs. Before returning, use /workspace/A111/skills/forge-agent-flow/scripts/hostdraft.py reply with your supplied NEW job/request.json to create a separate incomplete draft. Fill final /workspace/A111/runs/R01/sqlite-research/worker/reply.json with the actual task result and hashes of final artifacts. Capture check-reply output before returning. Reply preflight is not semantic acceptance; Root will review. At most two corrective rounds; retain first failures. Do not change referenced outputs after final preflight.",
+      "inputs": {
+        "brief": "/workspace/A111/runs/R00/research-brief.md"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/R00/research-brief.md",
+          "sha256": "923f63317e6e19670bd12da4e7fcb7a84019d4ada7e9ee2cbcaed1b204d095e4"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/R01/sqlite-research/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/R01/sqlite-research/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_66ef7f034e26",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "795bc019c080495274a35744f4bdb267b813b7aad9d1ec75fe0a6330a4f5902a",
+  "target": "/workspace/A111/runs/R01/sqlite-research/state.json",
+  "target_sha256": "4dbdc491b64547c6f23497c84c451a47c739edeb79abb9f48998b0a36e3659ba",
+  "target_before_sha256": "5b35f1de6dbac14e908663f7214522539fd741473e7447d9c656450c37fe745f",
+  "package_ref": null,
+  "phase": "committed",
+  "worker": "/root/luna_forge_66ef7f034e26",
+  "reply_ref": {
+    "path": "/workspace/A111/runs/R01/sqlite-research/job/receipts/3837fc1ba3b3072a0e7418e3a3cbda4713b6b5e1a7c950ccf86a337f2e2f7b1e.json",
+    "sha256": "3837fc1ba3b3072a0e7418e3a3cbda4713b6b5e1a7c950ccf86a337f2e2f7b1e"
+  },
+  "commit": {
+    "decision_ref": {
+      "path": "/workspace/A111/runs/R01/sqlite-research/decision.json",
+      "sha256": "e21130c68eecd62d88c5a3a71d3e0c10b7fd43b7873fb8e201bb68126a60485e"
+    },
+    "target_result": {
+      "task_id": "work",
+      "attempt_id": "66ef7f034e2646efa74c7fec3d524759",
+      "outcome": "done",
+      "task_status": "done",
+      "reason": null,
+      "status": "completed",
+      "revision": 2,
+      "plan_hash": "b9532a4b25320eab6fa4e38c17a8bd3e794f86f918f64dfb1d00e196b6c1c97a",
+      "evaluation_plan_hash": null
+    },
+    "worker_task_outcome": "done",
+    "coordinator_outcome": "done",
+    "recorded_at": "2026-10-04T04:56:11Z"
+  },
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/job/request.json",
+      "sha256": "ef6424434a861af8b04aaca4bb9507ff2feb97a9068147dad6c0b745e0e3bf73"
+    },
+    {
+      "path": "/workspace/A111/runs/R00/research-brief.md",
+      "sha256": "923f63317e6e19670bd12da4e7fcb7a84019d4ada7e9ee2cbcaed1b204d095e4"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/job/receipts/012fc16ff161945f2bcc83899e228c3a5c6c43973eb731e725a5f2eac83cea9d.json",
+      "sha256": "012fc16ff161945f2bcc83899e228c3a5c6c43973eb731e725a5f2eac83cea9d"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/job/receipts/26c5a65c8f346a79076b54139abee5b920bc4d9f73df5533d32e9866484e2055.json",
+      "sha256": "26c5a65c8f346a79076b54139abee5b920bc4d9f73df5533d32e9866484e2055"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/job/receipts/9cf3d1d94a9853183289dbfccf0c0eb79d8687e70c232a780cdf89dd9cc445b9.json",
+      "sha256": "9cf3d1d94a9853183289dbfccf0c0eb79d8687e70c232a780cdf89dd9cc445b9"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/job/receipts/3837fc1ba3b3072a0e7418e3a3cbda4713b6b5e1a7c950ccf86a337f2e2f7b1e.json",
+      "sha256": "3837fc1ba3b3072a0e7418e3a3cbda4713b6b5e1a7c950ccf86a337f2e2f7b1e"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/worker/reply.json",
+      "sha256": "3837fc1ba3b3072a0e7418e3a3cbda4713b6b5e1a7c950ccf86a337f2e2f7b1e"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/worker/research.json",
+      "sha256": "54ec21d582e96affefc87cfeb6100e33eef256ad15e060208eddbda4e26b0cdc"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/worker/report.md",
+      "sha256": "e004733b04df5e76b539cf3252ca30c97045fae2c6d67862eecc05f0b382f67d"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/worker/probe.py",
+      "sha256": "e84d2f8189c33dd19006bd84026ac8599b22fccebc7d47c838d8ac93847edcf6"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/worker/commands.log",
+      "sha256": "73f6a6b18a57741455dfd13ed990d5abebbbb11d8acfde557d61fad99864e56e"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/decision.json",
+      "sha256": "e21130c68eecd62d88c5a3a71d3e0c10b7fd43b7873fb8e201bb68126a60485e"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/sqlite-research/root-review.json",
+      "sha256": "4bca189d251edf3c4e43588b6b7857a372133bac7165a182c0de6f6297b73278"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/R01/sqlite-research/job/receipts/012fc16ff161945f2bcc83899e228c3a5c6c43973eb731e725a5f2eac83cea9d.json",
+    "sha256": "012fc16ff161945f2bcc83899e228c3a5c6c43973eb731e725a5f2eac83cea9d"
+  }
+}

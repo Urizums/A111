@@ -1,0 +1,87 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R01",
+  "goal": "Progress the long-term R&D loop with actual evidence.",
+  "tasks": [
+    {
+      "id": "R01-01",
+      "title": "验证最小长期接续控制器",
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "scripts/",
+        "state/"
+      ],
+      "acceptance": [
+        "Delivered milestones do not close long-term goal or hide ready tasks",
+        "Frozen inputs/criteria, failed attempts and two-repair budgets are enforced",
+        "Phase transition requires actual next first step"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "验证最小长期接续控制器"
+    },
+    {
+      "id": "R01-02",
+      "title": "生成工作坊日历文件",
+      "owner": "root",
+      "depends_on": [
+        "R01-01"
+      ],
+      "write_paths": [
+        "runs/R01/calendar/"
+      ],
+      "acceptance": [
+        "Produce one valid ICS event with exact source fields and timezone/duration",
+        "Perform source check with no factory or reusable app scaffolding"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "生成工作坊日历文件"
+    },
+    {
+      "id": "R01-03",
+      "title": "实现并验证馆藏设备迁移",
+      "owner": "root",
+      "depends_on": [
+        "R01-02"
+      ],
+      "write_paths": [
+        "challenges/inventory/",
+        "runs/R01/import/"
+      ],
+      "acceptance": [
+        "Source inventory and service relationships survive JSON-to-SQLite migration",
+        "Identical retry is idempotent; conflicting same batch is rejected",
+        "Late constraint failure rolls back complete existing-database transaction"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "实现并验证馆藏设备迁移"
+    },
+    {
+      "id": "R01-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R01-01",
+        "R01-02",
+        "R01-03"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "Next phase first task has actual recorded execution; preserve current phase archive"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "Read next phase plan, execute its first real step, start it, then run continuation.py advance."
+    }
+  ]
+}

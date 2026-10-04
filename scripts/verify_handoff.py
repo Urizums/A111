@@ -138,6 +138,19 @@ def validate_checkpoint(checkpoint, phase):
     return errors
 
 
+def validate_continuation(checkpoint, state, root):
+    from continuation import summary, validate
+    errors = validate(state, root)
+    frontier = summary(state)
+    if checkpoint.get('project_goal_status') != state['project_goal']['status']:
+        errors.append('checkpoint project goal differs from continuation queue')
+    if checkpoint.get('next_queue_task_id') != frontier['next_task_id']:
+        errors.append('checkpoint next queue task differs from ready/active work')
+    if checkpoint.get('lifecycle') == 'delivered' and state['project_goal']['status'] == 'active':
+        errors.append('delivery milestone must not terminate active project')
+    return errors
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--json', action='store_true')
@@ -158,7 +171,7 @@ def main():
             errors.append('release manifest coverage differs: ' + repr(sorted(actual ^ expected)))
         phase = read(ROOT / 'state/phase-todo.json')
         errors += validate_phase(phase, ROOT)
-        for history in sorted((ROOT / 'state/history').glob('S*-todo.json')):
+        for history in sorted((ROOT / 'state/history').glob('*-todo.json')):
             errors += validate_phase(read(history), ROOT)
         revision_files_checked = 0
         revision_index = ROOT / 'state/revision-locks.json'
@@ -169,6 +182,8 @@ def main():
                 revision_files_checked += len(entries)
         checkpoint = read(ROOT / 'state/checkpoint.json')
         errors += validate_checkpoint(checkpoint, phase)
+        if (ROOT / 'state/continuation.json').exists():
+            errors += validate_continuation(checkpoint, read(ROOT / 'state/continuation.json'), ROOT)
         for rel in checkpoint.get('delivery_evidence', []):
             if not safe_path(ROOT, rel).is_file():
                 errors.append('missing delivery evidence: ' + rel)

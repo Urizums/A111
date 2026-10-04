@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/R02/worker-recovery/command_worker.py",
+    "--input",
+    "runs/R02/materials/recovery-batch.json",
+    "--database",
+    "runs/R02/worker-recovery/recovery.sqlite3"
+  ],
+  "cwd": "/workspace/A111/runs/R02/handoff/worker/checkout",
+  "begin": {
+    "utc": "2026-10-04T05:04:02.586307+00:00",
+    "monotonic_ns": 34881232682308,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:04:02.613091+00:00",
+    "monotonic_ns": 34881259466991,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 73,
+  "stdout": "{\"batch_id\": \"observatory-2026-11\", \"pid\": 5397, \"state\": \"worker_exiting\", \"transaction_active\": true, \"uncommitted_mutations\": 6}\n",
+  "stderr": "",
+  "stdout_base64": "eyJiYXRjaF9pZCI6ICJvYnNlcnZhdG9yeS0yMDI2LTExIiwgInBpZCI6IDUzOTcsICJzdGF0ZSI6ICJ3b3JrZXJfZXhpdGluZyIsICJ0cmFuc2FjdGlvbl9hY3RpdmUiOiB0cnVlLCAidW5jb21taXR0ZWRfbXV0YXRpb25zIjogNn0K",
+  "stderr_base64": ""
+}

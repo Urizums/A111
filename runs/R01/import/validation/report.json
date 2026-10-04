@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": [
+    "source_rows_and_relationships",
+    "idempotent_retry_no_write",
+    "same_batch_drift_rejected",
+    "late_foreign_key_rolls_back_all_rows",
+    "late_duplicate_serial_rolls_back_all_rows",
+    "persistent_database_integrity"
+  ],
+  "database": "/workspace/A111/runs/R01/import/validation/inventory.sqlite3",
+  "baseline_sha256": "7a13181fd950a75871552b2e4505963623c665ee8cd502b0623fa4cdac7df7d8",
+  "source_sha256": "7ae8a28ba10e4bde93fb9fefa7c9109e6eca63e96afc37a80f6177bf82c992bc",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "sqlite": "3.53.1",
+  "limits": [
+    "Controlled local CLI/SQLite cases; no provider, network or production effect guarantee."
+  ]
+}

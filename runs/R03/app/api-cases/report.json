@@ -1,0 +1,46 @@
+{
+  "schema": "forge-case-run/1",
+  "plan_hash": "9ae02e77e4ccf22bd3924170ed53f86f4f161688779222ba360a5345486514d8",
+  "candidate": {
+    "files": [
+      {
+        "path": "/workspace/A111/challenges/ticket-desk/app.py",
+        "sha256": "2dcfde075ba8308e95d2f46aa17ab3da2f1de082474611618376c52be6180ece"
+      },
+      {
+        "path": "/workspace/A111/runs/R03/app/api_adapter.py",
+        "sha256": "ff5267805743e7288e7aca927f98007caa9092145c3aab9cf8e43c669198701a"
+      }
+    ],
+    "hash": "5ccfdf819b0f48bf677f1e7afd41a2f709321d641a1e743b961e23e61cfb65db"
+  },
+  "command": [
+    "python3",
+    "/workspace/A111/runs/R03/app/api_adapter.py",
+    "--out",
+    "/workspace/A111/runs/R03/app/api-raw"
+  ],
+  "cwd": "/workspace/A111",
+  "timeout_seconds": 30.0,
+  "cases": [
+    {
+      "id": "api_journey",
+      "input": {
+        "path": "/workspace/A111/runs/R03/app/api-cases/api_journey/input.json",
+        "sha256": "51e7b2bd46dec0ad0cbe4f40609c185a7ff09e7783b0aadef5df873f28ab17e7"
+      },
+      "stdout": {
+        "path": "/workspace/A111/runs/R03/app/api-cases/api_journey/stdout.txt",
+        "sha256": "9d43cb8dbb128c75f2b38d6fa21f39ad10832c498f9149e879425ef31c8b34bb"
+      },
+      "stderr": {
+        "path": "/workspace/A111/runs/R03/app/api-cases/api_journey/stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "returncode": 0,
+      "timed_out": false,
+      "launch_error": null,
+      "elapsed_seconds": 0.214808
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R03-01",
+  "attempt_id": "R03-01-1",
+  "requirements_hash": "d8a29db359cc353cf94a3f0dc6060180e00b7908881f23c0f30d2dd1af5132f9",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R03/app/api-cases/report.json",
+        "runs/R03/app/api-raw/requests.json",
+        "runs/R03/app/api-raw/processes.json",
+        "runs/R03/app/api-cases-310/report.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R03/app/api-cases/report.json",
+        "runs/R03/app/api-raw/requests.json",
+        "runs/R03/app/api-raw/processes.json",
+        "runs/R03/app/api-cases-310/report.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Working persistent support desk",
+    "hypothesis": "Explicit SQLite transactions and expected-version updates preserve records through conflicts and server restarts",
+    "baseline": "No support-desk application existed",
+    "conditions": "Real loopback HTTP, two distinct tickets, Python 3.10.21/3.12.14, file database, process termination/restart",
+    "observations": "One complete journey with nine product-state checks passes on each Python version; invalid input/transition and stale updates leave database unchanged",
+    "limits": [
+      "No production authentication, public-hosting SLA or concurrent load benchmark",
+      "UI acceptance is a separate task; API success does not establish visuals"
+    ],
+    "metrics": {
+      "journeys_passed_per_python": 1,
+      "state_checks_per_journey": 9,
+      "user_questions": 0,
+      "tokens": null,
+      "cost": null,
+      "usability_study": null
+    }
+  },
+  "next_action": "Inspect actual browser journeys and independent visual/interaction evidence."
+}

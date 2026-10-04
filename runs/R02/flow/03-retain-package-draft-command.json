@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "import hashlib,json,pathlib; source=pathlib.Path(\"challenges/renewal-flow/package.json\"); target=pathlib.Path(\"runs/R02/flow/package-draft.json\"); assert source.is_file() and not target.exists(); payload=source.read_bytes(); digest=hashlib.sha256(payload).hexdigest(); target.write_bytes(payload); source.unlink(); assert hashlib.sha256(target.read_bytes()).hexdigest()==digest; print(json.dumps({\"moved_to_run_evidence\":str(target),\"sha256\":digest,\"source_removed\":not source.exists(),\"sample_changed\":False},sort_keys=True))"
+  ],
+  "cwd": "/workspace/A111/runs/R02/handoff/worker/checkout",
+  "begin": {
+    "utc": "2026-10-04T05:09:47.456546+00:00",
+    "monotonic_ns": 35226102921683,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:09:47.479361+00:00",
+    "monotonic_ns": 35226125736892,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\"moved_to_run_evidence\": \"runs/R02/flow/package-draft.json\", \"sample_changed\": false, \"sha256\": \"f6b3033c9fbb6af0874e7eaf9bb51ab2bca511809d3324c892ae1dc882b3db5c\", \"source_removed\": true}\n",
+  "stderr": "",
+  "stdout_base64": "eyJtb3ZlZF90b19ydW5fZXZpZGVuY2UiOiAicnVucy9SMDIvZmxvdy9wYWNrYWdlLWRyYWZ0Lmpzb24iLCAic2FtcGxlX2NoYW5nZWQiOiBmYWxzZSwgInNoYTI1NiI6ICJmNmIzMDMzYzlmYmI2YWYwODc0ZTdlYWY5YmI1MWFiMmJjYTUxMTgwOWQzMzI0Yzg5MmFlMWRjODgyYjNkYjVjIiwgInNvdXJjZV9yZW1vdmVkIjogdHJ1ZX0K",
+  "stderr_base64": ""
+}

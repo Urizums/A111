@@ -1,0 +1,15 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>支持台 · 工单队列</title><link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script></head><body>
+<a class="skip" href="#queue">跳到工单队列</a>
+<header><div><span class="eyebrow">WORKSPACE / SUPPORT</span><h1>支持台<span class="dot">●</span></h1><p>记录问题，跟进进展，让每次处理都有迹可循。</p></div><span class="tag">团队工单</span></header>
+<main><section class="compose" aria-labelledby="create-heading"><span class="eyebrow">01 / 新问题</span><h2 id="create-heading">创建工单</h2><p class="muted">写清问题与影响，便于快速处理。</p>
+<form id="create" novalidate><label for="title">问题标题 <span>必填</span></label><input id="title" name="title" maxlength="120" placeholder="例如：会议室视频没有声音" required>
+<label for="description">问题说明 <span>必填</span></label><textarea id="description" name="description" rows="5" maxlength="4000" placeholder="发生在哪里？已经尝试了什么？" required></textarea>
+<label for="priority">优先级</label><select id="priority" name="priority"><option value="low">低 · 可以稍后处理</option><option value="normal" selected>普通 · 影响日常工作</option><option value="urgent">紧急 · 工作无法继续</option></select>
+<p id="form-error" class="error" role="alert"></p><button class="primary" type="submit">创建工单 <span aria-hidden="true">↗</span></button></form><p class="hint">新工单会进入「待处理」，处理记录自动保留。</p></section>
+<section id="queue" aria-labelledby="queue-heading" tabindex="-1"><div class="section-heading"><div><span class="eyebrow">02 / 跟进进展</span><h2 id="queue-heading">工单队列</h2></div><button id="refresh" class="quiet">刷新</button></div>
+<div class="counts" aria-label="按状态筛选"><button data-status="" aria-pressed="true"><strong id="count-all">0</strong>全部</button><button data-status="open" aria-pressed="false"><strong id="count-open">0</strong>待处理</button><button data-status="in_progress" aria-pressed="false"><strong id="count-in_progress">0</strong>处理中</button><button data-status="resolved" aria-pressed="false"><strong id="count-resolved">0</strong>已解决</button></div>
+<form id="search-form" role="search"><label class="sr-only" for="search">搜索工单</label><input type="search" id="search" placeholder="搜索标题或问题说明"><button type="submit" class="quiet">搜索</button></form>
+<div class="feedback"><p id="notice" role="status" aria-live="polite"></p><p id="list-error" class="error" role="alert"></p><span id="loading" role="status" hidden>正在更新队列…</span></div>
+<div id="tickets" aria-label="工单列表"></div><div id="empty" hidden><span aria-hidden="true">○</span><h3>这里暂时没有工单</h3><p>创建一个新工单，或调整搜索和筛选条件。</p></div>
+</section></main><footer>处理状态：待处理 → 处理中 → 已解决；需要时可重新打开。</footer>
+</body></html>

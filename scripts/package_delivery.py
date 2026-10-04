@@ -7,7 +7,7 @@ import json
 from pathlib import Path
 import tarfile
 
-from delivery import content_id, source_files
+from delivery import content_id, read_file, safe_file, source_files
 
 
 def main():
@@ -21,7 +21,13 @@ def main():
     # Exclusive creation keeps previously published delivery archives intact.
     with args.out.open('xb') as stream, tarfile.open(fileobj=stream, mode='w:gz') as archive:
         for row in rows:
-            archive.add(root / row['path'], arcname='agent-forge/' + row['path'], recursive=False)
+            raw = read_file(root, row['path'])
+            if len(raw) != row['size_bytes'] or hashlib.sha256(raw).hexdigest() != row['sha256']:
+                raise ValueError('Source changed while packaging: ' + row['path'])
+            entry = tarfile.TarInfo('agent-forge/' + row['path'])
+            entry.size = len(raw)
+            entry.mode = safe_file(root, row['path']).stat().st_mode & 0o777
+            archive.addfile(entry, io.BytesIO(raw))
         raw = (json.dumps(manifest, ensure_ascii=False, indent=2) + '\n').encode()
         entry = tarfile.TarInfo('agent-forge/delivery-manifest.json'); entry.size = len(raw)
         entry.mode = 0o644

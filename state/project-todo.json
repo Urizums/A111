@@ -1,6 +1,6 @@
 {
   "schema": "upgrade-work-record/1",
-  "updated_at": "2026-10-03T20:00:09.250606+00:00",
+  "updated_at": "2026-10-04T05:09:58.687632+00:00",
   "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
   "todo": [
     {
@@ -1040,9 +1040,9 @@
     "Host bridge 2026-10-02: two repair rounds used; retain B1/B2 failures. No additional repair or performance-gain claim in this iteration.",
     "O3 2026-10-03: two functional repairs used; preserve actual wrong-SHA submission and wrapped-IO counterexample. New features need a separate frozen iteration."
   ],
-  "next_action": "Requested goal delivered in PR #1. New development requires a new scoped goal; no background scheduler is active.",
+  "next_action": "Read START_HERE.md, validate current state, and execute continuation.py --root . next; PR delivery is not a stop condition.",
   "final_trial_prompt": "使用最终 forge-agent-flow，在独立目录做一个小型本地导入系统：接收 JSONL 记录，校验后生成可查看的成功/错误报告，重复运行不丢先前结果。无需界面或云服务，普通选择自己推，不向用户提问。交可运行代码与实际运行验证，记录真实耗时和修复。",
-  "development_status": "requested_cloud_delivery_complete; C2_observed_conformance_verified; original_C1_performance_inconclusive; PR_open_not_merged",
+  "development_status": "active_long_term_rd; D00_delivery_retained; C3_and_real_challenges_in_progress; C1_inconclusive",
   "remaining_capability_blockers": [
     {
       "task": "ticket browser UI journey",
@@ -1196,6 +1196,11 @@
     {
       "at": "2026-10-03T19:58:13.841840+00:00",
       "reason": "Current user requested cloud continuation, smoke/fixes and complete fork-dev PR. Preserve all original history, failure evidence and unrelated partial/UI tracks."
+    },
+    {
+      "at": "2026-10-04T05:09:58.687632+00:00",
+      "reason": "PR author requests ongoing dual-queue R&D, actual varied challenges and fresh-context continuation; user authorized implementation and direct fork-dev publication. D00 delivery does not close long goal.",
+      "requirements": "runs/R00/review-comments.json"
     }
   ],
   "skill_development_roles": {
@@ -1240,5 +1245,12 @@
     "full_name": "Urizums/A111",
     "visibility": "private",
     "publication_evidence": "state/github-publication.json"
+  },
+  "current_continuation": {
+    "state": "state/continuation.json",
+    "goal_status": "active",
+    "historical_D00": "state/history/D00-todo.json",
+    "mapping": "Each unfinished historical todo ID has a BACKLOG-* task with priority, dependencies, write scope, acceptance, evidence and next action. Historical rows retain their original status; current work is in the queue.",
+    "remaining_capability_blockers_scope": "Historical observations below; current probe is runs/R04/capability-probe/probe.json; new ticket app has separate R03 acceptance."
   }
 }

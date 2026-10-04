@@ -1,0 +1,131 @@
+{
+  "schema": "forge-eval/1",
+  "id": "library_renewal",
+  "criteria": [
+    {
+      "id": "policy",
+      "kind": "machine",
+      "required": true,
+      "assertion": "Exact decision, days, IDs and reasons match the explicit renewal policy."
+    },
+    {
+      "id": "protocol",
+      "kind": "machine",
+      "required": true,
+      "assertion": "Strict input/output shapes and stale response protection preserve the checkpoint."
+    }
+  ],
+  "cases": [
+    {
+      "id": "eligible",
+      "inputs": {
+        "borrower_id": "B-eligible",
+        "book_id": "BK-eligible",
+        "days_overdue": 0,
+        "holds": 0,
+        "renewals_used": 0
+      },
+      "expected": {
+        "result": {
+          "borrower_id": "B-eligible",
+          "book_id": "BK-eligible",
+          "decision": "renew",
+          "renewal_days": 14,
+          "reasons": []
+        }
+      },
+      "expected_status": "completed",
+      "criteria": [
+        "policy",
+        "protocol"
+      ],
+      "required": true
+    },
+    {
+      "id": "hold",
+      "inputs": {
+        "borrower_id": "B-hold",
+        "book_id": "BK-hold",
+        "days_overdue": 0,
+        "holds": 1,
+        "renewals_used": 0
+      },
+      "expected": {
+        "result": {
+          "borrower_id": "B-hold",
+          "book_id": "BK-hold",
+          "decision": "staff_review",
+          "renewal_days": 0,
+          "reasons": [
+            "reader_hold"
+          ]
+        }
+      },
+      "expected_status": "completed",
+      "criteria": [
+        "policy",
+        "protocol"
+      ],
+      "required": true
+    },
+    {
+      "id": "overdue",
+      "inputs": {
+        "borrower_id": "B-overdue",
+        "book_id": "BK-overdue",
+        "days_overdue": 3,
+        "holds": 0,
+        "renewals_used": 0
+      },
+      "expected": {
+        "result": {
+          "borrower_id": "B-overdue",
+          "book_id": "BK-overdue",
+          "decision": "staff_review",
+          "renewal_days": 0,
+          "reasons": [
+            "overdue"
+          ]
+        }
+      },
+      "expected_status": "completed",
+      "criteria": [
+        "policy",
+        "protocol"
+      ],
+      "required": true
+    },
+    {
+      "id": "quota",
+      "inputs": {
+        "borrower_id": "B-quota",
+        "book_id": "BK-quota",
+        "days_overdue": 0,
+        "holds": 0,
+        "renewals_used": 2
+      },
+      "expected": {
+        "result": {
+          "borrower_id": "B-quota",
+          "book_id": "BK-quota",
+          "decision": "staff_review",
+          "renewal_days": 0,
+          "reasons": [
+            "renewal_limit"
+          ]
+        }
+      },
+      "expected_status": "completed",
+      "criteria": [
+        "policy",
+        "protocol"
+      ],
+      "required": true
+    }
+  ],
+  "baseline": "No reusable renewal package existed; policy read manually by the host.",
+  "limitations": [
+    "Four explicit policy branches, no real library/account effects.",
+    "One host agent; no performance comparison or provider recovery claim."
+  ]
+}

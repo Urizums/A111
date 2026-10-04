@@ -1,0 +1,20 @@
+{
+  "schema": "forge-observed-command-failure/1",
+  "command": "python3 scripts/verify_handoff.py",
+  "result": "FAIL",
+  "validator_output": {
+    "schema": "forge-handoff-check/1",
+    "ok": false,
+    "errors": [
+      "release manifest coverage differs: ['challenges/renewal-flow/package.json']"
+    ],
+    "active_phase": "R02",
+    "next_task_id": "R02-02",
+    "scope": "read-only hashes, paths, phase dependency/transition invariants; not live or semantic acceptance"
+  },
+  "process_exit_code": null,
+  "exit_code_note": "The direct tool wrapper output retained the validator text but not the numeric subprocess exit code. The semantic FAIL output is preserved exactly.",
+  "correction": "Retain the identical validated package bytes under runs/R02/flow/package-draft.json and remove the temporary challenges/ path; rerun the read-only handoff check.",
+  "candidate_repair_round": 1,
+  "sample_changed": false
+}

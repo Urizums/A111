@@ -1,0 +1,7 @@
+{
+  "domain": "shared IT support queue",
+  "input": "Two clients read the same open ticket version, then simultaneously request in_progress",
+  "expected": "Exactly one 200, one 409, one new history row; stale client sees current state",
+  "unchanged_material": "Use a new frozen ticket input for this distinct concurrency experiment; preserve both clients and every run.",
+  "limits": "No load/performance claim from one two-client race"
+}

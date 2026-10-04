@@ -1,0 +1,52 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R01-03",
+  "attempt_id": "R01-03-1",
+  "requirements_hash": "a11a602eac50ea21ad5be9b269bf62a5cd3a99da08c63d52e9ec6cbe5f4f5990",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R01/import/validation-command.json",
+        "runs/R01/import/validation/report.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R01/import/validation-command.json",
+        "runs/R01/import/validation/report.json"
+      ]
+    },
+    {
+      "id": "a3",
+      "status": "pass",
+      "evidence": [
+        "runs/R01/import/validation-command.json",
+        "runs/R01/import/validation/report.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Durable inventory migration with recoverable failed imports",
+    "hypothesis": "Explicit transaction plus batch digest prevents partial writes and duplicate retries",
+    "baseline": "Frozen JSON only; no target database",
+    "conditions": "Python 3.12.14, SQLite 3.53.1; file database, 3 assets, 2 locations, 2 events; six CLI cases",
+    "observations": "All source records persisted; unchanged database bytes after identical retry and three rejected imports; close/reopen integrity passes",
+    "limits": [
+      "Single writer only; no throughput or concurrent load claim",
+      "Expected constraint failures exercise actual subprocesses, not provider failure"
+    ],
+    "metrics": {
+      "cases_passed": 6,
+      "user_questions": 0,
+      "lost_rows": 0,
+      "speed_gain": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Fresh-context handoff to command-worker crash recovery, then reusable renewal flow."
+}

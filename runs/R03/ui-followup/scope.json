@@ -1,0 +1,10 @@
+{
+  "kind": "root_target_observation_after_incomplete_independent_harness",
+  "original_requirements": ["runs/R03/materials/ticket-brief.json", "runs/R03/materials/ui-brief.json"],
+  "purpose": "Observe previously unexecuted browser states from the retained database; do not repair or rerun the exhausted Luna harness.",
+  "original_harness_verdict": "incomplete after two corrections; remains separate and is never relabeled as passed",
+  "input_policy": "Copy the retained final database byte-for-byte only after the worker finishes; preserve original tickets, source code, acceptance and all earlier failures.",
+  "checks": ["Actual stale-version UI displays conflict and latest state without overwrite", "Browser can continue status progression, resolve and reopen from retained state", "History remains visible", "390px actual layout has no horizontal overflow", "Keyboard focus is visible and semantic form controls remain usable", "Reduced-motion preference keeps all controls usable"],
+  "grader": "Root, same author; this follow-up is not independent validation",
+  "limit": "No full accessibility audit, user-study or provider-performance claim; the original independent result remains partial."
+}

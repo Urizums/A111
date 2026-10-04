@@ -1,0 +1,86 @@
+{
+  "schema": "forge-eval/1",
+  "id": "meeting_action_eval",
+  "criteria": [
+    {
+      "id": "quotes",
+      "kind": "machine",
+      "required": true,
+      "assertion": "Every source_quote is an exact substring of the supplied notes."
+    },
+    {
+      "id": "commitments",
+      "kind": "human",
+      "required": true,
+      "assertion": "Only explicit action items are included; unstated owners and due dates remain null."
+    }
+  ],
+  "cases": [
+    {
+      "id": "explicit_actions",
+      "inputs": {
+        "notes": "Priya will send the revised budget by Friday. Please review the final transcript. It may be useful to book a larger room."
+      },
+      "expected": {
+        "artifacts": {
+          "actions": [
+            {
+              "task": "send the revised budget",
+              "owner": "Priya",
+              "due": "Friday",
+              "source_quote": "Priya will send the revised budget by Friday."
+            },
+            {
+              "task": "review the final transcript",
+              "owner": null,
+              "due": null,
+              "source_quote": "Please review the final transcript."
+            }
+          ]
+        },
+        "evidence": {
+          "domain": "meeting_action_extraction",
+          "exact_source_quotes": [
+            "Priya will send the revised budget by Friday.",
+            "Please review the final transcript."
+          ],
+          "unstated_owner_and_due_are_null": true,
+          "suggestion_excluded": "It may be useful to book a larger room."
+        }
+      },
+      "expected_status": "completed",
+      "criteria": [
+        "quotes",
+        "commitments"
+      ],
+      "required": true
+    },
+    {
+      "id": "no_action_items",
+      "inputs": {
+        "notes": "The team discussed several possible venues. It might be worth comparing prices next week."
+      },
+      "expected": {
+        "artifacts": {
+          "actions": []
+        },
+        "evidence": {
+          "domain": "meeting_action_extraction",
+          "expected_source_quotes": [],
+          "discussion_and_suggestions_are_not_commitments": true
+        }
+      },
+      "expected_status": "completed",
+      "criteria": [
+        "quotes",
+        "commitments"
+      ],
+      "required": true
+    }
+  ],
+  "baseline": "One-agent extraction under the minimal meeting-action flow contract, using only supplied notes and returning the actions artifact.",
+  "limitations": [
+    "Expected artifact and evidence values are descriptive fixtures; this plan module does not execute flows or grade model output.",
+    "Human review is still required to judge whether each action is an explicit commitment."
+  ]
+}

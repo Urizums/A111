@@ -1,0 +1,85 @@
+{
+  "invocation_id": "9f6eb6042fde8d0c5b83234e29e244f1",
+  "outcome": "ok",
+  "artifacts": {
+    "architecture": {
+      "mode": "lite",
+      "necessity": {
+        "choice": "single_agent",
+        "rationale": "One explicit local policy has no independent context or authority boundary.",
+        "baseline": "One host agent reading the library policy."
+      },
+      "decisions": [
+        {
+          "id": "D02",
+          "status": "chosen",
+          "choice": "One policy node with renew and staff-review outcomes",
+          "rationale": "A reusable contract and bounded policy routing meet the goal without redundant roles.",
+          "rejected": [
+            "Multiple workers evaluating identical policy"
+          ],
+          "rollback": "Split only if an independent tool or approval boundary becomes necessary."
+        }
+      ],
+      "lifecycle": {
+        "infra": "Current host agent plus original local package controller; no library connector.",
+        "post": "Read frozen inputs, apply policy, emit strict result and matching outcome.",
+        "after": "Compare all frozen cases, reject stale replies, deliver package and preserve checkpoints."
+      },
+      "knowledge": [],
+      "source_refs": [
+        "runs/R02/materials/flow-brief.json"
+      ],
+      "coverage": [
+        {
+          "requirement_id": "r_policy",
+          "node_ids": [
+            "policy"
+          ],
+          "criteria": [
+            "policy"
+          ]
+        },
+        {
+          "requirement_id": "r_protocol",
+          "node_ids": [
+            "policy"
+          ],
+          "criteria": [
+            "protocol"
+          ]
+        }
+      ],
+      "stress_cases": [
+        {
+          "case_id": "eligible",
+          "risk": "Wrong eligibility, IDs or reasons for eligible",
+          "handling": "Strict result schema plus exact source policy comparison."
+        },
+        {
+          "case_id": "hold",
+          "risk": "Wrong eligibility, IDs or reasons for hold",
+          "handling": "Strict result schema plus exact source policy comparison."
+        },
+        {
+          "case_id": "overdue",
+          "risk": "Wrong eligibility, IDs or reasons for overdue",
+          "handling": "Strict result schema plus exact source policy comparison."
+        },
+        {
+          "case_id": "quota",
+          "risk": "Wrong eligibility, IDs or reasons for quota",
+          "handling": "Strict result schema plus exact source policy comparison."
+        }
+      ],
+      "review": {
+        "mode": "self_review",
+        "summary": "Root checked all four branches and no external effects. Same-context design review; independent handoff is a different task.",
+        "unresolved": []
+      }
+    }
+  },
+  "evidence": [
+    "runs/R02/flow/architecture.json"
+  ]
+}

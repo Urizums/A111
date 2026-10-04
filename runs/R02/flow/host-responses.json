@@ -1,0 +1,9 @@
+{
+  "host": "Root current agent; same-context policy execution, no separate provider call",
+  "responses": {
+    "eligible": {"invocation_id":"a1557a2e89100151dad96f9d3017ff81","outcome":"renewed","artifacts":{"result":{"borrower_id":"B-eligible","book_id":"BK-eligible","decision":"renew","renewal_days":14,"reasons":[]}},"evidence":["Observed eligible dispatch: zero overdue, zero holds, zero previous renewals."]},
+    "hold": {"invocation_id":"a6707c73e06cf864f50b84574e7049bd","outcome":"review","artifacts":{"result":{"borrower_id":"B-hold","book_id":"BK-hold","decision":"staff_review","renewal_days":0,"reasons":["reader_hold"]}},"evidence":["Observed hold dispatch: one other-reader hold."]},
+    "overdue": {"invocation_id":"053ac77776a48e821afab8000a88fad6","outcome":"review","artifacts":{"result":{"borrower_id":"B-overdue","book_id":"BK-overdue","decision":"staff_review","renewal_days":0,"reasons":["overdue"]}},"evidence":["Observed overdue dispatch: three days overdue."]},
+    "quota": {"invocation_id":"ee42938649a8ccc1425724bda82bbbd7","outcome":"review","artifacts":{"result":{"borrower_id":"B-quota","book_id":"BK-quota","decision":"staff_review","renewal_days":0,"reasons":["renewal_limit"]}},"evidence":["Observed quota dispatch: two previous renewals."]}
+  }
+}

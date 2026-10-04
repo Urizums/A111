@@ -1,0 +1,84 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T04:42:54Z",
+  "updated_at": "2026-10-04T04:56:11Z",
+  "revision": 2,
+  "status": "completed",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "sqlite-research",
+    "goal": "Resolve SQLite transaction and retry unknowns for inventory migration",
+    "deliverable_kind": "scoped_change",
+    "requirements": [
+      {
+        "id": "req_work",
+        "text": "Resolve SQLite transaction and retry unknowns for inventory migration",
+        "origin": "explicit",
+        "basis": "runs/R00/research-brief.md",
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_work",
+        "assertion": "Assigned original requirements are covered by actual source and runtime evidence with limits disclosed.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "Resolve SQLite transaction and retry unknowns for inventory migration",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "b9532a4b25320eab6fa4e38c17a8bd3e794f86f918f64dfb1d00e196b6c1c97a",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "done",
+      "attempts": [
+        {
+          "attempt_id": "66ef7f034e2646efa74c7fec3d524759",
+          "plan_hash": "b9532a4b25320eab6fa4e38c17a8bd3e794f86f918f64dfb1d00e196b6c1c97a",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_work"
+          ],
+          "started_at": "2026-10-04T04:42:54Z",
+          "finished_at": "2026-10-04T04:56:11Z",
+          "outcome": "done",
+          "reason": null,
+          "acceptance_results": {
+            "a_work": {
+              "status": "pass",
+              "level": "review",
+              "evidence": [
+                {
+                  "path": "/workspace/A111/runs/R01/sqlite-research/root-review.json",
+                  "sha256": "4bca189d251edf3c4e43588b6b7857a372133bac7165a182c0de6f6297b73278"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

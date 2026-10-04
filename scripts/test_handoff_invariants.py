@@ -5,7 +5,7 @@ from pathlib import Path
 import tempfile
 import unittest
 
-from verify_handoff import validate_checkpoint, validate_phase, safe_path
+from verify_handoff import validate_checkpoint, validate_phase, validate_continuation, safe_path
 
 
 class HandoffInvariants(unittest.TestCase):
@@ -89,6 +89,20 @@ class HandoffInvariants(unittest.TestCase):
 
     def test_unfinished_checkpoint_cannot_select_no_task(self):
         self.assertTrue(validate_checkpoint(dict(active_phase='P1', next_task_id=None), self.phase))
+
+    def test_delivery_cannot_hide_ready_continuation(self):
+        task=dict(id='ready', queue='capabilities', category='test', priority=1,
+                  owner='root', write_paths=['runs/'], acceptance=['real result'],
+                  inputs=[], depends_on=[], status='planned', next_action='execute',
+                  evidence=[], attempts=[], repairs_used=0, repair_limit=2, blocker=None)
+        state=dict(project_goal=dict(status='active'),deliveries=dict(D00=dict(status='delivered')),
+                   tasks=[task],execution={})
+        checkpoint=dict(project_goal_status='active',next_queue_task_id=None,lifecycle='delivered')
+        errors=validate_continuation(checkpoint,state,self.root)
+        self.assertTrue(any('next queue task' in e for e in errors))
+        self.assertTrue(any('must not terminate' in e for e in errors))
+        checkpoint.update(next_queue_task_id='ready',lifecycle='active')
+        self.assertEqual(validate_continuation(checkpoint,state,self.root),[])
 
 
 if __name__=='__main__':unittest.main()

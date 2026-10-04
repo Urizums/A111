@@ -1,0 +1,119 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R01",
+  "goal": "Progress the long-term R&D loop with actual evidence.",
+  "tasks": [
+    {
+      "id": "R01-01",
+      "title": "验证最小长期接续控制器",
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "scripts/",
+        "state/"
+      ],
+      "acceptance": [
+        "Delivered milestones do not close long-term goal or hide ready tasks",
+        "Frozen inputs/criteria, failed attempts and two-repair budgets are enforced",
+        "Phase transition requires actual next first step"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R01/mechanism-result.json",
+        "runs/R00/continuation-tests-initial.json",
+        "runs/R00/continuation-tests-initial.json",
+        "runs/R00/continuation-tests-initial.json",
+        "runs/R01/mechanism-first-step.json"
+      ],
+      "blocker": null,
+      "next_action": "Execute the one-off calendar task on its frozen materials."
+    },
+    {
+      "id": "R01-02",
+      "title": "生成工作坊日历文件",
+      "owner": "root",
+      "depends_on": [
+        "R01-01"
+      ],
+      "write_paths": [
+        "runs/R01/calendar/"
+      ],
+      "acceptance": [
+        "Produce one valid ICS event with exact source fields and timezone/duration",
+        "Perform source check with no factory or reusable app scaffolding"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R01/calendar/result.json",
+        "runs/R01/calendar/verify-command.json",
+        "runs/R01/calendar/workshop.ics",
+        "runs/R01/calendar/verify-command.json",
+        "runs/R01/calendar/workshop.ics",
+        "runs/R01/calendar/first-step.json"
+      ],
+      "blocker": null,
+      "next_action": "Increase complexity to durable JSON-to-SQLite migration with transaction failure cases."
+    },
+    {
+      "id": "R01-03",
+      "title": "实现并验证馆藏设备迁移",
+      "owner": "root",
+      "depends_on": [
+        "R01-02"
+      ],
+      "write_paths": [
+        "challenges/inventory/",
+        "runs/R01/import/"
+      ],
+      "acceptance": [
+        "Source inventory and service relationships survive JSON-to-SQLite migration",
+        "Identical retry is idempotent; conflicting same batch is rejected",
+        "Late constraint failure rolls back complete existing-database transaction"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R01/import/result.json",
+        "runs/R01/import/validation-command.json",
+        "runs/R01/import/validation/report.json",
+        "runs/R01/import/validation-command.json",
+        "runs/R01/import/validation/report.json",
+        "runs/R01/import/validation-command.json",
+        "runs/R01/import/validation/report.json",
+        "runs/R01/import/first-step.json"
+      ],
+      "blocker": null,
+      "next_action": "Fresh-context handoff to command-worker crash recovery, then reusable renewal flow."
+    },
+    {
+      "id": "R01-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R01-01",
+        "R01-02",
+        "R01-03"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "Next phase first task has actual recorded execution; preserve current phase archive"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R02/worker-recovery/01-freeze-check-command.json"
+      ],
+      "blocker": null,
+      "next_action": "Continue the already started successor task.",
+      "transition": {
+        "next_phase_id": "R02",
+        "todo_path": "state/phase-todo.json",
+        "first_task_id": "R02-01",
+        "start_evidence": [
+          "runs/R02/worker-recovery/01-freeze-check-command.json"
+        ]
+      }
+    }
+  ]
+}

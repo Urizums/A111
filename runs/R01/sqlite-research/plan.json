@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "sqlite-research",
+  "goal": "Resolve SQLite transaction and retry unknowns for inventory migration",
+  "deliverable_kind": "scoped_change",
+  "requirements": [
+    {
+      "id": "req_work",
+      "text": "Resolve SQLite transaction and retry unknowns for inventory migration",
+      "origin": "explicit",
+      "basis": "runs/R00/research-brief.md",
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_work",
+      "assertion": "Assigned original requirements are covered by actual source and runtime evidence with limits disclosed.",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "work",
+      "title": "Resolve SQLite transaction and retry unknowns for inventory migration",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ]
+}

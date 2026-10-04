@@ -1,0 +1,25 @@
+{
+  "category": "software_system",
+  "goal": "Working local IT support desk with persistent tickets and actionable error/recovery feedback.",
+  "requirements": [
+    "Create a ticket with required title, description and low/normal/urgent priority",
+    "List, search and filter persisted tickets",
+    "Move open to in_progress to resolved and reopen resolved to open; reject invalid transitions",
+    "Require expected version on updates and return conflict without overwriting concurrent edits",
+    "Persist state after server restart and retain change history",
+    "Return validation errors without losing entered form fields"
+  ],
+  "fixtures": [
+    {
+      "title": "打印队列卡住",
+      "description": "二楼共享打印机无法继续",
+      "priority": "normal"
+    },
+    {
+      "title": "会议室视频无声",
+      "description": "音频输出设备丢失",
+      "priority": "urgent"
+    }
+  ],
+  "scope": "Local actual HTTP/SQLite service with UI. No production identity or external business service claim."
+}

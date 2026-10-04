@@ -1,0 +1,292 @@
+{
+  "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+  "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+  "cases": [
+    {
+      "case_id": "eligible",
+      "run": {
+        "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+        "flow_state": {
+          "state_version": "1.0",
+          "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+          "run_id": "ef7139c24f3546379bd29bb3b2aafebf",
+          "status": "completed",
+          "node": "$done",
+          "steps": 1,
+          "visits": {
+            "policy": 1
+          },
+          "artifacts": {
+            "borrower_id": "B-eligible",
+            "book_id": "BK-eligible",
+            "days_overdue": 0,
+            "holds": 0,
+            "renewals_used": 0,
+            "result": {
+              "borrower_id": "B-eligible",
+              "book_id": "BK-eligible",
+              "decision": "renew",
+              "renewal_days": 14,
+              "reasons": []
+            }
+          },
+          "trace": [
+            {
+              "step": 1,
+              "node": "policy",
+              "invocation_id": "a1557a2e89100151dad96f9d3017ff81",
+              "outcome": "renewed",
+              "input_hash": "ae9a23b947bd2e9d83919245859dc50b0fbc68bc86244a504148de3ab0df0f9f",
+              "output_hash": "b55debe67cd8309ab56c2464703c6c9128c959a395e4093f4138f53dae29ae52",
+              "evidence": [
+                "Observed eligible dispatch: zero overdue, zero holds, zero previous renewals."
+              ]
+            }
+          ]
+        },
+        "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+        "input_hash": "ae9a23b947bd2e9d83919245859dc50b0fbc68bc86244a504148de3ab0df0f9f"
+      },
+      "checks": [
+        {
+          "id": "policy",
+          "kind": "machine",
+          "status": "pass",
+          "evidence": [
+            "runs/R02/flow/eligible-state-final.json",
+            "runs/R02/flow/eligible-stale-rejection.json",
+            "runs/R02/flow/eligible-shape-rejection.json",
+            "runs/R02/flow/eligible-input-rejection.json"
+          ]
+        },
+        {
+          "id": "protocol",
+          "kind": "machine",
+          "status": "pass",
+          "evidence": [
+            "runs/R02/flow/eligible-state-final.json",
+            "runs/R02/flow/eligible-stale-rejection.json",
+            "runs/R02/flow/eligible-shape-rejection.json",
+            "runs/R02/flow/eligible-input-rejection.json"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "hold",
+      "run": {
+        "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+        "flow_state": {
+          "state_version": "1.0",
+          "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+          "run_id": "cd0376b5f0564d7ab7c3e7d40d1dc018",
+          "status": "completed",
+          "node": "$done",
+          "steps": 1,
+          "visits": {
+            "policy": 1
+          },
+          "artifacts": {
+            "borrower_id": "B-hold",
+            "book_id": "BK-hold",
+            "days_overdue": 0,
+            "holds": 1,
+            "renewals_used": 0,
+            "result": {
+              "borrower_id": "B-hold",
+              "book_id": "BK-hold",
+              "decision": "staff_review",
+              "renewal_days": 0,
+              "reasons": [
+                "reader_hold"
+              ]
+            }
+          },
+          "trace": [
+            {
+              "step": 1,
+              "node": "policy",
+              "invocation_id": "a6707c73e06cf864f50b84574e7049bd",
+              "outcome": "review",
+              "input_hash": "0ab7d00ba3052a5e6aab17470d4f6f3ee4546cc3dfdafbe9da836ea0e664bc29",
+              "output_hash": "fc5572449c71d1c1f18aaffb1b68ef6a20009353110db7ae76da78c45624c6bb",
+              "evidence": [
+                "Observed hold dispatch: one other-reader hold."
+              ]
+            }
+          ]
+        },
+        "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+        "input_hash": "0ab7d00ba3052a5e6aab17470d4f6f3ee4546cc3dfdafbe9da836ea0e664bc29"
+      },
+      "checks": [
+        {
+          "id": "policy",
+          "kind": "machine",
+          "status": "pass",
+          "evidence": [
+            "runs/R02/flow/hold-state-final.json",
+            "runs/R02/flow/hold-stale-rejection.json",
+            "runs/R02/flow/hold-shape-rejection.json",
+            "runs/R02/flow/hold-input-rejection.json"
+          ]
+        },
+        {
+          "id": "protocol",
+          "kind": "machine",
+          "status": "pass",
+          "evidence": [
+            "runs/R02/flow/hold-state-final.json",
+            "runs/R02/flow/hold-stale-rejection.json",
+            "runs/R02/flow/hold-shape-rejection.json",
+            "runs/R02/flow/hold-input-rejection.json"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "overdue",
+      "run": {
+        "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+        "flow_state": {
+          "state_version": "1.0",
+          "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+          "run_id": "a987d0cf1e944162a909ca3477bbcb1a",
+          "status": "completed",
+          "node": "$done",
+          "steps": 1,
+          "visits": {
+            "policy": 1
+          },
+          "artifacts": {
+            "borrower_id": "B-overdue",
+            "book_id": "BK-overdue",
+            "days_overdue": 3,
+            "holds": 0,
+            "renewals_used": 0,
+            "result": {
+              "borrower_id": "B-overdue",
+              "book_id": "BK-overdue",
+              "decision": "staff_review",
+              "renewal_days": 0,
+              "reasons": [
+                "overdue"
+              ]
+            }
+          },
+          "trace": [
+            {
+              "step": 1,
+              "node": "policy",
+              "invocation_id": "053ac77776a48e821afab8000a88fad6",
+              "outcome": "review",
+              "input_hash": "cd51f3e18181e59fe35f48a346b98df2f305ecb62d40f2fced1705d96ed70d2f",
+              "output_hash": "69f8a4da623e911ade7b28da897a2e05868239c083149898970957875745df28",
+              "evidence": [
+                "Observed overdue dispatch: three days overdue."
+              ]
+            }
+          ]
+        },
+        "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+        "input_hash": "cd51f3e18181e59fe35f48a346b98df2f305ecb62d40f2fced1705d96ed70d2f"
+      },
+      "checks": [
+        {
+          "id": "policy",
+          "kind": "machine",
+          "status": "pass",
+          "evidence": [
+            "runs/R02/flow/overdue-state-final.json",
+            "runs/R02/flow/overdue-stale-rejection.json",
+            "runs/R02/flow/overdue-shape-rejection.json",
+            "runs/R02/flow/overdue-input-rejection.json"
+          ]
+        },
+        {
+          "id": "protocol",
+          "kind": "machine",
+          "status": "pass",
+          "evidence": [
+            "runs/R02/flow/overdue-state-final.json",
+            "runs/R02/flow/overdue-stale-rejection.json",
+            "runs/R02/flow/overdue-shape-rejection.json",
+            "runs/R02/flow/overdue-input-rejection.json"
+          ]
+        }
+      ]
+    },
+    {
+      "case_id": "quota",
+      "run": {
+        "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+        "flow_state": {
+          "state_version": "1.0",
+          "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+          "run_id": "41b543652048413ea71f06eb577d9a91",
+          "status": "completed",
+          "node": "$done",
+          "steps": 1,
+          "visits": {
+            "policy": 1
+          },
+          "artifacts": {
+            "borrower_id": "B-quota",
+            "book_id": "BK-quota",
+            "days_overdue": 0,
+            "holds": 0,
+            "renewals_used": 2,
+            "result": {
+              "borrower_id": "B-quota",
+              "book_id": "BK-quota",
+              "decision": "staff_review",
+              "renewal_days": 0,
+              "reasons": [
+                "renewal_limit"
+              ]
+            }
+          },
+          "trace": [
+            {
+              "step": 1,
+              "node": "policy",
+              "invocation_id": "ee42938649a8ccc1425724bda82bbbd7",
+              "outcome": "review",
+              "input_hash": "1cf4c279757a125f929dee526d481301b706e48fbf93173a8734ba8181012ffb",
+              "output_hash": "a4011959fc745dc5c8dd20f4684cfee5f8f7c71fccf00931163d480614c285af",
+              "evidence": [
+                "Observed quota dispatch: two previous renewals."
+              ]
+            }
+          ]
+        },
+        "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+        "input_hash": "1cf4c279757a125f929dee526d481301b706e48fbf93173a8734ba8181012ffb"
+      },
+      "checks": [
+        {
+          "id": "policy",
+          "kind": "machine",
+          "status": "pass",
+          "evidence": [
+            "runs/R02/flow/quota-state-final.json",
+            "runs/R02/flow/quota-stale-rejection.json",
+            "runs/R02/flow/quota-shape-rejection.json",
+            "runs/R02/flow/quota-input-rejection.json"
+          ]
+        },
+        {
+          "id": "protocol",
+          "kind": "machine",
+          "status": "pass",
+          "evidence": [
+            "runs/R02/flow/quota-state-final.json",
+            "runs/R02/flow/quota-stale-rejection.json",
+            "runs/R02/flow/quota-shape-rejection.json",
+            "runs/R02/flow/quota-input-rejection.json"
+          ]
+        }
+      ]
+    }
+  ]
+}

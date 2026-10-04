@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "cases": [
+    {
+      "case": "eligible",
+      "exact_policy": "pass",
+      "stale": "rejected_unchanged",
+      "shape": "rejected_unchanged",
+      "input": "rejected"
+    },
+    {
+      "case": "hold",
+      "exact_policy": "pass",
+      "stale": "rejected_unchanged",
+      "shape": "rejected_unchanged",
+      "input": "rejected"
+    },
+    {
+      "case": "overdue",
+      "exact_policy": "pass",
+      "stale": "rejected_unchanged",
+      "shape": "rejected_unchanged",
+      "input": "rejected"
+    },
+    {
+      "case": "quota",
+      "exact_policy": "pass",
+      "stale": "rejected_unchanged",
+      "shape": "rejected_unchanged",
+      "input": "rejected"
+    }
+  ],
+  "host": "Root agent, same-context; no native child/provider SDK claim",
+  "limits": [
+    "Four explicit policy branches, no real library/account effects.",
+    "One host agent; no performance comparison or provider recovery claim."
+  ],
+  "tokens": null,
+  "cost": null
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "import hashlib,json,pathlib; root=pathlib.Path(\".\"); state=json.loads((root/\"state/continuation.json\").read_text()); task=next(t for t in state[\"tasks\"] if t[\"id\"]==\"R02-02\"); frozen=json.loads((root/\"runs/R02/flow/frozen-acceptance.json\").read_text()); validator=json.loads((root/\"runs/R02/flow/01-successor-first-step-command.json\").read_text()); validation_output=json.loads(validator[\"stdout\"]); sha=lambda p:hashlib.sha256((root/p).read_bytes()).hexdigest(); acceptance_sha=hashlib.sha256(json.dumps(task[\"acceptance\"],ensure_ascii=False,sort_keys=True).encode()).hexdigest(); input_sha=sha(task[\"inputs\"][0]); controller_sha=sha(\"skills/forge-agent-flow/scripts/packagectl.py\"); assert task[\"acceptance\"]==frozen[\"criteria\"]; assert task[\"inputs\"][0]==frozen[\"input\"][\"path\"]; assert input_sha==frozen[\"input\"][\"sha256\"]; assert acceptance_sha==frozen[\"acceptance_sha256\"]; assert controller_sha==frozen[\"route\"][\"controller_sha256\"]; assert validator[\"state\"]==\"finished\" and validator[\"exit_code\"]==0 and validation_output[\"valid\"] is True; print(json.dumps({\"passed\":True,\"task_id\":task[\"id\"],\"input_sha256\":input_sha,\"acceptance_sha256\":acceptance_sha,\"controller_sha256\":controller_sha,\"package_sha256\":sha(\"challenges/renewal-flow/package.json\"),\"validation_exit_code\":validator[\"exit_code\"]},sort_keys=True))"
+  ],
+  "cwd": "/workspace/A111/runs/R02/handoff/worker/checkout",
+  "begin": {
+    "utc": "2026-10-04T05:07:19.333278+00:00",
+    "monotonic_ns": 35077979653959,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:07:19.361944+00:00",
+    "monotonic_ns": 35078008319645,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\"acceptance_sha256\": \"6d3a95c27efccdc814e87b7846549e5d18d90116095eac9533883b46e88c5e53\", \"controller_sha256\": \"00a85d0bde9e61395fcb25a4cd0178c88a87d72552f0d26324ed3caa5f6ce8c6\", \"input_sha256\": \"7b0682db565b8c689bfbbdda07166f45a05f8f3b585079e3919ab8be6cb8e105\", \"package_sha256\": \"f6b3033c9fbb6af0874e7eaf9bb51ab2bca511809d3324c892ae1dc882b3db5c\", \"passed\": true, \"task_id\": \"R02-02\", \"validation_exit_code\": 0}\n",
+  "stderr": "",
+  "stdout_base64": "eyJhY2NlcHRhbmNlX3NoYTI1NiI6ICI2ZDNhOTVjMjdlZmNjZGM4MTRlODdiNzg0NjU0OWU1ZDE4ZDkwMTE2MDk1ZWFjOTUzMzg4M2I0NmU4OGM1ZTUzIiwgImNvbnRyb2xsZXJfc2hhMjU2IjogIjAwYTg1ZDBiZGU5ZTYxMzk1ZmNiMjVhNGNkMDE3OGM4OGE4N2Q3MjU1MmYwZDI2MzI0ZWQzY2FhNWY2Y2U4YzYiLCAiaW5wdXRfc2hhMjU2IjogIjdiMDY4MmRiNTY1YjhjNjg5YmZiYmRkYTA3MTY2ZjQ1YTA1ZjhmM2I1ODUwNzllMzkxOWFiOGJlNmNiOGUxMDUiLCAicGFja2FnZV9zaGEyNTYiOiAiZjZiMzAzM2M5ZmJiNmFmMDg3NGU3ZWFmOWJiNTFhYjJiY2E1MTE4MDlkMzMyNGM4OTJhZTFkYzg4MmIzZGI1YyIsICJwYXNzZWQiOiB0cnVlLCAidGFza19pZCI6ICJSMDItMDIiLCAidmFsaWRhdGlvbl9leGl0X2NvZGUiOiAwfQo=",
+  "stderr_base64": ""
+}

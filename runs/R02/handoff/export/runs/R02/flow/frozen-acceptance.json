@@ -1,0 +1,32 @@
+{
+  "schema": "forge-task-freeze/1",
+  "task_id": "R02-02",
+  "frozen_before_first_step": true,
+  "criteria": [
+    {
+      "id": "a1",
+      "assertion": "Reusable policy flow executes all four frozen cases using original package controller"
+    },
+    {
+      "id": "a2",
+      "assertion": "Stale reply rejected without state mutation; all results match explicit policy"
+    }
+  ],
+  "acceptance_source": "state/continuation.json: R02-02.acceptance",
+  "input": {
+    "path": "runs/R02/materials/flow-brief.json",
+    "sha256": "7b0682db565b8c689bfbbdda07166f45a05f8f3b585079e3919ab8be6cb8e105"
+  },
+  "acceptance_sha256": "6d3a95c27efccdc814e87b7846549e5d18d90116095eac9533883b46e88c5e53",
+  "route": {
+    "choice": "agent_flow",
+    "reason": "The task is explicitly to build and run a reusable book-renewal policy flow with four frozen cases through the package controller.",
+    "controller_path": "skills/forge-agent-flow/scripts/packagectl.py",
+    "controller_sha256": "00a85d0bde9e61395fcb25a4cd0178c88a87d72552f0d26324ed3caa5f6ce8c6",
+    "controller_baseline": "The candidate controller copy has the same SHA-256; the immutable skills/ copy is selected as the original controller."
+  },
+  "effect_hypothesis": "A single-node offline package can express the exact renewal policy and strict shapes. The original controller should validate and later execute all four supplied cases while rejecting stale replies without mutating state.",
+  "model_active_time_seconds": null,
+  "provider_tokens": null,
+  "provider_cost": null
+}

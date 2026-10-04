@@ -2,7 +2,7 @@ name: Cloud delivery validation
 on:
   pull_request:
   push:
-    branches: [main]
+    branches: [main, dev]
   workflow_dispatch:
 jobs:
   validate:
@@ -19,8 +19,19 @@ jobs:
         run: python scripts/verify_handoff.py --json
       - name: Original controller regression
         run: python -m unittest discover -s skills/forge-agent-flow/scripts -p 'test_*.py'
+      - name: C3 versioned candidate regression
+        run: python -m unittest discover -s runs/R01/candidate/forge-agent-flow/scripts -p 'test_*.py'
       - name: Handoff and recorder regression
         run: python -m unittest discover -s scripts -p 'test_*.py'
+      - name: Actual support desk HTTP journey
+        run: >-
+          python skills/forge-agent-flow/scripts/caserunner.py run
+          runs/R03/app/evaluation-plan.json --cwd "$GITHUB_WORKSPACE"
+          --candidate-file "$GITHUB_WORKSPACE/runs/R03/app/api_adapter.py"
+          --candidate-file "$GITHUB_WORKSPACE/challenges/ticket-desk/app.py"
+          --output-dir "$RUNNER_TEMP/ticket-cases" --timeout 30
+          --command python "$GITHUB_WORKSPACE/runs/R03/app/api_adapter.py"
+          --out "$RUNNER_TEMP/ticket-raw"
       - name: Install and exercise CLI with fresh state
         run: |
           python scripts/deploy_cloud.py --prefix "$RUNNER_TEMP/agent-forge"
@@ -33,3 +44,5 @@ jobs:
           path: |
             ${{ runner.temp }}/delivery/
             ${{ runner.temp }}/smoke/report.json
+            ${{ runner.temp }}/ticket-cases/
+            ${{ runner.temp }}/ticket-raw/

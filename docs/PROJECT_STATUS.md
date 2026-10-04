@@ -1,4 +1,8 @@
-# 当前项目状态
+# 项目状态与保留的历史
+
+当前长期目标 active，D00 只表示历史交付里程碑。实时状态以 `state/continuation.json` 和 checkpoint 为准。R01–R04 已完成双队列机制、一次性日历、六项迁移案例、新上下文交接与进程恢复、四例续借 flow、真实 HTTP 工单应用及当前能力映射；R05 首项已在 Chromium 实际渲染原预设页面，完整旅程仍进行中。本轮报告见 `runs/R00/VERIFICATION_REPORT.md`。下面的 C1/S/D00 描述保留原验收范围。
+
+工单独立浏览器验收在两次脚本修正后仍未完成，Root 已将 bridge 判为 blocked。保留同一数据库后，Root 单独观察此前未执行的 8 个目标状态，涵盖冲突、重开、历史、390px、键盘和减少动效；它是作者复核，不能替代独立完整验收。没有改写原失败或修复耗尽的脚本。每小时接续检查已实际配置，未来宿主代码执行能力尚未验证。
 
 项目目标不是单个工单页面，而是一套能把目标转成可执行任务、交付软件或可复用 agent flow、验证并继续迭代的方法与本地控制器。工单审批、导入系统和资料抽取是验证材料。前端体验与运维稳定性是交叉的设计约束，不归并成一个“架构完成”标签。
 
@@ -6,7 +10,7 @@
 | --- | --- | --- |
 | 任务入口 | 简单任务、软件系统、agent infra、flow、既有 package 的分流 | 小任务不强制 factory；方法完整性不能替代产品运行 |
 | 应用/系统架构 | 领域、数据、权限、部署、故障恢复、性能与可观测性设计方法 | 具体系统必须落实案例；完整 production infra 未宣称完成 |
-| 前端架构与体验 | 独立 product-experience skill；布局、密度、色彩、组件状态、动效与交互路线 | 两个真实 UI 验收能力阻塞保留；HTTP 成功不能代替视觉与交互验收 |
+| 前端架构与体验 | 独立 product-experience skill；布局、密度、色彩、组件状态、动效与交互路线 | 历史两个 UI 阻塞保留为历史；当前浏览器已可用，工单和原预设目标分开验收 |
 | 本地执行 | project/package 状态、材料绑定、case grading、审阅、host bridge/driver | 不包含独立 provider SDK；本地限制不等于 provider 全局保证 |
 | 恢复 | 保留原 ID、receipt、失败及有界 resume/review；本地容量/截止案例 | 自然网络延迟、外部业务效果对账仍需专门验证 |
 | 最近基线 T1 | reply/decision 未完成草稿、原验收 preflight；历史 368 回归、两个真实 worker | 辅助情况与 worker pre-completion 采集缺口保留；未证明提速 |
@@ -33,4 +37,4 @@ S01 的 A01–A05 离线审计已完成，报告位于 `runs/S01/cloud-audit/wor
 
 原控制器在 Python 3.10/3.12 各通过 368 项回归，辅助检查各 16 项；候选另通过 368 项，安装/异地解压后 CLI 冒烟各 17 项通过。首次失败、修复预算与复测日志见 `runs/cloud/VERIFICATION_REPORT.md` 和 `runs/cloud/issues.json`。S01 审计与部署/S02/S03 的准备有时间重叠，归档计划明确保留实际时间，没有回填阶段开始时间。
 
-两个 UI 阻塞与三个 provider / resources / network / effects partial 工作继续独立存在。catalog 可先做来源、schema、token 和状态规范；真实渲染验收保留单独任务。
+历史 UI 阻塞与 provider / resources / network / effects partial 工作保留历史状态，当前可用性由 R04 重新探测；不得用历史阻塞代替现场检查。catalog 可先做来源、schema、token 和状态规范；真实渲染验收保留单独任务。

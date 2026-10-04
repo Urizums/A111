@@ -1,0 +1,35 @@
+{
+  "schema": "forge-task-freeze/1",
+  "task_id": "R02-01",
+  "frozen_before_implementation": true,
+  "criteria": [
+    {
+      "id": "a1",
+      "assertion": "Actual command worker exits during an uncommitted transaction; database has no partial write"
+    },
+    {
+      "id": "a2",
+      "assertion": "Fresh-context executor recovers original input, retries safely, retains raw failed attempt"
+    },
+    {
+      "id": "a3",
+      "assertion": "Choose route from repository, complete selected task and start next task with actual command evidence"
+    }
+  ],
+  "acceptance_source": "state/continuation.json: R02-01.acceptance",
+  "input": {
+    "path": "runs/R02/materials/recovery-batch.json",
+    "sha256": "3b4541ce07fdb931e6cdc32a114c2320573baa404503563c58a38bdb86fff2cb"
+  },
+  "acceptance_sha256": "0bb945f65e9b25c01d08149013eed785f5a7eabe24fa89d966c3a8f01cce9a1c",
+  "route": {
+    "choice": "scoped_task",
+    "basis": "runs/R01/candidate/forge-agent-flow/SKILL.md: choose the delivery type from the requested outcome; one-time scoped_task uses direct execution and relevant checks; do not create a factory when no reusable flow is requested.",
+    "reason": "R02-01 is a single local crash/recovery experiment over the supplied JSON and SQLite state. It does not request a reusable flow or product; R02-02 separately names the reusable agent-flow successor.",
+    "source_sha256": "bb963ee5814f7da35d3793f4400d08b0580cc90ac0d814c74ffc4a77f53336db"
+  },
+  "effect_hypothesis": "With a committed baseline row present, a command worker that mutates that row and stages the supplied batch inside one uncommitted transaction then exits abruptly should leave the database identical to the baseline after reopen. Replaying the unchanged source through the repository importer should apply once; replaying it again should be idempotently reused without changing database bytes.",
+  "model_active_time_seconds": null,
+  "provider_tokens": null,
+  "provider_cost": null
+}

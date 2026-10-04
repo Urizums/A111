@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "import hashlib,json,pathlib; root=pathlib.Path(\".\"); state=json.loads((root/\"state/continuation.json\").read_text()); task=next(t for t in state[\"tasks\"] if t[\"id\"]==\"R02-01\"); frozen=json.loads((root/\"runs/R02/worker-recovery/frozen-acceptance.json\").read_text()); sha=lambda p:hashlib.sha256((root/p).read_bytes()).hexdigest(); acceptance_sha=hashlib.sha256(json.dumps(task[\"acceptance\"],ensure_ascii=False,sort_keys=True).encode()).hexdigest(); assert frozen[\"criteria\"]==task[\"acceptance\"]; assert sha(frozen[\"input\"][\"path\"])==frozen[\"input\"][\"sha256\"]; assert not (root/\"runs/R02/worker-recovery/verify_recovery.py\").exists(); assert not (root/\"runs/R02/worker-recovery/command_worker.py\").exists(); print(json.dumps({\"task_id\":task[\"id\"],\"acceptance_sha256\":acceptance_sha,\"input_sha256\":sha(frozen[\"input\"][\"path\"]),\"route_source_sha256\":sha(\"runs/R01/candidate/forge-agent-flow/SKILL.md\"),\"implementation_absent\":True},sort_keys=True))"
+  ],
+  "cwd": "/workspace/A111/runs/R02/handoff/worker/checkout",
+  "begin": {
+    "utc": "2026-10-04T05:01:18.296948+00:00",
+    "monotonic_ns": 34716943323415,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:01:18.320830+00:00",
+    "monotonic_ns": 34716967204347,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\"acceptance_sha256\": \"0bb945f65e9b25c01d08149013eed785f5a7eabe24fa89d966c3a8f01cce9a1c\", \"implementation_absent\": true, \"input_sha256\": \"3b4541ce07fdb931e6cdc32a114c2320573baa404503563c58a38bdb86fff2cb\", \"route_source_sha256\": \"bb963ee5814f7da35d3793f4400d08b0580cc90ac0d814c74ffc4a77f53336db\", \"task_id\": \"R02-01\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJhY2NlcHRhbmNlX3NoYTI1NiI6ICIwYmI5NDVmNjVlOWIyNWMwMWQwODE0OTAxM2VlZDc4NWY1YTdlYWJlMjRmYTg5ZDk2NmMzYThmMDFjY2U5YTFjIiwgImltcGxlbWVudGF0aW9uX2Fic2VudCI6IHRydWUsICJpbnB1dF9zaGEyNTYiOiAiM2I0NTQxY2UwN2ZkYjkzMWU2Y2RjMzJhMTE0YzIzMjA1NzNiYWE0MDQ1MDM1NjNjNThhMzhiZGI4NmZmZjJjYiIsICJyb3V0ZV9zb3VyY2Vfc2hhMjU2IjogImJiOTYzZWU1ODE0ZjdkYTM1ZDM3OTNmNDQwMGQwOGIwNTgwY2M5MGFjMGQ4MTRjNzRmZmM0YTc3ZjUzMzM2ZGIiLCAidGFza19pZCI6ICJSMDItMDEifQo=",
+  "stderr_base64": ""
+}
