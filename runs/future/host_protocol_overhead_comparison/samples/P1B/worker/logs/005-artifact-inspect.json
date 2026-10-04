@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "from pathlib import Path; print({name:(Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker\")/name).read_text()[-20:] for name in [\"business.json\",\"corrections.json\"]})"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:15:29.242965+00:00",
+    "monotonic_ns": 39167889340845,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:15:29.263585+00:00",
+    "monotonic_ns": 39167909959639,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.020618794,
+  "stdout": "{'business.json': 'erval\"\\n    }\\n  ]\\n}\\\\n', 'corrections.json': '\"cost\": null\\n  }\\n}\\\\n'}\n",
+  "stderr": "",
+  "stdout_base64": "eydidXNpbmVzcy5qc29uJzogJ2VydmFsIlxuICAgIH1cbiAgXVxufVxcbicsICdjb3JyZWN0aW9ucy5qc29uJzogJyJjb3N0IjogbnVsbFxuICB9XG59XFxuJ30K",
+  "stderr_base64": ""
+}

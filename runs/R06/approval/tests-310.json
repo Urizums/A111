@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3.10",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "runs/R06/approval",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:37:10.102160+00:00",
+    "monotonic_ns": 40468748539231,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:37:10.950555+00:00",
+    "monotonic_ns": 40469596937168,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_disabled_policy_defaults_to_manual (test_approval.ApprovalTests) ... ok\ntest_durable_idempotency_and_conflicting_payload (test_approval.ApprovalTests) ... ok\ntest_invalid_boolean_amount_has_no_decision (test_approval.ApprovalTests) ... ok\ntest_late_process_crash_rolls_back_and_same_input_retries (test_approval.ApprovalTests) ... ok\ntest_rule_precedence_and_local_scope (test_approval.ApprovalTests) ... ok\ntest_second_version_has_contiguous_audit_and_rejects_stale (test_approval.ApprovalTests) ... ok\ntest_two_processes_share_same_version_without_lost_audit (test_approval.ApprovalTests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.797s\n\nOK\n",
+  "stdout_base64": "",
+  "stderr_base64": "dGVzdF9kaXNhYmxlZF9wb2xpY3lfZGVmYXVsdHNfdG9fbWFudWFsICh0ZXN0X2FwcHJvdmFsLkFwcHJvdmFsVGVzdHMpIC4uLiBvawp0ZXN0X2R1cmFibGVfaWRlbXBvdGVuY3lfYW5kX2NvbmZsaWN0aW5nX3BheWxvYWQgKHRlc3RfYXBwcm92YWwuQXBwcm92YWxUZXN0cykgLi4uIG9rCnRlc3RfaW52YWxpZF9ib29sZWFuX2Ftb3VudF9oYXNfbm9fZGVjaXNpb24gKHRlc3RfYXBwcm92YWwuQXBwcm92YWxUZXN0cykgLi4uIG9rCnRlc3RfbGF0ZV9wcm9jZXNzX2NyYXNoX3JvbGxzX2JhY2tfYW5kX3NhbWVfaW5wdXRfcmV0cmllcyAodGVzdF9hcHByb3ZhbC5BcHByb3ZhbFRlc3RzKSAuLi4gb2sKdGVzdF9ydWxlX3ByZWNlZGVuY2VfYW5kX2xvY2FsX3Njb3BlICh0ZXN0X2FwcHJvdmFsLkFwcHJvdmFsVGVzdHMpIC4uLiBvawp0ZXN0X3NlY29uZF92ZXJzaW9uX2hhc19jb250aWd1b3VzX2F1ZGl0X2FuZF9yZWplY3RzX3N0YWxlICh0ZXN0X2FwcHJvdmFsLkFwcHJvdmFsVGVzdHMpIC4uLiBvawp0ZXN0X3R3b19wcm9jZXNzZXNfc2hhcmVfc2FtZV92ZXJzaW9uX3dpdGhvdXRfbG9zdF9hdWRpdCAodGVzdF9hcHByb3ZhbC5BcHByb3ZhbFRlc3RzKSAuLi4gb2sKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KUmFuIDcgdGVzdHMgaW4gMC43OTdzCgpPSwo="
+}

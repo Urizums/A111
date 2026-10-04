@@ -1,0 +1,2303 @@
+{
+  "scope": "Root source regression, not independent acceptance",
+  "source": "/workspace/A111/runs/future/preset_browser_acceptance/candidate/v2",
+  "files": [
+    {
+      "path": "/workspace/A111/runs/future/preset_browser_acceptance/candidate/v2/ui-presets.html",
+      "sha256": "1382fe6726dba5b81aaa91ba83e77de59bcefb910594e78e9b6122582c52d688"
+    },
+    {
+      "path": "/workspace/A111/runs/future/preset_browser_acceptance/candidate/v2/ui-presets.css",
+      "sha256": "258ba413f276e2bcf500806c2fee99bc392e56ad8085bf8a4a02e0c9e717482a"
+    }
+  ],
+  "navigation": [
+    {
+      "width": 390,
+      "status": "pass",
+      "observed": {
+        "name": "Preferences",
+        "left": 22,
+        "right": 140.640625,
+        "top": 112.375,
+        "bottom": 158.75,
+        "navLeft": 16,
+        "navRight": 374,
+        "navTop": 56,
+        "navBottom": 164.75,
+        "outline": "3px",
+        "offset": "0px",
+        "scrollWidth": 390,
+        "viewport": 390
+      },
+      "enter_activates": true
+    },
+    {
+      "width": 320,
+      "status": "pass",
+      "observed": {
+        "name": "Preferences",
+        "left": 134.546875,
+        "right": 253.1875,
+        "top": 112.375,
+        "bottom": 158.75,
+        "navLeft": 16,
+        "navRight": 304,
+        "navTop": 56,
+        "navBottom": 164.75,
+        "outline": "3px",
+        "offset": "0px",
+        "scrollWidth": 320,
+        "viewport": 320
+      },
+      "enter_activates": true
+    },
+    {
+      "width": 680,
+      "status": "pass",
+      "observed": {
+        "name": "Preferences",
+        "left": 305.796875,
+        "right": 424.4375,
+        "top": 62,
+        "bottom": 108.375,
+        "navLeft": 16.3125,
+        "navRight": 663.6875,
+        "navTop": 56,
+        "navBottom": 114.375,
+        "outline": "3px",
+        "offset": "0px",
+        "scrollWidth": 680,
+        "viewport": 680
+      },
+      "enter_activates": true
+    },
+    {
+      "width": 1440,
+      "status": "pass",
+      "observed": {
+        "name": "Preferences",
+        "left": 16,
+        "right": 231,
+        "top": 289.125,
+        "bottom": 335.5,
+        "navLeft": 16,
+        "navRight": 231,
+        "navTop": 138,
+        "navBottom": 335.5,
+        "outline": "3px",
+        "offset": "0px",
+        "scrollWidth": 1440,
+        "viewport": 1440
+      },
+      "enter_activates": true
+    }
+  ],
+  "preserved_main_harness": {
+    "schema": "preset-browser-acceptance-results/1",
+    "started_at_utc": "2026-10-04T06:30:47.304418+00:00",
+    "target": {
+      "html": "/workspace/A111/runs/future/preset_browser_acceptance/candidate/v2/ui-presets.html",
+      "css": "/workspace/A111/runs/future/preset_browser_acceptance/candidate/v2/ui-presets.css",
+      "html_sha256": "1382fe6726dba5b81aaa91ba83e77de59bcefb910594e78e9b6122582c52d688",
+      "css_sha256": "258ba413f276e2bcf500806c2fee99bc392e56ad8085bf8a4a02e0c9e717482a"
+    },
+    "browser": {
+      "browser": "Chromium via /usr/bin/chromium",
+      "browser_version": "151.0.7922.173",
+      "viewport_initial": {
+        "width": 1440,
+        "height": 1000
+      },
+      "url": "http://127.0.0.1:42107/ui-presets.html",
+      "http_status": 200,
+      "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+      "color_scheme": "light"
+    },
+    "original_rows": [
+      {
+        "id": "r-1842",
+        "status": "succeeded",
+        "workflow": "Release checks",
+        "name": "release-check"
+      },
+      {
+        "id": "r-1841",
+        "status": "failed",
+        "workflow": "Release checks",
+        "name": "release-check"
+      },
+      {
+        "id": "r-1840",
+        "status": "succeeded",
+        "workflow": "Dependency audit",
+        "name": "dependency-audit"
+      }
+    ],
+    "actions": [
+      "GET http://127.0.0.1:42107/ui-presets.html; HTTP 200; wait_until=networkidle",
+      "Recorded original DOM rows, ids, statuses, workflows, and names before interaction.",
+      "Text and status filters, empty-state clear, and form clear exercised with pointer and input events.",
+      "Opened run detail, closed with Escape and named Close; checked focus return for both.",
+      "Opened r-1840 (Dependency audit) and activated Run again; verified r-1843 local queued row.",
+      "Canceled deletion of r-1841 and verified retention; confirmed deletion and verified only r-1841 removed.",
+      "Observed refresh busy/current rows, canceled and retried; induced recoverable error and retried to success.",
+      "Changed palette and density in each direction and checked each retained the other setting.",
+      "Verified quiet-slide runs without reduced motion; light-elastic resolves to no animation under reduced motion and remains operable.",
+      "Fresh browser page for accessibility/visual review: GET http://127.0.0.1:42107/ui-presets.html; HTTP 200.",
+      "Enumerated visible controls and names, tabbed through desktop focus order, inspected :focus-visible outline, and measured key text contrast in both palettes.",
+      "Set 390x844 viewport; checked document/table overflow and internal scroll, accessible control names, keyboard status selection, pointer detail open/close."
+    ],
+    "outcomes": [
+      {
+        "check": "original three rows and local sample identity",
+        "status": "passed",
+        "details": {
+          "original_rows": [
+            {
+              "id": "r-1842",
+              "status": "succeeded",
+              "workflow": "Release checks",
+              "name": "release-check"
+            },
+            {
+              "id": "r-1841",
+              "status": "failed",
+              "workflow": "Release checks",
+              "name": "release-check"
+            },
+            {
+              "id": "r-1840",
+              "status": "succeeded",
+              "workflow": "Dependency audit",
+              "name": "dependency-audit"
+            }
+          ]
+        }
+      },
+      {
+        "check": "text/status filtering, empty feedback, and clear",
+        "status": "passed",
+        "details": {
+          "filtered_release_ids": [
+            "r-1842",
+            "r-1841"
+          ],
+          "restored_rows": [
+            "r-1842",
+            "r-1841",
+            "r-1840"
+          ]
+        }
+      },
+      {
+        "check": "detail open, Escape/Close, and focus return",
+        "status": "passed",
+        "details": {
+          "escape_focus_return": {
+            "id": "",
+            "view": "r-1842"
+          },
+          "close_focus_return": {
+            "id": "",
+            "view": "r-1842"
+          }
+        }
+      },
+      {
+        "check": "run again adds selected matching workflow",
+        "status": "passed",
+        "details": {
+          "rows_after_run_again": [
+            {
+              "id": "r-1843",
+              "status": "queued",
+              "workflow": "Dependency audit",
+              "name": "dependency-audit"
+            },
+            {
+              "id": "r-1842",
+              "status": "succeeded",
+              "workflow": "Release checks",
+              "name": "release-check"
+            },
+            {
+              "id": "r-1841",
+              "status": "failed",
+              "workflow": "Release checks",
+              "name": "release-check"
+            },
+            {
+              "id": "r-1840",
+              "status": "succeeded",
+              "workflow": "Dependency audit",
+              "name": "dependency-audit"
+            }
+          ],
+          "added_id": "r-1843"
+        }
+      },
+      {
+        "check": "delete cancel retains; confirmation removes only selected row",
+        "status": "passed",
+        "details": {
+          "before": [
+            "r-1840",
+            "r-1841",
+            "r-1842",
+            "r-1843"
+          ],
+          "after_cancel": [
+            "r-1840",
+            "r-1841",
+            "r-1842",
+            "r-1843"
+          ],
+          "after_confirm": [
+            "r-1840",
+            "r-1842",
+            "r-1843"
+          ]
+        }
+      },
+      {
+        "check": "refresh busy/current rows, cancel/retry, error/retry",
+        "status": "passed",
+        "details": {
+          "rows_after_recovery": [
+            "r-1843",
+            "r-1842",
+            "r-1840"
+          ],
+          "updated_text": "06:30 AM"
+        }
+      },
+      {
+        "check": "palette and density independence",
+        "status": "passed",
+        "details": {
+          "palette": "clear",
+          "density": "balanced"
+        }
+      },
+      {
+        "check": "drawer motion toggle and reduced-motion usability",
+        "status": "passed",
+        "details": {
+          "quiet_slide": {
+            "animationName": "drawer-quiet-slide",
+            "animationDuration": "0.22s",
+            "transform": "matrix(1, 0, 0, 1, 16, 0)"
+          },
+          "light_elastic": {
+            "animationName": "drawer-light-elastic",
+            "animationDuration": "0.3s"
+          },
+          "reduced_motion": {
+            "animationName": "none",
+            "animationDuration": "0s",
+            "transform": "none"
+          }
+        }
+      },
+      {
+        "check": "desktop controls, keyboard focus visibility, and key text contrast",
+        "status": "passed",
+        "details": {
+          "visible_controls": 19,
+          "focusables": 19,
+          "tab_stops_recorded": 19,
+          "first_focus": {
+            "id": "",
+            "tag": "a",
+            "name": "Skip to runs",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(117, 64, 189)"
+          },
+          "keyboard_detail_focus_return": "r-1842",
+          "contrast_clear": [
+            {
+              "name": "page-title",
+              "text": "Run workspace",
+              "foreground": "rgb(24, 35, 31)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "36px",
+              "fontWeight": "700",
+              "foregroundChannels": [
+                24,
+                35,
+                31
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 15.02
+            },
+            {
+              "name": "section-title",
+              "text": "Recent runs",
+              "foreground": "rgb(24, 35, 31)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "18.4px",
+              "fontWeight": "700",
+              "foregroundChannels": [
+                24,
+                35,
+                31
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 15.02
+            },
+            {
+              "name": "muted-count",
+              "text": "3 runs",
+              "foreground": "rgb(75, 93, 85)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "foregroundChannels": [
+                75,
+                93,
+                85
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 6.51
+            },
+            {
+              "name": "run-name",
+              "text": "release-check",
+              "foreground": "rgb(24, 35, 31)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "16px",
+              "fontWeight": "680",
+              "foregroundChannels": [
+                24,
+                35,
+                31
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 15.02
+            },
+            {
+              "name": "run-meta",
+              "text": "Run r-1842 · main",
+              "foreground": "rgb(75, 93, 85)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "foregroundChannels": [
+                75,
+                93,
+                85
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 6.51
+            },
+            {
+              "name": "success-status",
+              "text": "Succeeded",
+              "foreground": "rgb(20, 95, 69)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "14px",
+              "fontWeight": "650",
+              "foregroundChannels": [
+                20,
+                95,
+                69
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 7.09
+            },
+            {
+              "name": "failed-status",
+              "text": "Failed",
+              "foreground": "rgb(161, 43, 37)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "14px",
+              "fontWeight": "650",
+              "foregroundChannels": [
+                161,
+                43,
+                37
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 6.76
+            },
+            {
+              "name": "queued-status",
+              "missing": true,
+              "ratio": null
+            },
+            {
+              "name": "primary-action",
+              "text": "Run workflow",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgba(0,107,82,1)",
+              "fontSize": "16px",
+              "fontWeight": "650",
+              "foregroundChannels": [
+                255,
+                255,
+                255
+              ],
+              "backgroundChannels": [
+                0,
+                107,
+                82
+              ],
+              "ratio": 6.51
+            },
+            {
+              "name": "filter-label",
+              "text": "Find a run",
+              "foreground": "rgb(75, 93, 85)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "14px",
+              "fontWeight": "650",
+              "foregroundChannels": [
+                75,
+                93,
+                85
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 6.51
+            },
+            {
+              "name": "table-header",
+              "text": "RUN",
+              "foreground": "rgb(75, 93, 85)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "12px",
+              "fontWeight": "750",
+              "foregroundChannels": [
+                75,
+                93,
+                85
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 6.51
+            },
+            {
+              "name": "demo-note",
+              "text": "Sample data is local to this page. Refresh simulates a request; it does not contact a service.",
+              "foreground": "rgb(75, 93, 85)",
+              "background": "rgba(245,247,246,1)",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "foregroundChannels": [
+                75,
+                93,
+                85
+              ],
+              "backgroundChannels": [
+                245,
+                247,
+                246
+              ],
+              "ratio": 6.51
+            },
+            {
+              "name": "nav-current",
+              "text": "Runs",
+              "foreground": "rgb(24, 35, 31)",
+              "background": "rgba(233,238,236,1)",
+              "fontSize": "16px",
+              "fontWeight": "620",
+              "foregroundChannels": [
+                24,
+                35,
+                31
+              ],
+              "backgroundChannels": [
+                233,
+                238,
+                236
+              ],
+              "ratio": 13.78
+            }
+          ],
+          "contrast_night": [
+            {
+              "name": "page-title",
+              "text": "Run workspace",
+              "foreground": "rgb(233, 240, 236)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "36px",
+              "fontWeight": "700",
+              "foregroundChannels": [
+                233,
+                240,
+                236
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 15.71
+            },
+            {
+              "name": "section-title",
+              "text": "Recent runs",
+              "foreground": "rgb(233, 240, 236)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "18.4px",
+              "fontWeight": "700",
+              "foregroundChannels": [
+                233,
+                240,
+                236
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 15.71
+            },
+            {
+              "name": "muted-count",
+              "text": "3 runs",
+              "foreground": "rgb(181, 196, 187)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "foregroundChannels": [
+                181,
+                196,
+                187
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 10.03
+            },
+            {
+              "name": "run-name",
+              "text": "release-check",
+              "foreground": "rgb(233, 240, 236)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "16px",
+              "fontWeight": "680",
+              "foregroundChannels": [
+                233,
+                240,
+                236
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 15.71
+            },
+            {
+              "name": "run-meta",
+              "text": "Run r-1842 · main",
+              "foreground": "rgb(181, 196, 187)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "foregroundChannels": [
+                181,
+                196,
+                187
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 10.03
+            },
+            {
+              "name": "success-status",
+              "text": "Succeeded",
+              "foreground": "rgb(154, 226, 187)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "14px",
+              "fontWeight": "650",
+              "foregroundChannels": [
+                154,
+                226,
+                187
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 12.1
+            },
+            {
+              "name": "failed-status",
+              "text": "Failed",
+              "foreground": "rgb(255, 170, 160)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "14px",
+              "fontWeight": "650",
+              "foregroundChannels": [
+                255,
+                170,
+                160
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 9.97
+            },
+            {
+              "name": "queued-status",
+              "missing": true,
+              "ratio": null
+            },
+            {
+              "name": "primary-action",
+              "text": "Run workflow",
+              "foreground": "rgb(255, 255, 255)",
+              "background": "rgba(0,107,82,1)",
+              "fontSize": "16px",
+              "fontWeight": "650",
+              "foregroundChannels": [
+                255,
+                255,
+                255
+              ],
+              "backgroundChannels": [
+                0,
+                107,
+                82
+              ],
+              "ratio": 6.51
+            },
+            {
+              "name": "filter-label",
+              "text": "Find a run",
+              "foreground": "rgb(181, 196, 187)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "14px",
+              "fontWeight": "650",
+              "foregroundChannels": [
+                181,
+                196,
+                187
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 10.03
+            },
+            {
+              "name": "table-header",
+              "text": "RUN",
+              "foreground": "rgb(181, 196, 187)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "12px",
+              "fontWeight": "750",
+              "foregroundChannels": [
+                181,
+                196,
+                187
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 10.03
+            },
+            {
+              "name": "demo-note",
+              "text": "Sample data is local to this page. Refresh simulates a request; it does not contact a service.",
+              "foreground": "rgb(181, 196, 187)",
+              "background": "rgba(16,23,20,1)",
+              "fontSize": "14px",
+              "fontWeight": "400",
+              "foregroundChannels": [
+                181,
+                196,
+                187
+              ],
+              "backgroundChannels": [
+                16,
+                23,
+                20
+              ],
+              "ratio": 10.03
+            },
+            {
+              "name": "nav-current",
+              "text": "Runs",
+              "foreground": "rgb(233, 240, 236)",
+              "background": "rgba(37,54,45,1)",
+              "fontSize": "16px",
+              "fontWeight": "620",
+              "foregroundChannels": [
+                233,
+                240,
+                236
+              ],
+              "backgroundChannels": [
+                37,
+                54,
+                45
+              ],
+              "ratio": 11.03
+            }
+          ]
+        }
+      },
+      {
+        "check": "390px narrow layout, keyboard/pointer operation and overflow access",
+        "status": "passed",
+        "details": {
+          "dimensions": {
+            "viewport": 390,
+            "documentScrollWidth": 390,
+            "bodyScrollWidth": 390,
+            "tableClientWidth": 358,
+            "tableScrollWidth": 369,
+            "tableScrollLeft": 11,
+            "tableOverflow": "auto",
+            "viewButtonRect": {
+              "left": 322.59375,
+              "right": 377.140625,
+              "top": 986.4375,
+              "bottom": 1021.625
+            },
+            "wrapRect": {
+              "left": 16,
+              "right": 374,
+              "top": 898.25,
+              "bottom": 1300
+            },
+            "last_control_after_scroll": {
+              "left": 311.59375,
+              "right": 366.140625,
+              "wrapLeft": 16,
+              "wrapRight": 374
+            }
+          },
+          "visible_controls": 19,
+          "keyboard_focusables": 19,
+          "status_filter_keyboard": "passed",
+          "pointer_detail": "passed"
+        }
+      }
+    ],
+    "measurements": {
+      "desktop_visible_controls": [
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Skip to runs",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Northstar Studio home",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Overview",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Runs",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Workflows",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Preferences",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Operations",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "id": "palette-choice",
+          "name": "Color palette",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "create-run",
+          "name": "Run workflow",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "refresh-runs",
+          "name": "Refresh runs",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "input",
+          "id": "run-search",
+          "name": "Find a run",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "id": "status-filter",
+          "name": "Status",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "clear-filters",
+          "name": "Clear filters",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": "View",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": "View",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": "View",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "preview-error",
+          "name": "Preview recoverable error",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "id": "density-choice",
+          "name": "Information density",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "id": "motion-choice",
+          "name": "Drawer entrance",
+          "tabIndex": 0,
+          "disabled": false
+        }
+      ],
+      "desktop_focusables": [
+        {
+          "id": "",
+          "name": "Skip to runs",
+          "tag": "a"
+        },
+        {
+          "id": "",
+          "name": "Northstar Studio home",
+          "tag": "a"
+        },
+        {
+          "id": "",
+          "name": "Overview",
+          "tag": "a"
+        },
+        {
+          "id": "",
+          "name": "Runs",
+          "tag": "a"
+        },
+        {
+          "id": "",
+          "name": "Workflows",
+          "tag": "a"
+        },
+        {
+          "id": "",
+          "name": "Preferences",
+          "tag": "a"
+        },
+        {
+          "id": "",
+          "name": "Operations",
+          "tag": "a"
+        },
+        {
+          "id": "palette-choice",
+          "name": "Color palette",
+          "tag": "select"
+        },
+        {
+          "id": "create-run",
+          "name": "Run workflow",
+          "tag": "button"
+        },
+        {
+          "id": "refresh-runs",
+          "name": "Refresh runs",
+          "tag": "button"
+        },
+        {
+          "id": "run-search",
+          "name": "Find a run",
+          "tag": "input"
+        },
+        {
+          "id": "status-filter",
+          "name": "All statuses\nSucceeded\nFailed\nQueued",
+          "tag": "select"
+        },
+        {
+          "id": "clear-filters",
+          "name": "Clear filters",
+          "tag": "button"
+        },
+        {
+          "id": "",
+          "name": "View",
+          "tag": "button"
+        },
+        {
+          "id": "",
+          "name": "View",
+          "tag": "button"
+        },
+        {
+          "id": "",
+          "name": "View",
+          "tag": "button"
+        },
+        {
+          "id": "preview-error",
+          "name": "Preview recoverable error",
+          "tag": "button"
+        },
+        {
+          "id": "density-choice",
+          "name": "Balanced\nCondensed",
+          "tag": "select"
+        },
+        {
+          "id": "motion-choice",
+          "name": "No animation\nQuiet side slide\nLight elastic",
+          "tag": "select"
+        }
+      ],
+      "desktop_tab_sequence": [
+        {
+          "id": "",
+          "tag": "a",
+          "name": "Skip to runs",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "a",
+          "name": "Northstar Studio home",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "a",
+          "name": "Overview",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "a",
+          "name": "Runs",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "a",
+          "name": "Workflows",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "a",
+          "name": "Preferences",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "a",
+          "name": "Operations",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "palette-choice",
+          "tag": "select",
+          "name": "Color palette",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "create-run",
+          "tag": "button",
+          "name": "Run workflow",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "refresh-runs",
+          "tag": "button",
+          "name": "Refresh runs",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "run-search",
+          "tag": "input",
+          "name": "Find a run",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "status-filter",
+          "tag": "select",
+          "name": "All statuses\nSucceeded\nFailed\nQueued",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "clear-filters",
+          "tag": "button",
+          "name": "Clear filters",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "button",
+          "name": "View",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "button",
+          "name": "View",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "",
+          "tag": "button",
+          "name": "View",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "preview-error",
+          "tag": "button",
+          "name": "Preview recoverable error",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "density-choice",
+          "tag": "select",
+          "name": "Balanced\nCondensed",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        },
+        {
+          "id": "motion-choice",
+          "tag": "select",
+          "name": "No animation\nQuiet side slide\nLight elastic",
+          "outlineStyle": "solid",
+          "outlineWidth": "3px",
+          "outlineColor": "rgb(117, 64, 189)"
+        }
+      ],
+      "contrast_clear": [
+        {
+          "name": "page-title",
+          "text": "Run workspace",
+          "foreground": "rgb(24, 35, 31)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "foregroundChannels": [
+            24,
+            35,
+            31
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 15.02
+        },
+        {
+          "name": "section-title",
+          "text": "Recent runs",
+          "foreground": "rgb(24, 35, 31)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "18.4px",
+          "fontWeight": "700",
+          "foregroundChannels": [
+            24,
+            35,
+            31
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 15.02
+        },
+        {
+          "name": "muted-count",
+          "text": "3 runs",
+          "foreground": "rgb(75, 93, 85)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foregroundChannels": [
+            75,
+            93,
+            85
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 6.51
+        },
+        {
+          "name": "run-name",
+          "text": "release-check",
+          "foreground": "rgb(24, 35, 31)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "16px",
+          "fontWeight": "680",
+          "foregroundChannels": [
+            24,
+            35,
+            31
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 15.02
+        },
+        {
+          "name": "run-meta",
+          "text": "Run r-1842 · main",
+          "foreground": "rgb(75, 93, 85)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foregroundChannels": [
+            75,
+            93,
+            85
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 6.51
+        },
+        {
+          "name": "success-status",
+          "text": "Succeeded",
+          "foreground": "rgb(20, 95, 69)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "14px",
+          "fontWeight": "650",
+          "foregroundChannels": [
+            20,
+            95,
+            69
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 7.09
+        },
+        {
+          "name": "failed-status",
+          "text": "Failed",
+          "foreground": "rgb(161, 43, 37)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "14px",
+          "fontWeight": "650",
+          "foregroundChannels": [
+            161,
+            43,
+            37
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 6.76
+        },
+        {
+          "name": "queued-status",
+          "missing": true,
+          "ratio": null
+        },
+        {
+          "name": "primary-action",
+          "text": "Run workflow",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgba(0,107,82,1)",
+          "fontSize": "16px",
+          "fontWeight": "650",
+          "foregroundChannels": [
+            255,
+            255,
+            255
+          ],
+          "backgroundChannels": [
+            0,
+            107,
+            82
+          ],
+          "ratio": 6.51
+        },
+        {
+          "name": "filter-label",
+          "text": "Find a run",
+          "foreground": "rgb(75, 93, 85)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "14px",
+          "fontWeight": "650",
+          "foregroundChannels": [
+            75,
+            93,
+            85
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 6.51
+        },
+        {
+          "name": "table-header",
+          "text": "RUN",
+          "foreground": "rgb(75, 93, 85)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "12px",
+          "fontWeight": "750",
+          "foregroundChannels": [
+            75,
+            93,
+            85
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 6.51
+        },
+        {
+          "name": "demo-note",
+          "text": "Sample data is local to this page. Refresh simulates a request; it does not contact a service.",
+          "foreground": "rgb(75, 93, 85)",
+          "background": "rgba(245,247,246,1)",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foregroundChannels": [
+            75,
+            93,
+            85
+          ],
+          "backgroundChannels": [
+            245,
+            247,
+            246
+          ],
+          "ratio": 6.51
+        },
+        {
+          "name": "nav-current",
+          "text": "Runs",
+          "foreground": "rgb(24, 35, 31)",
+          "background": "rgba(233,238,236,1)",
+          "fontSize": "16px",
+          "fontWeight": "620",
+          "foregroundChannels": [
+            24,
+            35,
+            31
+          ],
+          "backgroundChannels": [
+            233,
+            238,
+            236
+          ],
+          "ratio": 13.78
+        }
+      ],
+      "contrast_night": [
+        {
+          "name": "page-title",
+          "text": "Run workspace",
+          "foreground": "rgb(233, 240, 236)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "36px",
+          "fontWeight": "700",
+          "foregroundChannels": [
+            233,
+            240,
+            236
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 15.71
+        },
+        {
+          "name": "section-title",
+          "text": "Recent runs",
+          "foreground": "rgb(233, 240, 236)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "18.4px",
+          "fontWeight": "700",
+          "foregroundChannels": [
+            233,
+            240,
+            236
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 15.71
+        },
+        {
+          "name": "muted-count",
+          "text": "3 runs",
+          "foreground": "rgb(181, 196, 187)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foregroundChannels": [
+            181,
+            196,
+            187
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 10.03
+        },
+        {
+          "name": "run-name",
+          "text": "release-check",
+          "foreground": "rgb(233, 240, 236)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "16px",
+          "fontWeight": "680",
+          "foregroundChannels": [
+            233,
+            240,
+            236
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 15.71
+        },
+        {
+          "name": "run-meta",
+          "text": "Run r-1842 · main",
+          "foreground": "rgb(181, 196, 187)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foregroundChannels": [
+            181,
+            196,
+            187
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 10.03
+        },
+        {
+          "name": "success-status",
+          "text": "Succeeded",
+          "foreground": "rgb(154, 226, 187)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "14px",
+          "fontWeight": "650",
+          "foregroundChannels": [
+            154,
+            226,
+            187
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 12.1
+        },
+        {
+          "name": "failed-status",
+          "text": "Failed",
+          "foreground": "rgb(255, 170, 160)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "14px",
+          "fontWeight": "650",
+          "foregroundChannels": [
+            255,
+            170,
+            160
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 9.97
+        },
+        {
+          "name": "queued-status",
+          "missing": true,
+          "ratio": null
+        },
+        {
+          "name": "primary-action",
+          "text": "Run workflow",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgba(0,107,82,1)",
+          "fontSize": "16px",
+          "fontWeight": "650",
+          "foregroundChannels": [
+            255,
+            255,
+            255
+          ],
+          "backgroundChannels": [
+            0,
+            107,
+            82
+          ],
+          "ratio": 6.51
+        },
+        {
+          "name": "filter-label",
+          "text": "Find a run",
+          "foreground": "rgb(181, 196, 187)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "14px",
+          "fontWeight": "650",
+          "foregroundChannels": [
+            181,
+            196,
+            187
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 10.03
+        },
+        {
+          "name": "table-header",
+          "text": "RUN",
+          "foreground": "rgb(181, 196, 187)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "12px",
+          "fontWeight": "750",
+          "foregroundChannels": [
+            181,
+            196,
+            187
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 10.03
+        },
+        {
+          "name": "demo-note",
+          "text": "Sample data is local to this page. Refresh simulates a request; it does not contact a service.",
+          "foreground": "rgb(181, 196, 187)",
+          "background": "rgba(16,23,20,1)",
+          "fontSize": "14px",
+          "fontWeight": "400",
+          "foregroundChannels": [
+            181,
+            196,
+            187
+          ],
+          "backgroundChannels": [
+            16,
+            23,
+            20
+          ],
+          "ratio": 10.03
+        },
+        {
+          "name": "nav-current",
+          "text": "Runs",
+          "foreground": "rgb(233, 240, 236)",
+          "background": "rgba(37,54,45,1)",
+          "fontSize": "16px",
+          "fontWeight": "620",
+          "foregroundChannels": [
+            233,
+            240,
+            236
+          ],
+          "backgroundChannels": [
+            37,
+            54,
+            45
+          ],
+          "ratio": 11.03
+        }
+      ],
+      "mobile_dimensions": {
+        "viewport": 390,
+        "documentScrollWidth": 390,
+        "bodyScrollWidth": 390,
+        "tableClientWidth": 358,
+        "tableScrollWidth": 369,
+        "tableScrollLeft": 11,
+        "tableOverflow": "auto",
+        "viewButtonRect": {
+          "left": 322.59375,
+          "right": 377.140625,
+          "top": 986.4375,
+          "bottom": 1021.625
+        },
+        "wrapRect": {
+          "left": 16,
+          "right": 374,
+          "top": 898.25,
+          "bottom": 1300
+        },
+        "last_control_after_scroll": {
+          "left": 311.59375,
+          "right": 366.140625,
+          "wrapLeft": 16,
+          "wrapRight": 374
+        }
+      },
+      "mobile_visible_controls": [
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Skip to runs",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Northstar Studio home",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Overview",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Runs",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Workflows",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Preferences",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "a",
+          "id": "",
+          "name": "Operations",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "id": "palette-choice",
+          "name": "Color palette",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "create-run",
+          "name": "Run workflow",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "refresh-runs",
+          "name": "Refresh runs",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "input",
+          "id": "run-search",
+          "name": "Find a run",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "id": "status-filter",
+          "name": "Status",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "clear-filters",
+          "name": "Clear filters",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": "View",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": "View",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "",
+          "name": "View",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "button",
+          "id": "preview-error",
+          "name": "Preview recoverable error",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "id": "density-choice",
+          "name": "Information density",
+          "tabIndex": 0,
+          "disabled": false
+        },
+        {
+          "tag": "select",
+          "id": "motion-choice",
+          "name": "Drawer entrance",
+          "tabIndex": 0,
+          "disabled": false
+        }
+      ],
+      "mobile_focusables": [
+        {
+          "id": "",
+          "name": "Skip to runs"
+        },
+        {
+          "id": "",
+          "name": "Northstar Studio home"
+        },
+        {
+          "id": "",
+          "name": "Overview"
+        },
+        {
+          "id": "",
+          "name": "Runs"
+        },
+        {
+          "id": "",
+          "name": "Workflows"
+        },
+        {
+          "id": "",
+          "name": "Preferences"
+        },
+        {
+          "id": "",
+          "name": "Operations"
+        },
+        {
+          "id": "palette-choice",
+          "name": "Color palette"
+        },
+        {
+          "id": "create-run",
+          "name": "Run workflow"
+        },
+        {
+          "id": "refresh-runs",
+          "name": "Refresh runs"
+        },
+        {
+          "id": "run-search",
+          "name": "Find a run"
+        },
+        {
+          "id": "status-filter",
+          "name": "All statuses\nSucceeded\nFailed\nQueued"
+        },
+        {
+          "id": "clear-filters",
+          "name": "Clear filters"
+        },
+        {
+          "id": "",
+          "name": "View"
+        },
+        {
+          "id": "",
+          "name": "View"
+        },
+        {
+          "id": "",
+          "name": "View"
+        },
+        {
+          "id": "preview-error",
+          "name": "Preview recoverable error"
+        },
+        {
+          "id": "density-choice",
+          "name": "Balanced\nCondensed"
+        },
+        {
+          "id": "motion-choice",
+          "name": "No animation\nQuiet side slide\nLight elastic"
+        }
+      ]
+    },
+    "raw_errors": [],
+    "screenshots": [
+      "/workspace/A111/runs/future/preset_browser_acceptance/root-repair-2/screenshots/desktop-detail.png",
+      "/workspace/A111/runs/future/preset_browser_acceptance/root-repair-2/screenshots/desktop-initial.png",
+      "/workspace/A111/runs/future/preset_browser_acceptance/root-repair-2/screenshots/desktop-keyboard-focus.png",
+      "/workspace/A111/runs/future/preset_browser_acceptance/root-repair-2/screenshots/desktop-night-palette.png",
+      "/workspace/A111/runs/future/preset_browser_acceptance/root-repair-2/screenshots/mobile-390-detail.png",
+      "/workspace/A111/runs/future/preset_browser_acceptance/root-repair-2/screenshots/mobile-390-initial.png"
+    ],
+    "attempts": [
+      {
+        "attempt": 1,
+        "harness_corrections": 0,
+        "command": "python /workspace/A111/runs/future/preset_browser_acceptance/independent/worker/validate_presets.py",
+        "outcome": "completed with failures retained",
+        "outcomes": [
+          {
+            "check": "original three rows and local sample identity",
+            "status": "passed",
+            "details": {
+              "original_rows": [
+                {
+                  "id": "r-1842",
+                  "status": "succeeded",
+                  "workflow": "Release checks",
+                  "name": "release-check"
+                },
+                {
+                  "id": "r-1841",
+                  "status": "failed",
+                  "workflow": "Release checks",
+                  "name": "release-check"
+                },
+                {
+                  "id": "r-1840",
+                  "status": "succeeded",
+                  "workflow": "Dependency audit",
+                  "name": "dependency-audit"
+                }
+              ]
+            }
+          },
+          {
+            "check": "text/status filtering, empty feedback, and clear",
+            "status": "failed",
+            "error": "AssertionError: Empty-state clear did not restore all rows"
+          },
+          {
+            "check": "detail open, Escape/Close, and focus return",
+            "status": "passed",
+            "details": {
+              "escape_focus_return": {
+                "id": "",
+                "view": "r-1842"
+              },
+              "close_focus_return": {
+                "id": "",
+                "view": "r-1842"
+              }
+            }
+          },
+          {
+            "check": "run again adds selected matching workflow",
+            "status": "passed",
+            "details": {
+              "rows_after_run_again": [
+                {
+                  "id": "r-1843",
+                  "status": "queued",
+                  "workflow": "Dependency audit",
+                  "name": "dependency-audit"
+                },
+                {
+                  "id": "r-1842",
+                  "status": "succeeded",
+                  "workflow": "Release checks",
+                  "name": "release-check"
+                },
+                {
+                  "id": "r-1841",
+                  "status": "failed",
+                  "workflow": "Release checks",
+                  "name": "release-check"
+                },
+                {
+                  "id": "r-1840",
+                  "status": "succeeded",
+                  "workflow": "Dependency audit",
+                  "name": "dependency-audit"
+                }
+              ],
+              "added_id": "r-1843"
+            }
+          },
+          {
+            "check": "delete cancel retains; confirmation removes only selected row",
+            "status": "passed",
+            "details": {
+              "before": [
+                "r-1840",
+                "r-1841",
+                "r-1842",
+                "r-1843"
+              ],
+              "after_cancel": [
+                "r-1840",
+                "r-1841",
+                "r-1842",
+                "r-1843"
+              ],
+              "after_confirm": [
+                "r-1840",
+                "r-1842",
+                "r-1843"
+              ]
+            }
+          },
+          {
+            "check": "refresh busy/current rows, cancel/retry, error/retry",
+            "status": "passed",
+            "details": {
+              "rows_after_recovery": [
+                "r-1843",
+                "r-1842",
+                "r-1840"
+              ],
+              "updated_text": "06:06 AM"
+            }
+          },
+          {
+            "check": "palette and density independence",
+            "status": "passed",
+            "details": {
+              "palette": "clear",
+              "density": "balanced"
+            }
+          },
+          {
+            "check": "drawer motion toggle and reduced-motion usability",
+            "status": "passed",
+            "details": {
+              "quiet_slide": {
+                "animationName": "drawer-quiet-slide",
+                "animationDuration": "0.22s",
+                "transform": "matrix(1, 0, 0, 1, 16, 0)"
+              },
+              "light_elastic": {
+                "animationName": "drawer-light-elastic",
+                "animationDuration": "0.3s"
+              },
+              "reduced_motion": {
+                "animationName": "none",
+                "animationDuration": "0s",
+                "transform": "none"
+              }
+            }
+          },
+          {
+            "check": "desktop controls, keyboard focus visibility, and key text contrast",
+            "status": "failed",
+            "error": "Error: Page.evaluate: SyntaxError: missing ) after argument list\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:311:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          },
+          {
+            "check": "390px narrow layout, keyboard/pointer operation and overflow access",
+            "status": "failed",
+            "error": "Error: Page.evaluate: SyntaxError: missing ) after argument list\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:311:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+          }
+        ]
+      },
+      {
+        "attempt": 2,
+        "harness_corrections": 1,
+        "command": "python /workspace/A111/runs/future/preset_browser_acceptance/independent/worker/validate_presets.py",
+        "outcome": "completed with failures retained",
+        "outcomes": [
+          {
+            "check": "original three rows and local sample identity",
+            "status": "passed",
+            "details": {
+              "original_rows": [
+                {
+                  "id": "r-1842",
+                  "status": "succeeded",
+                  "workflow": "Release checks",
+                  "name": "release-check"
+                },
+                {
+                  "id": "r-1841",
+                  "status": "failed",
+                  "workflow": "Release checks",
+                  "name": "release-check"
+                },
+                {
+                  "id": "r-1840",
+                  "status": "succeeded",
+                  "workflow": "Dependency audit",
+                  "name": "dependency-audit"
+                }
+              ]
+            }
+          },
+          {
+            "check": "text/status filtering, empty feedback, and clear",
+            "status": "failed",
+            "error": "AssertionError: Clear filters control did not restore all rows"
+          },
+          {
+            "check": "detail open, Escape/Close, and focus return",
+            "status": "passed",
+            "details": {
+              "escape_focus_return": {
+                "id": "",
+                "view": "r-1842"
+              },
+              "close_focus_return": {
+                "id": "",
+                "view": "r-1842"
+              }
+            }
+          },
+          {
+            "check": "run again adds selected matching workflow",
+            "status": "passed",
+            "details": {
+              "rows_after_run_again": [
+                {
+                  "id": "r-1843",
+                  "status": "queued",
+                  "workflow": "Dependency audit",
+                  "name": "dependency-audit"
+                },
+                {
+                  "id": "r-1842",
+                  "status": "succeeded",
+                  "workflow": "Release checks",
+                  "name": "release-check"
+                },
+                {
+                  "id": "r-1841",
+                  "status": "failed",
+                  "workflow": "Release checks",
+                  "name": "release-check"
+                },
+                {
+                  "id": "r-1840",
+                  "status": "succeeded",
+                  "workflow": "Dependency audit",
+                  "name": "dependency-audit"
+                }
+              ],
+              "added_id": "r-1843"
+            }
+          },
+          {
+            "check": "delete cancel retains; confirmation removes only selected row",
+            "status": "passed",
+            "details": {
+              "before": [
+                "r-1840",
+                "r-1841",
+                "r-1842",
+                "r-1843"
+              ],
+              "after_cancel": [
+                "r-1840",
+                "r-1841",
+                "r-1842",
+                "r-1843"
+              ],
+              "after_confirm": [
+                "r-1840",
+                "r-1842",
+                "r-1843"
+              ]
+            }
+          },
+          {
+            "check": "refresh busy/current rows, cancel/retry, error/retry",
+            "status": "passed",
+            "details": {
+              "rows_after_recovery": [
+                "r-1843",
+                "r-1842",
+                "r-1840"
+              ],
+              "updated_text": "06:08 AM"
+            }
+          },
+          {
+            "check": "palette and density independence",
+            "status": "passed",
+            "details": {
+              "palette": "clear",
+              "density": "balanced"
+            }
+          },
+          {
+            "check": "drawer motion toggle and reduced-motion usability",
+            "status": "passed",
+            "details": {
+              "quiet_slide": {
+                "animationName": "drawer-quiet-slide",
+                "animationDuration": "0.22s",
+                "transform": "matrix(1, 0, 0, 1, 16, 0)"
+              },
+              "light_elastic": {
+                "animationName": "drawer-light-elastic",
+                "animationDuration": "0.3s"
+              },
+              "reduced_motion": {
+                "animationName": "none",
+                "animationDuration": "0s",
+                "transform": "none"
+              }
+            }
+          },
+          {
+            "check": "desktop controls, keyboard focus visibility, and key text contrast",
+            "status": "failed",
+            "error": "AssertionError: Keyboard focus lacked a visible outline on some controls: [{'id': '', 'tag': 'body', 'name': 'Skip to runs\\nN\\nNorthstar Studio\\n\\nWORKSPACE\\n\\nOverview\\nRuns\\nWorkflows\\nPreferences\\n\\nA local, fictional interface sample. No account or network connection is used.\\n\\nOperations\\n/\\nRun workspace\\nDEMO CONTROLS\\nColor palette\\nClear light\\nNight console\\n\\nOPERATIONS / AUTOMATION\\n\\nRun workspace\\n\\nReview recent activity, open the run you need, then repeat or remove it with a clear confirmation.\\n\\nRun workflow\\n\\nWorkflow Release checks\\nEnvironment Preview\\nUpdated 06:08 AM\\n\\nRecent runs\\n\\n3 runs\\n\\nRefresh runs\\nFind a run\\nStatus\\nAll statuses\\nSucceeded\\nFailed\\nQueued\\nClear filters\\nRecent workflow runs and their status\\nRUN\\tSTATUS\\tSTARTED\\t\\nACTIONS\\n\\n\\ndependency-audit\\nRun r-1843 · main\\n\\tQueued\\tjust now\\t\\nView\\n\\n\\nrelease-check\\nRun r-1842 · main\\n\\tSucceeded\\t14:32 UTC\\t\\nView\\n\\n\\ndependency-audit\\nRun r-1840 · main\\n\\tSucceeded\\t13:48 UTC\\t\\nView\\n\\nSample data is local to this page. Refresh simulates a request; it does not contact a service.\\n\\nRuns are up to date. Existing results were retained.\\nPreview recoverable error\\nActivity\\nTODAY\\nRelease checks passed\\n14:32 UTC · main\\nOne run needs attention\\n14:11 UTC · open run r-1841\\nDependency audit finished\\n13:48 UTC · main\\nAppearance and motion\\n\\nPalette, information density, and drawer motion are independent. These controls change this local preview only.\\n\\nInformation density\\nBalanced\\nCondensed\\nDrawer entrance\\nNo animation\\nQuiet side slide\\nLight elastic\\n\\nApplies only when opening run details. Reduced-motion preferences always disable it.', 'outlineStyle': 'none', 'outlineWidth': '3px', 'outlineColor': 'rgb(24, 35, 31)'}]"
+          },
+          {
+            "check": "390px narrow layout, keyboard/pointer operation and overflow access",
+            "status": "passed",
+            "details": {
+              "dimensions": {
+                "viewport": 390,
+                "documentScrollWidth": 390,
+                "bodyScrollWidth": 390,
+                "tableClientWidth": 358,
+                "tableScrollWidth": 369,
+                "tableScrollLeft": 11,
+                "tableOverflow": "auto",
+                "viewButtonRect": {
+                  "left": 322.59375,
+                  "right": 377.140625,
+                  "top": 1042.25,
+                  "bottom": 1077.4375
+                },
+                "wrapRect": {
+                  "left": 16,
+                  "right": 374,
+                  "top": 835.875,
+                  "bottom": 1237.625
+                },
+                "last_control_after_scroll": {
+                  "left": 311.59375,
+                  "right": 366.140625,
+                  "wrapLeft": 16,
+                  "wrapRight": 374
+                }
+              },
+              "visible_controls": 19,
+              "keyboard_focusables": 19,
+              "status_filter_keyboard": "passed",
+              "pointer_detail": "passed"
+            }
+          }
+        ]
+      },
+      {
+        "attempt": 3,
+        "harness_corrections": 2,
+        "command": "python /workspace/A111/runs/future/preset_browser_acceptance/independent/worker/validate_presets.py",
+        "outcome": "completed"
+      }
+    ],
+    "measurements_unavailable": {
+      "tokens": null,
+      "cost": null,
+      "provider_identity": null,
+      "active_time": null
+    }
+  },
+  "all_nav_pass": true,
+  "all_main_pass": true
+}

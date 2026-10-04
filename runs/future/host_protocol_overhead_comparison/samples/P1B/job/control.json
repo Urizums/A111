@@ -1,0 +1,174 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "8b6210456a3b075000ac328cdc103a5baec67d6a7308b7ff909268242628e215",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_29e1df7484464a7884d5624fcfa1f8c8",
+    "attempt_id": "2a99417c6f7e4cbc934339b72d202985",
+    "invocation_id": "2a99417c6f7e4cbc934339b72d202985",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "bc215a1139efa811c08c518cc7726e33d8c7f69be8c7aff999c6dd789d22ea33",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "Apply original source policy",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_source"
+      ]
+    },
+    "work": {
+      "prompt": "EXACT FIRST COMMAND (execute before any other shell command):\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/capture.py cli --record /workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/001-bootstrap.json --actor worker -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py /workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/request.json\n\nThen follow the bound public protocol and original material printed by bootstrap. Mode B. Complete your own original business task, separate draft, captured preflight and markers within its stated scope/budget. No sibling reads, delegation, global status queries, network or external effects.",
+      "inputs": {
+        "mode": "B",
+        "material": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+        "protocol": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+        "capture": "/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/capture.py",
+        "hostdraft": "/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/hostdraft.py",
+        "worker": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+          "sha256": "3cd188d229c9e007398636f9a732e6cce2a381c5588de3a0932c688980ac9140"
+        },
+        {
+          "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+          "sha256": "783407f9a175971a75bf3337011464c64b47ca2ae1e2bc14357f071cc43bdf1b"
+        },
+        {
+          "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py",
+          "sha256": "b9437b9e3c27ff56d127fb17b9df367b123b67d3349361c5f07b4e95aa4d0401"
+        },
+        {
+          "path": "/workspace/A111/runs/R01/candidate-lock.json",
+          "sha256": "f55d2dc681596500c212a9ee8270cc71a1763add7f9e199e4199bcb22b44c911"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_2a99417c6f7e",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "71d888b95d1d5d355510fa04e6532c931ac819ffd05ac6ecf9c3cc287fa95b4e",
+  "target": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/state.json",
+  "target_sha256": "bb68d55e3430ac4ec461651c91d33db8fdc5c1e03d08e84203eabdd72e8e1aee",
+  "target_before_sha256": "2767856272d717af32d583b88aad339841ba3d3c8e48ad713de64e4bfc64d535",
+  "package_ref": null,
+  "phase": "committed",
+  "worker": "/root/luna_forge_2a99417c6f7e",
+  "reply_ref": {
+    "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/receipts/b1b7ec70b03c9b8b5b66cd1f92fb88234f431ea2180742045a7a85378c3872ff.json",
+    "sha256": "b1b7ec70b03c9b8b5b66cd1f92fb88234f431ea2180742045a7a85378c3872ff"
+  },
+  "commit": {
+    "decision_ref": {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/coordinator/decision.json",
+      "sha256": "213fe239d9d7d928b6fe35e621ae14a7b227ee18aeef00eef70d7ccfb2c41bed"
+    },
+    "target_result": {
+      "task_id": "work",
+      "attempt_id": "2a99417c6f7e4cbc934339b72d202985",
+      "outcome": "done",
+      "task_status": "done",
+      "reason": null,
+      "status": "completed",
+      "revision": 2,
+      "plan_hash": "bc215a1139efa811c08c518cc7726e33d8c7f69be8c7aff999c6dd789d22ea33",
+      "evaluation_plan_hash": null
+    },
+    "worker_task_outcome": "done",
+    "coordinator_outcome": "done",
+    "recorded_at": "2026-10-04T06:19:54Z"
+  },
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/request.json",
+      "sha256": "da1fa24c088730a48c56346591c079b261380c3ca19d0d1e5251af147c756096"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+      "sha256": "3cd188d229c9e007398636f9a732e6cce2a381c5588de3a0932c688980ac9140"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+      "sha256": "783407f9a175971a75bf3337011464c64b47ca2ae1e2bc14357f071cc43bdf1b"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py",
+      "sha256": "b9437b9e3c27ff56d127fb17b9df367b123b67d3349361c5f07b4e95aa4d0401"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/candidate-lock.json",
+      "sha256": "f55d2dc681596500c212a9ee8270cc71a1763add7f9e199e4199bcb22b44c911"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/receipts/737a430ea9d894e48ba56db6fb31439591b637043e86225d50ef27ce74e2df08.json",
+      "sha256": "737a430ea9d894e48ba56db6fb31439591b637043e86225d50ef27ce74e2df08"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/receipts/a6ea6fc04dfab56ac25e4c579383fe255a866ead0201b2fa305b125dcdaea476.json",
+      "sha256": "a6ea6fc04dfab56ac25e4c579383fe255a866ead0201b2fa305b125dcdaea476"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/receipts/a6ea6fc04dfab56ac25e4c579383fe255a866ead0201b2fa305b125dcdaea476.json",
+      "sha256": "a6ea6fc04dfab56ac25e4c579383fe255a866ead0201b2fa305b125dcdaea476"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/receipts/b1b7ec70b03c9b8b5b66cd1f92fb88234f431ea2180742045a7a85378c3872ff.json",
+      "sha256": "b1b7ec70b03c9b8b5b66cd1f92fb88234f431ea2180742045a7a85378c3872ff"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/reply.json",
+      "sha256": "b1b7ec70b03c9b8b5b66cd1f92fb88234f431ea2180742045a7a85378c3872ff"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/business.json",
+      "sha256": "aa30600ccb89687fae4be3c4b0d6abccbda2a5c24f0129b6c286bbadbb1bb2ed"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/corrections.json",
+      "sha256": "230e4678646e9617c420f1afc1a3c460cab90750380133d9eda60ebc80808ce6"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/coordinator/decision.json",
+      "sha256": "213fe239d9d7d928b6fe35e621ae14a7b227ee18aeef00eef70d7ccfb2c41bed"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/coordinator/source-review.json",
+      "sha256": "b0e284ced9c61ad97e2d857028fdb49b52c5a177f0db25448faf0b8cce0e5323"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/receipts/737a430ea9d894e48ba56db6fb31439591b637043e86225d50ef27ce74e2df08.json",
+    "sha256": "737a430ea9d894e48ba56db6fb31439591b637043e86225d50ef27ce74e2df08"
+  }
+}

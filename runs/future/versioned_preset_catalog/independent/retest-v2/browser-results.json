@@ -1,0 +1,2204 @@
+{
+  "browser": {
+    "name": "Chromium",
+    "executable": "/usr/bin/chromium",
+    "version": "151.0.7922.173"
+  },
+  "url_origin": "http://127.0.0.1:8766/",
+  "checks": [
+    {
+      "name": "catalog: schema and version are explicit",
+      "status": "pass",
+      "details": {
+        "schema": "forge-preset-catalog/1",
+        "version": "1.0.1",
+        "source_revision": "R05-original-web-v1-repair1"
+      }
+    },
+    {
+      "name": "catalog: v2 candidate lock matches every frozen source",
+      "status": "pass",
+      "details": {
+        "candidate": "v2",
+        "files": [
+          {
+            "path": "runs/future/versioned_preset_catalog/candidate/v2/app.js",
+            "sha256": "dc4d6e6a5dba225d7f58418a9bbd56264c0fef69770e1e2cda7ae74de2358e96"
+          },
+          {
+            "path": "runs/future/versioned_preset_catalog/candidate/v2/catalog.json",
+            "sha256": "df2c9a59ee7b8d6b9b2701db74ead3d2b724a35dc3cea62229800bdcaae2e625"
+          },
+          {
+            "path": "runs/future/versioned_preset_catalog/candidate/v2/index.html",
+            "sha256": "83f313c11c722b9d8c985bf4c34896b94aebf8ff407715cdb65535837507eb89"
+          },
+          {
+            "path": "runs/future/versioned_preset_catalog/candidate/v2/styles.css",
+            "sha256": "091df585fb6efee5ba3dc53a86f2759691bc5332fcdb92674e8784abb87feec1"
+          }
+        ],
+        "lock_match": true
+      }
+    },
+    {
+      "name": "catalog: all three original task/platform variants exist",
+      "status": "pass",
+      "details": {
+        "variant_ids": [
+          "reader",
+          "review",
+          "stock"
+        ],
+        "variants": [
+          {
+            "id": "review",
+            "task": "Dense review queue",
+            "platform": "responsive web",
+            "canvas": {
+              "foreground": "#17212B",
+              "background": "#F3F6FA"
+            },
+            "layout": "wide queue/detail, narrow stacked record",
+            "states": [
+              "ready",
+              "filtered-empty",
+              "selected",
+              "confirmation",
+              "approved",
+              "retryable-error"
+            ]
+          },
+          {
+            "id": "stock",
+            "task": "Handheld stock count",
+            "platform": "responsive web, physical Android unverified",
+            "canvas": {
+              "foreground": "#1F2937",
+              "background": "#F8FAFC"
+            },
+            "layout": "single-column labeled quantity and in-flow actions",
+            "states": [
+              "ready",
+              "invalid",
+              "saving",
+              "saved-locally",
+              "conflict",
+              "storage-error"
+            ]
+          },
+          {
+            "id": "reader",
+            "task": "Long document with annotations",
+            "platform": "responsive web",
+            "canvas": {
+              "foreground": "#2F2D2A",
+              "background": "#FBFAF7"
+            },
+            "layout": "reading column and collapsible contents, annotation near passage",
+            "states": [
+              "reading",
+              "draft",
+              "saved-locally",
+              "delete-confirmation",
+              "retryable-error"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "catalog: sources have hashes and observation-only reuse scope",
+      "status": "pass",
+      "details": {
+        "source_count": 7,
+        "sources": [
+          {
+            "key": "refero_styles_lead",
+            "url": "https://styles.refero.design/",
+            "snapshot_sha256": "5779be8a0574a859d2c4cc3db9a54dc6f2fa2cc9301a509b8d62b122092cc000",
+            "accessed_at": "2026-10-04T06:03:38.298364+00:00",
+            "version": null,
+            "reuse": "observation_only_no_assets_or_code_reused"
+          },
+          {
+            "key": "wcag_use_of_color",
+            "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+            "snapshot_sha256": "a9bab2b8f419ee379b1ab37985d70b03bd6568952251d2f8a55036198990c9e8",
+            "accessed_at": "2026-10-04T06:03:39.251765+00:00",
+            "version": "Thu, 03 Sep 2026 15:17:59 GMT",
+            "reuse": "observation_only_no_assets_or_code_reused"
+          },
+          {
+            "key": "wcag_contrast_minimum",
+            "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+            "snapshot_sha256": "a06d8a7dad2b3c9cadf1d93b1a5372d58adbab65be51e4c4680124d4e47c9999",
+            "accessed_at": "2026-10-04T06:03:39.657966+00:00",
+            "version": "Thu, 01 Oct 2026 07:26:46 GMT",
+            "reuse": "observation_only_no_assets_or_code_reused"
+          },
+          {
+            "key": "wcag_focus_visible",
+            "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+            "snapshot_sha256": "754e2c52ec85b3a29d0b6a69f04fbdbbcec7cb9bba849ae2a340c3c92bb83209",
+            "accessed_at": "2026-10-04T06:03:39.943148+00:00",
+            "version": "Thu, 01 Oct 2026 07:26:46 GMT",
+            "reuse": "observation_only_no_assets_or_code_reused"
+          },
+          {
+            "key": "mdn_reduced_motion",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion",
+            "snapshot_sha256": "7afe909e3b33f9633b39ed851d94c82689bcbf0dfd077ae3b732d752b90d2d5c",
+            "accessed_at": "2026-10-04T06:03:40.015110+00:00",
+            "version": "Sun, 04 Oct 2026 01:42:18 GMT",
+            "reuse": "observation_only_no_assets_or_code_reused"
+          },
+          {
+            "key": "mdn_dialog",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
+            "snapshot_sha256": "72d7dcc9bc5aa1a9b7c304da6a8452a9b97c2ae69893786fb18d6f1ee67a2695",
+            "accessed_at": "2026-10-04T06:03:40.228352+00:00",
+            "version": "Sun, 04 Oct 2026 01:42:28 GMT",
+            "reuse": "observation_only_no_assets_or_code_reused"
+          },
+          {
+            "key": "android_system_bars",
+            "url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+            "snapshot_sha256": "3c1801b7d2f4202517a7967b0bf11d6820ed1e1c08c8926a1f0a194da43a5418",
+            "accessed_at": "2026-10-04T06:03:40.835199+00:00",
+            "version": "Tue, 22 Sep 2026 17:30:05 GMT",
+            "reuse": "observation_only_no_assets_or_code_reused"
+          }
+        ]
+      }
+    },
+    {
+      "name": "catalog: reuse scope is stated",
+      "status": "pass",
+      "details": {
+        "reuse": "Original authored code/tokens; repository license applies. External sources observed only."
+      }
+    },
+    {
+      "name": "catalog: paired semantic tokens are provided",
+      "status": "pass",
+      "details": {
+        "pairs": {
+          "surface": {
+            "foreground": "#1F2937",
+            "background": "#FFFFFF"
+          },
+          "primary": {
+            "foreground": "#FFFFFF",
+            "background": "#1D4ED8"
+          },
+          "selected": {
+            "foreground": "#1E3A8A",
+            "background": "#DBEAFE"
+          },
+          "error": {
+            "foreground": "#991B1B",
+            "background": "#FEF2F2"
+          },
+          "success": {
+            "foreground": "#065F46",
+            "background": "#ECFDF5"
+          },
+          "warning": {
+            "foreground": "#854D0E",
+            "background": "#FFFBEB"
+          },
+          "annotation": {
+            "foreground": "#3A311E",
+            "background": "#FFF1C2"
+          }
+        }
+      }
+    },
+    {
+      "name": "catalog: all paired token colors meet 4.5:1",
+      "status": "pass",
+      "details": {
+        "surface": 14.679,
+        "primary": 6.702,
+        "selected": 8.49,
+        "error": 7.597,
+        "success": 7.294,
+        "warning": 6.607,
+        "annotation": 11.363
+      }
+    },
+    {
+      "name": "catalog: each variant names layout and states",
+      "status": "pass",
+      "details": {
+        "states": {
+          "review": [
+            "ready",
+            "filtered-empty",
+            "selected",
+            "confirmation",
+            "approved",
+            "retryable-error"
+          ],
+          "stock": [
+            "ready",
+            "invalid",
+            "saving",
+            "saved-locally",
+            "conflict",
+            "storage-error"
+          ],
+          "reader": [
+            "reading",
+            "draft",
+            "saved-locally",
+            "delete-confirmation",
+            "retryable-error"
+          ]
+        }
+      }
+    },
+    {
+      "name": "catalog: responsive browser scope is explicit and Android is unverified",
+      "status": "pass",
+      "details": {
+        "platforms": {
+          "review": "responsive web",
+          "stock": "responsive web, physical Android unverified",
+          "reader": "responsive web"
+        }
+      }
+    },
+    {
+      "name": "catalog: default and reduced motion are defined",
+      "status": "pass",
+      "details": {
+        "default": "short optional opacity transition only",
+        "reduced": "static state changes, no smooth scrolling"
+      }
+    },
+    {
+      "name": "catalog: limitations deny unsupported authority/certification claims",
+      "status": "pass",
+      "details": [
+        "No backend, physical Android, assistive-technology or productivity claim"
+      ]
+    },
+    {
+      "name": "review: three original rows load",
+      "status": "pass",
+      "details": {
+        "count": 3
+      }
+    },
+    {
+      "name": "review: unmatched filter has empty state",
+      "status": "pass",
+      "details": {
+        "rows": 0,
+        "empty_text": "没有匹配的记录，请清除筛选。"
+      }
+    },
+    {
+      "name": "review: clear restores records",
+      "status": "pass",
+      "details": {
+        "count": 3
+      }
+    },
+    {
+      "name": "review: title filter returns original R-041",
+      "status": "pass",
+      "details": {
+        "count": 1
+      }
+    },
+    {
+      "name": "review: original R-041 selected",
+      "status": "pass",
+      "details": {
+        "title": "北侧展厅照明调整",
+        "active": "record-title"
+      }
+    },
+    {
+      "name": "review: keyboard opens confirmation with cancel focused",
+      "status": "pass",
+      "details": {
+        "active": "confirm-cancel"
+      }
+    },
+    {
+      "name": "review: Escape cancels and returns focus",
+      "status": "pass",
+      "details": {
+        "active": "review-approve"
+      }
+    },
+    {
+      "name": "review: cancel button leaves state unchanged and returns focus",
+      "status": "pass",
+      "details": {
+        "active": "review-approve",
+        "state": "负责人：林溪 · 待审阅"
+      }
+    },
+    {
+      "name": "review: Tab reaches confirm and keyboard applies approval",
+      "status": "pass",
+      "details": {
+        "initial_focus": "confirm-cancel",
+        "confirm_focus": "confirm-ok",
+        "dialog_closed": true,
+        "applied": true
+      }
+    },
+    {
+      "name": "review: confirmation applies decision",
+      "status": "pass",
+      "details": {
+        "keyboard": {
+          "initial_focus": "confirm-cancel",
+          "confirm_focus": "confirm-ok",
+          "dialog_closed": true,
+          "applied": true
+        },
+        "pointer_fallback": false,
+        "state": "负责人：林溪 · 已通过示例"
+      }
+    },
+    {
+      "name": "review: unrelated rows retained pending",
+      "status": "pass",
+      "details": {
+        "unrelated": [
+          {
+            "id": "R-042",
+            "text": "周末工作坊物料清单\nR-042 · 陈远\n○ 待审阅"
+          },
+          {
+            "id": "R-043",
+            "text": "器材借用说明更新\nR-043 · 苏禾\n○ 待审阅"
+          }
+        ]
+      }
+    },
+    {
+      "name": "review: retryable read error retains rows and recovers",
+      "status": "pass",
+      "details": {
+        "error": "读取失败。已有记录保留，可重试。",
+        "rows": 3
+      }
+    },
+    {
+      "name": "stock: invalid integer rejected with input preserved",
+      "status": "pass",
+      "details": {
+        "input": "12x",
+        "error": "请输入 0–99999 的整数，原输入已保留。"
+      }
+    },
+    {
+      "name": "stock: busy state blocks duplicate submission",
+      "status": "pass",
+      "details": {
+        "busy_seen": true,
+        "saved_state_observed": true,
+        "stored": {
+          "quantity": 14,
+          "note": "首次实盘记录",
+          "version": 1
+        }
+      }
+    },
+    {
+      "name": "stock: actual localStorage value restores after reload",
+      "status": "pass",
+      "details": {
+        "quantity": "14",
+        "note": "首次实盘记录",
+        "status": "✓ 已从当前浏览器恢复盘点记录。"
+      }
+    },
+    {
+      "name": "stock: conflict sample opens confirmation and retains draft",
+      "status": "pass",
+      "details": {
+        "quantity": "22",
+        "note": "保留的草稿",
+        "dialog": "当前记录：18 件；你的输入：22 件。取消将保留输入。"
+      }
+    },
+    {
+      "name": "stock: cancel conflict preserves draft",
+      "status": "pass",
+      "details": {
+        "quantity": "22",
+        "note": "保留的草稿",
+        "active": "stock-note"
+      }
+    },
+    {
+      "name": "stock: conflict resolution saves draft over local sample",
+      "status": "pass",
+      "details": {
+        "saved_state_observed": true,
+        "stored": {
+          "quantity": 22,
+          "note": "保留的草稿",
+          "version": 3
+        },
+        "status": "✓ 盘点已保存于当前浏览器。"
+      }
+    },
+    {
+      "name": "reader: contents navigation targets and focuses section",
+      "status": "pass",
+      "details": {
+        "hash": "#record",
+        "active": "record"
+      }
+    },
+    {
+      "name": "reader: create annotation saves locally",
+      "status": "pass",
+      "details": {
+        "stored": "第一版批注",
+        "visible": "第一版批注"
+      }
+    },
+    {
+      "name": "reader: annotation restores after reload",
+      "status": "pass",
+      "details": {
+        "visible": true,
+        "text": "第一版批注"
+      }
+    },
+    {
+      "name": "reader: retryable simulated failure preserves draft",
+      "status": "pass",
+      "details": {
+        "draft": "重试后的第二版批注",
+        "status": "示例保存错误：草稿已保留，再次保存即可重试。",
+        "stored_before_retry": "第一版批注"
+      }
+    },
+    {
+      "name": "reader: retry persists preserved draft",
+      "status": "pass",
+      "details": {
+        "stored": "重试后的第二版批注",
+        "visible": "重试后的第二版批注"
+      }
+    },
+    {
+      "name": "reader: cancel edit leaves saved annotation unchanged",
+      "status": "pass",
+      "details": {
+        "saved": "重试后的第二版批注",
+        "form_hidden": true
+      }
+    },
+    {
+      "name": "reader: delete cancellation preserves annotation and restores focus",
+      "status": "pass",
+      "details": {
+        "saved_visible": true,
+        "active": "annotation-delete"
+      }
+    },
+    {
+      "name": "reader: Tab reaches confirm and keyboard deletes annotation",
+      "status": "pass",
+      "details": {
+        "initial_focus": "confirm-cancel",
+        "confirm_focus": "confirm-ok",
+        "dialog_closed": true,
+        "applied": true
+      }
+    },
+    {
+      "name": "reader: delete confirmation removes local annotation",
+      "status": "pass",
+      "details": {
+        "keyboard": {
+          "initial_focus": "confirm-cancel",
+          "confirm_focus": "confirm-ok",
+          "dialog_closed": true,
+          "applied": true
+        },
+        "pointer_fallback": false,
+        "storage": null,
+        "saved_hidden": true
+      }
+    },
+    {
+      "name": "access: review at 1280px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 1280,
+        "documentWidth": 1280,
+        "bodyWidth": 1280,
+        "clientWidth": 1280,
+        "view": "review",
+        "target_width": 1280
+      }
+    },
+    {
+      "name": "access: review at 1280px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: review at 1280px shows keyboard focus",
+      "status": "pass",
+      "details": {
+        "tag": "BUTTON",
+        "id": "review-error",
+        "className": "",
+        "text": "显示读取错误",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "view": "review",
+        "width": 1280
+      }
+    },
+    {
+      "name": "access: review at 390px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "clientWidth": 390,
+        "view": "review",
+        "target_width": 390
+      }
+    },
+    {
+      "name": "access: review at 390px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: review at 390px shows keyboard focus",
+      "status": "fail",
+      "details": {
+        "tag": "BODY",
+        "id": "",
+        "className": "",
+        "text": "跳至内容\nF\n工作界面\nFIELDNOTES / 预设集 01\n\n本地交互样例 · 保存仅限当前浏览器\n\n01 审阅工作",
+        "outlineStyle": "none",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(23, 33, 43)",
+        "view": "review",
+        "width": 390
+      }
+    },
+    {
+      "name": "access: review at 320px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320,
+        "clientWidth": 320,
+        "view": "review",
+        "target_width": 320
+      }
+    },
+    {
+      "name": "access: review at 320px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: review at 320px shows keyboard focus",
+      "status": "pass",
+      "details": {
+        "tag": "A",
+        "id": "",
+        "className": "skip",
+        "text": "跳至内容",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "view": "review",
+        "width": 320
+      }
+    },
+    {
+      "name": "access: stock at 1280px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 1280,
+        "documentWidth": 1280,
+        "bodyWidth": 1280,
+        "clientWidth": 1280,
+        "view": "stock",
+        "target_width": 1280
+      }
+    },
+    {
+      "name": "access: stock at 1280px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: stock at 1280px shows keyboard focus",
+      "status": "pass",
+      "details": {
+        "tag": "BUTTON",
+        "id": "stock-incoming",
+        "className": "",
+        "text": "模拟另一份盘点记录",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "view": "stock",
+        "width": 1280
+      }
+    },
+    {
+      "name": "access: stock at 390px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "clientWidth": 390,
+        "view": "stock",
+        "target_width": 390
+      }
+    },
+    {
+      "name": "access: stock at 390px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: stock at 390px shows keyboard focus",
+      "status": "fail",
+      "details": {
+        "tag": "BODY",
+        "id": "",
+        "className": "",
+        "text": "跳至内容\nF\n工作界面\nFIELDNOTES / 预设集 01\n\n本地交互样例 · 保存仅限当前浏览器\n\n01 审阅工作",
+        "outlineStyle": "none",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(31, 41, 55)",
+        "view": "stock",
+        "width": 390
+      }
+    },
+    {
+      "name": "access: stock at 320px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320,
+        "clientWidth": 320,
+        "view": "stock",
+        "target_width": 320
+      }
+    },
+    {
+      "name": "access: stock at 320px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: stock at 320px shows keyboard focus",
+      "status": "pass",
+      "details": {
+        "tag": "A",
+        "id": "",
+        "className": "skip",
+        "text": "跳至内容",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "view": "stock",
+        "width": 320
+      }
+    },
+    {
+      "name": "access: reader at 1280px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 1280,
+        "documentWidth": 1280,
+        "bodyWidth": 1280,
+        "clientWidth": 1280,
+        "view": "reader",
+        "target_width": 1280
+      }
+    },
+    {
+      "name": "access: reader at 1280px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: reader at 1280px shows keyboard focus",
+      "status": "pass",
+      "details": {
+        "tag": "SUMMARY",
+        "id": "",
+        "className": "",
+        "text": "文档目录",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "view": "reader",
+        "width": 1280
+      }
+    },
+    {
+      "name": "access: reader at 390px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 390,
+        "documentWidth": 390,
+        "bodyWidth": 390,
+        "clientWidth": 390,
+        "view": "reader",
+        "target_width": 390
+      }
+    },
+    {
+      "name": "access: reader at 390px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: reader at 390px shows keyboard focus",
+      "status": "pass",
+      "details": {
+        "tag": "A",
+        "id": "",
+        "className": "",
+        "text": "01 先观察",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "view": "reader",
+        "width": 390
+      }
+    },
+    {
+      "name": "access: reader at 320px has no horizontal overflow",
+      "status": "pass",
+      "details": {
+        "innerWidth": 320,
+        "documentWidth": 320,
+        "bodyWidth": 320,
+        "clientWidth": 320,
+        "view": "reader",
+        "target_width": 320
+      }
+    },
+    {
+      "name": "access: reader at 320px has named visible controls",
+      "status": "pass",
+      "details": {
+        "unnamed": [],
+        "unlabeled": []
+      }
+    },
+    {
+      "name": "access: reader at 320px shows keyboard focus",
+      "status": "pass",
+      "details": {
+        "tag": "A",
+        "id": "",
+        "className": "",
+        "text": "02 再记录",
+        "outlineStyle": "solid",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(0, 95, 204)",
+        "view": "reader",
+        "width": 320
+      }
+    },
+    {
+      "name": "access: reduced motion retains review information",
+      "status": "pass",
+      "details": {
+        "text_length_before": 220,
+        "text_length_after": 220,
+        "transition_duration": "0s",
+        "scroll_behavior": "auto"
+      }
+    },
+    {
+      "name": "access: reduced motion disables review transition",
+      "status": "pass",
+      "details": {
+        "transition_duration": "0s"
+      }
+    },
+    {
+      "name": "access: reduced motion avoids smooth scrolling for review",
+      "status": "pass",
+      "details": {
+        "scroll_behavior": "auto"
+      }
+    },
+    {
+      "name": "access: reduced motion retains stock information",
+      "status": "pass",
+      "details": {
+        "text_length_before": 218,
+        "text_length_after": 218,
+        "transition_duration": "0s",
+        "scroll_behavior": "auto"
+      }
+    },
+    {
+      "name": "access: reduced motion disables stock transition",
+      "status": "pass",
+      "details": {
+        "transition_duration": "0s"
+      }
+    },
+    {
+      "name": "access: reduced motion avoids smooth scrolling for stock",
+      "status": "pass",
+      "details": {
+        "scroll_behavior": "auto"
+      }
+    },
+    {
+      "name": "access: reduced motion retains reader information",
+      "status": "pass",
+      "details": {
+        "text_length_before": 503,
+        "text_length_after": 503,
+        "transition_duration": "0s",
+        "scroll_behavior": "auto"
+      }
+    },
+    {
+      "name": "access: reduced motion disables reader transition",
+      "status": "pass",
+      "details": {
+        "transition_duration": "0s"
+      }
+    },
+    {
+      "name": "access: reduced motion avoids smooth scrolling for reader",
+      "status": "pass",
+      "details": {
+        "scroll_behavior": "auto"
+      }
+    },
+    {
+      "name": "browser: only loopback requests were issued",
+      "status": "pass",
+      "details": {
+        "requests": [
+          "http://127.0.0.1:8766/",
+          "http://127.0.0.1:8766/styles.css",
+          "http://127.0.0.1:8766/app.js",
+          "http://127.0.0.1:8766/",
+          "http://127.0.0.1:8766/styles.css",
+          "http://127.0.0.1:8766/app.js",
+          "http://127.0.0.1:8766/",
+          "http://127.0.0.1:8766/styles.css",
+          "http://127.0.0.1:8766/app.js"
+        ]
+      }
+    },
+    {
+      "name": "browser: no console errors or uncaught page errors",
+      "status": "pass",
+      "details": {
+        "console_errors": [],
+        "page_errors": []
+      }
+    }
+  ],
+  "observations": [],
+  "console_errors": [],
+  "page_errors": [],
+  "requests": [
+    "http://127.0.0.1:8766/",
+    "http://127.0.0.1:8766/styles.css",
+    "http://127.0.0.1:8766/app.js",
+    "http://127.0.0.1:8766/",
+    "http://127.0.0.1:8766/styles.css",
+    "http://127.0.0.1:8766/app.js",
+    "http://127.0.0.1:8766/",
+    "http://127.0.0.1:8766/styles.css",
+    "http://127.0.0.1:8766/app.js"
+  ],
+  "layout": [
+    {
+      "innerWidth": 1280,
+      "documentWidth": 1280,
+      "bodyWidth": 1280,
+      "clientWidth": 1280,
+      "view": "review",
+      "target_width": 1280
+    },
+    {
+      "innerWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "view": "review",
+      "target_width": 390
+    },
+    {
+      "innerWidth": 320,
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "clientWidth": 320,
+      "view": "review",
+      "target_width": 320
+    },
+    {
+      "innerWidth": 1280,
+      "documentWidth": 1280,
+      "bodyWidth": 1280,
+      "clientWidth": 1280,
+      "view": "stock",
+      "target_width": 1280
+    },
+    {
+      "innerWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "view": "stock",
+      "target_width": 390
+    },
+    {
+      "innerWidth": 320,
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "clientWidth": 320,
+      "view": "stock",
+      "target_width": 320
+    },
+    {
+      "innerWidth": 1280,
+      "documentWidth": 1280,
+      "bodyWidth": 1280,
+      "clientWidth": 1280,
+      "view": "reader",
+      "target_width": 1280
+    },
+    {
+      "innerWidth": 390,
+      "documentWidth": 390,
+      "bodyWidth": 390,
+      "clientWidth": 390,
+      "view": "reader",
+      "target_width": 390
+    },
+    {
+      "innerWidth": 320,
+      "documentWidth": 320,
+      "bodyWidth": 320,
+      "clientWidth": 320,
+      "view": "reader",
+      "target_width": 320
+    }
+  ],
+  "controls": [
+    {
+      "view": "review",
+      "width": 1280,
+      "tag": "input",
+      "id": "review-search",
+      "text": "",
+      "aria": null,
+      "placeholder": "按标题或负责人搜索",
+      "labels": [
+        "搜索记录"
+      ],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 1280,
+      "tag": "button",
+      "id": "review-clear",
+      "text": "清除筛选",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 1280,
+      "tag": "button",
+      "id": "",
+      "text": "北侧展厅照明调整\nR-041 · 林溪\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 1280,
+      "tag": "button",
+      "id": "",
+      "text": "周末工作坊物料清单\nR-042 · 陈远\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 1280,
+      "tag": "button",
+      "id": "",
+      "text": "器材借用说明更新\nR-043 · 苏禾\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 1280,
+      "tag": "button",
+      "id": "review-approve",
+      "text": "确认通过示例",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 1280,
+      "tag": "button",
+      "id": "review-error",
+      "text": "显示读取错误",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 390,
+      "tag": "input",
+      "id": "review-search",
+      "text": "",
+      "aria": null,
+      "placeholder": "按标题或负责人搜索",
+      "labels": [
+        "搜索记录"
+      ],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 390,
+      "tag": "button",
+      "id": "review-clear",
+      "text": "清除筛选",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 390,
+      "tag": "button",
+      "id": "",
+      "text": "北侧展厅照明调整\nR-041 · 林溪\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 390,
+      "tag": "button",
+      "id": "",
+      "text": "周末工作坊物料清单\nR-042 · 陈远\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 390,
+      "tag": "button",
+      "id": "",
+      "text": "器材借用说明更新\nR-043 · 苏禾\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 390,
+      "tag": "button",
+      "id": "review-approve",
+      "text": "确认通过示例",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 390,
+      "tag": "button",
+      "id": "review-error",
+      "text": "显示读取错误",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 320,
+      "tag": "input",
+      "id": "review-search",
+      "text": "",
+      "aria": null,
+      "placeholder": "按标题或负责人搜索",
+      "labels": [
+        "搜索记录"
+      ],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 320,
+      "tag": "button",
+      "id": "review-clear",
+      "text": "清除筛选",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 320,
+      "tag": "button",
+      "id": "",
+      "text": "北侧展厅照明调整\nR-041 · 林溪\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 320,
+      "tag": "button",
+      "id": "",
+      "text": "周末工作坊物料清单\nR-042 · 陈远\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 320,
+      "tag": "button",
+      "id": "",
+      "text": "器材借用说明更新\nR-043 · 苏禾\n○ 待审阅",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 320,
+      "tag": "button",
+      "id": "review-approve",
+      "text": "确认通过示例",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "review",
+      "width": 320,
+      "tag": "button",
+      "id": "review-error",
+      "text": "显示读取错误",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 1280,
+      "tag": "input",
+      "id": "quantity",
+      "text": "",
+      "aria": null,
+      "placeholder": null,
+      "labels": [
+        "实盘数量\n输入 0–99999 的整数"
+      ],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 1280,
+      "tag": "textarea",
+      "id": "stock-note",
+      "text": "",
+      "aria": null,
+      "placeholder": "例如：两件正在充电",
+      "labels": [
+        "备注（可选）"
+      ],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 1280,
+      "tag": "button",
+      "id": "stock-save",
+      "text": "保存盘点",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 1280,
+      "tag": "button",
+      "id": "stock-incoming",
+      "text": "模拟另一份盘点记录",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 390,
+      "tag": "input",
+      "id": "quantity",
+      "text": "",
+      "aria": null,
+      "placeholder": null,
+      "labels": [
+        "实盘数量\n输入 0–99999 的整数"
+      ],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 390,
+      "tag": "textarea",
+      "id": "stock-note",
+      "text": "",
+      "aria": null,
+      "placeholder": "例如：两件正在充电",
+      "labels": [
+        "备注（可选）"
+      ],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 390,
+      "tag": "button",
+      "id": "stock-save",
+      "text": "保存盘点",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 390,
+      "tag": "button",
+      "id": "stock-incoming",
+      "text": "模拟另一份盘点记录",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 320,
+      "tag": "input",
+      "id": "quantity",
+      "text": "",
+      "aria": null,
+      "placeholder": null,
+      "labels": [
+        "实盘数量\n输入 0–99999 的整数"
+      ],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 320,
+      "tag": "textarea",
+      "id": "stock-note",
+      "text": "",
+      "aria": null,
+      "placeholder": "例如：两件正在充电",
+      "labels": [
+        "备注（可选）"
+      ],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 320,
+      "tag": "button",
+      "id": "stock-save",
+      "text": "保存盘点",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "stock",
+      "width": 320,
+      "tag": "button",
+      "id": "stock-incoming",
+      "text": "模拟另一份盘点记录",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "reader",
+      "width": 1280,
+      "tag": "a",
+      "id": "",
+      "text": "01 先观察",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#observe"
+    },
+    {
+      "view": "reader",
+      "width": 1280,
+      "tag": "a",
+      "id": "",
+      "text": "02 再记录",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#record"
+    },
+    {
+      "view": "reader",
+      "width": 1280,
+      "tag": "a",
+      "id": "",
+      "text": "03 回到现场",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#return"
+    },
+    {
+      "view": "reader",
+      "width": 1280,
+      "tag": "button",
+      "id": "annotation-open",
+      "text": "为这一段添加批注",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "reader",
+      "width": 1280,
+      "tag": "button",
+      "id": "annotation-error",
+      "text": "让下一次保存显示可重试错误",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "reader",
+      "width": 390,
+      "tag": "a",
+      "id": "",
+      "text": "01 先观察",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#observe"
+    },
+    {
+      "view": "reader",
+      "width": 390,
+      "tag": "a",
+      "id": "",
+      "text": "02 再记录",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#record"
+    },
+    {
+      "view": "reader",
+      "width": 390,
+      "tag": "a",
+      "id": "",
+      "text": "03 回到现场",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#return"
+    },
+    {
+      "view": "reader",
+      "width": 390,
+      "tag": "button",
+      "id": "annotation-open",
+      "text": "为这一段添加批注",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "reader",
+      "width": 390,
+      "tag": "button",
+      "id": "annotation-error",
+      "text": "让下一次保存显示可重试错误",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "reader",
+      "width": 320,
+      "tag": "a",
+      "id": "",
+      "text": "01 先观察",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#observe"
+    },
+    {
+      "view": "reader",
+      "width": 320,
+      "tag": "a",
+      "id": "",
+      "text": "02 再记录",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#record"
+    },
+    {
+      "view": "reader",
+      "width": 320,
+      "tag": "a",
+      "id": "",
+      "text": "03 回到现场",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": "#return"
+    },
+    {
+      "view": "reader",
+      "width": 320,
+      "tag": "button",
+      "id": "annotation-open",
+      "text": "为这一段添加批注",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    },
+    {
+      "view": "reader",
+      "width": 320,
+      "tag": "button",
+      "id": "annotation-error",
+      "text": "让下一次保存显示可重试错误",
+      "aria": null,
+      "placeholder": null,
+      "labels": [],
+      "href": null
+    }
+  ],
+  "focus": [
+    {
+      "tag": "BUTTON",
+      "id": "review-error",
+      "className": "",
+      "text": "显示读取错误",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(0, 95, 204)",
+      "view": "review",
+      "width": 1280
+    },
+    {
+      "tag": "BODY",
+      "id": "",
+      "className": "",
+      "text": "跳至内容\nF\n工作界面\nFIELDNOTES / 预设集 01\n\n本地交互样例 · 保存仅限当前浏览器\n\n01 审阅工作",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(23, 33, 43)",
+      "view": "review",
+      "width": 390
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "className": "skip",
+      "text": "跳至内容",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(0, 95, 204)",
+      "view": "review",
+      "width": 320
+    },
+    {
+      "tag": "BUTTON",
+      "id": "stock-incoming",
+      "className": "",
+      "text": "模拟另一份盘点记录",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(0, 95, 204)",
+      "view": "stock",
+      "width": 1280
+    },
+    {
+      "tag": "BODY",
+      "id": "",
+      "className": "",
+      "text": "跳至内容\nF\n工作界面\nFIELDNOTES / 预设集 01\n\n本地交互样例 · 保存仅限当前浏览器\n\n01 审阅工作",
+      "outlineStyle": "none",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(31, 41, 55)",
+      "view": "stock",
+      "width": 390
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "className": "skip",
+      "text": "跳至内容",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(0, 95, 204)",
+      "view": "stock",
+      "width": 320
+    },
+    {
+      "tag": "SUMMARY",
+      "id": "",
+      "className": "",
+      "text": "文档目录",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(0, 95, 204)",
+      "view": "reader",
+      "width": 1280
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "className": "",
+      "text": "01 先观察",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(0, 95, 204)",
+      "view": "reader",
+      "width": 390
+    },
+    {
+      "tag": "A",
+      "id": "",
+      "className": "",
+      "text": "02 再记录",
+      "outlineStyle": "solid",
+      "outlineWidth": "3px",
+      "outlineColor": "rgb(0, 95, 204)",
+      "view": "reader",
+      "width": 320
+    }
+  ],
+  "contrast": [
+    {
+      "label": "review approved status",
+      "samples": [
+        {
+          "selector": "h1",
+          "text": "把注意力留给判断。",
+          "foreground": "rgb(23, 33, 43)",
+          "background": "rgb(243, 246, 250)",
+          "ratio": 15.032
+        },
+        {
+          "selector": "h2",
+          "text": "记录列表",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(243, 246, 250)",
+          "ratio": 6.991
+        },
+        {
+          "selector": "h2",
+          "text": "北侧展厅照明调整",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 14.679
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "FIELDNOTES / 预设集 01",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.578
+        },
+        {
+          "selector": ".status",
+          "text": "✓ 已通过示例：北侧展厅照明调整",
+          "foreground": "rgb(6, 95, 70)",
+          "background": "rgb(236, 253, 245)",
+          "ratio": 7.294
+        },
+        {
+          "selector": ".queue button strong",
+          "text": "北侧展厅照明调整",
+          "foreground": "rgb(30, 58, 138)",
+          "background": "rgb(219, 234, 254)",
+          "ratio": 8.49
+        },
+        {
+          "selector": ".queue .meta",
+          "text": "R-041 · 林溪",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(219, 234, 254)",
+          "ratio": 6.211
+        },
+        {
+          "selector": "button",
+          "text": "01 审阅工作台",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(23, 33, 43)",
+          "ratio": 16.293
+        },
+        {
+          "selector": "button",
+          "text": "清除筛选",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(243, 246, 250)",
+          "ratio": 13.542
+        },
+        {
+          "selector": "button",
+          "text": "确认通过示例",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(226, 232, 240)",
+          "ratio": 6.147
+        }
+      ],
+      "below_4_5": []
+    },
+    {
+      "label": "stock invalid count",
+      "samples": [
+        {
+          "selector": "h1",
+          "text": "一次，数清一件。",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(248, 250, 252)",
+          "ratio": 14.03
+        },
+        {
+          "selector": "h2",
+          "text": "便携照明灯",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(238, 242, 246)",
+          "ratio": 13.048
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "FIELDNOTES / 预设集 01",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.578
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "STOCK COUNT / A-03",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(248, 250, 252)",
+          "ratio": 7.243
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "北侧器材架 · 第三层",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(238, 242, 246)",
+          "ratio": 6.736
+        },
+        {
+          "selector": ".status",
+          "text": "尚未保存此次盘点。",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 14.679
+        },
+        {
+          "selector": ".error",
+          "text": "请输入 0–99999 的整数，原输入已保留。",
+          "foreground": "rgb(153, 27, 27)",
+          "background": "rgb(254, 242, 242)",
+          "ratio": 7.597
+        },
+        {
+          "selector": "button",
+          "text": "02 库存盘点",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(23, 33, 43)",
+          "ratio": 16.293
+        },
+        {
+          "selector": "button",
+          "text": "保存盘点",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(29, 78, 216)",
+          "ratio": 6.702
+        }
+      ],
+      "below_4_5": []
+    },
+    {
+      "label": "stock conflict resolution",
+      "samples": [
+        {
+          "selector": "h1",
+          "text": "一次，数清一件。",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(248, 250, 252)",
+          "ratio": 14.03
+        },
+        {
+          "selector": "h2",
+          "text": "便携照明灯",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(238, 242, 246)",
+          "ratio": 13.048
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "FIELDNOTES / 预设集 01",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.578
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "STOCK COUNT / A-03",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(248, 250, 252)",
+          "ratio": 7.243
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "北侧器材架 · 第三层",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(238, 242, 246)",
+          "ratio": 6.736
+        },
+        {
+          "selector": ".status",
+          "text": "✓ 盘点已保存于当前浏览器。",
+          "foreground": "rgb(6, 95, 70)",
+          "background": "rgb(236, 253, 245)",
+          "ratio": 7.294
+        },
+        {
+          "selector": "button",
+          "text": "02 库存盘点",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(23, 33, 43)",
+          "ratio": 16.293
+        },
+        {
+          "selector": "button",
+          "text": "保存盘点",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(29, 78, 216)",
+          "ratio": 6.702
+        },
+        {
+          "selector": "button",
+          "text": "模拟另一份盘点记录",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 14.679
+        }
+      ],
+      "below_4_5": []
+    },
+    {
+      "label": "reader saved annotation",
+      "samples": [
+        {
+          "selector": "h1",
+          "text": "在阅读中，留下想法。",
+          "foreground": "rgb(47, 45, 42)",
+          "background": "rgb(251, 250, 247)",
+          "ratio": 13.153
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "FIELDNOTES / 预设集 01",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.578
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "READING ROOM / FIELD GUIDE",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(251, 250, 247)",
+          "ratio": 7.26
+        },
+        {
+          "selector": "button",
+          "text": "03 文档批注",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(23, 33, 43)",
+          "ratio": 16.293
+        },
+        {
+          "selector": "button",
+          "text": "编辑批注",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 14.679
+        },
+        {
+          "selector": ".contents a",
+          "text": "01 先观察",
+          "foreground": "rgb(29, 78, 216)",
+          "background": "rgb(251, 250, 247)",
+          "ratio": 6.421
+        },
+        {
+          "selector": ".reading-column p",
+          "text": "重试后的第二版批注",
+          "foreground": "rgb(58, 49, 30)",
+          "background": "rgb(255, 241, 194)",
+          "ratio": 11.363
+        }
+      ],
+      "below_4_5": []
+    },
+    {
+      "label": "review base rendered text",
+      "samples": [
+        {
+          "selector": "h1",
+          "text": "把注意力留给判断。",
+          "foreground": "rgb(23, 33, 43)",
+          "background": "rgb(243, 246, 250)",
+          "ratio": 15.032
+        },
+        {
+          "selector": "h2",
+          "text": "记录列表",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(243, 246, 250)",
+          "ratio": 6.991
+        },
+        {
+          "selector": "h2",
+          "text": "选择一条记录",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 14.679
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "FIELDNOTES / 预设集 01",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.578
+        },
+        {
+          "selector": ".status",
+          "text": "请选择一条记录。",
+          "foreground": "rgb(23, 33, 43)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 16.293
+        },
+        {
+          "selector": "button",
+          "text": "01 审阅工作台",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(23, 33, 43)",
+          "ratio": 16.293
+        },
+        {
+          "selector": "button",
+          "text": "清除筛选",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(243, 246, 250)",
+          "ratio": 13.542
+        },
+        {
+          "selector": "button",
+          "text": "确认通过示例",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(226, 232, 240)",
+          "ratio": 6.147
+        }
+      ],
+      "below_4_5": []
+    },
+    {
+      "label": "stock base rendered text",
+      "samples": [
+        {
+          "selector": "h1",
+          "text": "一次，数清一件。",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(248, 250, 252)",
+          "ratio": 14.03
+        },
+        {
+          "selector": "h2",
+          "text": "便携照明灯",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(238, 242, 246)",
+          "ratio": 13.048
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "FIELDNOTES / 预设集 01",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.578
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "STOCK COUNT / A-03",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(248, 250, 252)",
+          "ratio": 7.243
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "北侧器材架 · 第三层",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(238, 242, 246)",
+          "ratio": 6.736
+        },
+        {
+          "selector": ".status",
+          "text": "✓ 已从当前浏览器恢复盘点记录。",
+          "foreground": "rgb(6, 95, 70)",
+          "background": "rgb(236, 253, 245)",
+          "ratio": 7.294
+        },
+        {
+          "selector": "button",
+          "text": "02 库存盘点",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(23, 33, 43)",
+          "ratio": 16.293
+        },
+        {
+          "selector": "button",
+          "text": "保存盘点",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(29, 78, 216)",
+          "ratio": 6.702
+        },
+        {
+          "selector": "button",
+          "text": "模拟另一份盘点记录",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 14.679
+        }
+      ],
+      "below_4_5": []
+    },
+    {
+      "label": "reader base rendered text",
+      "samples": [
+        {
+          "selector": "h1",
+          "text": "在阅读中，留下想法。",
+          "foreground": "rgb(47, 45, 42)",
+          "background": "rgb(251, 250, 247)",
+          "ratio": 13.153
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "FIELDNOTES / 预设集 01",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 7.578
+        },
+        {
+          "selector": ".eyebrow",
+          "text": "READING ROOM / FIELD GUIDE",
+          "foreground": "rgb(71, 85, 105)",
+          "background": "rgb(251, 250, 247)",
+          "ratio": 7.26
+        },
+        {
+          "selector": "button",
+          "text": "03 文档批注",
+          "foreground": "rgb(255, 255, 255)",
+          "background": "rgb(23, 33, 43)",
+          "ratio": 16.293
+        },
+        {
+          "selector": "button",
+          "text": "为这一段添加批注",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(251, 250, 247)",
+          "ratio": 14.063
+        },
+        {
+          "selector": "button",
+          "text": "让下一次保存显示可重试错误",
+          "foreground": "rgb(31, 41, 55)",
+          "background": "rgb(255, 255, 255)",
+          "ratio": 14.679
+        },
+        {
+          "selector": ".contents a",
+          "text": "01 先观察",
+          "foreground": "rgb(29, 78, 216)",
+          "background": "rgb(251, 250, 247)",
+          "ratio": 6.421
+        }
+      ],
+      "below_4_5": []
+    }
+  ],
+  "journey_errors": [],
+  "screenshots": [
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/screenshots/review-1280.png",
+      "view": "review",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/screenshots/stock-390.png",
+      "view": "stock",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/screenshots/reader-320.png",
+      "view": "reader",
+      "width": 320,
+      "height": 800
+    }
+  ],
+  "local_storage": [
+    {
+      "label": "stock after save",
+      "values": {
+        "forge-preset-stock-v1": "{\"quantity\":14,\"note\":\"首次实盘记录\",\"version\":1}"
+      }
+    },
+    {
+      "label": "stock after conflict resolution",
+      "values": {
+        "forge-preset-stock-v1": "{\"quantity\":22,\"note\":\"保留的草稿\",\"version\":3}"
+      }
+    },
+    {
+      "label": "reader after annotation save",
+      "values": {
+        "forge-preset-annotation-v1": "第一版批注"
+      }
+    }
+  ],
+  "summary": {
+    "passed": 74,
+    "failed": 2,
+    "journey_errors": 0,
+    "console_errors": 0,
+    "page_errors": 0,
+    "requests": [
+      "http://127.0.0.1:8766/",
+      "http://127.0.0.1:8766/styles.css",
+      "http://127.0.0.1:8766/app.js",
+      "http://127.0.0.1:8766/",
+      "http://127.0.0.1:8766/styles.css",
+      "http://127.0.0.1:8766/app.js",
+      "http://127.0.0.1:8766/",
+      "http://127.0.0.1:8766/styles.css",
+      "http://127.0.0.1:8766/app.js"
+    ]
+  }
+}

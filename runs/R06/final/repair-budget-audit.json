@@ -1,0 +1,95 @@
+{
+  "schema": "forge-repair-audit/1",
+  "updated_at": "2026-10-04T07:03:58.807954+00:00",
+  "status": "blocked",
+  "rule": "Per original actor/candidate; all counts retained; local product success cannot override an exceeded independent budget",
+  "actors": [
+    {
+      "scope": "R00 installer",
+      "used": 2,
+      "limit": 2,
+      "source": "runs/R00/issues.json",
+      "unchanged": true
+    },
+    {
+      "scope": "R05 original preset Root",
+      "used": 2,
+      "limit": 2,
+      "source": "runs/future/preset_browser_acceptance/root-final-review.json"
+    },
+    {
+      "scope": "R05 original preset independent",
+      "harness_used": 2,
+      "additional_reply_correction": 1,
+      "limit": 2,
+      "status": "blocked",
+      "source": "runs/future/preset_browser_acceptance/independent/worker/report.md"
+    },
+    {
+      "scope": "R05 catalog research",
+      "used": 2,
+      "limit": 2,
+      "source": "runs/future/versioned_preset_catalog/research/root-review.json"
+    },
+    {
+      "scope": "R05 catalog Root",
+      "used": 1,
+      "limit": 2,
+      "source": "runs/future/versioned_preset_catalog/repair-1.json"
+    },
+    {
+      "scope": "R05 catalog independent",
+      "used": 2,
+      "limit": 2,
+      "status": "blocked_on_remaining_failed_checks",
+      "source": "runs/future/versioned_preset_catalog/independent/retest-v2/results.json"
+    },
+    {
+      "scope": "R05 local adapter independent",
+      "used": 3,
+      "limit": 2,
+      "status": "exceeded",
+      "source": "runs/future/provider-adapter/independent/budget-clarification.json"
+    },
+    {
+      "scope": "R05 concurrent ticket Root",
+      "used": 1,
+      "limit": 2,
+      "source": "runs/future/concurrent-ticket/task-result.json"
+    },
+    {
+      "scope": "R05 protocol study Root",
+      "used": 2,
+      "limit": 2,
+      "status": "exhausted_with_incomplete_samples",
+      "source": "runs/future/host_protocol_overhead_comparison/report.json"
+    },
+    {
+      "scope": "C4/C5 core",
+      "used": 0,
+      "limit": 2,
+      "source": "runs/R06/FEEDBACK_LOOPS.md"
+    },
+    {
+      "scope": "C5 complex worker",
+      "guarded_repairs": 0,
+      "reported_pre_freeze_corrections": 1,
+      "reply_refresh": 1,
+      "limit": 2,
+      "source": "runs/R06/handoff/complex/completed-return.json"
+    },
+    {
+      "scope": "C5 handoff Root integration",
+      "used": 2,
+      "limit": 2,
+      "source": "runs/R06/handoff/root-repair-budget.json"
+    },
+    {
+      "scope": "R05/R06 release integration Root",
+      "used": 2,
+      "limit": 2,
+      "source": "runs/R06/final/integration-repair-2.json"
+    }
+  ],
+  "legacy_budgets": "Older S00/S01/S03 and R03 remain in immutable historical reports/checkpoint; none reset"
+}

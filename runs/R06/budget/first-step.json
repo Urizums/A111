@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "runs/R06/budget",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:32:16.619250+00:00",
+    "monotonic_ns": 40175265631621,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:32:17.937115+00:00",
+    "monotonic_ns": 40176583499658,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_changed_source_without_repair_is_rejected (test_bounded_run.GuardTests.test_changed_source_without_repair_is_rejected) ... ok\ntest_evidence_drift_is_rejected (test_bounded_run.GuardTests.test_evidence_drift_is_rejected) ... ok\ntest_failed_run_requires_recorded_changed_candidate (test_bounded_run.GuardTests.test_failed_run_requires_recorded_changed_candidate) ... ok\ntest_input_mutation_by_successful_child_cannot_pass (test_bounded_run.GuardTests.test_input_mutation_by_successful_child_cannot_pass) ... ok\ntest_new_case_actual_recovery_retains_failure_and_bytes (test_bounded_run.GuardTests.test_new_case_actual_recovery_retains_failure_and_bytes) ... ok\ntest_original_input_drift_and_duplicate_init_rejected (test_bounded_run.GuardTests.test_original_input_drift_and_duplicate_init_rejected) ... ok\ntest_original_three_failure_classes_stop_at_bound (test_bounded_run.GuardTests.test_original_three_failure_classes_stop_at_bound) ... ok\ntest_timeout_and_unknown_state_cannot_retry (test_bounded_run.GuardTests.test_timeout_and_unknown_state_cannot_retry) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 1.251s\n\nOK\n",
+  "stdout_base64": "",
+  "stderr_base64": "dGVzdF9jaGFuZ2VkX3NvdXJjZV93aXRob3V0X3JlcGFpcl9pc19yZWplY3RlZCAodGVzdF9ib3VuZGVkX3J1bi5HdWFyZFRlc3RzLnRlc3RfY2hhbmdlZF9zb3VyY2Vfd2l0aG91dF9yZXBhaXJfaXNfcmVqZWN0ZWQpIC4uLiBvawp0ZXN0X2V2aWRlbmNlX2RyaWZ0X2lzX3JlamVjdGVkICh0ZXN0X2JvdW5kZWRfcnVuLkd1YXJkVGVzdHMudGVzdF9ldmlkZW5jZV9kcmlmdF9pc19yZWplY3RlZCkgLi4uIG9rCnRlc3RfZmFpbGVkX3J1bl9yZXF1aXJlc19yZWNvcmRlZF9jaGFuZ2VkX2NhbmRpZGF0ZSAodGVzdF9ib3VuZGVkX3J1bi5HdWFyZFRlc3RzLnRlc3RfZmFpbGVkX3J1bl9yZXF1aXJlc19yZWNvcmRlZF9jaGFuZ2VkX2NhbmRpZGF0ZSkgLi4uIG9rCnRlc3RfaW5wdXRfbXV0YXRpb25fYnlfc3VjY2Vzc2Z1bF9jaGlsZF9jYW5ub3RfcGFzcyAodGVzdF9ib3VuZGVkX3J1bi5HdWFyZFRlc3RzLnRlc3RfaW5wdXRfbXV0YXRpb25fYnlfc3VjY2Vzc2Z1bF9jaGlsZF9jYW5ub3RfcGFzcykgLi4uIG9rCnRlc3RfbmV3X2Nhc2VfYWN0dWFsX3JlY292ZXJ5X3JldGFpbnNfZmFpbHVyZV9hbmRfYnl0ZXMgKHRlc3RfYm91bmRlZF9ydW4uR3VhcmRUZXN0cy50ZXN0X25ld19jYXNlX2FjdHVhbF9yZWNvdmVyeV9yZXRhaW5zX2ZhaWx1cmVfYW5kX2J5dGVzKSAuLi4gb2sKdGVzdF9vcmlnaW5hbF9pbnB1dF9kcmlmdF9hbmRfZHVwbGljYXRlX2luaXRfcmVqZWN0ZWQgKHRlc3RfYm91bmRlZF9ydW4uR3VhcmRUZXN0cy50ZXN0X29yaWdpbmFsX2lucHV0X2RyaWZ0X2FuZF9kdXBsaWNhdGVfaW5pdF9yZWplY3RlZCkgLi4uIG9rCnRlc3Rfb3JpZ2luYWxfdGhyZWVfZmFpbHVyZV9jbGFzc2VzX3N0b3BfYXRfYm91bmQgKHRlc3RfYm91bmRlZF9ydW4uR3VhcmRUZXN0cy50ZXN0X29yaWdpbmFsX3RocmVlX2ZhaWx1cmVfY2xhc3Nlc19zdG9wX2F0X2JvdW5kKSAuLi4gb2sKdGVzdF90aW1lb3V0X2FuZF91bmtub3duX3N0YXRlX2Nhbm5vdF9yZXRyeSAodGVzdF9ib3VuZGVkX3J1bi5HdWFyZFRlc3RzLnRlc3RfdGltZW91dF9hbmRfdW5rbm93bl9zdGF0ZV9jYW5ub3RfcmV0cnkpIC4uLiBvawoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpSYW4gOCB0ZXN0cyBpbiAxLjI1MXMKCk9LCg=="
+}

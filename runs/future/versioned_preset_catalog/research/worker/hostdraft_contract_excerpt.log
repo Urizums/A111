@@ -1,0 +1,31 @@
+    return view(c)
+
+
+def check_reply_identity(c, reply_path, reply):
+    """Pure outer reply identity checks shared with optional preflight."""
+    r = c["request"]
+    need(isinstance(reply, dict) and set(reply) == {"schema_version", "job_id", "attempt_id", "request_hash", "outcome", "result", "artifacts", "reason"}, "Malformed host reply")
+    need(reply["schema_version"] == "forge-host-reply/1" and reply["job_id"] == r["job_id"]
+         and reply["attempt_id"] == r["attempt_id"] and reply["request_hash"] == c["request_hash"], "Stale reply identity")
+    need(Path(reply_path).resolve() == Path(r["work"]["reply_path"]), "Reply is not the assigned output path")
+
+
+def check_reply_content(c, reply):
+    """Pure existing outcome/scope/evidence checks; not semantic acceptance."""
+    r = c["request"]
+    need(reply["outcome"] in {"done", "failed"}, "Unsupported worker task outcome")
+    need(isinstance(reply["artifacts"], list), "Reply artifacts must be a list")
+    if reply["outcome"] == "done":
+        need(reply["reason"] is None and bool(reply["artifacts"]), "Done needs artifact evidence and null reason")
+    else:
+        need(isinstance(reply["reason"], str) and bool(reply["reason"].strip()), "Failed reply needs actual error and next action")
+    scopes = [Path(p) for p in r["work"]["write_paths"]]
+    for ref in reply["artifacts"]:
+        need(isinstance(ref, dict) and set(ref) == {"path", "sha256"}, "Artifact reference needs path/sha256")
+        need(any(Path(ref["path"]).resolve().is_relative_to(p) for p in scopes), "Artifact outside assigned worker scope")
+    check_refs(reply["artifacts"])
+
+
+def receive(job, reply_path, receipt_path):
+    c = control(job)
+    reply = read(reply_path)

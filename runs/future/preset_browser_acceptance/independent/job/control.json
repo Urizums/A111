@@ -1,0 +1,95 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "7acf41f948c86fb9e41ec9c7eb957cf7b87d9cc8ae4f6aafd1a9aad531f875d7",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_1553aa2216f1464aaa9b269c80703887",
+    "attempt_id": "ec0ef35b347f4c5990443de8f50dc6f4",
+    "invocation_id": "ec0ef35b347f4c5990443de8f50dc6f4",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "5dad8ed9cf00bb65867d67306a23368b9dbfbcc97ab903a12020a853388bd968",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "Independently validate original run-workspace preset journeys",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    },
+    "work": {
+      "prompt": "# Independent acceptance: original run-workspace preset\n\nOnly validate the original target at /workspace/A111/skills/design-product-experience/assets/ui-presets.html and ui-presets.css. This task is distinct from any other UI. Read this original brief and /workspace/A111/skills/design-product-experience/references/experience-design.md and motion-design.md first; freeze expected-checks before inspecting/running target code. Do not read other reports, root diagnoses or state. Current local Chromium /usr/bin/chromium and Python Playwright, loopback server permitted. The preset is explicitly local sample data: do not invent a real business/backend claim.\n\nRequired journeys from its original purpose: original three rows; text/status filtering, empty feedback and clear; open detail then close/Escape with focus return; run again adds one matching selected workflow; delete cancel retains and confirmed delete removes only selected row; refresh exposes busy/current rows, cancel then retry, recoverable error then retry; palette/density independent; drawer motion toggles with reduced-motion usable; desktop and 390px narrow keyboard/pointer operation and horizontal overflow/scroll access. Inspect live rendered key text contrast, semantic labels, focus visibility and screenshots. Visible internal scrolling is not automatically a defect; verify all controls accessible. No user-study or global performance claim.\n\nStart a scoped local HTTP server, actual browser interactions, capture exact commands, screenshots (open and view), source hashes, original data, raw errors and all attempts. Stop server. Write only your assigned worker directory. No source edits. Max two harness corrections, retain every first failure; stop if exhausted. Return exact original source clauses/evidence for any actual defect, and distinguish not-run from failed. Do not infer acceptance from exit code alone. Deliver report.md, results.json, executable harness and reply.json preflight using supplied new host job.\n\nWrite only /workspace/A111/runs/future/preset_browser_acceptance/independent/worker. You may author/run benign analysis and validation scripts there; do not modify core, skill, shared TODO/state or historical evidence. Record actual commands/results and all failed attempts, corrections, parent questions, and unavailable measurements (tokens/cost/model-active-time null). Do not spawn/delegate, inspect siblings or query unrelated workers. This is a new task, never execute old native IDs. Before returning, use /workspace/A111/skills/forge-agent-flow/scripts/hostdraft.py reply with your supplied NEW job/request.json to create a separate incomplete draft. Fill final /workspace/A111/runs/future/preset_browser_acceptance/independent/worker/reply.json with the actual task result and hashes of final artifacts. Capture check-reply output before returning. Reply preflight is not semantic acceptance; Root will review. At most two corrective rounds; retain first failures. Do not change referenced outputs after final preflight.",
+      "inputs": {
+        "brief": "/workspace/A111/runs/R05/materials/preset-validation-brief.md"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/R05/materials/preset-validation-brief.md",
+          "sha256": "e15c163677c869ecd68fecd99ae57fe48e258c0fa61e538505325313b3c54423"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/future/preset_browser_acceptance/independent/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/future/preset_browser_acceptance/independent/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_ec0ef35b347f",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "45a1ce5b65cdd4f29afdb119fd38e7863b3f987ea71f952706436d3892b41234",
+  "target": "/workspace/A111/runs/future/preset_browser_acceptance/independent/state.json",
+  "target_sha256": "f53ae556d600d054008cb25f7f4611874f4db1044edb2c8d03feca8a61425b70",
+  "target_before_sha256": "21f8e99b7a58553f84a96f122134eb36db64c691c5f590709e2e7c0f97da25e2",
+  "package_ref": null,
+  "phase": "running",
+  "worker": "/root/luna_forge_ec0ef35b347f",
+  "reply_ref": null,
+  "commit": null,
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/future/preset_browser_acceptance/independent/job/request.json",
+      "sha256": "2955b31b6e711ca8738dc153947f731e07739bc0e4725809f9acee005e30f992"
+    },
+    {
+      "path": "/workspace/A111/runs/R05/materials/preset-validation-brief.md",
+      "sha256": "e15c163677c869ecd68fecd99ae57fe48e258c0fa61e538505325313b3c54423"
+    },
+    {
+      "path": "/workspace/A111/runs/future/preset_browser_acceptance/independent/job/receipts/265a72089df3e70fe641e7db0bc3e885e7265bd4b5ca2eab28650db808cbac90.json",
+      "sha256": "265a72089df3e70fe641e7db0bc3e885e7265bd4b5ca2eab28650db808cbac90"
+    },
+    {
+      "path": "/workspace/A111/runs/future/preset_browser_acceptance/independent/job/receipts/810e0b9b75616437d50eea43342454a17dcc24daad7320bdd6ef046b3b7f710a.json",
+      "sha256": "810e0b9b75616437d50eea43342454a17dcc24daad7320bdd6ef046b3b7f710a"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/future/preset_browser_acceptance/independent/job/receipts/265a72089df3e70fe641e7db0bc3e885e7265bd4b5ca2eab28650db808cbac90.json",
+    "sha256": "265a72089df3e70fe641e7db0bc3e885e7265bd4b5ca2eab28650db808cbac90"
+  }
+}

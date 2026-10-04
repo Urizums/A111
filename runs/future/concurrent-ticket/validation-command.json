@@ -1,0 +1,24 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/future/concurrent-ticket/verify_concurrency.py"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:06:31.482155+00:00",
+    "monotonic_ns": 38630128531498,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:06:33.331846+00:00",
+    "monotonic_ns": 38631978231482,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/A111/runs/future/concurrent-ticket/verify_concurrency.py\", line 129, in <module>\n    asyncio.run(browser_race())\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py\", line 195, in run\n    return runner.run(main)\n           ^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/runners.py\", line 118, in run\n    return self._loop.run_until_complete(task)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/asyncio/base_events.py\", line 691, in run_until_complete\n    return future.result()\n           ^^^^^^^^^^^^^^^\n  File \"/workspace/A111/runs/future/concurrent-ticket/verify_concurrency.py\", line 96, in browser_race\n    await expect(pages[loser].locator('#list-error')).to_contain_text('工单已被其他操作更新')\n                 ~~~~~^^^^^^^\nTypeError: list indices must be integers or slices, not Request\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9jb25jdXJyZW50LXRpY2tldC92ZXJpZnlfY29uY3VycmVuY3kucHkiLCBsaW5lIDEyOSwgaW4gPG1vZHVsZT4KICAgIGFzeW5jaW8ucnVuKGJyb3dzZXJfcmFjZSgpKQogIEZpbGUgIi9vcHQvY29kZXgvcnVudGltZXMvY29kZXgtcHJpbWFyeS1ydW50aW1lL2RlcGVuZGVuY2llcy9weXRob24vbGliL3B5dGhvbjMuMTIvYXN5bmNpby9ydW5uZXJzLnB5IiwgbGluZSAxOTUsIGluIHJ1bgogICAgcmV0dXJuIHJ1bm5lci5ydW4obWFpbikKICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eCiAgRmlsZSAiL29wdC9jb2RleC9ydW50aW1lcy9jb2RleC1wcmltYXJ5LXJ1bnRpbWUvZGVwZW5kZW5jaWVzL3B5dGhvbi9saWIvcHl0aG9uMy4xMi9hc3luY2lvL3J1bm5lcnMucHkiLCBsaW5lIDExOCwgaW4gcnVuCiAgICByZXR1cm4gc2VsZi5fbG9vcC5ydW5fdW50aWxfY29tcGxldGUodGFzaykKICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXgogIEZpbGUgIi9vcHQvY29kZXgvcnVudGltZXMvY29kZXgtcHJpbWFyeS1ydW50aW1lL2RlcGVuZGVuY2llcy9weXRob24vbGliL3B5dGhvbjMuMTIvYXN5bmNpby9iYXNlX2V2ZW50cy5weSIsIGxpbmUgNjkxLCBpbiBydW5fdW50aWxfY29tcGxldGUKICAgIHJldHVybiBmdXR1cmUucmVzdWx0KCkKICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvd29ya3NwYWNlL0ExMTEvcnVucy9mdXR1cmUvY29uY3VycmVudC10aWNrZXQvdmVyaWZ5X2NvbmN1cnJlbmN5LnB5IiwgbGluZSA5NiwgaW4gYnJvd3Nlcl9yYWNlCiAgICBhd2FpdCBleHBlY3QocGFnZXNbbG9zZXJdLmxvY2F0b3IoJyNsaXN0LWVycm9yJykpLnRvX2NvbnRhaW5fdGV4dCgn5bel5Y2V5bey6KKr5YW25LuW5pON5L2c5pu05pawJykKICAgICAgICAgICAgICAgICB+fn5+fl5eXl5eXl4KVHlwZUVycm9yOiBsaXN0IGluZGljZXMgbXVzdCBiZSBpbnRlZ2VycyBvciBzbGljZXMsIG5vdCBSZXF1ZXN0Cg=="
+}

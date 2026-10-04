@@ -1,0 +1,167 @@
+{
+  "schema": "forge-source-review/1",
+  "sample": "P2B",
+  "source": {
+    "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json",
+    "sha256": "434e8c494a482b8be6e8d2fd385f2a3cefe32806ebc81c9f0740e5af34c51cc2"
+  },
+  "policy": "Process jobs in listed order. Non-positive cpu or memory -> reject/invalid_request with host=null. Otherwise choose first host in listed order with remaining cpu>=job cpu AND remaining memory>=job memory; decision=assign, reason=capacity and host=its id; subtract both resources immediately. If none fits, decision=wait, reason=capacity_unavailable and host=null. No jobs are actually dispatched.",
+  "expected": {
+    "decisions": [
+      {
+        "id": "r1",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r2",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      },
+      {
+        "id": "r3",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r4",
+        "decision": "wait",
+        "reason": "capacity_unavailable",
+        "host": null
+      },
+      {
+        "id": "r5",
+        "decision": "reject",
+        "reason": "invalid_request",
+        "host": null
+      },
+      {
+        "id": "r6",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      }
+    ]
+  },
+  "observed": {
+    "decisions": [
+      {
+        "id": "r1",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r2",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      },
+      {
+        "id": "r3",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r4",
+        "decision": "wait",
+        "reason": "capacity_unavailable",
+        "host": null
+      },
+      {
+        "id": "r5",
+        "decision": "reject",
+        "reason": "invalid_request",
+        "host": null
+      },
+      {
+        "id": "r6",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      }
+    ]
+  },
+  "checks": {
+    "exact_original_decisions": true,
+    "reply_matches_business": true,
+    "bound_inputs_unchanged": true,
+    "artifact_hashes": true,
+    "captured_bootstrap_first": true,
+    "captured_preflight": true,
+    "separate_incomplete_draft": true,
+    "reported_repair_budget": true
+  },
+  "business_pass": true,
+  "corrections": {
+    "corrections": [],
+    "preserved_original_paths": [
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json",
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/job/request.json"
+    ],
+    "explanation": "Applied the stated sequential admission policy to each job in listed order. No correction or retry was needed; the source material and request remain unchanged.",
+    "parent_questions": [],
+    "unavailable_metrics": {
+      "model_active_time": null,
+      "provider_identity": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "worker_logs": [
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/001-bootstrap.json",
+      "sha256": "bee45c037a9551e109c5eaa2e1789985334327c9e9d4be45c94f261d49d584db"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/002-work-begin.json",
+      "sha256": "5d45e882a3f4ad2859ba8f12af7cb41301c28905d06b7f07484c520ae4f83456"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/003-read-request.json",
+      "sha256": "53f7642e4715f68cb5ed468b7060f9beda12e78f537686f844aaf1472dfa302f"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/004-write-artifacts.json",
+      "sha256": "7dd272928918c64188b090426a754c332af4b8a6adcb9b8d2f6552d1ae4d611c"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/005-create-draft.json",
+      "sha256": "cf9eddaf4b78d309b0c1c1105f96849283934a0757993de77da69ecd3a9d5ce1"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/006-reply-begin.json",
+      "sha256": "4ee9d3e2955a38dda23f55de9aa4a5ef59e11672d220a975d27f2ed19b9145e8"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/007-write-reply.json",
+      "sha256": "88b6561ade2109fcbf1647c3e5ce5bf0cf2c657055d20945dd17ebc6dd770b76"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/008-check-reply.json",
+      "sha256": "75b7a33c1099966d57d0bc3b0dd6685d464433f90d50edca68ef736436d2066a"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/009-inspect-preflight-capture.json",
+      "sha256": "da564617c82f4a7dcb6ded8837ead0b0e07f3ee4d001e4f75380c071422920c8"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/010-reply-end.json",
+      "sha256": "ba500bec4513604ad79c2454674e59d030ddd71b4a46fd1849e485beb8840fc6"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/011-work-end.json",
+      "sha256": "160012b1a94fd99952f64572592c1b4f79c13626668827a163f8fedab4fbb312"
+    }
+  ],
+  "limits": [
+    "Root is independent of business workers but authored protocol and grader.",
+    "Recorded subprocess inventory is cooperative, not authenticated completeness or provider compute time.",
+    "Original source inspection and grader authoring precede measured decision construction."
+  ]
+}

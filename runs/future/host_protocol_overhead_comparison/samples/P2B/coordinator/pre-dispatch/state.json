@@ -1,0 +1,73 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T06:20:05Z",
+  "updated_at": "2026-10-04T06:20:05Z",
+  "revision": 1,
+  "status": "active",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "study_P2B",
+    "goal": "Apply original P2 material policy",
+    "deliverable_kind": "scoped_task",
+    "requirements": [
+      {
+        "id": "req_source",
+        "text": "Return all exact decisions from supplied policy, with no external effects.",
+        "origin": "explicit",
+        "basis": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json",
+        "acceptance_ids": [
+          "a_source"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_source",
+        "assertion": "Business decisions match every original source policy field and order.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "Apply original source policy",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_source"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "ac6dc11603431cb5093c88a5fd6bc97df2c97d655acc1d0d306d6a2ba0426239",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "running",
+      "attempts": [
+        {
+          "attempt_id": "59ff7cd1418e444c820dae3f05892c8b",
+          "plan_hash": "ac6dc11603431cb5093c88a5fd6bc97df2c97d655acc1d0d306d6a2ba0426239",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_source"
+          ],
+          "started_at": "2026-10-04T06:20:05Z",
+          "finished_at": null,
+          "outcome": "running",
+          "reason": null,
+          "acceptance_results": null
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": "59ff7cd1418e444c820dae3f05892c8b",
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

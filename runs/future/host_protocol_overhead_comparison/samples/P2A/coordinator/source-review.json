@@ -1,0 +1,167 @@
+{
+  "schema": "forge-source-review/1",
+  "sample": "P2A",
+  "source": {
+    "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json",
+    "sha256": "434e8c494a482b8be6e8d2fd385f2a3cefe32806ebc81c9f0740e5af34c51cc2"
+  },
+  "policy": "Process jobs in listed order. Non-positive cpu or memory -> reject/invalid_request with host=null. Otherwise choose first host in listed order with remaining cpu>=job cpu AND remaining memory>=job memory; decision=assign, reason=capacity and host=its id; subtract both resources immediately. If none fits, decision=wait, reason=capacity_unavailable and host=null. No jobs are actually dispatched.",
+  "expected": {
+    "decisions": [
+      {
+        "id": "r1",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r2",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      },
+      {
+        "id": "r3",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r4",
+        "decision": "wait",
+        "reason": "capacity_unavailable",
+        "host": null
+      },
+      {
+        "id": "r5",
+        "decision": "reject",
+        "reason": "invalid_request",
+        "host": null
+      },
+      {
+        "id": "r6",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      }
+    ]
+  },
+  "observed": {
+    "decisions": [
+      {
+        "id": "r1",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r2",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      },
+      {
+        "id": "r3",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r4",
+        "decision": "wait",
+        "reason": "capacity_unavailable",
+        "host": null
+      },
+      {
+        "id": "r5",
+        "decision": "reject",
+        "reason": "invalid_request",
+        "host": null
+      },
+      {
+        "id": "r6",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      }
+    ]
+  },
+  "checks": {
+    "exact_original_decisions": true,
+    "reply_matches_business": true,
+    "bound_inputs_unchanged": true,
+    "artifact_hashes": true,
+    "captured_bootstrap_first": true,
+    "captured_preflight": true,
+    "separate_incomplete_draft": true,
+    "reported_repair_budget": true
+  },
+  "business_pass": true,
+  "corrections": {
+    "corrections": [],
+    "preserved_original_paths": [
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/job/request.json",
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json",
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md"
+    ],
+    "explanation": "Processed jobs in source order, selecting the first listed host with sufficient remaining CPU and memory and decrementing both on each assignment. Rejected r5 because CPU is non-positive; r4 had no fitting host. No corrections to original inputs or policy were needed.",
+    "parent_questions": [],
+    "unavailable_metrics": {
+      "model_active_time": null,
+      "provider_identity": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "worker_logs": [
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/001-bootstrap.json",
+      "sha256": "f793c43d4bded89622f35fd7777ebfcd9737305c387adefc02f22ccf990f8d35"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/002-work-begin.json",
+      "sha256": "cea6930d89e82259e0166e9d8dcc903622e6fe4ce05945e2b1e8f57b3e22c755"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/003-request-read.json",
+      "sha256": "c9feb93d0334fec66b8ca18654e81387bf8b218f7183231172b53926fc3d28ba"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/004-protocol-read.json",
+      "sha256": "c5773d88f37000faab13999a5d40758c222316433ed3323d24ae40ad6cad151c"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/005-business-write.json",
+      "sha256": "1553ac742a6db824baaccb11643fb2c6712f682459b7335f1da8165860f2df56"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/006-work-end.json",
+      "sha256": "17ea0ea9f9798760c710b8b6b642e50c9cdfd835c7e2ee059bf62ea1f9551666"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/007-reply-begin.json",
+      "sha256": "5c708a785d9bdb4ddd0b5c6f0bd8f373e63563c1fe3c6dacd9e7d3e5ad0a32a5"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/008-draft-write.json",
+      "sha256": "fa08c0bff23be93313c01cc43a709ea5cbcb71a82445514a77dde106960a3981"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/009-reply-write.json",
+      "sha256": "fa547e25fd9739b71b0957d07ecce6e08a6c1f1021bfb136f8770051df9c0307"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/010-check-reply.json",
+      "sha256": "bb8c9df73daf733c4f6d20a09ded58dbf4d2deddd62f49db141f7a94702afbaa"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/logs/011-reply-end.json",
+      "sha256": "01875b2c8634de4ec6530d5c804b1af1ca41598290410a371269ae5c4a17767a"
+    }
+  ],
+  "limits": [
+    "Root is independent of business workers but authored protocol and grader.",
+    "Recorded subprocess inventory is cooperative, not authenticated completeness or provider compute time.",
+    "Original source inspection and grader authoring precede measured decision construction."
+  ]
+}

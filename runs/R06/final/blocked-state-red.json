@@ -1,0 +1,30 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_handoff_invariants.py"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T07:02:59.187518+00:00",
+    "monotonic_ns": 42017833898259,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T07:02:59.259541+00:00",
+    "monotonic_ns": 42017905923393,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "F........F....\n======================================================================\nFAIL: test_blocked_frontier_can_have_no_ready_task_without_finishing_goal (test_handoff_invariants.HandoffInvariants.test_blocked_frontier_can_have_no_ready_task_without_finishing_goal)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/A111/scripts/test_handoff_invariants.py\", line 97, in test_blocked_frontier_can_have_no_ready_task_without_finishing_goal\n    self.assertEqual(validate_checkpoint(checkpoint,self.phase),[])\nAssertionError: Lists differ: ['checkpoint next task is absent or terminal'] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n'checkpoint next task is absent or terminal'\n\n- ['checkpoint next task is absent or terminal']\n+ []\n\n======================================================================\nFAIL: test_started_successor_may_later_block_but_requires_original_receipt (test_handoff_invariants.HandoffInvariants.test_started_successor_may_later_block_but_requires_original_receipt)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/workspace/A111/scripts/test_handoff_invariants.py\", line 113, in test_started_successor_may_later_block_but_requires_original_receipt\n    self.assertEqual(validate_phase(self.phase,self.root),[])\nAssertionError: Lists differ: ['next first task has not actually started with evidence'] != []\n\nFirst list contains 1 additional elements.\nFirst extra element 0:\n'next first task has not actually started with evidence'\n\n- ['next first task has not actually started with evidence']\n+ []\n\n----------------------------------------------------------------------\nRan 14 tests in 0.007s\n\nFAILED (failures=2)\n",
+  "stdout_base64": "",
+  "stderr_base64": "Ri4uLi4uLi4uRi4uLi4KPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PQpGQUlMOiB0ZXN0X2Jsb2NrZWRfZnJvbnRpZXJfY2FuX2hhdmVfbm9fcmVhZHlfdGFza193aXRob3V0X2ZpbmlzaGluZ19nb2FsICh0ZXN0X2hhbmRvZmZfaW52YXJpYW50cy5IYW5kb2ZmSW52YXJpYW50cy50ZXN0X2Jsb2NrZWRfZnJvbnRpZXJfY2FuX2hhdmVfbm9fcmVhZHlfdGFza193aXRob3V0X2ZpbmlzaGluZ19nb2FsKQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRyYWNlYmFjayAobW9zdCByZWNlbnQgY2FsbCBsYXN0KToKICBGaWxlICIvd29ya3NwYWNlL0ExMTEvc2NyaXB0cy90ZXN0X2hhbmRvZmZfaW52YXJpYW50cy5weSIsIGxpbmUgOTcsIGluIHRlc3RfYmxvY2tlZF9mcm9udGllcl9jYW5faGF2ZV9ub19yZWFkeV90YXNrX3dpdGhvdXRfZmluaXNoaW5nX2dvYWwKICAgIHNlbGYuYXNzZXJ0RXF1YWwodmFsaWRhdGVfY2hlY2twb2ludChjaGVja3BvaW50LHNlbGYucGhhc2UpLFtdKQpBc3NlcnRpb25FcnJvcjogTGlzdHMgZGlmZmVyOiBbJ2NoZWNrcG9pbnQgbmV4dCB0YXNrIGlzIGFic2VudCBvciB0ZXJtaW5hbCddICE9IFtdCgpGaXJzdCBsaXN0IGNvbnRhaW5zIDEgYWRkaXRpb25hbCBlbGVtZW50cy4KRmlyc3QgZXh0cmEgZWxlbWVudCAwOgonY2hlY2twb2ludCBuZXh0IHRhc2sgaXMgYWJzZW50IG9yIHRlcm1pbmFsJwoKLSBbJ2NoZWNrcG9pbnQgbmV4dCB0YXNrIGlzIGFic2VudCBvciB0ZXJtaW5hbCddCisgW10KCj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT0KRkFJTDogdGVzdF9zdGFydGVkX3N1Y2Nlc3Nvcl9tYXlfbGF0ZXJfYmxvY2tfYnV0X3JlcXVpcmVzX29yaWdpbmFsX3JlY2VpcHQgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzLnRlc3Rfc3RhcnRlZF9zdWNjZXNzb3JfbWF5X2xhdGVyX2Jsb2NrX2J1dF9yZXF1aXJlc19vcmlnaW5hbF9yZWNlaXB0KQotLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tClRyYWNlYmFjayAobW9zdCByZWNlbnQgY2FsbCBsYXN0KToKICBGaWxlICIvd29ya3NwYWNlL0ExMTEvc2NyaXB0cy90ZXN0X2hhbmRvZmZfaW52YXJpYW50cy5weSIsIGxpbmUgMTEzLCBpbiB0ZXN0X3N0YXJ0ZWRfc3VjY2Vzc29yX21heV9sYXRlcl9ibG9ja19idXRfcmVxdWlyZXNfb3JpZ2luYWxfcmVjZWlwdAogICAgc2VsZi5hc3NlcnRFcXVhbCh2YWxpZGF0ZV9waGFzZShzZWxmLnBoYXNlLHNlbGYucm9vdCksW10pCkFzc2VydGlvbkVycm9yOiBMaXN0cyBkaWZmZXI6IFsnbmV4dCBmaXJzdCB0YXNrIGhhcyBub3QgYWN0dWFsbHkgc3RhcnRlZCB3aXRoIGV2aWRlbmNlJ10gIT0gW10KCkZpcnN0IGxpc3QgY29udGFpbnMgMSBhZGRpdGlvbmFsIGVsZW1lbnRzLgpGaXJzdCBleHRyYSBlbGVtZW50IDA6CiduZXh0IGZpcnN0IHRhc2sgaGFzIG5vdCBhY3R1YWxseSBzdGFydGVkIHdpdGggZXZpZGVuY2UnCgotIFsnbmV4dCBmaXJzdCB0YXNrIGhhcyBub3QgYWN0dWFsbHkgc3RhcnRlZCB3aXRoIGV2aWRlbmNlJ10KKyBbXQoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpSYW4gMTQgdGVzdHMgaW4gMC4wMDdzCgpGQUlMRUQgKGZhaWx1cmVzPTIpCg=="
+}

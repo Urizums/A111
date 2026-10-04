@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "study_P1A",
+  "goal": "Apply original P1 material policy",
+  "deliverable_kind": "scoped_task",
+  "requirements": [
+    {
+      "id": "req_source",
+      "text": "Return all exact decisions from supplied policy, with no external effects.",
+      "origin": "explicit",
+      "basis": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+      "acceptance_ids": [
+        "a_source"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_source",
+      "assertion": "Business decisions match every original source policy field and order.",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "work",
+      "title": "Apply original source policy",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_source"
+      ]
+    }
+  ]
+}

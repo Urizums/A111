@@ -1,0 +1,20 @@
+{
+  "repair": 1,
+  "limit": 2,
+  "trigger": "independent/worker/browser-results.failed1.json",
+  "reproduction": "root-dialog-race/report.json",
+  "cause": "An asynchronous close event from the previous cancelled modal arrives after a new modal opens and clears the shared pending action. The new confirmation then closes with no effect.",
+  "hypothesis": "Consume the captured action synchronously in the submit/cancel events before another modal can open; never let an old close event mutate the active action.",
+  "candidate": "candidate/v2",
+  "unchanged": [
+    "Original records, stock fixture, annotation sample, all frozen acceptance requirements"
+  ],
+  "other_change": "Provide a local empty data favicon to eliminate browser 404 noise",
+  "harness_findings_to_review": [
+    "Exact Chinese wording assertion is not the original acceptance",
+    "Closed details descendants can have layout boxes while absent from rendered/accessible controls"
+  ],
+  "limits": [
+    "No reclassification of original failure as pass; same source input and repair budget retained"
+  ]
+}

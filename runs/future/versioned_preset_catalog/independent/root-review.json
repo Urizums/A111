@@ -1,0 +1,19 @@
+{
+  "candidate": "v1",
+  "disposition": "blocked",
+  "basis": {
+    "status": "blocked",
+    "acceptance": "not_accepted",
+    "reason": "The review and annotation confirmation flows did not apply when the focused confirm control was activated with Enter; stock conflict resolution was initiated but its final asynchronous persistence was not observed. The single initial run also timed out waiting for the review success status, so do not treat this as semantic acceptance.",
+    "source_changes": 0,
+    "failure_driven_corrections": 0,
+    "browser_runs": 1
+  },
+  "source_acceptance": "runs/future/versioned_preset_catalog/acceptance.json",
+  "root_product_reproduction": "runs/future/versioned_preset_catalog/root-dialog-race/report.json",
+  "budget": {
+    "worker_harness_corrections_used": 0,
+    "limit": 2
+  },
+  "next": "same worker retests v2 under original acceptance with remaining budget; v1 reply and evidence remain immutable"
+}

@@ -1,6 +1,6 @@
 {
   "schema": "upgrade-work-record/1",
-  "updated_at": "2026-10-04T05:09:58.687632+00:00",
+  "updated_at": "2026-10-04T07:50:51.906384+00:00",
   "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
   "todo": [
     {
@@ -1201,6 +1201,11 @@
       "at": "2026-10-04T05:09:58.687632+00:00",
       "reason": "PR author requests ongoing dual-queue R&D, actual varied challenges and fresh-context continuation; user authorized implementation and direct fork-dev publication. D00 delivery does not close long goal.",
       "requirements": "runs/R00/review-comments.json"
+    },
+    {
+      "at": "2026-10-04T06:56:19.177703+00:00",
+      "reason": "R05/R06 actual runtime work and retained failures; user explicitly tightened publication to complete acceptance. Historical statuses preserved.",
+      "evidence": "runs/R06/VERIFICATION_REPORT.md"
     }
   ],
   "skill_development_roles": {
@@ -1251,6 +1256,34 @@
     "goal_status": "active",
     "historical_D00": "state/history/D00-todo.json",
     "mapping": "Each unfinished historical todo ID has a BACKLOG-* task with priority, dependencies, write scope, acceptance, evidence and next action. Historical rows retain their original status; current work is in the queue.",
-    "remaining_capability_blockers_scope": "Historical observations below; current probe is runs/R04/capability-probe/probe.json; new ticket app has separate R03 acceptance."
+    "remaining_capability_blockers_scope": "Historical observations below; current probe is runs/R04/capability-probe/probe.json; new ticket app has separate R03 acceptance.",
+    "latest_review": "runs/R05/trigger-recheck/pr-comments.json",
+    "candidate": "runs/R06/candidate/C5-lock.json",
+    "current_report": "runs/R06/VERIFICATION_REPORT.md",
+    "publication_gate": "state/publication-gate.json",
+    "publication_rule": "Latest user permits this unfinished-work handoff PR; original strict acceptance remains not satisfied; no upstream merge",
+    "project_status": "active",
+    "new_tasks": [
+      "R06-feedback_snapshot",
+      "R06-feedback_budget",
+      "R06-fresh_context_validation",
+      "R06-scheduled_handoff"
+    ],
+    "current_task_counts": {
+      "done": 12,
+      "blocked": 8
+    },
+    "ready_tasks": [],
+    "recovery": "runs/R06/RECOVERY.md",
+    "final_evidence": "runs/R06/final/summary.json",
+    "unpublished": true,
+    "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+    "latest_resumption_report": "runs/R06/scheduling/resume-20261004T072138Z/REPORT.md",
+    "latest_capability_probe": "runs/R06/scheduling/cancel-20261004T074313Z/environment.json",
+    "monitor_enabled": false,
+    "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
+    "monitor_cancellation": "runs/R06/scheduling/cancel-20261004T074313Z/automation-after.json",
+    "upstream_handoff": "runs/R06/upstream-handoff/README.md",
+    "handoff_authorization": "state/upstream-handoff.json"
   }
 }

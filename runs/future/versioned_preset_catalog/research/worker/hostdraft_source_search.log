@@ -1,0 +1,24 @@
+25:    need(isinstance(request, dict) and request.get('schema_version') == 'forge-host-request/1', 'Unsupported host request schema')
+50:def artifact_refs(context, paths):
+53:    result = []
+60:        need(ref not in result, 'Duplicate artifact path')
+61:        result.append(ref)
+62:    return result
+65:def reply_draft(request_path, artifacts=(), flow_outcome=None):
+68:    result = None
+73:        result = ({'invocation_id': request['invocation_id'], 'outcome': None, 'artifacts': {}, 'evidence': []}
+74:                  if flow_outcome is None else templates.make_response_draft(dispatch, flow_outcome))
+76:        need(flow_outcome is None, 'Flow outcome applies only to a package request')
+77:    return {'schema_version': 'forge-host-reply/1', 'job_id': request['job_id'],
+79:            'outcome': None, 'result': result, 'artifacts': artifact_refs(context, artifacts), 'reason': None}
+97:        results = {'acceptance_results': {aid: {'status':'not_run', 'level': definitions[aid]['level'],
+101:            results['evaluation_plan_hash'] = lock['plan_hash']
+104:        results = deepcopy(templates.load_json(context['reply_ref']['path'])['result'])
+105:    return {'schema_version': 'forge-host-decision/1', 'request_hash': context['request_hash'],
+106:            'reply_sha256': context['reply_ref']['sha256'], 'outcome': None, 'results': results, 'reason': None}
+109:def write_reply(request_path, out, artifacts=(), flow_outcome=None):
+114:    draft = reply_draft(request_path, artifacts, flow_outcome)
+115:    inputs = [request_path, *artifacts, *[r['path'] for r in context['request']['work']['input_files']]]
+155:    reply = commands.add_parser('reply', help='write an explicitly incomplete host reply')
+157:    reply.add_argument('--artifact', action='append', default=[])
+173:            write_reply(args.request, args.out, args.artifact, args.flow_outcome)

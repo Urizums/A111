@@ -1,0 +1,18 @@
+{
+  "schema": "forge-provider-adapter-contract/1",
+  "scope": "Provider-neutral local request/event validation and durable reconciliation; no provider SDK execution claim",
+  "request": {"exact_fields": ["request_id", "idempotency_key", "model", "input", "limits"], "limits": ["timeout_ms", "max_output_tokens"]},
+  "event": {"exact_fields": ["request_id", "provider_run_id", "event_id", "status", "output", "error", "usage"], "status": ["running", "succeeded", "failed", "cancelled", "unknown"]},
+  "invariants": [
+    "Persist request before caller dispatch; identical idempotency key and payload reuse without redispatch; altered content rejected",
+    "Reject malformed, duplicate/non-finite JSON, unknown fields, booleans as token limits and event identity drift",
+    "An ambiguous dispatch/timeout stays unknown until a matching provider observation; never auto-retry an external effect",
+    "Cancel intent is not terminal proof; later success or explicit cancellation acknowledgement settles it",
+    "Repeated identical event is idempotent; changed duplicate or contradictory terminal observation rejected",
+    "SQLite transaction preserves durable history across process reopen; local store lock is not provider-global enforcement",
+    "Unavailable usage is null, never zero or invented provider identity"
+  ],
+  "acceptance": ["real CLI persistence and idempotent retry", "changed payload refusal", "unknown dispatch no redispatch", "cancel race with success", "cancel acknowledgement", "terminal/duplicate conflict refusal", "invalid fields/identity/usage rejection", "reopen intact history"],
+  "repair_limit": 2,
+  "live_gate": "Authorized provider endpoint/identity and actual observation contract required before claiming live execution"
+}

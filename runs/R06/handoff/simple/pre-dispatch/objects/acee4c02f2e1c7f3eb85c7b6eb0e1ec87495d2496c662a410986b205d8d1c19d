@@ -1,0 +1,73 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T06:35:01Z",
+  "updated_at": "2026-10-04T06:35:01Z",
+  "revision": 1,
+  "status": "active",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "pilot_simple",
+    "goal": "将以下公园巡检点整理为一个 GeoJSON FeatureCollection，按原顺序保留记录编号、名称和温度，坐标用 GeoJSON 的顺序；未知温度保持 null。附一句本地校验结果，直接交付文件。",
+    "deliverable_kind": "scoped_task",
+    "requirements": [
+      {
+        "id": "req_source",
+        "text": "将以下公园巡检点整理为一个 GeoJSON FeatureCollection，按原顺序保留记录编号、名称和温度，坐标用 GeoJSON 的顺序；未知温度保持 null。附一句本地校验结果，直接交付文件。",
+        "origin": "explicit",
+        "basis": "/workspace/A111/runs/R06/handoff/materials/simple.json",
+        "acceptance_ids": [
+          "a_original"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_original",
+        "assertion": "Original goal/material satisfied with actual output/runtime evidence, correct path selection and no budget reset",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "将以下公园巡检点整理为一个 GeoJSON FeatureCollection，按原顺序保留记录编号、名称和温度，坐标用 GeoJSON 的顺序；未知温度保持 null。附一句本地校验结果，直接交付文件。",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_original"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "66cdf021e24e65a6e7d3c76f798c92eb057463d2f2ec073e31437cf1ba12c845",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "running",
+      "attempts": [
+        {
+          "attempt_id": "fbe665efb5f341ba98224ff8bf363499",
+          "plan_hash": "66cdf021e24e65a6e7d3c76f798c92eb057463d2f2ec073e31437cf1ba12c845",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_original"
+          ],
+          "started_at": "2026-10-04T06:35:01Z",
+          "finished_at": null,
+          "outcome": "running",
+          "reason": null,
+          "acceptance_results": null
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": "fbe665efb5f341ba98224ff8bf363499",
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

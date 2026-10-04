@@ -1,0 +1,36 @@
+{
+  "corrections": [
+    {
+      "number": 1,
+      "paths": [
+        "business.json",
+        "corrections.json"
+      ],
+      "explanation": "The initial artifact write appended the two literal characters backslash and n after each JSON document, so both files were invalid JSON. The exact initial files are preserved in attempts/first-business.json and attempts/first-corrections.json; the artifacts were then rewritten with a real trailing newline.",
+      "initial_sha256": {
+        "business.json": "73c18b55408941d05bd31a75e49d3493d4a368b0315f771640cc80052ca3b839",
+        "corrections.json": "767494163628380520e7df1702a38a4980be73834cf47bd44bf613d6b9439ed0"
+      },
+      "preserved_attempt_paths": [
+        "attempts/first-business.json",
+        "attempts/first-corrections.json"
+      ]
+    }
+  ],
+  "preserved_original_paths": [
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/request.json",
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py",
+    "attempts/first-business.json",
+    "attempts/first-corrections.json"
+  ],
+  "explanation": "Applied the supplied reservation policy in request order. The accepted m1 and m3 intervals are considered when processing later requests. One artifact serialization correction is recorded above.",
+  "parent_questions": [],
+  "unavailable_metrics": {
+    "model_active_time": null,
+    "provider_identity": null,
+    "tokens": null,
+    "cost": null
+  }
+}

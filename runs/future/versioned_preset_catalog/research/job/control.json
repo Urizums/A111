@@ -1,0 +1,145 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "b4ced7bde29869c7822b4829113cd5f09f30515cae8d2442d364241b63d378ec",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_a6b078243ae54917b0ad156d934ab516",
+    "attempt_id": "64abaabceddf436a861fbdb911942776",
+    "invocation_id": "64abaabceddf436a861fbdb911942776",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "03c30fd7a80b7a908607251493913c8348de7eeded28ff6091f145b90a0f168e",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "Research task-specific original preset requirements from primary sources",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    },
+    "work": {
+      "prompt": "# Bounded design catalog research packet\n\nUnknown: which task-specific semantic states, foreground/background pairs and responsive/motion choices are necessary for three small original web presets: dense review console, handheld stock-count form, long-document reader/annotation? Root will author all catalog schema, code and skill. Your role is source collection and interaction pre-processing, not product implementation.\n\nRead /workspace/A111/skills/design-product-experience/references/design-references.md for packet format. Read current specific primary documents, preferably W3C/WAI contrast/use-of-color/focus and MDN reduced-motion/dialog plus relevant platform guidance. Start with Refero Styles as discovery lead only; don't claim viewing a flow from an index or copy assets/third-party code. Limit to 4-6 material sources, record source URLs, exact available version/access time, snapshots+SHA, cited passages, observed vs inferred points, alternatives and adoption rationale. Unknown asset reuse terms => observation only, propose original design. If access fails, preserve response and proceed with sufficient accessible primary evidence rather than endless research.\n\nProduce research.json and report.md: each proposal links concrete source evidence, task/platform, paired token candidates, component/error/loading/empty/conflict states, keyboard/focus, reduced motion, verification hypotheses and limits. No website-account access or external messages. Tokens/cost/provider identity unknown -> null. No native delegation. No edits to skills/core/catalog or shared state, and no reading sibling work. Max two corrective rounds; save all command results including failures.\n\nWrite only /workspace/A111/runs/future/versioned_preset_catalog/research/worker. You may author/run benign analysis and validation scripts there; do not modify core, skill, shared TODO/state or historical evidence. Record actual commands/results and all failed attempts, corrections, parent questions, and unavailable measurements (tokens/cost/model-active-time null). Do not spawn/delegate, inspect siblings or query unrelated workers. This is a new task, never execute old native IDs. Before returning, use /workspace/A111/skills/forge-agent-flow/scripts/hostdraft.py reply with your supplied NEW job/request.json to create a separate incomplete draft. Fill final /workspace/A111/runs/future/versioned_preset_catalog/research/worker/reply.json with the actual task result and hashes of final artifacts. Capture check-reply output before returning. Reply preflight is not semantic acceptance; Root will review. At most two corrective rounds; retain first failures. Do not change referenced outputs after final preflight.",
+      "inputs": {
+        "brief": "/workspace/A111/runs/R05/materials/catalog-research-brief.md"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/R05/materials/catalog-research-brief.md",
+          "sha256": "49b5d1165184897269be1c5753053b1c4cc54d873475a6ebe806c445b6969a45"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/future/versioned_preset_catalog/research/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/future/versioned_preset_catalog/research/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_64abaabceddf",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "a16fe90d0834bcce8f0652a06fa8df329796f5f300c5afd577e437975fb95ab7",
+  "target": "/workspace/A111/runs/future/versioned_preset_catalog/research/state.json",
+  "target_sha256": "1b0823c6f48283d0ea090b3a956859a9f1cee642c25267a7e47a761f72942abc",
+  "target_before_sha256": "3285057a66ef5a07fb7a670c1c99ea66cfad6465f033c6cfc27a58018e48e261",
+  "package_ref": null,
+  "phase": "committed",
+  "worker": "/root/luna_forge_64abaabceddf",
+  "reply_ref": {
+    "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/job/receipts/68d270f51a3e532f12949444540466717e8a62119e0cf2bb126702723f16c828.json",
+    "sha256": "68d270f51a3e532f12949444540466717e8a62119e0cf2bb126702723f16c828"
+  },
+  "commit": {
+    "decision_ref": {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/decision.json",
+      "sha256": "d669bf0126e2a153a3a4aa6aae299d343f00c913b43913e62d4803491e085b3c"
+    },
+    "target_result": {
+      "task_id": "work",
+      "attempt_id": "64abaabceddf436a861fbdb911942776",
+      "outcome": "done",
+      "task_status": "done",
+      "reason": null,
+      "status": "completed",
+      "revision": 2,
+      "plan_hash": "03c30fd7a80b7a908607251493913c8348de7eeded28ff6091f145b90a0f168e",
+      "evaluation_plan_hash": null
+    },
+    "worker_task_outcome": "done",
+    "coordinator_outcome": "done",
+    "recorded_at": "2026-10-04T06:37:35Z"
+  },
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/job/request.json",
+      "sha256": "6c331dc25022781d8a2b26be2aff18bf16e3ff5df69596a62cc8c2bf809e8c14"
+    },
+    {
+      "path": "/workspace/A111/runs/R05/materials/catalog-research-brief.md",
+      "sha256": "49b5d1165184897269be1c5753053b1c4cc54d873475a6ebe806c445b6969a45"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/job/receipts/0e5aa2854b361ebd1f0ac118c0e809020ac40fd4c405b411c4e983a609252ee7.json",
+      "sha256": "0e5aa2854b361ebd1f0ac118c0e809020ac40fd4c405b411c4e983a609252ee7"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/job/receipts/e7c4e9d18186d70ae95f0c81810fc9aa526c0a846404d1f680eaa0548762769a.json",
+      "sha256": "e7c4e9d18186d70ae95f0c81810fc9aa526c0a846404d1f680eaa0548762769a"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/job/receipts/1fc8048f0a759ebc8f046337d6c4f7ab20ea4caa9099641ddfbf63ecd10aeb7c.json",
+      "sha256": "1fc8048f0a759ebc8f046337d6c4f7ab20ea4caa9099641ddfbf63ecd10aeb7c"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/job/receipts/68d270f51a3e532f12949444540466717e8a62119e0cf2bb126702723f16c828.json",
+      "sha256": "68d270f51a3e532f12949444540466717e8a62119e0cf2bb126702723f16c828"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/worker/reply.json",
+      "sha256": "68d270f51a3e532f12949444540466717e8a62119e0cf2bb126702723f16c828"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/worker/research.json",
+      "sha256": "57be4c3b1323115ed5ebd36686b162de509d414097ab5fd75852ff05efb74ddd"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/worker/report.md",
+      "sha256": "62fe85fa8df35df437f947532e968480a45e538f5f7a999aead0610027a67523"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/decision.json",
+      "sha256": "d669bf0126e2a153a3a4aa6aae299d343f00c913b43913e62d4803491e085b3c"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/root-review.json",
+      "sha256": "7e3e2082e780af849dbbbd34cdddefa8b0d9d55610fd9eabc3e947af587726bf"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/job/receipts/0e5aa2854b361ebd1f0ac118c0e809020ac40fd4c405b411c4e983a609252ee7.json",
+    "sha256": "0e5aa2854b361ebd1f0ac118c0e809020ac40fd4c405b411c4e983a609252ee7"
+  }
+}

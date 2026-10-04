@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 import json
 from pathlib import Path
 import subprocess
+import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -39,6 +40,11 @@ def main():
     args = p.parse_args()
     if args.receipt.exists():
         p.error('Receipt already exists; inspect it before attempting another publication')
+    # User tightened publication to complete acceptance + repaired/retested smoke.
+    # Run before even preparing API writes; a manually edited status flag is insufficient.
+    subprocess.run([sys.executable, str(ROOT/'scripts/check_publication_gate.py'),
+                    '--root', str(ROOT), '--destination', args.repository+':'+args.branch],
+                   check=True)
     payload = json.loads(subprocess.check_output(
         ['python3', str(ROOT/'runs/cloud/prepare_git_payload.py'), args.base]))
     endpoint = 'repos/' + args.repository + '/git/'

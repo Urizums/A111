@@ -1,0 +1,26 @@
+{
+  "used": 2,
+  "limit": 2,
+  "items": [
+    {
+      "number": 1,
+      "cause": "Both new Root postprocessors treated the immutable request envelope as its inner request. Two original executions failed before source review/draft creation; no intermediate code repair. Unwrap request once in both. Preserve first decision begin, so any correction delay remains in measured stage.",
+      "failed_logs": [
+        "samples/P1A/coordinator/logs/source-review.json",
+        "samples/P1A/coordinator/logs/aggregate-decision-draft.json"
+      ],
+      "original_sources": "coordinator/failures/repair-1",
+      "at": "2026-10-04T06:19:49.097741+00:00"
+    },
+    {
+      "number": 2,
+      "cause": "Package flow identifiers require lowercase. New coordinator used uppercase pair names in study_K1; two untouched paired setups failed before any native creation. Lowercase only flow identifiers; original material/acceptance/modes unchanged.",
+      "failed_logs": [
+        "samples/K1B/coordinator/logs/002-start.json",
+        "samples/K1A/coordinator/logs/002-start.json"
+      ],
+      "original_sources": "coordinator/failures/repair-2",
+      "at": "2026-10-04T06:24:53.312554+00:00"
+    }
+  ]
+}

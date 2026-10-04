@@ -1115,8 +1115,13 @@
           "assertion": "Establish actual target evidence for this capability"
         }
       ],
-      "status": "in_progress",
-      "evidence": [],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/future/preset_browser_acceptance/root-final-review.json",
+          "sha256": "8ffbcfa1569bc99c67a2c316c1bffee3760ddd7891d9b33118c9d5bc16e15938"
+        }
+      ],
       "attempts": [
         {
           "id": "BACKLOG-preset_browser_acceptance-1",
@@ -1132,16 +1137,25 @@
             "path": "runs/future/preset_browser_acceptance/first-step-command.json",
             "sha256": "9f217be89fb7ad05bef6b8d6e0c46e7a2cb5c269806baf12cd34986798a276cc"
           },
-          "status": "in_progress"
+          "status": "blocked",
+          "ended_at": "2026-10-04T06:49:14.593758+00:00",
+          "reason": "Root repaired candidate passes original journeys and added narrow focus probes; final independent acceptance unavailable, historical validator limit and unreconciled native terminal evidence must not be bypassed.",
+          "evidence": [
+            {
+              "path": "runs/future/preset_browser_acceptance/root-final-review.json",
+              "sha256": "8ffbcfa1569bc99c67a2c316c1bffee3760ddd7891d9b33118c9d5bc16e15938"
+            }
+          ]
         }
       ],
-      "repairs_used": 0,
+      "repairs_used": 2,
       "repair_limit": 2,
-      "blocker": null,
-      "next_action": "Original preset has actually rendered in Chromium151 at 1440/390px and switched palette. Freeze full journeys from original design acceptance, then check filter/detail/focus/run-again/delete-confirm/cancel-refresh/error-retry/reduced-motion with original sample; preserve all failures, no effect/performance inference.",
+      "blocker": "Root repaired candidate passes original journeys and added narrow focus probes; final independent acceptance unavailable, historical validator limit and unreconciled native terminal evidence must not be bypassed.",
+      "next_action": "Preserve original reports and repaired v2; no budget reset or replacement validator; keep dev publication blocked.",
       "historical_task_id": "preset_browser_acceptance",
       "historical_status": "blocked",
-      "historical_evidence": "forge-design-upgrade/browser-capability.json"
+      "historical_evidence": "forge-design-upgrade/browser-capability.json",
+      "repair_reconciliation_scope": "Root source/verification/integration corrections from retained execution, including work performed inside one queue attempt; independent actor budgets are separate and not reset"
     },
     {
       "id": "BACKLOG-versioned_preset_catalog",
@@ -1166,13 +1180,43 @@
           "assertion": "Add task/platform variants with source revision, reuse terms, paired tokens, component states, motion and actual target evidence."
         }
       ],
-      "status": "planned",
-      "evidence": [],
-      "attempts": [],
-      "repairs_used": 0,
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/future/versioned_preset_catalog/root-final-review.json",
+          "sha256": "c3c8515d02d53bbe5b10572ab76a6a3b82ec3a77308e9d909374125c1251d972"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "BACKLOG-versioned_preset_catalog-1",
+          "started_at": "2026-10-04T06:03:41.628564+00:00",
+          "requirements_hash": "5b1fa325d575c95a6b22fcdcee8156d1ab19e0e9623b9adcd8086deb683a2d1d",
+          "inputs": [
+            {
+              "path": "runs/R00/requirements.json",
+              "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/future/versioned_preset_catalog/research/accepted-command.json",
+            "sha256": "a5ccfc8bd3c3169040cdc7cffc16030429c0a07434fe63b0ff33ee5f771a8ae4"
+          },
+          "status": "blocked",
+          "ended_at": "2026-10-04T07:01:49.256549+00:00",
+          "reason": "Independent v2 retest has74pass/2failed390px focus samples after two harness corrections. Root fullTabcycles pass separately but cannot replace exhausted independent acceptance.",
+          "evidence": [
+            {
+              "path": "runs/future/versioned_preset_catalog/root-final-review.json",
+              "sha256": "c3c8515d02d53bbe5b10572ab76a6a3b82ec3a77308e9d909374125c1251d972"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 1,
       "repair_limit": 2,
-      "blocker": null,
-      "next_action": "Root authors a small task/platform catalog and checks based on verified research; do not mark target visuals passed without browser/device evidence.",
+      "blocker": "Independent v2 retest has74pass/2failed390px focus samples after two harness corrections. Root fullTabcycles pass separately but cannot replace exhausted independent acceptance.",
+      "next_action": "Keep v1/v2, original criteria, receipts and all failures. No more validator correction or replacement; complete packaging checks without dev publication.",
       "historical_task_id": "versioned_preset_catalog",
       "historical_status": "planned",
       "historical_evidence": []
@@ -1394,13 +1438,43 @@
           "assertion": "Only descriptive paired results; no stable global speed or provider identity claim"
         }
       ],
-      "status": "planned",
-      "evidence": [],
-      "attempts": [],
-      "repairs_used": 0,
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/future/host_protocol_overhead_comparison/report.json",
+          "sha256": "beb16a3f73c66ab1bdb8036513a96f377245ddf47292998c7cead409505441fe"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "BACKLOG-host_protocol_overhead_comparison-1",
+          "started_at": "2026-10-04T06:13:51.842353+00:00",
+          "requirements_hash": "f36eb7a74d71982e098d04393d67f1f9fac9caf444fbe925ecc90fefac89f800",
+          "inputs": [
+            {
+              "path": "runs/R00/requirements.json",
+              "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/future/host_protocol_overhead_comparison/first-step.json",
+            "sha256": "12e6fdc972efafe21f3fbc7badbd65ad361956bc3f431230959caa63e6190e4c"
+          },
+          "status": "blocked",
+          "ended_at": "2026-10-04T06:27:39.478142+00:00",
+          "reason": "Frozen study coordinator exhausted two corrections; 4/8 native tasks completed, remaining package setup still invalid, plus P2B marker order failure.",
+          "evidence": [
+            {
+              "path": "runs/future/host_protocol_overhead_comparison/report.json",
+              "sha256": "beb16a3f73c66ab1bdb8036513a96f377245ddf47292998c7cead409505441fe"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 2,
       "repair_limit": 2,
-      "blocker": null,
-      "next_action": "Any later efficacy trial must be newly frozen; C1 remains partial/inconclusive and is never rerun to improve its score.",
+      "blocker": "Frozen study coordinator exhausted two corrections; 4/8 native tasks completed, remaining package setup still invalid, plus P2B marker order failure.",
+      "next_action": "Do not replace samples or retry this study. Integrate negative result and address general workflow defects in separately scoped feedback work.",
       "historical_task_id": "host_protocol_overhead_comparison",
       "historical_status": "partial",
       "historical_evidence": [
@@ -1411,7 +1485,8 @@
         "validation/luna/a04_project_a2_evidence.json",
         "runs/S01/final-review.json",
         "runs/S01/cloud-audit/worker/audit.json"
-      ]
+      ],
+      "repair_reconciliation_scope": "Root source/verification/integration corrections from retained execution, including work performed inside one queue attempt; independent actor budgets are separate and not reset"
     },
     {
       "id": "CAP-sdk_adapter_contract",
@@ -1440,13 +1515,43 @@
           "assertion": "Keep live provider validation blocked separately until an authorized endpoint/identity and observation contract exist"
         }
       ],
-      "status": "planned",
-      "evidence": [],
-      "attempts": [],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/future/provider-adapter/independent/budget-clarification.json",
+          "sha256": "6b99bd2c6806b08bd3a8ba6252a2c8b8e6539f0dfbb5e89ff01702da000d0bdd"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "CAP-sdk_adapter_contract-1",
+          "started_at": "2026-10-04T06:04:25.612845+00:00",
+          "requirements_hash": "6d486fe47d1f0ae05d67c223c45fbde043a833499ebb7b7ac37742f8a9c5fca9",
+          "inputs": [
+            {
+              "path": "runs/R00/requirements.json",
+              "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/future/provider-adapter/first-step.json",
+            "sha256": "abf73d283af7f8668a717baa8570f632cf39e6dc34637b208d1916361ad6641c"
+          },
+          "status": "blocked",
+          "ended_at": "2026-10-04T06:27:39.541188+00:00",
+          "reason": "Root local protocol tests passed, but required independent validator used three corrections against a two-correction limit; post-limit success cannot release this branch.",
+          "evidence": [
+            {
+              "path": "runs/future/provider-adapter/independent/budget-clarification.json",
+              "sha256": "6b99bd2c6806b08bd3a8ba6252a2c8b8e6539f0dfbb5e89ff01702da000d0bdd"
+            }
+          ]
+        }
+      ],
       "repairs_used": 0,
       "repair_limit": 2,
-      "blocker": null,
-      "next_action": "定义独立 provider 适配器接口并验证本地协议边界"
+      "blocker": "Root local protocol tests passed, but required independent validator used three corrections against a two-correction limit; post-limit success cannot release this branch.",
+      "next_action": "Retain local implementation and all observations. Do not swap validators or reset budget; publication remains blocked."
     },
     {
       "id": "X01-concurrent_ticket_edits",
@@ -1475,28 +1580,726 @@
           "assertion": "Retain original requests, database and conflict UI evidence; do not infer load or provider guarantees"
         }
       ],
-      "status": "planned",
-      "evidence": [],
-      "attempts": [],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/future/concurrent-ticket/task-result.json",
+          "sha256": "47bc2406e2c1fde68a11c5cfef7d4470a7d2a797ab877c2e881f6312fab4d807"
+        },
+        {
+          "path": "runs/future/concurrent-ticket/validation-repair-1-command.json",
+          "sha256": "87ae0fe90e1ec8842b84ef3436114990a577680168f3ed5041ca3d747d1a672b"
+        },
+        {
+          "path": "runs/future/concurrent-ticket/validation-repair-1/report.json",
+          "sha256": "d0c4f6c054e1e2b104888d9cd750de25ec894e6772647620f44c0b38c9eec8b4"
+        },
+        {
+          "path": "runs/future/concurrent-ticket/visual-review.json",
+          "sha256": "4564dfcd28fbf400b51d6d543b65bb48b7493d18137949afe13202bfe3cfd493"
+        },
+        {
+          "path": "runs/future/concurrent-ticket/validation-repair-1-command.json",
+          "sha256": "87ae0fe90e1ec8842b84ef3436114990a577680168f3ed5041ca3d747d1a672b"
+        },
+        {
+          "path": "runs/future/concurrent-ticket/validation-repair-1/report.json",
+          "sha256": "d0c4f6c054e1e2b104888d9cd750de25ec894e6772647620f44c0b38c9eec8b4"
+        },
+        {
+          "path": "runs/future/concurrent-ticket/visual-review.json",
+          "sha256": "4564dfcd28fbf400b51d6d543b65bb48b7493d18137949afe13202bfe3cfd493"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "X01-concurrent_ticket_edits-1",
+          "started_at": "2026-10-04T06:04:25.727725+00:00",
+          "requirements_hash": "557473cdeacb496401d6521a3684f44ba551ee8ff129d463b3d8388146917272",
+          "inputs": [
+            {
+              "path": "runs/R04/capability-probe/concurrent-brief.json",
+              "sha256": "e16e33f964b9d669b6e1b32525bccaa1efb9683ea403854ee23f576a2ee74c45"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/future/concurrent-ticket/first-step.json",
+            "sha256": "cc9112922944aafc79980722f8bd777b33b707c493b885c736091b4bbdec071d"
+          },
+          "status": "failed",
+          "ended_at": "2026-10-04T06:07:20.761301+00:00",
+          "result": {
+            "path": "runs/future/concurrent-ticket/attempt1-result.json",
+            "sha256": "2d041746010aca5c8935dab1dd6a697581fb058b5670a2e01d9c397bbe15525c"
+          },
+          "evidence": [
+            {
+              "path": "runs/future/concurrent-ticket/attempt1-result.json",
+              "sha256": "2d041746010aca5c8935dab1dd6a697581fb058b5670a2e01d9c397bbe15525c"
+            },
+            {
+              "path": "runs/future/concurrent-ticket/validation/report.json",
+              "sha256": "60a8763c304a5e06a3f3c7c54fa68b15023190179790add60a13f6ae7b49fe53"
+            },
+            {
+              "path": "runs/future/concurrent-ticket/validation-command.json",
+              "sha256": "548fbad9f8ca4bee0c7a0e1759412136009bb9787388c35a4c53d25200a8f208"
+            }
+          ]
+        },
+        {
+          "id": "X01-concurrent_ticket_edits-2",
+          "started_at": "2026-10-04T06:07:22.485711+00:00",
+          "requirements_hash": "557473cdeacb496401d6521a3684f44ba551ee8ff129d463b3d8388146917272",
+          "inputs": [
+            {
+              "path": "runs/R04/capability-probe/concurrent-brief.json",
+              "sha256": "e16e33f964b9d669b6e1b32525bccaa1efb9683ea403854ee23f576a2ee74c45"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/future/concurrent-ticket/validation-repair-1-command.json",
+            "sha256": "87ae0fe90e1ec8842b84ef3436114990a577680168f3ed5041ca3d747d1a672b"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T06:09:46.332175+00:00",
+          "result": {
+            "path": "runs/future/concurrent-ticket/task-result.json",
+            "sha256": "47bc2406e2c1fde68a11c5cfef7d4470a7d2a797ab877c2e881f6312fab4d807"
+          },
+          "evidence": [
+            {
+              "path": "runs/future/concurrent-ticket/task-result.json",
+              "sha256": "47bc2406e2c1fde68a11c5cfef7d4470a7d2a797ab877c2e881f6312fab4d807"
+            },
+            {
+              "path": "runs/future/concurrent-ticket/validation-repair-1-command.json",
+              "sha256": "87ae0fe90e1ec8842b84ef3436114990a577680168f3ed5041ca3d747d1a672b"
+            },
+            {
+              "path": "runs/future/concurrent-ticket/validation-repair-1/report.json",
+              "sha256": "d0c4f6c054e1e2b104888d9cd750de25ec894e6772647620f44c0b38c9eec8b4"
+            },
+            {
+              "path": "runs/future/concurrent-ticket/visual-review.json",
+              "sha256": "4564dfcd28fbf400b51d6d543b65bb48b7493d18137949afe13202bfe3cfd493"
+            },
+            {
+              "path": "runs/future/concurrent-ticket/validation-repair-1-command.json",
+              "sha256": "87ae0fe90e1ec8842b84ef3436114990a577680168f3ed5041ca3d747d1a672b"
+            },
+            {
+              "path": "runs/future/concurrent-ticket/validation-repair-1/report.json",
+              "sha256": "d0c4f6c054e1e2b104888d9cd750de25ec894e6772647620f44c0b38c9eec8b4"
+            },
+            {
+              "path": "runs/future/concurrent-ticket/visual-review.json",
+              "sha256": "4564dfcd28fbf400b51d6d543b65bb48b7493d18137949afe13202bfe3cfd493"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 1,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Integrate final acceptance results without publishing until the user gate is fully satisfied."
+    },
+    {
+      "id": "R06-feedback_snapshot",
+      "title": "Preserve exact handoff bytes before dispatch",
+      "queue": "capabilities",
+      "category": "feedback_iteration",
+      "complexity": 5,
+      "priority": 100,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "runs/R06/snapshot/"
+      ],
+      "inputs": [
+        "runs/R05/trigger-recheck/pr-comments.json",
+        "runs/R06/snapshot/acceptance.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Original missing-byte failure retained and source-bound snapshot regression passes"
+        },
+        {
+          "id": "a2",
+          "assertion": "New material can be restored byte-for-byte without touching its working source"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R06/snapshot/task-result.json",
+          "sha256": "deb0ec885bf8ea038a43025baf97720509bf6fb62e8e798b65bc8e89395a0870"
+        },
+        {
+          "path": "runs/R06/snapshot/first-step.json",
+          "sha256": "ae2c23d9ca38cc9abee8bafcbfdce4b238de155879f386b8b3fb331232869b04"
+        },
+        {
+          "path": "runs/R06/snapshot/tests-310.json",
+          "sha256": "9f492be498f8827f3ebe60e1fcf8a639470da6a6bea7f8471ff234fd8d6406d0"
+        },
+        {
+          "path": "runs/R06/snapshot/live-restore-command.json",
+          "sha256": "e48555e7f99fce9855c89a818dd9fcd61d96bf9c4c7fe55f64138d6a798483a4"
+        },
+        {
+          "path": "runs/R06/handoff/complex/snapshot-command.json",
+          "sha256": "4d2ea809053bf95f1a1317d4d6ae92432de98c579541e3146ab9235cdccb1d04"
+        },
+        {
+          "path": "runs/R06/handoff/complex/snapshot-verify.json",
+          "sha256": "7b31db62a1e485d486cc3452eda33cfa51e9f36b0724c3907a12d31559915384"
+        },
+        {
+          "path": "runs/R06/snapshot/first-step.json",
+          "sha256": "ae2c23d9ca38cc9abee8bafcbfdce4b238de155879f386b8b3fb331232869b04"
+        },
+        {
+          "path": "runs/R06/snapshot/tests-310.json",
+          "sha256": "9f492be498f8827f3ebe60e1fcf8a639470da6a6bea7f8471ff234fd8d6406d0"
+        },
+        {
+          "path": "runs/R06/snapshot/live-restore-command.json",
+          "sha256": "e48555e7f99fce9855c89a818dd9fcd61d96bf9c4c7fe55f64138d6a798483a4"
+        },
+        {
+          "path": "runs/R06/handoff/complex/snapshot-command.json",
+          "sha256": "4d2ea809053bf95f1a1317d4d6ae92432de98c579541e3146ab9235cdccb1d04"
+        },
+        {
+          "path": "runs/R06/handoff/complex/snapshot-verify.json",
+          "sha256": "7b31db62a1e485d486cc3452eda33cfa51e9f36b0724c3907a12d31559915384"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R06-feedback_snapshot-1",
+          "started_at": "2026-10-04T06:30:48.519719+00:00",
+          "requirements_hash": "589ca2803f004cd6d53c1e0c3c982e785bbea1b306f6ac96ce6d2f392d3d4856",
+          "inputs": [
+            {
+              "path": "runs/R05/trigger-recheck/pr-comments.json",
+              "sha256": "f25e6d2bc2a12b51d731c6fed1a9c9feb9fcf6738011e3c75904d945bf06c168"
+            },
+            {
+              "path": "runs/R06/snapshot/acceptance.json",
+              "sha256": "e3e9daa745438ebf6612ff290264101b5edac1adb7efcf2a0ca53449d8693e61"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R06/snapshot/first-step.json",
+            "sha256": "ae2c23d9ca38cc9abee8bafcbfdce4b238de155879f386b8b3fb331232869b04"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T06:39:26.418465+00:00",
+          "result": {
+            "path": "runs/R06/snapshot/task-result.json",
+            "sha256": "deb0ec885bf8ea038a43025baf97720509bf6fb62e8e798b65bc8e89395a0870"
+          },
+          "evidence": [
+            {
+              "path": "runs/R06/snapshot/task-result.json",
+              "sha256": "deb0ec885bf8ea038a43025baf97720509bf6fb62e8e798b65bc8e89395a0870"
+            },
+            {
+              "path": "runs/R06/snapshot/first-step.json",
+              "sha256": "ae2c23d9ca38cc9abee8bafcbfdce4b238de155879f386b8b3fb331232869b04"
+            },
+            {
+              "path": "runs/R06/snapshot/tests-310.json",
+              "sha256": "9f492be498f8827f3ebe60e1fcf8a639470da6a6bea7f8471ff234fd8d6406d0"
+            },
+            {
+              "path": "runs/R06/snapshot/live-restore-command.json",
+              "sha256": "e48555e7f99fce9855c89a818dd9fcd61d96bf9c4c7fe55f64138d6a798483a4"
+            },
+            {
+              "path": "runs/R06/handoff/complex/snapshot-command.json",
+              "sha256": "4d2ea809053bf95f1a1317d4d6ae92432de98c579541e3146ab9235cdccb1d04"
+            },
+            {
+              "path": "runs/R06/handoff/complex/snapshot-verify.json",
+              "sha256": "7b31db62a1e485d486cc3452eda33cfa51e9f36b0724c3907a12d31559915384"
+            },
+            {
+              "path": "runs/R06/snapshot/first-step.json",
+              "sha256": "ae2c23d9ca38cc9abee8bafcbfdce4b238de155879f386b8b3fb331232869b04"
+            },
+            {
+              "path": "runs/R06/snapshot/tests-310.json",
+              "sha256": "9f492be498f8827f3ebe60e1fcf8a639470da6a6bea7f8471ff234fd8d6406d0"
+            },
+            {
+              "path": "runs/R06/snapshot/live-restore-command.json",
+              "sha256": "e48555e7f99fce9855c89a818dd9fcd61d96bf9c4c7fe55f64138d6a798483a4"
+            },
+            {
+              "path": "runs/R06/handoff/complex/snapshot-command.json",
+              "sha256": "4d2ea809053bf95f1a1317d4d6ae92432de98c579541e3146ab9235cdccb1d04"
+            },
+            {
+              "path": "runs/R06/handoff/complex/snapshot-verify.json",
+              "sha256": "7b31db62a1e485d486cc3452eda33cfa51e9f36b0724c3907a12d31559915384"
+            }
+          ]
+        }
+      ],
       "repairs_used": 0,
       "repair_limit": 2,
       "blocker": null,
-      "next_action": "验证双客户端并发更新工单"
+      "next_action": "Use inherited C5 byte capture on new-context complex guidance; evaluate bounded repair guard on the retained original failure classes."
+    },
+    {
+      "id": "R06-feedback_budget",
+      "title": "Enforce durable failure and repair budget before execution",
+      "queue": "capabilities",
+      "category": "feedback_iteration",
+      "complexity": 5,
+      "priority": 101,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "runs/R06/budget/"
+      ],
+      "inputs": [
+        "runs/R05/trigger-recheck/pr-comments.json",
+        "runs/R06/budget/acceptance.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Original over-budget sequence stops after two corrections and never becomes pass"
+        },
+        {
+          "id": "a2",
+          "assertion": "New independent case preserves failures and refuses unauthorized fourth attempt"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R06/budget/task-result.json",
+          "sha256": "4f779d9f5490b920661f8a704799f08066eb126fe1dd4de7f438f8ee7bc41164"
+        },
+        {
+          "path": "runs/R06/budget/first-step.json",
+          "sha256": "9b99ee1fba8655576bb183c61947d120b3c07bcfc7242c60cfe6f42a914b5737"
+        },
+        {
+          "path": "runs/R06/budget/tests-310.json",
+          "sha256": "3a75c6c2d43e563070716c6a6d2610eac594edfffd7e40c567a7c89028d937fc"
+        },
+        {
+          "path": "runs/R06/budget/retained-scenarios-command.json",
+          "sha256": "28df958d44e55487ae2ea40168eaa22bf766feeaa2cf493312c300f5d17ed5bd"
+        },
+        {
+          "path": "runs/R06/budget/scenarios/report.json",
+          "sha256": "aefe4959649e2c16ff5211a142b3e98155d4bd3170dafe5145886ce02856ec4e"
+        },
+        {
+          "path": "runs/R06/budget/scenarios/commands.json",
+          "sha256": "035f9230733966e535e620d64a322d66889d5b5d9d9a0dcae60a28197bbfec8c"
+        },
+        {
+          "path": "runs/R06/budget/first-step.json",
+          "sha256": "9b99ee1fba8655576bb183c61947d120b3c07bcfc7242c60cfe6f42a914b5737"
+        },
+        {
+          "path": "runs/R06/budget/tests-310.json",
+          "sha256": "3a75c6c2d43e563070716c6a6d2610eac594edfffd7e40c567a7c89028d937fc"
+        },
+        {
+          "path": "runs/R06/budget/retained-scenarios-command.json",
+          "sha256": "28df958d44e55487ae2ea40168eaa22bf766feeaa2cf493312c300f5d17ed5bd"
+        },
+        {
+          "path": "runs/R06/budget/scenarios/report.json",
+          "sha256": "aefe4959649e2c16ff5211a142b3e98155d4bd3170dafe5145886ce02856ec4e"
+        },
+        {
+          "path": "runs/R06/budget/scenarios/commands.json",
+          "sha256": "035f9230733966e535e620d64a322d66889d5b5d9d9a0dcae60a28197bbfec8c"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R06-feedback_budget-1",
+          "started_at": "2026-10-04T06:33:39.057857+00:00",
+          "requirements_hash": "566a6dfd4dc62115d3cca510b2b0d84de626e4449d65e7ab6ecaa5c9f2eece2a",
+          "inputs": [
+            {
+              "path": "runs/R05/trigger-recheck/pr-comments.json",
+              "sha256": "f25e6d2bc2a12b51d731c6fed1a9c9feb9fcf6738011e3c75904d945bf06c168"
+            },
+            {
+              "path": "runs/R06/budget/acceptance.json",
+              "sha256": "62af7a0b0c9c5ef6c2bf9636f71675d69bbbd925aca5cf4a0eb1c89efbe7ced9"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R06/budget/first-step.json",
+            "sha256": "9b99ee1fba8655576bb183c61947d120b3c07bcfc7242c60cfe6f42a914b5737"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T06:44:45.473084+00:00",
+          "result": {
+            "path": "runs/R06/budget/task-result.json",
+            "sha256": "4f779d9f5490b920661f8a704799f08066eb126fe1dd4de7f438f8ee7bc41164"
+          },
+          "evidence": [
+            {
+              "path": "runs/R06/budget/task-result.json",
+              "sha256": "4f779d9f5490b920661f8a704799f08066eb126fe1dd4de7f438f8ee7bc41164"
+            },
+            {
+              "path": "runs/R06/budget/first-step.json",
+              "sha256": "9b99ee1fba8655576bb183c61947d120b3c07bcfc7242c60cfe6f42a914b5737"
+            },
+            {
+              "path": "runs/R06/budget/tests-310.json",
+              "sha256": "3a75c6c2d43e563070716c6a6d2610eac594edfffd7e40c567a7c89028d937fc"
+            },
+            {
+              "path": "runs/R06/budget/retained-scenarios-command.json",
+              "sha256": "28df958d44e55487ae2ea40168eaa22bf766feeaa2cf493312c300f5d17ed5bd"
+            },
+            {
+              "path": "runs/R06/budget/scenarios/report.json",
+              "sha256": "aefe4959649e2c16ff5211a142b3e98155d4bd3170dafe5145886ce02856ec4e"
+            },
+            {
+              "path": "runs/R06/budget/scenarios/commands.json",
+              "sha256": "035f9230733966e535e620d64a322d66889d5b5d9d9a0dcae60a28197bbfec8c"
+            },
+            {
+              "path": "runs/R06/budget/first-step.json",
+              "sha256": "9b99ee1fba8655576bb183c61947d120b3c07bcfc7242c60cfe6f42a914b5737"
+            },
+            {
+              "path": "runs/R06/budget/tests-310.json",
+              "sha256": "3a75c6c2d43e563070716c6a6d2610eac594edfffd7e40c567a7c89028d937fc"
+            },
+            {
+              "path": "runs/R06/budget/retained-scenarios-command.json",
+              "sha256": "28df958d44e55487ae2ea40168eaa22bf766feeaa2cf493312c300f5d17ed5bd"
+            },
+            {
+              "path": "runs/R06/budget/scenarios/report.json",
+              "sha256": "aefe4959649e2c16ff5211a142b3e98155d4bd3170dafe5145886ce02856ec4e"
+            },
+            {
+              "path": "runs/R06/budget/scenarios/commands.json",
+              "sha256": "035f9230733966e535e620d64a322d66889d5b5d9d9a0dcae60a28197bbfec8c"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Complete the already-started new-context original-goal pilots, inspect their actual journal and business outputs, then finish final regression/smoke gate."
+    },
+    {
+      "id": "R06-fresh_context_validation",
+      "title": "Verify new-context simple and complex task guidance",
+      "queue": "challenges",
+      "category": "independent_handoff",
+      "complexity": 5,
+      "priority": 102,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "runs/R06/handoff/"
+      ],
+      "inputs": [
+        "runs/R05/trigger-recheck/pr-comments.json",
+        "runs/R06/handoff/conditions.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Fresh Luna gets fixed candidate/original goal/material only; simple task uses direct path"
+        },
+        {
+          "id": "a2",
+          "assertion": "Different complex local rule challenge handles idempotency/concurrency/audit/failure and actually starts a successor"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R06/handoff/task-result.json",
+          "sha256": "bfdd9086c6673100e0e4c194449e12c014245a29b1e96955f7dd7b5c19ed5475"
+        },
+        {
+          "path": "runs/R06/handoff/conditions.json",
+          "sha256": "b591495f94fb6b75f27f3e59c0f3c8f5dffff05a03304fa2bfdc7d658909b0ee"
+        },
+        {
+          "path": "runs/R06/handoff/simple/root-review.json",
+          "sha256": "3a20c82848a733dd1984093c98a9185ee4cdd2e01668f134b9067a3f5a8dfada"
+        },
+        {
+          "path": "runs/R06/handoff/simple/reconcile-final.json",
+          "sha256": "2db5f7474d2234913964ff75ce637ad5870cec25af50f85590c1bbe4cd86cf39"
+        },
+        {
+          "path": "runs/R06/handoff/complex/root-review.json",
+          "sha256": "f0247f3920da6f2eb9ba13c08f5fd0c3316172f3dd4a0b593ddaad0aecf61c50"
+        },
+        {
+          "path": "runs/R06/handoff/complex/root-review-repair-1-command.json",
+          "sha256": "72026f3410af019f397a2c7c35538a36b21e457af1c36d783c89f95049ac86bb"
+        },
+        {
+          "path": "runs/R06/handoff/complex/reconcile-final.json",
+          "sha256": "37e10dbadf78b2ca7a0f565cd93e0b3b8648c57c0604cf1f22015265e8e22f50"
+        },
+        {
+          "path": "runs/R06/handoff/complex/worker/outputs/manual-review-task.json",
+          "sha256": "db988d3a926e1da87849133d4ec74279929a5b27f7429b44e88edcdde979bc76"
+        },
+        {
+          "path": "runs/R06/handoff/conditions.json",
+          "sha256": "b591495f94fb6b75f27f3e59c0f3c8f5dffff05a03304fa2bfdc7d658909b0ee"
+        },
+        {
+          "path": "runs/R06/handoff/simple/root-review.json",
+          "sha256": "3a20c82848a733dd1984093c98a9185ee4cdd2e01668f134b9067a3f5a8dfada"
+        },
+        {
+          "path": "runs/R06/handoff/simple/reconcile-final.json",
+          "sha256": "2db5f7474d2234913964ff75ce637ad5870cec25af50f85590c1bbe4cd86cf39"
+        },
+        {
+          "path": "runs/R06/handoff/complex/root-review.json",
+          "sha256": "f0247f3920da6f2eb9ba13c08f5fd0c3316172f3dd4a0b593ddaad0aecf61c50"
+        },
+        {
+          "path": "runs/R06/handoff/complex/root-review-repair-1-command.json",
+          "sha256": "72026f3410af019f397a2c7c35538a36b21e457af1c36d783c89f95049ac86bb"
+        },
+        {
+          "path": "runs/R06/handoff/complex/reconcile-final.json",
+          "sha256": "37e10dbadf78b2ca7a0f565cd93e0b3b8648c57c0604cf1f22015265e8e22f50"
+        },
+        {
+          "path": "runs/R06/handoff/complex/worker/outputs/manual-review-task.json",
+          "sha256": "db988d3a926e1da87849133d4ec74279929a5b27f7429b44e88edcdde979bc76"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R06-fresh_context_validation-1",
+          "started_at": "2026-10-04T06:36:04.293194+00:00",
+          "requirements_hash": "2a623f3bf869a15ca6a34175a0e50dbe25632b64bed5d71eae9037f664af124d",
+          "inputs": [
+            {
+              "path": "runs/R05/trigger-recheck/pr-comments.json",
+              "sha256": "f25e6d2bc2a12b51d731c6fed1a9c9feb9fcf6738011e3c75904d945bf06c168"
+            },
+            {
+              "path": "runs/R06/handoff/conditions.json",
+              "sha256": "b591495f94fb6b75f27f3e59c0f3c8f5dffff05a03304fa2bfdc7d658909b0ee"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R06/handoff/simple/accepted-command.json",
+            "sha256": "51bdd59adfceba94a0731ec24307be3c4879ce60ce6e801c2a6e9cffbc8dbcc4"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T06:53:42.441841+00:00",
+          "result": {
+            "path": "runs/R06/handoff/task-result.json",
+            "sha256": "bfdd9086c6673100e0e4c194449e12c014245a29b1e96955f7dd7b5c19ed5475"
+          },
+          "evidence": [
+            {
+              "path": "runs/R06/handoff/task-result.json",
+              "sha256": "bfdd9086c6673100e0e4c194449e12c014245a29b1e96955f7dd7b5c19ed5475"
+            },
+            {
+              "path": "runs/R06/handoff/conditions.json",
+              "sha256": "b591495f94fb6b75f27f3e59c0f3c8f5dffff05a03304fa2bfdc7d658909b0ee"
+            },
+            {
+              "path": "runs/R06/handoff/simple/root-review.json",
+              "sha256": "3a20c82848a733dd1984093c98a9185ee4cdd2e01668f134b9067a3f5a8dfada"
+            },
+            {
+              "path": "runs/R06/handoff/simple/reconcile-final.json",
+              "sha256": "2db5f7474d2234913964ff75ce637ad5870cec25af50f85590c1bbe4cd86cf39"
+            },
+            {
+              "path": "runs/R06/handoff/complex/root-review.json",
+              "sha256": "f0247f3920da6f2eb9ba13c08f5fd0c3316172f3dd4a0b593ddaad0aecf61c50"
+            },
+            {
+              "path": "runs/R06/handoff/complex/root-review-repair-1-command.json",
+              "sha256": "72026f3410af019f397a2c7c35538a36b21e457af1c36d783c89f95049ac86bb"
+            },
+            {
+              "path": "runs/R06/handoff/complex/reconcile-final.json",
+              "sha256": "37e10dbadf78b2ca7a0f565cd93e0b3b8648c57c0604cf1f22015265e8e22f50"
+            },
+            {
+              "path": "runs/R06/handoff/complex/worker/outputs/manual-review-task.json",
+              "sha256": "db988d3a926e1da87849133d4ec74279929a5b27f7429b44e88edcdde979bc76"
+            },
+            {
+              "path": "runs/R06/handoff/conditions.json",
+              "sha256": "b591495f94fb6b75f27f3e59c0f3c8f5dffff05a03304fa2bfdc7d658909b0ee"
+            },
+            {
+              "path": "runs/R06/handoff/simple/root-review.json",
+              "sha256": "3a20c82848a733dd1984093c98a9185ee4cdd2e01668f134b9067a3f5a8dfada"
+            },
+            {
+              "path": "runs/R06/handoff/simple/reconcile-final.json",
+              "sha256": "2db5f7474d2234913964ff75ce637ad5870cec25af50f85590c1bbe4cd86cf39"
+            },
+            {
+              "path": "runs/R06/handoff/complex/root-review.json",
+              "sha256": "f0247f3920da6f2eb9ba13c08f5fd0c3316172f3dd4a0b593ddaad0aecf61c50"
+            },
+            {
+              "path": "runs/R06/handoff/complex/root-review-repair-1-command.json",
+              "sha256": "72026f3410af019f397a2c7c35538a36b21e457af1c36d783c89f95049ac86bb"
+            },
+            {
+              "path": "runs/R06/handoff/complex/reconcile-final.json",
+              "sha256": "37e10dbadf78b2ca7a0f565cd93e0b3b8648c57c0604cf1f22015265e8e22f50"
+            },
+            {
+              "path": "runs/R06/handoff/complex/worker/outputs/manual-review-task.json",
+              "sha256": "db988d3a926e1da87849133d4ec74279929a5b27f7429b44e88edcdde979bc76"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 2,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Preserve the actual local successor and original pilot evidence; finish current UI retest and final release checks. Native multi-agent autonomous assignment remains an explicit unverified boundary.",
+      "repair_reconciliation_scope": "Root source/verification/integration corrections from retained execution, including work performed inside one queue attempt; independent actor budgets are separate and not reset"
+    },
+    {
+      "id": "R06-scheduled_handoff",
+      "title": "Validate actual scheduled continuation without duplicate coordinator",
+      "queue": "capabilities",
+      "category": "scheduling",
+      "complexity": 5,
+      "priority": 103,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "runs/R06/scheduling/"
+      ],
+      "inputs": [
+        "runs/R05/trigger-recheck/pr-comments.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "Record real trigger, commit/checkpoint, observed host and no duplicate execution"
+        },
+        {
+          "id": "a2",
+          "assertion": "Retain distinction between active-thread trigger and independent cold-start handoff"
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R06/scheduling/trigger-review.json",
+          "sha256": "b57efa5481185a8369c2aecaec06fb90447107904281261e0c18f0990a87e07b"
+        },
+        {
+          "path": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+          "sha256": "d71a9fca95fa91190ca665f076cff560abb77c112a0026bb3b30fdda1a1d902e"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R06-scheduled_handoff-1",
+          "started_at": "2026-10-04T06:43:20.291224+00:00",
+          "requirements_hash": "af07ab238476032af95ffcc8390027e5877c7f003448335603dde986b8707ebc",
+          "inputs": [
+            {
+              "path": "runs/R05/trigger-recheck/pr-comments.json",
+              "sha256": "f25e6d2bc2a12b51d731c6fed1a9c9feb9fcf6738011e3c75904d945bf06c168"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R06/scheduling/first-step.json",
+            "sha256": "2c6ab316a4c49e8f3b40fe3d8b690d3eedb4b6057eb889a81aff52466caef50f"
+          },
+          "status": "blocked",
+          "ended_at": "2026-10-04T06:43:20.353832+00:00",
+          "reason": "Real trigger and executable active-context continuation observed, but independent cold-start cross-session handoff has not occurred. Do not equate an active-thread injection with this stronger requirement.",
+          "evidence": [
+            {
+              "path": "runs/R06/scheduling/trigger-review.json",
+              "sha256": "b57efa5481185a8369c2aecaec06fb90447107904281261e0c18f0990a87e07b"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "Post-release 07:21 real trigger and retained-state inspection verified. Full independent cold-start plus substantive successor execution remains unverified: no original ready task and original native terminal receipt unresolved.",
+      "next_action": "Keep original attempts and budgets. Resume only after a concrete blocked condition changes and an original task can actually start; a repeated read-only trigger is insufficient."
     }
   ],
   "execution": {
     "mode": "cooperative_host",
     "background_available": null,
     "background_probe": "R04-01",
-    "native_pending": [],
-    "limit": "Current host executes real work. Hourly continuation/check is enabled, but a future run has not yet demonstrated checkout/command/native execution; it must probe and report that branch honestly. No daemon or permanent service is claimed.",
+    "native_pending": [
+      {
+        "worker": "/root/luna_forge_ec0ef35b347f",
+        "run": "runs/future/preset_browser_acceptance/independent",
+        "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
+      }
+    ],
+    "limit": "Unfinished work is being handed off upstream under explicit user instruction; no background continuation or upstream merge.",
     "monitor_configured": true,
     "monitor_id": "6ac1e1f6159081919cd571f6fa15d397",
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "checkpointed",
-    "checkpoint_reason": "Current reviewed batch published; R05 first task actually started; hourly continuation/check configured, future execution capabilities unverified."
+    "session_state": "preparing_user_authorized_upstream_handoff",
+    "checkpoint_reason": "Latest user explicitly requested PR handoff of unfinished work; strict acceptance remains failed; no additional implementation or acceptance retries.",
+    "coordinator_heartbeat": "2026-10-04T07:50:51.900507+00:00",
+    "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
+    "scheduled_trigger_code_execution_verified": true,
+    "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
+    "coordinator_lease": "state/coordinator-lease.json",
+    "latest_capability_probe": "runs/R06/scheduling/cancel-20261004T074313Z/environment.json",
+    "coordinator_lease_state": "state/coordinator-lease.json",
+    "recovery": "runs/R06/RECOVERY.md",
+    "final_validation": "runs/R06/final/summary.json",
+    "publication_check": "runs/R06/scheduling/cancel-20261004T074313Z/publication-check.json",
+    "review_bundle": "runs/R06/final/complete-review.json",
+    "post_release_trigger_verified": true,
+    "last_scheduled_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+    "latest_resumption_report": "runs/R06/scheduling/resume-20261004T072138Z/REPORT.md",
+    "previous_coordinator_released_at": "2026-10-04T07:13:18.042263+00:00",
+    "coordinator_release_instruction": "Current lease was held during checkpoint save; inspect state/coordinator-lease.json and run probe for actual current ownership. Exit release is recorded separately under this resumption evidence directory.",
+    "monitor_enabled": false,
+    "monitor_status": "disabled_by_user",
+    "monitor_disabled_at": "2026-10-04T07:43:35.078201+00:00",
+    "monitor_cancellation_evidence": "runs/R06/scheduling/cancel-20261004T074313Z/automation-after.json",
+    "monitor_cancellation_report": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
+    "upstream_handoff": "state/upstream-handoff.json",
+    "upstream_handoff_report": "runs/R06/upstream-handoff/README.md"
   },
   "events": [
     {
@@ -1871,6 +2674,389 @@
       "command": "sync",
       "result": {
         "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T06:02:02.465455+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T06:03:41.628869+00:00",
+      "command": "start",
+      "result": {
+        "id": "BACKLOG-versioned_preset_catalog-1",
+        "started_at": "2026-10-04T06:03:41.628564+00:00",
+        "requirements_hash": "5b1fa325d575c95a6b22fcdcee8156d1ab19e0e9623b9adcd8086deb683a2d1d",
+        "inputs": [
+          {
+            "path": "runs/R00/requirements.json",
+            "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/future/versioned_preset_catalog/research/accepted-command.json",
+          "sha256": "a5ccfc8bd3c3169040cdc7cffc16030429c0a07434fe63b0ff33ee5f771a8ae4"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:03:41.689524+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T06:04:25.613066+00:00",
+      "command": "start",
+      "result": {
+        "id": "CAP-sdk_adapter_contract-1",
+        "started_at": "2026-10-04T06:04:25.612845+00:00",
+        "requirements_hash": "6d486fe47d1f0ae05d67c223c45fbde043a833499ebb7b7ac37742f8a9c5fca9",
+        "inputs": [
+          {
+            "path": "runs/R00/requirements.json",
+            "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/future/provider-adapter/first-step.json",
+          "sha256": "abf73d283af7f8668a717baa8570f632cf39e6dc34637b208d1916361ad6641c"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:04:25.728041+00:00",
+      "command": "start",
+      "result": {
+        "id": "X01-concurrent_ticket_edits-1",
+        "started_at": "2026-10-04T06:04:25.727725+00:00",
+        "requirements_hash": "557473cdeacb496401d6521a3684f44ba551ee8ff129d463b3d8388146917272",
+        "inputs": [
+          {
+            "path": "runs/R04/capability-probe/concurrent-brief.json",
+            "sha256": "e16e33f964b9d669b6e1b32525bccaa1efb9683ea403854ee23f576a2ee74c45"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/future/concurrent-ticket/first-step.json",
+          "sha256": "cc9112922944aafc79980722f8bd777b33b707c493b885c736091b4bbdec071d"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:07:20.761408+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "X01-concurrent_ticket_edits",
+        "status": "failed",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T06:07:22.485967+00:00",
+      "command": "start",
+      "result": {
+        "id": "X01-concurrent_ticket_edits-2",
+        "started_at": "2026-10-04T06:07:22.485711+00:00",
+        "requirements_hash": "557473cdeacb496401d6521a3684f44ba551ee8ff129d463b3d8388146917272",
+        "inputs": [
+          {
+            "path": "runs/R04/capability-probe/concurrent-brief.json",
+            "sha256": "e16e33f964b9d669b6e1b32525bccaa1efb9683ea403854ee23f576a2ee74c45"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/future/concurrent-ticket/validation-repair-1-command.json",
+          "sha256": "87ae0fe90e1ec8842b84ef3436114990a577680168f3ed5041ca3d747d1a672b"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:09:46.332287+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "X01-concurrent_ticket_edits",
+        "status": "done",
+        "repairs_used": 1
+      }
+    },
+    {
+      "at": "2026-10-04T06:13:51.842596+00:00",
+      "command": "start",
+      "result": {
+        "id": "BACKLOG-host_protocol_overhead_comparison-1",
+        "started_at": "2026-10-04T06:13:51.842353+00:00",
+        "requirements_hash": "f36eb7a74d71982e098d04393d67f1f9fac9caf444fbe925ecc90fefac89f800",
+        "inputs": [
+          {
+            "path": "runs/R00/requirements.json",
+            "sha256": "a64542c98b6f4dd1824472d84f49e10bc2e42a90c47666ed473093613cc1488a"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/future/host_protocol_overhead_comparison/first-step.json",
+          "sha256": "12e6fdc972efafe21f3fbc7badbd65ad361956bc3f431230959caa63e6190e4c"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:27:39.478157+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "BACKLOG-host_protocol_overhead_comparison",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-04T06:27:39.541203+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "CAP-sdk_adapter_contract",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-04T06:30:48.520104+00:00",
+      "command": "start",
+      "result": {
+        "id": "R06-feedback_snapshot-1",
+        "started_at": "2026-10-04T06:30:48.519719+00:00",
+        "requirements_hash": "589ca2803f004cd6d53c1e0c3c982e785bbea1b306f6ac96ce6d2f392d3d4856",
+        "inputs": [
+          {
+            "path": "runs/R05/trigger-recheck/pr-comments.json",
+            "sha256": "f25e6d2bc2a12b51d731c6fed1a9c9feb9fcf6738011e3c75904d945bf06c168"
+          },
+          {
+            "path": "runs/R06/snapshot/acceptance.json",
+            "sha256": "e3e9daa745438ebf6612ff290264101b5edac1adb7efcf2a0ca53449d8693e61"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R06/snapshot/first-step.json",
+          "sha256": "ae2c23d9ca38cc9abee8bafcbfdce4b238de155879f386b8b3fb331232869b04"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:33:39.058203+00:00",
+      "command": "start",
+      "result": {
+        "id": "R06-feedback_budget-1",
+        "started_at": "2026-10-04T06:33:39.057857+00:00",
+        "requirements_hash": "566a6dfd4dc62115d3cca510b2b0d84de626e4449d65e7ab6ecaa5c9f2eece2a",
+        "inputs": [
+          {
+            "path": "runs/R05/trigger-recheck/pr-comments.json",
+            "sha256": "f25e6d2bc2a12b51d731c6fed1a9c9feb9fcf6738011e3c75904d945bf06c168"
+          },
+          {
+            "path": "runs/R06/budget/acceptance.json",
+            "sha256": "62af7a0b0c9c5ef6c2bf9636f71675d69bbbd925aca5cf4a0eb1c89efbe7ced9"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R06/budget/first-step.json",
+          "sha256": "9b99ee1fba8655576bb183c61947d120b3c07bcfc7242c60cfe6f42a914b5737"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:36:04.293582+00:00",
+      "command": "start",
+      "result": {
+        "id": "R06-fresh_context_validation-1",
+        "started_at": "2026-10-04T06:36:04.293194+00:00",
+        "requirements_hash": "2a623f3bf869a15ca6a34175a0e50dbe25632b64bed5d71eae9037f664af124d",
+        "inputs": [
+          {
+            "path": "runs/R05/trigger-recheck/pr-comments.json",
+            "sha256": "f25e6d2bc2a12b51d731c6fed1a9c9feb9fcf6738011e3c75904d945bf06c168"
+          },
+          {
+            "path": "runs/R06/handoff/conditions.json",
+            "sha256": "b591495f94fb6b75f27f3e59c0f3c8f5dffff05a03304fa2bfdc7d658909b0ee"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R06/handoff/simple/accepted-command.json",
+          "sha256": "51bdd59adfceba94a0731ec24307be3c4879ce60ce6e801c2a6e9cffbc8dbcc4"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:39:26.418582+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R06-feedback_snapshot",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T06:43:20.291481+00:00",
+      "command": "start",
+      "result": {
+        "id": "R06-scheduled_handoff-1",
+        "started_at": "2026-10-04T06:43:20.291224+00:00",
+        "requirements_hash": "af07ab238476032af95ffcc8390027e5877c7f003448335603dde986b8707ebc",
+        "inputs": [
+          {
+            "path": "runs/R05/trigger-recheck/pr-comments.json",
+            "sha256": "f25e6d2bc2a12b51d731c6fed1a9c9feb9fcf6738011e3c75904d945bf06c168"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R06/scheduling/first-step.json",
+          "sha256": "2c6ab316a4c49e8f3b40fe3d8b690d3eedb4b6057eb889a81aff52466caef50f"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T06:43:20.353846+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "R06-scheduled_handoff",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-04T06:44:45.473190+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R06-feedback_budget",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T06:49:14.593776+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "BACKLOG-preset_browser_acceptance",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-04T06:53:42.441952+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R06-fresh_context_validation",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T06:54:21.404259+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T06:56:19.174576+00:00",
+      "command": "root_budget_reconciliation",
+      "result": {
+        "counts": {
+          "BACKLOG-preset_browser_acceptance": 2,
+          "BACKLOG-host_protocol_overhead_comparison": 2,
+          "R06-fresh_context_validation": 2
+        },
+        "evidence": [
+          "runs/future/preset_browser_acceptance/root-final-review.json",
+          "runs/future/host_protocol_overhead_comparison/report.json",
+          "runs/R06/handoff/root-repair-budget.json"
+        ]
+      }
+    },
+    {
+      "at": "2026-10-04T06:56:19.241564+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T07:01:49.256566+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "BACKLOG-versioned_preset_catalog",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-04T07:01:49.355017+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T07:09:58.365076+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T07:13:18.445425+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T07:28:53.834629+00:00",
+      "command": "observe_post_release_trigger",
+      "result": {
+        "task_id": "R06-scheduled_handoff",
+        "status": "blocked",
+        "evidence": {
+          "path": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+          "sha256": "d71a9fca95fa91190ca665f076cff560abb77c112a0026bb3b30fdda1a1d902e"
+        },
+        "task_started": false,
+        "budget_changed": false
+      }
+    },
+    {
+      "at": "2026-10-04T07:44:22.473390+00:00",
+      "command": "disable_hourly_automation",
+      "result": {
+        "automation_id": "6ac1e1f6159081919cd571f6fa15d397",
+        "is_enabled": false,
+        "evidence": {
+          "path": "runs/R06/scheduling/cancel-20261004T074313Z/automation-after.json",
+          "sha256": "df522fed7e8a8c3b462b36f051f33bc57b3c21a02ec53bbeaffb3a31591cae0a"
+        },
+        "task_started": false,
+        "budgets_changed": false
+      }
+    },
+    {
+      "at": "2026-10-04T07:50:51.900519+00:00",
+      "command": "authorize_unfinished_upstream_handoff",
+      "result": {
+        "authorization": {
+          "path": "state/upstream-handoff.json",
+          "sha256": "c4eb9824517dd16226bb74e9ca9edb9feded2653e85860152f3b5df04ede8e91"
+        },
+        "acceptance_changed": false,
+        "budgets_changed": false,
+        "publication_mode": "review_handoff"
       }
     }
   ],

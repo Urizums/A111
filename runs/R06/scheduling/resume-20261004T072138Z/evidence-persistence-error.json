@@ -1,0 +1,8 @@
+{
+  "operation": "Persist previously read observation tool results",
+  "raw_error": "Script error:\nError: Missing source record: preclaim-command.json\n    at exec_main.mjs:22:48",
+  "cause": "The read-only artifacts listing exec cell was terminated after the artifacts call did not return; store writes in that cell did not survive.",
+  "side_effects": "Validation threw before any apply_patch or host probe invocation. No task attempt or acceptance execution occurred.",
+  "disposition": "Preserve this original failure. Use explicitly labelled structured transcription of already returned preclaim output, never a fabricated command receipt.",
+  "artifact_listing": "codex_app.list_artifacts did not return before the cell was terminated; attachment state remains unverified"
+}

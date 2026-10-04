@@ -24,7 +24,7 @@ python3 scripts/smoke_cloud.py --prefix /workspace/agent-forge-cloud --out /tmp/
 新业务 state 和输出应放到独立工作目录。仓库中的旧 state、绝对路径和 worker ID
 是证据，不是可在新宿主上直接恢复的活任务。停止 CLI 即结束该进程，无常驻服务。
 
-当前 C3 候选保存在 `runs/R01/candidate/forge-agent-flow/`，加入持续研发与效果验证规范及接续控制器；历史 C2 保留在 `runs/S02/candidate/forge-agent-flow/`。原 `skills/` 和 `evidence/` 字节保持不变。
+当前待发布 C5 候选保存在 `runs/R06/candidate/C5/forge-agent-flow/`，文件哈希见 `runs/R06/candidate/C5-lock.json`；增加字节快照及有界执行记录器。历史 C2/C3/C4 完整保留。原 `skills/` 和 `evidence/` 字节保持不变。
 宿主应阅读候选 SKILL.md 才能应用新协议；CLI 不会自动注册个人技能或调度模型。
 
 ## 打包与搬迁
@@ -43,7 +43,11 @@ python3 /tmp/agent-forge-extracted/agent-forge/scripts/deploy_cloud.py --prefix 
 
 工单示例可用 `python3 challenges/ticket-desk/app.py --database /tmp/support-desk.sqlite3 --port 8765` 启动，再访问 `http://127.0.0.1:8765`。默认绑定 loopback，数据库放在发布目录之外；没有生产认证或公网 SLA。
 
-本轮复核入口：`runs/R00/VERIFICATION_REPORT.md`、`runs/R00/issues.json`、`state/continuation.json`。
+本轮复核入口：`runs/R06/VERIFICATION_REPORT.md`、`runs/R06/issues.json`、`state/continuation.json`。
+
+C5 工具通过固定候选路径显式运行，旧 launcher 的命令映射保持原兼容入口。例如从 checkout 执行 `python3 -B runs/R06/candidate/C5/forge-agent-flow/scripts/snapshot.py --help` 和 `python3 -B runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py --help`。从安装目录调用时，将候选路径接在 `<prefix>/current/` 后；新输入和状态放在发布目录以外。不得把对旧 launcher 的冒烟当作 C5 新工具的运行验证。
+
+完整发布仍受 `state/publication-gate.json` 限制。先冻结源文件及证据并加入 Git 索引，再运行安装/辅助回归；未跟踪的新证据不会被安装器复制。只暂存不是提交或发布。原失败保留，必需阻塞解除并完整复测之前不推送 dev。
 
 历史复核入口：`runs/cloud/VERIFICATION_REPORT.md`、`runs/cloud/issues.json`、
 `runs/S01/final-review.md` 和 `runs/S03/validation.json`。这些入口区分真实原生调用、

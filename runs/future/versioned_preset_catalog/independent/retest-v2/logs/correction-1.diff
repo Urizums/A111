@@ -1,0 +1,129 @@
+--- browser_validate.target-bound.py
++++ browser_validate.after-correction-1.py
+@@ -76,6 +76,40 @@
+ 
+ def visible_text(page, selector):
+     return page.locator(selector).inner_text().strip()
++
++def wait_for_state(page, expression, timeout=3000):
++    predicate = f"() => Boolean({expression})"
++    try:
++        page.wait_for_function(predicate, timeout=timeout)
++    except Exception:
++        pass
++    return bool(page.evaluate(predicate))
++
++def keyboard_confirm(page, trigger_selector, applied_expression):
++    page.locator(trigger_selector).focus()
++    page.keyboard.press('Enter')
++    page.locator('#confirm').wait_for(state='visible', timeout=3000)
++    initial_focus = page.evaluate('document.activeElement.id')
++    page.keyboard.press('Tab')
++    confirm_focus = page.evaluate('document.activeElement.id')
++    page.keyboard.press('Enter')
++    applied = wait_for_state(page, applied_expression, timeout=1800)
++    return {
++        'initial_focus': initial_focus,
++        'confirm_focus': confirm_focus,
++        'dialog_closed': not page.evaluate("document.querySelector('#confirm').open"),
++        'applied': applied,
++    }
++
++def pointer_confirm_fallback(page, trigger_selector, applied_expression):
++    if wait_for_state(page, applied_expression, timeout=50):
++        return False
++    if not page.evaluate("document.querySelector('#confirm').open"):
++        page.locator(trigger_selector).focus()
++        page.keyboard.press('Enter')
++        page.locator('#confirm').wait_for(state='visible', timeout=3000)
++    page.locator('#confirm-ok').click()
++    return wait_for_state(page, applied_expression, timeout=4000)
+ 
+ def do_review(page):
+     try:
+@@ -110,16 +144,16 @@
+         page.locator('#confirm-cancel').click()
+         page.wait_for_function("!document.querySelector('#confirm').open")
+         check('review: cancel button leaves state unchanged and returns focus', page.evaluate('document.activeElement.id') == 'review-approve' and '待审阅' in visible_text(page, '#record-state'), {'active': page.evaluate('document.activeElement.id'), 'state': visible_text(page, '#record-state')})
+-        trigger.focus()
+-        page.keyboard.press('Enter')
+-        page.locator('#confirm').wait_for(state='visible')
+-        page.keyboard.press('Tab')
+-        active = page.evaluate('document.activeElement.id')
+-        page.keyboard.press('Enter')
+-        page.wait_for_function("!document.querySelector('#confirm').open")
+-        page.wait_for_function("document.querySelector('#review-status').textContent.includes('已通过示例')")
++        approved_expr = "document.querySelector('#review-status').textContent.includes('已通过示例')"
++        keyboard_result = keyboard_confirm(page, '#review-approve', approved_expr)
++        check('review: Tab reaches confirm and keyboard applies approval', keyboard_result['initial_focus']=='confirm-cancel' and keyboard_result['confirm_focus']=='confirm-ok' and keyboard_result['applied'], keyboard_result)
++        pointer_applied = False
++        if not keyboard_result['applied']:
++            pointer_applied = pointer_confirm_fallback(page, '#review-approve', approved_expr)
++            note('review: pointer fallback after recorded keyboard outcome', {'applied':pointer_applied})
++        approval_applied = wait_for_state(page, approved_expr, timeout=1000)
+         states = page.locator('#review-list button[data-record]').evaluate_all("els => els.map(e => ({id:e.dataset.record,text:e.innerText}))")
+-        check('review: Tab reaches confirm and confirmation approves R-041', active == 'confirm-ok' and '已通过示例' in visible_text(page, '#record-state'), {'tab_active': active, 'state': visible_text(page, '#record-state')})
++        check('review: confirmation applies decision', approval_applied and '已通过示例' in visible_text(page, '#record-state'), {'keyboard':keyboard_result,'pointer_fallback':pointer_applied,'state':visible_text(page, '#record-state')})
+         unrelated = [x for x in states if x['id'] in ('R-042','R-043')]
+         check('review: unrelated rows retained pending', len(unrelated) == 2 and all('待审阅' in x['text'] for x in unrelated), {'unrelated': unrelated})
+         capture_contrast(page, 'review approved status')
+@@ -149,10 +183,11 @@
+         page.keyboard.press('Enter')
+         busy=page.locator('#stock-save').is_disabled() and page.locator('#stock-form').get_attribute('aria-busy')=='true'
+         page.evaluate("document.querySelector('#stock-form').requestSubmit()")
+-        page.wait_for_function("!document.querySelector('#stock-save').disabled")
++        first_saved_expr = "(()=>{const v=JSON.parse(localStorage.getItem('forge-preset-stock-v1')||'null');return !!v&&v.version===1&&v.quantity===14&&v.note==='首次实盘记录'&&document.querySelector('#stock-status').textContent.includes('已保存')})()"
++        first_saved = wait_for_state(page, first_saved_expr, timeout=4000)
+         raw=page.evaluate("localStorage.getItem('forge-preset-stock-v1')")
+         data=json.loads(raw) if raw else None
+-        check('stock: busy state blocks duplicate submission', busy and data and data['version']==1 and data['quantity']==14, {'busy_seen':busy,'stored':data})
++        check('stock: busy state blocks duplicate submission', busy and first_saved and data and data['version']==1 and data['quantity']==14, {'busy_seen':busy,'saved_state_observed':first_saved,'stored':data})
+         record_storage(page,'stock after save',['forge-preset-stock-v1'])
+         page.reload(wait_until='networkidle')
+         switch_view(page,'stock')
+@@ -165,17 +200,19 @@
+         page.locator('#stock-note').fill('保留的草稿')
+         page.locator('#stock-form').evaluate("e => e.requestSubmit()")
+         page.locator('#confirm').wait_for(state='visible')
+-        check('stock: conflict sample opens confirmation and retains draft', page.locator('#quantity').input_value()=='22' and page.locator('#stock-note').input_value()=='保留的草稿' and '另一份' in visible_text(page,'#confirm-body'), {'quantity':page.locator('#quantity').input_value(),'note':page.locator('#stock-note').input_value(),'dialog':visible_text(page,'#confirm-body')})
++        conflict_body=visible_text(page,'#confirm-body')
++        check('stock: conflict sample opens confirmation and retains draft', page.locator('#quantity').input_value()=='22' and page.locator('#stock-note').input_value()=='保留的草稿' and '当前记录：18 件' in conflict_body and '你的输入：22 件' in conflict_body and '取消将保留输入' in conflict_body, {'quantity':page.locator('#quantity').input_value(),'note':page.locator('#stock-note').input_value(),'dialog':conflict_body})
+         page.keyboard.press('Escape')
+         page.wait_for_function("!document.querySelector('#confirm').open")
+         check('stock: cancel conflict preserves draft', page.locator('#quantity').input_value()=='22' and page.locator('#stock-note').input_value()=='保留的草稿' and page.evaluate('document.activeElement.id') in ('quantity','stock-note'), {'quantity':page.locator('#quantity').input_value(),'note':page.locator('#stock-note').input_value(),'active':page.evaluate('document.activeElement.id')})
+         page.locator('#stock-form').evaluate("e => e.requestSubmit()")
+         page.locator('#confirm').wait_for(state='visible')
+         page.locator('#confirm-ok').click()
+-        page.wait_for_function("!document.querySelector('#stock-save').disabled")
++        conflict_saved_expr = "(()=>{const v=JSON.parse(localStorage.getItem('forge-preset-stock-v1')||'null');return !!v&&v.version===3&&v.quantity===22&&v.note==='保留的草稿'&&document.querySelector('#stock-status').textContent.includes('已保存')})()"
++        conflict_saved = wait_for_state(page, conflict_saved_expr, timeout=4000)
+         raw=page.evaluate("localStorage.getItem('forge-preset-stock-v1')")
+         data=json.loads(raw) if raw else None
+-        check('stock: conflict resolution saves draft over local sample', data and data['quantity']==22 and data['note']=='保留的草稿' and data['version']==3, {'stored':data,'status':visible_text(page,'#stock-status')})
++        check('stock: conflict resolution saves draft over local sample', conflict_saved and data and data['quantity']==22 and data['note']=='保留的草稿' and data['version']==3, {'saved_state_observed':conflict_saved,'stored':data,'status':visible_text(page,'#stock-status')})
+         capture_contrast(page,'stock conflict resolution')
+         record_storage(page,'stock after conflict resolution',['forge-preset-stock-v1'])
+         page.set_viewport_size({'width':390,'height':844})
+@@ -225,13 +262,15 @@
+         page.locator('#confirm-cancel').click()
+         page.wait_for_function("!document.querySelector('#confirm').open")
+         check('reader: delete cancellation preserves annotation and restores focus', page.locator('#annotation-saved').is_visible() and page.evaluate("localStorage.getItem('forge-preset-annotation-v1')")=='重试后的第二版批注' and page.evaluate('document.activeElement.id')=='annotation-delete', {'saved_visible':page.locator('#annotation-saved').is_visible(),'active':page.evaluate('document.activeElement.id')})
+-        page.locator('#annotation-delete').click()
+-        page.locator('#confirm').wait_for(state='visible')
+-        page.keyboard.press('Tab')
+-        tab_active=page.evaluate('document.activeElement.id')
+-        page.keyboard.press('Enter')
+-        page.wait_for_function("!document.querySelector('#confirm').open")
+-        check('reader: keyboard confirms deletion', tab_active=='confirm-ok' and page.evaluate("localStorage.getItem('forge-preset-annotation-v1')") is None and page.locator('#annotation-saved').is_hidden(), {'tab_active':tab_active,'storage':page.evaluate("localStorage.getItem('forge-preset-annotation-v1')"),'saved_hidden':page.locator('#annotation-saved').is_hidden()})
++        delete_expr = "localStorage.getItem('forge-preset-annotation-v1')===null&&document.querySelector('#annotation-saved').hidden"
++        keyboard_delete = keyboard_confirm(page, '#annotation-delete', delete_expr)
++        check('reader: Tab reaches confirm and keyboard deletes annotation', keyboard_delete['initial_focus']=='confirm-cancel' and keyboard_delete['confirm_focus']=='confirm-ok' and keyboard_delete['applied'], keyboard_delete)
++        pointer_delete = False
++        if not keyboard_delete['applied']:
++            pointer_delete = pointer_confirm_fallback(page, '#annotation-delete', delete_expr)
++            note('reader: pointer fallback after recorded keyboard outcome', {'applied':pointer_delete})
++        delete_applied = wait_for_state(page, delete_expr, timeout=1000)
++        check('reader: delete confirmation removes local annotation', delete_applied and page.locator('#annotation-saved').is_hidden(), {'keyboard':keyboard_delete,'pointer_fallback':pointer_delete,'storage':page.evaluate("localStorage.getItem('forge-preset-annotation-v1')"),'saved_hidden':page.locator('#annotation-saved').is_hidden()})
+     except Exception as exc:
+         result['journey_errors'].append({'journey':'reader','error':repr(exc)})
+ 

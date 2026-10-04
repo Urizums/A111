@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>工作界面 · 预设集</title><link rel="stylesheet" href="styles.css"></head>
+<body data-view="review">
+<a class="skip" href="#main">跳至内容</a>
+<header class="top"><div class="brand"><span class="brand-mark" aria-hidden="true">F</span><div><strong>工作界面</strong><span class="eyebrow">FIELDNOTES / 预设集 01</span></div></div><p class="local-note">本地交互样例 · 保存仅限当前浏览器</p></header>
+<nav class="views" aria-label="选择工作界面"><button data-view="review" aria-current="page">01 审阅工作台</button><button data-view="stock">02 库存盘点</button><button data-view="reader">03 文档批注</button></nav>
+<main id="main" tabindex="-1">
+<section id="review" aria-labelledby="review-title">
+ <div class="intro"><div><p class="eyebrow">REVIEW DESK</p><h1 id="review-title">把注意力留给判断。</h1><p class="muted">待审记录与上下文放在一起，逐项确认每一次决定。</p></div><span class="pill">本地示例 · 3 条记录</span></div>
+ <div class="toolbar"><label for="review-search">搜索记录<input id="review-search" type="search" placeholder="按标题或负责人搜索"></label><button id="review-clear" class="quiet">清除筛选</button></div>
+ <p id="review-status" class="status" role="status">请选择一条记录。</p>
+ <div class="review-grid"><div><h2 class="small-heading">记录列表</h2><ul id="review-list" class="queue"></ul><p id="review-empty" hidden>没有匹配的记录，请清除筛选。</p></div><article id="review-detail" class="surface" aria-label="记录详情"><p class="eyebrow">记录详情</p><h2 id="record-title" tabindex="-1">选择一条记录</h2><p id="record-body" class="muted">查看背景、负责人和当前处理状态。</p><p id="record-state"></p><button id="review-approve" class="primary" disabled>确认通过示例</button></article></div>
+ <details class="state-examples"><summary>查看状态样例</summary><button id="review-error">显示读取错误</button><button id="review-retry" hidden>重试读取</button></details>
+</section>
+<section id="stock" aria-labelledby="stock-title" hidden>
+ <div class="intro"><div><p class="eyebrow">STOCK COUNT / A-03</p><h1 id="stock-title">一次，数清一件。</h1><p class="muted">确认货位，记录实盘数量。输入和保存状态始终可见。</p></div></div>
+ <div class="stock-layout"><aside class="item-card"><span class="eyebrow">北侧器材架 · 第三层</span><div class="item-symbol" aria-hidden="true">▦</div><h2>便携照明灯</h2><p class="muted">LIGHT-024 · 单位：件</p><p>上次记录 <strong id="stock-previous">12</strong> 件</p><p class="muted">示例货位。此页面不会修改真实库存。</p></aside>
+ <form id="stock-form" class="surface" novalidate><label for="quantity">实盘数量<span class="hint">输入 0–99999 的整数</span><input id="quantity" inputmode="numeric" type="text" value="12" aria-describedby="quantity-error"></label><p id="quantity-error" class="error" hidden></p><label for="stock-note">备注（可选）<textarea id="stock-note" rows="3" placeholder="例如：两件正在充电"></textarea></label><p id="stock-status" class="status" role="status">尚未保存此次盘点。</p><button id="stock-save" class="primary" type="submit">保存盘点</button><p class="hint">保存到当前浏览器，不代表已同步到任何库存系统。</p></form></div>
+ <details class="state-examples"><summary>查看状态样例</summary><button id="stock-incoming">模拟另一份盘点记录</button></details>
+</section>
+<section id="reader" aria-labelledby="reader-title" hidden>
+ <div class="intro"><div><p class="eyebrow">READING ROOM / FIELD GUIDE</p><h1 id="reader-title">在阅读中，留下想法。</h1><p class="muted">观察手册 · 本地文档样例 · 约 3 分钟</p></div></div>
+ <div class="reader-layout"><details class="contents" open><summary>文档目录</summary><nav aria-label="文档目录"><a href="#observe">01 先观察</a><a href="#record">02 再记录</a><a href="#return">03 回到现场</a></nav></details>
+ <article class="reading-column"><section aria-labelledby="observe"><h2 id="observe" tabindex="-1">01　先观察</h2><p>清晨的光线越过工作台，照亮物件表面细小的划痕。开始之前，给自己一点时间，确认场地、工具与眼前的任务。好的记录从一次完整的观察开始。</p><p>把直接看到的事实与自己的推测分开。记录位置、数量和时间，也记录暂时无法判断的部分。明确的未知，比仓促的结论更有帮助。</p><button id="annotation-open" class="quiet">为这一段添加批注</button><div id="annotation-saved" class="annotation" hidden><strong>批注</strong><p id="annotation-text"></p><button id="annotation-edit">编辑批注</button><button id="annotation-delete">删除批注</button></div>
+ <form id="annotation-form" class="surface" hidden><label for="annotation-input">你的批注<textarea id="annotation-input" rows="4" maxlength="1000"></textarea></label><p id="annotation-status" class="status" role="status">草稿尚未保存。</p><div class="actions"><button class="primary" id="annotation-save" type="submit">保存批注</button><button id="annotation-cancel" type="button">取消编辑</button></div></form></section>
+ <section aria-labelledby="record"><h2 id="record" tabindex="-1">02　再记录</h2><p>使用能够追溯的标识，让后来的人找到同一个对象。描述变化发生在哪里，哪些内容维持原状，以及证据来自哪次观察。不要让简短的状态代替必要的背景。</p><p>遇到不同的记录时，先保留双方的版本，再检查它们的时间与条件。差异可能来自环境，也可能来自操作。清晰的上下文能减少反复确认。</p></section>
+ <section aria-labelledby="return"><h2 id="return" tabindex="-1">03　回到现场</h2><p>一次记录完成之后，带着尚未解决的问题回到现场。用新的证据修正判断，同时保留原始记录。这样，下一次观察才有可信的起点。</p><p>这份手册是用于验证阅读与批注交互的原创示例，不代表具体行业的操作规范。</p></section></article></div>
+ <details class="state-examples"><summary>查看状态样例</summary><button id="annotation-error">让下一次保存显示可重试错误</button></details>
+</section>
+</main><footer>三种任务，三种信息节奏。<span>原创界面预设 / v1.0.0</span></footer>
+<dialog id="confirm" aria-labelledby="confirm-title"><form method="dialog"><p class="eyebrow">请确认</p><h2 id="confirm-title"></h2><p id="confirm-body"></p><div class="actions"><button id="confirm-cancel" value="cancel" autofocus>取消</button><button id="confirm-ok" class="primary" value="confirm">确认</button></div></form></dialog>
+<script src="app.js"></script></body></html>

@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "pilot_simple",
+  "goal": "将以下公园巡检点整理为一个 GeoJSON FeatureCollection，按原顺序保留记录编号、名称和温度，坐标用 GeoJSON 的顺序；未知温度保持 null。附一句本地校验结果，直接交付文件。",
+  "deliverable_kind": "scoped_task",
+  "requirements": [
+    {
+      "id": "req_source",
+      "text": "将以下公园巡检点整理为一个 GeoJSON FeatureCollection，按原顺序保留记录编号、名称和温度，坐标用 GeoJSON 的顺序；未知温度保持 null。附一句本地校验结果，直接交付文件。",
+      "origin": "explicit",
+      "basis": "/workspace/A111/runs/R06/handoff/materials/simple.json",
+      "acceptance_ids": [
+        "a_original"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_original",
+      "assertion": "Original goal/material satisfied with actual output/runtime evidence, correct path selection and no budget reset",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "work",
+      "title": "将以下公园巡检点整理为一个 GeoJSON FeatureCollection，按原顺序保留记录编号、名称和温度，坐标用 GeoJSON 的顺序；未知温度保持 null。附一句本地校验结果，直接交付文件。",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_original"
+      ]
+    }
+  ]
+}

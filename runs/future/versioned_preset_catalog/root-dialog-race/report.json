@@ -1,0 +1,36 @@
+{
+  "after_escape_active": "review-approve",
+  "after_cancel_active": "review-approve",
+  "before_confirm_active": "confirm-ok",
+  "after": {
+    "events": [
+      {
+        "event": "close",
+        "value": "",
+        "opened": false
+      },
+      {
+        "event": "submit",
+        "submitter": "confirm-cancel",
+        "value": "cancel"
+      },
+      {
+        "event": "close",
+        "value": "",
+        "opened": true
+      },
+      {
+        "event": "submit",
+        "submitter": "confirm-ok",
+        "value": "confirm"
+      },
+      {
+        "event": "close",
+        "value": "confirm",
+        "opened": false
+      }
+    ],
+    "state": "负责人：林溪 · 待审阅",
+    "status": "请选择一条记录。"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T06:35:02Z",
+  "updated_at": "2026-10-04T06:53:23Z",
+  "revision": 2,
+  "status": "completed",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "pilot_complex",
+    "goal": "根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。",
+    "deliverable_kind": "software_system",
+    "requirements": [
+      {
+        "id": "req_source",
+        "text": "根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。",
+        "origin": "explicit",
+        "basis": "/workspace/A111/runs/R06/handoff/materials/complex.json",
+        "acceptance_ids": [
+          "a_original"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_original",
+        "assertion": "Original goal/material satisfied with actual output/runtime evidence, correct path selection and no budget reset",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_original"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "d2ca7c5d63693533c28226dde51d4f88cce5950f19c74c6d16d1b482ce6769b3",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "done",
+      "attempts": [
+        {
+          "attempt_id": "10f249791e7a4a09833b39bd8a86281a",
+          "plan_hash": "d2ca7c5d63693533c28226dde51d4f88cce5950f19c74c6d16d1b482ce6769b3",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_original"
+          ],
+          "started_at": "2026-10-04T06:35:02Z",
+          "finished_at": "2026-10-04T06:53:23Z",
+          "outcome": "done",
+          "reason": null,
+          "acceptance_results": {
+            "a_original": {
+              "status": "pass",
+              "level": "review",
+              "evidence": [
+                {
+                  "path": "/workspace/A111/runs/R06/handoff/complex/root-review.json",
+                  "sha256": "f0247f3920da6f2eb9ba13c08f5fd0c3316172f3dd4a0b593ddaad0aecf61c50"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

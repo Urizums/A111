@@ -1,6 +1,6 @@
 {
   "schema": "forge-release-manifest/1",
-  "created_at": "2026-10-04T05:28:51.245340+00:00",
+  "created_at": "2026-10-04T07:03:59.178632+00:00",
   "mutable_directories": [
     "state",
     "runs",
@@ -9,13 +9,13 @@
   "entries": [
     {
       "path": ".github/workflows/validate.yml",
-      "size_bytes": 2107,
-      "sha256": "fb22e5caa81625e2a7f70664e81f2ca203805c403b95536b638c51cf6b18b21c"
+      "size_bytes": 2668,
+      "sha256": "ba58bcdce5b4a82893caa39d6e9ba7ac52c447fc6f79d5d8da1aad769a8580e2"
     },
     {
       "path": ".gitignore",
-      "size_bytes": 125,
-      "sha256": "40e994a76183e0d7b41bbce408aacb030527ef6791511dc7114452cb194d6cba"
+      "size_bytes": 148,
+      "sha256": "6cfe6cbd8bd5e49ac1b25ce88f2e9bde2527a681c8fed342a2b3406889f45548"
     },
     {
       "path": "AGENTS.md",
@@ -24,13 +24,13 @@
     },
     {
       "path": "README.md",
-      "size_bytes": 5598,
-      "sha256": "8c6e6374789c2ba1ee3b41b3c6e7ceba7b32a8989425b1a0fac52e9102b8d941"
+      "size_bytes": 5570,
+      "sha256": "0d4d445d8f88312f403c1af93e650629fe072551885dc4a00a7ea01f2f18e549"
     },
     {
       "path": "START_HERE.md",
-      "size_bytes": 2263,
-      "sha256": "fa23aa90c16585d77c65c6622a8c83505a9e412617379f4095c98f385171f8a8"
+      "size_bytes": 3605,
+      "sha256": "a793f5a49b492e12091d7581190c0400c19a8d1d48928bf7fccdc25c8471a3fa"
     },
     {
       "path": "challenges/inventory/import_inventory.py",
@@ -74,8 +74,8 @@
     },
     {
       "path": "docs/CLOUD_DEPLOYMENT.md",
-      "size_bytes": 3739,
-      "sha256": "0ea995f305027c18d7af90c911a339af4791efe7ae372b679650bd58b893339c"
+      "size_bytes": 4539,
+      "sha256": "40542f8abafff64f0bf006a78aaf4220fdee230e0c32b391c979967cc0952412"
     },
     {
       "path": "docs/EVIDENCE_MAP.md",
@@ -89,8 +89,8 @@
     },
     {
       "path": "docs/PROJECT_STATUS.md",
-      "size_bytes": 6021,
-      "sha256": "f3b4d2e3321dd3817e02e0759635a1b0daed3d73d19cd44ea4aa774b8de68991"
+      "size_bytes": 5845,
+      "sha256": "091ba8f05a89e9350d9457d845907742cca53390a7c7d9dfb5630e18c9516591"
     },
     {
       "path": "docs/ROADMAP.md",
@@ -99,8 +99,8 @@
     },
     {
       "path": "docs/WORKFLOW.md",
-      "size_bytes": 3554,
-      "sha256": "1b78d4ce14199fb7854bc3f59379e5abe393a944ed49998b697fa84b2345788c"
+      "size_bytes": 4198,
+      "sha256": "d19ad5b1847b1d201fe8f55d4e678dd159a5c4911652310db752f93eee2a18a6"
     },
     {
       "path": "evidence/c1/Host_Protocol_Comparison_Results_20261003.md",
@@ -4739,18 +4739,28 @@
     },
     {
       "path": "prompts/CONTINUE_IN_WORK.md",
-      "size_bytes": 1125,
-      "sha256": "10ef34bd4b3393fb2300d164af259ca5f3646b59ade9bcb864285adcac7f4a79"
+      "size_bytes": 1562,
+      "sha256": "42a7936708c289532226b047aaf6573c1b2bcf328c9f83d0749f692cf72eac48"
     },
     {
       "path": "prompts/CONTINUOUS_ITERATION.md",
-      "size_bytes": 2449,
-      "sha256": "7121b6195795f9d35e3bdd57881fd3e3ec52c8ecd3f02ee3e57a30c7dc6738e1"
+      "size_bytes": 2703,
+      "sha256": "8d30faef1f932af140c5d2fba1081ea8bacc910cc8d0ec755b210c0672a06ad4"
+    },
+    {
+      "path": "scripts/check_publication_gate.py",
+      "size_bytes": 4627,
+      "sha256": "7af13da31e124e08ae39b7972cf87a161de51fc4377719a86104ab71822e734c"
     },
     {
       "path": "scripts/continuation.py",
       "size_bytes": 14932,
       "sha256": "8b2c2cecef3c6056c2ff9272127e716404a2a1f67bfd9847274b6b89578e5f74"
+    },
+    {
+      "path": "scripts/coordinator_lease.py",
+      "size_bytes": 1711,
+      "sha256": "1e8da169b0dbfe16ee57628bf717aa54d3d09861cd987f9ea08d37e2c0dbaf56"
     },
     {
       "path": "scripts/delivery.py",
@@ -4793,19 +4803,29 @@
       "sha256": "a1c59d0c3c94a22bb5a8b1f0427fd06bde0fda4363dced8fc068bf33a2f805fc"
     },
     {
+      "path": "scripts/test_coordinator_lease.py",
+      "size_bytes": 1397,
+      "sha256": "af872d522b95bdf2e10b5f96e23bd68f272368665856af161bed246b42b932ac"
+    },
+    {
       "path": "scripts/test_delivery_integrity.py",
       "size_bytes": 6966,
       "sha256": "096b5465dbca1d27c63ca02735cafc58636745079490303b372186d654bb89fc"
     },
     {
       "path": "scripts/test_handoff_invariants.py",
-      "size_bytes": 5981,
-      "sha256": "bd5fe4d98d2b8e44fa7a25d7ca2a6be5b1118d75950bc83208f6fcaf8551a449"
+      "size_bytes": 7889,
+      "sha256": "29abb31b8d06d4205791294ab793f9506578de46c0b11285b22b2581d33cfdec"
+    },
+    {
+      "path": "scripts/test_publication_gate.py",
+      "size_bytes": 3275,
+      "sha256": "f39a11f9b4d4bae2b4d0d479013202085a56f21da7d4dabe6955f6d84d9d368c"
     },
     {
       "path": "scripts/verify_handoff.py",
-      "size_bytes": 10437,
-      "sha256": "e1ffff6ff486e5f493822ad7b608f94db64aec34e8c76ee34f4de662e5f7e54c"
+      "size_bytes": 11820,
+      "sha256": "d2a9b0123063ca73d20bb492ebb040d9c85b1023219aa766b9ac025956fc308b"
     },
     {
       "path": "skills/design-product-experience/SKILL.md",

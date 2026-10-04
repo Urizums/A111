@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "scripts/verify_handoff.py",
+    "--json"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T07:02:26.585156+00:00",
+    "monotonic_ns": 41985231532342,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T07:02:27.088390+00:00",
+    "monotonic_ns": 41985734772823,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "stdout": "{\n  \"schema\": \"forge-handoff-check/1\",\n  \"ok\": false,\n  \"errors\": [\n    \"next first task has not actually started with evidence\",\n    \"checkpoint next task is absent or terminal\"\n  ],\n  \"skill_files_checked\": 91,\n  \"cutoff_files_checked\": 375,\n  \"release_files_checked\": 1055,\n  \"revision_files_checked\": 375,\n  \"active_phase\": \"R05\",\n  \"next_task_id\": null,\n  \"scope\": \"read-only hashes, paths, phase dependency/transition invariants; not live or semantic acceptance\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtaGFuZG9mZi1jaGVjay8xIiwKICAib2siOiBmYWxzZSwKICAiZXJyb3JzIjogWwogICAgIm5leHQgZmlyc3QgdGFzayBoYXMgbm90IGFjdHVhbGx5IHN0YXJ0ZWQgd2l0aCBldmlkZW5jZSIsCiAgICAiY2hlY2twb2ludCBuZXh0IHRhc2sgaXMgYWJzZW50IG9yIHRlcm1pbmFsIgogIF0sCiAgInNraWxsX2ZpbGVzX2NoZWNrZWQiOiA5MSwKICAiY3V0b2ZmX2ZpbGVzX2NoZWNrZWQiOiAzNzUsCiAgInJlbGVhc2VfZmlsZXNfY2hlY2tlZCI6IDEwNTUsCiAgInJldmlzaW9uX2ZpbGVzX2NoZWNrZWQiOiAzNzUsCiAgImFjdGl2ZV9waGFzZSI6ICJSMDUiLAogICJuZXh0X3Rhc2tfaWQiOiBudWxsLAogICJzY29wZSI6ICJyZWFkLW9ubHkgaGFzaGVzLCBwYXRocywgcGhhc2UgZGVwZW5kZW5jeS90cmFuc2l0aW9uIGludmFyaWFudHM7IG5vdCBsaXZlIG9yIHNlbWFudGljIGFjY2VwdGFuY2UiCn0K",
+  "stderr_base64": ""
+}

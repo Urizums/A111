@@ -1,0 +1,193 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "3194f01c5018c905561504ef7482d0b48ea93b369a8b75cda1999f35ec7aed45",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_accbb996305244ea83eba1c6023e0be3",
+    "attempt_id": "72760337c1f74450849eb621196963f3",
+    "invocation_id": "72760337c1f74450849eb621196963f3",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "0e742551da34e3f813efbf132de5d5f80c3c77653e3a6d02b6754cfc8b02c69e",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "Verify original preset catalog",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    },
+    "work": {
+      "prompt": "# Independent acceptance of three original web presets\n\nRead only the frozen acceptance /workspace/A111/runs/future/versioned_preset_catalog/acceptance.json first, and freeze your own check plan before reading candidate code. Target /workspace/A111/runs/future/versioned_preset_catalog/candidate/v1/ and its candidate-lock.json; do not inspect sibling research/reports, Root tests, state or expected outputs. This is a distinct new catalog, not a rerun of any historical UI validator. It is a browser-local example, not real approval/inventory authority.\n\nActually run its three task journeys in Chromium /usr/bin/chromium with Python Playwright, at the original 1280/390/320 widths and with keyboard and reduced motion. Inspect live UI, key rendered text contrast and screenshot pixels (open screenshots). Verify persistence using real localStorage and page reload, modal cancellation/confirmation/keyboard focus, draft preservation/error retry and conflict example; retain actual browser observations, console/page errors and original sources/hashes. Verify catalog version, paired tokens, sources/reuse scope, responsive/motion/state definitions. Do not claim physical Android, screen reader or user study proof. Only a scoped loopback HTTP server is allowed; stop it on completion. No external network, business effects or delegation.\n\nWrite only the assigned worker directory. Save each original failed harness and every command/error/repair BEFORE another run. Count each failure-driven code change separately, including logging/readers/serialization; maximum TWO corrections. At the third failure stop and report blocked; do not patch or rerun beyond the limit. Do not erase outputs or reinterpret distinct failures as one round. No candidate/source edits. Return report.md/results.json and supplied final host reply, exact artifact hashes and captured preflight. Unavailable tokens/cost/provider identity/model-active-time are null. Preflight is not semantic acceptance.\n\nRead your immutable host request at /workspace/A111/runs/future/versioned_preset_catalog/independent/job/request.json. Write report/results and final reply only inside /workspace/A111/runs/future/versioned_preset_catalog/independent/worker. Use the C3 hostdraft reply helper with a separate incomplete draft and run captured check-reply before returning. Loopback to your own scoped server is explicitly allowed; no other network.\n",
+      "inputs": {
+        "brief": "/workspace/A111/runs/R05/materials/catalog-validation-brief.md"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/R05/materials/catalog-validation-brief.md",
+          "sha256": "1d93a516f107b120548e5fb9cc0d41d924a9a683424c6669718b6f0ff633564d"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_72760337c1f7",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "1e0aaf970efeb3b55c86159f497d284a786d358e971b8176861c3aba201d59a0",
+  "target": "/workspace/A111/runs/future/versioned_preset_catalog/independent/state.json",
+  "target_sha256": "6c4512a3a4b3c02faf530a63c0c12e72e777d5755d35150c6ee4cad60ff6025f",
+  "target_before_sha256": "bee8b4a259630047a7b3bc7a05dd86e332f277bf68041f2752b4e88bcc8cb671",
+  "package_ref": null,
+  "phase": "committed",
+  "worker": "/root/luna_forge_72760337c1f7",
+  "reply_ref": {
+    "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/job/receipts/aba5a439e3451bd8ca06a20fc007666a01448af8b8cd7aa109c27ef4b4c58d83.json",
+    "sha256": "aba5a439e3451bd8ca06a20fc007666a01448af8b8cd7aa109c27ef4b4c58d83"
+  },
+  "commit": {
+    "decision_ref": {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/decision.json",
+      "sha256": "7ff72d93f361adfdb066caf180c126bc56afc9f2a24886ad4c4314281e81a265"
+    },
+    "target_result": {
+      "task_id": "work",
+      "attempt_id": "72760337c1f74450849eb621196963f3",
+      "outcome": "blocked",
+      "task_status": "blocked",
+      "reason": "Original v1 independent browser acceptance failed; preserve original failure and perform same-worker retest of the frozen repair within remaining budget.",
+      "status": "active",
+      "revision": 2,
+      "plan_hash": "0e742551da34e3f813efbf132de5d5f80c3c77653e3a6d02b6754cfc8b02c69e",
+      "evaluation_plan_hash": null
+    },
+    "worker_task_outcome": "done",
+    "coordinator_outcome": "blocked",
+    "recorded_at": "2026-10-04T06:47:39Z"
+  },
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/job/request.json",
+      "sha256": "ccb5ec5150dd800b0d6ed05bc854da428c79c8e00af60461ec73f7f6a0a3e80d"
+    },
+    {
+      "path": "/workspace/A111/runs/R05/materials/catalog-validation-brief.md",
+      "sha256": "1d93a516f107b120548e5fb9cc0d41d924a9a683424c6669718b6f0ff633564d"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/job/receipts/e6d4bc8ac50e43c40fa7621619b5ff624cfe87ffbc10a76970f0e4058b117fab.json",
+      "sha256": "e6d4bc8ac50e43c40fa7621619b5ff624cfe87ffbc10a76970f0e4058b117fab"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/job/receipts/0abac04a05b712a43ee4990c0d82e7050a0da1abf4170e94142f7179bc3d6c16.json",
+      "sha256": "0abac04a05b712a43ee4990c0d82e7050a0da1abf4170e94142f7179bc3d6c16"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/job/receipts/0abac04a05b712a43ee4990c0d82e7050a0da1abf4170e94142f7179bc3d6c16.json",
+      "sha256": "0abac04a05b712a43ee4990c0d82e7050a0da1abf4170e94142f7179bc3d6c16"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/job/receipts/aba5a439e3451bd8ca06a20fc007666a01448af8b8cd7aa109c27ef4b4c58d83.json",
+      "sha256": "aba5a439e3451bd8ca06a20fc007666a01448af8b8cd7aa109c27ef4b4c58d83"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/reply.json",
+      "sha256": "aba5a439e3451bd8ca06a20fc007666a01448af8b8cd7aa109c27ef4b4c58d83"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/report.md",
+      "sha256": "5aed037ae28c9d608a5197127c52d5430b2f580182435db15ac2971bc905bd28"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/results.json",
+      "sha256": "5947a43a218ff5c97252eada2e5f0eb17a27fec3370cc7477162c4e30caec21c"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/browser-results.failed1.json",
+      "sha256": "9d971e683253f5eac4232169c5630c5eb4a46bbfa6bcf6f3ebd5510eab86b414"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/browser_validate.failed1.py",
+      "sha256": "ae7cdde439cd90d885a1825065c8f5786f3ce9bbbb6c8b0aabd57b2a44856188"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/check-plan.md",
+      "sha256": "9610d879335bd2d785e8d3a84ce7b00dbba22f62b5f144062236696e11d127c3"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/logs/failure-1.md",
+      "sha256": "68617b12a9266125f2aa25b56e41110d12789a969af359728e39ac9726948df6"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/logs/run-1.log",
+      "sha256": "2b3fbe63743d2213934a6f2de1ce364a552c5fb6adaf7f0734b5c1beaa1b8560"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/logs/server.log",
+      "sha256": "2aea95ba473879c0b2409182460b31ed7f05ebe940da514866cee5df03c38580"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/screenshots/stock-390.png",
+      "sha256": "6b7e6ae2f2ac3114781795f846dc9610edc29c1e25153e6c1fb806bf068faf93"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/screenshots/reader-320.png",
+      "sha256": "c65dd99fd408e22b2323c1ff3f52e9cebac77ed9c0495d295499da951422abd8"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/source_snapshots/index.html",
+      "sha256": "4ce5d4060b7f53cecd06656e40919e57da2e6942c1e9951ce94b0b706e4b2b24"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/source_snapshots/styles.css",
+      "sha256": "091df585fb6efee5ba3dc53a86f2759691bc5332fcdb92674e8784abb87feec1"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/source_snapshots/app.js",
+      "sha256": "d730e51f1f2aa76bb2b12819c23ad3484c9260c886d24cf8cc37853148649746"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/source_snapshots/catalog.json",
+      "sha256": "04ad4df1b3c52ab9fd779d709f2ddf095cba3e46f7842e5dfda8eaf21611e9fa"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/source_snapshots/candidate-lock.json",
+      "sha256": "e2182566210ff740b4a5ad24902427c38b6edfab8234da74386fd1f1f8360198"
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/decision.json",
+      "sha256": "7ff72d93f361adfdb066caf180c126bc56afc9f2a24886ad4c4314281e81a265"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/job/receipts/e6d4bc8ac50e43c40fa7621619b5ff624cfe87ffbc10a76970f0e4058b117fab.json",
+    "sha256": "e6d4bc8ac50e43c40fa7621619b5ff624cfe87ffbc10a76970f0e4058b117fab"
+  }
+}

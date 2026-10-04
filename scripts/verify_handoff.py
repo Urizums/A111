@@ -107,7 +107,20 @@ def validate_phase(phase, root):
             first = nxt['tasks'][0]
             if nxt['phase_id'] != trans.get('next_phase_id') or first['id'] != trans.get('first_task_id'):
                 errors.append('transition next phase/first task mismatch')
-            if first['status'] not in {'in_progress', 'partial', 'done'} or not first.get('evidence'):
+            started = first['status'] in {'in_progress', 'partial', 'done'}
+            if first['status'] == 'blocked':
+                # A real successor may fail after the transition. Require its
+                # retained original attempt, not merely a new blocked label.
+                queue = read(safe_path(root, 'state/continuation.json'))
+                task = next((t for t in queue['tasks'] if t['id'] == first['id']), {})
+                for attempt in task.get('attempts', []):
+                    ref = attempt.get('start_evidence', {})
+                    path = ref.get('path')
+                    if path in trans.get('start_evidence', []) and path in first.get('evidence', []):
+                        raw = safe_path(root, path).read_bytes()
+                        if hashlib.sha256(raw).hexdigest() == ref.get('sha256'):
+                            started = True
+            if not started or not first.get('evidence'):
                 errors.append('next first task has not actually started with evidence')
             for rel in trans.get('start_evidence', []):
                 if not safe_path(root, rel).is_file():
@@ -131,7 +144,16 @@ def validate_checkpoint(checkpoint, phase):
             errors.append('delivered checkpoint requires delivery evidence')
     else:
         selected = tasks.get(checkpoint['next_task_id'])
-        if not selected or selected['status'] in {'done', 'cancelled'}:
+        executable = [t for t in tasks.values()
+                      if t['status'] not in {'done', 'cancelled', 'blocked'}
+                      and all(tasks[d]['status'] == 'done' for d in t['depends_on'])]
+        blocked_frontier = (checkpoint.get('next_task_id') is None
+                            and checkpoint.get('project_goal_status') == 'active'
+                            and any(t['status'] == 'blocked' for t in tasks.values())
+                            and not executable)
+        if blocked_frontier:
+            pass
+        elif not selected or selected['status'] in {'done', 'cancelled'}:
             errors.append('checkpoint next task is absent or terminal')
         elif any(tasks[x]['status'] != 'done' for x in selected['depends_on']):
             errors.append('checkpoint next task dependencies not ready')

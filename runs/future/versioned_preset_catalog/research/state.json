@@ -1,0 +1,84 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T06:02:02Z",
+  "updated_at": "2026-10-04T06:37:35Z",
+  "revision": 2,
+  "status": "completed",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "research",
+    "goal": "Research task-specific original preset requirements from primary sources",
+    "deliverable_kind": "scoped_change",
+    "requirements": [
+      {
+        "id": "req_work",
+        "text": "Research task-specific original preset requirements from primary sources",
+        "origin": "explicit",
+        "basis": "runs/R05/materials/catalog-research-brief.md",
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_work",
+        "assertion": "Assigned original requirements are covered by actual source and runtime evidence with limits disclosed.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "Research task-specific original preset requirements from primary sources",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "03c30fd7a80b7a908607251493913c8348de7eeded28ff6091f145b90a0f168e",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "done",
+      "attempts": [
+        {
+          "attempt_id": "64abaabceddf436a861fbdb911942776",
+          "plan_hash": "03c30fd7a80b7a908607251493913c8348de7eeded28ff6091f145b90a0f168e",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_work"
+          ],
+          "started_at": "2026-10-04T06:02:02Z",
+          "finished_at": "2026-10-04T06:37:35Z",
+          "outcome": "done",
+          "reason": null,
+          "acceptance_results": {
+            "a_work": {
+              "status": "pass",
+              "level": "review",
+              "evidence": [
+                {
+                  "path": "/workspace/A111/runs/future/versioned_preset_catalog/research/root-review.json",
+                  "sha256": "7e3e2082e780af849dbbbd34cdddefa8b0d9d55610fd9eabc3e947af587726bf"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

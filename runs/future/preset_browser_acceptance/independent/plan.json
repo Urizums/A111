@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "independent",
+  "goal": "Independently validate original run-workspace preset journeys",
+  "deliverable_kind": "scoped_change",
+  "requirements": [
+    {
+      "id": "req_work",
+      "text": "Independently validate original run-workspace preset journeys",
+      "origin": "explicit",
+      "basis": "runs/R05/materials/preset-validation-brief.md",
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_work",
+      "assertion": "Assigned original requirements are covered by actual source and runtime evidence with limits disclosed.",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "work",
+      "title": "Independently validate original run-workspace preset journeys",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ]
+}

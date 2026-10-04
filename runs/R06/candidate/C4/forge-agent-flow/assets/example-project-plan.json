@@ -1,0 +1,81 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "sample-change",
+  "goal": "Deliver a scoped change with recorded structural, runtime, and review evidence.",
+  "deliverable_kind": "scoped_change",
+  "requirements": [
+    {
+      "id": "req_delivery",
+      "text": "Make the requested change and retain evidence for each required check.",
+      "origin": "default",
+      "basis": "Illustrative example value; not a user fact.",
+      "acceptance_ids": ["a_plan", "a_runtime", "a_review", "a_context"]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_plan",
+      "assertion": "The task graph and declared acceptance mappings are structurally valid.",
+      "required": true,
+      "level": "static"
+    },
+    {
+      "id": "a_runtime",
+      "assertion": "The scoped change has actual runtime evidence.",
+      "required": true,
+      "level": "runtime"
+    },
+    {
+      "id": "a_review",
+      "assertion": "A review records findings and their disposition.",
+      "required": true,
+      "level": "review"
+    },
+    {
+      "id": "a_context",
+      "assertion": "Relevant context was inspected.",
+      "required": false,
+      "level": "static"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "inspect",
+      "title": "Inspect the target and define the change boundary",
+      "depends_on": [],
+      "owner": "host:unassigned",
+      "write_paths": [],
+      "acceptance_ids": ["a_plan"]
+    },
+    {
+      "id": "implement",
+      "title": "Implement the scoped change and run checks",
+      "depends_on": ["inspect"],
+      "owner": null,
+      "write_paths": ["src/"],
+      "acceptance_ids": ["a_runtime"]
+    },
+    {
+      "id": "review",
+      "title": "Review the result and record findings",
+      "depends_on": ["implement"],
+      "owner": "host:unassigned",
+      "write_paths": [],
+      "acceptance_ids": ["a_review"]
+    },
+    {
+      "id": "context_notes",
+      "title": "Inspect optional context",
+      "depends_on": [],
+      "owner": null,
+      "write_paths": [],
+      "acceptance_ids": ["a_context"]
+    }
+  ],
+  "defaults": [
+    "Use the current host environment and its actual available tools."
+  ],
+  "unknowns": [
+    "Actual token and monetary cost are not provided by this local controller."
+  ]
+}

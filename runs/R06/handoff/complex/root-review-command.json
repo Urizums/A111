@@ -1,0 +1,24 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/R06/handoff/review_complex.py"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:52:47.593854+00:00",
+    "monotonic_ns": 41406240231761,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:52:47.624991+00:00",
+    "monotonic_ns": 41406271366149,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/A111/runs/R06/handoff/review_complex.py\", line 37, in <module>\n    assert json.loads(phase('recovery_inspect_after_crash')[0]['stdout'])=={'ticket':None,'audit':[]}\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIi93b3Jrc3BhY2UvQTExMS9ydW5zL1IwNi9oYW5kb2ZmL3Jldmlld19jb21wbGV4LnB5IiwgbGluZSAzNywgaW4gPG1vZHVsZT4KICAgIGFzc2VydCBqc29uLmxvYWRzKHBoYXNlKCdyZWNvdmVyeV9pbnNwZWN0X2FmdGVyX2NyYXNoJylbMF1bJ3N0ZG91dCddKT09eyd0aWNrZXQnOk5vbmUsJ2F1ZGl0JzpbXX0KICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KQXNzZXJ0aW9uRXJyb3IK"
+}

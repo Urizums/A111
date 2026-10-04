@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-04T05:31:54.512755+00:00",
+  "updated_at": "2026-10-04T07:50:51.904777+00:00",
   "active_phase": "R05",
-  "next_task_id": "BACKLOG-preset_browser_acceptance",
-  "next_action": "Original preset has actually rendered in Chromium151 at 1440/390px and switched palette. Freeze full journeys from original design acceptance, then check filter/detail/focus/run-again/delete-confirm/cancel-refresh/error-retry/reduced-motion with original sample; preserve all failures, no effect/performance inference.",
+  "next_task_id": null,
+  "next_action": "Upstream continues the eight original blocked tasks listed in runs/R06/upstream-handoff/README.md; hourly resumption disabled.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -24,7 +24,7 @@
   "provider_tokens": null,
   "provider_cost": null,
   "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
-  "termination": null,
+  "termination": "Current authorized executable scope finished; long-term goal active, awaiting concrete blocked conditions. No continuously running code agent is claimed.",
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
@@ -54,6 +54,16 @@
       "limit": 2,
       "scope": "exact-tree/source-path fix then standalone Python3.10 venv fix",
       "evidence": "runs/R00/issues.json"
+    },
+    "R06_release_integration": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R06/final/integration-repair-2.json"
+    },
+    "R06_handoff_root": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R06/handoff/root-repair-budget.json"
     }
   },
   "native_calls_in_current_delivery": [
@@ -70,7 +80,7 @@
       "purpose": "bounded conformance retest"
     }
   ],
-  "current_validation": "R01 continuation and source-bound distinct challenges; see state/continuation.json",
+  "current_validation": "R05/R06: core/source/archive runtime checks passed; complete required acceptance NOT passed; see final publication check",
   "delivery_evidence": [
     "runs/cloud/github-pr.json",
     "runs/cloud/github-publication-reports.json",
@@ -92,21 +102,50 @@
       "at": "2026-10-04T05:31:54.399954+00:00"
     }
   },
-  "next_queue_task_id": "BACKLOG-preset_browser_acceptance",
+  "next_queue_task_id": null,
   "continuation_state": "state/continuation.json",
   "execution": {
     "mode": "cooperative_host",
     "background_available": null,
     "background_probe": "R04-01",
-    "native_pending": [],
-    "limit": "Current host executes real work. Hourly continuation/check is enabled, but a future run has not yet demonstrated checkout/command/native execution; it must probe and report that branch honestly. No daemon or permanent service is claimed.",
+    "native_pending": [
+      {
+        "worker": "/root/luna_forge_ec0ef35b347f",
+        "run": "runs/future/preset_browser_acceptance/independent",
+        "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
+      }
+    ],
+    "limit": "Unfinished work is being handed off upstream under explicit user instruction; no background continuation or upstream merge.",
     "monitor_configured": true,
     "monitor_id": "6ac1e1f6159081919cd571f6fa15d397",
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "checkpointed",
-    "checkpoint_reason": "Current reviewed batch published; R05 first task actually started; hourly continuation/check configured, future execution capabilities unverified."
+    "session_state": "preparing_user_authorized_upstream_handoff",
+    "checkpoint_reason": "Latest user explicitly requested PR handoff of unfinished work; strict acceptance remains failed; no additional implementation or acceptance retries.",
+    "coordinator_heartbeat": "2026-10-04T07:50:51.900507+00:00",
+    "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
+    "scheduled_trigger_code_execution_verified": true,
+    "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
+    "coordinator_lease": "state/coordinator-lease.json",
+    "latest_capability_probe": "runs/R06/scheduling/cancel-20261004T074313Z/environment.json",
+    "coordinator_lease_state": "state/coordinator-lease.json",
+    "recovery": "runs/R06/RECOVERY.md",
+    "final_validation": "runs/R06/final/summary.json",
+    "publication_check": "runs/R06/scheduling/cancel-20261004T074313Z/publication-check.json",
+    "review_bundle": "runs/R06/final/complete-review.json",
+    "post_release_trigger_verified": true,
+    "last_scheduled_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+    "latest_resumption_report": "runs/R06/scheduling/resume-20261004T072138Z/REPORT.md",
+    "previous_coordinator_released_at": "2026-10-04T07:13:18.042263+00:00",
+    "coordinator_release_instruction": "Current lease was held during checkpoint save; inspect state/coordinator-lease.json and run probe for actual current ownership. Exit release is recorded separately under this resumption evidence directory.",
+    "monitor_enabled": false,
+    "monitor_status": "disabled_by_user",
+    "monitor_disabled_at": "2026-10-04T07:43:35.078201+00:00",
+    "monitor_cancellation_evidence": "runs/R06/scheduling/cancel-20261004T074313Z/automation-after.json",
+    "monitor_cancellation_report": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
+    "upstream_handoff": "state/upstream-handoff.json",
+    "upstream_handoff_report": "runs/R06/upstream-handoff/README.md"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -119,7 +158,61 @@
   "current_native_receipts": [
     "runs/R01/sqlite-research/completed-return.json",
     "runs/R02/handoff/completed-return.json",
-    "runs/R03/ui-independent/completed-return.json"
+    "runs/R03/ui-independent/completed-return.json",
+    "runs/R06/handoff/simple/completed-return.json",
+    "runs/R06/handoff/complex/completed-return.json",
+    "runs/future/versioned_preset_catalog/independent/completed-return.json",
+    "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
-  "current_native_pending": []
+  "current_native_pending": [
+    {
+      "worker": "/root/luna_forge_ec0ef35b347f",
+      "run": "runs/future/preset_browser_acceptance/independent",
+      "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
+    }
+  ],
+  "unpublished_work": {
+    "base_commit": "e3f3d9771df00b669e119ac2f7571d24875e8afe",
+    "candidate_sha256": "8b82e835160fd8318ac0dd2e30c5f1cc32832af5b8cd3254f96decbee5bd60d1",
+    "report": "runs/R06/VERIFICATION_REPORT.md",
+    "issues": "runs/R06/issues.json",
+    "recovery": "runs/R06/RECOVERY.md",
+    "gate": "state/publication-gate.json",
+    "code_archive": "/workspace/deliveries/A111-R06-candidate-20261004.tar.gz",
+    "committed": false,
+    "pushed": false,
+    "review_bundle": {
+      "archive": "/workspace/deliveries/A111-R06-complete-review-20261004.tar.gz",
+      "sha256": "bbe6179b9f39089e16dd00c77bbc897a7ddf2c47b356a25f8c4e6ab59d4bdf12",
+      "size_bytes": 24537217,
+      "all_envelope_members_verified": true,
+      "nested_archives": [
+        {
+          "archive": "A111-R06-candidate-20261004.tar.gz",
+          "files": 3459,
+          "content_id": "c9949853d1db92769195d22853d80dc04c81a39da1582b4a13a7dd0b866e9303",
+          "sha256": "6f670dd77fd4e1f17cd440aaa21b44927811a73c15cefb1da1cfcc190f924a02",
+          "all_candidate_files_match": true
+        },
+        {
+          "archive": "A111-R06-review-20261004.tar.gz",
+          "files": 3497,
+          "content_id": "bc04dadecf087ce7ea402f5876921075ebfd98e91663a2c3655ac7c76c23f2f4",
+          "sha256": "f028f23addf8e82122b8a4d9a8633e966b89014ca38a39f0522a845d1cdea1ac",
+          "all_candidate_files_match": true
+        }
+      ]
+    },
+    "handoff_authorization": "state/upstream-handoff.json"
+  },
+  "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
+  "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+  "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
+  "upstream_handoff": {
+    "mode": "unfinished_work_for_upstream",
+    "authorization": "state/upstream-handoff.json",
+    "report": "runs/R06/upstream-handoff/README.md",
+    "publication_state": "prepared",
+    "full_acceptance_passed": false
+  }
 }

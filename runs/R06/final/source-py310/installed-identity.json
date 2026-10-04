@@ -1,0 +1,27 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3.10",
+    "-B",
+    "-c",
+    "import sys,json;from pathlib import Path;sys.path.insert(0,\"scripts\");from delivery import source_files,verify_release;verify_release(Path(sys.argv[1]).resolve(),source_files(Path.cwd()));print(json.dumps({\"exact_tree\":True}))",
+    "/workspace/agent-forge-review-R06-py310/current"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T07:04:52.561340+00:00",
+    "monotonic_ns": 42131207715308,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T07:04:53.565245+00:00",
+    "monotonic_ns": 42132211624707,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\"exact_tree\": true}\n",
+  "stderr": "",
+  "stdout_base64": "eyJleGFjdF90cmVlIjogdHJ1ZX0K",
+  "stderr_base64": ""
+}

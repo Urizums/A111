@@ -1,0 +1,8 @@
+{
+ "source":"runs/R04/capability-probe/concurrent-brief.json",
+ "input":"runs/future/concurrent-ticket/input.json",
+ "cases":["Two real HTTP clients read version1, start PATCH from one barrier, yield exactly one200 and one409 with identical current row", "Exactly one new persisted history entry and version2 across restart", "Two real browser contexts submit their observed version1 in the same barrier-bound request group; one success and one conflict UI, no overwritten history"],
+ "conditions":"Original ticket application, two distinct clients, loopback HTTP, SQLite and Chromium; browser routing only gates timing and forwards original request unchanged to actual backend",
+ "limits":"One HTTP race plus one browser race are concurrency correctness cases, not a load/performance benchmark",
+ "repair_limit":2
+}

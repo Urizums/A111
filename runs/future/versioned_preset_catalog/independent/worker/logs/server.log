@@ -1,0 +1,11 @@
+Loopback server process: `python -m http.server 8765 --bind 127.0.0.1 --directory /workspace/A111/runs/future/versioned_preset_catalog/candidate/v1`
+Bound address: 127.0.0.1:8765. Stopped with Ctrl-C after run 1.
+Observed requests, all from local Chromium:
+127.0.0.1 - - [04/Oct/2026 06:33:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 06:33:20] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 06:33:20] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 06:33:20] code 404, message File not found
+127.0.0.1 - - [04/Oct/2026 06:33:20] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [04/Oct/2026 06:33:51] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [04/Oct/2026 06:33:52] "GET / HTTP/1.1" 304 -
+Shutdown output: `Keyboard interrupt received, exiting.`

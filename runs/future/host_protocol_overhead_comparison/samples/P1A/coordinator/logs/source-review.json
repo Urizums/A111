@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/A111",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/coordinator/grade.py",
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:19:32.340477+00:00",
+    "monotonic_ns": 39410986851062,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:19:32.365309+00:00",
+    "monotonic_ns": 39411011685413,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "elapsed_seconds": 0.024834351,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/A111/runs/future/host_protocol_overhead_comparison/coordinator/grade.py\", line 76, in <module>\n    if __name__=='__main__':grade(Path(sys.argv[1]).resolve())\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/A111/runs/future/host_protocol_overhead_comparison/coordinator/grade.py\", line 53, in grade\n    mpath=Path(request['work']['inputs']['material']); m=json.loads(mpath.read_text())\n               ~~~~~~~^^^^^^^^\nKeyError: 'work'\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vY29vcmRpbmF0b3IvZ3JhZGUucHkiLCBsaW5lIDc2LCBpbiA8bW9kdWxlPgogICAgaWYgX19uYW1lX189PSdfX21haW5fXyc6Z3JhZGUoUGF0aChzeXMuYXJndlsxXSkucmVzb2x2ZSgpKQogICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXgogIEZpbGUgIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vY29vcmRpbmF0b3IvZ3JhZGUucHkiLCBsaW5lIDUzLCBpbiBncmFkZQogICAgbXBhdGg9UGF0aChyZXF1ZXN0Wyd3b3JrJ11bJ2lucHV0cyddWydtYXRlcmlhbCddKTsgbT1qc29uLmxvYWRzKG1wYXRoLnJlYWRfdGV4dCgpKQogICAgICAgICAgICAgICB+fn5+fn5+Xl5eXl5eXl4KS2V5RXJyb3I6ICd3b3JrJwo="
+}

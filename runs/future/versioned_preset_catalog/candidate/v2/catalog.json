@@ -1,0 +1,157 @@
+{
+  "schema": "forge-preset-catalog/1",
+  "version": "1.0.1",
+  "source_revision": "R05-original-web-v1-repair1",
+  "reuse": "Original authored code/tokens; repository license applies. External sources observed only.",
+  "sources": [
+    {
+      "key": "refero_styles_lead",
+      "url": "https://styles.refero.design/",
+      "snapshot_sha256": "5779be8a0574a859d2c4cc3db9a54dc6f2fa2cc9301a509b8d62b122092cc000",
+      "accessed_at": "2026-10-04T06:03:38.298364+00:00",
+      "version": null,
+      "reuse": "observation_only_no_assets_or_code_reused"
+    },
+    {
+      "key": "wcag_use_of_color",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+      "snapshot_sha256": "a9bab2b8f419ee379b1ab37985d70b03bd6568952251d2f8a55036198990c9e8",
+      "accessed_at": "2026-10-04T06:03:39.251765+00:00",
+      "version": "Thu, 03 Sep 2026 15:17:59 GMT",
+      "reuse": "observation_only_no_assets_or_code_reused"
+    },
+    {
+      "key": "wcag_contrast_minimum",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "snapshot_sha256": "a06d8a7dad2b3c9cadf1d93b1a5372d58adbab65be51e4c4680124d4e47c9999",
+      "accessed_at": "2026-10-04T06:03:39.657966+00:00",
+      "version": "Thu, 01 Oct 2026 07:26:46 GMT",
+      "reuse": "observation_only_no_assets_or_code_reused"
+    },
+    {
+      "key": "wcag_focus_visible",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+      "snapshot_sha256": "754e2c52ec85b3a29d0b6a69f04fbdbbcec7cb9bba849ae2a340c3c92bb83209",
+      "accessed_at": "2026-10-04T06:03:39.943148+00:00",
+      "version": "Thu, 01 Oct 2026 07:26:46 GMT",
+      "reuse": "observation_only_no_assets_or_code_reused"
+    },
+    {
+      "key": "mdn_reduced_motion",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion",
+      "snapshot_sha256": "7afe909e3b33f9633b39ed851d94c82689bcbf0dfd077ae3b732d752b90d2d5c",
+      "accessed_at": "2026-10-04T06:03:40.015110+00:00",
+      "version": "Sun, 04 Oct 2026 01:42:18 GMT",
+      "reuse": "observation_only_no_assets_or_code_reused"
+    },
+    {
+      "key": "mdn_dialog",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
+      "snapshot_sha256": "72d7dcc9bc5aa1a9b7c304da6a8452a9b97c2ae69893786fb18d6f1ee67a2695",
+      "accessed_at": "2026-10-04T06:03:40.228352+00:00",
+      "version": "Sun, 04 Oct 2026 01:42:28 GMT",
+      "reuse": "observation_only_no_assets_or_code_reused"
+    },
+    {
+      "key": "android_system_bars",
+      "url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+      "snapshot_sha256": "3c1801b7d2f4202517a7967b0bf11d6820ed1e1c08c8926a1f0a194da43a5418",
+      "accessed_at": "2026-10-04T06:03:40.835199+00:00",
+      "version": "Tue, 22 Sep 2026 17:30:05 GMT",
+      "reuse": "observation_only_no_assets_or_code_reused"
+    }
+  ],
+  "semantic_pairs": {
+    "surface": {
+      "foreground": "#1F2937",
+      "background": "#FFFFFF"
+    },
+    "primary": {
+      "foreground": "#FFFFFF",
+      "background": "#1D4ED8"
+    },
+    "selected": {
+      "foreground": "#1E3A8A",
+      "background": "#DBEAFE"
+    },
+    "error": {
+      "foreground": "#991B1B",
+      "background": "#FEF2F2"
+    },
+    "success": {
+      "foreground": "#065F46",
+      "background": "#ECFDF5"
+    },
+    "warning": {
+      "foreground": "#854D0E",
+      "background": "#FFFBEB"
+    },
+    "annotation": {
+      "foreground": "#3A311E",
+      "background": "#FFF1C2"
+    }
+  },
+  "variants": [
+    {
+      "id": "review",
+      "task": "Dense review queue",
+      "platform": "responsive web",
+      "canvas": {
+        "foreground": "#17212B",
+        "background": "#F3F6FA"
+      },
+      "layout": "wide queue/detail, narrow stacked record",
+      "states": [
+        "ready",
+        "filtered-empty",
+        "selected",
+        "confirmation",
+        "approved",
+        "retryable-error"
+      ]
+    },
+    {
+      "id": "stock",
+      "task": "Handheld stock count",
+      "platform": "responsive web, physical Android unverified",
+      "canvas": {
+        "foreground": "#1F2937",
+        "background": "#F8FAFC"
+      },
+      "layout": "single-column labeled quantity and in-flow actions",
+      "states": [
+        "ready",
+        "invalid",
+        "saving",
+        "saved-locally",
+        "conflict",
+        "storage-error"
+      ]
+    },
+    {
+      "id": "reader",
+      "task": "Long document with annotations",
+      "platform": "responsive web",
+      "canvas": {
+        "foreground": "#2F2D2A",
+        "background": "#FBFAF7"
+      },
+      "layout": "reading column and collapsible contents, annotation near passage",
+      "states": [
+        "reading",
+        "draft",
+        "saved-locally",
+        "delete-confirmation",
+        "retryable-error"
+      ]
+    }
+  ],
+  "motion": {
+    "default": "short optional opacity transition only",
+    "reduced": "static state changes, no smooth scrolling"
+  },
+  "target_evidence": "../../validation/report.json",
+  "limitations": [
+    "No backend, physical Android, assistive-technology or productivity claim"
+  ]
+}

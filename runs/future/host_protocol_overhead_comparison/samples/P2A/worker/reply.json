@@ -1,0 +1,58 @@
+{
+  "schema_version": "forge-host-reply/1",
+  "job_id": "job_166ec4194a9f4f74b9ebd6cb1c0bf923",
+  "attempt_id": "bec6ea3f09be4b238747d84562848fb0",
+  "request_hash": "2379bb79c46276b5b661c5c1687218ae102b1d47d51e3cd27a2850421f9a984a",
+  "outcome": "done",
+  "result": {
+    "decisions": [
+      {
+        "id": "r1",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r2",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      },
+      {
+        "id": "r3",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "north"
+      },
+      {
+        "id": "r4",
+        "decision": "wait",
+        "reason": "capacity_unavailable",
+        "host": null
+      },
+      {
+        "id": "r5",
+        "decision": "reject",
+        "reason": "invalid_request",
+        "host": null
+      },
+      {
+        "id": "r6",
+        "decision": "assign",
+        "reason": "capacity",
+        "host": "south"
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/business.json",
+      "sha256": "5a94fa160da4ad1933f82bbcad1db1dae0087e7b42d37a8ed2194028c90bbe0c"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/corrections.json",
+      "sha256": "308f6dc0d10760b82d06cc7b19af5205ee179e8f43d463b0b65fed8a71d793c3"
+    }
+  ],
+  "reason": null
+}

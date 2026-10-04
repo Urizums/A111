@@ -1,0 +1,126 @@
+{
+  "schema": "forge-bounded-run/1",
+  "actor": "root-regression-original",
+  "created_at": "2026-10-04T06:42:25.372400+00:00",
+  "limit": 2,
+  "phase": "exhausted",
+  "candidate": [
+    {
+      "path": "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py",
+      "sha256": "b54dbe1a9ee63f3f72764f848c86b3c77946be7127d00e7230e0edab0e884aec"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/material.json",
+      "sha256": "6c4f4c9ba026f5d3254407951536a6474742fbe049e8fecef1828a1886c7e264"
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "snapshot-0",
+      "manifest_sha256": "ce1c26989567b02e665e3512a85e84b1fed626315054b32e10165067b336f060"
+    },
+    {
+      "path": "snapshot-1",
+      "manifest_sha256": "22676248f4ae4f2e326ff2046a493ab06895e3162669e65976ab0676feaa8611"
+    },
+    {
+      "path": "snapshot-2",
+      "manifest_sha256": "94dbcd121916fb1757077610fafbf366bc0f735adeb64987af0b3767efb8d8a4"
+    }
+  ],
+  "repairs": [
+    {
+      "number": 1,
+      "at": "2026-10-04T06:42:25.457344+00:00",
+      "reason": "Separate preserved failure-driven fixture change 1",
+      "after_attempt": 1,
+      "before": [
+        {
+          "path": "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py",
+          "sha256": "04b531d769eb12e103aac647a2e9cd838b0b591366fd166b37864ee598ead97d"
+        }
+      ],
+      "after": [
+        {
+          "path": "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py",
+          "sha256": "702c2a4935a7bcc3c8127df785c03b96461da89ab28cb90f8c611a6b41f1a3c5"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "at": "2026-10-04T06:42:25.537817+00:00",
+      "reason": "Separate preserved failure-driven fixture change 2",
+      "after_attempt": 2,
+      "before": [
+        {
+          "path": "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py",
+          "sha256": "702c2a4935a7bcc3c8127df785c03b96461da89ab28cb90f8c611a6b41f1a3c5"
+        }
+      ],
+      "after": [
+        {
+          "path": "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py",
+          "sha256": "b54dbe1a9ee63f3f72764f848c86b3c77946be7127d00e7230e0edab0e884aec"
+        }
+      ]
+    }
+  ],
+  "attempts": [
+    {
+      "id": 1,
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py"
+      ],
+      "cwd": "/workspace/A111",
+      "started_at": "2026-10-04T06:42:25.408131+00:00",
+      "status": "failed",
+      "repair_count": 0,
+      "ended_at": "2026-10-04T06:42:25.420284+00:00",
+      "exit_code": 1
+    },
+    {
+      "id": 2,
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py"
+      ],
+      "cwd": "/workspace/A111",
+      "started_at": "2026-10-04T06:42:25.492343+00:00",
+      "status": "failed",
+      "repair_count": 1,
+      "ended_at": "2026-10-04T06:42:25.504109+00:00",
+      "exit_code": 1
+    },
+    {
+      "id": 3,
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py"
+      ],
+      "cwd": "/workspace/A111",
+      "started_at": "2026-10-04T06:42:25.570429+00:00",
+      "status": "failed",
+      "repair_count": 2,
+      "ended_at": "2026-10-04T06:42:25.587591+00:00",
+      "exit_code": 1
+    }
+  ],
+  "records": [
+    {
+      "path": "attempt-1.json",
+      "sha256": "f224118733dc63391ce60f08d09ccb5e7da0d12b4763c8a258a72dbffb9e9ac2"
+    },
+    {
+      "path": "attempt-2.json",
+      "sha256": "c22add2e2f65d40803ab9440819ec5c22582e1efc82d2f920a3c0943ba7d2d94"
+    },
+    {
+      "path": "attempt-3.json",
+      "sha256": "6ce15abf06bb726b6bff50d4ea98d89834ef7ff3c1bb24fbeb41172f8868004c"
+    }
+  ]
+}

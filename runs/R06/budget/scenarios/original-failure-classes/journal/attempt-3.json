@@ -1,0 +1,19 @@
+{
+  "id": 3,
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py"
+  ],
+  "cwd": "/workspace/A111",
+  "started_at": "2026-10-04T06:42:25.570429+00:00",
+  "status": "failed",
+  "repair_count": 2,
+  "ended_at": "2026-10-04T06:42:25.587591+00:00",
+  "exit_code": 1,
+  "termination": "exited",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIi93b3Jrc3BhY2UvQTExMS9ydW5zL1IwNi9idWRnZXQvc2NlbmFyaW9zL29yaWdpbmFsLWZhaWx1cmUtY2xhc3Nlcy9oYXJuZXNzLnB5IiwgbGluZSAyLCBpbiA8bW9kdWxlPgogICAganNvbi5kdW1wcyh7InByZWRpY2F0ZSI6IGxhbWJkYSB4OiB4fSkKICBGaWxlICIvb3B0L2NvZGV4L3J1bnRpbWVzL2NvZGV4LXByaW1hcnktcnVudGltZS9kZXBlbmRlbmNpZXMvcHl0aG9uL2xpYi9weXRob24zLjEyL2pzb24vX19pbml0X18ucHkiLCBsaW5lIDIzMSwgaW4gZHVtcHMKICAgIHJldHVybiBfZGVmYXVsdF9lbmNvZGVyLmVuY29kZShvYmopCiAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXgogIEZpbGUgIi9vcHQvY29kZXgvcnVudGltZXMvY29kZXgtcHJpbWFyeS1ydW50aW1lL2RlcGVuZGVuY2llcy9weXRob24vbGliL3B5dGhvbjMuMTIvanNvbi9lbmNvZGVyLnB5IiwgbGluZSAyMDAsIGluIGVuY29kZQogICAgY2h1bmtzID0gc2VsZi5pdGVyZW5jb2RlKG8sIF9vbmVfc2hvdD1UcnVlKQogICAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXgogIEZpbGUgIi9vcHQvY29kZXgvcnVudGltZXMvY29kZXgtcHJpbWFyeS1ydW50aW1lL2RlcGVuZGVuY2llcy9weXRob24vbGliL3B5dGhvbjMuMTIvanNvbi9lbmNvZGVyLnB5IiwgbGluZSAyNTgsIGluIGl0ZXJlbmNvZGUKICAgIHJldHVybiBfaXRlcmVuY29kZShvLCAwKQogICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eCiAgRmlsZSAiL29wdC9jb2RleC9ydW50aW1lcy9jb2RleC1wcmltYXJ5LXJ1bnRpbWUvZGVwZW5kZW5jaWVzL3B5dGhvbi9saWIvcHl0aG9uMy4xMi9qc29uL2VuY29kZXIucHkiLCBsaW5lIDE4MCwgaW4gZGVmYXVsdAogICAgcmFpc2UgVHlwZUVycm9yKGYnT2JqZWN0IG9mIHR5cGUge28uX19jbGFzc19fLl9fbmFtZV9ffSAnClR5cGVFcnJvcjogT2JqZWN0IG9mIHR5cGUgZnVuY3Rpb24gaXMgbm90IEpTT04gc2VyaWFsaXphYmxlCg==",
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py\", line 2, in <module>\n    json.dumps({\"predicate\": lambda x: x})\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/__init__.py\", line 231, in dumps\n    return _default_encoder.encode(obj)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 200, in encode\n    chunks = self.iterencode(o, _one_shot=True)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 258, in iterencode\n    return _iterencode(o, 0)\n           ^^^^^^^^^^^^^^^^^\n  File \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/json/encoder.py\", line 180, in default\n    raise TypeError(f'Object of type {o.__class__.__name__} '\nTypeError: Object of type function is not JSON serializable\n",
+  "scope": "Direct local child process; no descendant/provider termination or semantic acceptance claim"
+}

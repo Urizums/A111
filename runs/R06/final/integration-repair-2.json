@@ -1,0 +1,13 @@
+{
+  "actor": "Root",
+  "scope": "R05/R06 release integration",
+  "used": 2,
+  "limit": 2,
+  "failure": "integrity-before-blocked-fix.json",
+  "original_source": "verify_handoff.before-blocked-fix.py",
+  "cause": "Validator rejected a genuinely started successor after it became blocked, and rejected an active goal with no executable phase task.",
+  "fix": "Allow only hash-bound original start evidence for blocked successors; allow null next only when a real blocker exists and no phase task is executable. Preserve rejection of ready-task omission, missing/tampered starts and false completion.",
+  "regression_red": "blocked-state-red.json",
+  "regression_green": "blocked-state-green.json",
+  "old_R00_installer_budget": "unchanged at2; no installer edits"
+}

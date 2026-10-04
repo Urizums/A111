@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import hashlib,json; from pathlib import Path; worker=Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker\"); req=json.loads(Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/job/request.json\").read_text()); r=req[\"request\"]; bp=worker/\"business.json\"; cp=worker/\"corrections.json\"; business=json.loads(bp.read_text()); artifacts=[{\"path\":str(p),\"sha256\":hashlib.sha256(p.read_bytes()).hexdigest()} for p in (bp,cp)]; reply={\"schema_version\":\"forge-host-reply/1\",\"job_id\":r[\"job_id\"],\"attempt_id\":r[\"attempt_id\"],\"request_hash\":req[\"request_hash\"],\"outcome\":\"done\",\"result\":business,\"artifacts\":artifacts,\"reason\":None}; p=worker/\"reply.json\"; p.write_text(json.dumps(reply,indent=2)+\"\\n\"); print(json.dumps({\"reply\":str(p),\"artifacts\":artifacts}))"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:22:01.209080+00:00",
+    "monotonic_ns": 39559855456835,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:22:01.233602+00:00",
+    "monotonic_ns": 39559879977749,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.024520914,
+  "stdout": "{\"reply\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/reply.json\", \"artifacts\": [{\"path\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/business.json\", \"sha256\": \"5a94fa160da4ad1933f82bbcad1db1dae0087e7b42d37a8ed2194028c90bbe0c\"}, {\"path\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/corrections.json\", \"sha256\": \"308f6dc0d10760b82d06cc7b19af5205ee179e8f43d463b0b65fed8a71d793c3\"}]}\n",
+  "stderr": "",
+  "stdout_base64": "eyJyZXBseSI6ICIvd29ya3NwYWNlL0ExMTEvcnVucy9mdXR1cmUvaG9zdF9wcm90b2NvbF9vdmVyaGVhZF9jb21wYXJpc29uL3NhbXBsZXMvUDJBL3dvcmtlci9yZXBseS5qc29uIiwgImFydGlmYWN0cyI6IFt7InBhdGgiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvZnV0dXJlL2hvc3RfcHJvdG9jb2xfb3ZlcmhlYWRfY29tcGFyaXNvbi9zYW1wbGVzL1AyQS93b3JrZXIvYnVzaW5lc3MuanNvbiIsICJzaGEyNTYiOiAiNWE5NGZhMTYwZGE0YWQxOTMzZjgyYmJjYWQxZGIxZGFlMDA4N2U3YjQyZDM3YThlZDIxOTQwMjhjOTBiYmUwYyJ9LCB7InBhdGgiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvZnV0dXJlL2hvc3RfcHJvdG9jb2xfb3ZlcmhlYWRfY29tcGFyaXNvbi9zYW1wbGVzL1AyQS93b3JrZXIvY29ycmVjdGlvbnMuanNvbiIsICJzaGEyNTYiOiAiMzA4ZjZkYzBkMTA3NjBiODJkMDZjYzdiMTlhZjUyMDVlZTE3OWU4ZjQzZDQ2M2IwYjY1ZmVkOGE3MWQ3OTNjMyJ9XX0K",
+  "stderr_base64": ""
+}

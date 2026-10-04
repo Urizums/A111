@@ -1,0 +1,40 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "X01-concurrent_ticket_edits",
+  "attempt_id": "X01-concurrent_ticket_edits-1",
+  "requirements_hash": "557473cdeacb496401d6521a3684f44ba551ee8ff129d463b3d8388146917272",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/future/concurrent-ticket/validation/report.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "fail",
+      "evidence": [
+        "runs/future/concurrent-ticket/validation-command.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Concurrent real-client updates",
+    "hypothesis": "SQLite write serialization preserves one update/history under simultaneous same-version clients",
+    "baseline": "Only sequential stale requests previously verified",
+    "conditions": "One real HTTP race and attempted two-browser race",
+    "observations": "HTTP race and persistence passed. Browser requests completed but harness mislabeled client from Playwright second callback argument, causing TypeError before screenshot checks.",
+    "limits": [
+      "This first run fails overall",
+      "Browser visual criterion not completed"
+    ],
+    "metrics": {
+      "product_changes": 0,
+      "harness_corrections": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Preserve first failure; correct only callback binding and re-run identical frozen cases within two-repair budget."
+}

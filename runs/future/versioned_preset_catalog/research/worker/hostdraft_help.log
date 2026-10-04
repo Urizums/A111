@@ -1,0 +1,13 @@
+usage: hostdraft.py [-h] {reply,decision,check-reply,check-decision} ...
+
+Incomplete host protocol drafts and read-only preflight; no tool calls/commit.
+
+positional arguments:
+  {reply,decision,check-reply,check-decision}
+    reply               write an explicitly incomplete host reply
+    decision            write ungraded original acceptance rows
+    check-reply         read-only outer protocol preflight, not acceptance
+    check-decision      read-only original controller preflight, no commit
+
+options:
+  -h, --help            show this help message and exit

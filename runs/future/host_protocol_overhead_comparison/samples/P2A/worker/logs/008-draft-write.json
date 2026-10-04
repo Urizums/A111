@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import hashlib,json; from pathlib import Path; worker=Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker\"); req=json.loads(Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/job/request.json\").read_text()); b=worker/\"business.json\"; art={\"path\":str(b),\"sha256\":hashlib.sha256(b.read_bytes()).hexdigest()}; r=req[\"request\"]; draft={\"schema_version\":\"forge-host-reply/1\",\"job_id\":r[\"job_id\"],\"attempt_id\":r[\"attempt_id\"],\"request_hash\":req[\"request_hash\"],\"outcome\":None,\"result\":None,\"artifacts\":[art],\"reason\":None}; p=worker/\"reply.draft.json\"; p.write_text(json.dumps(draft,indent=2)+\"\\n\"); print(json.dumps({\"draft\":str(p),\"business_sha256\":art[\"sha256\"],\"job_id\":r[\"job_id\"],\"attempt_id\":r[\"attempt_id\"],\"request_hash\":req[\"request_hash\"]}))"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:21:54.689365+00:00",
+    "monotonic_ns": 39553335741705,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:21:54.714311+00:00",
+    "monotonic_ns": 39553360687380,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.024945675,
+  "stdout": "{\"draft\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/reply.draft.json\", \"business_sha256\": \"5a94fa160da4ad1933f82bbcad1db1dae0087e7b42d37a8ed2194028c90bbe0c\", \"job_id\": \"job_166ec4194a9f4f74b9ebd6cb1c0bf923\", \"attempt_id\": \"bec6ea3f09be4b238747d84562848fb0\", \"request_hash\": \"2379bb79c46276b5b661c5c1687218ae102b1d47d51e3cd27a2850421f9a984a\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJkcmFmdCI6ICIvd29ya3NwYWNlL0ExMTEvcnVucy9mdXR1cmUvaG9zdF9wcm90b2NvbF9vdmVyaGVhZF9jb21wYXJpc29uL3NhbXBsZXMvUDJBL3dvcmtlci9yZXBseS5kcmFmdC5qc29uIiwgImJ1c2luZXNzX3NoYTI1NiI6ICI1YTk0ZmExNjBkYTRhZDE5MzNmODJiYmNhZDFkYjFkYWUwMDg3ZTdiNDJkMzdhOGVkMjE5NDAyOGM5MGJiZTBjIiwgImpvYl9pZCI6ICJqb2JfMTY2ZWM0MTk0YTlmNGY3NGI5ZWJkNmNiMWMwYmY5MjMiLCAiYXR0ZW1wdF9pZCI6ICJiZWM2ZWEzZjA5YmU0YjIzODc0N2Q4NDU2Mjg0OGZiMCIsICJyZXF1ZXN0X2hhc2giOiAiMjM3OWJiNzljNDYyNzZiNWI2NjFjNWMxNjg3MjE4YWUxMDJiMWQ0N2Q1MWUzY2QyN2EyODUwNDIxZjlhOTg0YSJ9Cg==",
+  "stderr_base64": ""
+}

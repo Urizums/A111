@@ -1,0 +1,84 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T06:20:05Z",
+  "updated_at": "2026-10-04T06:24:23Z",
+  "revision": 2,
+  "status": "completed",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "study_P2A",
+    "goal": "Apply original P2 material policy",
+    "deliverable_kind": "scoped_task",
+    "requirements": [
+      {
+        "id": "req_source",
+        "text": "Return all exact decisions from supplied policy, with no external effects.",
+        "origin": "explicit",
+        "basis": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json",
+        "acceptance_ids": [
+          "a_source"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_source",
+        "assertion": "Business decisions match every original source policy field and order.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "Apply original source policy",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_source"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "0d642f34384ffd439ce3b92bab5ea5c5cb24f11e2323cca3462d973e38a2014a",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "done",
+      "attempts": [
+        {
+          "attempt_id": "bec6ea3f09be4b238747d84562848fb0",
+          "plan_hash": "0d642f34384ffd439ce3b92bab5ea5c5cb24f11e2323cca3462d973e38a2014a",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_source"
+          ],
+          "started_at": "2026-10-04T06:20:05Z",
+          "finished_at": "2026-10-04T06:24:23Z",
+          "outcome": "done",
+          "reason": null,
+          "acceptance_results": {
+            "a_source": {
+              "status": "pass",
+              "level": "review",
+              "evidence": [
+                {
+                  "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/coordinator/source-review.json",
+                  "sha256": "9f9d3169914173dfd0d700cf236847e96764eaa23583ea41b6c924bd5bd67d29"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

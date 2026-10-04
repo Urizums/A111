@@ -1,0 +1,37 @@
+{
+  "prompt": "原始目标：根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。\n原始材料：/workspace/A111/runs/R06/handoff/materials/complex.json\n先读取固定版本技能 /workspace/A111/runs/R06/candidate/C5/forge-agent-flow/SKILL.md。版本锁 /workspace/A111/runs/R06/candidate/C5-lock.json。自主选择与目标匹配的路径；只读取该技能公开文件、原材料，以及材料明确指向的本地应用/契约/规则，不读 Root 测试、报告、答案、共享状态或其他 worker。\n你负责独立执行与验证，不改核心、skill 或目标应用。只写 /workspace/A111/runs/R06/handoff/complex/worker。除本地命令进程外没有外部副作用授权。每项冻结验证最多两次修正；使用 C5 的实际记录机制，并保留失败，不重置或换样本。简单材料直接交付；复杂任务可按实际必要性最多委派两个互不重叠、只写你目录子目录的验证子任务，给原要求，不能给答案。你的最终报告保留原始命令/结果、写域、分工、介入、失败/修正、接续首步和实际局限，未知 tokens/cost/model-active-time 为 null。\n返回 /workspace/A111/runs/R06/handoff/complex/worker/reply.json，使用新请求 /workspace/A111/runs/R06/handoff/complex/job/request.json 的身份与产物哈希；保留分开的不完整 draft 与实际 preflight。没有网络授权。",
+  "inputs": {
+    "material": "/workspace/A111/runs/R06/handoff/materials/complex.json",
+    "candidate_lock": "/workspace/A111/runs/R06/candidate/C5-lock.json"
+  },
+  "input_files": [
+    {
+      "path": "/workspace/A111/runs/R06/handoff/materials/complex.json",
+      "sha256": "7c7a65c8adbdb06d276e8e4685832a6223bde021740cf9cc92e4d3a9d86a37d5"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/candidate/C5-lock.json",
+      "sha256": "0298bb5bacab6c81289769fdffecc1a2322d7dfa8ad0b90c8f1589edb7e66194"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/approval/approval.py",
+      "sha256": "c424ed56f51f51f3de61def47ca70ba6549511738ba13ae1158aba6bd3dfda62"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/approval/contract.json",
+      "sha256": "b7e3882c48b9cf76702c5fae712f1c770a1b63fcea4e34ec5d1a072d8a36e985"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/approval/policy.json",
+      "sha256": "ab5a51f3c3e97e8ed5b3a9b91b0fce2050600e69f940c2bc1e8929674307667b"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/materials/manual-review-rules.json",
+      "sha256": "3cef7668736a5cf9de55aa14970a9ab218113394292965a678d03402089a04b9"
+    }
+  ],
+  "write_paths": [
+    "/workspace/A111/runs/R06/handoff/complex/worker"
+  ],
+  "reply_path": "/workspace/A111/runs/R06/handoff/complex/worker/reply.json"
+}

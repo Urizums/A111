@@ -1,0 +1,47 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "Action completed."
+    }
+  ],
+  "structuredContent": {
+    "url": "https://github.com/Urizums/A111/pull/1",
+    "number": 1,
+    "state": "open",
+    "merged": false,
+    "mergeable": true,
+    "draft": false,
+    "body": "安装器原先会复用已漂移的 release，打包时还可能通过父目录符号链接读取仓库外文件。本 PR 现在在激活/复用前校验完整文件和目录集合、长度与哈希；Git 与归档来源统一拒绝不规范路径及符号链接，拒绝时保留原安装。修复独立 Python 3.10 的 venv 标准库定位问题，并保留复现、失败与两轮修复记录。\n\n同时落实仓库所有者追加的持续研发要求：\n- 长期目标与单次交付分开；16 项能力/挑战双队列保存输入、验收、依赖、写域、证据与有界修复。\n- C3 版本化 skill/workflow；实际完成日历、数据迁移、命令进程恢复、续借 flow、HTTP/SQLite 工单应用及目标浏览器观察。\n- 三个新 Luna 分别完成具体资料研究、新上下文接续验证、独立 UI 检查；Root 编写核心并整合证据。R01–R04 已归档，R05 原预设页面已在 Chromium 实际启动。\n- 小时接续检查已配置；未来调度宿主能否执行代码尚未验证。长期目标保持 active，PR 交付不清空下一任务。\n\n验证：Python 3.10/3.12 原控制器各 368 项、C3 各 376 项、辅助各 37 项；两版云端安装各 17 项冒烟；无 Git 解压安装另 17 项通过。另有六例迁移、四例 flow/12 次协议拒绝、真实 HTTP 旅程和新上下文恢复证据。GitHub Actions [实现提交运行](https://github.com/waw1w1/A111/actions/runs/37180110023) 两版矩阵均成功，包括 HTTP、安装、打包与上传；最终报告提交的检查见本 PR Checks。\n\n边界：独立 UI 脚本用完两次修正后仍未完成，已明确判为 blocked；作者在同一保留数据库上补查的 8 项通过单独列出，不冒充独立通过。C1 仍 inconclusive；provider/global/network/effect 分支保持具体阻塞。新上下文原始三个派生状态字节未另存，恢复映射明确该缺口。没有合并上游或宣称生产托管/性能提升。\n\n入口：\n- [本轮验证报告](https://github.com/waw1w1/A111/blob/dev/runs/R00/VERIFICATION_REPORT.md)\n- [问题与修复记录](https://github.com/waw1w1/A111/blob/dev/runs/R00/issues.json)\n- [当前 checkpoint](https://github.com/waw1w1/A111/blob/dev/state/checkpoint.json)\n- [接续入口](https://github.com/waw1w1/A111/blob/dev/START_HERE.md)\n- [部署与打包](https://github.com/waw1w1/A111/blob/dev/docs/CLOUD_DEPLOYMENT.md)\n\n代码、原始报告、截图和失败记录均在本分支；源码/报告压缩包由 Actions Artifacts 提供。原 D00/C2 交付与不可变历史全部保留。",
+    "title": "修复云端安装边界，新增持续研发机制与实际验证",
+    "base": "main",
+    "base_sha": "550275d726485de6ad7ba49ae3b1231142edca04",
+    "head": "dev",
+    "head_sha": "e3f3d9771df00b669e119ac2f7571d24875e8afe",
+    "head_repo_id": 1403577323,
+    "head_repo_full_name": "waw1w1/A111",
+    "merge_commit_sha": "13d640e760bd32080e6549e6e33fd855b476b2a3",
+    "user": {
+      "login": "waw1w1",
+      "name": "waw1w1",
+      "email": null,
+      "avatar_url": "https://avatars.githubusercontent.com/u/179400865?v=4",
+      "id": 179400865
+    },
+    "requested_reviewers": null,
+    "requested_team_reviewers": null,
+    "diff": null,
+    "comments": null,
+    "created_at": "2026-10-03T19:59:10Z",
+    "updated_at": "2026-10-04T05:40:38Z",
+    "closed_at": null,
+    "merged_at": null,
+    "commits": 5,
+    "changed_files": 1045,
+    "additions": 217944,
+    "deletions": 173,
+    "display_url": "https://github.com/Urizums/A111/pull/1",
+    "display_title": "修复云端安装边界，新增持续研发机制与实际验证"
+  },
+  "isError": false
+}

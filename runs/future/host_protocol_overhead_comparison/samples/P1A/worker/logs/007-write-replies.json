@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import hashlib,json; from pathlib import Path; w=Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker\"); job_id=\"job_780b1a2db0dc424bbde99d7e25950691\"; attempt_id=\"e106c8cbc4c740ccbf877cfd20365afc\"; request_hash=\"2f359d41a65626f8c14476cf376630d0c9b9a17def7f7da414a7b106deaf7c8e\"; bp=w/\"business.json\"; cp=w/\"corrections.json\"; b=json.loads(bp.read_text()); artifact={\"path\":str(bp),\"sha256\":hashlib.sha256(bp.read_bytes()).hexdigest()}; draft={\"schema_version\":\"forge-host-reply/1\",\"job_id\":job_id,\"attempt_id\":attempt_id,\"request_hash\":request_hash,\"outcome\":None,\"result\":None,\"artifacts\":[artifact],\"reason\":None}; reply={\"schema_version\":\"forge-host-reply/1\",\"job_id\":job_id,\"attempt_id\":attempt_id,\"request_hash\":request_hash,\"outcome\":\"done\",\"result\":b,\"artifacts\":[artifact,{\"path\":str(cp),\"sha256\":hashlib.sha256(cp.read_bytes()).hexdigest()}],\"reason\":None}; (w/\"reply.draft.json\").write_text(json.dumps(draft,indent=2)+\"\\n\"); (w/\"reply.json\").write_text(json.dumps(reply,indent=2)+\"\\n\"); print(json.dumps({\"draft\":str(w/\"reply.draft.json\"),\"reply\":str(w/\"reply.json\"),\"artifacts\":reply[\"artifacts\"]},indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:15:10.624515+00:00",
+    "monotonic_ns": 39149270892159,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:15:10.648293+00:00",
+    "monotonic_ns": 39149294673245,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.023781086,
+  "stdout": "{\n  \"draft\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker/reply.draft.json\",\n  \"reply\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker/reply.json\",\n  \"artifacts\": [\n    {\n      \"path\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker/business.json\",\n      \"sha256\": \"aa30600ccb89687fae4be3c4b0d6abccbda2a5c24f0129b6c286bbadbb1bb2ed\"\n    },\n    {\n      \"path\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker/corrections.json\",\n      \"sha256\": \"05433ebeb9c53dbbf80ba38e42360f15a8dac2991e9a47a623c156963f9814ef\"\n    }\n  ]\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJkcmFmdCI6ICIvd29ya3NwYWNlL0ExMTEvcnVucy9mdXR1cmUvaG9zdF9wcm90b2NvbF9vdmVyaGVhZF9jb21wYXJpc29uL3NhbXBsZXMvUDFBL3dvcmtlci9yZXBseS5kcmFmdC5qc29uIiwKICAicmVwbHkiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvZnV0dXJlL2hvc3RfcHJvdG9jb2xfb3ZlcmhlYWRfY29tcGFyaXNvbi9zYW1wbGVzL1AxQS93b3JrZXIvcmVwbHkuanNvbiIsCiAgImFydGlmYWN0cyI6IFsKICAgIHsKICAgICAgInBhdGgiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvZnV0dXJlL2hvc3RfcHJvdG9jb2xfb3ZlcmhlYWRfY29tcGFyaXNvbi9zYW1wbGVzL1AxQS93b3JrZXIvYnVzaW5lc3MuanNvbiIsCiAgICAgICJzaGEyNTYiOiAiYWEzMDYwMGNjYjg5Njg3ZmFlNGJlM2M0YjBkNmFiY2NiZGEyYTVjMjRmMDEyOWI2YzI4NmJiYWRiYjFiYjJlZCIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vc2FtcGxlcy9QMUEvd29ya2VyL2NvcnJlY3Rpb25zLmpzb24iLAogICAgICAic2hhMjU2IjogIjA1NDMzZWJlYjljNTNkYmJmODBiYTM4ZTQyMzYwZjE1YThkYWMyOTkxZTlhNDdhNjIzYzE1Njk2M2Y5ODE0ZWYiCiAgICB9CiAgXQp9Cg==",
+  "stderr_base64": ""
+}

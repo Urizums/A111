@@ -1,0 +1,86 @@
+[
+  {
+    "label": "main-first-submit",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "/workspace/A111/runs/future/provider-adapter/adapter.py",
+      "--database",
+      "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.12-acceptance/db/lifecycle.db",
+      "submit",
+      "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.12-acceptance/inputs/main-first-submit.json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"created\": true, \"should_dispatch\": true, \"request_id\": \"req-main\", \"status\": \"accepted\"}\n",
+    "stderr": "",
+    "parsed_json": {
+      "created": true,
+      "should_dispatch": true,
+      "request_id": "req-main",
+      "status": "accepted"
+    },
+    "database_after_process_exit": {
+      "exists": true,
+      "requests": [
+        {
+          "request_id": "req-main",
+          "idem": "idem-main",
+          "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+          "status": "accepted",
+          "provider_run_id": null,
+          "cancel_requested": 0
+        }
+      ],
+      "events": []
+    },
+    "expected_exit_code": 0,
+    "expectation": null,
+    "expected_json_subset": {
+      "created": true,
+      "should_dispatch": true,
+      "request_id": "req-main",
+      "status": "accepted"
+    }
+  },
+  {
+    "label": "main-identical-retry-key-order-varied",
+    "command": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3.12",
+      "/workspace/A111/runs/future/provider-adapter/adapter.py",
+      "--database",
+      "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.12-acceptance/db/lifecycle.db",
+      "submit",
+      "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.12-acceptance/inputs/main-identical-retry-key-order-varied.json"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"created\": false, \"should_dispatch\": false, \"request_id\": \"req-main\", \"status\": \"accepted\"}\n",
+    "stderr": "",
+    "parsed_json": {
+      "created": false,
+      "should_dispatch": false,
+      "request_id": "req-main",
+      "status": "accepted"
+    },
+    "database_after_process_exit": {
+      "exists": true,
+      "requests": [
+        {
+          "request_id": "req-main",
+          "idem": "idem-main",
+          "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+          "status": "accepted",
+          "provider_run_id": null,
+          "cancel_requested": 0
+        }
+      ],
+      "events": []
+    },
+    "expected_exit_code": 0,
+    "expectation": null,
+    "expected_json_subset": {
+      "created": false,
+      "should_dispatch": false,
+      "request_id": "req-main",
+      "status": "accepted"
+    }
+  }
+]

@@ -1,0 +1,78 @@
+{
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_780b1a2db0dc424bbde99d7e25950691",
+    "attempt_id": "e106c8cbc4c740ccbf877cfd20365afc",
+    "invocation_id": "e106c8cbc4c740ccbf877cfd20365afc",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "f2dc20966051bb0948dec177d11186802a144ac50f4d7df3152c75d431ef720b",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "Apply original source policy",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_source"
+      ]
+    },
+    "work": {
+      "prompt": "EXACT FIRST COMMAND (execute before any other shell command):\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/capture.py cli --record /workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker/logs/001-bootstrap.json --actor worker -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py /workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/job/request.json\n\nThen follow the bound public protocol and original material printed by bootstrap. Mode A. Complete your own original business task, separate draft, captured preflight and markers within its stated scope/budget. No sibling reads, delegation, global status queries, network or external effects.",
+      "inputs": {
+        "mode": "A",
+        "material": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+        "protocol": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+        "capture": "/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/capture.py",
+        "hostdraft": "/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/hostdraft.py",
+        "worker": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+          "sha256": "3cd188d229c9e007398636f9a732e6cce2a381c5588de3a0932c688980ac9140"
+        },
+        {
+          "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+          "sha256": "783407f9a175971a75bf3337011464c64b47ca2ae1e2bc14357f071cc43bdf1b"
+        },
+        {
+          "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py",
+          "sha256": "b9437b9e3c27ff56d127fb17b9df367b123b67d3349361c5f07b4e95aa4d0401"
+        },
+        {
+          "path": "/workspace/A111/runs/R01/candidate-lock.json",
+          "sha256": "f55d2dc681596500c212a9ee8270cc71a1763add7f9e199e4199bcb22b44c911"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1A/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_e106c8cbc4c7",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "2f359d41a65626f8c14476cf376630d0c9b9a17def7f7da414a7b106deaf7c8e"
+}

@@ -1,0 +1,49 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R06-feedback_snapshot",
+  "attempt_id": "R06-feedback_snapshot-1",
+  "requirements_hash": "589ca2803f004cd6d53c1e0c3c982e785bbea1b306f6ac96ce6d2f392d3d4856",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R06/snapshot/first-step.json",
+        "runs/R06/snapshot/tests-310.json",
+        "runs/R06/snapshot/live-restore-command.json",
+        "runs/R06/handoff/complex/snapshot-command.json",
+        "runs/R06/handoff/complex/snapshot-verify.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R06/snapshot/first-step.json",
+        "runs/R06/snapshot/tests-310.json",
+        "runs/R06/snapshot/live-restore-command.json",
+        "runs/R06/handoff/complex/snapshot-command.json",
+        "runs/R06/handoff/complex/snapshot-verify.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Preserve exact bytes needed for later source-bound handoff",
+    "hypothesis": "Capture original state/input/criteria before issue, then verify/restore without touching live sources",
+    "baseline": "R02 and R05 P1 original state bytes were not saved separately; those gaps remain",
+    "conditions": "C4 byte snapshot code; seven real filesystem tests each Python3.12/3.10; C5 inherited helper actually captured two fresh native pilot scopes before issue; 12-file complex original restored into fresh directory",
+    "observations": "Exact byte restoration passed, Unicode/binary/dedup and source mutation cases passed; canonical paths, symlinks, overwrites, changed and extra objects refused. Native pilot inputs/state available as original bytes.",
+    "limits": [
+      "Historical missing originals cannot be recreated",
+      "Local byte identity and cooperative ordering, not authenticated remote state or effect replay"
+    ],
+    "metrics": {
+      "tests_per_runtime": 7,
+      "restored_files": 12,
+      "repairs_used": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Use inherited C5 byte capture on new-context complex guidance; evaluate bounded repair guard on the retained original failure classes."
+}

@@ -1,0 +1,17 @@
+{
+  "frozen_at": "2026-10-04T06:29:47.423639+00:00",
+  "trigger": "runs/R02/handoff original state bytes missing; R05 P1 originals again not snapshotted before dispatch",
+  "baseline": "C3 instructions and hash references without a saved byte bundle",
+  "candidate": "C4 exact-byte handoff capture before any issue/native create",
+  "required": [
+    "Existing original missing bytes remain missing; do not reconstruct retroactively",
+    "Capture canonical paths and exact bytes for state/input/criteria before a new call",
+    "Verify and restore in new directory after source changes; mismatched/missing/additional objects or unsafe paths rejected",
+    "Regression with original retained state + new binary/Unicode materials; no native replay"
+  ],
+  "limits": [
+    "No authenticated remote telemetry or disk isolation",
+    "Cooperative snapshot placement must precede actual native calls"
+  ],
+  "repair_limit": 2
+}

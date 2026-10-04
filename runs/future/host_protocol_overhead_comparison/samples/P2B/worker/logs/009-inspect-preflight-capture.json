@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import json; from pathlib import Path; p=Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/008-check-reply.json\"); d=json.loads(p.read_text()); print(json.dumps(d,indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:21:39.635055+00:00",
+    "monotonic_ns": 39538281431041,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:21:39.659276+00:00",
+    "monotonic_ns": 39538305656006,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.024224965,
+  "stdout": "{\n  \"schema\": \"forge-comparison-cli/1\",\n  \"actor\": \"worker\",\n  \"cwd\": \"/workspace\",\n  \"argv\": [\n    \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\",\n    \"/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/hostdraft.py\",\n    \"check-reply\",\n    \"--request\",\n    \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/job/request.json\",\n    \"--reply\",\n    \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/reply.json\"\n  ],\n  \"begin\": {\n    \"utc\": \"2026-10-04T06:21:30.681452+00:00\",\n    \"monotonic_ns\": 39529327827931,\n    \"boot_id\": \"15c5dffa-56c9-4924-b40b-ee079fd89ee9\"\n  },\n  \"state\": \"finished\",\n  \"end\": {\n    \"utc\": \"2026-10-04T06:21:30.718690+00:00\",\n    \"monotonic_ns\": 39529365070850,\n    \"boot_id\": \"15c5dffa-56c9-4924-b40b-ee079fd89ee9\"\n  },\n  \"exit_code\": 0,\n  \"elapsed_seconds\": 0.037242919,\n  \"stdout\": \"{\\n  \\\"status\\\": \\\"payload_valid\\\",\\n  \\\"read_only\\\": true,\\n  \\\"automatic_host_call\\\": false,\\n  \\\"call_allowed\\\": false,\\n  \\\"native_completion_checked\\\": false,\\n  \\\"semantic_acceptance\\\": \\\"not_evaluated\\\",\\n  \\\"scope\\\": \\\"existing outer host reply and file refs only; original receive/commit remain required\\\"\\n}\\n\",\n  \"stderr\": \"\",\n  \"stdout_base64\": \"ewogICJzdGF0dXMiOiAicGF5bG9hZF92YWxpZCIsCiAgInJlYWRfb25seSI6IHRydWUsCiAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwKICAiY2FsbF9hbGxvd2VkIjogZmFsc2UsCiAgIm5hdGl2ZV9jb21wbGV0aW9uX2NoZWNrZWQiOiBmYWxzZSwKICAic2VtYW50aWNfYWNjZXB0YW5jZSI6ICJub3RfZXZhbHVhdGVkIiwKICAic2NvcGUiOiAiZXhpc3Rpbmcgb3V0ZXIgaG9zdCByZXBseSBhbmQgZmlsZSByZWZzIG9ubHk7IG9yaWdpbmFsIHJlY2VpdmUvY29tbWl0IHJlbWFpbiByZXF1aXJlZCIKfQo=\",\n  \"stderr_base64\": \"\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtY29tcGFyaXNvbi1jbGkvMSIsCiAgImFjdG9yIjogIndvcmtlciIsCiAgImN3ZCI6ICIvd29ya3NwYWNlIiwKICAiYXJndiI6IFsKICAgICIvb3B0L2NvZGV4L3J1bnRpbWVzL2NvZGV4LXByaW1hcnktcnVudGltZS9kZXBlbmRlbmNpZXMvcHl0aG9uL2Jpbi9weXRob24zIiwKICAgICIvd29ya3NwYWNlL0ExMTEvcnVucy9SMDEvY2FuZGlkYXRlL2ZvcmdlLWFnZW50LWZsb3cvc2NyaXB0cy9ob3N0ZHJhZnQucHkiLAogICAgImNoZWNrLXJlcGx5IiwKICAgICItLXJlcXVlc3QiLAogICAgIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vc2FtcGxlcy9QMkIvam9iL3JlcXVlc3QuanNvbiIsCiAgICAiLS1yZXBseSIsCiAgICAiL3dvcmtzcGFjZS9BMTExL3J1bnMvZnV0dXJlL2hvc3RfcHJvdG9jb2xfb3ZlcmhlYWRfY29tcGFyaXNvbi9zYW1wbGVzL1AyQi93b3JrZXIvcmVwbHkuanNvbiIKICBdLAogICJiZWdpbiI6IHsKICAgICJ1dGMiOiAiMjAyNi0xMC0wNFQwNjoyMTozMC42ODE0NTIrMDA6MDAiLAogICAgIm1vbm90b25pY19ucyI6IDM5NTI5MzI3ODI3OTMxLAogICAgImJvb3RfaWQiOiAiMTVjNWRmZmEtNTZjOS00OTI0LWI0MGItZWUwNzlmZDg5ZWU5IgogIH0sCiAgInN0YXRlIjogImZpbmlzaGVkIiwKICAiZW5kIjogewogICAgInV0YyI6ICIyMDI2LTEwLTA0VDA2OjIxOjMwLjcxODY5MCswMDowMCIsCiAgICAibW9ub3RvbmljX25zIjogMzk1MjkzNjUwNzA4NTAsCiAgICAiYm9vdF9pZCI6ICIxNWM1ZGZmYS01NmM5LTQ5MjQtYjQwYi1lZTA3OWZkODllZTkiCiAgfSwKICAiZXhpdF9jb2RlIjogMCwKICAiZWxhcHNlZF9zZWNvbmRzIjogMC4wMzcyNDI5MTksCiAgInN0ZG91dCI6ICJ7XG4gIFwic3RhdHVzXCI6IFwicGF5bG9hZF92YWxpZFwiLFxuICBcInJlYWRfb25seVwiOiB0cnVlLFxuICBcImF1dG9tYXRpY19ob3N0X2NhbGxcIjogZmFsc2UsXG4gIFwiY2FsbF9hbGxvd2VkXCI6IGZhbHNlLFxuICBcIm5hdGl2ZV9jb21wbGV0aW9uX2NoZWNrZWRcIjogZmFsc2UsXG4gIFwic2VtYW50aWNfYWNjZXB0YW5jZVwiOiBcIm5vdF9ldmFsdWF0ZWRcIixcbiAgXCJzY29wZVwiOiBcImV4aXN0aW5nIG91dGVyIGhvc3QgcmVwbHkgYW5kIGZpbGUgcmVmcyBvbmx5OyBvcmlnaW5hbCByZWNlaXZlL2NvbW1pdCByZW1haW4gcmVxdWlyZWRcIlxufVxuIiwKICAic3RkZXJyIjogIiIsCiAgInN0ZG91dF9iYXNlNjQiOiAiZXdvZ0lDSnpkR0YwZFhNaU9pQWljR0Y1Ykc5aFpGOTJZV3hwWkNJc0NpQWdJbkpsWVdSZmIyNXNlU0k2SUhSeWRXVXNDaUFnSW1GMWRHOXRZWFJwWTE5b2IzTjBYMk5oYkd3aU9pQm1ZV3h6WlN3S0lDQWlZMkZzYkY5aGJHeHZkMlZrSWpvZ1ptRnNjMlVzQ2lBZ0ltNWhkR2wyWlY5amIyMXdiR1YwYVc5dVgyTm9aV05yWldRaU9pQm1ZV3h6WlN3S0lDQWljMlZ0WVc1MGFXTmZZV05qWlhCMFlXNWpaU0k2SUNKdWIzUmZaWFpoYkhWaGRHVmtJaXdLSUNBaWMyTnZjR1VpT2lBaVpYaHBjM1JwYm1jZ2IzVjBaWElnYUc5emRDQnlaWEJzZVNCaGJtUWdabWxzWlNCeVpXWnpJRzl1YkhrN0lHOXlhV2RwYm1Gc0lISmxZMlZwZG1VdlkyOXRiV2wwSUhKbGJXRnBiaUJ5WlhGMWFYSmxaQ0lLZlFvPSIsCiAgInN0ZGVycl9iYXNlNjQiOiAiIgp9Cg==",
+  "stderr_base64": ""
+}

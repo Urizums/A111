@@ -1,0 +1,34 @@
+/workspace/A111/skills/forge-agent-flow/references/host-bridge.md:70:  "schema_version": "forge-host-reply/1",
+/workspace/A111/skills/forge-agent-flow/references/host-bridge.md:73:  "outcome": "done", "result": {},
+/workspace/A111/skills/forge-agent-flow/scripts/test_hostbridge.py:59:        reply = {'schema_version':'forge-host-reply/1','job_id':request['request']['job_id'],
+/workspace/A111/skills/forge-agent-flow/scripts/test_hostbridge.py:59:        reply = {'schema_version':'forge-host-reply/1','job_id':request['request']['job_id'],
+/workspace/A111/skills/forge-agent-flow/scripts/hostdraft.py:77:    return {'schema_version': 'forge-host-reply/1', 'job_id': request['job_id'],
+/workspace/A111/skills/forge-agent-flow/scripts/hostdraft.py:77:    return {'schema_version': 'forge-host-reply/1', 'job_id': request['job_id'],
+/workspace/A111/skills/forge-agent-flow/scripts/test_coveragecheck.py:43:                "expected": {"result": {"state": state}, "evidence": {"reason": reason}},
+/workspace/A111/skills/forge-agent-flow/scripts/test_coveragecheck.py:233:        journey["expected"]["result"]["state"] = "sent"
+/workspace/A111/skills/forge-agent-flow/scripts/test_coveragecheck.py:43:                "expected": {"result": {"state": state}, "evidence": {"reason": reason}},
+/workspace/A111/skills/forge-agent-flow/scripts/test_coveragecheck.py:233:        journey["expected"]["result"]["state"] = "sent"
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:84:                "expected": {"artifacts": {"result": {"summary": "Deployment delayed", "owner": "Mina"}}},
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:92:                "expected": {"artifacts": {"result": {"summary": "Deployment delayed", "owner": None}}},
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:152:        "artifacts": {"result": {"type": "object", "description": "Ticket summary and owner."}},
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:153:        "outputs": ["result"],
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:162:                "writes": ["result"],
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:168:                "emits": {"ok": ["result"], "error": [], "blocked": []},
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:84:                "expected": {"artifacts": {"result": {"summary": "Deployment delayed", "owner": "Mina"}}},
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:92:                "expected": {"artifacts": {"result": {"summary": "Deployment delayed", "owner": None}}},
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:152:        "artifacts": {"result": {"type": "object", "description": "Ticket summary and owner."}},
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:153:        "outputs": ["result"],
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:162:                "writes": ["result"],
+/workspace/A111/skills/forge-agent-flow/scripts/test_designcheck.py:168:                "emits": {"ok": ["result"], "error": [], "blocked": []},
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:326:        reply_contract = {"result": "Task-specific output required by work.prompt"} if kind == "project" else {
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:327:            "result": {"required_keys": ["invocation_id", "outcome", "artifacts", "evidence"],
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:370:               "Write work.reply_path using forge-host-reply/1: schema_version, job_id, attempt_id, request_hash, "
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:481:    need(isinstance(reply, dict) and set(reply) == {"schema_version", "job_id", "attempt_id", "request_hash", "outcome", "result", "artifacts", "reason"}, "Malformed host reply")
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:482:    need(reply["schema_version"] == "forge-host-reply/1" and reply["job_id"] == r["job_id"]
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:556:            need(decision["results"] == reply["result"], "Package decision must submit the actual worker Flow response")
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:326:        reply_contract = {"result": "Task-specific output required by work.prompt"} if kind == "project" else {
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:327:            "result": {"required_keys": ["invocation_id", "outcome", "artifacts", "evidence"],
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:370:               "Write work.reply_path using forge-host-reply/1: schema_version, job_id, attempt_id, request_hash, "
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:481:    need(isinstance(reply, dict) and set(reply) == {"schema_version", "job_id", "attempt_id", "request_hash", "outcome", "result", "artifacts", "reason"}, "Malformed host reply")
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:482:    need(reply["schema_version"] == "forge-host-reply/1" and reply["job_id"] == r["job_id"]
+/workspace/A111/skills/forge-agent-flow/scripts/hostbridge.py:556:            need(decision["results"] == reply["result"], "Package decision must submit the actual worker Flow response")

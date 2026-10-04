@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,hashlib; from pathlib import Path; a=json.loads(Path('runs/future/concurrent-ticket/acceptance.json').read_text()); assert len(a['cases'])==3; print(hashlib.sha256(Path('challenges/ticket-desk/app.py').read_bytes()).hexdigest())"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:04:25.650708+00:00",
+    "monotonic_ns": 38504297084805,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:04:25.674699+00:00",
+    "monotonic_ns": 38504321078276,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "2dcfde075ba8308e95d2f46aa17ab3da2f1de082474611618376c52be6180ece\n",
+  "stderr": "",
+  "stdout_base64": "MmRjZmRlMDc1YmE4MzA4ZTk1ZDJmNDZhYTE3YWIzZGEyZjFkZTA4MjQ3NDYxMTYxODM3NmM1MmJlNjE4MGVjZQo=",
+  "stderr_base64": ""
+}

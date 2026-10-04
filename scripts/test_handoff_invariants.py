@@ -1,5 +1,6 @@
 """Negative checks for accidentally accepting a false handoff transition."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
@@ -89,6 +90,32 @@ class HandoffInvariants(unittest.TestCase):
 
     def test_unfinished_checkpoint_cannot_select_no_task(self):
         self.assertTrue(validate_checkpoint(dict(active_phase='P1', next_task_id=None), self.phase))
+
+    def test_blocked_frontier_can_have_no_ready_task_without_finishing_goal(self):
+        checkpoint=dict(active_phase='P1',next_task_id=None,lifecycle='active',project_goal_status='active')
+        self.phase['tasks'][0].update(status='blocked',blocker='Required capability absent')
+        self.assertEqual(validate_checkpoint(checkpoint,self.phase),[])
+        self.phase['tasks'][0].update(status='planned',blocker=None)
+        self.assertTrue(validate_checkpoint(checkpoint,self.phase))
+        for task in self.phase['tasks']:task['status']='done'
+        self.assertTrue(validate_checkpoint(checkpoint,self.phase))
+
+    def test_started_successor_may_later_block_but_requires_original_receipt(self):
+        for task in self.phase['tasks']:task.update(status='done',evidence=['actual.json'])
+        nxt=copy.deepcopy(self.phase);nxt['phase_id']='P2';nxt['tasks'][0]['status']='blocked'
+        (self.root/'next.json').write_text(json.dumps(nxt))
+        self.phase['tasks'][-1]['transition']={'next_phase_id':'P2','todo_path':'next.json',
+                                             'first_task_id':'a','start_evidence':['actual.json']}
+        (self.root/'state').mkdir()
+        ref={'path':'actual.json','sha256':hashlib.sha256((self.root/'actual.json').read_bytes()).hexdigest()}
+        state={'tasks':[{'id':'a','attempts':[{'start_evidence':ref}]}]}
+        (self.root/'state/continuation.json').write_text(json.dumps(state))
+        self.assertEqual(validate_phase(self.phase,self.root),[])
+        (self.root/'actual.json').write_text('tampered')
+        self.assertTrue(any('not actually started' in e for e in validate_phase(self.phase,self.root)))
+        state['tasks'][0]['attempts']=[]
+        (self.root/'state/continuation.json').write_text(json.dumps(state))
+        self.assertTrue(any('not actually started' in e for e in validate_phase(self.phase,self.root)))
 
     def test_delivery_cannot_hide_ready_continuation(self):
         task=dict(id='ready', queue='capabilities', category='test', priority=1,

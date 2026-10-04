@@ -1,0 +1,134 @@
+{
+  "schema": "forge-paired-study/1",
+  "id": "C3-P2",
+  "frozen_at": "2026-10-04T06:13:15.622034+00:00",
+  "scope": "New four original business materials, two A/B pairs per project/package block; historical C1 unchanged",
+  "candidate_lock": "runs/R01/candidate-lock.json",
+  "candidate_lock_sha256": "f55d2dc681596500c212a9ee8270cc71a1763add7f9e199e4199bcb22b44c911",
+  "samples": [
+    {
+      "id": "P1A",
+      "pair": "P1",
+      "kind": "project",
+      "mode": "A",
+      "material": "runs/future/host_protocol_overhead_comparison/materials/P1.json"
+    },
+    {
+      "id": "P1B",
+      "pair": "P1",
+      "kind": "project",
+      "mode": "B",
+      "material": "runs/future/host_protocol_overhead_comparison/materials/P1.json"
+    },
+    {
+      "id": "P2B",
+      "pair": "P2",
+      "kind": "project",
+      "mode": "B",
+      "material": "runs/future/host_protocol_overhead_comparison/materials/P2.json"
+    },
+    {
+      "id": "P2A",
+      "pair": "P2",
+      "kind": "project",
+      "mode": "A",
+      "material": "runs/future/host_protocol_overhead_comparison/materials/P2.json"
+    },
+    {
+      "id": "K1B",
+      "pair": "K1",
+      "kind": "package",
+      "mode": "B",
+      "material": "runs/future/host_protocol_overhead_comparison/materials/K1.json"
+    },
+    {
+      "id": "K1A",
+      "pair": "K1",
+      "kind": "package",
+      "mode": "A",
+      "material": "runs/future/host_protocol_overhead_comparison/materials/K1.json"
+    },
+    {
+      "id": "K2A",
+      "pair": "K2",
+      "kind": "package",
+      "mode": "A",
+      "material": "runs/future/host_protocol_overhead_comparison/materials/K2.json"
+    },
+    {
+      "id": "K2B",
+      "pair": "K2",
+      "kind": "package",
+      "mode": "B",
+      "material": "runs/future/host_protocol_overhead_comparison/materials/K2.json"
+    }
+  ],
+  "settings": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "max",
+    "fork_turns": "none",
+    "max_study_workers": 2,
+    "status_queries_per_worker": 12,
+    "wait_max_seconds": 45,
+    "corrections_per_worker": 2,
+    "coordinator_corrections_total": 2
+  },
+  "comparison": "A manually constructs separate incomplete reply/decision; B uses original hostdraft generation; both original preflight and Root source review",
+  "required": [
+    "8 actual original native calls and terminal receipts",
+    "2 pairs per block; source/candidate/criteria/settings/scopes identical within each pair",
+    "worker first exact bootstrap and captured pre-completion preflight",
+    "original receive, separate source review, decision check, commit/reconcile",
+    "all samples/failures/questions retained; missing metrics null"
+  ],
+  "metrics": [
+    "business acceptance",
+    "captured worker_reply elapsed",
+    "captured coordinator decision elapsed",
+    "captured target records with orchestration aggregates separately identified",
+    "actual correction count and parent assistance"
+  ],
+  "administrative_exclusions": [
+    "Study design/material authoring before sample setup is outside measured stages",
+    "The outer capture wrapper is instrumentation; nested targets inside an orchestration aggregate are not double-summed",
+    "Artifact transport and final Git publication are outside per-sample protocol timing"
+  ],
+  "limits": [
+    "Small descriptive paired observation, not stable speed or generalization claim",
+    "Same-boot elapsed includes tool/wait gaps; no model-active-time, tokens, cost or internal provider identity",
+    "Root source review is independent of business workers, but Root is protocol author",
+    "Global host resource isolation not provided; record any overlapping unrelated work"
+  ],
+  "files": [
+    {
+      "path": "runs/future/host_protocol_overhead_comparison/public/protocol.md",
+      "sha256": "783407f9a175971a75bf3337011464c64b47ca2ae1e2bc14357f071cc43bdf1b",
+      "size_bytes": 3865
+    },
+    {
+      "path": "runs/future/host_protocol_overhead_comparison/public/bootstrap.py",
+      "sha256": "b9437b9e3c27ff56d127fb17b9df367b123b67d3349361c5f07b4e95aa4d0401",
+      "size_bytes": 726
+    },
+    {
+      "path": "runs/future/host_protocol_overhead_comparison/materials/K1.json",
+      "sha256": "a4103da41f7e539142c543d223b63ff7da94247768bf507a96645ab06aed0125",
+      "size_bytes": 1116
+    },
+    {
+      "path": "runs/future/host_protocol_overhead_comparison/materials/P1.json",
+      "sha256": "3cd188d229c9e007398636f9a732e6cce2a381c5588de3a0932c688980ac9140",
+      "size_bytes": 880
+    },
+    {
+      "path": "runs/future/host_protocol_overhead_comparison/materials/K2.json",
+      "sha256": "0e80ce8d12e531843d516042edea627c2701ed3bda36a2a90a8a89a78a690d13",
+      "size_bytes": 987
+    },
+    {
+      "path": "runs/future/host_protocol_overhead_comparison/materials/P2.json",
+      "sha256": "434e8c494a482b8be6e8d2fd385f2a3cefe32806ebc81c9f0740e5af34c51cc2",
+      "size_bytes": 785
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/hostbridge.py",
+    "commit",
+    "--job",
+    "/workspace/A111/runs/R06/handoff/complex/job",
+    "--decision",
+    "/workspace/A111/runs/R06/handoff/complex/decision.json"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:53:23.184122+00:00",
+    "monotonic_ns": 41441830499799,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:53:23.240011+00:00",
+    "monotonic_ns": 41441886388997,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"phase\": \"committed\",\n  \"job_id\": \"job_46b001fd29ec4222bfdcd57670c69305\",\n  \"attempt_id\": \"10f249791e7a4a09833b39bd8a86281a\",\n  \"request_hash\": \"89a4699a503609a55ee9d40111669000e81924c5b6a426f3a605f636f90386e4\",\n  \"action\": \"reuse_record\",\n  \"worker\": \"/root/luna_forge_10f249791e7a\",\n  \"commit\": {\n    \"decision_ref\": {\n      \"path\": \"/workspace/A111/runs/R06/handoff/complex/decision.json\",\n      \"sha256\": \"724338aa39c5922ad02db9f9b1717b8425337e1ae3ba2719b924dec9d9f61647\"\n    },\n    \"target_result\": {\n      \"task_id\": \"work\",\n      \"attempt_id\": \"10f249791e7a4a09833b39bd8a86281a\",\n      \"outcome\": \"done\",\n      \"task_status\": \"done\",\n      \"reason\": null,\n      \"status\": \"completed\",\n      \"revision\": 2,\n      \"plan_hash\": \"d2ca7c5d63693533c28226dde51d4f88cce5950f19c74c6d16d1b482ce6769b3\",\n      \"evaluation_plan_hash\": null\n    },\n    \"worker_task_outcome\": \"done\",\n    \"coordinator_outcome\": \"done\",\n    \"recorded_at\": \"2026-10-04T06:53:23Z\"\n  },\n  \"coordinator_outcome\": \"done\",\n  \"automatic_host_call\": false,\n  \"internal_model_identity_verified\": false,\n  \"tokens\": null,\n  \"cost\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwaGFzZSI6ICJjb21taXR0ZWQiLAogICJqb2JfaWQiOiAiam9iXzQ2YjAwMWZkMjllYzQyMjJiZmRjZDU3NjcwYzY5MzA1IiwKICAiYXR0ZW1wdF9pZCI6ICIxMGYyNDk3OTFlN2E0YTA5ODMzYjM5YmQ4YTg2MjgxYSIsCiAgInJlcXVlc3RfaGFzaCI6ICI4OWE0Njk5YTUwMzYwOWE1NWVlOWQ0MDExMTY2OTAwMGU4MTkyNGM1YjZhNDI2ZjNhNjA1ZjYzNmY5MDM4NmU0IiwKICAiYWN0aW9uIjogInJldXNlX3JlY29yZCIsCiAgIndvcmtlciI6ICIvcm9vdC9sdW5hX2ZvcmdlXzEwZjI0OTc5MWU3YSIsCiAgImNvbW1pdCI6IHsKICAgICJkZWNpc2lvbl9yZWYiOiB7CiAgICAgICJwYXRoIjogIi93b3Jrc3BhY2UvQTExMS9ydW5zL1IwNi9oYW5kb2ZmL2NvbXBsZXgvZGVjaXNpb24uanNvbiIsCiAgICAgICJzaGEyNTYiOiAiNzI0MzM4YWEzOWM1OTIyYWQwMmRiOWY5YjE3MTdiODQyNTMzN2UxYWUzYmEyNzE5YjkyNGRlYzlkOWY2MTY0NyIKICAgIH0sCiAgICAidGFyZ2V0X3Jlc3VsdCI6IHsKICAgICAgInRhc2tfaWQiOiAid29yayIsCiAgICAgICJhdHRlbXB0X2lkIjogIjEwZjI0OTc5MWU3YTRhMDk4MzNiMzliZDhhODYyODFhIiwKICAgICAgIm91dGNvbWUiOiAiZG9uZSIsCiAgICAgICJ0YXNrX3N0YXR1cyI6ICJkb25lIiwKICAgICAgInJlYXNvbiI6IG51bGwsCiAgICAgICJzdGF0dXMiOiAiY29tcGxldGVkIiwKICAgICAgInJldmlzaW9uIjogMiwKICAgICAgInBsYW5faGFzaCI6ICJkMmNhN2M1ZDYzNjkzNTMzYzI4MjI2ZGRlNTFkNGY4OGNjZTU5NTBmMTljNzRjNmQxNmQxYjQ4MmNlNjc2OWIzIiwKICAgICAgImV2YWx1YXRpb25fcGxhbl9oYXNoIjogbnVsbAogICAgfSwKICAgICJ3b3JrZXJfdGFza19vdXRjb21lIjogImRvbmUiLAogICAgImNvb3JkaW5hdG9yX291dGNvbWUiOiAiZG9uZSIsCiAgICAicmVjb3JkZWRfYXQiOiAiMjAyNi0xMC0wNFQwNjo1MzoyM1oiCiAgfSwKICAiY29vcmRpbmF0b3Jfb3V0Y29tZSI6ICJkb25lIiwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICJpbnRlcm5hbF9tb2RlbF9pZGVudGl0eV92ZXJpZmllZCI6IGZhbHNlLAogICJ0b2tlbnMiOiBudWxsLAogICJjb3N0IjogbnVsbAp9Cg==",
+  "stderr_base64": ""
+}

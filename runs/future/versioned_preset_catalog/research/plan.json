@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "research",
+  "goal": "Research task-specific original preset requirements from primary sources",
+  "deliverable_kind": "scoped_change",
+  "requirements": [
+    {
+      "id": "req_work",
+      "text": "Research task-specific original preset requirements from primary sources",
+      "origin": "explicit",
+      "basis": "runs/R05/materials/catalog-research-brief.md",
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_work",
+      "assertion": "Assigned original requirements are covered by actual source and runtime evidence with limits disclosed.",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "work",
+      "title": "Research task-specific original preset requirements from primary sources",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "status": "blocked",
+  "functional_result": "Root original 10 journeys and 4 focus/width probes pass on candidate/v2",
+  "independent_final_acceptance": "not_available",
+  "native_bridge": "original worker final notification retained; later exact status query empty, terminal receipt unreconciled; no replacement worker",
+  "repairs": {
+    "Root": {
+      "used": 2,
+      "limit": 2,
+      "evidence": [
+        "repair-1.json",
+        "repair-2.json",
+        "root-repair-1-command.json",
+        "root-repair-2-command.json"
+      ]
+    },
+    "independent": {
+      "main_harness_used": 2,
+      "additional_reply_cli_correction": 1,
+      "limit": 2,
+      "over_limit_acceptance_forbidden": true
+    }
+  },
+  "evidence": [
+    "independent/worker/report.md",
+    "independent/final-status-query.json",
+    "root-repair-2/root-report.json",
+    "visual-review.json"
+  ],
+  "next": "Retain repaired local candidate and original failures. Do not reset budgets or fabricate provider terminal proof. Publication remains blocked."
+}

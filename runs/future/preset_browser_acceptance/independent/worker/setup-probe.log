@@ -1,0 +1,8 @@
+Preliminary environment probe command: python - <<'PY' (printed /usr/bin/chromium --version; imported playwright; entered sync_playwright() without its context manager; printed the bundled executable path)
+Observed raw teardown warning:
+Task was destroyed but it is pending!
+task: <Task cancelling name='Task-3' coro=<Connection.run.<locals>.init() running at /opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/playwright/_impl/_connection.py:344> wait_for=<Future finished result=None>>
+Future exception was never retrieved
+future: <Future finished exception=TargetClosedError('Target page, context or browser has been closed')>
+playwright._impl._errors.TargetClosedError: Target page, context or browser has been closed
+This was the unclosed preliminary probe, before acceptance attempt 1. The executable acceptance and supplemental probes use sync_playwright as a context manager, launch /usr/bin/chromium, and did not reproduce this warning.
