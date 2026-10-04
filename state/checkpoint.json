@@ -1,6 +1,6 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-04T05:26:49.237090+00:00",
+  "updated_at": "2026-10-04T05:31:54.512755+00:00",
   "active_phase": "R05",
   "next_task_id": "BACKLOG-preset_browser_acceptance",
   "next_action": "Original preset has actually rendered in Chromium151 at 1440/390px and switched palette. Freeze full journeys from original design acceptance, then check filter/detail/focus/run-again/delete-confirm/cancel-refresh/error-retry/reduced-motion with original sample; preserve all failures, no effect/performance inference.",
@@ -82,6 +82,14 @@
     "D00": {
       "status": "delivered",
       "evidence": "runs/cloud/github-pr.json"
+    },
+    "R00-review": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R00/github-publication-1.json",
+        "sha256": "fd90cc5d2d0fc3785de68b71e66e9ff55f6576dc672c9e7f0151613c42d56fed"
+      },
+      "at": "2026-10-04T05:31:54.399954+00:00"
     }
   },
   "next_queue_task_id": "BACKLOG-preset_browser_acceptance",
@@ -97,7 +105,8 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "active_coordinator"
+    "session_state": "checkpointed",
+    "checkpoint_reason": "Current reviewed batch published; R05 first task actually started; hourly continuation/check configured, future execution capabilities unverified."
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [

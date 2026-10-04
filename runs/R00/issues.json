@@ -128,6 +128,18 @@
       "evidence": [
         "runs/R04/capability-probe/automation-create.json"
       ]
+    },
+    {
+      "id": "R-I12",
+      "status": "historical_input_reconstruction_gap",
+      "problem": "Three original fresh-handoff derived state files were not separately retained before the worker updated them",
+      "resolution": "Retain initial hashes, full command records, final states and 1695 recoverable input files/delta map. Do not claim exact replay of all1698 input bytes.",
+      "corrections": 0,
+      "evidence": [
+        "runs/R02/handoff/snapshot.json",
+        "runs/R02/handoff/reconstruction-map.json",
+        "runs/R02/handoff/export-manifest.json"
+      ]
     }
   ]
 }

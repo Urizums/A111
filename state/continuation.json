@@ -10,6 +10,14 @@
     "D00": {
       "status": "delivered",
       "evidence": "runs/cloud/github-pr.json"
+    },
+    "R00-review": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R00/github-publication-1.json",
+        "sha256": "fd90cc5d2d0fc3785de68b71e66e9ff55f6576dc672c9e7f0151613c42d56fed"
+      },
+      "at": "2026-10-04T05:31:54.399954+00:00"
     }
   },
   "tasks": [
@@ -1487,7 +1495,8 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "active_coordinator"
+    "session_state": "checkpointed",
+    "checkpoint_reason": "Current reviewed batch published; R05 first task actually started; hourly continuation/check configured, future execution capabilities unverified."
   },
   "events": [
     {
@@ -1844,6 +1853,21 @@
     },
     {
       "at": "2026-10-04T05:26:49.233177+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T05:31:54.399968+00:00",
+      "command": "delivery",
+      "result": {
+        "delivery": "R00-review",
+        "project_status": "active"
+      }
+    },
+    {
+      "at": "2026-10-04T05:31:54.509008+00:00",
       "command": "sync",
       "result": {
         "synchronized": true

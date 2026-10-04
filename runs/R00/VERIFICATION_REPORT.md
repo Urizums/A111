@@ -65,4 +65,8 @@
 
 初始新上下文输入 1698 个文件中，1695 个原字节可由 `../R02/handoff/reconstruction-map.json` 和 baseline-delta 重建；当时三个派生状态文件原字节未另存，明确标注不可精确重建，最终状态与完整过程证据已导出。不能把这称为完整可重复的原宿主快照。
 
-归档及真实 GitHub CI 正在发布后核验。最终证据在新的命令记录和 `publication-verification.json` 中追加；未产生的结果不算通过。
+候选归档包含 2082 个文件，SHA-256 为 `d0d4f213e1782d6d00dacab7c9dad259f259a85813430745abe3fc6d66671203`。从不含 Git 的新解压目录安装，完整性和 17 项 CLI 冒烟通过（`package-candidate-command.json`、`archive-install-command.json`、`archive-smoke/report.json`）。最终交付包在报告整合后生成；候选及其失败/成功记录均保留。
+
+代码已直接推送 fork dev，远端提交 `d830f521f29533199fded1e2fded7f7d74b16cce` 的树与本地逐字节一致，上游 PR #1 自动更新且保持 open/unmerged。真实 Actions [run 37180110023](https://github.com/waw1w1/A111/actions/runs/37180110023) 已由 push 触发；Python3.10 和3.12 两项 job 均成功，原回归368、C3回归376、辅助37、真实HTTP旅程、安装17项烟测及归档上传全部成功。记录见 `ci-success.json`、`ci-jobs-success.json`、`ci-artifacts.json`、`publication-verification.json`。旧 settings API403 不影响本次真实运行。报告/checkpoint 收尾提交会再次触发 CI，最终 head 状态以 PR Checks 为准。
+
+最终代码和报告包输出到 `/workspace/deliveries/A111-review-20261004-final.tar.gz`，旁附 SHA-256；CI Artifacts 同样提供分 Python 的源码报告包。最终包在本报告整合后生成，不能将包自身哈希嵌入其内容；候选归档回放记录已经纳入仓库。
