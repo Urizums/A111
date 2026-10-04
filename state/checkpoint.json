@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-04T07:50:51.904777+00:00",
+  "updated_at": "2026-10-04T07:56:24.469260+00:00",
   "active_phase": "R05",
   "next_task_id": null,
-  "next_action": "Upstream continues the eight original blocked tasks listed in runs/R06/upstream-handoff/README.md; hourly resumption disabled.",
+  "next_action": "Upstream owns continuation from runs/R06/upstream-handoff/README.md; original acceptance tasks and budgets preserved; no scheduled continuation.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -100,6 +100,18 @@
         "sha256": "fd90cc5d2d0fc3785de68b71e66e9ff55f6576dc672c9e7f0151613c42d56fed"
       },
       "at": "2026-10-04T05:31:54.399954+00:00"
+    },
+    "R05-R06-upstream-handoff": {
+      "status": "delivered",
+      "mode": "unfinished_upstream_handoff",
+      "full_acceptance_passed": false,
+      "evidence": {
+        "path": "runs/R06/upstream-handoff/publication.json",
+        "sha256": "b7f117a7597c2d75974d4f372a6c6cfd0419eaac00c85d27d5f41d8eb7a6532b"
+      },
+      "commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
+      "pr": "https://github.com/Urizums/A111/pull/1",
+      "at": "2026-10-04T07:55:26.705220+00:00"
     }
   },
   "next_queue_task_id": null,
@@ -115,15 +127,15 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "limit": "Unfinished work is being handed off upstream under explicit user instruction; no background continuation or upstream merge.",
+    "limit": "Hourly automation disabled. This agent completed the authorized handoff, not full product acceptance; remaining original work is for upstream.",
     "monitor_configured": true,
     "monitor_id": "6ac1e1f6159081919cd571f6fa15d397",
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "preparing_user_authorized_upstream_handoff",
-    "checkpoint_reason": "Latest user explicitly requested PR handoff of unfinished work; strict acceptance remains failed; no additional implementation or acceptance retries.",
-    "coordinator_heartbeat": "2026-10-04T07:50:51.900507+00:00",
+    "session_state": "handed_off_to_upstream",
+    "checkpoint_reason": "User-directed unfinished-work handoff published to fork dev and upstream PR #1; eight original acceptance tasks remain blocked for upstream continuation.",
+    "coordinator_heartbeat": "2026-10-04T07:56:24.421515+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -132,7 +144,7 @@
     "coordinator_lease_state": "state/coordinator-lease.json",
     "recovery": "runs/R06/RECOVERY.md",
     "final_validation": "runs/R06/final/summary.json",
-    "publication_check": "runs/R06/scheduling/cancel-20261004T074313Z/publication-check.json",
+    "publication_check": "runs/R06/upstream-handoff/strict-acceptance.json",
     "review_bundle": "runs/R06/final/complete-review.json",
     "post_release_trigger_verified": true,
     "last_scheduled_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
@@ -145,7 +157,9 @@
     "monitor_cancellation_evidence": "runs/R06/scheduling/cancel-20261004T074313Z/automation-after.json",
     "monitor_cancellation_report": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
     "upstream_handoff": "state/upstream-handoff.json",
-    "upstream_handoff_report": "runs/R06/upstream-handoff/README.md"
+    "upstream_handoff_report": "runs/R06/upstream-handoff/README.md",
+    "handoff_publication": "runs/R06/upstream-handoff/publication.json",
+    "handoff_pr_verification": "runs/R06/upstream-handoff/pr-verification.json"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -179,8 +193,8 @@
     "recovery": "runs/R06/RECOVERY.md",
     "gate": "state/publication-gate.json",
     "code_archive": "/workspace/deliveries/A111-R06-candidate-20261004.tar.gz",
-    "committed": false,
-    "pushed": false,
+    "committed": true,
+    "pushed": true,
     "review_bundle": {
       "archive": "/workspace/deliveries/A111-R06-complete-review-20261004.tar.gz",
       "sha256": "bbe6179b9f39089e16dd00c77bbc897a7ddf2c47b356a25f8c4e6ab59d4bdf12",
@@ -203,7 +217,10 @@
         }
       ]
     },
-    "handoff_authorization": "state/upstream-handoff.json"
+    "handoff_authorization": "state/upstream-handoff.json",
+    "status": "published_for_upstream_handoff",
+    "published_commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
+    "publication_evidence": "runs/R06/upstream-handoff/publication.json"
   },
   "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
   "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
@@ -212,7 +229,10 @@
     "mode": "unfinished_work_for_upstream",
     "authorization": "state/upstream-handoff.json",
     "report": "runs/R06/upstream-handoff/README.md",
-    "publication_state": "prepared",
-    "full_acceptance_passed": false
+    "publication_state": "published_for_upstream_continuation",
+    "full_acceptance_passed": false,
+    "publication_commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
+    "publication_evidence": "runs/R06/upstream-handoff/publication.json",
+    "pr_verification": "runs/R06/upstream-handoff/pr-verification.json"
   }
 }
