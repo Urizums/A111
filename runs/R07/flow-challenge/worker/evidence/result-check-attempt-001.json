@@ -1,0 +1,13 @@
+{
+  "attempt": 1,
+  "argv": [
+    "python3",
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/evidence/verify_original.py"
+  ],
+  "cwd": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker",
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/evidence/verify_original.py\", line 37, in <module>\n    assert not re.search(r'\\b(requests|urllib|socket)\\b|https?://',code), 'unexpected network capability marker'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: unexpected network capability marker\n",
+  "defect": "Checker searched source text for the word requests and falsely matched CSV/API field names; no candidate failure was established.",
+  "repair_count_before": 0
+}

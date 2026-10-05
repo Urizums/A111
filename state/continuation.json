@@ -2268,28 +2268,729 @@
       "repair_limit": 2,
       "blocker": "Post-release 07:21 real trigger and retained-state inspection verified. Full independent cold-start plus substantive successor execution remains unverified: no original ready task and original native terminal receipt unresolved.",
       "next_action": "Keep original attempts and budgets. Resume only after a concrete blocked condition changes and an original task can actually start; a repeated read-only trigger is insufficient."
+    },
+    {
+      "id": "R07-01",
+      "title": "收集并固定上游成果",
+      "queue": "capabilities",
+      "category": "takeover",
+      "complexity": 2,
+      "priority": 0,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "runs/R07/intake/",
+        "runs/R07/inventory/"
+      ],
+      "inputs": [
+        "runs/R07/brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "原提交、源字节、旧失败与预算保留；接手索引可定位"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R07/R07-01-result.json",
+          "sha256": "4c513077a21d89c81d01e03e6f930e77d61946076ee22dee36535fc251ac274b"
+        },
+        {
+          "path": "runs/R07/intake/provenance.json",
+          "sha256": "098c272a0595195816516c4091f94dca0b501ee9a59c6132de14ced9714b5127"
+        },
+        {
+          "path": "runs/R07/intake/collection-check-command.json",
+          "sha256": "0cd6147eceaa29090cb229f2d8ea7af5d2f09df38e3cc9e0ef6d660be0344449"
+        },
+        {
+          "path": "runs/R07/inventory/INVENTORY.md",
+          "sha256": "f22a7edbee7e7b5b63617a93053b77ec3cf42bff060572020f0616bc67052315"
+        },
+        {
+          "path": "runs/R07/inventory/inventory.json",
+          "sha256": "f494f4e64ef6cd85642cef881a9790cbd2f7552292a42d4be224159ff39a0baf"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R07-01-1",
+          "started_at": "2026-10-04T17:40:34.186690+00:00",
+          "requirements_hash": "9a75b8dbafce5001707fe68a1c837e209f1b48fedaec3ce264ba51c8a97dbd06",
+          "inputs": [
+            {
+              "path": "runs/R07/brief.json",
+              "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R07/intake/collection-check-command.json",
+            "sha256": "0cd6147eceaa29090cb229f2d8ea7af5d2f09df38e3cc9e0ef6d660be0344449"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T17:42:24.389986+00:00",
+          "result": {
+            "path": "runs/R07/R07-01-result.json",
+            "sha256": "4c513077a21d89c81d01e03e6f930e77d61946076ee22dee36535fc251ac274b"
+          },
+          "evidence": [
+            {
+              "path": "runs/R07/R07-01-result.json",
+              "sha256": "4c513077a21d89c81d01e03e6f930e77d61946076ee22dee36535fc251ac274b"
+            },
+            {
+              "path": "runs/R07/intake/provenance.json",
+              "sha256": "098c272a0595195816516c4091f94dca0b501ee9a59c6132de14ced9714b5127"
+            },
+            {
+              "path": "runs/R07/intake/collection-check-command.json",
+              "sha256": "0cd6147eceaa29090cb229f2d8ea7af5d2f09df38e3cc9e0ef6d660be0344449"
+            },
+            {
+              "path": "runs/R07/inventory/INVENTORY.md",
+              "sha256": "f22a7edbee7e7b5b63617a93053b77ec3cf42bff060572020f0616bc67052315"
+            },
+            {
+              "path": "runs/R07/inventory/inventory.json",
+              "sha256": "f494f4e64ef6cd85642cef881a9790cbd2f7552292a42d4be224159ff39a0baf"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Continue next dependency-ready R07 task"
+    },
+    {
+      "id": "R07-02",
+      "title": "修复快照恢复并执行故障回归",
+      "queue": "capabilities",
+      "category": "snapshot_restore",
+      "complexity": 2,
+      "priority": 1,
+      "depends_on": [
+        "R07-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R07/candidate/",
+        "runs/R07/validation/"
+      ],
+      "inputs": [
+        "runs/R07/brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "失败可原路径重试；已有目标不覆盖；C6固定候选及相关回归通过"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R07/R07-02-result.json",
+          "sha256": "5e4d3aeb29e39d8ed78ddbbe6a6e47b0d337e4eaa3e3d57ac966481bdbe2d09a"
+        },
+        {
+          "path": "runs/R07/candidate/C6-lock.json",
+          "sha256": "92ad0488a576392dc5d0a97549b8a837d123578eaffcc12c27fecad69bfe75a3"
+        },
+        {
+          "path": "runs/R07/validation/restore-tests-command.json",
+          "sha256": "61e00df50091d8dec44ac7fe12bbb413e8f2b5f07af07da420653060b3304087"
+        },
+        {
+          "path": "runs/R07/validation/c6-regression-command.json",
+          "sha256": "787eca65685917ea74819def2a61a5a3170686489f393cec8336934e104bff5e"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R07-02-1",
+          "started_at": "2026-10-04T17:42:24.464918+00:00",
+          "requirements_hash": "455da9a47c65a602289c963f9c2a6aed64975459b7f2bad5ee5e00f1470f4a78",
+          "inputs": [
+            {
+              "path": "runs/R07/brief.json",
+              "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R07/validation/restore-tests-command.json",
+            "sha256": "61e00df50091d8dec44ac7fe12bbb413e8f2b5f07af07da420653060b3304087"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T17:42:24.539109+00:00",
+          "result": {
+            "path": "runs/R07/R07-02-result.json",
+            "sha256": "5e4d3aeb29e39d8ed78ddbbe6a6e47b0d337e4eaa3e3d57ac966481bdbe2d09a"
+          },
+          "evidence": [
+            {
+              "path": "runs/R07/R07-02-result.json",
+              "sha256": "5e4d3aeb29e39d8ed78ddbbe6a6e47b0d337e4eaa3e3d57ac966481bdbe2d09a"
+            },
+            {
+              "path": "runs/R07/candidate/C6-lock.json",
+              "sha256": "92ad0488a576392dc5d0a97549b8a837d123578eaffcc12c27fecad69bfe75a3"
+            },
+            {
+              "path": "runs/R07/validation/restore-tests-command.json",
+              "sha256": "61e00df50091d8dec44ac7fe12bbb413e8f2b5f07af07da420653060b3304087"
+            },
+            {
+              "path": "runs/R07/validation/c6-regression-command.json",
+              "sha256": "787eca65685917ea74819def2a61a5a3170686489f393cec8336934e104bff5e"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Continue next dependency-ready R07 task"
+    },
+    {
+      "id": "R07-03",
+      "title": "独立复核C6快照",
+      "queue": "capabilities",
+      "category": "independent_validation",
+      "complexity": 2,
+      "priority": 2,
+      "depends_on": [
+        "R07-02"
+      ],
+      "owner": "luna",
+      "write_paths": [
+        "runs/R07/validation/independent/"
+      ],
+      "inputs": [
+        "runs/R07/brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "新上下文只拿候选与原要求，实际检查并保留原结果/限度"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R07/R07-03-result.json",
+          "sha256": "1b9ecd140d2f6cf8a1f1398a66171d345980cf7cbe20cf315b28c4e69d7a9a64"
+        },
+        {
+          "path": "runs/R07/validation/independent/result.json",
+          "sha256": "367d79ce7e110c3f4597352e51c977c756f842c0e8fbefb0860cc79c183fe230"
+        },
+        {
+          "path": "runs/R07/validation/independent/outcomes.json",
+          "sha256": "787a0cdb8f82c63a72e34eb45a54c5eb2bec40f1a2267d593eefa4405896314a"
+        },
+        {
+          "path": "runs/R07/validation/independent/commands.jsonl",
+          "sha256": "e874b7e8a2097befdfe571865fed8efb7680c37191b8c67f2c0d919ed0ece085"
+        },
+        {
+          "path": "runs/R07/flow-challenge/host/restore-creation-receipt.json",
+          "sha256": "d34c8e15559202360796c4b826fd734ec9e35415cab6c35906df609949e215c8"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R07-03-1",
+          "started_at": "2026-10-04T17:42:24.666860+00:00",
+          "requirements_hash": "8f834f756bce56311fe8d0e80a351117699dc01b112e874a935f07a35d9416ea",
+          "inputs": [
+            {
+              "path": "runs/R07/brief.json",
+              "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R07/flow-challenge/host/dispatch-binding-command.json",
+            "sha256": "16186ae7cf9402975d75809c13b16fefa50cf704a203228ba58b86b5d89d3066"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T17:45:12.243553+00:00",
+          "result": {
+            "path": "runs/R07/R07-03-result.json",
+            "sha256": "1b9ecd140d2f6cf8a1f1398a66171d345980cf7cbe20cf315b28c4e69d7a9a64"
+          },
+          "evidence": [
+            {
+              "path": "runs/R07/R07-03-result.json",
+              "sha256": "1b9ecd140d2f6cf8a1f1398a66171d345980cf7cbe20cf315b28c4e69d7a9a64"
+            },
+            {
+              "path": "runs/R07/validation/independent/result.json",
+              "sha256": "367d79ce7e110c3f4597352e51c977c756f842c0e8fbefb0860cc79c183fe230"
+            },
+            {
+              "path": "runs/R07/validation/independent/outcomes.json",
+              "sha256": "787a0cdb8f82c63a72e34eb45a54c5eb2bec40f1a2267d593eefa4405896314a"
+            },
+            {
+              "path": "runs/R07/validation/independent/commands.jsonl",
+              "sha256": "e874b7e8a2097befdfe571865fed8efb7680c37191b8c67f2c0d919ed0ece085"
+            },
+            {
+              "path": "runs/R07/flow-challenge/host/restore-creation-receipt.json",
+              "sha256": "d34c8e15559202360796c4b826fd734ec9e35415cab6c35906df609949e215c8"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Complete native business pilot and integrate"
+    },
+    {
+      "id": "R07-04",
+      "title": "真实原生agent组织器材调配任务",
+      "queue": "challenges",
+      "category": "native_coordination",
+      "complexity": 2,
+      "priority": 3,
+      "depends_on": [
+        "R07-02"
+      ],
+      "owner": "luna",
+      "write_paths": [
+        "runs/R07/flow-challenge/worker/"
+      ],
+      "inputs": [
+        "runs/R07/brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "固定原材料业务结果可复核；真实子agent独立核验；实际后继首步；原输入不变"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R07/R07-04-result.json",
+          "sha256": "0a57af1251b2711f1589b051ddd6135b8857c62f10326c52e0164a19a2658f4a"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/results/allocation.json",
+          "sha256": "1b4f517b881f19f0e1fff45d4cf3fc0cf840c43dde7091978d8e62bf6b387719"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/evidence/commands.json",
+          "sha256": "6fd4b059b880dd5202da562ce144a5cbfe0e09a1724ae0d4c381322176e6eef4"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/reviewer/report.json",
+          "sha256": "089ae5202b712bd4d3e802b22a890d3abea5eb43b814da6ad446ad94a8f734cc"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/native/create-receipt.json",
+          "sha256": "b946fb1a45b3059f86552e5fea4bb506071dd6f19c36c95d17720412f3778d25"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json",
+          "sha256": "5249fc30830b9c4e5d7d8231a8c0f6f4b600e7b4a88f914fcee989c390d26315"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/evidence/final-input-integrity.json",
+          "sha256": "170bfc731b5b99869e81d052cd3b1df4b5440ad438f44eab5341301fe35543eb"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/successor/missing-information-checklist.md",
+          "sha256": "4029f6bf1bb05462227b4eec898f1a91a1074361dd4b420543c243e93eb48cae"
+        },
+        {
+          "path": "runs/R07/flow-challenge/host/cutoff-and-recovery.json",
+          "sha256": "e2be376533258a5690feeeb10fa8f367614c0104b1add78f0235562e1c6ce30b"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/evidence/repair-ledger.json",
+          "sha256": "d8c9e8b2fcca9da45c039e6c13c4f4395e74baf3cead97f6f8d1260d0bc7f402"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/final_report.md",
+          "sha256": "90fcd022c6e58684960b68c35c92bc3f170efbc3a185a37b05bcd07db68b0533"
+        },
+        {
+          "path": "runs/R07/integration-observation.json",
+          "sha256": "37f8e5e41aa357885ead08cceecb3a8aee46c783f87e3da21f67e9a103119f09"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R07-04-1",
+          "started_at": "2026-10-04T17:42:24.740906+00:00",
+          "requirements_hash": "3a8abdfd0c134affc667318dcc5b6bdf084e7f715f226a56463ef4274de22751",
+          "inputs": [
+            {
+              "path": "runs/R07/brief.json",
+              "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R07/flow-challenge/host/dispatch-binding-command.json",
+            "sha256": "16186ae7cf9402975d75809c13b16fefa50cf704a203228ba58b86b5d89d3066"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T17:57:01.336246+00:00",
+          "result": {
+            "path": "runs/R07/R07-04-result.json",
+            "sha256": "0a57af1251b2711f1589b051ddd6135b8857c62f10326c52e0164a19a2658f4a"
+          },
+          "evidence": [
+            {
+              "path": "runs/R07/R07-04-result.json",
+              "sha256": "0a57af1251b2711f1589b051ddd6135b8857c62f10326c52e0164a19a2658f4a"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/results/allocation.json",
+              "sha256": "1b4f517b881f19f0e1fff45d4cf3fc0cf840c43dde7091978d8e62bf6b387719"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/evidence/commands.json",
+              "sha256": "6fd4b059b880dd5202da562ce144a5cbfe0e09a1724ae0d4c381322176e6eef4"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/reviewer/report.json",
+              "sha256": "089ae5202b712bd4d3e802b22a890d3abea5eb43b814da6ad446ad94a8f734cc"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/native/create-receipt.json",
+              "sha256": "b946fb1a45b3059f86552e5fea4bb506071dd6f19c36c95d17720412f3778d25"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json",
+              "sha256": "5249fc30830b9c4e5d7d8231a8c0f6f4b600e7b4a88f914fcee989c390d26315"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/evidence/final-input-integrity.json",
+              "sha256": "170bfc731b5b99869e81d052cd3b1df4b5440ad438f44eab5341301fe35543eb"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/successor/missing-information-checklist.md",
+              "sha256": "4029f6bf1bb05462227b4eec898f1a91a1074361dd4b420543c243e93eb48cae"
+            },
+            {
+              "path": "runs/R07/flow-challenge/host/cutoff-and-recovery.json",
+              "sha256": "e2be376533258a5690feeeb10fa8f367614c0104b1add78f0235562e1c6ce30b"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/evidence/repair-ledger.json",
+              "sha256": "d8c9e8b2fcca9da45c039e6c13c4f4395e74baf3cead97f6f8d1260d0bc7f402"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/final_report.md",
+              "sha256": "90fcd022c6e58684960b68c35c92bc3f170efbc3a185a37b05bcd07db68b0533"
+            },
+            {
+              "path": "runs/R07/integration-observation.json",
+              "sha256": "37f8e5e41aa357885ead08cceecb3a8aee46c783f87e3da21f67e9a103119f09"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Integrate results and start capability/short-entry successor without regrading R07 timing"
+    },
+    {
+      "id": "R07-05",
+      "title": "整合接手状态与验证结果",
+      "queue": "capabilities",
+      "category": "handoff",
+      "complexity": 2,
+      "priority": 4,
+      "depends_on": [
+        "R07-03",
+        "R07-04"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "state/",
+        "START_HERE.md",
+        "docs/TAKEOVER.md",
+        "runs/R07/REPORT.md"
+      ],
+      "inputs": [
+        "runs/R07/brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "完整性和相关检查通过；旧8阻塞不改判；结果和下一动作可接续"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R07/R07-05-result.json",
+          "sha256": "4d87f52b79595cfac4795f69f8cfcb2de8a14ce42adbd0f0c923b944eb59b640"
+        },
+        {
+          "path": "runs/R07/REPORT.md",
+          "sha256": "30b38ae253cccaa775b66123d71614f7918b8d5dca021eefa68b4cba5118933e"
+        },
+        {
+          "path": "runs/R07/integration-observation.json",
+          "sha256": "37f8e5e41aa357885ead08cceecb3a8aee46c783f87e3da21f67e9a103119f09"
+        },
+        {
+          "path": "runs/R07/validation/integration-check-command.json",
+          "sha256": "159f1c1915e116b8e2707e33e81f19a131dc8fe91172b42ff0dbd38c93a5dca5"
+        },
+        {
+          "path": "runs/R07/validation/auxiliary-final-command.json",
+          "sha256": "637d1ab942264380e130bba4829185b96d123aca2260ea799a3333593ad7d130"
+        },
+        {
+          "path": "runs/R08/PLAN.md",
+          "sha256": "8f688996c3429a7503a436f48ab86333187a676de68db10e8ee5c004fce8ace1"
+        },
+        {
+          "path": "docs/TAKEOVER.md",
+          "sha256": "da7cf2a0ee38710d2c97469215e7991b8db7e5eb827bd130b44aa84e206a8c02"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R07-05-1",
+          "started_at": "2026-10-04T17:57:01.903737+00:00",
+          "requirements_hash": "d960b535786f12dabe71f0d6a97b8425c52829935e46cb03270afc216de9b26b",
+          "inputs": [
+            {
+              "path": "runs/R07/brief.json",
+              "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R07/validation/integration-check-command.json",
+            "sha256": "159f1c1915e116b8e2707e33e81f19a131dc8fe91172b42ff0dbd38c93a5dca5"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T17:58:13.022967+00:00",
+          "result": {
+            "path": "runs/R07/R07-05-result.json",
+            "sha256": "4d87f52b79595cfac4795f69f8cfcb2de8a14ce42adbd0f0c923b944eb59b640"
+          },
+          "evidence": [
+            {
+              "path": "runs/R07/R07-05-result.json",
+              "sha256": "4d87f52b79595cfac4795f69f8cfcb2de8a14ce42adbd0f0c923b944eb59b640"
+            },
+            {
+              "path": "runs/R07/REPORT.md",
+              "sha256": "30b38ae253cccaa775b66123d71614f7918b8d5dca021eefa68b4cba5118933e"
+            },
+            {
+              "path": "runs/R07/integration-observation.json",
+              "sha256": "37f8e5e41aa357885ead08cceecb3a8aee46c783f87e3da21f67e9a103119f09"
+            },
+            {
+              "path": "runs/R07/validation/integration-check-command.json",
+              "sha256": "159f1c1915e116b8e2707e33e81f19a131dc8fe91172b42ff0dbd38c93a5dca5"
+            },
+            {
+              "path": "runs/R07/validation/auxiliary-final-command.json",
+              "sha256": "637d1ab942264380e130bba4829185b96d123aca2260ea799a3333593ad7d130"
+            },
+            {
+              "path": "runs/R08/PLAN.md",
+              "sha256": "8f688996c3429a7503a436f48ab86333187a676de68db10e8ee5c004fce8ace1"
+            },
+            {
+              "path": "docs/TAKEOVER.md",
+              "sha256": "da7cf2a0ee38710d2c97469215e7991b8db7e5eb827bd130b44aa84e206a8c02"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Execute and record R08-01 capability probe, then advance using its actual start"
+    },
+    {
+      "id": "R08-01",
+      "title": "探测下一宿主可用能力并冻结便携边界",
+      "queue": "capabilities",
+      "category": "host_capabilities",
+      "complexity": 2,
+      "priority": 5,
+      "depends_on": [
+        "R07-05"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R08/capability-probe/"
+      ],
+      "inputs": [
+        "runs/R07/brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "实际命令核对checkout/Python/Git/宿主工具边界，缺provider的支线明确保留"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R08/R08-01-result.json",
+          "sha256": "7f6afc0efad24d9e12601179f9ec55c4edda994b5db045387d2cd26ae37ddb8e"
+        },
+        {
+          "path": "runs/R08/capability-probe/command.json",
+          "sha256": "a4713c3700074ef75f2ba53fae382481fb3ed1c9a4bfeb98ecf191df585bb5b2"
+        },
+        {
+          "path": "runs/R08/capability-probe/probe.py",
+          "sha256": "ff5840085978dda0dd18aef06613d00dd77d6daa74c533c1182ffbaee986cba1"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/native/create-receipt.json",
+          "sha256": "b946fb1a45b3059f86552e5fea4bb506071dd6f19c36c95d17720412f3778d25"
+        },
+        {
+          "path": "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json",
+          "sha256": "5249fc30830b9c4e5d7d8231a8c0f6f4b600e7b4a88f914fcee989c390d26315"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R08-01-1",
+          "started_at": "2026-10-04T17:58:15.515077+00:00",
+          "requirements_hash": "e77abdd7d53af76a0979c92d2d4320ce37d45b093269f8ea05bbe907f0b3cc50",
+          "inputs": [
+            {
+              "path": "runs/R07/brief.json",
+              "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R08/capability-probe/command.json",
+            "sha256": "a4713c3700074ef75f2ba53fae382481fb3ed1c9a4bfeb98ecf191df585bb5b2"
+          },
+          "status": "done",
+          "ended_at": "2026-10-04T17:59:12.940853+00:00",
+          "result": {
+            "path": "runs/R08/R08-01-result.json",
+            "sha256": "7f6afc0efad24d9e12601179f9ec55c4edda994b5db045387d2cd26ae37ddb8e"
+          },
+          "evidence": [
+            {
+              "path": "runs/R08/R08-01-result.json",
+              "sha256": "7f6afc0efad24d9e12601179f9ec55c4edda994b5db045387d2cd26ae37ddb8e"
+            },
+            {
+              "path": "runs/R08/capability-probe/command.json",
+              "sha256": "a4713c3700074ef75f2ba53fae382481fb3ed1c9a4bfeb98ecf191df585bb5b2"
+            },
+            {
+              "path": "runs/R08/capability-probe/probe.py",
+              "sha256": "ff5840085978dda0dd18aef06613d00dd77d6daa74c533c1182ffbaee986cba1"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/native/create-receipt.json",
+              "sha256": "b946fb1a45b3059f86552e5fea4bb506071dd6f19c36c95d17720412f3778d25"
+            },
+            {
+              "path": "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json",
+              "sha256": "5249fc30830b9c4e5d7d8231a8c0f6f4b600e7b4a88f914fcee989c390d26315"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "R08-02: author a new short-entry candidate, then fresh Luna validation on new frozen materials"
+    },
+    {
+      "id": "R08-02",
+      "title": "制作分流与最小真实首步的短启动候选",
+      "queue": "capabilities",
+      "category": "short_entry",
+      "complexity": 2,
+      "priority": 6,
+      "depends_on": [
+        "R08-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R08/candidate/",
+        "runs/R08/design/"
+      ],
+      "inputs": [
+        "runs/R08/PLAN.md"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "保存新旧版本及冻结锁；简单任务只读必要引用，先真实首步；系统/可复用flow分流与必要核验有明确边界"
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "制作分流与最小真实首步的短启动候选"
+    },
+    {
+      "id": "R08-03",
+      "title": "新上下文验证短路径的正确性、干预与实际分工",
+      "queue": "challenges",
+      "category": "short_entry_validation",
+      "complexity": 2,
+      "priority": 7,
+      "depends_on": [
+        "R08-02"
+      ],
+      "owner": "luna",
+      "write_paths": [
+        "runs/R08/validation/"
+      ],
+      "inputs": [
+        "runs/R08/PLAN.md"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "新冻结原材料与候选；实际首产物、干预、正确性和必要原生分工分别记录；原R07失败不改判"
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "新上下文验证短路径的正确性、干预与实际分工"
     }
   ],
   "execution": {
     "mode": "cooperative_host",
     "background_available": null,
     "background_probe": "R04-01",
-    "native_pending": [
-      {
-        "worker": "/root/luna_forge_ec0ef35b347f",
-        "run": "runs/future/preset_browser_acceptance/independent",
-        "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
-      }
-    ],
-    "limit": "Hourly automation disabled. This agent completed the authorized handoff, not full product acceptance; remaining original work is for upstream.",
+    "native_pending": [],
+    "limit": "Current native host validated one assisted local pilot; provider-global and independent cold-start conditions remain unverified. Timer remains disabled.",
     "monitor_configured": true,
     "monitor_id": "6ac1e1f6159081919cd571f6fa15d397",
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "handed_off_to_upstream",
-    "checkpoint_reason": "User-directed unfinished-work handoff published to fork dev and upstream PR #1; eight original acceptance tasks remain blocked for upstream continuation.",
-    "coordinator_heartbeat": "2026-10-04T07:56:24.421515+00:00",
+    "session_state": "paused_at_R08_02",
+    "checkpoint_reason": "Scoped R07 results and R08 first step complete; no current workers, timer disabled",
+    "coordinator_heartbeat": "2026-10-04T17:58:12.935265+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -2304,7 +3005,7 @@
     "last_scheduled_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
     "latest_resumption_report": "runs/R06/scheduling/resume-20261004T072138Z/REPORT.md",
     "previous_coordinator_released_at": "2026-10-04T07:13:18.042263+00:00",
-    "coordinator_release_instruction": "Current lease was held during checkpoint save; inspect state/coordinator-lease.json and run probe for actual current ownership. Exit release is recorded separately under this resumption evidence directory.",
+    "coordinator_release_instruction": "Read actual coordinator lease state and probe before acquiring; previous owner explicitly released after integration.",
     "monitor_enabled": false,
     "monitor_status": "disabled_by_user",
     "monitor_disabled_at": "2026-10-04T07:43:35.078201+00:00",
@@ -2313,7 +3014,31 @@
     "upstream_handoff": "state/upstream-handoff.json",
     "upstream_handoff_report": "runs/R06/upstream-handoff/README.md",
     "handoff_publication": "runs/R06/upstream-handoff/publication.json",
-    "handoff_pr_verification": "runs/R06/upstream-handoff/pr-verification.json"
+    "handoff_pr_verification": "runs/R06/upstream-handoff/pr-verification.json",
+    "historical_native_pending": [
+      {
+        "worker": "/root/luna_forge_ec0ef35b347f",
+        "run": "runs/future/preset_browser_acceptance/independent",
+        "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
+      }
+    ],
+    "current_coordinator": "root-takeover-r07",
+    "completed_native_R07": [
+      {
+        "worker": "/root/luna_r07_restore_validation",
+        "scope": "R07-03",
+        "state": "final_notification_received",
+        "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
+      },
+      {
+        "worker": "/root/luna_r07_native_task",
+        "scope": "R07-04",
+        "state": "final_notification_received",
+        "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
+      }
+    ],
+    "current_report": "runs/R07/REPORT.md",
+    "next_plan": "runs/R08/PLAN.md"
   },
   "events": [
     {
@@ -3087,6 +3812,237 @@
         "commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
         "pr": "https://github.com/Urizums/A111/pull/1",
         "at": "2026-10-04T07:55:26.705220+00:00"
+      }
+    },
+    {
+      "at": "2026-10-04T17:36:48.503748+00:00",
+      "command": "takeover_authorized_phase",
+      "result": {
+        "source_commit": "6f509c8dcb54f7864a49864e21061345dc4b2b9c",
+        "old_phase": "R05",
+        "old_phase_status": "blocked_preserved",
+        "active_phase": "R07",
+        "authorization": "runs/R07/intake/provenance.json",
+        "scope": "new observed snapshot defect + new native business pilot; old exhausted experiments not restarted"
+      }
+    },
+    {
+      "at": "2026-10-04T17:36:48.581772+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T17:40:34.186986+00:00",
+      "command": "start",
+      "result": {
+        "id": "R07-01-1",
+        "started_at": "2026-10-04T17:40:34.186690+00:00",
+        "requirements_hash": "9a75b8dbafce5001707fe68a1c837e209f1b48fedaec3ce264ba51c8a97dbd06",
+        "inputs": [
+          {
+            "path": "runs/R07/brief.json",
+            "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R07/intake/collection-check-command.json",
+          "sha256": "0cd6147eceaa29090cb229f2d8ea7af5d2f09df38e3cc9e0ef6d660be0344449"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T17:42:24.390096+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R07-01",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T17:42:24.465175+00:00",
+      "command": "start",
+      "result": {
+        "id": "R07-02-1",
+        "started_at": "2026-10-04T17:42:24.464918+00:00",
+        "requirements_hash": "455da9a47c65a602289c963f9c2a6aed64975459b7f2bad5ee5e00f1470f4a78",
+        "inputs": [
+          {
+            "path": "runs/R07/brief.json",
+            "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R07/validation/restore-tests-command.json",
+          "sha256": "61e00df50091d8dec44ac7fe12bbb413e8f2b5f07af07da420653060b3304087"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T17:42:24.539213+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R07-02",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T17:42:24.667129+00:00",
+      "command": "start",
+      "result": {
+        "id": "R07-03-1",
+        "started_at": "2026-10-04T17:42:24.666860+00:00",
+        "requirements_hash": "8f834f756bce56311fe8d0e80a351117699dc01b112e874a935f07a35d9416ea",
+        "inputs": [
+          {
+            "path": "runs/R07/brief.json",
+            "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R07/flow-challenge/host/dispatch-binding-command.json",
+          "sha256": "16186ae7cf9402975d75809c13b16fefa50cf704a203228ba58b86b5d89d3066"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T17:42:24.741174+00:00",
+      "command": "start",
+      "result": {
+        "id": "R07-04-1",
+        "started_at": "2026-10-04T17:42:24.740906+00:00",
+        "requirements_hash": "3a8abdfd0c134affc667318dcc5b6bdf084e7f715f226a56463ef4274de22751",
+        "inputs": [
+          {
+            "path": "runs/R07/brief.json",
+            "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R07/flow-challenge/host/dispatch-binding-command.json",
+          "sha256": "16186ae7cf9402975d75809c13b16fefa50cf704a203228ba58b86b5d89d3066"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T17:45:12.243669+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R07-03",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T17:56:07.888657+00:00",
+      "command": "plan_R08_from_observed_R07_limits",
+      "result": {
+        "plan": "runs/R08/PLAN.md",
+        "old_acceptance_unchanged": true,
+        "new_planned_tasks": [
+          "R08-02",
+          "R08-03"
+        ]
+      }
+    },
+    {
+      "at": "2026-10-04T17:57:01.336355+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R07-04",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T17:57:01.904108+00:00",
+      "command": "start",
+      "result": {
+        "id": "R07-05-1",
+        "started_at": "2026-10-04T17:57:01.903737+00:00",
+        "requirements_hash": "d960b535786f12dabe71f0d6a97b8425c52829935e46cb03270afc216de9b26b",
+        "inputs": [
+          {
+            "path": "runs/R07/brief.json",
+            "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R07/validation/integration-check-command.json",
+          "sha256": "159f1c1915e116b8e2707e33e81f19a131dc8fe91172b42ff0dbd38c93a5dca5"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T17:58:13.023073+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R07-05",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T17:58:15.515359+00:00",
+      "command": "start",
+      "result": {
+        "id": "R08-01-1",
+        "started_at": "2026-10-04T17:58:15.515077+00:00",
+        "requirements_hash": "e77abdd7d53af76a0979c92d2d4320ce37d45b093269f8ea05bbe907f0b3cc50",
+        "inputs": [
+          {
+            "path": "runs/R07/brief.json",
+            "sha256": "9643cdd41035d3d7006046ba1665cd42e232797d6ad1e0a8eeee6ac05ffa40d9"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R08/capability-probe/command.json",
+          "sha256": "a4713c3700074ef75f2ba53fae382481fb3ed1c9a4bfeb98ecf191df585bb5b2"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-04T17:58:15.598076+00:00",
+      "command": "advance",
+      "result": {
+        "closed_phase": "R07",
+        "active_phase": "R08",
+        "actual_start": {
+          "path": "runs/R08/capability-probe/command.json",
+          "sha256": "a4713c3700074ef75f2ba53fae382481fb3ed1c9a4bfeb98ecf191df585bb5b2"
+        }
+      }
+    },
+    {
+      "at": "2026-10-04T17:59:12.940968+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R08-01",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-04T17:59:15.170617+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-04T18:01:05.803107+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
       }
     }
   ],

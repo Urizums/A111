@@ -1,0 +1,360 @@
+{
+  "cases": [
+    {
+      "case": "help",
+      "passed": true,
+      "observed": {
+        "returncode": 0,
+        "stdout": "usage: snapshot.py [-h] {capture,verify,restore} ...\n\nRetain original handoff bytes before dispatch; never replay effects.\n\npositional arguments:\n  {capture,verify,restore}\n\noptions:\n  -h, --help            show this help message and exit\n",
+        "stderr": ""
+      },
+      "expected": {
+        "returncode": 0
+      }
+    },
+    {
+      "case": "capture_exact_original_bytes",
+      "passed": true,
+      "observed": {
+        "returncode": 0,
+        "stdout": "{\"manifest\": \"/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/snapshot-validation-72a2n0l5/snapshot-bundle/manifest.json\", \"sha256\": \"6b11d45a45b8d0286b9115d01e76cdec94c3b0f007166320a3b4ba20ceb28186\", \"files\": 3}\n",
+        "stderr": ""
+      },
+      "expected": {
+        "returncode": 0
+      }
+    },
+    {
+      "case": "verify_captured_bytes",
+      "passed": true,
+      "observed": {
+        "returncode": 0,
+        "stdout": "{\"valid\": true, \"files\": 3, \"effects_replayed\": false}\n",
+        "stderr": ""
+      },
+      "expected": {
+        "returncode": 0
+      }
+    },
+    {
+      "case": "independent_object_bytes_match_originals",
+      "passed": true,
+      "observed": {
+        "manifest_schema": "forge-byte-snapshot/1",
+        "manifest_files": 3,
+        "all_object_bytes_equal_original": true
+      },
+      "expected": {
+        "schema": "forge-byte-snapshot/1",
+        "file_count": 3,
+        "exact_bytes": true
+      }
+    },
+    {
+      "case": "restore_to_fresh_destination",
+      "passed": true,
+      "observed": {
+        "returncode": 0,
+        "stdout": "{\"restored\": 3, \"destination\": \"/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/snapshot-validation-72a2n0l5/restored-fresh\", \"effects_replayed\": false, \"publication\": \"atomic_no_replace\", \"backend\": \"linux_renameat2\"}\n",
+        "stderr": ""
+      },
+      "expected": {
+        "returncode": 0
+      }
+    },
+    {
+      "case": "fresh_restore_is_byte_faithful",
+      "passed": true,
+      "observed": {
+        "destination_exists": true,
+        "tree": {
+          "binary.dat": {
+            "type": "file",
+            "size": 520,
+            "sha256": "172b20df051302325f726dfd13078752f92720a7809ff4efaf2e3d15158495fb",
+            "bytes_hex": "000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f202122232425262728292a2b2c2d2e2f303132333435363738393a3b3c3d3e3f404142434445464748494a4b4c4d4e4f505152535455565758595a5b5c5d5e5f606162636465666768696a6b6c6d6e6f707172737475767778797a7b7c7d7e7f808182838485868788898a8b8c8d8e8f909192939495969798999a9b9c9d9e9fa0a1a2a3a4a5a6a7a8a9aaabacadaeafb0b1b2b3b4b5b6b7b8b9babbbcbdbebfc0c1c2c3c4c5c6c7c8c9cacbcccdcecfd0d1d2d3d4d5d6d7d8d9dadbdcdddedfe0e1e2e3e4e5e6e7e8e9eaebecedeeeff0f1f2f3f4f5f6f7f8f9fafbfcfdfeff00ff0a807461696c"
+          },
+          "empty.dat": {
+            "type": "file",
+            "size": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "bytes_hex": ""
+          },
+          "nested dir": {
+            "type": "dir"
+          },
+          "nested dir/雪 name.txt": {
+            "type": "file",
+            "size": 23,
+            "sha256": "632b677418824477ed8758ef4a2aa4824afe2633643840dd8e31ed97c131f684",
+            "bytes_hex": "efbbbf6c696e65206f6e650d0a006c696e652074776fff"
+          }
+        }
+      },
+      "expected": {
+        "all_original_relative_paths_and_bytes_restored": true
+      }
+    },
+    {
+      "case": "capture_rejects_parent_traversal",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "{\"error\": \"Path must be canonical and contained\"}\n"
+      },
+      "expected": {
+        "returncode": 2
+      }
+    },
+    {
+      "case": "unsafe_source_path_rejected_without_bundle",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stderr": "{\"error\": \"Path must be canonical and contained\"}\n",
+        "bundle_created": false
+      },
+      "expected": {
+        "returncode": 2,
+        "bundle_created": false
+      }
+    },
+    {
+      "case": "capture_rejects_source_symlink",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "{\"error\": \"[Errno 40] Too many levels of symbolic links: 'linked.bin'\"}\n"
+      },
+      "expected": {
+        "returncode": 2
+      }
+    },
+    {
+      "case": "source_symlink_is_not_followed",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stderr": "{\"error\": \"[Errno 40] Too many levels of symbolic links: 'linked.bin'\"}\n",
+        "bundle_created": false
+      },
+      "expected": {
+        "returncode": 2,
+        "bundle_created": false
+      }
+    },
+    {
+      "case": "verify_rejects_unsafe_manifest_path",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "{\"error\": \"Path must be canonical and contained\"}\n"
+      },
+      "expected": {
+        "returncode": 2
+      }
+    },
+    {
+      "case": "unsafe_manifest_path_rejected",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stderr": "{\"error\": \"Path must be canonical and contained\"}\n"
+      },
+      "expected": {
+        "returncode": 2
+      }
+    },
+    {
+      "case": "verify_rejects_corrupt_stored_bytes",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "{\"error\": \"Snapshot byte mismatch\"}\n"
+      },
+      "expected": {
+        "returncode": 2
+      }
+    },
+    {
+      "case": "corrupt_stored_bytes_rejected",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stderr": "{\"error\": \"Snapshot byte mismatch\"}\n"
+      },
+      "expected": {
+        "returncode": 2
+      }
+    },
+    {
+      "case": "restore_refuses_existing_destination",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stdout": "",
+        "stderr": "{\"error\": \"[Errno 17] Restore destination already exists: '/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/snapshot-validation-72a2n0l5/existing-destination'\"}\n"
+      },
+      "expected": {
+        "returncode": 2
+      }
+    },
+    {
+      "case": "existing_destination_is_untouched",
+      "passed": true,
+      "observed": {
+        "returncode": 2,
+        "stderr": "{\"error\": \"[Errno 17] Restore destination already exists: '/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/snapshot-validation-72a2n0l5/existing-destination'\"}\n",
+        "before": {
+          "preserve.txt": {
+            "type": "file",
+            "size": 23,
+            "sha256": "8036da5f318c8221029811c10f1a4b9473979615d67ba31f1ba803f01895658e",
+            "bytes_hex": "7072652d6578697374696e672073656e74696e656c00ff"
+          }
+        },
+        "after": {
+          "preserve.txt": {
+            "type": "file",
+            "size": 23,
+            "sha256": "8036da5f318c8221029811c10f1a4b9473979615d67ba31f1ba803f01895658e",
+            "bytes_hex": "7072652d6578697374696e672073656e74696e656c00ff"
+          }
+        }
+      },
+      "expected": {
+        "returncode": 2,
+        "tree_unchanged": true
+      }
+    },
+    {
+      "case": "write_failure_leaves_no_partial_destination",
+      "passed": true,
+      "observed": {
+        "error": "OSError: [Errno 28] injected disk-full during staged file write",
+        "final_destination_exists": false,
+        "staging_leftovers": []
+      },
+      "expected": {
+        "final_destination_exists": false,
+        "staging_leftovers": []
+      }
+    },
+    {
+      "case": "write_failure_destination_can_be_retried",
+      "passed": true,
+      "observed": {
+        "restore_result": {
+          "restored": 3,
+          "destination": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/snapshot-validation-72a2n0l5/write-failure-target",
+          "effects_replayed": false,
+          "publication": "atomic_no_replace",
+          "backend": "linux_renameat2"
+        },
+        "exact_bytes": true
+      },
+      "expected": {
+        "retry_succeeds": true,
+        "exact_bytes": true
+      }
+    },
+    {
+      "case": "publication_failure_leaves_no_partial_destination",
+      "passed": true,
+      "observed": {
+        "error": "OSError: [Errno 5] injected publication failure",
+        "final_destination_exists": false,
+        "staging_leftovers": []
+      },
+      "expected": {
+        "final_destination_exists": false,
+        "staging_leftovers": []
+      }
+    },
+    {
+      "case": "publication_failure_destination_can_be_retried",
+      "passed": true,
+      "observed": {
+        "restore_result": {
+          "restored": 3,
+          "destination": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/snapshot-validation-72a2n0l5/publish-failure-target",
+          "effects_replayed": false,
+          "publication": "atomic_no_replace",
+          "backend": "linux_renameat2"
+        },
+        "exact_bytes": true
+      },
+      "expected": {
+        "retry_succeeds": true,
+        "exact_bytes": true
+      }
+    },
+    {
+      "case": "unsupported_publishing_capability_is_explicit",
+      "passed": true,
+      "observed": {
+        "error": "OSError: [Errno 95] Atomic no-replace restore requires Linux renameat2",
+        "explicit_error": true,
+        "final_destination_exists": false,
+        "staging_leftovers": []
+      },
+      "expected": {
+        "error_mentions": "requires Linux renameat2",
+        "final_destination_exists": false,
+        "staging_leftovers": []
+      }
+    },
+    {
+      "case": "unsupported_attempt_does_not_block_later_supported_retry",
+      "passed": true,
+      "observed": {
+        "restore_result": {
+          "restored": 3,
+          "destination": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/snapshot-validation-72a2n0l5/unsupported-publisher-target",
+          "effects_replayed": false,
+          "publication": "atomic_no_replace",
+          "backend": "linux_renameat2"
+        },
+        "exact_bytes": true
+      },
+      "expected": {
+        "retry_succeeds": true,
+        "exact_bytes": true
+      }
+    },
+    {
+      "case": "candidate_source_unchanged",
+      "passed": true,
+      "observed": {
+        "path": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/candidate/C6/forge-agent-flow/scripts/snapshot.py",
+        "sha256_before": "5dd1f65493b54a20e17247f9c25815bb988f194a8528858148df31075db36cac",
+        "sha256_after": "5dd1f65493b54a20e17247f9c25815bb988f194a8528858148df31075db36cac"
+      },
+      "expected": {
+        "sha256_before_equals_after": true
+      }
+    }
+  ],
+  "raw_failures": [
+    {
+      "case": "injected_file_write_failure",
+      "observed_error": "OSError: [Errno 28] injected disk-full during staged file write",
+      "expected": true
+    },
+    {
+      "case": "injected_publication_failure",
+      "observed_error": "OSError: [Errno 5] injected publication failure",
+      "expected": true
+    },
+    {
+      "case": "unsupported_publisher_capability",
+      "observed_error": "OSError: [Errno 95] Atomic no-replace restore requires Linux renameat2",
+      "expected": true
+    }
+  ],
+  "unexpected_failures": []
+}

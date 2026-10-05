@@ -1,0 +1,22 @@
+{
+  "schema": "forge-host-observation/1",
+  "observed_at": "2026-10-04T17:58:12.939833+00:00",
+  "tool": "collaboration final notifications",
+  "workers": [
+    {
+      "worker": "/root/luna_r07_restore_validation",
+      "message_type": "FINAL_ANSWER",
+      "observed_terminal": true,
+      "summary": "23 independent source-local snapshot cases passed; injected errors preserved",
+      "evidence": "runs/R07/validation/independent/result.json"
+    },
+    {
+      "worker": "/root/luna_r07_native_task",
+      "message_type": "FINAL_ANSWER",
+      "observed_terminal": true,
+      "summary": "Assisted completion; original window not passed; 7 requests, native reviewer and checklist executed; harness repair1/2; product code repair0",
+      "evidence": "runs/R07/flow-challenge/worker/final_report.md"
+    }
+  ],
+  "limits": "Imported observations of actual coordinator notifications, not timed provider-native terminal envelopes"
+}

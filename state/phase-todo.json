@@ -1,115 +1,88 @@
 {
   "schema": "forge-phase-todo/1",
-  "phase_id": "R05",
-  "goal": "Use newly available browser capability on the original target and progress catalog/concurrent-app checks independently.",
+  "phase_id": "R08",
+  "goal": "按实际宿主能力缩短任务启动路径，并验证新的跨环境接续候选",
   "tasks": [
     {
-      "id": "BACKLOG-preset_browser_acceptance",
-      "title": "Execute planned UI journeys only when the target app and permitted browser/device access are available; no workaround or inferred UI pass.",
+      "id": "R08-01",
+      "title": "探测下一宿主可用能力并冻结便携边界",
       "owner": "root",
       "write_paths": [
-        "runs/future/preset_browser_acceptance/"
-      ],
-      "status": "blocked",
-      "blocker": "Root repaired candidate passes original journeys and added narrow focus probes; final independent acceptance unavailable, historical validator limit and unreconciled native terminal evidence must not be bypassed.",
-      "next_action": "Preserve original reports and repaired v2; no budget reset or replacement validator; keep dev publication blocked.",
-      "depends_on": [],
-      "acceptance": [
-        "Establish actual target evidence for this capability"
-      ],
-      "evidence": [
-        "runs/future/preset_browser_acceptance/root-final-review.json",
-        "runs/future/preset_browser_acceptance/first-step-command.json"
-      ]
-    },
-    {
-      "id": "BACKLOG-versioned_preset_catalog",
-      "title": "Root authors a small task/platform catalog and checks based on verified research; do not mark target visuals passed without browser/device evidence.",
-      "owner": "root",
-      "write_paths": [
-        "runs/future/versioned_preset_catalog/"
-      ],
-      "status": "blocked",
-      "blocker": "Independent v2 retest has74pass/2failed390px focus samples after two harness corrections. Root fullTabcycles pass separately but cannot replace exhausted independent acceptance.",
-      "next_action": "Keep v1/v2, original criteria, receipts and all failures. No more validator correction or replacement; complete packaging checks without dev publication.",
-      "depends_on": [],
-      "acceptance": [
-        "Add task/platform variants with source revision, reuse terms, paired tokens, component states, motion and actual target evidence."
-      ],
-      "evidence": [
-        "runs/future/versioned_preset_catalog/root-final-review.json",
-        "runs/future/versioned_preset_catalog/research/accepted-command.json"
-      ]
-    },
-    {
-      "id": "CAP-sdk_adapter_contract",
-      "title": "定义独立 provider 适配器接口并验证本地协议边界",
-      "owner": "root",
-      "write_paths": [
-        "runs/future/provider-adapter/"
-      ],
-      "status": "blocked",
-      "blocker": "Root local protocol tests passed, but required independent validator used three corrections against a two-correction limit; post-limit success cannot release this branch.",
-      "next_action": "Retain local implementation and all observations. Do not swap validators or reset budget; publication remains blocked.",
-      "depends_on": [],
-      "acceptance": [
-        "Freeze provider-neutral request/result/idempotency/cancel contract and implement local validation without claiming live SDK execution",
-        "Keep live provider validation blocked separately until an authorized endpoint/identity and observation contract exist"
-      ],
-      "evidence": [
-        "runs/future/provider-adapter/independent/budget-clarification.json",
-        "runs/future/provider-adapter/first-step.json"
-      ]
-    },
-    {
-      "id": "X01-concurrent_ticket_edits",
-      "title": "验证双客户端并发更新工单",
-      "owner": "root",
-      "write_paths": [
-        "runs/future/concurrent-ticket/"
+        "runs/R08/capability-probe/"
       ],
       "status": "done",
       "blocker": null,
-      "next_action": "Integrate final acceptance results without publishing until the user gate is fully satisfied.",
+      "next_action": "R08-02: author a new short-entry candidate, then fresh Luna validation on new frozen materials",
       "depends_on": [],
       "acceptance": [
-        "Two real clients issue updates from the same version; exactly one succeeds and one conflicts with no lost history",
-        "Retain original requests, database and conflict UI evidence; do not infer load or provider guarantees"
+        "实际命令核对checkout/Python/Git/宿主工具边界，缺provider的支线明确保留"
       ],
       "evidence": [
-        "runs/future/concurrent-ticket/task-result.json",
-        "runs/future/concurrent-ticket/validation-repair-1-command.json",
-        "runs/future/concurrent-ticket/validation-repair-1/report.json",
-        "runs/future/concurrent-ticket/visual-review.json",
-        "runs/future/concurrent-ticket/validation-repair-1-command.json",
-        "runs/future/concurrent-ticket/validation-repair-1/report.json",
-        "runs/future/concurrent-ticket/visual-review.json",
-        "runs/future/concurrent-ticket/validation-repair-1-command.json"
+        "runs/R08/R08-01-result.json",
+        "runs/R08/capability-probe/command.json",
+        "runs/R08/capability-probe/probe.py",
+        "runs/R07/flow-challenge/worker/native/create-receipt.json",
+        "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json",
+        "runs/R08/capability-probe/command.json"
       ]
     },
     {
-      "id": "R05-next",
+      "id": "R08-02",
+      "title": "制作分流与最小真实首步的短启动候选",
+      "owner": "root",
+      "write_paths": [
+        "runs/R08/candidate/",
+        "runs/R08/design/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "制作分流与最小真实首步的短启动候选",
+      "depends_on": [
+        "R08-01"
+      ],
+      "acceptance": [
+        "保存新旧版本及冻结锁；简单任务只读必要引用，先真实首步；系统/可复用flow分流与必要核验有明确边界"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R08-03",
+      "title": "新上下文验证短路径的正确性、干预与实际分工",
+      "owner": "luna",
+      "write_paths": [
+        "runs/R08/validation/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "新上下文验证短路径的正确性、干预与实际分工",
+      "depends_on": [
+        "R08-02"
+      ],
+      "acceptance": [
+        "新冻结原材料与候选；实际首产物、干预、正确性和必要原生分工分别记录；原R07失败不改判"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R08-next",
       "title": "启动下一阶段任务",
       "owner": "root",
       "depends_on": [
-        "BACKLOG-preset_browser_acceptance",
-        "BACKLOG-versioned_preset_catalog",
-        "CAP-sdk_adapter_contract",
-        "X01-concurrent_ticket_edits"
+        "R08-01",
+        "R08-02",
+        "R08-03"
       ],
       "write_paths": [
         "state/",
         "runs/"
       ],
       "acceptance": [
-        "Actual first step of the next bounded capability/challenge phase"
+        "选择并真实启动下一有价值支线"
       ],
-      "status": "blocked",
-      "evidence": [
-        "runs/R06/VERIFICATION_REPORT.md"
-      ],
-      "blocker": "Required R05 independent acceptance and adapter branches are blocked; no formal phase advance claimed",
-      "next_action": "Preserve parallel R06 result tasks in the same queue; resume phase transition only when original dependencies are truly satisfied"
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "按R08能力结果选可执行支线"
     }
   ]
 }

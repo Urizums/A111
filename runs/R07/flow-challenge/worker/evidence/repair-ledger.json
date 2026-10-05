@@ -1,0 +1,16 @@
+{
+  "scope": "coordinator semantic-check harness for fixed seven-request source run",
+  "max_repairs": 2,
+  "repairs_used": 1,
+  "repairs": [
+    {
+      "number": 1,
+      "reason": "Replace broad substring search for network modules with AST import inspection after false positive on harmless requests field names.",
+      "affected_file": "evidence/verify_original.py",
+      "prior_failure": "evidence/result-check-attempt-001.json",
+      "candidate_tool_changed": false
+    }
+  ],
+  "bounded_run_wrapper_used_for_initial_failure": false,
+  "limitation": "Initial failure was run directly before bounded_run could be initialized; preserved rather than relabeled or replayed."
+}

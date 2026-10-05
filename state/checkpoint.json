@@ -1,17 +1,21 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-04T07:56:24.469260+00:00",
-  "active_phase": "R05",
-  "next_task_id": null,
-  "next_action": "Upstream owns continuation from runs/R06/upstream-handoff/README.md; original acceptance tasks and budgets preserved; no scheduled continuation.",
+  "updated_at": "2026-10-04T18:01:05.807882+00:00",
+  "active_phase": "R08",
+  "next_task_id": "R08-02",
+  "next_action": "制作分流与最小真实首步的短启动候选",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
     {
-      "kind": "creation",
-      "worker": "/root/luna_portable_handoff_test",
-      "receipt": "validation/root/luna-native-receipt.json",
-      "purpose": "new validation, not C1 replacement"
+      "worker": "/root/luna_r07_restore_validation",
+      "evidence": "runs/R07/flow-challenge/host/final-notifications.json",
+      "state": "final_notification_received"
+    },
+    {
+      "worker": "/root/luna_r07_native_task",
+      "evidence": "runs/R07/flow-challenge/host/final-notifications.json",
+      "state": "final_notification_received"
     }
   ],
   "unresolved_historical_call": {
@@ -24,7 +28,7 @@
   "provider_tokens": null,
   "provider_cost": null,
   "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
-  "termination": "Current authorized executable scope finished; long-term goal active, awaiting concrete blocked conditions. No continuously running code agent is claimed.",
+  "termination": "R07 completed scoped repairs and assisted business-content acceptance; R08 capability first step executed. Next planned work is R08-02; no background code agent remains running.",
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
@@ -64,6 +68,16 @@
       "used": 2,
       "limit": 2,
       "evidence": "runs/R06/handoff/root-repair-budget.json"
+    },
+    "R07_release_integration": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R07/validation/integration-repair.json"
+    },
+    "R07_native_pilot_harness": {
+      "used": 1,
+      "limit": 2,
+      "evidence": "runs/R07/flow-challenge/worker/evidence/repair-ledger.json"
     }
   },
   "native_calls_in_current_delivery": [
@@ -80,7 +94,7 @@
       "purpose": "bounded conformance retest"
     }
   ],
-  "current_validation": "R05/R06: core/source/archive runtime checks passed; complete required acceptance NOT passed; see final publication check",
+  "current_validation": "R07: C6 regressions376, restore8, independent23, auxiliary47 passed; assisted business7-row content passed; autonomous original timing not passed; old strict product gate remains blocked",
   "delivery_evidence": [
     "runs/cloud/github-pr.json",
     "runs/cloud/github-publication-reports.json",
@@ -114,28 +128,22 @@
       "at": "2026-10-04T07:55:26.705220+00:00"
     }
   },
-  "next_queue_task_id": null,
+  "next_queue_task_id": "R08-02",
   "continuation_state": "state/continuation.json",
   "execution": {
     "mode": "cooperative_host",
     "background_available": null,
     "background_probe": "R04-01",
-    "native_pending": [
-      {
-        "worker": "/root/luna_forge_ec0ef35b347f",
-        "run": "runs/future/preset_browser_acceptance/independent",
-        "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
-      }
-    ],
-    "limit": "Hourly automation disabled. This agent completed the authorized handoff, not full product acceptance; remaining original work is for upstream.",
+    "native_pending": [],
+    "limit": "Current native host validated one assisted local pilot; provider-global and independent cold-start conditions remain unverified. Timer remains disabled.",
     "monitor_configured": true,
     "monitor_id": "6ac1e1f6159081919cd571f6fa15d397",
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "handed_off_to_upstream",
-    "checkpoint_reason": "User-directed unfinished-work handoff published to fork dev and upstream PR #1; eight original acceptance tasks remain blocked for upstream continuation.",
-    "coordinator_heartbeat": "2026-10-04T07:56:24.421515+00:00",
+    "session_state": "paused_at_R08_02",
+    "checkpoint_reason": "Scoped R07 results and R08 first step complete; no current workers, timer disabled",
+    "coordinator_heartbeat": "2026-10-04T17:58:12.935265+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -150,7 +158,7 @@
     "last_scheduled_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
     "latest_resumption_report": "runs/R06/scheduling/resume-20261004T072138Z/REPORT.md",
     "previous_coordinator_released_at": "2026-10-04T07:13:18.042263+00:00",
-    "coordinator_release_instruction": "Current lease was held during checkpoint save; inspect state/coordinator-lease.json and run probe for actual current ownership. Exit release is recorded separately under this resumption evidence directory.",
+    "coordinator_release_instruction": "Read actual coordinator lease state and probe before acquiring; previous owner explicitly released after integration.",
     "monitor_enabled": false,
     "monitor_status": "disabled_by_user",
     "monitor_disabled_at": "2026-10-04T07:43:35.078201+00:00",
@@ -159,7 +167,31 @@
     "upstream_handoff": "state/upstream-handoff.json",
     "upstream_handoff_report": "runs/R06/upstream-handoff/README.md",
     "handoff_publication": "runs/R06/upstream-handoff/publication.json",
-    "handoff_pr_verification": "runs/R06/upstream-handoff/pr-verification.json"
+    "handoff_pr_verification": "runs/R06/upstream-handoff/pr-verification.json",
+    "historical_native_pending": [
+      {
+        "worker": "/root/luna_forge_ec0ef35b347f",
+        "run": "runs/future/preset_browser_acceptance/independent",
+        "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
+      }
+    ],
+    "current_coordinator": "root-takeover-r07",
+    "completed_native_R07": [
+      {
+        "worker": "/root/luna_r07_restore_validation",
+        "scope": "R07-03",
+        "state": "final_notification_received",
+        "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
+      },
+      {
+        "worker": "/root/luna_r07_native_task",
+        "scope": "R07-04",
+        "state": "final_notification_received",
+        "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
+      }
+    ],
+    "current_report": "runs/R07/REPORT.md",
+    "next_plan": "runs/R08/PLAN.md"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -178,13 +210,7 @@
     "runs/future/versioned_preset_catalog/independent/completed-return.json",
     "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
-  "current_native_pending": [
-    {
-      "worker": "/root/luna_forge_ec0ef35b347f",
-      "run": "runs/future/preset_browser_acceptance/independent",
-      "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
-    }
-  ],
+  "current_native_pending": [],
   "unpublished_work": {
     "base_commit": "e3f3d9771df00b669e119ac2f7571d24875e8afe",
     "candidate_sha256": "8b82e835160fd8318ac0dd2e30c5f1cc32832af5b8cd3254f96decbee5bd60d1",
@@ -234,5 +260,11 @@
     "publication_commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
     "publication_evidence": "runs/R06/upstream-handoff/publication.json",
     "pr_verification": "runs/R06/upstream-handoff/pr-verification.json"
+  },
+  "unpublished_work_R07": {
+    "branch": "rd/takeover-r07",
+    "report": "runs/R07/REPORT.md",
+    "status": "ready_for_scoped_owner_publication",
+    "full_acceptance_passed": false
   }
 }

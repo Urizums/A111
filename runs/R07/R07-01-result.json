@@ -1,0 +1,35 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R07-01",
+  "attempt_id": "R07-01-1",
+  "requirements_hash": "9a75b8dbafce5001707fe68a1c837e209f1b48fedaec3ce264ba51c8a97dbd06",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R07/intake/provenance.json",
+        "runs/R07/intake/collection-check-command.json",
+        "runs/R07/inventory/INVENTORY.md",
+        "runs/R07/inventory/inventory.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "收集并固定上游成果",
+    "hypothesis": "Preserved original source plus scoped runtime/source checks enable reliable continuation",
+    "baseline": "R06 preserved source and original eight blocked branches",
+    "conditions": "Current managed Linux checkout; host native tool calls captured separately",
+    "observations": "Original 11 files saved with hashes, source commit retained on own branch, eight old blockers/budgets indexed",
+    "limits": [
+      "Registration timestamp is not a backdated full-work interval",
+      "Original blocked branches are not regraded",
+      "No broad efficacy or provider-global claim"
+    ],
+    "metrics": {
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Continue next dependency-ready R07 task"
+}

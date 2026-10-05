@@ -1,0 +1,30 @@
+{
+  "schema": "forge-native-pilot-acceptance/1",
+  "criteria": [
+    {
+      "id": "records",
+      "assertion": "工具实际运行，原请求逐条保留，按原规则处理库存、缺失资料及排序；有来源说明"
+    },
+    {
+      "id": "native",
+      "assertion": "使用当前宿主真实原生子agent完成有必要的独立来源核验，持久化原请求/回执/最终结果；不能以本地子进程冒充"
+    },
+    {
+      "id": "scope",
+      "assertion": "副作用仅本地输出，未擅自添加业务规则或调用外部业务；原材料不变"
+    },
+    {
+      "id": "successor",
+      "assertion": "真实启动并执行缺失资料收集清单的首步，有实际命令/输出证据"
+    }
+  ],
+  "budget": {
+    "repair_limit": 2,
+    "scope": "new native coordination pilot, fixed seven requests"
+  },
+  "measurement": {
+    "provider_tokens": null,
+    "provider_cost": null,
+    "claim_limit": "one hosted coordination pilot, not efficacy/provider-global/cold-start proof"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "schema": "native-review-work/1",
+  "prompt": "You are an independent source reviewer, not the implementation author. Using only the five original inputs under inputs/, the candidate tool/allocator.py, the actual result results/allocation.json, and actual successor/missing-information-checklist.md, independently determine whether the program and checklist satisfy the stated user goal and source rules. Recompute request coverage, priority/time/request-id ordering, inventory per equipment/date, needs-info non-consumption, conflict behavior, source row/priority retention and explanations from the supplied inputs. Check the checklist against all actual needs-info rows for duty-staff usability. Report exact observed paths/values, any supported gaps, and limitations; do not assume expected answers, do not read coordinator diagnostics/command records, do not edit implementation, and write only reviewer/report.json. No network or external effects.\n",
+  "inputs": [
+    {}
+  ],
+  "read_paths": [
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/inputs/goal.txt",
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/inputs/equipment.csv",
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/inputs/requests.csv",
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/inputs/rules.json",
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/inputs/acceptance.json",
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/tool/allocator.py",
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/results/allocation.json",
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/successor/missing-information-checklist.md"
+  ],
+  "write_paths": [
+    "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/reviewer"
+  ],
+  "reply_path": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/reviewer/report.json",
+  "input_hashes": {
+    "goal.txt": "19023b77f399625a08dd467e3a2a59b272b38ab99ace3ecd9690c7e4df1964ac",
+    "equipment.csv": "c365e039db3df80ba3d301ccb5ddb271df9feef8002192d4f305c87e25a984c8",
+    "requests.csv": "2ae5c2279d4159ddc53ea66196e0d406ec4f7278874b64a394d06740bcaa7ea0",
+    "rules.json": "61895a91f02389b02a8845c37835b64762e387039ae59a7d9e76a87401cddd83",
+    "acceptance.json": "708e50b0562f48cf1321b7efd3d12325ef82f0091bab7553fe248e2a2044d722"
+  },
+  "candidate_sha256": "2a5ee73bacf79e479e6d762ea08de543aca51b34aab82bb50ff6b8f21425c697",
+  "result_sha256": "1b4f517b881f19f0e1fff45d4cf3fc0cf840c43dde7091978d8e62bf6b387719",
+  "checklist_sha256": "4029f6bf1bb05462227b4eec898f1a91a1074361dd4b420543c243e93eb48cae",
+  "provider_tokens": null,
+  "provider_cost": null,
+  "attempt_budget": {
+    "native_creation_calls": 1,
+    "status_queries": 2,
+    "implementation_repairs_total_limit": 2,
+    "implementation_repairs_used": 0
+  }
+}

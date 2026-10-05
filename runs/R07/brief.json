@@ -1,0 +1,42 @@
+{
+  "goal": "收集对方成果并整理、接手续研；修复已独立复现的新快照故障，并验证实际原生任务组织",
+  "source_commit": "6f509c8dcb54f7864a49864e21061345dc4b2b9c",
+  "requirements": [
+    {
+      "id": "TAKE-1",
+      "origin": "explicit",
+      "basis": "对方停了，我们关闭开放吧，然后收集一下东西做整理和推进吧",
+      "acceptance": "PR关闭，原提交保留在自有分支，原输入/台账/预算留存"
+    },
+    {
+      "id": "RESTORE-1",
+      "origin": "derived",
+      "basis": "R06独立复核复现部分恢复后不可原路径重试；可靠交接依赖失败可恢复",
+      "acceptance": "失败不产生部分最终目录，原路径能重试；已有目标不覆盖"
+    },
+    {
+      "id": "FLOW-1",
+      "origin": "explicit",
+      "basis": "此前用户要求Luna形成完整flow并执行任务和分配任务",
+      "acceptance": "当前宿主真实原生子agent参与新的任务，产物由原材料核对，实际执行后继首步"
+    }
+  ],
+  "old_acceptance": "八项blocked保持原标准和预算，本轮不重跑或改判",
+  "budgets": {
+    "C6_snapshot": {
+      "limit": 2,
+      "repairs_used": 0
+    },
+    "native_pilot": {
+      "limit": 2,
+      "repairs_used": 0,
+      "scope": "new business input, not an old UI/provider/overhead sample"
+    }
+  },
+  "known_limits": [
+    "Linux snapshot publishing backend; unsupported host explicitly rejected",
+    "No provider credentials or device/global-usage acceptance",
+    "No timer restarted",
+    "No performance or broad-generalization assertion from one pilot"
+  ]
+}

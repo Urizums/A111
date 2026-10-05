@@ -1,0 +1,188 @@
+{
+  "schema": "local-equipment-advice/1",
+  "scope": "本地器材调配建议，不代表实际审批或发送通知",
+  "source_files": [
+    {
+      "file": "equipment.csv",
+      "bytes": 94,
+      "sha256": "c365e039db3df80ba3d301ccb5ddb271df9feef8002192d4f305c87e25a984c8"
+    },
+    {
+      "file": "requests.csv",
+      "bytes": 444,
+      "sha256": "2ae5c2279d4159ddc53ea66196e0d406ec4f7278874b64a394d06740bcaa7ea0"
+    },
+    {
+      "file": "rules.json",
+      "bytes": 723,
+      "sha256": "61895a91f02389b02a8845c37835b64762e387039ae59a7d9e76a87401cddd83"
+    }
+  ],
+  "processing_order": [
+    "R01",
+    "R05",
+    "R07",
+    "R02",
+    "R04"
+  ],
+  "inventory_after": [
+    {
+      "equipment_id": "E01",
+      "date": "2026-10-08",
+      "initial_units": 2,
+      "remaining_units": 0
+    },
+    {
+      "equipment_id": "E02",
+      "date": "2026-10-08",
+      "initial_units": 3,
+      "remaining_units": 2
+    },
+    {
+      "equipment_id": "E03",
+      "date": "2026-10-08",
+      "initial_units": 1,
+      "remaining_units": 0
+    }
+  ],
+  "summary": {
+    "ready": 3,
+    "conflict": 2,
+    "needs_info": 2
+  },
+  "requests": [
+    {
+      "source_row": 2,
+      "request_id": "R01",
+      "priority": "urgent",
+      "record": {
+        "request_id": "R01",
+        "equipment_id": "E01",
+        "units": "2",
+        "date": "2026-10-08",
+        "priority": "urgent",
+        "submitted_at": "2026-10-01T09:00:00",
+        "room": "大厅"
+      },
+      "status": "ready",
+      "allocation_order": 1,
+      "advice": "建议调配2件（本地建议）",
+      "reason": "请求2件，处理前库存2件，库存足够。",
+      "rule_basis": "库存足够，给调配建议并核减该日余额"
+    },
+    {
+      "source_row": 3,
+      "request_id": "R02",
+      "priority": "normal",
+      "record": {
+        "request_id": "R02",
+        "equipment_id": "E01",
+        "units": "1",
+        "date": "2026-10-08",
+        "priority": "normal",
+        "submitted_at": "2026-10-01T09:01:00",
+        "room": "教室A"
+      },
+      "status": "conflict",
+      "allocation_order": 4,
+      "advice": "库存不足，暂不建议调配",
+      "reason": "请求1件，处理时剩余库存0件，库存不足。",
+      "rule_basis": "库存不足，不占用库存且写清原请求与库存约束"
+    },
+    {
+      "source_row": 4,
+      "request_id": "R03",
+      "priority": "normal",
+      "record": {
+        "request_id": "R03",
+        "equipment_id": "E02",
+        "units": "2",
+        "date": "2026-10-08",
+        "priority": "normal",
+        "submitted_at": "2026-10-01T09:02:00",
+        "room": ""
+      },
+      "status": "needs_info",
+      "allocation_order": null,
+      "advice": "需补齐资料或核实器材清单后再给建议",
+      "reason": "missing room；未占用库存。",
+      "rule_basis": "未知equipment_id、缺room、units不是正整数、缺日期/优先级/提交时间，列needs_info且不占用库存"
+    },
+    {
+      "source_row": 5,
+      "request_id": "R04",
+      "priority": "normal",
+      "record": {
+        "request_id": "R04",
+        "equipment_id": "E03",
+        "units": "1",
+        "date": "2026-10-08",
+        "priority": "normal",
+        "submitted_at": "2026-10-01T09:03:00",
+        "room": "教室B"
+      },
+      "status": "conflict",
+      "allocation_order": 5,
+      "advice": "库存不足，暂不建议调配",
+      "reason": "请求1件，处理时剩余库存0件，库存不足。",
+      "rule_basis": "库存不足，不占用库存且写清原请求与库存约束"
+    },
+    {
+      "source_row": 6,
+      "request_id": "R05",
+      "priority": "urgent",
+      "record": {
+        "request_id": "R05",
+        "equipment_id": "E02",
+        "units": "1",
+        "date": "2026-10-08",
+        "priority": "urgent",
+        "submitted_at": "2026-10-01T09:04:00",
+        "room": "大厅"
+      },
+      "status": "ready",
+      "allocation_order": 2,
+      "advice": "建议调配1件（本地建议）",
+      "reason": "请求1件，处理前库存3件，库存足够。",
+      "rule_basis": "库存足够，给调配建议并核减该日余额"
+    },
+    {
+      "source_row": 7,
+      "request_id": "R06",
+      "priority": "normal",
+      "record": {
+        "request_id": "R06",
+        "equipment_id": "E99",
+        "units": "1",
+        "date": "2026-10-08",
+        "priority": "normal",
+        "submitted_at": "2026-10-01T09:05:00",
+        "room": "教室C"
+      },
+      "status": "needs_info",
+      "allocation_order": null,
+      "advice": "需补齐资料或核实器材清单后再给建议",
+      "reason": "unknown equipment_id E99；未占用库存。",
+      "rule_basis": "未知equipment_id、缺room、units不是正整数、缺日期/优先级/提交时间，列needs_info且不占用库存"
+    },
+    {
+      "source_row": 8,
+      "request_id": "R07",
+      "priority": "urgent",
+      "record": {
+        "request_id": "R07",
+        "equipment_id": "E03",
+        "units": "1",
+        "date": "2026-10-08",
+        "priority": "urgent",
+        "submitted_at": "2026-10-01T09:06:00",
+        "room": "大厅"
+      },
+      "status": "ready",
+      "allocation_order": 3,
+      "advice": "建议调配1件（本地建议）",
+      "reason": "请求1件，处理前库存1件，库存足够。",
+      "rule_basis": "库存足够，给调配建议并核减该日余额"
+    }
+  ]
+}

@@ -2,7 +2,7 @@ name: Cloud delivery validation
 on:
   pull_request:
   push:
-    branches: [main, dev]
+    branches: [main, dev, 'rd/**']
   workflow_dispatch:
 jobs:
   validate:
@@ -23,6 +23,10 @@ jobs:
         run: python -m unittest discover -s runs/R01/candidate/forge-agent-flow/scripts -p 'test_*.py'
       - name: C5 versioned candidate regression
         run: python -m unittest discover -s runs/R06/candidate/C5/forge-agent-flow/scripts -p 'test_*.py'
+      - name: C6 takeover candidate and restore recovery
+        run: |
+          python -m unittest discover -s runs/R07/candidate/C6/forge-agent-flow/scripts -p 'test_*.py'
+          python -m unittest discover -s runs/R07/validation -p 'test_snapshot_restore.py'
       - name: Snapshot, bounded repairs, local provider and approval regressions
         run: |
           python -m unittest discover -s runs/R06/snapshot -p 'test_*.py'

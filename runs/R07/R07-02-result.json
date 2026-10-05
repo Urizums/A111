@@ -1,0 +1,34 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R07-02",
+  "attempt_id": "R07-02-1",
+  "requirements_hash": "455da9a47c65a602289c963f9c2a6aed64975459b7f2bad5ee5e00f1470f4a78",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R07/candidate/C6-lock.json",
+        "runs/R07/validation/restore-tests-command.json",
+        "runs/R07/validation/c6-regression-command.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "修复快照恢复并执行故障回归",
+    "hypothesis": "Preserved original source plus scoped runtime/source checks enable reliable continuation",
+    "baseline": "R06 preserved source and original eight blocked branches",
+    "conditions": "Current managed Linux checkout; host native tool calls captured separately",
+    "observations": "Eight fault/retry/no-overwrite cases and 376 inherited candidate regressions passed; Linux no-replace backend explicit",
+    "limits": [
+      "Registration timestamp is not a backdated full-work interval",
+      "Original blocked branches are not regraded",
+      "No broad efficacy or provider-global claim"
+    ],
+    "metrics": {
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Continue next dependency-ready R07 task"
+}
