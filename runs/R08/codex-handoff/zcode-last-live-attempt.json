@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "integrations/zcode/dispatch.py",
+    "run",
+    "--repo",
+    ".",
+    "--out",
+    "/tmp/zcode-first-live-attempt-20261005T0251"
+  ],
+  "cwd": "/workspace/scratch/73714494ad2f/forge-zcode-bridge-r08",
+  "begin": {
+    "utc": "2026-10-05T02:52:46.425670+00:00",
+    "monotonic_ns": 182682205284,
+    "boot_id": "3fabf716-2b92-40d1-a1b7-7dfed13a62dd"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-05T02:52:46.482023+00:00",
+    "monotonic_ns": 182738554106,
+    "boot_id": "3fabf716-2b92-40d1-a1b7-7dfed13a62dd"
+  },
+  "exit_code": 2,
+  "stdout": "{\n  \"job_id\": \"R08-ZCODE-READ-01\",\n  \"job_sha256\": \"d3ff49aa4ff4b81112c27385806fb4a6e4b3d1ba0b3004f8738b0c932125d9f2\",\n  \"argv\": [\n    \"zcode\",\n    \"--cwd\",\n    \"/workspace/scratch/73714494ad2f/forge-zcode-bridge-r08\",\n    \"--mode\",\n    \"plan\",\n    \"--output-format\",\n    \"json\",\n    \"--prompt\",\n    \"这是 Agent Forge 的一次真实本地执行器接入检查。只读取 AGENTS.md、START_HERE.md、state/phase-todo.json 和 runs/R08/PLAN.md，报告当前阶段、下一任务、一个真正可在本机执行的验证命令及当前缺少的执行条件。不要编辑文件，不要读取账号配置或凭据，不要开启调度，不要创建其他agent或改判历史失败。简短返回所读路径和观察；不能把本次读取当作能力/性能验收通过。\"\n  ],\n  \"head\": \"b361e150e8011ed6e6ae34e05bf956a4ec7b83f2\",\n  \"executable_found\": false,\n  \"model_called\": false,\n  \"tokens\": null,\n  \"cost\": null,\n  \"acceptance\": \"not_assessed\",\n  \"state\": \"blocked\",\n  \"reason\": \"ZCode CLI is not installed/reachable on this host\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJqb2JfaWQiOiAiUjA4LVpDT0RFLVJFQUQtMDEiLAogICJqb2Jfc2hhMjU2IjogImQzZmY0OWFhNGZmNGI4MTExMmMyNzM4NTgwNmZiNGE2ZTRiM2QxYmEwYjMwMDRmODczOGIwYzkzMjEyNWQ5ZjIiLAogICJhcmd2IjogWwogICAgInpjb2RlIiwKICAgICItLWN3ZCIsCiAgICAiL3dvcmtzcGFjZS9zY3JhdGNoLzczNzE0NDk0YWQyZi9mb3JnZS16Y29kZS1icmlkZ2UtcjA4IiwKICAgICItLW1vZGUiLAogICAgInBsYW4iLAogICAgIi0tb3V0cHV0LWZvcm1hdCIsCiAgICAianNvbiIsCiAgICAiLS1wcm9tcHQiLAogICAgIui/meaYryBBZ2VudCBGb3JnZSDnmoTkuIDmrKHnnJ/lrp7mnKzlnLDmiafooYzlmajmjqXlhaXmo4Dmn6XjgILlj6ror7vlj5YgQUdFTlRTLm1k44CBU1RBUlRfSEVSRS5tZOOAgXN0YXRlL3BoYXNlLXRvZG8uanNvbiDlkowgcnVucy9SMDgvUExBTi5tZO+8jOaKpeWRiuW9k+WJjemYtuauteOAgeS4i+S4gOS7u+WKoeOAgeS4gOS4quecn+ato+WPr+WcqOacrOacuuaJp+ihjOeahOmqjOivgeWRveS7pOWPiuW9k+WJjee8uuWwkeeahOaJp+ihjOadoeS7tuOAguS4jeimgee8lui+keaWh+S7tu+8jOS4jeimgeivu+WPlui0puWPt+mFjee9ruaIluWHreaNru+8jOS4jeimgeW8gOWQr+iwg+W6pu+8jOS4jeimgeWIm+W7uuWFtuS7lmFnZW505oiW5pS55Yik5Y6G5Y+y5aSx6LSl44CC566A55+t6L+U5Zue5omA6K+76Lev5b6E5ZKM6KeC5a+f77yb5LiN6IO95oqK5pys5qyh6K+75Y+W5b2T5L2c6IO95YqbL+aAp+iDvemqjOaUtumAmui/h+OAgiIKICBdLAogICJoZWFkIjogImIzNjFlMTUwZTgwMTFlZDZlNmFlMzRlMDViZjk1NmE0ZWM3YjgzZjIiLAogICJleGVjdXRhYmxlX2ZvdW5kIjogZmFsc2UsCiAgIm1vZGVsX2NhbGxlZCI6IGZhbHNlLAogICJ0b2tlbnMiOiBudWxsLAogICJjb3N0IjogbnVsbCwKICAiYWNjZXB0YW5jZSI6ICJub3RfYXNzZXNzZWQiLAogICJzdGF0ZSI6ICJibG9ja2VkIiwKICAicmVhc29uIjogIlpDb2RlIENMSSBpcyBub3QgaW5zdGFsbGVkL3JlYWNoYWJsZSBvbiB0aGlzIGhvc3QiCn0K",
+  "stderr_base64": ""
+}

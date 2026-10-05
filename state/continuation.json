@@ -2937,7 +2937,8 @@
         "runs/R08/design/"
       ],
       "inputs": [
-        "runs/R08/PLAN.md"
+        "runs/R08/PLAN.md",
+        "runs/R08/codex-handoff/PLAN_ADDENDUM.md"
       ],
       "acceptance": [
         {
@@ -2963,12 +2964,13 @@
       "depends_on": [
         "R08-02"
       ],
-      "owner": "luna",
+      "owner": "independent_codex_or_available_luna",
       "write_paths": [
         "runs/R08/validation/"
       ],
       "inputs": [
-        "runs/R08/PLAN.md"
+        "runs/R08/PLAN.md",
+        "runs/R08/codex-handoff/PLAN_ADDENDUM.md"
       ],
       "acceptance": [
         {
@@ -3063,9 +3065,9 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "checkpoint_with_ZCode_blocker",
-    "checkpoint_reason": "Main development baseline merged; first ZCode live job blocked by unavailable local entry; independent R08-02 remains ready",
-    "coordinator_heartbeat": "2026-10-04T17:58:12.935265+00:00",
+    "session_state": "checkpoint_for_codex_main",
+    "checkpoint_reason": "Handoff prepared and locally verified; Codex should continue R08-02 from main; no active code worker",
+    "coordinator_heartbeat": "2026-10-05T03:06:05.102363+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -3080,7 +3082,7 @@
     "last_scheduled_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
     "latest_resumption_report": "runs/R06/scheduling/resume-20261004T072138Z/REPORT.md",
     "previous_coordinator_released_at": "2026-10-04T07:13:18.042263+00:00",
-    "coordinator_release_instruction": "Read actual coordinator lease state and probe before acquiring; previous owner explicitly released after integration.",
+    "coordinator_release_instruction": "Probe the actual lease before acquiring in the new checkout; this coordinator releases after preparing the final handoff.",
     "monitor_enabled": false,
     "monitor_status": "disabled_by_user",
     "monitor_disabled_at": "2026-10-04T07:43:35.078201+00:00",
@@ -3097,7 +3099,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-zcode-r08",
+    "current_coordinator": "root-codex-handoff-r08",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -3112,8 +3114,11 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R08/zcode-bridge/STATUS.md",
-    "next_plan": "runs/R08/PLAN.md"
+    "current_report": "runs/R08/codex-handoff/STATUS.md",
+    "next_plan": "runs/R08/PLAN.md",
+    "deferred_tasks": [
+      "R08-ZCODE-01"
+    ]
   },
   "events": [
     {
@@ -4171,6 +4176,31 @@
     },
     {
       "at": "2026-10-05T02:13:09.080015+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-05T03:06:05.102355+00:00",
+      "command": "user_selected_codex_main_continuation",
+      "result": {
+        "decision": "runs/R08/codex-handoff/decision.json",
+        "deferred_task": "R08-ZCODE-01",
+        "phase_dependency_removed": true,
+        "acceptance_changed": false,
+        "budgets_changed": false
+      }
+    },
+    {
+      "at": "2026-10-05T03:06:45.142096+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-05T03:08:56.592217+00:00",
       "command": "sync",
       "result": {
         "synchronized": true

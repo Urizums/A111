@@ -1,27 +1,29 @@
-# 接续入口
+# Codex 接续入口
 
-本分支由仓库所有者接手。对方源提交 `6f509c8` 和全部旧失败已保留，PR #1 已关闭。
-当前状态见 `state/checkpoint.json`；接手索引见 [docs/TAKEOVER.md](docs/TAKEOVER.md)。
-关闭 PR 不表示长期目标完成。
+用户已决定从 GitHub `main` 改用 Codex 继续研发。
+首先读 [CODEX_HANDOFF.md](CODEX_HANDOFF.md) 和 [AGENTS.md](AGENTS.md)，再从原台账执行。
+ZCode 连接是延期支线，不阻塞当前主线，也不要求你配置或调用它。
 
-R07 收集/修复批次已归档；R08-01 能力首步已实际执行。
-当前首项为 R08-02：由 Root 制作短启动候选，再交新上下文 Luna 验证。
-见 [R08 计划](runs/R08/PLAN.md)。R07 业务结果通过，但自主限时完成失败，后续不得改判。
+当前首项是 **R08-02：制作分流与最小真实首步的短启动候选**。
+随后 R08-03 做新上下文验证；阶段末项“启动下一阶段任务”需要下一阶段的真实首步。
+状态入口是 state/checkpoint.json、state/phase-todo.json 和 state/continuation.json。
 
-1. 读 AGENTS.md、checkpoint、state/phase-todo.json。
-2. 运行 `python3 scripts/coordinator_lease.py probe --root .`，仅空闲时持有租约。
-   旧宿主 worker/PID/路径只作历史证据。
-3. 运行 `python3 scripts/verify_handoff.py --json` 和
-   `python3 scripts/continuation.py --root . next`，从同一台账接续。
-4. 当前候选为 [C6](runs/R07/candidate/C6/forge-agent-flow/SKILL.md)，文件锁为
-   runs/R07/candidate/C6-lock.json。C5/C4、原 skills、失败全部保留。
-   普通任务直接做，系统用 program，明确可复用 flow 才用 package。
-   Root 写核心/skill，Luna 做资料、脚手架和独立验证。
-5. 新任务先保存原材料字节和真实首步，再用 continuation start/finish 绑定验收与证据。
-   原八项阻塞保持原标准和已耗额度，不能清零换样本。
-6. 阶段最后一项“启动下一阶段任务”需要下一计划和真实首步；会话结束保存
-   checkpoint、未决调用和下一动作。停用定时器保持停用。
+```sh
+python3 scripts/coordinator_lease.py probe --root .
+python3 scripts/verify_handoff.py --json
+python3 scripts/continuation.py --root . next
+```
 
-新结果见 runs/R07/REPORT.md，原交接见 runs/R06/upstream-handoff/README.md。
-check_publication_gate.py 保留原完整产品门槛；单批开发保存不代表它已通过。
-实际提交和发布状态以 GitHub 与本轮记录为准。
+确认租约空闲并核对未决原生调用后，持有租约再串行更新台账。
+旧宿主 worker/PID/绝对路径仅作历史；使用当前 checkout 的相对路径。
+定时器保持停用，会话结束保存 checkpoint，不宣称后台自动继续。
+
+当前候选是 [C6](runs/R07/candidate/C6/forge-agent-flow/SKILL.md)，锁为
+runs/R07/candidate/C6-lock.json。新 C7 写 runs/R08/candidate/，保存旧版和全部失败。
+需要产品界面时按需读 skills/design-product-experience；简单任务直接做，系统用 program，
+明确可复用 flow 才用 package。原 skills、source-lock、失败验收和已耗预算不改写。
+
+历史索引见 [接手记录](docs/TAKEOVER.md)、[R07 结果](runs/R07/REPORT.md) 和
+[R08 计划](runs/R08/PLAN.md)。R07 业务内容通过，但自主限时完成失败；原八项阻塞仍保留。
+本次 Codex 角色与延期支线调整见 [R08 补充](runs/R08/codex-handoff/PLAN_ADDENDUM.md)，原计划证据保持原字节。
+check_publication_gate.py 保留完整产品门槛，本次开发成果合并不代表完整验收通过。
