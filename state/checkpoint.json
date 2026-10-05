@@ -1,6 +1,6 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-04T18:01:05.807882+00:00",
+  "updated_at": "2026-10-05T01:50:25.660044+00:00",
   "active_phase": "R08",
   "next_task_id": "R08-02",
   "next_action": "制作分流与最小真实首步的短启动候选",
@@ -126,6 +126,14 @@
       "commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
       "pr": "https://github.com/Urizums/A111/pull/1",
       "at": "2026-10-04T07:55:26.705220+00:00"
+    },
+    "R07-owner-dev": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R07/publication.json",
+        "sha256": "4727eaf0cec0c127715fd7863d3c33b30dacac39ab19749a491ac59d1abbb8af"
+      },
+      "at": "2026-10-05T01:50:25.654984+00:00"
     }
   },
   "next_queue_task_id": "R08-02",
@@ -264,7 +272,22 @@
   "unpublished_work_R07": {
     "branch": "rd/takeover-r07",
     "report": "runs/R07/REPORT.md",
-    "status": "ready_for_scoped_owner_publication",
-    "full_acceptance_passed": false
+    "status": "published_scoped_owner_branch",
+    "full_acceptance_passed": false,
+    "published_commit": "b0d9093d979fa69035ec51a25a453c32bdbd69bc",
+    "publication_evidence": "runs/R07/publication.json"
+  },
+  "publication_evidence_R07": "runs/R07/publication.json",
+  "delivery_pr_state": "closed_unmerged",
+  "current_ci_R07": {
+    "run_id": 37252912799,
+    "head_sha": "b0d9093d979fa69035ec51a25a453c32bdbd69bc",
+    "matrices": {
+      "3.10": "success",
+      "3.12": "success"
+    },
+    "evidence": "runs/R07/ci-jobs.json",
+    "url": "https://github.com/Urizums/A111/actions/runs/37252912799",
+    "scope": "Tested source commit, not full product acceptance"
   }
 }
