@@ -1,6 +1,6 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-05T03:40:10.902997+00:00",
+  "updated_at": "2026-10-05T03:50:04.801279+00:00",
   "active_phase": "R08",
   "next_task_id": null,
   "next_action": "Continue R09-02 fresh-checkout verification on the published commit; do not replay exhausted R08 complex case or archive R08 as passed.",
@@ -28,7 +28,7 @@
   "provider_tokens": null,
   "provider_cost": null,
   "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
-  "termination": "Development baseline integrated; user selected Codex continuation from main at R08-02. ZCode remains deferred and blocked; no background code execution claimed.",
+  "termination": "Scoped development and evidence committed for main; R08 phase remains blocked, next queue R09-02; current native calls terminal, timer disabled.",
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
@@ -149,9 +149,9 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "checkpoint_after_scoped_r08_r09_work",
-    "checkpoint_reason": "R08-03 is blocked after budget overrun. Distinct R09-01 completed with actual runtime evidence; R09-02 fresh checkout validation is next. No background execution claimed.",
-    "coordinator_heartbeat": "2026-10-05T03:41:36.110053+00:00",
+    "session_state": "checkpoint_for_published_main",
+    "checkpoint_reason": "C7 implemented; R08 complex blocked with budget overrun retained; distinct R09-01 completed; R09-02 fresh checkout verification remains next. No pending current native worker or background code claim.",
+    "coordinator_heartbeat": "2026-10-05T03:50:04.801265+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -215,7 +215,10 @@
         "outcome": "failed_budget_exceeded",
         "evidence": "runs/R08/validation/complex-terminal.json"
       }
-    ]
+    ],
+    "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
+    "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
+    "coordinator_release_evidence": "runs/R08/design/lease-release.json"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -340,5 +343,13 @@
   "R08_validation_budget": "runs/R08/validation/root-repair-ledger.json",
   "R09_branch": "runs/R09/PLAN_ADDENDUM.md",
   "R08_budget_and_failures": "runs/R08/validation/root-repair-ledger.json",
-  "R09_actual_first_step": "runs/R09/preflight/formal-first-step.json"
+  "R09_actual_first_step": "runs/R09/preflight/formal-first-step.json",
+  "R08_final_regressions": {
+    "inherited": 376,
+    "auxiliary_stable": 53,
+    "windows_preflight": 6,
+    "wsl_preflight": 6,
+    "semantic_R08_03": "failed_complex_budget_overrun"
+  },
+  "R08_latest_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json"
 }

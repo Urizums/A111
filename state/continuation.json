@@ -3439,9 +3439,9 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "checkpoint_after_scoped_r08_r09_work",
-    "checkpoint_reason": "R08-03 is blocked after budget overrun. Distinct R09-01 completed with actual runtime evidence; R09-02 fresh checkout validation is next. No background execution claimed.",
-    "coordinator_heartbeat": "2026-10-05T03:41:36.110053+00:00",
+    "session_state": "checkpoint_for_published_main",
+    "checkpoint_reason": "C7 implemented; R08 complex blocked with budget overrun retained; distinct R09-01 completed; R09-02 fresh checkout verification remains next. No pending current native worker or background code claim.",
+    "coordinator_heartbeat": "2026-10-05T03:50:04.801265+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -3505,7 +3505,10 @@
         "outcome": "failed_budget_exceeded",
         "evidence": "runs/R08/validation/complex-terminal.json"
       }
-    ]
+    ],
+    "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
+    "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
+    "coordinator_release_evidence": "runs/R08/design/lease-release.json"
   },
   "events": [
     {
@@ -4748,6 +4751,17 @@
         "task_id": "R09-01",
         "status": "done",
         "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-05T03:50:04.801276+00:00",
+      "command": "final_checkpoint_for_main",
+      "result": {
+        "R08_phase_passed": false,
+        "R09_01_actual_done": true,
+        "next_task_id": "R09-02",
+        "current_native_pending": [],
+        "old_budgets_unchanged": true
       }
     }
   ],

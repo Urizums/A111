@@ -35,9 +35,11 @@ R08-next 仍依赖原 R08-03 验收并保持 blocked；没有 continuation advan
 
 一轮辅助安装回归与共享状态写入重叠，运行21项后出现3个失败标记，被协调者实际
 终止（exit -15）；完整信封在 design/auxiliary-regression.json，不作为验收。
-使用固定源码快照进行一次有界纠正，结果将附在 design/auxiliary-stable.json。
+使用固定源码快照进行一次有界纠正，53项辅助回归在20.590秒内通过；结果保留在 design/auxiliary-stable.json。这不是独立验收或性能对比。
 协调者原结果读取的GBK错误保留在 validation/root-repair-ledger.json；本次源码快照
 纠正另作版本记录，不覆盖已绑定证据。旧各批预算不变。
 
 代码、原始失败、TODO/checkpoint 将同步 main；定时器未启用。
 会话结束前核对无未决当前原生worker、保留历史未决调用并释放协调者租约。
+
+固定测试源码树通过一个单独Git提交保留，见 design/stable-source-commit.json；后续提交只整合最终证据与状态。
