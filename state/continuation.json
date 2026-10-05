@@ -2983,6 +2983,73 @@
       "repair_limit": 2,
       "blocker": null,
       "next_action": "新上下文验证短路径的正确性、干预与实际分工"
+    },
+    {
+      "id": "R08-ZCODE-01",
+      "title": "接入用户ZCode并取得首条真实任务回执",
+      "queue": "capabilities",
+      "category": "external_command_worker",
+      "complexity": 2,
+      "priority": 3,
+      "depends_on": [
+        "R08-01"
+      ],
+      "owner": "zcode",
+      "write_paths": [
+        "integrations/zcode/",
+        "runs/R08/zcode-bridge/"
+      ],
+      "inputs": [
+        "integrations/zcode/first-job.json",
+        "runs/R08/zcode-bridge/brief.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "用户实际配置的ZCode执行冻结只读任务，有原回复和退出码；协调者核验来源与工作区未改动，不以准备/帮助/模拟当通过"
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R08/zcode-bridge/preflight-command.json",
+          "sha256": "893cf6b95027baf828a00cb7e29b5cc803ed86c122d2fa5720d1340c7be4260b"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R08-ZCODE-01-1",
+          "started_at": "2026-10-05T02:11:49.686784+00:00",
+          "requirements_hash": "e082f73b824f7e4764e14b75e69dd6dae3f3b9f91c7fd22e40f3928199b4c8e8",
+          "inputs": [
+            {
+              "path": "integrations/zcode/first-job.json",
+              "sha256": "d3ff49aa4ff4b81112c27385806fb4a6e4b3d1ba0b3004f8738b0c932125d9f2"
+            },
+            {
+              "path": "runs/R08/zcode-bridge/brief.json",
+              "sha256": "fa69c01c06ed2c0211c8fbe548645b1caab9f742f1aa02d6cef9406773dd9901"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R08/zcode-bridge/preflight-command.json",
+            "sha256": "893cf6b95027baf828a00cb7e29b5cc803ed86c122d2fa5720d1340c7be4260b"
+          },
+          "status": "blocked",
+          "ended_at": "2026-10-05T02:11:49.765361+00:00",
+          "reason": "本宿主没有ZCode CLI或用户本机执行通道；尚未取得真实账号调用回执",
+          "evidence": [
+            {
+              "path": "runs/R08/zcode-bridge/preflight-command.json",
+              "sha256": "893cf6b95027baf828a00cb7e29b5cc803ed86c122d2fa5720d1340c7be4260b"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "本宿主没有ZCode CLI或用户本机执行通道；尚未取得真实账号调用回执",
+      "next_action": "用户实际ZCode环境执行冻结只读任务；回传原回复/退出码，确认账号与额度后再开放编码任务"
     }
   ],
   "execution": {
@@ -2996,8 +3063,8 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "paused_at_R08_02",
-    "checkpoint_reason": "Scoped R07 results and R08 first step complete; no current workers, timer disabled",
+    "session_state": "checkpoint_with_ZCode_blocker",
+    "checkpoint_reason": "Main development baseline merged; first ZCode live job blocked by unavailable local entry; independent R08-02 remains ready",
     "coordinator_heartbeat": "2026-10-04T17:58:12.935265+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
@@ -3030,7 +3097,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-takeover-r07",
+    "current_coordinator": "root-zcode-r08",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -3045,7 +3112,7 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R07/REPORT.md",
+    "current_report": "runs/R08/zcode-bridge/STATUS.md",
     "next_plan": "runs/R08/PLAN.md"
   },
   "events": [
@@ -4059,6 +4126,54 @@
       "result": {
         "delivery": "R07-owner-dev",
         "project_status": "active"
+      }
+    },
+    {
+      "at": "2026-10-05T02:11:49.608443+00:00",
+      "command": "user_added_ZCode_execution_frontier",
+      "result": {
+        "new_task_id": "R08-ZCODE-01",
+        "old_blockers_unchanged": true,
+        "main_merge": "7fd80faad93bb454a3bdfa1cff10f0fa0c6bbbca"
+      }
+    },
+    {
+      "at": "2026-10-05T02:11:49.687136+00:00",
+      "command": "start",
+      "result": {
+        "id": "R08-ZCODE-01-1",
+        "started_at": "2026-10-05T02:11:49.686784+00:00",
+        "requirements_hash": "e082f73b824f7e4764e14b75e69dd6dae3f3b9f91c7fd22e40f3928199b4c8e8",
+        "inputs": [
+          {
+            "path": "integrations/zcode/first-job.json",
+            "sha256": "d3ff49aa4ff4b81112c27385806fb4a6e4b3d1ba0b3004f8738b0c932125d9f2"
+          },
+          {
+            "path": "runs/R08/zcode-bridge/brief.json",
+            "sha256": "fa69c01c06ed2c0211c8fbe548645b1caab9f742f1aa02d6cef9406773dd9901"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R08/zcode-bridge/preflight-command.json",
+          "sha256": "893cf6b95027baf828a00cb7e29b5cc803ed86c122d2fa5720d1340c7be4260b"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-05T02:11:49.765399+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "R08-ZCODE-01",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-05T02:13:09.080015+00:00",
+      "command": "sync",
+      "result": {
+        "synchronized": true
       }
     }
   ],
