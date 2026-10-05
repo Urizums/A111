@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "ui-independent",
+  "goal": "Independently validate the actual support desk browser journey and visual states",
+  "deliverable_kind": "scoped_change",
+  "requirements": [
+    {
+      "id": "req_work",
+      "text": "Independently validate the actual support desk browser journey and visual states",
+      "origin": "explicit",
+      "basis": "runs/R00/ui-brief.md",
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_work",
+      "assertion": "Assigned original requirements are covered by actual source and runtime evidence with limits disclosed.",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "work",
+      "title": "Independently validate the actual support desk browser journey and visual states",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ]
+}

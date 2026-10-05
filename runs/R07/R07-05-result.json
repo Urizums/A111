@@ -1,0 +1,38 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R07-05",
+  "attempt_id": "R07-05-1",
+  "requirements_hash": "d960b535786f12dabe71f0d6a97b8425c52829935e46cb03270afc216de9b26b",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R07/REPORT.md",
+        "runs/R07/integration-observation.json",
+        "runs/R07/validation/integration-check-command.json",
+        "runs/R07/validation/auxiliary-final-command.json",
+        "runs/R08/PLAN.md",
+        "docs/TAKEOVER.md"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Owner continuation state and reviewable scoped R07 results",
+    "hypothesis": "Retained history, source locks and current TODO permit owner continuation",
+    "baseline": "Collaborator stopped with eight blocked original tasks and snapshot defect",
+    "conditions": "Original source preserved, old records unchanged, C6 and assisted pilot results bounded by scope",
+    "observations": "20 original tasks unchanged; current task results accepted; 47 auxiliary checks pass; old strict product gate remains",
+    "limits": [
+      "One current host, not independent cold start",
+      "Original R07 autonomous timing failed; full product acceptance still blocked"
+    ],
+    "metrics": {
+      "original_tasks_unchanged": 20,
+      "aux_checks_passed": 47,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Execute and record R08-01 capability probe, then advance using its actual start"
+}

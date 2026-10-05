@@ -1,0 +1,89 @@
+{
+  "schema": "forge-bounded-run/1",
+  "actor": "root-regression-new",
+  "created_at": "2026-10-04T06:42:25.698549+00:00",
+  "limit": 2,
+  "phase": "passed",
+  "candidate": [
+    {
+      "path": "/workspace/A111/runs/R06/budget/scenarios/new-material/analysis.py",
+      "sha256": "532ea7111dac78d0495c42ecdb5267777c8ca964bbe8b01193994223d523dd6e"
+    }
+  ],
+  "inputs": [
+    {
+      "path": "/workspace/A111/runs/R06/budget/scenarios/new-material/measurements.json",
+      "sha256": "1a22414f79a19428cbdda4fce988226f569eee7216182e230b24d1b8baae4097"
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "snapshot-0",
+      "manifest_sha256": "554acac932bbc8a2a1873178edd0fe9985073d43f33b54c3a2d8e6d7256aaca0"
+    },
+    {
+      "path": "snapshot-1",
+      "manifest_sha256": "30f8f287b436a93259ca54542cc4434493254cc14c999472332238db95ef56ec"
+    }
+  ],
+  "repairs": [
+    {
+      "number": 1,
+      "at": "2026-10-04T06:42:25.785456+00:00",
+      "reason": "Use original samples field; preserve failure and unchanged original material",
+      "after_attempt": 1,
+      "before": [
+        {
+          "path": "/workspace/A111/runs/R06/budget/scenarios/new-material/analysis.py",
+          "sha256": "e98a5e4ca2bb2bd2c44ea2bc4fdd7ced09ef4f3e918d59c66faca1350412a2aa"
+        }
+      ],
+      "after": [
+        {
+          "path": "/workspace/A111/runs/R06/budget/scenarios/new-material/analysis.py",
+          "sha256": "532ea7111dac78d0495c42ecdb5267777c8ca964bbe8b01193994223d523dd6e"
+        }
+      ]
+    }
+  ],
+  "attempts": [
+    {
+      "id": 1,
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/A111/runs/R06/budget/scenarios/new-material/analysis.py",
+        "/workspace/A111/runs/R06/budget/scenarios/new-material/measurements.json"
+      ],
+      "cwd": "/workspace/A111",
+      "started_at": "2026-10-04T06:42:25.731246+00:00",
+      "status": "failed",
+      "repair_count": 0,
+      "ended_at": "2026-10-04T06:42:25.748890+00:00",
+      "exit_code": 1
+    },
+    {
+      "id": 2,
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/A111/runs/R06/budget/scenarios/new-material/analysis.py",
+        "/workspace/A111/runs/R06/budget/scenarios/new-material/measurements.json"
+      ],
+      "cwd": "/workspace/A111",
+      "started_at": "2026-10-04T06:42:25.826279+00:00",
+      "status": "passed",
+      "repair_count": 1,
+      "ended_at": "2026-10-04T06:42:25.843912+00:00",
+      "exit_code": 0
+    }
+  ],
+  "records": [
+    {
+      "path": "attempt-1.json",
+      "sha256": "b427775c3b73db221db7800458c15aa62e9f4980c8fcab1745b84e0d88e2b01a"
+    },
+    {
+      "path": "attempt-2.json",
+      "sha256": "8f7945ee4e3830d2b6757e188b800c4622837e32bc890c3af2e372ca8278b770"
+    }
+  ]
+}

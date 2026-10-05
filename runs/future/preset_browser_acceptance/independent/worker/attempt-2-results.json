@@ -1,0 +1,661 @@
+{
+  "schema": "preset-browser-acceptance-results/1",
+  "started_at_utc": "2026-10-04T06:08:36.525850+00:00",
+  "target": {
+    "html": "/workspace/A111/skills/design-product-experience/assets/ui-presets.html",
+    "css": "/workspace/A111/skills/design-product-experience/assets/ui-presets.css",
+    "html_sha256": "1382fe6726dba5b81aaa91ba83e77de59bcefb910594e78e9b6122582c52d688",
+    "css_sha256": "39483287fceec40f32ecf54f24fbc630cd63e03e2811986283689b190611657a"
+  },
+  "browser": {
+    "browser": "Chromium via /usr/bin/chromium",
+    "browser_version": "151.0.7922.173",
+    "viewport_initial": {
+      "width": 1440,
+      "height": 1000
+    },
+    "url": "http://127.0.0.1:8765/ui-presets.html",
+    "http_status": 200,
+    "user_agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/151.0.0.0 Safari/537.36",
+    "color_scheme": "light"
+  },
+  "original_rows": [
+    {
+      "id": "r-1842",
+      "status": "succeeded",
+      "workflow": "Release checks",
+      "name": "release-check"
+    },
+    {
+      "id": "r-1841",
+      "status": "failed",
+      "workflow": "Release checks",
+      "name": "release-check"
+    },
+    {
+      "id": "r-1840",
+      "status": "succeeded",
+      "workflow": "Dependency audit",
+      "name": "dependency-audit"
+    }
+  ],
+  "actions": [
+    "GET http://127.0.0.1:8765/ui-presets.html; HTTP 200; wait_until=networkidle",
+    "Recorded original DOM rows, ids, statuses, workflows, and names before interaction.",
+    "Opened run detail, closed with Escape and named Close; checked focus return for both.",
+    "Opened r-1840 (Dependency audit) and activated Run again; verified r-1843 local queued row.",
+    "Canceled deletion of r-1841 and verified retention; confirmed deletion and verified only r-1841 removed.",
+    "Observed refresh busy/current rows, canceled and retried; induced recoverable error and retried to success.",
+    "Changed palette and density in each direction and checked each retained the other setting.",
+    "Verified quiet-slide runs without reduced motion; light-elastic resolves to no animation under reduced motion and remains operable.",
+    "Set 390x844 viewport; checked document/table overflow and internal scroll, accessible control names, keyboard status selection, pointer detail open/close."
+  ],
+  "outcomes": [
+    {
+      "check": "original three rows and local sample identity",
+      "status": "passed",
+      "details": {
+        "original_rows": [
+          {
+            "id": "r-1842",
+            "status": "succeeded",
+            "workflow": "Release checks",
+            "name": "release-check"
+          },
+          {
+            "id": "r-1841",
+            "status": "failed",
+            "workflow": "Release checks",
+            "name": "release-check"
+          },
+          {
+            "id": "r-1840",
+            "status": "succeeded",
+            "workflow": "Dependency audit",
+            "name": "dependency-audit"
+          }
+        ]
+      }
+    },
+    {
+      "check": "text/status filtering, empty feedback, and clear",
+      "status": "failed",
+      "error": "AssertionError: Clear filters control did not restore all rows"
+    },
+    {
+      "check": "detail open, Escape/Close, and focus return",
+      "status": "passed",
+      "details": {
+        "escape_focus_return": {
+          "id": "",
+          "view": "r-1842"
+        },
+        "close_focus_return": {
+          "id": "",
+          "view": "r-1842"
+        }
+      }
+    },
+    {
+      "check": "run again adds selected matching workflow",
+      "status": "passed",
+      "details": {
+        "rows_after_run_again": [
+          {
+            "id": "r-1843",
+            "status": "queued",
+            "workflow": "Dependency audit",
+            "name": "dependency-audit"
+          },
+          {
+            "id": "r-1842",
+            "status": "succeeded",
+            "workflow": "Release checks",
+            "name": "release-check"
+          },
+          {
+            "id": "r-1841",
+            "status": "failed",
+            "workflow": "Release checks",
+            "name": "release-check"
+          },
+          {
+            "id": "r-1840",
+            "status": "succeeded",
+            "workflow": "Dependency audit",
+            "name": "dependency-audit"
+          }
+        ],
+        "added_id": "r-1843"
+      }
+    },
+    {
+      "check": "delete cancel retains; confirmation removes only selected row",
+      "status": "passed",
+      "details": {
+        "before": [
+          "r-1840",
+          "r-1841",
+          "r-1842",
+          "r-1843"
+        ],
+        "after_cancel": [
+          "r-1840",
+          "r-1841",
+          "r-1842",
+          "r-1843"
+        ],
+        "after_confirm": [
+          "r-1840",
+          "r-1842",
+          "r-1843"
+        ]
+      }
+    },
+    {
+      "check": "refresh busy/current rows, cancel/retry, error/retry",
+      "status": "passed",
+      "details": {
+        "rows_after_recovery": [
+          "r-1843",
+          "r-1842",
+          "r-1840"
+        ],
+        "updated_text": "06:08 AM"
+      }
+    },
+    {
+      "check": "palette and density independence",
+      "status": "passed",
+      "details": {
+        "palette": "clear",
+        "density": "balanced"
+      }
+    },
+    {
+      "check": "drawer motion toggle and reduced-motion usability",
+      "status": "passed",
+      "details": {
+        "quiet_slide": {
+          "animationName": "drawer-quiet-slide",
+          "animationDuration": "0.22s",
+          "transform": "matrix(1, 0, 0, 1, 16, 0)"
+        },
+        "light_elastic": {
+          "animationName": "drawer-light-elastic",
+          "animationDuration": "0.3s"
+        },
+        "reduced_motion": {
+          "animationName": "none",
+          "animationDuration": "0s",
+          "transform": "none"
+        }
+      }
+    },
+    {
+      "check": "desktop controls, keyboard focus visibility, and key text contrast",
+      "status": "failed",
+      "error": "AssertionError: Keyboard focus lacked a visible outline on some controls: [{'id': '', 'tag': 'body', 'name': 'Skip to runs\\nN\\nNorthstar Studio\\n\\nWORKSPACE\\n\\nOverview\\nRuns\\nWorkflows\\nPreferences\\n\\nA local, fictional interface sample. No account or network connection is used.\\n\\nOperations\\n/\\nRun workspace\\nDEMO CONTROLS\\nColor palette\\nClear light\\nNight console\\n\\nOPERATIONS / AUTOMATION\\n\\nRun workspace\\n\\nReview recent activity, open the run you need, then repeat or remove it with a clear confirmation.\\n\\nRun workflow\\n\\nWorkflow Release checks\\nEnvironment Preview\\nUpdated 06:08 AM\\n\\nRecent runs\\n\\n3 runs\\n\\nRefresh runs\\nFind a run\\nStatus\\nAll statuses\\nSucceeded\\nFailed\\nQueued\\nClear filters\\nRecent workflow runs and their status\\nRUN\\tSTATUS\\tSTARTED\\t\\nACTIONS\\n\\n\\ndependency-audit\\nRun r-1843 \u00b7 main\\n\\tQueued\\tjust now\\t\\nView\\n\\n\\nrelease-check\\nRun r-1842 \u00b7 main\\n\\tSucceeded\\t14:32 UTC\\t\\nView\\n\\n\\ndependency-audit\\nRun r-1840 \u00b7 main\\n\\tSucceeded\\t13:48 UTC\\t\\nView\\n\\nSample data is local to this page. Refresh simulates a request; it does not contact a service.\\n\\nRuns are up to date. Existing results were retained.\\nPreview recoverable error\\nActivity\\nTODAY\\nRelease checks passed\\n14:32 UTC \u00b7 main\\nOne run needs attention\\n14:11 UTC \u00b7 open run r-1841\\nDependency audit finished\\n13:48 UTC \u00b7 main\\nAppearance and motion\\n\\nPalette, information density, and drawer motion are independent. These controls change this local preview only.\\n\\nInformation density\\nBalanced\\nCondensed\\nDrawer entrance\\nNo animation\\nQuiet side slide\\nLight elastic\\n\\nApplies only when opening run details. Reduced-motion preferences always disable it.', 'outlineStyle': 'none', 'outlineWidth': '3px', 'outlineColor': 'rgb(24, 35, 31)'}]"
+    },
+    {
+      "check": "390px narrow layout, keyboard/pointer operation and overflow access",
+      "status": "passed",
+      "details": {
+        "dimensions": {
+          "viewport": 390,
+          "documentScrollWidth": 390,
+          "bodyScrollWidth": 390,
+          "tableClientWidth": 358,
+          "tableScrollWidth": 369,
+          "tableScrollLeft": 11,
+          "tableOverflow": "auto",
+          "viewButtonRect": {
+            "left": 322.59375,
+            "right": 377.140625,
+            "top": 1042.25,
+            "bottom": 1077.4375
+          },
+          "wrapRect": {
+            "left": 16,
+            "right": 374,
+            "top": 835.875,
+            "bottom": 1237.625
+          },
+          "last_control_after_scroll": {
+            "left": 311.59375,
+            "right": 366.140625,
+            "wrapLeft": 16,
+            "wrapRight": 374
+          }
+        },
+        "visible_controls": 19,
+        "keyboard_focusables": 19,
+        "status_filter_keyboard": "passed",
+        "pointer_detail": "passed"
+      }
+    }
+  ],
+  "measurements": {
+    "mobile_dimensions": {
+      "viewport": 390,
+      "documentScrollWidth": 390,
+      "bodyScrollWidth": 390,
+      "tableClientWidth": 358,
+      "tableScrollWidth": 369,
+      "tableScrollLeft": 11,
+      "tableOverflow": "auto",
+      "viewButtonRect": {
+        "left": 322.59375,
+        "right": 377.140625,
+        "top": 1042.25,
+        "bottom": 1077.4375
+      },
+      "wrapRect": {
+        "left": 16,
+        "right": 374,
+        "top": 835.875,
+        "bottom": 1237.625
+      },
+      "last_control_after_scroll": {
+        "left": 311.59375,
+        "right": 366.140625,
+        "wrapLeft": 16,
+        "wrapRight": 374
+      }
+    },
+    "mobile_visible_controls": [
+      {
+        "tag": "a",
+        "id": "",
+        "name": "Skip to runs",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "name": "Northstar Studio home",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "name": "Overview",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "name": "Runs",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "name": "Workflows",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "name": "Preferences",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "a",
+        "id": "",
+        "name": "Operations",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "select",
+        "id": "palette-choice",
+        "name": "Color palette",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "button",
+        "id": "create-run",
+        "name": "Run workflow",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "button",
+        "id": "refresh-runs",
+        "name": "Refresh runs",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "input",
+        "id": "run-search",
+        "name": "Find a run",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "select",
+        "id": "status-filter",
+        "name": "Status",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "button",
+        "id": "clear-filters",
+        "name": "Clear filters",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "button",
+        "id": "",
+        "name": "View",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "button",
+        "id": "",
+        "name": "View",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "button",
+        "id": "",
+        "name": "View",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "button",
+        "id": "preview-error",
+        "name": "Preview recoverable error",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "select",
+        "id": "density-choice",
+        "name": "Information density",
+        "tabIndex": 0,
+        "disabled": false
+      },
+      {
+        "tag": "select",
+        "id": "motion-choice",
+        "name": "Drawer entrance",
+        "tabIndex": 0,
+        "disabled": false
+      }
+    ],
+    "mobile_focusables": [
+      {
+        "id": "",
+        "name": "Skip to runs"
+      },
+      {
+        "id": "",
+        "name": "Northstar Studio home"
+      },
+      {
+        "id": "",
+        "name": "Overview"
+      },
+      {
+        "id": "",
+        "name": "Runs"
+      },
+      {
+        "id": "",
+        "name": "Workflows"
+      },
+      {
+        "id": "",
+        "name": "Preferences"
+      },
+      {
+        "id": "",
+        "name": "Operations"
+      },
+      {
+        "id": "palette-choice",
+        "name": "Color palette"
+      },
+      {
+        "id": "create-run",
+        "name": "Run workflow"
+      },
+      {
+        "id": "refresh-runs",
+        "name": "Refresh runs"
+      },
+      {
+        "id": "run-search",
+        "name": "Find a run"
+      },
+      {
+        "id": "status-filter",
+        "name": "All statuses\nSucceeded\nFailed\nQueued"
+      },
+      {
+        "id": "clear-filters",
+        "name": "Clear filters"
+      },
+      {
+        "id": "",
+        "name": "View"
+      },
+      {
+        "id": "",
+        "name": "View"
+      },
+      {
+        "id": "",
+        "name": "View"
+      },
+      {
+        "id": "preview-error",
+        "name": "Preview recoverable error"
+      },
+      {
+        "id": "density-choice",
+        "name": "Balanced\nCondensed"
+      },
+      {
+        "id": "motion-choice",
+        "name": "No animation\nQuiet side slide\nLight elastic"
+      }
+    ]
+  },
+  "raw_errors": [],
+  "screenshots": [
+    "/workspace/A111/runs/future/preset_browser_acceptance/independent/worker/screenshots/desktop-detail.png",
+    "/workspace/A111/runs/future/preset_browser_acceptance/independent/worker/screenshots/desktop-initial.png",
+    "/workspace/A111/runs/future/preset_browser_acceptance/independent/worker/screenshots/desktop-keyboard-focus.png",
+    "/workspace/A111/runs/future/preset_browser_acceptance/independent/worker/screenshots/mobile-390-detail.png",
+    "/workspace/A111/runs/future/preset_browser_acceptance/independent/worker/screenshots/mobile-390-initial.png"
+  ],
+  "attempts": [
+    {
+      "attempt": 1,
+      "harness_corrections": 0,
+      "command": "python /workspace/A111/runs/future/preset_browser_acceptance/independent/worker/validate_presets.py",
+      "outcome": "completed with harness failures; full evidence retained separately",
+      "outcomes": [
+        {
+          "check": "original three rows and local sample identity",
+          "status": "passed",
+          "details": {
+            "original_rows": [
+              {
+                "id": "r-1842",
+                "status": "succeeded",
+                "workflow": "Release checks",
+                "name": "release-check"
+              },
+              {
+                "id": "r-1841",
+                "status": "failed",
+                "workflow": "Release checks",
+                "name": "release-check"
+              },
+              {
+                "id": "r-1840",
+                "status": "succeeded",
+                "workflow": "Dependency audit",
+                "name": "dependency-audit"
+              }
+            ]
+          }
+        },
+        {
+          "check": "text/status filtering, empty feedback, and clear",
+          "status": "failed",
+          "error": "AssertionError: Empty-state clear did not restore all rows"
+        },
+        {
+          "check": "detail open, Escape/Close, and focus return",
+          "status": "passed",
+          "details": {
+            "escape_focus_return": {
+              "id": "",
+              "view": "r-1842"
+            },
+            "close_focus_return": {
+              "id": "",
+              "view": "r-1842"
+            }
+          }
+        },
+        {
+          "check": "run again adds selected matching workflow",
+          "status": "passed",
+          "details": {
+            "rows_after_run_again": [
+              {
+                "id": "r-1843",
+                "status": "queued",
+                "workflow": "Dependency audit",
+                "name": "dependency-audit"
+              },
+              {
+                "id": "r-1842",
+                "status": "succeeded",
+                "workflow": "Release checks",
+                "name": "release-check"
+              },
+              {
+                "id": "r-1841",
+                "status": "failed",
+                "workflow": "Release checks",
+                "name": "release-check"
+              },
+              {
+                "id": "r-1840",
+                "status": "succeeded",
+                "workflow": "Dependency audit",
+                "name": "dependency-audit"
+              }
+            ],
+            "added_id": "r-1843"
+          }
+        },
+        {
+          "check": "delete cancel retains; confirmation removes only selected row",
+          "status": "passed",
+          "details": {
+            "before": [
+              "r-1840",
+              "r-1841",
+              "r-1842",
+              "r-1843"
+            ],
+            "after_cancel": [
+              "r-1840",
+              "r-1841",
+              "r-1842",
+              "r-1843"
+            ],
+            "after_confirm": [
+              "r-1840",
+              "r-1842",
+              "r-1843"
+            ]
+          }
+        },
+        {
+          "check": "refresh busy/current rows, cancel/retry, error/retry",
+          "status": "passed",
+          "details": {
+            "rows_after_recovery": [
+              "r-1843",
+              "r-1842",
+              "r-1840"
+            ],
+            "updated_text": "06:06 AM"
+          }
+        },
+        {
+          "check": "palette and density independence",
+          "status": "passed",
+          "details": {
+            "palette": "clear",
+            "density": "balanced"
+          }
+        },
+        {
+          "check": "drawer motion toggle and reduced-motion usability",
+          "status": "passed",
+          "details": {
+            "quiet_slide": {
+              "animationName": "drawer-quiet-slide",
+              "animationDuration": "0.22s",
+              "transform": "matrix(1, 0, 0, 1, 16, 0)"
+            },
+            "light_elastic": {
+              "animationName": "drawer-light-elastic",
+              "animationDuration": "0.3s"
+            },
+            "reduced_motion": {
+              "animationName": "none",
+              "animationDuration": "0s",
+              "transform": "none"
+            }
+          }
+        },
+        {
+          "check": "desktop controls, keyboard focus visibility, and key text contrast",
+          "status": "failed",
+          "error": "Error: Page.evaluate: SyntaxError: missing ) after argument list\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:311:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+        },
+        {
+          "check": "390px narrow layout, keyboard/pointer operation and overflow access",
+          "status": "failed",
+          "error": "Error: Page.evaluate: SyntaxError: missing ) after argument list\n    at eval (<anonymous>)\n    at UtilityScript.evaluate (<anonymous>:311:30)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+        }
+      ]
+    },
+    {
+      "attempt": 2,
+      "harness_corrections": 1,
+      "command": "python /workspace/A111/runs/future/preset_browser_acceptance/independent/worker/validate_presets.py",
+      "outcome": "completed"
+    }
+  ],
+  "measurements_unavailable": {
+    "tokens": null,
+    "cost": null,
+    "provider_identity": null,
+    "active_time": null
+  }
+}

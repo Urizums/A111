@@ -1,0 +1,252 @@
+{
+  "status": "ready",
+  "node": "architect",
+  "kind": "agent",
+  "invocation_id": "9f6eb6042fde8d0c5b83234e29e244f1",
+  "prompt": "Compare one-agent baseline to at most one justified alternative. Choose minimum sufficient nodes. Describe actual artifact dependencies, branch outcomes, bounded review loops and terminal outputs. Bind only verified tools. Define a budget and explain any specialized workers. Serialize independent workers in IR v1; do not claim concurrency without an adapter. Do not claim measured superiority without measurements. Read references/architecture.md. Choose lite or full design. Record necessity/baseline, applicable decision records, rejected choices and rollback triggers, INFRA/POST/AFTER, and dated evidence-scoped knowledge. Preserve every unmet host/model/tool/policy/budget requirement. The test_plan input is an exact lock: read test_plan.plan and retain test_plan.plan_hash. Do not paraphrase its criteria into a replacement plan. Read references/design-from-brief.md. Include coverage rows (requirement_id/node_ids/criteria), at least two required frozen stress_cases (case_id/risk/handling), and review (mode/summary/unresolved). Critique assumptions, failure paths and actual node methods. Resolve gaps internally before ok; label self_review versus fresh_context honestly.",
+  "inputs": {
+    "contract": {
+      "goal": "Build a reusable library renewal agent flow. Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with explicit reasons. Preserve borrower_id and book_id. No external library actions. Strict shapes and stale-response rejection.",
+      "requirements": [
+        {
+          "id": "r_policy",
+          "text": "Implement stated renewal policy with exact IDs and reasons",
+          "origin": "explicit",
+          "basis": "Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2",
+          "criteria": [
+            "policy"
+          ]
+        },
+        {
+          "id": "r_protocol",
+          "text": "Strict shapes and stale-response rejection",
+          "origin": "explicit",
+          "basis": "Strict shapes and stale-response rejection",
+          "criteria": [
+            "protocol"
+          ]
+        }
+      ],
+      "decisions": {
+        "scope": {
+          "choice": "Reusable local renewal decision package; no account or library effects",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "inputs": {
+          "choice": "borrower_id, book_id strings; days_overdue, holds, renewals_used integers",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "outputs": {
+          "choice": "result object containing borrower_id, book_id, decision, renewal_days and reasons",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "quality": {
+          "choice": "Exact explicit policy and reasons; malformed envelopes rejected",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "tools_and_authority": {
+          "choice": "No external tools or requested filesystem writes by target node",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "failures": {
+          "choice": "Input shape errors rejected before start; stale/invalid response leaves state unchanged",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "state_and_handoffs": {
+          "choice": "One immutable input and one result in package checkpoint",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "budget_and_stop": {
+          "choice": "One target node/visit; at most two factory repairs",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "model_and_topology": {
+          "choice": "One actual host-default agent; one policy has no independent context boundary",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        }
+      },
+      "blocking_questions": []
+    },
+    "test_plan": {
+      "plan": {
+        "schema": "forge-eval/1",
+        "id": "library_renewal",
+        "criteria": [
+          {
+            "id": "policy",
+            "kind": "machine",
+            "required": true,
+            "assertion": "Exact decision, days, IDs and reasons match the explicit renewal policy."
+          },
+          {
+            "id": "protocol",
+            "kind": "machine",
+            "required": true,
+            "assertion": "Strict input/output shapes and stale response protection preserve the checkpoint."
+          }
+        ],
+        "cases": [
+          {
+            "id": "eligible",
+            "inputs": {
+              "borrower_id": "B-eligible",
+              "book_id": "BK-eligible",
+              "days_overdue": 0,
+              "holds": 0,
+              "renewals_used": 0
+            },
+            "expected": {
+              "result": {
+                "borrower_id": "B-eligible",
+                "book_id": "BK-eligible",
+                "decision": "renew",
+                "renewal_days": 14,
+                "reasons": []
+              }
+            },
+            "expected_status": "completed",
+            "criteria": [
+              "policy",
+              "protocol"
+            ],
+            "required": true
+          },
+          {
+            "id": "hold",
+            "inputs": {
+              "borrower_id": "B-hold",
+              "book_id": "BK-hold",
+              "days_overdue": 0,
+              "holds": 1,
+              "renewals_used": 0
+            },
+            "expected": {
+              "result": {
+                "borrower_id": "B-hold",
+                "book_id": "BK-hold",
+                "decision": "staff_review",
+                "renewal_days": 0,
+                "reasons": [
+                  "reader_hold"
+                ]
+              }
+            },
+            "expected_status": "completed",
+            "criteria": [
+              "policy",
+              "protocol"
+            ],
+            "required": true
+          },
+          {
+            "id": "overdue",
+            "inputs": {
+              "borrower_id": "B-overdue",
+              "book_id": "BK-overdue",
+              "days_overdue": 3,
+              "holds": 0,
+              "renewals_used": 0
+            },
+            "expected": {
+              "result": {
+                "borrower_id": "B-overdue",
+                "book_id": "BK-overdue",
+                "decision": "staff_review",
+                "renewal_days": 0,
+                "reasons": [
+                  "overdue"
+                ]
+              }
+            },
+            "expected_status": "completed",
+            "criteria": [
+              "policy",
+              "protocol"
+            ],
+            "required": true
+          },
+          {
+            "id": "quota",
+            "inputs": {
+              "borrower_id": "B-quota",
+              "book_id": "BK-quota",
+              "days_overdue": 0,
+              "holds": 0,
+              "renewals_used": 2
+            },
+            "expected": {
+              "result": {
+                "borrower_id": "B-quota",
+                "book_id": "BK-quota",
+                "decision": "staff_review",
+                "renewal_days": 0,
+                "reasons": [
+                  "renewal_limit"
+                ]
+              }
+            },
+            "expected_status": "completed",
+            "criteria": [
+              "policy",
+              "protocol"
+            ],
+            "required": true
+          }
+        ],
+        "baseline": "No reusable renewal package existed; policy read manually by the host.",
+        "limitations": [
+          "Four explicit policy branches, no real library/account effects.",
+          "One host agent; no performance comparison or provider recovery claim."
+        ]
+      },
+      "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6"
+    }
+  },
+  "capabilities": {},
+  "acceptance": [
+    "Topology matches dependencies.",
+    "Extra nodes have explicit benefits.",
+    "Every failure route and termination bound is defined."
+  ],
+  "outcomes": {
+    "ok": [
+      "architecture"
+    ],
+    "error": [],
+    "blocked": []
+  },
+  "artifact_types": {
+    "architecture": {
+      "type": "object",
+      "description": "Lite or full architecture: necessity/baseline, applicable D01-D14 decisions, INFRA/POST/AFTER, evidence-scoped knowledge, node contracts and actual host requirements. Checked coverage, stress_cases and resolved review from design-from-brief.md are required."
+    }
+  },
+  "materials_assessment": {
+    "configured": false,
+    "operation": null,
+    "decision": "not_configured",
+    "valid": false,
+    "status": "not_configured",
+    "manifest_sha256": null,
+    "claim_scope": "local_material_integrity_and_declared_binding_only",
+    "allowed_operations": [],
+    "blockers": [
+      "Materials manifest not configured"
+    ],
+    "claim_limit": "not_configured",
+    "material_sha256": {},
+    "gate_blockers": [
+      "Materials manifest not configured"
+    ]
+  },
+  "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6"
+}

@@ -1,0 +1,61 @@
+{
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_accbb996305244ea83eba1c6023e0be3",
+    "attempt_id": "72760337c1f74450849eb621196963f3",
+    "invocation_id": "72760337c1f74450849eb621196963f3",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "0e742551da34e3f813efbf132de5d5f80c3c77653e3a6d02b6754cfc8b02c69e",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "Verify original preset catalog",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    },
+    "work": {
+      "prompt": "# Independent acceptance of three original web presets\n\nRead only the frozen acceptance /workspace/A111/runs/future/versioned_preset_catalog/acceptance.json first, and freeze your own check plan before reading candidate code. Target /workspace/A111/runs/future/versioned_preset_catalog/candidate/v1/ and its candidate-lock.json; do not inspect sibling research/reports, Root tests, state or expected outputs. This is a distinct new catalog, not a rerun of any historical UI validator. It is a browser-local example, not real approval/inventory authority.\n\nActually run its three task journeys in Chromium /usr/bin/chromium with Python Playwright, at the original 1280/390/320 widths and with keyboard and reduced motion. Inspect live UI, key rendered text contrast and screenshot pixels (open screenshots). Verify persistence using real localStorage and page reload, modal cancellation/confirmation/keyboard focus, draft preservation/error retry and conflict example; retain actual browser observations, console/page errors and original sources/hashes. Verify catalog version, paired tokens, sources/reuse scope, responsive/motion/state definitions. Do not claim physical Android, screen reader or user study proof. Only a scoped loopback HTTP server is allowed; stop it on completion. No external network, business effects or delegation.\n\nWrite only the assigned worker directory. Save each original failed harness and every command/error/repair BEFORE another run. Count each failure-driven code change separately, including logging/readers/serialization; maximum TWO corrections. At the third failure stop and report blocked; do not patch or rerun beyond the limit. Do not erase outputs or reinterpret distinct failures as one round. No candidate/source edits. Return report.md/results.json and supplied final host reply, exact artifact hashes and captured preflight. Unavailable tokens/cost/provider identity/model-active-time are null. Preflight is not semantic acceptance.\n\nRead your immutable host request at /workspace/A111/runs/future/versioned_preset_catalog/independent/job/request.json. Write report/results and final reply only inside /workspace/A111/runs/future/versioned_preset_catalog/independent/worker. Use the C3 hostdraft reply helper with a separate incomplete draft and run captured check-reply before returning. Loopback to your own scoped server is explicitly allowed; no other network.\n",
+      "inputs": {
+        "brief": "/workspace/A111/runs/R05/materials/catalog-validation-brief.md"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/R05/materials/catalog-validation-brief.md",
+          "sha256": "1d93a516f107b120548e5fb9cc0d41d924a9a683424c6669718b6f0ff633564d"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_72760337c1f7",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "1e0aaf970efeb3b55c86159f497d284a786d358e971b8176861c3aba201d59a0"
+}

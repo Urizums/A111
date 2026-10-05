@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "ticket-desk",
+  "goal": "Complete local support desk",
+  "deliverable_kind": "software_system",
+  "requirements": [
+    {
+      "id": "req_ticket",
+      "text": "Implement the frozen original ticket requirements with a usable UI",
+      "origin": "explicit",
+      "basis": "runs/R03/materials/ticket-brief.json",
+      "acceptance_ids": [
+        "runtime"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "runtime",
+      "assertion": "Real HTTP CRUD, filters, transitions, optimistic conflict, history and restart preserve exact product state.",
+      "required": true,
+      "level": "runtime"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "implement",
+      "title": "Implement and validate local support desk",
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "challenges/ticket-desk/"
+      ],
+      "acceptance_ids": [
+        "runtime"
+      ]
+    }
+  ]
+}

@@ -1,13 +1,27 @@
 # 接续入口
 
-1. 读取根目录 AGENTS.md、本文件、docs/PROJECT_STATUS.md 和 state/phase-todo.json。
-2. 运行 `python3 scripts/verify_handoff.py`。读取 state/checkpoint.json，核对当前阶段和下一可执行项。
-3. 按任务类型阅读 skills/forge-agent-flow/SKILL.md；涉及 UI/UX 时再读 skills/design-product-experience/SKILL.md。按需展开引用，不把全部参考文件塞进每个简单任务。
-4. **继续 S01-02：完成 C1 尚未结束的离线独立审计。** 先读 runs/S01/audit-plan.json、evidence/c1/Study_Plan.md 和 docs/EVIDENCE_MAP.md。只读原始截止证据，输出写入 runs/S01/。不运行证据目录里的旧控制器命令，不对旧 ID 发新查询、创建、接收或提交。
-5. 将实际结论、命令返回、证据路径、未解决项写回当前阶段 TODO 和 checkpoint。S01 最后一项要求启动 S02 的首个任务；先创建下一阶段 TODO，再真正执行首个任务并保存证据，才能关闭转换任务。
+本分支由仓库所有者接手。对方源提交 `6f509c8` 和全部旧失败已保留，PR #1 已关闭。
+当前状态见 `state/checkpoint.json`；接手索引见 [docs/TAKEOVER.md](docs/TAKEOVER.md)。
+关闭 PR 不表示长期目标完成。
 
-若缺少 Luna 或原生子 agent，可先完成 Root 可做的只读计算和资料整理，将独立验证标为待办。Root 自查不能标作 Luna 独立审计。现有 UI 阻塞不阻止离线审计、协议设计或 catalog 的结构工作。
+R07 收集/修复批次已归档；R08-01 能力首步已实际执行。
+当前首项为 R08-02：由 Root 制作短启动候选，再交新上下文 Luna 验证。
+见 [R08 计划](runs/R08/PLAN.md)。R07 业务结果通过，但自主限时完成失败，后续不得改判。
 
-Work 模式下，先确认仓库已被导入或 checkout 到 agent 可读写的目录。只有 GitHub URL、截图或会话摘要不足以保证代码执行能力。无执行工具时可以做审阅，但必须把运行验证保留为未执行。
+1. 读 AGENTS.md、checkpoint、state/phase-todo.json。
+2. 运行 `python3 scripts/coordinator_lease.py probe --root .`，仅空闲时持有租约。
+   旧宿主 worker/PID/路径只作历史证据。
+3. 运行 `python3 scripts/verify_handoff.py --json` 和
+   `python3 scripts/continuation.py --root . next`，从同一台账接续。
+4. 当前候选为 [C6](runs/R07/candidate/C6/forge-agent-flow/SKILL.md)，文件锁为
+   runs/R07/candidate/C6-lock.json。C5/C4、原 skills、失败全部保留。
+   普通任务直接做，系统用 program，明确可复用 flow 才用 package。
+   Root 写核心/skill，Luna 做资料、脚手架和独立验证。
+5. 新任务先保存原材料字节和真实首步，再用 continuation start/finish 绑定验收与证据。
+   原八项阻塞保持原标准和已耗额度，不能清零换样本。
+6. 阶段最后一项“启动下一阶段任务”需要下一计划和真实首步；会话结束保存
+   checkpoint、未决调用和下一动作。停用定时器保持停用。
 
-历史记录中出现的个人宿主路径和原生 worker ID 只用于证明当时发生的事。新宿主应建立新 run；原宿主的待定调用若需要恢复，必须另行取得原调用者的真实状态证据，不能靠当前仓库推断。
+新结果见 runs/R07/REPORT.md，原交接见 runs/R06/upstream-handoff/README.md。
+check_publication_gate.py 保留原完整产品门槛；单批开发保存不代表它已通过。
+实际提交和发布状态以 GitHub 与本轮记录为准。

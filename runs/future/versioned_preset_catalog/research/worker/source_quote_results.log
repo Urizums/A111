@@ -1,0 +1,56 @@
+
+
+The status bar, caption bar, and navigation bar are the system bars. They
+display important information such as battery level, the time, and notification
+alerts, and provide direct device interaction from anywhere.
+Always take the presence and prominence of system bars into account, whether
+you're designing layouts, input methods, or other device capabilities.
+
+
+
+
+
+Android skills
+
+View on GitHub
+open_in_new
+
+
+
+Add Edge-to-Edge support
+
+
+
+
+
+Use the Edge-to-Edge Android skill to add adaptive edge-to-edge support to your Jetpack Compose app.
+
+
+
+
+To install the skill from the Android CLI, run:
+
+
+
+android skills add edge-to-edge
+
+
+
+
+
+
+
+Figure 1. Images behind system bars.
+Note: System bars and navigation can vary by device manufacturer. Older devices
+may have hardware navigation buttons instead of software buttons.
+Takeaways
+Include system bars in your layouts for different screen sizes and form
+factors. Account for UI safe zones, system interactions, input methods,
+display cutouts, status bars, caption bars, navigation bars, and other
+device capabilities.
+Keep the system status and navigation bars transparent or translucent and
+draw content behind these bars to go edge-to-edge.
+Use WindowInsets to properly handle system bar intrusions and ensure
+your content is not obscured in your adaptive layouts.
+Use canonical layouts, which use the screen space efficiently.
+Status bar

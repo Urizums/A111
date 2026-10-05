@@ -1,0 +1,16 @@
+{
+  "command": "python /workspace/A111/runs/future/preset_browser_acceptance/independent/worker/probe_mobile_nav.py",
+  "status": "failed",
+  "failure_type": "observed target behavior",
+  "failed_assertion": "keyboard_state['navScrollLeft'] > 0",
+  "observed": {
+    "activeText": "Preferences",
+    "navClientWidth": 358,
+    "navScrollWidth": 402,
+    "navScrollLeft": 0,
+    "navRect": {"left": 16, "right": 374},
+    "lastLinkRect": {"left": 299.484375, "right": 418.125},
+    "pageScrollWidth": 390
+  },
+  "interpretation": "Keyboard focus reached the Preferences link but did not scroll the horizontal navigation; 44.125 CSS pixels of the link and its focus indicator remained clipped. The failure was retained. A separate pointer-wheel probe verified the navigation can be scrolled, and a separate Enter probe verified the focused link activates."
+}

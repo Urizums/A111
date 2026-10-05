@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "runs/R07/validation",
+    "-p",
+    "test_snapshot_restore.py",
+    "-v"
+  ],
+  "cwd": "/workspace/scratch/73714494ad2f/forge-takeover-r07",
+  "begin": {
+    "utc": "2026-10-04T17:30:30.224399+00:00",
+    "monotonic_ns": 539256477871,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T17:30:30.312563+00:00",
+    "monotonic_ns": 539344644421,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_destination_is_absent_until_complete_publication (test_snapshot_restore.RestoreTests.test_destination_is_absent_until_complete_publication) ... ok\ntest_existing_empty_directory_is_not_replaced (test_snapshot_restore.RestoreTests.test_existing_empty_directory_is_not_replaced) ... ok\ntest_existing_file_or_dangling_symlink_is_preserved (test_snapshot_restore.RestoreTests.test_existing_file_or_dangling_symlink_is_preserved) ... ok\ntest_publish_failure_leaves_no_target_and_retry_works (test_snapshot_restore.RestoreTests.test_publish_failure_leaves_no_target_and_retry_works) ... ok\ntest_second_write_failure_leaves_no_target_and_retry_works (test_snapshot_restore.RestoreTests.test_second_write_failure_leaves_no_target_and_retry_works) ... ok\ntest_tamper_rejected_before_output_creation (test_snapshot_restore.RestoreTests.test_tamper_rejected_before_output_creation) ... ok\ntest_target_created_during_publish_is_not_overwritten (test_snapshot_restore.RestoreTests.test_target_created_during_publish_is_not_overwritten) ... ok\ntest_unsupported_backend_has_no_partial_result (test_snapshot_restore.RestoreTests.test_unsupported_backend_has_no_partial_result) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.009s\n\nOK\n",
+  "stdout_base64": "",
+  "stderr_base64": "dGVzdF9kZXN0aW5hdGlvbl9pc19hYnNlbnRfdW50aWxfY29tcGxldGVfcHVibGljYXRpb24gKHRlc3Rfc25hcHNob3RfcmVzdG9yZS5SZXN0b3JlVGVzdHMudGVzdF9kZXN0aW5hdGlvbl9pc19hYnNlbnRfdW50aWxfY29tcGxldGVfcHVibGljYXRpb24pIC4uLiBvawp0ZXN0X2V4aXN0aW5nX2VtcHR5X2RpcmVjdG9yeV9pc19ub3RfcmVwbGFjZWQgKHRlc3Rfc25hcHNob3RfcmVzdG9yZS5SZXN0b3JlVGVzdHMudGVzdF9leGlzdGluZ19lbXB0eV9kaXJlY3RvcnlfaXNfbm90X3JlcGxhY2VkKSAuLi4gb2sKdGVzdF9leGlzdGluZ19maWxlX29yX2RhbmdsaW5nX3N5bWxpbmtfaXNfcHJlc2VydmVkICh0ZXN0X3NuYXBzaG90X3Jlc3RvcmUuUmVzdG9yZVRlc3RzLnRlc3RfZXhpc3RpbmdfZmlsZV9vcl9kYW5nbGluZ19zeW1saW5rX2lzX3ByZXNlcnZlZCkgLi4uIG9rCnRlc3RfcHVibGlzaF9mYWlsdXJlX2xlYXZlc19ub190YXJnZXRfYW5kX3JldHJ5X3dvcmtzICh0ZXN0X3NuYXBzaG90X3Jlc3RvcmUuUmVzdG9yZVRlc3RzLnRlc3RfcHVibGlzaF9mYWlsdXJlX2xlYXZlc19ub190YXJnZXRfYW5kX3JldHJ5X3dvcmtzKSAuLi4gb2sKdGVzdF9zZWNvbmRfd3JpdGVfZmFpbHVyZV9sZWF2ZXNfbm9fdGFyZ2V0X2FuZF9yZXRyeV93b3JrcyAodGVzdF9zbmFwc2hvdF9yZXN0b3JlLlJlc3RvcmVUZXN0cy50ZXN0X3NlY29uZF93cml0ZV9mYWlsdXJlX2xlYXZlc19ub190YXJnZXRfYW5kX3JldHJ5X3dvcmtzKSAuLi4gb2sKdGVzdF90YW1wZXJfcmVqZWN0ZWRfYmVmb3JlX291dHB1dF9jcmVhdGlvbiAodGVzdF9zbmFwc2hvdF9yZXN0b3JlLlJlc3RvcmVUZXN0cy50ZXN0X3RhbXBlcl9yZWplY3RlZF9iZWZvcmVfb3V0cHV0X2NyZWF0aW9uKSAuLi4gb2sKdGVzdF90YXJnZXRfY3JlYXRlZF9kdXJpbmdfcHVibGlzaF9pc19ub3Rfb3ZlcndyaXR0ZW4gKHRlc3Rfc25hcHNob3RfcmVzdG9yZS5SZXN0b3JlVGVzdHMudGVzdF90YXJnZXRfY3JlYXRlZF9kdXJpbmdfcHVibGlzaF9pc19ub3Rfb3ZlcndyaXR0ZW4pIC4uLiBvawp0ZXN0X3Vuc3VwcG9ydGVkX2JhY2tlbmRfaGFzX25vX3BhcnRpYWxfcmVzdWx0ICh0ZXN0X3NuYXBzaG90X3Jlc3RvcmUuUmVzdG9yZVRlc3RzLnRlc3RfdW5zdXBwb3J0ZWRfYmFja2VuZF9oYXNfbm9fcGFydGlhbF9yZXN1bHQpIC4uLiBvawoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpSYW4gOCB0ZXN0cyBpbiAwLjAwOXMKCk9LCg=="
+}

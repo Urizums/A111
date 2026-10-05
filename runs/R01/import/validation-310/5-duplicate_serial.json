@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "/home/agent/.local/bin/python3.10",
+    "/workspace/A111/challenges/inventory/import_inventory.py",
+    "--input",
+    "/workspace/A111/runs/R01/import/validation-310/duplicate_serial.json",
+    "--database",
+    "/workspace/A111/runs/R01/import/validation-310/inventory.sqlite3"
+  ],
+  "begin": "2026-10-04T05:10:13.605445+00:00",
+  "end": "2026-10-04T05:10:13.633016+00:00",
+  "exit_code": 2,
+  "stdout": "{\"status\": \"rejected\", \"error\": \"UNIQUE constraint failed: assets.serial\"}\n",
+  "stderr": ""
+}

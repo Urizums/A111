@@ -1,0 +1,45 @@
+{
+  "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+  "flow_state": {
+    "state_version": "1.0",
+    "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+    "run_id": "a987d0cf1e944162a909ca3477bbcb1a",
+    "status": "completed",
+    "node": "$done",
+    "steps": 1,
+    "visits": {
+      "policy": 1
+    },
+    "artifacts": {
+      "borrower_id": "B-overdue",
+      "book_id": "BK-overdue",
+      "days_overdue": 3,
+      "holds": 0,
+      "renewals_used": 0,
+      "result": {
+        "borrower_id": "B-overdue",
+        "book_id": "BK-overdue",
+        "decision": "staff_review",
+        "renewal_days": 0,
+        "reasons": [
+          "overdue"
+        ]
+      }
+    },
+    "trace": [
+      {
+        "step": 1,
+        "node": "policy",
+        "invocation_id": "053ac77776a48e821afab8000a88fad6",
+        "outcome": "review",
+        "input_hash": "cd51f3e18181e59fe35f48a346b98df2f305ecb62d40f2fced1705d96ed70d2f",
+        "output_hash": "69f8a4da623e911ade7b28da897a2e05868239c083149898970957875745df28",
+        "evidence": [
+          "Observed overdue dispatch: three days overdue."
+        ]
+      }
+    ]
+  },
+  "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+  "input_hash": "cd51f3e18181e59fe35f48a346b98df2f305ecb62d40f2fced1705d96ed70d2f"
+}

@@ -1,0 +1,114 @@
+{
+  "schema_version": "worker-operations/1",
+  "task_id": "summarize",
+  "write_scope": "/workspace/A111/runs/S03/repair-1/worker",
+  "file_tool_writes": [
+    {
+      "path": "/workspace/A111/runs/S03/repair-1/worker/summarize.py",
+      "operation": "created with apply_patch"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/repair-1/worker/operations.json",
+      "operation": "created with apply_patch"
+    }
+  ],
+  "generated_files": [
+    {
+      "path": "/workspace/A111/runs/S03/repair-1/worker/totals.json",
+      "by": "/workspace/A111/runs/S03/repair-1/worker/logs/002-compute-totals.json"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/repair-1/worker/totals.md",
+      "by": "/workspace/A111/runs/S03/repair-1/worker/logs/002-compute-totals.json"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/repair-1/worker/reply-draft.json",
+      "by": "/workspace/A111/runs/S03/repair-1/worker/logs/009-incomplete-reply-draft.json"
+    },
+    {
+      "path": "/workspace/A111/runs/S03/repair-1/worker/reply.json",
+      "by": "/workspace/A111/runs/S03/repair-1/worker/logs/010-build-final-reply.json"
+    }
+  ],
+  "captured_commands": [
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/000-bootstrap.json",
+      "actor": "worker",
+      "target": "Python bootstrap reader for the immutable request, recording protocol, bound expenses.csv, and AGENTS.md"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/001-work-begin.json",
+      "actor": "worker",
+      "target": "capture.py mark --events /workspace/A111/runs/S03/repair-1/worker/events --actor worker --stage worker_work --event begin"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/002-compute-totals.json",
+      "actor": "worker",
+      "target": "python3 /workspace/A111/runs/S03/repair-1/worker/summarize.py"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/003-work-end.json",
+      "actor": "worker",
+      "target": "capture.py mark --events /workspace/A111/runs/S03/repair-1/worker/events --actor worker --stage worker_work --event end"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/004-hostdraft-help.json",
+      "actor": "worker",
+      "target": "python3 /workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/hostdraft.py --help"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/005-hostdraft-reply-help.json",
+      "actor": "worker",
+      "target": "python3 /workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/hostdraft.py reply --help"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/006-hostdraft-source.json",
+      "actor": "worker",
+      "target": "Python reader of public hostdraft.py source"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/007-reply-validation-source.json",
+      "actor": "worker",
+      "target": "Python reader of public hostbridge.py check_reply_content source"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/008-reply-begin.json",
+      "actor": "worker",
+      "target": "capture.py mark --events /workspace/A111/runs/S03/repair-1/worker/events --actor worker --stage worker_reply --event begin"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/009-incomplete-reply-draft.json",
+      "actor": "worker",
+      "target": "hostdraft.py reply --request /workspace/A111/runs/S03/repair-1/job/request.json --artifact /workspace/A111/runs/S03/repair-1/worker/totals.json --artifact /workspace/A111/runs/S03/repair-1/worker/totals.md --out /workspace/A111/runs/S03/repair-1/worker/reply-draft.json"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/010-build-final-reply.json",
+      "actor": "worker",
+      "target": "Python writer of worker/reply.json using the request identifiers and SHA-256 of totals.json, totals.md, and operations.json"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/011-check-reply.json",
+      "actor": "worker",
+      "target": "hostdraft.py check-reply --request /workspace/A111/runs/S03/repair-1/job/request.json --reply /workspace/A111/runs/S03/repair-1/worker/reply.json"
+    },
+    {
+      "record": "/workspace/A111/runs/S03/repair-1/worker/logs/012-reply-end.json",
+      "actor": "worker",
+      "target": "capture.py mark --events /workspace/A111/runs/S03/repair-1/worker/events --actor worker --stage worker_reply --event end"
+    }
+  ],
+  "correction_attempts": [],
+  "failed_targets": [],
+  "tool_errors": [
+    {
+      "event": "The first functions.exec wrapper source had a JavaScript syntax error before launching any shell target; the exact bootstrap target then ran successfully in 000-bootstrap.json."
+    }
+  ],
+  "measurement": {
+    "model": "gpt-6-luna",
+    "reasoning_effort": "max",
+    "provider_tokens": null,
+    "provider_cost": null,
+    "internal_identity": null
+  }
+}

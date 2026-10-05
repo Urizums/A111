@@ -1,0 +1,61 @@
+{
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_02c11b105ef541c483e347936b63f3e3",
+    "attempt_id": "4fd0215e67934ac2b5c27b321ec9d333",
+    "invocation_id": "4fd0215e67934ac2b5c27b321ec9d333",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "a6c9dc691b15a450c64c62175958c37a4520a315147185776739bfcc8e96c8b3",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "Independently verify durable provider-neutral local protocol",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    },
+    "work": {
+      "prompt": "# Independent local provider-protocol acceptance\n\nValidate only /workspace/A111/runs/future/provider-adapter/contract.json and adapter.py. Read the frozen contract first and freeze your own checks before inspecting implementation. Do not read Root tests, results, sibling work or state. Use actual CLI processes with temporary SQLite stores under your assigned worker directory, including restart/reopen and malformed inputs. Exercise all original invariants: durable request identity/content idempotency, strict JSON/limits, event identity/duplicates, unknown dispatch without redispatch, cancellation intent versus actual terminal proof (including success race), terminal consistency, unknown usage=null and durable history. Local declared limits are not global/provider enforcement; no live API or credentials in scope. Python3.10 and3.12 are available; report actual runtime and exact limits.\n\nNo core/source edits. Keep original commands, outputs, candidate SHA, failures and max two harness corrections. Inspect outputs and state, not just exit code. Deliver report.md/results.json and final reply with original request IDs and successful preflight; a mismatch must cite original requirement and reproduction. Network and native delegation prohibited. Tokens/cost/provider identity unknown=null.\n\nWrite only /workspace/A111/runs/future/provider-adapter/independent/worker. You may author/run benign analysis and validation scripts there; do not modify core, skill, shared TODO/state or historical evidence. Record actual commands/results and all failed attempts, corrections, parent questions, and unavailable measurements (tokens/cost/model-active-time null). Do not spawn/delegate, inspect siblings or query unrelated workers. This is a new task, never execute old native IDs. Before returning, use /workspace/A111/skills/forge-agent-flow/scripts/hostdraft.py reply with your supplied NEW job/request.json to create a separate incomplete draft. Fill final /workspace/A111/runs/future/provider-adapter/independent/worker/reply.json with the actual task result and hashes of final artifacts. Capture check-reply output before returning. Reply preflight is not semantic acceptance; Root will review. At most two corrective rounds; retain first failures. Do not change referenced outputs after final preflight.",
+      "inputs": {
+        "brief": "/workspace/A111/runs/R05/materials/adapter-validation-brief.md"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/R05/materials/adapter-validation-brief.md",
+          "sha256": "24a9fa9b1eeb29f08a068bc87aeab26059cce1c6b5620a94af32cc0e45f61920"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/future/provider-adapter/independent/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/future/provider-adapter/independent/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_4fd0215e6793",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "0216b471166f3949aed973f70c70452699e4e901786bff84a6793d0d150c9114"
+}

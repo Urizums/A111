@@ -1,0 +1,61 @@
+{
+  "database": "runs/R02/worker-recovery/recovery.sqlite3",
+  "database_sha256": "12063ca1886c5866b5747d40edfeb6e8731572f5e3dc2136b7a3a9e8e33c134e",
+  "integrity_check": "ok",
+  "schema": "forge-sqlite-snapshot/1",
+  "tables": {
+    "assets": [
+      [
+        "BASE-001",
+        "Baseline sensor",
+        "BASE-SERIAL-001",
+        "BASE",
+        "ready"
+      ],
+      [
+        "O-801",
+        "导星相机",
+        "GUIDE-81",
+        "DOME",
+        "ready"
+      ],
+      [
+        "O-802",
+        "调焦电机",
+        "FOCUS-5",
+        "DOME",
+        "repair"
+      ]
+    ],
+    "import_batches": [
+      [
+        "observatory-2026-11",
+        "597f5af9019d547d77bcb3ec1ca8879a8fcdeeb604b50d0f91171c311fd0abe2",
+        "{\"batch_id\": \"observatory-2026-11\", \"source_sha256\": \"597f5af9019d547d77bcb3ec1ca8879a8fcdeeb604b50d0f91171c311fd0abe2\", \"assets\": 2, \"service_events\": 1}"
+      ],
+      [
+        "recovery-baseline-2026-10-04",
+        "ccf3fa9edd1d63384a699700c65a4517190f6562168d3b87856cbd96f7073b6a",
+        "{\"batch_id\": \"recovery-baseline-2026-10-04\", \"source_sha256\": \"ccf3fa9edd1d63384a699700c65a4517190f6562168d3b87856cbd96f7073b6a\", \"assets\": 1, \"service_events\": 0}"
+      ]
+    ],
+    "locations": [
+      [
+        "BASE",
+        "Committed baseline"
+      ],
+      [
+        "DOME",
+        "观测圆顶"
+      ]
+    ],
+    "service_events": [
+      [
+        "OBS-01",
+        "O-801",
+        "2026-10-04",
+        "暗场检查"
+      ]
+    ]
+  }
+}

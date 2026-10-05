@@ -1,0 +1,15 @@
+{
+  "source": "Actual followup reply from the same validator; no rerun or artifact edits requested",
+  "actor": "/root/luna_forge_4fd0215e6793",
+  "admitted_corrections": 3,
+  "allowed_corrections": 2,
+  "sequence": [
+    "Initial SyntaxError in concurrent check dictionary; added description key (repair 1)",
+    "submit() rejected expectation argument; modified submit/observe argument forwarding and partial logging (repair 2)",
+    "Partial log tried to serialize callable predicate; changed serialization to description and reran (repair 3, beyond bound)"
+  ],
+  "omission": "Second failure absent from attempts.md because append and reset were in one guard-rejected command. No reset command executed.",
+  "evidence": ["worker/failed-harness-run-2", "worker/py3.12-acceptance", "worker/py3.12-acceptance-rerun", "worker/py3.10-acceptance-rerun", "worker/attempts.md"],
+  "root_verdict": "blocked_budget_exhausted; successful post-limit checks retained as observations only, not valid independent acceptance",
+  "further_rerun_allowed": false
+}

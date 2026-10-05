@@ -1,0 +1,82 @@
+{
+  "schema": "forge-c1-root-final-review/1",
+  "status": "completed_with_historical_gaps",
+  "recorded_at": "2026-10-03T19:57:44.176471+00:00",
+  "audit_path": "runs/S01/cloud-audit/worker/audit.json",
+  "audit_sha256": "f825669cdc9a9109b6d29ca47c47af4e38cec23b0506928c3934e291e221c008",
+  "checks": [
+    {
+      "id": "source_citations",
+      "status": "pass",
+      "checked": 336
+    },
+    {
+      "id": "frozen_requirement_coverage",
+      "status": "pass",
+      "count": 10
+    },
+    {
+      "id": "all_eight_samples_retained",
+      "status": "pass"
+    },
+    {
+      "id": "package_B1",
+      "status": "pass",
+      "actions": 3,
+      "original_refs_verified": 13
+    },
+    {
+      "id": "package_A1",
+      "status": "pass",
+      "actions": 3,
+      "original_refs_verified": 13
+    },
+    {
+      "id": "package_A2",
+      "status": "pass",
+      "actions": 3,
+      "original_refs_verified": 13
+    },
+    {
+      "id": "package_B2",
+      "status": "pass",
+      "actions": 3,
+      "original_refs_verified": 14
+    },
+    {
+      "id": "B2_budget_violation_retained",
+      "status": "pass",
+      "analysis_cycles": 3,
+      "limit": 2,
+      "rejected_bridge_operations": 2
+    },
+    {
+      "id": "C10_historical_tracks",
+      "status": "pass",
+      "source": "state/history/project-todo-before-cloud.json",
+      "partial_ids": [
+        "real_agent_executor_integration",
+        "real_worker_failure_recovery_trials",
+        "bridge_budget_timeout_validation"
+      ],
+      "browser_status": "blocked",
+      "scope": "Root history review, outside the independent worker input set"
+    }
+  ],
+  "original_csv_recomputation": "runs/S01/root-csv-recomputation.json",
+  "original_C1_verdict": "partial/inconclusive",
+  "package_completed": 4,
+  "original_total_completed": 7,
+  "original_selected": 8,
+  "project_A2": "running/unknown at original non-atomic cutoff; saved values do not establish completion",
+  "root_resolution": [
+    "C07 passes preservation only; B2 violated the separate frozen two-correction policy.",
+    "C10 is checked by Root against preserved history, not asserted as an independent worker result.",
+    "Old source-review and embedded index prose limit full-blindness; independent source computations remain available.",
+    "An initial auditor reference lookup bug was corrected using historical path mapping; raw C1 was unchanged."
+  ],
+  "performance_gain": null,
+  "tokens": null,
+  "cost": null,
+  "old_native_calls": 0
+}

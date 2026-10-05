@@ -1,0 +1,63 @@
+{
+  "schema_version": "forge-host-reply/1",
+  "job_id": "job_02c11b105ef541c483e347936b63f3e3",
+  "attempt_id": "4fd0215e67934ac2b5c27b321ec9d333",
+  "request_hash": "0216b471166f3949aed973f70c70452699e4e901786bff84a6793d0d150c9114",
+  "outcome": "done",
+  "result": {
+    "acceptance": "passed",
+    "runtimes": {
+      "Python 3.12.14": {
+        "checks": "62/62",
+        "cli_processes": 55
+      },
+      "Python 3.10.21": {
+        "checks": "62/62",
+        "cli_processes": 55
+      }
+    },
+    "committed_request_ids_and_final_status": {
+      "req-main": "succeeded",
+      "req-cancel-success": "succeeded (cancel intent retained)",
+      "req-cancel-ack": "cancelled",
+      "req-event-invalid": "unknown",
+      "req-limits-min": "accepted",
+      "req-concurrent": "accepted; one dispatch decision"
+    },
+    "declared_request_limits": "timeout_ms and max_output_tokens must be exact JSON integers >= 1; booleans rejected; no adapter upper bound; these are local declarations, not provider/global enforcement.",
+    "unavailable_measurements": {
+      "tokens": null,
+      "cost": null,
+      "provider_identity": null,
+      "model_active_time": null
+    },
+    "scope": "Local provider-neutral protocol only; no network, live provider, or SDK execution claim."
+  },
+  "artifacts": [
+    {
+      "path": "/workspace/A111/runs/future/provider-adapter/independent/worker/report.md",
+      "sha256": "5302c666ca60752ed475a1a6c4d6437f02ef2cff40b2913612ef528ff1ca8572"
+    },
+    {
+      "path": "/workspace/A111/runs/future/provider-adapter/independent/worker/results.json",
+      "sha256": "72100c9441a53701b57ed8030da17c3c86b79fab027d0a1c3a7c201c6c6b0a8f"
+    },
+    {
+      "path": "/workspace/A111/runs/future/provider-adapter/independent/worker/attempts.md",
+      "sha256": "cd181529d40bd60766d215944e73947c3169f27ada03e7ff4c862b853ef2a1a5"
+    },
+    {
+      "path": "/workspace/A111/runs/future/provider-adapter/independent/worker/check-plan.md",
+      "sha256": "d0a6426ae2026fe0521262084a2b0bca8c8f570d4b804f59e9e9c86610e011b8"
+    },
+    {
+      "path": "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.12-acceptance-rerun/results.json",
+      "sha256": "864e7e8e73175e6040b45043adba53471265f36b9c057e597f9953064189238a"
+    },
+    {
+      "path": "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/results.json",
+      "sha256": "e76c0a3718579751ccd9485850564fe7713dc97ae5af5841d9bbe2b895199729"
+    }
+  ],
+  "reason": null
+}

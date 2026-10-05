@@ -1,0 +1,87 @@
+{
+  "schema": "forge-paired-study-result/1",
+  "study": "C3-P2",
+  "status": "blocked",
+  "business_completed": 4,
+  "planned": 8,
+  "samples": [
+    {
+      "sample": "P1A",
+      "native_created": true,
+      "business_acceptance": "pass",
+      "protocol": "observed",
+      "evidence": "runs/future/host_protocol_overhead_comparison/samples/P1A/coordinator/source-review.json"
+    },
+    {
+      "sample": "P1B",
+      "native_created": true,
+      "business_acceptance": "pass",
+      "protocol": "observed",
+      "evidence": "runs/future/host_protocol_overhead_comparison/samples/P1B/coordinator/source-review.json"
+    },
+    {
+      "sample": "P2B",
+      "native_created": true,
+      "business_acceptance": "pass",
+      "protocol": "failed_marker_order",
+      "evidence": "runs/future/host_protocol_overhead_comparison/samples/P2B/coordinator/source-review.json"
+    },
+    {
+      "sample": "P2A",
+      "native_created": true,
+      "business_acceptance": "pass",
+      "protocol": "observed",
+      "evidence": "runs/future/host_protocol_overhead_comparison/samples/P2A/coordinator/source-review.json"
+    },
+    {
+      "sample": "K1B",
+      "native_created": false,
+      "business_acceptance": "not_run",
+      "protocol": "not_run",
+      "evidence": null
+    },
+    {
+      "sample": "K1A",
+      "native_created": false,
+      "business_acceptance": "not_run",
+      "protocol": "not_run",
+      "evidence": null
+    },
+    {
+      "sample": "K2A",
+      "native_created": false,
+      "business_acceptance": "not_run",
+      "protocol": "not_run",
+      "evidence": null
+    },
+    {
+      "sample": "K2B",
+      "native_created": false,
+      "business_acceptance": "not_run",
+      "protocol": "not_run",
+      "evidence": null
+    }
+  ],
+  "coordinator_repairs_used": 2,
+  "limit": 2,
+  "remaining_failure": "K1B package start after repair 2 rejects missing exact model/write_scope requirement mappings. K1A counterpart not rerun; no K1/K2 workers created. No third correction permitted.",
+  "comparison": "inconclusive; incomplete original sample and P2B out-of-order marker, no acceleration claim",
+  "additional_limits": [
+    "Original P1 pre-dispatch state bytes not snapshotted; only later copies, not retrospective reconstruction",
+    "Root source reading/grader authoring outside decision construction timer",
+    "Unrelated browser validation overlapped study tasks",
+    "Some original reads not instrumented; no total-work timing claim"
+  ],
+  "original_failures": [
+    "coordinator/failures/repair-1",
+    "coordinator/failures/repair-2",
+    "samples/K1B/coordinator/logs/002-start-r2.json"
+  ],
+  "metrics": {
+    "tokens": null,
+    "cost": null,
+    "provider_identity": null,
+    "model_active_time": null
+  },
+  "next_action": "Stop this frozen study at its bound. Use actual defects to improve future workflow without relabeling or replacing these samples."
+}

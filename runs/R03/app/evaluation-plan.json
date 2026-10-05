@@ -1,0 +1,44 @@
+{
+  "schema": "forge-eval/1",
+  "id": "ticket_desk",
+  "criteria": [
+    {
+      "id": "runtime",
+      "kind": "machine",
+      "required": true,
+      "assertion": "Real HTTP CRUD, filters, transitions, optimistic conflict, history and restart preserve exact product state."
+    }
+  ],
+  "cases": [
+    {
+      "id": "api_journey",
+      "inputs": {
+        "fixture": "runs/R03/materials/ticket-brief.json"
+      },
+      "expected": {
+        "passed": true,
+        "checks": [
+          "create_two",
+          "validation_unchanged",
+          "search_filter",
+          "transition",
+          "stale_unchanged",
+          "invalid_transition_unchanged",
+          "resolve_reopen",
+          "history",
+          "restart_persistence"
+        ]
+      },
+      "expected_status": "completed",
+      "criteria": [
+        "runtime"
+      ],
+      "required": true
+    }
+  ],
+  "baseline": "No support-desk service existed; frozen original ticket requirements define the workflow.",
+  "limitations": [
+    "Real loopback HTTP and SQLite, one local server; no production identity, load or external business effects.",
+    "UI evaluated separately in a real browser."
+  ]
+}

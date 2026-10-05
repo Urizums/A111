@@ -1,0 +1,28 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/A111",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/coordinator/decide.py",
+    "P1B",
+    "commit"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:19:54.500375+00:00",
+    "monotonic_ns": 39433146755404,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:19:54.697236+00:00",
+    "monotonic_ns": 39433343617878,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.196862474,
+  "stdout": "{\"phase\": \"committed\", \"job_id\": \"job_29e1df7484464a7884d5624fcfa1f8c8\", \"attempt_id\": \"2a99417c6f7e4cbc934339b72d202985\", \"request_hash\": \"71d888b95d1d5d355510fa04e6532c931ac819ffd05ac6ecf9c3cc287fa95b4e\", \"action\": \"reuse_record\", \"worker\": \"/root/luna_forge_2a99417c6f7e\", \"commit\": {\"decision_ref\": {\"path\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/coordinator/decision.json\", \"sha256\": \"213fe239d9d7d928b6fe35e621ae14a7b227ee18aeef00eef70d7ccfb2c41bed\"}, \"target_result\": {\"task_id\": \"work\", \"attempt_id\": \"2a99417c6f7e4cbc934339b72d202985\", \"outcome\": \"done\", \"task_status\": \"done\", \"reason\": null, \"status\": \"completed\", \"revision\": 2, \"plan_hash\": \"bc215a1139efa811c08c518cc7726e33d8c7f69be8c7aff999c6dd789d22ea33\", \"evaluation_plan_hash\": null}, \"worker_task_outcome\": \"done\", \"coordinator_outcome\": \"done\", \"recorded_at\": \"2026-10-04T06:19:54Z\"}, \"coordinator_outcome\": \"done\", \"automatic_host_call\": false, \"internal_model_identity_verified\": false, \"tokens\": null, \"cost\": null, \"ledger\": {\"job_id\": \"job_29e1df7484464a7884d5624fcfa1f8c8\", \"input_sha256\": \"71d888b95d1d5d355510fa04e6532c931ac819ffd05ac6ecf9c3cc287fa95b4e\", \"automatic_host_call\": false, \"state\": \"completed\", \"action\": \"reuse\", \"attempt_id\": \"2a99417c6f7e4cbc934339b72d202985\", \"evidence_valid\": true, \"reason\": \"A completed attempt has the same input hash and intact evidence.\"}}\n",
+  "stderr": "",
+  "stdout_base64": "eyJwaGFzZSI6ICJjb21taXR0ZWQiLCAiam9iX2lkIjogImpvYl8yOWUxZGY3NDg0NDY0YTc4ODRkNTYyNGZjZmExZjhjOCIsICJhdHRlbXB0X2lkIjogIjJhOTk0MTdjNmY3ZTRjYmM5MzQzMzliNzJkMjAyOTg1IiwgInJlcXVlc3RfaGFzaCI6ICI3MWQ4ODhiOTVkMWQ1ZDM1NTUxMGZhMDRlNjUzMmM5MzFhYzgxOWZmZDA1YWM2ZWNmOWMzY2MyODdmYTk1YjRlIiwgImFjdGlvbiI6ICJyZXVzZV9yZWNvcmQiLCAid29ya2VyIjogIi9yb290L2x1bmFfZm9yZ2VfMmE5OTQxN2M2ZjdlIiwgImNvbW1pdCI6IHsiZGVjaXNpb25fcmVmIjogeyJwYXRoIjogIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vc2FtcGxlcy9QMUIvY29vcmRpbmF0b3IvZGVjaXNpb24uanNvbiIsICJzaGEyNTYiOiAiMjEzZmUyMzlkOWQ3ZDkyOGI2ZmUzNWU2MjFhZTE0YTdiMjI3ZWUxOGFlZWYwMGVlZjcwZDdjY2ZiMmM0MWJlZCJ9LCAidGFyZ2V0X3Jlc3VsdCI6IHsidGFza19pZCI6ICJ3b3JrIiwgImF0dGVtcHRfaWQiOiAiMmE5OTQxN2M2ZjdlNGNiYzkzNDMzOWI3MmQyMDI5ODUiLCAib3V0Y29tZSI6ICJkb25lIiwgInRhc2tfc3RhdHVzIjogImRvbmUiLCAicmVhc29uIjogbnVsbCwgInN0YXR1cyI6ICJjb21wbGV0ZWQiLCAicmV2aXNpb24iOiAyLCAicGxhbl9oYXNoIjogImJjMjE1YTExMzllZmE4MTFjMDhjNTE4Y2M3NzI2ZTMzZDhjN2Y2OWJlOGM3YWZmOTk5YzZkZDc4OWQyMmVhMzMiLCAiZXZhbHVhdGlvbl9wbGFuX2hhc2giOiBudWxsfSwgIndvcmtlcl90YXNrX291dGNvbWUiOiAiZG9uZSIsICJjb29yZGluYXRvcl9vdXRjb21lIjogImRvbmUiLCAicmVjb3JkZWRfYXQiOiAiMjAyNi0xMC0wNFQwNjoxOTo1NFoifSwgImNvb3JkaW5hdG9yX291dGNvbWUiOiAiZG9uZSIsICJhdXRvbWF0aWNfaG9zdF9jYWxsIjogZmFsc2UsICJpbnRlcm5hbF9tb2RlbF9pZGVudGl0eV92ZXJpZmllZCI6IGZhbHNlLCAidG9rZW5zIjogbnVsbCwgImNvc3QiOiBudWxsLCAibGVkZ2VyIjogeyJqb2JfaWQiOiAiam9iXzI5ZTFkZjc0ODQ0NjRhNzg4NGQ1NjI0ZmNmYTFmOGM4IiwgImlucHV0X3NoYTI1NiI6ICI3MWQ4ODhiOTVkMWQ1ZDM1NTUxMGZhMDRlNjUzMmM5MzFhYzgxOWZmZDA1YWM2ZWNmOWMzY2MyODdmYTk1YjRlIiwgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwgInN0YXRlIjogImNvbXBsZXRlZCIsICJhY3Rpb24iOiAicmV1c2UiLCAiYXR0ZW1wdF9pZCI6ICIyYTk5NDE3YzZmN2U0Y2JjOTM0MzM5YjcyZDIwMjk4NSIsICJldmlkZW5jZV92YWxpZCI6IHRydWUsICJyZWFzb24iOiAiQSBjb21wbGV0ZWQgYXR0ZW1wdCBoYXMgdGhlIHNhbWUgaW5wdXQgaGFzaCBhbmQgaW50YWN0IGV2aWRlbmNlLiJ9fQo=",
+  "stderr_base64": ""
+}

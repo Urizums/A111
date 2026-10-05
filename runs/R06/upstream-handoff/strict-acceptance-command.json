@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "scripts/check_publication_gate.py",
+    "--root",
+    ".",
+    "--out",
+    "runs/R06/upstream-handoff/strict-acceptance.json"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T07:50:53.155916+00:00",
+    "monotonic_ns": 44891802293720,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T07:50:53.362309+00:00",
+    "monotonic_ns": 44892008691249,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 2,
+  "stdout": "{\n  \"schema\": \"forge-publication-check/1\",\n  \"destination\": \"waw1w1/A111:dev\",\n  \"publishing_allowed\": false,\n  \"errors\": [\n    \"BACKLOG-bridge_budget_timeout_validation: blocked\",\n    \"BACKLOG-host_protocol_overhead_comparison: blocked\",\n    \"BACKLOG-preset_browser_acceptance: blocked\",\n    \"BACKLOG-real_agent_executor_integration: blocked\",\n    \"BACKLOG-real_worker_failure_recovery_trials: blocked\",\n    \"BACKLOG-versioned_preset_catalog: blocked\",\n    \"CAP-sdk_adapter_contract: blocked\",\n    \"R06-scheduled_handoff: blocked\",\n    \"independent_final_ui: blocked\",\n    \"new_defects_retested: blocked\",\n    \"repair_budget_audit: blocked\",\n    \"Open required finding: R05-UI-focus\",\n    \"Open required finding: R05-adapter-validation-budget\",\n    \"Open required finding: R05-preset-independent\",\n    \"Open required finding: R05-protocol-study\",\n    \"Open required finding: R05-provider-runtime\",\n    \"Open required finding: R05-provider-global-and-recovery\",\n    \"Open required finding: R06-cold-start\",\n    \"Open required finding: R03-independent-UI-historical\",\n    \"Open required finding: R05-catalog-independent-focus\",\n    \"Native calls remain unreconciled\"\n  ],\n  \"limits\": \"Local fail-closed evidence check; Root must review semantics and current remote head. No GitHub branch-protection or authenticated provider guarantee.\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtcHVibGljYXRpb24tY2hlY2svMSIsCiAgImRlc3RpbmF0aW9uIjogIndhdzF3MS9BMTExOmRldiIsCiAgInB1Ymxpc2hpbmdfYWxsb3dlZCI6IGZhbHNlLAogICJlcnJvcnMiOiBbCiAgICAiQkFDS0xPRy1icmlkZ2VfYnVkZ2V0X3RpbWVvdXRfdmFsaWRhdGlvbjogYmxvY2tlZCIsCiAgICAiQkFDS0xPRy1ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb246IGJsb2NrZWQiLAogICAgIkJBQ0tMT0ctcHJlc2V0X2Jyb3dzZXJfYWNjZXB0YW5jZTogYmxvY2tlZCIsCiAgICAiQkFDS0xPRy1yZWFsX2FnZW50X2V4ZWN1dG9yX2ludGVncmF0aW9uOiBibG9ja2VkIiwKICAgICJCQUNLTE9HLXJlYWxfd29ya2VyX2ZhaWx1cmVfcmVjb3ZlcnlfdHJpYWxzOiBibG9ja2VkIiwKICAgICJCQUNLTE9HLXZlcnNpb25lZF9wcmVzZXRfY2F0YWxvZzogYmxvY2tlZCIsCiAgICAiQ0FQLXNka19hZGFwdGVyX2NvbnRyYWN0OiBibG9ja2VkIiwKICAgICJSMDYtc2NoZWR1bGVkX2hhbmRvZmY6IGJsb2NrZWQiLAogICAgImluZGVwZW5kZW50X2ZpbmFsX3VpOiBibG9ja2VkIiwKICAgICJuZXdfZGVmZWN0c19yZXRlc3RlZDogYmxvY2tlZCIsCiAgICAicmVwYWlyX2J1ZGdldF9hdWRpdDogYmxvY2tlZCIsCiAgICAiT3BlbiByZXF1aXJlZCBmaW5kaW5nOiBSMDUtVUktZm9jdXMiLAogICAgIk9wZW4gcmVxdWlyZWQgZmluZGluZzogUjA1LWFkYXB0ZXItdmFsaWRhdGlvbi1idWRnZXQiLAogICAgIk9wZW4gcmVxdWlyZWQgZmluZGluZzogUjA1LXByZXNldC1pbmRlcGVuZGVudCIsCiAgICAiT3BlbiByZXF1aXJlZCBmaW5kaW5nOiBSMDUtcHJvdG9jb2wtc3R1ZHkiLAogICAgIk9wZW4gcmVxdWlyZWQgZmluZGluZzogUjA1LXByb3ZpZGVyLXJ1bnRpbWUiLAogICAgIk9wZW4gcmVxdWlyZWQgZmluZGluZzogUjA1LXByb3ZpZGVyLWdsb2JhbC1hbmQtcmVjb3ZlcnkiLAogICAgIk9wZW4gcmVxdWlyZWQgZmluZGluZzogUjA2LWNvbGQtc3RhcnQiLAogICAgIk9wZW4gcmVxdWlyZWQgZmluZGluZzogUjAzLWluZGVwZW5kZW50LVVJLWhpc3RvcmljYWwiLAogICAgIk9wZW4gcmVxdWlyZWQgZmluZGluZzogUjA1LWNhdGFsb2ctaW5kZXBlbmRlbnQtZm9jdXMiLAogICAgIk5hdGl2ZSBjYWxscyByZW1haW4gdW5yZWNvbmNpbGVkIgogIF0sCiAgImxpbWl0cyI6ICJMb2NhbCBmYWlsLWNsb3NlZCBldmlkZW5jZSBjaGVjazsgUm9vdCBtdXN0IHJldmlldyBzZW1hbnRpY3MgYW5kIGN1cnJlbnQgcmVtb3RlIGhlYWQuIE5vIEdpdEh1YiBicmFuY2gtcHJvdGVjdGlvbiBvciBhdXRoZW50aWNhdGVkIHByb3ZpZGVyIGd1YXJhbnRlZS4iCn0K",
+  "stderr_base64": ""
+}

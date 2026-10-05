@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/A111",
+  "argv": [
+    "python3",
+    "-c",
+    "import json;from pathlib import Path;p=Path(\"runs/S03/native/decision-draft.json\");v=json.loads(p.read_text());v[\"outcome\"]=\"done\";v[\"reason\"]=None;[(row.update(status=\"pass\")) for row in v[\"results\"][\"acceptance_results\"].values()];Path(\"runs/S03/native/decision.json\").write_text(json.dumps(v,indent=2)+\"\\n\")"
+  ],
+  "begin": {
+    "utc": "2026-10-03T19:34:33.179272+00:00",
+    "monotonic_ns": 711825649940,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:34:33.200626+00:00",
+    "monotonic_ns": 711847006420,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.02135648,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/hostdraft.py",
+    "reply",
+    "--request",
+    "/workspace/A111/runs/S03/native/job/request.json",
+    "--artifact",
+    "/workspace/A111/runs/S03/native/worker/totals.json",
+    "--artifact",
+    "/workspace/A111/runs/S03/native/worker/totals.md",
+    "--artifact",
+    "/workspace/A111/runs/S03/native/worker/operations.json",
+    "--out",
+    "/workspace/A111/runs/S03/native/worker/incomplete-reply.json"
+  ],
+  "begin": {
+    "utc": "2026-10-03T19:32:53.675119+00:00",
+    "monotonic_ns": 612321498717,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:32:53.717446+00:00",
+    "monotonic_ns": 612363825836,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.042327119,
+  "stdout": "{\n  \"status\": \"draft\",\n  \"out\": \"/workspace/A111/runs/S03/native/worker/incomplete-reply.json\",\n  \"ready_to_submit\": false,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"next_action\": \"Fill actual work or independent review; preflight then use original receive/commit.\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzdGF0dXMiOiAiZHJhZnQiLAogICJvdXQiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvUzAzL25hdGl2ZS93b3JrZXIvaW5jb21wbGV0ZS1yZXBseS5qc29uIiwKICAicmVhZHlfdG9fc3VibWl0IjogZmFsc2UsCiAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwKICAiY2FsbF9hbGxvd2VkIjogZmFsc2UsCiAgIm5leHRfYWN0aW9uIjogIkZpbGwgYWN0dWFsIHdvcmsgb3IgaW5kZXBlbmRlbnQgcmV2aWV3OyBwcmVmbGlnaHQgdGhlbiB1c2Ugb3JpZ2luYWwgcmVjZWl2ZS9jb21taXQuIgp9Cg==",
+  "stderr_base64": ""
+}

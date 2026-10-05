@@ -1,0 +1,51 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R03-02",
+  "attempt_id": "R03-02-1",
+  "requirements_hash": "fb6c4da40f34dc914077ce20c57ec71837c43bc21837511f65431eeadd54ddb4",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R03/ui-independent/worker/results.json",
+        "runs/R03/ui-independent/root-review.json",
+        "runs/R03/ui-followup/observations.json",
+        "runs/R03/ui-followup/command.json",
+        "runs/R03/ui/root-visual-review.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R03/ui-independent/worker/results.json",
+        "runs/R03/ui-independent/root-review.json",
+        "runs/R03/ui-followup/observations.json",
+        "runs/R03/ui-followup/command.json",
+        "runs/R03/ui/root-visual-review.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Real ticket UI original target requirements",
+    "hypothesis": "Explicit conflict reload and semantic responsive controls preserve usable task state",
+    "baseline": "No ticket UI; independent harness later left several states unexecuted",
+    "conditions": "Chromium151 on managed cloud, real loopbackHTTP/SQLite, original two tickets, unchanged source, retained DB copy",
+    "observations": "Independent final run confirms six early browser checks and first transition; independent acceptance remains incomplete after two corrections. Root observed eight previously unexecuted browser states and visually inspected desktop/mobile screenshots. Combined target evidence covers frozen criteria.",
+    "limits": [
+      "Root follow-up is same-author, not independent validation",
+      "No full accessibility audit or user study",
+      "Independent harness remains blocked and its failure/budget is unchanged"
+    ],
+    "metrics": {
+      "independent_early_checks": 6,
+      "independent_harness_corrections": 2,
+      "root_remaining_state_checks": 8,
+      "root_observation_corrections": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Probe remaining runtime branches and advance only with actual successor start."
+}

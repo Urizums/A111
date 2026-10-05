@@ -1,0 +1,53 @@
+{
+  "schema": "forge-cloud-delivery/1",
+  "delivery_type": "scoped_change",
+  "source_repository": "Urizums/A111",
+  "source_commit": "550275d726485de6ad7ba49ae3b1231142edca04",
+  "explicit_goal": "部署到云端服务器，按 README 接续，冒烟测试出报告和问题，修复并将代码和报告打包提交 PR。",
+  "deployment_target": "Attached managed cloud environment, /workspace/agent-forge-cloud",
+  "default_basis": "The user attached this cloud execution environment; no separate SSH target or external cloud identity is configured.",
+  "delivery_boundary": "Runnable Python CLI deployment, S01 offline audit closure, S02 versioned protocol candidate, S03 native worker smoke plus one bounded coordinator capture repair/retest, regression and portable archive/PR.",
+  "protected": [
+    "evidence/",
+    "skills/ baseline hashes",
+    "state/source-lock.json",
+    "historical TODO identities"
+  ],
+  "requirements": [
+    {
+      "id": "D01",
+      "assertion": "Install runnable CLI in the attached cloud environment and verify outside the source checkout."
+    },
+    {
+      "id": "D02",
+      "assertion": "Complete or explicitly qualify A01-A05 using immutable originals and a fresh independent Luna auditor."
+    },
+    {
+      "id": "D03",
+      "assertion": "Freeze a versioned S02 protocol before a fresh S03 native worker; preserve original candidates and bounded fixes."
+    },
+    {
+      "id": "D04",
+      "assertion": "Exercise success, rejected inputs, checkpoint reuse and changed evidence; preserve command return codes and reports."
+    },
+    {
+      "id": "D05",
+      "assertion": "Publish full source and reports to a feature branch and PR; include reproducible archive generation and hashes."
+    }
+  ],
+  "limits": [
+    "Not a permanent externally hosted service or an HTTP endpoint.",
+    "Managed environment lifetime is controlled by the host.",
+    "No provider SDK/global-resource/network-fault/UI/performance acceptance inferred from local tests.",
+    "At most two functional repair rounds for each candidate; setup mistakes retained separately."
+  ],
+  "provider_tokens": null,
+  "provider_cost": null,
+  "github_delivery": {
+    "head_repository": "waw1w1/A111",
+    "head_branch": "dev",
+    "base_repository": "Urizums/A111",
+    "base_branch": "main",
+    "basis": "User explicitly requested fork dev -> upstream PR after creating fork."
+  }
+}

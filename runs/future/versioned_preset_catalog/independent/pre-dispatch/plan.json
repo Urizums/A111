@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "catalog_validation",
+  "goal": "Independent target browser validation of three original presets",
+  "deliverable_kind": "scoped_change",
+  "requirements": [
+    {
+      "id": "req_work",
+      "text": "Verify original frozen acceptance in target browser",
+      "origin": "explicit",
+      "basis": "/workspace/A111/runs/R05/materials/catalog-validation-brief.md",
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_work",
+      "assertion": "All original required checks have valid runtime evidence within the repair budget",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "work",
+      "title": "Verify original preset catalog",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_work"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "task": "independent source-local acceptance of snapshot.py byte snapshot utility",
+  "candidate": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/candidate/C6/forge-agent-flow",
+  "candidate_files_hashed": [
+    {
+      "path": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/candidate/C6/forge-agent-flow/scripts/snapshot.py",
+      "sha256_before": "5dd1f65493b54a20e17247f9c25815bb988f194a8528858148df31075db36cac",
+      "sha256_after": "5dd1f65493b54a20e17247f9c25815bb988f194a8528858148df31075db36cac"
+    }
+  ],
+  "commands_log": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/commands.jsonl",
+  "outcomes_file": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/outcomes.json",
+  "run_materials": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/validation/independent/snapshot-validation-72a2n0l5",
+  "cases_passed": 23,
+  "cases_failed": 0,
+  "raw_induced_failures": [
+    {
+      "case": "injected_file_write_failure",
+      "observed_error": "OSError: [Errno 28] injected disk-full during staged file write",
+      "expected": true
+    },
+    {
+      "case": "injected_publication_failure",
+      "observed_error": "OSError: [Errno 5] injected publication failure",
+      "expected": true
+    },
+    {
+      "case": "unsupported_publisher_capability",
+      "observed_error": "OSError: [Errno 95] Atomic no-replace restore requires Linux renameat2",
+      "expected": true
+    }
+  ],
+  "unexpected_failures": [],
+  "result": "pass",
+  "scope_note": "Source-local independent acceptance; no global performance claim."
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/R08/capability-probe/probe.py"
+  ],
+  "cwd": "/workspace/scratch/73714494ad2f/forge-takeover-r07",
+  "begin": {
+    "utc": "2026-10-04T17:58:15.396131+00:00",
+    "monotonic_ns": 2204428212590,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T17:58:15.438678+00:00",
+    "monotonic_ns": 2204470754121,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"schema\": \"forge-local-capability-probe/1\",\n  \"checkout\": \"/workspace/scratch/73714494ad2f/forge-takeover-r07\",\n  \"python\": \"3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]\",\n  \"python_executable\": \"/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3\",\n  \"python_3_10_available\": false,\n  \"platform\": \"Linux-6.18.44-x86_64-with-glibc2.39\",\n  \"git\": {\n    \"argv\": [\n      \"git\",\n      \"--version\"\n    ],\n    \"exit_code\": 0,\n    \"stdout\": \"git version 2.51.1\",\n    \"stderr\": \"\"\n  },\n  \"source_head\": {\n    \"argv\": [\n      \"git\",\n      \"rev-parse\",\n      \"HEAD\"\n    ],\n    \"exit_code\": 0,\n    \"stdout\": \"6f509c8dcb54f7864a49864e21061345dc4b2b9c\",\n    \"stderr\": \"\"\n  },\n  \"candidate_files_matching_lock\": 92,\n  \"renameat2_symbol_available\": true,\n  \"actual_native_creation_observed\": true,\n  \"native_creation_evidence\": \"runs/R07/flow-challenge/worker/native/create-receipt.json\",\n  \"native_completed_evidence\": \"runs/R07/flow-challenge/worker/native/terminal-notification.payload.json\",\n  \"timer_enabled\": false,\n  \"provider_preflight\": \"not run: this scoped task supplied no authorized provider endpoint or identity\",\n  \"provider_tokens\": null,\n  \"provider_cost\": null,\n  \"limits\": [\n    \"This host only; next host must re-probe tools and permissions\",\n    \"No independent cold start or global provider resource proof\",\n    \"Raw historical absolute paths remain evidence, not instructions to recreate them\"\n  ]\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtbG9jYWwtY2FwYWJpbGl0eS1wcm9iZS8xIiwKICAiY2hlY2tvdXQiOiAiL3dvcmtzcGFjZS9zY3JhdGNoLzczNzE0NDk0YWQyZi9mb3JnZS10YWtlb3Zlci1yMDciLAogICJweXRob24iOiAiMy4xMi4xNCAobWFpbiwgQXVnIDI1IDIwMjYsIDE0OjAwOjQ5KSBbQ2xhbmcgMjIuMS4zIF0iLAogICJweXRob25fZXhlY3V0YWJsZSI6ICIvb3B0L2NvZGV4L3J1bnRpbWVzL2NvZGV4LXByaW1hcnktcnVudGltZS9kZXBlbmRlbmNpZXMvcHl0aG9uL2Jpbi9weXRob24zIiwKICAicHl0aG9uXzNfMTBfYXZhaWxhYmxlIjogZmFsc2UsCiAgInBsYXRmb3JtIjogIkxpbnV4LTYuMTguNDQteDg2XzY0LXdpdGgtZ2xpYmMyLjM5IiwKICAiZ2l0IjogewogICAgImFyZ3YiOiBbCiAgICAgICJnaXQiLAogICAgICAiLS12ZXJzaW9uIgogICAgXSwKICAgICJleGl0X2NvZGUiOiAwLAogICAgInN0ZG91dCI6ICJnaXQgdmVyc2lvbiAyLjUxLjEiLAogICAgInN0ZGVyciI6ICIiCiAgfSwKICAic291cmNlX2hlYWQiOiB7CiAgICAiYXJndiI6IFsKICAgICAgImdpdCIsCiAgICAgICJyZXYtcGFyc2UiLAogICAgICAiSEVBRCIKICAgIF0sCiAgICAiZXhpdF9jb2RlIjogMCwKICAgICJzdGRvdXQiOiAiNmY1MDljOGRjYjU0Zjc4NjRhNDk4NjRlMjEwNjEzNDVkYzRiMmI5YyIsCiAgICAic3RkZXJyIjogIiIKICB9LAogICJjYW5kaWRhdGVfZmlsZXNfbWF0Y2hpbmdfbG9jayI6IDkyLAogICJyZW5hbWVhdDJfc3ltYm9sX2F2YWlsYWJsZSI6IHRydWUsCiAgImFjdHVhbF9uYXRpdmVfY3JlYXRpb25fb2JzZXJ2ZWQiOiB0cnVlLAogICJuYXRpdmVfY3JlYXRpb25fZXZpZGVuY2UiOiAicnVucy9SMDcvZmxvdy1jaGFsbGVuZ2Uvd29ya2VyL25hdGl2ZS9jcmVhdGUtcmVjZWlwdC5qc29uIiwKICAibmF0aXZlX2NvbXBsZXRlZF9ldmlkZW5jZSI6ICJydW5zL1IwNy9mbG93LWNoYWxsZW5nZS93b3JrZXIvbmF0aXZlL3Rlcm1pbmFsLW5vdGlmaWNhdGlvbi5wYXlsb2FkLmpzb24iLAogICJ0aW1lcl9lbmFibGVkIjogZmFsc2UsCiAgInByb3ZpZGVyX3ByZWZsaWdodCI6ICJub3QgcnVuOiB0aGlzIHNjb3BlZCB0YXNrIHN1cHBsaWVkIG5vIGF1dGhvcml6ZWQgcHJvdmlkZXIgZW5kcG9pbnQgb3IgaWRlbnRpdHkiLAogICJwcm92aWRlcl90b2tlbnMiOiBudWxsLAogICJwcm92aWRlcl9jb3N0IjogbnVsbCwKICAibGltaXRzIjogWwogICAgIlRoaXMgaG9zdCBvbmx5OyBuZXh0IGhvc3QgbXVzdCByZS1wcm9iZSB0b29scyBhbmQgcGVybWlzc2lvbnMiLAogICAgIk5vIGluZGVwZW5kZW50IGNvbGQgc3RhcnQgb3IgZ2xvYmFsIHByb3ZpZGVyIHJlc291cmNlIHByb29mIiwKICAgICJSYXcgaGlzdG9yaWNhbCBhYnNvbHV0ZSBwYXRocyByZW1haW4gZXZpZGVuY2UsIG5vdCBpbnN0cnVjdGlvbnMgdG8gcmVjcmVhdGUgdGhlbSIKICBdCn0K",
+  "stderr_base64": ""
+}

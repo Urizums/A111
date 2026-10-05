@@ -1,0 +1,71 @@
+{
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_b0acf89671a046d8adb738f7eaceeb95",
+    "attempt_id": "fe59e381cb4d4e0695d5af0d9837c2d5",
+    "invocation_id": "fe59e381cb4d4e0695d5af0d9837c2d5",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "summarize",
+      "plan_hash": "1fbbae96a0a63a5a435b3cf09242e88cdc01b8921b116af72c03c540abf5db9d",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "summarize",
+      "title": "New expense summary with measured native protocol",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_business",
+        "a_protocol"
+      ]
+    },
+    "work": {
+      "prompt": "FIRST SHELL COMMAND: execute the following EXACT command before any other shell operation. Tool metadata discovery is not a shell command. Do not ask Root to recapture your first read.\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/capture.py cli --record /workspace/A111/runs/S03/native/worker/logs/000-bootstrap.json --actor worker -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 -c 'from pathlib import Path;print('\"'\"'\\nSOURCE /workspace/A111/runs/S03/native/job/request.json\\n'\"'\"');print(Path('\"'\"'/workspace/A111/runs/S03/native/job/request.json'\"'\"').read_text()) ;print('\"'\"'\\nSOURCE /workspace/A111/runs/S02/candidate/forge-agent-flow/references/recording-protocol.md\\n'\"'\"');print(Path('\"'\"'/workspace/A111/runs/S02/candidate/forge-agent-flow/references/recording-protocol.md'\"'\"').read_text()) ;print('\"'\"'\\nSOURCE /workspace/A111/runs/S03/native/expenses.csv\\n'\"'\"');print(Path('\"'\"'/workspace/A111/runs/S03/native/expenses.csv'\"'\"').read_text()) ;print('\"'\"'\\nSOURCE /workspace/A111/AGENTS.md\\n'\"'\"');print(Path('\"'\"'/workspace/A111/AGENTS.md'\"'\"').read_text()) ;'\n\nTask: From the bound expenses.csv alone, produce totals.json and a Chinese explanation totals.md. totals.json must contain exactly row_count (integer), total_fen (integer), and categories (sorted by category); each category object has exactly category, total_fen, and ids (all original IDs in source order). Convert each decimal amount exactly to integer fen, including refunds/zero; preserve every ID once. Do not use binary floats. Do not read previous outputs or infer missing values. Independently author computation and outputs.\nUse this C2 recording protocol for the whole run. Only read this request, bound expenses.csv, public candidate skill/code and AGENTS.md. The continuation/audit tasks mentioned by AGENTS are not your assigned task. You may use installed Python standard library. Write only /workspace/A111/runs/S03/native/worker, including all scripts, logs, drafts, outputs and markers. Do not use network, status/creation/followup/interrupt/delegation tools, global agents listings, siblings, coordinator state/reviews or previous runs. Do not spawn another worker. Parent notification is for your own status/completion only.\nAfter the exact bootstrap command, capture every target command using the specified capture.py cli with a unique in-scope record. Marker commands are targets too and must be wrapped. The outer capture wrapper is excluded; children of a target share its aggregate span. Pure file-tool edits are allowed only in scope and must be disclosed in operations.json. Record worker_work begin before business computation, worker_work end after both outputs, worker_reply begin before incomplete hostdraft reply, worker_reply end after captured successful check-reply. Use the exact actor worker, keep marker boot IDs unchanged.\nCreate an incomplete reply draft with the public hostdraft.py reply command and retain it. Fill a separate final reply.json from real work, hash actual outputs. Run captured hostdraft.py check-reply BEFORE worker_reply end. Reply must reference totals.json and totals.md plus operations.json which lists all file-tool writes, captured commands and correction attempts. Do not mutate referenced files after final preflight.\nBudgets: one original worker, no delegation/network/status calls; at most 40 captured targets; at most two local corrective attempts INCLUDING analysis/readers/index/telemetry repairs. Preserve failed commands and initial versions. First authored candidate is not a correction. Root pure file edits/native intent saving are outside your denominator; all your corrective work counts. Report unknown provider tokens/cost/internal identity as null. Return your reply path and actual status, not a fabricated completion receipt.",
+      "inputs": {
+        "csv": "/workspace/A111/runs/S03/native/expenses.csv",
+        "rules": "Integer fen; sorted category totals; all IDs exactly once; Chinese explanation."
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/S03/native/expenses.csv",
+          "sha256": "a84e1a715ddee59771de9aea307c8ea5af3b38ee98ac262b3ff1751969a67834"
+        },
+        {
+          "path": "/workspace/A111/runs/S02/candidate/forge-agent-flow/references/recording-protocol.md",
+          "sha256": "57b65c5660e8aab5fc81a2e219530e0bcb5ff5a6125786018452c670d7895431"
+        },
+        {
+          "path": "/workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/capture.py",
+          "sha256": "8e7d8e9f6b1c9bb2311ec619d51f3a0c5c4fa02039d9adc7139b1bc52bd4cb77"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/S03/native/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/S03/native/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_fe59e381cb4d",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "cda0e391b313b243e4758a668f4871cfdeec404090bf5ed1b989a2d79bdb7149"
+}

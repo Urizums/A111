@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "scripts/check_publication_gate.py",
+    "--root",
+    "."
+  ],
+  "cwd": "/workspace/scratch/73714494ad2f/forge-takeover-r07",
+  "begin": {
+    "utc": "2026-10-04T17:59:15.945728+00:00",
+    "monotonic_ns": 2264977808309,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T17:59:15.986965+00:00",
+    "monotonic_ns": 2265019042971,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "exit_code": 2,
+  "stdout": "{\n  \"schema\": \"forge-publication-check/1\",\n  \"destination\": \"waw1w1/A111:dev\",\n  \"publishing_allowed\": false,\n  \"errors\": [\n    \"BACKLOG-bridge_budget_timeout_validation: blocked\",\n    \"BACKLOG-host_protocol_overhead_comparison: blocked\",\n    \"BACKLOG-preset_browser_acceptance: blocked\",\n    \"BACKLOG-real_agent_executor_integration: blocked\",\n    \"BACKLOG-real_worker_failure_recovery_trials: blocked\",\n    \"BACKLOG-versioned_preset_catalog: blocked\",\n    \"CAP-sdk_adapter_contract: blocked\",\n    \"R06-scheduled_handoff: blocked\",\n    \"Evidence hash changed: .github/workflows/validate.yml\"\n  ],\n  \"limits\": \"Local fail-closed evidence check; Root must review semantics and current remote head. No GitHub branch-protection or authenticated provider guarantee.\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtcHVibGljYXRpb24tY2hlY2svMSIsCiAgImRlc3RpbmF0aW9uIjogIndhdzF3MS9BMTExOmRldiIsCiAgInB1Ymxpc2hpbmdfYWxsb3dlZCI6IGZhbHNlLAogICJlcnJvcnMiOiBbCiAgICAiQkFDS0xPRy1icmlkZ2VfYnVkZ2V0X3RpbWVvdXRfdmFsaWRhdGlvbjogYmxvY2tlZCIsCiAgICAiQkFDS0xPRy1ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb246IGJsb2NrZWQiLAogICAgIkJBQ0tMT0ctcHJlc2V0X2Jyb3dzZXJfYWNjZXB0YW5jZTogYmxvY2tlZCIsCiAgICAiQkFDS0xPRy1yZWFsX2FnZW50X2V4ZWN1dG9yX2ludGVncmF0aW9uOiBibG9ja2VkIiwKICAgICJCQUNLTE9HLXJlYWxfd29ya2VyX2ZhaWx1cmVfcmVjb3ZlcnlfdHJpYWxzOiBibG9ja2VkIiwKICAgICJCQUNLTE9HLXZlcnNpb25lZF9wcmVzZXRfY2F0YWxvZzogYmxvY2tlZCIsCiAgICAiQ0FQLXNka19hZGFwdGVyX2NvbnRyYWN0OiBibG9ja2VkIiwKICAgICJSMDYtc2NoZWR1bGVkX2hhbmRvZmY6IGJsb2NrZWQiLAogICAgIkV2aWRlbmNlIGhhc2ggY2hhbmdlZDogLmdpdGh1Yi93b3JrZmxvd3MvdmFsaWRhdGUueW1sIgogIF0sCiAgImxpbWl0cyI6ICJMb2NhbCBmYWlsLWNsb3NlZCBldmlkZW5jZSBjaGVjazsgUm9vdCBtdXN0IHJldmlldyBzZW1hbnRpY3MgYW5kIGN1cnJlbnQgcmVtb3RlIGhlYWQuIE5vIEdpdEh1YiBicmFuY2gtcHJvdGVjdGlvbiBvciBhdXRoZW50aWNhdGVkIHByb3ZpZGVyIGd1YXJhbnRlZS4iCn0K",
+  "stderr_base64": ""
+}

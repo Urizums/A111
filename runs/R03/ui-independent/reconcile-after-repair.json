@@ -1,0 +1,27 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "skills/forge-agent-flow/scripts/hostbridge.py",
+    "reconcile",
+    "--job",
+    "runs/R03/ui-independent/job"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T05:25:53.681760+00:00",
+    "monotonic_ns": 36192328136301,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:25:53.726321+00:00",
+    "monotonic_ns": 36192372702927,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"phase\": \"committed\",\n  \"job_id\": \"job_2ca7f1a3acec4744be21dd40597dee1c\",\n  \"attempt_id\": \"1173fec900eb413b843fcbe8a1d83b77\",\n  \"request_hash\": \"cbe33c26b2bd77e5152b2d97133ebf3194eb8fae840af06fb256fb17dd7e72a1\",\n  \"action\": \"reconcile_effects_before_new_project_attempt\",\n  \"worker\": \"/root/luna_forge_1173fec900eb\",\n  \"commit\": {\n    \"decision_ref\": {\n      \"path\": \"/workspace/A111/runs/R03/ui-independent/decision.json\",\n      \"sha256\": \"fdfbe11a5e00ab06aed78116a321ed104a784fa838401881c668d2f666b12f69\"\n    },\n    \"target_result\": {\n      \"task_id\": \"work\",\n      \"attempt_id\": \"1173fec900eb413b843fcbe8a1d83b77\",\n      \"outcome\": \"blocked\",\n      \"task_status\": \"blocked\",\n      \"reason\": \"Independent browser acceptance incomplete after its two allowed harness corrections; unexecuted criteria and all failures retained.\",\n      \"status\": \"active\",\n      \"revision\": 2,\n      \"plan_hash\": \"2b435af73eff86d8dcc5235135ab41fed34e5a01504abbd18abf33b94c716d41\",\n      \"evaluation_plan_hash\": null\n    },\n    \"worker_task_outcome\": \"done\",\n    \"coordinator_outcome\": \"blocked\",\n    \"recorded_at\": \"2026-10-04T05:25:53Z\"\n  },\n  \"coordinator_outcome\": \"blocked\",\n  \"automatic_host_call\": false,\n  \"internal_model_identity_verified\": false,\n  \"tokens\": null,\n  \"cost\": null,\n  \"ledger\": {\n    \"job_id\": \"job_2ca7f1a3acec4744be21dd40597dee1c\",\n    \"input_sha256\": \"cbe33c26b2bd77e5152b2d97133ebf3194eb8fae840af06fb256fb17dd7e72a1\",\n    \"automatic_host_call\": false,\n    \"state\": \"completed\",\n    \"action\": \"reuse\",\n    \"attempt_id\": \"1173fec900eb413b843fcbe8a1d83b77\",\n    \"evidence_valid\": true,\n    \"reason\": \"A completed attempt has the same input hash and intact evidence.\"\n  }\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwaGFzZSI6ICJjb21taXR0ZWQiLAogICJqb2JfaWQiOiAiam9iXzJjYTdmMWEzYWNlYzQ3NDRiZTIxZGQ0MDU5N2RlZTFjIiwKICAiYXR0ZW1wdF9pZCI6ICIxMTczZmVjOTAwZWI0MTNiODQzZmNiZThhMWQ4M2I3NyIsCiAgInJlcXVlc3RfaGFzaCI6ICJjYmUzM2MyNmIyYmQ3N2U1MTUyYjJkOTcxMzNlYmYzMTk0ZWI4ZmFlODQwYWYwNmZiMjU2ZmIxN2RkN2U3MmExIiwKICAiYWN0aW9uIjogInJlY29uY2lsZV9lZmZlY3RzX2JlZm9yZV9uZXdfcHJvamVjdF9hdHRlbXB0IiwKICAid29ya2VyIjogIi9yb290L2x1bmFfZm9yZ2VfMTE3M2ZlYzkwMGViIiwKICAiY29tbWl0IjogewogICAgImRlY2lzaW9uX3JlZiI6IHsKICAgICAgInBhdGgiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvUjAzL3VpLWluZGVwZW5kZW50L2RlY2lzaW9uLmpzb24iLAogICAgICAic2hhMjU2IjogImZkZmJlMTFhNWUwMGFiMDZhZWQ3ODExNmEzMjFlZDEwNGE3ODRmYTgzODQwMTg4MWM2NjhkMmY2NjZiMTJmNjkiCiAgICB9LAogICAgInRhcmdldF9yZXN1bHQiOiB7CiAgICAgICJ0YXNrX2lkIjogIndvcmsiLAogICAgICAiYXR0ZW1wdF9pZCI6ICIxMTczZmVjOTAwZWI0MTNiODQzZmNiZThhMWQ4M2I3NyIsCiAgICAgICJvdXRjb21lIjogImJsb2NrZWQiLAogICAgICAidGFza19zdGF0dXMiOiAiYmxvY2tlZCIsCiAgICAgICJyZWFzb24iOiAiSW5kZXBlbmRlbnQgYnJvd3NlciBhY2NlcHRhbmNlIGluY29tcGxldGUgYWZ0ZXIgaXRzIHR3byBhbGxvd2VkIGhhcm5lc3MgY29ycmVjdGlvbnM7IHVuZXhlY3V0ZWQgY3JpdGVyaWEgYW5kIGFsbCBmYWlsdXJlcyByZXRhaW5lZC4iLAogICAgICAic3RhdHVzIjogImFjdGl2ZSIsCiAgICAgICJyZXZpc2lvbiI6IDIsCiAgICAgICJwbGFuX2hhc2giOiAiMmI0MzVhZjczZWZmODZkOGRjYzUyMzUxMzVhYjQxZmVkMzRlNWEwMTUwNGFiYmQxOGFiZjMzYjk0YzcxNmQ0MSIsCiAgICAgICJldmFsdWF0aW9uX3BsYW5faGFzaCI6IG51bGwKICAgIH0sCiAgICAid29ya2VyX3Rhc2tfb3V0Y29tZSI6ICJkb25lIiwKICAgICJjb29yZGluYXRvcl9vdXRjb21lIjogImJsb2NrZWQiLAogICAgInJlY29yZGVkX2F0IjogIjIwMjYtMTAtMDRUMDU6MjU6NTNaIgogIH0sCiAgImNvb3JkaW5hdG9yX291dGNvbWUiOiAiYmxvY2tlZCIsCiAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwKICAiaW50ZXJuYWxfbW9kZWxfaWRlbnRpdHlfdmVyaWZpZWQiOiBmYWxzZSwKICAidG9rZW5zIjogbnVsbCwKICAiY29zdCI6IG51bGwsCiAgImxlZGdlciI6IHsKICAgICJqb2JfaWQiOiAiam9iXzJjYTdmMWEzYWNlYzQ3NDRiZTIxZGQ0MDU5N2RlZTFjIiwKICAgICJpbnB1dF9zaGEyNTYiOiAiY2JlMzNjMjZiMmJkNzdlNTE1MmIyZDk3MTMzZWJmMzE5NGViOGZhZTg0MGFmMDZmYjI1NmZiMTdkZDdlNzJhMSIsCiAgICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICAgInN0YXRlIjogImNvbXBsZXRlZCIsCiAgICAiYWN0aW9uIjogInJldXNlIiwKICAgICJhdHRlbXB0X2lkIjogIjExNzNmZWM5MDBlYjQxM2I4NDNmY2JlOGExZDgzYjc3IiwKICAgICJldmlkZW5jZV92YWxpZCI6IHRydWUsCiAgICAicmVhc29uIjogIkEgY29tcGxldGVkIGF0dGVtcHQgaGFzIHRoZSBzYW1lIGlucHV0IGhhc2ggYW5kIGludGFjdCBldmlkZW5jZS4iCiAgfQp9Cg==",
+  "stderr_base64": ""
+}

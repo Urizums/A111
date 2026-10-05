@@ -33,3 +33,9 @@ Host 的作用是调用原生工具并保存原件；本地 projectctl/factoryct
 每条要求附可复核的来源条款、实际证据、结果和局限。状态可区分 planned、static_checked、fixture_checked、runtime_checked、independently_checked；性能还需要可比条件与原始计时。缺失数据记 null，不猜 token/成本，不把 synthetic receipt 说成实际 native 返回。
 
 关键源码入口：skills/forge-agent-flow/references/task-entry.md、system-architecture.md、project-execution.md、host-execution.md、host-resource-boundaries.md、host-observability.md、host-drafts.md、evaluation-plan.md；体验内容进入另一个 skill。先读 SKILL.md 并按需路由，避免每个任务背负整个资料集。
+
+## 当前固定候选与发布约束
+
+当前候选入口及哈希以 START_HERE.md 为准。C4/C5 分别将原字节丢失和修正次数漏记的反馈落实到 snapshot.py、bounded_run.py；原失败和新案例证据见 runs/R06/FEEDBACK_LOOPS.md。快照不能补回历史未保存的字节；本地 guard 不等于 provider 全局强制约束。
+
+协调者先核对 lease 和原生未决状态，再串行整合共享台账。所有必需验收与最终候选冒烟通过之前，不提交或推送 dev。执行 check_publication_gate.py 并人工核对语义；该校验只检查本地证据完整性，不等于 GitHub 分支保护。

@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "import json; from pathlib import Path; d=json.loads(Path('runs/future/provider-adapter/contract.json').read_text()); assert len(d['invariants']) == 7; print(d['scope'])"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:04:25.535649+00:00",
+    "monotonic_ns": 38504182027199,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:04:25.560399+00:00",
+    "monotonic_ns": 38504206777544,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "Provider-neutral local request/event validation and durable reconciliation; no provider SDK execution claim\n",
+  "stderr": "",
+  "stdout_base64": "UHJvdmlkZXItbmV1dHJhbCBsb2NhbCByZXF1ZXN0L2V2ZW50IHZhbGlkYXRpb24gYW5kIGR1cmFibGUgcmVjb25jaWxpYXRpb247IG5vIHByb3ZpZGVyIFNESyBleGVjdXRpb24gY2xhaW0K",
+  "stderr_base64": ""
+}

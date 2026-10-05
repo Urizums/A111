@@ -1,0 +1,84 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R02",
+  "goal": "Progress the long-term R&D loop with actual evidence.",
+  "tasks": [
+    {
+      "id": "R02-01",
+      "title": "新上下文接续：运行失败恢复挑战",
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "runs/R02/worker-recovery/"
+      ],
+      "acceptance": [
+        "Actual command worker exits during an uncommitted transaction; database has no partial write",
+        "Fresh-context executor recovers original input, retries safely, retains raw failed attempt",
+        "Choose route from repository, complete selected task and start next task with actual command evidence"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R02/worker-recovery/task-result.json",
+        "runs/R02/worker-recovery/02-seed-command.json",
+        "runs/R02/worker-recovery/04-crash-command.json",
+        "runs/R02/worker-recovery/05-post-crash-command.json",
+        "runs/R02/worker-recovery/frozen-acceptance.json",
+        "runs/R02/materials/recovery-batch.json",
+        "runs/R02/worker-recovery/04-crash-command.json",
+        "runs/R02/worker-recovery/06-retry-original-command.json",
+        "runs/R02/worker-recovery/07-after-apply-command.json",
+        "runs/R02/worker-recovery/08-retry-identical-command.json",
+        "runs/R02/worker-recovery/frozen-acceptance.json",
+        "runs/R02/worker-recovery/01-freeze-check-command.json",
+        "runs/R02/flow/frozen-acceptance.json",
+        "runs/R02/flow/01-successor-first-step-command.json",
+        "runs/R02/flow/02-successor-start-command.json",
+        "runs/R02/worker-recovery/01-freeze-check-command.json"
+      ],
+      "blocker": null,
+      "next_action": "Start R02-02 (reusable book-renewal agent flow) from its frozen original brief; implement one policy case first."
+    },
+    {
+      "id": "R02-02",
+      "title": "构建并运行图书续借 agent flow",
+      "owner": "root",
+      "depends_on": [
+        "R02-01"
+      ],
+      "write_paths": [
+        "challenges/renewal-flow/",
+        "runs/R02/flow/"
+      ],
+      "acceptance": [
+        "Reusable policy flow executes all four frozen cases using original package controller",
+        "Stale reply rejected without state mutation; all results match explicit policy"
+      ],
+      "status": "in_progress",
+      "evidence": [
+        "runs/R02/flow/02-successor-start-command.json"
+      ],
+      "blocker": null,
+      "next_action": "构建并运行图书续借 agent flow"
+    },
+    {
+      "id": "R02-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R02-01",
+        "R02-02"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "Next phase first task has actual recorded execution; preserve current phase archive"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "Read next phase plan, execute its first real step, start it, then run continuation.py advance."
+    }
+  ]
+}

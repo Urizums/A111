@@ -1,0 +1,31 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/A111",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/hostbridge.py",
+    "commit",
+    "--job",
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/job",
+    "--decision",
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/coordinator/decision.json"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:24:22.519341+00:00",
+    "monotonic_ns": 39701165716168,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:24:22.564486+00:00",
+    "monotonic_ns": 39701210863424,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.045147256,
+  "stdout": "{\n  \"phase\": \"committed\",\n  \"job_id\": \"job_bf8ac50ffae84838b5302bf077ce1664\",\n  \"attempt_id\": \"59ff7cd1418e444c820dae3f05892c8b\",\n  \"request_hash\": \"57a78d22b26f52abcf97eb90207795e2d9a477f229c5c06ecb9efd506d476eae\",\n  \"action\": \"reuse_record\",\n  \"worker\": \"/root/luna_forge_59ff7cd1418e\",\n  \"commit\": {\n    \"decision_ref\": {\n      \"path\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/coordinator/decision.json\",\n      \"sha256\": \"8958d3ee2a1446970d142a1b0e00d1f6a74538fd9cae2dd1a55336f6031d75e8\"\n    },\n    \"target_result\": {\n      \"task_id\": \"work\",\n      \"attempt_id\": \"59ff7cd1418e444c820dae3f05892c8b\",\n      \"outcome\": \"done\",\n      \"task_status\": \"done\",\n      \"reason\": null,\n      \"status\": \"completed\",\n      \"revision\": 2,\n      \"plan_hash\": \"ac6dc11603431cb5093c88a5fd6bc97df2c97d655acc1d0d306d6a2ba0426239\",\n      \"evaluation_plan_hash\": null\n    },\n    \"worker_task_outcome\": \"done\",\n    \"coordinator_outcome\": \"done\",\n    \"recorded_at\": \"2026-10-04T06:24:22Z\"\n  },\n  \"coordinator_outcome\": \"done\",\n  \"automatic_host_call\": false,\n  \"internal_model_identity_verified\": false,\n  \"tokens\": null,\n  \"cost\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwaGFzZSI6ICJjb21taXR0ZWQiLAogICJqb2JfaWQiOiAiam9iX2JmOGFjNTBmZmFlODQ4MzhiNTMwMmJmMDc3Y2UxNjY0IiwKICAiYXR0ZW1wdF9pZCI6ICI1OWZmN2NkMTQxOGU0NDRjODIwZGFlM2YwNTg5MmM4YiIsCiAgInJlcXVlc3RfaGFzaCI6ICI1N2E3OGQyMmIyNmY1MmFiY2Y5N2ViOTAyMDc3OTVlMmQ5YTQ3N2YyMjljNWMwNmVjYjllZmQ1MDZkNDc2ZWFlIiwKICAiYWN0aW9uIjogInJldXNlX3JlY29yZCIsCiAgIndvcmtlciI6ICIvcm9vdC9sdW5hX2ZvcmdlXzU5ZmY3Y2QxNDE4ZSIsCiAgImNvbW1pdCI6IHsKICAgICJkZWNpc2lvbl9yZWYiOiB7CiAgICAgICJwYXRoIjogIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vc2FtcGxlcy9QMkIvY29vcmRpbmF0b3IvZGVjaXNpb24uanNvbiIsCiAgICAgICJzaGEyNTYiOiAiODk1OGQzZWUyYTE0NDY5NzBkMTQyYTFiMGUwMGQxZjZhNzQ1MzhmZDljYWUyZGQxYTU1MzM2ZjYwMzFkNzVlOCIKICAgIH0sCiAgICAidGFyZ2V0X3Jlc3VsdCI6IHsKICAgICAgInRhc2tfaWQiOiAid29yayIsCiAgICAgICJhdHRlbXB0X2lkIjogIjU5ZmY3Y2QxNDE4ZTQ0NGM4MjBkYWUzZjA1ODkyYzhiIiwKICAgICAgIm91dGNvbWUiOiAiZG9uZSIsCiAgICAgICJ0YXNrX3N0YXR1cyI6ICJkb25lIiwKICAgICAgInJlYXNvbiI6IG51bGwsCiAgICAgICJzdGF0dXMiOiAiY29tcGxldGVkIiwKICAgICAgInJldmlzaW9uIjogMiwKICAgICAgInBsYW5faGFzaCI6ICJhYzZkYzExNjAzNDMxY2I1MDkzYzg4YTVmZDZiYzk3ZGYyYzk3ZDY1NWFjYzFkMGQzMDZkNmEyYmEwNDI2MjM5IiwKICAgICAgImV2YWx1YXRpb25fcGxhbl9oYXNoIjogbnVsbAogICAgfSwKICAgICJ3b3JrZXJfdGFza19vdXRjb21lIjogImRvbmUiLAogICAgImNvb3JkaW5hdG9yX291dGNvbWUiOiAiZG9uZSIsCiAgICAicmVjb3JkZWRfYXQiOiAiMjAyNi0xMC0wNFQwNjoyNDoyMloiCiAgfSwKICAiY29vcmRpbmF0b3Jfb3V0Y29tZSI6ICJkb25lIiwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICJpbnRlcm5hbF9tb2RlbF9pZGVudGl0eV92ZXJpZmllZCI6IGZhbHNlLAogICJ0b2tlbnMiOiBudWxsLAogICJjb3N0IjogbnVsbAp9Cg==",
+  "stderr_base64": ""
+}

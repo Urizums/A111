@@ -1,0 +1,13 @@
+{
+  "scope": "Root R05/R06 delivery preparation",
+  "status": "preserved_failure",
+  "failures": [
+    "aux-312.json",
+    "aux-310.json"
+  ],
+  "cause": "Installer tests used tracked files before new evidence was staged and release manifest was updated; incomplete copies correctly failed integrity.",
+  "correction": 1,
+  "limit": 2,
+  "repair": "After worker evidence is final, stage authorized files and refresh release manifest, then rerun the unchanged suite. No installer code change or reset of exhausted R00 installer budget.",
+  "retest": "pending"
+}

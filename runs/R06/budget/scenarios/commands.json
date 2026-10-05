@@ -1,0 +1,198 @@
+[
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "init",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal",
+      "--actor",
+      "root-regression-original",
+      "--candidate",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py",
+      "--input",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/material.json"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\"initialized\": true, \"repair_limit\": 2}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "run",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py"
+    ],
+    "expected_exit": 1,
+    "exit_code": 1,
+    "stdout": "{\"attempt\": 1, \"exit_code\": 1, \"phase\": \"failed\", \"repairs_used\": 0, \"record\": \"/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal/attempt-1.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "repair",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal",
+      "--reason",
+      "Separate preserved failure-driven fixture change 1"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\"repair\": 1, \"remaining\": 1}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "run",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py"
+    ],
+    "expected_exit": 1,
+    "exit_code": 1,
+    "stdout": "{\"attempt\": 2, \"exit_code\": 1, \"phase\": \"failed\", \"repairs_used\": 1, \"record\": \"/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal/attempt-2.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "repair",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal",
+      "--reason",
+      "Separate preserved failure-driven fixture change 2"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\"repair\": 2, \"remaining\": 0}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "run",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py"
+    ],
+    "expected_exit": 1,
+    "exit_code": 1,
+    "stdout": "{\"attempt\": 3, \"exit_code\": 1, \"phase\": \"exhausted\", \"repairs_used\": 2, \"record\": \"/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal/attempt-3.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "repair",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal",
+      "--reason",
+      "Forbidden third correction"
+    ],
+    "expected_exit": 2,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "{\"error\": \"Repair requires the preceding failed run\"}\n"
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "run",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/journal",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/budget/scenarios/original-failure-classes/harness.py"
+    ],
+    "expected_exit": 2,
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "{\"error\": \"Journal is failed, exhausted or has an unknown in-flight run; do not retry\"}\n"
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "init",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/journal",
+      "--actor",
+      "root-regression-new",
+      "--candidate",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/analysis.py",
+      "--input",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/measurements.json"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\"initialized\": true, \"repair_limit\": 2}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "run",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/journal",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/analysis.py",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/measurements.json"
+    ],
+    "expected_exit": 1,
+    "exit_code": 1,
+    "stdout": "{\"attempt\": 1, \"exit_code\": 1, \"phase\": \"failed\", \"repairs_used\": 0, \"record\": \"/workspace/A111/runs/R06/budget/scenarios/new-material/journal/attempt-1.json\"}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "repair",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/journal",
+      "--reason",
+      "Use original samples field; preserve failure and unchanged original material"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\"repair\": 1, \"remaining\": 1}\n",
+    "stderr": ""
+  },
+  {
+    "argv": [
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "run",
+      "--state",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/journal",
+      "--",
+      "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/analysis.py",
+      "/workspace/A111/runs/R06/budget/scenarios/new-material/measurements.json"
+    ],
+    "expected_exit": 0,
+    "exit_code": 0,
+    "stdout": "{\"attempt\": 2, \"exit_code\": 0, \"phase\": \"passed\", \"repairs_used\": 1, \"record\": \"/workspace/A111/runs/R06/budget/scenarios/new-material/journal/attempt-2.json\"}\n",
+    "stderr": ""
+  }
+]

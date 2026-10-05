@@ -1,0 +1,35 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/capture.py",
+    "mark",
+    "--events",
+    "/workspace/A111/runs/S03/native/worker/events",
+    "--actor",
+    "worker",
+    "--stage",
+    "worker_reply",
+    "--event",
+    "begin"
+  ],
+  "begin": {
+    "utc": "2026-10-03T19:31:29.299646+00:00",
+    "monotonic_ns": 527946021998,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:31:29.332991+00:00",
+    "monotonic_ns": 527979366304,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.033344306,
+  "stdout": "{\"marker\": \"/workspace/A111/runs/S03/native/worker/events/527973983284_02cfa6a5bebb4e908ab0ef54e6b3699d.json\", \"schema\": \"forge-comparison-marker/1\", \"actor\": \"worker\", \"stage\": \"worker_reply\", \"event\": \"begin\", \"utc\": \"2026-10-03T19:31:29.327609+00:00\", \"monotonic_ns\": 527973983284, \"boot_id\": \"15c5dffa-56c9-4924-b40b-ee079fd89ee9\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJtYXJrZXIiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvUzAzL25hdGl2ZS93b3JrZXIvZXZlbnRzLzUyNzk3Mzk4MzI4NF8wMmNmYTZhNWJlYmI0ZTkwOGFiMGVmNTRlNmIzNjk5ZC5qc29uIiwgInNjaGVtYSI6ICJmb3JnZS1jb21wYXJpc29uLW1hcmtlci8xIiwgImFjdG9yIjogIndvcmtlciIsICJzdGFnZSI6ICJ3b3JrZXJfcmVwbHkiLCAiZXZlbnQiOiAiYmVnaW4iLCAidXRjIjogIjIwMjYtMTAtMDNUMTk6MzE6MjkuMzI3NjA5KzAwOjAwIiwgIm1vbm90b25pY19ucyI6IDUyNzk3Mzk4MzI4NCwgImJvb3RfaWQiOiAiMTVjNWRmZmEtNTZjOS00OTI0LWI0MGItZWUwNzlmZDg5ZWU5In0K",
+  "stderr_base64": ""
+}

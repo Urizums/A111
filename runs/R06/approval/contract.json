@@ -1,0 +1,51 @@
+{
+  "schema": "local-demo-approval-contract/1",
+  "frozen_at": "2026-10-04T06:33:39.289777+00:00",
+  "scope": "Local sample policy, never real organizational authority or external effects",
+  "request_fields": [
+    "request_id",
+    "idempotency_key",
+    "ticket_id",
+    "expected_version",
+    "category",
+    "amount_cents",
+    "risk",
+    "evidence_complete",
+    "requester",
+    "reviewer"
+  ],
+  "policy": {
+    "schema": "local-demo-approval-policy/1",
+    "version": "demo-20261004",
+    "fictional_local_only": true,
+    "enabled": true,
+    "allowed_categories": [
+      "lighting",
+      "supplies"
+    ],
+    "max_amount_cents": 20000
+  },
+  "rules_order": [
+    "disabled => manual/policy_disabled",
+    "reviewer==requester => manual/self_review",
+    "amount_cents is null => manual/amount_unknown",
+    "category outside allowlist => manual/category_review",
+    "risk != low => manual/risk_review",
+    "evidence_complete is false => manual/evidence_missing",
+    "amount > maximum => manual/amount_review",
+    "otherwise => approved/sample_rule_match"
+  ],
+  "invariants": [
+    "SQLite durable transaction: decision and one audit row atomic",
+    "Identical key/content retry reuses original response and adds no audit; changed content/key identity conflict is rejected",
+    "Expected version guards updates: two real processes at same original version yield one commit and one conflict",
+    "Controlled direct-process crash before commit rolls back; retry uses same original request",
+    "Every outcome explains rule and fixed policy version; no actual approvals or notifications"
+  ],
+  "acceptance": [
+    "Original batch matches original explicit rules",
+    "Restart/idempotency/input validation/late rollback/cancellation-free concurrency preserve original state and audit",
+    "Successor local manual-review task actually starts on retained manual entries"
+  ],
+  "repair_limit": 2
+}

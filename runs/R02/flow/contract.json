@@ -1,0 +1,71 @@
+{
+  "goal": "Build a reusable library renewal agent flow. Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with explicit reasons. Preserve borrower_id and book_id. No external library actions. Strict shapes and stale-response rejection.",
+  "requirements": [
+    {
+      "id": "r_policy",
+      "text": "Implement stated renewal policy with exact IDs and reasons",
+      "origin": "explicit",
+      "basis": "Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2",
+      "criteria": [
+        "policy"
+      ]
+    },
+    {
+      "id": "r_protocol",
+      "text": "Strict shapes and stale-response rejection",
+      "origin": "explicit",
+      "basis": "Strict shapes and stale-response rejection",
+      "criteria": [
+        "protocol"
+      ]
+    }
+  ],
+  "decisions": {
+    "scope": {
+      "choice": "Reusable local renewal decision package; no account or library effects",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    },
+    "inputs": {
+      "choice": "borrower_id, book_id strings; days_overdue, holds, renewals_used integers",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    },
+    "outputs": {
+      "choice": "result object containing borrower_id, book_id, decision, renewal_days and reasons",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    },
+    "quality": {
+      "choice": "Exact explicit policy and reasons; malformed envelopes rejected",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    },
+    "tools_and_authority": {
+      "choice": "No external tools or requested filesystem writes by target node",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    },
+    "failures": {
+      "choice": "Input shape errors rejected before start; stale/invalid response leaves state unchanged",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    },
+    "state_and_handoffs": {
+      "choice": "One immutable input and one result in package checkpoint",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    },
+    "budget_and_stop": {
+      "choice": "One target node/visit; at most two factory repairs",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    },
+    "model_and_topology": {
+      "choice": "One actual host-default agent; one policy has no independent context boundary",
+      "reason": "Smallest complete local boundary for this explicit reusable flow",
+      "origin": "derived"
+    }
+  },
+  "blocking_questions": []
+}

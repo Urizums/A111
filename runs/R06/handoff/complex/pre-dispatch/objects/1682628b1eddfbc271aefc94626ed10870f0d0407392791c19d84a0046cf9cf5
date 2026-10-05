@@ -1,0 +1,39 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "pilot_complex",
+  "goal": "根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。",
+  "deliverable_kind": "software_system",
+  "requirements": [
+    {
+      "id": "req_source",
+      "text": "根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。",
+      "origin": "explicit",
+      "basis": "/workspace/A111/runs/R06/handoff/materials/complex.json",
+      "acceptance_ids": [
+        "a_original"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_original",
+      "assertion": "Original goal/material satisfied with actual output/runtime evidence, correct path selection and no budget reset",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "work",
+      "title": "根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_original"
+      ]
+    }
+  ]
+}

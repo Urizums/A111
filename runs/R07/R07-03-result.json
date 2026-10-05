@@ -1,0 +1,36 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R07-03",
+  "attempt_id": "R07-03-1",
+  "requirements_hash": "8f834f756bce56311fe8d0e80a351117699dc01b112e874a935f07a35d9416ea",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R07/validation/independent/result.json",
+        "runs/R07/validation/independent/outcomes.json",
+        "runs/R07/validation/independent/commands.jsonl",
+        "runs/R07/flow-challenge/host/restore-creation-receipt.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Independent C6 snapshot source-local behavior",
+    "hypothesis": "Staged no-replace restore is recoverable on write/publication failures",
+    "baseline": "C5 leaves a partial final directory on injected write failure",
+    "conditions": "New-context Luna, fixed C6 source, original temporary binary/Unicode/empty inputs, Linux filesystem",
+    "observations": "23 cases passed; 3 induced errors retained; no unexpected failures; source hash unchanged",
+    "limits": [
+      "Not provider-global, timing comparison, or cross-platform proof",
+      "Root dispatch binding was recorded after actual creation; no full C2 telemetry claim"
+    ],
+    "metrics": {
+      "cases_passed": 23,
+      "cases_failed": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Complete native business pilot and integrate"
+}

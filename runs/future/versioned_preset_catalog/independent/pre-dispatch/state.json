@@ -1,0 +1,73 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T06:25:41Z",
+  "updated_at": "2026-10-04T06:25:41Z",
+  "revision": 1,
+  "status": "active",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "catalog_validation",
+    "goal": "Independent target browser validation of three original presets",
+    "deliverable_kind": "scoped_change",
+    "requirements": [
+      {
+        "id": "req_work",
+        "text": "Verify original frozen acceptance in target browser",
+        "origin": "explicit",
+        "basis": "/workspace/A111/runs/R05/materials/catalog-validation-brief.md",
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_work",
+        "assertion": "All original required checks have valid runtime evidence within the repair budget",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "Verify original preset catalog",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "0e742551da34e3f813efbf132de5d5f80c3c77653e3a6d02b6754cfc8b02c69e",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "running",
+      "attempts": [
+        {
+          "attempt_id": "72760337c1f74450849eb621196963f3",
+          "plan_hash": "0e742551da34e3f813efbf132de5d5f80c3c77653e3a6d02b6754cfc8b02c69e",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_work"
+          ],
+          "started_at": "2026-10-04T06:25:41Z",
+          "finished_at": null,
+          "outcome": "running",
+          "reason": null,
+          "acceptance_results": null
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": "72760337c1f74450849eb621196963f3",
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

@@ -1,0 +1,22 @@
+{
+  "repair": 1,
+  "limit": 2,
+  "trigger": "independent/worker/mobile-nav-access-attempt-1.json",
+  "root_reproduction": "root-baseline/root-report.json",
+  "hypothesis": "Wrap narrow navigation and reserve focus-ring space so every keyboard-focused link stays visible without manual horizontal scrolling",
+  "source_baseline": "skills/design-product-experience/assets",
+  "candidate": "candidate/v1",
+  "unchanged": "HTML, sample input, main interaction logic and original source-lock",
+  "regression": "original 390px keyboard focus; original full preserved main journeys",
+  "new_cases": "320px and 680px navigation + 1440px desktop, reduced motion",
+  "files": [
+    {
+      "path": "runs/future/preset_browser_acceptance/candidate/v1/ui-presets.html",
+      "sha256": "1382fe6726dba5b81aaa91ba83e77de59bcefb910594e78e9b6122582c52d688"
+    },
+    {
+      "path": "runs/future/preset_browser_acceptance/candidate/v1/ui-presets.css",
+      "sha256": "55a74090dcc53e0b4185a69ae6683a871ad3947c843b5f09f2559bacaca80d58"
+    }
+  ]
+}

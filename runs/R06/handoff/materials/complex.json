@@ -1,0 +1,93 @@
+{
+  "goal": "根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。",
+  "application": "runs/R06/approval/approval.py",
+  "contract": "runs/R06/approval/contract.json",
+  "policy": "runs/R06/approval/policy.json",
+  "requests": [
+    {
+      "expected_version": 0,
+      "category": "lighting",
+      "amount_cents": 5000,
+      "risk": "low",
+      "evidence_complete": true,
+      "requester": "keeper",
+      "reviewer": "inspector",
+      "request_id": "batch-1",
+      "idempotency_key": "batch-key-1",
+      "ticket_id": "CASE-1"
+    },
+    {
+      "expected_version": 0,
+      "category": "structure",
+      "amount_cents": 5000,
+      "risk": "low",
+      "evidence_complete": true,
+      "requester": "keeper",
+      "reviewer": "inspector",
+      "request_id": "batch-2",
+      "idempotency_key": "batch-key-2",
+      "ticket_id": "CASE-2"
+    },
+    {
+      "expected_version": 0,
+      "category": "lighting",
+      "amount_cents": null,
+      "risk": "low",
+      "evidence_complete": true,
+      "requester": "keeper",
+      "reviewer": "inspector",
+      "request_id": "batch-3",
+      "idempotency_key": "batch-key-3",
+      "ticket_id": "CASE-3"
+    },
+    {
+      "expected_version": 0,
+      "category": "lighting",
+      "amount_cents": 5000,
+      "risk": "medium",
+      "evidence_complete": true,
+      "requester": "keeper",
+      "reviewer": "inspector",
+      "request_id": "batch-4",
+      "idempotency_key": "batch-key-4",
+      "ticket_id": "CASE-4"
+    },
+    {
+      "expected_version": 0,
+      "category": "lighting",
+      "amount_cents": 5000,
+      "risk": "low",
+      "evidence_complete": true,
+      "requester": "keeper",
+      "reviewer": "keeper",
+      "request_id": "batch-5",
+      "idempotency_key": "batch-key-5",
+      "ticket_id": "CASE-5"
+    },
+    {
+      "expected_version": 0,
+      "category": "lighting",
+      "amount_cents": 5000,
+      "risk": "low",
+      "evidence_complete": false,
+      "requester": "keeper",
+      "reviewer": "inspector",
+      "request_id": "batch-6",
+      "idempotency_key": "batch-key-6",
+      "ticket_id": "CASE-6"
+    },
+    {
+      "expected_version": 0,
+      "category": "lighting",
+      "amount_cents": 22000,
+      "risk": "low",
+      "evidence_complete": true,
+      "requester": "keeper",
+      "reviewer": "inspector",
+      "request_id": "batch-7",
+      "idempotency_key": "batch-key-7",
+      "ticket_id": "CASE-7"
+    }
+  ],
+  "successor_material": "manual-review-rules.json"
+}

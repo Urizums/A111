@@ -1,0 +1,47 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R04-01",
+  "attempt_id": "R04-01-1",
+  "requirements_hash": "a31260602137f10897c758a9d69232480a83a615d9a63b880a33bc537e086477",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R04/capability-probe/probe.json",
+        "runs/R04/capability-probe/environment-status.json",
+        "runs/R04/capability-probe/backlog-mapping.json",
+        "runs/R04/capability-probe/automation-create.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R04/capability-probe/probe.json",
+        "runs/R04/capability-probe/environment-status.json",
+        "runs/R04/capability-probe/backlog-mapping.json",
+        "runs/R04/capability-probe/automation-create.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Keep available capabilities progressing while specific live branches remain blocked",
+    "hypothesis": "A current probe prevents stale historical browser blockers from stopping unrelated work",
+    "baseline": "Six historical capabilities partly blocked or partial",
+    "conditions": "Actual current cloud status, commands, credential presence only and GitHub Actions read APIs",
+    "observations": "Python3.10/3.12, real browser, native workers and hourly scheduler available; no configured provider identity. Three historical live branches remain scoped, three can progress; added independent adapter-contract and simultaneous-client challenge. CI execution pending actual push/dispatch.",
+    "limits": [
+      "Scheduled future execution is unverified",
+      "No provider identity, global budget or natural-network conclusions",
+      "C1 remains inconclusive"
+    ],
+    "metrics": {
+      "historical_tasks_mapped": 6,
+      "independent_new_tasks": 2,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Start original preset browser target from frozen source and original journeys, then advance R05."
+}

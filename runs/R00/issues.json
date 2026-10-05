@@ -1,0 +1,145 @@
+{
+  "schema": "forge-revision-issues/1",
+  "date_utc": "2026-10-04",
+  "installer_functional_budget": {
+    "used": 2,
+    "limit": 2
+  },
+  "historical_failures_preserved": true,
+  "issues": [
+    {
+      "id": "R-I01",
+      "status": "fixed",
+      "problem": "Installed release reuse accepted drift",
+      "resolution": "Complete file/directory/hash/size comparison before activation; old installation retained on refusal.",
+      "corrections": 1,
+      "evidence": [
+        "runs/R00/delivery-before.json",
+        "runs/R00/delivery-after.json"
+      ]
+    },
+    {
+      "id": "R-I02",
+      "status": "fixed",
+      "problem": "Git/manifest input parent symlinks and noncanonical paths",
+      "resolution": "Reject all symlink components and unsafe names; O_NOFOLLOW reads; exact manifest hash/length.",
+      "corrections": 1,
+      "evidence": [
+        "runs/R00/delivery-before.json",
+        "runs/R00/delivery-after.json"
+      ]
+    },
+    {
+      "id": "R-I03",
+      "status": "fixed",
+      "problem": "Copied standalone Python3.10 venv executable cannot locate encodings",
+      "resolution": "POSIX venv symlinks=True. Second and final installer functional repair.",
+      "corrections": 2,
+      "evidence": [
+        "runs/R00/aux-regression-310.json",
+        "runs/R00/aux-regression-310-repair-2.json"
+      ]
+    },
+    {
+      "id": "R-I04",
+      "status": "invalid_run_preserved_stable_retest_passed",
+      "problem": "Coordinator modified a manifest-covered document during final3.12 installer test",
+      "resolution": "Freeze stable source and rerun into a new log; guard correctly refused mismatch. No third product repair.",
+      "corrections": 0,
+      "evidence": [
+        "runs/R00/delivery-final-312.json",
+        "runs/R00/delivery-stable-final-312.json"
+      ]
+    },
+    {
+      "id": "R-I05",
+      "status": "fixed_coordinator_record",
+      "problem": "Flow factory delivery rejected assessment path in reserved assessment field",
+      "resolution": "Preserve attempt1 and use assessment_path once.",
+      "corrections": 1,
+      "evidence": [
+        "runs/R02/flow/verify-command.json",
+        "runs/R02/flow/verify-repair-1.json"
+      ]
+    },
+    {
+      "id": "R-I06",
+      "status": "fixed_evidence_location",
+      "problem": "Fresh handoff successor draft under challenges changed release coverage",
+      "resolution": "Move unchanged evidence draft under runs; retain initial failure.",
+      "corrections": 1,
+      "evidence": [
+        "runs/R02/handoff/worker/handoff-report.md",
+        "runs/R02/handoff/root-review.json"
+      ]
+    },
+    {
+      "id": "R-I07",
+      "status": "incomplete_budget_exhausted",
+      "problem": "Independent UI harness failed after two corrections",
+      "resolution": "No further repair/rerun/replacement. Bridge blocked; worker reported partial accurately. Root remaining-state observations have separate same-author attribution.",
+      "corrections": 2,
+      "evidence": [
+        "runs/R03/ui-independent/worker/results.json",
+        "runs/R03/ui-independent/decision.json",
+        "runs/R03/ui-followup/observations.json"
+      ]
+    },
+    {
+      "id": "R-I08",
+      "status": "fixed_coordinator_record",
+      "problem": "Root bridge decisions used fields forbidden for selected outcome",
+      "resolution": "Research done must use reason=null; UI blocked must use results=null. Preserve rejected records and one correction each.",
+      "corrections": 1,
+      "evidence": [
+        "runs/R01/sqlite-research/commit-command.json",
+        "runs/R01/sqlite-research/commit-repair-1.json",
+        "runs/R03/ui-independent/commit-command.json",
+        "runs/R03/ui-independent/commit-repair-1.json"
+      ]
+    },
+    {
+      "id": "R-I09",
+      "status": "advice",
+      "problem": "Ticket search button wraps two Chinese characters",
+      "resolution": "Functional UI remains usable; later visual iteration may widen button. Do not change frozen source for cosmetic advice.",
+      "corrections": 0,
+      "evidence": [
+        "runs/R03/ui/root-visual-review.json"
+      ]
+    },
+    {
+      "id": "R-I10",
+      "status": "blocked_live_branches",
+      "problem": "Provider credentials/global observation/natural external events unavailable",
+      "resolution": "Resume affected live branches with authorized endpoint/identity/telemetry/sandbox; independent ready work continues.",
+      "corrections": 0,
+      "evidence": [
+        "runs/R04/capability-probe/environment-status.json",
+        "runs/R04/capability-probe/backlog-mapping.json"
+      ]
+    },
+    {
+      "id": "R-I11",
+      "status": "scheduled_execution_unverified",
+      "problem": "Hourly continuation configured but future executor not observed",
+      "resolution": "Future run probes checkout/exec/native capabilities; cannot claim permanent background R&D.",
+      "corrections": 0,
+      "evidence": [
+        "runs/R04/capability-probe/automation-create.json"
+      ]
+    },
+    {
+      "id": "R-I12",
+      "status": "historical_input_reconstruction_gap",
+      "problem": "Three original fresh-handoff derived state files were not separately retained before the worker updated them",
+      "resolution": "Retain initial hashes, full command records, final states and 1695 recoverable input files/delta map. Do not claim exact replay of all1698 input bytes.",
+      "corrections": 0,
+      "evidence": [
+        "runs/R02/handoff/snapshot.json",
+        "runs/R02/handoff/reconstruction-map.json",
+        "runs/R02/handoff/export-manifest.json"
+      ]
+    }
+  ]
+}

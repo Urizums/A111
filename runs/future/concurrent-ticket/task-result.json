@@ -1,0 +1,46 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "X01-concurrent_ticket_edits",
+  "attempt_id": "X01-concurrent_ticket_edits-2",
+  "requirements_hash": "557473cdeacb496401d6521a3684f44ba551ee8ff129d463b3d8388146917272",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/future/concurrent-ticket/validation-repair-1-command.json",
+        "runs/future/concurrent-ticket/validation-repair-1/report.json",
+        "runs/future/concurrent-ticket/visual-review.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/future/concurrent-ticket/validation-repair-1-command.json",
+        "runs/future/concurrent-ticket/validation-repair-1/report.json",
+        "runs/future/concurrent-ticket/visual-review.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Prevent lost updates under same-version simultaneous clients",
+    "hypothesis": "BEGIN IMMEDIATE plus expected version permits exactly one change/history row",
+    "baseline": "Sequential stale update had passed; simultaneous clients unverified",
+    "conditions": "Two real urllib clients and two browser contexts, barrier release, same original fixture, real loopback backend and SQLite; browser interception forwards unchanged actual requests/responses",
+    "observations": "HTTP and browser races each produce one200/one409; one new history row each, version2 state, persistent after restart; loser UI shows latest state and explicit conflict. One harness callback repair retained.",
+    "limits": [
+      "One race per client type, not load/performance proof",
+      "Root validation is author-dependent",
+      "No external/provider guarantees"
+    ],
+    "metrics": {
+      "races": 2,
+      "harness_repairs": 1,
+      "product_repairs": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Integrate final acceptance results without publishing until the user gate is fully satisfied."
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/R02/worker-recovery/verify_recovery.py",
+    "post-crash",
+    "--database",
+    "runs/R02/worker-recovery/recovery.sqlite3",
+    "--baseline",
+    "runs/R02/worker-recovery/baseline-snapshot.json",
+    "--crash-record",
+    "runs/R02/worker-recovery/04-crash-command.json",
+    "--output",
+    "runs/R02/worker-recovery/post-crash-result.json"
+  ],
+  "cwd": "/workspace/A111/runs/R02/handoff/worker/checkout",
+  "begin": {
+    "utc": "2026-10-04T05:04:06.662525+00:00",
+    "monotonic_ns": 34885308899719,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:04:06.692611+00:00",
+    "monotonic_ns": 34885338986640,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\"after_crash_database_sha256\": \"3b1bf290873add72045ff301b8bb0b7f18cc05d08fe3225d1cf4b108b65fd0b5\", \"baseline_database_sha256\": \"3b1bf290873add72045ff301b8bb0b7f18cc05d08fe3225d1cf4b108b65fd0b5\", \"integrity_check\": \"ok\", \"passed\": true, \"same_rows_as_committed_baseline\": true, \"worker_record\": {\"exit_code\": 73, \"pid\": 5397, \"transaction_active\": true, \"uncommitted_mutations\": 6}}\n",
+  "stderr": "",
+  "stdout_base64": "eyJhZnRlcl9jcmFzaF9kYXRhYmFzZV9zaGEyNTYiOiAiM2IxYmYyOTA4NzNhZGQ3MjA0NWZmMzAxYjhiYjBiN2YxOGNjMDVkMDhmZTMyMjVkMWNmNGIxMDhiNjVmZDBiNSIsICJiYXNlbGluZV9kYXRhYmFzZV9zaGEyNTYiOiAiM2IxYmYyOTA4NzNhZGQ3MjA0NWZmMzAxYjhiYjBiN2YxOGNjMDVkMDhmZTMyMjVkMWNmNGIxMDhiNjVmZDBiNSIsICJpbnRlZ3JpdHlfY2hlY2siOiAib2siLCAicGFzc2VkIjogdHJ1ZSwgInNhbWVfcm93c19hc19jb21taXR0ZWRfYmFzZWxpbmUiOiB0cnVlLCAid29ya2VyX3JlY29yZCI6IHsiZXhpdF9jb2RlIjogNzMsICJwaWQiOiA1Mzk3LCAidHJhbnNhY3Rpb25fYWN0aXZlIjogdHJ1ZSwgInVuY29tbWl0dGVkX211dGF0aW9ucyI6IDZ9fQo=",
+  "stderr_base64": ""
+}

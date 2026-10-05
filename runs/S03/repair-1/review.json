@@ -1,0 +1,332 @@
+{
+  "schema": "forge-native-source-review/1",
+  "checks": [
+    {
+      "id": "source_exact_integer_fen_and_ids",
+      "pass": true,
+      "evidence": [
+        "expenses.csv",
+        "worker/totals.json"
+      ]
+    },
+    {
+      "id": "chinese_explanation_present",
+      "pass": true,
+      "evidence": [
+        "worker/totals.md"
+      ]
+    },
+    {
+      "id": "reply_done",
+      "pass": true,
+      "evidence": [
+        "worker/reply.json"
+      ]
+    },
+    {
+      "id": "artifact_hashes",
+      "pass": true,
+      "evidence": [
+        "worker/reply.json"
+      ]
+    },
+    {
+      "id": "first_target_exact_bootstrap",
+      "pass": true,
+      "evidence": [
+        "worker/logs/000-bootstrap.json"
+      ]
+    },
+    {
+      "id": "target_budget",
+      "pass": true,
+      "evidence": [
+        "13 targets / 40"
+      ]
+    },
+    {
+      "id": "raw_streams_actor_boot_order",
+      "pass": true,
+      "evidence": [
+        "worker/logs/000-bootstrap.json",
+        "worker/logs/001-work-begin.json",
+        "worker/logs/002-compute-totals.json",
+        "worker/logs/003-work-end.json",
+        "worker/logs/004-hostdraft-help.json",
+        "worker/logs/005-hostdraft-reply-help.json",
+        "worker/logs/006-hostdraft-source.json",
+        "worker/logs/007-reply-validation-source.json",
+        "worker/logs/008-reply-begin.json",
+        "worker/logs/009-incomplete-reply-draft.json",
+        "worker/logs/010-build-final-reply.json",
+        "worker/logs/011-check-reply.json",
+        "worker/logs/012-reply-end.json"
+      ]
+    },
+    {
+      "id": "worker_work_markers",
+      "pass": true,
+      "evidence": [
+        "worker/events/966858011068_9915583e6df94858b22bbcd3138d1cae.json",
+        "worker/events/1029298772053_70be3c0b9a8042ab812a0c8eeced9858.json"
+      ]
+    },
+    {
+      "id": "worker_reply_markers",
+      "pass": true,
+      "evidence": [
+        "worker/events/1109001881558_be900c027b554fbb93199016c2fe491d.json",
+        "worker/events/1183761845300_9d54d258ff7543c6b1548c6ef157656f.json"
+      ]
+    },
+    {
+      "id": "all_markers_are_captured_targets",
+      "pass": true,
+      "evidence": [
+        "worker/events/1029298772053_70be3c0b9a8042ab812a0c8eeced9858.json",
+        "worker/events/1109001881558_be900c027b554fbb93199016c2fe491d.json",
+        "worker/events/1183761845300_9d54d258ff7543c6b1548c6ef157656f.json",
+        "worker/events/966858011068_9915583e6df94858b22bbcd3138d1cae.json"
+      ]
+    },
+    {
+      "id": "preflight_before_worker_reply_end",
+      "pass": true,
+      "evidence": [
+        "worker/logs/"
+      ]
+    },
+    {
+      "id": "incomplete_draft_retained",
+      "pass": true,
+      "evidence": [
+        "worker/reply-draft.json"
+      ]
+    },
+    {
+      "id": "operations_disclosure",
+      "pass": true,
+      "evidence": [
+        "worker/operations.json"
+      ]
+    },
+    {
+      "id": "actual_receipt_create-return.json",
+      "pass": true,
+      "evidence": [
+        "create-return.json"
+      ]
+    },
+    {
+      "id": "actual_receipt_query-1-return.json",
+      "pass": true,
+      "evidence": [
+        "query-1-return.json"
+      ]
+    },
+    {
+      "id": "actual_receipt_query-2-return.json",
+      "pass": true,
+      "evidence": [
+        "query-2-return.json"
+      ]
+    }
+  ],
+  "passed": true,
+  "expected": {
+    "row_count": 6,
+    "total_fen": 3630,
+    "categories": [
+      {
+        "category": "交通",
+        "total_fen": 1020,
+        "ids": [
+          "N01",
+          "N03"
+        ]
+      },
+      {
+        "category": "办公",
+        "total_fen": 10,
+        "ids": [
+          "N04",
+          "N06"
+        ]
+      },
+      {
+        "category": "餐饮",
+        "total_fen": 2600,
+        "ids": [
+          "N02",
+          "N05"
+        ]
+      }
+    ]
+  },
+  "worker_stages": {
+    "worker_work": {
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "worker",
+        "stage": "worker_work",
+        "event": "begin",
+        "utc": "2026-10-03T19:38:48.211634+00:00",
+        "monotonic_ns": 966858011068,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "worker",
+        "stage": "worker_work",
+        "event": "end",
+        "utc": "2026-10-03T19:39:50.652396+00:00",
+        "monotonic_ns": 1029298772053,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "elapsed_seconds": 62.440760985
+    },
+    "worker_reply": {
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "worker",
+        "stage": "worker_reply",
+        "event": "begin",
+        "utc": "2026-10-03T19:41:10.355504+00:00",
+        "monotonic_ns": 1109001881558,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "worker",
+        "stage": "worker_reply",
+        "event": "end",
+        "utc": "2026-10-03T19:42:25.115467+00:00",
+        "monotonic_ns": 1183761845300,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "elapsed_seconds": 74.759963742
+    }
+  },
+  "captured_worker_targets": 13,
+  "failed_worker_targets": [],
+  "drafts": [
+    "worker/reply-draft.json"
+  ],
+  "scope": "Root source recomputation and recorded-conformance audit. Instruction-only tool/scope restrictions; no full host trace, security containment or performance claim.",
+  "operations": {
+    "schema_version": "worker-operations/1",
+    "task_id": "summarize",
+    "write_scope": "/workspace/A111/runs/S03/repair-1/worker",
+    "file_tool_writes": [
+      {
+        "path": "/workspace/A111/runs/S03/repair-1/worker/summarize.py",
+        "operation": "created with apply_patch"
+      },
+      {
+        "path": "/workspace/A111/runs/S03/repair-1/worker/operations.json",
+        "operation": "created with apply_patch"
+      }
+    ],
+    "generated_files": [
+      {
+        "path": "/workspace/A111/runs/S03/repair-1/worker/totals.json",
+        "by": "/workspace/A111/runs/S03/repair-1/worker/logs/002-compute-totals.json"
+      },
+      {
+        "path": "/workspace/A111/runs/S03/repair-1/worker/totals.md",
+        "by": "/workspace/A111/runs/S03/repair-1/worker/logs/002-compute-totals.json"
+      },
+      {
+        "path": "/workspace/A111/runs/S03/repair-1/worker/reply-draft.json",
+        "by": "/workspace/A111/runs/S03/repair-1/worker/logs/009-incomplete-reply-draft.json"
+      },
+      {
+        "path": "/workspace/A111/runs/S03/repair-1/worker/reply.json",
+        "by": "/workspace/A111/runs/S03/repair-1/worker/logs/010-build-final-reply.json"
+      }
+    ],
+    "captured_commands": [
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/000-bootstrap.json",
+        "actor": "worker",
+        "target": "Python bootstrap reader for the immutable request, recording protocol, bound expenses.csv, and AGENTS.md"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/001-work-begin.json",
+        "actor": "worker",
+        "target": "capture.py mark --events /workspace/A111/runs/S03/repair-1/worker/events --actor worker --stage worker_work --event begin"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/002-compute-totals.json",
+        "actor": "worker",
+        "target": "python3 /workspace/A111/runs/S03/repair-1/worker/summarize.py"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/003-work-end.json",
+        "actor": "worker",
+        "target": "capture.py mark --events /workspace/A111/runs/S03/repair-1/worker/events --actor worker --stage worker_work --event end"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/004-hostdraft-help.json",
+        "actor": "worker",
+        "target": "python3 /workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/hostdraft.py --help"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/005-hostdraft-reply-help.json",
+        "actor": "worker",
+        "target": "python3 /workspace/A111/runs/S02/candidate/forge-agent-flow/scripts/hostdraft.py reply --help"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/006-hostdraft-source.json",
+        "actor": "worker",
+        "target": "Python reader of public hostdraft.py source"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/007-reply-validation-source.json",
+        "actor": "worker",
+        "target": "Python reader of public hostbridge.py check_reply_content source"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/008-reply-begin.json",
+        "actor": "worker",
+        "target": "capture.py mark --events /workspace/A111/runs/S03/repair-1/worker/events --actor worker --stage worker_reply --event begin"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/009-incomplete-reply-draft.json",
+        "actor": "worker",
+        "target": "hostdraft.py reply --request /workspace/A111/runs/S03/repair-1/job/request.json --artifact /workspace/A111/runs/S03/repair-1/worker/totals.json --artifact /workspace/A111/runs/S03/repair-1/worker/totals.md --out /workspace/A111/runs/S03/repair-1/worker/reply-draft.json"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/010-build-final-reply.json",
+        "actor": "worker",
+        "target": "Python writer of worker/reply.json using the request identifiers and SHA-256 of totals.json, totals.md, and operations.json"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/011-check-reply.json",
+        "actor": "worker",
+        "target": "hostdraft.py check-reply --request /workspace/A111/runs/S03/repair-1/job/request.json --reply /workspace/A111/runs/S03/repair-1/worker/reply.json"
+      },
+      {
+        "record": "/workspace/A111/runs/S03/repair-1/worker/logs/012-reply-end.json",
+        "actor": "worker",
+        "target": "capture.py mark --events /workspace/A111/runs/S03/repair-1/worker/events --actor worker --stage worker_reply --event end"
+      }
+    ],
+    "correction_attempts": [],
+    "failed_targets": [],
+    "tool_errors": [
+      {
+        "event": "The first functions.exec wrapper source had a JavaScript syntax error before launching any shell target; the exact bootstrap target then ran successfully in 000-bootstrap.json."
+      }
+    ],
+    "measurement": {
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "provider_tokens": null,
+      "provider_cost": null,
+      "internal_identity": null
+    }
+  },
+  "provider_tokens": null,
+  "provider_cost": null
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/A111",
+  "argv": [
+    "python3",
+    "-c",
+    "import json;from pathlib import Path;r=Path(\"runs/S03/repair-1/worker\");v=json.loads((r/\"operations.json\").read_text());actual={p.name for p in (r/\"logs\").glob(\"*.json\")};declared={Path(c[\"record\"]).name for c in v[\"captured_commands\"]};assert actual==declared;assert all(Path(x[\"path\"]).resolve().is_relative_to(r.resolve()) for x in v[\"file_tool_writes\"]);print(json.dumps({\"targets\":len(actual),\"disclosed_tool_errors\":v[\"tool_errors\"],\"worker_reported_corrections\":len(v[\"correction_attempts\"]),\"root_counted_corrections\":len(v[\"tool_errors\"])+len(v[\"correction_attempts\"]),\"correction_limit\":2},indent=2))"
+  ],
+  "begin": {
+    "utc": "2026-10-03T19:44:01.222436+00:00",
+    "monotonic_ns": 1279868813543,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:44:01.244803+00:00",
+    "monotonic_ns": 1279891178962,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.022365419,
+  "stdout": "{\n  \"targets\": 13,\n  \"disclosed_tool_errors\": [\n    {\n      \"event\": \"The first functions.exec wrapper source had a JavaScript syntax error before launching any shell target; the exact bootstrap target then ran successfully in 000-bootstrap.json.\"\n    }\n  ],\n  \"worker_reported_corrections\": 0,\n  \"root_counted_corrections\": 1,\n  \"correction_limit\": 2\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJ0YXJnZXRzIjogMTMsCiAgImRpc2Nsb3NlZF90b29sX2Vycm9ycyI6IFsKICAgIHsKICAgICAgImV2ZW50IjogIlRoZSBmaXJzdCBmdW5jdGlvbnMuZXhlYyB3cmFwcGVyIHNvdXJjZSBoYWQgYSBKYXZhU2NyaXB0IHN5bnRheCBlcnJvciBiZWZvcmUgbGF1bmNoaW5nIGFueSBzaGVsbCB0YXJnZXQ7IHRoZSBleGFjdCBib290c3RyYXAgdGFyZ2V0IHRoZW4gcmFuIHN1Y2Nlc3NmdWxseSBpbiAwMDAtYm9vdHN0cmFwLmpzb24uIgogICAgfQogIF0sCiAgIndvcmtlcl9yZXBvcnRlZF9jb3JyZWN0aW9ucyI6IDAsCiAgInJvb3RfY291bnRlZF9jb3JyZWN0aW9ucyI6IDEsCiAgImNvcnJlY3Rpb25fbGltaXQiOiAyCn0K",
+  "stderr_base64": ""
+}

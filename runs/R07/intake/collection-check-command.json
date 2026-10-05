@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib,hashlib; r=pathlib.Path('.'); p=json.loads((r/'runs/R07/intake/provenance.json').read_text()); assert all(hashlib.sha256((r/x['snapshot_path']).read_bytes()).hexdigest()==x['sha256'] for x in p['original_files']); print('11 original files preserved; inventory files present:',(r/'runs/R07/inventory/inventory.json').is_file())"
+  ],
+  "cwd": "/workspace/scratch/73714494ad2f/forge-takeover-r07",
+  "begin": {
+    "utc": "2026-10-04T17:40:34.077624+00:00",
+    "monotonic_ns": 1143109705301,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T17:40:34.110982+00:00",
+    "monotonic_ns": 1143143060875,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "exit_code": 0,
+  "stdout": "11 original files preserved; inventory files present: True\n",
+  "stderr": "",
+  "stdout_base64": "MTEgb3JpZ2luYWwgZmlsZXMgcHJlc2VydmVkOyBpbnZlbnRvcnkgZmlsZXMgcHJlc2VudDogVHJ1ZQo=",
+  "stderr_base64": ""
+}

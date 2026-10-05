@@ -1,0 +1,101 @@
+{
+  "schema": "smoke-evidence-manifest/1",
+  "plan_hash": "8f44a074ed82b4435f0a57cd097828034825e3e9103c4c206be699eb3f2f4fe0",
+  "candidate_id": "example-candidate-build",
+  "baseline_id": "example-original-build",
+  "entries": [
+    {
+      "ref": "evidence/create_item/round-1",
+      "purpose": "run",
+      "path": "artifacts/create_item-r1.txt",
+      "sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+      "media_type": "text/plain",
+      "candidate_id": "example-candidate-build",
+      "journey_id": "create_item",
+      "round": 1,
+      "checks": [
+        {"kind": "contains_binding"},
+        {"kind": "contains", "value": "New item contains the exact entered content"}
+      ]
+    },
+    {
+      "ref": "evidence/create_item/round-2",
+      "purpose": "run",
+      "path": "artifacts/create_item-r2.json",
+      "sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+      "media_type": "application/json",
+      "candidate_id": "example-candidate-build",
+      "journey_id": "create_item",
+      "round": 2,
+      "checks": [
+        {"kind": "json_equals", "field": "observation", "value": "reopened_item_matches"}
+      ]
+    },
+    {
+      "ref": "evidence/recover_invalid/round-1",
+      "purpose": "run",
+      "path": "artifacts/recover_invalid-r1.txt",
+      "sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "media_type": "text/plain",
+      "candidate_id": "example-candidate-build",
+      "journey_id": "recover_invalid",
+      "round": 1,
+      "checks": [
+        {"kind": "contains_binding"},
+        {"kind": "contains", "value": "Description is preserved"}
+      ]
+    },
+    {
+      "ref": "evidence/recover_invalid/round-2",
+      "purpose": "run",
+      "path": "artifacts/recover_invalid-r2.json",
+      "sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+      "media_type": "application/json",
+      "candidate_id": "example-candidate-build",
+      "journey_id": "recover_invalid",
+      "round": 2,
+      "checks": [
+        {"kind": "json_equals", "field": "observation", "value": "draft_survived_correction"}
+      ]
+    },
+    {
+      "ref": "evidence/reopen_repeat/round-1",
+      "purpose": "run",
+      "path": "artifacts/reopen_repeat-r1.txt",
+      "sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+      "media_type": "text/plain",
+      "candidate_id": "example-candidate-build",
+      "journey_id": "reopen_repeat",
+      "round": 1,
+      "checks": [
+        {"kind": "contains_binding"},
+        {"kind": "contains", "value": "Editing item two never changes item three"}
+      ]
+    },
+    {
+      "ref": "evidence/reopen_repeat/round-2",
+      "purpose": "run",
+      "path": "artifacts/reopen_repeat-r2.json",
+      "sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+      "media_type": "application/json",
+      "candidate_id": "example-candidate-build",
+      "journey_id": "reopen_repeat",
+      "round": 2,
+      "checks": [
+        {"kind": "json_equals", "field": "observation", "value": "stable_identity_after_repeat"}
+      ]
+    },
+    {
+      "ref": "evidence/saved_items_regression",
+      "purpose": "regression",
+      "path": "artifacts/saved_items-regression.json",
+      "sha256": "7777777777777777777777777777777777777777777777777777777777777777",
+      "media_type": "application/json",
+      "candidate_id": "example-candidate-build",
+      "behavior_id": "saved_items",
+      "checks": [
+        {"kind": "json_equals", "field": "observation", "value": "saved_items_preserved"}
+      ]
+    }
+  ]
+}

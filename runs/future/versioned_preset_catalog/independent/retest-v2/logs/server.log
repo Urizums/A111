@@ -1,0 +1,9 @@
+Server command: `python -m http.server 8766 --bind 127.0.0.1 --directory /workspace/A111/runs/future/versioned_preset_catalog/candidate/v2`
+Bound to loopback only; stopped with Ctrl-C after the single v2 run.
+Observed local requests:
+127.0.0.1 - - [04/Oct/2026 06:56:33] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 06:56:33] "GET /styles.css HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 06:56:33] "GET /app.js HTTP/1.1" 200 -
+127.0.0.1 - - [04/Oct/2026 06:56:34] "GET / HTTP/1.1" 304 -
+127.0.0.1 - - [04/Oct/2026 06:56:35] "GET / HTTP/1.1" 304 -
+Shutdown output: `Keyboard interrupt received, exiting.`

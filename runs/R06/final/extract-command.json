@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path;import tarfile,json;root=Path(\"/workspace/R06-extracted-candidate\");root.mkdir(exist_ok=False);archive=tarfile.open(\"/workspace/deliveries/A111-R06-candidate-20261004.tar.gz\");archive.extractall(root,filter=\"data\");print(json.dumps({\"extracted_members\":len(archive.getmembers()),\"root\":str(root)}));archive.close()"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T07:06:03.885286+00:00",
+    "monotonic_ns": 42202531661340,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T07:06:04.382239+00:00",
+    "monotonic_ns": 42203028621768,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\"extracted_members\": 3460, \"root\": \"/workspace/R06-extracted-candidate\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJleHRyYWN0ZWRfbWVtYmVycyI6IDM0NjAsICJyb290IjogIi93b3Jrc3BhY2UvUjA2LWV4dHJhY3RlZC1jYW5kaWRhdGUifQo=",
+  "stderr_base64": ""
+}

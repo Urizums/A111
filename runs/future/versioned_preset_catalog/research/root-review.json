@@ -1,0 +1,54 @@
+{
+  "schema": "forge-research-review/1",
+  "outcome": "pass",
+  "checks": [
+    {
+      "key": "refero_styles_lead",
+      "http_status": 200,
+      "hash_matches": true
+    },
+    {
+      "key": "wcag_use_of_color",
+      "http_status": 200,
+      "hash_matches": true
+    },
+    {
+      "key": "wcag_contrast_minimum",
+      "http_status": 200,
+      "hash_matches": true
+    },
+    {
+      "key": "wcag_focus_visible",
+      "http_status": 200,
+      "hash_matches": true
+    },
+    {
+      "key": "mdn_reduced_motion",
+      "http_status": 200,
+      "hash_matches": true
+    },
+    {
+      "key": "mdn_dialog",
+      "http_status": 200,
+      "hash_matches": true
+    },
+    {
+      "key": "android_system_bars",
+      "http_status": 200,
+      "hash_matches": true
+    }
+  ],
+  "source_scope": "6 primary sources plus 1 Refero discovery lead; original proposals, no asset/code reuse; target acceptance pending",
+  "corrections_used": 2,
+  "limits": [
+    "Guidance and numerical contrast are not target UI proof",
+    "No physical Android or assistive technology claim"
+  ],
+  "adopted": [
+    "paired semantic colors",
+    "non-color status text",
+    "native dialog with focus checks",
+    "static reduced-motion behavior",
+    "task-specific responsive layouts"
+  ]
+}

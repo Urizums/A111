@@ -1,11 +1,12 @@
 """Negative checks for accidentally accepting a false handoff transition."""
 import copy
+import hashlib
 import json
 from pathlib import Path
 import tempfile
 import unittest
 
-from verify_handoff import validate_phase, safe_path
+from verify_handoff import validate_checkpoint, validate_phase, validate_continuation, safe_path
 
 
 class HandoffInvariants(unittest.TestCase):
@@ -63,6 +64,72 @@ class HandoffInvariants(unittest.TestCase):
     def test_done_without_evidence_rejected(self):
         self.phase['tasks'][0]['status']='done'
         self.assertTrue(any('done without evidence' in x for x in validate_phase(self.phase,self.root)))
+
+    def test_historical_transition_resolves_archived_successor(self):
+        for t in self.phase['tasks']:
+            t.update(status='done', evidence=['actual.json'])
+        successor=copy.deepcopy(self.phase);successor['phase_id']='P2'
+        frontier=copy.deepcopy(successor);frontier['phase_id']='P3'
+        (self.root/'state/history').mkdir(parents=True)
+        (self.root/'state/phase-todo.json').write_text(json.dumps(frontier))
+        (self.root/'state/history/P2-todo.json').write_text(json.dumps(successor))
+        self.phase['tasks'][-1]['transition']={'next_phase_id':'P2','todo_path':'state/phase-todo.json',
+                                             'first_task_id':'a','start_evidence':['actual.json']}
+        self.assertEqual(validate_phase(self.phase,self.root), [])
+        (self.root/'state/history/P2-todo.json').unlink()
+        self.assertTrue(any('transition:' in e for e in validate_phase(self.phase,self.root)))
+
+    def test_delivered_checkpoint_requires_terminal_phase_and_evidence(self):
+        checkpoint=dict(active_phase='P1', next_task_id=None, lifecycle='delivered', delivery_evidence=['actual.json'])
+        self.assertTrue(validate_checkpoint(checkpoint, self.phase))
+        self.phase['tasks'][0]['status']='done'
+        self.phase['tasks'][-1]['status']='cancelled'
+        self.assertEqual(validate_checkpoint(checkpoint, self.phase), [])
+        checkpoint['delivery_evidence']=[]
+        self.assertTrue(validate_checkpoint(checkpoint, self.phase))
+
+    def test_unfinished_checkpoint_cannot_select_no_task(self):
+        self.assertTrue(validate_checkpoint(dict(active_phase='P1', next_task_id=None), self.phase))
+
+    def test_blocked_frontier_can_have_no_ready_task_without_finishing_goal(self):
+        checkpoint=dict(active_phase='P1',next_task_id=None,lifecycle='active',project_goal_status='active')
+        self.phase['tasks'][0].update(status='blocked',blocker='Required capability absent')
+        self.assertEqual(validate_checkpoint(checkpoint,self.phase),[])
+        self.phase['tasks'][0].update(status='planned',blocker=None)
+        self.assertTrue(validate_checkpoint(checkpoint,self.phase))
+        for task in self.phase['tasks']:task['status']='done'
+        self.assertTrue(validate_checkpoint(checkpoint,self.phase))
+
+    def test_started_successor_may_later_block_but_requires_original_receipt(self):
+        for task in self.phase['tasks']:task.update(status='done',evidence=['actual.json'])
+        nxt=copy.deepcopy(self.phase);nxt['phase_id']='P2';nxt['tasks'][0]['status']='blocked'
+        (self.root/'next.json').write_text(json.dumps(nxt))
+        self.phase['tasks'][-1]['transition']={'next_phase_id':'P2','todo_path':'next.json',
+                                             'first_task_id':'a','start_evidence':['actual.json']}
+        (self.root/'state').mkdir()
+        ref={'path':'actual.json','sha256':hashlib.sha256((self.root/'actual.json').read_bytes()).hexdigest()}
+        state={'tasks':[{'id':'a','attempts':[{'start_evidence':ref}]}]}
+        (self.root/'state/continuation.json').write_text(json.dumps(state))
+        self.assertEqual(validate_phase(self.phase,self.root),[])
+        (self.root/'actual.json').write_text('tampered')
+        self.assertTrue(any('not actually started' in e for e in validate_phase(self.phase,self.root)))
+        state['tasks'][0]['attempts']=[]
+        (self.root/'state/continuation.json').write_text(json.dumps(state))
+        self.assertTrue(any('not actually started' in e for e in validate_phase(self.phase,self.root)))
+
+    def test_delivery_cannot_hide_ready_continuation(self):
+        task=dict(id='ready', queue='capabilities', category='test', priority=1,
+                  owner='root', write_paths=['runs/'], acceptance=['real result'],
+                  inputs=[], depends_on=[], status='planned', next_action='execute',
+                  evidence=[], attempts=[], repairs_used=0, repair_limit=2, blocker=None)
+        state=dict(project_goal=dict(status='active'),deliveries=dict(D00=dict(status='delivered')),
+                   tasks=[task],execution={})
+        checkpoint=dict(project_goal_status='active',next_queue_task_id=None,lifecycle='delivered')
+        errors=validate_continuation(checkpoint,state,self.root)
+        self.assertTrue(any('next queue task' in e for e in errors))
+        self.assertTrue(any('must not terminate' in e for e in errors))
+        checkpoint.update(next_queue_task_id='ready',lifecycle='active')
+        self.assertEqual(validate_continuation(checkpoint,state,self.root),[])
 
 
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,11 @@
+{
+  "issue_id": "ISSUE-003",
+  "type": "continuation_validator",
+  "source_clause": "D02/D03 and AGENTS phase transition: old transitions must remain valid when current phase advances.",
+  "before": "runs/cloud/handoff-before-fix.py",
+  "reproduction": "runs/cloud/frontier-before-fix.json",
+  "fix": "Resolve historical successor from state/history/<phase>-todo.json when active frontier moves; validate all archived phase graphs and versioned candidate hashes.",
+  "post_fix": "runs/cloud/frontier-after-fix.json",
+  "round": 1,
+  "limit": 2
+}

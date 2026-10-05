@@ -1,0 +1,36 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R08-01",
+  "attempt_id": "R08-01-1",
+  "requirements_hash": "e77abdd7d53af76a0979c92d2d4320ce37d45b093269f8ea05bbe907f0b3cc50",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R08/capability-probe/command.json",
+        "runs/R08/capability-probe/probe.py",
+        "runs/R07/flow-challenge/worker/native/create-receipt.json",
+        "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Current host capability boundary",
+    "hypothesis": "Concrete available capabilities identify an executable next frontier",
+    "baseline": "Stopped collaborator lacked unspecified original-host capabilities",
+    "conditions": "Actual Python/Git/lock checks in this checkout and actual native call evidence",
+    "observations": "Python3.12/Git/Linux renameat2 symbol available;92 C6 files match; native child creation/completion observed; timer disabled; no authorized provider endpoint supplied for this scope",
+    "limits": [
+      "Not evidence about a different host",
+      "Not a provider/global budget/cold-start test",
+      "Python3.10 not installed locally"
+    ],
+    "metrics": {
+      "candidate_files": 92,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R08-02: author a new short-entry candidate, then fresh Luna validation on new frozen materials"
+}

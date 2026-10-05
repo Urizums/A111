@@ -1,0 +1,24 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/R02/flow/verify_flow.py"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T05:01:38.544074+00:00",
+    "monotonic_ns": 34737190449256,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:01:38.628379+00:00",
+    "monotonic_ns": 34737274756946,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/workspace/A111/runs/R02/flow/verify_flow.py\", line 35, in <module>\n    d=factoryctl.pending(s);save(label+'-dispatch.json',d);r=dict(invocation_id=d['invocation_id'],outcome='ok',artifacts=artifact,evidence=['runs/R02/flow/case-results.json']);save(label+'-response.json',r);s=factoryctl.advance(s,r);save('factory-'+label+'-complete.json',s)\n                                                                                                                                                                                                                  ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/workspace/A111/skills/forge-agent-flow/scripts/factoryctl.py\", line 376, in advance\n    raise flow.FlowError(f\"Delivery {key} cannot override the recorded binding\")\nflowctl.FlowError: Delivery assessment cannot override the recorded binding\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIi93b3Jrc3BhY2UvQTExMS9ydW5zL1IwMi9mbG93L3ZlcmlmeV9mbG93LnB5IiwgbGluZSAzNSwgaW4gPG1vZHVsZT4KICAgIGQ9ZmFjdG9yeWN0bC5wZW5kaW5nKHMpO3NhdmUobGFiZWwrJy1kaXNwYXRjaC5qc29uJyxkKTtyPWRpY3QoaW52b2NhdGlvbl9pZD1kWydpbnZvY2F0aW9uX2lkJ10sb3V0Y29tZT0nb2snLGFydGlmYWN0cz1hcnRpZmFjdCxldmlkZW5jZT1bJ3J1bnMvUjAyL2Zsb3cvY2FzZS1yZXN1bHRzLmpzb24nXSk7c2F2ZShsYWJlbCsnLXJlc3BvbnNlLmpzb24nLHIpO3M9ZmFjdG9yeWN0bC5hZHZhbmNlKHMscik7c2F2ZSgnZmFjdG9yeS0nK2xhYmVsKyctY29tcGxldGUuanNvbicscykKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvd29ya3NwYWNlL0ExMTEvc2tpbGxzL2ZvcmdlLWFnZW50LWZsb3cvc2NyaXB0cy9mYWN0b3J5Y3RsLnB5IiwgbGluZSAzNzYsIGluIGFkdmFuY2UKICAgIHJhaXNlIGZsb3cuRmxvd0Vycm9yKGYiRGVsaXZlcnkge2tleX0gY2Fubm90IG92ZXJyaWRlIHRoZSByZWNvcmRlZCBiaW5kaW5nIikKZmxvd2N0bC5GbG93RXJyb3I6IERlbGl2ZXJ5IGFzc2Vzc21lbnQgY2Fubm90IG92ZXJyaWRlIHRoZSByZWNvcmRlZCBiaW5kaW5nCg=="
+}

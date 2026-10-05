@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/hostbridge.py",
+    "commit",
+    "--job",
+    "/workspace/A111/runs/future/provider-adapter/independent/job",
+    "--decision",
+    "/workspace/A111/runs/future/provider-adapter/independent/decision.json"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:37:35.886713+00:00",
+    "monotonic_ns": 40494533090948,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:37:35.934892+00:00",
+    "monotonic_ns": 40494581268883,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"phase\": \"committed\",\n  \"job_id\": \"job_02c11b105ef541c483e347936b63f3e3\",\n  \"attempt_id\": \"4fd0215e67934ac2b5c27b321ec9d333\",\n  \"request_hash\": \"0216b471166f3949aed973f70c70452699e4e901786bff84a6793d0d150c9114\",\n  \"action\": \"reconcile_effects_before_new_project_attempt\",\n  \"worker\": \"/root/luna_forge_4fd0215e6793\",\n  \"commit\": {\n    \"decision_ref\": {\n      \"path\": \"/workspace/A111/runs/future/provider-adapter/independent/decision.json\",\n      \"sha256\": \"16eca23f490d997fc8cb0d3312ca1bd20cd584d726f77c6f10c7fa77a0e1bbb8\"\n    },\n    \"target_result\": {\n      \"task_id\": \"work\",\n      \"attempt_id\": \"4fd0215e67934ac2b5c27b321ec9d333\",\n      \"outcome\": \"blocked\",\n      \"task_status\": \"blocked\",\n      \"reason\": \"Independent validator admitted three distinct failure-driven corrections against a maximum of two. Post-limit observations cannot satisfy this acceptance; no further rerun authorized.\",\n      \"status\": \"active\",\n      \"revision\": 2,\n      \"plan_hash\": \"a6c9dc691b15a450c64c62175958c37a4520a315147185776739bfcc8e96c8b3\",\n      \"evaluation_plan_hash\": null\n    },\n    \"worker_task_outcome\": \"done\",\n    \"coordinator_outcome\": \"blocked\",\n    \"recorded_at\": \"2026-10-04T06:37:35Z\"\n  },\n  \"coordinator_outcome\": \"blocked\",\n  \"automatic_host_call\": false,\n  \"internal_model_identity_verified\": false,\n  \"tokens\": null,\n  \"cost\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwaGFzZSI6ICJjb21taXR0ZWQiLAogICJqb2JfaWQiOiAiam9iXzAyYzExYjEwNWVmNTQxYzQ4M2UzNDc5MzZiNjNmM2UzIiwKICAiYXR0ZW1wdF9pZCI6ICI0ZmQwMjE1ZTY3OTM0YWMyYjVjMjdiMzIxZWM5ZDMzMyIsCiAgInJlcXVlc3RfaGFzaCI6ICIwMjE2YjQ3MTE2NmYzOTQ5YWVkOTczZjcwYzcwNDUyNjk5ZTRlOTAxNzg2YmZmODRhNjc5M2QwZDE1MGM5MTE0IiwKICAiYWN0aW9uIjogInJlY29uY2lsZV9lZmZlY3RzX2JlZm9yZV9uZXdfcHJvamVjdF9hdHRlbXB0IiwKICAid29ya2VyIjogIi9yb290L2x1bmFfZm9yZ2VfNGZkMDIxNWU2NzkzIiwKICAiY29tbWl0IjogewogICAgImRlY2lzaW9uX3JlZiI6IHsKICAgICAgInBhdGgiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvZnV0dXJlL3Byb3ZpZGVyLWFkYXB0ZXIvaW5kZXBlbmRlbnQvZGVjaXNpb24uanNvbiIsCiAgICAgICJzaGEyNTYiOiAiMTZlY2EyM2Y0OTBkOTk3ZmM4Y2IwZDMzMTJjYTFiZDIwY2Q1ODRkNzI2Zjc3YzZmMTBjN2ZhNzdhMGUxYmJiOCIKICAgIH0sCiAgICAidGFyZ2V0X3Jlc3VsdCI6IHsKICAgICAgInRhc2tfaWQiOiAid29yayIsCiAgICAgICJhdHRlbXB0X2lkIjogIjRmZDAyMTVlNjc5MzRhYzJiNWMyN2IzMjFlYzlkMzMzIiwKICAgICAgIm91dGNvbWUiOiAiYmxvY2tlZCIsCiAgICAgICJ0YXNrX3N0YXR1cyI6ICJibG9ja2VkIiwKICAgICAgInJlYXNvbiI6ICJJbmRlcGVuZGVudCB2YWxpZGF0b3IgYWRtaXR0ZWQgdGhyZWUgZGlzdGluY3QgZmFpbHVyZS1kcml2ZW4gY29ycmVjdGlvbnMgYWdhaW5zdCBhIG1heGltdW0gb2YgdHdvLiBQb3N0LWxpbWl0IG9ic2VydmF0aW9ucyBjYW5ub3Qgc2F0aXNmeSB0aGlzIGFjY2VwdGFuY2U7IG5vIGZ1cnRoZXIgcmVydW4gYXV0aG9yaXplZC4iLAogICAgICAic3RhdHVzIjogImFjdGl2ZSIsCiAgICAgICJyZXZpc2lvbiI6IDIsCiAgICAgICJwbGFuX2hhc2giOiAiYTZjOWRjNjkxYjE1YTQ1MGM2NGM2MjE3NTk1OGMzN2E0NTIwYTMxNTE0NzE4NTc3NjczOWJmY2M4ZTk2YzhiMyIsCiAgICAgICJldmFsdWF0aW9uX3BsYW5faGFzaCI6IG51bGwKICAgIH0sCiAgICAid29ya2VyX3Rhc2tfb3V0Y29tZSI6ICJkb25lIiwKICAgICJjb29yZGluYXRvcl9vdXRjb21lIjogImJsb2NrZWQiLAogICAgInJlY29yZGVkX2F0IjogIjIwMjYtMTAtMDRUMDY6Mzc6MzVaIgogIH0sCiAgImNvb3JkaW5hdG9yX291dGNvbWUiOiAiYmxvY2tlZCIsCiAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwKICAiaW50ZXJuYWxfbW9kZWxfaWRlbnRpdHlfdmVyaWZpZWQiOiBmYWxzZSwKICAidG9rZW5zIjogbnVsbCwKICAiY29zdCI6IG51bGwKfQo=",
+  "stderr_base64": ""
+}

@@ -1,9 +1,9 @@
-# GitHub / Work 接续提示词
+# 在新上下文接续
 
-请在你可读写的 checkout 中继续这个 Agent Forge 项目。先读取仓库根目录 AGENTS.md、START_HERE.md、docs/PROJECT_STATUS.md、state/checkpoint.json 和 state/phase-todo.json，运行 scripts/verify_handoff.py。读取 prompts/CONTINUOUS_ITERATION.md 并据此持续推进。
+请从这个 checkout 的 AGENTS.md、START_HERE.md 和 state/checkpoint.json 开始。用户目标是持续研发、扩展和实际效果验证；交付 PR 不终止长期目标。运行 verify_handoff.py 与 continuation.py --root . next，读取所选任务的原材料、验收、写域和预算，从当前前沿继续，不重开历史阶段。
 
-下一工作是 S01-02：根据 runs/S01/audit-plan.json 的冻结范围，对 evidence/c1/ 截止原件完成尚未结束的离线审计。遵守 C1 Study_Plan.md 的原要求。Root 负责架构/skill/修复，可用的 Luna 负责独立验证，只给它原要求与原材料，不给标准答案。若 Luna/原生工具不可用，先做可完成的 Root 工作并保留独立验证待办。
+使用 START_HERE.md 指定并锁定的 C5 候选。先核对 coordinator lease、原生未决任务及 state/publication-gate.json，不并发修改共享状态。简单一次性任务直接交付，完整系统走 program，明确的复用 agent flow 才走 package。Root 写核心和 skill；Luna 做研究、脚手架与独立验证。只使用真实可用工具，保留 first failure、所有修正和未知指标，不把 preflight 当语义验收。
 
-不重跑旧八个 worker，不读取后来 live 文件，不对历史 ID 新建查询/receive/commit。历史记录绝对路径用 docs/EVIDENCE_MAP.md 映射为当前证据；不要重写原件。
+完成下一就绪项并检查实际效果，然后真正执行其后续任务的首步、保存命令返回，更新双队列和阶段。连续推进能力队列与不同领域/形态/复杂度的挑战队列；阻塞只影响相关分支，不等用户再发 continue。详情见 CONTINUOUS_ITERATION.md。停止会话时留下可复核 checkpoint，准确说明是否存在实际后台接续。
 
-完成 S01 实质任务后，最后一项“启动下一阶段任务”必须创建 S02 TODO，并实际启动 Root 修订采集边界/receipt/写域合同的首项，记录证据。持续执行到可核验结果；不把常规阶段检查当作用户确认门。停止时保存能让下一 agent 直接继续的 checkpoint。
+全部必需验收、冒烟以及新问题修复复测通过后才可提交或推送 dev；禁止单批发布、跳过独立验收、重置失败额度。上游 PR 自动随 dev 更新，不合并上游。没有可用执行宿主或状态未变化时保持安静，保留恢复条件，不宣称后台代码在持续执行。

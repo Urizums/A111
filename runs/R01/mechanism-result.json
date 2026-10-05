@@ -1,0 +1,47 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R01-01",
+  "attempt_id": "R01-01-1",
+  "requirements_hash": "e37b409e6adc17acf0ebc0e933b406fb0a844d848718727ad7db5b43126e7e0e",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R00/continuation-tests-initial.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R00/continuation-tests-initial.json"
+      ]
+    },
+    {
+      "id": "a3",
+      "status": "pass",
+      "evidence": [
+        "runs/R00/continuation-tests-initial.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Keep the long-term goal active after delivery and preserve verifiable continuation",
+    "hypothesis": "Separate goal/delivery state plus evidence-bound tasks prevents delivery from discarding ready work",
+    "baseline": "D00 checkpoint delivered with next_task_id null while historical capability work remained",
+    "conditions": "8 local behavior tests, including blocked independent branch, stale results, failed-attempt retention and real-start transition guard",
+    "observations": "All 8 checks pass; C3 has no automatic model dispatch yet",
+    "limits": [
+      "Tests are local controller fixtures; no claim of provider dispatch or generalization gain"
+    ],
+    "metrics": {
+      "tests_passed": 8,
+      "provider_tokens": null,
+      "provider_cost": null,
+      "speed_gain": null,
+      "user_questions": 0
+    }
+  },
+  "next_action": "Execute the one-off calendar task on its frozen materials."
+}

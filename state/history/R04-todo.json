@@ -1,0 +1,64 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R04",
+  "goal": "Progress the long-term R&D loop with actual evidence.",
+  "tasks": [
+    {
+      "id": "R04-01",
+      "title": "复核可用运行时并冻结下一轮扩展",
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "runs/R04/capability-probe/"
+      ],
+      "acceptance": [
+        "Probe current provider/browser/background/CI capabilities without disclosing credentials",
+        "Map each remaining historical capability to evidence, specific blocker or ready next experiment"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R04/capability-probe/task-result.json",
+        "runs/R04/capability-probe/probe.json",
+        "runs/R04/capability-probe/environment-status.json",
+        "runs/R04/capability-probe/backlog-mapping.json",
+        "runs/R04/capability-probe/automation-create.json",
+        "runs/R04/capability-probe/probe.json",
+        "runs/R04/capability-probe/environment-status.json",
+        "runs/R04/capability-probe/backlog-mapping.json",
+        "runs/R04/capability-probe/automation-create.json",
+        "runs/R04/capability-probe/first-step.json"
+      ],
+      "blocker": null,
+      "next_action": "Start original preset browser target from frozen source and original journeys, then advance R05."
+    },
+    {
+      "id": "R04-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R04-01"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "Next phase first task has actual recorded execution; preserve current phase archive"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/future/preset_browser_acceptance/first-step-command.json"
+      ],
+      "blocker": null,
+      "next_action": "Continue the already started successor task.",
+      "transition": {
+        "next_phase_id": "R05",
+        "todo_path": "state/phase-todo.json",
+        "first_task_id": "BACKLOG-preset_browser_acceptance",
+        "start_evidence": [
+          "runs/future/preset_browser_acceptance/first-step-command.json"
+        ]
+      }
+    }
+  ]
+}

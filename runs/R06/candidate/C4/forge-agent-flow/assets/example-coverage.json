@@ -1,0 +1,64 @@
+{
+  "schema": "forge-coverage/1",
+  "plan_hash": "a2db48e66f6c79144a4d6def95a1e9093316a56dff29eedee8af634818c856e8",
+  "entries": [
+    {
+      "requirement_id": "quote_fidelity",
+      "criterion_id": "quotes",
+      "scope": "Exact quotation behavior for action-bearing and non-action notes.",
+      "applicability": {
+        "negative": {"applies": true, "reason": "Suggestion-only notes must not create a quote or action."},
+        "recovery": {"applies": false, "reason": "This extraction runs once and has no recovery path."},
+        "reuse": {"applies": false, "reason": "No prior extraction result is supplied for reuse."},
+        "authorization": {"applies": false, "reason": "The flow only reads supplied notes and has no gated external effect."},
+        "ui_feedback": {"applies": false, "reason": "The plan checks backend artifacts and declares no user interface."},
+        "explanation": {"applies": false, "reason": "Quote fidelity is checked against exact source text, without a rationale artifact."}
+      },
+      "obligations": [
+        {
+          "id": "quote_success",
+          "kind": "success",
+          "case_ids": ["explicit_actions"],
+          "input_variant": "Notes contain two explicit actions and one optional suggestion.",
+          "expected_fields": ["/evidence/exact_source_quotes"]
+        },
+        {
+          "id": "quote_negative",
+          "kind": "negative",
+          "case_ids": ["no_action_items"],
+          "input_variant": "Notes contain only discussion and a suggestion, with no committed action.",
+          "expected_fields": ["/evidence/expected_source_quotes"]
+        }
+      ]
+    },
+    {
+      "requirement_id": "commitment_precision",
+      "criterion_id": "commitments",
+      "scope": "Include explicit action items and exclude suggestions or discussion.",
+      "applicability": {
+        "negative": {"applies": true, "reason": "Suggestion-only notes must produce no action items."},
+        "recovery": {"applies": false, "reason": "No failure-and-retry lifecycle is part of extraction."},
+        "reuse": {"applies": false, "reason": "No existing extraction artifact can be reused."},
+        "authorization": {"applies": false, "reason": "Extraction has no external write or approval gate."},
+        "ui_feedback": {"applies": false, "reason": "This backend plan has no declared UI surface."},
+        "explanation": {"applies": false, "reason": "The criterion checks action inclusion and exclusion, not a rationale field."}
+      },
+      "obligations": [
+        {
+          "id": "commitments_success",
+          "kind": "success",
+          "case_ids": ["explicit_actions"],
+          "input_variant": "The notes state two concrete review or delivery actions.",
+          "expected_fields": ["/artifacts/actions"]
+        },
+        {
+          "id": "suggestion_exclusion",
+          "kind": "negative",
+          "case_ids": ["no_action_items"],
+          "input_variant": "The notes contain possible future work but no explicit commitment.",
+          "expected_fields": ["/artifacts/actions"]
+        }
+      ]
+    }
+  ]
+}

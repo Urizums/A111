@@ -1,0 +1,10 @@
+{
+  "issue_id": "ISSUE-002",
+  "type": "test_harness",
+  "observed": "CLI package advance returns status/steps, while outputs remain in checkpoint flow_state.artifacts; smoke harness read a nonexistent outputs field.",
+  "evidence": "runs/cloud/smoke-initial/report.json",
+  "fix": "Inspect durable checkpoint actions and completed status; do not change package behavior or acceptance.",
+  "candidate_before": "runs/cloud/smoke-before-fix.py",
+  "repair_round": 1,
+  "repair_limit": 2
+}

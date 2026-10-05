@@ -1,0 +1,187 @@
+{
+  "schema": "forge-source-review/1",
+  "sample": "P1B",
+  "source": {
+    "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+    "sha256": "3cd188d229c9e007398636f9a732e6cce2a381c5588de3a0932c688980ac9140"
+  },
+  "policy": "Process requests in listed order. An interval is half-open [start,end); start>=end is reject/invalid_interval. Unknown tool is review/unknown_tool. Any overlap with an existing booking or earlier accepted request on that tool is reject/conflict. Otherwise accept/free and add it to bookings. Apply this precedence exactly; no real bookings are made.",
+  "expected": {
+    "decisions": [
+      {
+        "id": "m1",
+        "decision": "accept",
+        "reason": "free"
+      },
+      {
+        "id": "m2",
+        "decision": "reject",
+        "reason": "conflict"
+      },
+      {
+        "id": "m3",
+        "decision": "accept",
+        "reason": "free"
+      },
+      {
+        "id": "m4",
+        "decision": "reject",
+        "reason": "conflict"
+      },
+      {
+        "id": "m5",
+        "decision": "review",
+        "reason": "unknown_tool"
+      },
+      {
+        "id": "m6",
+        "decision": "reject",
+        "reason": "invalid_interval"
+      }
+    ]
+  },
+  "observed": {
+    "decisions": [
+      {
+        "id": "m1",
+        "decision": "accept",
+        "reason": "free"
+      },
+      {
+        "id": "m2",
+        "decision": "reject",
+        "reason": "conflict"
+      },
+      {
+        "id": "m3",
+        "decision": "accept",
+        "reason": "free"
+      },
+      {
+        "id": "m4",
+        "decision": "reject",
+        "reason": "conflict"
+      },
+      {
+        "id": "m5",
+        "decision": "review",
+        "reason": "unknown_tool"
+      },
+      {
+        "id": "m6",
+        "decision": "reject",
+        "reason": "invalid_interval"
+      }
+    ]
+  },
+  "checks": {
+    "exact_original_decisions": true,
+    "reply_matches_business": true,
+    "bound_inputs_unchanged": true,
+    "artifact_hashes": true,
+    "captured_bootstrap_first": true,
+    "captured_preflight": true,
+    "separate_incomplete_draft": true,
+    "reported_repair_budget": true
+  },
+  "business_pass": true,
+  "corrections": {
+    "corrections": [
+      {
+        "number": 1,
+        "paths": [
+          "business.json",
+          "corrections.json"
+        ],
+        "explanation": "The initial artifact write appended the two literal characters backslash and n after each JSON document, so both files were invalid JSON. The exact initial files are preserved in attempts/first-business.json and attempts/first-corrections.json; the artifacts were then rewritten with a real trailing newline.",
+        "initial_sha256": {
+          "business.json": "73c18b55408941d05bd31a75e49d3493d4a368b0315f771640cc80052ca3b839",
+          "corrections.json": "767494163628380520e7df1702a38a4980be73834cf47bd44bf613d6b9439ed0"
+        },
+        "preserved_attempt_paths": [
+          "attempts/first-business.json",
+          "attempts/first-corrections.json"
+        ]
+      }
+    ],
+    "preserved_original_paths": [
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/request.json",
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P1.json",
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+      "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py",
+      "attempts/first-business.json",
+      "attempts/first-corrections.json"
+    ],
+    "explanation": "Applied the supplied reservation policy in request order. The accepted m1 and m3 intervals are considered when processing later requests. One artifact serialization correction is recorded above.",
+    "parent_questions": [],
+    "unavailable_metrics": {
+      "model_active_time": null,
+      "provider_identity": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "worker_logs": [
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/001-bootstrap.json",
+      "sha256": "aee7122f8e1f2cf1eb1874f38908a35188ff8c13617cf0b782ede436a52c9ba6"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/002-work-begin.json",
+      "sha256": "15f8a780f8877197b8a8f09a8bf8d0f37e0e06762654fd431453a22c06a9fa4f"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/003-request-read.json",
+      "sha256": "4ba7f2e5b96fbf459aeaa3e8151bb2a041b27b8bd0654c09a24a1c5345c49867"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/004-artifacts-write.json",
+      "sha256": "e6fb09254314a322bf56b3d1ac9c68047f119b66da90e7b0a571e02a7cc88a38"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/005-artifact-inspect.json",
+      "sha256": "3b674bd8c32948f1dae5a1ed649f8ecf4f5914c0ce9ee220530916f5fe5cfed6"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/006-artifact-correction.json",
+      "sha256": "45ca0f3985abe7a8ebb919e324d00eefd0b23edf7d28dd76a18fab9e8814ad4c"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/007-artifact-check.json",
+      "sha256": "38426e420006e1aa83e10c0546a90c28c4a2740fc0ec952b5aed4aa5a21a8dba"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/008-work-end.json",
+      "sha256": "5963be7f132fc69fa91e255aa7eea135c1058d1bd7367750458b2ae29cbd4562"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/009-reply-begin.json",
+      "sha256": "bca7dd50776db963c59a3e99ab66d360d9668fc2565177f7779bf97fd3c9617f"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/010-hostdraft-reply.json",
+      "sha256": "657d154d18cf7181941768ad2859dbe5f2dc4f3af97bdf4ec081ad23c80d3a18"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/011-draft-read.json",
+      "sha256": "f671163f316a892e709c10cd24890dc9ba7fcdb08cff7cf60f6849c4d6a723be"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/012-reply-write.json",
+      "sha256": "ab652a60ae32001d2ff106bb1df1d903ed3a471ecfac8a95987f2bfb5d652720"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/013-preflight.json",
+      "sha256": "712485a9683f5a3684c3d4ee9046fa81792ca39dff344cf288c51840e25153d1"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/logs/014-reply-end.json",
+      "sha256": "96ae574451f600e37d0db6e2d521daea2b70183d1f9538f44ec26e64a91a90cd"
+    }
+  ],
+  "limits": [
+    "Root is independent of business workers but authored protocol and grader.",
+    "Recorded subprocess inventory is cooperative, not authenticated completeness or provider compute time.",
+    "Original source inspection and grader authoring precede measured decision construction."
+  ]
+}

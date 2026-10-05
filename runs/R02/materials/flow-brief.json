@@ -1,0 +1,29 @@
+{
+  "category": "agent_flow",
+  "domain": "图书续借",
+  "goal": "Reusable package routes renewal requests from explicit policy; never contacts a library.",
+  "inputs": [
+    "borrower_id",
+    "book_id",
+    "days_overdue",
+    "holds",
+    "renewals_used"
+  ],
+  "policy": {
+    "max_renewals": 2,
+    "renewal_days": 14,
+    "decision": "renew only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with reasons"
+  },
+  "cases": [
+    "eligible renewal",
+    "other reader hold",
+    "overdue request",
+    "renewal quota reached"
+  ],
+  "acceptance": [
+    "strict input/output shapes",
+    "all cases execute through original package controller",
+    "stale reply rejected without state mutation",
+    "no real library effects"
+  ]
+}

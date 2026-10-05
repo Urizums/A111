@@ -1,0 +1,300 @@
+{
+  "schema": "forge-native-source-review/1",
+  "checks": [
+    {
+      "id": "source_exact_integer_fen_and_ids",
+      "pass": true,
+      "evidence": [
+        "expenses.csv",
+        "worker/totals.json"
+      ]
+    },
+    {
+      "id": "chinese_explanation_present",
+      "pass": true,
+      "evidence": [
+        "worker/totals.md"
+      ]
+    },
+    {
+      "id": "reply_done",
+      "pass": true,
+      "evidence": [
+        "worker/reply.json"
+      ]
+    },
+    {
+      "id": "artifact_hashes",
+      "pass": true,
+      "evidence": [
+        "worker/reply.json"
+      ]
+    },
+    {
+      "id": "first_target_exact_bootstrap",
+      "pass": true,
+      "evidence": [
+        "worker/logs/000-bootstrap.json"
+      ]
+    },
+    {
+      "id": "target_budget",
+      "pass": true,
+      "evidence": [
+        "11 targets / 40"
+      ]
+    },
+    {
+      "id": "raw_streams_actor_boot_order",
+      "pass": true,
+      "evidence": [
+        "worker/logs/000-bootstrap.json",
+        "worker/logs/001-hostdraft-source.json",
+        "worker/logs/002-work-begin.json",
+        "worker/logs/003-compute.json",
+        "worker/logs/004-work-end.json",
+        "worker/logs/005-hostbridge-source.json",
+        "worker/logs/006-reply-begin.json",
+        "worker/logs/007-hostdraft-reply.json",
+        "worker/logs/008-write-final-reply.json",
+        "worker/logs/009-check-reply.json",
+        "worker/logs/010-reply-end.json"
+      ]
+    },
+    {
+      "id": "worker_work_markers",
+      "pass": true,
+      "evidence": [
+        "worker/events/427478654898_11b8042fe35d4f08845a1c810e89d31a.json",
+        "worker/events/519324706584_78aa60f47a58424ea46e4174e8d02412.json"
+      ]
+    },
+    {
+      "id": "worker_reply_markers",
+      "pass": true,
+      "evidence": [
+        "worker/events/527973983284_02cfa6a5bebb4e908ab0ef54e6b3699d.json",
+        "worker/events/625714905655_eb2a583ccb84467e95107b2f30dc4591.json"
+      ]
+    },
+    {
+      "id": "all_markers_are_captured_targets",
+      "pass": true,
+      "evidence": [
+        "worker/events/427478654898_11b8042fe35d4f08845a1c810e89d31a.json",
+        "worker/events/519324706584_78aa60f47a58424ea46e4174e8d02412.json",
+        "worker/events/527973983284_02cfa6a5bebb4e908ab0ef54e6b3699d.json",
+        "worker/events/625714905655_eb2a583ccb84467e95107b2f30dc4591.json"
+      ]
+    },
+    {
+      "id": "preflight_before_worker_reply_end",
+      "pass": true,
+      "evidence": [
+        "worker/logs/"
+      ]
+    },
+    {
+      "id": "incomplete_draft_retained",
+      "pass": true,
+      "evidence": [
+        "worker/incomplete-reply.json"
+      ]
+    },
+    {
+      "id": "operations_disclosure",
+      "pass": true,
+      "evidence": [
+        "worker/operations.json"
+      ]
+    },
+    {
+      "id": "actual_receipt_create-return.json",
+      "pass": true,
+      "evidence": [
+        "create-return.json"
+      ]
+    },
+    {
+      "id": "actual_receipt_query-1-return.json",
+      "pass": true,
+      "evidence": [
+        "query-1-return.json"
+      ]
+    },
+    {
+      "id": "actual_receipt_query-2-return.json",
+      "pass": true,
+      "evidence": [
+        "query-2-return.json"
+      ]
+    }
+  ],
+  "passed": true,
+  "expected": {
+    "row_count": 6,
+    "total_fen": 3630,
+    "categories": [
+      {
+        "category": "交通",
+        "total_fen": 1020,
+        "ids": [
+          "N01",
+          "N03"
+        ]
+      },
+      {
+        "category": "办公",
+        "total_fen": 10,
+        "ids": [
+          "N04",
+          "N06"
+        ]
+      },
+      {
+        "category": "餐饮",
+        "total_fen": 2600,
+        "ids": [
+          "N02",
+          "N05"
+        ]
+      }
+    ]
+  },
+  "worker_stages": {
+    "worker_work": {
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "worker",
+        "stage": "worker_work",
+        "event": "begin",
+        "utc": "2026-10-03T19:29:48.832278+00:00",
+        "monotonic_ns": 427478654898,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "worker",
+        "stage": "worker_work",
+        "event": "end",
+        "utc": "2026-10-03T19:31:20.678329+00:00",
+        "monotonic_ns": 519324706584,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "elapsed_seconds": 91.846051686
+    },
+    "worker_reply": {
+      "begin": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "worker",
+        "stage": "worker_reply",
+        "event": "begin",
+        "utc": "2026-10-03T19:31:29.327609+00:00",
+        "monotonic_ns": 527973983284,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "end": {
+        "schema": "forge-comparison-marker/1",
+        "actor": "worker",
+        "stage": "worker_reply",
+        "event": "end",
+        "utc": "2026-10-03T19:33:07.068528+00:00",
+        "monotonic_ns": 625714905655,
+        "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+      },
+      "elapsed_seconds": 97.740922371
+    }
+  },
+  "captured_worker_targets": 11,
+  "failed_worker_targets": [],
+  "drafts": [
+    "worker/incomplete-reply.json"
+  ],
+  "scope": "Root source recomputation and recorded-conformance audit. Instruction-only tool/scope restrictions; no full host trace, security containment or performance claim.",
+  "operations": {
+    "schema_version": "forge-worker-operations/1",
+    "actor": "worker",
+    "file_tool_writes": [
+      {
+        "path": "/workspace/A111/runs/S03/native/worker/compute.py",
+        "tool": "apply_patch",
+        "purpose": "Author the exact-decimal CSV aggregation and totals output writer."
+      },
+      {
+        "path": "/workspace/A111/runs/S03/native/worker/operations.json",
+        "tool": "apply_patch",
+        "purpose": "Initial creation of the operations record."
+      },
+      {
+        "path": "/workspace/A111/runs/S03/native/worker/finalize_reply.py",
+        "tool": "apply_patch",
+        "purpose": "Author the separate final reply from the immutable request and current artifact hashes."
+      },
+      {
+        "path": "/workspace/A111/runs/S03/native/worker/operations.json",
+        "tool": "apply_patch",
+        "purpose": "Finalize the operations record before creating the retained draft and final reply."
+      }
+    ],
+    "captured_commands": [
+      {
+        "record": "logs/000-bootstrap.json",
+        "target": "python3 -c: read and print request.json, recording-protocol.md, expenses.csv, and AGENTS.md"
+      },
+      {
+        "record": "logs/001-hostdraft-source.json",
+        "target": "python3 -c: read and print public scripts/hostdraft.py"
+      },
+      {
+        "record": "logs/002-work-begin.json",
+        "target": "capture.py mark --events worker/events --actor worker --stage worker_work --event begin"
+      },
+      {
+        "record": "logs/003-compute.json",
+        "target": "python3 worker/compute.py"
+      },
+      {
+        "record": "logs/004-work-end.json",
+        "target": "capture.py mark --events worker/events --actor worker --stage worker_work --event end"
+      },
+      {
+        "record": "logs/005-hostbridge-source.json",
+        "target": "python3 -c: read and print public scripts/hostbridge.py"
+      },
+      {
+        "record": "logs/006-reply-begin.json",
+        "target": "capture.py mark --events worker/events --actor worker --stage worker_reply --event begin"
+      },
+      {
+        "record": "logs/007-hostdraft-reply.json",
+        "target": "hostdraft.py reply --request request.json --artifact totals.json --artifact totals.md --artifact operations.json --out incomplete-reply.json"
+      },
+      {
+        "record": "logs/008-write-final-reply.json",
+        "target": "python3 worker/finalize_reply.py"
+      },
+      {
+        "record": "logs/009-check-reply.json",
+        "target": "hostdraft.py check-reply --request request.json --reply reply.json"
+      },
+      {
+        "record": "logs/010-reply-end.json",
+        "target": "capture.py mark --events worker/events --actor worker --stage worker_reply --event end"
+      }
+    ],
+    "correction_attempts": [],
+    "failed_captured_commands": [],
+    "candidate": {
+      "first_authored_outputs": [
+        "/workspace/A111/runs/S03/native/worker/totals.json",
+        "/workspace/A111/runs/S03/native/worker/totals.md"
+      ],
+      "correction_attempt_count": 0
+    },
+    "provider_tokens": null,
+    "provider_cost": null,
+    "internal_identity": null
+  },
+  "provider_tokens": null,
+  "provider_cost": null
+}

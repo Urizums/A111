@@ -1,0 +1,73 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T05:05:37Z",
+  "updated_at": "2026-10-04T05:25:53Z",
+  "revision": 2,
+  "status": "active",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "ui-independent",
+    "goal": "Independently validate the actual support desk browser journey and visual states",
+    "deliverable_kind": "scoped_change",
+    "requirements": [
+      {
+        "id": "req_work",
+        "text": "Independently validate the actual support desk browser journey and visual states",
+        "origin": "explicit",
+        "basis": "runs/R00/ui-brief.md",
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_work",
+        "assertion": "Assigned original requirements are covered by actual source and runtime evidence with limits disclosed.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "Independently validate the actual support desk browser journey and visual states",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "2b435af73eff86d8dcc5235135ab41fed34e5a01504abbd18abf33b94c716d41",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt_id": "1173fec900eb413b843fcbe8a1d83b77",
+          "plan_hash": "2b435af73eff86d8dcc5235135ab41fed34e5a01504abbd18abf33b94c716d41",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_work"
+          ],
+          "started_at": "2026-10-04T05:05:37Z",
+          "finished_at": "2026-10-04T05:25:53Z",
+          "outcome": "blocked",
+          "reason": "Independent browser acceptance incomplete after its two allowed harness corrections; unexecuted criteria and all failures retained.",
+          "acceptance_results": null
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": "Independent browser acceptance incomplete after its two allowed harness corrections; unexecuted criteria and all failures retained.",
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

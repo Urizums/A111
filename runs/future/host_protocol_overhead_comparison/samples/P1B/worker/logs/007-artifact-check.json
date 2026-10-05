@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import json,hashlib; from pathlib import Path; w=Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker\"); names=[\"business.json\",\"corrections.json\"]; print({name:{\"valid_json\":json.loads((w/name).read_text()) is not None,\"sha256\":hashlib.sha256((w/name).read_bytes()).hexdigest()} for name in names})"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:15:56.153216+00:00",
+    "monotonic_ns": 39194799591791,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:15:56.176962+00:00",
+    "monotonic_ns": 39194823338916,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.023747125,
+  "stdout": "{'business.json': {'valid_json': True, 'sha256': 'aa30600ccb89687fae4be3c4b0d6abccbda2a5c24f0129b6c286bbadbb1bb2ed'}, 'corrections.json': {'valid_json': True, 'sha256': '230e4678646e9617c420f1afc1a3c460cab90750380133d9eda60ebc80808ce6'}}\n",
+  "stderr": "",
+  "stdout_base64": "eydidXNpbmVzcy5qc29uJzogeyd2YWxpZF9qc29uJzogVHJ1ZSwgJ3NoYTI1Nic6ICdhYTMwNjAwY2NiODk2ODdmYWU0YmUzYzRiMGQ2YWJjY2JkYTJhNWMyNGYwMTI5YjZjMjg2YmJhZGJiMWJiMmVkJ30sICdjb3JyZWN0aW9ucy5qc29uJzogeyd2YWxpZF9qc29uJzogVHJ1ZSwgJ3NoYTI1Nic6ICcyMzBlNDY3ODY0NmU5NjE3YzQyMGYxYWZjMWEzYzQ2MGNhYjkwNzUwMzgwMTMzZDllZGE2MGViYzgwODA4Y2U2J319Cg==",
+  "stderr_base64": ""
+}

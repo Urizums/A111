@@ -1,0 +1,150 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "46f900b39ae0f10c15e1b5e453ea3006bdfe1e43b2bdf5f4db70b16a4fa86110",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_db00ed09c9f74b828ef2c0a9b384427c",
+    "attempt_id": "fbe665efb5f341ba98224ff8bf363499",
+    "invocation_id": "fbe665efb5f341ba98224ff8bf363499",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "66cdf021e24e65a6e7d3c76f798c92eb057463d2f2ec073e31437cf1ba12c845",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "将以下公园巡检点整理为一个 GeoJSON FeatureCollection，按原顺序保留记录编号、名称和温度，坐标用 GeoJSON 的顺序；未知温度保持 null。附一句本地校验结果，直接交付文件。",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_original"
+      ]
+    },
+    "work": {
+      "prompt": "原始目标：将以下公园巡检点整理为一个 GeoJSON FeatureCollection，按原顺序保留记录编号、名称和温度，坐标用 GeoJSON 的顺序；未知温度保持 null。附一句本地校验结果，直接交付文件。\n原始材料：/workspace/A111/runs/R06/handoff/materials/simple.json\n先读取固定版本技能 /workspace/A111/runs/R06/candidate/C5/forge-agent-flow/SKILL.md。版本锁 /workspace/A111/runs/R06/candidate/C5-lock.json。自主选择与目标匹配的路径；只读取该技能公开文件、原材料，以及材料明确指向的本地应用/契约/规则，不读 Root 测试、报告、答案、共享状态或其他 worker。\n你负责独立执行与验证，不改核心、skill 或目标应用。只写 /workspace/A111/runs/R06/handoff/simple/worker。除本地命令进程外没有外部副作用授权。每项冻结验证最多两次修正；使用 C5 的实际记录机制，并保留失败，不重置或换样本。简单材料直接交付；复杂任务可按实际必要性最多委派两个互不重叠、只写你目录子目录的验证子任务，给原要求，不能给答案。你的最终报告保留原始命令/结果、写域、分工、介入、失败/修正、接续首步和实际局限，未知 tokens/cost/model-active-time 为 null。\n返回 /workspace/A111/runs/R06/handoff/simple/worker/reply.json，使用新请求 /workspace/A111/runs/R06/handoff/simple/job/request.json 的身份与产物哈希；保留分开的不完整 draft 与实际 preflight。没有网络授权。",
+      "inputs": {
+        "material": "/workspace/A111/runs/R06/handoff/materials/simple.json",
+        "candidate_lock": "/workspace/A111/runs/R06/candidate/C5-lock.json"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/R06/handoff/materials/simple.json",
+          "sha256": "3ba363d95784682ba5efce496d3ead4287ce06320b612e3c90147080da71d18a"
+        },
+        {
+          "path": "/workspace/A111/runs/R06/candidate/C5-lock.json",
+          "sha256": "0298bb5bacab6c81289769fdffecc1a2322d7dfa8ad0b90c8f1589edb7e66194"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/R06/handoff/simple/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/R06/handoff/simple/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_fbe665efb5f3",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "63447e715a6ea986bc136edda80db2509477e401fd9953a372186326037982ea",
+  "target": "/workspace/A111/runs/R06/handoff/simple/state.json",
+  "target_sha256": "6f50a0f98ac817b5d6d36c83377772f8256359609c03257bf968b99313220219",
+  "target_before_sha256": "7749a82ff680d23e47261e5843143f316516eee8e592c5084b093afed8161a76",
+  "package_ref": null,
+  "phase": "committed",
+  "worker": "/root/luna_forge_fbe665efb5f3",
+  "reply_ref": {
+    "path": "/workspace/A111/runs/R06/handoff/simple/job/receipts/62fc579cae4b06a927e24f791ccdcfadd0108eb58c84b29e65f5734f5b13d2e2.json",
+    "sha256": "62fc579cae4b06a927e24f791ccdcfadd0108eb58c84b29e65f5734f5b13d2e2"
+  },
+  "commit": {
+    "decision_ref": {
+      "path": "/workspace/A111/runs/R06/handoff/simple/decision.json",
+      "sha256": "eabe892f7e7d7a26b71295be7036533b280db0cdf113ebc006eae06fcafe67e2"
+    },
+    "target_result": {
+      "task_id": "work",
+      "attempt_id": "fbe665efb5f341ba98224ff8bf363499",
+      "outcome": "done",
+      "task_status": "done",
+      "reason": null,
+      "status": "completed",
+      "revision": 2,
+      "plan_hash": "66cdf021e24e65a6e7d3c76f798c92eb057463d2f2ec073e31437cf1ba12c845",
+      "evaluation_plan_hash": null
+    },
+    "worker_task_outcome": "done",
+    "coordinator_outcome": "done",
+    "recorded_at": "2026-10-04T06:39:26Z"
+  },
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/job/request.json",
+      "sha256": "d5727b0cfb4db4320bd62971734257bb69718ad7ad902d767569776895f64390"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/materials/simple.json",
+      "sha256": "3ba363d95784682ba5efce496d3ead4287ce06320b612e3c90147080da71d18a"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/candidate/C5-lock.json",
+      "sha256": "0298bb5bacab6c81289769fdffecc1a2322d7dfa8ad0b90c8f1589edb7e66194"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/job/receipts/46164ef14ea3c1b700a6925baf3d419f08661c265aa8e04a815589a3fa2c1393.json",
+      "sha256": "46164ef14ea3c1b700a6925baf3d419f08661c265aa8e04a815589a3fa2c1393"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/job/receipts/ee058e4d2e6476ae6ee48cc5c85dbca0104232faedd396fc5a917cf28900cdaf.json",
+      "sha256": "ee058e4d2e6476ae6ee48cc5c85dbca0104232faedd396fc5a917cf28900cdaf"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/job/receipts/ee058e4d2e6476ae6ee48cc5c85dbca0104232faedd396fc5a917cf28900cdaf.json",
+      "sha256": "ee058e4d2e6476ae6ee48cc5c85dbca0104232faedd396fc5a917cf28900cdaf"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/job/receipts/62fc579cae4b06a927e24f791ccdcfadd0108eb58c84b29e65f5734f5b13d2e2.json",
+      "sha256": "62fc579cae4b06a927e24f791ccdcfadd0108eb58c84b29e65f5734f5b13d2e2"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/worker/reply.json",
+      "sha256": "62fc579cae4b06a927e24f791ccdcfadd0108eb58c84b29e65f5734f5b13d2e2"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/worker/park-inspection.geojson",
+      "sha256": "b7a26ce2bf89b6dd935d5041d7fbf9408b3e09da329e3c6a0dcc5192dccd8db0"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/decision.json",
+      "sha256": "eabe892f7e7d7a26b71295be7036533b280db0cdf113ebc006eae06fcafe67e2"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/simple/root-review.json",
+      "sha256": "3a20c82848a733dd1984093c98a9185ee4cdd2e01668f134b9067a3f5a8dfada"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/R06/handoff/simple/job/receipts/46164ef14ea3c1b700a6925baf3d419f08661c265aa8e04a815589a3fa2c1393.json",
+    "sha256": "46164ef14ea3c1b700a6925baf3d419f08661c265aa8e04a815589a3fa2c1393"
+  }
+}

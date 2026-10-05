@@ -1,0 +1,73 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-04T06:07:49Z",
+  "updated_at": "2026-10-04T06:37:35Z",
+  "revision": 2,
+  "status": "active",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "independent",
+    "goal": "Independently verify durable provider-neutral local protocol",
+    "deliverable_kind": "scoped_change",
+    "requirements": [
+      {
+        "id": "req_work",
+        "text": "Independently verify durable provider-neutral local protocol",
+        "origin": "explicit",
+        "basis": "runs/R05/materials/adapter-validation-brief.md",
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "a_work",
+        "assertion": "Assigned original requirements are covered by actual source and runtime evidence with limits disclosed.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "work",
+        "title": "Independently verify durable provider-neutral local protocol",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "a_work"
+        ]
+      }
+    ]
+  },
+  "plan_hash": "a6c9dc691b15a450c64c62175958c37a4520a315147185776739bfcc8e96c8b3",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "work": {
+      "status": "blocked",
+      "attempts": [
+        {
+          "attempt_id": "4fd0215e67934ac2b5c27b321ec9d333",
+          "plan_hash": "a6c9dc691b15a450c64c62175958c37a4520a315147185776739bfcc8e96c8b3",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "a_work"
+          ],
+          "started_at": "2026-10-04T06:07:49Z",
+          "finished_at": "2026-10-04T06:37:35Z",
+          "outcome": "blocked",
+          "reason": "Independent validator admitted three distinct failure-driven corrections against a maximum of two. Post-limit observations cannot satisfy this acceptance; no further rerun authorized.",
+          "acceptance_results": null
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": "Independent validator admitted three distinct failure-driven corrections against a maximum of two. Post-limit observations cannot satisfy this acceptance; no further rerun authorized.",
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

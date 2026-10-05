@@ -1,0 +1,77 @@
+{
+  "schema": "forge-issues/1",
+  "issues": [
+    {
+      "id": "ISSUE-001",
+      "type": "recorder",
+      "status": "fixed_verified",
+      "problem": "Missing executable left no failed command record.",
+      "fix": "Reserve the record before execution, retain started state, catch launch OSError as 127, preserve raw streams and stamps.",
+      "before": "runs/S02/qualification-before-fix.json",
+      "after": "runs/S02/qualification-after-fix.json",
+      "budget": "C2 recorder 1/2"
+    },
+    {
+      "id": "ISSUE-002",
+      "type": "test_harness",
+      "status": "fixed_verified",
+      "problem": "Smoke harness expected business outputs in CLI summary instead of saved checkpoint.",
+      "fix": "Assert persisted flow_state.artifacts with the unchanged completed/no-action criterion.",
+      "before": "runs/cloud/smoke-initial/report.json",
+      "after": "runs/cloud/smoke-after-fix/report.json",
+      "budget": "cloud harness 1/2"
+    },
+    {
+      "id": "ISSUE-003",
+      "type": "continuation_validator",
+      "status": "fixed_verified",
+      "problem": "Advancing the active phase invalidated historical transitions pointing to state/phase-todo.json.",
+      "fix": "Resolve the exact archived successor; validate all phase history and new revision hashes. Add an explicit delivered checkpoint state.",
+      "before": "runs/cloud/frontier-before-fix.json",
+      "after": "runs/cloud/frontier-after-fix.json",
+      "budget": "handoff validator 1/2"
+    },
+    {
+      "id": "ISSUE-004",
+      "type": "archive_portability",
+      "status": "fixed_verified",
+      "problem": "Extracted delivery-manifest.json was incorrectly considered untracked release content.",
+      "fix": "Keep the transport manifest outside immutable release coverage; installer verifies the complete payload.",
+      "before": "runs/cloud/archive-integrity-initial.json",
+      "after": "runs/cloud/archive-integrity-fixed.json",
+      "budget": "handoff validator 2/2"
+    },
+    {
+      "id": "ISSUE-005",
+      "type": "native_measurement",
+      "status": "fixed_verified_in_bounded_retest",
+      "problem": "Original worker captures passed, but coordinator shell inspection/authoring during review was not fully wrapped; initial conformance grade overstated capture coverage.",
+      "fix": "Preserve original run and passing business result; run one explicitly counted repair on identical inputs/criteria with captured coordinator commands and pure file-tool receipt saves.",
+      "before": "runs/S03/validation-initial.json",
+      "plan": "runs/S03/repair-plan.json",
+      "budget": "S03 coordinator 1/2",
+      "after": "runs/S03/validation.json",
+      "limits": "Original capture failure remains; current worker reports one pre-launch wrapper error, counted by Root within budget. Scope conformance is observed, not host-enforced."
+    },
+    {
+      "id": "BLOCK-001",
+      "type": "github_access",
+      "status": "resolved",
+      "problem": "Connected user waw1w1 has read-only access to Urizums/A111; target branch and fork creation both return 403.",
+      "evidence": "runs/cloud/github-access.json",
+      "next_action": "Resolved: fork dev published and PR #1 open; no permission action required.",
+      "resolution": "User-created fork is writable. Code tree published to dev via authenticated Git Data API; git HTTPS transport 401 retained.",
+      "resolution_evidence": "runs/cloud/github-publication-code.json",
+      "pr": "https://github.com/Urizums/A111/pull/1"
+    },
+    {
+      "id": "HIST-C1",
+      "type": "historical_evidence",
+      "status": "retained_inconclusive",
+      "problem": "C1 efficacy comparison has historical capture/ordering/scope/correction gaps and original A2 cutoff; later results cannot repair the old experiment.",
+      "next_action": "Offline A01-A05 audit closed with source citations. Any future performance study must be separately frozen.",
+      "audit": "runs/S01/final-review.json"
+    }
+  ],
+  "scope": "Do not combine functional repairs with historical-data gaps or access blockers."
+}

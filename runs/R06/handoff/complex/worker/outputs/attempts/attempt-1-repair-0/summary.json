@@ -1,0 +1,697 @@
+{
+  "schema": "local-demo-approval-validation/1",
+  "scope": "fictional local example only; no real authority or external effects",
+  "policy_version": "demo-20261004",
+  "source_order": [
+    "CASE-1",
+    "CASE-2",
+    "CASE-3",
+    "CASE-4",
+    "CASE-5",
+    "CASE-6",
+    "CASE-7"
+  ],
+  "outcomes": [
+    {
+      "request": {
+        "expected_version": 0,
+        "category": "lighting",
+        "amount_cents": 5000,
+        "risk": "low",
+        "evidence_complete": true,
+        "requester": "keeper",
+        "reviewer": "inspector",
+        "request_id": "batch-1",
+        "idempotency_key": "batch-key-1",
+        "ticket_id": "CASE-1"
+      },
+      "decision": {
+        "ticket_id": "CASE-1",
+        "version": 1,
+        "decision": "approved",
+        "reason": "sample_rule_match",
+        "policy_version": "demo-20261004",
+        "request_id": "batch-1",
+        "local_demo_only": true,
+        "reused": false
+      },
+      "inspection": {
+        "ticket": {
+          "ticket_id": "CASE-1",
+          "version": 1,
+          "decision": "approved",
+          "reason": "sample_rule_match",
+          "policy_version": "demo-20261004"
+        },
+        "audit": [
+          {
+            "id": 1,
+            "ticket_id": "CASE-1",
+            "previous_version": 0,
+            "new_version": 1,
+            "decision": "approved",
+            "reason": "sample_rule_match",
+            "policy_version": "demo-20261004",
+            "request_id": "batch-1"
+          }
+        ],
+        "local_demo_only": true
+      }
+    },
+    {
+      "request": {
+        "expected_version": 0,
+        "category": "structure",
+        "amount_cents": 5000,
+        "risk": "low",
+        "evidence_complete": true,
+        "requester": "keeper",
+        "reviewer": "inspector",
+        "request_id": "batch-2",
+        "idempotency_key": "batch-key-2",
+        "ticket_id": "CASE-2"
+      },
+      "decision": {
+        "ticket_id": "CASE-2",
+        "version": 1,
+        "decision": "manual",
+        "reason": "category_review",
+        "policy_version": "demo-20261004",
+        "request_id": "batch-2",
+        "local_demo_only": true,
+        "reused": false
+      },
+      "inspection": {
+        "ticket": {
+          "ticket_id": "CASE-2",
+          "version": 1,
+          "decision": "manual",
+          "reason": "category_review",
+          "policy_version": "demo-20261004"
+        },
+        "audit": [
+          {
+            "id": 2,
+            "ticket_id": "CASE-2",
+            "previous_version": 0,
+            "new_version": 1,
+            "decision": "manual",
+            "reason": "category_review",
+            "policy_version": "demo-20261004",
+            "request_id": "batch-2"
+          }
+        ],
+        "local_demo_only": true
+      }
+    },
+    {
+      "request": {
+        "expected_version": 0,
+        "category": "lighting",
+        "amount_cents": null,
+        "risk": "low",
+        "evidence_complete": true,
+        "requester": "keeper",
+        "reviewer": "inspector",
+        "request_id": "batch-3",
+        "idempotency_key": "batch-key-3",
+        "ticket_id": "CASE-3"
+      },
+      "decision": {
+        "ticket_id": "CASE-3",
+        "version": 1,
+        "decision": "manual",
+        "reason": "amount_unknown",
+        "policy_version": "demo-20261004",
+        "request_id": "batch-3",
+        "local_demo_only": true,
+        "reused": false
+      },
+      "inspection": {
+        "ticket": {
+          "ticket_id": "CASE-3",
+          "version": 1,
+          "decision": "manual",
+          "reason": "amount_unknown",
+          "policy_version": "demo-20261004"
+        },
+        "audit": [
+          {
+            "id": 3,
+            "ticket_id": "CASE-3",
+            "previous_version": 0,
+            "new_version": 1,
+            "decision": "manual",
+            "reason": "amount_unknown",
+            "policy_version": "demo-20261004",
+            "request_id": "batch-3"
+          }
+        ],
+        "local_demo_only": true
+      }
+    },
+    {
+      "request": {
+        "expected_version": 0,
+        "category": "lighting",
+        "amount_cents": 5000,
+        "risk": "medium",
+        "evidence_complete": true,
+        "requester": "keeper",
+        "reviewer": "inspector",
+        "request_id": "batch-4",
+        "idempotency_key": "batch-key-4",
+        "ticket_id": "CASE-4"
+      },
+      "decision": {
+        "ticket_id": "CASE-4",
+        "version": 1,
+        "decision": "manual",
+        "reason": "risk_review",
+        "policy_version": "demo-20261004",
+        "request_id": "batch-4",
+        "local_demo_only": true,
+        "reused": false
+      },
+      "inspection": {
+        "ticket": {
+          "ticket_id": "CASE-4",
+          "version": 1,
+          "decision": "manual",
+          "reason": "risk_review",
+          "policy_version": "demo-20261004"
+        },
+        "audit": [
+          {
+            "id": 4,
+            "ticket_id": "CASE-4",
+            "previous_version": 0,
+            "new_version": 1,
+            "decision": "manual",
+            "reason": "risk_review",
+            "policy_version": "demo-20261004",
+            "request_id": "batch-4"
+          }
+        ],
+        "local_demo_only": true
+      }
+    },
+    {
+      "request": {
+        "expected_version": 0,
+        "category": "lighting",
+        "amount_cents": 5000,
+        "risk": "low",
+        "evidence_complete": true,
+        "requester": "keeper",
+        "reviewer": "keeper",
+        "request_id": "batch-5",
+        "idempotency_key": "batch-key-5",
+        "ticket_id": "CASE-5"
+      },
+      "decision": {
+        "ticket_id": "CASE-5",
+        "version": 1,
+        "decision": "manual",
+        "reason": "self_review",
+        "policy_version": "demo-20261004",
+        "request_id": "batch-5",
+        "local_demo_only": true,
+        "reused": false
+      },
+      "inspection": {
+        "ticket": {
+          "ticket_id": "CASE-5",
+          "version": 1,
+          "decision": "manual",
+          "reason": "self_review",
+          "policy_version": "demo-20261004"
+        },
+        "audit": [
+          {
+            "id": 5,
+            "ticket_id": "CASE-5",
+            "previous_version": 0,
+            "new_version": 1,
+            "decision": "manual",
+            "reason": "self_review",
+            "policy_version": "demo-20261004",
+            "request_id": "batch-5"
+          }
+        ],
+        "local_demo_only": true
+      }
+    },
+    {
+      "request": {
+        "expected_version": 0,
+        "category": "lighting",
+        "amount_cents": 5000,
+        "risk": "low",
+        "evidence_complete": false,
+        "requester": "keeper",
+        "reviewer": "inspector",
+        "request_id": "batch-6",
+        "idempotency_key": "batch-key-6",
+        "ticket_id": "CASE-6"
+      },
+      "decision": {
+        "ticket_id": "CASE-6",
+        "version": 1,
+        "decision": "manual",
+        "reason": "evidence_missing",
+        "policy_version": "demo-20261004",
+        "request_id": "batch-6",
+        "local_demo_only": true,
+        "reused": false
+      },
+      "inspection": {
+        "ticket": {
+          "ticket_id": "CASE-6",
+          "version": 1,
+          "decision": "manual",
+          "reason": "evidence_missing",
+          "policy_version": "demo-20261004"
+        },
+        "audit": [
+          {
+            "id": 6,
+            "ticket_id": "CASE-6",
+            "previous_version": 0,
+            "new_version": 1,
+            "decision": "manual",
+            "reason": "evidence_missing",
+            "policy_version": "demo-20261004",
+            "request_id": "batch-6"
+          }
+        ],
+        "local_demo_only": true
+      }
+    },
+    {
+      "request": {
+        "expected_version": 0,
+        "category": "lighting",
+        "amount_cents": 22000,
+        "risk": "low",
+        "evidence_complete": true,
+        "requester": "keeper",
+        "reviewer": "inspector",
+        "request_id": "batch-7",
+        "idempotency_key": "batch-key-7",
+        "ticket_id": "CASE-7"
+      },
+      "decision": {
+        "ticket_id": "CASE-7",
+        "version": 1,
+        "decision": "manual",
+        "reason": "amount_review",
+        "policy_version": "demo-20261004",
+        "request_id": "batch-7",
+        "local_demo_only": true,
+        "reused": false
+      },
+      "inspection": {
+        "ticket": {
+          "ticket_id": "CASE-7",
+          "version": 1,
+          "decision": "manual",
+          "reason": "amount_review",
+          "policy_version": "demo-20261004"
+        },
+        "audit": [
+          {
+            "id": 7,
+            "ticket_id": "CASE-7",
+            "previous_version": 0,
+            "new_version": 1,
+            "decision": "manual",
+            "reason": "amount_review",
+            "policy_version": "demo-20261004",
+            "request_id": "batch-7"
+          }
+        ],
+        "local_demo_only": true
+      }
+    }
+  ],
+  "idempotency": {
+    "reused": true,
+    "audit_state_unchanged": true,
+    "before": {
+      "ticket": {
+        "ticket_id": "CASE-1",
+        "version": 1,
+        "decision": "approved",
+        "reason": "sample_rule_match",
+        "policy_version": "demo-20261004"
+      },
+      "audit": [
+        {
+          "id": 1,
+          "ticket_id": "CASE-1",
+          "previous_version": 0,
+          "new_version": 1,
+          "decision": "approved",
+          "reason": "sample_rule_match",
+          "policy_version": "demo-20261004",
+          "request_id": "batch-1"
+        }
+      ],
+      "local_demo_only": true
+    },
+    "after": {
+      "ticket": {
+        "ticket_id": "CASE-1",
+        "version": 1,
+        "decision": "approved",
+        "reason": "sample_rule_match",
+        "policy_version": "demo-20261004"
+      },
+      "audit": [
+        {
+          "id": 1,
+          "ticket_id": "CASE-1",
+          "previous_version": 0,
+          "new_version": 1,
+          "decision": "approved",
+          "reason": "sample_rule_match",
+          "policy_version": "demo-20261004",
+          "request_id": "batch-1"
+        }
+      ],
+      "local_demo_only": true
+    }
+  },
+  "identity_conflicts": [
+    {
+      "probe": "conflict-same-key.json",
+      "exit_code": 3,
+      "error": {
+        "error": "Idempotency/request identity content conflict",
+        "conflict": true
+      }
+    },
+    {
+      "probe": "conflict-same-request-id.json",
+      "exit_code": 3,
+      "error": {
+        "error": "Idempotency/request identity content conflict",
+        "conflict": true
+      }
+    }
+  ],
+  "batch_audit_aggregate": {
+    "audit_rows": 7,
+    "distinct_tickets": 7
+  },
+  "commit_failure_recovery": {
+    "database": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/recovery.sqlite3",
+    "crash_exit_code": 75,
+    "rollback_ticket": null,
+    "rollback_audit_count": 0,
+    "retry": {
+      "ticket_id": "CASE-1",
+      "version": 1,
+      "decision": "approved",
+      "reason": "sample_rule_match",
+      "policy_version": "demo-20261004",
+      "request_id": "batch-1",
+      "local_demo_only": true,
+      "reused": false
+    },
+    "crash_command": {
+      "phase": "recovery_controlled_crash",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/A111/runs/R06/approval/approval.py",
+        "--database",
+        "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/recovery.sqlite3",
+        "decide",
+        "/workspace/A111/runs/R06/handoff/complex/worker/input/original/request-1.json",
+        "--policy",
+        "/workspace/A111/runs/R06/approval/policy.json",
+        "--simulate-crash-before-commit"
+      ],
+      "cwd": "/workspace/A111/runs/R06/handoff/complex/worker/outputs",
+      "started_at": "2026-10-04T06:42:23.038229+00:00",
+      "ended_at": "2026-10-04T06:42:23.063373+00:00",
+      "monotonic_start": 40781.684599344,
+      "monotonic_end": 40781.709733398,
+      "duration_seconds": 0.025134053998044692,
+      "exit_code": 75,
+      "stdout_base64": "",
+      "stderr_base64": "",
+      "stdout": "",
+      "stderr": ""
+    },
+    "retry_command": {
+      "phase": "recovery_same_request_retry",
+      "argv": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "/workspace/A111/runs/R06/approval/approval.py",
+        "--database",
+        "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/recovery.sqlite3",
+        "decide",
+        "/workspace/A111/runs/R06/handoff/complex/worker/input/original/request-1.json",
+        "--policy",
+        "/workspace/A111/runs/R06/approval/policy.json"
+      ],
+      "cwd": "/workspace/A111/runs/R06/handoff/complex/worker/outputs",
+      "started_at": "2026-10-04T06:42:23.094630+00:00",
+      "ended_at": "2026-10-04T06:42:23.126042+00:00",
+      "monotonic_start": 40781.741001385,
+      "monotonic_end": 40781.772401785,
+      "duration_seconds": 0.0314003999956185,
+      "exit_code": 0,
+      "stdout_base64": "eyJ0aWNrZXRfaWQiOiAiQ0FTRS0xIiwgInZlcnNpb24iOiAxLCAiZGVjaXNpb24iOiAiYXBwcm92ZWQiLCAicmVhc29uIjogInNhbXBsZV9ydWxlX21hdGNoIiwgInBvbGljeV92ZXJzaW9uIjogImRlbW8tMjAyNjEwMDQiLCAicmVxdWVzdF9pZCI6ICJiYXRjaC0xIiwgImxvY2FsX2RlbW9fb25seSI6IHRydWUsICJyZXVzZWQiOiBmYWxzZX0K",
+      "stderr_base64": "",
+      "stdout": "{\"ticket_id\": \"CASE-1\", \"version\": 1, \"decision\": \"approved\", \"reason\": \"sample_rule_match\", \"policy_version\": \"demo-20261004\", \"request_id\": \"batch-1\", \"local_demo_only\": true, \"reused\": false}\n",
+      "stderr": ""
+    }
+  },
+  "same_version_concurrency": {
+    "database": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/concurrency.sqlite3",
+    "ticket": "CASE-CONCURRENCY",
+    "ticket_state": {
+      "ticket_id": "CASE-CONCURRENCY",
+      "version": 1,
+      "decision": "approved",
+      "reason": "sample_rule_match",
+      "policy_version": "demo-20261004"
+    },
+    "audit": [
+      {
+        "id": 1,
+        "ticket_id": "CASE-CONCURRENCY",
+        "previous_version": 0,
+        "new_version": 1,
+        "decision": "approved",
+        "reason": "sample_rule_match",
+        "policy_version": "demo-20261004",
+        "request_id": "probe-concurrency-b"
+      }
+    ],
+    "process_results": [
+      {
+        "phase": "concurrency_decide",
+        "gate_argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "/workspace/A111/runs/R06/handoff/complex/worker/validation/concurrency_gate.py",
+          "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/concurrency.gate",
+          "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/concurrency-a.started.json",
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "/workspace/A111/runs/R06/approval/approval.py",
+          "--database",
+          "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/concurrency.sqlite3",
+          "decide",
+          "/workspace/A111/runs/R06/handoff/complex/worker/input/probes/concurrency-a.json",
+          "--policy",
+          "/workspace/A111/runs/R06/approval/policy.json"
+        ],
+        "actual_app_argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "/workspace/A111/runs/R06/approval/approval.py",
+          "--database",
+          "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/concurrency.sqlite3",
+          "decide",
+          "/workspace/A111/runs/R06/handoff/complex/worker/input/probes/concurrency-a.json",
+          "--policy",
+          "/workspace/A111/runs/R06/approval/policy.json"
+        ],
+        "pid": 14891,
+        "launched_at": "2026-10-04T06:42:23.775619+00:00",
+        "launched_monotonic": 40782.421989055,
+        "gate_release_at": "2026-10-04T06:42:23.776240+00:00",
+        "gate_release_monotonic": 40782.422609768,
+        "both_waiting_before_release": true,
+        "started_marker": {
+          "gate_observed_at": "2026-10-04T06:42:23.793948+00:00",
+          "gate_observed_monotonic": 40782.44031839,
+          "pid": 14891
+        },
+        "ended_at": "2026-10-04T06:42:23.824907+00:00",
+        "exit_code": 3,
+        "stdout_base64": "",
+        "stderr_base64": "eyJlcnJvciI6ICJFeHBlY3RlZCB2ZXJzaW9uIGNvbmZsaWN0OyBsYXRlc3QgdmVyc2lvbiAxIiwgImNvbmZsaWN0IjogdHJ1ZX0K",
+        "stdout": "",
+        "stderr": "{\"error\": \"Expected version conflict; latest version 1\", \"conflict\": true}\n"
+      },
+      {
+        "phase": "concurrency_decide",
+        "gate_argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "/workspace/A111/runs/R06/handoff/complex/worker/validation/concurrency_gate.py",
+          "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/concurrency.gate",
+          "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/concurrency-b.started.json",
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "/workspace/A111/runs/R06/approval/approval.py",
+          "--database",
+          "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/concurrency.sqlite3",
+          "decide",
+          "/workspace/A111/runs/R06/handoff/complex/worker/input/probes/concurrency-b.json",
+          "--policy",
+          "/workspace/A111/runs/R06/approval/policy.json"
+        ],
+        "actual_app_argv": [
+          "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+          "/workspace/A111/runs/R06/approval/approval.py",
+          "--database",
+          "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/concurrency.sqlite3",
+          "decide",
+          "/workspace/A111/runs/R06/handoff/complex/worker/input/probes/concurrency-b.json",
+          "--policy",
+          "/workspace/A111/runs/R06/approval/policy.json"
+        ],
+        "pid": 14892,
+        "launched_at": "2026-10-04T06:42:23.775961+00:00",
+        "launched_monotonic": 40782.422332235,
+        "gate_release_at": "2026-10-04T06:42:23.776240+00:00",
+        "gate_release_monotonic": 40782.422609768,
+        "both_waiting_before_release": true,
+        "started_marker": {
+          "gate_observed_at": "2026-10-04T06:42:23.793545+00:00",
+          "gate_observed_monotonic": 40782.439917189,
+          "pid": 14892
+        },
+        "ended_at": "2026-10-04T06:42:23.825735+00:00",
+        "exit_code": 0,
+        "stdout_base64": "eyJ0aWNrZXRfaWQiOiAiQ0FTRS1DT05DVVJSRU5DWSIsICJ2ZXJzaW9uIjogMSwgImRlY2lzaW9uIjogImFwcHJvdmVkIiwgInJlYXNvbiI6ICJzYW1wbGVfcnVsZV9tYXRjaCIsICJwb2xpY3lfdmVyc2lvbiI6ICJkZW1vLTIwMjYxMDA0IiwgInJlcXVlc3RfaWQiOiAicHJvYmUtY29uY3VycmVuY3ktYiIsICJsb2NhbF9kZW1vX29ubHkiOiB0cnVlLCAicmV1c2VkIjogZmFsc2V9Cg==",
+        "stderr_base64": "",
+        "stdout": "{\"ticket_id\": \"CASE-CONCURRENCY\", \"version\": 1, \"decision\": \"approved\", \"reason\": \"sample_rule_match\", \"policy_version\": \"demo-20261004\", \"request_id\": \"probe-concurrency-b\", \"local_demo_only\": true, \"reused\": false}\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "successor_task": {
+    "path": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/manual-review-task.json",
+    "start_result": {
+      "task_id": "manual-review-3273f785a7e4c995",
+      "status": "started",
+      "reused_existing": false,
+      "entry_count": 6
+    },
+    "record": {
+      "schema": "local-demo-manual-review-task/1",
+      "task_id": "manual-review-3273f785a7e4c995",
+      "status": "started",
+      "started_at": "2026-10-04T06:42:23.879290+00:00",
+      "scope": "Local follow-up on actual retained manual outcomes only; no real assignments",
+      "fictional_local_only": true,
+      "external_effects": false,
+      "notifications_sent": false,
+      "real_assignment": null,
+      "source": {
+        "database": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/original-batch.sqlite3",
+        "selection": "actual audit rows where decision=manual, ordered by audit id",
+        "entry_count": 6
+      },
+      "items": [
+        {
+          "ticket_id": "CASE-2",
+          "reason": "category_review",
+          "needed_material": "由专业人员复核类别",
+          "source_request_id": "batch-2",
+          "source_version": 1,
+          "policy_version": "demo-20261004"
+        },
+        {
+          "ticket_id": "CASE-3",
+          "reason": "amount_unknown",
+          "needed_material": "补充费用金额",
+          "source_request_id": "batch-3",
+          "source_version": 1,
+          "policy_version": "demo-20261004"
+        },
+        {
+          "ticket_id": "CASE-4",
+          "reason": "risk_review",
+          "needed_material": "补充风险评估",
+          "source_request_id": "batch-4",
+          "source_version": 1,
+          "policy_version": "demo-20261004"
+        },
+        {
+          "ticket_id": "CASE-5",
+          "reason": "self_review",
+          "needed_material": "更换非申请人复核",
+          "source_request_id": "batch-5",
+          "source_version": 1,
+          "policy_version": "demo-20261004"
+        },
+        {
+          "ticket_id": "CASE-6",
+          "reason": "evidence_missing",
+          "needed_material": "补充证明资料",
+          "source_request_id": "batch-6",
+          "source_version": 1,
+          "policy_version": "demo-20261004"
+        },
+        {
+          "ticket_id": "CASE-7",
+          "reason": "amount_review",
+          "needed_material": "转金额权限复核",
+          "source_request_id": "batch-7",
+          "source_version": 1,
+          "policy_version": "demo-20261004"
+        }
+      ],
+      "missing_materials": [
+        {
+          "ticket_id": "CASE-2",
+          "reason": "category_review",
+          "needed_material": "由专业人员复核类别"
+        },
+        {
+          "ticket_id": "CASE-3",
+          "reason": "amount_unknown",
+          "needed_material": "补充费用金额"
+        },
+        {
+          "ticket_id": "CASE-4",
+          "reason": "risk_review",
+          "needed_material": "补充风险评估"
+        },
+        {
+          "ticket_id": "CASE-5",
+          "reason": "self_review",
+          "needed_material": "更换非申请人复核"
+        },
+        {
+          "ticket_id": "CASE-6",
+          "reason": "evidence_missing",
+          "needed_material": "补充证明资料"
+        },
+        {
+          "ticket_id": "CASE-7",
+          "reason": "amount_review",
+          "needed_material": "转金额权限复核"
+        }
+      ]
+    }
+  },
+  "harness_attempt": {
+    "attempt": 1,
+    "repairs_used": 0
+  }
+}

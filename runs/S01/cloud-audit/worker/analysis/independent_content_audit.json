@@ -1,0 +1,860 @@
+{
+  "schema": "independent-content-audit/1",
+  "package": {
+    "B1": {
+      "actions_file": {
+        "exists": true,
+        "actual_sha256": "ba34b34ba9ad7f78f67262305170ab6805a1b3f0a5466fdb90e8311e021e7030",
+        "recorded_sha256": "ba34b34ba9ad7f78f67262305170ab6805a1b3f0a5466fdb90e8311e021e7030"
+      },
+      "actions_file_path": "evidence/c1/package/B1/artifacts/actions.json",
+      "actions_file_shape": "array",
+      "actions_file_content_matches_expected": true,
+      "worker_reply_present": true,
+      "worker_reply_hash": "9f2c7cfd387396735b1f033f6efb423a730a96f1dac425a0865c98a778e7b4bf",
+      "worker_reply_content_matches_expected": true,
+      "worker_reply_outer_outcome": "done",
+      "worker_reply_inner_outcome": "ok",
+      "worker_reply_referenced_files": [
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/actions.json",
+          "snapshot_path": "evidence/c1/package/B1/artifacts/actions.json",
+          "exists": true,
+          "expected_sha256": "ba34b34ba9ad7f78f67262305170ab6805a1b3f0a5466fdb90e8311e021e7030",
+          "actual_sha256": "ba34b34ba9ad7f78f67262305170ab6805a1b3f0a5466fdb90e8311e021e7030",
+          "hash_matches": true
+        },
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B1/artifacts/解释.md",
+          "snapshot_path": "evidence/c1/package/B1/artifacts/解释.md",
+          "exists": true,
+          "expected_sha256": "a62edee87f4ef97a1cc5a61b9c2f8fa849c66ec3c4b2584dbbf8de3d7843aeb7",
+          "actual_sha256": "a62edee87f4ef97a1cc5a61b9c2f8fa849c66ec3c4b2584dbbf8de3d7843aeb7",
+          "hash_matches": true
+        }
+      ],
+      "explanation_path": "evidence/c1/package/B1/artifacts/解释.md",
+      "explanation_sha256": "a62edee87f4ef97a1cc5a61b9c2f8fa849c66ec3c4b2584dbbf8de3d7843aeb7",
+      "explanation_text": "根据会议记录，提取出 3 项明确的行动：更新部署文档、补充回归用例、补充日志告警。前两项按原文记录负责人和截止时间，其中相对日期“周五”保持原样；补充日志告警没有写明负责人或截止时间，因此记为 null。\n\n“建议以后考虑更换配色。”属于建议，不作为已承诺的行动；“本周没有新增外部通知。”是情况说明，不构成行动项。",
+      "v1_result": {
+        "package_hash": "bd95dfb88fbdf32cc659a0629110da26aef591b1c6f1ba1a24a84b7157db4d75",
+        "checks": [
+          {
+            "id": "quotes",
+            "kind": "machine",
+            "status": "pass",
+            "evidence": [
+              "materials/notes.txt sha256:2a6802a93f60d87cc1c66f9c0eeed402398dbe0e0ef8df000f4ae76c18bdafdf",
+              "package/B1/artifacts/actions.json sha256:ba34b34ba9ad7f78f67262305170ab6805a1b3f0a5466fdb90e8311e021e7030",
+              "package/B1/review/source-checker.json sha256:64d025fba4e0f484797b51374bb3d851fbf901c9b11b30d64226011ae6a5ebcd"
+            ]
+          },
+          {
+            "id": "commitments",
+            "kind": "human",
+            "status": "pass",
+            "evidence": [
+              "package/B1/artifacts/actions.json sha256:ba34b34ba9ad7f78f67262305170ab6805a1b3f0a5466fdb90e8311e021e7030",
+              "package/B1/artifacts/解释.md sha256:a62edee87f4ef97a1cc5a61b9c2f8fa849c66ec3c4b2584dbbf8de3d7843aeb7",
+              "package/B1/review/source-checker.json sha256:64d025fba4e0f484797b51374bb3d851fbf901c9b11b30d64226011ae6a5ebcd"
+            ]
+          }
+        ]
+      },
+      "decision": {
+        "schema_version": "forge-host-decision/1",
+        "request_hash": "55e701dd6b9e14d21fe3a2e5b1ed6dddcd9ed383df29fea0925a3adc04585483",
+        "reply_sha256": "9f2c7cfd387396735b1f033f6efb423a730a96f1dac425a0865c98a778e7b4bf",
+        "outcome": "done",
+        "results": {
+          "invocation_id": "effdf28894dd763006de01d952807d97",
+          "outcome": "ok",
+          "artifacts": {
+            "actions": [
+              {
+                "task": "更新部署文档",
+                "owner": "赵宁",
+                "due": "周五",
+                "source_quote": "赵宁负责更新部署文档，截止周五。"
+              },
+              {
+                "task": "补充回归用例",
+                "owner": "许静",
+                "due": "2026-10-09",
+                "source_quote": "许静负责补充回归用例，截止2026-10-09。"
+              },
+              {
+                "task": "补充日志告警",
+                "owner": null,
+                "due": null,
+                "source_quote": "决定补充日志告警。"
+              }
+            ]
+          },
+          "evidence": [
+            "artifacts/actions.json: three extracted records with source quotes checked against supplied notes",
+            "artifacts/解释.md: Chinese explanation of included actions and excluded suggestion/information",
+            "artifacts/captures/verify-business-artifacts-final.json: PASS for exact source substrings, literal due values, null unstated fields, and exclusion of suggestion/information"
+          ]
+        },
+        "reason": null
+      },
+      "decision_preflight_record": {
+        "schema": "forge-comparison-cli/1",
+        "actor": "coordinator",
+        "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+        "argv": [
+          "python3",
+          "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+          "check-decision",
+          "--job",
+          "package/B1/job",
+          "--decision",
+          "package/B1/review/coordinator-decision.json"
+        ],
+        "begin": {
+          "utc": "2026-10-03T12:02:58.722900+00:00",
+          "monotonic_ns": 1327839120598,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+        },
+        "end": {
+          "utc": "2026-10-03T12:02:58.758275+00:00",
+          "monotonic_ns": 1327874489374,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+        },
+        "exit_code": 0,
+        "elapsed_seconds": 0.035368776,
+        "stdout": "{\n  \"status\": \"controller_compatible\",\n  \"read_only\": true,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"committed\": false,\n  \"semantic_acceptance\": \"not_evaluated\",\n  \"scope\": \"original controller validation and stored local refs; not independent semantic grading\"\n}\n",
+        "stderr": "",
+        "stdout_base64": "ewogICJzdGF0dXMiOiAiY29udHJvbGxlcl9jb21wYXRpYmxlIiwKICAicmVhZF9vbmx5IjogdHJ1ZSwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICJjYWxsX2FsbG93ZWQiOiBmYWxzZSwKICAiY29tbWl0dGVkIjogZmFsc2UsCiAgInNlbWFudGljX2FjY2VwdGFuY2UiOiAibm90X2V2YWx1YXRlZCIsCiAgInNjb3BlIjogIm9yaWdpbmFsIGNvbnRyb2xsZXIgdmFsaWRhdGlvbiBhbmQgc3RvcmVkIGxvY2FsIHJlZnM7IG5vdCBpbmRlcGVuZGVudCBzZW1hbnRpYyBncmFkaW5nIgp9Cg==",
+        "stderr_base64": ""
+      }
+    },
+    "A1": {
+      "actions_file": {
+        "exists": true,
+        "actual_sha256": "b0e143bc11dbb572a494397db6c261fd6e574fdc0518c82072cf9a902d5ec5d2",
+        "recorded_sha256": "b0e143bc11dbb572a494397db6c261fd6e574fdc0518c82072cf9a902d5ec5d2"
+      },
+      "actions_file_path": "evidence/c1/package/A1/artifacts/actions.json",
+      "actions_file_shape": "flow_envelope",
+      "actions_file_content_matches_expected": true,
+      "worker_reply_present": true,
+      "worker_reply_hash": "17513cfda6604e6ae1f22435d8dcea4a494afea21feb3f2d475c14b321b94090",
+      "worker_reply_content_matches_expected": true,
+      "worker_reply_outer_outcome": "done",
+      "worker_reply_inner_outcome": "ok",
+      "worker_reply_referenced_files": [
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts/actions.json",
+          "snapshot_path": "evidence/c1/package/A1/artifacts/actions.json",
+          "exists": true,
+          "expected_sha256": "b0e143bc11dbb572a494397db6c261fd6e574fdc0518c82072cf9a902d5ec5d2",
+          "actual_sha256": "b0e143bc11dbb572a494397db6c261fd6e574fdc0518c82072cf9a902d5ec5d2",
+          "hash_matches": true
+        },
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts/解释.md",
+          "snapshot_path": "evidence/c1/package/A1/artifacts/解释.md",
+          "exists": true,
+          "expected_sha256": "2712985481c278ff83360f29fb4548b5f5930b2fe539a35138f473c0cab19bf0",
+          "actual_sha256": "2712985481c278ff83360f29fb4548b5f5930b2fe539a35138f473c0cab19bf0",
+          "hash_matches": true
+        }
+      ],
+      "explanation_path": "evidence/c1/package/A1/artifacts/解释.md",
+      "explanation_sha256": "2712985481c278ff83360f29fb4548b5f5930b2fe539a35138f473c0cab19bf0",
+      "explanation_text": "根据会议纪要，提取出 3 项明确行动：\n\n1. 赵宁更新部署文档，截止时间保留原文中的相对日期“周五”。\n2. 许静补充回归用例，截止时间为“2026-10-09”。\n3. 会议决定补充日志告警，但未说明负责人或截止日期，因此两项均为 null。\n\n“建议以后考虑更换配色”属于建议，未作为承诺列入；“本周没有新增外部通知”不是行动项。\n",
+      "v1_result": {
+        "package_hash": "bd95dfb88fbdf32cc659a0629110da26aef591b1c6f1ba1a24a84b7157db4d75",
+        "checks": [
+          {
+            "id": "quotes",
+            "kind": "machine",
+            "status": "pass",
+            "evidence": [
+              "materials/notes.txt sha256:2a6802a93f60d87cc1c66f9c0eeed402398dbe0e0ef8df000f4ae76c18bdafdf",
+              "package/A1/artifacts/actions.json sha256:b0e143bc11dbb572a494397db6c261fd6e574fdc0518c82072cf9a902d5ec5d2",
+              "package/A1/review/source-checker.json sha256:c0af9f8fc1b1c3641d2dadd68a468c7556bca0128af0f1561ef867cd93adeeb8"
+            ]
+          },
+          {
+            "id": "commitments",
+            "kind": "human",
+            "status": "pass",
+            "evidence": [
+              "package/A1/artifacts/actions.json sha256:b0e143bc11dbb572a494397db6c261fd6e574fdc0518c82072cf9a902d5ec5d2",
+              "package/A1/artifacts/解释.md sha256:2712985481c278ff83360f29fb4548b5f5930b2fe539a35138f473c0cab19bf0",
+              "package/A1/review/source-checker.json sha256:c0af9f8fc1b1c3641d2dadd68a468c7556bca0128af0f1561ef867cd93adeeb8"
+            ]
+          }
+        ]
+      },
+      "decision": {
+        "schema_version": "forge-host-decision/1",
+        "request_hash": "ddd3dcdb5dfaead04b8319a2b5eb6e8ec62991ba2e3560c1e55f8028621d043a",
+        "reply_sha256": "17513cfda6604e6ae1f22435d8dcea4a494afea21feb3f2d475c14b321b94090",
+        "outcome": "done",
+        "results": {
+          "invocation_id": "d136ac6ce1fc81d124075d4d665b52c3",
+          "outcome": "ok",
+          "artifacts": {
+            "actions": [
+              {
+                "task": "更新部署文档",
+                "owner": "赵宁",
+                "due": "周五",
+                "source_quote": "赵宁负责更新部署文档，截止周五。"
+              },
+              {
+                "task": "补充回归用例",
+                "owner": "许静",
+                "due": "2026-10-09",
+                "source_quote": "许静负责补充回归用例，截止2026-10-09。"
+              },
+              {
+                "task": "补充日志告警",
+                "owner": null,
+                "due": null,
+                "source_quote": "决定补充日志告警。"
+              }
+            ]
+          },
+          "evidence": [
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts/actions.json",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A1/artifacts/解释.md"
+          ]
+        },
+        "reason": null
+      },
+      "decision_preflight_record": {
+        "schema": "forge-comparison-cli/1",
+        "actor": "coordinator",
+        "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+        "argv": [
+          "python3",
+          "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+          "check-decision",
+          "--job",
+          "package/A1/job",
+          "--decision",
+          "package/A1/review/coordinator-decision.json"
+        ],
+        "begin": {
+          "utc": "2026-10-03T12:13:35.444426+00:00",
+          "monotonic_ns": 1964560643278,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+        },
+        "end": {
+          "utc": "2026-10-03T12:13:35.479923+00:00",
+          "monotonic_ns": 1964596135592,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+        },
+        "exit_code": 0,
+        "elapsed_seconds": 0.035492314,
+        "stdout": "{\n  \"status\": \"controller_compatible\",\n  \"read_only\": true,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"committed\": false,\n  \"semantic_acceptance\": \"not_evaluated\",\n  \"scope\": \"original controller validation and stored local refs; not independent semantic grading\"\n}\n",
+        "stderr": "",
+        "stdout_base64": "ewogICJzdGF0dXMiOiAiY29udHJvbGxlcl9jb21wYXRpYmxlIiwKICAicmVhZF9vbmx5IjogdHJ1ZSwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICJjYWxsX2FsbG93ZWQiOiBmYWxzZSwKICAiY29tbWl0dGVkIjogZmFsc2UsCiAgInNlbWFudGljX2FjY2VwdGFuY2UiOiAibm90X2V2YWx1YXRlZCIsCiAgInNjb3BlIjogIm9yaWdpbmFsIGNvbnRyb2xsZXIgdmFsaWRhdGlvbiBhbmQgc3RvcmVkIGxvY2FsIHJlZnM7IG5vdCBpbmRlcGVuZGVudCBzZW1hbnRpYyBncmFkaW5nIgp9Cg==",
+        "stderr_base64": ""
+      }
+    },
+    "A2": {
+      "actions_file": {
+        "exists": true,
+        "actual_sha256": "49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce",
+        "recorded_sha256": "49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce"
+      },
+      "actions_file_path": "evidence/c1/package/A2/artifacts/actions.json",
+      "actions_file_shape": "array",
+      "actions_file_content_matches_expected": true,
+      "worker_reply_present": true,
+      "worker_reply_hash": "c8b5f69467c164caa6ede610db6750588e9e8c1d3bd4b8bb17ef52f499e3f461",
+      "worker_reply_content_matches_expected": true,
+      "worker_reply_outer_outcome": "done",
+      "worker_reply_inner_outcome": "ok",
+      "worker_reply_referenced_files": [
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/actions.json",
+          "snapshot_path": "evidence/c1/package/A2/artifacts/actions.json",
+          "exists": true,
+          "expected_sha256": "49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce",
+          "actual_sha256": "49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce",
+          "hash_matches": true
+        },
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/explanation.md",
+          "snapshot_path": "evidence/c1/package/A2/artifacts/explanation.md",
+          "exists": true,
+          "expected_sha256": "00249fd0af705c6aed80d5dc39d5edaf55d9e89aa9dd5a66d32c9eb44cc40926",
+          "actual_sha256": "00249fd0af705c6aed80d5dc39d5edaf55d9e89aa9dd5a66d32c9eb44cc40926",
+          "hash_matches": true
+        }
+      ],
+      "explanation_path": "evidence/c1/package/A2/artifacts/explanation.md",
+      "explanation_sha256": "00249fd0af705c6aed80d5dc39d5edaf55d9e89aa9dd5a66d32c9eb44cc40926",
+      "explanation_text": "从会议记录中抽取到三项明确行动：更新部署文档、补充回归用例、补充日志告警。前两项按原文保留负责人和截止日期；“周五”保持原样，不推算为具体日期。补充日志告警是明确决定，但记录未指定负责人或截止日期，因此两项均记为 null。\n\n“建议以后考虑更换配色”表达的是建议，不作为承诺；“本周没有新增外部通知”是状态说明，不是行动项。没有向任何人发送任务或通知。\n",
+      "v1_result": {
+        "package_hash": "bd95dfb88fbdf32cc659a0629110da26aef591b1c6f1ba1a24a84b7157db4d75",
+        "checks": [
+          {
+            "id": "quotes",
+            "kind": "machine",
+            "status": "pass",
+            "evidence": [
+              "package/A2/review/source-review.md",
+              "package/A2/review/check_package_output.py",
+              "package/A2/review/source-checker.json"
+            ]
+          },
+          {
+            "id": "commitments",
+            "kind": "human",
+            "status": "pass",
+            "evidence": [
+              "package/A2/review/source-review.md",
+              "package/A2/review/check_package_output.py",
+              "package/A2/review/source-checker.json"
+            ]
+          }
+        ]
+      },
+      "decision": {
+        "schema_version": "forge-host-decision/1",
+        "request_hash": "8ef79aa97223c830c1eee82f223321c8a8a1a7d2d4c338a3b20fe1ba5abe8d2b",
+        "reply_sha256": "c8b5f69467c164caa6ede610db6750588e9e8c1d3bd4b8bb17ef52f499e3f461",
+        "outcome": "done",
+        "results": {
+          "invocation_id": "30c3df730e13319200770469e341ade2",
+          "outcome": "ok",
+          "artifacts": {
+            "actions": [
+              {
+                "task": "更新部署文档",
+                "owner": "赵宁",
+                "due": "周五",
+                "source_quote": "赵宁负责更新部署文档，截止周五。"
+              },
+              {
+                "task": "补充回归用例",
+                "owner": "许静",
+                "due": "2026-10-09",
+                "source_quote": "许静负责补充回归用例，截止2026-10-09。"
+              },
+              {
+                "task": "补充日志告警",
+                "owner": null,
+                "due": null,
+                "source_quote": "决定补充日志告警。"
+              }
+            ]
+          },
+          "evidence": [
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/actions.json",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/A2/artifacts/explanation.md"
+          ]
+        },
+        "reason": null
+      },
+      "decision_preflight_record": {
+        "schema": "forge-comparison-cli/1",
+        "actor": "coordinator",
+        "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+        "argv": [
+          "python3",
+          "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+          "check-decision",
+          "--job",
+          "package/A2/job",
+          "--decision",
+          "package/A2/review/decision.json"
+        ],
+        "begin": {
+          "utc": "2026-10-03T12:28:23.302214+00:00",
+          "monotonic_ns": 2852418432203,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+        },
+        "end": {
+          "utc": "2026-10-03T12:28:23.347747+00:00",
+          "monotonic_ns": 2852463959600,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+        },
+        "exit_code": 0,
+        "elapsed_seconds": 0.045527397,
+        "stdout": "{\n  \"status\": \"controller_compatible\",\n  \"read_only\": true,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"committed\": false,\n  \"semantic_acceptance\": \"not_evaluated\",\n  \"scope\": \"original controller validation and stored local refs; not independent semantic grading\"\n}\n",
+        "stderr": "",
+        "stdout_base64": "ewogICJzdGF0dXMiOiAiY29udHJvbGxlcl9jb21wYXRpYmxlIiwKICAicmVhZF9vbmx5IjogdHJ1ZSwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICJjYWxsX2FsbG93ZWQiOiBmYWxzZSwKICAiY29tbWl0dGVkIjogZmFsc2UsCiAgInNlbWFudGljX2FjY2VwdGFuY2UiOiAibm90X2V2YWx1YXRlZCIsCiAgInNjb3BlIjogIm9yaWdpbmFsIGNvbnRyb2xsZXIgdmFsaWRhdGlvbiBhbmQgc3RvcmVkIGxvY2FsIHJlZnM7IG5vdCBpbmRlcGVuZGVudCBzZW1hbnRpYyBncmFkaW5nIgp9Cg==",
+        "stderr_base64": ""
+      }
+    },
+    "B2": {
+      "actions_file": {
+        "exists": true,
+        "actual_sha256": "49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce",
+        "recorded_sha256": "49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce"
+      },
+      "actions_file_path": "evidence/c1/package/B2/artifacts/actions.json",
+      "actions_file_shape": "array",
+      "actions_file_content_matches_expected": true,
+      "worker_reply_present": true,
+      "worker_reply_hash": "1112af8a63f71a411653f17a7b89ed6e7c175c521d2c86e6c91bf82f19cb023e",
+      "worker_reply_content_matches_expected": true,
+      "worker_reply_outer_outcome": "done",
+      "worker_reply_inner_outcome": "ok",
+      "worker_reply_referenced_files": [
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/actions.json",
+          "snapshot_path": "evidence/c1/package/B2/artifacts/actions.json",
+          "exists": true,
+          "expected_sha256": "49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce",
+          "actual_sha256": "49630d72372a7dd2fd85b0be1c0e567adcc56ebdf0d417adccc01eb3c8b763ce",
+          "hash_matches": true
+        },
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/explanation.zh.md",
+          "snapshot_path": "evidence/c1/package/B2/artifacts/explanation.zh.md",
+          "exists": true,
+          "expected_sha256": "78d16fcb7e174f3fc588998b89d3d0f077c9f9c5a960678c6a6fd69bb757730d",
+          "actual_sha256": "78d16fcb7e174f3fc588998b89d3d0f077c9f9c5a960678c6a6fd69bb757730d",
+          "hash_matches": true
+        },
+        {
+          "historical_path": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/verification.json",
+          "snapshot_path": "evidence/c1/package/B2/artifacts/verification.json",
+          "exists": true,
+          "expected_sha256": "86d37e2a90ed486bc1699a621c4ccbc4449cf171d54b5838f9d8c9c5ba7bb64e",
+          "actual_sha256": "86d37e2a90ed486bc1699a621c4ccbc4449cf171d54b5838f9d8c9c5ba7bb64e",
+          "hash_matches": true
+        }
+      ],
+      "explanation_path": "evidence/c1/package/B2/artifacts/explanation.zh.md",
+      "explanation_sha256": "78d16fcb7e174f3fc588998b89d3d0f077c9f9c5a960678c6a6fd69bb757730d",
+      "explanation_text": "提取出 3 项明确行动：赵宁更新部署文档（截止“周五”）、许静补充回归用例（截止“2026-10-09”），以及决定补充日志告警（负责人和期限未说明，均为 null）。每条 source_quote 均逐字取自会议记录。未将“建议以后考虑更换配色”列为承诺；“本周没有新增外部通知”是状态陈述，不是行动。\n",
+      "v1_result": {
+        "package_hash": "bd95dfb88fbdf32cc659a0629110da26aef591b1c6f1ba1a24a84b7157db4d75",
+        "checks": [
+          {
+            "id": "quotes",
+            "kind": "machine",
+            "status": "pass",
+            "evidence": [
+              "package/B2/review/source-review.md",
+              "package/B2/review/check_package_output.py",
+              "package/B2/review/source-checker.json"
+            ]
+          },
+          {
+            "id": "commitments",
+            "kind": "human",
+            "status": "pass",
+            "evidence": [
+              "package/B2/review/source-review.md",
+              "package/B2/review/check_package_output.py",
+              "package/B2/review/source-checker.json"
+            ]
+          }
+        ]
+      },
+      "decision": {
+        "schema_version": "forge-host-decision/1",
+        "request_hash": "d195afca565b55878e69bea1f27f751e158455e4ef0bd2ecb9444b03f11ead2a",
+        "reply_sha256": "1112af8a63f71a411653f17a7b89ed6e7c175c521d2c86e6c91bf82f19cb023e",
+        "outcome": "done",
+        "results": {
+          "invocation_id": "f88af0850658c82f19f494424d05ec22",
+          "outcome": "ok",
+          "artifacts": {
+            "actions": [
+              {
+                "task": "更新部署文档",
+                "owner": "赵宁",
+                "due": "周五",
+                "source_quote": "赵宁负责更新部署文档，截止周五。"
+              },
+              {
+                "task": "补充回归用例",
+                "owner": "许静",
+                "due": "2026-10-09",
+                "source_quote": "许静负责补充回归用例，截止2026-10-09。"
+              },
+              {
+                "task": "补充日志告警",
+                "owner": null,
+                "due": null,
+                "source_quote": "决定补充日志告警。"
+              }
+            ]
+          },
+          "evidence": [
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/actions.json",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/explanation.zh.md",
+            "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003/package/B2/artifacts/verification.json"
+          ]
+        },
+        "reason": null
+      },
+      "decision_preflight_record": {
+        "schema": "forge-comparison-cli/1",
+        "actor": "coordinator",
+        "cwd": "/workspace/scratch/73714494ad2f/forge-protocol-comparison-20261003",
+        "argv": [
+          "python3",
+          "/root/.codex/skills/remote-skills/skill-6ab323b7c2a081919b95502e8e7297f0/scripts/hostdraft.py",
+          "check-decision",
+          "--job",
+          "package/B2/job",
+          "--decision",
+          "package/B2/review/decision.json"
+        ],
+        "begin": {
+          "utc": "2026-10-03T12:44:48.317020+00:00",
+          "monotonic_ns": 3837433235111,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+        },
+        "end": {
+          "utc": "2026-10-03T12:44:48.356173+00:00",
+          "monotonic_ns": 3837472386939,
+          "boot_id": "e7c60fd9-bfe3-4f0d-b09f-75ad1396db98"
+        },
+        "exit_code": 0,
+        "elapsed_seconds": 0.039151828,
+        "stdout": "{\n  \"status\": \"controller_compatible\",\n  \"read_only\": true,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"committed\": false,\n  \"semantic_acceptance\": \"not_evaluated\",\n  \"scope\": \"original controller validation and stored local refs; not independent semantic grading\"\n}\n",
+        "stderr": "",
+        "stdout_base64": "ewogICJzdGF0dXMiOiAiY29udHJvbGxlcl9jb21wYXRpYmxlIiwKICAicmVhZF9vbmx5IjogdHJ1ZSwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICJjYWxsX2FsbG93ZWQiOiBmYWxzZSwKICAiY29tbWl0dGVkIjogZmFsc2UsCiAgInNlbWFudGljX2FjY2VwdGFuY2UiOiAibm90X2V2YWx1YXRlZCIsCiAgInNjb3BlIjogIm9yaWdpbmFsIGNvbnRyb2xsZXIgdmFsaWRhdGlvbiBhbmQgc3RvcmVkIGxvY2FsIHJlZnM7IG5vdCBpbmRlcGVuZGVudCBzZW1hbnRpYyBncmFkaW5nIgp9Cg==",
+        "stderr_base64": ""
+      }
+    }
+  },
+  "project": {
+    "A1": {
+      "summary_path": "evidence/c1/project/A1/artifacts/summary.json",
+      "summary_sha256": "5954bfd47d9d563ebb8a9832cf6f6a84221083c7286abddd6749eed46d2bd527",
+      "normalized_categories": [
+        {
+          "category": "design",
+          "count": 1,
+          "total_fen": 1600,
+          "ids": [
+            "C604"
+          ]
+        },
+        {
+          "category": "dev",
+          "count": 2,
+          "total_fen": 946,
+          "ids": [
+            "C602",
+            "C605"
+          ]
+        },
+        {
+          "category": "ops",
+          "count": 3,
+          "total_fen": 1464,
+          "ids": [
+            "C601",
+            "C603",
+            "C606"
+          ]
+        }
+      ],
+      "summary_matches_expected": true,
+      "summary_zh_path": "evidence/c1/project/A1/artifacts/summary_zh.md",
+      "summary_zh_sha256": "753c6fc1fd7bc503043f1d5f5763caa2f2c57e9eb052d57764b1b64986e5bcd3",
+      "summary_zh_text": "# 费用分类汇总\n\n金额以人民币分为单位，按十进制精确换算；来源 ID 按 CSV 行序排列。\n\n| 类别 | 行数 | 合计（分） | 来源 ID |\n|---|---:|---:|---|\n| design | 1 | 1600 | C604 |\n| dev | 2 | 946 | C602、C605 |\n| ops | 3 | 1464 | C601、C603、C606 |\n",
+      "worker_reply_path": "evidence/c1/project/A1/artifacts/worker-reply.json",
+      "worker_reply_sha256": "6bf6bde47f3647a314bd000eba8518093029484ae1db94f75551b94a709d0e12",
+      "worker_reply_present": true,
+      "worker_reply_matches_expected": true,
+      "worker_reply_result_categories": [
+        {
+          "category": "design",
+          "count": 1,
+          "total_fen": 1600,
+          "ids": [
+            "C604"
+          ]
+        },
+        {
+          "category": "dev",
+          "count": 2,
+          "total_fen": 946,
+          "ids": [
+            "C602",
+            "C605"
+          ]
+        },
+        {
+          "category": "ops",
+          "count": 3,
+          "total_fen": 1464,
+          "ids": [
+            "C601",
+            "C603",
+            "C606"
+          ]
+        }
+      ],
+      "source_checks": [
+        {
+          "path": "evidence/c1/project/A1/review/source-check-output.json",
+          "sha256": "b6c2c7365943299ed573aaf78eeb07e5d0c3efc348aaa8900a8524a39c63fd43",
+          "pass": true,
+          "checks": {
+            "json_shape": true,
+            "category_set_exactly_once": true,
+            "row_counts": true,
+            "exact_integer_fen_sums": true,
+            "complete_ordered_ids": true,
+            "chinese_heading": true,
+            "markdown_rows_agree": true
+          }
+        }
+      ]
+    },
+    "B1": {
+      "summary_path": "evidence/c1/project/B1/artifacts/summary.json",
+      "summary_sha256": "8bc08ffb153c2526f200e733bbe5d404d203519b285fa37b6082ae47b090d543",
+      "normalized_categories": [
+        {
+          "category": "design",
+          "count": 1,
+          "total_fen": 1600,
+          "ids": [
+            "C604"
+          ]
+        },
+        {
+          "category": "dev",
+          "count": 2,
+          "total_fen": 946,
+          "ids": [
+            "C602",
+            "C605"
+          ]
+        },
+        {
+          "category": "ops",
+          "count": 3,
+          "total_fen": 1464,
+          "ids": [
+            "C601",
+            "C603",
+            "C606"
+          ]
+        }
+      ],
+      "summary_matches_expected": true,
+      "summary_zh_path": "evidence/c1/project/B1/artifacts/summary_zh.md",
+      "summary_zh_sha256": "37485756b39849b3cc7401fdcda42a4c0b83bb5140ec55858d5c69e5f892f8c6",
+      "summary_zh_text": "# 费用分类汇总\n\n共处理 6 行。金额使用十进制精确换算，1 元 = 100 分；分类按字典序排列，来源 ID 保持 CSV 原始行序。\n\n| 分类 | 行数 | 总金额（分） | 来源 ID |\n|---|---:|---:|---|\n| design | 1 | 1600 | C604 |\n| dev | 2 | 946 | C602, C605 |\n| ops | 3 | 1464 | C601, C603, C606 |\n",
+      "worker_reply_path": "evidence/c1/project/B1/artifacts/worker-reply.json",
+      "worker_reply_sha256": "38a3808c0af30e6a04fb96fc9690cc50122738f9625c236b5b0bfd2a8bbbf52b",
+      "worker_reply_present": true,
+      "worker_reply_matches_expected": true,
+      "worker_reply_result_categories": [
+        {
+          "category": "design",
+          "count": 1,
+          "total_fen": 1600,
+          "ids": [
+            "C604"
+          ]
+        },
+        {
+          "category": "dev",
+          "count": 2,
+          "total_fen": 946,
+          "ids": [
+            "C602",
+            "C605"
+          ]
+        },
+        {
+          "category": "ops",
+          "count": 3,
+          "total_fen": 1464,
+          "ids": [
+            "C601",
+            "C603",
+            "C606"
+          ]
+        }
+      ],
+      "source_checks": [
+        {
+          "path": "evidence/c1/project/B1/review/source-check-output.json",
+          "sha256": "04cad41e072715d4c058b48a13507b40a1aa6d9c89087a87addcb1715ba5bd3b",
+          "pass": false,
+          "checks": {
+            "json_shape": true,
+            "category_set_exactly_once": true,
+            "row_counts": true,
+            "exact_integer_fen_sums": false,
+            "complete_ordered_ids": true,
+            "chinese_heading": true,
+            "markdown_rows_agree": true
+          }
+        },
+        {
+          "path": "evidence/c1/project/B1/review/source-check-output.rejected-v1.json",
+          "sha256": "04cad41e072715d4c058b48a13507b40a1aa6d9c89087a87addcb1715ba5bd3b",
+          "pass": false,
+          "checks": {
+            "json_shape": true,
+            "category_set_exactly_once": true,
+            "row_counts": true,
+            "exact_integer_fen_sums": false,
+            "complete_ordered_ids": true,
+            "chinese_heading": true,
+            "markdown_rows_agree": true
+          }
+        },
+        {
+          "path": "evidence/c1/project/B1/review/source-check-output.v2.json",
+          "sha256": "8d4f5d88a1ee04f4ef5f418ca65a2839bb489286e1018ff42ee93f0427a0af49",
+          "pass": true,
+          "checks": {
+            "json_shape": true,
+            "category_set_exactly_once": true,
+            "row_counts": true,
+            "exact_integer_fen_sums": true,
+            "complete_ordered_ids": true,
+            "chinese_heading": true,
+            "markdown_rows_agree": true
+          }
+        }
+      ]
+    },
+    "B2": {
+      "summary_path": "evidence/c1/project/B2/artifacts/summary.json",
+      "summary_sha256": "373f70e1ba7cb5cc74bd33a51592ac109050cde29ec9c4c07c870edc540dbca3",
+      "normalized_categories": [
+        {
+          "category": "design",
+          "count": 1,
+          "total_fen": 1600,
+          "ids": [
+            "C604"
+          ]
+        },
+        {
+          "category": "dev",
+          "count": 2,
+          "total_fen": 946,
+          "ids": [
+            "C602",
+            "C605"
+          ]
+        },
+        {
+          "category": "ops",
+          "count": 3,
+          "total_fen": 1464,
+          "ids": [
+            "C601",
+            "C603",
+            "C606"
+          ]
+        }
+      ],
+      "summary_matches_expected": true,
+      "summary_zh_path": "evidence/c1/project/B2/artifacts/summary_zh.md",
+      "summary_zh_sha256": "85ac768fb707096c04a8565d59f76ae5ac48e513a661b42068b29a037514eb77",
+      "summary_zh_text": "# 费用分类汇总\n\n金额以 Decimal 按 1 元 = 100 分精确换算；ID 按 CSV 原始行序排列。\n\n| 类别 | 行数 | 合计（分） | 来源 ID |\n| --- | ---: | ---: | --- |\n| design | 1 | 1600 | C604 |\n| dev | 2 | 946 | C602, C605 |\n| ops | 3 | 1464 | C601, C603, C606 |\n",
+      "worker_reply_path": "evidence/c1/project/B2/artifacts/worker-reply.json",
+      "worker_reply_sha256": "399ccadb968a68b90a122f47eb1f79188454c57cc5bbf98b190501c294c38634",
+      "worker_reply_present": true,
+      "worker_reply_matches_expected": true,
+      "worker_reply_result_categories": [
+        {
+          "category": "design",
+          "count": 1,
+          "total_fen": 1600,
+          "ids": [
+            "C604"
+          ]
+        },
+        {
+          "category": "dev",
+          "count": 2,
+          "total_fen": 946,
+          "ids": [
+            "C602",
+            "C605"
+          ]
+        },
+        {
+          "category": "ops",
+          "count": 3,
+          "total_fen": 1464,
+          "ids": [
+            "C601",
+            "C603",
+            "C606"
+          ]
+        }
+      ],
+      "source_checks": [
+        {
+          "path": "evidence/c1/project/B2/review/source-check-output.json",
+          "sha256": "a5403ef0d70560fbfac89b5e1a65e4da8e60ef10408e8c5f325cbea91b5c2bb1",
+          "pass": true,
+          "checks": {
+            "json_exactly_matches_raw_csv": true,
+            "category_keys_sorted": true,
+            "all_ids_and_row_counts_match": true,
+            "markdown_rows_match_raw_csv": true,
+            "markdown_chinese_explanation_present": true,
+            "reply_binds_to_actual_request": true,
+            "reply_result_matches_json": true,
+            "reply_artifact_hashes_match": true,
+            "captured_check_reply_payload_valid": true
+          }
+        }
+      ]
+    },
+    "A2": {
+      "summary_path": "evidence/c1/project/A2/artifacts/summary.json",
+      "summary_sha256": "5954bfd47d9d563ebb8a9832cf6f6a84221083c7286abddd6749eed46d2bd527",
+      "normalized_categories": [
+        {
+          "category": "design",
+          "count": 1,
+          "total_fen": 1600,
+          "ids": [
+            "C604"
+          ]
+        },
+        {
+          "category": "dev",
+          "count": 2,
+          "total_fen": 946,
+          "ids": [
+            "C602",
+            "C605"
+          ]
+        },
+        {
+          "category": "ops",
+          "count": 3,
+          "total_fen": 1464,
+          "ids": [
+            "C601",
+            "C603",
+            "C606"
+          ]
+        }
+      ],
+      "summary_matches_expected": true,
+      "summary_zh_path": "evidence/c1/project/A2/artifacts/summary_zh.md",
+      "summary_zh_sha256": "69ecf9a9cfe412cae561ebbe5046d037ac1d4a14a6e1374cefcbe21c5b14c003",
+      "summary_zh_text": "# 费用分类汇总\n\n金额以 `Decimal` 读取 CSV 中的元金额，再乘以 100 转为整数分；类别按字典序排列，各类来源 ID 保持 CSV 原始行序。\n\n| 类别 | 行数 | 合计（分） | 来源 ID |\n| --- | ---: | ---: | --- |\n| design | 1 | 1600 | C604 |\n| dev | 2 | 946 | C602、C605 |\n| ops | 3 | 1464 | C601、C603、C606 |\n",
+      "worker_reply_path": null,
+      "worker_reply_sha256": null,
+      "worker_reply_present": false,
+      "worker_reply_matches_expected": null,
+      "worker_reply_result_categories": null,
+      "source_checks": []
+    }
+  }
+}

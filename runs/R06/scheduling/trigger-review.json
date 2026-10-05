@@ -1,0 +1,14 @@
+{
+  "schema": "forge-scheduled-observation/1",
+  "trigger_evidence": "runs/R05/trigger-recheck/automation-observed.json",
+  "last_run_time": "2026-10-04T06:16:44.699186+00:00",
+  "read_head": "e3f3d9771df00b669e119ac2f7571d24875e8afe",
+  "remote_reads": "runs/R05/trigger-recheck/",
+  "existing_coordinator_since": "2026-10-04T06:02:02.400517+00:00",
+  "behavior": "Trigger arrived in active root; preserved current jobs/worktree, reconciled fresh known worker IDs and continued same queue. No second coordinator or duplicate monitor created.",
+  "current_actual_command": "runs/R06/scheduling/active-lease-probe.json",
+  "new_guard": "Cooperative advisory lock blocks a second process on this checkout; real competing-process test passes. Active root holds the lease.",
+  "cold_start_cross_session": "not_verified",
+  "publication": "blocked_by_user_gate; no dev write",
+  "recovery": "Observe a later genuine trigger after this coordinator exits with readable same checkout; claim free lease, reconcile preserved unknown calls and execute original ready work. Never fabricate a cold-start event or issue duplicate workers."
+}

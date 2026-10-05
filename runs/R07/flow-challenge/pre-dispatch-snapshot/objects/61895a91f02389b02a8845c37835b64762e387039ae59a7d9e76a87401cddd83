@@ -1,0 +1,14 @@
+{
+  "scope": "本地器材调配建议，不代表实际审批或发送通知",
+  "priority_order": [
+    "urgent",
+    "normal"
+  ],
+  "ordering": "完整有效请求先按priority_order、submitted_at、request_id排序；按equipment_id和date独立核减库存",
+  "incomplete": "未知equipment_id、缺room、units不是正整数、缺日期/优先级/提交时间，列needs_info且不占用库存",
+  "complete_statuses": {
+    "ready": "库存足够，给调配建议并核减该日余额",
+    "conflict": "库存不足，不占用库存且写清原请求与库存约束"
+  },
+  "output": "原请求全部逐条保留；给status与基于来源的reason；保留priority和源行号，另给独立来源核验"
+}

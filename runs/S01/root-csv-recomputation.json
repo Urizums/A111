@@ -1,0 +1,60 @@
+{
+  "source_sha256": "f1a6914eae07b97537e809c9e9fa5000acd02b391ca64484927596a19c2b3bfb",
+  "expected": {
+    "ops": {
+      "row_count": 3,
+      "total_fen": 1464,
+      "ids": [
+        "C601",
+        "C603",
+        "C606"
+      ]
+    },
+    "dev": {
+      "row_count": 2,
+      "total_fen": 946,
+      "ids": [
+        "C602",
+        "C605"
+      ]
+    },
+    "design": {
+      "row_count": 1,
+      "total_fen": 1600,
+      "ids": [
+        "C604"
+      ]
+    }
+  },
+  "samples": [
+    {
+      "sample": "A1",
+      "source": "evidence/c1/project/A1/artifacts/summary.json",
+      "sha256": "5954bfd47d9d563ebb8a9832cf6f6a84221083c7286abddd6749eed46d2bd527",
+      "matches": true,
+      "lifecycle_claim": "Business content check only"
+    },
+    {
+      "sample": "B1",
+      "source": "evidence/c1/project/B1/artifacts/summary.json",
+      "sha256": "8bc08ffb153c2526f200e733bbe5d404d203519b285fa37b6082ae47b090d543",
+      "matches": true,
+      "lifecycle_claim": "Business content check only"
+    },
+    {
+      "sample": "B2",
+      "source": "evidence/c1/project/B2/artifacts/summary.json",
+      "sha256": "373f70e1ba7cb5cc74bd33a51592ac109050cde29ec9c4c07c870edc540dbca3",
+      "matches": true,
+      "lifecycle_claim": "Business content check only"
+    },
+    {
+      "sample": "A2",
+      "source": "evidence/c1/project/A2/artifacts/summary.json",
+      "sha256": "5954bfd47d9d563ebb8a9832cf6f6a84221083c7286abddd6749eed46d2bd527",
+      "matches": true,
+      "lifecycle_claim": "A2 is cutoff output only; equality does not establish completion"
+    }
+  ],
+  "scope": "Fresh read-only Decimal recomputation, no old controller or native calls"
+}

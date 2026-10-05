@@ -1,0 +1,49 @@
+Research command and result record
+
+Parent direction: use the three official documents already fetched into worker/sources; do not fetch more. No parent question was asked and no user clarification was needed. No network call was made.
+
+Command: cat /workspace/A111/runs/R01/sqlite-research/job/request.json
+Result: immutable request loaded; job_id=job_a017450681914b5b8e14ae7052259b64; attempt_id=66ef7f034e2646efa74c7fec3d524759; request_hash=795bc019c080495274a35744f4bdb267b813b7aad9d1ec75fe0a6330a4f5902a; write path worker/.
+
+Command: ls -la /workspace/A111/runs/R01/sqlite-research/worker/sources
+Result: found exactly python310-sqlite3.html, sqlite-transactions.html, sqlite-foreignkeys.html, and sources.json.
+
+Command: cat /workspace/A111/runs/R01/sqlite-research/worker/sources/sources.json
+Result: the three official URLs, retrieval timestamps, SHA-256 hashes, and byte sizes are recorded in research.json.
+
+Source inspection commands and results:
+- sed -n '2006,2057p' /workspace/A111/runs/R01/sqlite-research/worker/sources/python310-sqlite3.html: retrieved Python 3.10 transaction-control section.
+- sed -n '350,400p' /workspace/A111/runs/R01/sqlite-research/worker/sources/sqlite-foreignkeys.html: retrieved per-connection enabling and read-back passages.
+- sed -n '395,430p' /workspace/A111/runs/R01/sqlite-research/worker/sources/sqlite-foreignkeys.html: retrieved the mid-transaction no-op passage.
+- sed -n '250,360p' /workspace/A111/runs/R01/sqlite-research/worker/sources/sqlite-transactions.html: retrieved explicit transactions, one-writer, DEFERRED and IMMEDIATE semantics.
+- sed -n '408,440p' /workspace/A111/runs/R01/sqlite-research/worker/sources/sqlite-transactions.html: retrieved error and explicit rollback discussion.
+- rg -n -i -C 3 'autocommit|isolation_level|BEGIN|commit|rollback|foreign key|PRAGMA foreign_keys|deferred|atomic|ON CONFLICT|UPSERT' /workspace/A111/runs/R01/sqlite-research/worker/sources/python310-sqlite3.html: broad Python search; output was truncated/noisy.
+- rg -n -i -C 3 'transaction|BEGIN|COMMIT|ROLLBACK|foreign key|PRAGMA foreign_keys|deferred|atomic|savepoint' /workspace/A111/runs/R01/sqlite-research/worker/sources/sqlite-transactions.html /workspace/A111/runs/R01/sqlite-research/worker/sources/sqlite-foreignkeys.html: broad SQLite search; output was truncated/noisy.
+- Follow-up rg searches located the FK enablement, DEFERRED/IMMEDIATE and error passages; the exact sections were then read using the sed commands above. No new URLs were fetched; source limit remained three.
+
+Initial runtime command: python3 --version && python3 -c 'import sqlite3,sys; print(sqlite3.sqlite_version, sqlite3.version, sys.version)'
+Result: Python 3.12.14; SQLite runtime 3.53.1; sqlite3.version was 2.6.0 and emitted DeprecationWarning that it will be removed in Python 3.14. This warning was not a failure.
+
+Corrected runtime command: python3 -c 'import sqlite3,sys; print(f"python={sys.version.split()[0]}"); print(f"sqlite_runtime={sqlite3.sqlite_version}"); print(f"sqlite_runtime_tuple={sqlite3.sqlite_version_info}")'
+Result: python=3.12.14; sqlite_runtime=3.53.1; sqlite_runtime_tuple=(3, 53, 1). The corrected measurement omitted deprecated sqlite3.version.
+
+Expectations freeze: research.json was written with source-backed expectations and recommendation before probe.py was executed.
+Pre-probe validation commands: python3 -m json.tool /workspace/A111/runs/R01/sqlite-research/worker/research.json >/dev/null and python3 -m py_compile /workspace/A111/runs/R01/sqlite-research/worker/probe.py. Both completed without output (exit 0).
+
+Probe command: python3 probe.py
+Working directory: /workspace/A111/runs/R01/sqlite-research/worker
+Exit code: 0
+Actual output:
+python=3.12.14
+sqlite_runtime=3.53.1
+foreign_keys_after_enable=1
+later_conflict=IntegrityError; transaction_active_at_failure=True; explicit_rollback=True; baseline_unchanged=True; counts={locations:1, assets:1, imports:1, history:1}
+foreign_key_violation=IntegrityError; missing_location_rejected=True; rollback_restored_baseline=True
+identical_retry=first=committed; retry=identical-retry-noop; asset_count_stable=True; history_count_stable=True
+close_reopen=foreign_keys=1; committed_state_persisted=True; assets=2; history=2
+probe_status=PASS
+Storage/result detail: probe used a temporary file-backed SQLite database under worker/, enabled and read back foreign_keys before BEGIN, created a baseline with one location/asset/import/history row, forced a second-row primary-key conflict, and explicitly rolled back. It separately forced an orphan-location FK error, then imported a successful batch and retried the same ID+digest. The committed state survived connection close/reopen; TemporaryDirectory removed the database afterward.
+
+Failed attempt and corrections: an artifact-update shell command was rejected before execution because it included `rm -rf __pycache__`. The execution wrapper returned: “Rejected ... rm -f style commands are not permitted. Use a safer approach”. A read-only check confirmed no files changed; the artifact update was retried without cleanup. During that correction, I initially mistyped the SQLite version in the transcript as 3.12.14; corrected it to the captured actual output 3.53.1. The probe itself ran once and passed. The initial broad rg output was truncated/noisy; correction was reading exact sections with targeted sed. No source evidence changed.
+
+Unavailable measurements: tokens=null, cost=null, model_active_time=null.

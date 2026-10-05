@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import json,hashlib; from pathlib import Path; w=Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker\"); wrapped=json.loads(Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/job/request.json\").read_text()); q=wrapped[\"request\"]; business_path=w/\"business.json\"; corrections_path=w/\"corrections.json\"; result=json.loads(business_path.read_text()); reply={\"schema_version\":\"forge-host-reply/1\",\"job_id\":q[\"job_id\"],\"attempt_id\":q[\"attempt_id\"],\"request_hash\":wrapped[\"request_hash\"],\"outcome\":\"done\",\"result\":result,\"artifacts\":[{\"path\":str(business_path),\"sha256\":hashlib.sha256(business_path.read_bytes()).hexdigest()},{\"path\":str(corrections_path),\"sha256\":hashlib.sha256(corrections_path.read_bytes()).hexdigest()}],\"reason\":None}; out=w/\"reply.json\"; out.write_text(json.dumps(reply,indent=2,ensure_ascii=False)+\"\\n\"); print(str(out))"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:16:25.410398+00:00",
+    "monotonic_ns": 39224056772954,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:16:25.438038+00:00",
+    "monotonic_ns": 39224084416472,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.027643518,
+  "stdout": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P1B/worker/reply.json\n",
+  "stderr": "",
+  "stdout_base64": "L3dvcmtzcGFjZS9BMTExL3J1bnMvZnV0dXJlL2hvc3RfcHJvdG9jb2xfb3ZlcmhlYWRfY29tcGFyaXNvbi9zYW1wbGVzL1AxQi93b3JrZXIvcmVwbHkuanNvbgo=",
+  "stderr_base64": ""
+}

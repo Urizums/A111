@@ -1,0 +1,143 @@
+{
+  "schema": "independent-source-review/1",
+  "review_scope": {
+    "goal": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/inputs/goal.txt",
+    "rules": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/inputs/rules.json",
+    "acceptance": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/inputs/acceptance.json",
+    "candidate": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/tool/allocator.py",
+    "actual_result": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/results/allocation.json",
+    "checklist": "/workspace/scratch/73714494ad2f/forge-takeover-r07/runs/R07/flow-challenge/worker/successor/missing-information-checklist.md",
+    "method": "Recomputed directly from the five permitted original inputs and compared against the permitted candidate, result, and checklist. No expected-answer or coordinator material was used."
+  },
+  "verdict": {
+    "source_bound_allocation_content": "pass",
+    "needs_information_checklist_content": "pass",
+    "operational_proof": "limited_by_permitted_evidence",
+    "overall": "Reviewed content matches the stated source rules for all seven supplied requests; execution and native-coordination provenance cannot be established from the permitted artifacts alone."
+  },
+  "recomputed": {
+    "source_request_count": 7,
+    "source_line_numbers": [2, 3, 4, 5, 6, 7, 8],
+    "output_record_order_by_source_line": ["R01", "R02", "R03", "R04", "R05", "R06", "R07"],
+    "complete_request_processing_order": ["R01", "R05", "R07", "R02", "R04"],
+    "processing_order_reason": "Priority order is urgent then normal; within each priority submitted_at then request_id determines order. R03 and R06 are incomplete and are excluded from allocation ordering.",
+    "requests": [
+      {
+        "source_row": 2,
+        "request_id": "R01",
+        "equipment_id": "E01",
+        "units": 2,
+        "date": "2026-10-08",
+        "priority": "urgent",
+        "submitted_at": "2026-10-01T09:00:00",
+        "room": "大厅",
+        "status": "ready",
+        "allocation_order": 1,
+        "reason": "Requests 2; E01 inventory before this request is 2, so it is sufficient. Inventory becomes 0."
+      },
+      {
+        "source_row": 3,
+        "request_id": "R02",
+        "equipment_id": "E01",
+        "units": 1,
+        "date": "2026-10-08",
+        "priority": "normal",
+        "submitted_at": "2026-10-01T09:01:00",
+        "room": "教室A",
+        "status": "conflict",
+        "allocation_order": 4,
+        "reason": "Requests 1; E01 inventory when processed is 0, so stock is insufficient. Conflict consumes no further inventory."
+      },
+      {
+        "source_row": 4,
+        "request_id": "R03",
+        "equipment_id": "E02",
+        "units": 2,
+        "date": "2026-10-08",
+        "priority": "normal",
+        "submitted_at": "2026-10-01T09:02:00",
+        "room": "",
+        "status": "needs_info",
+        "allocation_order": null,
+        "reason": "Room is missing; this row does not consume E02 inventory."
+      },
+      {
+        "source_row": 5,
+        "request_id": "R04",
+        "equipment_id": "E03",
+        "units": 1,
+        "date": "2026-10-08",
+        "priority": "normal",
+        "submitted_at": "2026-10-01T09:03:00",
+        "room": "教室B",
+        "status": "conflict",
+        "allocation_order": 5,
+        "reason": "Requests 1; E03 inventory when processed is 0, after urgent R07 uses its sole unit, so stock is insufficient. Conflict consumes no further inventory."
+      },
+      {
+        "source_row": 6,
+        "request_id": "R05",
+        "equipment_id": "E02",
+        "units": 1,
+        "date": "2026-10-08",
+        "priority": "urgent",
+        "submitted_at": "2026-10-01T09:04:00",
+        "room": "大厅",
+        "status": "ready",
+        "allocation_order": 2,
+        "reason": "Requests 1; E02 inventory before this request is 3, so it is sufficient. Inventory becomes 2. R03 is excluded as incomplete and consumes none."
+      },
+      {
+        "source_row": 7,
+        "request_id": "R06",
+        "equipment_id": "E99",
+        "units": 1,
+        "date": "2026-10-08",
+        "priority": "normal",
+        "submitted_at": "2026-10-01T09:05:00",
+        "room": "教室C",
+        "status": "needs_info",
+        "allocation_order": null,
+        "reason": "E99 is absent from the equipment inventory; verify its identity/ledger. This row does not consume inventory."
+      },
+      {
+        "source_row": 8,
+        "request_id": "R07",
+        "equipment_id": "E03",
+        "units": 1,
+        "date": "2026-10-08",
+        "priority": "urgent",
+        "submitted_at": "2026-10-01T09:06:00",
+        "room": "大厅",
+        "status": "ready",
+        "allocation_order": 3,
+        "reason": "Requests 1; E03 inventory before this request is 1, so it is sufficient. Inventory becomes 0."
+      }
+    ],
+    "inventory_after_by_equipment_and_date": [
+      {"equipment_id": "E01", "date": "2026-10-08", "initial_units": 2, "remaining_units": 0},
+      {"equipment_id": "E02", "date": "2026-10-08", "initial_units": 3, "remaining_units": 2},
+      {"equipment_id": "E03", "date": "2026-10-08", "initial_units": 1, "remaining_units": 0}
+    ],
+    "status_counts": {"ready": 3, "conflict": 2, "needs_info": 2}
+  },
+  "comparison_findings": [
+    "The actual result retains all seven requests in original CSV data-row order, with source_row 2 through 8, the original priority, and the full original record. It reports the recomputed processing order, per-equipment/date balances, and status counts exactly.",
+    "Each ready reason states requested units and sufficient pre-request inventory; each conflict reason states requested units and insufficient remaining stock. The result's conflict handling leaves inventory unchanged. Each needs_info reason identifies the source defect and explicitly says inventory was not consumed. Rule-basis text is carried from rules.json.",
+    "The candidate implements priority/submission-time/request-ID sorting for complete requests and keeps inventory balances keyed by equipment_id and date. The result has one date per equipment in this input set, so separation across multiple dates is not exercised by these seven rows.",
+    "The result source_files byte counts and SHA-256 values match the original equipment.csv, requests.csv, and rules.json values observed in the permitted work/input metadata: equipment.csv 94 bytes; requests.csv 444 bytes; rules.json 723 bytes."
+  ],
+  "checklist_review": {
+    "actual_needs_info_rows": [
+      {"request_id": "R03", "source_row": 4, "observed_issue": "missing room", "checklist_entry": "R03 / 第4行", "collection_action": "Ask the applicant to supply the room/location."},
+      {"request_id": "R06", "source_row": 7, "observed_issue": "unknown equipment_id E99", "checklist_entry": "R06 / 第7行", "collection_action": "Verify what E99 identifies and confirm the equipment ledger and available quantity."}
+    ],
+    "coverage": "Both and only the two actual needs_info rows are covered. Each entry includes request/source-row identifiers, priority, existing request details, the reason, the requested follow-up, and fields for response and review. The closing instruction directs staff to update source records and rerun the local tool; it says not to treat unresolved items as allocated.",
+    "duty_staff_usability": "Usable for the two present cases: the missing room has a direct applicant follow-up, and the unknown equipment code has an identity/ledger/quantity verification step."
+  },
+  "supported_gaps_and_limits": [
+    "The allowed evidence establishes the correctness and source binding of the result content, but it does not establish when or by what process allocator.py was executed.",
+    "Acceptance criteria also call for a real native subagent receipt/persistence trail and actual command/output evidence for starting the successor step. The permitted files include the finished checklist but no native coordination receipt or successor execution record, and the report does not claim those operational criteria are verified.",
+    "The fixed input set contains only one date per equipment ID and no malformed units, missing date/priority/submitted_at, invalid priority, or tied sort keys; those code paths are therefore not demonstrated by the reviewed result."
+  ]
+}

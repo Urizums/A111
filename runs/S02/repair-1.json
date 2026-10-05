@@ -1,0 +1,15 @@
+{
+  "issue_id": "ISSUE-001",
+  "source_clause": "R02: failed target subprocess must retain argv/raw streams/exit/timestamps",
+  "before": "runs/S02/capture-before-repair.py",
+  "reproduction": "runs/S02/qualification-before-fix.json",
+  "observed": "Missing executable raised FileNotFoundError before writing any record.",
+  "change": "Reserve record exclusively before execution; persist started state, catch OSError as exit 127, save actual error and end stamps. Existing records prevent repeat effects.",
+  "after": "runs/S02/qualification-after-fix.json",
+  "result": "5 tests passed",
+  "round": 1,
+  "limit": 2,
+  "remaining": 1,
+  "tokens": null,
+  "cost": null
+}

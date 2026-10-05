@@ -1,0 +1,98 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "S01",
+  "goal": "Complete interrupted C1 audit without replay and initiate the revised-contract phase.",
+  "tasks": [
+    {
+      "id": "S01-01",
+      "title": "冻结离线审计范围并实际检查截止证据",
+      "owner": "coordinator",
+      "depends_on": [],
+      "write_paths": [
+        "runs/S01/"
+      ],
+      "acceptance": [
+        "冻结 A01–A05，禁止旧 native 调用",
+        "逐文件校验 cutoff sha256/size 并保存实际返回"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/S01/audit-plan.json",
+        "runs/S01/cutoff-integrity.json",
+        "runs/S01/record-inventory.json"
+      ],
+      "blocker": null,
+      "next_action": "Continue S01-02 remaining original audit"
+    },
+    {
+      "id": "S01-02",
+      "title": "完成剩余离线独立审计",
+      "owner": "coordinator + available Luna independent reviewer",
+      "depends_on": [
+        "S01-01"
+      ],
+      "write_paths": [
+        "runs/S01/"
+      ],
+      "acceptance": [
+        "完成或明确缺失 A01–A05，引用原记录及冻结条款",
+        "保留 inconclusive 和审计局限，不重跑样本"
+      ],
+      "status": "partial",
+      "evidence": [
+        "validation/luna/a04_project_a2_evidence.json",
+        "validation/luna/a04_readonly_command-log.json"
+      ],
+      "blocker": null,
+      "next_action": "Complete A01 package receipt/review/preflight/commit traces; A02 package recomputation; A03 correction counts; remaining A04 samples and A05. Preserve the bounded A2 result and nonblind limit."
+    },
+    {
+      "id": "S01-03",
+      "title": "整合审计结论与原失败状态",
+      "owner": "coordinator",
+      "depends_on": [
+        "S01-02"
+      ],
+      "write_paths": [
+        "runs/S01/"
+      ],
+      "acceptance": [
+        "更新完整台账，C1 不被伪装性能成功",
+        "保留 UI blockers、三个 partial 与原历史"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "整合审计结论与原失败状态"
+    },
+    {
+      "id": "S01-next",
+      "title": "启动下一阶段任务",
+      "owner": "coordinator",
+      "depends_on": [
+        "S01-01",
+        "S01-02",
+        "S01-03"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/S02/"
+      ],
+      "acceptance": [
+        "S02 TODO 和新候选范围已保存",
+        "S02 首项真实执行并有证据"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "启动下一阶段任务",
+      "transition": {
+        "next_phase_id": "S02",
+        "todo_path": null,
+        "first_task_id": null,
+        "start_evidence": []
+      }
+    }
+  ],
+  "updated_at": "2026-10-03T18:26:32.710000+00:00"
+}

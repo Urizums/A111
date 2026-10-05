@@ -1,0 +1,94 @@
+{
+  "schema_version": "forge-project-state/1",
+  "created_at": "2026-10-03T19:24:12Z",
+  "updated_at": "2026-10-03T19:57:59Z",
+  "revision": 2,
+  "status": "completed",
+  "plan": {
+    "schema_version": "forge-project-plan/1",
+    "id": "c1-cloud-offline-audit",
+    "goal": "Complete frozen offline C1 audit A01-A05 from original sources without replay.",
+    "deliverable_kind": "scoped_change",
+    "requirements": [
+      {
+        "id": "req_audit",
+        "text": "Complete A01-A05 from frozen source clauses and immutable evidence.",
+        "origin": "derived",
+        "basis": "START_HERE.md and runs/S01/audit-plan.json",
+        "acceptance_ids": [
+          "audit_report"
+        ]
+      }
+    ],
+    "acceptance": [
+      {
+        "id": "audit_report",
+        "assertion": "A01-A05 each has source-cited finding or explicit missing evidence; recomputation scripts and outputs exist; no old native calls.",
+        "required": true,
+        "level": "review"
+      }
+    ],
+    "tasks": [
+      {
+        "id": "audit",
+        "title": "Independent frozen C1 audit",
+        "depends_on": [],
+        "owner": "gpt-6-luna",
+        "write_paths": [
+          "worker/"
+        ],
+        "acceptance_ids": [
+          "audit_report"
+        ]
+      }
+    ],
+    "defaults": [
+      "Read-only historical evidence; local analysis only."
+    ],
+    "unknowns": [
+      "Provider internal identity, tokens and cost."
+    ]
+  },
+  "plan_hash": "c692e7504f0d5247a959efcebb36bbfc799b3ff1a836b080e0a88ef0179da8b7",
+  "evaluation_plan_lock": null,
+  "tasks": {
+    "audit": {
+      "status": "done",
+      "attempts": [
+        {
+          "attempt_id": "5630af6429d848e7b3465850cff6d56d",
+          "plan_hash": "c692e7504f0d5247a959efcebb36bbfc799b3ff1a836b080e0a88ef0179da8b7",
+          "evaluation_plan_hash": null,
+          "acceptance_ids": [
+            "audit_report"
+          ],
+          "started_at": "2026-10-03T19:24:12Z",
+          "finished_at": "2026-10-03T19:57:59Z",
+          "outcome": "done",
+          "reason": null,
+          "acceptance_results": {
+            "audit_report": {
+              "status": "pass",
+              "level": "review",
+              "evidence": [
+                {
+                  "path": "/workspace/A111/runs/S01/final-review.json",
+                  "sha256": "f61923a0a2fc32aaacab5035d2d14c0c4b8eb79259b058434003206223015bc8"
+                },
+                {
+                  "path": "/workspace/A111/runs/S01/final-review.md",
+                  "sha256": "2e7a1ab797c5518cf3cf11b742f9fa462b8d3f0c361feddb37f09157d7056bb8"
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "repair_attempts": 0,
+      "active_attempt_id": null,
+      "reason": null,
+      "invalidations": []
+    }
+  },
+  "revision_history": []
+}

@@ -1,0 +1,74 @@
+{
+  "schema": "forge-checkpoint/1",
+  "updated_at": "2026-10-03T20:00:09.250606+00:00",
+  "active_phase": "D00",
+  "next_task_id": null,
+  "next_action": "Requested goal delivered in PR #1. New development requires a new scoped goal; no background scheduler is active.",
+  "source_lock": "state/source-lock.json",
+  "phase_todo": "state/phase-todo.json",
+  "native_calls_in_current_handoff": [
+    {
+      "kind": "creation",
+      "worker": "/root/luna_portable_handoff_test",
+      "receipt": "validation/root/luna-native-receipt.json",
+      "purpose": "new validation, not C1 replacement"
+    }
+  ],
+  "unresolved_historical_call": {
+    "sample": "C1 project A2",
+    "observed_status": "running at original Q5 cutoff",
+    "portable_resume_allowed": false
+  },
+  "functional_repairs_used_current_handoff": 0,
+  "functional_repair_limit": 2,
+  "provider_tokens": null,
+  "provider_cost": null,
+  "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
+  "termination": "Delivered; no further phase automatically started. Optional S04/D1/R1 tracks retain their own scopes and historical states.",
+  "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
+  "remaining_audit_checks": [],
+  "github_repository": "Urizums/A111",
+  "publication_evidence": "state/github-publication.json",
+  "lifecycle": "delivered",
+  "c1_audit": "completed_with_historical_gaps; efficacy remains inconclusive",
+  "historical_handoff_repair_scope": "Existing functional_repairs fields describe S00 only; current candidate budgets are separate.",
+  "current_delivery_repair_budgets": {
+    "C2_recorder": {
+      "used": 1,
+      "limit": 2
+    },
+    "handoff_validator": {
+      "used": 2,
+      "limit": 2
+    },
+    "cloud_smoke_harness": {
+      "used": 1,
+      "limit": 2
+    },
+    "S03_coordinator": {
+      "used": 1,
+      "limit": 2
+    }
+  },
+  "native_calls_in_current_delivery": [
+    {
+      "worker": "/root/luna_forge_5630af6429d8",
+      "purpose": "fresh offline audit"
+    },
+    {
+      "worker": "/root/luna_forge_fe59e381cb4d",
+      "purpose": "original smoke; coordinator capture failed"
+    },
+    {
+      "worker": "/root/luna_forge_d847e131cd3a",
+      "purpose": "bounded conformance retest"
+    }
+  ],
+  "current_validation": "S01 offline audit; C2 recorder and original controllers; S03 native source review; CLI on Python 3.10/3.12",
+  "delivery_evidence": [
+    "runs/cloud/github-pr.json",
+    "runs/cloud/github-publication-reports.json",
+    "runs/cloud/github-verification.json"
+  ],
+  "delivery_pr": "https://github.com/Urizums/A111/pull/1"
+}

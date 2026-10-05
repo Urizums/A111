@@ -1,0 +1,24 @@
+{
+  "schema": "forge-bounded-repair/1",
+  "frozen_at": "2026-10-03T19:37:45.494367+00:00",
+  "issue_id": "ISSUE-005",
+  "candidate": "S03 coordinator instrumentation",
+  "original_attempt": "runs/S03/native",
+  "finding": "Root used unwrapped exec_command reads and a Python file-authoring command during source review. The 11 worker captures remain valid; coordinator whole-target coverage was overstated in original acceptance. Missing original raw captures cannot be reconstructed as measured evidence.",
+  "original_result": "business passed; worker observed conformance passed; complete coordinator capture failed",
+  "preserve": [
+    "runs/S03/native",
+    "runs/S03/validation-initial.json"
+  ],
+  "fix": "All coordinator subprocesses during the repaired measured attempt go through the recorder; receipt and review text saving uses pure apply_patch file tools. No original receipt/state is edited.",
+  "same_business_inputs": "Exact bytes of original expenses.csv; no prior results supplied to fresh worker.",
+  "same_requirements": "R01-R06 and original project acceptance unchanged.",
+  "repair_round": 1,
+  "repair_limit": 2,
+  "counts_are_cumulative": true,
+  "native_attempts_total_planned": 2,
+  "max_spawns_per_attempt": 1,
+  "not_a_replacement": "Both attempts retained in final denominator; new attempt is an explicit bounded conformance retest, no speed/success-rate claim.",
+  "worker_max_corrections": 2,
+  "worker_context": "fresh; no prior diagnosis or answers"
+}

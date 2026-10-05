@@ -1,98 +1,88 @@
 {
   "schema": "forge-phase-todo/1",
-  "phase_id": "S01",
-  "goal": "Complete interrupted C1 audit without replay and initiate the revised-contract phase.",
+  "phase_id": "R08",
+  "goal": "按实际宿主能力缩短任务启动路径，并验证新的跨环境接续候选",
   "tasks": [
     {
-      "id": "S01-01",
-      "title": "冻结离线审计范围并实际检查截止证据",
-      "owner": "coordinator",
-      "depends_on": [],
+      "id": "R08-01",
+      "title": "探测下一宿主可用能力并冻结便携边界",
+      "owner": "root",
       "write_paths": [
-        "runs/S01/"
-      ],
-      "acceptance": [
-        "冻结 A01–A05，禁止旧 native 调用",
-        "逐文件校验 cutoff sha256/size 并保存实际返回"
+        "runs/R08/capability-probe/"
       ],
       "status": "done",
-      "evidence": [
-        "runs/S01/audit-plan.json",
-        "runs/S01/cutoff-integrity.json",
-        "runs/S01/record-inventory.json"
-      ],
       "blocker": null,
-      "next_action": "Continue S01-02 remaining original audit"
+      "next_action": "R08-02: author a new short-entry candidate, then fresh Luna validation on new frozen materials",
+      "depends_on": [],
+      "acceptance": [
+        "实际命令核对checkout/Python/Git/宿主工具边界，缺provider的支线明确保留"
+      ],
+      "evidence": [
+        "runs/R08/R08-01-result.json",
+        "runs/R08/capability-probe/command.json",
+        "runs/R08/capability-probe/probe.py",
+        "runs/R07/flow-challenge/worker/native/create-receipt.json",
+        "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json",
+        "runs/R08/capability-probe/command.json"
+      ]
     },
     {
-      "id": "S01-02",
-      "title": "完成剩余离线独立审计",
-      "owner": "coordinator + available Luna independent reviewer",
-      "depends_on": [
-        "S01-01"
-      ],
+      "id": "R08-02",
+      "title": "制作分流与最小真实首步的短启动候选",
+      "owner": "root",
       "write_paths": [
-        "runs/S01/"
-      ],
-      "acceptance": [
-        "完成或明确缺失 A01–A05，引用原记录及冻结条款",
-        "保留 inconclusive 和审计局限，不重跑样本"
-      ],
-      "status": "partial",
-      "evidence": [
-        "validation/luna/a04_project_a2_evidence.json",
-        "validation/luna/a04_readonly_command-log.json"
-      ],
-      "blocker": null,
-      "next_action": "Complete A01 package receipt/review/preflight/commit traces; A02 package recomputation; A03 correction counts; remaining A04 samples and A05. Preserve the bounded A2 result and nonblind limit."
-    },
-    {
-      "id": "S01-03",
-      "title": "整合审计结论与原失败状态",
-      "owner": "coordinator",
-      "depends_on": [
-        "S01-02"
-      ],
-      "write_paths": [
-        "runs/S01/"
-      ],
-      "acceptance": [
-        "更新完整台账，C1 不被伪装性能成功",
-        "保留 UI blockers、三个 partial 与原历史"
+        "runs/R08/candidate/",
+        "runs/R08/design/"
       ],
       "status": "planned",
-      "evidence": [],
       "blocker": null,
-      "next_action": "整合审计结论与原失败状态"
+      "next_action": "制作分流与最小真实首步的短启动候选",
+      "depends_on": [
+        "R08-01"
+      ],
+      "acceptance": [
+        "保存新旧版本及冻结锁；简单任务只读必要引用，先真实首步；系统/可复用flow分流与必要核验有明确边界"
+      ],
+      "evidence": []
     },
     {
-      "id": "S01-next",
-      "title": "启动下一阶段任务",
-      "owner": "coordinator",
+      "id": "R08-03",
+      "title": "新上下文验证短路径的正确性、干预与实际分工",
+      "owner": "luna",
+      "write_paths": [
+        "runs/R08/validation/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "新上下文验证短路径的正确性、干预与实际分工",
       "depends_on": [
-        "S01-01",
-        "S01-02",
-        "S01-03"
+        "R08-02"
+      ],
+      "acceptance": [
+        "新冻结原材料与候选；实际首产物、干预、正确性和必要原生分工分别记录；原R07失败不改判"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R08-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R08-01",
+        "R08-02",
+        "R08-03"
       ],
       "write_paths": [
         "state/",
-        "runs/S02/"
+        "runs/"
       ],
       "acceptance": [
-        "S02 TODO 和新候选范围已保存",
-        "S02 首项真实执行并有证据"
+        "选择并真实启动下一有价值支线"
       ],
       "status": "planned",
       "evidence": [],
       "blocker": null,
-      "next_action": "启动下一阶段任务",
-      "transition": {
-        "next_phase_id": "S02",
-        "todo_path": null,
-        "first_task_id": null,
-        "start_evidence": []
-      }
+      "next_action": "按R08能力结果选可执行支线"
     }
-  ],
-  "updated_at": "2026-10-03T18:26:32.710000+00:00"
+  ]
 }

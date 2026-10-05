@@ -1,0 +1,2806 @@
+{
+  "runtime": "3.10.21 (main, Sep 24 2026, 17:54:40) [Clang 22.1.3 ]",
+  "executable": "/home/agent/.local/bin/python3.10",
+  "candidate": "/workspace/A111/runs/future/provider-adapter/adapter.py",
+  "candidate_sha256": "b6fb2ae7b74079017d105f072892cddab5c0c6341c5348331c6c34d8a86171cd",
+  "contract_sha256": "625797bfcda0365b1669dc2d02e5ee4e17e902427c7a3449d22e3a437ff8036a",
+  "commands": [
+    {
+      "label": "main-first-submit",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-first-submit.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": true, \"should_dispatch\": true, \"request_id\": \"req-main\", \"status\": \"accepted\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": true,
+        "should_dispatch": true,
+        "request_id": "req-main",
+        "status": "accepted"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "created": true,
+        "should_dispatch": true,
+        "request_id": "req-main",
+        "status": "accepted"
+      }
+    },
+    {
+      "label": "main-identical-retry-key-order-varied",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-identical-retry-key-order-varied.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": false, \"should_dispatch\": false, \"request_id\": \"req-main\", \"status\": \"accepted\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": false,
+        "should_dispatch": false,
+        "request_id": "req-main",
+        "status": "accepted"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "created": false,
+        "should_dispatch": false,
+        "request_id": "req-main",
+        "status": "accepted"
+      }
+    },
+    {
+      "label": "main-altered-content-same-idempotency",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-altered-content-same-idempotency.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Request identity/idempotency content conflict\"}\n",
+      "parsed_json": {
+        "error": "Request identity/idempotency content conflict"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "main-altered-idempotency-same-request-id",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-altered-idempotency-same-request-id.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Request identity/idempotency content conflict\"}\n",
+      "parsed_json": {
+        "error": "Request identity/idempotency content conflict"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "main-ambiguous-dispatch-unknown",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-ambiguous-dispatch-unknown.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": false, \"status\": \"unknown\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": false,
+        "status": "unknown"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "unknown",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": false,
+        "status": "unknown"
+      }
+    },
+    {
+      "label": "main-retry-while-unknown-no-redispatch",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-retry-while-unknown-no-redispatch.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": false, \"should_dispatch\": false, \"request_id\": \"req-main\", \"status\": \"unknown\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": false,
+        "should_dispatch": false,
+        "request_id": "req-main",
+        "status": "unknown"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "unknown",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "created": false,
+        "should_dispatch": false,
+        "request_id": "req-main",
+        "status": "unknown"
+      }
+    },
+    {
+      "label": "main-reopen-get-unknown",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "get",
+        "req-main"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-main\", \"input\": \"prompt alpha\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-main\"}, \"status\": \"unknown\", \"provider_run_id\": null, \"cancel_requested\": false, \"events\": [{\"error\": \"dispatch outcome ambiguous\", \"event_id\": \"evt-unknown\", \"output\": null, \"provider_run_id\": null, \"request_id\": \"req-main\", \"status\": \"unknown\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-main",
+          "input": "prompt alpha",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-main"
+        },
+        "status": "unknown",
+        "provider_run_id": null,
+        "cancel_requested": false,
+        "events": [
+          {
+            "error": "dispatch outcome ambiguous",
+            "event_id": "evt-unknown",
+            "output": null,
+            "provider_run_id": null,
+            "request_id": "req-main",
+            "status": "unknown",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "unknown",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "status": "unknown",
+        "provider_run_id": null
+      }
+    },
+    {
+      "label": "main-matching-provider-running",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-matching-provider-running.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": false, \"status\": \"running\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": false,
+        "status": "running"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "running",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": false,
+        "status": "running"
+      }
+    },
+    {
+      "label": "main-provider-run-identity-drift",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-provider-run-identity-drift.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Provider run identity changed\"}\n",
+      "parsed_json": {
+        "error": "Provider run identity changed"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "running",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "main-unbound-request-identity",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-unbound-request-identity.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Unknown request identity\"}\n",
+      "parsed_json": {
+        "error": "Unknown request identity"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "running",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "main-success-null-usage",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-success-null-usage.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": false, \"status\": \"succeeded\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": false,
+        "status": "succeeded"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-success",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-success\",\"output\":\"accepted output\",\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": false,
+        "status": "succeeded"
+      }
+    },
+    {
+      "label": "main-identical-terminal-event-repeat",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-identical-terminal-event-repeat.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": true, \"status\": \"succeeded\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": true,
+        "status": "succeeded"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-success",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-success\",\"output\":\"accepted output\",\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": true,
+        "status": "succeeded"
+      }
+    },
+    {
+      "label": "main-changed-duplicate-event-content",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-changed-duplicate-event-content.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Duplicate event content conflict\"}\n",
+      "parsed_json": {
+        "error": "Duplicate event content conflict"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-success",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-success\",\"output\":\"accepted output\",\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "main-contradictory-new-terminal",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/main-contradictory-new-terminal.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Terminal request cannot accept another observation\"}\n",
+      "parsed_json": {
+        "error": "Terminal request cannot accept another observation"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-success",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-success\",\"output\":\"accepted output\",\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "main-reopen-get-terminal",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "get",
+        "req-main"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-main\", \"input\": \"prompt alpha\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-main\"}, \"status\": \"succeeded\", \"provider_run_id\": \"run-A\", \"cancel_requested\": false, \"events\": [{\"error\": \"dispatch outcome ambiguous\", \"event_id\": \"evt-unknown\", \"output\": null, \"provider_run_id\": null, \"request_id\": \"req-main\", \"status\": \"unknown\", \"usage\": null}, {\"error\": null, \"event_id\": \"evt-running\", \"output\": null, \"provider_run_id\": \"run-A\", \"request_id\": \"req-main\", \"status\": \"running\", \"usage\": null}, {\"error\": null, \"event_id\": \"evt-success\", \"output\": \"accepted output\", \"provider_run_id\": \"run-A\", \"request_id\": \"req-main\", \"status\": \"succeeded\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-main",
+          "input": "prompt alpha",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-main"
+        },
+        "status": "succeeded",
+        "provider_run_id": "run-A",
+        "cancel_requested": false,
+        "events": [
+          {
+            "error": "dispatch outcome ambiguous",
+            "event_id": "evt-unknown",
+            "output": null,
+            "provider_run_id": null,
+            "request_id": "req-main",
+            "status": "unknown",
+            "usage": null
+          },
+          {
+            "error": null,
+            "event_id": "evt-running",
+            "output": null,
+            "provider_run_id": "run-A",
+            "request_id": "req-main",
+            "status": "running",
+            "usage": null
+          },
+          {
+            "error": null,
+            "event_id": "evt-success",
+            "output": "accepted output",
+            "provider_run_id": "run-A",
+            "request_id": "req-main",
+            "status": "succeeded",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-success",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-success\",\"output\":\"accepted output\",\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "status": "succeeded",
+        "provider_run_id": "run-A"
+      }
+    },
+    {
+      "label": "cancel-race-submit",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-success.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/cancel-race-submit.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": true, \"should_dispatch\": true, \"request_id\": \"req-cancel-success\", \"status\": \"accepted\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": true,
+        "should_dispatch": true,
+        "request_id": "req-cancel-success",
+        "status": "accepted"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "created": true,
+        "should_dispatch": true,
+        "status": "accepted"
+      }
+    },
+    {
+      "label": "cancel-race-provider-running",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-success.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/cancel-race-provider-running.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": false, \"status\": \"running\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": false,
+        "status": "running"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "running",
+            "provider_run_id": "run-C",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-csrunning",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csrunning\",\"output\":null,\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"running\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": false,
+        "status": "running"
+      }
+    },
+    {
+      "label": "cancel-race-intent",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-success.db",
+        "cancel",
+        "req-cancel-success"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"running\", \"cancel_requested\": true, \"terminal_proven\": false}\n",
+      "stderr": "",
+      "parsed_json": {
+        "status": "running",
+        "cancel_requested": true,
+        "terminal_proven": false
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "running",
+            "provider_run_id": "run-C",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-csrunning",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csrunning\",\"output\":null,\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"running\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "status": "running",
+        "cancel_requested": true,
+        "terminal_proven": false
+      }
+    },
+    {
+      "label": "cancel-race-intent-does-not-settle",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-success.db",
+        "get",
+        "req-cancel-success"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-cancel-success\", \"input\": \"cancel race\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-cancel-success\"}, \"status\": \"running\", \"provider_run_id\": \"run-C\", \"cancel_requested\": true, \"events\": [{\"error\": null, \"event_id\": \"evt-csrunning\", \"output\": null, \"provider_run_id\": \"run-C\", \"request_id\": \"req-cancel-success\", \"status\": \"running\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-cancel-success",
+          "input": "cancel race",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-cancel-success"
+        },
+        "status": "running",
+        "provider_run_id": "run-C",
+        "cancel_requested": true,
+        "events": [
+          {
+            "error": null,
+            "event_id": "evt-csrunning",
+            "output": null,
+            "provider_run_id": "run-C",
+            "request_id": "req-cancel-success",
+            "status": "running",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "running",
+            "provider_run_id": "run-C",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-csrunning",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csrunning\",\"output\":null,\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"running\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "status": "running",
+        "cancel_requested": true,
+        "provider_run_id": "run-C"
+      }
+    },
+    {
+      "label": "cancel-race-success-settles",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-success.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/cancel-race-success-settles.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": false, \"status\": \"succeeded\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": false,
+        "status": "succeeded"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-C",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-csrunning",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csrunning\",\"output\":null,\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-csuccess",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csuccess\",\"output\":\"success won race\",\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": false,
+        "status": "succeeded"
+      }
+    },
+    {
+      "label": "cancel-race-success-is-terminal-proof",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-success.db",
+        "get",
+        "req-cancel-success"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-cancel-success\", \"input\": \"cancel race\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-cancel-success\"}, \"status\": \"succeeded\", \"provider_run_id\": \"run-C\", \"cancel_requested\": true, \"events\": [{\"error\": null, \"event_id\": \"evt-csrunning\", \"output\": null, \"provider_run_id\": \"run-C\", \"request_id\": \"req-cancel-success\", \"status\": \"running\", \"usage\": null}, {\"error\": null, \"event_id\": \"evt-csuccess\", \"output\": \"success won race\", \"provider_run_id\": \"run-C\", \"request_id\": \"req-cancel-success\", \"status\": \"succeeded\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-cancel-success",
+          "input": "cancel race",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-cancel-success"
+        },
+        "status": "succeeded",
+        "provider_run_id": "run-C",
+        "cancel_requested": true,
+        "events": [
+          {
+            "error": null,
+            "event_id": "evt-csrunning",
+            "output": null,
+            "provider_run_id": "run-C",
+            "request_id": "req-cancel-success",
+            "status": "running",
+            "usage": null
+          },
+          {
+            "error": null,
+            "event_id": "evt-csuccess",
+            "output": "success won race",
+            "provider_run_id": "run-C",
+            "request_id": "req-cancel-success",
+            "status": "succeeded",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-C",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-csrunning",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csrunning\",\"output\":null,\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-csuccess",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csuccess\",\"output\":\"success won race\",\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "status": "succeeded",
+        "cancel_requested": true,
+        "provider_run_id": "run-C"
+      }
+    },
+    {
+      "label": "cancel-race-retry-no-redispatch",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-success.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/cancel-race-retry-no-redispatch.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": false, \"should_dispatch\": false, \"request_id\": \"req-cancel-success\", \"status\": \"succeeded\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": false,
+        "should_dispatch": false,
+        "request_id": "req-cancel-success",
+        "status": "succeeded"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-C",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-csrunning",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csrunning\",\"output\":null,\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-csuccess",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csuccess\",\"output\":\"success won race\",\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "created": false,
+        "should_dispatch": false,
+        "status": "succeeded"
+      }
+    },
+    {
+      "label": "cancel-ack-submit",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-ack.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/cancel-ack-submit.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": true, \"should_dispatch\": true, \"request_id\": \"req-cancel-ack\", \"status\": \"accepted\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": true,
+        "should_dispatch": true,
+        "request_id": "req-cancel-ack",
+        "status": "accepted"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-ack",
+            "idem": "idem-cancel-ack",
+            "payload": "{\"idempotency_key\":\"idem-cancel-ack\",\"input\":\"cancel ack\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-ack\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "created": true,
+        "should_dispatch": true,
+        "status": "accepted"
+      }
+    },
+    {
+      "label": "cancel-ack-intent",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-ack.db",
+        "cancel",
+        "req-cancel-ack"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"status\": \"accepted\", \"cancel_requested\": true, \"terminal_proven\": false}\n",
+      "stderr": "",
+      "parsed_json": {
+        "status": "accepted",
+        "cancel_requested": true,
+        "terminal_proven": false
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-ack",
+            "idem": "idem-cancel-ack",
+            "payload": "{\"idempotency_key\":\"idem-cancel-ack\",\"input\":\"cancel ack\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-ack\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 1
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "status": "accepted",
+        "cancel_requested": true,
+        "terminal_proven": false
+      }
+    },
+    {
+      "label": "cancel-ack-provider-terminal",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-ack.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/cancel-ack-provider-terminal.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": false, \"status\": \"cancelled\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": false,
+        "status": "cancelled"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-ack",
+            "idem": "idem-cancel-ack",
+            "payload": "{\"idempotency_key\":\"idem-cancel-ack\",\"input\":\"cancel ack\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-ack\"}",
+            "status": "cancelled",
+            "provider_run_id": "run-D",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-cancel-ack",
+            "request_id": "req-cancel-ack",
+            "payload": "{\"error\":null,\"event_id\":\"evt-cancel-ack\",\"output\":null,\"provider_run_id\":\"run-D\",\"request_id\":\"req-cancel-ack\",\"status\":\"cancelled\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": false,
+        "status": "cancelled"
+      }
+    },
+    {
+      "label": "cancel-ack-terminal-proof",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-ack.db",
+        "get",
+        "req-cancel-ack"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-cancel-ack\", \"input\": \"cancel ack\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-cancel-ack\"}, \"status\": \"cancelled\", \"provider_run_id\": \"run-D\", \"cancel_requested\": true, \"events\": [{\"error\": null, \"event_id\": \"evt-cancel-ack\", \"output\": null, \"provider_run_id\": \"run-D\", \"request_id\": \"req-cancel-ack\", \"status\": \"cancelled\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-cancel-ack",
+          "input": "cancel ack",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-cancel-ack"
+        },
+        "status": "cancelled",
+        "provider_run_id": "run-D",
+        "cancel_requested": true,
+        "events": [
+          {
+            "error": null,
+            "event_id": "evt-cancel-ack",
+            "output": null,
+            "provider_run_id": "run-D",
+            "request_id": "req-cancel-ack",
+            "status": "cancelled",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-ack",
+            "idem": "idem-cancel-ack",
+            "payload": "{\"idempotency_key\":\"idem-cancel-ack\",\"input\":\"cancel ack\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-ack\"}",
+            "status": "cancelled",
+            "provider_run_id": "run-D",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-cancel-ack",
+            "request_id": "req-cancel-ack",
+            "payload": "{\"error\":null,\"event_id\":\"evt-cancel-ack\",\"output\":null,\"provider_run_id\":\"run-D\",\"request_id\":\"req-cancel-ack\",\"status\":\"cancelled\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "status": "cancelled",
+        "cancel_requested": true,
+        "provider_run_id": "run-D"
+      }
+    },
+    {
+      "label": "invalid-malformed-request-json",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-malformed.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-malformed-request-json.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}\n",
+      "parsed_json": {
+        "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "invalid-duplicate-request-json-key",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-duplicate.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-duplicate-request-json-key.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Duplicate JSON key: request_id\"}\n",
+      "parsed_json": {
+        "error": "Duplicate JSON key: request_id"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "invalid-nonfinite-request-number",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-nonfinite.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-nonfinite-request-number.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Non-finite JSON value: NaN\"}\n",
+      "parsed_json": {
+        "error": "Non-finite JSON value: NaN"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "invalid-unknown-request-field",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-extra.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-unknown-request-field.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Unexpected or missing fields: request_id, idempotency_key, model, input, limits\"}\n",
+      "parsed_json": {
+        "error": "Unexpected or missing fields: request_id, idempotency_key, model, input, limits"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-bool-output-limit",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-bool.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-bool-output-limit.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Limits must be positive integers; declaration is not provider enforcement\"}\n",
+      "parsed_json": {
+        "error": "Limits must be positive integers; declaration is not provider enforcement"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-zero-timeout-limit",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-zero.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-zero-timeout-limit.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Limits must be positive integers; declaration is not provider enforcement\"}\n",
+      "parsed_json": {
+        "error": "Limits must be positive integers; declaration is not provider enforcement"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-string-timeout-limit",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-string-limit.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-string-timeout-limit.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Limits must be positive integers; declaration is not provider enforcement\"}\n",
+      "parsed_json": {
+        "error": "Limits must be positive integers; declaration is not provider enforcement"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-blank-input",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-blank.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-blank-input.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Input must be nonempty text\"}\n",
+      "parsed_json": {
+        "error": "Input must be nonempty text"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-request-identifier",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-identity.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-request-identifier.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Invalid identity\"}\n",
+      "parsed_json": {
+        "error": "Invalid identity"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "limits-minimum-positive-values",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/limits-minimum.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/limits-minimum-positive-values.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": true, \"should_dispatch\": true, \"request_id\": \"req-limits-min\", \"status\": \"accepted\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": true,
+        "should_dispatch": true,
+        "request_id": "req-limits-min",
+        "status": "accepted"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-limits-min",
+            "idem": "idem-limits-min",
+            "payload": "{\"idempotency_key\":\"idem-limits-min\",\"input\":\"minimum\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-limits-min\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "created": true,
+        "should_dispatch": true,
+        "status": "accepted"
+      }
+    },
+    {
+      "label": "invalid-malformed-event-json",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-event-malformed.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-malformed-event-json.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Expecting property name enclosed in double quotes: line 1 column 2 (char 1)\"}\n",
+      "parsed_json": {
+        "error": "Expecting property name enclosed in double quotes: line 1 column 2 (char 1)"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "invalid-duplicate-event-json-key",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-event-duplicate.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-duplicate-event-json-key.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Duplicate JSON key: event_id\"}\n",
+      "parsed_json": {
+        "error": "Duplicate JSON key: event_id"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "invalid-nonfinite-event-usage",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/bad-event-nonfinite.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-nonfinite-event-usage.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Non-finite JSON value: NaN\"}\n",
+      "parsed_json": {
+        "error": "Non-finite JSON value: NaN"
+      },
+      "database_after_process_exit": {
+        "exists": false,
+        "requests": [],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": "predicate asserted by harness"
+    },
+    {
+      "label": "event-validation-seed-submit",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/event-validation-seed-submit.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": true, \"should_dispatch\": true, \"request_id\": \"req-event-invalid\", \"status\": \"accepted\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": true,
+        "should_dispatch": true,
+        "request_id": "req-event-invalid",
+        "status": "accepted"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "created": true,
+        "should_dispatch": true
+      }
+    },
+    {
+      "label": "invalid-unknown-event-field",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-unknown-event-field.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Unexpected or missing fields: request_id, provider_run_id, event_id, status, output, error, usage\"}\n",
+      "parsed_json": {
+        "error": "Unexpected or missing fields: request_id, provider_run_id, event_id, status, output, error, usage"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-unknown-usage-field",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-unknown-usage-field.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Unexpected or missing fields: input_tokens, output_tokens\"}\n",
+      "parsed_json": {
+        "error": "Unexpected or missing fields: input_tokens, output_tokens"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-bool-usage-count",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-bool-usage-count.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Usage must be nonnegative measured integers or null\"}\n",
+      "parsed_json": {
+        "error": "Usage must be nonnegative measured integers or null"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-negative-usage-count",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-negative-usage-count.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Usage must be nonnegative measured integers or null\"}\n",
+      "parsed_json": {
+        "error": "Usage must be nonnegative measured integers or null"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-known-event-missing-provider-run-id",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-known-event-missing-provider-run-id.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Known provider run identity required for this observation\"}\n",
+      "parsed_json": {
+        "error": "Known provider run identity required for this observation"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-event-identity-syntax",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-event-identity-syntax.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Invalid identity\"}\n",
+      "parsed_json": {
+        "error": "Invalid identity"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "invalid-event-status",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/invalid-event-status.json"
+      ],
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "{\"error\": \"Invalid observed state\"}\n",
+      "parsed_json": {
+        "error": "Invalid observed state"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 2,
+      "expectation": null
+    },
+    {
+      "label": "valid-measured-usage",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/valid-measured-usage.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": false, \"status\": \"running\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": false,
+        "status": "running"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "running",
+            "provider_run_id": "run-E",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "ev-valid-usage",
+            "request_id": "req-event-invalid",
+            "payload": "{\"error\":null,\"event_id\":\"ev-valid-usage\",\"output\":null,\"provider_run_id\":\"run-E\",\"request_id\":\"req-event-invalid\",\"status\":\"running\",\"usage\":{\"input_tokens\":4,\"output_tokens\":2}}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": false,
+        "status": "running"
+      }
+    },
+    {
+      "label": "valid-unknown-null-usage-identity",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "observe",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/valid-unknown-null-usage-identity.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"reused\": false, \"status\": \"unknown\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "reused": false,
+        "status": "unknown"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "unknown",
+            "provider_run_id": "run-E",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "ev-valid-usage",
+            "request_id": "req-event-invalid",
+            "payload": "{\"error\":null,\"event_id\":\"ev-valid-usage\",\"output\":null,\"provider_run_id\":\"run-E\",\"request_id\":\"req-event-invalid\",\"status\":\"running\",\"usage\":{\"input_tokens\":4,\"output_tokens\":2}}"
+          },
+          {
+            "event_id": "ev-unknown-null-run",
+            "request_id": "req-event-invalid",
+            "payload": "{\"error\":\"outcome uncertain\",\"event_id\":\"ev-unknown-null-run\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-event-invalid\",\"status\":\"unknown\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "reused": false,
+        "status": "unknown"
+      }
+    },
+    {
+      "label": "event-validation-reopen",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/event-invalid.db",
+        "get",
+        "req-event-invalid"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-event-invalid\", \"input\": \"prompt alpha\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-event-invalid\"}, \"status\": \"unknown\", \"provider_run_id\": \"run-E\", \"cancel_requested\": false, \"events\": [{\"error\": null, \"event_id\": \"ev-valid-usage\", \"output\": null, \"provider_run_id\": \"run-E\", \"request_id\": \"req-event-invalid\", \"status\": \"running\", \"usage\": {\"input_tokens\": 4, \"output_tokens\": 2}}, {\"error\": \"outcome uncertain\", \"event_id\": \"ev-unknown-null-run\", \"output\": null, \"provider_run_id\": null, \"request_id\": \"req-event-invalid\", \"status\": \"unknown\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-event-invalid",
+          "input": "prompt alpha",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-event-invalid"
+        },
+        "status": "unknown",
+        "provider_run_id": "run-E",
+        "cancel_requested": false,
+        "events": [
+          {
+            "error": null,
+            "event_id": "ev-valid-usage",
+            "output": null,
+            "provider_run_id": "run-E",
+            "request_id": "req-event-invalid",
+            "status": "running",
+            "usage": {
+              "input_tokens": 4,
+              "output_tokens": 2
+            }
+          },
+          {
+            "error": "outcome uncertain",
+            "event_id": "ev-unknown-null-run",
+            "output": null,
+            "provider_run_id": null,
+            "request_id": "req-event-invalid",
+            "status": "unknown",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "unknown",
+            "provider_run_id": "run-E",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "ev-valid-usage",
+            "request_id": "req-event-invalid",
+            "payload": "{\"error\":null,\"event_id\":\"ev-valid-usage\",\"output\":null,\"provider_run_id\":\"run-E\",\"request_id\":\"req-event-invalid\",\"status\":\"running\",\"usage\":{\"input_tokens\":4,\"output_tokens\":2}}"
+          },
+          {
+            "event_id": "ev-unknown-null-run",
+            "request_id": "req-event-invalid",
+            "payload": "{\"error\":\"outcome uncertain\",\"event_id\":\"ev-unknown-null-run\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-event-invalid\",\"status\":\"unknown\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null,
+      "expected_json_subset": {
+        "status": "unknown",
+        "provider_run_id": "run-E"
+      }
+    },
+    {
+      "label": "concurrent-identical-submit-1",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/concurrent.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/concurrent-request.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": true, \"should_dispatch\": true, \"request_id\": \"req-concurrent\", \"status\": \"accepted\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": true,
+        "should_dispatch": true,
+        "request_id": "req-concurrent",
+        "status": "accepted"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-concurrent",
+            "idem": "idem-concurrent",
+            "payload": "{\"idempotency_key\":\"idem-concurrent\",\"input\":\"same concurrent content\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-concurrent\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null
+    },
+    {
+      "label": "concurrent-identical-submit-2",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/concurrent.db",
+        "submit",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/inputs/concurrent-request.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"created\": false, \"should_dispatch\": false, \"request_id\": \"req-concurrent\", \"status\": \"accepted\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "created": false,
+        "should_dispatch": false,
+        "request_id": "req-concurrent",
+        "status": "accepted"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-concurrent",
+            "idem": "idem-concurrent",
+            "payload": "{\"idempotency_key\":\"idem-concurrent\",\"input\":\"same concurrent content\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-concurrent\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      },
+      "expected_exit_code": 0,
+      "expectation": null
+    },
+    {
+      "label": "final-reopen-main-history",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/lifecycle.db",
+        "get",
+        "req-main"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-main\", \"input\": \"prompt alpha\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-main\"}, \"status\": \"succeeded\", \"provider_run_id\": \"run-A\", \"cancel_requested\": false, \"events\": [{\"error\": \"dispatch outcome ambiguous\", \"event_id\": \"evt-unknown\", \"output\": null, \"provider_run_id\": null, \"request_id\": \"req-main\", \"status\": \"unknown\", \"usage\": null}, {\"error\": null, \"event_id\": \"evt-running\", \"output\": null, \"provider_run_id\": \"run-A\", \"request_id\": \"req-main\", \"status\": \"running\", \"usage\": null}, {\"error\": null, \"event_id\": \"evt-success\", \"output\": \"accepted output\", \"provider_run_id\": \"run-A\", \"request_id\": \"req-main\", \"status\": \"succeeded\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-main",
+          "input": "prompt alpha",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-main"
+        },
+        "status": "succeeded",
+        "provider_run_id": "run-A",
+        "cancel_requested": false,
+        "events": [
+          {
+            "error": "dispatch outcome ambiguous",
+            "event_id": "evt-unknown",
+            "output": null,
+            "provider_run_id": null,
+            "request_id": "req-main",
+            "status": "unknown",
+            "usage": null
+          },
+          {
+            "error": null,
+            "event_id": "evt-running",
+            "output": null,
+            "provider_run_id": "run-A",
+            "request_id": "req-main",
+            "status": "running",
+            "usage": null
+          },
+          {
+            "error": null,
+            "event_id": "evt-success",
+            "output": "accepted output",
+            "provider_run_id": "run-A",
+            "request_id": "req-main",
+            "status": "succeeded",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-success",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-success\",\"output\":\"accepted output\",\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null
+    },
+    {
+      "label": "final-reopen-cancel-success-history",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-success.db",
+        "get",
+        "req-cancel-success"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-cancel-success\", \"input\": \"cancel race\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-cancel-success\"}, \"status\": \"succeeded\", \"provider_run_id\": \"run-C\", \"cancel_requested\": true, \"events\": [{\"error\": null, \"event_id\": \"evt-csrunning\", \"output\": null, \"provider_run_id\": \"run-C\", \"request_id\": \"req-cancel-success\", \"status\": \"running\", \"usage\": null}, {\"error\": null, \"event_id\": \"evt-csuccess\", \"output\": \"success won race\", \"provider_run_id\": \"run-C\", \"request_id\": \"req-cancel-success\", \"status\": \"succeeded\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-cancel-success",
+          "input": "cancel race",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-cancel-success"
+        },
+        "status": "succeeded",
+        "provider_run_id": "run-C",
+        "cancel_requested": true,
+        "events": [
+          {
+            "error": null,
+            "event_id": "evt-csrunning",
+            "output": null,
+            "provider_run_id": "run-C",
+            "request_id": "req-cancel-success",
+            "status": "running",
+            "usage": null
+          },
+          {
+            "error": null,
+            "event_id": "evt-csuccess",
+            "output": "success won race",
+            "provider_run_id": "run-C",
+            "request_id": "req-cancel-success",
+            "status": "succeeded",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-C",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-csrunning",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csrunning\",\"output\":null,\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-csuccess",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csuccess\",\"output\":\"success won race\",\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null
+    },
+    {
+      "label": "final-reopen-cancel-ack-history",
+      "command": [
+        "/home/agent/.local/bin/python3.10",
+        "/workspace/A111/runs/future/provider-adapter/adapter.py",
+        "--database",
+        "/workspace/A111/runs/future/provider-adapter/independent/worker/py3.10-acceptance-rerun/db/cancel-ack.db",
+        "get",
+        "req-cancel-ack"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"request\": {\"idempotency_key\": \"idem-cancel-ack\", \"input\": \"cancel ack\", \"limits\": {\"max_output_tokens\": 1, \"timeout_ms\": 1}, \"model\": \"model-local-test\", \"request_id\": \"req-cancel-ack\"}, \"status\": \"cancelled\", \"provider_run_id\": \"run-D\", \"cancel_requested\": true, \"events\": [{\"error\": null, \"event_id\": \"evt-cancel-ack\", \"output\": null, \"provider_run_id\": \"run-D\", \"request_id\": \"req-cancel-ack\", \"status\": \"cancelled\", \"usage\": null}], \"boundary\": \"Local observed ledger, not authenticated provider telemetry\"}\n",
+      "stderr": "",
+      "parsed_json": {
+        "request": {
+          "idempotency_key": "idem-cancel-ack",
+          "input": "cancel ack",
+          "limits": {
+            "max_output_tokens": 1,
+            "timeout_ms": 1
+          },
+          "model": "model-local-test",
+          "request_id": "req-cancel-ack"
+        },
+        "status": "cancelled",
+        "provider_run_id": "run-D",
+        "cancel_requested": true,
+        "events": [
+          {
+            "error": null,
+            "event_id": "evt-cancel-ack",
+            "output": null,
+            "provider_run_id": "run-D",
+            "request_id": "req-cancel-ack",
+            "status": "cancelled",
+            "usage": null
+          }
+        ],
+        "boundary": "Local observed ledger, not authenticated provider telemetry"
+      },
+      "database_after_process_exit": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-ack",
+            "idem": "idem-cancel-ack",
+            "payload": "{\"idempotency_key\":\"idem-cancel-ack\",\"input\":\"cancel ack\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-ack\"}",
+            "status": "cancelled",
+            "provider_run_id": "run-D",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-cancel-ack",
+            "request_id": "req-cancel-ack",
+            "payload": "{\"error\":null,\"event_id\":\"evt-cancel-ack\",\"output\":null,\"provider_run_id\":\"run-D\",\"request_id\":\"req-cancel-ack\",\"status\":\"cancelled\",\"usage\":null}"
+          }
+        ]
+      },
+      "expected_exit_code": 0,
+      "expectation": null
+    }
+  ],
+  "checks": [
+    {
+      "label": "main-first-submit",
+      "passed": true
+    },
+    {
+      "label": "main-durable-before-caller-dispatch",
+      "passed": true,
+      "description": "request row is committed in accepted state before caller dispatch",
+      "state": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      }
+    },
+    {
+      "label": "main-identical-retry-key-order-varied",
+      "passed": true
+    },
+    {
+      "label": "main-altered-content-same-idempotency",
+      "passed": true
+    },
+    {
+      "label": "main-altered-idempotency-same-request-id",
+      "passed": true
+    },
+    {
+      "label": "main-conflicts-preserve-single-record",
+      "passed": true,
+      "description": "both changed-content collisions leave the original single request intact",
+      "state": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "accepted",
+            "provider_run_id": null,
+            "cancel_requested": 0
+          }
+        ],
+        "events": []
+      }
+    },
+    {
+      "label": "main-ambiguous-dispatch-unknown",
+      "passed": true
+    },
+    {
+      "label": "main-retry-while-unknown-no-redispatch",
+      "passed": true
+    },
+    {
+      "label": "main-reopen-get-unknown",
+      "passed": true
+    },
+    {
+      "label": "main-matching-provider-running",
+      "passed": true
+    },
+    {
+      "label": "main-provider-run-identity-drift",
+      "passed": true
+    },
+    {
+      "label": "main-unbound-request-identity",
+      "passed": true
+    },
+    {
+      "label": "main-success-null-usage",
+      "passed": true
+    },
+    {
+      "label": "main-identical-terminal-event-repeat",
+      "passed": true
+    },
+    {
+      "label": "main-changed-duplicate-event-content",
+      "passed": true
+    },
+    {
+      "label": "main-contradictory-new-terminal",
+      "passed": true
+    },
+    {
+      "label": "main-reopen-get-terminal",
+      "passed": true
+    },
+    {
+      "label": "main-reopen-history-intact",
+      "passed": true,
+      "description": "fresh processes observe accepted -> unknown -> running -> succeeded event history; usage remains null",
+      "state": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-main",
+            "idem": "idem-main",
+            "payload": "{\"idempotency_key\":\"idem-main\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-main\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-A",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-unknown",
+            "request_id": "req-main",
+            "payload": "{\"error\":\"dispatch outcome ambiguous\",\"event_id\":\"evt-unknown\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-main\",\"status\":\"unknown\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-running",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-running\",\"output\":null,\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-success",
+            "request_id": "req-main",
+            "payload": "{\"error\":null,\"event_id\":\"evt-success\",\"output\":\"accepted output\",\"provider_run_id\":\"run-A\",\"request_id\":\"req-main\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      }
+    },
+    {
+      "label": "cancel-race-submit",
+      "passed": true
+    },
+    {
+      "label": "cancel-race-provider-running",
+      "passed": true
+    },
+    {
+      "label": "cancel-race-intent",
+      "passed": true
+    },
+    {
+      "label": "cancel-race-intent-does-not-settle",
+      "passed": true
+    },
+    {
+      "label": "cancel-race-success-settles",
+      "passed": true
+    },
+    {
+      "label": "cancel-race-success-is-terminal-proof",
+      "passed": true
+    },
+    {
+      "label": "cancel-race-retry-no-redispatch",
+      "passed": true
+    },
+    {
+      "label": "cancel-race-durable",
+      "passed": true,
+      "description": "cancel intent persists, success is terminal, and both observations remain in history",
+      "state": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-success",
+            "idem": "idem-cancel-success",
+            "payload": "{\"idempotency_key\":\"idem-cancel-success\",\"input\":\"cancel race\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-success\"}",
+            "status": "succeeded",
+            "provider_run_id": "run-C",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-csrunning",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csrunning\",\"output\":null,\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"running\",\"usage\":null}"
+          },
+          {
+            "event_id": "evt-csuccess",
+            "request_id": "req-cancel-success",
+            "payload": "{\"error\":null,\"event_id\":\"evt-csuccess\",\"output\":\"success won race\",\"provider_run_id\":\"run-C\",\"request_id\":\"req-cancel-success\",\"status\":\"succeeded\",\"usage\":null}"
+          }
+        ]
+      }
+    },
+    {
+      "label": "cancel-ack-submit",
+      "passed": true
+    },
+    {
+      "label": "cancel-ack-intent",
+      "passed": true
+    },
+    {
+      "label": "cancel-ack-provider-terminal",
+      "passed": true
+    },
+    {
+      "label": "cancel-ack-terminal-proof",
+      "passed": true
+    },
+    {
+      "label": "cancel-ack-durable",
+      "passed": true,
+      "description": "explicit cancellation acknowledgement is the durable terminal proof",
+      "state": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-cancel-ack",
+            "idem": "idem-cancel-ack",
+            "payload": "{\"idempotency_key\":\"idem-cancel-ack\",\"input\":\"cancel ack\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-cancel-ack\"}",
+            "status": "cancelled",
+            "provider_run_id": "run-D",
+            "cancel_requested": 1
+          }
+        ],
+        "events": [
+          {
+            "event_id": "evt-cancel-ack",
+            "request_id": "req-cancel-ack",
+            "payload": "{\"error\":null,\"event_id\":\"evt-cancel-ack\",\"output\":null,\"provider_run_id\":\"run-D\",\"request_id\":\"req-cancel-ack\",\"status\":\"cancelled\",\"usage\":null}"
+          }
+        ]
+      }
+    },
+    {
+      "label": "invalid-malformed-request-json",
+      "passed": true
+    },
+    {
+      "label": "invalid-duplicate-request-json-key",
+      "passed": true
+    },
+    {
+      "label": "invalid-nonfinite-request-number",
+      "passed": true
+    },
+    {
+      "label": "invalid-unknown-request-field",
+      "passed": true
+    },
+    {
+      "label": "invalid-bool-output-limit",
+      "passed": true
+    },
+    {
+      "label": "invalid-zero-timeout-limit",
+      "passed": true
+    },
+    {
+      "label": "invalid-string-timeout-limit",
+      "passed": true
+    },
+    {
+      "label": "invalid-blank-input",
+      "passed": true
+    },
+    {
+      "label": "invalid-request-identifier",
+      "passed": true
+    },
+    {
+      "label": "limits-minimum-positive-values",
+      "passed": true
+    },
+    {
+      "label": "invalid-malformed-event-json",
+      "passed": true
+    },
+    {
+      "label": "invalid-duplicate-event-json-key",
+      "passed": true
+    },
+    {
+      "label": "invalid-nonfinite-event-usage",
+      "passed": true
+    },
+    {
+      "label": "event-validation-seed-submit",
+      "passed": true
+    },
+    {
+      "label": "invalid-unknown-event-field",
+      "passed": true
+    },
+    {
+      "label": "invalid-unknown-usage-field",
+      "passed": true
+    },
+    {
+      "label": "invalid-bool-usage-count",
+      "passed": true
+    },
+    {
+      "label": "invalid-negative-usage-count",
+      "passed": true
+    },
+    {
+      "label": "invalid-known-event-missing-provider-run-id",
+      "passed": true
+    },
+    {
+      "label": "invalid-event-identity-syntax",
+      "passed": true
+    },
+    {
+      "label": "invalid-event-status",
+      "passed": true
+    },
+    {
+      "label": "valid-measured-usage",
+      "passed": true
+    },
+    {
+      "label": "valid-unknown-null-usage-identity",
+      "passed": true
+    },
+    {
+      "label": "event-validation-reopen",
+      "passed": true
+    },
+    {
+      "label": "event-validation-history-and-null",
+      "passed": true,
+      "description": "valid measured usage is retained while unavailable usage remains null",
+      "state": {
+        "exists": true,
+        "requests": [
+          {
+            "request_id": "req-event-invalid",
+            "idem": "idem-event-invalid",
+            "payload": "{\"idempotency_key\":\"idem-event-invalid\",\"input\":\"prompt alpha\",\"limits\":{\"max_output_tokens\":1,\"timeout_ms\":1},\"model\":\"model-local-test\",\"request_id\":\"req-event-invalid\"}",
+            "status": "unknown",
+            "provider_run_id": "run-E",
+            "cancel_requested": 0
+          }
+        ],
+        "events": [
+          {
+            "event_id": "ev-valid-usage",
+            "request_id": "req-event-invalid",
+            "payload": "{\"error\":null,\"event_id\":\"ev-valid-usage\",\"output\":null,\"provider_run_id\":\"run-E\",\"request_id\":\"req-event-invalid\",\"status\":\"running\",\"usage\":{\"input_tokens\":4,\"output_tokens\":2}}"
+          },
+          {
+            "event_id": "ev-unknown-null-run",
+            "request_id": "req-event-invalid",
+            "payload": "{\"error\":\"outcome uncertain\",\"event_id\":\"ev-unknown-null-run\",\"output\":null,\"provider_run_id\":null,\"request_id\":\"req-event-invalid\",\"status\":\"unknown\",\"usage\":null}"
+          }
+        ]
+      }
+    },
+    {
+      "label": "concurrent-identical-submit-1",
+      "passed": true
+    },
+    {
+      "label": "concurrent-identical-submit-2",
+      "passed": true
+    },
+    {
+      "label": "concurrent-submit-one-dispatch-only",
+      "passed": true,
+      "description": "local SQLite transaction serializes identical submissions to one dispatch decision and one durable request"
+    },
+    {
+      "label": "final-reopen-main-history",
+      "passed": true
+    },
+    {
+      "label": "final-reopen-cancel-success-history",
+      "passed": true
+    },
+    {
+      "label": "final-reopen-cancel-ack-history",
+      "passed": true
+    }
+  ],
+  "summary": {
+    "checks_total": 62,
+    "checks_passed": 62,
+    "checks_failed": [],
+    "cli_commands": 55,
+    "tokens": null,
+    "cost": null,
+    "provider_identity": null,
+    "model_active_time": null
+  }
+}

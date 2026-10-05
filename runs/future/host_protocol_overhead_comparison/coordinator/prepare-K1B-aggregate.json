@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "runs/future/host_protocol_overhead_comparison/coordinator/operate.py",
+    "prepare",
+    "K1B"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:24:30.519294+00:00",
+    "monotonic_ns": 39709165669429,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:24:30.709631+00:00",
+    "monotonic_ns": 39709356051919,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 1,
+  "stdout": "\n",
+  "stderr": "{\"error\": \"flow: Invalid flow id\"}\n\nTraceback (most recent call last):\n  File \"/workspace/A111/runs/future/host_protocol_overhead_comparison/coordinator/operate.py\", line 114, in <module>\n    if a.action=='prepare':prepare(spec)\n                           ^^^^^^^^^^^^^\n  File \"/workspace/A111/runs/future/host_protocol_overhead_comparison/coordinator/operate.py\", line 76, in prepare\n    call(sample,'002-start',[sys.executable,CANDIDATE/'scripts/packagectl.py','start',sample/'package.json','--inputs',sample/'inputs.json','--state',sample/'state.json'])\n  File \"/workspace/A111/runs/future/host_protocol_overhead_comparison/coordinator/operate.py\", line 30, in call\n    raise RuntimeError('Captured command failed: '+label)\nRuntimeError: Captured command failed: 002-start\n",
+  "stdout_base64": "Cg==",
+  "stderr_base64": "eyJlcnJvciI6ICJmbG93OiBJbnZhbGlkIGZsb3cgaWQifQoKVHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vY29vcmRpbmF0b3Ivb3BlcmF0ZS5weSIsIGxpbmUgMTE0LCBpbiA8bW9kdWxlPgogICAgaWYgYS5hY3Rpb249PSdwcmVwYXJlJzpwcmVwYXJlKHNwZWMpCiAgICAgICAgICAgICAgICAgICAgICAgICAgIF5eXl5eXl5eXl5eXl4KICBGaWxlICIvd29ya3NwYWNlL0ExMTEvcnVucy9mdXR1cmUvaG9zdF9wcm90b2NvbF9vdmVyaGVhZF9jb21wYXJpc29uL2Nvb3JkaW5hdG9yL29wZXJhdGUucHkiLCBsaW5lIDc2LCBpbiBwcmVwYXJlCiAgICBjYWxsKHNhbXBsZSwnMDAyLXN0YXJ0Jyxbc3lzLmV4ZWN1dGFibGUsQ0FORElEQVRFLydzY3JpcHRzL3BhY2thZ2VjdGwucHknLCdzdGFydCcsc2FtcGxlLydwYWNrYWdlLmpzb24nLCctLWlucHV0cycsc2FtcGxlLydpbnB1dHMuanNvbicsJy0tc3RhdGUnLHNhbXBsZS8nc3RhdGUuanNvbiddKQogIEZpbGUgIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vY29vcmRpbmF0b3Ivb3BlcmF0ZS5weSIsIGxpbmUgMzAsIGluIGNhbGwKICAgIHJhaXNlIFJ1bnRpbWVFcnJvcignQ2FwdHVyZWQgY29tbWFuZCBmYWlsZWQ6ICcrbGFiZWwpClJ1bnRpbWVFcnJvcjogQ2FwdHVyZWQgY29tbWFuZCBmYWlsZWQ6IDAwMi1zdGFydAo="
+}

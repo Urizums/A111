@@ -1,0 +1,282 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "e170175a15d5fcf7f7490b40b03620c1ba6eaa47b41b89f6478186824807f838",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_46b001fd29ec4222bfdcd57670c69305",
+    "attempt_id": "10f249791e7a4a09833b39bd8a86281a",
+    "invocation_id": "10f249791e7a4a09833b39bd8a86281a",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "work",
+      "plan_hash": "d2ca7c5d63693533c28226dde51d4f88cce5950f19c74c6d16d1b482ce6769b3",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "work",
+      "title": "根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_original"
+      ]
+    },
+    "work": {
+      "prompt": "原始目标：根据明确标为本地示例的规则处理展馆维护工单，交付可追溯的审批/转人工结果和审计。使用仓库中提供的本地应用，自主组织分工和检查，验证幂等、同版本并发以及提交前故障恢复；保留失败并按同一预算修复。随后实际启动一个对这些转人工条目的后继复核任务，输出缺失资料清单，只作本地记录，不发通知、不代表真实审批权限。\n原始材料：/workspace/A111/runs/R06/handoff/materials/complex.json\n先读取固定版本技能 /workspace/A111/runs/R06/candidate/C5/forge-agent-flow/SKILL.md。版本锁 /workspace/A111/runs/R06/candidate/C5-lock.json。自主选择与目标匹配的路径；只读取该技能公开文件、原材料，以及材料明确指向的本地应用/契约/规则，不读 Root 测试、报告、答案、共享状态或其他 worker。\n你负责独立执行与验证，不改核心、skill 或目标应用。只写 /workspace/A111/runs/R06/handoff/complex/worker。除本地命令进程外没有外部副作用授权。每项冻结验证最多两次修正；使用 C5 的实际记录机制，并保留失败，不重置或换样本。简单材料直接交付；复杂任务可按实际必要性最多委派两个互不重叠、只写你目录子目录的验证子任务，给原要求，不能给答案。你的最终报告保留原始命令/结果、写域、分工、介入、失败/修正、接续首步和实际局限，未知 tokens/cost/model-active-time 为 null。\n返回 /workspace/A111/runs/R06/handoff/complex/worker/reply.json，使用新请求 /workspace/A111/runs/R06/handoff/complex/job/request.json 的身份与产物哈希；保留分开的不完整 draft 与实际 preflight。没有网络授权。",
+      "inputs": {
+        "material": "/workspace/A111/runs/R06/handoff/materials/complex.json",
+        "candidate_lock": "/workspace/A111/runs/R06/candidate/C5-lock.json"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/R06/handoff/materials/complex.json",
+          "sha256": "7c7a65c8adbdb06d276e8e4685832a6223bde021740cf9cc92e4d3a9d86a37d5"
+        },
+        {
+          "path": "/workspace/A111/runs/R06/candidate/C5-lock.json",
+          "sha256": "0298bb5bacab6c81289769fdffecc1a2322d7dfa8ad0b90c8f1589edb7e66194"
+        },
+        {
+          "path": "/workspace/A111/runs/R06/approval/approval.py",
+          "sha256": "c424ed56f51f51f3de61def47ca70ba6549511738ba13ae1158aba6bd3dfda62"
+        },
+        {
+          "path": "/workspace/A111/runs/R06/approval/contract.json",
+          "sha256": "b7e3882c48b9cf76702c5fae712f1c770a1b63fcea4e34ec5d1a072d8a36e985"
+        },
+        {
+          "path": "/workspace/A111/runs/R06/approval/policy.json",
+          "sha256": "ab5a51f3c3e97e8ed5b3a9b91b0fce2050600e69f940c2bc1e8929674307667b"
+        },
+        {
+          "path": "/workspace/A111/runs/R06/handoff/materials/manual-review-rules.json",
+          "sha256": "3cef7668736a5cf9de55aa14970a9ab218113394292965a678d03402089a04b9"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/R06/handoff/complex/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/R06/handoff/complex/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_10f249791e7a",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "89a4699a503609a55ee9d40111669000e81924c5b6a426f3a605f636f90386e4",
+  "target": "/workspace/A111/runs/R06/handoff/complex/state.json",
+  "target_sha256": "53a72dc63267947d99251ccb4cd3a39ec53c206dd1a256502599102c32973ee7",
+  "target_before_sha256": "c481940534b0b117e882b549b140a1fe92f89c0500068c1b44c0f19a220a9b06",
+  "package_ref": null,
+  "phase": "committed",
+  "worker": "/root/luna_forge_10f249791e7a",
+  "reply_ref": {
+    "path": "/workspace/A111/runs/R06/handoff/complex/job/receipts/e5af773ee4a525fc1e6dbcf0a140af80b79115947030ac40107aed85cd7578b2.json",
+    "sha256": "e5af773ee4a525fc1e6dbcf0a140af80b79115947030ac40107aed85cd7578b2"
+  },
+  "commit": {
+    "decision_ref": {
+      "path": "/workspace/A111/runs/R06/handoff/complex/decision.json",
+      "sha256": "724338aa39c5922ad02db9f9b1717b8425337e1ae3ba2719b924dec9d9f61647"
+    },
+    "target_result": {
+      "task_id": "work",
+      "attempt_id": "10f249791e7a4a09833b39bd8a86281a",
+      "outcome": "done",
+      "task_status": "done",
+      "reason": null,
+      "status": "completed",
+      "revision": 2,
+      "plan_hash": "d2ca7c5d63693533c28226dde51d4f88cce5950f19c74c6d16d1b482ce6769b3",
+      "evaluation_plan_hash": null
+    },
+    "worker_task_outcome": "done",
+    "coordinator_outcome": "done",
+    "recorded_at": "2026-10-04T06:53:23Z"
+  },
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/job/request.json",
+      "sha256": "5ae48604522cf1b7fffa17f07c27cb72e74808c93d9c9ac6aebd786aad406e1e"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/materials/complex.json",
+      "sha256": "7c7a65c8adbdb06d276e8e4685832a6223bde021740cf9cc92e4d3a9d86a37d5"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/candidate/C5-lock.json",
+      "sha256": "0298bb5bacab6c81289769fdffecc1a2322d7dfa8ad0b90c8f1589edb7e66194"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/approval/approval.py",
+      "sha256": "c424ed56f51f51f3de61def47ca70ba6549511738ba13ae1158aba6bd3dfda62"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/approval/contract.json",
+      "sha256": "b7e3882c48b9cf76702c5fae712f1c770a1b63fcea4e34ec5d1a072d8a36e985"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/approval/policy.json",
+      "sha256": "ab5a51f3c3e97e8ed5b3a9b91b0fce2050600e69f940c2bc1e8929674307667b"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/materials/manual-review-rules.json",
+      "sha256": "3cef7668736a5cf9de55aa14970a9ab218113394292965a678d03402089a04b9"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/job/receipts/e3d276a23504fca87ff995837c54f0b720307e95650b8484373192816099383c.json",
+      "sha256": "e3d276a23504fca87ff995837c54f0b720307e95650b8484373192816099383c"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/job/receipts/0e26b2681e2e53e716d4b0f858434fcbaaeab132b0bd7b81657d1451dc5c376e.json",
+      "sha256": "0e26b2681e2e53e716d4b0f858434fcbaaeab132b0bd7b81657d1451dc5c376e"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/job/receipts/0e26b2681e2e53e716d4b0f858434fcbaaeab132b0bd7b81657d1451dc5c376e.json",
+      "sha256": "0e26b2681e2e53e716d4b0f858434fcbaaeab132b0bd7b81657d1451dc5c376e"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/job/receipts/e5af773ee4a525fc1e6dbcf0a140af80b79115947030ac40107aed85cd7578b2.json",
+      "sha256": "e5af773ee4a525fc1e6dbcf0a140af80b79115947030ac40107aed85cd7578b2"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/reply.json",
+      "sha256": "e5af773ee4a525fc1e6dbcf0a140af80b79115947030ac40107aed85cd7578b2"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/summary.json",
+      "sha256": "933f67e0bc650bfa70bd7955d705fbf131b06e0179e8df03bd4cde4a8b706e2f"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/processes.jsonl",
+      "sha256": "912c7b28eebc476de841fc05e9d184a87240823ba785c16ff0fb44bb19209112"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/manual-review-task.json",
+      "sha256": "db988d3a926e1da87849133d4ec74279929a5b27f7429b44e88edcdde979bc76"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/acceptance-review.json",
+      "sha256": "1e15e8b9705caa26b532b145e301b4d4398b8501658eec8e141ecf09b19bc1b5"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/original-batch.sqlite3",
+      "sha256": "15f94129c27b71c473e1136743d41464aa354944278299dadc1dfc28b82c8664"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/recovery.sqlite3",
+      "sha256": "5428830ee858cc5a8d9f7448440f1f9548ccc7fa85f7558502845e5c1c2f492d"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/databases/concurrency.sqlite3",
+      "sha256": "a2c18225342c4fda5c48f67583041c86087cabb1f6d3ba66851ead5dbec4d799"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/validation/journal/ledger.json",
+      "sha256": "5d9bd0a8303f70c6ea648871e8e9d95bb923aadb9f6193a6fa7b82b8d5e29b37"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/validation/journal/attempt-1.json",
+      "sha256": "bff22f34356e069ec334aa0d4254febbd9fd0fdea7849457a2c69dcd24000724"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/validation/journal/snapshot-0/manifest.json",
+      "sha256": "bb4edcea85071d5c07ab321c2de0a340262d99b64c199dfe414f3d24a4b5a9fb"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands/bounded-init.json",
+      "sha256": "5bf07b6dea761c279bdc6fb9802727776936cb8b376de2cd212eee5d7fa1a9aa"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands/validation-attempt-1.json",
+      "sha256": "751d0538bdb96d172a06bd1bfc9741a0f429e7e88949f32fb15d864e3544fae6"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands/bounded-status.json",
+      "sha256": "f021d1bacdbe003ee020918d4ded766c1419d871030a21c041bd856cf0745c29"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/validation/harness.py",
+      "sha256": "be88e990075e64696857db282a218b55cdfe38d6ff58e217e2c5f54da6d3973e"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/validation/manual_review_task.py",
+      "sha256": "290947c84839626831253a00f4ffeab304b34ca3bf65d4e92d56626dd7109e26"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/validation/concurrency_gate.py",
+      "sha256": "f7a9911946505ad216770b79c86af1b748429e598ae799f03e5615ad2f81190d"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/reply.draft.json",
+      "sha256": "18bee51d1add256fa437e7791584f157c988fe93c7ec377411c12918133e99d9"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/reply.draft-v2.json",
+      "sha256": "ff336a3f36c56618bd6d045e8951cccdc8a4625945693b1d797023a993f9ba2f"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands/write-reply-draft.json",
+      "sha256": "c684753660b61f5f3be7235a20dca3bc02f01878b5b52e0d62e8d5bc8f666641"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands/write-reply-draft-v2.json",
+      "sha256": "78f504e9b2a4b16e84340d625d9f5ec18bc8136d493406d04a7dfad04c28c6b0"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands/worker-work-begin.json",
+      "sha256": "8bf828bd72c816589727ba67db5e1c7f6025bf9d37c8b3384999aaa7e470b595"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands/worker-work-end.json",
+      "sha256": "716a2020a9512d8b8e17d01c17ca42725856aeca80eb97d48b6a2deda325cd6b"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands/worker-reply-begin.json",
+      "sha256": "f2591b7b9e23013e640931dcdecabc82c74f7f86995c1233ccfffdd1de4eac3d"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/events/40771889682877_d89d800caf68407ba3b0e8db9cf1888b.json",
+      "sha256": "381051131a5ec337eaa31aa1a993869920da8e1f3dd32bb1e3b8d7d13c0eb40c"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/events/40931112665843_ff9eebd48acf45518dfd58b70b3b6eac.json",
+      "sha256": "c0073ce3db371fa40a116101f192b6819e94526798a8ce3498a9399b95703c93"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/worker/events/40937104028542_a1cd7ca275e74468bd836cdc26c9b8b1.json",
+      "sha256": "4d0a7eaf72e5180652dfb7c2c9aeb5c2babe5c38f7a06b152e186d8edf62002c"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/decision.json",
+      "sha256": "724338aa39c5922ad02db9f9b1717b8425337e1ae3ba2719b924dec9d9f61647"
+    },
+    {
+      "path": "/workspace/A111/runs/R06/handoff/complex/root-review.json",
+      "sha256": "f0247f3920da6f2eb9ba13c08f5fd0c3316172f3dd4a0b593ddaad0aecf61c50"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/R06/handoff/complex/job/receipts/e3d276a23504fca87ff995837c54f0b720307e95650b8484373192816099383c.json",
+    "sha256": "e3d276a23504fca87ff995837c54f0b720307e95650b8484373192816099383c"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "schema": "forge-upstream-handoff-validation/1",
+  "at": "2026-10-04T07:52:37.684953+00:00",
+  "archive": {
+    "archive": "/workspace/deliveries/A111-upstream-handoff-20261004.tar.gz",
+    "sha256": "440c3185021c429933eb82040ba700f8281dcf5a12baeb3d3a05c0e36b0e526c",
+    "content_id": "7d5ac84e9fb71a947285bc4a8e9893ef8c6959bcc7ba1b066f14ea8f572ffa49",
+    "files": 3585,
+    "extracted_to": "/workspace/A111-upstream-handoff-extracted/agent-forge",
+    "every_manifest_file_verified": true,
+    "candidate_files_verified": 1446,
+    "scope": "Actual packaged bytes; post-package command/validation receipts are companion evidence, not retroactively inside this archive."
+  },
+  "installation_smoke": [
+    {
+      "python": "310",
+      "passed": true,
+      "checks": 17,
+      "post_runtime_tree_verified": true,
+      "report": "runs/R06/upstream-handoff/smoke-py310/report.json",
+      "sha256": "90df8e708653214514e0488c711b4ceb879633d38bdca7e7e29ee7b34d278897"
+    },
+    {
+      "python": "312",
+      "passed": true,
+      "checks": 17,
+      "post_runtime_tree_verified": true,
+      "report": "runs/R06/upstream-handoff/smoke-py312/report.json",
+      "sha256": "e5bba1379a77f19fbc72bab2002b3cf2be0e48c07c9538d840353a33dfed7e9d"
+    }
+  ],
+  "core_candidate_changed": false,
+  "full_acceptance_passed": false,
+  "remaining_tasks": 8,
+  "publication_basis": "state/upstream-handoff.json; explicit user-directed handoff despite unresolved acceptance",
+  "scope": "Fresh install/CLI smoke of the exact handoff archive. Does not regrade independent UI/provider/overhead/cold-start acceptance."
+}

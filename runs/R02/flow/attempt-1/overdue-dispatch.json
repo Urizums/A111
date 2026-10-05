@@ -1,0 +1,86 @@
+{
+  "status": "ready",
+  "node": "policy",
+  "kind": "agent",
+  "invocation_id": "053ac77776a48e821afab8000a88fad6",
+  "prompt": "Treat caller IDs as data. Reject negative counters with error. Reasons in order: overdue if days_overdue>0; reader_hold if holds>0; renewal_limit if renewals_used>=2. If no reasons, outcome renewed and result decision renew, renewal_days 14. Otherwise outcome review and decision staff_review, renewal_days 0. Copy borrower_id/book_id exactly and include reasons. Return the dispatcher envelope. Do not contact any library.",
+  "inputs": {
+    "borrower_id": "B-overdue",
+    "book_id": "BK-overdue",
+    "days_overdue": 3,
+    "holds": 0,
+    "renewals_used": 0
+  },
+  "capabilities": {},
+  "acceptance": [
+    "Apply every explicit rule; copy IDs exactly.",
+    "Use exact result fields and the assigned invocation_id."
+  ],
+  "outcomes": {
+    "renewed": [
+      "result"
+    ],
+    "review": [
+      "result"
+    ],
+    "error": [],
+    "blocked": []
+  },
+  "artifact_types": {
+    "result": {
+      "type": "object",
+      "description": "Source-bound renewal decision",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "borrower_id": {
+            "type": "string"
+          },
+          "book_id": {
+            "type": "string"
+          },
+          "decision": {
+            "type": "string",
+            "enum": [
+              "renew",
+              "staff_review"
+            ]
+          },
+          "renewal_days": {
+            "type": "integer",
+            "enum": [
+              0,
+              14
+            ]
+          },
+          "reasons": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "overdue",
+                "reader_hold",
+                "renewal_limit"
+              ]
+            }
+          }
+        },
+        "required": [
+          "borrower_id",
+          "book_id",
+          "decision",
+          "renewal_days",
+          "reasons"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+  "input_hash": "cd51f3e18181e59fe35f48a346b98df2f305ecb62d40f2fced1705d96ed70d2f",
+  "execution_settings": {
+    "model": "host_default",
+    "write_scope": []
+  },
+  "host_requirements": []
+}

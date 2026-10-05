@@ -1,0 +1,112 @@
+{
+  "schema": "forge-package/1",
+  "design": {
+    "mode": "lite",
+    "necessity": {
+      "choice": "single_agent",
+      "rationale": "One bounded original policy-classification node, no external capability.",
+      "baseline": "One host agent extracting explicit actions from supplied notes."
+    },
+    "decisions": [
+      {
+        "id": "D02",
+        "status": "chosen",
+        "choice": "One extraction node",
+        "rationale": "The full input fits one task and each action has a verifiable source quote.",
+        "rejected": [
+          "Additional workers without a distinct evidence source"
+        ],
+        "rollback": "Add a verifier only if measured extraction errors justify its cost."
+      }
+    ],
+    "lifecycle": {
+      "infra": "Use the current host model with no external capabilities.",
+      "post": "Extract explicit actions, preserve source quotes and null missing fields; one bounded step.",
+      "after": "Check exact quotes and fields, record missed cases as candidate lessons; do not send assignments."
+    },
+    "knowledge": [],
+    "source_refs": []
+  },
+  "flow": {
+    "schema_version": "1.0",
+    "id": "study_k1",
+    "goal": "Apply original source policy exactly without external actions.",
+    "assumptions": [
+      "Original material is supplied and no external effects are performed."
+    ],
+    "inputs": {
+      "material": {
+        "type": "string",
+        "description": "Original JSON material and its exact decision policy."
+      }
+    },
+    "artifacts": {
+      "decisions": {
+        "type": "array",
+        "description": "Source-ordered decisions with exact required original fields."
+      }
+    },
+    "outputs": [
+      "decisions"
+    ],
+    "capabilities": {},
+    "budgets": {
+      "max_steps": 1
+    },
+    "entry": "classify",
+    "nodes": [
+      {
+        "id": "classify",
+        "kind": "agent",
+        "reads": [
+          "material"
+        ],
+        "writes": [
+          "decisions"
+        ],
+        "tools": [],
+        "prompt": "Apply the supplied JSON material policy. Return decisions in source order with its exact required fields; never perform external actions.",
+        "acceptance": [
+          "All decisions match original material policy exactly."
+        ],
+        "max_visits": 1,
+        "routes": {
+          "ok": "$done",
+          "error": "$failed",
+          "blocked": "$blocked"
+        },
+        "emits": {
+          "ok": [
+            "decisions"
+          ],
+          "error": [],
+          "blocked": []
+        }
+      }
+    ]
+  },
+  "execution": {
+    "adapter": "host_serial",
+    "parallelism": 1,
+    "node_settings": {
+      "classify": {
+        "model": "gpt-6-luna",
+        "write_scope": [
+          "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/K1B/worker"
+        ]
+      }
+    },
+    "requirements": [],
+    "unresolved": []
+  },
+  "acceptance": {
+    "criteria": [
+      {
+        "id": "source",
+        "kind": "machine",
+        "required": true,
+        "assertion": "Every decision equals original source policy in original order."
+      }
+    ]
+  }
+}

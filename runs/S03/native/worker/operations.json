@@ -1,0 +1,84 @@
+{
+  "schema_version": "forge-worker-operations/1",
+  "actor": "worker",
+  "file_tool_writes": [
+    {
+      "path": "/workspace/A111/runs/S03/native/worker/compute.py",
+      "tool": "apply_patch",
+      "purpose": "Author the exact-decimal CSV aggregation and totals output writer."
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/worker/operations.json",
+      "tool": "apply_patch",
+      "purpose": "Initial creation of the operations record."
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/worker/finalize_reply.py",
+      "tool": "apply_patch",
+      "purpose": "Author the separate final reply from the immutable request and current artifact hashes."
+    },
+    {
+      "path": "/workspace/A111/runs/S03/native/worker/operations.json",
+      "tool": "apply_patch",
+      "purpose": "Finalize the operations record before creating the retained draft and final reply."
+    }
+  ],
+  "captured_commands": [
+    {
+      "record": "logs/000-bootstrap.json",
+      "target": "python3 -c: read and print request.json, recording-protocol.md, expenses.csv, and AGENTS.md"
+    },
+    {
+      "record": "logs/001-hostdraft-source.json",
+      "target": "python3 -c: read and print public scripts/hostdraft.py"
+    },
+    {
+      "record": "logs/002-work-begin.json",
+      "target": "capture.py mark --events worker/events --actor worker --stage worker_work --event begin"
+    },
+    {
+      "record": "logs/003-compute.json",
+      "target": "python3 worker/compute.py"
+    },
+    {
+      "record": "logs/004-work-end.json",
+      "target": "capture.py mark --events worker/events --actor worker --stage worker_work --event end"
+    },
+    {
+      "record": "logs/005-hostbridge-source.json",
+      "target": "python3 -c: read and print public scripts/hostbridge.py"
+    },
+    {
+      "record": "logs/006-reply-begin.json",
+      "target": "capture.py mark --events worker/events --actor worker --stage worker_reply --event begin"
+    },
+    {
+      "record": "logs/007-hostdraft-reply.json",
+      "target": "hostdraft.py reply --request request.json --artifact totals.json --artifact totals.md --artifact operations.json --out incomplete-reply.json"
+    },
+    {
+      "record": "logs/008-write-final-reply.json",
+      "target": "python3 worker/finalize_reply.py"
+    },
+    {
+      "record": "logs/009-check-reply.json",
+      "target": "hostdraft.py check-reply --request request.json --reply reply.json"
+    },
+    {
+      "record": "logs/010-reply-end.json",
+      "target": "capture.py mark --events worker/events --actor worker --stage worker_reply --event end"
+    }
+  ],
+  "correction_attempts": [],
+  "failed_captured_commands": [],
+  "candidate": {
+    "first_authored_outputs": [
+      "/workspace/A111/runs/S03/native/worker/totals.json",
+      "/workspace/A111/runs/S03/native/worker/totals.md"
+    ],
+    "correction_attempt_count": 0
+  },
+  "provider_tokens": null,
+  "provider_cost": null,
+  "internal_identity": null
+}

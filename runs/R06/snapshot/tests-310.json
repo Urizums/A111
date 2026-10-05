@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3.10",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "runs/R06/snapshot",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:37:10.108544+00:00",
+    "monotonic_ns": 40468754922879,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:37:10.158599+00:00",
+    "monotonic_ns": 40468804981661,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_existing_snapshot_never_overwritten (test_snapshot.SnapshotTests) ... ok\ntest_invalid_and_duplicate_paths_leave_no_bundle (test_snapshot.SnapshotTests) ... ok\ntest_new_binary_unicode_same_hash_dedup (test_snapshot.SnapshotTests) ... ok\ntest_original_retained_state_survives_later_mutation (test_snapshot.SnapshotTests) ... ok\ntest_parent_and_leaf_symlinks_rejected (test_snapshot.SnapshotTests) ... ok\ntest_restore_refuses_existing_destination_and_unsafe_manifest (test_snapshot.SnapshotTests) ... ok\ntest_tamper_and_extra_objects_rejected (test_snapshot.SnapshotTests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.003s\n\nOK\n",
+  "stdout_base64": "",
+  "stderr_base64": "dGVzdF9leGlzdGluZ19zbmFwc2hvdF9uZXZlcl9vdmVyd3JpdHRlbiAodGVzdF9zbmFwc2hvdC5TbmFwc2hvdFRlc3RzKSAuLi4gb2sKdGVzdF9pbnZhbGlkX2FuZF9kdXBsaWNhdGVfcGF0aHNfbGVhdmVfbm9fYnVuZGxlICh0ZXN0X3NuYXBzaG90LlNuYXBzaG90VGVzdHMpIC4uLiBvawp0ZXN0X25ld19iaW5hcnlfdW5pY29kZV9zYW1lX2hhc2hfZGVkdXAgKHRlc3Rfc25hcHNob3QuU25hcHNob3RUZXN0cykgLi4uIG9rCnRlc3Rfb3JpZ2luYWxfcmV0YWluZWRfc3RhdGVfc3Vydml2ZXNfbGF0ZXJfbXV0YXRpb24gKHRlc3Rfc25hcHNob3QuU25hcHNob3RUZXN0cykgLi4uIG9rCnRlc3RfcGFyZW50X2FuZF9sZWFmX3N5bWxpbmtzX3JlamVjdGVkICh0ZXN0X3NuYXBzaG90LlNuYXBzaG90VGVzdHMpIC4uLiBvawp0ZXN0X3Jlc3RvcmVfcmVmdXNlc19leGlzdGluZ19kZXN0aW5hdGlvbl9hbmRfdW5zYWZlX21hbmlmZXN0ICh0ZXN0X3NuYXBzaG90LlNuYXBzaG90VGVzdHMpIC4uLiBvawp0ZXN0X3RhbXBlcl9hbmRfZXh0cmFfb2JqZWN0c19yZWplY3RlZCAodGVzdF9zbmFwc2hvdC5TbmFwc2hvdFRlc3RzKSAuLi4gb2sKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KUmFuIDcgdGVzdHMgaW4gMC4wMDNzCgpPSwo="
+}

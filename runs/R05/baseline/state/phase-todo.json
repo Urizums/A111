@@ -1,0 +1,97 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R05",
+  "goal": "Use newly available browser capability on the original target and progress catalog/concurrent-app checks independently.",
+  "tasks": [
+    {
+      "id": "BACKLOG-preset_browser_acceptance",
+      "title": "Execute planned UI journeys only when the target app and permitted browser/device access are available; no workaround or inferred UI pass.",
+      "owner": "root",
+      "write_paths": [
+        "runs/future/preset_browser_acceptance/"
+      ],
+      "status": "in_progress",
+      "blocker": null,
+      "next_action": "Original preset has actually rendered in Chromium151 at 1440/390px and switched palette. Freeze full journeys from original design acceptance, then check filter/detail/focus/run-again/delete-confirm/cancel-refresh/error-retry/reduced-motion with original sample; preserve all failures, no effect/performance inference.",
+      "depends_on": [],
+      "acceptance": [
+        "Establish actual target evidence for this capability"
+      ],
+      "evidence": [
+        "runs/future/preset_browser_acceptance/first-step-command.json"
+      ]
+    },
+    {
+      "id": "BACKLOG-versioned_preset_catalog",
+      "title": "Root authors a small task/platform catalog and checks based on verified research; do not mark target visuals passed without browser/device evidence.",
+      "owner": "root",
+      "write_paths": [
+        "runs/future/versioned_preset_catalog/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "Root authors a small task/platform catalog and checks based on verified research; do not mark target visuals passed without browser/device evidence.",
+      "depends_on": [],
+      "acceptance": [
+        "Add task/platform variants with source revision, reuse terms, paired tokens, component states, motion and actual target evidence."
+      ],
+      "evidence": []
+    },
+    {
+      "id": "CAP-sdk_adapter_contract",
+      "title": "定义独立 provider 适配器接口并验证本地协议边界",
+      "owner": "root",
+      "write_paths": [
+        "runs/future/provider-adapter/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "定义独立 provider 适配器接口并验证本地协议边界",
+      "depends_on": [],
+      "acceptance": [
+        "Freeze provider-neutral request/result/idempotency/cancel contract and implement local validation without claiming live SDK execution",
+        "Keep live provider validation blocked separately until an authorized endpoint/identity and observation contract exist"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "X01-concurrent_ticket_edits",
+      "title": "验证双客户端并发更新工单",
+      "owner": "root",
+      "write_paths": [
+        "runs/future/concurrent-ticket/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "验证双客户端并发更新工单",
+      "depends_on": [],
+      "acceptance": [
+        "Two real clients issue updates from the same version; exactly one succeeds and one conflicts with no lost history",
+        "Retain original requests, database and conflict UI evidence; do not infer load or provider guarantees"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R05-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "BACKLOG-preset_browser_acceptance",
+        "BACKLOG-versioned_preset_catalog",
+        "CAP-sdk_adapter_contract",
+        "X01-concurrent_ticket_edits"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "Actual first step of the next bounded capability/challenge phase"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "Select next valuable ready work from current results, freeze scope and execute its first step before advancing."
+    }
+  ]
+}

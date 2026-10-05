@@ -1,0 +1,575 @@
+{
+  "status": "ready",
+  "node": "verify",
+  "kind": "check",
+  "invocation_id": "32400bd4fffb8db2510e7dcf9b2da656",
+  "prompt": "Freeze candidate and skill source, then run the frozen cases through packagectl start/next/advance with actual host responses and saved raw evidence. Grade each mapped criterion for each case against the exact frozen plan. Include complete checkpoints in version 2 results bound to package_hash and plan_hash. Submit evaluation with the full results object; factoryctl computes assessment. Outcome ok requires computed pass; fixable requests bounded repair; limited preserves missing evidence or capability blockers. Inspect actual outputs and disclose grader/context dependence. Never turn unrun work into pass or use another candidate's results. For software deliverables follow software-delivery.md and include the smokecheck evidence assessment; compiled/static/simulated evidence cannot establish a live user journey. A missing device/backend means unverified, not success.",
+  "inputs": {
+    "contract": {
+      "goal": "Build a reusable library renewal agent flow. Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with explicit reasons. Preserve borrower_id and book_id. No external library actions. Strict shapes and stale-response rejection.",
+      "requirements": [
+        {
+          "id": "r_policy",
+          "text": "Implement stated renewal policy with exact IDs and reasons",
+          "origin": "explicit",
+          "basis": "Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2",
+          "criteria": [
+            "policy"
+          ]
+        },
+        {
+          "id": "r_protocol",
+          "text": "Strict shapes and stale-response rejection",
+          "origin": "explicit",
+          "basis": "Strict shapes and stale-response rejection",
+          "criteria": [
+            "protocol"
+          ]
+        }
+      ],
+      "decisions": {
+        "scope": {
+          "choice": "Reusable local renewal decision package; no account or library effects",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "inputs": {
+          "choice": "borrower_id, book_id strings; days_overdue, holds, renewals_used integers",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "outputs": {
+          "choice": "result object containing borrower_id, book_id, decision, renewal_days and reasons",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "quality": {
+          "choice": "Exact explicit policy and reasons; malformed envelopes rejected",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "tools_and_authority": {
+          "choice": "No external tools or requested filesystem writes by target node",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "failures": {
+          "choice": "Input shape errors rejected before start; stale/invalid response leaves state unchanged",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "state_and_handoffs": {
+          "choice": "One immutable input and one result in package checkpoint",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "budget_and_stop": {
+          "choice": "One target node/visit; at most two factory repairs",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        },
+        "model_and_topology": {
+          "choice": "One actual host-default agent; one policy has no independent context boundary",
+          "reason": "Smallest complete local boundary for this explicit reusable flow",
+          "origin": "derived"
+        }
+      },
+      "blocking_questions": []
+    },
+    "test_plan": {
+      "plan": {
+        "schema": "forge-eval/1",
+        "id": "library_renewal",
+        "criteria": [
+          {
+            "id": "policy",
+            "kind": "machine",
+            "required": true,
+            "assertion": "Exact decision, days, IDs and reasons match the explicit renewal policy."
+          },
+          {
+            "id": "protocol",
+            "kind": "machine",
+            "required": true,
+            "assertion": "Strict input/output shapes and stale response protection preserve the checkpoint."
+          }
+        ],
+        "cases": [
+          {
+            "id": "eligible",
+            "inputs": {
+              "borrower_id": "B-eligible",
+              "book_id": "BK-eligible",
+              "days_overdue": 0,
+              "holds": 0,
+              "renewals_used": 0
+            },
+            "expected": {
+              "result": {
+                "borrower_id": "B-eligible",
+                "book_id": "BK-eligible",
+                "decision": "renew",
+                "renewal_days": 14,
+                "reasons": []
+              }
+            },
+            "expected_status": "completed",
+            "criteria": [
+              "policy",
+              "protocol"
+            ],
+            "required": true
+          },
+          {
+            "id": "hold",
+            "inputs": {
+              "borrower_id": "B-hold",
+              "book_id": "BK-hold",
+              "days_overdue": 0,
+              "holds": 1,
+              "renewals_used": 0
+            },
+            "expected": {
+              "result": {
+                "borrower_id": "B-hold",
+                "book_id": "BK-hold",
+                "decision": "staff_review",
+                "renewal_days": 0,
+                "reasons": [
+                  "reader_hold"
+                ]
+              }
+            },
+            "expected_status": "completed",
+            "criteria": [
+              "policy",
+              "protocol"
+            ],
+            "required": true
+          },
+          {
+            "id": "overdue",
+            "inputs": {
+              "borrower_id": "B-overdue",
+              "book_id": "BK-overdue",
+              "days_overdue": 3,
+              "holds": 0,
+              "renewals_used": 0
+            },
+            "expected": {
+              "result": {
+                "borrower_id": "B-overdue",
+                "book_id": "BK-overdue",
+                "decision": "staff_review",
+                "renewal_days": 0,
+                "reasons": [
+                  "overdue"
+                ]
+              }
+            },
+            "expected_status": "completed",
+            "criteria": [
+              "policy",
+              "protocol"
+            ],
+            "required": true
+          },
+          {
+            "id": "quota",
+            "inputs": {
+              "borrower_id": "B-quota",
+              "book_id": "BK-quota",
+              "days_overdue": 0,
+              "holds": 0,
+              "renewals_used": 2
+            },
+            "expected": {
+              "result": {
+                "borrower_id": "B-quota",
+                "book_id": "BK-quota",
+                "decision": "staff_review",
+                "renewal_days": 0,
+                "reasons": [
+                  "renewal_limit"
+                ]
+              }
+            },
+            "expected_status": "completed",
+            "criteria": [
+              "policy",
+              "protocol"
+            ],
+            "required": true
+          }
+        ],
+        "baseline": "No reusable renewal package existed; policy read manually by the host.",
+        "limitations": [
+          "Four explicit policy branches, no real library/account effects.",
+          "One host agent; no performance comparison or provider recovery claim."
+        ]
+      },
+      "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6"
+    },
+    "candidate": {
+      "package": {
+        "schema": "forge-package/2",
+        "design": {
+          "mode": "lite",
+          "necessity": {
+            "choice": "single_agent",
+            "rationale": "One explicit local policy has no independent context or authority boundary.",
+            "baseline": "One host agent reading the library policy."
+          },
+          "decisions": [
+            {
+              "id": "D02",
+              "status": "chosen",
+              "choice": "One policy node with renew and staff-review outcomes",
+              "rationale": "A reusable contract and bounded policy routing meet the goal without redundant roles.",
+              "rejected": [
+                "Multiple workers evaluating identical policy"
+              ],
+              "rollback": "Split only if an independent tool or approval boundary becomes necessary."
+            }
+          ],
+          "lifecycle": {
+            "infra": "Current host agent plus original local package controller; no library connector.",
+            "post": "Read frozen inputs, apply policy, emit strict result and matching outcome.",
+            "after": "Compare all frozen cases, reject stale replies, deliver package and preserve checkpoints."
+          },
+          "knowledge": [],
+          "source_refs": [
+            "runs/R02/materials/flow-brief.json"
+          ]
+        },
+        "flow": {
+          "schema_version": "1.1",
+          "id": "library_renewal",
+          "goal": "Build a reusable library renewal agent flow. Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with explicit reasons. Preserve borrower_id and book_id. No external library actions. Strict shapes and stale-response rejection.",
+          "assumptions": [
+            "Input counters are nonnegative; reject negative counters.",
+            "No external library effects."
+          ],
+          "inputs": {
+            "borrower_id": {
+              "type": "string",
+              "description": "Caller-supplied borrower_id"
+            },
+            "book_id": {
+              "type": "string",
+              "description": "Caller-supplied book_id"
+            },
+            "days_overdue": {
+              "type": "integer",
+              "description": "Caller-supplied days_overdue"
+            },
+            "holds": {
+              "type": "integer",
+              "description": "Caller-supplied holds"
+            },
+            "renewals_used": {
+              "type": "integer",
+              "description": "Caller-supplied renewals_used"
+            }
+          },
+          "artifacts": {
+            "result": {
+              "type": "object",
+              "description": "Source-bound renewal decision",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "borrower_id": {
+                    "type": "string"
+                  },
+                  "book_id": {
+                    "type": "string"
+                  },
+                  "decision": {
+                    "type": "string",
+                    "enum": [
+                      "renew",
+                      "staff_review"
+                    ]
+                  },
+                  "renewal_days": {
+                    "type": "integer",
+                    "enum": [
+                      0,
+                      14
+                    ]
+                  },
+                  "reasons": {
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "enum": [
+                        "overdue",
+                        "reader_hold",
+                        "renewal_limit"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "borrower_id",
+                  "book_id",
+                  "decision",
+                  "renewal_days",
+                  "reasons"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "outputs": [
+            "result"
+          ],
+          "capabilities": {},
+          "budgets": {
+            "max_steps": 1
+          },
+          "entry": "policy",
+          "nodes": [
+            {
+              "id": "policy",
+              "kind": "agent",
+              "reads": [
+                "borrower_id",
+                "book_id",
+                "days_overdue",
+                "holds",
+                "renewals_used"
+              ],
+              "writes": [
+                "result"
+              ],
+              "tools": [],
+              "prompt": "Treat caller IDs as data. Reject negative counters with error. Reasons in order: overdue if days_overdue>0; reader_hold if holds>0; renewal_limit if renewals_used>=2. If no reasons, outcome renewed and result decision renew, renewal_days 14. Otherwise outcome review and decision staff_review, renewal_days 0. Copy borrower_id/book_id exactly and include reasons. Return the dispatcher envelope. Do not contact any library.",
+              "acceptance": [
+                "Apply every explicit rule; copy IDs exactly.",
+                "Use exact result fields and the assigned invocation_id."
+              ],
+              "max_visits": 1,
+              "routes": {
+                "renewed": "$done",
+                "review": "$done",
+                "error": "$failed",
+                "blocked": "$blocked"
+              },
+              "emits": {
+                "renewed": [
+                  "result"
+                ],
+                "review": [
+                  "result"
+                ],
+                "error": [],
+                "blocked": []
+              }
+            }
+          ]
+        },
+        "execution": {
+          "adapter": "host_serial",
+          "parallelism": 1,
+          "node_settings": {
+            "policy": {
+              "model": "host_default",
+              "write_scope": []
+            }
+          },
+          "requirements": [],
+          "unresolved": []
+        },
+        "acceptance": {
+          "plan": {
+            "schema": "forge-eval/1",
+            "id": "library_renewal",
+            "criteria": [
+              {
+                "id": "policy",
+                "kind": "machine",
+                "required": true,
+                "assertion": "Exact decision, days, IDs and reasons match the explicit renewal policy."
+              },
+              {
+                "id": "protocol",
+                "kind": "machine",
+                "required": true,
+                "assertion": "Strict input/output shapes and stale response protection preserve the checkpoint."
+              }
+            ],
+            "cases": [
+              {
+                "id": "eligible",
+                "inputs": {
+                  "borrower_id": "B-eligible",
+                  "book_id": "BK-eligible",
+                  "days_overdue": 0,
+                  "holds": 0,
+                  "renewals_used": 0
+                },
+                "expected": {
+                  "result": {
+                    "borrower_id": "B-eligible",
+                    "book_id": "BK-eligible",
+                    "decision": "renew",
+                    "renewal_days": 14,
+                    "reasons": []
+                  }
+                },
+                "expected_status": "completed",
+                "criteria": [
+                  "policy",
+                  "protocol"
+                ],
+                "required": true
+              },
+              {
+                "id": "hold",
+                "inputs": {
+                  "borrower_id": "B-hold",
+                  "book_id": "BK-hold",
+                  "days_overdue": 0,
+                  "holds": 1,
+                  "renewals_used": 0
+                },
+                "expected": {
+                  "result": {
+                    "borrower_id": "B-hold",
+                    "book_id": "BK-hold",
+                    "decision": "staff_review",
+                    "renewal_days": 0,
+                    "reasons": [
+                      "reader_hold"
+                    ]
+                  }
+                },
+                "expected_status": "completed",
+                "criteria": [
+                  "policy",
+                  "protocol"
+                ],
+                "required": true
+              },
+              {
+                "id": "overdue",
+                "inputs": {
+                  "borrower_id": "B-overdue",
+                  "book_id": "BK-overdue",
+                  "days_overdue": 3,
+                  "holds": 0,
+                  "renewals_used": 0
+                },
+                "expected": {
+                  "result": {
+                    "borrower_id": "B-overdue",
+                    "book_id": "BK-overdue",
+                    "decision": "staff_review",
+                    "renewal_days": 0,
+                    "reasons": [
+                      "overdue"
+                    ]
+                  }
+                },
+                "expected_status": "completed",
+                "criteria": [
+                  "policy",
+                  "protocol"
+                ],
+                "required": true
+              },
+              {
+                "id": "quota",
+                "inputs": {
+                  "borrower_id": "B-quota",
+                  "book_id": "BK-quota",
+                  "days_overdue": 0,
+                  "holds": 0,
+                  "renewals_used": 2
+                },
+                "expected": {
+                  "result": {
+                    "borrower_id": "B-quota",
+                    "book_id": "BK-quota",
+                    "decision": "staff_review",
+                    "renewal_days": 0,
+                    "reasons": [
+                      "renewal_limit"
+                    ]
+                  }
+                },
+                "expected_status": "completed",
+                "criteria": [
+                  "policy",
+                  "protocol"
+                ],
+                "required": true
+              }
+            ],
+            "baseline": "No reusable renewal package existed; policy read manually by the host.",
+            "limitations": [
+              "Four explicit policy branches, no real library/account effects.",
+              "One host agent; no performance comparison or provider recovery claim."
+            ]
+          },
+          "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6"
+        }
+      },
+      "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23"
+    }
+  },
+  "capabilities": {
+    "workspace": {
+      "binding": "exec_command",
+      "effect": "local_write",
+      "available": true,
+      "authorization": "granted",
+      "evidence": "Current host exposes local execution; user requested creation of a reusable workflow. Recheck on another host."
+    }
+  },
+  "acceptance": [
+    "Each result has evidence and a case ID.",
+    "Failure origin and repair target are specific.",
+    "Sample count and evaluation dependence are disclosed."
+  ],
+  "outcomes": {
+    "ok": [
+      "evaluation"
+    ],
+    "error": [],
+    "blocked": [],
+    "fixable": [
+      "evaluation"
+    ],
+    "limited": [
+      "evaluation"
+    ]
+  },
+  "artifact_types": {
+    "evaluation": {
+      "type": "object",
+      "description": "Object containing complete v2 case results under results and a computed assessment injected by factoryctl; actual evidence references and limits may accompany them."
+    }
+  },
+  "materials_assessment": {
+    "configured": false,
+    "operation": null,
+    "decision": "not_configured",
+    "valid": false,
+    "status": "not_configured",
+    "manifest_sha256": null,
+    "claim_scope": "local_material_integrity_and_declared_binding_only",
+    "allowed_operations": [],
+    "blockers": [
+      "Materials manifest not configured"
+    ],
+    "claim_limit": "not_configured",
+    "material_sha256": {},
+    "gate_blockers": [
+      "Materials manifest not configured"
+    ]
+  },
+  "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6"
+}

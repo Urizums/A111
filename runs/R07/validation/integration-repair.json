@@ -1,0 +1,12 @@
+{
+  "scope": "R07 owner integration packaging",
+  "used": 2,
+  "limit": 2,
+  "candidate_modified": false,
+  "initial_failure": "auxiliary-command.json: 5 installer setup failures caused by tracked symlink fixture",
+  "repair": "Preserve verified fixture tar, leave raw originals locally, narrowly exclude their unpacked paths from git delivery",
+  "old_budgets_unchanged": true,
+  "timestamp": "2026-10-04T17:52:31.178931+00:00",
+  "second_failure": "auxiliary-retry-command.json retained: .gitignore manifest hash was stale after packaging edit",
+  "second_repair": "Regenerate mutable release manifest after the authorized .gitignore edit; no immutable source/candidate or old acceptance changed"
+}

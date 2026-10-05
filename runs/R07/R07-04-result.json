@@ -1,0 +1,48 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R07-04",
+  "attempt_id": "R07-04-1",
+  "requirements_hash": "3a8abdfd0c134affc667318dcc5b6bdf084e7f715f226a56463ef4274de22751",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R07/flow-challenge/worker/results/allocation.json",
+        "runs/R07/flow-challenge/worker/evidence/commands.json",
+        "runs/R07/flow-challenge/worker/reviewer/report.json",
+        "runs/R07/flow-challenge/worker/native/create-receipt.json",
+        "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json",
+        "runs/R07/flow-challenge/worker/evidence/final-input-integrity.json",
+        "runs/R07/flow-challenge/worker/successor/missing-information-checklist.md",
+        "runs/R07/flow-challenge/host/cutoff-and-recovery.json",
+        "runs/R07/flow-challenge/worker/evidence/repair-ledger.json",
+        "runs/R07/flow-challenge/worker/final_report.md",
+        "runs/R07/integration-observation.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Fixed seven-request native coordination pilot",
+    "hypothesis": "Luna can implement a small source-bound task, create an independent native reviewer and run a useful successor step",
+    "baseline": "Original R06 complex trial had zero native subdelegations; R07 original cutoff yielded no runnable output",
+    "conditions": "Current native-tool host, fixed original files, same scope after parent interruption/followup",
+    "observations": "7 rows retained: 3 ready/2 conflict/2 needs_info; one real native independent content review; checklist command executed; original autonomous window NOT passed",
+    "limits": [
+      "Parent assistance required; no within-window autonomous success",
+      "Independent content verifier could not establish execution provenance from its allowed files; Root checked actual host and command evidence separately",
+      "One fixed local batch only; no provider/global efficacy/cold-start proof",
+      "1/2 checker harness repair; bad envelope and original failure retained"
+    ],
+    "metrics": {
+      "requests": 7,
+      "native_creations": 1,
+      "code_repairs": 0,
+      "harness_repairs": 1,
+      "tokens": null,
+      "cost": null,
+      "parent_assistance": true
+    }
+  },
+  "next_action": "Integrate results and start capability/short-entry successor without regrading R07 timing"
+}

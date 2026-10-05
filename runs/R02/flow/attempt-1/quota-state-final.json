@@ -1,0 +1,45 @@
+{
+  "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+  "flow_state": {
+    "state_version": "1.0",
+    "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+    "run_id": "41b543652048413ea71f06eb577d9a91",
+    "status": "completed",
+    "node": "$done",
+    "steps": 1,
+    "visits": {
+      "policy": 1
+    },
+    "artifacts": {
+      "borrower_id": "B-quota",
+      "book_id": "BK-quota",
+      "days_overdue": 0,
+      "holds": 0,
+      "renewals_used": 2,
+      "result": {
+        "borrower_id": "B-quota",
+        "book_id": "BK-quota",
+        "decision": "staff_review",
+        "renewal_days": 0,
+        "reasons": [
+          "renewal_limit"
+        ]
+      }
+    },
+    "trace": [
+      {
+        "step": 1,
+        "node": "policy",
+        "invocation_id": "ee42938649a8ccc1425724bda82bbbd7",
+        "outcome": "review",
+        "input_hash": "1cf4c279757a125f929dee526d481301b706e48fbf93173a8734ba8181012ffb",
+        "output_hash": "a4011959fc745dc5c8dd20f4684cfee5f8f7c71fccf00931163d480614c285af",
+        "evidence": [
+          "Observed quota dispatch: two previous renewals."
+        ]
+      }
+    ]
+  },
+  "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+  "input_hash": "1cf4c279757a125f929dee526d481301b706e48fbf93173a8734ba8181012ffb"
+}

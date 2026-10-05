@@ -1,0 +1,81 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R08",
+  "goal": "按实际宿主能力缩短任务启动路径，并验证新的跨环境接续候选",
+  "tasks": [
+    {
+      "id": "R08-01",
+      "title": "探测下一宿主可用能力并冻结便携边界",
+      "owner": "root",
+      "write_paths": [
+        "runs/R08/capability-probe/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "探测下一宿主可用能力并冻结便携边界",
+      "depends_on": [],
+      "acceptance": [
+        "实际命令核对checkout/Python/Git/宿主工具边界，缺provider的支线明确保留"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R08-02",
+      "title": "制作分流与最小真实首步的短启动候选",
+      "owner": "root",
+      "write_paths": [
+        "runs/R08/candidate/",
+        "runs/R08/design/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "制作分流与最小真实首步的短启动候选",
+      "depends_on": [
+        "R08-01"
+      ],
+      "acceptance": [
+        "保存新旧版本及冻结锁；简单任务只读必要引用，先真实首步；系统/可复用flow分流与必要核验有明确边界"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R08-03",
+      "title": "新上下文验证短路径的正确性、干预与实际分工",
+      "owner": "luna",
+      "write_paths": [
+        "runs/R08/validation/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "新上下文验证短路径的正确性、干预与实际分工",
+      "depends_on": [
+        "R08-02"
+      ],
+      "acceptance": [
+        "新冻结原材料与候选；实际首产物、干预、正确性和必要原生分工分别记录；原R07失败不改判"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R08-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R08-01",
+        "R08-02",
+        "R08-03"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "选择并真实启动下一有价值支线"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "按R08能力结果选可执行支线"
+    }
+  ]
+}

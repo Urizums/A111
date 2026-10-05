@@ -1,0 +1,312 @@
+{
+  "schema_version": "task-specific-design-research/1",
+  "retrieval_window_utc": ["2026-10-04T06:03:38Z", "2026-10-04T06:03:41Z"],
+  "purpose": "Evidence packet and interaction preprocessing for three original web presets; this does not author the catalog, implement a product, or certify conformance.",
+  "input": {
+    "brief_path": "/workspace/A111/runs/R05/materials/catalog-research-brief.md",
+    "brief_sha256": "49b5d1165184897269be1c5753053b1c4cc54d873475a6ebe806c445b6969a45",
+    "request_path": "/workspace/A111/runs/future/versioned_preset_catalog/research/job/request.json",
+    "request_file_sha256": "6c331dc25022781d8a2b26be2aff18bf16e3ff5df69596a62cc8c2bf809e8c14",
+    "request_hash": "a16fe90d0834bcce8f0652a06fa8df329796f5f300c5afd577e437975fb95ab7",
+    "job_id": "job_a6b078243ae54917b0ad156d934ab516",
+    "attempt_id": "64abaabceddf436a861fbdb911942776",
+    "invocation_id": "64abaabceddf436a861fbdb911942776"
+  },
+  "scope": {
+    "material_source_count": 6,
+    "source_limit": "4-6 material sources; Refero was used only as a discovery lead and is excluded from the six primary material sources.",
+    "retrieval": "Unauthenticated, read-only HTTPS GETs to the primary sources explicitly named or preferred by the brief. No logins, external messages, asset reuse, third-party code reuse, or delegation.",
+    "write_scope": "/workspace/A111/runs/future/versioned_preset_catalog/research/worker",
+    "reuse": "Observation-only. Refero item-specific revision and reuse terms were not inspected; no external assets or code are proposed for reuse."
+  },
+  "sources": [
+    {
+      "id": "refero_styles_lead",
+      "classification": "discovery lead; non-material for design proposals",
+      "url": "https://styles.refero.design/",
+      "final_url": "https://styles.refero.design/",
+      "retrieval_method": "Raw HTML GET via Python urllib; local standard-library text extraction; no interactive flow opened.",
+      "status": 200,
+      "accessed_at_utc": "2026-10-04T06:03:38.298364+00:00",
+      "exact_available_version": "No Last-Modified, revision, or per-item DESIGN.md version surfaced in the captured homepage response. Homepage is a mutable index.",
+      "readable_scope": "Homepage response only.",
+      "snapshot": "source_snapshots/refero_styles_lead.html",
+      "snapshot_sha256": "5779be8a0574a859d2c4cc3db9a54dc6f2fa2cc9301a509b8d62b122092cc000",
+      "observed": [
+        "Homepage describes a library of 2,000+ AI-readable design systems.",
+        "Homepage lists color, typography, spacing, components, and DESIGN.md as material categories."
+      ],
+      "short_citation": "Homepage: ‘Browse 2,000+ AI-readable design systems’; ‘colors, typography, spacing, components, and a DESIGN.md’.",
+      "inferred_use": "Vocabulary/discovery lead only; no individual style or target-task fit inferred.",
+      "unavailable": ["No particular style entry or flow was opened.", "Exact revision and material reuse terms unknown."],
+      "reuse_terms": "Unknown; no reuse proposed."
+    },
+    {
+      "id": "wcag_use_of_color",
+      "classification": "primary accessibility guidance; material source 1/6",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+      "final_url": "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+      "retrieval_method": "Raw HTML GET via Python urllib; local standard-library text extraction.",
+      "status": 200,
+      "accessed_at_utc": "2026-10-04T06:03:39.251765+00:00",
+      "exact_available_version": "WCAG 2.2 Understanding resource; HTTP Last-Modified Thu, 03 Sep 2026 15:17:59 GMT. Mutable explanatory page; response body is pinned by SHA.",
+      "readable_scope": "Understanding SC 1.4.1 Use of Color page and extracted visible text.",
+      "snapshot": "source_snapshots/wcag_use_of_color.html",
+      "snapshot_sha256": "a9bab2b8f419ee379b1ab37985d70b03bd6568952251d2f8a55036198990c9e8",
+      "observed": ["SC 1.4.1 says color is not the only visual means to convey information, indicate an action, prompt a response, or distinguish a visual element."],
+      "short_citation": "SC 1.4.1: ‘Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.’",
+      "inferred_use": "Pair status/error/selection colors with text, icon, shape, or another visible cue in all three presets.",
+      "limits": "Understanding guidance, not a rendered target evaluation. No asset or code reuse."
+    },
+    {
+      "id": "wcag_contrast_minimum",
+      "classification": "primary accessibility guidance; material source 2/6",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "final_url": "https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html",
+      "retrieval_method": "Raw HTML GET via Python urllib; local standard-library text extraction.",
+      "status": 200,
+      "accessed_at_utc": "2026-10-04T06:03:39.657966+00:00",
+      "exact_available_version": "WCAG 2.2 Understanding resource; HTTP Last-Modified Thu, 01 Oct 2026 07:26:46 GMT. Mutable explanatory page; response body is pinned by SHA.",
+      "readable_scope": "Understanding SC 1.4.3 Contrast (Minimum), including threshold and exception text.",
+      "snapshot": "source_snapshots/wcag_contrast_minimum.html",
+      "snapshot_sha256": "a06d8a7dad2b3c9cadf1d93b1a5372d58adbab65be51e4c4680124d4e47c9999",
+      "observed": ["SC 1.4.3 specifies 4.5:1 for ordinary text and 3:1 for large-scale text.", "The page lists exceptions including inactive UI, decoration, and logotypes."],
+      "short_citation": "SC 1.4.3: ‘at least 4.5:1’; large-scale text: ‘at least 3:1’.",
+      "inferred_use": "Calculate candidate literal text/background pairs and verify final rendered text in every state.",
+      "limits": "Flat hex pair calculations do not account for opacity, antialiasing, overlays, imagery, fonts, or all criterion exceptions; no conformance conclusion. No asset or code reuse."
+    },
+    {
+      "id": "wcag_focus_visible",
+      "classification": "primary accessibility guidance; material source 3/6",
+      "url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+      "final_url": "https://www.w3.org/WAI/WCAG22/Understanding/focus-visible.html",
+      "retrieval_method": "Raw HTML GET via Python urllib; local standard-library text extraction.",
+      "status": 200,
+      "accessed_at_utc": "2026-10-04T06:03:39.943148+00:00",
+      "exact_available_version": "WCAG 2.2 Understanding resource, SC 2.4.7 Focus Visible (Level AA); HTTP Last-Modified Thu, 01 Oct 2026 07:26:46 GMT.",
+      "readable_scope": "Understanding SC 2.4.7 page and extracted visible text.",
+      "snapshot": "source_snapshots/wcag_focus_visible.html",
+      "snapshot_sha256": "754e2c52ec85b3a29d0b6a69f04fbdbbcec7cb9bba849ae2a340c3c92bb83209",
+      "observed": ["Any keyboard-operable UI needs a mode with visible focus.", "The page states focus must not be time limited."],
+      "short_citation": "SC 2.4.7: ‘Any keyboard operable user interface has a mode of operation where the keyboard focus indicator is visible.’",
+      "inferred_use": "Keep a visible focus indicator across filters, rows, form controls, links, annotation controls and dialogs; test actual sequence separately.",
+      "limits": "The page does not select the proposed ring thickness/color or establish target focus order. No asset or code reuse."
+    },
+    {
+      "id": "mdn_reduced_motion",
+      "classification": "primary technical reference; material source 4/6",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion",
+      "final_url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@media/prefers-reduced-motion",
+      "retrieval_method": "Raw HTML GET via Python urllib; brief-era URL resolved to the current Reference URL; local standard-library text extraction.",
+      "status": 200,
+      "accessed_at_utc": "2026-10-04T06:03:40.015110+00:00",
+      "exact_available_version": "HTTP Last-Modified Sun, 04 Oct 2026 01:42:18 GMT; ETag \"094c37c68eaf620d556f619dd615cf9a\".",
+      "readable_scope": "Current MDN CSS reference page and extracted visible text.",
+      "snapshot": "source_snapshots/mdn_reduced_motion.html",
+      "snapshot_sha256": "7afe909e3b33f9633b39ed851d94c82689bcbf0dfd077ae3b732d752b90d2d5c",
+      "observed": ["The feature detects a device preference to remove, reduce, or replace non-essential motion.", "Scaling or panning large objects can trigger discomfort for some readers."],
+      "short_citation": "The feature detects a preference that ‘removes, reduces, or replaces motion-based animations’.",
+      "inferred_use": "Keep semantic state identical while replacing movement with a static state update when the preference is enabled.",
+      "limits": "Technical reference, not target runtime proof or an assertion that every animation is prohibited. No code reuse."
+    },
+    {
+      "id": "mdn_dialog",
+      "classification": "primary technical reference; material source 5/6",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog",
+      "final_url": "https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog",
+      "retrieval_method": "Raw HTML GET via Python urllib; brief-era URL redirected to current Reference URL; local standard-library text extraction.",
+      "status": 200,
+      "accessed_at_utc": "2026-10-04T06:03:40.228352+00:00",
+      "exact_available_version": "HTTP Last-Modified Sun, 04 Oct 2026 01:42:28 GMT; ETag \"8b55c0a24b3fdb952686bd71d2bb22f2\".",
+      "readable_scope": "Current MDN HTML dialog reference including accessibility notes.",
+      "snapshot": "source_snapshots/mdn_dialog.html",
+      "snapshot_sha256": "72d7dcc9bc5aa1a9b7c304da6a8452a9b97c2ae69893786fb18d6f1ee67a2695",
+      "observed": ["showModal() opens a modal dialog and makes outside content inert.", "MDN documents Esc dismissal and recommends deliberate initial focus and an explicit close mechanism."],
+      "short_citation": "MDN accessibility notes: use a deliberate initial focus; provide an explicit close mechanism; a modal opened with showModal() closes on Esc by default.",
+      "inferred_use": "Prefer a native modal for review/form/annotation conflicts when blocking resolution is necessary; return focus and browser support still require testing.",
+      "limits": "Technical HTML reference, not evidence that a modal is the best UX for every conflict. No code reuse."
+    },
+    {
+      "id": "android_system_bars",
+      "classification": "primary platform guidance; material source 6/6",
+      "url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+      "final_url": "https://developer.android.com/design/ui/mobile/guides/foundations/system-bars",
+      "retrieval_method": "Raw HTML GET via Python urllib; local standard-library text extraction.",
+      "status": 200,
+      "accessed_at_utc": "2026-10-04T06:03:40.835199+00:00",
+      "exact_available_version": "HTTP Last-Modified Tue, 22 Sep 2026 17:30:05 GMT.",
+      "readable_scope": "Android mobile System bars design guidance, including takeaways, adaptive layouts and gesture insets.",
+      "snapshot": "source_snapshots/android_system_bars.html",
+      "snapshot_sha256": "3c1801b7d2f4202517a7967b0bf11d6820ed1e1c08c8926a1f0a194da43a5418",
+      "observed": ["Account for bars, safe zones, input methods, display cutouts, and device capabilities.", "Use WindowInsets so content is not obscured in adaptive layouts.", "Avoid placing interactions or touch targets under gesture-navigation insets."],
+      "short_citation": "Takeaways: ‘Use WindowInsets to properly handle system bar intrusions’; ‘Avoid adding interactions or touch targets under gesture navigation insets.’",
+      "inferred_use": "For a handheld preset hosted edge-to-edge in Android, test/handle system insets and keyboard overlap.",
+      "limits": "Native/app host guidance does not define ordinary mobile-web browser layout, web breakpoints, touch-target sizing, or keyboard behavior. No code reuse."
+    }
+  ],
+  "candidate_token_calculations": {
+    "method": "WCAG relative luminance from sRGB literal hex foreground/background inputs; selected inputs and outputs recorded in contrast_check.py and contrast_results.json.",
+    "results_file": "contrast_results.json",
+    "standard_evidence": "wcag_contrast_minimum",
+    "caveat": "Ratios are candidate text-pair calculations, not rendered conformance. Focus ratios are descriptive calculations, not a sourced focus-indicator contrast requirement.",
+    "pairs": [
+      {"role": "review_body", "foreground": "#17212B", "background": "#F3F6FA", "ratio": 15.03},
+      {"role": "review_surface_text", "foreground": "#1F2937", "background": "#FFFFFF", "ratio": 14.68},
+      {"role": "review_muted", "foreground": "#475569", "background": "#F3F6FA", "ratio": 6.99},
+      {"role": "stock_canvas_body", "foreground": "#1F2937", "background": "#F8FAFC", "ratio": 14.03},
+      {"role": "reader_body", "foreground": "#2F2D2A", "background": "#FBFAF7", "ratio": 13.15},
+      {"role": "secondary_text_review", "foreground": "#475569", "background": "#F3F6FA", "ratio": 6.99},
+      {"role": "secondary_text_stock", "foreground": "#475569", "background": "#F8FAFC", "ratio": 7.24},
+      {"role": "secondary_text_reader", "foreground": "#475569", "background": "#FBFAF7", "ratio": 7.26},
+      {"role": "primary_action", "foreground": "#1D4ED8", "background": "#FFFFFF", "ratio": 6.7},
+      {"role": "primary_button_label", "foreground": "#FFFFFF", "background": "#1D4ED8", "ratio": 6.7},
+      {"role": "selected_item", "foreground": "#1E3A8A", "background": "#DBEAFE", "ratio": 8.49},
+      {"role": "error", "foreground": "#991B1B", "background": "#FEF2F2", "ratio": 7.6},
+      {"role": "success", "foreground": "#065F46", "background": "#ECFDF5", "ratio": 7.29},
+      {"role": "warning_conflict", "foreground": "#854D0E", "background": "#FFFBEB", "ratio": 6.61},
+      {"role": "focus_on_white", "foreground": "#005FCC", "background": "#FFFFFF", "ratio": 5.98},
+      {"role": "focus_on_review_canvas", "foreground": "#005FCC", "background": "#F3F6FA", "ratio": 5.52},
+      {"role": "focus_on_stock_canvas", "foreground": "#005FCC", "background": "#F8FAFC", "ratio": 5.72},
+      {"role": "focus_on_reader_canvas", "foreground": "#005FCC", "background": "#FBFAF7", "ratio": 5.73},
+      {"role": "reader_annotation", "foreground": "#3A311E", "background": "#FFF1C2", "ratio": 11.36}
+    ]
+  },
+  "proposals": [
+    {
+      "id": "dense_review_console",
+      "task": "Review many records, filter/scan a queue, inspect one selected record, and commit a decision while handling stale or conflicting state.",
+      "platform": "Desktop responsive web with a narrow web fallback.",
+      "evidence": ["wcag_use_of_color", "wcag_contrast_minimum", "wcag_focus_visible", "mdn_dialog", "mdn_reduced_motion"],
+      "observed_vs_inferred": {
+        "observed": "Sources establish color is not the only cue, candidate text contrast thresholds, visible keyboard focus, reduced-motion preference semantics, and native modal dialog behaviors.",
+        "inferred": "Queue + filter + selected-record split layout, region order, responsive list-to-record fallback, semantic tokens, and product states. No review console flow or screen was observed."
+      },
+      "region_attention_map": ["Queue title/context and global actions", "Filter/search band", "Scannable review queue", "Selected record detail and decision/activity controls"],
+      "layout_hypothesis": "Use a split queue/detail view only at wide widths; on narrow screens switch to a list-to-record route so columns do not become clipped. Breakpoints are unmeasured.",
+      "token_pairs": [
+        {"role": "canvas/body", "fg": "#17212B", "bg": "#F3F6FA", "ratio": 15.03},
+        {"role": "card/body", "fg": "#1F2937", "bg": "#FFFFFF", "ratio": 14.68},
+        {"role": "secondary", "fg": "#475569", "bg": "#F3F6FA", "ratio": 6.99},
+        {"role": "selected", "fg": "#1E3A8A", "bg": "#DBEAFE", "ratio": 8.49, "additional_cue": "Label or icon; do not signal selection by hue alone."},
+        {"role": "action", "fg": "#FFFFFF", "bg": "#1D4ED8", "ratio": 6.7},
+        {"role": "warning", "fg": "#854D0E", "bg": "#FFFBEB", "ratio": 6.61, "additional_cue": "Warning icon and explicit text."},
+        {"role": "error", "fg": "#991B1B", "bg": "#FEF2F2", "ratio": 7.6, "additional_cue": "Error icon and explicit text."},
+        {"role": "focus", "fg": "#005FCC", "bg": "#FFFFFF or #F3F6FA", "calculated_ratios": [5.98, 5.52], "additional_cue": "Persistent visible outline; exact treatment remains a hypothesis."}
+      ],
+      "component_states": {
+        "loading": "Static placeholder rows with textual loading status.",
+        "empty": ["No work assigned", "No matching results with clear-filters route"],
+        "error": "Fetch failure preserves filters and offers Retry.",
+        "conflict": "Show local and server versions with explicit compare/keep/replace actions; preserve unsent work where product behavior allows.",
+        "success": "Decision saved text plus icon/status, not color alone."
+      },
+      "keyboard_focus": "Proposed visible persistent focus and sequence: filters -> queue -> selected record -> decision controls. Native modal is a candidate only for blocking conflict/irreversible confirmation; set deliberate initial focus, explicit buttons and Esc dismissal; test focus return.",
+      "reduced_motion": "No motion is required. If a transition is used, the reduced-motion branch replaces slide/pan with a static state update and preserves status and focus.",
+      "alternative_and_rationale": "A full-page record route is simpler but may cost context switching. A split view is a wide-screen task hypothesis; narrow screens route to the record to protect legibility.",
+      "verification_hypotheses": ["Keyboard-only traversal through loading, populated, empty and conflict states.", "Measure rendered text pairs and confirm label/icon cues.", "Test 1280, intermediate and 320 CSS px widths for clipping and return path; these are test points, not sourced breakpoints.", "With OS reduced motion enabled, confirm state changes do not depend on movement.", "Check Esc close and focus restoration in supported browsers."],
+      "limits": ["No product schema, workflow, queue data, or user test evidence.", "Sources do not prove split-view effectiveness, row density, breakpoints, keyboard order, persistence semantics, or target conformance."]
+    },
+    {
+      "id": "handheld_stock_count_form",
+      "task": "Count assigned inventory items on a phone and preserve or resolve count state during validation and sync.",
+      "platform": "Phone web; Android app/WebView edge-to-edge behavior applies only if that host is used.",
+      "evidence": ["wcag_use_of_color", "wcag_contrast_minimum", "wcag_focus_visible", "mdn_dialog", "mdn_reduced_motion", "android_system_bars"],
+      "observed_vs_inferred": {
+        "observed": "Sources establish semantic color redundancy, contrast thresholds, visible keyboard focus, reduced-motion preference, modal-dialog basics, and Android system-inset concerns.",
+        "inferred": "One-column item/count sequence, in-flow actions, offline/sync/conflict states, and phone layout. No inventory flow or phone screen was observed."
+      },
+      "region_attention_map": ["Job/location context", "Item identity and unit", "Primary count field", "Optional note/exception", "Save/Next action and text sync status"],
+      "layout_hypothesis": "One column; allow scroll around the virtual keyboard. In an edge-to-edge Android app/WebView, keep content and controls clear of bars, cutouts and gesture insets using host-appropriate inset behavior.",
+      "token_pairs": [
+        {"role": "canvas/body", "fg": "#1F2937", "bg": "#F8FAFC", "ratio": 14.03},
+        {"role": "input/surface", "fg": "#1F2937", "bg": "#FFFFFF", "ratio": 14.68},
+        {"role": "action", "fg": "#FFFFFF", "bg": "#1D4ED8", "ratio": 6.7},
+        {"role": "saved", "fg": "#065F46", "bg": "#ECFDF5", "ratio": 7.29, "additional_cue": "Check plus text."},
+        {"role": "conflict", "fg": "#854D0E", "bg": "#FFFBEB", "ratio": 6.61, "additional_cue": "Conflict label/icon and both values."},
+        {"role": "invalid", "fg": "#991B1B", "bg": "#FEF2F2", "ratio": 7.6, "additional_cue": "Field-associated error text and icon."},
+        {"role": "focus", "fg": "#005FCC", "bg": "#FFFFFF or #F8FAFC", "calculated_ratios": [5.98, 5.72], "additional_cue": "Visible outline hypothesis."}
+      ],
+      "component_states": {
+        "loading": "Static item placeholder/label and text status.",
+        "empty": "No assigned item with a clear next route.",
+        "invalid": "Field-associated validation text and preserved input.",
+        "saving": "Prevent duplicate submit while exposing a textual saving state.",
+        "offline": "Report saved locally/waiting to sync only if product persistence is actually implemented.",
+        "conflict": "Present server and local counts and explicit resolution options.",
+        "success": "Textual saved/complete state plus check icon."
+      },
+      "keyboard_focus": "Proposed tab order: item context -> count -> note/exception -> Save/Next. Keep labels visible and focus indicator distinct; a conflict dialog needs a cancel route and should use the native modal pattern only if resolution blocks other work.",
+      "reduced_motion": "State updates work without motion. With preference enabled, suppress spinner sweeps and count transitions while keeping a textual saving/sync state; no large scale/pan effects.",
+      "alternative_and_rationale": "A fixed bottom action might improve reach but can be obscured by the IME or system/gesture inset. Begin with an in-flow action; adopt fixed positioning only after device tests establish that it remains visible and unobscured.",
+      "verification_hypotheses": ["Test supported Android edge-to-edge host, gesture navigation, system bars/cutouts, and IME open.", "Test zoom/text scaling, invalid count, repeat submit, offline/reconnect and stale server count.", "Test actual browser and physical phone; Android guidance does not establish ordinary mobile browser behavior.", "Check rendered status/error/action text, keyboard and screen-reader interaction."],
+      "limits": ["Offline persistence, scanner, gloves, outdoor glare, units, input method and conflict semantics are unknown.", "Android source does not define web breakpoints or touch target sizes.", "No specific phone UI or task flow was observed."]
+    },
+    {
+      "id": "long_document_reader_annotation",
+      "task": "Read a long document, navigate its sections, create annotations, and handle saved or conflicting note edits.",
+      "platform": "Responsive web across desktop and narrow phone widths.",
+      "evidence": ["wcag_use_of_color", "wcag_contrast_minimum", "wcag_focus_visible", "mdn_dialog", "mdn_reduced_motion"],
+      "observed_vs_inferred": {
+        "observed": "Sources establish text contrast guidance, non-color cues, visible keyboard focus, reduced-motion preference behavior and dialog focus/close behavior.",
+        "inferred": "Warm reading canvas, reading-column hierarchy, collapsible contents, annotation and conflict flow. No reader screen or annotation workflow was observed."
+      },
+      "region_attention_map": ["Document title and compact controls", "Optional/collapsible table of contents", "Continuous reading column", "Annotation affordance near its passage"],
+      "layout_hypothesis": "Collapse contents navigation on narrow screens and keep document text dominant. Column width, type scale, stickiness and pagination require real document/device evaluation.",
+      "token_pairs": [
+        {"role": "reading body", "fg": "#2F2D2A", "bg": "#FBFAF7", "ratio": 13.15},
+        {"role": "secondary", "fg": "#475569", "bg": "#FBFAF7", "ratio": 7.26},
+        {"role": "utility surface", "fg": "#1F2937", "bg": "#FFFFFF", "ratio": 14.68},
+        {"role": "annotation", "fg": "#3A311E", "bg": "#FFF1C2", "ratio": 11.36, "additional_cue": "Icon/underline or explicit comment label, not highlight hue alone."},
+        {"role": "action", "fg": "#FFFFFF", "bg": "#1D4ED8", "ratio": 6.7},
+        {"role": "focus", "fg": "#005FCC", "bg": "#FFFFFF or #FBFAF7", "calculated_ratios": [5.98, 5.73], "additional_cue": "Visible persistent outline hypothesis."}
+      ],
+      "component_states": {
+        "loading": "Static placeholder plus text status.",
+        "empty": "Explain absent content and preserve Back/return path.",
+        "error": "Retry without losing the return path.",
+        "draft": "Composer distinguishes an unsaved annotation from a saved note.",
+        "conflict": "Show local and server note text with explicit resolve/keep/discard actions.",
+        "delete_or_exit": "If confirmation is needed, offer clear cancel and confirm controls in an accessible dialog candidate."
+      },
+      "keyboard_focus": "Visible focus for contents links, search, annotation controls and dialog buttons. Keep a coherent document-control/annotation tab path, avoid traps, and test reading order with screen readers. Dialog uses deliberate focus, explicit close/cancel and Esc behavior when modal.",
+      "reduced_motion": "No auto-pan/parallax is needed. When reduced motion is enabled, heading/annotation navigation reaches the same destination without smooth animated travel; test scroll and focus together.",
+      "alternative_and_rationale": "Sticky contents can aid orientation but consume space and may obscure content under zoom. Start collapsible and non-sticky; add stickiness only if long-document testing shows a benefit.",
+      "verification_hypotheses": ["Test short/long docs, narrow view and browser zoom.", "Test keyboard-only navigation and reading order with screen reader.", "Test empty, load error, draft, conflict and delete/exit states.", "Check actual text pairs and reduced-motion navigation/focus behavior."],
+      "limits": ["Typography scale, ideal line length, scroll model, annotation semantics and mobile pagination are not sourced.", "No claim about successful task performance or product conformance."]
+    }
+  ],
+  "alternatives_and_adoption": {
+    "adopted_direction": "Original, semantically named palette and task-state hypotheses grounded in primary accessibility/platform guidance; no third-party design material adopted.",
+    "alternatives": [
+      {"task": "review console", "alternative": "Always use a full-page selected record.", "candidate_choice": "Split queue/detail at wide widths, full-page route when narrow; requires testing."},
+      {"task": "stock count", "alternative": "Fixed bottom save action.", "candidate_choice": "In-flow action first because IME/system inset overlap is unresolved; test reachability."},
+      {"task": "reader", "alternative": "Sticky contents panel.", "candidate_choice": "Collapsible, non-sticky navigation until zoom and long-document tests establish fit."},
+      {"task": "all", "alternative": "Borrow a style/sample from Refero.", "candidate_choice": "No individual item/revision or reuse terms checked; observation-only and original token suggestions."}
+    ]
+  },
+  "open_questions": [
+    "What exact fields and comparison needs drive review-queue scanning?",
+    "Must stock counts work offline, use scanners, support gloves or work in outdoor glare?",
+    "Does the reader need collaboration, simultaneous notes or mobile pagination?",
+    "Which browsers, Android host modes, viewport sizes, zoom levels and assistive technologies are supported?",
+    "What are the product's brand palette, typography and persistence/conflict rules?"
+  ],
+  "execution": {
+    "source_fetch_command": "python3 /workspace/A111/runs/future/versioned_preset_catalog/research/worker/fetch_sources.py",
+    "source_fetch_results": "fetch_results.log; fetch_manifest.json",
+    "text_extraction_command": "python3 /workspace/A111/runs/future/versioned_preset_catalog/research/worker/extract_text.py",
+    "text_extraction_results": "extract_results.log",
+    "contrast_command": "python3 /workspace/A111/runs/future/versioned_preset_catalog/research/worker/contrast_check.py",
+    "contrast_results": ["contrast_check.log", "contrast_check_round2.log"],
+    "packet_integrity": "packet_integrity.log records SHA-256 verification of all 7 fetched response bodies and confirms that every proposal source reference resolves.",
+    "corrective_rounds": [
+      {"round": 1, "attempt": "python3 -c 'import bs4; print(bs4.__version__)'", "result": "failed: ModuleNotFoundError: No module named 'bs4'", "correction": "Used Python standard-library HTMLParser against already-fetched response bodies."},
+      {"round": 2, "attempt": "Structured JSON load failed: line 284 lacked a colon after the 'task' key in an alternatives entry.", "result": "Failed validation retained in structured_validation_failure.log; location retained in json_error_excerpt.log.", "correction": "Corrected the malformed alternatives object, then re-ran JSON parsing."}
+    ],
+    "analysis_refinement": "Expanded successful contrast calculations to include stock/reader canvas focus and muted text pairs; original and expanded output logs are retained.",
+    "parent_questions": [],
+    "unavailable_measurements": {"tokens": null, "cost": null, "provider_identity": null, "active_model_time": null}
+  },
+  "final_artifact_paths": ["research.json", "report.md"],
+  "final_artifact_hashes": "Included in the outer forge-host-reply/1 artifact references; self-hash is intentionally not embedded here."
+}

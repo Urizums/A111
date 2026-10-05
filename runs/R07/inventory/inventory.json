@@ -1,0 +1,123 @@
+{
+  "schema": "agent-forge-takeover-inventory/1",
+  "source_commit": "6f509c8",
+  "scope": "collection/research only; no regrading, source/skill/shared-state edits, external calls, or legacy worker/timer operations",
+  "external_context": {
+    "source_pr": "https://github.com/Urizums/A111/pull/1",
+    "requester_says_pr_is_being_closed_and_owner_continues_development": true,
+    "remote_state_checked": false
+  },
+  "project": {
+    "goal_status": "active",
+    "r05_r06_handoff_status": "delivered_unfinished_handoff",
+    "full_acceptance_passed": false,
+    "continuation_task_counts": {
+      "done": 12,
+      "blocked": 8,
+      "failed": 0
+    },
+    "next_ready_task": null
+  },
+  "reusable_capabilities": [
+    {
+      "name": "Continuation, lease, integrity, and publication-gate controls",
+      "scope": "Local state/evidence workflow and strict gate; no automatic model execution.",
+      "evidence": ["scripts/continuation.py", "scripts/coordinator_lease.py", "scripts/verify_handoff.py", "scripts/check_publication_gate.py", "state/continuation.json", "state/phase-todo.json"]
+    },
+    {
+      "name": "Input byte snapshots and cooperative bounded execution",
+      "scope": "C4 snapshot/verify/restore; C5 local command attempt and correction recording. Not provider-global enforcement.",
+      "evidence": ["runs/R06/candidate/C5/forge-agent-flow/scripts/snapshot.py", "runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py", "runs/R06/snapshot/", "runs/R06/budget/"]
+    },
+    {
+      "name": "Provider-neutral local adapter and ticket workflows",
+      "scope": "Local protocol checks and HTTP/SQLite journey; two concurrent edits produce one success and one conflict while retaining history. No live SDK proof.",
+      "evidence": ["runs/future/provider-adapter/", "runs/R03/app/", "runs/future/concurrent-ticket/", "runs/R06/regression/http-310.json"]
+    },
+    {
+      "name": "Preset UI and catalog repairs",
+      "scope": "Narrow-screen navigation/focus, table-label scrolling, three presets, and confirmation callback repair; Root retests do not replace blocked independent acceptance.",
+      "evidence": ["runs/future/preset_browser_acceptance/", "runs/future/versioned_preset_catalog/", "runs/R06/FEEDBACK_LOOPS.md"]
+    },
+    {
+      "name": "Local task-flow examples",
+      "scope": "GeoJSON delivery and approval example with idempotency, concurrency, process-crash recovery, and local post-review; no real approval/notification side effect or autonomous child-agent delegation proven.",
+      "evidence": ["runs/R06/handoff/simple/", "runs/R06/handoff/complex/", "runs/R06/approval/"]
+    },
+    {
+      "name": "Portable CLI/install/package regressions",
+      "scope": "Historical Python 3.10/3.12 evidence: controller 368 each, C3/C5 376 each, auxiliary 47 each, source/archive CLI smoke 17 each, C5 snapshot 7 and bounded run 8.",
+      "evidence": ["runs/R06/final/source-py310/", "runs/R06/final/source-py312/", "runs/R06/final/archive-py310/", "runs/R06/final/archive-py312/", "runs/R06/final/summary.json"]
+    }
+  ],
+  "runnable_commands": [
+    {"command": "python3 scripts/verify_handoff.py --json", "purpose": "Read-only handoff integrity check"},
+    {"command": "python3 scripts/continuation.py --root . next", "purpose": "Inspect current eligible queue"},
+    {"command": "python3 scripts/check_publication_gate.py --root .", "purpose": "Strict acceptance status; historical expected exit 2 while blocked"},
+    {"command": "python3 -m unittest discover -s skills/forge-agent-flow/scripts -p 'test_*.py'", "purpose": "Original controller regression"},
+    {"command": "python3 -m unittest discover -s runs/R01/candidate/forge-agent-flow/scripts -p 'test_*.py'", "purpose": "C3 candidate regression"},
+    {"command": "python3 -m unittest discover -s runs/R06/candidate/C5/forge-agent-flow/scripts -p 'test_*.py'", "purpose": "C5 candidate regression"},
+    {"command": "python3 -m unittest discover -s scripts -p 'test_*.py'", "purpose": "Handoff/recorder regression"}
+  ],
+  "blocked_task_ids": [
+    {"id": "BACKLOG-preset_browser_acceptance", "budget": "coordinator 2/2", "blocker": "Root retest passed; independent final acceptance and native terminal reconciliation unresolved."},
+    {"id": "BACKLOG-versioned_preset_catalog", "budget": "continuation 1/2; independent harness 2/2 exhausted", "blocker": "Independent v2 has 74 pass/2 failed 390px focus samples; Root full Tab cycles are separate evidence."},
+    {"id": "CAP-sdk_adapter_contract", "budget": "local task 0/2; independent validator used 3 corrections against limit 2", "blocker": "Local protocol tests passed but over-budget independent acceptance cannot qualify."},
+    {"id": "BACKLOG-host_protocol_overhead_comparison", "budget": "2/2 exhausted", "blocker": "Only 4/8 frozen samples; package config invalid and P2B marker order failed."},
+    {"id": "BACKLOG-real_agent_executor_integration", "budget": "0/2", "blocker": "No configured authorized provider endpoint/model/identity/credential or independent SDK execution."},
+    {"id": "BACKLOG-real_worker_failure_recovery_trials", "budget": "0/2", "blocker": "Provider cancel-terminal, natural network failure, and permitted external-effect sandbox evidence absent."},
+    {"id": "BACKLOG-bridge_budget_timeout_validation", "budget": "0/2", "blocker": "Provider-global token/admission/cancel-ack telemetry unavailable."},
+    {"id": "R06-scheduled_handoff", "budget": "0/2", "blocker": "Trigger and retained-state observation exists; independent cold start and substantive successor step remain unverified; automation disabled."}
+  ],
+  "blocked_issue_ids": [
+    "R05-adapter-validation-budget",
+    "R05-preset-independent",
+    "R05-protocol-study",
+    "R05-provider-runtime",
+    "R05-provider-global-and-recovery",
+    "R06-cold-start",
+    "R05-catalog-independent-focus",
+    "R03-independent-UI-historical"
+  ],
+  "environment_gaps": [
+    {"gap": "No authorized provider endpoint/model/identity/credential and independent SDK run", "evidence": ["runs/R06/environment-final.json"]},
+    {"gap": "No provider-global usage/admission/cancel-terminal telemetry", "evidence": ["runs/R04/capability-probe/probe.json"]},
+    {"gap": "No permitted isolated external-effect recovery sandbox", "evidence": ["runs/R04/capability-probe/probe.json"]},
+    {"gap": "Independent scheduled cold-start execution not verified", "evidence": ["runs/R06/scheduling/trigger-review.json", "runs/R06/scheduling/resume-20261004T072138Z/observation.json"]}
+  ],
+  "local_code_or_validation_issues": [
+    {"issue": "Independent catalog focus samples failed; correction budget exhausted; Root result remains separate.", "evidence": ["runs/future/versioned_preset_catalog/independent/retest-v2/browser-results.json"]},
+    {"issue": "Overhead comparison incomplete with invalid package setup and marker-order error.", "evidence": ["runs/future/host_protocol_overhead_comparison/report.json"]},
+    {"issue": "Independent adapter validator exceeded its two-correction limit despite local tests passing.", "evidence": ["runs/future/provider-adapter/independent/budget-clarification.json"]},
+    {"issue": "Preset independent terminal receipt/final acceptance unresolved after Root retest.", "evidence": ["runs/future/preset_browser_acceptance/root-final-review.json"]}
+  ],
+  "fixed_and_retested_but_not_global_acceptance": [
+    "R05-UI-focus",
+    "R05-catalog-confirm",
+    "R06-snapshot-gap-prevention",
+    "R06-over-budget-prevention",
+    "R06-final-staging",
+    "R06-root-review",
+    "R06-result-protocol",
+    "R06-blocked-state-validator"
+  ],
+  "budget_audit_refs": ["runs/R06/final/repair-budget-audit.json", "runs/R06/handoff/root-repair-budget.json"],
+  "evidence_entry_points": [
+    "AGENTS.md",
+    "START_HERE.md",
+    "state/continuation.json",
+    "state/phase-todo.json",
+    "state/checkpoint.json",
+    "runs/R06/upstream-handoff/README.md",
+    "runs/R06/VERIFICATION_REPORT.md",
+    "runs/R06/issues.json",
+    "runs/R06/FEEDBACK_LOOPS.md",
+    "runs/R06/final/summary.json",
+    "runs/R06/upstream-handoff/strict-acceptance.json"
+  ],
+  "next_useful_work": [
+    "Take a read-only local baseline: lease probe, verify_handoff, continuation next, and strict gate.",
+    "Have Root select and freeze a fresh R07 scope from unmet product needs; the original queue has no ready task and R05-next remains blocked.",
+    "Preserve original failures, input samples, evidence, and budgets; only revisit a blocked branch when its actual precondition changes."
+  ]
+}

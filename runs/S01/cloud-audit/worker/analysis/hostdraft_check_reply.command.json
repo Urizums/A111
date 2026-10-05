@@ -1,0 +1,17 @@
+{
+  "schema": "offline-hostdraft-command/1",
+  "mode": "check",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/skills/forge-agent-flow/scripts/hostdraft.py",
+    "check-reply",
+    "--request",
+    "/workspace/A111/runs/S01/cloud-audit/job/request.json",
+    "--reply",
+    "/workspace/A111/runs/S01/cloud-audit/worker/reply.json"
+  ],
+  "cwd": "/workspace/A111",
+  "exit_code": 0,
+  "stdout": "{\n  \"status\": \"payload_valid\",\n  \"read_only\": true,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"native_completion_checked\": false,\n  \"semantic_acceptance\": \"not_evaluated\",\n  \"scope\": \"existing outer host reply and file refs only; original receive/commit remain required\"\n}\n",
+  "stderr": ""
+}

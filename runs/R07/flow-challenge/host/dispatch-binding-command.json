@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "import json,pathlib; r=pathlib.Path('.'); print(json.loads((r/'runs/R07/flow-challenge/host/restore-creation-receipt.json').read_text())['returned']); print(json.loads((r/'runs/R07/flow-challenge/host/native-creation-receipt.json').read_text())['returned'])"
+  ],
+  "cwd": "/workspace/scratch/73714494ad2f/forge-takeover-r07",
+  "begin": {
+    "utc": "2026-10-04T17:42:24.579332+00:00",
+    "monotonic_ns": 1253611410225,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T17:42:24.598911+00:00",
+    "monotonic_ns": 1253630985811,
+    "boot_id": "1a581fd9-3181-41c6-9a8b-8beb31ab8e03"
+  },
+  "exit_code": 0,
+  "stdout": "{'task_name': '/root/luna_r07_restore_validation'}\n{'task_name': '/root/luna_r07_native_task'}\n",
+  "stderr": "",
+  "stdout_base64": "eyd0YXNrX25hbWUnOiAnL3Jvb3QvbHVuYV9yMDdfcmVzdG9yZV92YWxpZGF0aW9uJ30Keyd0YXNrX25hbWUnOiAnL3Jvb3QvbHVuYV9yMDdfbmF0aXZlX3Rhc2snfQo=",
+  "stderr_base64": ""
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-c",
+    "from pathlib import Path; print(Path(\"runs/R01/import/legacy.json\").read_text())"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T04:51:19.104899+00:00",
+    "monotonic_ns": 34117751277667,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T04:51:19.125150+00:00",
+    "monotonic_ns": 34117771527198,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"schema\": 1,\n  \"batch_id\": \"museum-2026-10\",\n  \"locations\": [\n    {\n      \"code\": \"NORTH\",\n      \"name\": \"北库\"\n    },\n    {\n      \"code\": \"LAB\",\n      \"name\": \"修复室\"\n    }\n  ],\n  \"assets\": [\n    {\n      \"asset_id\": \"M-101\",\n      \"label\": \"光谱仪\",\n      \"serial\": \"SPEC-01\",\n      \"location\": \"LAB\",\n      \"condition\": \"ready\",\n      \"service\": [\n        {\n          \"event_id\": \"S-01\",\n          \"date\": \"2026-09-18\",\n          \"note\": \"年度校准\"\n        }\n      ]\n    },\n    {\n      \"asset_id\": \"M-102\",\n      \"label\": \"摄影灯\",\n      \"serial\": \"LIGHT-12\",\n      \"location\": \"NORTH\",\n      \"condition\": \"ready\",\n      \"service\": []\n    },\n    {\n      \"asset_id\": \"M-103\",\n      \"label\": \"温湿度记录仪\",\n      \"serial\": \"SENSOR-7\",\n      \"location\": \"LAB\",\n      \"condition\": \"repair\",\n      \"service\": [\n        {\n          \"event_id\": \"S-02\",\n          \"date\": \"2026-09-20\",\n          \"note\": \"等待探头\"\n        }\n      ]\n    }\n  ]\n}\n\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAxLAogICJiYXRjaF9pZCI6ICJtdXNldW0tMjAyNi0xMCIsCiAgImxvY2F0aW9ucyI6IFsKICAgIHsKICAgICAgImNvZGUiOiAiTk9SVEgiLAogICAgICAibmFtZSI6ICLljJflupMiCiAgICB9LAogICAgewogICAgICAiY29kZSI6ICJMQUIiLAogICAgICAibmFtZSI6ICLkv67lpI3lrqQiCiAgICB9CiAgXSwKICAiYXNzZXRzIjogWwogICAgewogICAgICAiYXNzZXRfaWQiOiAiTS0xMDEiLAogICAgICAibGFiZWwiOiAi5YWJ6LCx5LuqIiwKICAgICAgInNlcmlhbCI6ICJTUEVDLTAxIiwKICAgICAgImxvY2F0aW9uIjogIkxBQiIsCiAgICAgICJjb25kaXRpb24iOiAicmVhZHkiLAogICAgICAic2VydmljZSI6IFsKICAgICAgICB7CiAgICAgICAgICAiZXZlbnRfaWQiOiAiUy0wMSIsCiAgICAgICAgICAiZGF0ZSI6ICIyMDI2LTA5LTE4IiwKICAgICAgICAgICJub3RlIjogIuW5tOW6puagoeWHhiIKICAgICAgICB9CiAgICAgIF0KICAgIH0sCiAgICB7CiAgICAgICJhc3NldF9pZCI6ICJNLTEwMiIsCiAgICAgICJsYWJlbCI6ICLmkYTlvbHnga8iLAogICAgICAic2VyaWFsIjogIkxJR0hULTEyIiwKICAgICAgImxvY2F0aW9uIjogIk5PUlRIIiwKICAgICAgImNvbmRpdGlvbiI6ICJyZWFkeSIsCiAgICAgICJzZXJ2aWNlIjogW10KICAgIH0sCiAgICB7CiAgICAgICJhc3NldF9pZCI6ICJNLTEwMyIsCiAgICAgICJsYWJlbCI6ICLmuKnmub/luqborrDlvZXku6oiLAogICAgICAic2VyaWFsIjogIlNFTlNPUi03IiwKICAgICAgImxvY2F0aW9uIjogIkxBQiIsCiAgICAgICJjb25kaXRpb24iOiAicmVwYWlyIiwKICAgICAgInNlcnZpY2UiOiBbCiAgICAgICAgewogICAgICAgICAgImV2ZW50X2lkIjogIlMtMDIiLAogICAgICAgICAgImRhdGUiOiAiMjAyNi0wOS0yMCIsCiAgICAgICAgICAibm90ZSI6ICLnrYnlvoXmjqLlpLQiCiAgICAgICAgfQogICAgICBdCiAgICB9CiAgXQp9Cgo=",
+  "stderr_base64": ""
+}

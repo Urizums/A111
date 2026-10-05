@@ -1,0 +1,115 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R05",
+  "goal": "Use newly available browser capability on the original target and progress catalog/concurrent-app checks independently.",
+  "tasks": [
+    {
+      "id": "BACKLOG-preset_browser_acceptance",
+      "title": "Execute planned UI journeys only when the target app and permitted browser/device access are available; no workaround or inferred UI pass.",
+      "owner": "root",
+      "write_paths": [
+        "runs/future/preset_browser_acceptance/"
+      ],
+      "status": "blocked",
+      "blocker": "Root repaired candidate passes original journeys and added narrow focus probes; final independent acceptance unavailable, historical validator limit and unreconciled native terminal evidence must not be bypassed.",
+      "next_action": "Preserve original reports and repaired v2; no budget reset or replacement validator; keep dev publication blocked.",
+      "depends_on": [],
+      "acceptance": [
+        "Establish actual target evidence for this capability"
+      ],
+      "evidence": [
+        "runs/future/preset_browser_acceptance/root-final-review.json",
+        "runs/future/preset_browser_acceptance/first-step-command.json"
+      ]
+    },
+    {
+      "id": "BACKLOG-versioned_preset_catalog",
+      "title": "Root authors a small task/platform catalog and checks based on verified research; do not mark target visuals passed without browser/device evidence.",
+      "owner": "root",
+      "write_paths": [
+        "runs/future/versioned_preset_catalog/"
+      ],
+      "status": "blocked",
+      "blocker": "Independent v2 retest has74pass/2failed390px focus samples after two harness corrections. Root fullTabcycles pass separately but cannot replace exhausted independent acceptance.",
+      "next_action": "Keep v1/v2, original criteria, receipts and all failures. No more validator correction or replacement; complete packaging checks without dev publication.",
+      "depends_on": [],
+      "acceptance": [
+        "Add task/platform variants with source revision, reuse terms, paired tokens, component states, motion and actual target evidence."
+      ],
+      "evidence": [
+        "runs/future/versioned_preset_catalog/root-final-review.json",
+        "runs/future/versioned_preset_catalog/research/accepted-command.json"
+      ]
+    },
+    {
+      "id": "CAP-sdk_adapter_contract",
+      "title": "定义独立 provider 适配器接口并验证本地协议边界",
+      "owner": "root",
+      "write_paths": [
+        "runs/future/provider-adapter/"
+      ],
+      "status": "blocked",
+      "blocker": "Root local protocol tests passed, but required independent validator used three corrections against a two-correction limit; post-limit success cannot release this branch.",
+      "next_action": "Retain local implementation and all observations. Do not swap validators or reset budget; publication remains blocked.",
+      "depends_on": [],
+      "acceptance": [
+        "Freeze provider-neutral request/result/idempotency/cancel contract and implement local validation without claiming live SDK execution",
+        "Keep live provider validation blocked separately until an authorized endpoint/identity and observation contract exist"
+      ],
+      "evidence": [
+        "runs/future/provider-adapter/independent/budget-clarification.json",
+        "runs/future/provider-adapter/first-step.json"
+      ]
+    },
+    {
+      "id": "X01-concurrent_ticket_edits",
+      "title": "验证双客户端并发更新工单",
+      "owner": "root",
+      "write_paths": [
+        "runs/future/concurrent-ticket/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Integrate final acceptance results without publishing until the user gate is fully satisfied.",
+      "depends_on": [],
+      "acceptance": [
+        "Two real clients issue updates from the same version; exactly one succeeds and one conflicts with no lost history",
+        "Retain original requests, database and conflict UI evidence; do not infer load or provider guarantees"
+      ],
+      "evidence": [
+        "runs/future/concurrent-ticket/task-result.json",
+        "runs/future/concurrent-ticket/validation-repair-1-command.json",
+        "runs/future/concurrent-ticket/validation-repair-1/report.json",
+        "runs/future/concurrent-ticket/visual-review.json",
+        "runs/future/concurrent-ticket/validation-repair-1-command.json",
+        "runs/future/concurrent-ticket/validation-repair-1/report.json",
+        "runs/future/concurrent-ticket/visual-review.json",
+        "runs/future/concurrent-ticket/validation-repair-1-command.json"
+      ]
+    },
+    {
+      "id": "R05-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "BACKLOG-preset_browser_acceptance",
+        "BACKLOG-versioned_preset_catalog",
+        "CAP-sdk_adapter_contract",
+        "X01-concurrent_ticket_edits"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "Actual first step of the next bounded capability/challenge phase"
+      ],
+      "status": "blocked",
+      "evidence": [
+        "runs/R06/VERIFICATION_REPORT.md"
+      ],
+      "blocker": "Required R05 independent acceptance and adapter branches are blocked; no formal phase advance claimed",
+      "next_action": "Preserve parallel R06 result tasks in the same queue; resume phase transition only when original dependencies are truly satisfied"
+    }
+  ]
+}

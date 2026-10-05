@@ -1,0 +1,36 @@
+{
+  "schema": "forge-revision-requirements/1",
+  "frozen_at": "2026-10-03T19:26:29.046765+00:00",
+  "candidate": "runs/S02/candidate/forge-agent-flow",
+  "baseline": "skills/forge-agent-flow",
+  "requirements": [
+    {
+      "id": "R01",
+      "assertion": "Root supplies an exact first read command capturing request and protocol with a unique in-scope log before business commands."
+    },
+    {
+      "id": "R02",
+      "assertion": "Every target subprocess including markers is captured; outer wrapper and native tool/pure file actions are explicitly outside the subprocess denominator."
+    },
+    {
+      "id": "R03",
+      "assertion": "Persist native intent and actual returns; creation -> accepted; running -> observe; completed -> receive; source review -> decision preflight -> commit/reconcile."
+    },
+    {
+      "id": "R04",
+      "assertion": "Track all worker/coordinator local corrections, including analysis and indexes; maximum two per candidate actor; preserve first failures."
+    },
+    {
+      "id": "R05",
+      "assertion": "Workers may read only their own inputs/public protocol and write their own directory; no status/delegation/network/sibling reads; instruction-only containment is disclosed."
+    },
+    {
+      "id": "R06",
+      "assertion": "Baseline source-lock and cutoff evidence unchanged; new candidate hash frozen before tests; no performance or provider-global claims."
+    }
+  ],
+  "max_functional_repairs": 2,
+  "new_ordinary_workers": 1,
+  "tokens": null,
+  "cost": null
+}

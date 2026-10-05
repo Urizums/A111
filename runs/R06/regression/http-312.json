@@ -1,0 +1,41 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "skills/forge-agent-flow/scripts/caserunner.py",
+    "run",
+    "runs/R03/app/evaluation-plan.json",
+    "--cwd",
+    "/workspace/A111",
+    "--candidate-file",
+    "/workspace/A111/runs/R03/app/api_adapter.py",
+    "--candidate-file",
+    "/workspace/A111/challenges/ticket-desk/app.py",
+    "--output-dir",
+    "/workspace/A111/runs/R06/regression/http-312-cases",
+    "--timeout",
+    "30",
+    "--command",
+    "python3",
+    "/workspace/A111/runs/R03/app/api_adapter.py",
+    "--out",
+    "/workspace/A111/runs/R06/regression/http-312-raw"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:54:20.867158+00:00",
+    "monotonic_ns": 41499513536178,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:54:21.139452+00:00",
+    "monotonic_ns": 41499785831086,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"report\": \"/workspace/A111/runs/R06/regression/http-312-cases/report.json\",\n  \"assessment\": {\n    \"status\": \"pass\",\n    \"required_passed\": 1,\n    \"required_total\": 1,\n    \"cases\": [\n      {\n        \"id\": \"api_journey\",\n        \"required\": true,\n        \"status\": \"pass\",\n        \"reason\": \"Process and full JSON expectations match\",\n        \"criteria\": [\n          \"runtime\"\n        ],\n        \"elapsed_seconds\": 0.21491\n      }\n    ],\n    \"candidate_hash\": \"5ccfdf819b0f48bf677f1e7afd41a2f709321d641a1e743b961e23e61cfb65db\",\n    \"plan_hash\": \"9ae02e77e4ccf22bd3924170ed53f86f4f161688779222ba360a5345486514d8\",\n    \"limits\": [\n      \"Exact JSON grading only; no human or UI judgement\",\n      \"Source manifest covers declared files only; environment/dependencies are not attested\",\n      \"Hashes detect drift; they do not authenticate producer or process receipts\"\n    ]\n  }\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJyZXBvcnQiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvUjA2L3JlZ3Jlc3Npb24vaHR0cC0zMTItY2FzZXMvcmVwb3J0Lmpzb24iLAogICJhc3Nlc3NtZW50IjogewogICAgInN0YXR1cyI6ICJwYXNzIiwKICAgICJyZXF1aXJlZF9wYXNzZWQiOiAxLAogICAgInJlcXVpcmVkX3RvdGFsIjogMSwKICAgICJjYXNlcyI6IFsKICAgICAgewogICAgICAgICJpZCI6ICJhcGlfam91cm5leSIsCiAgICAgICAgInJlcXVpcmVkIjogdHJ1ZSwKICAgICAgICAic3RhdHVzIjogInBhc3MiLAogICAgICAgICJyZWFzb24iOiAiUHJvY2VzcyBhbmQgZnVsbCBKU09OIGV4cGVjdGF0aW9ucyBtYXRjaCIsCiAgICAgICAgImNyaXRlcmlhIjogWwogICAgICAgICAgInJ1bnRpbWUiCiAgICAgICAgXSwKICAgICAgICAiZWxhcHNlZF9zZWNvbmRzIjogMC4yMTQ5MQogICAgICB9CiAgICBdLAogICAgImNhbmRpZGF0ZV9oYXNoIjogIjVjY2ZkZjgxOWIwZjQ4YmY2NzdmMWU3YWZkNDFhMmY3MDkzMjFkNjQxYTFlNzQzYjk2MWUyM2U2MWNmYjY1ZGIiLAogICAgInBsYW5faGFzaCI6ICI5YWUwMmU3N2U0Y2NmMjJiZDM5MjQxNzBlZDUzZjg2ZjRmMTYxNjg4Nzc5MjIyYmEzNjBhNTM0NTQ4NjUxNGQ4IiwKICAgICJsaW1pdHMiOiBbCiAgICAgICJFeGFjdCBKU09OIGdyYWRpbmcgb25seTsgbm8gaHVtYW4gb3IgVUkganVkZ2VtZW50IiwKICAgICAgIlNvdXJjZSBtYW5pZmVzdCBjb3ZlcnMgZGVjbGFyZWQgZmlsZXMgb25seTsgZW52aXJvbm1lbnQvZGVwZW5kZW5jaWVzIGFyZSBub3QgYXR0ZXN0ZWQiLAogICAgICAiSGFzaGVzIGRldGVjdCBkcmlmdDsgdGhleSBkbyBub3QgYXV0aGVudGljYXRlIHByb2R1Y2VyIG9yIHByb2Nlc3MgcmVjZWlwdHMiCiAgICBdCiAgfQp9Cg==",
+  "stderr_base64": ""
+}

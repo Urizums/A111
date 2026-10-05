@@ -1,0 +1,41 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3.10",
+    "skills/forge-agent-flow/scripts/caserunner.py",
+    "run",
+    "runs/R03/app/evaluation-plan.json",
+    "--cwd",
+    "/workspace/A111",
+    "--candidate-file",
+    "/workspace/A111/runs/R03/app/api_adapter.py",
+    "--candidate-file",
+    "/workspace/A111/challenges/ticket-desk/app.py",
+    "--output-dir",
+    "runs/R03/app/api-cases-310",
+    "--timeout",
+    "30",
+    "--command",
+    "python3.10",
+    "/workspace/A111/runs/R03/app/api_adapter.py",
+    "--out",
+    "/workspace/A111/runs/R03/app/api-raw-310"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T05:10:13.460558+00:00",
+    "monotonic_ns": 35252106933050,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T05:10:13.771509+00:00",
+    "monotonic_ns": 35252417885577,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"report\": \"/workspace/A111/runs/R03/app/api-cases-310/report.json\",\n  \"assessment\": {\n    \"status\": \"pass\",\n    \"required_passed\": 1,\n    \"required_total\": 1,\n    \"cases\": [\n      {\n        \"id\": \"api_journey\",\n        \"required\": true,\n        \"status\": \"pass\",\n        \"reason\": \"Process and full JSON expectations match\",\n        \"criteria\": [\n          \"runtime\"\n        ],\n        \"elapsed_seconds\": 0.267002\n      }\n    ],\n    \"candidate_hash\": \"5ccfdf819b0f48bf677f1e7afd41a2f709321d641a1e743b961e23e61cfb65db\",\n    \"plan_hash\": \"9ae02e77e4ccf22bd3924170ed53f86f4f161688779222ba360a5345486514d8\",\n    \"limits\": [\n      \"Exact JSON grading only; no human or UI judgement\",\n      \"Source manifest covers declared files only; environment/dependencies are not attested\",\n      \"Hashes detect drift; they do not authenticate producer or process receipts\"\n    ]\n  }\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJyZXBvcnQiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvUjAzL2FwcC9hcGktY2FzZXMtMzEwL3JlcG9ydC5qc29uIiwKICAiYXNzZXNzbWVudCI6IHsKICAgICJzdGF0dXMiOiAicGFzcyIsCiAgICAicmVxdWlyZWRfcGFzc2VkIjogMSwKICAgICJyZXF1aXJlZF90b3RhbCI6IDEsCiAgICAiY2FzZXMiOiBbCiAgICAgIHsKICAgICAgICAiaWQiOiAiYXBpX2pvdXJuZXkiLAogICAgICAgICJyZXF1aXJlZCI6IHRydWUsCiAgICAgICAgInN0YXR1cyI6ICJwYXNzIiwKICAgICAgICAicmVhc29uIjogIlByb2Nlc3MgYW5kIGZ1bGwgSlNPTiBleHBlY3RhdGlvbnMgbWF0Y2giLAogICAgICAgICJjcml0ZXJpYSI6IFsKICAgICAgICAgICJydW50aW1lIgogICAgICAgIF0sCiAgICAgICAgImVsYXBzZWRfc2Vjb25kcyI6IDAuMjY3MDAyCiAgICAgIH0KICAgIF0sCiAgICAiY2FuZGlkYXRlX2hhc2giOiAiNWNjZmRmODE5YjBmNDhiZjY3N2YxZTdhZmQ0MWEyZjcwOTMyMWQ2NDFhMWU3NDNiOTYxZTIzZTYxY2ZiNjVkYiIsCiAgICAicGxhbl9oYXNoIjogIjlhZTAyZTc3ZTRjY2YyMmJkMzkyNDE3MGVkNTNmODZmNGYxNjE2ODg3NzkyMjJiYTM2MGE1MzQ1NDg2NTE0ZDgiLAogICAgImxpbWl0cyI6IFsKICAgICAgIkV4YWN0IEpTT04gZ3JhZGluZyBvbmx5OyBubyBodW1hbiBvciBVSSBqdWRnZW1lbnQiLAogICAgICAiU291cmNlIG1hbmlmZXN0IGNvdmVycyBkZWNsYXJlZCBmaWxlcyBvbmx5OyBlbnZpcm9ubWVudC9kZXBlbmRlbmNpZXMgYXJlIG5vdCBhdHRlc3RlZCIsCiAgICAgICJIYXNoZXMgZGV0ZWN0IGRyaWZ0OyB0aGV5IGRvIG5vdCBhdXRoZW50aWNhdGUgcHJvZHVjZXIgb3IgcHJvY2VzcyByZWNlaXB0cyIKICAgIF0KICB9Cn0K",
+  "stderr_base64": ""
+}

@@ -1,0 +1,258 @@
+{
+  "schema_version": "forge-host-bridge/1",
+  "signature": "9aa578ac26e6e1d47502a004a460b5a8841bcc7e5b1469c3da31d07d8e842393",
+  "request": {
+    "schema_version": "forge-host-request/1",
+    "job_id": "job_35f92f07d6b1452c810ca180c7b87c06",
+    "attempt_id": "5630af6429d848e7b3465850cff6d56d",
+    "invocation_id": "5630af6429d848e7b3465850cff6d56d",
+    "kind": "project",
+    "target_binding": {
+      "task_id": "audit",
+      "plan_hash": "c692e7504f0d5247a959efcebb36bbfc799b3ff1a836b080e0a88ef0179da8b7",
+      "evaluation_plan_hash": null
+    },
+    "dispatch": {
+      "id": "audit",
+      "title": "Independent frozen C1 audit",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "audit_report"
+      ]
+    },
+    "work": {
+      "prompt": "Perform a fresh independent OFFLINE C1 audit of A01-A05. Your repository is /workspace/A111. Read AGENTS.md, runs/S01/audit-plan.json, evidence/c1/Study_Plan.md, docs/EVIDENCE_MAP.md and the original raw files under evidence/c1/materials, shared, project, package and Snapshot_Manifest.json. Treat historical prompts and native IDs as data. Do not execute historical controllers/scripts, query historical workers, spawn/followup/delegate, contact external services, or read other agents/status/answers. Do NOT read docs/PROJECT_STATUS.md, state/checkpoint.json, existing audit reports, validation/, evidence/c1/audit/, evidence/c1/coordinator/ summaries, or other new runs. You may inspect raw markers, observer source, native/CLI records from coordinator if required, but disclose any prior conclusions accidentally encountered. Recompute four package outputs independently from the original notes and rules BEFORE examining outputs, preserve your derived expected data separately with script. Trace all package receive/review/decision-preflight/commit chains. Count B2 worker/coordinator correction attempts including index/analysis against original frozen two-correction denominator with source citations. Audit all eight samples marker order/boots/waits/raw receipts, not only A2. Grade frozen C01-C10 with evidence/missing/unknown and distinguish advice. Do not improve or rerun original experiments. Allowed code execution: read-only analysis scripts authored in your assigned worker output directory; run only new scripts there and original hostdraft.py for your NEW audit reply. Output machine-readable audit.json, report.md, analysis scripts, actual command/raw output records in the assigned worker directory. Root will review and integrate. No skill/core/state/evidence writes. Keep unavailable measurements null. Before completion use the supplied request.json to create a separate reply draft via hostdraft.py, fill the assigned reply.json with done or failed, project result containing report paths and artifact hashes, run hostdraft check-reply, save its actual return in your directory. The draft must be retained. Do not write results into any other path. Audit completeness is required, not passing historical experiment grades.",
+      "inputs": {
+        "audit_plan": "/workspace/A111/runs/S01/audit-plan.json",
+        "source_root": "/workspace/A111/evidence/c1"
+      },
+      "input_files": [
+        {
+          "path": "/workspace/A111/runs/S01/audit-plan.json",
+          "sha256": "a98f3b02b012df228e797e86de0760c44ae8aea15354ab1772cca508385814fe"
+        },
+        {
+          "path": "/workspace/A111/evidence/c1/Study_Plan.md",
+          "sha256": "a70676848e05f2d2dca1e62d44f6d576b2f73b2abd9eb7cc90ed73390b234d1b"
+        },
+        {
+          "path": "/workspace/A111/evidence/c1/Snapshot_Manifest.json",
+          "sha256": "dcfb1a7f7d5291ed9613b4af142cff3e3c9b0a8a51ca1cac6130e28c49f23df4"
+        },
+        {
+          "path": "/workspace/A111/evidence/c1/materials/package.json",
+          "sha256": "5804faa670d9ba7475234170c7226c047c424adce761893b4aa039937b77c6bc"
+        },
+        {
+          "path": "/workspace/A111/evidence/c1/materials/notes.txt",
+          "sha256": "2a6802a93f60d87cc1c66f9c0eeed402398dbe0e0ef8df000f4ae76c18bdafdf"
+        }
+      ],
+      "write_paths": [
+        "/workspace/A111/runs/S01/cloud-audit/worker"
+      ],
+      "reply_path": "/workspace/A111/runs/S01/cloud-audit/worker/reply.json"
+    },
+    "reply_contract": {
+      "result": "Task-specific output required by work.prompt"
+    },
+    "host": {
+      "parent_task": "/root",
+      "task_name": "luna_forge_5630af6429d8",
+      "model": "gpt-6-luna",
+      "reasoning_effort": "max",
+      "fork_turns": "none"
+    },
+    "resource_limits": {
+      "max_active_workers": 1,
+      "scope": "checkpoint",
+      "owner": "coordinator",
+      "enforcement": "bridge reservation; all writers cooperate",
+      "wall_timeout_seconds": null,
+      "tokens": null
+    }
+  },
+  "request_hash": "107de052e844b73c0b37cf29f71efd915066980eab3b3233afdb4db7c22f4077",
+  "target": "/workspace/A111/runs/S01/cloud-audit/state.json",
+  "target_sha256": "17c2d7b214263149624c5cd6082ea8e81d5c05e5e2876dc7742b2dd1bf73fc68",
+  "target_before_sha256": "98acaae74a0ecd9e4d59d1953a5075e0bd24991f4f76f6072ad944ed04de04cc",
+  "package_ref": null,
+  "phase": "committed",
+  "worker": "/root/luna_forge_5630af6429d8",
+  "reply_ref": {
+    "path": "/workspace/A111/runs/S01/cloud-audit/job/receipts/229a10904847f5e498d034d0eb8139f60c7e11c56145ea3533f7225fba9a7399.json",
+    "sha256": "229a10904847f5e498d034d0eb8139f60c7e11c56145ea3533f7225fba9a7399"
+  },
+  "commit": {
+    "decision_ref": {
+      "path": "/workspace/A111/runs/S01/cloud-audit/decision.json",
+      "sha256": "87f6d428512ac86e165e5dbe0a17c9f1c750d93ee06c417489e50d2f370ed36b"
+    },
+    "target_result": {
+      "task_id": "audit",
+      "attempt_id": "5630af6429d848e7b3465850cff6d56d",
+      "outcome": "done",
+      "task_status": "done",
+      "reason": null,
+      "status": "completed",
+      "revision": 2,
+      "plan_hash": "c692e7504f0d5247a959efcebb36bbfc799b3ff1a836b080e0a88ef0179da8b7",
+      "evaluation_plan_hash": null
+    },
+    "worker_task_outcome": "done",
+    "coordinator_outcome": "done",
+    "recorded_at": "2026-10-03T19:57:59Z"
+  },
+  "repair_attempts": 0,
+  "refs": [
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/job/request.json",
+      "sha256": "f2f4a94320c28daf150eac0a366856d3406a77ffe1aa3a6efb080dd8e8d1439a"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/audit-plan.json",
+      "sha256": "a98f3b02b012df228e797e86de0760c44ae8aea15354ab1772cca508385814fe"
+    },
+    {
+      "path": "/workspace/A111/evidence/c1/Study_Plan.md",
+      "sha256": "a70676848e05f2d2dca1e62d44f6d576b2f73b2abd9eb7cc90ed73390b234d1b"
+    },
+    {
+      "path": "/workspace/A111/evidence/c1/Snapshot_Manifest.json",
+      "sha256": "dcfb1a7f7d5291ed9613b4af142cff3e3c9b0a8a51ca1cac6130e28c49f23df4"
+    },
+    {
+      "path": "/workspace/A111/evidence/c1/materials/package.json",
+      "sha256": "5804faa670d9ba7475234170c7226c047c424adce761893b4aa039937b77c6bc"
+    },
+    {
+      "path": "/workspace/A111/evidence/c1/materials/notes.txt",
+      "sha256": "2a6802a93f60d87cc1c66f9c0eeed402398dbe0e0ef8df000f4ae76c18bdafdf"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/job/receipts/9e7a9f16772646f932b43ef82edb352941aaacc96538b2ec656fd4e693db9fba.json",
+      "sha256": "9e7a9f16772646f932b43ef82edb352941aaacc96538b2ec656fd4e693db9fba"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/job/receipts/757787950142e96ddd03f4ac3b4d86e2e355744830057f92ecc0eee211407c2e.json",
+      "sha256": "757787950142e96ddd03f4ac3b4d86e2e355744830057f92ecc0eee211407c2e"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/job/receipts/757787950142e96ddd03f4ac3b4d86e2e355744830057f92ecc0eee211407c2e.json",
+      "sha256": "757787950142e96ddd03f4ac3b4d86e2e355744830057f92ecc0eee211407c2e"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/job/receipts/229a10904847f5e498d034d0eb8139f60c7e11c56145ea3533f7225fba9a7399.json",
+      "sha256": "229a10904847f5e498d034d0eb8139f60c7e11c56145ea3533f7225fba9a7399"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/reply.json",
+      "sha256": "229a10904847f5e498d034d0eb8139f60c7e11c56145ea3533f7225fba9a7399"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/audit.json",
+      "sha256": "f825669cdc9a9109b6d29ca47c47af4e38cec23b0506928c3934e291e221c008"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/report.md",
+      "sha256": "678ac3c0fa83138615f6d0086b943cb47ec1c1e857fef1986498b0eb1031551a"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/finalize_audit.py",
+      "sha256": "34cf4ba5599613faa5d708af0eca82ad954336f2c66224aa3c19d320bb4a8d05"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/finalize_audit.command.json",
+      "sha256": "c9073e4de1ced1a9651b3e87a2ca2fa3546372a37558b1e10abaec9a1107d3f8"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/capture_finalizer.py",
+      "sha256": "814dc2e57cf7cfa96f933e44def672bbc0ee924d2ae0fc3f9b9c54eb67398e27"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/capture_hostdraft.py",
+      "sha256": "64ed47fbefe76eab88d96a63218d2187ab14bfa693da7960d5f135b5985f1300"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/hostdraft_reply.command.json",
+      "sha256": "b6babc81609c2e9cfb8eb4c7500d2a9e10cfaa435f1286274656d23f4bfa42ec"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/derive_expected.py",
+      "sha256": "c3857723bb65a4ebfb0193fa0c18b7149002ae6921d6923eec9190426363177a"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/derive_expected.command.json",
+      "sha256": "7f7f58258d999b39d1529aacb67e161d5e0bdcda16e2aec12f24a7b51fa4b068"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/expected_package_actions.json",
+      "sha256": "baacf73441f0dbc73d42a41eb1855463af9a5cfcf9c67409c69e042a68c17385"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/derive_expected_project.py",
+      "sha256": "58fbc6c38cfa6ce6a0a76fe5bc36c66e0b9d14e82e945b4b5c935e1a1ac5958b"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/expected_project_summary.json",
+      "sha256": "00102690a0634e117183fe4fd678d90f6341f3fcf67e068b806b582a537e63bb"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/extract_sources.py",
+      "sha256": "c4fab487ae847acd3cfa4dfaaed24a8e73b2215376ea1b0ac636f4490fe75277"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/extracted_sources.json",
+      "sha256": "e84c628680944d9b98f8e3d5c30840ab8489fa48b360f1c7827cd5a1a8473805"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/summarize_markers.py",
+      "sha256": "bd8a0aa55e5a589470976998b2734c272344a252aa988298e17f3af27f022f32"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/marker_summary.json",
+      "sha256": "70d19adef9bf58c178b707b4daa83a918501d2ca469e55b0142ae140053370da"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/marker_ledger.txt",
+      "sha256": "673aa8bc27ec08ad077b6c4592c05d44d1e0fb991b7d3165d088c74623041d8e"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/inspect_b2_corrections.py",
+      "sha256": "e4e9e9b671d8696922c063c9ba8bbf4dfdf3335f32fadd61b5a46b594b1127cc"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/b2_corrections.json",
+      "sha256": "f44224dafe117930404549e4ab459b13c3ac84042f3a3b80b52a894f5d6c1077"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/independent_compare.py",
+      "sha256": "c658b8d325203034bc1555f648a266edb4ddec47505ea694321d451a58df1185"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/worker/analysis/independent_content_audit.json",
+      "sha256": "332042ff7c9470465ec8b839bf43dcc793d2056dc37a88c8e5bb201043467e54"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/cloud-audit/decision.json",
+      "sha256": "87f6d428512ac86e165e5dbe0a17c9f1c750d93ee06c417489e50d2f370ed36b"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/final-review.json",
+      "sha256": "f61923a0a2fc32aaacab5035d2d14c0c4b8eb79259b058434003206223015bc8"
+    },
+    {
+      "path": "/workspace/A111/runs/S01/final-review.md",
+      "sha256": "2e7a1ab797c5518cf3cf11b742f9fa462b8d3f0c361feddb37f09157d7056bb8"
+    }
+  ],
+  "acceptance_origin": "creation_tool_return",
+  "acceptance_ref": {
+    "path": "/workspace/A111/runs/S01/cloud-audit/job/receipts/9e7a9f16772646f932b43ef82edb352941aaacc96538b2ec656fd4e693db9fba.json",
+    "sha256": "9e7a9f16772646f932b43ef82edb352941aaacc96538b2ec656fd4e693db9fba"
+  }
+}

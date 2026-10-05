@@ -1,0 +1,60 @@
+{
+  "schema": "local-demo-worker-review/1",
+  "review_mode": "same-context source-to-evidence review; not independent peer review",
+  "requirements": [
+    {
+      "id": "original_batch_rules",
+      "status": "pass",
+      "basis": "/workspace/A111/runs/R06/approval/contract.json rules_order and acceptance; /workspace/A111/runs/R06/approval/policy.json",
+      "evidence": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/summary.json outcomes and per-ticket inspections",
+      "observation": "CASE-1 approved/sample_rule_match. CASE-2 through CASE-7 are manual with category_review, amount_unknown, risk_review, self_review, evidence_missing, and amount_review, respectively; all carry policy demo-20261004 and local_demo_only=true."
+    },
+    {
+      "id": "audit_and_atomic_recovery",
+      "status": "pass",
+      "basis": "/workspace/A111/runs/R06/approval/contract.json invariants: decision and one audit row atomic; controlled crash before commit rolls back",
+      "evidence": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/processes.jsonl and summary.json commit_failure_recovery",
+      "observation": "The controlled application process exited 75 before commit. Inspect on the same recovery database showed no ticket and no audit row. The same original request file was retried successfully and created version 1 with one audit entry. The seven batch tickets each have one version-1 audit row."
+    },
+    {
+      "id": "idempotency_and_identity_conflict",
+      "status": "pass",
+      "basis": "/workspace/A111/runs/R06/approval/contract.json invariant: identical key/content reuse; changed key identity or content conflicts",
+      "evidence": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/processes.jsonl and summary.json idempotency and identity_conflicts",
+      "observation": "An identical retry returned reused=true without changing CASE-1 state or audit. Changed content with the same idempotency key and changed key with the same request_id both returned conflict exit 3 and made no write."
+    },
+    {
+      "id": "same_version_concurrency",
+      "status": "pass",
+      "basis": "/workspace/A111/runs/R06/approval/contract.json invariant: two real processes at the same original version yield one commit and one conflict",
+      "evidence": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/processes.jsonl and summary.json same_version_concurrency",
+      "observation": "Two separate approval.py processes were held at a shared local gate with expected_version=0 for CASE-CONCURRENCY, then released. One returned approved/version 1; the other returned version conflict exit 3. The retained database has one ticket at version 1 and exactly one audit row."
+    },
+    {
+      "id": "successor_manual_review",
+      "status": "pass",
+      "basis": "/workspace/A111/runs/R06/approval/contract.json acceptance and /workspace/A111/runs/R06/handoff/materials/manual-review-rules.json",
+      "evidence": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/manual-review-task.json and the successor_manual_review_start process record",
+      "observation": "A local subprocess actually created a started task from the six retained batch manual audit outcomes in source order. Each entry lists ticket_id, reason, and needed_material. The record states fictional_local_only=true, external_effects=false, notifications_sent=false, and real_assignment=null."
+    },
+    {
+      "id": "fictional_and_local_only_boundary",
+      "status": "pass",
+      "basis": "The supplied application docstring, contract scope, policy marker, and successor rules state local fictional-only scope",
+      "evidence": "/workspace/A111/runs/R06/handoff/complex/worker/outputs/attempts/attempt-1-repair-0/summary.json, /workspace/A111/runs/R06/handoff/complex/worker/outputs/manual-review-task.json",
+      "observation": "All mutations used local processes and worker-owned SQLite databases/files. No notification or external service call was attempted; no real authority is claimed."
+    },
+    {
+      "id": "C2_command_recording_boundary",
+      "status": "partial",
+      "basis": "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/references/recording-protocol.md requires the first captured command before other shell commands for a measured native-worker run",
+      "evidence": "/workspace/A111/runs/R06/handoff/complex/worker/logs/commands and /workspace/A111/runs/R06/handoff/complex/worker/events",
+      "observation": "The actual approval validation, bounded-run init/run/status, reply draft, and later preflight commands are captured. The initial skill/material/app reads and CLI help commands happened before capture.py logging, so the exact first-command boundary and complete bootstrap command record are not available. This dispatch did not provide a first-command capture command, and the gap cannot be repaired retrospectively."
+    }
+  ],
+  "advisory_limits": [
+    "This is a same-context source-to-evidence review, not an independent peer review.",
+    "The concurrency gate establishes two real app processes released from the same expected version; it does not measure provider or system-wide concurrency guarantees.",
+    "The successor task is an actual local record created by a local subprocess. It makes no real assignment and cannot establish that a human has acted on the missing-material requests."
+  ]
+}

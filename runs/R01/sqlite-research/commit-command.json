@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "skills/forge-agent-flow/scripts/hostbridge.py",
+    "commit",
+    "--job",
+    "runs/R01/sqlite-research/job",
+    "--decision",
+    "runs/R01/sqlite-research/decision.json"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T04:55:41.156212+00:00",
+    "monotonic_ns": 34379802594355,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T04:55:41.208989+00:00",
+    "monotonic_ns": 34379855373684,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 2,
+  "stdout": "{\n  \"status\": \"reconcile_required\",\n  \"error\": \"reason is allowed only for blocked or failed outcomes\",\n  \"next_action\": \"Inspect the bound checkpoint, job journal and actual host before any retry.\",\n  \"automatic_host_call\": false\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzdGF0dXMiOiAicmVjb25jaWxlX3JlcXVpcmVkIiwKICAiZXJyb3IiOiAicmVhc29uIGlzIGFsbG93ZWQgb25seSBmb3IgYmxvY2tlZCBvciBmYWlsZWQgb3V0Y29tZXMiLAogICJuZXh0X2FjdGlvbiI6ICJJbnNwZWN0IHRoZSBib3VuZCBjaGVja3BvaW50LCBqb2Igam91cm5hbCBhbmQgYWN0dWFsIGhvc3QgYmVmb3JlIGFueSByZXRyeS4iLAogICJhdXRvbWF0aWNfaG9zdF9jYWxsIjogZmFsc2UKfQo=",
+  "stderr_base64": ""
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import hashlib,json; from pathlib import Path; root=Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker\"); request=json.loads(Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/job/request.json\").read_text()); business=json.loads((root/\"business.json\").read_text()); defhash=lambda p: hashlib.sha256(p.read_bytes()).hexdigest(); reply={\"schema_version\":\"forge-host-reply/1\",\"job_id\":request[\"request\"][\"job_id\"],\"attempt_id\":request[\"request\"][\"attempt_id\"],\"request_hash\":request[\"request_hash\"],\"outcome\":\"done\",\"result\":business,\"artifacts\":[{\"path\":str(root/\"business.json\"),\"sha256\":defhash(root/\"business.json\")},{\"path\":str(root/\"corrections.json\"),\"sha256\":defhash(root/\"corrections.json\")}],\"reason\":None}; (root/\"reply.json\").write_text(json.dumps(reply,indent=2)+\"\\n\")"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:21:25.654496+00:00",
+    "monotonic_ns": 39524300871494,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:21:25.676862+00:00",
+    "monotonic_ns": 39524323239057,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.022367563,
+  "stdout": "",
+  "stderr": "",
+  "stdout_base64": "",
+  "stderr_base64": ""
+}

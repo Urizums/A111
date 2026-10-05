@@ -1,0 +1,107 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "S03",
+  "goal": "Preserve original smoke and one bounded conformance retest on identical inputs.",
+  "tasks": [
+    {
+      "id": "S03-01",
+      "title": "冻结新烟测并建立原 bridge",
+      "owner": "coordinator",
+      "depends_on": [],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "新业务输入、验收、实际设置与预算已冻结"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/S03/native/freeze.json",
+        "runs/S03/native/logs/002-setup.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope."
+    },
+    {
+      "id": "S03-02",
+      "title": "执行原始烟测并保留失败",
+      "owner": "coordinator",
+      "depends_on": [
+        "S03-01"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "保存实际原生返回及业务验收；不把协调端采集缺口隐藏为通过"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/S03/native/create-return.json",
+        "runs/S03/validation-initial.json",
+        "runs/S03/repair-plan.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope."
+    },
+    {
+      "id": "S03-03",
+      "title": "有界修正与同标准复测",
+      "owner": "coordinator",
+      "depends_on": [
+        "S03-02"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "输入与验收不变、预算不重置，两次均保留；复测闭环并写明限制"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/S03/validation.json",
+        "runs/S03/repair-1/source-review.md",
+        "runs/S03/final-validation-command.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope."
+    },
+    {
+      "id": "S03-next",
+      "title": "启动下一阶段任务",
+      "owner": "coordinator",
+      "depends_on": [
+        "S03-01",
+        "S03-02",
+        "S03-03"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "下一阶段 TODO 已保存，首项已真实执行且证据存在"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/cloud/install-revised.json",
+        "runs/cloud/smoke-revised/report.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope.",
+      "transition": {
+        "next_phase_id": "D00",
+        "todo_path": "state/phase-todo.json",
+        "first_task_id": "D00-01",
+        "start_evidence": [
+          "runs/cloud/install-revised.json",
+          "runs/cloud/smoke-revised/report.json"
+        ]
+      }
+    }
+  ],
+  "updated_at": "2026-10-03T19:58:13.841840+00:00"
+}

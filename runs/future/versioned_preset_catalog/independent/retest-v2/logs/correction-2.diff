@@ -1,0 +1,21 @@
+--- browser_validate.after-correction-1.py
++++ browser_validate.after-correction-2.py
+@@ -278,6 +278,9 @@
+     sizes=[(1280,900),(390,844),(320,800)]
+     for view in ('review','stock','reader'):
+         switch_view(page,view)
++        state_details=page.locator(f'main > section#{view} details.state-examples')
++        if state_details.count() and not state_details.evaluate('e => e.open'):
++            state_details.locator('summary').click()
+         for width,height in sizes:
+             page.set_viewport_size({'width':width,'height':height})
+             page.wait_for_timeout(80)
+@@ -285,7 +288,7 @@
+             metrics.update({'view':view,'target_width':width})
+             result['layout'].append(metrics)
+             check(f'access: {view} at {width}px has no horizontal overflow', metrics['documentWidth']<=width and metrics['bodyWidth']<=width, metrics)
+-            control_data=page.locator(f'main > section#{view}').evaluate('''root => Array.from(root.querySelectorAll('button,input,textarea,select,a')).filter(e=>e.getClientRects().length>0).map(e=>({tag:e.tagName.toLowerCase(),id:e.id,text:(e.innerText||'').trim(),aria:e.getAttribute('aria-label'),placeholder:e.getAttribute('placeholder'),labels:e.labels?Array.from(e.labels).map(x=>x.innerText.trim()):[],href:e.getAttribute('href')}))''')
++            control_data=page.locator(f'main > section#{view}').evaluate('''root => Array.from(root.querySelectorAll('button,input,textarea,select,a')).filter(e=>e.getClientRects().length>0&&getComputedStyle(e).visibility!=='hidden').map(e=>({tag:e.tagName.toLowerCase(),id:e.id,text:(e.innerText||e.textContent||'').trim(),aria:e.getAttribute('aria-label'),placeholder:e.getAttribute('placeholder'),labels:e.labels?Array.from(e.labels).map(x=>x.innerText.trim()):[],href:e.getAttribute('href')}))''')
+             unnamed=[]
+             unlabeled=[]
+             for c in control_data:

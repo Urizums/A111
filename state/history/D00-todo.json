@@ -1,0 +1,103 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "D00",
+  "goal": "Deliver the requested cloud installation, source, reports and fork dev PR.",
+  "tasks": [
+    {
+      "id": "D00-01",
+      "title": "云端 CLI 安装与搬迁验证",
+      "owner": "coordinator",
+      "depends_on": [],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "已连接云端环境有可运行 CLI；解压包可在不同路径安装"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/cloud/install-revised.json",
+        "runs/cloud/archive-install-fixed.json",
+        "runs/cloud/python310-install-cli.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope."
+    },
+    {
+      "id": "D00-02",
+      "title": "修复复测并整理完整交付内容",
+      "owner": "coordinator",
+      "depends_on": [
+        "D00-01"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "原失败及修复前后记录完整；源码和报告可打包；本地冒烟通过"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/cloud/VERIFICATION_REPORT.md",
+        "runs/cloud/issues.json",
+        "runs/cloud/archive-smoke-fixed/report.json",
+        "runs/cloud/python310-smoke/report.json"
+      ],
+      "blocker": null,
+      "next_action": "Preserve original evidence and review the recorded scope."
+    },
+    {
+      "id": "D00-03",
+      "title": "推送 fork dev 并向原仓库提交 PR",
+      "owner": "coordinator",
+      "depends_on": [
+        "D00-01",
+        "D00-02"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "waw1w1/A111 dev 包含最终文件；PR 指向 Urizums/A111 main 并附验证说明"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/cloud/github-pr.json",
+        "runs/cloud/github-publication-reports.json",
+        "runs/cloud/github-verification.json"
+      ],
+      "blocker": null,
+      "next_action": "PR created and attached; leave merge to repository review."
+    },
+    {
+      "id": "D00-next",
+      "title": "启动下一阶段任务",
+      "owner": "coordinator",
+      "depends_on": [
+        "D00-01",
+        "D00-02",
+        "D00-03"
+      ],
+      "write_paths": [
+        "runs/",
+        "state/"
+      ],
+      "acceptance": [
+        "目标交付完成后记录终态；不自动扩大为新性能实验"
+      ],
+      "status": "cancelled",
+      "evidence": [
+        "runs/cloud/github-pr.json",
+        "runs/cloud/github-publication-reports.json",
+        "runs/cloud/github-verification.json"
+      ],
+      "blocker": null,
+      "next_action": "Requested delivery goal fulfilled. Await a new goal before any new performance/provider/UI phase.",
+      "cancellation_reason": "User-requested cloud deployment, validation, fixes and PR delivered; do not manufacture a further phase."
+    }
+  ],
+  "updated_at": "2026-10-03T20:00:09.250606+00:00"
+}

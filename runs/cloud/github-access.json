@@ -1,0 +1,39 @@
+{
+  "schema": "forge-github-access/1",
+  "observed_at": "2026-10-03T19:35:33.889935+00:00",
+  "repository": "Urizums/A111",
+  "default_branch": "main",
+  "visibility": "public",
+  "authenticated_login": "waw1w1",
+  "permissions": {
+    "admin": false,
+    "maintain": false,
+    "pull": true,
+    "push": false,
+    "triage": false
+  },
+  "attempts": [
+    {
+      "channel": "GitHub CLI",
+      "action": "fork Urizums/A111",
+      "exit_code": 1,
+      "http_status": 403,
+      "actual_message": "failed to fork: HTTP 403: Resource not accessible by integration (https://api.github.com/repos/Urizums/A111/forks)"
+    },
+    {
+      "channel": "GitHub connector",
+      "action": "create codex/cloud-continuation-smoke from 550275d726485de6ad7ba49ae3b1231142edca04",
+      "http_status": 403,
+      "actual_response": {
+        "message": "Resource not accessible by integration",
+        "documentation_url": "https://docs.github.com/rest/git/refs#create-a-reference",
+        "status": "403"
+      }
+    }
+  ],
+  "next_action": "User grants connected account/integration write access or supplies writable fork; preserve local branch and bundle meanwhile.",
+  "visibility_changed_by_this_task": false,
+  "pr_created": false,
+  "fork_list_observed": [],
+  "fork_list_action": "GET repos/Urizums/A111/forks?per_page=100 succeeded with empty list"
+}

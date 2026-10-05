@@ -1,0 +1,52 @@
+{
+  "status": "ready",
+  "node": "intake",
+  "kind": "agent",
+  "invocation_id": "74571c6ae93db5737c781a56ada1f118",
+  "prompt": "Compile the request into a task contract. Separate explicit requirements, proposed defaults, and blockers. Assign requirement IDs. Include deliverables, actual capabilities and authority, bounded execution scope, acceptance outcomes and budget. Do not infer access or invent user preferences. Ask only for outcome-changing missing facts; otherwise proceed with labeled defaults. Read references/design-from-brief.md before responding. Accept short requests without asking the user to design the flow. Emit goal, requirements (id/text/origin/basis/criteria), all nine decisions (choice/reason/origin), and blocking_questions. Ground explicit requirement bases and explicit decision basis fields in exact request quotes. Resolve reversible defaults yourself; do not invent authority. Successful intake requires no unresolved blocking questions. For software work read references/software-delivery.md: record actual source/baseline, protected existing behaviors and runtime availability; do not equate plausible code with task completion.",
+  "inputs": {
+    "request": "Build a reusable library renewal agent flow. Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with explicit reasons. Preserve borrower_id and book_id. No external library actions. Strict shapes and stale-response rejection.",
+    "environment": {
+      "host": "Current Root agent",
+      "runtime": "Python stdlib original factory/package controllers",
+      "external_effects": false
+    }
+  },
+  "capabilities": {},
+  "acceptance": [
+    "Requirements trace to the request.",
+    "Unavailable capabilities and unresolved blockers are explicit.",
+    "Outcome and deliverables are concrete."
+  ],
+  "outcomes": {
+    "ok": [
+      "contract"
+    ],
+    "error": [],
+    "blocked": []
+  },
+  "artifact_types": {
+    "contract": {
+      "type": "object",
+      "description": "Checked goal, requirements with source/default provenance and criterion IDs, nine design decisions, empty blocking_questions for success, plus task context."
+    }
+  },
+  "materials_assessment": {
+    "configured": false,
+    "operation": null,
+    "decision": "not_configured",
+    "valid": false,
+    "status": "not_configured",
+    "manifest_sha256": null,
+    "claim_scope": "local_material_integrity_and_declared_binding_only",
+    "allowed_operations": [],
+    "blockers": [
+      "Materials manifest not configured"
+    ],
+    "claim_limit": "not_configured",
+    "material_sha256": {},
+    "gate_blockers": [
+      "Materials manifest not configured"
+    ]
+  }
+}

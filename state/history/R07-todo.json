@@ -1,0 +1,177 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R07",
+  "goal": "接手、整理、可靠恢复与原生任务组织",
+  "tasks": [
+    {
+      "id": "R07-01",
+      "title": "收集并固定上游成果",
+      "owner": "root",
+      "write_paths": [
+        "runs/R07/intake/",
+        "runs/R07/inventory/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Continue next dependency-ready R07 task",
+      "depends_on": [],
+      "acceptance": [
+        "原提交、源字节、旧失败与预算保留；接手索引可定位"
+      ],
+      "evidence": [
+        "runs/R07/R07-01-result.json",
+        "runs/R07/intake/provenance.json",
+        "runs/R07/intake/collection-check-command.json",
+        "runs/R07/inventory/INVENTORY.md",
+        "runs/R07/inventory/inventory.json",
+        "runs/R07/intake/collection-check-command.json"
+      ]
+    },
+    {
+      "id": "R07-02",
+      "title": "修复快照恢复并执行故障回归",
+      "owner": "root",
+      "write_paths": [
+        "runs/R07/candidate/",
+        "runs/R07/validation/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Continue next dependency-ready R07 task",
+      "depends_on": [
+        "R07-01"
+      ],
+      "acceptance": [
+        "失败可原路径重试；已有目标不覆盖；C6固定候选及相关回归通过"
+      ],
+      "evidence": [
+        "runs/R07/R07-02-result.json",
+        "runs/R07/candidate/C6-lock.json",
+        "runs/R07/validation/restore-tests-command.json",
+        "runs/R07/validation/c6-regression-command.json",
+        "runs/R07/validation/restore-tests-command.json"
+      ]
+    },
+    {
+      "id": "R07-03",
+      "title": "独立复核C6快照",
+      "owner": "luna",
+      "write_paths": [
+        "runs/R07/validation/independent/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Complete native business pilot and integrate",
+      "depends_on": [
+        "R07-02"
+      ],
+      "acceptance": [
+        "新上下文只拿候选与原要求，实际检查并保留原结果/限度"
+      ],
+      "evidence": [
+        "runs/R07/R07-03-result.json",
+        "runs/R07/validation/independent/result.json",
+        "runs/R07/validation/independent/outcomes.json",
+        "runs/R07/validation/independent/commands.jsonl",
+        "runs/R07/flow-challenge/host/restore-creation-receipt.json",
+        "runs/R07/flow-challenge/host/dispatch-binding-command.json"
+      ]
+    },
+    {
+      "id": "R07-04",
+      "title": "真实原生agent组织器材调配任务",
+      "owner": "luna",
+      "write_paths": [
+        "runs/R07/flow-challenge/worker/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Integrate results and start capability/short-entry successor without regrading R07 timing",
+      "depends_on": [
+        "R07-02"
+      ],
+      "acceptance": [
+        "固定原材料业务结果可复核；真实子agent独立核验；实际后继首步；原输入不变"
+      ],
+      "evidence": [
+        "runs/R07/R07-04-result.json",
+        "runs/R07/flow-challenge/worker/results/allocation.json",
+        "runs/R07/flow-challenge/worker/evidence/commands.json",
+        "runs/R07/flow-challenge/worker/reviewer/report.json",
+        "runs/R07/flow-challenge/worker/native/create-receipt.json",
+        "runs/R07/flow-challenge/worker/native/terminal-notification.payload.json",
+        "runs/R07/flow-challenge/worker/evidence/final-input-integrity.json",
+        "runs/R07/flow-challenge/worker/successor/missing-information-checklist.md",
+        "runs/R07/flow-challenge/host/cutoff-and-recovery.json",
+        "runs/R07/flow-challenge/worker/evidence/repair-ledger.json",
+        "runs/R07/flow-challenge/worker/final_report.md",
+        "runs/R07/integration-observation.json",
+        "runs/R07/flow-challenge/host/dispatch-binding-command.json"
+      ]
+    },
+    {
+      "id": "R07-05",
+      "title": "整合接手状态与验证结果",
+      "owner": "root",
+      "write_paths": [
+        "state/",
+        "START_HERE.md",
+        "docs/TAKEOVER.md",
+        "runs/R07/REPORT.md"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Execute and record R08-01 capability probe, then advance using its actual start",
+      "depends_on": [
+        "R07-03",
+        "R07-04"
+      ],
+      "acceptance": [
+        "完整性和相关检查通过；旧8阻塞不改判；结果和下一动作可接续"
+      ],
+      "evidence": [
+        "runs/R07/R07-05-result.json",
+        "runs/R07/REPORT.md",
+        "runs/R07/integration-observation.json",
+        "runs/R07/validation/integration-check-command.json",
+        "runs/R07/validation/auxiliary-final-command.json",
+        "runs/R08/PLAN.md",
+        "docs/TAKEOVER.md",
+        "runs/R07/validation/integration-check-command.json"
+      ]
+    },
+    {
+      "id": "R07-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "write_paths": [
+        "state/",
+        "runs/R08/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Continue the already started successor task.",
+      "depends_on": [
+        "R07-01",
+        "R07-02",
+        "R07-03",
+        "R07-04",
+        "R07-05"
+      ],
+      "acceptance": [
+        "R08计划和首项真实启动证据"
+      ],
+      "evidence": [
+        "runs/R08/capability-probe/command.json"
+      ],
+      "transition": {
+        "next_phase_id": "R08",
+        "todo_path": "state/phase-todo.json",
+        "first_task_id": "R08-01",
+        "start_evidence": [
+          "runs/R08/capability-probe/command.json"
+        ]
+      }
+    }
+  ]
+}

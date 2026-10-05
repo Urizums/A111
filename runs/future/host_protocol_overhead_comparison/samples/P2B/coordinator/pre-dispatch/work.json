@@ -1,0 +1,33 @@
+{
+  "prompt": "EXACT FIRST COMMAND (execute before any other shell command):\n/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/capture.py cli --record /workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/logs/001-bootstrap.json --actor worker -- /opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3 /workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py /workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/job/request.json\n\nThen follow the bound public protocol and original material printed by bootstrap. Mode B. Complete your own original business task, separate draft, captured preflight and markers within its stated scope/budget. No sibling reads, delegation, global status queries, network or external effects.",
+  "inputs": {
+    "mode": "B",
+    "material": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json",
+    "protocol": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+    "capture": "/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/capture.py",
+    "hostdraft": "/workspace/A111/runs/R01/candidate/forge-agent-flow/scripts/hostdraft.py",
+    "worker": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker"
+  },
+  "input_files": [
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json",
+      "sha256": "434e8c494a482b8be6e8d2fd385f2a3cefe32806ebc81c9f0740e5af34c51cc2"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md",
+      "sha256": "783407f9a175971a75bf3337011464c64b47ca2ae1e2bc14357f071cc43bdf1b"
+    },
+    {
+      "path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/public/bootstrap.py",
+      "sha256": "b9437b9e3c27ff56d127fb17b9df367b123b67d3349361c5f07b4e95aa4d0401"
+    },
+    {
+      "path": "/workspace/A111/runs/R01/candidate-lock.json",
+      "sha256": "f55d2dc681596500c212a9ee8270cc71a1763add7f9e199e4199bcb22b44c911"
+    }
+  ],
+  "write_paths": [
+    "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker"
+  ],
+  "reply_path": "/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2B/worker/reply.json"
+}

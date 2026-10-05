@@ -1,0 +1,153 @@
+{
+  "schema": "forge-issues/1",
+  "updated_at": "2026-10-04T07:03:58.807954+00:00",
+  "published": false,
+  "project_goal": "active",
+  "issues": [
+    {
+      "id": "R05-UI-focus",
+      "required": true,
+      "status": "fixed_and_root_retested",
+      "scope": "original preset candidate/v2",
+      "failure": "runs/future/preset_browser_acceptance/independent/worker/mobile-nav-access-attempt-1.json",
+      "repair": "runs/future/preset_browser_acceptance/repair-2.json",
+      "retest": "runs/future/preset_browser_acceptance/root-repair-2/root-report.json",
+      "remaining": "Independent final acceptance and native reconciliation unavailable; separate blocker retained"
+    },
+    {
+      "id": "R05-catalog-confirm",
+      "required": true,
+      "status": "fixed_and_retested",
+      "scope": "catalog v1.0.1",
+      "failure": "runs/future/versioned_preset_catalog/independent/worker/report.md",
+      "repair": "runs/future/versioned_preset_catalog/repair-1.json",
+      "retest": "runs/future/versioned_preset_catalog/independent/retest-v2/browser-results.json"
+    },
+    {
+      "id": "R05-adapter-validation-budget",
+      "required": true,
+      "status": "blocked",
+      "evidence": "runs/future/provider-adapter/independent/budget-clarification.json",
+      "reason": "Independent validator made a third correction; passing later runs cannot qualify within limit2",
+      "recovery": "Preserve original outcome and evidence. No validator swap, no budget reset; requires explicit resolution of the exhausted acceptance branch before dev publication"
+    },
+    {
+      "id": "R05-preset-independent",
+      "required": true,
+      "status": "blocked",
+      "evidence": "runs/future/preset_browser_acceptance/root-final-review.json",
+      "reason": "Independent main harness used2 repairs plus later reply CLI correction; final candidate Root-tested only; terminal receipt not reconciled",
+      "recovery": "Do not infer independent pass or synthesize terminal receipt. Preserve known original worker and actual query; no duplicate dispatch"
+    },
+    {
+      "id": "R05-protocol-study",
+      "required": true,
+      "status": "blocked",
+      "evidence": "runs/future/host_protocol_overhead_comparison/report.json",
+      "reason": "4/8 actual samples; Root budget2 exhausted before package samples; retained timing-order error",
+      "recovery": "Keep original design, missing samples and inconclusive result; do not manufacture comparison or restart budget"
+    },
+    {
+      "id": "R05-provider-runtime",
+      "required": true,
+      "status": "blocked",
+      "evidence": "runs/R06/environment-final.json",
+      "reason": "No configured provider endpoint/model/credential or independent SDK execution",
+      "recovery": "Configure authorized provider identity and endpoint in managed environment/connection settings, then reread original task and remaining budget; no secrets in chat"
+    },
+    {
+      "id": "R05-provider-global-and-recovery",
+      "required": true,
+      "status": "blocked",
+      "evidence": "runs/R04/capability-probe/probe.json",
+      "reason": "No provider-global usage/admission/cancel-terminal telemetry or authorized external-effect recovery sandbox",
+      "recovery": "Supply actual observation/cancellation contract and a permitted controlled environment; local command processes cannot satisfy these criteria"
+    },
+    {
+      "id": "R06-snapshot-gap-prevention",
+      "required": true,
+      "status": "fixed_and_retested",
+      "failure": "runs/future/host_protocol_overhead_comparison/report.json",
+      "repair": "runs/R06/candidate/C4/forge-agent-flow/scripts/snapshot.py",
+      "retest": "runs/R06/snapshot/live-restore-command.json",
+      "limit": "Old absent bytes remain absent"
+    },
+    {
+      "id": "R06-over-budget-prevention",
+      "required": true,
+      "status": "fixed_and_retested",
+      "failure": "runs/future/provider-adapter/independent/budget-clarification.json",
+      "repair": "runs/R06/candidate/C5/forge-agent-flow/scripts/bounded_run.py",
+      "retest": "runs/R06/budget/retained-scenarios-command.json",
+      "limit": "Local cooperative guard only; historical exceeded validator remains blocked"
+    },
+    {
+      "id": "R06-final-staging",
+      "required": true,
+      "status": "fixed_and_retested",
+      "failure": "runs/R06/regression/integration-failure-1.json",
+      "reason": "Auxiliary install tests ran before complete Git file selection and refreshed manifest",
+      "correction": "Stage authorized files and freeze unchanged installer inputs after workers finish; repeat original45 tests per Python",
+      "retest": [
+        "runs/R06/final/source-py310/auxiliary.json",
+        "runs/R06/final/source-py312/auxiliary.json"
+      ]
+    },
+    {
+      "id": "R06-root-review",
+      "required": true,
+      "status": "fixed_and_retested",
+      "failure": "runs/R06/handoff/complex/root-review-command.json",
+      "repair": "runs/R06/handoff/complex/root-review-repair-1.json",
+      "retest": "runs/R06/handoff/complex/root-review-repair-1-command.json"
+    },
+    {
+      "id": "R06-result-protocol",
+      "required": true,
+      "status": "fixed_and_retested",
+      "failure": "runs/R06/handoff/finish-attempt1.json",
+      "repair": "runs/R06/handoff/task-result.json",
+      "retest": "runs/R06/handoff/finish-repair-1-command.json"
+    },
+    {
+      "id": "R06-cold-start",
+      "required": true,
+      "status": "blocked",
+      "evidence": "runs/R06/scheduling/trigger-review.json",
+      "reason": "Real trigger reached existing active Root; independent cross-session cold start not yet observed",
+      "recovery": "After Root exits, observe the next genuine configured trigger, acquire free lease, read original checkpoint/commit and execute an actually ready first step; do not create duplicate automation"
+    },
+    {
+      "id": "R06-guidance-boundaries",
+      "required": false,
+      "status": "unverified",
+      "evidence": "runs/R06/handoff/complex/root-review.json",
+      "reason": "Fresh local task pilot passed; autonomous native child-agent assignment and complete first-command timing not demonstrated",
+      "recovery": "Keep this limitation distinct from successful local business evidence; any later experiment must have its own justified original scope and may not regrade this pilot"
+    },
+    {
+      "id": "R03-independent-UI-historical",
+      "required": true,
+      "status": "blocked",
+      "evidence": "runs/R03/ui-independent/reconcile-final.json",
+      "reason": "Historical independent script exhausted its two repairs; Root8observations are separate",
+      "recovery": "Do not regrade historical failure or replace validator to evade its budget"
+    },
+    {
+      "id": "R05-catalog-independent-focus",
+      "required": true,
+      "status": "blocked",
+      "evidence": "runs/future/versioned_preset_catalog/independent/retest-v2/browser-results.json",
+      "reason": "Final independent run:74 pass and2 failed390px focus samples, harness correction budget2 exhausted. Root9completeTabcycles pass separately; BODY document-exit samples explain a measurement limitation but do not rewrite independent result.",
+      "recovery": "Preserve original acceptance, worker, snapshots, raw failed samples and budget; do not replace validator or silently drop failed access checks."
+    },
+    {
+      "id": "R06-blocked-state-validator",
+      "required": true,
+      "status": "fixed_and_retested",
+      "failure": "runs/R06/final/integrity-before-blocked-fix.json",
+      "repair": "runs/R06/final/integration-repair-2.json",
+      "retest": "runs/R06/final/blocked-state-green.json"
+    }
+  ]
+}

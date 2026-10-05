@@ -1,0 +1,53 @@
+{
+  "schema_version": "forge-project-plan/1",
+  "id": "s03-native-smoke",
+  "goal": "One new ordinary worker verifies the revised C2 capture contract and exact CSV task.",
+  "deliverable_kind": "scoped_change",
+  "requirements": [
+    {
+      "id": "req_result",
+      "text": "All supplied expense rows aggregate exactly and source review records C2 conformance.",
+      "origin": "derived",
+      "basis": "Frozen S02 R01-R06 and S03 raw input",
+      "acceptance_ids": [
+        "a_business",
+        "a_protocol"
+      ]
+    }
+  ],
+  "acceptance": [
+    {
+      "id": "a_business",
+      "assertion": "Source recomputation matches every amount, category and ID and Chinese explanation.",
+      "required": true,
+      "level": "review"
+    },
+    {
+      "id": "a_protocol",
+      "assertion": "R01-R06 recording/scope/lifecycle checks pass with actual native receipts and retained drafts.",
+      "required": true,
+      "level": "review"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "summarize",
+      "title": "New expense summary with measured native protocol",
+      "depends_on": [],
+      "owner": "gpt-6-luna",
+      "write_paths": [
+        "worker/"
+      ],
+      "acceptance_ids": [
+        "a_business",
+        "a_protocol"
+      ]
+    }
+  ],
+  "defaults": [
+    "One actual fresh Luna/max; no global containment or performance claim."
+  ],
+  "unknowns": [
+    "Provider identity/tokens/cost."
+  ]
+}

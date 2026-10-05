@@ -1,0 +1,68 @@
+{
+  "schema": "forge-final-verification/1",
+  "recorded_at": "2026-10-04T07:09:02.658440+00:00",
+  "publication": "blocked",
+  "candidate_sha256": "8b82e835160fd8318ac0dd2e30c5f1cc32832af5b8cd3254f96decbee5bd60d1",
+  "source_runs": {
+    "310": {
+      "status": "pass",
+      "prefix": "/workspace/agent-forge-review-R06-py310",
+      "content_id": "50869f19eafb9f139c863de2ad7f76024994661d93eb1add85dd9af7507b1977",
+      "files": 3430,
+      "auxiliary_tests": 47,
+      "cli_smoke_checks": 17,
+      "installed_c5_snapshot_tests": 7,
+      "installed_c5_budget_tests": 8,
+      "post_runtime_exact_tree": true,
+      "evidence": "runs/R06/final/source-py310"
+    },
+    "312": {
+      "status": "pass",
+      "prefix": "/workspace/agent-forge-review-R06-py312",
+      "content_id": "50869f19eafb9f139c863de2ad7f76024994661d93eb1add85dd9af7507b1977",
+      "files": 3430,
+      "auxiliary_tests": 47,
+      "cli_smoke_checks": 17,
+      "installed_c5_snapshot_tests": 7,
+      "installed_c5_budget_tests": 8,
+      "post_runtime_exact_tree": true,
+      "evidence": "runs/R06/final/source-py312"
+    }
+  },
+  "archive_runs": {
+    "310": {
+      "status": "pass",
+      "prefix": "/workspace/agent-forge-archive-R06-py310",
+      "content_id": "c9949853d1db92769195d22853d80dc04c81a39da1582b4a13a7dd0b866e9303",
+      "files": 3459,
+      "auxiliary_tests": 47,
+      "cli_smoke_checks": 17,
+      "installed_c5_snapshot_tests": 7,
+      "installed_c5_budget_tests": 8,
+      "post_runtime_exact_tree": true,
+      "evidence": "runs/R06/final/archive-py310"
+    },
+    "312": {
+      "status": "pass",
+      "prefix": "/workspace/agent-forge-archive-R06-py312",
+      "content_id": "c9949853d1db92769195d22853d80dc04c81a39da1582b4a13a7dd0b866e9303",
+      "files": 3459,
+      "auxiliary_tests": 47,
+      "cli_smoke_checks": 17,
+      "installed_c5_snapshot_tests": 7,
+      "installed_c5_budget_tests": 8,
+      "post_runtime_exact_tree": true,
+      "evidence": "runs/R06/final/archive-py312"
+    }
+  },
+  "limits": [
+    "Core and smoke pass do not release required blocked independent/provider/scheduling tasks",
+    "No new GitHub Actions run because no new commit or push is allowed"
+  ],
+  "archive": {
+    "archive": "/workspace/deliveries/A111-R06-candidate-20261004.tar.gz",
+    "sha256": "6f670dd77fd4e1f17cd440aaa21b44927811a73c15cefb1da1cfcc190f924a02",
+    "content_id": "c9949853d1db92769195d22853d80dc04c81a39da1582b4a13a7dd0b866e9303",
+    "files": 3459
+  }
+}

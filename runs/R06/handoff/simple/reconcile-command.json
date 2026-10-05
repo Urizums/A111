@@ -1,0 +1,27 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "/workspace/A111/runs/R06/candidate/C5/forge-agent-flow/scripts/hostbridge.py",
+    "reconcile",
+    "--job",
+    "/workspace/A111/runs/R06/handoff/simple/job"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-04T06:39:26.118122+00:00",
+    "monotonic_ns": 40604764498125,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:39:26.158779+00:00",
+    "monotonic_ns": 40604805157498,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"phase\": \"committed\",\n  \"job_id\": \"job_db00ed09c9f74b828ef2c0a9b384427c\",\n  \"attempt_id\": \"fbe665efb5f341ba98224ff8bf363499\",\n  \"request_hash\": \"63447e715a6ea986bc136edda80db2509477e401fd9953a372186326037982ea\",\n  \"action\": \"reuse_record\",\n  \"worker\": \"/root/luna_forge_fbe665efb5f3\",\n  \"commit\": {\n    \"decision_ref\": {\n      \"path\": \"/workspace/A111/runs/R06/handoff/simple/decision.json\",\n      \"sha256\": \"eabe892f7e7d7a26b71295be7036533b280db0cdf113ebc006eae06fcafe67e2\"\n    },\n    \"target_result\": {\n      \"task_id\": \"work\",\n      \"attempt_id\": \"fbe665efb5f341ba98224ff8bf363499\",\n      \"outcome\": \"done\",\n      \"task_status\": \"done\",\n      \"reason\": null,\n      \"status\": \"completed\",\n      \"revision\": 2,\n      \"plan_hash\": \"66cdf021e24e65a6e7d3c76f798c92eb057463d2f2ec073e31437cf1ba12c845\",\n      \"evaluation_plan_hash\": null\n    },\n    \"worker_task_outcome\": \"done\",\n    \"coordinator_outcome\": \"done\",\n    \"recorded_at\": \"2026-10-04T06:39:26Z\"\n  },\n  \"coordinator_outcome\": \"done\",\n  \"automatic_host_call\": false,\n  \"internal_model_identity_verified\": false,\n  \"tokens\": null,\n  \"cost\": null,\n  \"ledger\": {\n    \"job_id\": \"job_db00ed09c9f74b828ef2c0a9b384427c\",\n    \"input_sha256\": \"63447e715a6ea986bc136edda80db2509477e401fd9953a372186326037982ea\",\n    \"automatic_host_call\": false,\n    \"state\": \"completed\",\n    \"action\": \"reuse\",\n    \"attempt_id\": \"fbe665efb5f341ba98224ff8bf363499\",\n    \"evidence_valid\": true,\n    \"reason\": \"A completed attempt has the same input hash and intact evidence.\"\n  }\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJwaGFzZSI6ICJjb21taXR0ZWQiLAogICJqb2JfaWQiOiAiam9iX2RiMDBlZDA5YzlmNzRiODI4ZWYyYzBhOWIzODQ0MjdjIiwKICAiYXR0ZW1wdF9pZCI6ICJmYmU2NjVlZmI1ZjM0MWJhOTgyMjRmZjhiZjM2MzQ5OSIsCiAgInJlcXVlc3RfaGFzaCI6ICI2MzQ0N2U3MTVhNmVhOTg2YmMxMzZlZGRhODBkYjI1MDk0NzdlNDAxZmQ5OTUzYTM3MjE4NjMyNjAzNzk4MmVhIiwKICAiYWN0aW9uIjogInJldXNlX3JlY29yZCIsCiAgIndvcmtlciI6ICIvcm9vdC9sdW5hX2ZvcmdlX2ZiZTY2NWVmYjVmMyIsCiAgImNvbW1pdCI6IHsKICAgICJkZWNpc2lvbl9yZWYiOiB7CiAgICAgICJwYXRoIjogIi93b3Jrc3BhY2UvQTExMS9ydW5zL1IwNi9oYW5kb2ZmL3NpbXBsZS9kZWNpc2lvbi5qc29uIiwKICAgICAgInNoYTI1NiI6ICJlYWJlODkyZjdlN2Q3YTI2YjcxMjk1YmU3MDM2NTMzYjI4MGRiMGNkZjExM2ViYzAwNmVhZTA2ZmNhZmU2N2UyIgogICAgfSwKICAgICJ0YXJnZXRfcmVzdWx0IjogewogICAgICAidGFza19pZCI6ICJ3b3JrIiwKICAgICAgImF0dGVtcHRfaWQiOiAiZmJlNjY1ZWZiNWYzNDFiYTk4MjI0ZmY4YmYzNjM0OTkiLAogICAgICAib3V0Y29tZSI6ICJkb25lIiwKICAgICAgInRhc2tfc3RhdHVzIjogImRvbmUiLAogICAgICAicmVhc29uIjogbnVsbCwKICAgICAgInN0YXR1cyI6ICJjb21wbGV0ZWQiLAogICAgICAicmV2aXNpb24iOiAyLAogICAgICAicGxhbl9oYXNoIjogIjY2Y2RmMDIxZTI0ZTY1YTZlN2QzYzc2Zjc5OGM5MmViMDU3NDYzZDJmMmVjMDczZTMxNDM3Y2YxYmExMmM4NDUiLAogICAgICAiZXZhbHVhdGlvbl9wbGFuX2hhc2giOiBudWxsCiAgICB9LAogICAgIndvcmtlcl90YXNrX291dGNvbWUiOiAiZG9uZSIsCiAgICAiY29vcmRpbmF0b3Jfb3V0Y29tZSI6ICJkb25lIiwKICAgICJyZWNvcmRlZF9hdCI6ICIyMDI2LTEwLTA0VDA2OjM5OjI2WiIKICB9LAogICJjb29yZGluYXRvcl9vdXRjb21lIjogImRvbmUiLAogICJhdXRvbWF0aWNfaG9zdF9jYWxsIjogZmFsc2UsCiAgImludGVybmFsX21vZGVsX2lkZW50aXR5X3ZlcmlmaWVkIjogZmFsc2UsCiAgInRva2VucyI6IG51bGwsCiAgImNvc3QiOiBudWxsLAogICJsZWRnZXIiOiB7CiAgICAiam9iX2lkIjogImpvYl9kYjAwZWQwOWM5Zjc0YjgyOGVmMmMwYTliMzg0NDI3YyIsCiAgICAiaW5wdXRfc2hhMjU2IjogIjYzNDQ3ZTcxNWE2ZWE5ODZiYzEzNmVkZGE4MGRiMjUwOTQ3N2U0MDFmZDk5NTNhMzcyMTg2MzI2MDM3OTgyZWEiLAogICAgImF1dG9tYXRpY19ob3N0X2NhbGwiOiBmYWxzZSwKICAgICJzdGF0ZSI6ICJjb21wbGV0ZWQiLAogICAgImFjdGlvbiI6ICJyZXVzZSIsCiAgICAiYXR0ZW1wdF9pZCI6ICJmYmU2NjVlZmI1ZjM0MWJhOTgyMjRmZjhiZjM2MzQ5OSIsCiAgICAiZXZpZGVuY2VfdmFsaWQiOiB0cnVlLAogICAgInJlYXNvbiI6ICJBIGNvbXBsZXRlZCBhdHRlbXB0IGhhcyB0aGUgc2FtZSBpbnB1dCBoYXNoIGFuZCBpbnRhY3QgZXZpZGVuY2UuIgogIH0KfQo=",
+  "stderr_base64": ""
+}

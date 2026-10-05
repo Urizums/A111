@@ -1,0 +1,234 @@
+{
+  "schema": "forge-independent-retest-result/1",
+  "task": "versioned_preset_catalog independent v2 follow-up",
+  "terminal_state": "completed",
+  "semantic_acceptance": "blocked",
+  "candidate": {
+    "lock_path": "/workspace/A111/runs/future/versioned_preset_catalog/candidate-v2-lock.json",
+    "lock_sha256": "21bf751e539ab76ff09e143eee3a74789d7ff3afa3db4265bd2624dca78d616b",
+    "candidate_id": "v2",
+    "version": "1.0.1",
+    "source_revision": "R05-original-web-v1-repair1",
+    "candidate_repairs_used": 1,
+    "candidate_repair_limit": 2,
+    "files": [
+      {
+        "path": "runs/future/versioned_preset_catalog/candidate/v2/app.js",
+        "sha256": "dc4d6e6a5dba225d7f58418a9bbd56264c0fef69770e1e2cda7ae74de2358e96"
+      },
+      {
+        "path": "runs/future/versioned_preset_catalog/candidate/v2/catalog.json",
+        "sha256": "df2c9a59ee7b8d6b9b2701db74ead3d2b724a35dc3cea62229800bdcaae2e625"
+      },
+      {
+        "path": "runs/future/versioned_preset_catalog/candidate/v2/index.html",
+        "sha256": "83f313c11c722b9d8c985bf4c34896b94aebf8ff407715cdb65535837507eb89"
+      },
+      {
+        "path": "runs/future/versioned_preset_catalog/candidate/v2/styles.css",
+        "sha256": "091df585fb6efee5ba3dc53a86f2759691bc5332fcdb92674e8784abb87feec1"
+      }
+    ]
+  },
+  "validation_budget": {
+    "original_harness_corrections_before_v2": 0,
+    "harness_corrections_used": 2,
+    "harness_correction_limit": 2,
+    "harness_corrections_remaining": 0,
+    "browser_runs": 1,
+    "reruns_after_v2_run": 0
+  },
+  "execution": {
+    "browser": {
+      "name": "Chromium",
+      "executable": "/usr/bin/chromium",
+      "version": "151.0.7922.173"
+    },
+    "python": "3.12.14",
+    "playwright": "Python Playwright sync API (imported by harness)",
+    "origin": "http://127.0.0.1:8766/",
+    "viewport_widths_css_px": [
+      1280,
+      390,
+      320
+    ],
+    "requests": [
+      "http://127.0.0.1:8766/",
+      "http://127.0.0.1:8766/styles.css",
+      "http://127.0.0.1:8766/app.js",
+      "http://127.0.0.1:8766/",
+      "http://127.0.0.1:8766/styles.css",
+      "http://127.0.0.1:8766/app.js",
+      "http://127.0.0.1:8766/",
+      "http://127.0.0.1:8766/styles.css",
+      "http://127.0.0.1:8766/app.js"
+    ],
+    "loopback_requests_only": true,
+    "console_errors": 0,
+    "page_errors": 0,
+    "journey_errors": 0,
+    "checks": {
+      "passed": 74,
+      "failed": 2,
+      "total": 76
+    }
+  },
+  "acceptance_cases": [
+    {
+      "id": "catalog",
+      "original_requirement": "Three task/platform variants, version/source hashes/reuse scope, paired semantic tokens, states, motion and explicit supported browser scope",
+      "outcome": "pass",
+      "checks_passed": 11,
+      "checks_failed": 0,
+      "evidence": "Three variants, candidate lock and all four source hashes, source/reuse scope, seven semantic pairs, pair contrast, layouts/states, motion/support/limitations declarations."
+    },
+    {
+      "id": "review",
+      "original_requirement": "Filter/empty/clear, select original review record, cancel/confirm decision, retain unrelated rows, keyboard Escape and focus return",
+      "outcome": "pass",
+      "checks_passed": 12,
+      "checks_failed": 0,
+      "evidence": "R-041 filtering/selection, empty/clear, keyboard confirmation, Escape and focus return, cancel, approval, unrelated pending rows, retryable read recovery."
+    },
+    {
+      "id": "stock",
+      "original_requirement": "Reject invalid count without erasing input, busy duplicate prevention, actual browser-local persistence after reload, explicit conflict sample preserving draft, cancel/resolve",
+      "outcome": "pass",
+      "checks_passed": 6,
+      "checks_failed": 0,
+      "evidence": "Invalid 12x retained; busy duplicate guard; localStorage v1 quantity 14/note persisted and restored after reload; 18-vs-22 conflict draft retained on cancel, then resolved to localStorage version 3."
+    },
+    {
+      "id": "reader",
+      "original_requirement": "Contents navigation, create/edit annotation and actual local persistence, cancel/delete confirmation, preserve drafts on simulated retryable error",
+      "outcome": "pass",
+      "checks_passed": 9,
+      "checks_failed": 0,
+      "evidence": "Contents navigation; local annotation create/reload; simulated error preserving and retrying edited draft; cancel edit; cancel and keyboard-confirm deletion."
+    },
+    {
+      "id": "access",
+      "original_requirement": "1280/390/320 CSS px target, no page horizontal overflow, reachable labeled controls and visible keyboard focus, key rendered text contrast >=4.5, reduced-motion without information loss",
+      "outcome": "partial-fail",
+      "checks_passed": 34,
+      "checks_failed": 2,
+      "evidence": "All nine view/width combinations had no horizontal overflow and all 48 scanned rendered controls had names; seven of nine focus observations had visible focus. Reduced-motion checks passed for all three views; 59 key rendered text samples had contrast >= 6.147:1. Two 390px focus observations failed."
+    },
+    {
+      "id": "browser",
+      "original_requirement": "Execution provenance and captured runtime errors/requests from original brief supporting the acceptance observations",
+      "outcome": "pass",
+      "checks_passed": 2,
+      "checks_failed": 0,
+      "evidence": "Only loopback requests; no console errors, uncaught page errors, or journey errors."
+    }
+  ],
+  "failures": [
+    {
+      "check": "access: review at 390px shows keyboard focus",
+      "observed": {
+        "tag": "BODY",
+        "id": "",
+        "className": "",
+        "text": "跳至内容\nF\n工作界面\nFIELDNOTES / 预设集 01\n\n本地交互样例 · 保存仅限当前浏览器\n\n01 审阅工作",
+        "outlineStyle": "none",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(23, 33, 43)",
+        "view": "review",
+        "width": 390
+      },
+      "source": "browser-results.json; check failed because active element was BODY with outlineStyle none"
+    },
+    {
+      "check": "access: stock at 390px shows keyboard focus",
+      "observed": {
+        "tag": "BODY",
+        "id": "",
+        "className": "",
+        "text": "跳至内容\nF\n工作界面\nFIELDNOTES / 预设集 01\n\n本地交互样例 · 保存仅限当前浏览器\n\n01 审阅工作",
+        "outlineStyle": "none",
+        "outlineWidth": "3px",
+        "outlineColor": "rgb(31, 41, 55)",
+        "view": "stock",
+        "width": 390
+      },
+      "source": "browser-results.json; check failed because active element was BODY with outlineStyle none"
+    }
+  ],
+  "contrast": {
+    "rendered_state_samples": 7,
+    "total_text_samples": 59,
+    "below_4_5_count": 0,
+    "minimum_sample_ratio": 6.147,
+    "scope": "The seven recorded rendered-state samples in the raw browser result, not every possible text state."
+  },
+  "local_storage_observations": [
+    {
+      "label": "stock after save",
+      "values": {
+        "forge-preset-stock-v1": "{\"quantity\":14,\"note\":\"首次实盘记录\",\"version\":1}"
+      }
+    },
+    {
+      "label": "stock after conflict resolution",
+      "values": {
+        "forge-preset-stock-v1": "{\"quantity\":22,\"note\":\"保留的草稿\",\"version\":3}"
+      }
+    },
+    {
+      "label": "reader after annotation save",
+      "values": {
+        "forge-preset-annotation-v1": "第一版批注"
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/screenshots/review-1280.png",
+      "view": "review",
+      "width": 1280,
+      "height": 900
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/screenshots/stock-390.png",
+      "view": "stock",
+      "width": 390,
+      "height": 844
+    },
+    {
+      "path": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/screenshots/reader-320.png",
+      "view": "reader",
+      "width": 320,
+      "height": 800
+    }
+  ],
+  "correction_ledger": [
+    {
+      "number": 1,
+      "reason": "v1 browser observations exposed waits that did not track actual keyboard completion/storage timing and an expected conflict-dialog phrase absent from the UI.",
+      "change": "State-based completion/storage waits; separately report keyboard result; pointer fallback only to finish remaining journey after recording keyboard outcome; compare rendered conflict copy to actual quantities.",
+      "evidence": "logs/correction-1.md and logs/correction-1.diff"
+    },
+    {
+      "number": 2,
+      "reason": "v1 scan treated controls inside closed state-example details as visible and unnamed.",
+      "change": "Open disclosure before scan and restrict text/name collection to rendered controls.",
+      "evidence": "logs/correction-2.md and logs/correction-2.diff"
+    }
+  ],
+  "host_job": {
+    "new_job_created": false,
+    "new_host_reply_created": false,
+    "reason": "Parent instructed that the original host job remains committed blocked and this follow-up is recorded independently; no new invocation or job is asserted.",
+    "c3_preflight": "not run for this follow-up"
+  },
+  "limitations": [
+    "Responsive web behavior only; physical Android remains unverified.",
+    "No screen-reader certification, global performance claim, user study, backend persistence, or real approval/inventory/document authority was tested or claimed.",
+    "Acceptance remains blocked by the two recorded 390px focus checks."
+  ],
+  "evidence_directory": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2",
+  "raw_browser_results": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/browser-results.json",
+  "report": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/report.md",
+  "evidence_manifest": "/workspace/A111/runs/future/versioned_preset_catalog/independent/retest-v2/evidence-manifest.json"
+}

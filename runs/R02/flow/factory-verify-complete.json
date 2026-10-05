@@ -1,0 +1,983 @@
+{
+  "schema": "forge-factory/1",
+  "flow_state": {
+    "state_version": "1.0",
+    "flow_hash": "a8b70559543f7011f38e368d4eff0837d47a715c95e8eca38a88fd6b0e1e22fd",
+    "run_id": "0a9e51f0ccf9417b882fcd65462572ad",
+    "status": "running",
+    "node": "deliver",
+    "steps": 5,
+    "visits": {
+      "intake": 1,
+      "eval_design": 1,
+      "architect": 1,
+      "build": 1,
+      "verify": 1
+    },
+    "artifacts": {
+      "request": "Build a reusable library renewal agent flow. Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with explicit reasons. Preserve borrower_id and book_id. No external library actions. Strict shapes and stale-response rejection.",
+      "environment": {
+        "host": "Current Root agent",
+        "runtime": "Python stdlib original factory/package controllers",
+        "external_effects": false
+      },
+      "contract": {
+        "goal": "Build a reusable library renewal agent flow. Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with explicit reasons. Preserve borrower_id and book_id. No external library actions. Strict shapes and stale-response rejection.",
+        "requirements": [
+          {
+            "id": "r_policy",
+            "text": "Implement stated renewal policy with exact IDs and reasons",
+            "origin": "explicit",
+            "basis": "Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2",
+            "criteria": [
+              "policy"
+            ]
+          },
+          {
+            "id": "r_protocol",
+            "text": "Strict shapes and stale-response rejection",
+            "origin": "explicit",
+            "basis": "Strict shapes and stale-response rejection",
+            "criteria": [
+              "protocol"
+            ]
+          }
+        ],
+        "decisions": {
+          "scope": {
+            "choice": "Reusable local renewal decision package; no account or library effects",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          },
+          "inputs": {
+            "choice": "borrower_id, book_id strings; days_overdue, holds, renewals_used integers",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          },
+          "outputs": {
+            "choice": "result object containing borrower_id, book_id, decision, renewal_days and reasons",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          },
+          "quality": {
+            "choice": "Exact explicit policy and reasons; malformed envelopes rejected",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          },
+          "tools_and_authority": {
+            "choice": "No external tools or requested filesystem writes by target node",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          },
+          "failures": {
+            "choice": "Input shape errors rejected before start; stale/invalid response leaves state unchanged",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          },
+          "state_and_handoffs": {
+            "choice": "One immutable input and one result in package checkpoint",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          },
+          "budget_and_stop": {
+            "choice": "One target node/visit; at most two factory repairs",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          },
+          "model_and_topology": {
+            "choice": "One actual host-default agent; one policy has no independent context boundary",
+            "reason": "Smallest complete local boundary for this explicit reusable flow",
+            "origin": "derived"
+          }
+        },
+        "blocking_questions": []
+      },
+      "test_plan": {
+        "plan": {
+          "schema": "forge-eval/1",
+          "id": "library_renewal",
+          "criteria": [
+            {
+              "id": "policy",
+              "kind": "machine",
+              "required": true,
+              "assertion": "Exact decision, days, IDs and reasons match the explicit renewal policy."
+            },
+            {
+              "id": "protocol",
+              "kind": "machine",
+              "required": true,
+              "assertion": "Strict input/output shapes and stale response protection preserve the checkpoint."
+            }
+          ],
+          "cases": [
+            {
+              "id": "eligible",
+              "inputs": {
+                "borrower_id": "B-eligible",
+                "book_id": "BK-eligible",
+                "days_overdue": 0,
+                "holds": 0,
+                "renewals_used": 0
+              },
+              "expected": {
+                "result": {
+                  "borrower_id": "B-eligible",
+                  "book_id": "BK-eligible",
+                  "decision": "renew",
+                  "renewal_days": 14,
+                  "reasons": []
+                }
+              },
+              "expected_status": "completed",
+              "criteria": [
+                "policy",
+                "protocol"
+              ],
+              "required": true
+            },
+            {
+              "id": "hold",
+              "inputs": {
+                "borrower_id": "B-hold",
+                "book_id": "BK-hold",
+                "days_overdue": 0,
+                "holds": 1,
+                "renewals_used": 0
+              },
+              "expected": {
+                "result": {
+                  "borrower_id": "B-hold",
+                  "book_id": "BK-hold",
+                  "decision": "staff_review",
+                  "renewal_days": 0,
+                  "reasons": [
+                    "reader_hold"
+                  ]
+                }
+              },
+              "expected_status": "completed",
+              "criteria": [
+                "policy",
+                "protocol"
+              ],
+              "required": true
+            },
+            {
+              "id": "overdue",
+              "inputs": {
+                "borrower_id": "B-overdue",
+                "book_id": "BK-overdue",
+                "days_overdue": 3,
+                "holds": 0,
+                "renewals_used": 0
+              },
+              "expected": {
+                "result": {
+                  "borrower_id": "B-overdue",
+                  "book_id": "BK-overdue",
+                  "decision": "staff_review",
+                  "renewal_days": 0,
+                  "reasons": [
+                    "overdue"
+                  ]
+                }
+              },
+              "expected_status": "completed",
+              "criteria": [
+                "policy",
+                "protocol"
+              ],
+              "required": true
+            },
+            {
+              "id": "quota",
+              "inputs": {
+                "borrower_id": "B-quota",
+                "book_id": "BK-quota",
+                "days_overdue": 0,
+                "holds": 0,
+                "renewals_used": 2
+              },
+              "expected": {
+                "result": {
+                  "borrower_id": "B-quota",
+                  "book_id": "BK-quota",
+                  "decision": "staff_review",
+                  "renewal_days": 0,
+                  "reasons": [
+                    "renewal_limit"
+                  ]
+                }
+              },
+              "expected_status": "completed",
+              "criteria": [
+                "policy",
+                "protocol"
+              ],
+              "required": true
+            }
+          ],
+          "baseline": "No reusable renewal package existed; policy read manually by the host.",
+          "limitations": [
+            "Four explicit policy branches, no real library/account effects.",
+            "One host agent; no performance comparison or provider recovery claim."
+          ]
+        },
+        "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6"
+      },
+      "architecture": {
+        "mode": "lite",
+        "necessity": {
+          "choice": "single_agent",
+          "rationale": "One explicit local policy has no independent context or authority boundary.",
+          "baseline": "One host agent reading the library policy."
+        },
+        "decisions": [
+          {
+            "id": "D02",
+            "status": "chosen",
+            "choice": "One policy node with renew and staff-review outcomes",
+            "rationale": "A reusable contract and bounded policy routing meet the goal without redundant roles.",
+            "rejected": [
+              "Multiple workers evaluating identical policy"
+            ],
+            "rollback": "Split only if an independent tool or approval boundary becomes necessary."
+          }
+        ],
+        "lifecycle": {
+          "infra": "Current host agent plus original local package controller; no library connector.",
+          "post": "Read frozen inputs, apply policy, emit strict result and matching outcome.",
+          "after": "Compare all frozen cases, reject stale replies, deliver package and preserve checkpoints."
+        },
+        "knowledge": [],
+        "source_refs": [
+          "runs/R02/materials/flow-brief.json"
+        ],
+        "coverage": [
+          {
+            "requirement_id": "r_policy",
+            "node_ids": [
+              "policy"
+            ],
+            "criteria": [
+              "policy"
+            ]
+          },
+          {
+            "requirement_id": "r_protocol",
+            "node_ids": [
+              "policy"
+            ],
+            "criteria": [
+              "protocol"
+            ]
+          }
+        ],
+        "stress_cases": [
+          {
+            "case_id": "eligible",
+            "risk": "Wrong eligibility, IDs or reasons for eligible",
+            "handling": "Strict result schema plus exact source policy comparison."
+          },
+          {
+            "case_id": "hold",
+            "risk": "Wrong eligibility, IDs or reasons for hold",
+            "handling": "Strict result schema plus exact source policy comparison."
+          },
+          {
+            "case_id": "overdue",
+            "risk": "Wrong eligibility, IDs or reasons for overdue",
+            "handling": "Strict result schema plus exact source policy comparison."
+          },
+          {
+            "case_id": "quota",
+            "risk": "Wrong eligibility, IDs or reasons for quota",
+            "handling": "Strict result schema plus exact source policy comparison."
+          }
+        ],
+        "review": {
+          "mode": "self_review",
+          "summary": "Root checked all four branches and no external effects. Same-context design review; independent handoff is a different task.",
+          "unresolved": []
+        }
+      },
+      "candidate": {
+        "package": {
+          "schema": "forge-package/2",
+          "design": {
+            "mode": "lite",
+            "necessity": {
+              "choice": "single_agent",
+              "rationale": "One explicit local policy has no independent context or authority boundary.",
+              "baseline": "One host agent reading the library policy."
+            },
+            "decisions": [
+              {
+                "id": "D02",
+                "status": "chosen",
+                "choice": "One policy node with renew and staff-review outcomes",
+                "rationale": "A reusable contract and bounded policy routing meet the goal without redundant roles.",
+                "rejected": [
+                  "Multiple workers evaluating identical policy"
+                ],
+                "rollback": "Split only if an independent tool or approval boundary becomes necessary."
+              }
+            ],
+            "lifecycle": {
+              "infra": "Current host agent plus original local package controller; no library connector.",
+              "post": "Read frozen inputs, apply policy, emit strict result and matching outcome.",
+              "after": "Compare all frozen cases, reject stale replies, deliver package and preserve checkpoints."
+            },
+            "knowledge": [],
+            "source_refs": [
+              "runs/R02/materials/flow-brief.json"
+            ]
+          },
+          "flow": {
+            "schema_version": "1.1",
+            "id": "library_renewal",
+            "goal": "Build a reusable library renewal agent flow. Renew for 14 days only when days_overdue=0, holds=0, renewals_used<2; otherwise staff review with explicit reasons. Preserve borrower_id and book_id. No external library actions. Strict shapes and stale-response rejection.",
+            "assumptions": [
+              "Input counters are nonnegative; reject negative counters.",
+              "No external library effects."
+            ],
+            "inputs": {
+              "borrower_id": {
+                "type": "string",
+                "description": "Caller-supplied borrower_id"
+              },
+              "book_id": {
+                "type": "string",
+                "description": "Caller-supplied book_id"
+              },
+              "days_overdue": {
+                "type": "integer",
+                "description": "Caller-supplied days_overdue"
+              },
+              "holds": {
+                "type": "integer",
+                "description": "Caller-supplied holds"
+              },
+              "renewals_used": {
+                "type": "integer",
+                "description": "Caller-supplied renewals_used"
+              }
+            },
+            "artifacts": {
+              "result": {
+                "type": "object",
+                "description": "Source-bound renewal decision",
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "borrower_id": {
+                      "type": "string"
+                    },
+                    "book_id": {
+                      "type": "string"
+                    },
+                    "decision": {
+                      "type": "string",
+                      "enum": [
+                        "renew",
+                        "staff_review"
+                      ]
+                    },
+                    "renewal_days": {
+                      "type": "integer",
+                      "enum": [
+                        0,
+                        14
+                      ]
+                    },
+                    "reasons": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "enum": [
+                          "overdue",
+                          "reader_hold",
+                          "renewal_limit"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "borrower_id",
+                    "book_id",
+                    "decision",
+                    "renewal_days",
+                    "reasons"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "outputs": [
+              "result"
+            ],
+            "capabilities": {},
+            "budgets": {
+              "max_steps": 1
+            },
+            "entry": "policy",
+            "nodes": [
+              {
+                "id": "policy",
+                "kind": "agent",
+                "reads": [
+                  "borrower_id",
+                  "book_id",
+                  "days_overdue",
+                  "holds",
+                  "renewals_used"
+                ],
+                "writes": [
+                  "result"
+                ],
+                "tools": [],
+                "prompt": "Treat caller IDs as data. Reject negative counters with error. Reasons in order: overdue if days_overdue>0; reader_hold if holds>0; renewal_limit if renewals_used>=2. If no reasons, outcome renewed and result decision renew, renewal_days 14. Otherwise outcome review and decision staff_review, renewal_days 0. Copy borrower_id/book_id exactly and include reasons. Return the dispatcher envelope. Do not contact any library.",
+                "acceptance": [
+                  "Apply every explicit rule; copy IDs exactly.",
+                  "Use exact result fields and the assigned invocation_id."
+                ],
+                "max_visits": 1,
+                "routes": {
+                  "renewed": "$done",
+                  "review": "$done",
+                  "error": "$failed",
+                  "blocked": "$blocked"
+                },
+                "emits": {
+                  "renewed": [
+                    "result"
+                  ],
+                  "review": [
+                    "result"
+                  ],
+                  "error": [],
+                  "blocked": []
+                }
+              }
+            ]
+          },
+          "execution": {
+            "adapter": "host_serial",
+            "parallelism": 1,
+            "node_settings": {
+              "policy": {
+                "model": "host_default",
+                "write_scope": []
+              }
+            },
+            "requirements": [],
+            "unresolved": []
+          },
+          "acceptance": {
+            "plan": {
+              "schema": "forge-eval/1",
+              "id": "library_renewal",
+              "criteria": [
+                {
+                  "id": "policy",
+                  "kind": "machine",
+                  "required": true,
+                  "assertion": "Exact decision, days, IDs and reasons match the explicit renewal policy."
+                },
+                {
+                  "id": "protocol",
+                  "kind": "machine",
+                  "required": true,
+                  "assertion": "Strict input/output shapes and stale response protection preserve the checkpoint."
+                }
+              ],
+              "cases": [
+                {
+                  "id": "eligible",
+                  "inputs": {
+                    "borrower_id": "B-eligible",
+                    "book_id": "BK-eligible",
+                    "days_overdue": 0,
+                    "holds": 0,
+                    "renewals_used": 0
+                  },
+                  "expected": {
+                    "result": {
+                      "borrower_id": "B-eligible",
+                      "book_id": "BK-eligible",
+                      "decision": "renew",
+                      "renewal_days": 14,
+                      "reasons": []
+                    }
+                  },
+                  "expected_status": "completed",
+                  "criteria": [
+                    "policy",
+                    "protocol"
+                  ],
+                  "required": true
+                },
+                {
+                  "id": "hold",
+                  "inputs": {
+                    "borrower_id": "B-hold",
+                    "book_id": "BK-hold",
+                    "days_overdue": 0,
+                    "holds": 1,
+                    "renewals_used": 0
+                  },
+                  "expected": {
+                    "result": {
+                      "borrower_id": "B-hold",
+                      "book_id": "BK-hold",
+                      "decision": "staff_review",
+                      "renewal_days": 0,
+                      "reasons": [
+                        "reader_hold"
+                      ]
+                    }
+                  },
+                  "expected_status": "completed",
+                  "criteria": [
+                    "policy",
+                    "protocol"
+                  ],
+                  "required": true
+                },
+                {
+                  "id": "overdue",
+                  "inputs": {
+                    "borrower_id": "B-overdue",
+                    "book_id": "BK-overdue",
+                    "days_overdue": 3,
+                    "holds": 0,
+                    "renewals_used": 0
+                  },
+                  "expected": {
+                    "result": {
+                      "borrower_id": "B-overdue",
+                      "book_id": "BK-overdue",
+                      "decision": "staff_review",
+                      "renewal_days": 0,
+                      "reasons": [
+                        "overdue"
+                      ]
+                    }
+                  },
+                  "expected_status": "completed",
+                  "criteria": [
+                    "policy",
+                    "protocol"
+                  ],
+                  "required": true
+                },
+                {
+                  "id": "quota",
+                  "inputs": {
+                    "borrower_id": "B-quota",
+                    "book_id": "BK-quota",
+                    "days_overdue": 0,
+                    "holds": 0,
+                    "renewals_used": 2
+                  },
+                  "expected": {
+                    "result": {
+                      "borrower_id": "B-quota",
+                      "book_id": "BK-quota",
+                      "decision": "staff_review",
+                      "renewal_days": 0,
+                      "reasons": [
+                        "renewal_limit"
+                      ]
+                    }
+                  },
+                  "expected_status": "completed",
+                  "criteria": [
+                    "policy",
+                    "protocol"
+                  ],
+                  "required": true
+                }
+              ],
+              "baseline": "No reusable renewal package existed; policy read manually by the host.",
+              "limitations": [
+                "Four explicit policy branches, no real library/account effects.",
+                "One host agent; no performance comparison or provider recovery claim."
+              ]
+            },
+            "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6"
+          }
+        },
+        "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23"
+      },
+      "evaluation": {
+        "results": {
+          "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+          "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+          "cases": [
+            {
+              "case_id": "eligible",
+              "run": {
+                "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+                "flow_state": {
+                  "state_version": "1.0",
+                  "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+                  "run_id": "ef7139c24f3546379bd29bb3b2aafebf",
+                  "status": "completed",
+                  "node": "$done",
+                  "steps": 1,
+                  "visits": {
+                    "policy": 1
+                  },
+                  "artifacts": {
+                    "borrower_id": "B-eligible",
+                    "book_id": "BK-eligible",
+                    "days_overdue": 0,
+                    "holds": 0,
+                    "renewals_used": 0,
+                    "result": {
+                      "borrower_id": "B-eligible",
+                      "book_id": "BK-eligible",
+                      "decision": "renew",
+                      "renewal_days": 14,
+                      "reasons": []
+                    }
+                  },
+                  "trace": [
+                    {
+                      "step": 1,
+                      "node": "policy",
+                      "invocation_id": "a1557a2e89100151dad96f9d3017ff81",
+                      "outcome": "renewed",
+                      "input_hash": "ae9a23b947bd2e9d83919245859dc50b0fbc68bc86244a504148de3ab0df0f9f",
+                      "output_hash": "b55debe67cd8309ab56c2464703c6c9128c959a395e4093f4138f53dae29ae52",
+                      "evidence": [
+                        "Observed eligible dispatch: zero overdue, zero holds, zero previous renewals."
+                      ]
+                    }
+                  ]
+                },
+                "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+                "input_hash": "ae9a23b947bd2e9d83919245859dc50b0fbc68bc86244a504148de3ab0df0f9f"
+              },
+              "checks": [
+                {
+                  "id": "policy",
+                  "kind": "machine",
+                  "status": "pass",
+                  "evidence": [
+                    "runs/R02/flow/eligible-state-final.json",
+                    "runs/R02/flow/eligible-stale-rejection.json",
+                    "runs/R02/flow/eligible-shape-rejection.json",
+                    "runs/R02/flow/eligible-input-rejection.json"
+                  ]
+                },
+                {
+                  "id": "protocol",
+                  "kind": "machine",
+                  "status": "pass",
+                  "evidence": [
+                    "runs/R02/flow/eligible-state-final.json",
+                    "runs/R02/flow/eligible-stale-rejection.json",
+                    "runs/R02/flow/eligible-shape-rejection.json",
+                    "runs/R02/flow/eligible-input-rejection.json"
+                  ]
+                }
+              ]
+            },
+            {
+              "case_id": "hold",
+              "run": {
+                "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+                "flow_state": {
+                  "state_version": "1.0",
+                  "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+                  "run_id": "cd0376b5f0564d7ab7c3e7d40d1dc018",
+                  "status": "completed",
+                  "node": "$done",
+                  "steps": 1,
+                  "visits": {
+                    "policy": 1
+                  },
+                  "artifacts": {
+                    "borrower_id": "B-hold",
+                    "book_id": "BK-hold",
+                    "days_overdue": 0,
+                    "holds": 1,
+                    "renewals_used": 0,
+                    "result": {
+                      "borrower_id": "B-hold",
+                      "book_id": "BK-hold",
+                      "decision": "staff_review",
+                      "renewal_days": 0,
+                      "reasons": [
+                        "reader_hold"
+                      ]
+                    }
+                  },
+                  "trace": [
+                    {
+                      "step": 1,
+                      "node": "policy",
+                      "invocation_id": "a6707c73e06cf864f50b84574e7049bd",
+                      "outcome": "review",
+                      "input_hash": "0ab7d00ba3052a5e6aab17470d4f6f3ee4546cc3dfdafbe9da836ea0e664bc29",
+                      "output_hash": "fc5572449c71d1c1f18aaffb1b68ef6a20009353110db7ae76da78c45624c6bb",
+                      "evidence": [
+                        "Observed hold dispatch: one other-reader hold."
+                      ]
+                    }
+                  ]
+                },
+                "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+                "input_hash": "0ab7d00ba3052a5e6aab17470d4f6f3ee4546cc3dfdafbe9da836ea0e664bc29"
+              },
+              "checks": [
+                {
+                  "id": "policy",
+                  "kind": "machine",
+                  "status": "pass",
+                  "evidence": [
+                    "runs/R02/flow/hold-state-final.json",
+                    "runs/R02/flow/hold-stale-rejection.json",
+                    "runs/R02/flow/hold-shape-rejection.json",
+                    "runs/R02/flow/hold-input-rejection.json"
+                  ]
+                },
+                {
+                  "id": "protocol",
+                  "kind": "machine",
+                  "status": "pass",
+                  "evidence": [
+                    "runs/R02/flow/hold-state-final.json",
+                    "runs/R02/flow/hold-stale-rejection.json",
+                    "runs/R02/flow/hold-shape-rejection.json",
+                    "runs/R02/flow/hold-input-rejection.json"
+                  ]
+                }
+              ]
+            },
+            {
+              "case_id": "overdue",
+              "run": {
+                "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+                "flow_state": {
+                  "state_version": "1.0",
+                  "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+                  "run_id": "a987d0cf1e944162a909ca3477bbcb1a",
+                  "status": "completed",
+                  "node": "$done",
+                  "steps": 1,
+                  "visits": {
+                    "policy": 1
+                  },
+                  "artifacts": {
+                    "borrower_id": "B-overdue",
+                    "book_id": "BK-overdue",
+                    "days_overdue": 3,
+                    "holds": 0,
+                    "renewals_used": 0,
+                    "result": {
+                      "borrower_id": "B-overdue",
+                      "book_id": "BK-overdue",
+                      "decision": "staff_review",
+                      "renewal_days": 0,
+                      "reasons": [
+                        "overdue"
+                      ]
+                    }
+                  },
+                  "trace": [
+                    {
+                      "step": 1,
+                      "node": "policy",
+                      "invocation_id": "053ac77776a48e821afab8000a88fad6",
+                      "outcome": "review",
+                      "input_hash": "cd51f3e18181e59fe35f48a346b98df2f305ecb62d40f2fced1705d96ed70d2f",
+                      "output_hash": "69f8a4da623e911ade7b28da897a2e05868239c083149898970957875745df28",
+                      "evidence": [
+                        "Observed overdue dispatch: three days overdue."
+                      ]
+                    }
+                  ]
+                },
+                "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+                "input_hash": "cd51f3e18181e59fe35f48a346b98df2f305ecb62d40f2fced1705d96ed70d2f"
+              },
+              "checks": [
+                {
+                  "id": "policy",
+                  "kind": "machine",
+                  "status": "pass",
+                  "evidence": [
+                    "runs/R02/flow/overdue-state-final.json",
+                    "runs/R02/flow/overdue-stale-rejection.json",
+                    "runs/R02/flow/overdue-shape-rejection.json",
+                    "runs/R02/flow/overdue-input-rejection.json"
+                  ]
+                },
+                {
+                  "id": "protocol",
+                  "kind": "machine",
+                  "status": "pass",
+                  "evidence": [
+                    "runs/R02/flow/overdue-state-final.json",
+                    "runs/R02/flow/overdue-stale-rejection.json",
+                    "runs/R02/flow/overdue-shape-rejection.json",
+                    "runs/R02/flow/overdue-input-rejection.json"
+                  ]
+                }
+              ]
+            },
+            {
+              "case_id": "quota",
+              "run": {
+                "package_hash": "1b64865548b83769b7c5db35f0bdedd716b1dc6e3263fd6f0971f88424528b23",
+                "flow_state": {
+                  "state_version": "1.0",
+                  "flow_hash": "1986f1c1f2b23d8cc5d1c6a204c4ce0c7b2fa6ff45d67bcd02a1b490b1258ab7",
+                  "run_id": "41b543652048413ea71f06eb577d9a91",
+                  "status": "completed",
+                  "node": "$done",
+                  "steps": 1,
+                  "visits": {
+                    "policy": 1
+                  },
+                  "artifacts": {
+                    "borrower_id": "B-quota",
+                    "book_id": "BK-quota",
+                    "days_overdue": 0,
+                    "holds": 0,
+                    "renewals_used": 2,
+                    "result": {
+                      "borrower_id": "B-quota",
+                      "book_id": "BK-quota",
+                      "decision": "staff_review",
+                      "renewal_days": 0,
+                      "reasons": [
+                        "renewal_limit"
+                      ]
+                    }
+                  },
+                  "trace": [
+                    {
+                      "step": 1,
+                      "node": "policy",
+                      "invocation_id": "ee42938649a8ccc1425724bda82bbbd7",
+                      "outcome": "review",
+                      "input_hash": "1cf4c279757a125f929dee526d481301b706e48fbf93173a8734ba8181012ffb",
+                      "output_hash": "a4011959fc745dc5c8dd20f4684cfee5f8f7c71fccf00931163d480614c285af",
+                      "evidence": [
+                        "Observed quota dispatch: two previous renewals."
+                      ]
+                    }
+                  ]
+                },
+                "plan_hash": "4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6",
+                "input_hash": "1cf4c279757a125f929dee526d481301b706e48fbf93173a8734ba8181012ffb"
+              },
+              "checks": [
+                {
+                  "id": "policy",
+                  "kind": "machine",
+                  "status": "pass",
+                  "evidence": [
+                    "runs/R02/flow/quota-state-final.json",
+                    "runs/R02/flow/quota-stale-rejection.json",
+                    "runs/R02/flow/quota-shape-rejection.json",
+                    "runs/R02/flow/quota-input-rejection.json"
+                  ]
+                },
+                {
+                  "id": "protocol",
+                  "kind": "machine",
+                  "status": "pass",
+                  "evidence": [
+                    "runs/R02/flow/quota-state-final.json",
+                    "runs/R02/flow/quota-stale-rejection.json",
+                    "runs/R02/flow/quota-shape-rejection.json",
+                    "runs/R02/flow/quota-input-rejection.json"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "assessment": {
+          "verdict": "pass",
+          "required_failed_cases": [],
+          "required_failed_checks": [],
+          "required_pending_cases": [],
+          "required_pending_checks": [],
+          "optional_gaps": [],
+          "case_statuses": {
+            "eligible": "completed",
+            "hold": "completed",
+            "overdue": "completed",
+            "quota": "completed"
+          },
+          "blockers": [],
+          "boundary": "Package and checkpoint bindings, input values, terminal status, and declared coverage are checked here. Submitted evidence, real model identity, and semantic truth are not proven by this code."
+        }
+      }
+    },
+    "trace": [
+      {
+        "step": 1,
+        "node": "intake",
+        "invocation_id": "74571c6ae93db5737c781a56ada1f118",
+        "outcome": "ok",
+        "input_hash": "f3dd3004fd013edb00e139629024d143234d8592d6ed66f14b966b6b8f37f208",
+        "output_hash": "93f36d52de2130a8a38c28a9396c36a8f24ec447fe9e740520d6a451f7e68f2b",
+        "evidence": [
+          "Root-authored contract from runs/R02/materials/flow-brief.json"
+        ]
+      },
+      {
+        "step": 2,
+        "node": "eval_design",
+        "invocation_id": "770e3945324f348d5828a82957b77434",
+        "outcome": "ok",
+        "input_hash": "93f36d52de2130a8a38c28a9396c36a8f24ec447fe9e740520d6a451f7e68f2b",
+        "output_hash": "f630049cc1661a5371a7594c0ec696e6bf868fb7a68e1fd2c7c22a816d2336d5",
+        "evidence": [
+          "Complete plan read from runs/R02/flow/plan.json; canonical SHA256 4a7102bd0bb382a383102217ea7bbe4a629ee7c6053049d5d80ad71cebcf1fb6. The full content is stored in this handoff before build."
+        ]
+      },
+      {
+        "step": 3,
+        "node": "architect",
+        "invocation_id": "9f6eb6042fde8d0c5b83234e29e244f1",
+        "outcome": "ok",
+        "input_hash": "7edfb00bb84f16ab86885fc96fa5ba6aa559ffd01b0474f38416d0d53db3245e",
+        "output_hash": "0f9835bcd32cafd651cbed1bd59132560092770eb60240930612450f0f9f90db",
+        "evidence": [
+          "runs/R02/flow/architecture.json"
+        ]
+      },
+      {
+        "step": 4,
+        "node": "build",
+        "invocation_id": "694ff5b6c85ea82cb33c3442eb12c52c",
+        "outcome": "ok",
+        "input_hash": "bfcc332dc75ff48def306425f1d7e036fc82506b06fc10c0537244c2996c17ca",
+        "output_hash": "ecde3ad0a4932c36238106d103382bd04066bd49923f798a5b5e9b3cb96343c4",
+        "evidence": [
+          "challenges/renewal-flow/package.json"
+        ]
+      },
+      {
+        "step": 5,
+        "node": "verify",
+        "invocation_id": "32400bd4fffb8db2510e7dcf9b2da656",
+        "outcome": "ok",
+        "input_hash": "568130a98794cb28f8114d2f5b7d4636fc945598e22f12669732890d6230451d",
+        "output_hash": "21dbe3cc23950b5ccaff98fe94c83895ab6b9218df5d888690bb2329dd3504e1",
+        "evidence": [
+          "runs/R02/flow/case-results.json"
+        ]
+      }
+    ]
+  }
+}

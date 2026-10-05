@@ -1,0 +1,50 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R06-feedback_budget",
+  "attempt_id": "R06-feedback_budget-1",
+  "requirements_hash": "566a6dfd4dc62115d3cca510b2b0d84de626e4449d65e7ab6ecaa5c9f2eece2a",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R06/budget/first-step.json",
+        "runs/R06/budget/tests-310.json",
+        "runs/R06/budget/retained-scenarios-command.json",
+        "runs/R06/budget/scenarios/report.json",
+        "runs/R06/budget/scenarios/commands.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R06/budget/first-step.json",
+        "runs/R06/budget/tests-310.json",
+        "runs/R06/budget/retained-scenarios-command.json",
+        "runs/R06/budget/scenarios/report.json",
+        "runs/R06/budget/scenarios/commands.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Stop a frozen validator from silently exceeding its repair budget",
+    "hypothesis": "Record immutable versions and actual child results, require a separately recorded repair before another execution, fail closed after two corrections",
+    "baseline": "Provider-adapter validator merged a third actual correction into the second in prose; Root regrade rejected that acceptance",
+    "conditions": "C5 local wrapper; actual SyntaxError, unexpected argument and JSON-callable serialization child failures in same journal; third repair/fourth run rejected. Separate original measurement input recovered after one recorded repair.",
+    "observations": "Eight tests per Python3.12/3.10 passed. Twelve retained CLI operations preserve every intended child failure and source snapshot; original sequence stops at bound, new case computes 16. Input/evidence drift and unknown timeout prevent reuse.",
+    "limits": [
+      "Local cooperative command enforcement can be bypassed outside this wrapper; no global security/provider guarantee",
+      "Historical validator and C3-P2 failures remain blocked, not rerun or regraded as pass",
+      "New-context guidance has its own still-active acceptance task; this verdict is bounded-run behavior only"
+    ],
+    "metrics": {
+      "tests_per_runtime": 8,
+      "retained_cli_operations": 12,
+      "root_candidate_repairs": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Complete the already-started new-context original-goal pilots, inspect their actual journal and business outputs, then finish final regression/smoke gate."
+}

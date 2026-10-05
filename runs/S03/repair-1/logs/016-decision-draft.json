@@ -1,0 +1,35 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "coordinator",
+  "cwd": "/workspace/A111",
+  "argv": [
+    "python3",
+    "runs/S02/candidate/forge-agent-flow/scripts/hostdraft.py",
+    "decision",
+    "--job",
+    "runs/S03/repair-1/job",
+    "--evidence",
+    "runs/S03/repair-1/review.json",
+    "--evidence",
+    "runs/S03/repair-1/source-review.md",
+    "--out",
+    "runs/S03/repair-1/decision-draft.json"
+  ],
+  "begin": {
+    "utc": "2026-10-03T19:44:02.095847+00:00",
+    "monotonic_ns": 1280742222093,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:44:02.135164+00:00",
+    "monotonic_ns": 1280781542778,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.039320685,
+  "stdout": "{\n  \"status\": \"draft\",\n  \"out\": \"/workspace/A111/runs/S03/repair-1/decision-draft.json\",\n  \"ready_to_submit\": false,\n  \"automatic_host_call\": false,\n  \"call_allowed\": false,\n  \"next_action\": \"Fill actual work or independent review; preflight then use original receive/commit.\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzdGF0dXMiOiAiZHJhZnQiLAogICJvdXQiOiAiL3dvcmtzcGFjZS9BMTExL3J1bnMvUzAzL3JlcGFpci0xL2RlY2lzaW9uLWRyYWZ0Lmpzb24iLAogICJyZWFkeV90b19zdWJtaXQiOiBmYWxzZSwKICAiYXV0b21hdGljX2hvc3RfY2FsbCI6IGZhbHNlLAogICJjYWxsX2FsbG93ZWQiOiBmYWxzZSwKICAibmV4dF9hY3Rpb24iOiAiRmlsbCBhY3R1YWwgd29yayBvciBpbmRlcGVuZGVudCByZXZpZXc7IHByZWZsaWdodCB0aGVuIHVzZSBvcmlnaW5hbCByZWNlaXZlL2NvbW1pdC4iCn0K",
+  "stderr_base64": ""
+}

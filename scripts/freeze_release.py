@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 import hashlib
 import json
 from pathlib import Path
-from verify_handoff import ROOT, MUTABLE, read, verify_entries
+from verify_handoff import ROOT, MUTABLE, MANIFEST_NAMES, read, verify_entries
 
 errors = verify_entries(ROOT, read(ROOT/'state/source-lock.json')['entries'])
 errors += verify_entries(ROOT, read(ROOT/'evidence/c1/Snapshot_Manifest.json')['entries'], 'evidence/c1/')
@@ -13,7 +13,7 @@ entries = []
 for p in sorted(ROOT.rglob('*')):
     rel = p.relative_to(ROOT)
     if (not p.is_file() or any(x in MUTABLE for x in rel.parts)
-        or p.name == 'artifact-manifest.json' or p.suffix in {'.pyc','.gz','.bundle'}):
+        or p.name in MANIFEST_NAMES or p.suffix in {'.pyc','.gz','.bundle'}):
         continue
     data = p.read_bytes()
     entries.append({'path':rel.as_posix(),'size_bytes':len(data),'sha256':hashlib.sha256(data).hexdigest()})

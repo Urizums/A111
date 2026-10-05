@@ -1,0 +1,71 @@
+{
+  "schema": "smokecheck-plan/1",
+  "project_kind": "change",
+  "baseline": {
+    "id": "example-original-build",
+    "protected_behaviors": [
+      {
+        "id": "saved_items",
+        "description": "Existing saved items survive a restart without content changes."
+      }
+    ]
+  },
+  "candidate_id": "example-candidate-build",
+  "journeys": [
+    {
+      "id": "create_item",
+      "goal": "Save a new item and find it after reopening.",
+      "initial_state": "Original saved item exists; candidate app is open.",
+      "steps": [
+        "Create a new item with distinctive content.",
+        "Return to the list.",
+        "Restart the app and open the saved item."
+      ],
+      "expected": [
+        "New item contains the exact entered content.",
+        "Original item remains unchanged."
+      ],
+      "kind": "main",
+      "required": true,
+      "min_level": "runtime",
+      "min_backend": "none"
+    },
+    {
+      "id": "recover_invalid",
+      "goal": "Correct invalid input without losing other draft content.",
+      "initial_state": "Draft has a valid description and an invalid required field.",
+      "steps": [
+        "Submit invalid draft.",
+        "Correct the invalid field.",
+        "Submit again."
+      ],
+      "expected": [
+        "Specific validation feedback appears.",
+        "Description is preserved and only one final item is stored."
+      ],
+      "kind": "recovery",
+      "required": true,
+      "min_level": "runtime",
+      "min_backend": "none"
+    },
+    {
+      "id": "reopen_repeat",
+      "goal": "Open different items repeatedly without selecting the wrong item.",
+      "initial_state": "At least three saved items with different content exist.",
+      "steps": [
+        "Open item two.",
+        "Return and open item three.",
+        "Return and reopen item two.",
+        "Edit item two, reopen it, then inspect item three."
+      ],
+      "expected": [
+        "Every open matches the selected stable item identity.",
+        "Editing item two never changes item three."
+      ],
+      "kind": "repeat",
+      "required": true,
+      "min_level": "runtime",
+      "min_backend": "none"
+    }
+  ]
+}

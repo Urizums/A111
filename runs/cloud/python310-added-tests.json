@@ -1,0 +1,36 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "uv",
+    "run",
+    "--no-project",
+    "--python",
+    "3.10",
+    "python",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "cwd": "/workspace/A111",
+  "begin": {
+    "utc": "2026-10-03T19:39:41.443045+00:00",
+    "monotonic_ns": 1020089421899,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-03T19:39:41.799306+00:00",
+    "monotonic_ns": 1020445686850,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "test_existing_record_prevents_target_effect (test_capture_contract.CaptureContract) ... ok\ntest_invalid_marker_preserves_failure_without_event (test_capture_contract.CaptureContract) ... ok\ntest_missing_executable_is_recorded (test_capture_contract.CaptureContract) ... ok\ntest_raw_bytes_and_nonzero_exit (test_capture_contract.CaptureContract) ... ok\ntest_successful_marker_target_is_captured (test_capture_contract.CaptureContract) ... ok\ntest_cycle_rejected (test_handoff_invariants.HandoffInvariants) ... ok\ntest_delivered_checkpoint_requires_terminal_phase_and_evidence (test_handoff_invariants.HandoffInvariants) ... ok\ntest_done_without_evidence_rejected (test_handoff_invariants.HandoffInvariants) ... ok\ntest_false_transition_without_execution_rejected (test_handoff_invariants.HandoffInvariants) ... ok\ntest_historical_transition_resolves_archived_successor (test_handoff_invariants.HandoffInvariants) ... ok\ntest_path_escape_rejected (test_handoff_invariants.HandoffInvariants) ... ok\ntest_ready_phase_allowed (test_handoff_invariants.HandoffInvariants) ... ok\ntest_successor_bound_transition_allowed (test_handoff_invariants.HandoffInvariants) ... ok\ntest_transition_cannot_skip_prior_task (test_handoff_invariants.HandoffInvariants) ... ok\ntest_unfinished_checkpoint_cannot_select_no_task (test_handoff_invariants.HandoffInvariants) ... ok\ntest_unknown_dependency_rejected (test_handoff_invariants.HandoffInvariants) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 0.301s\n\nOK\n",
+  "stdout_base64": "",
+  "stderr_base64": "dGVzdF9leGlzdGluZ19yZWNvcmRfcHJldmVudHNfdGFyZ2V0X2VmZmVjdCAodGVzdF9jYXB0dXJlX2NvbnRyYWN0LkNhcHR1cmVDb250cmFjdCkgLi4uIG9rCnRlc3RfaW52YWxpZF9tYXJrZXJfcHJlc2VydmVzX2ZhaWx1cmVfd2l0aG91dF9ldmVudCAodGVzdF9jYXB0dXJlX2NvbnRyYWN0LkNhcHR1cmVDb250cmFjdCkgLi4uIG9rCnRlc3RfbWlzc2luZ19leGVjdXRhYmxlX2lzX3JlY29yZGVkICh0ZXN0X2NhcHR1cmVfY29udHJhY3QuQ2FwdHVyZUNvbnRyYWN0KSAuLi4gb2sKdGVzdF9yYXdfYnl0ZXNfYW5kX25vbnplcm9fZXhpdCAodGVzdF9jYXB0dXJlX2NvbnRyYWN0LkNhcHR1cmVDb250cmFjdCkgLi4uIG9rCnRlc3Rfc3VjY2Vzc2Z1bF9tYXJrZXJfdGFyZ2V0X2lzX2NhcHR1cmVkICh0ZXN0X2NhcHR1cmVfY29udHJhY3QuQ2FwdHVyZUNvbnRyYWN0KSAuLi4gb2sKdGVzdF9jeWNsZV9yZWplY3RlZCAodGVzdF9oYW5kb2ZmX2ludmFyaWFudHMuSGFuZG9mZkludmFyaWFudHMpIC4uLiBvawp0ZXN0X2RlbGl2ZXJlZF9jaGVja3BvaW50X3JlcXVpcmVzX3Rlcm1pbmFsX3BoYXNlX2FuZF9ldmlkZW5jZSAodGVzdF9oYW5kb2ZmX2ludmFyaWFudHMuSGFuZG9mZkludmFyaWFudHMpIC4uLiBvawp0ZXN0X2RvbmVfd2l0aG91dF9ldmlkZW5jZV9yZWplY3RlZCAodGVzdF9oYW5kb2ZmX2ludmFyaWFudHMuSGFuZG9mZkludmFyaWFudHMpIC4uLiBvawp0ZXN0X2ZhbHNlX3RyYW5zaXRpb25fd2l0aG91dF9leGVjdXRpb25fcmVqZWN0ZWQgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzKSAuLi4gb2sKdGVzdF9oaXN0b3JpY2FsX3RyYW5zaXRpb25fcmVzb2x2ZXNfYXJjaGl2ZWRfc3VjY2Vzc29yICh0ZXN0X2hhbmRvZmZfaW52YXJpYW50cy5IYW5kb2ZmSW52YXJpYW50cykgLi4uIG9rCnRlc3RfcGF0aF9lc2NhcGVfcmVqZWN0ZWQgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzKSAuLi4gb2sKdGVzdF9yZWFkeV9waGFzZV9hbGxvd2VkICh0ZXN0X2hhbmRvZmZfaW52YXJpYW50cy5IYW5kb2ZmSW52YXJpYW50cykgLi4uIG9rCnRlc3Rfc3VjY2Vzc29yX2JvdW5kX3RyYW5zaXRpb25fYWxsb3dlZCAodGVzdF9oYW5kb2ZmX2ludmFyaWFudHMuSGFuZG9mZkludmFyaWFudHMpIC4uLiBvawp0ZXN0X3RyYW5zaXRpb25fY2Fubm90X3NraXBfcHJpb3JfdGFzayAodGVzdF9oYW5kb2ZmX2ludmFyaWFudHMuSGFuZG9mZkludmFyaWFudHMpIC4uLiBvawp0ZXN0X3VuZmluaXNoZWRfY2hlY2twb2ludF9jYW5ub3Rfc2VsZWN0X25vX3Rhc2sgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzKSAuLi4gb2sKdGVzdF91bmtub3duX2RlcGVuZGVuY3lfcmVqZWN0ZWQgKHRlc3RfaGFuZG9mZl9pbnZhcmlhbnRzLkhhbmRvZmZJbnZhcmlhbnRzKSAuLi4gb2sKCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0KUmFuIDE2IHRlc3RzIGluIDAuMzAxcwoKT0sK"
+}

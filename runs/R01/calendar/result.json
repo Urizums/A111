@@ -1,0 +1,43 @@
+{
+  "schema": "forge-task-result/1",
+  "task_id": "R01-02",
+  "attempt_id": "R01-02-1",
+  "requirements_hash": "847bb6b4957cb4a45e57b370a1efc7b9ea3a58fe42d30565699951291ac56ed0",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R01/calendar/verify-command.json",
+        "runs/R01/calendar/workshop.ics"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R01/calendar/verify-command.json",
+        "runs/R01/calendar/workshop.ics"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Deliver usable calendar file from explicit workshop material",
+    "hypothesis": "Direct one-off transformation and source check are sufficient for a scoped task",
+    "baseline": "No calendar deliverable existed",
+    "conditions": "Python zoneinfo Europe/Paris, one November event, CRLF ICS, no external calendar submission",
+    "observations": "One event parses back to the requested local time/duration and exact text; 8 source checks pass",
+    "limits": [
+      "Not a general calendar engine; no target calendar application import was requested or tested",
+      "No claim of overall performance improvement"
+    ],
+    "metrics": {
+      "source_checks_passed": 8,
+      "user_questions": 0,
+      "speed_gain": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Increase complexity to durable JSON-to-SQLite migration with transaction failure cases."
+}

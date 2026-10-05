@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "worker",
+  "cwd": "/workspace",
+  "argv": [
+    "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+    "-c",
+    "import json; from pathlib import Path; worker=Path(\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker\"); business={\"decisions\":[{\"id\":\"r1\",\"decision\":\"assign\",\"reason\":\"capacity\",\"host\":\"north\"},{\"id\":\"r2\",\"decision\":\"assign\",\"reason\":\"capacity\",\"host\":\"south\"},{\"id\":\"r3\",\"decision\":\"assign\",\"reason\":\"capacity\",\"host\":\"north\"},{\"id\":\"r4\",\"decision\":\"wait\",\"reason\":\"capacity_unavailable\",\"host\":None},{\"id\":\"r5\",\"decision\":\"reject\",\"reason\":\"invalid_request\",\"host\":None},{\"id\":\"r6\",\"decision\":\"assign\",\"reason\":\"capacity\",\"host\":\"south\"}]}; (worker/\"business.json\").write_text(json.dumps(business,indent=2)+\"\\n\"); corrections={\"corrections\":[],\"preserved_original_paths\":[\"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/job/request.json\",\"/workspace/A111/runs/future/host_protocol_overhead_comparison/materials/P2.json\",\"/workspace/A111/runs/future/host_protocol_overhead_comparison/public/protocol.md\"],\"explanation\":\"Processed jobs in source order, selecting the first listed host with sufficient remaining CPU and memory and decrementing both on each assignment. Rejected r5 because CPU is non-positive; r4 had no fitting host. No corrections to original inputs or policy were needed.\",\"parent_questions\":[],\"unavailable_metrics\":{\"model_active_time\":None,\"provider_identity\":None,\"tokens\":None,\"cost\":None}}; (worker/\"corrections.json\").write_text(json.dumps(corrections,indent=2)+\"\\n\"); print(json.dumps({\"business\":str(worker/\"business.json\"),\"corrections\":str(worker/\"corrections.json\")}))"
+  ],
+  "begin": {
+    "utc": "2026-10-04T06:21:27.797279+00:00",
+    "monotonic_ns": 39526443656550,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-04T06:21:27.821773+00:00",
+    "monotonic_ns": 39526468154730,
+    "boot_id": "15c5dffa-56c9-4924-b40b-ee079fd89ee9"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.02449818,
+  "stdout": "{\"business\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/business.json\", \"corrections\": \"/workspace/A111/runs/future/host_protocol_overhead_comparison/samples/P2A/worker/corrections.json\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJidXNpbmVzcyI6ICIvd29ya3NwYWNlL0ExMTEvcnVucy9mdXR1cmUvaG9zdF9wcm90b2NvbF9vdmVyaGVhZF9jb21wYXJpc29uL3NhbXBsZXMvUDJBL3dvcmtlci9idXNpbmVzcy5qc29uIiwgImNvcnJlY3Rpb25zIjogIi93b3Jrc3BhY2UvQTExMS9ydW5zL2Z1dHVyZS9ob3N0X3Byb3RvY29sX292ZXJoZWFkX2NvbXBhcmlzb24vc2FtcGxlcy9QMkEvd29ya2VyL2NvcnJlY3Rpb25zLmpzb24ifQo=",
+  "stderr_base64": ""
+}

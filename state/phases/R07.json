@@ -1,0 +1,124 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R07",
+  "goal": "接手、整理、可靠恢复与原生任务组织",
+  "tasks": [
+    {
+      "id": "R07-01",
+      "title": "收集并固定上游成果",
+      "owner": "root",
+      "write_paths": [
+        "runs/R07/intake/",
+        "runs/R07/inventory/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "收集并固定上游成果",
+      "depends_on": [],
+      "acceptance": [
+        "原提交、源字节、旧失败与预算保留；接手索引可定位"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R07-02",
+      "title": "修复快照恢复并执行故障回归",
+      "owner": "root",
+      "write_paths": [
+        "runs/R07/candidate/",
+        "runs/R07/validation/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "修复快照恢复并执行故障回归",
+      "depends_on": [
+        "R07-01"
+      ],
+      "acceptance": [
+        "失败可原路径重试；已有目标不覆盖；C6固定候选及相关回归通过"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R07-03",
+      "title": "独立复核C6快照",
+      "owner": "luna",
+      "write_paths": [
+        "runs/R07/validation/independent/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "独立复核C6快照",
+      "depends_on": [
+        "R07-02"
+      ],
+      "acceptance": [
+        "新上下文只拿候选与原要求，实际检查并保留原结果/限度"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R07-04",
+      "title": "真实原生agent组织器材调配任务",
+      "owner": "luna",
+      "write_paths": [
+        "runs/R07/flow-challenge/worker/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "真实原生agent组织器材调配任务",
+      "depends_on": [
+        "R07-02"
+      ],
+      "acceptance": [
+        "固定原材料业务结果可复核；真实子agent独立核验；实际后继首步；原输入不变"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R07-05",
+      "title": "整合接手状态与验证结果",
+      "owner": "root",
+      "write_paths": [
+        "state/",
+        "START_HERE.md",
+        "docs/TAKEOVER.md",
+        "runs/R07/REPORT.md"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "整合接手状态与验证结果",
+      "depends_on": [
+        "R07-03",
+        "R07-04"
+      ],
+      "acceptance": [
+        "完整性和相关检查通过；旧8阻塞不改判；结果和下一动作可接续"
+      ],
+      "evidence": []
+    },
+    {
+      "id": "R07-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "write_paths": [
+        "state/",
+        "runs/R08/"
+      ],
+      "status": "planned",
+      "blocker": null,
+      "next_action": "执行R08-01真实能力首步后归档R07",
+      "depends_on": [
+        "R07-01",
+        "R07-02",
+        "R07-03",
+        "R07-04",
+        "R07-05"
+      ],
+      "acceptance": [
+        "R08计划和首项真实启动证据"
+      ],
+      "evidence": []
+    }
+  ]
+}
