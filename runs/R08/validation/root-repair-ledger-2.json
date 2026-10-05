@@ -1,0 +1,23 @@
+{
+  "parent": "runs/R08/validation/root-repair-ledger.json",
+  "coordinator_current_case_limit": 2,
+  "coordinator_current_case_used": 2,
+  "new_correction": {
+    "ordinal": 2,
+    "failure": "Auxiliary install test source changed while state and entry-point integration continued; interrupted suite retained with exit -15 and three failed markers",
+    "correction": "Freeze staged Git bytes into a separately hashed read-only test export; run one retry against that stable tree",
+    "original_evidence": "runs/R08/design/auxiliary-regression.json",
+    "retry_evidence": "runs/R08/design/auxiliary-stable.json"
+  },
+  "administrative_transport_failure": {
+    "failure": "PowerShell ParserError before the WSL process-tree termination command reached the shell",
+    "effect_started": false,
+    "resolution": "Use a file-based current-PID identity-checked termination script",
+    "exclusion_basis": "Frozen spec administrative exclusions include WSL command transport; separately retained here, no business/source repair or acceptance change"
+  },
+  "further_coordinator_case_repairs_allowed": false,
+  "complex_actor": {"used": 3, "limit": 2, "exceeded": true, "further_repairs_allowed": false},
+  "simple_actor": {"used": 2, "limit": 2, "further_repairs_allowed": false},
+  "C7_source_repairs": {"used": 0, "limit": 2},
+  "old_budgets_changed": false
+}

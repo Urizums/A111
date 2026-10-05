@@ -1,0 +1,13 @@
+{
+  "case_id": "complex",
+  "goal": "Build a local persistent approval CLI for document requests, and obtain independent runtime verification before delivery. This is a small software system, not a reusable agent flow.",
+  "requirements": [
+    "Use Python standard library and SQLite; all business data lives in a caller-supplied database path. No network, messages, accounts or real approvals.",
+    "Provide CLI submit, get, decide commands with --db. submit --id --owner stores a pending request at version 1. Duplicate id fails without changing the existing row. get --id returns id, owner, status, version as JSON.",
+    "decide --id --actor --expected-version --status approved|rejected succeeds only for actor reviewer, pending row and exact current version. Success atomically changes status and increments version once. Any rejection exits nonzero and changes no business row.",
+    "Missing id, empty id/owner and bad status must be rejected. Separate CLI process invocations preserve state. Emit machine-readable JSON on success and a useful error on rejection.",
+    "Run two concurrent decide processes using the same pending row and version: exactly one succeeds, final version is 2 and status equals the successful decision. Verify unauthorized, stale and repeated decisions preserve the row.",
+    "A fresh independent agent must derive checks from this request and the implementation without expected answers, author test results or diagnoses. It performs actual CLI checks and writes its own evidence under the assigned reviewer directory. Author checks do not replace this requirement.",
+    "Keep a short requirements/architecture/TODO record and actually execute a useful successor first step after acceptance, such as running a new invalid-input or concurrent case with retained command evidence; a successor plan alone is insufficient."
+  ]
+}

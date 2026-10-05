@@ -2946,9 +2946,86 @@
           "assertion": "保存新旧版本及冻结锁；简单任务只读必要引用，先真实首步；系统/可复用flow分流与必要核验有明确边界"
         }
       ],
-      "status": "planned",
-      "evidence": [],
-      "attempts": [],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R08/R08-02-result.json",
+          "sha256": "771acff9e61ad1211d42e4bd68292fe1899a9103925828edc06555c435593b4b"
+        },
+        {
+          "path": "runs/R08/design/build-c7.json",
+          "sha256": "50e523ed48911ac3aa91ed56e581060f1ed83edf4df553747aae8d6d70fb1013"
+        },
+        {
+          "path": "runs/R08/design/change.json",
+          "sha256": "f2f7091f79e116bbd84e3541a9e1492aa09c861791be594b2d8e5f128373f264"
+        },
+        {
+          "path": "runs/R08/candidate/C7-lock.json",
+          "sha256": "b35aaa35f79ad210fce72f14f51c5e631fb269e1cf23b7991c991c3553de8cb7"
+        },
+        {
+          "path": "runs/R08/candidate/C7/forge-agent-flow/SKILL.md",
+          "sha256": "e390746f804e6e5377870d09b6d291583b8ad478c7797712463a7d053f9cf947"
+        },
+        {
+          "path": "runs/R07/candidate/C6-lock.json",
+          "sha256": "92ad0488a576392dc5d0a97549b8a837d123578eaffcc12c27fecad69bfe75a3"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R08-02-1",
+          "started_at": "2026-10-05T03:22:11.023537+00:00",
+          "requirements_hash": "0878873c9e7c34d83547c068af899a38303c5ac55b31785499dd6a2aa353db76",
+          "inputs": [
+            {
+              "path": "runs/R08/PLAN.md",
+              "sha256": "8f688996c3429a7503a436f48ab86333187a676de68db10e8ee5c004fce8ace1"
+            },
+            {
+              "path": "runs/R08/codex-handoff/PLAN_ADDENDUM.md",
+              "sha256": "2426d1ad18440b67ed768cf41bc8eaf71b711c9e9a9fa8c3cf0c29d815d1f716"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R08/design/build-c7.json",
+            "sha256": "50e523ed48911ac3aa91ed56e581060f1ed83edf4df553747aae8d6d70fb1013"
+          },
+          "status": "done",
+          "ended_at": "2026-10-05T03:24:18.942798+00:00",
+          "result": {
+            "path": "runs/R08/R08-02-result.json",
+            "sha256": "771acff9e61ad1211d42e4bd68292fe1899a9103925828edc06555c435593b4b"
+          },
+          "evidence": [
+            {
+              "path": "runs/R08/R08-02-result.json",
+              "sha256": "771acff9e61ad1211d42e4bd68292fe1899a9103925828edc06555c435593b4b"
+            },
+            {
+              "path": "runs/R08/design/build-c7.json",
+              "sha256": "50e523ed48911ac3aa91ed56e581060f1ed83edf4df553747aae8d6d70fb1013"
+            },
+            {
+              "path": "runs/R08/design/change.json",
+              "sha256": "f2f7091f79e116bbd84e3541a9e1492aa09c861791be594b2d8e5f128373f264"
+            },
+            {
+              "path": "runs/R08/candidate/C7-lock.json",
+              "sha256": "b35aaa35f79ad210fce72f14f51c5e631fb269e1cf23b7991c991c3553de8cb7"
+            },
+            {
+              "path": "runs/R08/candidate/C7/forge-agent-flow/SKILL.md",
+              "sha256": "e390746f804e6e5377870d09b6d291583b8ad478c7797712463a7d053f9cf947"
+            },
+            {
+              "path": "runs/R07/candidate/C6-lock.json",
+              "sha256": "92ad0488a576392dc5d0a97549b8a837d123578eaffcc12c27fecad69bfe75a3"
+            }
+          ]
+        }
+      ],
       "repairs_used": 0,
       "repair_limit": 2,
       "blocker": null,
@@ -2970,7 +3047,9 @@
       ],
       "inputs": [
         "runs/R08/PLAN.md",
-        "runs/R08/codex-handoff/PLAN_ADDENDUM.md"
+        "runs/R08/codex-handoff/PLAN_ADDENDUM.md",
+        "runs/R08/validation/frozen-lock.json",
+        "runs/R08/candidate/C7-lock.json"
       ],
       "acceptance": [
         {
@@ -2978,13 +3057,82 @@
           "assertion": "新冻结原材料与候选；实际首产物、干预、正确性和必要原生分工分别记录；原R07失败不改判"
         }
       ],
-      "status": "planned",
-      "evidence": [],
-      "attempts": [],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R08/R08-03-result.json",
+          "sha256": "46b34cf80b8342006fba6f8c7aad70a1b3906681f1dcad0d193d0fcd8757572c"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R08-03-1",
+          "started_at": "2026-10-05T03:24:25.101910+00:00",
+          "requirements_hash": "ebced6a7fe327d6dddedfede09bff6bb575d086e175543bb903e2325159f9c8e",
+          "inputs": [
+            {
+              "path": "runs/R08/PLAN.md",
+              "sha256": "8f688996c3429a7503a436f48ab86333187a676de68db10e8ee5c004fce8ace1"
+            },
+            {
+              "path": "runs/R08/codex-handoff/PLAN_ADDENDUM.md",
+              "sha256": "2426d1ad18440b67ed768cf41bc8eaf71b711c9e9a9fa8c3cf0c29d815d1f716"
+            },
+            {
+              "path": "runs/R08/validation/frozen-lock.json",
+              "sha256": "b9309d3cb98dd831eda9786cc2b8ebcde5ba2740657b8954a84eca9dc7ee5ec7"
+            },
+            {
+              "path": "runs/R08/candidate/C7-lock.json",
+              "sha256": "b35aaa35f79ad210fce72f14f51c5e631fb269e1cf23b7991c991c3553de8cb7"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R08/validation/freeze-command.json",
+            "sha256": "4c7b69540e77071a7e3215a7b6131b3df3aad0fbf16e1beb6e76a206f49981de"
+          },
+          "status": "failed",
+          "ended_at": "2026-10-05T03:38:56.306804+00:00",
+          "result": {
+            "path": "runs/R08/R08-03-result.json",
+            "sha256": "46b34cf80b8342006fba6f8c7aad70a1b3906681f1dcad0d193d0fcd8757572c"
+          },
+          "evidence": [
+            {
+              "path": "runs/R08/R08-03-result.json",
+              "sha256": "46b34cf80b8342006fba6f8c7aad70a1b3906681f1dcad0d193d0fcd8757572c"
+            },
+            {
+              "path": "runs/R08/validation/simple/result.json",
+              "sha256": "c9576dfdcc9a3f49a2cd5b069accd024f34c2db33c958e3688dc80186dca1e0d"
+            },
+            {
+              "path": "runs/R08/validation/simple/results/reconciliation.json",
+              "sha256": "a69d5d584df0fb412ca0c85dbfd964e3669d5b45404bf6a2e7e50b038f059643"
+            },
+            {
+              "path": "runs/R08/validation/complex-terminal.json",
+              "sha256": "130da1899181b9c0d83e3fc89b59f7e864c64df9f4782c0ec08fb3efeeca2938"
+            },
+            {
+              "path": "runs/R08/validation/frozen-lock.json",
+              "sha256": "b9309d3cb98dd831eda9786cc2b8ebcde5ba2740657b8954a84eca9dc7ee5ec7"
+            },
+            {
+              "path": "runs/R08/validation/native-create-returns.json",
+              "sha256": "6d4a2e3ce2622ae69af096dbbef5bd8a1a8434e38d882140248f6290bd3005ad"
+            },
+            {
+              "path": "runs/R08/validation/root-repair-ledger.json",
+              "sha256": "b3d46faaa993eb635945b718952a5644631ff83be41fbcdc493dcb0cb07fabc1"
+            }
+          ]
+        }
+      ],
       "repairs_used": 0,
       "repair_limit": 2,
-      "blocker": null,
-      "next_action": "新上下文验证短路径的正确性、干预与实际分工"
+      "blocker": "Complex executor exceeded frozen two-correction limit; no business artifact or independent runtime verification. Same case must not be replayed by a new actor.",
+      "next_action": "Preserve failure and budgets; continue separate R09-01 host diagnostics; R08 transition remains blocked."
     },
     {
       "id": "R08-ZCODE-01",
@@ -3052,6 +3200,232 @@
       "repair_limit": 2,
       "blocker": "本宿主没有ZCode CLI或用户本机执行通道；尚未取得真实账号调用回执",
       "next_action": "用户实际ZCode环境执行冻结只读任务；回传原回复/退出码，确认账号与额度后再开放编码任务"
+    },
+    {
+      "id": "R09-01",
+      "title": "实现并实际运行宿主与冻结字节预检",
+      "queue": "capabilities",
+      "category": "cross_environment_diagnostics",
+      "complexity": 3,
+      "priority": 8,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "scripts/host_preflight.py",
+        "scripts/test_host_preflight.py",
+        "runs/R09/preflight/"
+      ],
+      "inputs": [
+        "runs/R09/PLAN.md",
+        "runs/R09/source-lock.json",
+        "runs/R09/PLAN_ADDENDUM.md"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "只读 JSON CLI 诊断当前宿主的 continuation/安全文件打开/计时条件，字节漂移、非法路径和损坏锁拒绝；不修改文件、预算、租约或真实调用"
+        },
+        {
+          "id": "a2",
+          "assertion": "实际 Windows 与 Linux/WSL 命令和相关测试分别留存；不声称已经移植原生 Windows 控制器或证明 provider/恢复发布"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R09/R09-01-result.json",
+          "sha256": "33f7d89939f414498fd8e95748c62d98377126817279127eef3c7f9151a41b1d"
+        },
+        {
+          "path": "runs/R09/source-lock.json",
+          "sha256": "f4226cc35b828555d8dc51f77a737d2b765c926b811c1d115fe3e20cbc9fd3a5"
+        },
+        {
+          "path": "runs/R09/preflight/formal-first-step.json",
+          "sha256": "d14212f6ba9c9f40d5a377a05221a6b13c9537d74dc32c542613ef47b89ce6a7"
+        },
+        {
+          "path": "runs/R09/preflight/windows-probe.json",
+          "sha256": "c51026bc6ec10016dd6348dfdd79db42afc96c98b9dc30c009d4df92389e06ff"
+        },
+        {
+          "path": "runs/R09/preflight/wsl-probe.json",
+          "sha256": "819c2e826c8ec5ef18d8fa933a9832e8ff4a15d445ab436e74925144bec95583"
+        },
+        {
+          "path": "runs/R09/preflight/windows-tests-final.json",
+          "sha256": "ad8f4f49d2f766ec6acb0d3807b0f520066130b349c41dbff1f6f488f820e3d6"
+        },
+        {
+          "path": "runs/R09/preflight/wsl-tests-final.json",
+          "sha256": "2e6ca076c0b9d71d4320bb6d6a31e12de813f92a138ac6d3fbe80facaff4dcb1"
+        },
+        {
+          "path": "runs/R09/PLAN_ADDENDUM.md",
+          "sha256": "c478da21658a146e6ce232316d6656083c0272361c18ea6aad12258a5d791f41"
+        },
+        {
+          "path": "runs/R09/source-lock.json",
+          "sha256": "f4226cc35b828555d8dc51f77a737d2b765c926b811c1d115fe3e20cbc9fd3a5"
+        },
+        {
+          "path": "runs/R09/preflight/formal-first-step.json",
+          "sha256": "d14212f6ba9c9f40d5a377a05221a6b13c9537d74dc32c542613ef47b89ce6a7"
+        },
+        {
+          "path": "runs/R09/preflight/windows-probe.json",
+          "sha256": "c51026bc6ec10016dd6348dfdd79db42afc96c98b9dc30c009d4df92389e06ff"
+        },
+        {
+          "path": "runs/R09/preflight/wsl-probe.json",
+          "sha256": "819c2e826c8ec5ef18d8fa933a9832e8ff4a15d445ab436e74925144bec95583"
+        },
+        {
+          "path": "runs/R09/preflight/windows-tests-final.json",
+          "sha256": "ad8f4f49d2f766ec6acb0d3807b0f520066130b349c41dbff1f6f488f820e3d6"
+        },
+        {
+          "path": "runs/R09/preflight/wsl-tests-final.json",
+          "sha256": "2e6ca076c0b9d71d4320bb6d6a31e12de813f92a138ac6d3fbe80facaff4dcb1"
+        },
+        {
+          "path": "runs/R09/PLAN_ADDENDUM.md",
+          "sha256": "c478da21658a146e6ce232316d6656083c0272361c18ea6aad12258a5d791f41"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R09-01-1",
+          "started_at": "2026-10-05T03:39:29.328505+00:00",
+          "requirements_hash": "c3bc8db2cd0f0cac5e8485d85a4fb2732462f83287f6468ac01b31ff3dbd9d62",
+          "inputs": [
+            {
+              "path": "runs/R09/PLAN.md",
+              "sha256": "f4700e8e7445dc39de23b8798091f2700f3e9e1b2b99e4fe55a0dd60137ab28e"
+            },
+            {
+              "path": "runs/R09/source-lock.json",
+              "sha256": "f4226cc35b828555d8dc51f77a737d2b765c926b811c1d115fe3e20cbc9fd3a5"
+            },
+            {
+              "path": "runs/R09/PLAN_ADDENDUM.md",
+              "sha256": "c478da21658a146e6ce232316d6656083c0272361c18ea6aad12258a5d791f41"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R09/preflight/formal-first-step.json",
+            "sha256": "d14212f6ba9c9f40d5a377a05221a6b13c9537d74dc32c542613ef47b89ce6a7"
+          },
+          "status": "done",
+          "ended_at": "2026-10-05T03:40:10.871908+00:00",
+          "result": {
+            "path": "runs/R09/R09-01-result.json",
+            "sha256": "33f7d89939f414498fd8e95748c62d98377126817279127eef3c7f9151a41b1d"
+          },
+          "evidence": [
+            {
+              "path": "runs/R09/R09-01-result.json",
+              "sha256": "33f7d89939f414498fd8e95748c62d98377126817279127eef3c7f9151a41b1d"
+            },
+            {
+              "path": "runs/R09/source-lock.json",
+              "sha256": "f4226cc35b828555d8dc51f77a737d2b765c926b811c1d115fe3e20cbc9fd3a5"
+            },
+            {
+              "path": "runs/R09/preflight/formal-first-step.json",
+              "sha256": "d14212f6ba9c9f40d5a377a05221a6b13c9537d74dc32c542613ef47b89ce6a7"
+            },
+            {
+              "path": "runs/R09/preflight/windows-probe.json",
+              "sha256": "c51026bc6ec10016dd6348dfdd79db42afc96c98b9dc30c009d4df92389e06ff"
+            },
+            {
+              "path": "runs/R09/preflight/wsl-probe.json",
+              "sha256": "819c2e826c8ec5ef18d8fa933a9832e8ff4a15d445ab436e74925144bec95583"
+            },
+            {
+              "path": "runs/R09/preflight/windows-tests-final.json",
+              "sha256": "ad8f4f49d2f766ec6acb0d3807b0f520066130b349c41dbff1f6f488f820e3d6"
+            },
+            {
+              "path": "runs/R09/preflight/wsl-tests-final.json",
+              "sha256": "2e6ca076c0b9d71d4320bb6d6a31e12de813f92a138ac6d3fbe80facaff4dcb1"
+            },
+            {
+              "path": "runs/R09/PLAN_ADDENDUM.md",
+              "sha256": "c478da21658a146e6ce232316d6656083c0272361c18ea6aad12258a5d791f41"
+            },
+            {
+              "path": "runs/R09/source-lock.json",
+              "sha256": "f4226cc35b828555d8dc51f77a737d2b765c926b811c1d115fe3e20cbc9fd3a5"
+            },
+            {
+              "path": "runs/R09/preflight/formal-first-step.json",
+              "sha256": "d14212f6ba9c9f40d5a377a05221a6b13c9537d74dc32c542613ef47b89ce6a7"
+            },
+            {
+              "path": "runs/R09/preflight/windows-probe.json",
+              "sha256": "c51026bc6ec10016dd6348dfdd79db42afc96c98b9dc30c009d4df92389e06ff"
+            },
+            {
+              "path": "runs/R09/preflight/wsl-probe.json",
+              "sha256": "819c2e826c8ec5ef18d8fa933a9832e8ff4a15d445ab436e74925144bec95583"
+            },
+            {
+              "path": "runs/R09/preflight/windows-tests-final.json",
+              "sha256": "ad8f4f49d2f766ec6acb0d3807b0f520066130b349c41dbff1f6f488f820e3d6"
+            },
+            {
+              "path": "runs/R09/preflight/wsl-tests-final.json",
+              "sha256": "2e6ca076c0b9d71d4320bb6d6a31e12de813f92a138ac6d3fbe80facaff4dcb1"
+            },
+            {
+              "path": "runs/R09/PLAN_ADDENDUM.md",
+              "sha256": "c478da21658a146e6ce232316d6656083c0272361c18ea6aad12258a5d791f41"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Run frozen preflight on the actual host"
+    },
+    {
+      "id": "R09-02",
+      "title": "独立新checkout核验跨环境预检边界",
+      "queue": "challenges",
+      "category": "cross_environment_diagnostics",
+      "complexity": 3,
+      "priority": 9,
+      "depends_on": [
+        "R09-01"
+      ],
+      "owner": "independent_codex_or_available_luna",
+      "write_paths": [
+        "runs/R09/independent/"
+      ],
+      "inputs": [
+        "runs/R09/PLAN.md",
+        "runs/R09/source-lock.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "新上下文从实际 Git 提交创建新 checkout，独立运行预检、continuation 与 lease；冻结版本和要求，不接收作者答案或诊断"
+        },
+        {
+          "id": "a2",
+          "assertion": "保留真实命令、首产物、环境差异、失败与最多两轮预算；未知provider/token/cost保持null"
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Dispatch fresh checkout verifier after R09-01 acceptance"
     }
   ],
   "execution": {
@@ -3065,14 +3439,14 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "checkpoint_for_codex_main",
-    "checkpoint_reason": "Handoff prepared and locally verified; Codex should continue R08-02 from main; no active code worker",
-    "coordinator_heartbeat": "2026-10-05T03:06:05.102363+00:00",
+    "session_state": "checkpoint_after_scoped_r08_r09_work",
+    "checkpoint_reason": "R08-03 is blocked after budget overrun. Distinct R09-01 completed with actual runtime evidence; R09-02 fresh checkout validation is next. No background execution claimed.",
+    "coordinator_heartbeat": "2026-10-05T03:41:36.110053+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
     "coordinator_lease": "state/coordinator-lease.json",
-    "latest_capability_probe": "runs/R06/scheduling/cancel-20261004T074313Z/environment.json",
+    "latest_capability_probe": "runs/R09/preflight/wsl-probe.json",
     "coordinator_lease_state": "state/coordinator-lease.json",
     "recovery": "runs/R06/RECOVERY.md",
     "final_validation": "runs/R06/final/summary.json",
@@ -3099,7 +3473,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-handoff-r08",
+    "current_coordinator": "root-codex-r08-desktop",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -3114,10 +3488,23 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R08/codex-handoff/STATUS.md",
-    "next_plan": "runs/R08/PLAN.md",
+    "current_report": "runs/R08/REPORT.md",
+    "next_plan": "runs/R09/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
+    ],
+    "current_native_pending": [],
+    "current_native_completed": [
+      {
+        "worker": "/root/r08_simple",
+        "outcome": "business_passed",
+        "evidence": "runs/R08/validation/simple/result.json"
+      },
+      {
+        "worker": "/root/r08_complex",
+        "outcome": "failed_budget_exceeded",
+        "evidence": "runs/R08/validation/complex-terminal.json"
+      }
     ]
   },
   "events": [
@@ -4204,6 +4591,163 @@
       "command": "sync",
       "result": {
         "synchronized": true
+      }
+    },
+    {
+      "at": "2026-10-05T03:22:11.060259+00:00",
+      "command": "start",
+      "result": {
+        "id": "R08-02-1",
+        "started_at": "2026-10-05T03:22:11.023537+00:00",
+        "requirements_hash": "0878873c9e7c34d83547c068af899a38303c5ac55b31785499dd6a2aa353db76",
+        "inputs": [
+          {
+            "path": "runs/R08/PLAN.md",
+            "sha256": "8f688996c3429a7503a436f48ab86333187a676de68db10e8ee5c004fce8ace1"
+          },
+          {
+            "path": "runs/R08/codex-handoff/PLAN_ADDENDUM.md",
+            "sha256": "2426d1ad18440b67ed768cf41bc8eaf71b711c9e9a9fa8c3cf0c29d815d1f716"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R08/design/build-c7.json",
+          "sha256": "50e523ed48911ac3aa91ed56e581060f1ed83edf4df553747aae8d6d70fb1013"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-05T03:24:11.805879+00:00",
+      "command": "freeze_R08_new_samples",
+      "result": {
+        "lock": "runs/R08/validation/frozen-lock.json",
+        "acceptance_unchanged": true,
+        "old_budgets_unchanged": true
+      }
+    },
+    {
+      "at": "2026-10-05T03:24:18.952387+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R08-02",
+        "status": "done",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-05T03:24:25.169327+00:00",
+      "command": "start",
+      "result": {
+        "id": "R08-03-1",
+        "started_at": "2026-10-05T03:24:25.101910+00:00",
+        "requirements_hash": "ebced6a7fe327d6dddedfede09bff6bb575d086e175543bb903e2325159f9c8e",
+        "inputs": [
+          {
+            "path": "runs/R08/PLAN.md",
+            "sha256": "8f688996c3429a7503a436f48ab86333187a676de68db10e8ee5c004fce8ace1"
+          },
+          {
+            "path": "runs/R08/codex-handoff/PLAN_ADDENDUM.md",
+            "sha256": "2426d1ad18440b67ed768cf41bc8eaf71b711c9e9a9fa8c3cf0c29d815d1f716"
+          },
+          {
+            "path": "runs/R08/validation/frozen-lock.json",
+            "sha256": "b9309d3cb98dd831eda9786cc2b8ebcde5ba2740657b8954a84eca9dc7ee5ec7"
+          },
+          {
+            "path": "runs/R08/candidate/C7-lock.json",
+            "sha256": "b35aaa35f79ad210fce72f14f51c5e631fb269e1cf23b7991c991c3553de8cb7"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R08/validation/freeze-command.json",
+          "sha256": "4c7b69540e77071a7e3215a7b6131b3df3aad0fbf16e1beb6e76a206f49981de"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-05T03:33:47.044673+00:00",
+      "command": "prepare_R09_from_observed_host_failures",
+      "result": {
+        "plan": "runs/R09/PLAN.md",
+        "new_tasks": [
+          "R09-01",
+          "R09-02"
+        ],
+        "old_acceptance_unchanged": true,
+        "old_budgets_unchanged": true,
+        "early_commands_are_setup_not_phase_transition": true
+      }
+    },
+    {
+      "at": "2026-10-05T03:38:50.329197+00:00",
+      "command": "continue_distinct_unblocked_host_diagnostics",
+      "result": {
+        "task": "R09-01",
+        "old_depends_on": [
+          "R08-03"
+        ],
+        "new_depends_on": [],
+        "basis": "runs/R09/PLAN_ADDENDUM.md",
+        "acceptance_changed": false,
+        "old_budgets_changed": false,
+        "R08_transition_may_advance": false
+      }
+    },
+    {
+      "at": "2026-10-05T03:38:56.316852+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R08-03",
+        "status": "failed",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-05T03:39:02.369925+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "R08-03",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-05T03:39:29.369722+00:00",
+      "command": "start",
+      "result": {
+        "id": "R09-01-1",
+        "started_at": "2026-10-05T03:39:29.328505+00:00",
+        "requirements_hash": "c3bc8db2cd0f0cac5e8485d85a4fb2732462f83287f6468ac01b31ff3dbd9d62",
+        "inputs": [
+          {
+            "path": "runs/R09/PLAN.md",
+            "sha256": "f4700e8e7445dc39de23b8798091f2700f3e9e1b2b99e4fe55a0dd60137ab28e"
+          },
+          {
+            "path": "runs/R09/source-lock.json",
+            "sha256": "f4226cc35b828555d8dc51f77a737d2b765c926b811c1d115fe3e20cbc9fd3a5"
+          },
+          {
+            "path": "runs/R09/PLAN_ADDENDUM.md",
+            "sha256": "c478da21658a146e6ce232316d6656083c0272361c18ea6aad12258a5d791f41"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R09/preflight/formal-first-step.json",
+          "sha256": "d14212f6ba9c9f40d5a377a05221a6b13c9537d74dc32c542613ef47b89ce6a7"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-05T03:40:10.880781+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R09-01",
+        "status": "done",
+        "repairs_used": 0
       }
     }
   ],

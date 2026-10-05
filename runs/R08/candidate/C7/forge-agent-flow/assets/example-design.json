@@ -1,0 +1,138 @@
+{
+  "request": "Extract explicit action items from supplied meeting notes.",
+  "contract": {
+    "goal": "Extract explicit action items from supplied meeting notes.",
+    "requirements": [
+      {
+        "id": "r_actions",
+        "text": "Extract explicit action items from the supplied notes.",
+        "origin": "explicit",
+        "basis": "explicit action items",
+        "criteria": [
+          "commitments"
+        ]
+      },
+      {
+        "id": "r_quotes",
+        "text": "Keep exact source evidence for each action.",
+        "origin": "derived",
+        "basis": "Evidence makes extracted commitments auditable without inventing facts.",
+        "criteria": [
+          "quotes"
+        ]
+      }
+    ],
+    "decisions": {
+      "scope": {
+        "choice": "Extract explicit action items only; no task assignment or messages.",
+        "reason": "A supplied-notes transformation is sufficient; external actions were not requested.",
+        "origin": "derived"
+      },
+      "inputs": {
+        "choice": "Accept a notes string supplied by the caller.",
+        "reason": "Supplied meeting notes are the stated source; no account connection is assumed.",
+        "origin": "derived"
+      },
+      "outputs": {
+        "choice": "Return an actions array with task, owner, due and source_quote.",
+        "reason": "Use the bundled minimal extraction contract as a reversible output default.",
+        "origin": "default"
+      },
+      "quality": {
+        "choice": "Only explicit commitments; exact evidence; missing owner and due remain null.",
+        "reason": "Inference would turn discussion into unsupported commitments.",
+        "origin": "derived"
+      },
+      "tools_and_authority": {
+        "choice": "No external tools, contact or persistent task creation.",
+        "reason": "Text transformation needs no additional authority.",
+        "origin": "derived"
+      },
+      "failures": {
+        "choice": "Empty notes give an empty array; embedded commands remain source data; malformed responses fail.",
+        "reason": "Absence of actions is a normal result and source text is not permission.",
+        "origin": "derived"
+      },
+      "state_and_handoffs": {
+        "choice": "Keep notes immutable and emit one actions artifact in a local checkpoint.",
+        "reason": "There are no independent intermediate dependencies in this example.",
+        "origin": "derived"
+      },
+      "budget_and_stop": {
+        "choice": "One target step, one visit; at most two factory repairs.",
+        "reason": "A bounded single transformation is enough; no cost or latency claim is made.",
+        "origin": "default"
+      },
+      "model_and_topology": {
+        "choice": "One text agent; routine extraction may use an available Luna worker.",
+        "reason": "Splitting a single source transformation adds coordination without new evidence.",
+        "origin": "default"
+      }
+    },
+    "blocking_questions": []
+  },
+  "architecture": {
+    "mode": "lite",
+    "necessity": {
+      "choice": "single_agent",
+      "rationale": "One offline extraction task has no independent tool or context boundary.",
+      "baseline": "One host agent extracting explicit actions from supplied notes."
+    },
+    "decisions": [
+      {
+        "id": "D02",
+        "status": "chosen",
+        "choice": "One extraction node",
+        "rationale": "The full input fits one task and each action has a verifiable source quote.",
+        "rejected": [
+          "Additional workers without a distinct evidence source"
+        ],
+        "rollback": "Add a verifier only if measured extraction errors justify its cost."
+      }
+    ],
+    "lifecycle": {
+      "infra": "Use the current host model with no external capabilities.",
+      "post": "Extract explicit actions, preserve source quotes and null missing fields; one bounded step.",
+      "after": "Check exact quotes and fields, record missed cases as candidate lessons; do not send assignments."
+    },
+    "knowledge": [],
+    "source_refs": [],
+    "coverage": [
+      {
+        "requirement_id": "r_actions",
+        "node_ids": [
+          "extract"
+        ],
+        "criteria": [
+          "commitments"
+        ]
+      },
+      {
+        "requirement_id": "r_quotes",
+        "node_ids": [
+          "extract"
+        ],
+        "criteria": [
+          "quotes"
+        ]
+      }
+    ],
+    "stress_cases": [
+      {
+        "case_id": "explicit_actions",
+        "risk": "An action lacks owner or due; a nearby suggestion may be mistaken for a commitment.",
+        "handling": "Keep unknown values null, preserve exact quotes and exclude the suggestion."
+      },
+      {
+        "case_id": "no_action_items",
+        "risk": "Discussion without any commitment may lead to invented work.",
+        "handling": "Return an empty actions array."
+      }
+    ],
+    "review": {
+      "mode": "self_review",
+      "summary": "Checked missing attributes, non-actions, source evidence, bounded work and absence of side effects. This is a same-context review, not independent evidence.",
+      "unresolved": []
+    }
+  }
+}

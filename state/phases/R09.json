@@ -1,0 +1,82 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R09",
+  "goal": "从真实Windows/WSL差异建立安全可复核的接续预检",
+  "tasks": [
+    {
+      "id": "R09-01",
+      "title": "实现并实际运行宿主与冻结字节预检",
+      "owner": "root",
+      "write_paths": [
+        "scripts/host_preflight.py",
+        "scripts/test_host_preflight.py",
+        "runs/R09/preflight/"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R09/R09-01-result.json",
+        "runs/R09/source-lock.json",
+        "runs/R09/preflight/formal-first-step.json",
+        "runs/R09/preflight/windows-probe.json",
+        "runs/R09/preflight/wsl-probe.json",
+        "runs/R09/preflight/windows-tests-final.json",
+        "runs/R09/preflight/wsl-tests-final.json",
+        "runs/R09/PLAN_ADDENDUM.md",
+        "runs/R09/source-lock.json",
+        "runs/R09/preflight/formal-first-step.json",
+        "runs/R09/preflight/windows-probe.json",
+        "runs/R09/preflight/wsl-probe.json",
+        "runs/R09/preflight/windows-tests-final.json",
+        "runs/R09/preflight/wsl-tests-final.json",
+        "runs/R09/PLAN_ADDENDUM.md",
+        "runs/R09/preflight/formal-first-step.json"
+      ],
+      "blocker": null,
+      "next_action": "Run frozen preflight on the actual host",
+      "depends_on": [],
+      "acceptance": [
+        "只读 JSON CLI 诊断当前宿主的 continuation/安全文件打开/计时条件，字节漂移、非法路径和损坏锁拒绝；不修改文件、预算、租约或真实调用",
+        "实际 Windows 与 Linux/WSL 命令和相关测试分别留存；不声称已经移植原生 Windows 控制器或证明 provider/恢复发布"
+      ]
+    },
+    {
+      "id": "R09-02",
+      "title": "独立新checkout核验跨环境预检边界",
+      "owner": "independent_codex_or_available_luna",
+      "write_paths": [
+        "runs/R09/independent/"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "Dispatch fresh checkout verifier after R09-01 acceptance",
+      "depends_on": [
+        "R09-01"
+      ],
+      "acceptance": [
+        "新上下文从实际 Git 提交创建新 checkout，独立运行预检、continuation 与 lease；冻结版本和要求，不接收作者答案或诊断",
+        "保留真实命令、首产物、环境差异、失败与最多两轮预算；未知provider/token/cost保持null"
+      ]
+    },
+    {
+      "id": "R09-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R09-01",
+        "R09-02"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "从本阶段真实观察选有价值新支线并实际启动"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "blocker": null,
+      "next_action": "Select a meaningful successor from observed R09 results"
+    }
+  ]
+}

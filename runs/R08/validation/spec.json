@@ -1,0 +1,30 @@
+{
+  "schema": "forge-r08-validation/1",
+  "frozen_at": "2026-10-05T03:23:20.295724+00:00",
+  "candidate": "runs/R08/candidate/C7-lock.json",
+  "cases": [
+    "simple",
+    "complex"
+  ],
+  "requirements": [
+    "Execute frozen simple and complex requests in separate fresh native contexts",
+    "Record exact first command, first business artifact time, correctness, interventions, native children and successor actual work separately",
+    "Independent verification uses original requirements with no answer/diagnosis exposure",
+    "Preserve R07 failures and old budgets; no efficiency or generalization conclusion"
+  ],
+  "repair_limit_per_actor": 2,
+  "repairs_used": 0,
+  "first_artifact_definition": "First persisted business output (simple JSON or executable CLI source), not intake/probe/TODO",
+  "time_origin": "Exact first command capture begin on same WSL boot; spawn-to-first-command is separately nullable",
+  "deadline": "No performance threshold; observe this bounded session. If interrupted, retain unknown/pending and do not duplicate creation.",
+  "administrative_exclusions": [
+    "WSL command transport and read-only locator assistance, if separately recorded; these are interventions, not source repairs"
+  ],
+  "status_query_limit": 12,
+  "wait_seconds_max": 45,
+  "model": "gpt-6-luna",
+  "reasoning_effort": "max",
+  "tokens": null,
+  "cost": null,
+  "scopes_are_instruction_level": true
+}

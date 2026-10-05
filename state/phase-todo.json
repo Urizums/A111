@@ -34,7 +34,7 @@
         "runs/R08/candidate/",
         "runs/R08/design/"
       ],
-      "status": "planned",
+      "status": "done",
       "blocker": null,
       "next_action": "制作分流与最小真实首步的短启动候选",
       "depends_on": [
@@ -43,7 +43,15 @@
       "acceptance": [
         "保存新旧版本及冻结锁；简单任务只读必要引用，先真实首步；系统/可复用flow分流与必要核验有明确边界"
       ],
-      "evidence": []
+      "evidence": [
+        "runs/R08/R08-02-result.json",
+        "runs/R08/design/build-c7.json",
+        "runs/R08/design/change.json",
+        "runs/R08/candidate/C7-lock.json",
+        "runs/R08/candidate/C7/forge-agent-flow/SKILL.md",
+        "runs/R07/candidate/C6-lock.json",
+        "runs/R08/design/build-c7.json"
+      ]
     },
     {
       "id": "R08-03",
@@ -52,16 +60,19 @@
       "write_paths": [
         "runs/R08/validation/"
       ],
-      "status": "planned",
-      "blocker": null,
-      "next_action": "新上下文验证短路径的正确性、干预与实际分工",
+      "status": "blocked",
+      "blocker": "Complex executor exceeded frozen two-correction limit; no business artifact or independent runtime verification. Same case must not be replayed by a new actor.",
+      "next_action": "Preserve failure and budgets; continue separate R09-01 host diagnostics; R08 transition remains blocked.",
       "depends_on": [
         "R08-02"
       ],
       "acceptance": [
         "新冻结原材料与候选；实际首产物、干预、正确性和必要原生分工分别记录；原R07失败不改判"
       ],
-      "evidence": []
+      "evidence": [
+        "runs/R08/R08-03-result.json",
+        "runs/R08/validation/freeze-command.json"
+      ]
     },
     {
       "id": "R08-next",
@@ -79,10 +90,13 @@
       "acceptance": [
         "选择并真实启动下一有价值支线"
       ],
-      "status": "planned",
-      "evidence": [],
-      "blocker": null,
-      "next_action": "按R08能力结果选可执行支线"
+      "status": "blocked",
+      "evidence": [
+        "runs/R08/validation/complex-terminal.json",
+        "runs/R09/PLAN_ADDENDUM.md"
+      ],
+      "blocker": "R08-03 complex case failed and exceeded frozen two-repair limit; phase acceptance is incomplete.",
+      "next_action": "Retain R08 gate; continue independent R09-01 host diagnostics without archiving R08."
     }
   ],
   "scope_decision": "runs/R08/codex-handoff/decision.json"

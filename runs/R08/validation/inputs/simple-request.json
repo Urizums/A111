@@ -1,0 +1,12 @@
+{
+  "case_id": "simple",
+  "goal": "Produce a one-time payments reconciliation JSON from the supplied CSV; no reusable flow or application is requested.",
+  "input": "runs/R08/validation/inputs/payments.csv",
+  "requirements": [
+    "Process rows in source order with physical CSV line numbers including the header as line 1.",
+    "Accept only status settled, a nonempty account, an integer amount_cents, and the first occurrence of each payment_id. A negative integer is a valid refund.",
+    "Later repeated payment_id rows are duplicate and cannot change totals. A first occurrence is reserved even if invalid; check duplication first, then status, then account, then integer amount.",
+    "Write results/reconciliation.json with totals_cents keyed by account and accepted line numbers; report rejected rows with line and one of duplicate, not_settled, missing_account, invalid_amount.",
+    "Run a meaningful source/output check; state chosen route and references actually loaded. Do not create a factory, application or project controller for this result."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "task_id": "R09-01",
+  "attempt_id": "R09-01-1",
+  "requirements_hash": "c3bc8db2cd0f0cac5e8485d85a4fb2732462f83287f6468ac01b31ff3dbd9d62",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R09/source-lock.json",
+        "runs/R09/preflight/formal-first-step.json",
+        "runs/R09/preflight/windows-probe.json",
+        "runs/R09/preflight/wsl-probe.json",
+        "runs/R09/preflight/windows-tests-final.json",
+        "runs/R09/preflight/wsl-tests-final.json",
+        "runs/R09/PLAN_ADDENDUM.md"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R09/source-lock.json",
+        "runs/R09/preflight/formal-first-step.json",
+        "runs/R09/preflight/windows-probe.json",
+        "runs/R09/preflight/wsl-probe.json",
+        "runs/R09/preflight/windows-tests-final.json",
+        "runs/R09/preflight/wsl-tests-final.json",
+        "runs/R09/PLAN_ADDENDUM.md"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "实现并实际运行宿主与冻结字节预检",
+    "hypothesis": "New scoped work can advance without changing historical acceptance or budgets",
+    "baseline": "Preserved C6 and R07 evidence",
+    "conditions": "Codex desktop on Windows; actual execution on Ubuntu WSL Python 3.12.3",
+    "observations": [
+      "Implemented read-only host_preflight.py with explicit byte drift and runtime compatibility diagnostics",
+      "Six relevant cases passed on Windows Python 3.12.8 and WSL Python 3.12.3",
+      "Native Windows returned expected unsupported status; WSL verified actual frozen C7/R09 bytes and eligible lease-probe conditions",
+      "Formal real first step executed after distinct branch decision; R08 phase remains blocked and unarchived"
+    ],
+    "limits": [
+      "Author/runtime checks only; fresh checkout independence remains R09-02",
+      "No Windows controller port, secure concurrent-read proof, snapshot backend or provider acceptance"
+    ],
+    "metrics": {
+      "windows_tests_passed": 6,
+      "wsl_tests_passed": 6,
+      "windows_probe_exit": 2,
+      "wsl_probe_exit": 0,
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Run frozen preflight on the actual host"
+}

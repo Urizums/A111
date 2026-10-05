@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-05T03:08:56.598245+00:00",
+  "updated_at": "2026-10-05T03:40:10.902997+00:00",
   "active_phase": "R08",
-  "next_task_id": "R08-02",
-  "next_action": "制作分流与最小真实首步的短启动候选",
+  "next_task_id": null,
+  "next_action": "Continue R09-02 fresh-checkout verification on the published commit; do not replay exhausted R08 complex case or archive R08 as passed.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -94,7 +94,7 @@
       "purpose": "bounded conformance retest"
     }
   ],
-  "current_validation": "R07: C6 regressions376, restore8, independent23, auxiliary47 passed; assisted business7-row content passed; autonomous original timing not passed; old strict product gate remains blocked",
+  "current_validation": "R08: C7 authoring and inherited376 passed; simple fresh task passed; complex incomplete with three corrections beyond limit2; R08-03 blocked. R07 and full product gate unchanged.",
   "delivery_evidence": [
     "runs/cloud/github-pr.json",
     "runs/cloud/github-publication-reports.json",
@@ -136,7 +136,7 @@
       "at": "2026-10-05T01:50:25.654984+00:00"
     }
   },
-  "next_queue_task_id": "R08-02",
+  "next_queue_task_id": "R09-02",
   "continuation_state": "state/continuation.json",
   "execution": {
     "mode": "cooperative_host",
@@ -149,14 +149,14 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "checkpoint_for_codex_main",
-    "checkpoint_reason": "Handoff prepared and locally verified; Codex should continue R08-02 from main; no active code worker",
-    "coordinator_heartbeat": "2026-10-05T03:06:05.102363+00:00",
+    "session_state": "checkpoint_after_scoped_r08_r09_work",
+    "checkpoint_reason": "R08-03 is blocked after budget overrun. Distinct R09-01 completed with actual runtime evidence; R09-02 fresh checkout validation is next. No background execution claimed.",
+    "coordinator_heartbeat": "2026-10-05T03:41:36.110053+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
     "coordinator_lease": "state/coordinator-lease.json",
-    "latest_capability_probe": "runs/R06/scheduling/cancel-20261004T074313Z/environment.json",
+    "latest_capability_probe": "runs/R09/preflight/wsl-probe.json",
     "coordinator_lease_state": "state/coordinator-lease.json",
     "recovery": "runs/R06/RECOVERY.md",
     "final_validation": "runs/R06/final/summary.json",
@@ -183,7 +183,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-handoff-r08",
+    "current_coordinator": "root-codex-r08-desktop",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -198,10 +198,23 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R08/codex-handoff/STATUS.md",
-    "next_plan": "runs/R08/PLAN.md",
+    "current_report": "runs/R08/REPORT.md",
+    "next_plan": "runs/R09/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
+    ],
+    "current_native_pending": [],
+    "current_native_completed": [
+      {
+        "worker": "/root/r08_simple",
+        "outcome": "business_passed",
+        "evidence": "runs/R08/validation/simple/result.json"
+      },
+      {
+        "worker": "/root/r08_complex",
+        "outcome": "failed_budget_exceeded",
+        "evidence": "runs/R08/validation/complex-terminal.json"
+      }
     ]
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
@@ -323,5 +336,9 @@
     "baseline_commit": "7fd80faad93bb454a3bdfa1cff10f0fa0c6bbbca",
     "publication_status": "reviewable_handoff",
     "report": "runs/R08/codex-handoff/STATUS.md"
-  }
+  },
+  "R08_validation_budget": "runs/R08/validation/root-repair-ledger.json",
+  "R09_branch": "runs/R09/PLAN_ADDENDUM.md",
+  "R08_budget_and_failures": "runs/R08/validation/root-repair-ledger.json",
+  "R09_actual_first_step": "runs/R09/preflight/formal-first-step.json"
 }

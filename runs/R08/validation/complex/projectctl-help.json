@@ -1,0 +1,27 @@
+{
+  "schema": "forge-comparison-cli/1",
+  "actor": "r08_complex",
+  "cwd": "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+  "argv": [
+    "python3",
+    "runs/R08/candidate/C7/forge-agent-flow/scripts/projectctl.py",
+    "--help"
+  ],
+  "begin": {
+    "utc": "2026-10-05T03:27:45.216656+00:00",
+    "monotonic_ns": 529169785681,
+    "boot_id": "63177c62-e19e-4702-a321-2836189d080c"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-05T03:27:45.321335+00:00",
+    "monotonic_ns": 529274464296,
+    "boot_id": "63177c62-e19e-4702-a321-2836189d080c"
+  },
+  "exit_code": 0,
+  "elapsed_seconds": 0.104678615,
+  "stdout": "usage: projectctl.py [-h]\n                     {validate,init,status,next,assess,reopen,begin,finish,revise}\n                     ...\n\nPersistent host-driven project plan controller. This bundled-module CLI\nvalidates task graphs, records attempts and local evidence, and supports\nrecovery. It never calls models or tools and does not authenticate semantic\nclaims, authorization, or evidence producers. State files assume one writer.\nDeclare write_paths relative to one project root: overlap checks are lexical\nand do not resolve relative/absolute aliases or symlinks, isolate workers, or\nenforce access.\n\npositional arguments:\n  {validate,init,status,next,assess,reopen,begin,finish,revise}\n    validate            structurally validate a plan\n    init                create a persistent project state\n    status              report machine-readable progress and blockers\n    next                list ready tasks and active attempts to reconcile\n    assess              regrade and attach a real program-mode case run\n    reopen              reopen a done task after observed required-case\n                        failure\n    begin               record a real host task attempt\n    finish              record a task result from the host\n    revise              revise a plan while preserving task history\n\noptions:\n  -h, --help            show this help message and exit\n",
+  "stderr": "",
+  "stdout_base64": "dXNhZ2U6IHByb2plY3RjdGwucHkgWy1oXQogICAgICAgICAgICAgICAgICAgICB7dmFsaWRhdGUsaW5pdCxzdGF0dXMsbmV4dCxhc3Nlc3MscmVvcGVuLGJlZ2luLGZpbmlzaCxyZXZpc2V9CiAgICAgICAgICAgICAgICAgICAgIC4uLgoKUGVyc2lzdGVudCBob3N0LWRyaXZlbiBwcm9qZWN0IHBsYW4gY29udHJvbGxlci4gVGhpcyBidW5kbGVkLW1vZHVsZSBDTEkKdmFsaWRhdGVzIHRhc2sgZ3JhcGhzLCByZWNvcmRzIGF0dGVtcHRzIGFuZCBsb2NhbCBldmlkZW5jZSwgYW5kIHN1cHBvcnRzCnJlY292ZXJ5LiBJdCBuZXZlciBjYWxscyBtb2RlbHMgb3IgdG9vbHMgYW5kIGRvZXMgbm90IGF1dGhlbnRpY2F0ZSBzZW1hbnRpYwpjbGFpbXMsIGF1dGhvcml6YXRpb24sIG9yIGV2aWRlbmNlIHByb2R1Y2Vycy4gU3RhdGUgZmlsZXMgYXNzdW1lIG9uZSB3cml0ZXIuCkRlY2xhcmUgd3JpdGVfcGF0aHMgcmVsYXRpdmUgdG8gb25lIHByb2plY3Qgcm9vdDogb3ZlcmxhcCBjaGVja3MgYXJlIGxleGljYWwKYW5kIGRvIG5vdCByZXNvbHZlIHJlbGF0aXZlL2Fic29sdXRlIGFsaWFzZXMgb3Igc3ltbGlua3MsIGlzb2xhdGUgd29ya2Vycywgb3IKZW5mb3JjZSBhY2Nlc3MuCgpwb3NpdGlvbmFsIGFyZ3VtZW50czoKICB7dmFsaWRhdGUsaW5pdCxzdGF0dXMsbmV4dCxhc3Nlc3MscmVvcGVuLGJlZ2luLGZpbmlzaCxyZXZpc2V9CiAgICB2YWxpZGF0ZSAgICAgICAgICAgIHN0cnVjdHVyYWxseSB2YWxpZGF0ZSBhIHBsYW4KICAgIGluaXQgICAgICAgICAgICAgICAgY3JlYXRlIGEgcGVyc2lzdGVudCBwcm9qZWN0IHN0YXRlCiAgICBzdGF0dXMgICAgICAgICAgICAgIHJlcG9ydCBtYWNoaW5lLXJlYWRhYmxlIHByb2dyZXNzIGFuZCBibG9ja2VycwogICAgbmV4dCAgICAgICAgICAgICAgICBsaXN0IHJlYWR5IHRhc2tzIGFuZCBhY3RpdmUgYXR0ZW1wdHMgdG8gcmVjb25jaWxlCiAgICBhc3Nlc3MgICAgICAgICAgICAgIHJlZ3JhZGUgYW5kIGF0dGFjaCBhIHJlYWwgcHJvZ3JhbS1tb2RlIGNhc2UgcnVuCiAgICByZW9wZW4gICAgICAgICAgICAgIHJlb3BlbiBhIGRvbmUgdGFzayBhZnRlciBvYnNlcnZlZCByZXF1aXJlZC1jYXNlCiAgICAgICAgICAgICAgICAgICAgICAgIGZhaWx1cmUKICAgIGJlZ2luICAgICAgICAgICAgICAgcmVjb3JkIGEgcmVhbCBob3N0IHRhc2sgYXR0ZW1wdAogICAgZmluaXNoICAgICAgICAgICAgICByZWNvcmQgYSB0YXNrIHJlc3VsdCBmcm9tIHRoZSBob3N0CiAgICByZXZpc2UgICAgICAgICAgICAgIHJldmlzZSBhIHBsYW4gd2hpbGUgcHJlc2VydmluZyB0YXNrIGhpc3RvcnkKCm9wdGlvbnM6CiAgLWgsIC0taGVscCAgICAgICAgICAgIHNob3cgdGhpcyBoZWxwIG1lc3NhZ2UgYW5kIGV4aXQK",
+  "stderr_base64": ""
+}

@@ -1,0 +1,77 @@
+{
+  "case_id": "simple",
+  "route": "Direct scoped task: produce and check a one-time reconciliation result.",
+  "references_read": [
+    "runs/R08/candidate/C7/forge-agent-flow/SKILL.md",
+    "runs/R08/candidate/C7/forge-agent-flow/references/recording-protocol.md"
+  ],
+  "inputs_read": [
+    "runs/R08/validation/inputs/simple-request.json",
+    "runs/R08/validation/inputs/payments.csv"
+  ],
+  "first_business_artifact": {
+    "path": "runs/R08/validation/simple/results/reconciliation.json",
+    "sha256": "a69d5d584df0fb412ca0c85dbfd964e3669d5b45404bf6a2e7e50b038f059643",
+    "written_utc": "2026-10-05T03:28:07.701089+00:00",
+    "written_monotonic_ns": 551654223631,
+    "write_record": "runs/R08/validation/simple/reconciliation-write.json"
+  },
+  "worker_work_markers": {
+    "begin": {
+      "path": "runs/R08/validation/simple/events/452086392441_ef1bacb89c534407acccaecf28726024.json",
+      "utc": "2026-10-05T03:26:27.305221+00:00",
+      "monotonic_ns": 452086392441,
+      "boot_id": "63177c62-e19e-4702-a321-2836189d080c"
+    },
+    "end": {
+      "path": "runs/R08/validation/simple/events/614284971425_4c2301d28c5b4c7abe8798fbcd4acfff.json",
+      "utc": "2026-10-05T03:29:10.331840+00:00",
+      "monotonic_ns": 614284971425,
+      "boot_id": "63177c62-e19e-4702-a321-2836189d080c"
+    }
+  },
+  "executed_output_check": {
+    "command_record": "runs/R08/validation/simple/source-output-check.json",
+    "check": "Recomputed accepted rows, rejection precedence and per-account totals from the supplied CSV, then compared the complete JSON object.",
+    "exit_code": 0,
+    "output": "PASS: source rows reconciled; accepted=5, rejected=4, totals={'alpha': 1050, 'beta': 1000, 'gamma': 900}"
+  },
+  "model": {
+    "name": "gpt-6-luna",
+    "reasoning_effort": "max",
+    "provider_identity": null,
+    "tokens": null,
+    "cost": null
+  },
+  "interventions": [
+    "Added runs/R08/validation/simple/reconcile_once.py and check_reconciliation.py using file edits within the assigned write directory.",
+    "Two command-construction attempts failed in the exec JavaScript layer because btoa and then TextEncoder were unavailable. Neither launched a subprocess or wrote an artifact; the task was then completed with the local one-time script and captured execution."
+  ],
+  "failures": {
+    "orchestration": [
+      {
+        "error": "ReferenceError: btoa is not defined",
+        "subprocess_launched": false,
+        "artifact_written": false
+      },
+      {
+        "error": "ReferenceError: TextEncoder is not defined",
+        "subprocess_launched": false,
+        "artifact_written": false
+      }
+    ],
+    "captured_target_commands": []
+  },
+  "command_records": [
+    "runs/R08/validation/simple/first-command.json",
+    "runs/R08/validation/simple/c7-skill.json",
+    "runs/R08/validation/simple/worker-work-begin.json",
+    "runs/R08/validation/simple/reconciliation-write.json",
+    "runs/R08/validation/simple/source-output-check.json",
+    "runs/R08/validation/simple/worker-work-end.json"
+  ],
+  "other_artifacts": [
+    "runs/R08/validation/simple/reconcile_once.py",
+    "runs/R08/validation/simple/check_reconciliation.py"
+  ]
+}

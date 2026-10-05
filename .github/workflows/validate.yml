@@ -5,6 +5,15 @@ on:
     branches: [main, dev, 'rd/**']
   workflow_dispatch:
 jobs:
+  windows-preflight:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Read-only preflight behavior on native Windows
+        run: python -m unittest discover -s scripts -p 'test_host_preflight.py'
   validate:
     runs-on: ubuntu-latest
     strategy:
@@ -27,6 +36,8 @@ jobs:
         run: |
           python -m unittest discover -s runs/R07/candidate/C6/forge-agent-flow/scripts -p 'test_*.py'
           python -m unittest discover -s runs/R07/validation -p 'test_snapshot_restore.py'
+      - name: C7 short-entry candidate regression
+        run: python -m unittest discover -s runs/R08/candidate/C7/forge-agent-flow/scripts -p 'test_*.py'
       - name: Snapshot, bounded repairs, local provider and approval regressions
         run: |
           python -m unittest discover -s runs/R06/snapshot -p 'test_*.py'

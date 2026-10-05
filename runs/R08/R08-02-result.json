@@ -1,0 +1,38 @@
+{
+  "task_id": "R08-02",
+  "attempt_id": "R08-02-1",
+  "requirements_hash": "0878873c9e7c34d83547c068af899a38303c5ac55b31785499dd6a2aa353db76",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R08/design/build-c7.json",
+        "runs/R08/design/change.json",
+        "runs/R08/candidate/C7-lock.json",
+        "runs/R08/candidate/C7/forge-agent-flow/SKILL.md",
+        "runs/R07/candidate/C6-lock.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "制作分流与最小真实首步的短启动候选",
+    "hypothesis": "New scoped work can advance without changing historical acceptance or budgets",
+    "baseline": "Preserved C6 and R07 evidence",
+    "conditions": "Codex desktop on Windows; actual execution on Ubuntu WSL Python 3.12.3",
+    "observations": [
+      "C7 entry routes one-time tasks directly; program and explicit reusable flows have distinct loading paths",
+      "Mandatory entry reduced from 17498 to 7139 bytes; all C6 executable files preserved",
+      "Independent checks, exact-byte handoff and bounded repairs remain conditional contracts"
+    ],
+    "limits": [
+      "Byte reduction is structural, not a speed result",
+      "No installation promotion; inherited Linux restore limitation remains"
+    ],
+    "metrics": {
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "制作分流与最小真实首步的短启动候选"
+}

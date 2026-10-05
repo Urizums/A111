@@ -1,0 +1,25 @@
+{
+  "schema": "forge-native-terminal-observation/1",
+  "worker": "/root/r08_complex",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "max",
+  "terminal": true,
+  "source": "Actual collaboration final answer transcribed by coordinator; no provider-authenticated telemetry",
+  "outcome": "failed_blocked",
+  "business_artifact": null,
+  "independent_reviewer": null,
+  "successor_first_step": null,
+  "first_command": "runs/R08/validation/complex/first-command.json",
+  "failures": [
+    {"error": "WSL rg unavailable", "exit_code": 127, "evidence": "runs/R08/validation/complex/c7-interface-inspect.json", "correction": "Python Path.read_text reader fallback succeeded", "correction_ordinal": 1},
+    {"error": "ReferenceError: btoa is not defined", "shell_started": false, "correction": "Hand-coded base64 plus TextEncoder fallback", "correction_ordinal": 2},
+    {"error": "ReferenceError: TextEncoder is not defined", "shell_started": false, "correction": "ASCII char-code encoding fallback", "correction_ordinal": 3},
+    {"error": "Windows OS error 206: command too long", "shell_started": false, "correction": null}
+  ],
+  "repair_budget": {"used": 3, "limit": 2, "exceeded": true, "further_execution_allowed": false},
+  "scope_exposure": ["runs/R08/candidate/C7/forge-agent-flow/assets/example-project-plan.json", "runs/R08/candidate/C7/forge-agent-flow/assets/benchmark-cases.json"],
+  "interventions": ["Coordinator status-only query", "Coordinator budget reconciliation", "Coordinator stop instruction after overrun disclosure"],
+  "final_artifact_limits": "Worker did not persist result.json/history; retained coordinator final-answer transcription establishes what was actually returned and what evidence is absent.",
+  "tokens": null,
+  "cost": null
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "scripts/host_preflight.py",
+    "--root",
+    ".",
+    "--lock",
+    "state/source-lock.json",
+    "--lock",
+    "runs/R08/candidate/C7-lock.json"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-05T03:27:13.267675+00:00",
+    "monotonic_ns": 8331968000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-05T03:27:13.547850+00:00",
+    "monotonic_ns": 8332250000000,
+    "boot_id": null
+  },
+  "exit_code": 2,
+  "stdout": "{\r\n  \"schema\": \"forge-host-preflight/1\",\r\n  \"root\": \"C:\\\\Users\\\\admin\\\\Documents\\\\Codex\\\\2026-10-05\\\\urizums-a111-main-codex-handoff-md\\\\work\\\\A111\",\r\n  \"python\": \"3.12.8\",\r\n  \"platform\": \"Windows\",\r\n  \"capabilities\": {\r\n    \"fcntl\": false,\r\n    \"posix_component_open\": false,\r\n    \"linux_boot_marker\": false\r\n  },\r\n  \"locks\": [\r\n    {\r\n      \"lock\": \"state/source-lock.json\",\r\n      \"files_checked\": 91,\r\n      \"ok\": true,\r\n      \"errors\": []\r\n    },\r\n    {\r\n      \"lock\": \"runs/R08/candidate/C7-lock.json\",\r\n      \"files_checked\": 93,\r\n      \"ok\": true,\r\n      \"errors\": []\r\n    }\r\n  ],\r\n  \"byte_identity\": true,\r\n  \"continuation_runtime_compatible\": false,\r\n  \"eligible_for_lease_probe\": false,\r\n  \"actions\": [\r\n    \"Use an actually available Linux/WSL runtime and probe again. Native Windows continuation/secure POSIX opener/recording are unsupported; do not silently weaken file or lease safety.\"\r\n  ],\r\n  \"limits\": [\r\n    \"Read-only byte identity and API availability; no concurrent filesystem safety proof\",\r\n    \"Does not acquire a lease, reconcile workers, replay effects or invoke providers\",\r\n    \"Snapshot renameat2/filesystem support and installed-product behavior require actual separate checks\"\r\n  ],\r\n  \"tokens\": null,\r\n  \"cost\": null\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAic2NoZW1hIjogImZvcmdlLWhvc3QtcHJlZmxpZ2h0LzEiLA0KICAicm9vdCI6ICJDOlxcVXNlcnNcXGFkbWluXFxEb2N1bWVudHNcXENvZGV4XFwyMDI2LTEwLTA1XFx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXFx3b3JrXFxBMTExIiwNCiAgInB5dGhvbiI6ICIzLjEyLjgiLA0KICAicGxhdGZvcm0iOiAiV2luZG93cyIsDQogICJjYXBhYmlsaXRpZXMiOiB7DQogICAgImZjbnRsIjogZmFsc2UsDQogICAgInBvc2l4X2NvbXBvbmVudF9vcGVuIjogZmFsc2UsDQogICAgImxpbnV4X2Jvb3RfbWFya2VyIjogZmFsc2UNCiAgfSwNCiAgImxvY2tzIjogWw0KICAgIHsNCiAgICAgICJsb2NrIjogInN0YXRlL3NvdXJjZS1sb2NrLmpzb24iLA0KICAgICAgImZpbGVzX2NoZWNrZWQiOiA5MSwNCiAgICAgICJvayI6IHRydWUsDQogICAgICAiZXJyb3JzIjogW10NCiAgICB9LA0KICAgIHsNCiAgICAgICJsb2NrIjogInJ1bnMvUjA4L2NhbmRpZGF0ZS9DNy1sb2NrLmpzb24iLA0KICAgICAgImZpbGVzX2NoZWNrZWQiOiA5MywNCiAgICAgICJvayI6IHRydWUsDQogICAgICAiZXJyb3JzIjogW10NCiAgICB9DQogIF0sDQogICJieXRlX2lkZW50aXR5IjogdHJ1ZSwNCiAgImNvbnRpbnVhdGlvbl9ydW50aW1lX2NvbXBhdGlibGUiOiBmYWxzZSwNCiAgImVsaWdpYmxlX2Zvcl9sZWFzZV9wcm9iZSI6IGZhbHNlLA0KICAiYWN0aW9ucyI6IFsNCiAgICAiVXNlIGFuIGFjdHVhbGx5IGF2YWlsYWJsZSBMaW51eC9XU0wgcnVudGltZSBhbmQgcHJvYmUgYWdhaW4uIE5hdGl2ZSBXaW5kb3dzIGNvbnRpbnVhdGlvbi9zZWN1cmUgUE9TSVggb3BlbmVyL3JlY29yZGluZyBhcmUgdW5zdXBwb3J0ZWQ7IGRvIG5vdCBzaWxlbnRseSB3ZWFrZW4gZmlsZSBvciBsZWFzZSBzYWZldHkuIg0KICBdLA0KICAibGltaXRzIjogWw0KICAgICJSZWFkLW9ubHkgYnl0ZSBpZGVudGl0eSBhbmQgQVBJIGF2YWlsYWJpbGl0eTsgbm8gY29uY3VycmVudCBmaWxlc3lzdGVtIHNhZmV0eSBwcm9vZiIsDQogICAgIkRvZXMgbm90IGFjcXVpcmUgYSBsZWFzZSwgcmVjb25jaWxlIHdvcmtlcnMsIHJlcGxheSBlZmZlY3RzIG9yIGludm9rZSBwcm92aWRlcnMiLA0KICAgICJTbmFwc2hvdCByZW5hbWVhdDIvZmlsZXN5c3RlbSBzdXBwb3J0IGFuZCBpbnN0YWxsZWQtcHJvZHVjdCBiZWhhdmlvciByZXF1aXJlIGFjdHVhbCBzZXBhcmF0ZSBjaGVja3MiDQogIF0sDQogICJ0b2tlbnMiOiBudWxsLA0KICAiY29zdCI6IG51bGwNCn0NCg==",
+  "stderr_base64": ""
+}

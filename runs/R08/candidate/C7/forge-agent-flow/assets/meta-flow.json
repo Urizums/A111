@@ -1,0 +1,303 @@
+{
+  "schema_version": "1.0",
+  "id": "agent_flow_forge",
+  "goal": "Turn a natural-language goal into the smallest justified unified architecture/flow package, exercise it against frozen criteria, and deliver artifacts, evidence and candidate lessons.",
+  "assumptions": [
+    "The host reads SKILL.md and referenced contracts before dispatch.",
+    "The host provides actual model reasoning and tools; flowctl performs control-flow and artifact checks only.",
+    "Rebind capability inventory to the current host before starting.",
+    "At most two repair rounds. Model/provider, tokens, cost, and wall-clock are recorded by the host when available.",
+    "New factory runs use factoryctl so full plan identity, package binding and case assessment are checked mechanically; raw flowctl does not enforce these extra contracts."
+  ],
+  "inputs": {
+    "request": {
+      "type": "string",
+      "description": "Raw user goal and constraints."
+    },
+    "environment": {
+      "type": "object",
+      "description": "Actual capability inventory, authorization evidence, working directory, execution scope and user budget."
+    }
+  },
+  "artifacts": {
+    "contract": {
+      "type": "object",
+      "description": "Checked goal, requirements with source/default provenance and criterion IDs, nine design decisions, empty blocking_questions for success, plus task context."
+    },
+    "test_plan": {
+      "type": "object",
+      "description": "Exact lock {plan, plan_hash}; plan is a complete forge-eval/1 with inputs, expectations, criterion mappings and baseline, frozen by factoryctl at eval_design before build."
+    },
+    "architecture": {
+      "type": "object",
+      "description": "Lite or full architecture: necessity/baseline, applicable D01-D14 decisions, INFRA/POST/AFTER, evidence-scoped knowledge, node contracts and actual host requirements. Checked coverage, stress_cases and resolved review from design-from-brief.md are required."
+    },
+    "candidate": {
+      "type": "object",
+      "description": "Object containing full forge-package/2 under package and its canonical package_hash, with optional compiled paths; acceptance is copied exactly from frozen test_plan."
+    },
+    "evaluation": {
+      "type": "object",
+      "description": "Object containing complete v2 case results under results and a computed assessment injected by factoryctl; actual evidence references and limits may accompany them."
+    },
+    "delivery": {
+      "type": "object",
+      "description": "Package/artifact paths, invocation, tested status and blockers, after-summary and provisional lessons with evidence and scope."
+    }
+  },
+  "outputs": [
+    "delivery"
+  ],
+  "capabilities": {
+    "workspace": {
+      "binding": "exec_command",
+      "effect": "local_write",
+      "available": true,
+      "authorization": "granted",
+      "evidence": "Current host exposes local execution; user requested creation of a reusable workflow. Recheck on another host."
+    }
+  },
+  "budgets": {
+    "max_steps": 16
+  },
+  "entry": "intake",
+  "nodes": [
+    {
+      "id": "intake",
+      "kind": "agent",
+      "reads": [
+        "request",
+        "environment"
+      ],
+      "writes": [
+        "contract"
+      ],
+      "tools": [],
+      "prompt": "Compile the request into a task contract. Separate explicit requirements, proposed defaults, and blockers. Assign requirement IDs. Include deliverables, actual capabilities and authority, bounded execution scope, acceptance outcomes and budget. Do not infer access or invent user preferences. Ask only for outcome-changing missing facts; otherwise proceed with labeled defaults. Read references/design-from-brief.md before responding. Accept short requests without asking the user to design the flow. Emit goal, requirements (id/text/origin/basis/criteria), all nine decisions (choice/reason/origin), and blocking_questions. Ground explicit requirement bases and explicit decision basis fields in exact request quotes. Resolve reversible defaults yourself; do not invent authority. Successful intake requires no unresolved blocking questions. For software work read references/software-delivery.md: record actual source/baseline, protected existing behaviors and runtime availability; do not equate plausible code with task completion.",
+      "acceptance": [
+        "Requirements trace to the request.",
+        "Unavailable capabilities and unresolved blockers are explicit.",
+        "Outcome and deliverables are concrete."
+      ],
+      "max_visits": 1,
+      "routes": {
+        "ok": "eval_design",
+        "error": "$failed",
+        "blocked": "$blocked"
+      },
+      "emits": {
+        "ok": [
+          "contract"
+        ],
+        "error": [],
+        "blocked": []
+      }
+    },
+    {
+      "id": "eval_design",
+      "kind": "agent",
+      "reads": [
+        "contract"
+      ],
+      "writes": [
+        "test_plan"
+      ],
+      "tools": [],
+      "prompt": "Read references/evaluation-plan.md. Define observable assertions linked to requirements and complete success/edge/failure cases before candidate design. Write a full forge-eval/1 plan with exact case inputs, expectations, expected statuses, criterion mappings, baseline and limitations. Do not submit a summary as test_plan. Use factoryctl freeze-plan with the full file to complete this stage; its output is the exact {plan, plan_hash} lock. Keep private holdouts out of candidate context. Any later requirement correction needs a new explicitly versioned run, never a silent edit. Every contract requirement criterion ID must exist as a required plan criterion. Include at least two required cases for normal behavior and a relevant challenge; no summary-only test plan. Software cases must follow real user goals through visible feedback, persistent state and effects; cover primary, recovery and repeated-use journeys, with baseline regressions and honest evidence levels.",
+      "acceptance": [
+        "Every must-have has an assertion.",
+        "Claims of live testing require traces.",
+        "Critical failures cannot be averaged away.",
+        "Full plan content is frozen and trace-bound through factoryctl before architecture or build."
+      ],
+      "max_visits": 1,
+      "routes": {
+        "ok": "architect",
+        "error": "$failed",
+        "blocked": "$blocked"
+      },
+      "emits": {
+        "ok": [
+          "test_plan"
+        ],
+        "error": [],
+        "blocked": []
+      }
+    },
+    {
+      "id": "architect",
+      "kind": "agent",
+      "reads": [
+        "contract",
+        "test_plan"
+      ],
+      "writes": [
+        "architecture"
+      ],
+      "tools": [],
+      "prompt": "Compare one-agent baseline to at most one justified alternative. Choose minimum sufficient nodes. Describe actual artifact dependencies, branch outcomes, bounded review loops and terminal outputs. Bind only verified tools. Define a budget and explain any specialized workers. Serialize independent workers in IR v1; do not claim concurrency without an adapter. Do not claim measured superiority without measurements. Read references/architecture.md. Choose lite or full design. Record necessity/baseline, applicable decision records, rejected choices and rollback triggers, INFRA/POST/AFTER, and dated evidence-scoped knowledge. Preserve every unmet host/model/tool/policy/budget requirement. The test_plan input is an exact lock: read test_plan.plan and retain test_plan.plan_hash. Do not paraphrase its criteria into a replacement plan. Read references/design-from-brief.md. Include coverage rows (requirement_id/node_ids/criteria), at least two required frozen stress_cases (case_id/risk/handling), and review (mode/summary/unresolved). Critique assumptions, failure paths and actual node methods. Resolve gaps internally before ok; label self_review versus fresh_context honestly.",
+      "acceptance": [
+        "Topology matches dependencies.",
+        "Extra nodes have explicit benefits.",
+        "Every failure route and termination bound is defined."
+      ],
+      "max_visits": 1,
+      "routes": {
+        "ok": "build",
+        "error": "$failed",
+        "blocked": "$blocked"
+      },
+      "emits": {
+        "ok": [
+          "architecture"
+        ],
+        "error": [],
+        "blocked": []
+      }
+    },
+    {
+      "id": "build",
+      "kind": "agent",
+      "reads": [
+        "contract",
+        "test_plan",
+        "architecture"
+      ],
+      "writes": [
+        "candidate"
+      ],
+      "tools": [
+        "workspace"
+      ],
+      "prompt": "Read the flow, package and evaluation-plan contracts. Build a draft package with the smallest adequate Flow IR v1 and architecture/host requirements. Use factoryctl bind-package to create forge-package/2 with the exact authoritative frozen plan, then packagectl validate and compile to a new directory. Submit candidate with the complete package and its canonical package_hash plus actual compiled paths. Keep per-outcome artifacts and all-path availability correct. Record unsupported capabilities as blockers; never alter frozen criteria, case inputs or expected outcomes. All architecture coverage node_ids must exist in the actual generated flow. Keep a concrete working method, evidence handling, output contract and failure response in each node prompt.",
+      "acceptance": [
+        "Unified package JSON and compiled prompts exist without loss of requested execution settings.",
+        "Validation output is recorded.",
+        "Case definitions match the frozen plan."
+      ],
+      "max_visits": 3,
+      "routes": {
+        "ok": "verify",
+        "error": "$failed",
+        "blocked": "$blocked"
+      },
+      "emits": {
+        "ok": [
+          "candidate"
+        ],
+        "error": [],
+        "blocked": []
+      }
+    },
+    {
+      "id": "verify",
+      "kind": "check",
+      "reads": [
+        "contract",
+        "test_plan",
+        "candidate"
+      ],
+      "writes": [
+        "evaluation"
+      ],
+      "tools": [
+        "workspace"
+      ],
+      "prompt": "Freeze candidate and skill source, then run the frozen cases through packagectl start/next/advance with actual host responses and saved raw evidence. Grade each mapped criterion for each case against the exact frozen plan. Include complete checkpoints in version 2 results bound to package_hash and plan_hash. Submit evaluation with the full results object; factoryctl computes assessment. Outcome ok requires computed pass; fixable requests bounded repair; limited preserves missing evidence or capability blockers. Inspect actual outputs and disclose grader/context dependence. Never turn unrun work into pass or use another candidate's results. For software deliverables follow software-delivery.md and include the smokecheck evidence assessment; compiled/static/simulated evidence cannot establish a live user journey. A missing device/backend means unverified, not success.",
+      "acceptance": [
+        "Each result has evidence and a case ID.",
+        "Failure origin and repair target are specific.",
+        "Sample count and evaluation dependence are disclosed."
+      ],
+      "max_visits": 3,
+      "routes": {
+        "ok": "deliver",
+        "error": "$failed",
+        "blocked": "$blocked",
+        "fixable": "repair",
+        "limited": "deliver"
+      },
+      "emits": {
+        "ok": [
+          "evaluation"
+        ],
+        "error": [],
+        "blocked": [],
+        "fixable": [
+          "evaluation"
+        ],
+        "limited": [
+          "evaluation"
+        ]
+      }
+    },
+    {
+      "id": "repair",
+      "kind": "agent",
+      "reads": [
+        "contract",
+        "test_plan",
+        "architecture",
+        "candidate",
+        "evaluation"
+      ],
+      "writes": [
+        "architecture"
+      ],
+      "tools": [],
+      "prompt": "Repair only the component implicated by evidence. Classify the defect and record a minimal change, expected effect and regression cases. Preserve goals and frozen acceptance criteria. Do not replay completed external actions. If repeating a failure without new evidence, use blocked with a concrete blocker. Output updated architecture for rebuild; do not recursively create another factory. Preserve complete requirement coverage, stress_cases and review as defined in references/design-from-brief.md. Resolve the actual finding without weakening frozen criteria.",
+      "acceptance": [
+        "Change addresses a demonstrated failure.",
+        "Acceptance criteria are preserved.",
+        "Repair scope and regression checks are explicit."
+      ],
+      "max_visits": 2,
+      "routes": {
+        "ok": "build",
+        "error": "$failed",
+        "blocked": "$blocked"
+      },
+      "emits": {
+        "ok": [
+          "architecture"
+        ],
+        "error": [],
+        "blocked": []
+      }
+    },
+    {
+      "id": "deliver",
+      "kind": "agent",
+      "reads": [
+        "contract",
+        "candidate",
+        "evaluation"
+      ],
+      "writes": [
+        "delivery"
+      ],
+      "tools": [
+        "workspace"
+      ],
+      "prompt": "Save deliverables using the host normal artifact workflow. Report the smallest selected topology, invocation, per-requirement evidence, test sample counts, remaining blockers and unsupported runtime features. If evaluation is limited, clearly label the artifact at its actual maturity. Never claim production readiness, competitive superiority or success of an unrun task. Include an after-summary of results, environment, scope, incidents and unknowns; save proposed lessons as candidates with evidence, not automatically as proven practices. Preserve the exact plan export and both hashes. Factoryctl attaches the computed assessment; do not override its verdict. Save raw case inputs, outputs and checks so the result is reviewable.",
+      "acceptance": [
+        "Deliverables are accessible.",
+        "Tested status matches evidence.",
+        "Remaining operational work is explicit."
+      ],
+      "max_visits": 1,
+      "routes": {
+        "ok": "$done",
+        "error": "$failed",
+        "blocked": "$blocked"
+      },
+      "emits": {
+        "ok": [
+          "delivery"
+        ],
+        "error": [],
+        "blocked": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "R08 new sample result aggregation; separate from historical exhausted integration budgets",
+  "limit": 2,
+  "used": 1,
+  "repairs": [
+    {
+      "ordinal": 1,
+      "failure": "Coordinator read of simple first-command.json used Windows default GBK and raised UnicodeDecodeError before the timing computation",
+      "subprocess_exit_code": 1,
+      "original_error": "UnicodeDecodeError: 'gbk' codec can't decode byte 0x94 in position 7760: illegal multibyte sequence",
+      "correction": "Repeat the same read-only aggregation with explicit encoding='utf-8'",
+      "source_or_case_changed": false,
+      "verification": "Timing computed from retained same-boot monotonic values: 195.193523698 seconds"
+    }
+  ],
+  "candidate_C7": {
+    "used": 0,
+    "limit": 2
+  },
+  "simple_executor": {
+    "used": 2,
+    "limit": 2,
+    "basis": "Two failure-driven command-construction corrections, btoa then TextEncoder unavailable; no target subprocess launched. Conservatively counted, not hidden as successful commands.",
+    "evidence": "runs/R08/validation/simple/result.json",
+    "further_repairs_allowed": false
+  },
+  "historical_budgets": "Retained unchanged in checkpoint and original continuation tasks; see preservation-audit.json",
+  "scope_limits": "Expected Windows capability rejection and pre-existing checkout conversion diagnostics are environmental observations, not new functional source repairs; raw failure records retained. Pre-freeze R09 source authoring is a different task.",
+  "complex_executor": {
+    "used": 3,
+    "limit": 2,
+    "exceeded": true,
+    "further_repairs_allowed": false,
+    "evidence": "runs/R08/validation/complex-terminal.json"
+  }
+}

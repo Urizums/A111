@@ -1,0 +1,48 @@
+{
+  "task_id": "R08-03",
+  "attempt_id": "R08-03-1",
+  "requirements_hash": "ebced6a7fe327d6dddedfede09bff6bb575d086e175543bb903e2325159f9c8e",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "fail",
+      "evidence": [
+        "runs/R08/validation/simple/result.json",
+        "runs/R08/validation/simple/results/reconciliation.json",
+        "runs/R08/validation/complex-terminal.json",
+        "runs/R08/validation/frozen-lock.json",
+        "runs/R08/validation/native-create-returns.json",
+        "runs/R08/validation/root-repair-ledger.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "新上下文验证短路径的正确性、干预与实际分工",
+    "hypothesis": "New scoped work can advance without changing historical acceptance or budgets",
+    "baseline": "Preserved C6 and R07 evidence",
+    "conditions": "Codex desktop on Windows; actual execution on Ubuntu WSL Python 3.12.3",
+    "observations": [
+      "Fresh Luna/max simple executor produced correct reconciliation; source/output check passed",
+      "Simple first business artifact elapsed 195.193523698 seconds from first capture begin; includes tools and failures",
+      "Fresh Luna/max complex executor performed setup but produced no business artifact or independent reviewer",
+      "Complex reported three corrections against limit two and read two C7 assets outside its assigned scope; execution stopped",
+      "No complex successor business step; original R07 failure remains unchanged"
+    ],
+    "limits": [
+      "R08-03 acceptance failed; no candidate performance or generalization conclusion",
+      "No authenticated provider timing or cost; write scopes are instruction-level",
+      "First-command captures and frozen raw bytes retained; complete original bridge/snapshot predispatch protocol was not exercised"
+    ],
+    "metrics": {
+      "simple_first_artifact_seconds": 195.193523698,
+      "complex_first_artifact_seconds": null,
+      "candidate_repairs": 0,
+      "simple_actor_repairs": 2,
+      "complex_actor_repairs": 3,
+      "complex_actor_limit": 2,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "新上下文验证短路径的正确性、干预与实际分工"
+}
