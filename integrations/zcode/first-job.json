@@ -1,0 +1,13 @@
+{
+  "schema": "forge-zcode-job/1",
+  "id": "R08-ZCODE-READ-01",
+  "base_commit": "c9309429ddf3caf523263b72ace286d78142e51f",
+  "mode": "plan",
+  "timeout_seconds": 120,
+  "prompt": "这是 Agent Forge 的一次真实本地执行器接入检查。只读取 AGENTS.md、START_HERE.md、state/phase-todo.json 和 runs/R08/PLAN.md，报告当前阶段、下一任务、一个真正可在本机执行的验证命令及当前缺少的执行条件。不要编辑文件，不要读取账号配置或凭据，不要开启调度，不要创建其他agent或改判历史失败。简短返回所读路径和观察；不能把本次读取当作能力/性能验收通过。",
+  "acceptance": [
+    "使用用户实际配置的 ZCode 运行；保留真实进程退出码和原回复",
+    "读取当前原文件给出可复核观察，工作区无修改",
+    "由协调者核验结果；退出码0不能自动判定业务通过"
+  ]
+}

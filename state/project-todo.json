@@ -1206,6 +1206,12 @@
       "at": "2026-10-04T06:56:19.177703+00:00",
       "reason": "R05/R06 actual runtime work and retained failures; user explicitly tightened publication to complete acceptance. Historical statuses preserved.",
       "evidence": "runs/R06/VERIFICATION_REPORT.md"
+    },
+    {
+      "id": "codex_main_handoff_R08",
+      "at": "2026-10-05T03:06:05.107261+00:00",
+      "reason": "User authorized development upload/merge and selected Codex continuation; blocked task criteria and budgets preserved",
+      "evidence": "runs/R08/codex-handoff/decision.json"
     }
   ],
   "skill_development_roles": {
@@ -1297,5 +1303,15 @@
     "inventory": "runs/R07/inventory/INVENTORY.md",
     "old_blocked_preserved": 8,
     "own_branch": "rd/takeover-r07"
+  },
+  "codex_handoff": {
+    "entry": "CODEX_HANDOFF.md",
+    "active_phase": "R08",
+    "next_task_id": "R08-02",
+    "branch": "main",
+    "ledger": "state/continuation.json",
+    "deferred_tasks": [
+      "R08-ZCODE-01"
+    ]
   }
 }

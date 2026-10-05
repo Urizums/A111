@@ -48,7 +48,7 @@
     {
       "id": "R08-03",
       "title": "新上下文验证短路径的正确性、干预与实际分工",
-      "owner": "independent_codex_or_available_luna",
+      "owner": "luna",
       "write_paths": [
         "runs/R08/validation/"
       ],
@@ -64,13 +64,36 @@
       "evidence": []
     },
     {
+      "id": "R08-ZCODE-01",
+      "title": "接入用户ZCode并取得首条真实任务回执",
+      "owner": "zcode",
+      "write_paths": [
+        "integrations/zcode/",
+        "runs/R08/zcode-bridge/"
+      ],
+      "status": "blocked",
+      "blocker": "本宿主没有ZCode CLI或用户本机执行通道；尚未取得真实账号调用回执",
+      "next_action": "用户实际ZCode环境执行冻结只读任务；回传原回复/退出码，确认账号与额度后再开放编码任务",
+      "depends_on": [
+        "R08-01"
+      ],
+      "evidence": [
+        "runs/R08/zcode-bridge/preflight-command.json",
+        "runs/R08/zcode-bridge/preflight-command.json"
+      ],
+      "acceptance": [
+        "用户实际配置的ZCode执行冻结只读任务，有原回复和退出码；协调者核验来源与工作区未改动，不以准备/帮助/模拟当通过"
+      ]
+    },
+    {
       "id": "R08-next",
       "title": "启动下一阶段任务",
       "owner": "root",
       "depends_on": [
         "R08-01",
         "R08-02",
-        "R08-03"
+        "R08-03",
+        "R08-ZCODE-01"
       ],
       "write_paths": [
         "state/",
@@ -84,6 +107,5 @@
       "blocker": null,
       "next_action": "按R08能力结果选可执行支线"
     }
-  ],
-  "scope_decision": "runs/R08/codex-handoff/decision.json"
+  ]
 }

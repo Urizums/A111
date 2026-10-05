@@ -2,9 +2,9 @@
 
 目标：让 agent 从自然语言需求完成软件或 agent flow 的设计、实现、验收和后续迭代，并把进度留在仓库中。这个仓库包含当前 skill 源码、项目历史、下一阶段任务、接续提示词，以及最近一次实验的原始截止证据。
 
-**新 agent 从 [START_HERE.md](START_HERE.md) 开始。** 不需要原聊天记录，也不需要原机器上的个人 skill 路径。长期目标保持 active；前次 D00 已交付，当前继续处理 PR 审阅要求。双队列及真实证据见 [接续状态](state/continuation.json)，当前阶段见 [checkpoint](state/checkpoint.json)。
+**Codex 从 [CODEX_HANDOFF.md](CODEX_HANDOFF.md) 和 [START_HERE.md](START_HERE.md) 开始。** 不需要原聊天记录，也不需要原机器上的个人 skill 路径。用户已选择从 `main` 接续；长期目标保持 active，当前首项是 R08-02。双队列及真实证据见 [接续状态](state/continuation.json)，当前阶段见 [checkpoint](state/checkpoint.json)。ZCode 留作延期实验，不阻塞主线。
 
-当前待发布候选 C5 在原 C3 上增加了原始字节快照与持久的有界执行/修正记录器。R05/R06 还新增三种任务预设、本地 provider 协议适配器和展馆工单规则示例，保留独立验收发现、修复版本及原始失败。当前结果以 [R05/R06 验证报告](runs/R06/VERIFICATION_REPORT.md)、[问题台账](runs/R06/issues.json) 和 [发布门槛](state/publication-gate.json) 为准；存在必需阻塞项，尚未提交或推送本轮改动。此前已发布的结果保留在 runs/R00/ 与 runs/cloud/。
+当前候选 [C6](runs/R07/candidate/C6/forge-agent-flow/SKILL.md) 修复了 C5 的 snapshot 恢复与重试缺陷，旧候选全部保留。开发基线经 PR #2 合并，结果见 [R07 报告](runs/R07/REPORT.md)，下一阶段见 [R08 计划](runs/R08/PLAN.md)。R05/R06 的预设、协议适配器与工单示例见 [原验证报告](runs/R06/VERIFICATION_REPORT.md) 和 [问题台账](runs/R06/issues.json)。原八项阻塞及 [完整发布门槛](state/publication-gate.json) 仍保留；开发成果合并不代表完整产品验收通过。
 
 核心交付是 CLI 与研发工作包；工单挑战另提供可运行的 HTTP/SQLite 示例。已有云端 CLI 路径为 `/workspace/agent-forge-cloud`，本轮待验收安装使用独立前缀，实际路径及内容哈希见本轮报告。部署生命周期由当前宿主管理。
 
@@ -22,13 +22,13 @@ python3 scripts/smoke_cloud.py --prefix /workspace/agent-forge-cloud --out /tmp/
 
 完整性检查不会执行旧 host 状态；本地回归和 CLI 冒烟不能替代真实 worker、浏览器或 provider 测试。CLI 与工单运行要求为 Python 3.10+ 标准库，浏览器验收另用 Playwright/Chromium。安装、工单启动、搬迁、打包方法见 [云端部署说明](docs/CLOUD_DEPLOYMENT.md)。
 
-长期目标保持 active。R05 原预设和新增目录均有真实 Chromium 浏览器记录；Root 复测、独立验收、预算耗尽和 provider 缺口分别列明。既有每小时调度于 2026-10-04 06:16 UTC 实际触发到活动 Root，能执行代码；独立冷启动接续尚未验证，不据此宣称永久后台研发。
+长期目标保持 active。R05 原预设和新增目录均有真实 Chromium 浏览器记录；Root 复测、独立验收、预算耗尽和 provider 缺口分别列明。历史调度的实际触发记录保留，但定时器现已按用户要求停用。独立冷启动接续尚未验证，不据此宣称永久后台研发。
 
 把 [prompts/CONTINUE_IN_WORK.md](prompts/CONTINUE_IN_WORK.md) 发给能够读取并写入本仓库的 agent。需要通用持续迭代行为时，使用 [prompts/CONTINUOUS_ITERATION.md](prompts/CONTINUOUS_ITERATION.md)。宿主是否支持原生子 agent、Luna、浏览器或持久后台执行，需要现场核实。提示词不能自行提供这些能力。
 
 ## GitHub 托管与复用
 
-上游仓库为 [Urizums/A111](https://github.com/Urizums/A111)。此前已按用户指令提交到 [waw1w1/A111 的 dev 分支](https://github.com/waw1w1/A111/tree/dev)，并创建 [上游 PR #1](https://github.com/Urizums/A111/pull/1)，目标为 `main`，未合并。此前发布记录 `state/github-publication.json` 属于原始交接历史；本次记录保存在 `runs/cloud/`。仓库当前访问权限以 GitHub 为准，原快照的私有描述不代表当前可见性。
+上游仓库为 [Urizums/A111](https://github.com/Urizums/A111)，Codex 从 `main` 接续。[PR #1](https://github.com/Urizums/A111/pull/1) 已关闭且源历史保留；[PR #2](https://github.com/Urizums/A111/pull/2) 已合并。此前发布记录 `state/github-publication.json` 和 `runs/cloud/` 属于原始交接历史；后续成果与原始证据在 `runs/R07/`、`runs/R08/`。仓库访问权限以 GitHub 为准，原快照的私有描述不代表当前可见性。
 
 若要复制到另一个 GitHub 仓库：
 
@@ -58,7 +58,7 @@ git push -u origin main
 | 完整历史 TODO | state/project-todo.json |
 | 便携 skill 快照 | skills/forge-agent-flow、skills/design-product-experience |
 | C2 历史候选与锁定哈希 | runs/S02/candidate/forge-agent-flow、runs/S02/candidate-lock.json |
-| C3 历史候选 / C5 当前待发布候选 | runs/R01/candidate/forge-agent-flow、runs/R06/candidate/C5/forge-agent-flow |
+| C3/C5 历史候选 / C6 当前候选 | runs/R01/candidate/forge-agent-flow、runs/R06/candidate/C5/forge-agent-flow、runs/R07/candidate/C6/forge-agent-flow |
 | 能力 / 挑战双队列 | state/continuation.json |
 | 离线审计与原生复测 | runs/S01/final-review.md、runs/S03/validation.json |
 | 云端部署与交付验证 | docs/CLOUD_DEPLOYMENT.md、runs/cloud/VERIFICATION_REPORT.md |
