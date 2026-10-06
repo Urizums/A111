@@ -1,6 +1,6 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-06T08:36:35.629600+00:00",
+  "updated_at": "2026-10-06T08:40:35.551200+00:00",
   "active_phase": "R08",
   "next_task_id": null,
   "next_action": "Inspect branch-specific blockers and the independent ready queue.",
@@ -149,7 +149,7 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "R12_design_pass_R13_adoption_failed_checkpoint",
+    "session_state": "R12_research_and_R13_failure_published",
     "checkpoint_reason": "R12 independent protocol design pass; actual R13 adoption failed UTF-8 export inspection and rolled back; all old failures/budgets retained",
     "coordinator_heartbeat": "2026-10-06T08:24:55.885648+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
@@ -218,7 +218,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R10/publication/receipt-checkpoint-lease.json",
+    "coordinator_release_evidence": "runs/R13/publication/receipt-lease.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -269,7 +269,9 @@
         "worker": "/root/r12_protocol_review",
         "evidence": "runs/R12/review/native-terminal-v2.json"
       }
-    ]
+    ],
+    "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
+    "R12_R13_publication_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -289,7 +291,7 @@
     "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
   "current_native_pending": [],
-  "unpublished_work": true,
+  "unpublished_work": false,
   "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
   "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
   "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
@@ -435,5 +437,7 @@
   },
   "current_development_report": "runs/R13/REPORT.md",
   "root_entries_rolled_back": true,
-  "reviewed_protocol_research_artifact": "runs/R12/protocol/v2/evaluation-protocol.md"
+  "reviewed_protocol_research_artifact": "runs/R12/protocol/v2/evaluation-protocol.md",
+  "R12_R13_published_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
+  "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json"
 }
