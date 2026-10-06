@@ -1,0 +1,32 @@
+{
+  "task_id": "R12-02",
+  "request": "Independently review the supplied repository evaluation protocol as a prospective documentation design. Inspect the supplied minimal original records to assess whether the protocol is usable and preserves their evidence constraints. Do not execute, repair or regrade the historical business case; do not inspect the author diagnosis or other repository conclusions. Produce review.md with source-backed findings, explicit limits and an adoption recommendation, plus result.json with a verdict for each requirement. Write only under runs/R12/review/v2/independent/. No external actions or custom evidence framework are required. Existing tool receipts plus your documents suffice for this design review; coordinator owns queue integration.",
+  "requirements": [
+    {
+      "id": "r1",
+      "assertion": "Review actual protocol decisions, evidence responsibilities and proportionality against the supplied original records, separating directly observed facts from inferred causal or future-effect claims"
+    },
+    {
+      "id": "r2",
+      "assertion": "Assess preservation of frozen requirements, cumulative repair limits, unresolved calls, truthful artifact/command status and source traceability; report actionable defects when present"
+    },
+    {
+      "id": "r3",
+      "assertion": "Assess usability without adding a product runtime or bespoke recording framework; give a bounded design-adoption recommendation without claiming historical business acceptance, C8 behavioral validation or measured improvement"
+    }
+  ],
+  "repair_limit": 2,
+  "allowed_reads": [
+    "runs/R12/review/v2/request.json",
+    "runs/R12/protocol/v2/evaluation-protocol.md",
+    "runs/R12/review/v2/frozen-lock.json",
+    "runs/R10/validation/request.json",
+    "runs/R10/validation/independent/evidence/first-command.json",
+    "runs/R10/resumption/first-command-terminal.json",
+    "runs/R10/resumption/native-final-return.txt"
+  ],
+  "output_directory": "runs/R12/review/v2/independent/",
+  "tokens": null,
+  "cost": null,
+  "cumulative_case_corrections_used": 2
+}

@@ -1,0 +1,43 @@
+{
+  "task_id": "R12-02",
+  "attempt_id": "R12-02-1",
+  "requirements_hash": "291009967652c725d6cd086fc23a10712207f4f52462d9275d4668144b64a866",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "fail",
+      "evidence": [
+        "runs/R12/review/independent/result.json",
+        "runs/R12/review/independent/review.md",
+        "runs/R12/review/adoption-review.json",
+        "runs/R12/review/native-terminal.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R12/review/independent/result.json",
+        "runs/R12/review/independent/review.md",
+        "runs/R12/review/adoption-review.json",
+        "runs/R12/review/native-terminal.json",
+        "runs/R12/author-preservation.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Independent prospective protocol design review",
+    "hypothesis": "The new protocol is usable within inherited constraints",
+    "baseline": "Frozen protocol and minimal original command/final records",
+    "conditions": "Actual fresh requested-Luna context, no author diagnosis, no old business execution",
+    "observations": "The independent review fails r1/r2 and conditionally passes r3. Its two actionable design defects are explicit claim provenance and over-limit handling; the original protocol is not yet adopted.",
+    "limits": "Design review only; no empirical recording improvement, performance or skill behavior claim",
+    "metrics": {
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R13-01 actual repository adoption if this protocol passes"
+}

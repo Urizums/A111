@@ -1,0 +1,74 @@
+{
+  "schema": "forge-independent-protocol-review/1",
+  "task_id": "R12-02",
+  "verdict": "adopt_prospectively",
+  "recommendation": "Adopt the revised protocol for prospective documentation/evaluation work, subject to each case's own frozen requirements and repair budget. This design verdict does not change any historical business verdict.",
+  "requirements": [
+    {
+      "id": "r1",
+      "verdict": "pass",
+      "sources": [
+        "runs/R12/protocol/v2/evaluation-protocol.md#判定与交接",
+        "runs/R10/validation/request.json",
+        "runs/R10/resumption/native-final-return.txt"
+      ],
+      "finding": "The revised protocol explicitly separates direct observation, causal explanation, and future expectation, with evidence/assumption/remaining-validation guidance. It does so within the existing record. The R10 final return is treated as evidence of what was reported, not proof of business quality.",
+      "limitations": ["The raw packet, C8 skill, and business artifacts were outside the allowed read set; item-level quality cannot be checked."]
+    },
+    {
+      "id": "r2",
+      "verdict": "pass",
+      "sources": [
+        "runs/R12/protocol/v2/evaluation-protocol.md#执行前约定",
+        "runs/R12/protocol/v2/evaluation-protocol.md#执行者完成业务，记录者保留证据",
+        "runs/R12/protocol/v2/evaluation-protocol.md#缺项和中断",
+        "runs/R10/validation/request.json",
+        "runs/R10/validation/independent/evidence/first-command.json",
+        "runs/R10/resumption/first-command-terminal.json",
+        "runs/R10/resumption/native-final-return.txt"
+      ],
+      "finding": "Frozen requirements and cumulative limits are preserved. The revised protocol explicitly requires above-limit totals to remain visible, stops further corrections, and requires retaining drafts/receipts and recording attempts/boundary discovery without speculative chronology repair. It preserves unresolved command status, truthful artifact status, and receipt/transcription source binding. The original receipt's broad environment capture is an observed privacy minimization concern already addressed by the protocol's instruction to collect only necessary information.",
+      "limitations": ["The allowed native return gives 3/2 but the underlying correction ledger/chronology is unavailable, so the count's detailed history is not independently verified."]
+    },
+    {
+      "id": "r3",
+      "verdict": "pass",
+      "sources": [
+        "runs/R12/protocol/v2/evaluation-protocol.md",
+        "runs/R10/validation/request.json"
+      ],
+      "finding": "The protocol relies on existing receipts and a compact record, explicitly disclaims product runtime and bespoke recording requirements, and offers a bounded prospective design recommendation. No historical business acceptance, C8 behavior, or measured improvement is claimed.",
+      "limitations": []
+    }
+  ],
+  "hash_check": {
+    "lock": "runs/R12/review/v2/frozen-lock.json",
+    "files_checked": 6,
+    "all_match": true
+  },
+  "corrections": {
+    "internal_review_used": 0,
+    "internal_review_limit": 2,
+    "cumulative_case_used": 2,
+    "cumulative_case_limit": 2,
+    "case_accounting_source": "runs/R12/review/v2/request.json",
+    "request_supplied_prior_failures": [
+      "Rejected corrective patch construction with no mutation",
+      "Recovery/source-revision attempt"
+    ],
+    "unexpected_failures_in_this_review": [],
+    "repairs_or_reruns_attempted_in_this_review": 0,
+    "boundary_note": "The case is already at its 2/2 boundary. This review performed no corrections or reruns."
+  },
+  "limitations": [
+    "Only the v2 request, revised protocol/lock, and explicitly allowed R10 records were inspected.",
+    "The coordinator's prior correction/failure accounting is reported as request-supplied and was not independently inspected.",
+    "The raw feedback packet, C8 skill, business outputs, correction ledger, and other repository conclusions were outside the allowed read set.",
+    "Actual model telemetry, tokens, and cost were unavailable."
+  ],
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  }
+}

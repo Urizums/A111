@@ -1,0 +1,27 @@
+{
+  "task_id": "R12-02",
+  "cumulative_used": 2,
+  "limit": 2,
+  "attempts": [
+    {
+      "round": 1,
+      "kind": "failed_corrective_patch_construction",
+      "error": "apply_patch verification failed: Failed to find expected lines in runs/R13/manage.py: R13_current_budget=dict(author_used=0,limit=2),",
+      "files_changed": false,
+      "child_process_started": false
+    },
+    {
+      "round": 2,
+      "kind": "corrective_recovery_and_protocol_source_revision",
+      "previous": "runs/R12/protocol/evaluation-protocol.md",
+      "current": "runs/R12/protocol/v2/evaluation-protocol.md",
+      "changes": [
+        "Explicit claim provenance",
+        "Explicit actual above-limit total and stop/preserve/report"
+      ],
+      "requirements_changed": false,
+      "primary_records_changed": false
+    }
+  ],
+  "limits": "A failed corrective construction counts even without mutations; no further correction allowed after this round"
+}

@@ -1,0 +1,96 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R12",
+  "goal": "轻量研发评估规程设计与独立审查",
+  "tasks": [
+    {
+      "id": "R12-01",
+      "title": "诊断记录故障并设计轻量评估规程",
+      "owner": "root",
+      "write_paths": [
+        "runs/R12/protocol/",
+        "runs/R12/diagnosis.md"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R12/R12-01-result.json",
+        "runs/R12/diagnosis.md",
+        "runs/R12/protocol/evaluation-protocol.md",
+        "runs/R12/author-preservation.json",
+        "runs/R12/PLAN.md",
+        "runs/R12/inventory-command.json"
+      ],
+      "blocker": null,
+      "next_action": "R12-02 independent design review",
+      "depends_on": [],
+      "acceptance": [
+        "以原记录诊断实际故障，区分事实/假设，交付轻量评估规程且不添加产品执行依赖",
+        "保留旧案例、全部历史输入/验收/预算与冻结C8，规程不追溯重判"
+      ]
+    },
+    {
+      "id": "R12-02",
+      "title": "独立审查评估规程的可用性与约束",
+      "owner": "independent_available_luna",
+      "write_paths": [
+        "runs/R12/review/independent/"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R12/R12-02-result-v2.json",
+        "runs/R12/review/v2/independent/result.json",
+        "runs/R12/review/v2/independent/review.md",
+        "runs/R12/review/adoption-review-v2.json",
+        "runs/R12/review/repair-ledger.json",
+        "runs/R12/review/native-terminal-v2.json",
+        "runs/R12/review/v2/independent/result.json",
+        "runs/R12/review/v2/independent/review.md",
+        "runs/R12/review/adoption-review-v2.json",
+        "runs/R12/review/repair-ledger.json",
+        "runs/R12/review/native-terminal-v2.json",
+        "runs/R12/PLAN.md",
+        "runs/R12/review/v2/revise-command.json"
+      ],
+      "blocker": null,
+      "next_action": "R13-01 actual adoption if passed; otherwise stop exhausted protocol review",
+      "depends_on": [
+        "R12-01"
+      ],
+      "acceptance": [
+        "新上下文在冻结最小原材料上产出完整有依据的设计审查和明确采用建议",
+        "原案例不执行/修正/重判，独立规程审查不得宣称业务验收或性能提升"
+      ]
+    },
+    {
+      "id": "R12-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R12-01",
+        "R12-02"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "依据实际结果选择有价值后继并完成真实首步；没有后继时如实停止"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R13/adopt-command.json",
+        "runs/R13/PLAN.md"
+      ],
+      "blocker": null,
+      "next_action": "Complete already-started repository adoption",
+      "transition": {
+        "next_phase_id": "R13",
+        "todo_path": "state/phases/R13.json",
+        "first_task_id": "R13-01",
+        "start_evidence": [
+          "runs/R13/adopt-command.json"
+        ]
+      }
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema": "upgrade-work-record/1",
-  "updated_at": "2026-10-06T07:02:24.639561+00:00",
+  "updated_at": "2026-10-06T08:36:35.637571+00:00",
   "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
   "todo": [
     {
@@ -1359,5 +1359,24 @@
     "R11_02": "blocked_dependency_on_R10_02",
     "R09_branch_completed_with_successor": true,
     "R11_next": "blocked"
+  },
+  "evaluation_protocol_R12": {
+    "plan": "runs/R12/PLAN.md",
+    "stage": "done_design_review_only",
+    "scope": "Independent prospective protocol, not C8 business replay",
+    "historical_budgets_preserved": true,
+    "review": "runs/R12/review/v2/independent/result.json",
+    "R12_next": "done_actual_R13_first_step_later_failed",
+    "case_repairs_used": 2
+  },
+  "protocol_adoption_R13": {
+    "plan": "runs/R13/PLAN.md",
+    "R13_01": "blocked_failed_utf8_export",
+    "R13_next": "blocked_dependency",
+    "report": "runs/R13/REPORT.md",
+    "repairs_used": 2,
+    "repair_limit": 2,
+    "adopted": false,
+    "rollback": "runs/R13/rollback.json"
   }
 }

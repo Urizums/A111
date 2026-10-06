@@ -1,0 +1,19 @@
+{
+  "task_id": "R13-01",
+  "cumulative_used": 2,
+  "limit": 2,
+  "attempts": [
+    {
+      "round": 1,
+      "kind": "failed_corrective_patch_construction",
+      "error": "apply_patch verification failed: Failed to find expected lines in runs/R13/manage.py: R13_current_budget=dict(author_used=0,limit=2),",
+      "files_changed": false,
+      "child_process_started": false
+    },
+    {
+      "round": 2,
+      "kind": "source_correction_and_recovery",
+      "detail": "Remove observed extra closing parenthesis before helper execution; keep before-source, no old business execution"
+    }
+  ]
+}

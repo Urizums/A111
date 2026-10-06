@@ -1,0 +1,64 @@
+{
+  "schema": "forge-independent-protocol-review/1",
+  "task_id": "R12-02",
+  "verdict": "conditional_adopt",
+  "recommendation": "Conditionally adopt prospectively after adding an explicit observed/inferred/forecast claim-status requirement and explicit handling for counts above the frozen correction limit.",
+  "requirements": [
+    {
+      "id": "r1",
+      "verdict": "fail",
+      "sources": [
+        "runs/R12/protocol/evaluation-protocol.md",
+        "runs/R10/validation/request.json",
+        "runs/R10/resumption/native-final-return.txt"
+      ],
+      "finding": "The protocol has sensible evidence responsibilities and proportionality, but does not require material claims to be explicitly separated as directly observed versus inferred or forecast, including causal/future-effect claims.",
+      "action": "Add a lightweight claim-status label with source/check and assumptions for inferences and forecasts."
+    },
+    {
+      "id": "r2",
+      "verdict": "fail",
+      "sources": [
+        "runs/R12/protocol/evaluation-protocol.md",
+        "runs/R12/review/frozen-lock.json",
+        "runs/R10/validation/independent/evidence/first-command.json",
+        "runs/R10/resumption/first-command-terminal.json",
+        "runs/R10/resumption/native-final-return.txt"
+      ],
+      "finding": "Frozen limits, unresolved status, truthful artifact claims, and traceability are substantially covered. The terminal transcription is hash-bound and explicitly not a new execution; the original receipt contains argv/cwd/times/exit code and an unnecessarily broad environment capture. The protocol does not state a concrete response when the observed cumulative count exceeds the limit, as the supplied return reports 3/2.",
+      "action": "Specify that over-limit totals remain visible and trigger stop/preserve/report, with a ledger identifying counted attempts and boundary crossing. Preserve minimal receipt and transcription lineage."
+    },
+    {
+      "id": "r3",
+      "verdict": "pass_with_conditions",
+      "sources": [
+        "runs/R12/protocol/evaluation-protocol.md",
+        "runs/R10/validation/request.json",
+        "runs/R10/resumption/native-final-return.txt"
+      ],
+      "finding": "The document is proportionate for a small team, relies on existing receipts, and rejects unnecessary runtime/recording-framework work. The final return's explicit unverified status and known failure illustrate the value of its stop and handoff guidance. This review is design-only and makes no historical acceptance, C8 validation, or measured-improvement claim.",
+      "action": "Adopt prospectively only after the r1/r2 corrections; do not use this review to replace historical acceptance."
+    }
+  ],
+  "hash_check": {
+    "lock": "runs/R12/review/frozen-lock.json",
+    "files_checked": 6,
+    "all_match": true
+  },
+  "corrections": {
+    "cumulative_used": 0,
+    "limit": 2,
+    "failures_or_corrections": [],
+    "note": "Review completed without repair attempts; findings are recommendations, not corrections to the frozen protocol."
+  },
+  "limitations": [
+    "Only the allowed source files were inspected; raw packet, skill, business outputs, and other conclusions were not inspected.",
+    "Item-level business quality and correction chronology could not be verified from this minimal set.",
+    "Actual model telemetry, token usage, and cost were unavailable and are not inferred."
+  ],
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  }
+}

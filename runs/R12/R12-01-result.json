@@ -1,0 +1,37 @@
+{
+  "task_id": "R12-01",
+  "attempt_id": "R12-01-1",
+  "requirements_hash": "d0c7d39ff69045ef89702435cbecdfedb5b7618534cf695042f21d8de1c8c80d",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R12/diagnosis.md",
+        "runs/R12/protocol/evaluation-protocol.md"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R12/author-preservation.json",
+        "runs/R12/PLAN.md"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Prospective repository evaluation protocol",
+    "hypothesis": "Explicit minimal evidence ownership can reduce needless bespoke recording",
+    "baseline": "Historical recording failures and incomplete source check",
+    "conditions": "Root documentation design, original records retained",
+    "observations": "Protocol authored with preparation, responsibilities, interruptions, limits and truthful handoff",
+    "limits": "Author design only; no measured improvement or C8/historical business acceptance",
+    "metrics": {
+      "repairs_used": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R12-02 independent design review"
+}

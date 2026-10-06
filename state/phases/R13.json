@@ -1,0 +1,64 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R13",
+  "goal": "评估规程研发入口接入",
+  "tasks": [
+    {
+      "id": "R13-01",
+      "title": "接入已审查规程并核对交接与历史保护",
+      "owner": "root",
+      "write_paths": [
+        "docs/EVALUATION_PROTOCOL.md",
+        "AGENTS.md",
+        "START_HERE.md",
+        "CODEX_HANDOFF.md",
+        "artifact-manifest.json"
+      ],
+      "status": "blocked",
+      "evidence": [
+        "runs/R13/R13-01-result.json",
+        "runs/R13/adopt-command.json",
+        "runs/R13/manifest-command.json",
+        "runs/R13/inspection-command.json",
+        "runs/R13/rollback.json",
+        "runs/R13/rollback-command.json",
+        "runs/R13/authoring/repair-ledger.json",
+        "runs/R13/adopt-command.json",
+        "runs/R13/manifest-command.json",
+        "runs/R13/inspection-command.json",
+        "runs/R13/rollback.json",
+        "runs/R13/rollback-command.json",
+        "runs/R13/authoring/repair-ledger.json",
+        "runs/R13/adopt-command.json"
+      ],
+      "blocker": "UTF-8 export inspection failed after actual adoption; cumulative preparation corrections2/2. Adoption rolled back, same case cannot be retried.",
+      "next_action": "Preserve exhausted failed adoption, publish protocol as reviewed research artifact only, no same-case rerun",
+      "depends_on": [],
+      "acceptance": [
+        "实际接入冻结规程和有效入口，源/目标字节一致；仅更新明确入口、台账、导出清单并保留旧版本",
+        "真实核验交接图与全历史保护，明确设计审查并非C8业务通过；停止无价值的阶段生成"
+      ]
+    },
+    {
+      "id": "R13-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R13-01"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "依据实际结果选择有价值后继并完成真实首步；没有后继时如实停止"
+      ],
+      "status": "blocked",
+      "evidence": [
+        "runs/R13/R13-01-result.json"
+      ],
+      "blocker": "Required R13-01 adoption acceptance failed at exhausted correction budget",
+      "next_action": "Preserve failed adoption and original blockers; do not fabricate successor"
+    }
+  ]
+}

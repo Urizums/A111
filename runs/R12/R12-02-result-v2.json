@@ -1,0 +1,46 @@
+{
+  "task_id": "R12-02",
+  "attempt_id": "R12-02-2",
+  "requirements_hash": "291009967652c725d6cd086fc23a10712207f4f52462d9275d4668144b64a866",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R12/review/v2/independent/result.json",
+        "runs/R12/review/v2/independent/review.md",
+        "runs/R12/review/adoption-review-v2.json",
+        "runs/R12/review/repair-ledger.json",
+        "runs/R12/review/native-terminal-v2.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R12/review/v2/independent/result.json",
+        "runs/R12/review/v2/independent/review.md",
+        "runs/R12/review/adoption-review-v2.json",
+        "runs/R12/review/repair-ledger.json",
+        "runs/R12/review/native-terminal-v2.json",
+        "runs/R12/PLAN.md"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Same independent protocol design review after bounded corrections",
+    "hypothesis": "The narrow documentation changes satisfy the original review criteria",
+    "baseline": "Original protocol, original failed review and unchanged primary records",
+    "conditions": "Same requested-Luna actor, unchanged review requirements, two cumulative source/orchestration correction attempts",
+    "observations": "Same independent actor reviewed frozen v2 and reports r1/r2/r3 pass and adopt_prospectively. Root checked the actual revised paragraphs and report: claim provenance and over-limit handling are explicit without adding a product runtime. Original failed review, version and primary records remain intact.",
+    "limits": "Design review only; no historical business, C8 behavior or measured improvement acceptance",
+    "metrics": {
+      "repairs_used": 2,
+      "repair_limit": 2,
+      "reviewer_internal_repairs": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R13-01 actual adoption if passed; otherwise stop exhausted protocol review"
+}
