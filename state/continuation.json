@@ -5424,7 +5424,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R13/publication/receipt-lease.json",
+    "coordinator_release_evidence": "runs/R16/publication/lease-release-observation.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -5441,14 +5441,19 @@
       }
     ],
     "final_checkpoint_lease": "runs/R10/publication/final-checkpoint-lease.json",
-    "publication_receipt": "runs/R10/publication/source-push-receipt.json",
-    "publication_source_commit": "d08cd5f99f809df1f21e8cb55cbe0e24d8532508",
+    "publication_receipt": "runs/R16/publication/source-receipt.json",
+    "publication_source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
     "source_ci": {
-      "id": 37426876905,
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
       "status": "completed",
       "conclusion": "success",
-      "url": "https://github.com/Urizums/A111/actions/runs/37426876905",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984",
       "jobs": [
+        {
+          "name": "windows-preflight",
+          "status": "completed",
+          "conclusion": "success"
+        },
         {
           "name": "validate (3.10)",
           "status": "completed",
@@ -5458,13 +5463,9 @@
           "name": "validate (3.12)",
           "status": "completed",
           "conclusion": "success"
-        },
-        {
-          "name": "windows-preflight",
-          "status": "completed",
-          "conclusion": "success"
         }
-      ]
+      ],
+      "evidence": "runs/R16/publication/source-ci-completion-command.json"
     },
     "completed_native_R12": [
       {
@@ -5695,7 +5696,40 @@
       }
     },
     "tokens": null,
-    "cost": null
+    "cost": null,
+    "R14_R16_publication_source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "R14_R16_publication_receipt": "runs/R16/publication/source-receipt.json",
+    "R14_R16_source_ci_at_discovery": {
+      "conclusion": "",
+      "databaseId": 37509319984,
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+      "status": "queued",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984"
+    },
+    "R14_R16_source_ci": {
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984",
+      "jobs": [
+        {
+          "name": "windows-preflight",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.10)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "evidence": "runs/R16/publication/source-ci-completion-command.json"
+    }
   },
   "events": [
     {
@@ -7470,6 +7504,26 @@
         "R16_case_stop": "2/2",
         "R15_started": false,
         "R16_complete_paper": false,
+        "full_acceptance_passed": false
+      }
+    },
+    {
+      "at": "2026-10-06T18:12:12.287537+00:00",
+      "command": "record_actual_R14_R16_source_push",
+      "result": {
+        "source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+        "remote_head_at_observation": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+        "source_ci_status": "queued",
+        "full_acceptance_passed": false,
+        "old_tasks_preserved": true
+      }
+    },
+    {
+      "at": "2026-10-06T18:14:52.170673+00:00",
+      "command": "record_completed_source_ci",
+      "result": {
+        "source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+        "conclusion": "success",
         "full_acceptance_passed": false
       }
     }
