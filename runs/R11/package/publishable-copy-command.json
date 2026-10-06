@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path;import shutil,hashlib;source=Path('../../outputs/Forge-C8-meta-workflow.zip');target=Path('runs/R11/package/Forge-C8-meta-workflow.zip');assert not target.exists();shutil.copyfile(source,target);print(hashlib.sha256(target.read_bytes()).hexdigest())"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-06T06:45:12.176799+00:00",
+    "monotonic_ns": 16844546000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-06T06:45:12.248112+00:00",
+    "monotonic_ns": 16844609000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "2a1cee218731fb1919092adf159ee39befbdf78ab567640532cbe56ba77cd492\r\n",
+  "stderr": "",
+  "stdout_base64": "MmExY2VlMjE4NzMxZmIxOTE5MDkyYWRmMTU5ZWUzOWJlZmJkZjc4YWI1Njc2NDA1MzJjYmU1NmJhNzdjZDQ5Mg0K",
+  "stderr_base64": ""
+}

@@ -1,0 +1,27 @@
+{
+  "schema": "forge-native-terminal-transcription/1",
+  "worker": "/root/c8_workflow_trial",
+  "same_actor_resumed": true,
+  "actual_final_text": "Stopped under the two-correction limit: the cumulative count is 3/2. I wrote weekly-triage-workflow.md, next-week-handoff-template.md, and batch-triage.md. The batch draft is unverified and has a known F3 wording error. No raw-input check, correction ledger, or result.json was completed.",
+  "reported_chronology": [
+    {"step": 1, "event": "Exploratory request read and packet lookup at wrong candidate path failed; listing found validation/packet.json; subsequent input reads succeeded", "raw_error_text_on_disk": null, "counting_note": "Worker described input discovery, not required execution. Retain as failure; the explicitly reported3 corrections already exceed2 without excluding this history."},
+    {"step": 2, "event": "Actual source-inventory subprocess exited0 and wrote first-batch-source-snapshot.json", "record": "runs/R10/validation/independent/evidence/first-command.json"},
+    {"step": 3, "event": "Worker sanitized missed VERIFYING_IDENTITY values in its record/harness", "correction": 1},
+    {"step": 4, "event": "Coordinator added SHA-linked terminal transcription because state was missing", "correction": 2, "record": "runs/R10/resumption/first-command-terminal.json"},
+    {"step": 5, "event": "Local transcription attempt failed during functions.exec JavaScript parsing", "observed_error": "SyntaxError: Unexpected identifier 'candidate'", "child_process_started": false, "files_changed": false, "correction_attempt": 3},
+    {"step": 6, "event": "Three business drafts were written before budget reconciliation; no raw-input verification or result completed", "known_defect": "F3 summary says 'shares to accomplish' instead of faithfully preserving the input sharing goal"},
+    {"step": 7, "event": "Worker acknowledged3/2 and stopped; no replacement actor or sample"}
+  ],
+  "original_record_current_sha256": "912443a45b6d3e0cea87ffb3d4dc4dce22d65de01779c9cd234805d14f3c3bb8",
+  "drafts": ["runs/R10/validation/independent/weekly-triage-workflow.md", "runs/R10/validation/independent/next-week-handoff-template.md", "runs/R10/validation/independent/batch-triage.md"],
+  "actor_corrections_used": 3,
+  "actor_correction_limit": 2,
+  "candidate_source_repairs": 0,
+  "coordinator_corrections_used": 2,
+  "coordinator_correction_limit": 2,
+  "requested_model": "gpt-6-luna",
+  "requested_reasoning_effort": "max",
+  "authenticated_exact_model": null,
+  "tokens": null,
+  "cost": null
+}

@@ -1,0 +1,12 @@
+{
+  "observation": "The first post-refresh check was launched after refresh returned a running session, before its completion was received",
+  "refresh_record": "runs/R10/publication/release-manifest-command.json",
+  "overlapping_check": "runs/R10/publication/handoff-after-release-command.json",
+  "check_result": "Read old export manifest and rejected the two intentionally updated entry hashes",
+  "accept_as_final_validation": false,
+  "original_records_retained": true,
+  "next_check_condition": "Only inspect the stable finished export after refresh exit0 and its exact two-entry diff are received",
+  "lease_scope_limit": "Export manifest refresh occurred after checkpoint lease release; all current native workers were terminal, but this does not establish lease coverage for that export mutation",
+  "source_or_business_retry": false,
+  "old_validation_budgets_changed": false
+}

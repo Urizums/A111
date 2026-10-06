@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-05T03:50:04.801279+00:00",
+  "updated_at": "2026-10-06T06:53:27.375285+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Continue R09-02 fresh-checkout verification on the published commit; do not replay exhausted R08 complex case or archive R08 as passed.",
+  "next_action": "Retain exhausted original cases and dependent blockers; do not fabricate a ready task or reset budget",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -94,7 +94,7 @@
       "purpose": "bounded conformance retest"
     }
   ],
-  "current_validation": "R08: C7 authoring and inherited376 passed; simple fresh task passed; complex incomplete with three corrections beyond limit2; R08-03 blocked. R07 and full product gate unchanged.",
+  "current_validation": "C8 authoring/structure and R11 actual independent packaging passed; R09 fresh-checkout checks passed; R10 original actor failed3/2 and raw-input check absent; R10/R11 dependent transitions blocked",
   "delivery_evidence": [
     "runs/cloud/github-pr.json",
     "runs/cloud/github-publication-reports.json",
@@ -136,7 +136,7 @@
       "at": "2026-10-05T01:50:25.654984+00:00"
     }
   },
-  "next_queue_task_id": "R09-02",
+  "next_queue_task_id": null,
   "continuation_state": "state/continuation.json",
   "execution": {
     "mode": "cooperative_host",
@@ -149,9 +149,9 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "checkpoint_for_published_main",
-    "checkpoint_reason": "C7 implemented; R08 complex blocked with budget overrun retained; distinct R09-01 completed; R09-02 fresh checkout verification remains next. No pending current native worker or background code claim.",
-    "coordinator_heartbeat": "2026-10-05T03:50:04.801265+00:00",
+    "session_state": "development_candidate_checkpoint",
+    "checkpoint_reason": "C8 document-only candidate and actual standalone package; R09 independent checks done; R10 original actor3/2 blocked, dependent R11 continuation blocked; budgets/history preserved",
+    "coordinator_heartbeat": "2026-10-06T06:53:27.350373+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -183,7 +183,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-r08-desktop",
+    "current_coordinator": "root-codex-c8-resume",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -198,8 +198,8 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R08/REPORT.md",
-    "next_plan": "runs/R09/PLAN.md",
+    "current_report": "runs/R10/REPORT.md",
+    "next_plan": "runs/R11/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
@@ -218,7 +218,23 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R08/design/lease-release.json"
+    "coordinator_release_evidence": "runs/R10/publication/lease-release.json",
+    "latest_scope_decision": "runs/R10/scope-decision.json",
+    "completed_native_R09": [
+      {
+        "worker": "/root/r09_independent",
+        "state": "terminal_report_on_disk",
+        "evidence": "runs/R09/independent/report.json"
+      }
+    ],
+    "completed_native_R10": [
+      {
+        "worker": "/root/c8_workflow_trial",
+        "state": "terminal_failure_received_budget_exceeded",
+        "evidence": "runs/R10/resumption/native-terminal.json"
+      }
+    ],
+    "final_checkpoint_lease": "runs/R10/publication/final-checkpoint-lease.json"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -238,43 +254,7 @@
     "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
   "current_native_pending": [],
-  "unpublished_work": {
-    "base_commit": "e3f3d9771df00b669e119ac2f7571d24875e8afe",
-    "candidate_sha256": "8b82e835160fd8318ac0dd2e30c5f1cc32832af5b8cd3254f96decbee5bd60d1",
-    "report": "runs/R06/VERIFICATION_REPORT.md",
-    "issues": "runs/R06/issues.json",
-    "recovery": "runs/R06/RECOVERY.md",
-    "gate": "state/publication-gate.json",
-    "code_archive": "/workspace/deliveries/A111-R06-candidate-20261004.tar.gz",
-    "committed": true,
-    "pushed": true,
-    "review_bundle": {
-      "archive": "/workspace/deliveries/A111-R06-complete-review-20261004.tar.gz",
-      "sha256": "bbe6179b9f39089e16dd00c77bbc897a7ddf2c47b356a25f8c4e6ab59d4bdf12",
-      "size_bytes": 24537217,
-      "all_envelope_members_verified": true,
-      "nested_archives": [
-        {
-          "archive": "A111-R06-candidate-20261004.tar.gz",
-          "files": 3459,
-          "content_id": "c9949853d1db92769195d22853d80dc04c81a39da1582b4a13a7dd0b866e9303",
-          "sha256": "6f670dd77fd4e1f17cd440aaa21b44927811a73c15cefb1da1cfcc190f924a02",
-          "all_candidate_files_match": true
-        },
-        {
-          "archive": "A111-R06-review-20261004.tar.gz",
-          "files": 3497,
-          "content_id": "bc04dadecf087ce7ea402f5876921075ebfd98e91663a2c3655ac7c76c23f2f4",
-          "sha256": "f028f23addf8e82122b8a4d9a8633e966b89014ca38a39f0522a845d1cdea1ac",
-          "all_candidate_files_match": true
-        }
-      ]
-    },
-    "handoff_authorization": "state/upstream-handoff.json",
-    "status": "published_for_upstream_handoff",
-    "published_commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
-    "publication_evidence": "runs/R06/upstream-handoff/publication.json"
-  },
+  "unpublished_work": true,
   "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
   "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
   "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
@@ -341,7 +321,10 @@
     "report": "runs/R08/codex-handoff/STATUS.md"
   },
   "R08_validation_budget": "runs/R08/validation/root-repair-ledger.json",
-  "R09_branch": "runs/R09/PLAN_ADDENDUM.md",
+  "R09_branch": {
+    "status": "done_with_actual_R11_successor",
+    "evidence": "runs/R09/R09-02-result.json"
+  },
   "R08_budget_and_failures": "runs/R08/validation/root-repair-ledger.json",
   "R09_actual_first_step": "runs/R09/preflight/formal-first-step.json",
   "R08_final_regressions": {
@@ -351,5 +334,31 @@
     "wsl_preflight": 6,
     "semantic_R08_03": "failed_complex_budget_overrun"
   },
-  "R08_latest_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json"
+  "R08_latest_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
+  "meta_workflow_R10": {
+    "scope": "runs/R10/scope-decision.json",
+    "candidate": "runs/R10/candidate/C8-lock.json",
+    "plan": "runs/R10/PLAN.md"
+  },
+  "R10_current_budget": {
+    "actor_used": 3,
+    "actor_limit": 2,
+    "coordinator_used": 2,
+    "coordinator_limit": 2,
+    "candidate_source_repairs": 0,
+    "evidence": "runs/R10/resumption/native-terminal.json"
+  },
+  "R11_actual_first_step": "runs/R11/package/first-command.json",
+  "publication_scope": "C8 development candidate and evidence; independent behavior/full product not accepted",
+  "C8_delivery": {
+    "source": "runs/R10/candidate/C8-lock.json",
+    "package": "runs/R11/package/Forge-C8-meta-workflow.zip",
+    "behavior_passed": false,
+    "personal_installation": false
+  },
+  "R11_branch": {
+    "packaging": "done",
+    "actual_first_step": "runs/R11/package/first-command.json",
+    "continuation": "blocked_dependency"
+  }
 }

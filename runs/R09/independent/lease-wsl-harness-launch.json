@@ -1,0 +1,41 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "wsl.exe",
+    "-d",
+    "Ubuntu-24.04",
+    "--cd",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/r09-independent-checkout",
+    "--",
+    "python3",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/r09-independent-checkout/scripts/record_command.py",
+    "--out",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R09/independent/lease-wsl-harness.json",
+    "--",
+    "python3",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R09/independent/lease_harness.py",
+    "--root",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/r09-independent-checkout",
+    "--out",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R09/independent/lease-wsl-hold.json",
+    "--competing-record",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R09/independent/lease-wsl-competing-probe.json"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\r09-independent-checkout",
+  "begin": {
+    "utc": "2026-10-05T04:33:03.690881+00:00",
+    "monotonic_ns": 12282390000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-05T04:33:04.048943+00:00",
+    "monotonic_ns": 12282750000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\"hold_exit_code\": 0, \"competing_recorder_exit_code\": 0, \"hold_first_line\": \"{\\\"acquired\\\": true, \\\"busy\\\": true, \\\"holder\\\": {\\\"owner\\\": \\\"r09-independent-checkout\\\", \\\"pid\\\": 480, \\\"acquired_at\\\": \\\"2026-10-05T04:33:03.904247+00:00\\\", \\\"scope\\\": \\\"single checkout advisory file lock, not distributed host isolation\\\"}}\", \"release_observed\": true, \"harness_error\": null}\n",
+  "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\r\u0000\n\u0000",
+  "stdout_base64": "eyJob2xkX2V4aXRfY29kZSI6IDAsICJjb21wZXRpbmdfcmVjb3JkZXJfZXhpdF9jb2RlIjogMCwgImhvbGRfZmlyc3RfbGluZSI6ICJ7XCJhY3F1aXJlZFwiOiB0cnVlLCBcImJ1c3lcIjogdHJ1ZSwgXCJob2xkZXJcIjoge1wib3duZXJcIjogXCJyMDktaW5kZXBlbmRlbnQtY2hlY2tvdXRcIiwgXCJwaWRcIjogNDgwLCBcImFjcXVpcmVkX2F0XCI6IFwiMjAyNi0xMC0wNVQwNDozMzowMy45MDQyNDcrMDA6MDBcIiwgXCJzY29wZVwiOiBcInNpbmdsZSBjaGVja291dCBhZHZpc29yeSBmaWxlIGxvY2ssIG5vdCBkaXN0cmlidXRlZCBob3N0IGlzb2xhdGlvblwifX0iLCAicmVsZWFzZV9vYnNlcnZlZCI6IHRydWUsICJoYXJuZXNzX2Vycm9yIjogbnVsbH0K",
+  "stderr_base64": "dwBzAGwAOgAgAMBoS20wUiAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0TZFufwz/Rk8qZ1yVz1AwUiAAVwBTAEwAAjBOAEEAVAAgACFqD18LToR2IABXAFMATAAgAA1OL2UBYyAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0AjANAAoA"
+}

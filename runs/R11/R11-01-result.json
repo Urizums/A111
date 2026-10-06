@@ -1,0 +1,42 @@
+{
+  "task_id": "R11-01",
+  "attempt_id": "R11-01-1",
+  "requirements_hash": "5ef6ad0df93ee5af00479083b6bcbd7a1d43c50d646cd235ca6b0621c244f518",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R11/package/first-command.json",
+        "runs/R11/package/standalone-result.json",
+        "runs/R11/package/quick-validate-command.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R11/PLAN.md",
+        "runs/R11/package/standalone-result.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Portable pure-document skill delivery",
+    "hypothesis": "Frozen method files can be distributed without repository runtime helpers",
+    "baseline": "C8 locked five Markdown files; R09 tools require Linux APIs",
+    "conditions": "Windows Python3.12.8 packaging, independent newly extracted directory, same C8 bytes",
+    "observations": "zip created and extracted; all five source/output/extracted files equal; links stay inside package; standalone frontmatter validation passes",
+    "limits": "Structure and real packaging only; no personal installation, behavior/performance/generalization claim",
+    "metrics": {
+      "files": 5,
+      "script_files": 0,
+      "test_files": 0,
+      "archive_bytes": 8325,
+      "repairs_used": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R11-02 requires frozen actual R10 outputs and independent continuation execution"
+}

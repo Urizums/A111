@@ -1,6 +1,6 @@
 {
   "schema": "upgrade-work-record/1",
-  "updated_at": "2026-10-05T03:41:36.107125+00:00",
+  "updated_at": "2026-10-06T06:53:27.388996+00:00",
   "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
   "todo": [
     {
@@ -1327,5 +1327,34 @@
     "old_blockers_and_budgets": "preserved",
     "tokens": null,
     "cost": null
+  },
+  "meta_workflow_scope_R10": {
+    "decision": "runs/R10/scope-decision.json",
+    "plan": "runs/R10/PLAN.md",
+    "candidate": "runs/R10/candidate/C8-lock.json",
+    "historical_goal_and_budgets_retained": true,
+    "current_frontier": "blocked_original_behavior_case",
+    "tasks": [
+      "R10-01",
+      "R10-02",
+      "R10-next"
+    ],
+    "authoring": "done",
+    "independent_evaluation": "failed3_over2_unverified_drafts",
+    "report": "runs/R10/REPORT.md",
+    "R10_next": "blocked",
+    "no_budget_reset": true,
+    "publication_scope": "authorized development candidate and evidence",
+    "publication_pending": true,
+    "behavior_passed": false
+  },
+  "standalone_method_R11": {
+    "plan": "runs/R11/PLAN.md",
+    "actual_first_step": "runs/R11/package/first-command.json",
+    "package_result": "runs/R11/package/standalone-result.json",
+    "R11_01": "done",
+    "R11_02": "blocked_dependency_on_R10_02",
+    "R09_branch_completed_with_successor": true,
+    "R11_next": "blocked"
   }
 }

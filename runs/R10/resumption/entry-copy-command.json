@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "-B",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path;import hashlib;d=Path('runs/R10/resumption/entry-before');d.mkdir();names=['START_HERE.md','CODEX_HANDOFF.md'];[(d/n).write_bytes(Path(n).read_bytes()) for n in names];print({n:hashlib.sha256((d/n).read_bytes()).hexdigest() for n in names})"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-06T06:48:54.199477+00:00",
+    "monotonic_ns": 17066562000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-06T06:48:54.265605+00:00",
+    "monotonic_ns": 17066625000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{'START_HERE.md': 'cc337e9040da66d94ea392091fdddb53c8c8fb5ae7878b8024493be6140375a5', 'CODEX_HANDOFF.md': '82b7b14cede54f1933596c4b3e19581c1bed2aa1bf3901c87373c2f347d4aac5'}\r\n",
+  "stderr": "",
+  "stdout_base64": "eydTVEFSVF9IRVJFLm1kJzogJ2NjMzM3ZTkwNDBkYTY2ZDk0ZWEzOTIwOTFmZGRkYjUzYzhjOGZiNWFlNzg3OGI4MDI0NDkzYmU2MTQwMzc1YTUnLCAnQ09ERVhfSEFORE9GRi5tZCc6ICc4MmI3YjE0Y2VkZTU0ZjE5MzM1OTZjNGIzZTE5NTgxYzFiZWQyYWExYmYzOTAxYzg3MzczYzJmMzQ3ZDRhYWM1J30NCg==",
+  "stderr_base64": ""
+}

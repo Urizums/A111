@@ -1,0 +1,88 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R10",
+  "goal": "交付自包含Forge meta-workflow并观察真实使用",
+  "tasks": [
+    {
+      "id": "R10-01",
+      "title": "制作纯方法 C8 并核对成品边界",
+      "owner": "root",
+      "write_paths": [
+        "runs/R10/candidate/",
+        "runs/R10/author/"
+      ],
+      "depends_on": [],
+      "acceptance": [
+        "新C8自包含纯方法与必要参考，无执行器或测试依赖，保留来源、新锁和原历史",
+        "结构核验与旧文件/任务/预算核对有实际证据，不能代替行为验收"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R10/R10-01-result.json",
+        "runs/R10/scope-decision.json",
+        "runs/R10/candidate/C8-lock.json",
+        "runs/R10/author/provenance.json",
+        "runs/R10/candidate/C8/forge-agent-flow/SKILL.md",
+        "runs/R10/author/quick-validate-command.json",
+        "runs/R10/author/inspection.json",
+        "runs/R10/author/inspect-command.json",
+        "runs/R10/author/prepare-command.json"
+      ],
+      "blocker": null,
+      "next_action": "R10-02 fresh context executes frozen feedback workflow request"
+    },
+    {
+      "id": "R10-02",
+      "title": "独立执行反馈分流 meta-workflow 样本",
+      "owner": "independent_codex_or_available_luna",
+      "write_paths": [
+        "runs/R10/validation/independent/"
+      ],
+      "depends_on": [
+        "R10-01"
+      ],
+      "acceptance": [
+        "新上下文仅依据C8和新冻结原材料设计流程并实际完成批次，满足request r1-r5",
+        "保留真实首步、命令、产物、能力限制与累计最多两轮纠正；不改判旧样本"
+      ],
+      "status": "blocked",
+      "evidence": [
+        "runs/R10/R10-02-result.json",
+        "runs/R10/validation/request.json",
+        "runs/R10/validation/packet.json",
+        "runs/R10/validation/independent/weekly-triage-workflow.md",
+        "runs/R10/validation/independent/next-week-handoff-template.md",
+        "runs/R10/validation/independent/batch-triage.md",
+        "runs/R10/resumption/artifact-review.md",
+        "runs/R10/resumption/native-terminal.json",
+        "runs/R10/resumption/first-command-terminal.json",
+        "runs/R10/resumption/decision.json",
+        "runs/R10/resumption/first-command-terminal.json"
+      ],
+      "blocker": "Original actor used3 corrections against limit2; three drafts remain unverified. Same-case retry/substitute forbidden.",
+      "next_action": "Retain exhausted original case and drafts; do not retry or substitute. Distribution exists as C8 development candidate only."
+    },
+    {
+      "id": "R10-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R10-01",
+        "R10-02"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "从实际行为观察形成有价值后继并执行真实首步"
+      ],
+      "status": "blocked",
+      "evidence": [
+        "runs/R10/R10-02-result.json"
+      ],
+      "blocker": "Required behavioral predecessor failed its frozen bounded acceptance",
+      "next_action": "Preserve branch history and unmet acceptance; no fabricated stage transition"
+    }
+  ]
+}

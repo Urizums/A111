@@ -1,36 +1,37 @@
 # Codex 当前研发交接
 
-从 `Urizums/A111:main` 接续。用户授权持续研发、上传开发成果，不等待 ZCode。
+继续 Urizums/A111:main，用户授权持续研发及上传开发成果，不等待ZCode。
+用户澄清成品为forge-skill/meta-workflow；原话与边界在 runs/R10/scope-decision.json。
 先读 AGENTS.md、START_HERE.md、state/continuation.json、state/checkpoint.json。
 
-2026-10-05 本次 desktop 工作保存 C7 短入口并冻结锁：
-`runs/R08/candidate/C7-lock.json`。C6 保持原字节；入口 17498→7139 字节，
-376 条继承回归通过。字节缩减不证明速度、性能或泛化改善。
+C8在 runs/R10/candidate/C8/forge-agent-flow/，锁为 runs/R10/candidate/C8-lock.json。
+仅SKILL.md加四份参考，无脚本/测试/运行控制器依赖，不替换旧锁定skills/。
+R10-01作者源码/结构完成；R11-01实际独立打包、解包、字节/引用/frontmatter检查通过。
+可分发包为 runs/R11/package/Forge-C8-meta-workflow.zip；未安装个人skill。
+包装通过不证明独立行为、性能/泛化或完整产品验收。
 
-R08-03 已从两个新 Luna/max 上下文实际执行冻结要求。
-simple 对账内容和源数据检查通过；首业务文件约 195.194 秒（含工具往返与失败）。
-complex 只有读取和 CLI 帮助记录，未写业务源码、未创建 reviewer、无业务后继首步。
-其读域偏差及三次修正超过两次上限均保留：
-`runs/R08/validation/complex-terminal.json`、`root-repair-ledger.json`。
-这项保持 blocked，禁止转给新 worker、换样本或清零预算刷通过。
-R08-next 保持 blocked；没有通过 continuation advance 归档 R08。
+R09-02已从发布提交11e5ce90864e73a3f600df066cfbb469c6428a18的新clone独立验证。
+22条真实完成命令：Windows缺fcntl等API，WSL队列核对与单checkout锁取得/竞争/释放有证据。
+见 runs/R09/independent/report.json 与 runs/R09/R09-02-result.json。
+创建请求gpt-6-luna/max，报告自称GPT-6；认证准确模型未知，不能将自称视为遥测。
+R09支线末项已绑定R11真实首步；没有越过R08主阶段。
 
-不同来源的 R09 环境诊断支线已实际启动并完成 R09-01，
-不是重开 complex 样本。正式首步：`runs/R09/preflight/formal-first-step.json`。
-只读 host_preflight.py 在 Windows 和 Ubuntu WSL 各通过 6 项相关检查，
-原生 Windows 明确报告不兼容，WSL 核对冻结字节后可执行原控制器。
-本次没有移植 Windows 控制器或证明恢复发布、provider、UI 或崩溃耐久。
-支线依据见 runs/R09/PLAN_ADDENDUM.md；下一实际可执行项 **R09-02**，
-从已发布提交的新 checkout 做独立验证，保留原验收与每 actor 两次预算。
+R10-02首次因额度中断，2026-10-06权限恢复后followup接续同一actor、同一原材料。
+原命令缺state，原件保留，另存SHA绑定终态转录；没有替代worker或新样本。
+actor确认3次纠正/尝试超过限额2：脱敏、终态转录、失败的JS纠正命令构造。
+三份流程/模板/批次草稿存在，F3有已承认措辞缺陷，没有原材料检查或worker结果。
+虽草稿自标finished，协调者按原要求记失败blocked；预算真实数3不截断为2。
+验证协调修正2/2，C8源码修正0；证据见 runs/R10/resumption/native-terminal.json 与 R10-02-result.json。
+R10-next blocked；R11-02缺少原定已验收的实际批次/checkpoint，零尝试blocked；R11-next blocked。
+禁止改验收、转交新worker或改名样本规避此边界。
 
-原全部旧锁、历史失败和预算未改变；本轮原始 Git 基线为
-`83f21cadfe895cbfd3d03075ba012359f670bb7a`，不是早期 PR#2 的旧基线。
-审计核对 3811 个继承文件及29个原任务；9个原 blocked 包含旧八项与延期 ZCode。
-PR#1 已关闭、原源提交保留；PR#2 已合并。完整产品门槛仍未通过。
+R08-03原复杂CLI样本继续blocked（3/2且缺业务产物），R08-next仍blocked，未advance归档。
+C7及旧源码、案例、失败、预算和延期ZCode都保留；原完整产品门槛不因新范围/上传通过。
+本轮保留基线11e5ce9，更早83f21ca、PR#1原源与PR#2合并历史不重写。
+本轮报告 runs/R10/REPORT.md；旧交接字节 runs/R10/resumption/entry-before/。
 
-当前无未决原生 worker，定时器未开启。原历史未决调用单独保留，不能复用旧 PID。
-先运行 host_preflight、verify_handoff 和 continuation next，核对当前租约再持有；
-当前 CLI 使用 Python3/Linux，Windows 本机用实际可用 WSL 并替换为当前 checkout 路径。
-不存在 provider token/cost 数据时写 null。共享源码、TODO/checkpoint 由协调者串行整合。
-报告与恢复动作见 runs/R08/REPORT.md；原交接字节在 runs/R08/design/entry-before/。
-结束前提交原始证据、TODO/checkpoint，上传授权开发成果并释放租约。
+先运行宿主/字节预检、verify_handoff与continuation next，核对真实租约和历史未决调用再持有。
+原控制器用Python3/Linux；Windows经实际WSL运行，C8本身不依赖它。不要复用旧PID。
+新增两位验证者终态已收；历史未决调用单独保留。共享源码与台账由Root串行整合。
+未知provider/token/cost为null，定时器停用；不能凭提示词承诺后台自动执行。
+发布仅是可审阅开发候选和证据。结束前保存checkpoint、上传授权开发成果并释放实际租约。

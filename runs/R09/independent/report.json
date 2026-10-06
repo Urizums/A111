@@ -1,0 +1,173 @@
+{
+  "schema": "forge-r09-independent-report/1",
+  "task_id": "R09-02",
+  "repository": "Urizums/A111",
+  "model": "GPT-6",
+  "verdict": "pass",
+  "published_commit": "11e5ce90864e73a3f600df066cfbb469c6428a18",
+  "actual_commit": "11e5ce90864e73a3f600df066cfbb469c6428a18",
+  "checkout_path": "work/r09-independent-checkout",
+  "checkout_mode": "fresh local clone, detached at the published commit; checkout used core.autocrlf=false",
+  "first_command": {
+    "record": "first-command.json",
+    "state": "finished",
+    "exit_code": 0
+  },
+  "requirements": [
+    {
+      "id": "a1",
+      "verdict": "pass",
+      "requirement": "New context and new checkout from exact Git commit; actual preflight, continuation and lease operations; frozen version and requirements; no author verdict or diagnosis supplied",
+      "evidence": [
+        "first-command.json",
+        "checkout.json",
+        "commit.json",
+        "preflight-windows.json",
+        "preflight-wsl.json",
+        "continuation-windows-validate.json",
+        "continuation-windows-next.json",
+        "continuation-wsl-validate.json",
+        "continuation-wsl-next.json",
+        "lease-windows-probe.json",
+        "lease-wsl-probe.json",
+        "lease-wsl-hold.json",
+        "lease-wsl-competing-probe.json",
+        "lease-wsl-post-release-probe.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "verdict": "pass",
+      "requirement": "Record first command, environment differences, actual failures and budget; maximum two failure-driven corrective attempts; unavailable provider/tokens/cost are null",
+      "evidence": [
+        "first-command.json",
+        "commands",
+        "failures",
+        "repair_ledger"
+      ]
+    }
+  ],
+  "environment": {
+    "windows": {
+      "python": "3.12.8",
+      "host_preflight_record": "preflight-windows.json",
+      "byte_identity": true,
+      "continuation_runtime_compatible": false,
+      "eligible_for_lease_probe": false,
+      "capabilities": {
+        "fcntl": false,
+        "posix_component_open": false,
+        "linux_boot_marker": false
+      },
+      "lock_results": [
+        {"lock": "state/source-lock.json", "files_checked": 91, "ok": true},
+        {"lock": "runs/R07/candidate/C6-lock.json", "files_checked": 92, "ok": true},
+        {"lock": "runs/R09/source-lock.json", "files_checked": 4, "ok": true}
+      ],
+      "exit_code": 2
+    },
+    "wsl": {
+      "distribution": "Ubuntu-24.04",
+      "python": "3.12.3",
+      "platform": "Linux",
+      "checkout_path": "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/r09-independent-checkout",
+      "host_preflight_record": "preflight-wsl.json",
+      "byte_identity": true,
+      "continuation_runtime_compatible": true,
+      "eligible_for_lease_probe": true,
+      "capabilities": {
+        "fcntl": true,
+        "posix_component_open": true,
+        "linux_boot_marker": true
+      },
+      "lock_results": [
+        {"lock": "state/source-lock.json", "files_checked": 91, "ok": true},
+        {"lock": "runs/R07/candidate/C6-lock.json", "files_checked": 92, "ok": true},
+        {"lock": "runs/R09/source-lock.json", "files_checked": 4, "ok": true}
+      ],
+      "exit_code": 0
+    }
+  },
+  "observations": [
+    {
+      "id": "checkout-and-frozen-bytes",
+      "result": "The fresh clone was detached at the requested commit, and git rev-parse HEAD matched it. All files in the three checked source locks matched their recorded sizes and SHA-256 values on both hosts.",
+      "evidence": ["first-command.json", "checkout.json", "commit.json", "preflight-windows.json", "preflight-wsl.json"]
+    },
+    {
+      "id": "windows-boundary",
+      "result": "Native Windows preflight found exact frozen bytes but lacked fcntl, the required POSIX component-open support, and the Linux boot marker. It returned exit 2 and did not mark the checkout eligible. Actual continuation validate/next and coordinator probe invocations stopped at ModuleNotFoundError: No module named 'fcntl'.",
+      "evidence": ["preflight-windows.json", "continuation-windows-validate.json", "continuation-windows-next.json", "lease-windows-probe.json"]
+    },
+    {
+      "id": "wsl-continuation",
+      "result": "Under Ubuntu-24.04, read-only continuation validate returned ok=true for 31 tasks and an active project. The next command selected R09-02; the summary reported one ready task and no active task.",
+      "evidence": ["continuation-wsl-validate.json", "continuation-wsl-next.json"]
+    },
+    {
+      "id": "wsl-coordinator-lease",
+      "result": "The initial WSL probe reported busy=false/acquired=false. A separate hold process acquired the lease; a competing probe while it was held reported busy=true and identified the holder. The hold process received release, exited 0, and recorded released=true. A post-release probe again reported busy=false. The observed lock scope was a single-checkout advisory file lock; this run does not establish distributed host isolation.",
+      "evidence": ["lease-wsl-probe.json", "lease-wsl-hold.json", "lease-wsl-competing-probe.json", "lease-wsl-post-release-probe.json"]
+    },
+    {
+      "id": "checkout-write-boundary",
+      "result": "After the lease sequence, the only reported checkout change was state/coordinator-lease.json, which the hold/release operation updates with lease metadata. Frozen source files were checked before lease operations; core source and source locks were not edited.",
+      "evidence": ["checkout-status.json", "lease-wsl-hold.json", "preflight-wsl.json"]
+    }
+  ],
+  "commands": [
+    {"id": "fresh-clone-first-command", "record": "first-command.json"},
+    {"id": "detach-at-published-commit", "record": "checkout.json"},
+    {"id": "verify-actual-commit", "record": "commit.json"},
+    {"id": "windows-preflight", "record": "preflight-windows.json"},
+    {"id": "wsl-preflight-launch", "record": "preflight-wsl-launch.json"},
+    {"id": "wsl-preflight", "record": "preflight-wsl.json"},
+    {"id": "windows-continuation-validate", "record": "continuation-windows-validate.json"},
+    {"id": "windows-continuation-next", "record": "continuation-windows-next.json"},
+    {"id": "windows-lease-probe", "record": "lease-windows-probe.json"},
+    {"id": "wsl-continuation-validate-launch", "record": "continuation-wsl-validate-launch.json"},
+    {"id": "wsl-continuation-validate", "record": "continuation-wsl-validate.json"},
+    {"id": "wsl-continuation-next-launch", "record": "continuation-wsl-next-launch.json"},
+    {"id": "wsl-continuation-next", "record": "continuation-wsl-next.json"},
+    {"id": "wsl-initial-lease-probe-launch", "record": "lease-wsl-probe-launch.json"},
+    {"id": "wsl-initial-lease-probe", "record": "lease-wsl-probe.json"},
+    {"id": "wsl-hold-and-competing-probe-launch", "record": "lease-wsl-harness-launch.json"},
+    {"id": "wsl-hold-and-competing-probe-harness", "record": "lease-wsl-harness.json"},
+    {"id": "wsl-lease-hold-release", "record": "lease-wsl-hold.json"},
+    {"id": "wsl-competing-lease-probe", "record": "lease-wsl-competing-probe.json"},
+    {"id": "wsl-post-release-probe-launch", "record": "lease-wsl-post-release-launch.json"},
+    {"id": "wsl-post-release-probe", "record": "lease-wsl-post-release-probe.json"},
+    {"id": "checkout-status-after-lease", "record": "checkout-status.json"}
+  ],
+  "failures": [
+    {
+      "record": "preflight-windows.json",
+      "exit_code": 2,
+      "observation": "Expected host incompatibility result: byte identity passed, but required runtime capabilities were unavailable."
+    },
+    {
+      "record": "continuation-windows-validate.json",
+      "exit_code": 1,
+      "observation": "Import failed with ModuleNotFoundError for fcntl before validation ran."
+    },
+    {
+      "record": "continuation-windows-next.json",
+      "exit_code": 1,
+      "observation": "Import failed with ModuleNotFoundError for fcntl before selection ran."
+    },
+    {
+      "record": "lease-windows-probe.json",
+      "exit_code": 1,
+      "observation": "Import failed with ModuleNotFoundError for fcntl before lease probing ran."
+    }
+  ],
+  "repair_ledger": {
+    "limit": 2,
+    "used": 0,
+    "entries": [],
+    "note": "The WSL commands were the required second environment leg; no implementation correction or corrective retry was made. Every Windows terminal result remains recorded above."
+  },
+  "provider": null,
+  "tokens": null,
+  "cost": null
+}

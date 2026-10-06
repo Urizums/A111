@@ -1,0 +1,48 @@
+{
+  "task_id": "R10-02",
+  "attempt_id": "R10-02-1",
+  "requirements_hash": "27ed2d9b36c8c32e8cb4314fbcabd168c6761ac9ddf24aea5569b7121328d227",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "fail",
+      "evidence": [
+        "runs/R10/validation/request.json",
+        "runs/R10/validation/packet.json",
+        "runs/R10/validation/independent/weekly-triage-workflow.md",
+        "runs/R10/validation/independent/next-week-handoff-template.md",
+        "runs/R10/validation/independent/batch-triage.md",
+        "runs/R10/resumption/artifact-review.md"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "fail",
+      "evidence": [
+        "runs/R10/resumption/native-terminal.json",
+        "runs/R10/resumption/first-command-terminal.json",
+        "runs/R10/resumption/decision.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Fresh-context workflow design and actual feedback batch",
+    "hypothesis": "A pure method skill can guide a portable workflow and checked batch without its inherited execution platform",
+    "baseline": "Frozen C8 and feedback-2026-w40; original user meta-workflow scope",
+    "conditions": "Same fresh Luna-requested context resumed after quota interruption, original input and output directory, correction_limit2",
+    "observations": "Three method/handoff/batch drafts exist. Input snapshot contains8 rows. No raw-input verification or worker result. Known F3 wording defect; drafts self-label finished despite unverified outcome. Three recording/orchestration corrections exceed2.",
+    "limits": "Partial artifact observations only, no independent behavioral pass, performance/generalization or product acceptance; raw path-lookup error text unavailable on disk and reported as such; requested model is not authenticated exact provider telemetry",
+    "metrics": {
+      "draft_artifacts": 3,
+      "input_rows": 8,
+      "actor_corrections_used": 3,
+      "actor_limit": 2,
+      "coordinator_corrections_used": 2,
+      "coordinator_limit": 2,
+      "candidate_source_repairs": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Retain exhausted original case and drafts; do not retry or substitute. Distribution exists as C8 development candidate only."
+}

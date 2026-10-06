@@ -1,0 +1,75 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R11",
+  "goal": "独立方法包与实际checkpoint接续",
+  "tasks": [
+    {
+      "id": "R11-01",
+      "title": "交付并实际解包纯方法 C8",
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "runs/R11/package/"
+      ],
+      "status": "done",
+      "evidence": [
+        "runs/R11/R11-01-result.json",
+        "runs/R11/package/first-command.json",
+        "runs/R11/package/standalone-result.json",
+        "runs/R11/package/quick-validate-command.json",
+        "runs/R11/PLAN.md",
+        "runs/R11/package/standalone-result.json",
+        "runs/R11/package/first-command.json"
+      ],
+      "blocker": null,
+      "next_action": "R11-02 requires frozen actual R10 outputs and independent continuation execution",
+      "acceptance": [
+        "实际输出并解包冻结C8五份文档，核对字节和全部引用，包内无执行器/测试，无个人安装或旧源码修改",
+        "真实命令和边界记录，不以包装验收代替行为、性能或完整产品验收"
+      ]
+    },
+    {
+      "id": "R11-02",
+      "title": "独立方法包的 checkpoint 接续验证",
+      "owner": "independent_codex_or_available_luna",
+      "depends_on": [
+        "R11-01"
+      ],
+      "write_paths": [
+        "runs/R11/continuation/"
+      ],
+      "status": "blocked",
+      "evidence": [
+        "runs/R10/R10-02-result.json"
+      ],
+      "blocker": "Required accepted R10 batch/checkpoint is unavailable because the original R10-02 case exhausted its budget",
+      "next_action": "Retain planned acceptance and zero attempts; do not fabricate accepted checkpoint or replace failed batch",
+      "acceptance": [
+        "在执行前冻结基于实际R10输出的checkpoint和新继续要求，独立新上下文从独立技能包恢复并产出可核验结果",
+        "保留原版本、已耗预算、未决决定与有效输出的复用证据，无隐藏仓库依赖；失败与修正不清零"
+      ]
+    },
+    {
+      "id": "R11-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R11-01",
+        "R11-02"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "依据接续结果形成后继并实际启动"
+      ],
+      "status": "blocked",
+      "evidence": [
+        "runs/R10/R10-02-result.json"
+      ],
+      "blocker": "Required behavioral predecessor failed its frozen bounded acceptance",
+      "next_action": "Preserve branch history and unmet acceptance; no fabricated stage transition"
+    }
+  ]
+}

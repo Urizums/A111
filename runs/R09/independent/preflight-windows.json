@@ -1,0 +1,32 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "scripts/host_preflight.py",
+    "--root",
+    ".",
+    "--lock",
+    "state/source-lock.json",
+    "--lock",
+    "runs/R07/candidate/C6-lock.json",
+    "--lock",
+    "runs/R09/source-lock.json"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\r09-independent-checkout",
+  "begin": {
+    "utc": "2026-10-05T04:29:21.333739+00:00",
+    "monotonic_ns": 12060031000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-05T04:29:21.796757+00:00",
+    "monotonic_ns": 12060500000000,
+    "boot_id": null
+  },
+  "exit_code": 2,
+  "stdout": "{\r\n  \"schema\": \"forge-host-preflight/1\",\r\n  \"root\": \"C:\\\\Users\\\\admin\\\\Documents\\\\Codex\\\\2026-10-05\\\\urizums-a111-main-codex-handoff-md\\\\work\\\\r09-independent-checkout\",\r\n  \"python\": \"3.12.8\",\r\n  \"platform\": \"Windows\",\r\n  \"capabilities\": {\r\n    \"fcntl\": false,\r\n    \"posix_component_open\": false,\r\n    \"linux_boot_marker\": false\r\n  },\r\n  \"locks\": [\r\n    {\r\n      \"lock\": \"state/source-lock.json\",\r\n      \"files_checked\": 91,\r\n      \"ok\": true,\r\n      \"errors\": []\r\n    },\r\n    {\r\n      \"lock\": \"runs/R07/candidate/C6-lock.json\",\r\n      \"files_checked\": 92,\r\n      \"ok\": true,\r\n      \"errors\": []\r\n    },\r\n    {\r\n      \"lock\": \"runs/R09/source-lock.json\",\r\n      \"files_checked\": 4,\r\n      \"ok\": true,\r\n      \"errors\": []\r\n    }\r\n  ],\r\n  \"byte_identity\": true,\r\n  \"continuation_runtime_compatible\": false,\r\n  \"eligible_for_lease_probe\": false,\r\n  \"actions\": [\r\n    \"Use an actually available Linux/WSL runtime and probe again. Native Windows continuation/secure POSIX opener/recording are unsupported; do not silently weaken file or lease safety.\"\r\n  ],\r\n  \"limits\": [\r\n    \"Read-only byte identity and API availability; no concurrent filesystem safety proof\",\r\n    \"Does not acquire a lease, reconcile workers, replay effects or invoke providers\",\r\n    \"Snapshot renameat2/filesystem support and installed-product behavior require actual separate checks\"\r\n  ],\r\n  \"tokens\": null,\r\n  \"cost\": null\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAic2NoZW1hIjogImZvcmdlLWhvc3QtcHJlZmxpZ2h0LzEiLA0KICAicm9vdCI6ICJDOlxcVXNlcnNcXGFkbWluXFxEb2N1bWVudHNcXENvZGV4XFwyMDI2LTEwLTA1XFx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXFx3b3JrXFxyMDktaW5kZXBlbmRlbnQtY2hlY2tvdXQiLA0KICAicHl0aG9uIjogIjMuMTIuOCIsDQogICJwbGF0Zm9ybSI6ICJXaW5kb3dzIiwNCiAgImNhcGFiaWxpdGllcyI6IHsNCiAgICAiZmNudGwiOiBmYWxzZSwNCiAgICAicG9zaXhfY29tcG9uZW50X29wZW4iOiBmYWxzZSwNCiAgICAibGludXhfYm9vdF9tYXJrZXIiOiBmYWxzZQ0KICB9LA0KICAibG9ja3MiOiBbDQogICAgew0KICAgICAgImxvY2siOiAic3RhdGUvc291cmNlLWxvY2suanNvbiIsDQogICAgICAiZmlsZXNfY2hlY2tlZCI6IDkxLA0KICAgICAgIm9rIjogdHJ1ZSwNCiAgICAgICJlcnJvcnMiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgImxvY2siOiAicnVucy9SMDcvY2FuZGlkYXRlL0M2LWxvY2suanNvbiIsDQogICAgICAiZmlsZXNfY2hlY2tlZCI6IDkyLA0KICAgICAgIm9rIjogdHJ1ZSwNCiAgICAgICJlcnJvcnMiOiBbXQ0KICAgIH0sDQogICAgew0KICAgICAgImxvY2siOiAicnVucy9SMDkvc291cmNlLWxvY2suanNvbiIsDQogICAgICAiZmlsZXNfY2hlY2tlZCI6IDQsDQogICAgICAib2siOiB0cnVlLA0KICAgICAgImVycm9ycyI6IFtdDQogICAgfQ0KICBdLA0KICAiYnl0ZV9pZGVudGl0eSI6IHRydWUsDQogICJjb250aW51YXRpb25fcnVudGltZV9jb21wYXRpYmxlIjogZmFsc2UsDQogICJlbGlnaWJsZV9mb3JfbGVhc2VfcHJvYmUiOiBmYWxzZSwNCiAgImFjdGlvbnMiOiBbDQogICAgIlVzZSBhbiBhY3R1YWxseSBhdmFpbGFibGUgTGludXgvV1NMIHJ1bnRpbWUgYW5kIHByb2JlIGFnYWluLiBOYXRpdmUgV2luZG93cyBjb250aW51YXRpb24vc2VjdXJlIFBPU0lYIG9wZW5lci9yZWNvcmRpbmcgYXJlIHVuc3VwcG9ydGVkOyBkbyBub3Qgc2lsZW50bHkgd2Vha2VuIGZpbGUgb3IgbGVhc2Ugc2FmZXR5LiINCiAgXSwNCiAgImxpbWl0cyI6IFsNCiAgICAiUmVhZC1vbmx5IGJ5dGUgaWRlbnRpdHkgYW5kIEFQSSBhdmFpbGFiaWxpdHk7IG5vIGNvbmN1cnJlbnQgZmlsZXN5c3RlbSBzYWZldHkgcHJvb2YiLA0KICAgICJEb2VzIG5vdCBhY3F1aXJlIGEgbGVhc2UsIHJlY29uY2lsZSB3b3JrZXJzLCByZXBsYXkgZWZmZWN0cyBvciBpbnZva2UgcHJvdmlkZXJzIiwNCiAgICAiU25hcHNob3QgcmVuYW1lYXQyL2ZpbGVzeXN0ZW0gc3VwcG9ydCBhbmQgaW5zdGFsbGVkLXByb2R1Y3QgYmVoYXZpb3IgcmVxdWlyZSBhY3R1YWwgc2VwYXJhdGUgY2hlY2tzIg0KICBdLA0KICAidG9rZW5zIjogbnVsbCwNCiAgImNvc3QiOiBudWxsDQp9DQo=",
+  "stderr_base64": ""
+}

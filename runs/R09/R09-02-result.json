@@ -1,0 +1,47 @@
+{
+  "task_id": "R09-02",
+  "attempt_id": "R09-02-1",
+  "requirements_hash": "726bd507c83d40dfb7a28d93cf35434ec8889fd3897a3cedfc1aa59e66014910",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R09/independent/report.json",
+        "runs/R09/independent/commit.json",
+        "runs/R09/independent/preflight-windows.json",
+        "runs/R09/independent/preflight-wsl.json",
+        "runs/R09/independent/continuation-wsl-validate.json",
+        "runs/R09/independent/lease-wsl-hold.json",
+        "runs/R09/independent/lease-wsl-competing-probe.json",
+        "runs/R09/independent/lease-wsl-post-release-probe.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R09/independent/report.json",
+        "runs/R09/independent/first-command.json",
+        "runs/R09/independent/creation-return.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Independent checkout/environment verification",
+    "hypothesis": "Preflight reflects actual APIs and frozen bytes; lease excludes competing coordinator in same checkout",
+    "baseline": "Published Git commit11e5ce9, frozen R09 implementation",
+    "conditions": "Fresh local clone, Windows3.12.8 and Ubuntu24.04 Python3.12.3",
+    "observations": "22 finished command records; exact commit; Windows rejects unsupported runtime; WSL validates31 tasks and exercises acquired/competing-busy/released/free",
+    "limits": "No Windows implementation port, provider, distributed isolation or crash durability proof. Requested model gpt-6-luna/max; report self-label GPT-6 is not authenticated exact model telemetry; actual provider model unknown.",
+    "metrics": {
+      "command_records": 22,
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "provider": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Integrate independent result, retain R08 block, proceed user-requested meta-workflow branch"
+}

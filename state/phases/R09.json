@@ -46,10 +46,24 @@
       "write_paths": [
         "runs/R09/independent/"
       ],
-      "status": "planned",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "runs/R09/R09-02-result.json",
+        "runs/R09/independent/report.json",
+        "runs/R09/independent/commit.json",
+        "runs/R09/independent/preflight-windows.json",
+        "runs/R09/independent/preflight-wsl.json",
+        "runs/R09/independent/continuation-wsl-validate.json",
+        "runs/R09/independent/lease-wsl-hold.json",
+        "runs/R09/independent/lease-wsl-competing-probe.json",
+        "runs/R09/independent/lease-wsl-post-release-probe.json",
+        "runs/R09/independent/report.json",
+        "runs/R09/independent/first-command.json",
+        "runs/R09/independent/creation-return.json",
+        "runs/R09/independent/first-command.json"
+      ],
       "blocker": null,
-      "next_action": "Dispatch fresh checkout verifier after R09-01 acceptance",
+      "next_action": "Integrate independent result, retain R08 block, proceed user-requested meta-workflow branch",
       "depends_on": [
         "R09-01"
       ],
@@ -73,10 +87,21 @@
       "acceptance": [
         "从本阶段真实观察选有价值新支线并实际启动"
       ],
-      "status": "planned",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        "runs/R11/package/first-command.json",
+        "runs/R11/PLAN.md"
+      ],
       "blocker": null,
-      "next_action": "Select a meaningful successor from observed R09 results"
+      "next_action": "Continue already-started standalone method branch",
+      "transition": {
+        "next_phase_id": "R11",
+        "todo_path": "state/phases/R11.json",
+        "first_task_id": "R11-01",
+        "start_evidence": [
+          "runs/R11/package/first-command.json"
+        ]
+      }
     }
   ]
 }
