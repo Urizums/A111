@@ -1,0 +1,18 @@
+{
+  "schema": "forge-cumulative-budget-decision/1",
+  "actor": "/root/r14_math_l3",
+  "case": "math-level-3",
+  "original_actor_reported_used": 2,
+  "limit": 2,
+  "observed_corrections": [
+    {"ordinal": 1, "domain": "orchestration", "fact": "Initial reads omitted runs/R14 prefix and failed; original actor confirmed subsequent actual reads at corrected paths"},
+    {"ordinal": 2, "domain": "source", "fact": "Review found --input hashing default source rather than actual input; source changed to correct it"},
+    {"ordinal": 3, "domain": "source/report", "fact": "Review found source-check hardcoded correction count0 inconsistent with used budget; duplicated field removed"}
+  ],
+  "coordinator_used": 3,
+  "decision": "Original cumulative scope includes orchestration and discovered-defect corrections, not only failed solver commands. Actual3/2 is preserved and this case stops; producer report is not edited or capped.",
+  "actor_reply_provenance": "Same actor read-only historical status reply in parent conversation, not reconstructed provider telemetry",
+  "numerical_verdict": "Separate independent check pending; numerical correctness cannot restore an exceeded budget",
+  "old_C9_author_budget": {"used": 2, "limit": 2, "reset": false},
+  "further_execution": false
+}

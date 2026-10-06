@@ -1,0 +1,233 @@
+{
+  "case_id": "offline-demand-allocation-01",
+  "status": "computed; producer self-check only",
+  "units": {
+    "demand": "units/week",
+    "allocation": "integer units for week9",
+    "cost": "CNY/unit"
+  },
+  "history_weeks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "data_audit": {
+    "rows": 8,
+    "stations": [
+      "A",
+      "B",
+      "C"
+    ],
+    "missing": 0,
+    "duplicate_weeks": 0,
+    "non_numeric_or_non_finite": 0,
+    "raw_values_used_without_imputation": true
+  },
+  "forecast_method": "ordinary least-squares linear trend on all observed weeks; extrapolate one week",
+  "forecast_assumptions": [
+    "trend remains locally linear for one step",
+    "observations are comparable weekly demand"
+  ],
+  "predictions_units_per_week": {
+    "A": 28.0,
+    "B": 20.357142857142858,
+    "C": 30.67857142857143
+  },
+  "validation": {
+    "design": "expanding-window one-step origins at weeks 4–8; fit uses only earlier weeks",
+    "selection_note": "small in-sample history; no held-out future beyond supplied weeks",
+    "by_station": {
+      "A": {
+        "n_one_step_origins": 5,
+        "origins": [
+          {
+            "week": 4,
+            "actual": 23.0,
+            "linear_trend": 23.0,
+            "last_value": 22.0,
+            "linear_abs_error": 0.0,
+            "last_value_abs_error": 1.0
+          },
+          {
+            "week": 5,
+            "actual": 24.0,
+            "linear_trend": 24.0,
+            "last_value": 23.0,
+            "linear_abs_error": 0.0,
+            "last_value_abs_error": 1.0
+          },
+          {
+            "week": 6,
+            "actual": 25.0,
+            "linear_trend": 25.0,
+            "last_value": 24.0,
+            "linear_abs_error": 0.0,
+            "last_value_abs_error": 1.0
+          },
+          {
+            "week": 7,
+            "actual": 26.0,
+            "linear_trend": 26.0,
+            "last_value": 25.0,
+            "linear_abs_error": 0.0,
+            "last_value_abs_error": 1.0
+          },
+          {
+            "week": 8,
+            "actual": 27.0,
+            "linear_trend": 27.0,
+            "last_value": 26.0,
+            "linear_abs_error": 0.0,
+            "last_value_abs_error": 1.0
+          }
+        ],
+        "linear_trend_mae": 0.0,
+        "last_value_mae": 1.0
+      },
+      "B": {
+        "n_one_step_origins": 5,
+        "origins": [
+          {
+            "week": 4,
+            "actual": 18.0,
+            "linear_trend": 17.0,
+            "last_value": 17.0,
+            "linear_abs_error": 1.0,
+            "last_value_abs_error": 1.0
+          },
+          {
+            "week": 5,
+            "actual": 17.0,
+            "linear_trend": 18.5,
+            "last_value": 18.0,
+            "linear_abs_error": 1.5,
+            "last_value_abs_error": 1.0
+          },
+          {
+            "week": 6,
+            "actual": 19.0,
+            "linear_trend": 18.1,
+            "last_value": 17.0,
+            "linear_abs_error": 0.8999999999999986,
+            "last_value_abs_error": 2.0
+          },
+          {
+            "week": 7,
+            "actual": 20.0,
+            "linear_trend": 19.2,
+            "last_value": 19.0,
+            "linear_abs_error": 0.8000000000000007,
+            "last_value_abs_error": 1.0
+          },
+          {
+            "week": 8,
+            "actual": 19.0,
+            "linear_trend": 20.285714285714285,
+            "last_value": 20.0,
+            "linear_abs_error": 1.2857142857142847,
+            "last_value_abs_error": 1.0
+          }
+        ],
+        "linear_trend_mae": 1.0971428571428568,
+        "last_value_mae": 1.2
+      },
+      "C": {
+        "n_one_step_origins": 5,
+        "origins": [
+          {
+            "week": 4,
+            "actual": 27.0,
+            "linear_trend": 25.0,
+            "last_value": 24.0,
+            "linear_abs_error": 2.0,
+            "last_value_abs_error": 3.0
+          },
+          {
+            "week": 5,
+            "actual": 26.0,
+            "linear_trend": 27.5,
+            "last_value": 27.0,
+            "linear_abs_error": 1.5,
+            "last_value_abs_error": 1.0
+          },
+          {
+            "week": 6,
+            "actual": 28.0,
+            "linear_trend": 27.4,
+            "last_value": 26.0,
+            "linear_abs_error": 0.6000000000000014,
+            "last_value_abs_error": 2.0
+          },
+          {
+            "week": 7,
+            "actual": 30.0,
+            "linear_trend": 28.6,
+            "last_value": 28.0,
+            "linear_abs_error": 1.3999999999999986,
+            "last_value_abs_error": 2.0
+          },
+          {
+            "week": 8,
+            "actual": 29.0,
+            "linear_trend": 30.285714285714285,
+            "last_value": 30.0,
+            "linear_abs_error": 1.2857142857142847,
+            "last_value_abs_error": 1.0
+          }
+        ],
+        "linear_trend_mae": 1.357142857142857,
+        "last_value_mae": 1.8
+      }
+    }
+  },
+  "allocation": {
+    "A": 28,
+    "B": 2,
+    "C": 30
+  },
+  "total_available_units": 60,
+  "station_caps": {
+    "A": 30,
+    "B": 25,
+    "C": 35
+  },
+  "total_allocated_units": 60,
+  "objective_CNY": 264.92857142857144,
+  "objective_formula": "sum(cost_i*x_i + penalty_i*max(pred_i-x_i,0))",
+  "objective_breakdown": {
+    "A": {
+      "delivered_cost_CNY": 56.0,
+      "unmet_units": 0.0,
+      "unmet_penalty_CNY": 0.0
+    },
+    "B": {
+      "delivered_cost_CNY": 2.0,
+      "unmet_units": 18.357142857142858,
+      "unmet_penalty_CNY": 110.14285714285714
+    },
+    "C": {
+      "delivered_cost_CNY": 90.0,
+      "unmet_units": 0.6785714285714306,
+      "unmet_penalty_CNY": 6.785714285714306
+    }
+  },
+  "feasibility": {
+    "all_nonnegative_integers": true,
+    "within_station_caps": true,
+    "within_total_stock": true,
+    "objective_independent_recalculation_matches": true,
+    "enumerated_feasible_allocations": 24076,
+    "optimality_evidence": "all integer allocations within caps and total stock enumerated; exact for stated objective and input"
+  },
+  "limitations": [
+    "Forecast error estimates use only five short expanding-window origins.",
+    "Predictions are fractional expected demand; no integer rounding is needed in the objective.",
+    "Objective assumes stated linear costs/penalties and no cross-station effects.",
+    "No real contest rules, leaderboard, awards, or general performance claims were assessed."
+  ]
+}

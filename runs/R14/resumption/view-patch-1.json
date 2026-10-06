@@ -1,0 +1,24 @@
+{
+  "execution": {
+    "current_coordinator": "root-codex-r14-resume",
+    "session_state": "R14_original_actors_reconciled_and_new_levels_running",
+    "checkpoint_reason": "Write restored; same actors reconciled; L1 repair and L8 completion; frontend browser gate blocked",
+    "R14_resumption": "runs/R14/resumption/reconciliation.json",
+    "native_pending": [
+      {"worker": "/root/r14_math_l1", "task": "R14-02", "level": 1, "state": "original_actor_case_correction_1", "requested_model": "gpt-6-luna", "actual_model": null},
+      {"worker": "/root/r14_math_l2", "task": "R14-02", "level": 2, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null},
+      {"worker": "/root/r14_math_l3", "task": "R14-02", "level": 3, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null}
+    ],
+    "current_native_pending": [
+      {"worker": "/root/r14_math_l1", "task": "R14-02", "level": 1, "state": "original_actor_case_correction_1", "requested_model": "gpt-6-luna", "actual_model": null},
+      {"worker": "/root/r14_math_l2", "task": "R14-02", "level": 2, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null},
+      {"worker": "/root/r14_math_l3", "task": "R14-02", "level": 3, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null}
+    ],
+    "completed_native_R14_observation": [
+      {"worker": "/root/r14_math_l8", "state": "producer_delivery_complete", "evidence": "runs/R14/trials/math/L8/result.json", "case_corrections_used": 0},
+      {"worker": "/root/r14_frontend", "state": "runtime_blocked_truthful_partial_handoff", "evidence": "runs/R14/trials/frontend/result.json", "case_corrections_used": 0}
+    ]
+  },
+  "checkpoint": {"unpublished_work": true, "current_development_report": "runs/R14/REPORT.md"},
+  "project": {"status": "math_levels_running_frontend_browser_blocked", "resumption": "runs/R14/resumption/reconciliation.json"}
+}

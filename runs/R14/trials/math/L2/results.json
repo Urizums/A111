@@ -1,0 +1,71 @@
+{
+  "case_id": "offline-demand-allocation-01",
+  "units": {
+    "demand": "units/week",
+    "allocation": "integer units for week9",
+    "cost": "CNY/unit"
+  },
+  "prediction": {
+    "method": "per-station ordinary least-squares linear trend on all observed weeks; extrapolate one week; no external covariates",
+    "values": {
+      "A": 28.0,
+      "B": 20.35714285714286,
+      "C": 30.678571428571445
+    },
+    "assumption": "short stable local linear trend; predictions may be fractional and are optimization demand targets"
+  },
+  "validation": {
+    "method": "expanding-origin chronological holdout, training weeks 1..t-1, t=4..8; model parameters refit at each origin",
+    "station_metrics": {
+      "A": {
+        "n_origins": 5,
+        "linear_trend_MAE": 4.973799150320701e-15,
+        "last_observation_MAE": 1.0
+      },
+      "B": {
+        "n_origins": 5,
+        "linear_trend_MAE": 1.0971428571428583,
+        "last_observation_MAE": 1.2
+      },
+      "C": {
+        "n_origins": 5,
+        "linear_trend_MAE": 1.357142857142859,
+        "last_observation_MAE": 1.8
+      }
+    },
+    "all_origins_model_MAE": 0.8180952380952408,
+    "all_origins_last_observation_MAE": 1.3333333333333333,
+    "no_future_data_used": true
+  },
+  "allocation": {
+    "A": 28,
+    "B": 2,
+    "C": 30
+  },
+  "allocation_checks": {
+    "integer_nonnegative": true,
+    "within_caps": true,
+    "total_used": 60,
+    "total_available": 60,
+    "within_total": true
+  },
+  "objective": {
+    "formula": "sum_i(delivery_cost_i*x_i + penalty_i*max(predicted_demand_i-x_i,0))",
+    "value_CNY": 264.9285714285716,
+    "components_CNY": {
+      "A": {
+        "delivery": 56,
+        "unmet": 0.0
+      },
+      "B": {
+        "delivery": 2,
+        "unmet": 110.14285714285717
+      },
+      "C": {
+        "delivery": 90,
+        "unmet": 6.785714285714448
+      }
+    },
+    "optimality_evidence": "Exhaustive enumeration of every integer triple within station caps and total stock; global optimum for this finite stated model."
+  }
+}

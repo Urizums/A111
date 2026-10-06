@@ -1,0 +1,150 @@
+{
+  "case_id": "offline-demand-allocation-01",
+  "input_path": "runs/R14/cases/math/problem.json",
+  "input_sha256": "e6bac9fd20c5609f55757e39546b7d3e28865dd6af333086e8930b6cf0b36f39",
+  "units": {
+    "demand": "units/week",
+    "allocation": "integer units for week9",
+    "cost": "CNY/unit"
+  },
+  "prediction_method": "Per-station ordinary least-squares linear trend on weeks 1-8; no future actual values used.",
+  "predictions_week9": {
+    "A": 28.0,
+    "B": 20.35714285714286,
+    "C": 30.678571428571445
+  },
+  "validation": {
+    "design": "expanding-window one-step-ahead; train weeks 1-4 through 1-7, target weeks 5-8; same folds for both methods",
+    "folds": [
+      {
+        "target_week": 5,
+        "actual": {
+          "A": 24.0,
+          "B": 17.0,
+          "C": 26.0
+        },
+        "linear_trend": {
+          "A": 23.999999999999993,
+          "B": 18.499999999999996,
+          "C": 27.49999999999999
+        },
+        "last_observation_baseline": {
+          "A": 23.0,
+          "B": 18.0,
+          "C": 27.0
+        },
+        "history_ends_at_week": 4
+      },
+      {
+        "target_week": 6,
+        "actual": {
+          "A": 25.0,
+          "B": 19.0,
+          "C": 28.0
+        },
+        "linear_trend": {
+          "A": 24.999999999999993,
+          "B": 18.1,
+          "C": 27.4
+        },
+        "last_observation_baseline": {
+          "A": 24.0,
+          "B": 17.0,
+          "C": 26.0
+        },
+        "history_ends_at_week": 5
+      },
+      {
+        "target_week": 7,
+        "actual": {
+          "A": 26.0,
+          "B": 20.0,
+          "C": 30.0
+        },
+        "linear_trend": {
+          "A": 26.0,
+          "B": 19.200000000000006,
+          "C": 28.6
+        },
+        "last_observation_baseline": {
+          "A": 25.0,
+          "B": 19.0,
+          "C": 28.0
+        },
+        "history_ends_at_week": 6
+      },
+      {
+        "target_week": 8,
+        "actual": {
+          "A": 27.0,
+          "B": 19.0,
+          "C": 29.0
+        },
+        "linear_trend": {
+          "A": 27.0,
+          "B": 20.285714285714292,
+          "C": 30.2857142857143
+        },
+        "last_observation_baseline": {
+          "A": 26.0,
+          "B": 20.0,
+          "C": 30.0
+        },
+        "history_ends_at_week": 7
+      }
+    ],
+    "mae_units_per_week": {
+      "linear_trend": {
+        "A": 3.552713678800501e-15,
+        "B": 1.12142857142857,
+        "C": 1.196428571428572
+      },
+      "last_observation_baseline": {
+        "A": 1.0,
+        "B": 1.25,
+        "C": 1.5
+      }
+    },
+    "aggregate_mae": {
+      "linear_trend": 0.7726190476190485,
+      "last_observation_baseline": 1.25
+    },
+    "limitation": "Four temporally ordered folds from one short synthetic practice series; descriptive only, no uncertainty or generalization claim. The week-9 forecast is refit using all eight observed weeks."
+  },
+  "allocation": {
+    "A": 28,
+    "B": 2,
+    "C": 30
+  },
+  "allocation_total_units": 60,
+  "station_caps_units": {
+    "A": 30,
+    "B": 25,
+    "C": 35
+  },
+  "total_available_units": 60,
+  "shortfall_units": {
+    "A": 0.0,
+    "B": 18.35714285714286,
+    "C": 0.6785714285714448
+  },
+  "objective_components_cny": {
+    "delivery": 148,
+    "unmet_prediction_penalty": 116.92857142857162
+  },
+  "objective_cny": 264.9285714285716,
+  "objective_formula": "sum_i(cost_i*x_i + penalty_i*max(pred_i-x_i,0))",
+  "optimization_evidence": {
+    "method": "Exhaustive enumeration of all bounded integer triples satisfying sum(x)<=60; exact for the supplied caps and objective.",
+    "feasible_integer_allocations_evaluated": 24076,
+    "optimality_claim_scope": "global optimum over this finite feasible set, with fixed forecast inputs"
+  },
+  "checks": {
+    "integer_nonnegative": true,
+    "within_caps": true,
+    "within_stock": true,
+    "objective_recomputed_from_components": true
+  },
+  "figure": "forecast_allocation.png",
+  "figure_source": "Generated from this run's computed history, forecasts and allocation."
+}

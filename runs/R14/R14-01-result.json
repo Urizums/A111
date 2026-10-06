@@ -1,0 +1,40 @@
+{
+  "task_id": "R14-01",
+  "attempt_id": "R14-01-1",
+  "requirements_hash": "162f3fd358e5e05d4ae15b8640177d88ffd1540175494230811302a8a5c622d2",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R14/author/structure.json",
+        "runs/R14/candidate/C9-lock.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R14/scope-decision.json",
+        "runs/R14/baseline.json",
+        "runs/R14/cases/frozen-lock.json",
+        "runs/R14/author/failed-validator-observation.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "New user-specified meta-workflow quality/domain scope",
+    "hypothesis": "Explicit gates and domain interfaces can guide stronger workflow construction",
+    "baseline": "C8 general method, prior failures/budgets retained",
+    "conditions": "Actual C9 eight-document authoring/frontmatter/link checks",
+    "observations": "New skill source and original acceptance/input locks created",
+    "limits": "Author structure only; no behavior or improvement verdict",
+    "metrics": {
+      "source_repairs": 0,
+      "orchestration_corrections": 2,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Dispatch frozen math level probes and frontend trial"
+}

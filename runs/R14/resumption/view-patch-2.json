@@ -1,0 +1,29 @@
+{
+  "execution": {
+    "native_pending": [
+      {"worker": "/root/r14_math_l4", "task": "R14-02", "level": 4, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null},
+      {"worker": "/root/r14_math_l5", "task": "R14-02", "level": 5, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null},
+      {"worker": "/root/r14_math_l6", "task": "R14-02", "level": 6, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null}
+    ],
+    "current_native_pending": [
+      {"worker": "/root/r14_math_l4", "task": "R14-02", "level": 4, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null},
+      {"worker": "/root/r14_math_l5", "task": "R14-02", "level": 5, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null},
+      {"worker": "/root/r14_math_l6", "task": "R14-02", "level": 6, "state": "created", "requested_model": "gpt-6-luna", "actual_model": null}
+    ],
+    "completed_native_R14_observation": [
+      {"worker": "/root/r14_math_l1", "state": "producer_corrected_same_case", "evidence": "runs/R14/trials/math/L1/result.json", "case_corrections_used": 1},
+      {"worker": "/root/r14_math_l2", "state": "producer_delivery_complete", "evidence": "runs/R14/trials/math/L2/result.json", "case_corrections_used": 0},
+      {"worker": "/root/r14_math_l3", "state": "producer_delivery_complete_budget_reconciliation_pending", "evidence": "runs/R14/trials/math/L3/result.json", "case_corrections_reported": 2},
+      {"worker": "/root/r14_math_l8", "state": "producer_delivery_complete", "evidence": "runs/R14/trials/math/L8/result.json", "case_corrections_used": 0},
+      {"worker": "/root/r14_frontend", "state": "runtime_blocked_truthful_partial_handoff", "evidence": "runs/R14/trials/frontend/result.json", "case_corrections_used": 0}
+    ]
+  },
+  "checkpoint": {"unpublished_work": true, "current_development_report": "runs/R14/REPORT.md"},
+  "project": {"status": "remaining_math_levels_running_frontend_browser_blocked"},
+  "transition": {
+    "status": "blocked",
+    "blocker": "Mandatory frontend browser acceptance is blocked; R14-04 cannot start and R15 has no authorized prerequisite pass.",
+    "evidence": ["runs/R14/R14-03-result.json", "runs/R14/control/block-acceptance-command.json"],
+    "next_action": "Retain original dependency; complete independent mathematical observations without calling them the two-domain stage pass."
+  }
+}

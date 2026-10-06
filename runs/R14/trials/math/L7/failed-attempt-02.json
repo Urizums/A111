@@ -1,0 +1,9 @@
+{
+  "attempt": 2,
+  "type": "boundary-message quality failure",
+  "observation": "Malformed cost was correctly rejected, but raw execution exposed a Python traceback rather than a concise actionable refusal.",
+  "requirement": "m5 and boundary_materials: explicitly identify inability to solve from malformed input and preserve the recovery condition.",
+  "correction_round": 2,
+  "correction": "Production CLI now catches input/schema errors and emits a concise Input rejected message with nonzero status; JSON BOM is accepted for practical file interchange.",
+  "budget": "2 of 2 correction rounds used. Case stops after verification of this correction."
+}

@@ -1,0 +1,18 @@
+{
+  "schema": "forge-development-integration-ledger/1",
+  "scope": "Root final checkpoint/report integration; separate from all frozen candidate, trial and source cases",
+  "used": 2,
+  "limit": 2,
+  "failure": "apply_patch rejected a patch containing Delete File and Add File for the same REPORT.md; no edits were applied.",
+  "recovery": "Replace the rejected construction with a new integration helper that preserves prior report bytes before writing the final report.",
+  "raw_command_receipt": null,
+  "provenance": "Actual parent tool-return observation transcribed; not a child process command record",
+  "other_observations": [
+    "Root read command requested nonexistent scripts/continuation_ctl.py; actual controller is scripts/continuation.py.",
+    "Root read command requested absent runs/R16/solution/TODO.md. Absence confirms this deliverable was not produced; no producer file created or case rerun.",
+    "No candidate or original trial repair was performed by root."
+  ],
+  "second_failure": "JS patch construction SyntaxError from unescaped Markdown backticks; no tool mutation occurred.",
+  "second_recovery": "Construct entry helper without backtick-containing template fragments.",
+  "final_boundary": "No further corrective integration round beyond2/2."
+}

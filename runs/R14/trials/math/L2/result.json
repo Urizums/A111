@@ -1,0 +1,51 @@
+{
+  "schema": "math-level2-trial-result/1",
+  "case_id": "math-level-2",
+  "input_case_id": "offline-demand-allocation-01",
+  "candidate": "C9",
+  "requested_model": "gpt-6-luna",
+  "authenticated_model": null,
+  "tokens": null,
+  "cost": null,
+  "state": "producer_slice_complete_independent_acceptance_pending",
+  "files": {
+    "workflow": "runs/R14/trials/math/L2/workflow.md",
+    "solver": "runs/R14/trials/math/L2/solver.py",
+    "reproduction": "python -X utf8 runs/R14/trials/math/L2/solver.py",
+    "results": "runs/R14/trials/math/L2/results.json",
+    "figure": "runs/R14/trials/math/L2/demand_allocation.png",
+    "paper": "runs/R14/trials/math/L2/paper.md",
+    "verification": "runs/R14/trials/math/L2/verification.md",
+    "receipts": ["receipt-material-check.json", "receipt-source-check.json", "receipt-smoke.json", "receipt-malformed.json", "receipt-verification.json"]
+  },
+  "checks": {
+    "locked_source_materials": "pass: 8/8 size and SHA-256 entries in C9 lock",
+    "source_syntax": "pass",
+    "main_smoke": "pass",
+    "malformed_input_same_entrypoint": "rejected as required (nonzero exit)",
+    "prediction_validation": "expanding origins weeks 4-8; model MAE 0.818095, last-observation MAE 1.333333 across 15 station-origin values",
+    "allocation": {"A": 28, "B": 2, "C": 30},
+    "objective_CNY": 264.9285714285716,
+    "allocation_optimality": "exhaustive finite enumeration, independently recomputed in producer verification script",
+    "independent_acceptance": "pending; producer self-check is not independent acceptance"
+  },
+  "failures": [
+    {"kind": "expected_boundary_rejection", "input": "malformed_bad_cost.json", "observed": "CLI rejected nonnumeric A delivery cost; exit nonzero", "correction": false}
+  ],
+  "budget": {
+    "case_corrections_used": 0,
+    "case_correction_limit": 2,
+    "C9_lock_repairs_used": 2,
+    "C9_lock_repair_limit": 2,
+    "counter_domains": "distinct: this Level 2 case began at 0/2; immutable C9 candidate lock records its own prior 2/2",
+    "candidate_lock_reset_or_mutation": false
+  },
+  "limits": [
+    "Self-created offline practice with only eight observations and three stations; not real competition evidence.",
+    "Five expanding origins cannot establish broad forecasting performance or superiority.",
+    "Global optimality is only for the stated finite allocation model and supplied point forecasts.",
+    "No award, leaderboard rank, full-contest performance, or causal prompt-level comparison is established.",
+    "Independent evaluation is a separate pending step.",
+    "Authenticated model, tokens and cost telemetry are unknown and retained as null."
+  ]
+}

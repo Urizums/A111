@@ -1,0 +1,176 @@
+{
+  "case_id": "offline-demand-allocation-01",
+  "audit": {
+    "rows": 8,
+    "stations": [
+      "A",
+      "B",
+      "C"
+    ],
+    "missing_cells": 0,
+    "duplicate_weeks": 0,
+    "weeks": [
+      1,
+      8
+    ],
+    "demand_min": {
+      "A": 20.0,
+      "B": 15.0,
+      "C": 23.0
+    },
+    "demand_max": {
+      "A": 27.0,
+      "B": 20.0,
+      "C": 30.0
+    },
+    "units": {
+      "demand": "units/week",
+      "allocation": "integer units for week9",
+      "cost": "CNY/unit"
+    }
+  },
+  "validation": {
+    "protocol": "rolling-origin one-step; at each origin train only on earlier weeks; origins 4–8",
+    "predictions": {
+      "A": [
+        {
+          "target_week": 4,
+          "actual": 23.0,
+          "naive_last": 22.0,
+          "linear_trend": 22.99999999999999
+        },
+        {
+          "target_week": 5,
+          "actual": 24.0,
+          "naive_last": 23.0,
+          "linear_trend": 23.999999999999993
+        },
+        {
+          "target_week": 6,
+          "actual": 25.0,
+          "naive_last": 24.0,
+          "linear_trend": 24.999999999999993
+        },
+        {
+          "target_week": 7,
+          "actual": 26.0,
+          "naive_last": 25.0,
+          "linear_trend": 26.0
+        },
+        {
+          "target_week": 8,
+          "actual": 27.0,
+          "naive_last": 26.0,
+          "linear_trend": 27.0
+        }
+      ],
+      "B": [
+        {
+          "target_week": 4,
+          "actual": 18.0,
+          "naive_last": 17.0,
+          "linear_trend": 16.99999999999999
+        },
+        {
+          "target_week": 5,
+          "actual": 17.0,
+          "naive_last": 18.0,
+          "linear_trend": 18.499999999999996
+        },
+        {
+          "target_week": 6,
+          "actual": 19.0,
+          "naive_last": 17.0,
+          "linear_trend": 18.1
+        },
+        {
+          "target_week": 7,
+          "actual": 20.0,
+          "naive_last": 19.0,
+          "linear_trend": 19.200000000000006
+        },
+        {
+          "target_week": 8,
+          "actual": 19.0,
+          "naive_last": 20.0,
+          "linear_trend": 20.285714285714292
+        }
+      ],
+      "C": [
+        {
+          "target_week": 4,
+          "actual": 27.0,
+          "naive_last": 24.0,
+          "linear_trend": 24.999999999999993
+        },
+        {
+          "target_week": 5,
+          "actual": 26.0,
+          "naive_last": 27.0,
+          "linear_trend": 27.49999999999999
+        },
+        {
+          "target_week": 6,
+          "actual": 28.0,
+          "naive_last": 26.0,
+          "linear_trend": 27.4
+        },
+        {
+          "target_week": 7,
+          "actual": 30.0,
+          "naive_last": 28.0,
+          "linear_trend": 28.6
+        },
+        {
+          "target_week": 8,
+          "actual": 29.0,
+          "naive_last": 30.0,
+          "linear_trend": 30.2857142857143
+        }
+      ]
+    },
+    "metrics": {
+      "naive_last": {
+        "MAE_units_per_week": 1.3333333333333333,
+        "RMSE_units_per_week": 1.4605934866804429,
+        "n_station_origins": 15
+      },
+      "linear_trend": {
+        "MAE_units_per_week": 0.8180952380952408,
+        "RMSE_units_per_week": 1.0512253944478203,
+        "n_station_origins": 15
+      }
+    }
+  },
+  "forecast_method": "per-station ordinary least squares linear trend on weeks 1–8, extrapolated one week; clipped at zero",
+  "forecast_week9_units_per_week": {
+    "A": 28.0,
+    "B": 20.35714285714286,
+    "C": 30.678571428571445
+  },
+  "allocation": {
+    "units_week9": {
+      "A": 28,
+      "B": 2,
+      "C": 30
+    },
+    "total_units": 60,
+    "cap_slack": {
+      "A": 2,
+      "B": 23,
+      "C": 5
+    },
+    "stock_slack": 0,
+    "shortage_units": {
+      "A": 0.0,
+      "B": 18.35714285714286,
+      "C": 0.6785714285714448
+    },
+    "objective_CNY": 264.9285714285716,
+    "objective_recomputed_CNY": 264.9285714285716,
+    "enumerated_feasible_allocations": 24076,
+    "optimality_evidence": "scipy.milp (zero requested relative gap) agrees with independent exhaustive enumeration of every feasible integer allocation"
+  },
+  "milp_status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "uncertainty": "No probabilistic intervals estimated; eight weeks are too little to establish calibrated uncertainty."
+}

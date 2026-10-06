@@ -1,0 +1,17 @@
+{
+  "case_id": "math-level-1",
+  "state": "executed_bounded_slice_self_checked_independent_acceptance_not_performed",
+  "artifacts": ["workflow.md", "solver.py", "results.json", "demand_forecast.png", "paper.md", "verification.md"],
+  "reproduction": "python -X utf8 runs/R14/trials/math/L1/solver.py",
+  "checks_performed": ["raw JSON schema and chronology", "solver rerun", "six expanding rolling-origin forecast checks against last-value baseline", "integer/cap/stock feasibility", "objective recomputation", "exhaustive feasible allocation enumeration", "malformed string-cost rejection", "rendered plot"],
+  "failed_attempts": [],
+  "cumulative_corrections_used": 2,
+  "cumulative_corrections_limit": 2,
+  "corrections_added_this_run": 0,
+  "model_requested": "gpt-6-luna",
+  "authenticated_model": null,
+  "tokens": null,
+  "cost": null,
+  "independent_acceptance": false,
+  "unknowns": ["No future week 9 actual demand", "No independent acceptor", "No current official contest rules researched", "Small sample cannot establish general predictive performance or contest outcomes"]
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "forge-observed-level-comparison/1",
+  "matrix": {
+    "L1": {
+      "m1": "pass",
+      "m2": "pass",
+      "m3": "pass",
+      "m4": "pass",
+      "m5": "pass"
+    },
+    "L2": {
+      "m1": "pass",
+      "m2": "pass",
+      "m3": "pass",
+      "m4": "pass",
+      "m5": "pass"
+    },
+    "L3": {
+      "m1": "pass",
+      "m2": "pass",
+      "m3": "pass",
+      "m4": "pass",
+      "m5": "fail"
+    },
+    "L4": {
+      "m1": "pass",
+      "m2": "pass",
+      "m3": "pass",
+      "m4": "pass",
+      "m5": "pass"
+    },
+    "L5": {
+      "m1": "pass",
+      "m2": "pass",
+      "m3": "pass",
+      "m4": "pass",
+      "m5": "pass"
+    },
+    "L6": {
+      "m1": "pass",
+      "m2": "pass",
+      "m3": "pass",
+      "m4": "pass",
+      "m5": "pass"
+    },
+    "L7": {
+      "m1": "pass",
+      "m2": "pass",
+      "m3": "fail",
+      "m4": "pass",
+      "m5": "pass"
+    },
+    "L8": {
+      "m1": "pass",
+      "m2": "pass",
+      "m3": "pass",
+      "m4": "pass",
+      "m5": "pass"
+    }
+  },
+  "counts": {
+    "pass": 38,
+    "fail": 2,
+    "unverified": 0
+  },
+  "case_budgets": {
+    "L1": {
+      "used": 1,
+      "limit": 2
+    },
+    "L2": {
+      "used": 0,
+      "limit": 2
+    },
+    "L3": {
+      "used": 3,
+      "limit": 2
+    },
+    "L4": {
+      "used": 0,
+      "limit": 2
+    },
+    "L5": {
+      "used": 1,
+      "limit": 2
+    },
+    "L6": {
+      "used": 2,
+      "limit": 2
+    },
+    "L7": {
+      "used": 2,
+      "limit": 2
+    },
+    "L8": {
+      "used": 0,
+      "limit": 2
+    }
+  },
+  "evidence": [
+    "runs/R14/math-output-lock.json",
+    "runs/R14/trials/math/independent-review/review.json",
+    "runs/R14/trials/math/independent-review/addendum.json",
+    "runs/R14/trials/math/independent-review/independent-calculations.json",
+    "runs/R14/resumption/L3-budget-decision.json"
+  ],
+  "limits": "One synthetic case per level, shared detailed acceptance; distinct validation folds; no ranking, prompt causality, award or full contest inference.",
+  "author_budget": {
+    "used": 2,
+    "limit": 2
+  },
+  "reviewer_budget": {
+    "used": 2,
+    "limit": 2
+  },
+  "combined_R14_04_status": "blocked",
+  "producer_self_check_is_independent": false
+}

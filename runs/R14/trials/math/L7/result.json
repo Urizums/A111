@@ -1,0 +1,34 @@
+{
+  "schema": "forge-trial-result/1",
+  "case_id": "math-level-7",
+  "source_case": "runs/R14/cases/math/L7/request.json",
+  "problem": "runs/R14/cases/math/problem.json",
+  "candidate_lock": "runs/R14/candidate/C9-lock.json",
+  "candidate_revision": "C9",
+  "state": "bounded_slice_delivered_self_checked_independent_acceptance_unverified",
+  "files": [
+    "workflow.md", "solve.py", "results.json", "demand_forecast.png", "paper.md", "verification.md",
+    "main-smoke.json", "main-rerun-01.json", "main-rerun-02.json", "malformed-smoke.json", "malformed-rerun-02.json",
+    "malformed-cost.json", "failed-attempt-01.json", "failed-attempt-02.json"
+  ],
+  "checks": {
+    "main_smoke_exit_code": 0,
+    "malformed_boundary_exit_code": 1,
+    "malformed_field_identified": "delivery_cost_per_unit",
+    "plot_viewed_after_legend_correction": true,
+    "forecast_validation": "expanding-origin one-step weeks 4-8, no future values",
+    "allocation_feasible": true,
+    "objective_CNY": 270,
+    "optimality_evidence": "exact separable marginal-value ranking argument; cutoff tie documented",
+    "independent_acceptance": false
+  },
+  "failed_attempts": 2,
+  "correction_rounds_used": 2,
+  "correction_round_limit": 2,
+  "failed_attempts_detail": [
+    "Forecast markers lacked legend; corrected and visually rechecked.",
+    "Concise malformed-input CLI message patch did not take effect; traceback remains although rejection and offending field are evidenced."
+  ],
+  "limit": "Case stopped at the original 2/2 correction boundary. Result is conditional on eight synthetic weeks and supplied costs/penalties; no future week-9 actual, current contest rules, award/rank evidence, causal ranking, or general performance claim.",
+  "telemetry": {"requested_model": "gpt-6-luna", "authenticated_model": null, "tokens": null, "cost": null, "elapsed_model_time": null}
+}

@@ -1,0 +1,41 @@
+{
+  "task_id": "R14-03",
+  "attempt_id": "R14-03-1",
+  "requirements_hash": "b8fe91fb1b51aa9693fad3a001ecee5645ebdc0a16edd38f96fa36adce060152",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "blocked",
+      "evidence": [
+        "runs/R14/trials/frontend/result.json",
+        "runs/R14/trials/frontend/verification.md",
+        "runs/R14/resumption/reconciliation.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R14/trials/frontend/result.json",
+        "runs/R14/trials/frontend/workflow.md"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Frozen substantial frontend workflow and actual browser trial",
+    "hypothesis": "C9 gates require actual interaction and visual evidence",
+    "baseline": "No verified frontend runtime",
+    "conditions": "Original actor delivered HTML and workflow; browser file protocol rejected by host security policy",
+    "observations": "No server/browser execution or screenshots; f2-f5 remain unverified; static fixture arithmetic is separate",
+    "limits": "Not frontend acceptance, visual quality, responsiveness, keyboard usability or production proof",
+    "metrics": {
+      "case_corrections_used": 0,
+      "case_limit": 2,
+      "candidate_author_used": 2,
+      "candidate_author_limit": 2,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Retain browser-policy blocker; do not substitute static evidence or attempt a policy workaround"
+}

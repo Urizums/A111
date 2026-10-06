@@ -1,0 +1,48 @@
+{
+  "schema": "forge-original-case-budget-decision/1",
+  "task_id": "R16-02",
+  "actor": "/root/r16_original_solution",
+  "provenance": "Coordinator adjudication of the original producer's retained ledger and actual receipts; not a new raw command receipt or independent model review.",
+  "used": 2,
+  "limit": 2,
+  "events": [
+    {
+      "correction": 1,
+      "failure": "Initial one-line source-extraction command failed with SyntaxError.",
+      "recovery": "Authored read_sources.py as a replacement construction and executed it.",
+      "evidence": "runs/R16/solution/attempt-ledger.md",
+      "raw_failure_receipt": null,
+      "limit_of_evidence": "Original actor disclosed the failure and recovery; exact original argv/output/timing unavailable. Lack of a recorder receipt does not erase the correction."
+    },
+    {
+      "correction": 2,
+      "failure": "read_sources.py resolved A111/source, then raised StopIteration.",
+      "recovery": "Changed the script's source-root calculation and executed the corrected construction successfully.",
+      "failure_receipt": "runs/R16/solution/receipts/01-source-read.json",
+      "recovery_receipt": "runs/R16/solution/receipts/02-source-read.json"
+    }
+  ],
+  "boundary_disclosure": {
+    "unauthorized_manifest_read": "Original actor reports accidentally displaying source-manifest.json outside its allowed read list and not using its content. Original observation retained in attempt-ledger.md; non-use is an actor statement, not externally proved.",
+    "solver_executed": false,
+    "verified_baseline": false,
+    "full_paper_exists": false,
+    "unverified_draft": "runs/R16/solution/solve.py"
+  },
+  "separate_domains_unchanged": {
+    "R16_source": {"used": 2, "limit": 2},
+    "C9_author": {"used": 2, "limit": 2},
+    "R14_L3": {"used": 3, "limit": 2},
+    "R14_L7": {"used": 2, "limit": 2}
+  },
+  "decision": "Stop the original execution case at its original boundary. Do not execute/repair the draft, replace the actor, rename the sample or dilute p1-p6. Source acquisition passed; the requested original complete solution and paper remain undelivered.",
+  "recovery_condition": "Only explicit user authorization to increase this original case's cumulative limit can permit additional construction/execution. Preserve used=2, original failures, actor, inputs and requirements.",
+  "governing_rules": [
+    "AGENTS.md: 有界修复默认每候选最多两轮；达到边界保留失败、分离能继续的任务并明确停止原因。不能换验收、换样本或转交另一个 worker 规避边界。",
+    "runs/R14/candidate/C9/forge-agent-flow/references/continuation.md: Stop at the requested goal, user stop, unavailable material/capability, deadline or original budget boundary.",
+    "runs/R16/acceptance.json repair_policy: Each declared source/execution/review case at most two cumulative failure-driven source/orchestration/fallback corrections."
+  ],
+  "actual_model": null,
+  "tokens": null,
+  "cost": null
+}

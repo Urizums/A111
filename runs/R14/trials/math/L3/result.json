@@ -1,0 +1,71 @@
+{
+  "schema": "forge-trial-result/1",
+  "case_id": "math-level-3",
+  "input_case_id": "offline-demand-allocation-01",
+  "candidate": "C9-lock",
+  "output_directory": "runs/R14/trials/math/L3/",
+  "state": "producer_selfchecked_pending_independent_acceptance",
+  "files": {
+    "workflow": "runs/R14/trials/math/L3/workflow.md",
+    "solver": "runs/R14/trials/math/L3/solve.py",
+    "source_check_script": "runs/R14/trials/math/L3/source_check.py",
+    "source_check": "runs/R14/trials/math/L3/source_check.json",
+    "malformed_fixture": "runs/R14/trials/math/L3/malformed_bad_cost.json",
+    "results": "runs/R14/trials/math/L3/results.json",
+    "figure": "runs/R14/trials/math/L3/forecast_allocation.png",
+    "paper": "runs/R14/trials/math/L3/paper.md",
+    "verification": "runs/R14/trials/math/L3/verification.md",
+    "receipts": [
+      "runs/R14/trials/math/L3/receipts/main-smoke.json",
+      "runs/R14/trials/math/L3/receipts/source-check.json",
+      "runs/R14/trials/math/L3/receipts/malformed-rejection.json",
+      "runs/R14/trials/math/L3/receipts/final-main-smoke.json",
+      "runs/R14/trials/math/L3/receipts/final-malformed-rejection.json",
+      "runs/R14/trials/math/L3/receipts/source-check-final.json"
+    ]
+  },
+  "reproduction": {
+    "working_directory": "repo root",
+    "main": "py -3.12 -X utf8 runs/R14/trials/math/L3/solve.py",
+    "source_check_and_fixture": "py -3.12 -X utf8 runs/R14/trials/math/L3/source_check.py",
+    "malformed_rejection": "py -3.12 -X utf8 runs/R14/trials/math/L3/solve.py --input runs/R14/trials/math/L3/malformed_bad_cost.json --out runs/R14/trials/math/L3/malformed_should_not_exist.json",
+    "recorded_target_exit_codes": {"final_main_smoke": 0, "final_malformed_rejection": 2, "source_check_final": 0}
+  },
+  "checks": {
+    "source_material_check": "producer selfcheck passed; raw problem SHA and all 8 C9-lock document hashes checked",
+    "main_smoke": "producer selfcheck passed; computed results written and constraints/objective assertions true",
+    "malformed_input_same_entrypoint": "producer selfcheck passed; target exit code 2, INPUT_REJECTED, no result file written",
+    "figure": "generated from actual result data and viewed in this session",
+    "independent_acceptance": "pending; must be conducted separately from original request and actual artifacts"
+  },
+  "budget": {
+    "trial_level3": {"initial": 0, "corrections_used": 2, "limit": 2, "exhausted": true},
+    "candidate_lock_domain": {"repairs_used": 2, "repair_limit": 2, "candidate_source_repairs": 0, "author_orchestration_corrections": 2, "modified_or_reset": false},
+    "failed_attempts": [
+      {
+        "event": "Initial exploratory read used relative paths without the runs/R14 prefix; three file lookups failed.",
+        "effect": "No source or trial artifact was changed by this lookup failure.",
+        "resolution": "Read the paths specified by the L3 request under runs/R14.",
+        "correction_budget_count": 0
+      }
+    ],
+    "corrections": [
+      "Hash the actual --input bytes for reusable solver invocations rather than always hashing the default source file.",
+      "Remove a duplicated hardcoded L3 repair count from source-check output; result.json is the single trial budget summary."
+    ]
+  },
+  "outputs_summary": {
+    "predictions_week9_units_per_week": {"A": 28.0, "B": 20.35714285714286, "C": 30.678571428571445},
+    "allocation_week9_units": {"A": 28, "B": 2, "C": 30},
+    "objective_cny": 264.9285714285716,
+    "feasible_allocations_exhaustively_evaluated": 24076,
+    "validation_mae_units_per_week": {"linear_trend": 0.7726190476190485, "last_observation_baseline": 1.25}
+  },
+  "unknown_telemetry": {"model_requested": "gpt-6-luna", "authenticated_model": null, "tokens": null, "cost": null},
+  "limits": [
+    "One short, self-created practice case with 8 weeks and 3 stations; no genuine MathorCup or CUMCM task, current rules, full-competition evidence, awards or leaderboard evidence.",
+    "Four rolling one-step validation folds cannot establish generalized or statistically reliable forecasting superiority; week 9 has no observed outcome.",
+    "Allocation optimality is exact only for the fixed predictions, objective and finite constraints provided in this exercise.",
+    "Producer selfcheck is not independent acceptance; external acceptance remains pending."
+  ]
+}

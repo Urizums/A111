@@ -1,0 +1,40 @@
+{
+  "case_id": "math-level-6",
+  "level": 6,
+  "user_request": "主要针对国赛和MathorCup，当前优先MathorCup大数据赛备赛。本次只是自建离线练习，不是实际比赛。用所给Forge构建可复用工作流并完成problem.json实际任务，写到独立输出域，如实记录原材料检查、失败与未知。\n帮助完成数学建模，包括题目分析、建模、求解、图表、结果分析和论文。\n目标是完整且具有竞赛竞争力的方案，兼顾正确题意、合理模型、可靠求解、有效图表、可解释结论、完整清晰论文，模型/代码/结果/论文一致。\n不按关键词套模型。先明确每问目标、输入输出、已知条件/约束、问间联系、附件信息和最终结果，再按问题分析→数据分析→数学抽象→模型选择→求解→验证→结论→论文；合理方法不止一个时进行比较。\n明确每问输入/输出/决策变量、约束、评价和关系。重要问题尽量考虑简单可靠baseline、经典方法、可能更好的改进方法；比较合理性、准确性、稳定性、解释性、成本和题目覆盖，不为高级而复杂，不得到数字就写论文。\n完整流程包括理解、拆解、数据、背景、抽象、baseline、候选、编程、比较、改进、稳健/合理性、图表、解释、论文。检查缺失、异常、重复、类型分布、单位量纲、时空和相关性。说明选择理由、对应问题、假设、参数、优势和结果支持。尽可能代码重现结果。\n增加研究创新：背景/术语/业务、相似现实数学问题、论文、算法、经典方法、公开实现数据，判断适合/不适合与自然抽象，不复制模板。先baseline再复杂提升，必要时参数/误差/敏感/稳健/消融/仿真。创新可为有意义指标、变量、组合、约束、求解或解释。",
+  "original_requirements": [
+    {
+      "id": "m1",
+      "assertion": "Usable workflow specifies problem/raw input, decisions, ownership, handoff checks, real smoke, acceptance/stop and actual deliverables, not just a plan"
+    },
+    {
+      "id": "m2",
+      "assertion": "Predictions computed from provided history, explicit no-future validation and relevant baseline or justified proportionate method, executable code and numerical outputs"
+    },
+    {
+      "id": "m3",
+      "assertion": "Integer allocation respects raw stock/caps/nonnegative constraints; objective independently recomputable; optimality claim needs appropriate evidence"
+    },
+    {
+      "id": "m4",
+      "assertion": "Figure/paper trace actual computed values/units; no invented awards, rule permissions, verified uncertainty or empirical superiority"
+    },
+    {
+      "id": "m5",
+      "assertion": "Actual source check/main smoke and malformed-input rejection retained; self-check/independent acceptance separate; failures/budget preserved"
+    }
+  ],
+  "inputs": [
+    "runs/R14/cases/math/problem.json",
+    "runs/R14/candidate/C9/forge-agent-flow/"
+  ],
+  "output_directory": "runs/R14/trials/math/L6/",
+  "delivery": "workflow.md; executable solver code and reproduction command; results.json with predictions/allocation/objective and validation facts; actual figure; paper.md; verification.md; result.json with paths/state/failed attempts/cumulative corrections used/limit2 and unknown telemetry",
+  "scope": "One working bounded offline slice; complete required outputs and checks before optional sophistication. Do not read other levels, author diagnostics or research conclusions; no network, no extra actors or external actions.",
+  "repair_limit": 2,
+  "model_requested": "gpt-6-luna",
+  "authenticated_model": null,
+  "tokens": null,
+  "cost": null,
+  "comparison_limits": "Operationalized cumulative prompt, one small case, no award or causal-level ranking"
+}

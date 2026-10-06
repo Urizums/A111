@@ -1,0 +1,4 @@
+Attempt: first inventory listing command
+Command (from A111): py -X utf8 -c "import zipfile; from pathlib import Path; [print('\\n'.join(f'{z}: {n} | {i.file_size} bytes' for i in zipfile.ZipFile(Path('runs/R16/source')/z).infolist())) for z in ['D_corrected.zip','all_questions.zip']]"
+Error: NameError: name 'n' is not defined
+Effect: no network request and no original attachment write; retried once with list_archives.py, which completed and is preserved in inventory-receipt.json.

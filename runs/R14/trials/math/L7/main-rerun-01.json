@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "runs/R14/trials/math/L7/solve.py",
+    "--problem",
+    "runs/R14/cases/math/problem.json",
+    "--outdir",
+    "runs/R14/trials/math/L7"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-06T17:38:54.435218+00:00",
+    "monotonic_ns": 56066875000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-06T17:38:55.415231+00:00",
+    "monotonic_ns": 56067843000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\"results\": \"runs\\\\R14\\\\trials\\\\math\\\\L7\\\\results.json\", \"figure\": \"runs\\\\R14\\\\trials\\\\math\\\\L7\\\\demand_forecast.png\", \"method\": \"linear_trend\", \"mae\": {\"linear_trend\": 0.8180952380952408, \"persistence\": 1.3333333333333333}, \"forecast\": {\"A\": 28.0, \"B\": 20.35714285714286, \"C\": 30.678571428571445}, \"allocation\": {\"units\": {\"A\": 28, \"B\": 1, \"C\": 31}, \"total_units\": 60, \"objective_CNY\": 270.0, \"predicted_integer_demand_units\": {\"A\": 28, \"B\": 21, \"C\": 31}, \"constraints\": {\"nonnegative_integer\": true, \"station_caps\": {\"A\": true, \"B\": true, \"C\": true}, \"total_available\": true}, \"optimality_certificate\": {\"method\": \"separable marginal-value ranking\", \"positive_units_available\": 80, \"units_selected\": 60, \"last_selected_gain\": 5.0, \"best_excluded_positive_gain\": 5.0, \"omitted_post_demand_marginals_negative\": true, \"argument\": \"Objective improvement is additive by station and each feasible unit through ceil(prediction) has constant gain penalty-cost. Selecting the top min(stock, positive-unit-count) gains is globally optimal; units beyond predicted demand have negative gain and cannot improve the minimization objective.\"}}}\r\n",
+  "stderr": "",
+  "stdout_base64": "eyJyZXN1bHRzIjogInJ1bnNcXFIxNFxcdHJpYWxzXFxtYXRoXFxMN1xccmVzdWx0cy5qc29uIiwgImZpZ3VyZSI6ICJydW5zXFxSMTRcXHRyaWFsc1xcbWF0aFxcTDdcXGRlbWFuZF9mb3JlY2FzdC5wbmciLCAibWV0aG9kIjogImxpbmVhcl90cmVuZCIsICJtYWUiOiB7ImxpbmVhcl90cmVuZCI6IDAuODE4MDk1MjM4MDk1MjQwOCwgInBlcnNpc3RlbmNlIjogMS4zMzMzMzMzMzMzMzMzMzMzfSwgImZvcmVjYXN0IjogeyJBIjogMjguMCwgIkIiOiAyMC4zNTcxNDI4NTcxNDI4NiwgIkMiOiAzMC42Nzg1NzE0Mjg1NzE0NDV9LCAiYWxsb2NhdGlvbiI6IHsidW5pdHMiOiB7IkEiOiAyOCwgIkIiOiAxLCAiQyI6IDMxfSwgInRvdGFsX3VuaXRzIjogNjAsICJvYmplY3RpdmVfQ05ZIjogMjcwLjAsICJwcmVkaWN0ZWRfaW50ZWdlcl9kZW1hbmRfdW5pdHMiOiB7IkEiOiAyOCwgIkIiOiAyMSwgIkMiOiAzMX0sICJjb25zdHJhaW50cyI6IHsibm9ubmVnYXRpdmVfaW50ZWdlciI6IHRydWUsICJzdGF0aW9uX2NhcHMiOiB7IkEiOiB0cnVlLCAiQiI6IHRydWUsICJDIjogdHJ1ZX0sICJ0b3RhbF9hdmFpbGFibGUiOiB0cnVlfSwgIm9wdGltYWxpdHlfY2VydGlmaWNhdGUiOiB7Im1ldGhvZCI6ICJzZXBhcmFibGUgbWFyZ2luYWwtdmFsdWUgcmFua2luZyIsICJwb3NpdGl2ZV91bml0c19hdmFpbGFibGUiOiA4MCwgInVuaXRzX3NlbGVjdGVkIjogNjAsICJsYXN0X3NlbGVjdGVkX2dhaW4iOiA1LjAsICJiZXN0X2V4Y2x1ZGVkX3Bvc2l0aXZlX2dhaW4iOiA1LjAsICJvbWl0dGVkX3Bvc3RfZGVtYW5kX21hcmdpbmFsc19uZWdhdGl2ZSI6IHRydWUsICJhcmd1bWVudCI6ICJPYmplY3RpdmUgaW1wcm92ZW1lbnQgaXMgYWRkaXRpdmUgYnkgc3RhdGlvbiBhbmQgZWFjaCBmZWFzaWJsZSB1bml0IHRocm91Z2ggY2VpbChwcmVkaWN0aW9uKSBoYXMgY29uc3RhbnQgZ2FpbiBwZW5hbHR5LWNvc3QuIFNlbGVjdGluZyB0aGUgdG9wIG1pbihzdG9jaywgcG9zaXRpdmUtdW5pdC1jb3VudCkgZ2FpbnMgaXMgZ2xvYmFsbHkgb3B0aW1hbDsgdW5pdHMgYmV5b25kIHByZWRpY3RlZCBkZW1hbmQgaGF2ZSBuZWdhdGl2ZSBnYWluIGFuZCBjYW5ub3QgaW1wcm92ZSB0aGUgbWluaW1pemF0aW9uIG9iamVjdGl2ZS4ifX19DQo=",
+  "stderr_base64": ""
+}

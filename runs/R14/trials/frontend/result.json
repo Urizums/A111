@@ -1,0 +1,96 @@
+{
+  "case_id": "web-modeling-workbench-01",
+  "actor": "frontend",
+  "status": "incomplete_blocked_at_browser_runtime_boundary",
+  "scope": "Only the assigned frontend trial directory was updated. Existing index.html and workflow.md are preserved.",
+  "requirements": {
+    "f1": {
+      "status": "artifact_present_static_review_only",
+      "evidence": [
+        "workflow.md"
+      ],
+      "claim_limit": "Workflow document contains role/interface/receiving-check and iteration/stop sections; not independently accepted."
+    },
+    "f2": {
+      "status": "unverified_blocked",
+      "evidence": [
+        "index.html source inspection",
+        "verification.md read-only arithmetic audit"
+      ],
+      "claim_limit": "No actual-browser interaction or displayed values were observed. Static source and arithmetic do not satisfy actual-browser evidence."
+    },
+    "f3": {
+      "status": "unverified_blocked",
+      "evidence": [
+        "index.html source inspection"
+      ],
+      "claim_limit": "Negative/nonnumeric rejection and correction recovery were not exercised in a browser."
+    },
+    "f4": {
+      "status": "unverified_blocked",
+      "evidence": [
+        "index.html responsive/focus source inspection"
+      ],
+      "claim_limit": "Keyboard completion, mobile reachability and clipping were not tested at runtime."
+    },
+    "f5": {
+      "status": "unverified_blocked",
+      "evidence": [],
+      "claim_limit": "No screenshots were created or visually inspected; browser and visual observations are absent."
+    }
+  },
+  "read_only_math_audit": {
+    "method": "Independent one-shot exhaustive arithmetic over the supplied raw week 1–8 fixture and distribution constraints; not execution of the app.",
+    "forecast_model": "OLS linear trend on weeks 1–8, extrapolate week 9",
+    "predicted_demand_units_per_week": {
+      "A": 28.0,
+      "B": 20.357142857142854,
+      "C": 30.678571428571427
+    },
+    "optimal_integer_allocation_units": {
+      "A": 28,
+      "B": 2,
+      "C": 30
+    },
+    "objective_cny": 264.9285714285714,
+    "limits": "This arithmetic is a source-level expected-value oracle only. It does not establish that the browser app displays or computes these values."
+  },
+  "attempts": {
+    "frontend_case_corrections_used": 0,
+    "frontend_case_repair_limit": 2,
+    "C9_author_repairs_used": 2,
+    "C9_author_repair_limit": 2,
+    "budget_domains": "C9 author corrections are a separate domain and are reported separately; they do not alter this frontend case count."
+  },
+  "browser_boundary": {
+    "original_implementation_browser_command": "None; no server/browser command was run during original implementation.",
+    "current_browser_result": "Blocked: parent thread observed a browser file:// security-policy refusal. The raw tool receipt is unavailable in this trial directory, so this is recorded as a parent-thread observation, not a locally retained raw receipt.",
+    "alternate_execution_attempts": 0,
+    "screenshots": [],
+    "telemetry": {
+      "provider_model": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "artifacts": {
+    "app": "runs/R14/trials/frontend/index.html",
+    "workflow": "runs/R14/trials/frontend/workflow.md",
+    "verification": "runs/R14/trials/frontend/verification.md",
+    "result": "runs/R14/trials/frontend/result.json"
+  },
+  "reproduction": {
+    "app": "Open index.html locally in a browser if permitted by the host policy.",
+    "browser_smoke": "Not run. Browser execution is blocked for this case in the current host context; do not treat static inspection or the arithmetic audit as a substitute.",
+    "checks_run": "Read-only source inspection and independent fixture arithmetic audit only."
+  },
+  "claims_not_established": [
+    "actual browser computation or error/recovery",
+    "keyboard completion and responsive runtime behavior",
+    "screenshots or visual inspection",
+    "independent acceptance",
+    "production integration",
+    "comprehensive accessibility",
+    "performance"
+  ]
+}

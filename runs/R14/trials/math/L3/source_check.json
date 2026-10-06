@@ -1,0 +1,66 @@
+{
+  "case_id": "offline-demand-allocation-01",
+  "problem_path": "runs/R14/cases/math/problem.json",
+  "problem_sha256": "e6bac9fd20c5609f55757e39546b7d3e28865dd6af333086e8930b6cf0b36f39",
+  "data_rows": 8,
+  "stations": [
+    "A",
+    "B",
+    "C"
+  ],
+  "boundary_material_count": 1,
+  "c9_lock_repairs_used": 2,
+  "c9_lock_limit": 2,
+  "locked_forge_files": [
+    {
+      "path": "runs/R14/candidate/C9/forge-agent-flow/references/collaboration.md",
+      "expected_sha256": "e47019551555763e42275ec7077370c0bd6cb658df5e53b12a02eebd56cbcb9f",
+      "actual_sha256": "e47019551555763e42275ec7077370c0bd6cb658df5e53b12a02eebd56cbcb9f",
+      "matches": true
+    },
+    {
+      "path": "runs/R14/candidate/C9/forge-agent-flow/references/continuation.md",
+      "expected_sha256": "fd91f2e97e099281aecda7f840e3f0aee563d1dd7a3219bbded524ac34fac845",
+      "actual_sha256": "fd91f2e97e099281aecda7f840e3f0aee563d1dd7a3219bbded524ac34fac845",
+      "matches": true
+    },
+    {
+      "path": "runs/R14/candidate/C9/forge-agent-flow/references/evaluation.md",
+      "expected_sha256": "4d911f33d51d1a4f36c4c7087dc4ccaf6b2d5f1b378fd10c602503412ec188e2",
+      "actual_sha256": "4d911f33d51d1a4f36c4c7087dc4ccaf6b2d5f1b378fd10c602503412ec188e2",
+      "matches": true
+    },
+    {
+      "path": "runs/R14/candidate/C9/forge-agent-flow/references/frontend.md",
+      "expected_sha256": "cecbe0047fa7d61c8cbe9bc014341586d0be85128bb18724b799414cadd6f7db",
+      "actual_sha256": "cecbe0047fa7d61c8cbe9bc014341586d0be85128bb18724b799414cadd6f7db",
+      "matches": true
+    },
+    {
+      "path": "runs/R14/candidate/C9/forge-agent-flow/references/modeling.md",
+      "expected_sha256": "3a0403dbb2b32387c3fa41fe5be1d49099ffb39b62e32d5cb21d1aa689256125",
+      "actual_sha256": "3a0403dbb2b32387c3fa41fe5be1d49099ffb39b62e32d5cb21d1aa689256125",
+      "matches": true
+    },
+    {
+      "path": "runs/R14/candidate/C9/forge-agent-flow/references/source-evaluation.md",
+      "expected_sha256": "f0ccd33fdbfb1c8bf10475b4f31161c92bccd68de30689b75e10de5d788d05fb",
+      "actual_sha256": "f0ccd33fdbfb1c8bf10475b4f31161c92bccd68de30689b75e10de5d788d05fb",
+      "matches": true
+    },
+    {
+      "path": "runs/R14/candidate/C9/forge-agent-flow/references/workflow-design.md",
+      "expected_sha256": "8b9121323495f5298e791162cf697e29d04e8e8b4910475990573bc30468eb2c",
+      "actual_sha256": "8b9121323495f5298e791162cf697e29d04e8e8b4910475990573bc30468eb2c",
+      "matches": true
+    },
+    {
+      "path": "runs/R14/candidate/C9/forge-agent-flow/SKILL.md",
+      "expected_sha256": "b83a327e1a8813b7972dffac47541b7e168eb5e7e8b7dfe3bb9ef9b836a7a4e8",
+      "actual_sha256": "b83a327e1a8813b7972dffac47541b7e168eb5e7e8b7dfe3bb9ef9b836a7a4e8",
+      "matches": true
+    }
+  ],
+  "malformed_fixture": "runs/R14/trials/math/L3/malformed_bad_cost.json",
+  "malformed_change": "distribution.delivery_cost_per_unit.A = 'two CNY'"
+}

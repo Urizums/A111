@@ -1,0 +1,25 @@
+{
+  "schema": "forge-real-contest-practice-acceptance/1",
+  "provenance": "New user historical MathorCup independent-solution request. Freeze selected official problem/data/errata and this contract before executor receives it.",
+  "source_gate": [
+    {"id": "s1", "assertion": "Official 2026 regular-contest question, required attachments and official errata identified, retrieved bytes hashed; missing required source is explicit and blocks a fabricated complete solve"},
+    {"id": "s2", "assertion": "Input provenance excludes competition solutions, participant/award papers and unofficial answer templates; neutral packet contains source facts without a proposed answer or model"}
+  ],
+  "execution_gate": [
+    {"id": "p1", "assertion": "Workflow and question coverage map trace every official subquestion to actual inputs, model/decision, result, receiving check and limitation; skipped or unsupported subquestions cannot count as complete"},
+    {"id": "p2", "assertion": "Mathematical definitions, units, assumptions and constraints match the original task; feasible proportionate baseline precedes justified main method; necessary alternatives or simplifications receive actual evidence rather than model-name lists"},
+    {"id": "p3", "assertion": "Original code processes official raw data and actually computes reported results; retained reproduction instructions and real command evidence; no fabricated numeric answer, hardcoded reported result or disguised mock"},
+    {"id": "p4", "assertion": "Task-relevant substantive validation independently recomputable from raw material; fair baseline/main comparison and a meaningful failure/boundary path; sensitivity/robustness where material to the original conclusions; unavailable observations remain unverified"},
+    {"id": "p5", "assertion": "Complete paper answers official questions with coherent analysis/models/results/validation/conclusions/limits and source attribution; substantive tables/figures/equations agree with code/results and carry units; restrained uncertainty and no competition rank/prize claim"},
+    {"id": "p6", "assertion": "Original producer context runs bounded autonomous TODO/handoffs using frozen C9; self-check and independent review distinct; failures, cumulative case correction limit2, candidate-author history2/2 and unknown telemetry preserved"}
+  ],
+  "independent_review_gate": [
+    {"id": "v1", "assertion": "Fresh reviewer receives official raw source, frozen requirements and actual artifacts without intended answer/producer diagnoses/previous verdict; recomputes critical quantities and checks question coverage rather than trusting pass reports"},
+    {"id": "v2", "assertion": "One source/evidence-backed verdict per p1-p6, mandatory defects separated from optional polish; actual reproduction/check observations and model/data/paper disagreements retained"}
+  ],
+  "resources": "Existing local Windows Python scientific libraries and CPU; offline executor, no installation or solution search. Inspect data and choose proportionate computations; report actual runtime and sample/scale limits.",
+  "delivery": "workflow.md, TODO.md, source/input references, executable code, actual numeric results, actual inspected figures, complete paper.md, verification.md, result.json and real command records. An exportable PDF is desirable but cannot substitute for numerical or paper correctness.",
+  "limits": "Historical regular-contest practice supports only observed workflow/model/paper performance. It is not live competition submission, a MathorCup big-data benchmark, award evidence or a guarantee of generality.",
+  "repair_policy": "Each declared source/execution/review case at most two cumulative failure-driven source/orchestration/fallback corrections; original input and criterion cannot be changed to erase failures. Source budget is not silently transferred to the independent executor, nor C9 author budget reset.",
+  "status": "draft_pending_selected_official_question_identity"
+}

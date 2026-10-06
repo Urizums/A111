@@ -1,0 +1,53 @@
+{
+  "case_id": "math-level-8",
+  "problem_id": "offline-demand-allocation-01",
+  "state": "delivered_producer_checked_independent_acceptance_pending",
+  "output_directory": "runs/R14/trials/math/L8/",
+  "files": {
+    "workflow": "workflow.md",
+    "solver": "solve.py",
+    "reproduction_command": "python -X utf8 runs/R14/trials/math/L8/solve.py --problem runs/R14/cases/math/problem.json --outdir runs/R14/trials/math/L8",
+    "results": "results.json",
+    "figure": "forecast_allocation.png",
+    "paper": "paper.md",
+    "verification": "verification.md",
+    "main_command_record": "reproduction/command.json",
+    "malformed_input": "malformed-cost.json",
+    "boundary_command_record": "boundary-check/command.json"
+  },
+  "observed_checks": {
+    "main_reproduction_exit_code": 0,
+    "malformed_cost_exit_code": 2,
+    "malformed_cost_rejected_before_output": true,
+    "figure_opened_and_inspected": true,
+    "c9_locked_skill_and_reference_hashes_match": true,
+    "independent_acceptance": false
+  },
+  "case_correction_budget": {
+    "limit": 2,
+    "failure_driven_corrections_used": 0,
+    "failed_attempts": [],
+    "note": "Expected malformed-input rejection is a planned boundary check, not a failure-driven correction."
+  },
+  "candidate_author_history_budget": {
+    "source": "runs/R14/candidate/C9-lock.json",
+    "repairs_used": 2,
+    "repair_limit": 2,
+    "candidate_source_repairs": 0,
+    "author_orchestration_corrections": 2,
+    "counting_domain": "C9 candidate author history; separate from this L8 execution"
+  },
+  "receipt_provenance": "Initial main and malformed command outputs were observed but no complete original command receipts were saved. The cited reproduction/ and boundary-check/ records are retained records of later invocations; they are not represented as the original session receipts.",
+  "telemetry": {
+    "requested_model": "gpt-6-luna",
+    "authenticated_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "claims_excluded": [
+    "independent acceptance or general correctness",
+    "real-contest competitiveness, leaderboard rank, or awards",
+    "causal ranking of workflow levels",
+    "empirical forecasting superiority beyond the five observed origins"
+  ]
+}

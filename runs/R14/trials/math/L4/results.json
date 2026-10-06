@@ -1,0 +1,176 @@
+{
+  "case_id": "offline-demand-allocation-01",
+  "units": {
+    "demand": "units/week",
+    "allocation": "integer units for week9",
+    "cost": "CNY/unit"
+  },
+  "source": "runs\\R14\\cases\\math\\problem.json",
+  "forecast": {
+    "method": "per-station ordinary least-squares linear trend on all observed weeks; extrapolate one week; floor at zero",
+    "decision_week": 9,
+    "values": {
+      "A": 28.0,
+      "B": 20.35714285714286,
+      "C": 30.678571428571445
+    },
+    "assumptions": [
+      "weekly indices are evenly spaced",
+      "trend remains locally linear for one-step extrapolation",
+      "no future observations used"
+    ]
+  },
+  "validation": {
+    "method": "rolling-origin one-step, training begins with first 3 weeks; targets weeks 4 through 8",
+    "fold_count": 5,
+    "station_fold_count": 15,
+    "linear_trend_mae_units_per_week": 0.8180952380952408,
+    "last_observation_baseline_mae_units_per_week": 1.3333333333333333,
+    "folds": [
+      {
+        "target_week": 4,
+        "station": "A",
+        "actual": 23,
+        "linear_trend": 22.99999999999999,
+        "last_observation": 22
+      },
+      {
+        "target_week": 4,
+        "station": "B",
+        "actual": 18,
+        "linear_trend": 16.99999999999999,
+        "last_observation": 17
+      },
+      {
+        "target_week": 4,
+        "station": "C",
+        "actual": 27,
+        "linear_trend": 24.999999999999993,
+        "last_observation": 24
+      },
+      {
+        "target_week": 5,
+        "station": "A",
+        "actual": 24,
+        "linear_trend": 23.999999999999993,
+        "last_observation": 23
+      },
+      {
+        "target_week": 5,
+        "station": "B",
+        "actual": 17,
+        "linear_trend": 18.499999999999996,
+        "last_observation": 18
+      },
+      {
+        "target_week": 5,
+        "station": "C",
+        "actual": 26,
+        "linear_trend": 27.49999999999999,
+        "last_observation": 27
+      },
+      {
+        "target_week": 6,
+        "station": "A",
+        "actual": 25,
+        "linear_trend": 24.999999999999993,
+        "last_observation": 24
+      },
+      {
+        "target_week": 6,
+        "station": "B",
+        "actual": 19,
+        "linear_trend": 18.1,
+        "last_observation": 17
+      },
+      {
+        "target_week": 6,
+        "station": "C",
+        "actual": 28,
+        "linear_trend": 27.4,
+        "last_observation": 26
+      },
+      {
+        "target_week": 7,
+        "station": "A",
+        "actual": 26,
+        "linear_trend": 26.0,
+        "last_observation": 25
+      },
+      {
+        "target_week": 7,
+        "station": "B",
+        "actual": 20,
+        "linear_trend": 19.200000000000006,
+        "last_observation": 19
+      },
+      {
+        "target_week": 7,
+        "station": "C",
+        "actual": 30,
+        "linear_trend": 28.6,
+        "last_observation": 28
+      },
+      {
+        "target_week": 8,
+        "station": "A",
+        "actual": 27,
+        "linear_trend": 27.0,
+        "last_observation": 26
+      },
+      {
+        "target_week": 8,
+        "station": "B",
+        "actual": 19,
+        "linear_trend": 20.285714285714292,
+        "last_observation": 20
+      },
+      {
+        "target_week": 8,
+        "station": "C",
+        "actual": 29,
+        "linear_trend": 30.2857142857143,
+        "last_observation": 30
+      }
+    ],
+    "comparison_note": "descriptive on only five origins and three stations; not an inferential superiority claim"
+  },
+  "allocation": {
+    "allocation": {
+      "A": 28,
+      "B": 2,
+      "C": 30
+    },
+    "objective": 264.9285714285716,
+    "feasible_integer_vectors_enumerated": 24076,
+    "objective_components": {
+      "A": {
+        "delivery": 56.0,
+        "unmet": 0.0
+      },
+      "B": {
+        "delivery": 2.0,
+        "unmet": 110.14285714285717
+      },
+      "C": {
+        "delivery": 90.0,
+        "unmet": 6.785714285714448
+      }
+    },
+    "constraints": {
+      "total_available_units": 60,
+      "station_caps": {
+        "A": 30,
+        "B": 25,
+        "C": 35
+      },
+      "integer_nonnegative": true
+    },
+    "total_allocated": 60,
+    "predicted_unmet_units": {
+      "A": 0.0,
+      "B": 18.35714285714286,
+      "C": 0.6785714285714448
+    }
+  }
+}

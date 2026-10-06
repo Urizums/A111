@@ -1,0 +1,48 @@
+{
+  "case_id": "math-level-6",
+  "problem_id": "offline-demand-allocation-01",
+  "state": "produced_with_unresolved_visual_acceptance",
+  "output_directory": "runs/R14/trials/math/L6/",
+  "files": {
+    "workflow": "workflow.md",
+    "solver": "solve.py",
+    "results": "results.json",
+    "figure": "demand_forecast.png",
+    "paper": "paper.md",
+    "verification": "verification.md",
+    "valid_command_receipt": "smoke-valid-command.json",
+    "malformed_command_receipt": "smoke-malformed-command.json",
+    "malformed_input_fixture": "malformed-cost.json"
+  },
+  "checks": {
+    "valid_cli_exit_code": 0,
+    "malformed_cli_exit_code": 2,
+    "malformed_cli_message": "cost for A must be finite numeric",
+    "audit": {"rows": 8, "missing_cells": 0, "duplicate_weeks": 0, "stations": 3},
+    "validation": {"protocol": "rolling one-step origins 4–8; train only on earlier weeks", "trend_MAE_units_per_week": 0.8180952380952408, "last_value_MAE_units_per_week": 1.3333333333333333, "predictions": 15},
+    "week9_forecast_units_per_week": {"A": 28.0, "B": 20.35714285714286, "C": 30.678571428571445},
+    "allocation_units": {"A": 28, "B": 2, "C": 30},
+    "allocation_total": 60,
+    "cap_slack": {"A": 2, "B": 23, "C": 5},
+    "stock_slack": 0,
+    "objective_CNY": 264.9285714285716,
+    "optimality_evidence": "MILP status optimal and agrees with exhaustive enumeration of all 24,076 feasible integer allocations",
+    "figure_visual_inspection": "opened and inspected; observations and forecasts visible, forecast marker labels absent from legend; receiving check unresolved",
+    "independent_acceptance": "not performed",
+    "external_research": "not performed; offline work did not verify papers, public data/code, or current contest rules"
+  },
+  "failed_attempts": [
+    {"attempt": 1, "stage": "initial valid CLI run", "failure": "NameError: cost mapping was referenced as undefined name", "correction": "use defined costs mapping", "status": "corrected; subsequent valid run succeeded"},
+    {"attempt": 2, "stage": "figure-label improvement and final rerun", "failure": "command ran from repository parent instead of work/A111, so relative paths did not resolve and no source change or final rerun occurred", "status": "preserved; budget exhausted; stop"}
+  ],
+  "repair_budget": {"limit": 2, "used": 2, "remaining": 0, "scope": "this new case; distinct from C9 author budget"},
+  "unknown_telemetry": {"authenticated_model": null, "tokens": null, "cost": null},
+  "limits": [
+    "single self-created offline exercise with eight weeks and three stations",
+    "producer smoke is not independent acceptance",
+    "no contest ranking, award, causal, or generalization claim",
+    "no probabilistic forecast uncertainty estimated",
+    "figure legend check unresolved and no further repairs allowed in this case",
+    "no online research or current organizer-rule verification"
+  ]
+}

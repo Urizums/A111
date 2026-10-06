@@ -1,0 +1,20 @@
+{
+  "case_id": "math-level-1",
+  "state": "corrected_slice_executed_and_self_checked_independent_acceptance_not_performed",
+  "artifacts": ["workflow.md", "solver.py", "results.json", "demand_forecast.png", "paper.md", "verification.md", "check_rolling.py", "malformed-cost-input.json", "attempt-1-main.json", "attempt-1-check.json", "attempt-0/"],
+  "reproduction": "python -X utf8 runs/R14/trials/math/L1/solver.py",
+  "checks_performed": ["main solver command recorded with exit code 0", "target-specific expanding rolling-origin forecasts for weeks 3–8", "independent target-fold and MAE recomputation recorded with exit code 0", "integer/cap/stock feasibility", "objective recomputation", "exhaustive feasible allocation enumeration", "malformed input rejected by production load_and_validate entry point", "rendered plot", "original artifacts preserved under attempt-0/"],
+  "correction": "forecast function hardcoded week 9 during historical folds; it now takes explicit target_week; forecasts, paper and verification updated",
+  "prior_failed_check": "Candidate lock SHA-256 check command returned a truncated Python SyntaxError; no durable receipt and no retry. Details in verification.md.",
+  "case_corrections_used": 1,
+  "case_corrections_limit": 2,
+  "candidate_author_orchestration_corrections_used": 2,
+  "candidate_author_orchestration_corrections_limit": 2,
+  "candidate_source_repairs": 0,
+  "independent_acceptance": false,
+  "model_requested": "gpt-6-luna",
+  "authenticated_model": null,
+  "tokens": null,
+  "cost": null,
+  "unknowns": ["No future week 9 actual demand", "No independent acceptor", "Candidate-lock hash check remains unverified due to syntax failure", "No current official contest rules researched", "Small sample cannot establish general predictive performance or contest outcomes"]
+}

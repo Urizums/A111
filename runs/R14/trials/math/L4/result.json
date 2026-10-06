@@ -1,0 +1,62 @@
+{
+  "schema": "forge-trial-result/1",
+  "case_id": "math-level-4",
+  "state": "completed_self_checked_independent_acceptance_unavailable",
+  "output_directory": "runs/R14/trials/math/L4/",
+  "files": {
+    "workflow": "workflow.md",
+    "solver": "solve.py",
+    "results": "results.json",
+    "figure": "forecast_allocation.png",
+    "paper": "paper.md",
+    "verification": "verification.md",
+    "command_receipts": ["receipts/main-smoke.json", "receipts/malformed-smoke.json"]
+  },
+  "checks": {
+    "declared_C9_flow_hashes_match": true,
+    "raw_data_audit": "8 complete, increasing weeks; three numeric station series; no repair",
+    "main_smoke": {"receipt": "receipts/main-smoke.json", "exit_code": 0, "state": "finished"},
+    "malformed_input_rejection": {
+      "receipt": "receipts/malformed-smoke.json",
+      "exit_code": 1,
+      "state": "finished_expected_rejection",
+      "observed": "ValueError: delivery_cost_per_unit[A] must be finite and nonnegative numeric"
+    },
+    "forecast": {
+      "week9": {"A": 28.0, "B": 20.35714285714286, "C": 30.678571428571445},
+      "rolling_origin_folds": 5,
+      "linear_trend_mae_units_per_week": 0.8180952380952408,
+      "last_observation_mae_units_per_week": 1.3333333333333333
+    },
+    "allocation": {
+      "integer_units": {"A": 28, "B": 2, "C": 30},
+      "objective_cny": 264.9285714285716,
+      "feasible_integer_vectors_exhaustively_evaluated": 24076,
+      "constraint_check": "nonnegative integer, under station caps, total 60 <= 60"
+    },
+    "figure_visual_inspection": "performed; bars and allocation markers legible and values trace to results.json",
+    "independent_acceptance": "not performed"
+  },
+  "failure_history": {
+    "failed_attempts": [],
+    "expected_rejections": ["malformed-cost input rejected before numerical solve"],
+    "cumulative_failure_driven_corrections_used": 0,
+    "repair_limit": 2,
+    "historical_lock_counts": "C9 records 0 source repairs and 2 prior author orchestration corrections for a different scope; these are preserved as history and neither transfer budget nor reset this case."
+  },
+  "telemetry": {
+    "requested_model": "gpt-6-luna",
+    "authenticated_model": null,
+    "tokens": null,
+    "cost": null,
+    "provider_timing": null
+  },
+  "limits": [
+    "One self-created offline practice case only; not a real contest problem or submission.",
+    "Only eight weeks and three stations; validation covers five rolling origins and is descriptive.",
+    "No actual week-9 demand exists to score the selected forecast.",
+    "Optimization optimality is exhaustive for the provided finite objective and constraints; cost/penalty assumptions are not externally validated.",
+    "No independent acceptor, current contest-rule check, award/rank conclusion, or general Level superiority claim.",
+    "Model identity and token/cost/timing telemetry remain unknown."
+  ]
+}

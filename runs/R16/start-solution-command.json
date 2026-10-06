@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-B",
+    "scripts/continuation.py",
+    "--root",
+    ".",
+    "start",
+    "R16-02",
+    "--evidence",
+    "runs/R16/freeze-input-command.json"
+  ],
+  "cwd": "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+  "begin": {
+    "utc": "2026-10-06T17:52:26.690971+00:00",
+    "monotonic_ns": 1972385910248,
+    "boot_id": "ceae7945-fb11-4789-ba4e-866bc7f3c597"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-06T17:52:33.930427+00:00",
+    "monotonic_ns": 1979625363004,
+    "boot_id": "ceae7945-fb11-4789-ba4e-866bc7f3c597"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"id\": \"R16-02-1\",\n  \"started_at\": \"2026-10-06T17:52:33.852730+00:00\",\n  \"requirements_hash\": \"c1bcf5046c83ef250cbffb9df59f0fe4ccc642c0de83b2a398f7ccf68ca01243\",\n  \"inputs\": [\n    {\n      \"path\": \"runs/R16/PLAN.md\",\n      \"sha256\": \"eca99fc7645ffbf42e2ea23f557e52b7397f17619cc309600f31cb3174e663e0\"\n    },\n    {\n      \"path\": \"runs/R16/scope-decision.json\",\n      \"sha256\": \"ad506b94f3dd53641b97679938e019f8a065cbcc0759111559a2aaefa73da93b\"\n    },\n    {\n      \"path\": \"runs/R16/acceptance.json\",\n      \"sha256\": \"d2550e9ff1c13efb68ee02855ca73dd85e8df0fb6754b79630b2c59732231e09\"\n    },\n    {\n      \"path\": \"runs/R16/input-lock.json\",\n      \"sha256\": \"e9dfc55420b59d73819540122f40f75d77e662d854cb3346707cbde3d62a5a92\"\n    },\n    {\n      \"path\": \"runs/R14/candidate/C9-lock.json\",\n      \"sha256\": \"239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4\"\n    }\n  ],\n  \"start_evidence\": {\n    \"path\": \"runs/R16/freeze-input-command.json\",\n    \"sha256\": \"0b1c37a7f3f48dd89e6be7c0a047610a135ae9939e6d01085f8f7b3de61d5d90\"\n  },\n  \"status\": \"in_progress\"\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJpZCI6ICJSMTYtMDItMSIsCiAgInN0YXJ0ZWRfYXQiOiAiMjAyNi0xMC0wNlQxNzo1MjozMy44NTI3MzArMDA6MDAiLAogICJyZXF1aXJlbWVudHNfaGFzaCI6ICJjMWJjZjUwNDZjODNlZjI1MGNiZmZiOWRmNTlmMGZlNGNjYzY0MmMwZGU4M2IyYTM5OGY3Y2NmNjhjYTAxMjQzIiwKICAiaW5wdXRzIjogWwogICAgewogICAgICAicGF0aCI6ICJydW5zL1IxNi9QTEFOLm1kIiwKICAgICAgInNoYTI1NiI6ICJlY2E5OWZjNzY0NWZmYmY0MmUyZWEyM2Y1NTdlNTJiNzM5N2YxNzYxOWNjMzA5NjAwZjMxY2IzMTc0ZTY2M2UwIgogICAgfSwKICAgIHsKICAgICAgInBhdGgiOiAicnVucy9SMTYvc2NvcGUtZGVjaXNpb24uanNvbiIsCiAgICAgICJzaGEyNTYiOiAiYWQ1MDZiOTRmM2RkNTM2NDFiOTc2Nzk5MzhlMDE5ZjhhMDY1Y2JjYzA3NTkxMTE1NTlhMmFhZWZhNzNkYTkzYiIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogInJ1bnMvUjE2L2FjY2VwdGFuY2UuanNvbiIsCiAgICAgICJzaGEyNTYiOiAiZDI1NTBlOWZmMWMxM2VmYjY4ZWUwMjg1NWNhNzNkZDg1ZThkZjBmYjY3NTRiNzk2MzBiMmM1OTczMjIzMWUwOSIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogInJ1bnMvUjE2L2lucHV0LWxvY2suanNvbiIsCiAgICAgICJzaGEyNTYiOiAiZTlkZmM1NTQyMGI1OWQ3MzgxOTU0MDEyMmY0MGY3NWQ3N2U2NjJkODU0Y2IzMzQ2NzA3Y2JkZTNkNjJhNWE5MiIKICAgIH0sCiAgICB7CiAgICAgICJwYXRoIjogInJ1bnMvUjE0L2NhbmRpZGF0ZS9DOS1sb2NrLmpzb24iLAogICAgICAic2hhMjU2IjogIjIzOWNmNWZkZTMzZGFmY2E3OTI2Y2U2NjkwNTUwMjRiMGM4MWM1NWY2MjAwMzQyNjMwZjc0MjdiNjRiZTgxYjQiCiAgICB9CiAgXSwKICAic3RhcnRfZXZpZGVuY2UiOiB7CiAgICAicGF0aCI6ICJydW5zL1IxNi9mcmVlemUtaW5wdXQtY29tbWFuZC5qc29uIiwKICAgICJzaGEyNTYiOiAiMGIxYzM3YTdmM2Y0OGRkODllNmJlN2MwYTA0NzYxMGExMzVhZTk5MzllNmQwMTA4NWY4ZjdiM2RlNjFkNWQ5MCIKICB9LAogICJzdGF0dXMiOiAiaW5fcHJvZ3Jlc3MiCn0K",
+  "stderr_base64": ""
+}

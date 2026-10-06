@@ -1,0 +1,129 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R14",
+  "goal": "Forge本体与建模/重前端真实工作流",
+  "tasks": [
+    {
+      "id": "R14-01",
+      "title": "升级Forge纯文档本体与冻结契约",
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "runs/R14/candidate/",
+        "runs/R14/author/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Dispatch frozen math level probes and frontend trial",
+      "acceptance": [
+        "C9实际改动meta-workflow及质量/领域方法，无产品脚本/测试，链接/frontmatter有效",
+        "保存版本来源、冻结输入和旧任务/预算，结构检查不代替行为"
+      ],
+      "evidence": [
+        "runs/R14/R14-01-result.json",
+        "runs/R14/author/structure.json",
+        "runs/R14/candidate/C9-lock.json",
+        "runs/R14/scope-decision.json",
+        "runs/R14/baseline.json",
+        "runs/R14/cases/frozen-lock.json",
+        "runs/R14/author/failed-validator-observation.json",
+        "runs/R14/author/prepare-command.json"
+      ]
+    },
+    {
+      "id": "R14-02",
+      "title": "八层输入的新上下文建模工作流实际试运行",
+      "owner": "independent_luna",
+      "depends_on": [
+        "R14-01"
+      ],
+      "write_paths": [
+        "runs/R14/trials/math/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Retain failed original cases and blocked frontend/combined gate; no post-boundary repairs.",
+      "acceptance": [
+        "八个全新上下文各按同一原题和C9交付工作流及真实小题产物，失败/预算与未知不隐藏",
+        "按原m1–m5判定并报告Level观察边界，不凭长度或模型数宣称奖项/层级因果"
+      ],
+      "evidence": [
+        "runs/R14/R14-02-result.json",
+        "runs/R14/math-output-lock.json",
+        "runs/R14/math-comparison.json",
+        "runs/R14/REPORT.md",
+        "runs/R14/trials/math/independent-review/review.json",
+        "runs/R14/trials/math/independent-review/addendum.json",
+        "runs/R14/author/prepare-command.json"
+      ]
+    },
+    {
+      "id": "R14-03",
+      "title": "重前端工作流与实际浏览器试运行",
+      "owner": "independent_luna",
+      "depends_on": [
+        "R14-01"
+      ],
+      "write_paths": [
+        "runs/R14/trials/frontend/"
+      ],
+      "status": "blocked",
+      "blocker": "Browser protocol security refusal; mandatory f2-f5 have no runtime evidence. Case budget0/2 is retained, no workaround.",
+      "next_action": "Resume only when original runtime path is legitimately supported; preserve current refusal and partial artifacts.",
+      "acceptance": [
+        "按冻结f1–f5交付方法/实际应用，真实主路径/错误恢复/视口/键盘检查",
+        "运行、视觉、自测、独立验收、mock与未知边界分开，预算/失败保留"
+      ],
+      "evidence": [
+        "runs/R14/R14-03-result.json",
+        "runs/R14/author/prepare-command.json"
+      ]
+    },
+    {
+      "id": "R14-04",
+      "title": "独立核验两类产物与smoke验收职责",
+      "owner": "independent_luna",
+      "depends_on": [
+        "R14-02",
+        "R14-03"
+      ],
+      "write_paths": [
+        "runs/R14/acceptance/"
+      ],
+      "status": "blocked",
+      "blocker": "R14-03 mandatory browser/visual predecessor is blocked; combined independent acceptance cannot start.",
+      "next_action": "Keep original two-domain acceptance intact; math-only diagnostic checks do not satisfy the frontend dependency.",
+      "acceptance": [
+        "新审查者按原要求/原数据检查实际工件，数值重算与浏览器观察，不只接受作者报告",
+        "强度未降低、必需/可选判定分开，完整需求-证据结论和独立性局限"
+      ],
+      "evidence": [
+        "runs/R14/R14-03-result.json"
+      ]
+    },
+    {
+      "id": "R14-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R14-01",
+        "R14-02",
+        "R14-03",
+        "R14-04"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "满足前驱后冻结并真实启动验收者抗退化测试"
+      ],
+      "status": "blocked",
+      "evidence": [
+        "runs/R14/REPORT.md"
+      ],
+      "blocker": "R14-03 browser runtime and R14-04 combined acceptance remain blocked; no R15 first step.",
+      "next_action": "Resolve original prerequisite within explicit authorization; preserve failed cases and budgets."
+    }
+  ]
+}

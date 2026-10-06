@@ -1,0 +1,50 @@
+{
+  "case_id": "math-level-5",
+  "state": "producer-self-checked; independent acceptance not performed",
+  "scope": "One self-created offline practice case using the frozen request and problem JSON.",
+  "files": {
+    "workflow": "runs/R14/trials/math/L5/workflow.md",
+    "solver": "runs/R14/trials/math/L5/solve.py",
+    "results": "runs/R14/trials/math/L5/results.json",
+    "figure": "runs/R14/trials/math/L5/forecast_allocation.png",
+    "paper": "runs/R14/trials/math/L5/paper.md",
+    "verification": "runs/R14/trials/math/L5/verification.md",
+    "main_receipt_first": "runs/R14/trials/math/L5/receipt-main.json",
+    "main_receipt_after_correction": "runs/R14/trials/math/L5/receipt-main-correction-1.json",
+    "malformed_receipt": "runs/R14/trials/math/L5/receipt-malformed.json",
+    "malformed_input_fixture": "runs/R14/trials/math/L5/malformed_problem.json",
+    "retained_first_figure": "runs/R14/trials/math/L5/figure-attempt-1.png"
+  },
+  "checks": {
+    "original_input_main_cli": "passed; exit 0; receipt-main-correction-1.json",
+    "forecast_validation": "computed from source history with expanding windows; last_value and linear_trend compared on 15 station-origin predictions each",
+    "allocation": "feasible; integer constraints checked; exhaustive enumeration over 24076 feasible allocations recorded",
+    "figure": "final PNG visually inspected after correcting unit label",
+    "malformed_cost_boundary": "rejected; exit 1; no success result or figure emitted for that invocation",
+    "paper_result_trace": "producer cross-check against results.json",
+    "independent_acceptance": "not performed"
+  },
+  "failed_attempts": [
+    {
+      "attempt": 1,
+      "observation": "Initial plot used a shared units/week y-axis for forecast demand and integer allocation, making allocation units ambiguous.",
+      "preserved_artifact": "runs/R14/trials/math/L5/figure-attempt-1.png",
+      "correction": "Changed final axis label to distinguish units/week from week-9 units; reran recorded main command successfully."
+    }
+  ],
+  "cumulative_failure_driven_corrections_used": 1,
+  "repair_limit": 2,
+  "remaining_corrections": 1,
+  "telemetry": {
+    "requested_model": "gpt-6-luna",
+    "authenticated_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "unknowns_and_limits": [
+    "No actual week-9 demand is provided, so realized prediction and operating outcomes are unknown.",
+    "The eight-week sample cannot establish general forecast superiority, leaderboard ranking, awards, or full-contest performance.",
+    "Cost and shortage penalty values are supplied exercise parameters, not calibrated real-world values.",
+    "All verification was producer self-check in one context; independent acceptance is unverified."
+  ]
+}

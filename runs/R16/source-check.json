@@ -1,0 +1,20 @@
+{
+  "source_manifest_entries_checked": 37,
+  "sha256_matches": true,
+  "selected_official_files": 3,
+  "old_D_not_used": true,
+  "source_corrections_used": 2,
+  "source_correction_limit": 2,
+  "source_failures_preserved": [
+    {
+      "attempt": "inventory command 1",
+      "error": "本地归档清单的一行式表达式引用未定义名称 n，Python抛出 NameError；未访问外部资源、未写出原始附件。后续以受限脚本成功生成 inventory-receipt.json。原命令/错误摘要保存在 attempt-01-inventory-error.txt。"
+    },
+    {
+      "attempt": "archive extraction 1",
+      "receipt": "extract-receipt.json",
+      "error": "首次解压在完成首个成员写入后，打印路径时对相对 root 调用 Path.relative_to(绝对路径)，触发 ValueError；原错误回执保留。一次修订脚本后解压成功，回执 extract-receipt-retry.json。"
+    }
+  ],
+  "limits": "Retrieval and byte checks only, not a solved problem or CPU feasibility proof"
+}

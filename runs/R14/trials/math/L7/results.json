@@ -1,0 +1,323 @@
+{
+  "case_id": "offline-demand-allocation-01",
+  "units": {
+    "demand": "units/week",
+    "allocation": "integer units for week9",
+    "cost": "CNY/unit"
+  },
+  "audit": {
+    "rows": 8,
+    "weeks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "stations": [
+      "A",
+      "B",
+      "C"
+    ],
+    "missing_cells": 0,
+    "duplicate_weeks": 0,
+    "demand_min": 15.0,
+    "demand_max": 30.0,
+    "units_consistent": true,
+    "source": "problem.json data array; all values numeric; no embedded future week9 actual"
+  },
+  "validation": {
+    "protocol": "expanding origin, one-step ahead, targets weeks 4–8; each fit sees only earlier weeks",
+    "fold_count": 10,
+    "mae_by_method": {
+      "linear_trend": 0.8180952380952408,
+      "persistence": 1.3333333333333333
+    },
+    "selected_method": "linear_trend",
+    "scores": [
+      {
+        "week": 4,
+        "station": "A",
+        "method": "persistence",
+        "actual": 23.0,
+        "prediction": 22.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 4,
+        "station": "B",
+        "method": "persistence",
+        "actual": 18.0,
+        "prediction": 17.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 4,
+        "station": "C",
+        "method": "persistence",
+        "actual": 27.0,
+        "prediction": 24.0,
+        "absolute_error": 3.0
+      },
+      {
+        "week": 4,
+        "station": "A",
+        "method": "linear_trend",
+        "actual": 23.0,
+        "prediction": 22.99999999999999,
+        "absolute_error": 1.0658141036401503e-14
+      },
+      {
+        "week": 4,
+        "station": "B",
+        "method": "linear_trend",
+        "actual": 18.0,
+        "prediction": 16.99999999999999,
+        "absolute_error": 1.0000000000000107
+      },
+      {
+        "week": 4,
+        "station": "C",
+        "method": "linear_trend",
+        "actual": 27.0,
+        "prediction": 24.999999999999993,
+        "absolute_error": 2.000000000000007
+      },
+      {
+        "week": 5,
+        "station": "A",
+        "method": "persistence",
+        "actual": 24.0,
+        "prediction": 23.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 5,
+        "station": "B",
+        "method": "persistence",
+        "actual": 17.0,
+        "prediction": 18.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 5,
+        "station": "C",
+        "method": "persistence",
+        "actual": 26.0,
+        "prediction": 27.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 5,
+        "station": "A",
+        "method": "linear_trend",
+        "actual": 24.0,
+        "prediction": 23.999999999999993,
+        "absolute_error": 7.105427357601002e-15
+      },
+      {
+        "week": 5,
+        "station": "B",
+        "method": "linear_trend",
+        "actual": 17.0,
+        "prediction": 18.499999999999996,
+        "absolute_error": 1.4999999999999964
+      },
+      {
+        "week": 5,
+        "station": "C",
+        "method": "linear_trend",
+        "actual": 26.0,
+        "prediction": 27.49999999999999,
+        "absolute_error": 1.4999999999999893
+      },
+      {
+        "week": 6,
+        "station": "A",
+        "method": "persistence",
+        "actual": 25.0,
+        "prediction": 24.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 6,
+        "station": "B",
+        "method": "persistence",
+        "actual": 19.0,
+        "prediction": 17.0,
+        "absolute_error": 2.0
+      },
+      {
+        "week": 6,
+        "station": "C",
+        "method": "persistence",
+        "actual": 28.0,
+        "prediction": 26.0,
+        "absolute_error": 2.0
+      },
+      {
+        "week": 6,
+        "station": "A",
+        "method": "linear_trend",
+        "actual": 25.0,
+        "prediction": 24.999999999999993,
+        "absolute_error": 7.105427357601002e-15
+      },
+      {
+        "week": 6,
+        "station": "B",
+        "method": "linear_trend",
+        "actual": 19.0,
+        "prediction": 18.1,
+        "absolute_error": 0.8999999999999986
+      },
+      {
+        "week": 6,
+        "station": "C",
+        "method": "linear_trend",
+        "actual": 28.0,
+        "prediction": 27.4,
+        "absolute_error": 0.6000000000000014
+      },
+      {
+        "week": 7,
+        "station": "A",
+        "method": "persistence",
+        "actual": 26.0,
+        "prediction": 25.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 7,
+        "station": "B",
+        "method": "persistence",
+        "actual": 20.0,
+        "prediction": 19.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 7,
+        "station": "C",
+        "method": "persistence",
+        "actual": 30.0,
+        "prediction": 28.0,
+        "absolute_error": 2.0
+      },
+      {
+        "week": 7,
+        "station": "A",
+        "method": "linear_trend",
+        "actual": 26.0,
+        "prediction": 26.0,
+        "absolute_error": 0.0
+      },
+      {
+        "week": 7,
+        "station": "B",
+        "method": "linear_trend",
+        "actual": 20.0,
+        "prediction": 19.200000000000006,
+        "absolute_error": 0.7999999999999936
+      },
+      {
+        "week": 7,
+        "station": "C",
+        "method": "linear_trend",
+        "actual": 30.0,
+        "prediction": 28.6,
+        "absolute_error": 1.3999999999999986
+      },
+      {
+        "week": 8,
+        "station": "A",
+        "method": "persistence",
+        "actual": 27.0,
+        "prediction": 26.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 8,
+        "station": "B",
+        "method": "persistence",
+        "actual": 19.0,
+        "prediction": 20.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 8,
+        "station": "C",
+        "method": "persistence",
+        "actual": 29.0,
+        "prediction": 30.0,
+        "absolute_error": 1.0
+      },
+      {
+        "week": 8,
+        "station": "A",
+        "method": "linear_trend",
+        "actual": 27.0,
+        "prediction": 27.0,
+        "absolute_error": 0.0
+      },
+      {
+        "week": 8,
+        "station": "B",
+        "method": "linear_trend",
+        "actual": 19.0,
+        "prediction": 20.285714285714292,
+        "absolute_error": 1.2857142857142918
+      },
+      {
+        "week": 8,
+        "station": "C",
+        "method": "linear_trend",
+        "actual": 29.0,
+        "prediction": 30.2857142857143,
+        "absolute_error": 1.285714285714299
+      }
+    ]
+  },
+  "forecast": {
+    "week": 9,
+    "demand_units": {
+      "A": 28.0,
+      "B": 20.35714285714286,
+      "C": 30.678571428571445
+    }
+  },
+  "allocation": {
+    "units": {
+      "A": 28,
+      "B": 1,
+      "C": 31
+    },
+    "total_units": 60,
+    "objective_CNY": 270.0,
+    "predicted_integer_demand_units": {
+      "A": 28,
+      "B": 21,
+      "C": 31
+    },
+    "constraints": {
+      "nonnegative_integer": true,
+      "station_caps": {
+        "A": true,
+        "B": true,
+        "C": true
+      },
+      "total_available": true
+    },
+    "optimality_certificate": {
+      "method": "separable marginal-value ranking",
+      "positive_units_available": 80,
+      "units_selected": 60,
+      "last_selected_gain": 5.0,
+      "best_excluded_positive_gain": 5.0,
+      "omitted_post_demand_marginals_negative": true,
+      "argument": "Objective improvement is additive by station and each feasible unit through ceil(prediction) has constant gain penalty-cost. Selecting the top min(stock, positive-unit-count) gains is globally optimal; units beyond predicted demand have negative gain and cannot improve the minimization objective."
+    }
+  }
+}

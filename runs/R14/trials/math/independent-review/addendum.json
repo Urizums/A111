@@ -1,0 +1,282 @@
+{
+  "schema": "r14-independent-math-review-addendum/1",
+  "review_stage": "Second review after coordinator requirement and locator feedback; initial blind review remains unchanged in review.json/review.md.",
+  "scope": "Re-audit L3 cumulative budget and m5; validate/repair evidence locators for all initial per-requirement source fields. No other root diagnostics, author addenda or new reconciliations were read.",
+  "initial_artifacts_preserved": [
+    "runs/R14/trials/math/independent-review/review.json",
+    "runs/R14/trials/math/independent-review/review.md"
+  ],
+  "locator_audit": {
+    "checked_against_filesystem": true,
+    "per_level_exact_paths": {
+      "L1": {
+        "runs/R14/trials/math/L1/solver.py": true,
+        "runs/R14/trials/math/L1/results.json": true,
+        "runs/R14/trials/math/L1/workflow.md": true,
+        "runs/R14/trials/math/L1/paper.md": true,
+        "runs/R14/trials/math/L1/verification.md": true,
+        "runs/R14/trials/math/L1/demand_forecast.png": true,
+        "runs/R14/trials/math/L1/attempt-1-main.json": true,
+        "runs/R14/trials/math/L1/attempt-1-check.json": true
+      },
+      "L2": {
+        "runs/R14/trials/math/L2/solver.py": true,
+        "runs/R14/trials/math/L2/results.json": true,
+        "runs/R14/trials/math/L2/workflow.md": true,
+        "runs/R14/trials/math/L2/paper.md": true,
+        "runs/R14/trials/math/L2/verification.md": true,
+        "runs/R14/trials/math/L2/demand_allocation.png": true,
+        "runs/R14/trials/math/L2/receipt-source-check.json": true,
+        "runs/R14/trials/math/L2/receipt-smoke.json": true,
+        "runs/R14/trials/math/L2/receipt-malformed.json": true,
+        "runs/R14/trials/math/L2/receipt-verification.json": true
+      },
+      "L3": {
+        "runs/R14/trials/math/L3/solve.py": true,
+        "runs/R14/trials/math/L3/results.json": true,
+        "runs/R14/trials/math/L3/workflow.md": true,
+        "runs/R14/trials/math/L3/paper.md": true,
+        "runs/R14/trials/math/L3/verification.md": true,
+        "runs/R14/trials/math/L3/forecast_allocation.png": true,
+        "runs/R14/trials/math/L3/receipts/source-check-final.json": true,
+        "runs/R14/trials/math/L3/receipts/final-main-smoke.json": true,
+        "runs/R14/trials/math/L3/receipts/final-malformed-rejection.json": true
+      },
+      "L4": {
+        "runs/R14/trials/math/L4/solve.py": true,
+        "runs/R14/trials/math/L4/results.json": true,
+        "runs/R14/trials/math/L4/workflow.md": true,
+        "runs/R14/trials/math/L4/paper.md": true,
+        "runs/R14/trials/math/L4/verification.md": true,
+        "runs/R14/trials/math/L4/forecast_allocation.png": true,
+        "runs/R14/trials/math/L4/receipts/main-smoke.json": true,
+        "runs/R14/trials/math/L4/receipts/malformed-smoke.json": true
+      },
+      "L5": {
+        "runs/R14/trials/math/L5/solve.py": true,
+        "runs/R14/trials/math/L5/results.json": true,
+        "runs/R14/trials/math/L5/workflow.md": true,
+        "runs/R14/trials/math/L5/paper.md": true,
+        "runs/R14/trials/math/L5/verification.md": true,
+        "runs/R14/trials/math/L5/forecast_allocation.png": true,
+        "runs/R14/trials/math/L5/receipt-main.json": true,
+        "runs/R14/trials/math/L5/receipt-malformed.json": true,
+        "runs/R14/trials/math/L5/receipt-main-correction-1.json": true
+      },
+      "L6": {
+        "runs/R14/trials/math/L6/solve.py": true,
+        "runs/R14/trials/math/L6/results.json": true,
+        "runs/R14/trials/math/L6/workflow.md": true,
+        "runs/R14/trials/math/L6/paper.md": true,
+        "runs/R14/trials/math/L6/verification.md": true,
+        "runs/R14/trials/math/L6/demand_forecast.png": true,
+        "runs/R14/trials/math/L6/smoke-valid-command.json": true,
+        "runs/R14/trials/math/L6/smoke-malformed-command.json": true
+      },
+      "L7": {
+        "runs/R14/trials/math/L7/solve.py": true,
+        "runs/R14/trials/math/L7/results.json": true,
+        "runs/R14/trials/math/L7/workflow.md": true,
+        "runs/R14/trials/math/L7/paper.md": true,
+        "runs/R14/trials/math/L7/verification.md": true,
+        "runs/R14/trials/math/L7/demand_forecast.png": true,
+        "runs/R14/trials/math/L7/main-smoke.json": true,
+        "runs/R14/trials/math/L7/main-rerun-01.json": true,
+        "runs/R14/trials/math/L7/main-rerun-02.json": true,
+        "runs/R14/trials/math/L7/malformed-smoke.json": true,
+        "runs/R14/trials/math/L7/malformed-rerun-02.json": true
+      },
+      "L8": {
+        "runs/R14/trials/math/L8/solve.py": true,
+        "runs/R14/trials/math/L8/results.json": true,
+        "runs/R14/trials/math/L8/workflow.md": true,
+        "runs/R14/trials/math/L8/paper.md": true,
+        "runs/R14/trials/math/L8/verification.md": true,
+        "runs/R14/trials/math/L8/forecast_allocation.png": true,
+        "runs/R14/trials/math/L8/reproduction/command.json": true,
+        "runs/R14/trials/math/L8/boundary-check/command.json": true
+      }
+    },
+    "observed_locator_error": "The initial review used {root}solve.py generically for m2/m3, which does not exist for L1 and L2; both producer files are solver.py. The initial m4/m5 fields used generic artifact labels rather than exact per-level file paths.",
+    "corrected_path_map": {
+      "L1": {
+        "solver": "runs/R14/trials/math/L1/solver.py",
+        "results": "runs/R14/trials/math/L1/results.json",
+        "workflow": "runs/R14/trials/math/L1/workflow.md",
+        "paper": "runs/R14/trials/math/L1/paper.md",
+        "figure": "runs/R14/trials/math/L1/demand_forecast.png",
+        "verification": "runs/R14/trials/math/L1/verification.md",
+        "receipts": [
+          "runs/R14/trials/math/L1/attempt-1-main.json",
+          "runs/R14/trials/math/L1/attempt-1-check.json"
+        ]
+      },
+      "L2": {
+        "solver": "runs/R14/trials/math/L2/solver.py",
+        "results": "runs/R14/trials/math/L2/results.json",
+        "workflow": "runs/R14/trials/math/L2/workflow.md",
+        "paper": "runs/R14/trials/math/L2/paper.md",
+        "figure": "runs/R14/trials/math/L2/demand_allocation.png",
+        "verification": "runs/R14/trials/math/L2/verification.md",
+        "receipts": [
+          "runs/R14/trials/math/L2/receipt-source-check.json",
+          "runs/R14/trials/math/L2/receipt-smoke.json",
+          "runs/R14/trials/math/L2/receipt-malformed.json",
+          "runs/R14/trials/math/L2/receipt-verification.json"
+        ]
+      },
+      "L3": {
+        "solver": "runs/R14/trials/math/L3/solve.py",
+        "results": "runs/R14/trials/math/L3/results.json",
+        "workflow": "runs/R14/trials/math/L3/workflow.md",
+        "paper": "runs/R14/trials/math/L3/paper.md",
+        "figure": "runs/R14/trials/math/L3/forecast_allocation.png",
+        "verification": "runs/R14/trials/math/L3/verification.md",
+        "receipts": [
+          "runs/R14/trials/math/L3/receipts/source-check-final.json",
+          "runs/R14/trials/math/L3/receipts/final-main-smoke.json",
+          "runs/R14/trials/math/L3/receipts/final-malformed-rejection.json"
+        ]
+      },
+      "L4": {
+        "solver": "runs/R14/trials/math/L4/solve.py",
+        "results": "runs/R14/trials/math/L4/results.json",
+        "workflow": "runs/R14/trials/math/L4/workflow.md",
+        "paper": "runs/R14/trials/math/L4/paper.md",
+        "figure": "runs/R14/trials/math/L4/forecast_allocation.png",
+        "verification": "runs/R14/trials/math/L4/verification.md",
+        "receipts": [
+          "runs/R14/trials/math/L4/receipts/main-smoke.json",
+          "runs/R14/trials/math/L4/receipts/malformed-smoke.json"
+        ]
+      },
+      "L5": {
+        "solver": "runs/R14/trials/math/L5/solve.py",
+        "results": "runs/R14/trials/math/L5/results.json",
+        "workflow": "runs/R14/trials/math/L5/workflow.md",
+        "paper": "runs/R14/trials/math/L5/paper.md",
+        "figure": "runs/R14/trials/math/L5/forecast_allocation.png",
+        "verification": "runs/R14/trials/math/L5/verification.md",
+        "receipts": [
+          "runs/R14/trials/math/L5/receipt-main.json",
+          "runs/R14/trials/math/L5/receipt-malformed.json",
+          "runs/R14/trials/math/L5/receipt-main-correction-1.json"
+        ]
+      },
+      "L6": {
+        "solver": "runs/R14/trials/math/L6/solve.py",
+        "results": "runs/R14/trials/math/L6/results.json",
+        "workflow": "runs/R14/trials/math/L6/workflow.md",
+        "paper": "runs/R14/trials/math/L6/paper.md",
+        "figure": "runs/R14/trials/math/L6/demand_forecast.png",
+        "verification": "runs/R14/trials/math/L6/verification.md",
+        "receipts": [
+          "runs/R14/trials/math/L6/smoke-valid-command.json",
+          "runs/R14/trials/math/L6/smoke-malformed-command.json"
+        ]
+      },
+      "L7": {
+        "solver": "runs/R14/trials/math/L7/solve.py",
+        "results": "runs/R14/trials/math/L7/results.json",
+        "workflow": "runs/R14/trials/math/L7/workflow.md",
+        "paper": "runs/R14/trials/math/L7/paper.md",
+        "figure": "runs/R14/trials/math/L7/demand_forecast.png",
+        "verification": "runs/R14/trials/math/L7/verification.md",
+        "receipts": [
+          "runs/R14/trials/math/L7/main-smoke.json",
+          "runs/R14/trials/math/L7/main-rerun-01.json",
+          "runs/R14/trials/math/L7/main-rerun-02.json",
+          "runs/R14/trials/math/L7/malformed-smoke.json",
+          "runs/R14/trials/math/L7/malformed-rerun-02.json"
+        ]
+      },
+      "L8": {
+        "solver": "runs/R14/trials/math/L8/solve.py",
+        "results": "runs/R14/trials/math/L8/results.json",
+        "workflow": "runs/R14/trials/math/L8/workflow.md",
+        "paper": "runs/R14/trials/math/L8/paper.md",
+        "figure": "runs/R14/trials/math/L8/forecast_allocation.png",
+        "verification": "runs/R14/trials/math/L8/verification.md",
+        "receipts": [
+          "runs/R14/trials/math/L8/reproduction/command.json",
+          "runs/R14/trials/math/L8/boundary-check/command.json"
+        ]
+      }
+    },
+    "all_listed_corrected_paths_exist": true
+  },
+  "L3_budget_reconciliation": {
+    "case_limit": 2,
+    "producer_reported_trial_corrections": 2,
+    "case_level_events": [
+      {
+        "event": "Initial exploratory file reads omitted required runs/R14 prefix; three lookups failed.",
+        "classification": "one orchestration correction when path was corrected; three failed lookups are one grouped root-cause event, not three corrections",
+        "evidence": "runs/R14/trials/math/L3/result.json budget.failed_attempts[0]",
+        "raw_command_receipt": "none found among L3 retained receipts; event/count are recorded in result.json and verification.md, so raw invocation detail is unverified",
+        "producer_budget_field": "correction_budget_count=0",
+        "independent_count": 1
+      },
+      {
+        "event": "Hash the actual --input bytes in reusable solver invocations.",
+        "classification": "one source/construction correction",
+        "evidence": "runs/R14/trials/math/L3/result.json budget.corrections[0] and current solve.py/source-check behavior",
+        "producer_budget_field": "included among two corrections",
+        "independent_count": 1
+      },
+      {
+        "event": "Remove duplicated hardcoded L3 correction count from source-check output.",
+        "classification": "one source/check construction correction",
+        "evidence": "runs/R14/trials/math/L3/result.json budget.corrections[1] and current source_check.py/source_check.json",
+        "producer_budget_field": "included among two corrections",
+        "independent_count": 1
+      }
+    ],
+    "independent_case_cumulative_count": 3,
+    "case_budget_result": "3/2; limit exceeded by one when source/construction and orchestration correction categories are cumulatively counted",
+    "candidate_lock_domain": {
+      "repairs_used": 2,
+      "repair_limit": 2,
+      "source_repairs": 0,
+      "orchestration_corrections": 2,
+      "classification": "separate frozen C9 candidate history; 2/2 and not reset by this case"
+    },
+    "lineage_event_total_across_separate_domains": 5,
+    "lineage_total_caveat": "Arithmetic total across candidate history (2) plus L3 case (3) is 5 events, but the lock and case request define separate denominators; report both rather than silently treating them as one 2-round case budget.",
+    "confidence_limit": "Two source corrections and the path correction are recorded in the trial result/verification, but no raw receipt for the three failed path lookups was found. The correction count is the best-supported cumulative reading of the retained event ledger; exact command-level details for the lookup failure remain unknown."
+  },
+  "verdict_changes": {
+    "L3_m5": {
+      "initial": "pass",
+      "addendum": "fail",
+      "reason": "The initial m5 pass accepted the producer summary’s trial counter (2/2) without accumulating the separately recorded failed-path recovery with the two source/construction corrections. Under C9’s cumulative source/orchestration/construction/fallback counting rule, L3 is 3/2. The trial budget is therefore not truthfully reconciled; m5 also requires failures/budget preserved.",
+      "evidence": "runs/R14/cases/math/L3/request.json repair_limit=2; runs/R14/candidate/C9-lock.json candidate domain=2/2; runs/R14/trials/math/L3/result.json budget.failed_attempts[0] plus budget.corrections[0:2]; retained L3 source-check/main/malformed receipts confirm actual required checks ran, but do not evidence the initial failed reads."
+    },
+    "other_original_verdicts": "No change to the original m1-m4 verdicts or other levels. In particular L7 m3 remains fail."
+  },
+  "revised_counts": {
+    "original_review": {
+      "pass": 39,
+      "fail": 1,
+      "unverified": 0
+    },
+    "after_addendum": {
+      "pass": 38,
+      "fail": 2,
+      "unverified": 0
+    },
+    "basis": "Only L3 m5 changes from pass to fail; L7 m3 was already failed."
+  },
+  "reviewer_budget": {
+    "round1": "Independent calculation index bug corrected; 1/2 reviewer corrections used.",
+    "round2": "This addendum repairs source locators and cumulative budget accounting; 2/2 reviewer corrections used.",
+    "remaining": 0,
+    "instruction": "No third review/correction round will be performed. No locked producer artifact was edited."
+  },
+  "limitations": [
+    "The initial relative-path failure has no raw command receipt; its occurrence is recorded by the trial in result.json/verification.md. Count one grouped orchestration correction, while keeping command details unverified.",
+    "C9 candidate history (2/2) and L3 trial request (limit 2) are separate stated budget domains. Their lineage event total is reported as 5, while the L3 case itself is 3/2.",
+    "Authenticated model, tokens and cost remain unknown/null."
+  ],
+  "global_boundary": "The review remains limited to the eight mathematical artifacts and shared detailed acceptance contract. Fold schemes differ by level. It does not infer level causality/ranking or any contest outcome."
+}

@@ -1,0 +1,170 @@
+{
+  "case_id": "offline-demand-allocation-01",
+  "source": {
+    "path": "runs\\R14\\cases\\math\\problem.json",
+    "sha256": "e6bac9fd20c5609f55757e39546b7d3e28865dd6af333086e8930b6cf0b36f39"
+  },
+  "units": {
+    "demand": "units/week",
+    "allocation": "integer units for week9",
+    "cost": "CNY/unit"
+  },
+  "data_audit": {
+    "row_count": 8,
+    "stations": [
+      "A",
+      "B",
+      "C"
+    ],
+    "week_sequence": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "missing_cells": 0,
+    "duplicate_weeks": 0,
+    "numeric_finite_nonnegative_demand": true,
+    "unit_from_source": "units/week",
+    "per_station_min": {
+      "A": 20,
+      "B": 15,
+      "C": 23
+    },
+    "per_station_max": {
+      "A": 27,
+      "B": 20,
+      "C": 30
+    },
+    "limitations": "Only eight supplied observations; no external source, seasonality, stockout, or measurement-error metadata."
+  },
+  "forecast": {
+    "selected_method": "linear_trend",
+    "predictions_units_per_week": {
+      "A": 28.0,
+      "B": 20.35714285714286,
+      "C": 30.678571428571445
+    },
+    "selection_rule": "lowest pooled rolling-origin MAE; tie favors last_value",
+    "validation": {
+      "design": "expanding-window one-step-ahead; each forecast uses only earlier weeks",
+      "origins_predicting": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "n_forecasts": {
+        "last_value": 15,
+        "linear_trend": 15
+      },
+      "methods": {
+        "last_value": {
+          "mae_units_per_week": 1.3333333333333333,
+          "station_mae": {
+            "A": 1.0,
+            "B": 1.2,
+            "C": 1.8
+          },
+          "signed_errors": {
+            "A": [
+              -1.0,
+              -1.0,
+              -1.0,
+              -1.0,
+              -1.0
+            ],
+            "B": [
+              -1.0,
+              1.0,
+              -2.0,
+              -1.0,
+              1.0
+            ],
+            "C": [
+              -3.0,
+              1.0,
+              -2.0,
+              -2.0,
+              1.0
+            ]
+          }
+        },
+        "linear_trend": {
+          "mae_units_per_week": 0.8180952380952408,
+          "station_mae": {
+            "A": 4.973799150320701e-15,
+            "B": 1.0971428571428583,
+            "C": 1.357142857142859
+          },
+          "signed_errors": {
+            "A": [
+              -1.0658141036401503e-14,
+              -7.105427357601002e-15,
+              -7.105427357601002e-15,
+              0.0,
+              0.0
+            ],
+            "B": [
+              -1.0000000000000107,
+              1.4999999999999964,
+              -0.8999999999999986,
+              -0.7999999999999936,
+              1.2857142857142918
+            ],
+            "C": [
+              -2.000000000000007,
+              1.4999999999999893,
+              -0.6000000000000014,
+              -1.3999999999999986,
+              1.285714285714299
+            ]
+          }
+        }
+      }
+    }
+  },
+  "allocation": {
+    "week": 9,
+    "integer_units": {
+      "A": 28,
+      "B": 2,
+      "C": 30
+    },
+    "total_units": 60,
+    "caps": {
+      "A": 30,
+      "B": 25,
+      "C": 35
+    },
+    "available_units": 60,
+    "objective_cny": 264.9285714285716,
+    "objective_terms": {
+      "A": {
+        "delivery": 56,
+        "unmet": 0.0
+      },
+      "B": {
+        "delivery": 2,
+        "unmet": 110.14285714285717
+      },
+      "C": {
+        "delivery": 90,
+        "unmet": 6.785714285714448
+      }
+    },
+    "feasible_allocation_count": 24076,
+    "optimality_evidence": "Exhaustively enumerated every integer vector within each cap and total-stock limit; minimum objective selected over the full feasible set.",
+    "minimum_objective_gap_to_next_distinct": 1.0
+  },
+  "interpretation_limits": [
+    "Predictions are conditional on a short synthetic history and chosen rolling MAE rule.",
+    "Allocation optimizes supplied forecast penalties and costs; these parameters are not empirically calibrated.",
+    "No actual week-9 demand is supplied, so realized service or cost cannot be evaluated."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "schema":"forge-failed-tool-observation/1",
+  "initial_error":"UnicodeDecodeError: 'gbk' codec can't decode byte 0x94 in position 283: illegal multibyte sequence",
+  "initial_command":["python","C:/Users/admin/.codex/skills/.system/skill-creator/scripts/quick_validate.py","runs/R14/candidate/C9/forge-agent-flow"],
+  "outer_exit_code":1,
+  "corrections":[
+    {"round":1,"kind":"failed_corrective_construction","intended":"UTF-8 validator invocation and case preparation","error":"SyntaxError: missing ) after argument list","child_process_started":false,"files_changed":false},
+    {"round":2,"kind":"corrective_recovery","action":"Use raw patch text and invoke Python with -X utf8; keep source bytes unchanged"}
+  ],
+  "author_orchestration_corrections_used":2,
+  "limit":2,
+  "raw_subprocess_timing":null,
+  "limits":"Transcription of actual tool observations, not a fabricated timed command receipt. No R13 exporter repair or old-case retry."
+}

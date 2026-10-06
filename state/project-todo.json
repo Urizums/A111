@@ -1382,5 +1382,68 @@
     "rollback": "runs/R13/rollback.json",
     "published_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
     "publication_scope": "Actual failed adoption and rollback evidence, not adopted protocol"
+  },
+  "domain_workflows_R14": {
+    "plan": "runs/R14/PLAN.md",
+    "candidate": "runs/R14/candidate/C9-lock.json",
+    "status": "diagnostics_complete_combined_acceptance_blocked",
+    "new_user_scope": true,
+    "resumption": "runs/R14/resumption/reconciliation.json",
+    "report": "runs/R14/REPORT.md",
+    "math_result": "runs/R14/R14-02-result.json",
+    "counts": {
+      "pass_count": 38,
+      "fail_count": 2
+    },
+    "case_budgets": {
+      "L1": {
+        "used": 1,
+        "limit": 2
+      },
+      "L2": {
+        "used": 0,
+        "limit": 2
+      },
+      "L3": {
+        "used": 3,
+        "limit": 2
+      },
+      "L4": {
+        "used": 0,
+        "limit": 2
+      },
+      "L5": {
+        "used": 1,
+        "limit": 2
+      },
+      "L6": {
+        "used": 2,
+        "limit": 2
+      },
+      "L7": {
+        "used": 2,
+        "limit": 2
+      },
+      "L8": {
+        "used": 0,
+        "limit": 2
+      }
+    },
+    "R15_started": false
+  },
+  "real_historical_problem_R16": {
+    "plan": "runs/R16/PLAN.md",
+    "scope": "runs/R16/scope-decision.json",
+    "status": "original_solution_budget_blocked",
+    "new_user_scope": true,
+    "old_cases_reset": false,
+    "report": "runs/R16/REPORT.md",
+    "budget_decision": "runs/R16/budget-decision.json",
+    "source_status": "done",
+    "solution_status": "blocked",
+    "original_case_used": 2,
+    "original_case_limit": 2,
+    "full_paper_delivered": false,
+    "independent_review_started": false
   }
 }

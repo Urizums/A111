@@ -4514,6 +4514,834 @@
       "repair_limit": 2,
       "blocker": "UTF-8 export inspection failed after actual adoption; cumulative preparation corrections2/2. Adoption rolled back, same case cannot be retried.",
       "next_action": "Preserve exhausted failed adoption, publish protocol as reviewed research artifact only, no same-case rerun"
+    },
+    {
+      "id": "R14-01",
+      "title": "升级Forge纯文档本体与冻结契约",
+      "queue": "capabilities",
+      "category": "new_domain_workflow_quality",
+      "complexity": 2,
+      "priority": 30,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "runs/R14/candidate/",
+        "runs/R14/author/"
+      ],
+      "inputs": [
+        "runs/R14/PLAN.md",
+        "runs/R14/scope-decision.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "C9实际改动meta-workflow及质量/领域方法，无产品脚本/测试，链接/frontmatter有效"
+        },
+        {
+          "id": "a2",
+          "assertion": "保存版本来源、冻结输入和旧任务/预算，结构检查不代替行为"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R14/R14-01-result.json",
+          "sha256": "75201f409d20f341df887dd91ee46e7f4db099e39460aedb16e6723bb9113079"
+        },
+        {
+          "path": "runs/R14/author/structure.json",
+          "sha256": "b030a59a00e186f3abfadc6b0a524f3521f32fa937f90d033ce78451276eef0a"
+        },
+        {
+          "path": "runs/R14/candidate/C9-lock.json",
+          "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+        },
+        {
+          "path": "runs/R14/scope-decision.json",
+          "sha256": "5ef260af759983642ced02682068f7838e5c8456d172a0d67841ee45f0af08cd"
+        },
+        {
+          "path": "runs/R14/baseline.json",
+          "sha256": "a2e6a93687c1996d58de17fc6981a7588ac61ea8064d3ae4e1fbe87d985cb7df"
+        },
+        {
+          "path": "runs/R14/cases/frozen-lock.json",
+          "sha256": "e184527724cbf70189b9737f3483527810f3b9371c97d3a69fcd249d6083250b"
+        },
+        {
+          "path": "runs/R14/author/failed-validator-observation.json",
+          "sha256": "da4a999185231c2da7eb0aaf010e7a2d5112a1cb9dffe23ee917abfdc2220bfb"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R14-01-1",
+          "started_at": "2026-10-06T16:13:43.378134+00:00",
+          "requirements_hash": "162f3fd358e5e05d4ae15b8640177d88ffd1540175494230811302a8a5c622d2",
+          "inputs": [
+            {
+              "path": "runs/R14/PLAN.md",
+              "sha256": "c183cf0bd617334a800ca00193e91e0f001dc6d2ecff6031251bbd5fdb8f8322"
+            },
+            {
+              "path": "runs/R14/scope-decision.json",
+              "sha256": "5ef260af759983642ced02682068f7838e5c8456d172a0d67841ee45f0af08cd"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R14/author/prepare-command.json",
+            "sha256": "35cdeccdfa2683cacfbc51c3c1657c62166db1a0f2a26e8a06d2dad53e385dde"
+          },
+          "status": "done",
+          "ended_at": "2026-10-06T16:13:43.464430+00:00",
+          "result": {
+            "path": "runs/R14/R14-01-result.json",
+            "sha256": "75201f409d20f341df887dd91ee46e7f4db099e39460aedb16e6723bb9113079"
+          },
+          "evidence": [
+            {
+              "path": "runs/R14/R14-01-result.json",
+              "sha256": "75201f409d20f341df887dd91ee46e7f4db099e39460aedb16e6723bb9113079"
+            },
+            {
+              "path": "runs/R14/author/structure.json",
+              "sha256": "b030a59a00e186f3abfadc6b0a524f3521f32fa937f90d033ce78451276eef0a"
+            },
+            {
+              "path": "runs/R14/candidate/C9-lock.json",
+              "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+            },
+            {
+              "path": "runs/R14/scope-decision.json",
+              "sha256": "5ef260af759983642ced02682068f7838e5c8456d172a0d67841ee45f0af08cd"
+            },
+            {
+              "path": "runs/R14/baseline.json",
+              "sha256": "a2e6a93687c1996d58de17fc6981a7588ac61ea8064d3ae4e1fbe87d985cb7df"
+            },
+            {
+              "path": "runs/R14/cases/frozen-lock.json",
+              "sha256": "e184527724cbf70189b9737f3483527810f3b9371c97d3a69fcd249d6083250b"
+            },
+            {
+              "path": "runs/R14/author/failed-validator-observation.json",
+              "sha256": "da4a999185231c2da7eb0aaf010e7a2d5112a1cb9dffe23ee917abfdc2220bfb"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 2,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Dispatch frozen math level probes and frontend trial"
+    },
+    {
+      "id": "R14-02",
+      "title": "八层输入的新上下文建模工作流实际试运行",
+      "queue": "challenges",
+      "category": "new_domain_workflow_quality",
+      "complexity": 2,
+      "priority": 31,
+      "depends_on": [
+        "R14-01"
+      ],
+      "owner": "independent_luna",
+      "write_paths": [
+        "runs/R14/trials/math/"
+      ],
+      "inputs": [
+        "runs/R14/cases/acceptance.json",
+        "runs/R14/cases/frozen-lock.json",
+        "runs/R14/candidate/C9-lock.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "八个全新上下文各按同一原题和C9交付工作流及真实小题产物，失败/预算与未知不隐藏"
+        },
+        {
+          "id": "a2",
+          "assertion": "按原m1–m5判定并报告Level观察边界，不凭长度或模型数宣称奖项/层级因果"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R14/R14-02-result.json",
+          "sha256": "59085beb43597ab5151e08bf6cdb59ed8bd99ef4e0735f41252917bf8235ebab"
+        },
+        {
+          "path": "runs/R14/math-output-lock.json",
+          "sha256": "4617c4778d5a9398ba14e5efc855c35bc23ddc81cf280ee830e39364fee7aebb"
+        },
+        {
+          "path": "runs/R14/math-comparison.json",
+          "sha256": "1fee4aa38b6cf1c42d0d3220bdd8798688f243e7633e0e2b057f0da5718059b0"
+        },
+        {
+          "path": "runs/R14/REPORT.md",
+          "sha256": "2609d32d2a46430c251e41475d3195bf3c36ec2de1e127e8eaa5413ed00cb51d"
+        },
+        {
+          "path": "runs/R14/trials/math/independent-review/review.json",
+          "sha256": "0280ea030667d54756e23c58886a18d934be4514fcd4603609e0703d692fd5aa"
+        },
+        {
+          "path": "runs/R14/trials/math/independent-review/addendum.json",
+          "sha256": "fb0b2c6f53511c5ea813428d87a3a84b9eda132ac592e14e89a3e006e66006d4"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R14-02-1",
+          "started_at": "2026-10-06T16:15:14.345068+00:00",
+          "requirements_hash": "bb9c67c4b62885a647933c21ce9960b75e8ac239970e589af1c9f8e278eb61c2",
+          "inputs": [
+            {
+              "path": "runs/R14/cases/acceptance.json",
+              "sha256": "c083630b91f8e389ce85fb9792d474da4377332ece3eb0048e1503c93d4bceca"
+            },
+            {
+              "path": "runs/R14/cases/frozen-lock.json",
+              "sha256": "e184527724cbf70189b9737f3483527810f3b9371c97d3a69fcd249d6083250b"
+            },
+            {
+              "path": "runs/R14/candidate/C9-lock.json",
+              "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R14/author/prepare-command.json",
+            "sha256": "35cdeccdfa2683cacfbc51c3c1657c62166db1a0f2a26e8a06d2dad53e385dde"
+          },
+          "status": "done",
+          "ended_at": "2026-10-06T18:06:16.994641+00:00",
+          "result": {
+            "path": "runs/R14/R14-02-result.json",
+            "sha256": "59085beb43597ab5151e08bf6cdb59ed8bd99ef4e0735f41252917bf8235ebab"
+          },
+          "evidence": [
+            {
+              "path": "runs/R14/R14-02-result.json",
+              "sha256": "59085beb43597ab5151e08bf6cdb59ed8bd99ef4e0735f41252917bf8235ebab"
+            },
+            {
+              "path": "runs/R14/math-output-lock.json",
+              "sha256": "4617c4778d5a9398ba14e5efc855c35bc23ddc81cf280ee830e39364fee7aebb"
+            },
+            {
+              "path": "runs/R14/math-comparison.json",
+              "sha256": "1fee4aa38b6cf1c42d0d3220bdd8798688f243e7633e0e2b057f0da5718059b0"
+            },
+            {
+              "path": "runs/R14/REPORT.md",
+              "sha256": "2609d32d2a46430c251e41475d3195bf3c36ec2de1e127e8eaa5413ed00cb51d"
+            },
+            {
+              "path": "runs/R14/trials/math/independent-review/review.json",
+              "sha256": "0280ea030667d54756e23c58886a18d934be4514fcd4603609e0703d692fd5aa"
+            },
+            {
+              "path": "runs/R14/trials/math/independent-review/addendum.json",
+              "sha256": "fb0b2c6f53511c5ea813428d87a3a84b9eda132ac592e14e89a3e006e66006d4"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Retain failed original cases and blocked frontend/combined gate; no post-boundary repairs."
+    },
+    {
+      "id": "R14-03",
+      "title": "重前端工作流与实际浏览器试运行",
+      "queue": "challenges",
+      "category": "new_domain_workflow_quality",
+      "complexity": 2,
+      "priority": 32,
+      "depends_on": [
+        "R14-01"
+      ],
+      "owner": "independent_luna",
+      "write_paths": [
+        "runs/R14/trials/frontend/"
+      ],
+      "inputs": [
+        "runs/R14/cases/acceptance.json",
+        "runs/R14/cases/frozen-lock.json",
+        "runs/R14/candidate/C9-lock.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "按冻结f1–f5交付方法/实际应用，真实主路径/错误恢复/视口/键盘检查"
+        },
+        {
+          "id": "a2",
+          "assertion": "运行、视觉、自测、独立验收、mock与未知边界分开，预算/失败保留"
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R14/R14-03-result.json",
+          "sha256": "3a362ee365b61c43353675ac92449682edb3c8e3ba0da651ee66ee945dcae8ac"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R14-03-1",
+          "started_at": "2026-10-06T16:15:14.722476+00:00",
+          "requirements_hash": "b8fe91fb1b51aa9693fad3a001ecee5645ebdc0a16edd38f96fa36adce060152",
+          "inputs": [
+            {
+              "path": "runs/R14/cases/acceptance.json",
+              "sha256": "c083630b91f8e389ce85fb9792d474da4377332ece3eb0048e1503c93d4bceca"
+            },
+            {
+              "path": "runs/R14/cases/frozen-lock.json",
+              "sha256": "e184527724cbf70189b9737f3483527810f3b9371c97d3a69fcd249d6083250b"
+            },
+            {
+              "path": "runs/R14/candidate/C9-lock.json",
+              "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R14/author/prepare-command.json",
+            "sha256": "35cdeccdfa2683cacfbc51c3c1657c62166db1a0f2a26e8a06d2dad53e385dde"
+          },
+          "status": "failed",
+          "ended_at": "2026-10-06T17:26:43.123523+00:00",
+          "result": {
+            "path": "runs/R14/R14-03-result.json",
+            "sha256": "3a362ee365b61c43353675ac92449682edb3c8e3ba0da651ee66ee945dcae8ac"
+          },
+          "evidence": [
+            {
+              "path": "runs/R14/R14-03-result.json",
+              "sha256": "3a362ee365b61c43353675ac92449682edb3c8e3ba0da651ee66ee945dcae8ac"
+            },
+            {
+              "path": "runs/R14/trials/frontend/result.json",
+              "sha256": "09e55cca051e2ce60031055daf64648296a4194a835e5c31fa02be7c9952c22f"
+            },
+            {
+              "path": "runs/R14/trials/frontend/verification.md",
+              "sha256": "67463cf8d2416dd1ab94fa923b041ab64c125ab575d32cbd99f2cc63cffa4ef0"
+            },
+            {
+              "path": "runs/R14/resumption/reconciliation.json",
+              "sha256": "40cca1b2b9c30a9c7c9fc91605b49c8b1876d9953e73658629ecb15fdc4f3a99"
+            },
+            {
+              "path": "runs/R14/trials/frontend/result.json",
+              "sha256": "09e55cca051e2ce60031055daf64648296a4194a835e5c31fa02be7c9952c22f"
+            },
+            {
+              "path": "runs/R14/trials/frontend/workflow.md",
+              "sha256": "8fa23565ea88030c852898a6a53f27fe7821dc6a7d6b43516dd04a5b93b8349d"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "Browser protocol security refusal; mandatory f2-f5 have no runtime evidence. Case budget0/2 is retained, no workaround.",
+      "next_action": "Resume only when original runtime path is legitimately supported; preserve current refusal and partial artifacts."
+    },
+    {
+      "id": "R14-04",
+      "title": "独立核验两类产物与smoke验收职责",
+      "queue": "challenges",
+      "category": "new_domain_workflow_quality",
+      "complexity": 2,
+      "priority": 33,
+      "depends_on": [
+        "R14-02",
+        "R14-03"
+      ],
+      "owner": "independent_luna",
+      "write_paths": [
+        "runs/R14/acceptance/"
+      ],
+      "inputs": [
+        "runs/R14/cases/acceptance.json",
+        "runs/R14/cases/frozen-lock.json",
+        "runs/R14/candidate/C9-lock.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "新审查者按原要求/原数据检查实际工件，数值重算与浏览器观察，不只接受作者报告"
+        },
+        {
+          "id": "a2",
+          "assertion": "强度未降低、必需/可选判定分开，完整需求-证据结论和独立性局限"
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R14/R14-03-result.json",
+          "sha256": "3a362ee365b61c43353675ac92449682edb3c8e3ba0da651ee66ee945dcae8ac"
+        }
+      ],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "R14-03 mandatory browser/visual predecessor is blocked; combined independent acceptance cannot start.",
+      "next_action": "Keep original two-domain acceptance intact; math-only diagnostic checks do not satisfy the frontend dependency."
+    },
+    {
+      "id": "R16-01",
+      "title": "取得官方真实赛题和中性输入包",
+      "queue": "challenges",
+      "category": "new_user_real_historical_problem",
+      "complexity": 3,
+      "priority": 40,
+      "depends_on": [],
+      "owner": "official_source_luna",
+      "write_paths": [
+        "runs/R16/source/"
+      ],
+      "inputs": [
+        "runs/R16/PLAN.md",
+        "runs/R16/scope-decision.json"
+      ],
+      "acceptance": [
+        {
+          "id": "s1",
+          "assertion": "Official 2026 regular-contest question, required attachments and official errata identified, retrieved bytes hashed; missing required source is explicit and blocks a fabricated complete solve"
+        },
+        {
+          "id": "s2",
+          "assertion": "Input provenance excludes competition solutions, participant/award papers and unofficial answer templates; neutral packet contains source facts without a proposed answer or model"
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R16/R16-01-result.json",
+          "sha256": "4da1b5bee863ee071194a2941c82056d9d28f414a4bc2748ffb3faaaa85a54bb"
+        },
+        {
+          "path": "runs/R16/source/source-manifest.json",
+          "sha256": "5e0e4ee33d51b5f704cd1ea00788e19ea1aa490b603502092400cbe4320daddc"
+        },
+        {
+          "path": "runs/R16/source-check.json",
+          "sha256": "fb4bd879165539e39bdbca438d5177f9097e97c05ba46cab0133da33cba3d587"
+        },
+        {
+          "path": "runs/R16/input-lock.json",
+          "sha256": "e9dfc55420b59d73819540122f40f75d77e662d854cb3346707cbde3d62a5a92"
+        },
+        {
+          "path": "runs/R16/source/packet.md",
+          "sha256": "191688cdeafea72f6fc6c5b84257d4a36a6c9cae7a3164c37d323e45b064b76e"
+        },
+        {
+          "path": "runs/R16/scope-decision.json",
+          "sha256": "ad506b94f3dd53641b97679938e019f8a065cbcc0759111559a2aaefa73da93b"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R16-01-1",
+          "started_at": "2026-10-06T17:45:03.987831+00:00",
+          "requirements_hash": "0b5f45e45ba12ed381075f28fe2370f31b215e0772fcbd36925aaaf619e3ebcd",
+          "inputs": [
+            {
+              "path": "runs/R16/PLAN.md",
+              "sha256": "eca99fc7645ffbf42e2ea23f557e52b7397f17619cc309600f31cb3174e663e0"
+            },
+            {
+              "path": "runs/R16/scope-decision.json",
+              "sha256": "ad506b94f3dd53641b97679938e019f8a065cbcc0759111559a2aaefa73da93b"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R16/source/fetch-receipt.json",
+            "sha256": "15c1f5a19d31f7aba489c39d3f75db2aa4660c66ea5d80aed9e3f3c22db4beef"
+          },
+          "status": "done",
+          "ended_at": "2026-10-06T17:50:36.015977+00:00",
+          "result": {
+            "path": "runs/R16/R16-01-result.json",
+            "sha256": "4da1b5bee863ee071194a2941c82056d9d28f414a4bc2748ffb3faaaa85a54bb"
+          },
+          "evidence": [
+            {
+              "path": "runs/R16/R16-01-result.json",
+              "sha256": "4da1b5bee863ee071194a2941c82056d9d28f414a4bc2748ffb3faaaa85a54bb"
+            },
+            {
+              "path": "runs/R16/source/source-manifest.json",
+              "sha256": "5e0e4ee33d51b5f704cd1ea00788e19ea1aa490b603502092400cbe4320daddc"
+            },
+            {
+              "path": "runs/R16/source-check.json",
+              "sha256": "fb4bd879165539e39bdbca438d5177f9097e97c05ba46cab0133da33cba3d587"
+            },
+            {
+              "path": "runs/R16/input-lock.json",
+              "sha256": "e9dfc55420b59d73819540122f40f75d77e662d854cb3346707cbde3d62a5a92"
+            },
+            {
+              "path": "runs/R16/source/packet.md",
+              "sha256": "191688cdeafea72f6fc6c5b84257d4a36a6c9cae7a3164c37d323e45b064b76e"
+            },
+            {
+              "path": "runs/R16/scope-decision.json",
+              "sha256": "ad506b94f3dd53641b97679938e019f8a065cbcc0759111559a2aaefa73da93b"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 2,
+      "repair_limit": 2,
+      "blocker": null,
+      "next_action": "Frozen original D solution trial by a fresh actor"
+    },
+    {
+      "id": "R16-02",
+      "title": "不读既有解法的原创完整试解与论文",
+      "queue": "challenges",
+      "category": "new_user_real_historical_problem",
+      "complexity": 3,
+      "priority": 41,
+      "depends_on": [
+        "R16-01"
+      ],
+      "owner": "fresh_executor_luna",
+      "write_paths": [
+        "runs/R16/solution/"
+      ],
+      "inputs": [
+        "runs/R16/PLAN.md",
+        "runs/R16/scope-decision.json",
+        "runs/R16/acceptance.json",
+        "runs/R16/input-lock.json",
+        "runs/R14/candidate/C9-lock.json"
+      ],
+      "acceptance": [
+        {
+          "id": "p1",
+          "assertion": "Workflow and question coverage map trace every official subquestion to actual inputs, model/decision, result, receiving check and limitation; skipped or unsupported subquestions cannot count as complete"
+        },
+        {
+          "id": "p2",
+          "assertion": "Mathematical definitions, units, assumptions and constraints match the original task; feasible proportionate baseline precedes justified main method; necessary alternatives or simplifications receive actual evidence rather than model-name lists"
+        },
+        {
+          "id": "p3",
+          "assertion": "Original code processes official raw data and actually computes reported results; retained reproduction instructions and real command evidence; no fabricated numeric answer, hardcoded reported result or disguised mock"
+        },
+        {
+          "id": "p4",
+          "assertion": "Task-relevant substantive validation independently recomputable from raw material; fair baseline/main comparison and a meaningful failure/boundary path; sensitivity/robustness where material to the original conclusions; unavailable observations remain unverified"
+        },
+        {
+          "id": "p5",
+          "assertion": "Complete paper answers official questions with coherent analysis/models/results/validation/conclusions/limits and source attribution; substantive tables/figures/equations agree with code/results and carry units; restrained uncertainty and no competition rank/prize claim"
+        },
+        {
+          "id": "p6",
+          "assertion": "Original producer context runs bounded autonomous TODO/handoffs using frozen C9; self-check and independent review distinct; failures, cumulative case correction limit2, candidate-author history2/2 and unknown telemetry preserved"
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R16/R16-02-result.json",
+          "sha256": "b0db9c575dee4e668c4a48fadecbc7570e53a213e876f52da71809f2f966f3e4"
+        },
+        {
+          "path": "runs/R16/budget-decision.json",
+          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+        },
+        {
+          "path": "runs/R16/solution/attempt-ledger.md",
+          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+        },
+        {
+          "path": "runs/R16/REPORT.md",
+          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+        },
+        {
+          "path": "runs/R16/budget-decision.json",
+          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+        },
+        {
+          "path": "runs/R16/solution/attempt-ledger.md",
+          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+        },
+        {
+          "path": "runs/R16/REPORT.md",
+          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+        },
+        {
+          "path": "runs/R16/budget-decision.json",
+          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+        },
+        {
+          "path": "runs/R16/solution/attempt-ledger.md",
+          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+        },
+        {
+          "path": "runs/R16/REPORT.md",
+          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+        },
+        {
+          "path": "runs/R16/budget-decision.json",
+          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+        },
+        {
+          "path": "runs/R16/solution/attempt-ledger.md",
+          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+        },
+        {
+          "path": "runs/R16/REPORT.md",
+          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+        },
+        {
+          "path": "runs/R16/budget-decision.json",
+          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+        },
+        {
+          "path": "runs/R16/solution/attempt-ledger.md",
+          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+        },
+        {
+          "path": "runs/R16/REPORT.md",
+          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+        },
+        {
+          "path": "runs/R16/budget-decision.json",
+          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+        },
+        {
+          "path": "runs/R16/solution/attempt-ledger.md",
+          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+        },
+        {
+          "path": "runs/R16/REPORT.md",
+          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R16-02-1",
+          "started_at": "2026-10-06T17:52:33.852730+00:00",
+          "requirements_hash": "c1bcf5046c83ef250cbffb9df59f0fe4ccc642c0de83b2a398f7ccf68ca01243",
+          "inputs": [
+            {
+              "path": "runs/R16/PLAN.md",
+              "sha256": "eca99fc7645ffbf42e2ea23f557e52b7397f17619cc309600f31cb3174e663e0"
+            },
+            {
+              "path": "runs/R16/scope-decision.json",
+              "sha256": "ad506b94f3dd53641b97679938e019f8a065cbcc0759111559a2aaefa73da93b"
+            },
+            {
+              "path": "runs/R16/acceptance.json",
+              "sha256": "d2550e9ff1c13efb68ee02855ca73dd85e8df0fb6754b79630b2c59732231e09"
+            },
+            {
+              "path": "runs/R16/input-lock.json",
+              "sha256": "e9dfc55420b59d73819540122f40f75d77e662d854cb3346707cbde3d62a5a92"
+            },
+            {
+              "path": "runs/R14/candidate/C9-lock.json",
+              "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R16/freeze-input-command.json",
+            "sha256": "0b1c37a7f3f48dd89e6be7c0a047610a135ae9939e6d01085f8f7b3de61d5d90"
+          },
+          "status": "blocked",
+          "ended_at": "2026-10-06T18:06:17.243369+00:00",
+          "result": {
+            "path": "runs/R16/R16-02-result.json",
+            "sha256": "b0db9c575dee4e668c4a48fadecbc7570e53a213e876f52da71809f2f966f3e4"
+          },
+          "evidence": [
+            {
+              "path": "runs/R16/R16-02-result.json",
+              "sha256": "b0db9c575dee4e668c4a48fadecbc7570e53a213e876f52da71809f2f966f3e4"
+            },
+            {
+              "path": "runs/R16/budget-decision.json",
+              "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+            },
+            {
+              "path": "runs/R16/solution/attempt-ledger.md",
+              "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+            },
+            {
+              "path": "runs/R16/REPORT.md",
+              "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+            },
+            {
+              "path": "runs/R16/budget-decision.json",
+              "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+            },
+            {
+              "path": "runs/R16/solution/attempt-ledger.md",
+              "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+            },
+            {
+              "path": "runs/R16/REPORT.md",
+              "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+            },
+            {
+              "path": "runs/R16/budget-decision.json",
+              "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+            },
+            {
+              "path": "runs/R16/solution/attempt-ledger.md",
+              "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+            },
+            {
+              "path": "runs/R16/REPORT.md",
+              "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+            },
+            {
+              "path": "runs/R16/budget-decision.json",
+              "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+            },
+            {
+              "path": "runs/R16/solution/attempt-ledger.md",
+              "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+            },
+            {
+              "path": "runs/R16/REPORT.md",
+              "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+            },
+            {
+              "path": "runs/R16/budget-decision.json",
+              "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+            },
+            {
+              "path": "runs/R16/solution/attempt-ledger.md",
+              "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+            },
+            {
+              "path": "runs/R16/REPORT.md",
+              "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+            },
+            {
+              "path": "runs/R16/budget-decision.json",
+              "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+            },
+            {
+              "path": "runs/R16/solution/attempt-ledger.md",
+              "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
+            },
+            {
+              "path": "runs/R16/REPORT.md",
+              "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 2,
+      "repair_limit": 2,
+      "blocker": "Repair budget exhausted; original criteria and all attempts retained.",
+      "next_action": "Await explicit original-case limit increase with used2 retained; no replacement actor or sample."
+    },
+    {
+      "id": "R16-03",
+      "title": "原题原数据与论文代码的独立核验",
+      "queue": "challenges",
+      "category": "new_user_real_historical_problem",
+      "complexity": 3,
+      "priority": 42,
+      "depends_on": [
+        "R16-02"
+      ],
+      "owner": "fresh_reviewer_luna",
+      "write_paths": [
+        "runs/R16/review/"
+      ],
+      "inputs": [
+        "runs/R16/PLAN.md",
+        "runs/R16/scope-decision.json",
+        "runs/R16/acceptance.json",
+        "runs/R16/input-lock.json",
+        "runs/R14/candidate/C9-lock.json"
+      ],
+      "acceptance": [
+        {
+          "id": "v1",
+          "assertion": "Fresh reviewer receives official raw source, frozen requirements and actual artifacts without intended answer/producer diagnoses/previous verdict; recomputes critical quantities and checks question coverage rather than trusting pass reports"
+        },
+        {
+          "id": "v2",
+          "assertion": "One source/evidence-backed verdict per p1-p6, mandatory defects separated from optional polish; actual reproduction/check observations and model/data/paper disagreements retained"
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R16/R16-02-result.json",
+          "sha256": "b0db9c575dee4e668c4a48fadecbc7570e53a213e876f52da71809f2f966f3e4"
+        }
+      ],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "R16-02 stopped at original cumulative budget2/2 without model results or a complete paper.",
+      "next_action": "Preserve original dependencies; do not dispatch review or claim full report until original solution gate passes."
+    },
+    {
+      "id": "R16-04",
+      "title": "汇总真实证据与大数据赛迁移边界",
+      "queue": "challenges",
+      "category": "new_user_real_historical_problem",
+      "complexity": 3,
+      "priority": 43,
+      "depends_on": [
+        "R16-01",
+        "R16-02",
+        "R16-03"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R16/report/"
+      ],
+      "inputs": [
+        "runs/R16/PLAN.md",
+        "runs/R16/scope-decision.json",
+        "runs/R16/acceptance.json",
+        "runs/R16/input-lock.json",
+        "runs/R14/candidate/C9-lock.json"
+      ],
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "逐问证据与失败真实保留，原题试解/复现/独立核验/竞争力推论分开，不改旧失败预算"
+        },
+        {
+          "id": "a2",
+          "assertion": "明确常规赛与大数据赛迁移的依据和差异，交付论文及工件与可执行下一项而不保证奖项"
+        }
+      ],
+      "status": "blocked",
+      "evidence": [
+        {
+          "path": "runs/R16/R16-02-result.json",
+          "sha256": "b0db9c575dee4e668c4a48fadecbc7570e53a213e876f52da71809f2f966f3e4"
+        }
+      ],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": 2,
+      "blocker": "R16-02 stopped at original cumulative budget2/2 without model results or a complete paper.",
+      "next_action": "Preserve original dependencies; do not dispatch review or claim full report until original solution gate passes."
     }
   ],
   "execution": {
@@ -4527,9 +5355,9 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "R12_research_and_R13_failure_published",
-    "checkpoint_reason": "R12 independent protocol design pass; actual R13 adoption failed UTF-8 export inspection and rolled back; all old failures/budgets retained",
-    "coordinator_heartbeat": "2026-10-06T08:24:55.885648+00:00",
+    "session_state": "R14_diagnostic_complete_R16_original_budget_stop",
+    "checkpoint_reason": "Original failures retained; no full real-paper delivery. Explicit original-case limit change pending.",
+    "coordinator_heartbeat": "2026-10-06T18:06:17.268147+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -4561,7 +5389,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-C8-publication-receipt",
+    "current_coordinator": "root-codex-r14-resume",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -4576,8 +5404,8 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R13/REPORT.md",
-    "next_plan": "runs/R11/PLAN.md",
+    "current_report": "runs/R16/REPORT.md",
+    "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
@@ -4649,7 +5477,225 @@
       }
     ],
     "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
-    "R12_R13_publication_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf"
+    "R12_R13_publication_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
+    "R14_resumption": "runs/R14/resumption/reconciliation.json",
+    "completed_native_R14_observation": [
+      {
+        "worker": "/root/r14_math_l1",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L1/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l2",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L2/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l3",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L3/result.json",
+        "case_corrections_used": 3,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l4",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L4/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l5",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L5/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l6",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L6/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l7",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L7/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l8",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L8/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_frontend",
+        "state": "terminal_runtime_blocked",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "evidence": "runs/R14/R14-03-result.json",
+        "actual_model": null
+      }
+    ],
+    "R16_plan": "runs/R16/PLAN.md",
+    "R16_source_actor": "/root/r16_official_problem_packet",
+    "R16_original_solution_search": false,
+    "completed_native_R14_R16_observation": [
+      {
+        "worker": "/root/r14_math_l1",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L1/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l2",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L2/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l3",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L3/result.json",
+        "case_corrections_used": 3,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l4",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L4/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l5",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L5/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l6",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L6/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l7",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L7/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l8",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L8/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_frontend",
+        "state": "terminal_runtime_blocked",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "evidence": "runs/R14/R14-03-result.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_independent_final",
+        "state": "terminal_second_addendum_received",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R14/trials/math/independent-review/addendum.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r16_official_problem_packet",
+        "state": "terminal_official_material_delivered",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R16/source/source-manifest.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r16_original_solution",
+        "state": "terminal_paused_original_budget_boundary",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R16/budget-decision.json",
+        "actual_model": null
+      }
+    ],
+    "R14_report": "runs/R14/REPORT.md",
+    "R16_solution_actor": "/root/r16_original_solution",
+    "R16_case_budget": {
+      "used": 2,
+      "limit": 2
+    },
+    "R14_case_budgets": {
+      "L1": {
+        "used": 1,
+        "limit": 2
+      },
+      "L2": {
+        "used": 0,
+        "limit": 2
+      },
+      "L3": {
+        "used": 3,
+        "limit": 2
+      },
+      "L4": {
+        "used": 0,
+        "limit": 2
+      },
+      "L5": {
+        "used": 1,
+        "limit": 2
+      },
+      "L6": {
+        "used": 2,
+        "limit": 2
+      },
+      "L7": {
+        "used": 2,
+        "limit": 2
+      },
+      "L8": {
+        "used": 0,
+        "limit": 2
+      }
+    },
+    "tokens": null,
+    "cost": null
   },
   "events": [
     {
@@ -6248,6 +7294,183 @@
       "result": {
         "source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
         "adoption_passed": false
+      }
+    },
+    {
+      "at": "2026-10-06T16:13:43.477865+00:00",
+      "command": "register_new_domain_user_scope",
+      "result": {
+        "plan": "runs/R14/PLAN.md",
+        "old_case_retries": false
+      }
+    },
+    {
+      "at": "2026-10-06T16:15:14.406082+00:00",
+      "command": "start",
+      "result": {
+        "id": "R14-02-1",
+        "started_at": "2026-10-06T16:15:14.345068+00:00",
+        "requirements_hash": "bb9c67c4b62885a647933c21ce9960b75e8ac239970e589af1c9f8e278eb61c2",
+        "inputs": [
+          {
+            "path": "runs/R14/cases/acceptance.json",
+            "sha256": "c083630b91f8e389ce85fb9792d474da4377332ece3eb0048e1503c93d4bceca"
+          },
+          {
+            "path": "runs/R14/cases/frozen-lock.json",
+            "sha256": "e184527724cbf70189b9737f3483527810f3b9371c97d3a69fcd249d6083250b"
+          },
+          {
+            "path": "runs/R14/candidate/C9-lock.json",
+            "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R14/author/prepare-command.json",
+          "sha256": "35cdeccdfa2683cacfbc51c3c1657c62166db1a0f2a26e8a06d2dad53e385dde"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-06T16:15:14.833799+00:00",
+      "command": "start",
+      "result": {
+        "id": "R14-03-1",
+        "started_at": "2026-10-06T16:15:14.722476+00:00",
+        "requirements_hash": "b8fe91fb1b51aa9693fad3a001ecee5645ebdc0a16edd38f96fa36adce060152",
+        "inputs": [
+          {
+            "path": "runs/R14/cases/acceptance.json",
+            "sha256": "c083630b91f8e389ce85fb9792d474da4377332ece3eb0048e1503c93d4bceca"
+          },
+          {
+            "path": "runs/R14/cases/frozen-lock.json",
+            "sha256": "e184527724cbf70189b9737f3483527810f3b9371c97d3a69fcd249d6083250b"
+          },
+          {
+            "path": "runs/R14/candidate/C9-lock.json",
+            "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R14/author/prepare-command.json",
+          "sha256": "35cdeccdfa2683cacfbc51c3c1657c62166db1a0f2a26e8a06d2dad53e385dde"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-06T17:24:23.810244+00:00",
+      "command": "R14_resumption_integrate",
+      "result": {
+        "source": "runs/R14/resumption/view-patch-1.json",
+        "old_tasks_preserved": true
+      }
+    },
+    {
+      "at": "2026-10-06T17:26:43.128628+00:00",
+      "command": "finish",
+      "result": {
+        "task_id": "R14-03",
+        "status": "failed",
+        "repairs_used": 0
+      }
+    },
+    {
+      "at": "2026-10-06T17:26:50.995040+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "R14-03",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-06T17:28:36.339045+00:00",
+      "command": "block",
+      "result": {
+        "task_id": "R14-04",
+        "status": "blocked"
+      }
+    },
+    {
+      "at": "2026-10-06T17:34:29.058039+00:00",
+      "command": "R14_resumption_integrate",
+      "result": {
+        "source": "runs/R14/resumption/view-patch-2.json",
+        "old_tasks_preserved": true
+      }
+    },
+    {
+      "at": "2026-10-06T17:45:04.017970+00:00",
+      "command": "register_new_user_historical_problem_scope",
+      "result": {
+        "plan": "runs/R16/PLAN.md",
+        "actual_official_fetch": "runs/R16/source/fetch-receipt.json",
+        "previous_gate_bypass": false
+      }
+    },
+    {
+      "at": "2026-10-06T17:50:36.021511+00:00",
+      "command": "freeze_original_historical_problem",
+      "result": {
+        "question": "D",
+        "corrected_official": true,
+        "solution_papers": false,
+        "source_budget": 2
+      }
+    },
+    {
+      "at": "2026-10-06T17:52:33.892975+00:00",
+      "command": "start",
+      "result": {
+        "id": "R16-02-1",
+        "started_at": "2026-10-06T17:52:33.852730+00:00",
+        "requirements_hash": "c1bcf5046c83ef250cbffb9df59f0fe4ccc642c0de83b2a398f7ccf68ca01243",
+        "inputs": [
+          {
+            "path": "runs/R16/PLAN.md",
+            "sha256": "eca99fc7645ffbf42e2ea23f557e52b7397f17619cc309600f31cb3174e663e0"
+          },
+          {
+            "path": "runs/R16/scope-decision.json",
+            "sha256": "ad506b94f3dd53641b97679938e019f8a065cbcc0759111559a2aaefa73da93b"
+          },
+          {
+            "path": "runs/R16/acceptance.json",
+            "sha256": "d2550e9ff1c13efb68ee02855ca73dd85e8df0fb6754b79630b2c59732231e09"
+          },
+          {
+            "path": "runs/R16/input-lock.json",
+            "sha256": "e9dfc55420b59d73819540122f40f75d77e662d854cb3346707cbde3d62a5a92"
+          },
+          {
+            "path": "runs/R14/candidate/C9-lock.json",
+            "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+          }
+        ],
+        "start_evidence": {
+          "path": "runs/R16/freeze-input-command.json",
+          "sha256": "0b1c37a7f3f48dd89e6be7c0a047610a135ae9939e6d01085f8f7b3de61d5d90"
+        },
+        "status": "in_progress"
+      }
+    },
+    {
+      "at": "2026-10-06T18:06:17.268160+00:00",
+      "command": "R14_R16_checkpoint",
+      "result": {
+        "old_task_count": 38,
+        "old_tasks_preserved": true,
+        "actual_pending_actors": [],
+        "R14_diagnostic_failures": [
+          "L3:m5",
+          "L7:m3"
+        ],
+        "R16_case_stop": "2/2",
+        "R15_started": false,
+        "R16_complete_paper": false,
+        "full_acceptance_passed": false
       }
     }
   ],

@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-X",
+    "utf8",
+    "runs\\R16\\source\\inspect_d_docx.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-06T17:46:25.306593+00:00",
+    "monotonic_ns": 56517775637600,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-06T17:46:25.423844+00:00",
+    "monotonic_ns": 56517892890400,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "一、基本数据与假设\r\n1. 货车箱体参数（两种标准车型）\r\n- 车型1（轻型厢式货车）\r\n内尺寸：长 420cm × 宽 210cm × 高 220cm\r\n额定载重：6000kg\r\n单次运输成本：450 元/趟（含油费、过路费、人工）\r\n- 车型2（中型厢式货车）\r\n内尺寸：长 680cm × 宽 245cm × 高 250cm\r\n额定载重：10000kg\r\n单次运输成本：700 元/趟\r\n2. 货物类型与基础约束\r\n现有一批待运货物，分为三类：\r\n（1）标准件：长方体纸箱，可任意方向摆放，可堆叠，无特殊约束；\r\n（2）易碎件：仅允许单层放置，不可堆叠，摆放时底面必须完全贴合箱体底面或其他标准件顶面；\r\n（3）定向件：有明确方向要求（如“向上”标识），仅允许一种摆放姿态，可堆叠但上层货物重心不得超出下层投影范围。\r\n所有货物均为刚性长方体，不可挤压、不可拆分，装箱时货物之间、货物与箱体之间不得重叠，必须保持正交摆放（棱与箱体棱平行）。\r\n3. 附加约束\r\n（1）承重约束：下层货物承重上限为 500kg/平方米，超重则不允许堆叠；\r\n（2）稳定性约束：货物高度不得超过车厢高度，且顶层货物距车厢顶部预留不小于 3cm 安全间隙。\r\n二、任务数据\r\n现有某批次货物参数信息如下（单位：cm，kg）：\r\n货物编号\r\n类型\r\n长×宽×高\r\n单重\r\n数量\r\nG1\r\n标准件\r\n60×40×30\r\n12\r\n800\r\nG2\r\n标准件\r\n50×35×25\r\n8\r\n1000\r\nG3\r\n易碎件\r\n70×50×40\r\n15\r\n300\r\nG4\r\n定向件\r\n80×60×50\r\n25\r\n400\r\nG5\r\n定向件\r\n40×40×60\r\n18\r\n500\r\n[TABLE 1]\r\n货物编号 | 类型 | 长×宽×高 | 单重 | 数量\r\nG1 | 标准件 | 60×40×30 | 12 | 800\r\nG2 | 标准件 | 50×35×25 | 8 | 1000\r\nG3 | 易碎件 | 70×50×40 | 15 | 300\r\nG4 | 定向件 | 80×60×50 | 25 | 400\r\nG5 | 定向件 | 40×40×60 | 18 | 500\r\n",
+  "stderr": "",
+  "stdout_base64": "5LiA44CB5Z+65pys5pWw5o2u5LiO5YGH6K6+DQoxLiDotKfovabnrrHkvZPlj4LmlbDvvIjkuKTnp43moIflh4bovablnovvvIkNCi0g6L2m5Z6LMe+8iOi9u+Wei+WOouW8j+i0p+i9pu+8iQ0K5YaF5bC65a+477ya6ZW/IDQyMGNtIMOXIOWuvSAyMTBjbSDDlyDpq5ggMjIwY20NCumineWumui9vemHje+8mjYwMDBrZw0K5Y2V5qyh6L+Q6L6T5oiQ5pys77yaNDUwIOWFgy/otp/vvIjlkKvmsrnotLnjgIHov4fot6/otLnjgIHkurrlt6XvvIkNCi0g6L2m5Z6LMu+8iOS4reWei+WOouW8j+i0p+i9pu+8iQ0K5YaF5bC65a+477ya6ZW/IDY4MGNtIMOXIOWuvSAyNDVjbSDDlyDpq5ggMjUwY20NCumineWumui9vemHje+8mjEwMDAwa2cNCuWNleasoei/kOi+k+aIkOacrO+8mjcwMCDlhYMv6LafDQoyLiDotKfniannsbvlnovkuI7ln7rnoYDnuqbmnZ8NCueOsOacieS4gOaJueW+hei/kOi0p+eJqe+8jOWIhuS4uuS4ieexu++8mg0K77yIMe+8ieagh+WHhuS7tu+8mumVv+aWueS9k+e6uOeuse+8jOWPr+S7u+aEj+aWueWQkeaRhuaUvu+8jOWPr+WghuWPoO+8jOaXoOeJueauiue6puadn++8mw0K77yIMu+8ieaYk+eijuS7tu+8muS7heWFgeiuuOWNleWxguaUvue9ru+8jOS4jeWPr+WghuWPoO+8jOaRhuaUvuaXtuW6lemdouW/hemhu+WujOWFqOi0tOWQiOeuseS9k+W6lemdouaIluWFtuS7luagh+WHhuS7tumhtumdou+8mw0K77yIM++8ieWumuWQkeS7tu+8muacieaYjuehruaWueWQkeimgeaxgu+8iOWmguKAnOWQkeS4iuKAneagh+ivhu+8ie+8jOS7heWFgeiuuOS4gOenjeaRhuaUvuWnv+aAge+8jOWPr+WghuWPoOS9huS4iuWxgui0p+eJqemHjeW/g+S4jeW+l+i2heWHuuS4i+WxguaKleW9seiMg+WbtOOAgg0K5omA5pyJ6LSn54mp5Z2H5Li65Yia5oCn6ZW/5pa55L2T77yM5LiN5Y+v5oyk5Y6L44CB5LiN5Y+v5ouG5YiG77yM6KOF566x5pe26LSn54mp5LmL6Ze044CB6LSn54mp5LiO566x5L2T5LmL6Ze05LiN5b6X6YeN5Y+g77yM5b+F6aG75L+d5oyB5q2j5Lqk5pGG5pS+77yI5qOx5LiO566x5L2T5qOx5bmz6KGM77yJ44CCDQozLiDpmYTliqDnuqbmnZ8NCu+8iDHvvInmib/ph43nuqbmnZ/vvJrkuIvlsYLotKfnianmib/ph43kuIrpmZDkuLogNTAwa2cv5bmz5pa557Gz77yM6LaF6YeN5YiZ5LiN5YWB6K645aCG5Y+g77ybDQrvvIgy77yJ56iz5a6a5oCn57qm5p2f77ya6LSn54mp6auY5bqm5LiN5b6X6LaF6L+H6L2m5Y6i6auY5bqm77yM5LiU6aG25bGC6LSn54mp6Led6L2m5Y6i6aG26YOo6aKE55WZ5LiN5bCP5LqOIDNjbSDlronlhajpl7TpmpnjgIINCuS6jOOAgeS7u+WKoeaVsOaNrg0K546w5pyJ5p+Q5om55qyh6LSn54mp5Y+C5pWw5L+h5oGv5aaC5LiL77yI5Y2V5L2N77yaY23vvIxrZ++8ie+8mg0K6LSn54mp57yW5Y+3DQrnsbvlnosNCumVv8OX5a69w5fpq5gNCuWNlemHjQ0K5pWw6YePDQpHMQ0K5qCH5YeG5Lu2DQo2MMOXNDDDlzMwDQoxMg0KODAwDQpHMg0K5qCH5YeG5Lu2DQo1MMOXMzXDlzI1DQo4DQoxMDAwDQpHMw0K5piT56KO5Lu2DQo3MMOXNTDDlzQwDQoxNQ0KMzAwDQpHNA0K5a6a5ZCR5Lu2DQo4MMOXNjDDlzUwDQoyNQ0KNDAwDQpHNQ0K5a6a5ZCR5Lu2DQo0MMOXNDDDlzYwDQoxOA0KNTAwDQpbVEFCTEUgMV0NCui0p+eJqee8luWPtyB8IOexu+WeiyB8IOmVv8OX5a69w5fpq5ggfCDljZXph40gfCDmlbDph48NCkcxIHwg5qCH5YeG5Lu2IHwgNjDDlzQww5czMCB8IDEyIHwgODAwDQpHMiB8IOagh+WHhuS7tiB8IDUww5czNcOXMjUgfCA4IHwgMTAwMA0KRzMgfCDmmJPnoo7ku7YgfCA3MMOXNTDDlzQwIHwgMTUgfCAzMDANCkc0IHwg5a6a5ZCR5Lu2IHwgODDDlzYww5c1MCB8IDI1IHwgNDAwDQpHNSB8IOWumuWQkeS7tiB8IDQww5c0MMOXNjAgfCAxOCB8IDUwMA0K",
+  "stderr_base64": ""
+}

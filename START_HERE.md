@@ -1,24 +1,23 @@
 # Codex 接续入口
 
-当前用户定位为 Forge meta-workflow。C8 是纯方法开发候选：
-[技能入口](runs/R10/candidate/C8/forge-agent-flow/SKILL.md)、
-[五文件独立包](runs/R11/package/Forge-C8-meta-workflow.zip)、
-[研发报告](runs/R10/REPORT.md)。包内不含脚本、测试或执行器。
+成品方向为Forge meta-workflow，当前候选C9是八份纯文档：
+[技能入口](runs/R14/candidate/C9/forge-agent-flow/SKILL.md)、
+[可分发包](runs/R14/package/Forge-C9-meta-workflow.zip)、
+[八层实际诊断](runs/R14/REPORT.md)、
+[真实原题检查点](runs/R16/REPORT.md)。
+包内无脚本、测试或执行器，尚未完整行为验收。
 
-先读 AGENTS.md、CODEX_HANDOFF.md 和 state/checkpoint.json；state/continuation.json 保存完整任务历史。
-R10-01 源码/结构通过；R09-02 新checkout独立核验完成；R11-01 实际独立包装与解包完成。
-R10-02 同一actor接续后累计3次纠正超过2次预算，三份业务草稿未完成原材料检查，保持blocked。
-R10-next、依赖已验收批次的R11-02/R11-next保持blocked，不换样本或worker刷通过。
-R08-03/R08-next、旧产品门槛、失败和预算仍保留；R08没有归档为通过。
+先读AGENTS.md、CODEX_HANDOFF.md、state/checkpoint.json和state/continuation.json。
+R14独立诊断38项通过、2项失败：L3原案例3/2，L7改变目标；不修复或掩盖。
+前端真实浏览器及两领域联合验收仍blocked，R15未启动。
 
-```sh
-python3 scripts/host_preflight.py --root . --lock state/source-lock.json --lock runs/R10/candidate/C8-lock.json
-python3 scripts/coordinator_lease.py probe --root .
-python3 scripts/verify_handoff.py --json
-python3 scripts/continuation.py --root . next
-```
+R16取得上半年2026 MathorCup官方修订D题，子agent没有读取既有论文或解法。
+求解actor完成材料读取，但两次恢复耗尽原案例2/2；未运行模型，未完成论文。
+仅等待用户明确是否提高该原案例累计上限，保留已用2与原失败；不能自动视为授权。
+原38任务、R08/R10/R11/R13失败与预算保留，主阶段仍R08，不等待ZCode。
 
-以上是研发恢复工具，不是C8运行依赖。原生Windows控制器仍不兼容，实际用Linux/WSL。
-新clone保留core.autocrlf=false，避免冻结字节改变；先核对真实租约与未决调用再写共享台账，不复用旧PID。
-旧入口字节在 runs/R10/resumption/entry-before/，更早备份也保留。定时器停用，未知token/cost为null。
-C8未安装个人skill，没有独立行为或完整产品通过结论。
+恢复时实际执行scripts/host_preflight.py、scripts/coordinator_lease.py probe、
+scripts/verify_handoff.py --json及scripts/continuation.py next。
+它们是研发恢复工具，不是C9运行依赖；先核对真实租约和未决调用。
+保持core.autocrlf=false，Windows显式UTF8，研发控制器实际经Linux/WSL运行。
+旧入口字节在runs/R16/entry-before/；未安装个人skill，未投稿，定时器停用。

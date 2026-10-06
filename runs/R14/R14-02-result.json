@@ -1,0 +1,74 @@
+{
+  "task_id": "R14-02",
+  "attempt_id": "R14-02-1",
+  "requirements_hash": "bb9c67c4b62885a647933c21ce9960b75e8ac239970e589af1c9f8e278eb61c2",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R14/math-output-lock.json",
+        "runs/R14/math-comparison.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R14/REPORT.md",
+        "runs/R14/trials/math/independent-review/review.json",
+        "runs/R14/trials/math/independent-review/addendum.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Eight frozen level workflow trials and descriptive original-requirement diagnosis",
+    "hypothesis": "Actual independent checks can expose defects that producer smoke alone misses",
+    "baseline": "No independent original-objective/budget diagnosis",
+    "conditions": "One synthetic eight-week fixture, fixed C9 and common detailed acceptance; separate fresh producers",
+    "observations": "All eight trials produced artifacts; 38/40 diagnostic requirements pass, L7 m3 and L3 m5 fail; failures preserved",
+    "limits": "Task completion is production and honest diagnosis, not universal per-case pass or combined frontend/math acceptance",
+    "metrics": {
+      "pass_count": 38,
+      "fail_count": 2,
+      "unverified_count": 0,
+      "case_budgets": {
+        "L1": {
+          "used": 1,
+          "limit": 2
+        },
+        "L2": {
+          "used": 0,
+          "limit": 2
+        },
+        "L3": {
+          "used": 3,
+          "limit": 2
+        },
+        "L4": {
+          "used": 0,
+          "limit": 2
+        },
+        "L5": {
+          "used": 1,
+          "limit": 2
+        },
+        "L6": {
+          "used": 2,
+          "limit": 2
+        },
+        "L7": {
+          "used": 2,
+          "limit": 2
+        },
+        "L8": {
+          "used": 0,
+          "limit": 2
+        }
+      },
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Retain failed original cases and blocked frontend/combined gate; no post-boundary repairs."
+}

@@ -1,0 +1,41 @@
+{
+  "schema": "forge-resumption-observation/1",
+  "source": "Parent conversation observations and same original actors' status replies; not raw provider telemetry",
+  "read_only_turn": {
+    "write_permission_granted": false,
+    "reviews": ["/root/r14_readonly_math_review", "/root/r14_readonly_skill_review"],
+    "formal_acceptance": false,
+    "finding": "L1 historical folds predicted week 9 rather than their target week; L8 numerical slice existed but handoff was unfinished; frontend had no browser run",
+    "L1_correct_one_step_MAE_targets_3_to_8": {"A": 0, "B": 1.414285714285714, "C": 1.6309523809523803},
+    "browser": {
+      "action": "cua.createBrowserTab iab file:///.../trials/frontend/index.html",
+      "outcome": "Browser URL policy rejected file protocol; allowed protocols http and https",
+      "restriction": "No workaround, indirect execution, raw CDP, alternate browser surface or policy circumvention for the blocked action",
+      "runtime_acceptance": false
+    }
+  },
+  "write_restored": true,
+  "lease": {
+    "old_exec_session": 82031,
+    "old_session_observation": "Unknown process id; no release receipt claimed",
+    "fresh_probe": "busy=false, acquired=false",
+    "new_owner": "root-codex-r14-resume",
+    "new_pid": 363,
+    "new_session_id": 21120,
+    "acquired_at": "2026-10-06T17:19:42.668269+00:00"
+  },
+  "budget_domains": {
+    "C9_candidate_author": {"used": 2, "limit": 2, "source_repairs": 0, "orchestration_corrections": 2},
+    "math_level_1": {
+      "actor": "/root/r14_math_l1",
+      "same_actor_reply": "Original solver exited 0; no case correction or rerun; later initial lock-hash check had a syntax failure and was not retried",
+      "case_corrections_before_resume": 0,
+      "limit": 2,
+      "old_result_budget_wording": "Preserved in attempt-0; referred to candidate history, not this case",
+      "next": "Same actor preserves initial output and performs case correction 1; C9 remains unchanged"
+    },
+    "math_level_8": {"actor": "/root/r14_math_l8", "case_corrections_before_resume": 0, "limit": 2, "next": "Same actor completes unfinished documents and retains actual command observations"},
+    "frontend": {"actor": "/root/r14_frontend", "case_corrections_before_resume": 0, "limit": 2, "next": "Same actor records truthful unfinished/runtime-blocked evidence; no browser workaround"}
+  },
+  "limits": "Prior R08/R10/R13 failures and budgets are untouched. Status requests used original actor identities, never replacement executors. Missing raw receipts are not reconstructed as authenticated command logs. Actual model/tokens/cost unknown."
+}

@@ -1,0 +1,81 @@
+{
+  "input_sha256": "e6bac9fd20c5609f55757e39546b7d3e28865dd6af333086e8930b6cf0b36f39",
+  "units": {
+    "demand": "units/week",
+    "allocation": "integer units for week9",
+    "cost": "CNY/unit"
+  },
+  "forecast_method": "Per-station ordinary least-squares linear trend, demand ~ week, fit weeks 1–8; extrapolate to week 9; no future demand used.",
+  "predictions_week9": {
+    "A": 28.0,
+    "B": 20.357143,
+    "C": 30.678571
+  },
+  "validation": {
+    "method": "For each target week 3–8, fit only earlier weeks and forecast that specific next week; compare to last-observation naive baseline.",
+    "targets": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "linear_trend_mae_units_per_week": {
+      "A": 4.736951571734001e-15,
+      "B": 1.4142857142857128,
+      "C": 1.6309523809523825
+    },
+    "naive_last_value_mae_units_per_week": {
+      "A": 1.0,
+      "B": 1.3333333333333333,
+      "C": 1.6666666666666667
+    },
+    "interpretation": "Six origins only; descriptive, not evidence of general superiority."
+  },
+  "allocation": {
+    "A": 28,
+    "B": 2,
+    "C": 30
+  },
+  "allocation_objective_CNY": 264.928571,
+  "objective_recomputed_CNY": 264.928571,
+  "allocation_terms_CNY": {
+    "A": {
+      "delivery": 56,
+      "unmet": 0.0
+    },
+    "B": {
+      "delivery": 2,
+      "unmet": 110.14285714285717
+    },
+    "C": {
+      "delivery": 90,
+      "unmet": 6.785714285714448
+    }
+  },
+  "constraints": {
+    "total_allocated": 60,
+    "total_available": 60,
+    "station_caps": {
+      "A": 30,
+      "B": 25,
+      "C": 35
+    },
+    "nonnegative_integer": true,
+    "all_feasible": true
+  },
+  "optimality_evidence": "Exhaustive enumeration of all integer triples within station caps and total stock (31*26*36 upper bound; infeasible triples skipped); minimum objective found. Exact only for stated forecast/objective/constraints.",
+  "malformed_cost_boundary": {
+    "outcome": "rejected",
+    "input_file": "malformed-cost-input.json",
+    "validation_entrypoint": "load_and_validate",
+    "reason": "nonnumeric delivery_cost_per_unit[A]",
+    "optimization_performed": false
+  },
+  "limitations": [
+    "Eight observations per station; linear trend is a simple baseline and ignores seasonality/uncertainty.",
+    "Penalty and delivery costs treated as supplied deterministic inputs.",
+    "No empirical comparison beyond six rolling origins; no contest or real deployment conclusion."
+  ]
+}

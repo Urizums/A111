@@ -1,0 +1,413 @@
+{
+  "schema": "r14-independent-math-review/1",
+  "scope": "Eight locked math trial artifacts only; comparison review of mathematical branch. Not an R14-04 two-domain pass.",
+  "inputs_read": [
+    "runs/R14/cases/acceptance.json",
+    "runs/R14/cases/math/problem.json",
+    "runs/R14/cases/math/L1..L8/request.json",
+    "runs/R14/math-output-lock.json",
+    "locked current files under runs/R14/trials/math/L1..L8/"
+  ],
+  "calculations": {
+    "script": "runs/R14/trials/math/independent-review/recompute.py",
+    "command_records": [
+      "recompute-command.json (failed; IndexError in independent validation loop; no verdict drawn from it)",
+      "recompute-command-correction-1.json (exit 0 after correcting target-index range)"
+    ],
+    "prediction_week9_units_per_week": {
+      "A": 28.0,
+      "B": 20.357142857142858,
+      "C": 30.67857142857143
+    },
+    "own_validation_targets": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "own_validation_trend_mae": {
+      "A": 0.0,
+      "B": 1.414285714285714,
+      "C": 1.6309523809523807
+    },
+    "own_validation_persistence_mae": {
+      "A": 1.0,
+      "B": 1.3333333333333333,
+      "C": 1.6666666666666667
+    },
+    "allocation": {
+      "A": 28,
+      "B": 2,
+      "C": 30
+    },
+    "objective_CNY": 264.92857142857144,
+    "feasible_allocations_enumerated": 24076,
+    "L7_submitted_allocation_original_objective_CNY": 266.14285714285717,
+    "L7_reported_rounded_demand_objective_CNY": 270.0
+  },
+  "levels": {
+    "L1": {
+      "m1": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/L1/request.json original_requirements.m1; runs/R14/trials/math/L1/workflow.md; runs/R14/trials/math/L1/result.json",
+        "artifact": "Workflow, executable solver, numerical result, figure, paper, verification/handoff",
+        "check": "Checked raw input path, Q1-Q3, units, forecast/decision boundary, roles/owners or combined-role caveat, receiving checks, failure/stop gates, actual reproduction instructions and named deliverables.",
+        "reason": "All eight workflows give a usable bounded run-and-handoff procedure; single-context producer roles are explicitly distinguished from independent acceptance.",
+        "limit": "Workflow usefulness was assessed against this one small case; no separate operator usability study."
+      },
+      "m2": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json; runs/R14/trials/math/L1/solve.py, results.json, workflow.md, paper.md",
+        "artifact": "Per-level solver.py/solve.py, results.json, workflow.md, paper.md",
+        "check": "Independently recomputed OLS extrapolation from weeks 1-8 (A=28, B=20.3571428571, C=30.6785714286 units/week), rolling one-step errors with training strictly before targets, and persistence baseline. Each level uses valid chronological folds (fold spans vary by level); level-reported metrics match its stated fold set.",
+        "reason": "Prediction values arise from the raw history; validation is explicitly no-future and compares the last-value baseline; code and numeric outputs are present.",
+        "limit": "Only eight synthetic weeks and a few origins; descriptive results cannot establish week-9 accuracy or general forecast superiority."
+      },
+      "m3": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json distribution.objective/constraints; runs/R14/trials/math/L1/solve.py, results.json, paper.md; runs/R14/trials/math/independent-review/recompute.py",
+        "artifact": "Solver allocation, result objective/terms/constraints, paper optimization section",
+        "check": "Independently enumerated all 24,076 feasible triples using the original unrounded prediction objective. Exact optimum is x=(28,2,30), 60 units, objective 264.9285714286 CNY; costs, shortfalls and penalties recompute.",
+        "reason": "The allocation and stated optimum match the original objective in L1-L6 and L8. L7 rounds each forecast upward and explicitly solves a changed objective, reports (28,1,31) and 270 CNY; under the original objective that plan costs 266.142857 CNY and is not optimal.",
+        "limit": "Enumeration establishes optimality only for fixed point forecasts and supplied coefficients/caps/stock. No claim about realized week-9 demand."
+      },
+      "m4": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L1/paper.md; runs/R14/trials/math/L1/results.json; runs/R14/trials/math/L1/ figure PNG",
+        "artifact": "Actual generated PNG plus paper tables/equations and result JSON",
+        "check": "Opened and visually inspected all eight PNGs; compared plotted time series/forecast markers and paper numbers to computed outputs; checked source and units in figure/paper, and searched for unsupported awards, rule permissions, calibrated uncertainty or empirical superiority claims.",
+        "reason": "Each layer traces its reported values to computed outputs with units and bounds the exercise as synthetic/offline. L7 accurately labels its rounded-demand objective in paper and output (the objective mismatch is handled under m3). L6 has a generic forecast legend entry, but color/position and paper/results remain traceable; no hidden polish standard applied.",
+        "limit": "Visual inspection is one rendered size; plots do not constitute week-9 outcome evidence. L7 chart emphasizes forecast, not the integer plan; task requires at least one source/unit chart, which it supplies."
+      },
+      "m5": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L1/result.json; runs/R14/trials/math/L1/verification.md; actual command receipts in the level directory; solver source",
+        "artifact": "Retained actual source/execution checks, valid main smoke, malformed-cost rejection, failure/correction/budget and unknown telemetry records",
+        "check": "Read actual receipt argv, exit codes, stdout/stderr and compared with claims; inspected production input validation and checked source-check evidence where separately retained. Valid paths execute; malformed A cost is rejected by the actual production route. Audited producer failure ledgers and case counters; authenticated model/tokens/cost remain null. Independently compared all 99 lock-listed current math trial files against bytes and SHA-256; all matched.",
+        "reason": "Required smoke and malformed boundary rejection are retained, self-check is labeled producer-side rather than independent, and failed attempts/counters are preserved. L1 hash-check failure and L6/L7 correction failures were not erased; L8 rerun receipts are identified as later reproductions, not original receipts.",
+        "limit": "Receipts prove commands/outputs, not independent acceptance. Scope is the supplied malformed-cost case and recorded source checks only; not exhaustive parser security."
+      }
+    },
+    "L2": {
+      "m1": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/L2/request.json original_requirements.m1; runs/R14/trials/math/L2/workflow.md; runs/R14/trials/math/L2/result.json",
+        "artifact": "Workflow, executable solver, numerical result, figure, paper, verification/handoff",
+        "check": "Checked raw input path, Q1-Q3, units, forecast/decision boundary, roles/owners or combined-role caveat, receiving checks, failure/stop gates, actual reproduction instructions and named deliverables.",
+        "reason": "All eight workflows give a usable bounded run-and-handoff procedure; single-context producer roles are explicitly distinguished from independent acceptance.",
+        "limit": "Workflow usefulness was assessed against this one small case; no separate operator usability study."
+      },
+      "m2": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json; runs/R14/trials/math/L2/solve.py, results.json, workflow.md, paper.md",
+        "artifact": "Per-level solver.py/solve.py, results.json, workflow.md, paper.md",
+        "check": "Independently recomputed OLS extrapolation from weeks 1-8 (A=28, B=20.3571428571, C=30.6785714286 units/week), rolling one-step errors with training strictly before targets, and persistence baseline. Each level uses valid chronological folds (fold spans vary by level); level-reported metrics match its stated fold set.",
+        "reason": "Prediction values arise from the raw history; validation is explicitly no-future and compares the last-value baseline; code and numeric outputs are present.",
+        "limit": "Only eight synthetic weeks and a few origins; descriptive results cannot establish week-9 accuracy or general forecast superiority."
+      },
+      "m3": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json distribution.objective/constraints; runs/R14/trials/math/L2/solve.py, results.json, paper.md; runs/R14/trials/math/independent-review/recompute.py",
+        "artifact": "Solver allocation, result objective/terms/constraints, paper optimization section",
+        "check": "Independently enumerated all 24,076 feasible triples using the original unrounded prediction objective. Exact optimum is x=(28,2,30), 60 units, objective 264.9285714286 CNY; costs, shortfalls and penalties recompute.",
+        "reason": "The allocation and stated optimum match the original objective in L1-L6 and L8. L7 rounds each forecast upward and explicitly solves a changed objective, reports (28,1,31) and 270 CNY; under the original objective that plan costs 266.142857 CNY and is not optimal.",
+        "limit": "Enumeration establishes optimality only for fixed point forecasts and supplied coefficients/caps/stock. No claim about realized week-9 demand."
+      },
+      "m4": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L2/paper.md; runs/R14/trials/math/L2/results.json; runs/R14/trials/math/L2/ figure PNG",
+        "artifact": "Actual generated PNG plus paper tables/equations and result JSON",
+        "check": "Opened and visually inspected all eight PNGs; compared plotted time series/forecast markers and paper numbers to computed outputs; checked source and units in figure/paper, and searched for unsupported awards, rule permissions, calibrated uncertainty or empirical superiority claims.",
+        "reason": "Each layer traces its reported values to computed outputs with units and bounds the exercise as synthetic/offline. L7 accurately labels its rounded-demand objective in paper and output (the objective mismatch is handled under m3). L6 has a generic forecast legend entry, but color/position and paper/results remain traceable; no hidden polish standard applied.",
+        "limit": "Visual inspection is one rendered size; plots do not constitute week-9 outcome evidence. L7 chart emphasizes forecast, not the integer plan; task requires at least one source/unit chart, which it supplies."
+      },
+      "m5": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L2/result.json; runs/R14/trials/math/L2/verification.md; actual command receipts in the level directory; solver source",
+        "artifact": "Retained actual source/execution checks, valid main smoke, malformed-cost rejection, failure/correction/budget and unknown telemetry records",
+        "check": "Read actual receipt argv, exit codes, stdout/stderr and compared with claims; inspected production input validation and checked source-check evidence where separately retained. Valid paths execute; malformed A cost is rejected by the actual production route. Audited producer failure ledgers and case counters; authenticated model/tokens/cost remain null. Independently compared all 99 lock-listed current math trial files against bytes and SHA-256; all matched.",
+        "reason": "Required smoke and malformed boundary rejection are retained, self-check is labeled producer-side rather than independent, and failed attempts/counters are preserved. L1 hash-check failure and L6/L7 correction failures were not erased; L8 rerun receipts are identified as later reproductions, not original receipts.",
+        "limit": "Receipts prove commands/outputs, not independent acceptance. Scope is the supplied malformed-cost case and recorded source checks only; not exhaustive parser security."
+      }
+    },
+    "L3": {
+      "m1": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/L3/request.json original_requirements.m1; runs/R14/trials/math/L3/workflow.md; runs/R14/trials/math/L3/result.json",
+        "artifact": "Workflow, executable solver, numerical result, figure, paper, verification/handoff",
+        "check": "Checked raw input path, Q1-Q3, units, forecast/decision boundary, roles/owners or combined-role caveat, receiving checks, failure/stop gates, actual reproduction instructions and named deliverables.",
+        "reason": "All eight workflows give a usable bounded run-and-handoff procedure; single-context producer roles are explicitly distinguished from independent acceptance.",
+        "limit": "Workflow usefulness was assessed against this one small case; no separate operator usability study."
+      },
+      "m2": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json; runs/R14/trials/math/L3/solve.py, results.json, workflow.md, paper.md",
+        "artifact": "Per-level solver.py/solve.py, results.json, workflow.md, paper.md",
+        "check": "Independently recomputed OLS extrapolation from weeks 1-8 (A=28, B=20.3571428571, C=30.6785714286 units/week), rolling one-step errors with training strictly before targets, and persistence baseline. Each level uses valid chronological folds (fold spans vary by level); level-reported metrics match its stated fold set.",
+        "reason": "Prediction values arise from the raw history; validation is explicitly no-future and compares the last-value baseline; code and numeric outputs are present.",
+        "limit": "Only eight synthetic weeks and a few origins; descriptive results cannot establish week-9 accuracy or general forecast superiority."
+      },
+      "m3": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json distribution.objective/constraints; runs/R14/trials/math/L3/solve.py, results.json, paper.md; runs/R14/trials/math/independent-review/recompute.py",
+        "artifact": "Solver allocation, result objective/terms/constraints, paper optimization section",
+        "check": "Independently enumerated all 24,076 feasible triples using the original unrounded prediction objective. Exact optimum is x=(28,2,30), 60 units, objective 264.9285714286 CNY; costs, shortfalls and penalties recompute.",
+        "reason": "The allocation and stated optimum match the original objective in L1-L6 and L8. L7 rounds each forecast upward and explicitly solves a changed objective, reports (28,1,31) and 270 CNY; under the original objective that plan costs 266.142857 CNY and is not optimal.",
+        "limit": "Enumeration establishes optimality only for fixed point forecasts and supplied coefficients/caps/stock. No claim about realized week-9 demand."
+      },
+      "m4": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L3/paper.md; runs/R14/trials/math/L3/results.json; runs/R14/trials/math/L3/ figure PNG",
+        "artifact": "Actual generated PNG plus paper tables/equations and result JSON",
+        "check": "Opened and visually inspected all eight PNGs; compared plotted time series/forecast markers and paper numbers to computed outputs; checked source and units in figure/paper, and searched for unsupported awards, rule permissions, calibrated uncertainty or empirical superiority claims.",
+        "reason": "Each layer traces its reported values to computed outputs with units and bounds the exercise as synthetic/offline. L7 accurately labels its rounded-demand objective in paper and output (the objective mismatch is handled under m3). L6 has a generic forecast legend entry, but color/position and paper/results remain traceable; no hidden polish standard applied.",
+        "limit": "Visual inspection is one rendered size; plots do not constitute week-9 outcome evidence. L7 chart emphasizes forecast, not the integer plan; task requires at least one source/unit chart, which it supplies."
+      },
+      "m5": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L3/result.json; runs/R14/trials/math/L3/verification.md; actual command receipts in the level directory; solver source",
+        "artifact": "Retained actual source/execution checks, valid main smoke, malformed-cost rejection, failure/correction/budget and unknown telemetry records",
+        "check": "Read actual receipt argv, exit codes, stdout/stderr and compared with claims; inspected production input validation and checked source-check evidence where separately retained. Valid paths execute; malformed A cost is rejected by the actual production route. Audited producer failure ledgers and case counters; authenticated model/tokens/cost remain null. Independently compared all 99 lock-listed current math trial files against bytes and SHA-256; all matched.",
+        "reason": "Required smoke and malformed boundary rejection are retained, self-check is labeled producer-side rather than independent, and failed attempts/counters are preserved. L1 hash-check failure and L6/L7 correction failures were not erased; L8 rerun receipts are identified as later reproductions, not original receipts.",
+        "limit": "Receipts prove commands/outputs, not independent acceptance. Scope is the supplied malformed-cost case and recorded source checks only; not exhaustive parser security."
+      }
+    },
+    "L4": {
+      "m1": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/L4/request.json original_requirements.m1; runs/R14/trials/math/L4/workflow.md; runs/R14/trials/math/L4/result.json",
+        "artifact": "Workflow, executable solver, numerical result, figure, paper, verification/handoff",
+        "check": "Checked raw input path, Q1-Q3, units, forecast/decision boundary, roles/owners or combined-role caveat, receiving checks, failure/stop gates, actual reproduction instructions and named deliverables.",
+        "reason": "All eight workflows give a usable bounded run-and-handoff procedure; single-context producer roles are explicitly distinguished from independent acceptance.",
+        "limit": "Workflow usefulness was assessed against this one small case; no separate operator usability study."
+      },
+      "m2": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json; runs/R14/trials/math/L4/solve.py, results.json, workflow.md, paper.md",
+        "artifact": "Per-level solver.py/solve.py, results.json, workflow.md, paper.md",
+        "check": "Independently recomputed OLS extrapolation from weeks 1-8 (A=28, B=20.3571428571, C=30.6785714286 units/week), rolling one-step errors with training strictly before targets, and persistence baseline. Each level uses valid chronological folds (fold spans vary by level); level-reported metrics match its stated fold set.",
+        "reason": "Prediction values arise from the raw history; validation is explicitly no-future and compares the last-value baseline; code and numeric outputs are present.",
+        "limit": "Only eight synthetic weeks and a few origins; descriptive results cannot establish week-9 accuracy or general forecast superiority."
+      },
+      "m3": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json distribution.objective/constraints; runs/R14/trials/math/L4/solve.py, results.json, paper.md; runs/R14/trials/math/independent-review/recompute.py",
+        "artifact": "Solver allocation, result objective/terms/constraints, paper optimization section",
+        "check": "Independently enumerated all 24,076 feasible triples using the original unrounded prediction objective. Exact optimum is x=(28,2,30), 60 units, objective 264.9285714286 CNY; costs, shortfalls and penalties recompute.",
+        "reason": "The allocation and stated optimum match the original objective in L1-L6 and L8. L7 rounds each forecast upward and explicitly solves a changed objective, reports (28,1,31) and 270 CNY; under the original objective that plan costs 266.142857 CNY and is not optimal.",
+        "limit": "Enumeration establishes optimality only for fixed point forecasts and supplied coefficients/caps/stock. No claim about realized week-9 demand."
+      },
+      "m4": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L4/paper.md; runs/R14/trials/math/L4/results.json; runs/R14/trials/math/L4/ figure PNG",
+        "artifact": "Actual generated PNG plus paper tables/equations and result JSON",
+        "check": "Opened and visually inspected all eight PNGs; compared plotted time series/forecast markers and paper numbers to computed outputs; checked source and units in figure/paper, and searched for unsupported awards, rule permissions, calibrated uncertainty or empirical superiority claims.",
+        "reason": "Each layer traces its reported values to computed outputs with units and bounds the exercise as synthetic/offline. L7 accurately labels its rounded-demand objective in paper and output (the objective mismatch is handled under m3). L6 has a generic forecast legend entry, but color/position and paper/results remain traceable; no hidden polish standard applied.",
+        "limit": "Visual inspection is one rendered size; plots do not constitute week-9 outcome evidence. L7 chart emphasizes forecast, not the integer plan; task requires at least one source/unit chart, which it supplies."
+      },
+      "m5": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L4/result.json; runs/R14/trials/math/L4/verification.md; actual command receipts in the level directory; solver source",
+        "artifact": "Retained actual source/execution checks, valid main smoke, malformed-cost rejection, failure/correction/budget and unknown telemetry records",
+        "check": "Read actual receipt argv, exit codes, stdout/stderr and compared with claims; inspected production input validation and checked source-check evidence where separately retained. Valid paths execute; malformed A cost is rejected by the actual production route. Audited producer failure ledgers and case counters; authenticated model/tokens/cost remain null. Independently compared all 99 lock-listed current math trial files against bytes and SHA-256; all matched.",
+        "reason": "Required smoke and malformed boundary rejection are retained, self-check is labeled producer-side rather than independent, and failed attempts/counters are preserved. L1 hash-check failure and L6/L7 correction failures were not erased; L8 rerun receipts are identified as later reproductions, not original receipts.",
+        "limit": "Receipts prove commands/outputs, not independent acceptance. Scope is the supplied malformed-cost case and recorded source checks only; not exhaustive parser security."
+      }
+    },
+    "L5": {
+      "m1": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/L5/request.json original_requirements.m1; runs/R14/trials/math/L5/workflow.md; runs/R14/trials/math/L5/result.json",
+        "artifact": "Workflow, executable solver, numerical result, figure, paper, verification/handoff",
+        "check": "Checked raw input path, Q1-Q3, units, forecast/decision boundary, roles/owners or combined-role caveat, receiving checks, failure/stop gates, actual reproduction instructions and named deliverables.",
+        "reason": "All eight workflows give a usable bounded run-and-handoff procedure; single-context producer roles are explicitly distinguished from independent acceptance.",
+        "limit": "Workflow usefulness was assessed against this one small case; no separate operator usability study."
+      },
+      "m2": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json; runs/R14/trials/math/L5/solve.py, results.json, workflow.md, paper.md",
+        "artifact": "Per-level solver.py/solve.py, results.json, workflow.md, paper.md",
+        "check": "Independently recomputed OLS extrapolation from weeks 1-8 (A=28, B=20.3571428571, C=30.6785714286 units/week), rolling one-step errors with training strictly before targets, and persistence baseline. Each level uses valid chronological folds (fold spans vary by level); level-reported metrics match its stated fold set.",
+        "reason": "Prediction values arise from the raw history; validation is explicitly no-future and compares the last-value baseline; code and numeric outputs are present.",
+        "limit": "Only eight synthetic weeks and a few origins; descriptive results cannot establish week-9 accuracy or general forecast superiority."
+      },
+      "m3": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json distribution.objective/constraints; runs/R14/trials/math/L5/solve.py, results.json, paper.md; runs/R14/trials/math/independent-review/recompute.py",
+        "artifact": "Solver allocation, result objective/terms/constraints, paper optimization section",
+        "check": "Independently enumerated all 24,076 feasible triples using the original unrounded prediction objective. Exact optimum is x=(28,2,30), 60 units, objective 264.9285714286 CNY; costs, shortfalls and penalties recompute.",
+        "reason": "The allocation and stated optimum match the original objective in L1-L6 and L8. L7 rounds each forecast upward and explicitly solves a changed objective, reports (28,1,31) and 270 CNY; under the original objective that plan costs 266.142857 CNY and is not optimal.",
+        "limit": "Enumeration establishes optimality only for fixed point forecasts and supplied coefficients/caps/stock. No claim about realized week-9 demand."
+      },
+      "m4": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L5/paper.md; runs/R14/trials/math/L5/results.json; runs/R14/trials/math/L5/ figure PNG",
+        "artifact": "Actual generated PNG plus paper tables/equations and result JSON",
+        "check": "Opened and visually inspected all eight PNGs; compared plotted time series/forecast markers and paper numbers to computed outputs; checked source and units in figure/paper, and searched for unsupported awards, rule permissions, calibrated uncertainty or empirical superiority claims.",
+        "reason": "Each layer traces its reported values to computed outputs with units and bounds the exercise as synthetic/offline. L7 accurately labels its rounded-demand objective in paper and output (the objective mismatch is handled under m3). L6 has a generic forecast legend entry, but color/position and paper/results remain traceable; no hidden polish standard applied.",
+        "limit": "Visual inspection is one rendered size; plots do not constitute week-9 outcome evidence. L7 chart emphasizes forecast, not the integer plan; task requires at least one source/unit chart, which it supplies."
+      },
+      "m5": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L5/result.json; runs/R14/trials/math/L5/verification.md; actual command receipts in the level directory; solver source",
+        "artifact": "Retained actual source/execution checks, valid main smoke, malformed-cost rejection, failure/correction/budget and unknown telemetry records",
+        "check": "Read actual receipt argv, exit codes, stdout/stderr and compared with claims; inspected production input validation and checked source-check evidence where separately retained. Valid paths execute; malformed A cost is rejected by the actual production route. Audited producer failure ledgers and case counters; authenticated model/tokens/cost remain null. Independently compared all 99 lock-listed current math trial files against bytes and SHA-256; all matched.",
+        "reason": "Required smoke and malformed boundary rejection are retained, self-check is labeled producer-side rather than independent, and failed attempts/counters are preserved. L1 hash-check failure and L6/L7 correction failures were not erased; L8 rerun receipts are identified as later reproductions, not original receipts.",
+        "limit": "Receipts prove commands/outputs, not independent acceptance. Scope is the supplied malformed-cost case and recorded source checks only; not exhaustive parser security."
+      }
+    },
+    "L6": {
+      "m1": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/L6/request.json original_requirements.m1; runs/R14/trials/math/L6/workflow.md; runs/R14/trials/math/L6/result.json",
+        "artifact": "Workflow, executable solver, numerical result, figure, paper, verification/handoff",
+        "check": "Checked raw input path, Q1-Q3, units, forecast/decision boundary, roles/owners or combined-role caveat, receiving checks, failure/stop gates, actual reproduction instructions and named deliverables.",
+        "reason": "All eight workflows give a usable bounded run-and-handoff procedure; single-context producer roles are explicitly distinguished from independent acceptance.",
+        "limit": "Workflow usefulness was assessed against this one small case; no separate operator usability study."
+      },
+      "m2": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json; runs/R14/trials/math/L6/solve.py, results.json, workflow.md, paper.md",
+        "artifact": "Per-level solver.py/solve.py, results.json, workflow.md, paper.md",
+        "check": "Independently recomputed OLS extrapolation from weeks 1-8 (A=28, B=20.3571428571, C=30.6785714286 units/week), rolling one-step errors with training strictly before targets, and persistence baseline. Each level uses valid chronological folds (fold spans vary by level); level-reported metrics match its stated fold set.",
+        "reason": "Prediction values arise from the raw history; validation is explicitly no-future and compares the last-value baseline; code and numeric outputs are present.",
+        "limit": "Only eight synthetic weeks and a few origins; descriptive results cannot establish week-9 accuracy or general forecast superiority."
+      },
+      "m3": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json distribution.objective/constraints; runs/R14/trials/math/L6/solve.py, results.json, paper.md; runs/R14/trials/math/independent-review/recompute.py",
+        "artifact": "Solver allocation, result objective/terms/constraints, paper optimization section",
+        "check": "Independently enumerated all 24,076 feasible triples using the original unrounded prediction objective. Exact optimum is x=(28,2,30), 60 units, objective 264.9285714286 CNY; costs, shortfalls and penalties recompute.",
+        "reason": "The allocation and stated optimum match the original objective in L1-L6 and L8. L7 rounds each forecast upward and explicitly solves a changed objective, reports (28,1,31) and 270 CNY; under the original objective that plan costs 266.142857 CNY and is not optimal.",
+        "limit": "Enumeration establishes optimality only for fixed point forecasts and supplied coefficients/caps/stock. No claim about realized week-9 demand."
+      },
+      "m4": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L6/paper.md; runs/R14/trials/math/L6/results.json; runs/R14/trials/math/L6/ figure PNG",
+        "artifact": "Actual generated PNG plus paper tables/equations and result JSON",
+        "check": "Opened and visually inspected all eight PNGs; compared plotted time series/forecast markers and paper numbers to computed outputs; checked source and units in figure/paper, and searched for unsupported awards, rule permissions, calibrated uncertainty or empirical superiority claims.",
+        "reason": "Each layer traces its reported values to computed outputs with units and bounds the exercise as synthetic/offline. L7 accurately labels its rounded-demand objective in paper and output (the objective mismatch is handled under m3). L6 has a generic forecast legend entry, but color/position and paper/results remain traceable; no hidden polish standard applied.",
+        "limit": "Visual inspection is one rendered size; plots do not constitute week-9 outcome evidence. L7 chart emphasizes forecast, not the integer plan; task requires at least one source/unit chart, which it supplies."
+      },
+      "m5": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L6/result.json; runs/R14/trials/math/L6/verification.md; actual command receipts in the level directory; solver source",
+        "artifact": "Retained actual source/execution checks, valid main smoke, malformed-cost rejection, failure/correction/budget and unknown telemetry records",
+        "check": "Read actual receipt argv, exit codes, stdout/stderr and compared with claims; inspected production input validation and checked source-check evidence where separately retained. Valid paths execute; malformed A cost is rejected by the actual production route. Audited producer failure ledgers and case counters; authenticated model/tokens/cost remain null. Independently compared all 99 lock-listed current math trial files against bytes and SHA-256; all matched.",
+        "reason": "Required smoke and malformed boundary rejection are retained, self-check is labeled producer-side rather than independent, and failed attempts/counters are preserved. L1 hash-check failure and L6/L7 correction failures were not erased; L8 rerun receipts are identified as later reproductions, not original receipts.",
+        "limit": "Receipts prove commands/outputs, not independent acceptance. Scope is the supplied malformed-cost case and recorded source checks only; not exhaustive parser security."
+      }
+    },
+    "L7": {
+      "m1": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/L7/request.json original_requirements.m1; runs/R14/trials/math/L7/workflow.md; runs/R14/trials/math/L7/result.json",
+        "artifact": "Workflow, executable solver, numerical result, figure, paper, verification/handoff",
+        "check": "Checked raw input path, Q1-Q3, units, forecast/decision boundary, roles/owners or combined-role caveat, receiving checks, failure/stop gates, actual reproduction instructions and named deliverables.",
+        "reason": "All eight workflows give a usable bounded run-and-handoff procedure; single-context producer roles are explicitly distinguished from independent acceptance.",
+        "limit": "Workflow usefulness was assessed against this one small case; no separate operator usability study."
+      },
+      "m2": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json; runs/R14/trials/math/L7/solve.py, results.json, workflow.md, paper.md",
+        "artifact": "Per-level solver.py/solve.py, results.json, workflow.md, paper.md",
+        "check": "Independently recomputed OLS extrapolation from weeks 1-8 (A=28, B=20.3571428571, C=30.6785714286 units/week), rolling one-step errors with training strictly before targets, and persistence baseline. Each level uses valid chronological folds (fold spans vary by level); level-reported metrics match its stated fold set.",
+        "reason": "Prediction values arise from the raw history; validation is explicitly no-future and compares the last-value baseline; code and numeric outputs are present.",
+        "limit": "Only eight synthetic weeks and a few origins; descriptive results cannot establish week-9 accuracy or general forecast superiority."
+      },
+      "m3": {
+        "status": "fail",
+        "source": "runs/R14/cases/math/problem.json distribution.objective/constraints; runs/R14/trials/math/L7/solve.py, results.json, paper.md; runs/R14/trials/math/independent-review/recompute.py",
+        "artifact": "Solver allocation, result objective/terms/constraints, paper optimization section",
+        "check": "Independently enumerated all 24,076 feasible triples using the original unrounded prediction objective. Exact optimum is x=(28,2,30), 60 units, objective 264.9285714286 CNY; costs, shortfalls and penalties recompute.",
+        "reason": "The allocation and stated optimum match the original objective in L1-L6 and L8. L7 rounds each forecast upward and explicitly solves a changed objective, reports (28,1,31) and 270 CNY; under the original objective that plan costs 266.142857 CNY and is not optimal.",
+        "limit": "Enumeration establishes optimality only for fixed point forecasts and supplied coefficients/caps/stock. No claim about realized week-9 demand."
+      },
+      "m4": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L7/paper.md; runs/R14/trials/math/L7/results.json; runs/R14/trials/math/L7/ figure PNG",
+        "artifact": "Actual generated PNG plus paper tables/equations and result JSON",
+        "check": "Opened and visually inspected all eight PNGs; compared plotted time series/forecast markers and paper numbers to computed outputs; checked source and units in figure/paper, and searched for unsupported awards, rule permissions, calibrated uncertainty or empirical superiority claims.",
+        "reason": "Each layer traces its reported values to computed outputs with units and bounds the exercise as synthetic/offline. L7 accurately labels its rounded-demand objective in paper and output (the objective mismatch is handled under m3). L6 has a generic forecast legend entry, but color/position and paper/results remain traceable; no hidden polish standard applied.",
+        "limit": "Visual inspection is one rendered size; plots do not constitute week-9 outcome evidence. L7 chart emphasizes forecast, not the integer plan; task requires at least one source/unit chart, which it supplies."
+      },
+      "m5": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L7/result.json; runs/R14/trials/math/L7/verification.md; actual command receipts in the level directory; solver source",
+        "artifact": "Retained actual source/execution checks, valid main smoke, malformed-cost rejection, failure/correction/budget and unknown telemetry records",
+        "check": "Read actual receipt argv, exit codes, stdout/stderr and compared with claims; inspected production input validation and checked source-check evidence where separately retained. Valid paths execute; malformed A cost is rejected by the actual production route. Audited producer failure ledgers and case counters; authenticated model/tokens/cost remain null. Independently compared all 99 lock-listed current math trial files against bytes and SHA-256; all matched.",
+        "reason": "Required smoke and malformed boundary rejection are retained, self-check is labeled producer-side rather than independent, and failed attempts/counters are preserved. L1 hash-check failure and L6/L7 correction failures were not erased; L8 rerun receipts are identified as later reproductions, not original receipts.",
+        "limit": "Receipts prove commands/outputs, not independent acceptance. Scope is the supplied malformed-cost case and recorded source checks only; not exhaustive parser security."
+      }
+    },
+    "L8": {
+      "m1": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/L8/request.json original_requirements.m1; runs/R14/trials/math/L8/workflow.md; runs/R14/trials/math/L8/result.json",
+        "artifact": "Workflow, executable solver, numerical result, figure, paper, verification/handoff",
+        "check": "Checked raw input path, Q1-Q3, units, forecast/decision boundary, roles/owners or combined-role caveat, receiving checks, failure/stop gates, actual reproduction instructions and named deliverables.",
+        "reason": "All eight workflows give a usable bounded run-and-handoff procedure; single-context producer roles are explicitly distinguished from independent acceptance.",
+        "limit": "Workflow usefulness was assessed against this one small case; no separate operator usability study."
+      },
+      "m2": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json; runs/R14/trials/math/L8/solve.py, results.json, workflow.md, paper.md",
+        "artifact": "Per-level solver.py/solve.py, results.json, workflow.md, paper.md",
+        "check": "Independently recomputed OLS extrapolation from weeks 1-8 (A=28, B=20.3571428571, C=30.6785714286 units/week), rolling one-step errors with training strictly before targets, and persistence baseline. Each level uses valid chronological folds (fold spans vary by level); level-reported metrics match its stated fold set.",
+        "reason": "Prediction values arise from the raw history; validation is explicitly no-future and compares the last-value baseline; code and numeric outputs are present.",
+        "limit": "Only eight synthetic weeks and a few origins; descriptive results cannot establish week-9 accuracy or general forecast superiority."
+      },
+      "m3": {
+        "status": "pass",
+        "source": "runs/R14/cases/math/problem.json distribution.objective/constraints; runs/R14/trials/math/L8/solve.py, results.json, paper.md; runs/R14/trials/math/independent-review/recompute.py",
+        "artifact": "Solver allocation, result objective/terms/constraints, paper optimization section",
+        "check": "Independently enumerated all 24,076 feasible triples using the original unrounded prediction objective. Exact optimum is x=(28,2,30), 60 units, objective 264.9285714286 CNY; costs, shortfalls and penalties recompute.",
+        "reason": "The allocation and stated optimum match the original objective in L1-L6 and L8. L7 rounds each forecast upward and explicitly solves a changed objective, reports (28,1,31) and 270 CNY; under the original objective that plan costs 266.142857 CNY and is not optimal.",
+        "limit": "Enumeration establishes optimality only for fixed point forecasts and supplied coefficients/caps/stock. No claim about realized week-9 demand."
+      },
+      "m4": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L8/paper.md; runs/R14/trials/math/L8/results.json; runs/R14/trials/math/L8/ figure PNG",
+        "artifact": "Actual generated PNG plus paper tables/equations and result JSON",
+        "check": "Opened and visually inspected all eight PNGs; compared plotted time series/forecast markers and paper numbers to computed outputs; checked source and units in figure/paper, and searched for unsupported awards, rule permissions, calibrated uncertainty or empirical superiority claims.",
+        "reason": "Each layer traces its reported values to computed outputs with units and bounds the exercise as synthetic/offline. L7 accurately labels its rounded-demand objective in paper and output (the objective mismatch is handled under m3). L6 has a generic forecast legend entry, but color/position and paper/results remain traceable; no hidden polish standard applied.",
+        "limit": "Visual inspection is one rendered size; plots do not constitute week-9 outcome evidence. L7 chart emphasizes forecast, not the integer plan; task requires at least one source/unit chart, which it supplies."
+      },
+      "m5": {
+        "status": "pass",
+        "source": "runs/R14/trials/math/L8/result.json; runs/R14/trials/math/L8/verification.md; actual command receipts in the level directory; solver source",
+        "artifact": "Retained actual source/execution checks, valid main smoke, malformed-cost rejection, failure/correction/budget and unknown telemetry records",
+        "check": "Read actual receipt argv, exit codes, stdout/stderr and compared with claims; inspected production input validation and checked source-check evidence where separately retained. Valid paths execute; malformed A cost is rejected by the actual production route. Audited producer failure ledgers and case counters; authenticated model/tokens/cost remain null. Independently compared all 99 lock-listed current math trial files against bytes and SHA-256; all matched.",
+        "reason": "Required smoke and malformed boundary rejection are retained, self-check is labeled producer-side rather than independent, and failed attempts/counters are preserved. L1 hash-check failure and L6/L7 correction failures were not erased; L8 rerun receipts are identified as later reproductions, not original receipts.",
+        "limit": "Receipts prove commands/outputs, not independent acceptance. Scope is the supplied malformed-cost case and recorded source checks only; not exhaustive parser security."
+      }
+    }
+  },
+  "budget": {
+    "per_level_case_repairs": {
+      "L1": "1/2; initial lock-hash check failed and remains explicitly unresolved; candidate author budget 2/2 is separate",
+      "L2": "0/2; malformed rejection is expected boundary behavior",
+      "L3": "2/2; two producer corrections retained",
+      "L4": "0/2; malformed rejection is expected boundary behavior",
+      "L5": "1/2; initial plot-unit ambiguity corrected and prior figure retained",
+      "L6": "2/2; initial NameError corrected; later legend command failed due cwd and budget exhausted",
+      "L7": "2/2; forecast legend fixed; malformed-error-message patch did not apply",
+      "L8": "0/2; main and malformed original-session outputs were unavailable, later recorded reruns retained distinctly"
+    },
+    "independent_review_script_failures": 1,
+    "independent_review_script_corrections": 1,
+    "independent_review_failures_detail": "First run used an out-of-range target index in the reviewer’s rolling-origin loop; corrected range on the one allowed repair path; final run exit 0. No locked artifact or producer source was modified.",
+    "model_tokens_cost": "Unknown/null; no assumptions made."
+  },
+  "global_inference_boundary": "This review supports per-requirement observations for these eight small-task folds and the shared detailed contract only. Fold windows differ across levels. It does not establish level causality, award likelihood/ranking, full-contest competitiveness, or general performance.",
+  "lock_audit": {
+    "source": "runs/R14/math-output-lock.json",
+    "artifact": "runs/R14/trials/math/independent-review/lock-audit.json",
+    "command_record": "runs/R14/trials/math/independent-review/lock-audit-command.json",
+    "checked_files": 99,
+    "all_match": true,
+    "scope": "Every lock-listed file under math L1-L8 was checked by byte size and SHA-256 before the review; all matched."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "task_id": "R16-01",
+  "attempt_id": "R16-01-1",
+  "requirements_hash": "0b5f45e45ba12ed381075f28fe2370f31b215e0772fcbd36925aaaf619e3ebcd",
+  "criteria": [
+    {
+      "id": "s1",
+      "status": "pass",
+      "evidence": [
+        "runs/R16/source/source-manifest.json",
+        "runs/R16/source-check.json",
+        "runs/R16/input-lock.json"
+      ]
+    },
+    {
+      "id": "s2",
+      "status": "pass",
+      "evidence": [
+        "runs/R16/source/packet.md",
+        "runs/R16/scope-decision.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Official historical question without solution-paper contamination",
+    "hypothesis": "Real question/data provide stronger workflow test than synthetic micro-case",
+    "baseline": "R14 self-created eight-week three-station fixture",
+    "conditions": "Official corrected D ZIP and raw PDF/DOCX/XLSX, neutral source packet",
+    "observations": "HTTP200 original ZIPs, raw byte checks and errata identified; source2/2 preserved",
+    "limits": "No solver result, CPU feasibility or competition quality claim",
+    "metrics": {
+      "source_corrections_used": 2,
+      "source_limit": 2,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Frozen original D solution trial by a fresh actor"
+}
