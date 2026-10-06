@@ -4003,7 +4003,7 @@
     "monitor_schedule": "hourly",
     "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
     "background_code_execution_verified": false,
-    "session_state": "development_candidate_checkpoint",
+    "session_state": "C8_source_published_development_checkpoint",
     "checkpoint_reason": "C8 document-only candidate and actual standalone package; R09 independent checks done; R10 original actor3/2 blocked, dependent R11 continuation blocked; budgets/history preserved",
     "coordinator_heartbeat": "2026-10-06T06:53:27.350373+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
@@ -4037,7 +4037,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-c8-resume",
+    "current_coordinator": "root-codex-C8-publication-receipt",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -4072,7 +4072,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R10/publication/lease-release.json",
+    "coordinator_release_evidence": "runs/R10/publication/receipt-checkpoint-lease.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -4088,7 +4088,32 @@
         "evidence": "runs/R10/resumption/native-terminal.json"
       }
     ],
-    "final_checkpoint_lease": "runs/R10/publication/final-checkpoint-lease.json"
+    "final_checkpoint_lease": "runs/R10/publication/final-checkpoint-lease.json",
+    "publication_receipt": "runs/R10/publication/source-push-receipt.json",
+    "publication_source_commit": "d08cd5f99f809df1f21e8cb55cbe0e24d8532508",
+    "source_ci": {
+      "id": 37426876905,
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Urizums/A111/actions/runs/37426876905",
+      "jobs": [
+        {
+          "name": "validate (3.10)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "windows-preflight",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
   },
   "events": [
     {
@@ -5528,6 +5553,16 @@
         "R11_02": "blocked_dependency",
         "old_budgets_changed": false,
         "full_acceptance_passed": false
+      }
+    },
+    {
+      "at": "2026-10-06T07:02:24.600028+00:00",
+      "command": "record_C8_source_publication",
+      "result": {
+        "source_commit": "d08cd5f99f809df1f21e8cb55cbe0e24d8532508",
+        "ci": "success",
+        "behavior_passed": false,
+        "old_budgets_unchanged": true
       }
     }
   ],

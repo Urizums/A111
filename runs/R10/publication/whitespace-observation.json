@@ -1,0 +1,9 @@
+{
+  "check": "git diff --cached --check and git show --check",
+  "observed": "Raw Windows evidence CRLF is reported as trailing whitespace by default Git configuration; cr-at-eol filtering leaves three deliberate Markdown hard-break lines in the preserved batch draft",
+  "remaining_paths": ["runs/R10/validation/independent/batch-triage.md:5", "runs/R10/validation/independent/batch-triage.md:6", "runs/R10/validation/independent/batch-triage.md:7"],
+  "action": "Retain frozen actual evidence bytes and unfinished worker draft; no whitespace normalization or failed-case repair",
+  "C8_skill_files_affected": false,
+  "code_correctness_claim": false,
+  "scope": "Formatting diagnostic, not independent acceptance; Git diagnostics retained here without regrading the failed case"
+}

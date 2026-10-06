@@ -1,0 +1,78 @@
+{
+  "schema": "forge-published-source-receipt/1",
+  "at": "2026-10-06T07:02:16.506223+00:00",
+  "repository": "Urizums/A111",
+  "branch": "main",
+  "source_commit": "d08cd5f99f809df1f21e8cb55cbe0e24d8532508",
+  "remote_commit": "d08cd5f99f809df1f21e8cb55cbe0e24d8532508",
+  "actual_push_return": {
+    "exit_code": 0,
+    "stdout": "11e5ce9..d08cd5f main -> main"
+  },
+  "ci": {
+    "id": 37426876905,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Urizums/A111/actions/runs/37426876905",
+    "jobs": [
+      {
+        "name": "validate (3.10)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "validate (3.12)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "windows-preflight",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "exit_code": 0,
+      "stdout": "d08cd5f99f809df1f21e8cb55cbe0e24d8532508\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "ls-remote",
+        "origin",
+        "refs/heads/main"
+      ],
+      "exit_code": 0,
+      "stdout": "d08cd5f99f809df1f21e8cb55cbe0e24d8532508\trefs/heads/main\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "gh",
+        "run",
+        "view",
+        "37426876905",
+        "--repo",
+        "Urizums/A111",
+        "--json",
+        "status,conclusion,jobs,url"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"conclusion\":\"success\",\"jobs\":[{\"completedAt\":\"2026-10-06T07:01:20Z\",\"conclusion\":\"success\",\"databaseId\":112148433726,\"name\":\"validate (3.10)\",\"startedAt\":\"2026-10-06T06:59:09Z\",\"status\":\"completed\",\"steps\":[{\"completedAt\":\"2026-10-06T06:59:11Z\",\"conclusion\":\"success\",\"name\":\"Set up job\",\"number\":1,\"startedAt\":\"2026-10-06T06:59:10Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:13Z\",\"conclusion\":\"success\",\"name\":\"Run actions/checkout@v4\",\"number\":2,\"startedAt\":\"2026-10-06T06:59:11Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:14Z\",\"conclusion\":\"success\",\"name\":\"Run actions/setup-python@v5\",\"number\":3,\"startedAt\":\"2026-10-06T06:59:13Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:14Z\",\"conclusion\":\"success\",\"name\":\"Verify immutable evidence, revision and phase history\",\"number\":4,\"startedAt\":\"2026-10-06T06:59:14Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:29Z\",\"conclusion\":\"success\",\"name\":\"Original controller regression\",\"number\":5,\"startedAt\":\"2026-10-06T06:59:14Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:41Z\",\"conclusion\":\"success\",\"name\":\"C3 versioned candidate regression\",\"number\":6,\"startedAt\":\"2026-10-06T06:59:29Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:54Z\",\"conclusion\":\"success\",\"name\":\"C5 versioned candidate regression\",\"number\":7,\"startedAt\":\"2026-10-06T06:59:41Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:00:06Z\",\"conclusion\":\"success\",\"name\":\"C6 takeover candidate and restore recovery\",\"number\":8,\"startedAt\":\"2026-10-06T06:59:54Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:00:18Z\",\"conclusion\":\"success\",\"name\":\"C7 short-entry candidate regression\",\"number\":9,\"startedAt\":\"2026-10-06T07:00:06Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:00:23Z\",\"conclusion\":\"success\",\"name\":\"Snapshot, bounded repairs, local provider and approval regressions\",\"number\":10,\"startedAt\":\"2026-10-06T07:00:18Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:02Z\",\"conclusion\":\"success\",\"name\":\"Handoff and recorder regression\",\"number\":11,\"startedAt\":\"2026-10-06T07:00:23Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:02Z\",\"conclusion\":\"success\",\"name\":\"Actual support desk HTTP journey\",\"number\":12,\"startedAt\":\"2026-10-06T07:01:02Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:09Z\",\"conclusion\":\"success\",\"name\":\"Install and exercise CLI with fresh state\",\"number\":13,\"startedAt\":\"2026-10-06T07:01:02Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:15Z\",\"conclusion\":\"success\",\"name\":\"Package source and reports\",\"number\":14,\"startedAt\":\"2026-10-06T07:01:09Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:17Z\",\"conclusion\":\"success\",\"name\":\"Run actions/upload-artifact@v4\",\"number\":15,\"startedAt\":\"2026-10-06T07:01:15Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:17Z\",\"conclusion\":\"success\",\"name\":\"Post Run actions/setup-python@v5\",\"number\":29,\"startedAt\":\"2026-10-06T07:01:17Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:17Z\",\"conclusion\":\"success\",\"name\":\"Post Run actions/checkout@v4\",\"number\":30,\"startedAt\":\"2026-10-06T07:01:17Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:18Z\",\"conclusion\":\"success\",\"name\":\"Complete job\",\"number\":31,\"startedAt\":\"2026-10-06T07:01:17Z\",\"status\":\"completed\"}],\"url\":\"https://github.com/Urizums/A111/actions/runs/37426876905/job/112148433726\"},{\"completedAt\":\"2026-10-06T07:01:30Z\",\"conclusion\":\"success\",\"databaseId\":112148433917,\"name\":\"validate (3.12)\",\"startedAt\":\"2026-10-06T06:59:09Z\",\"status\":\"completed\",\"steps\":[{\"completedAt\":\"2026-10-06T06:59:10Z\",\"conclusion\":\"success\",\"name\":\"Set up job\",\"number\":1,\"startedAt\":\"2026-10-06T06:59:10Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:13Z\",\"conclusion\":\"success\",\"name\":\"Run actions/checkout@v4\",\"number\":2,\"startedAt\":\"2026-10-06T06:59:10Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:13Z\",\"conclusion\":\"success\",\"name\":\"Run actions/setup-python@v5\",\"number\":3,\"startedAt\":\"2026-10-06T06:59:13Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:14Z\",\"conclusion\":\"success\",\"name\":\"Verify immutable evidence, revision and phase history\",\"number\":4,\"startedAt\":\"2026-10-06T06:59:13Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:28Z\",\"conclusion\":\"success\",\"name\":\"Original controller regression\",\"number\":5,\"startedAt\":\"2026-10-06T06:59:14Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:40Z\",\"conclusion\":\"success\",\"name\":\"C3 versioned candidate regression\",\"number\":6,\"startedAt\":\"2026-10-06T06:59:28Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:52Z\",\"conclusion\":\"success\",\"name\":\"C5 versioned candidate regression\",\"number\":7,\"startedAt\":\"2026-10-06T06:59:40Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:00:03Z\",\"conclusion\":\"success\",\"name\":\"C6 takeover candidate and restore recovery\",\"number\":8,\"startedAt\":\"2026-10-06T06:59:52Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:00:15Z\",\"conclusion\":\"success\",\"name\":\"C7 short-entry candidate regression\",\"number\":9,\"startedAt\":\"2026-10-06T07:00:03Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:00:20Z\",\"conclusion\":\"success\",\"name\":\"Snapshot, bounded repairs, local provider and approval regressions\",\"number\":10,\"startedAt\":\"2026-10-06T07:00:15Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:09Z\",\"conclusion\":\"success\",\"name\":\"Handoff and recorder regression\",\"number\":11,\"startedAt\":\"2026-10-06T07:00:20Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:10Z\",\"conclusion\":\"success\",\"name\":\"Actual support desk HTTP journey\",\"number\":12,\"startedAt\":\"2026-10-06T07:01:09Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:19Z\",\"conclusion\":\"success\",\"name\":\"Install and exercise CLI with fresh state\",\"number\":13,\"startedAt\":\"2026-10-06T07:01:10Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:25Z\",\"conclusion\":\"success\",\"name\":\"Package source and reports\",\"number\":14,\"startedAt\":\"2026-10-06T07:01:19Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:27Z\",\"conclusion\":\"success\",\"name\":\"Run actions/upload-artifact@v4\",\"number\":15,\"startedAt\":\"2026-10-06T07:01:25Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:27Z\",\"conclusion\":\"success\",\"name\":\"Post Run actions/setup-python@v5\",\"number\":29,\"startedAt\":\"2026-10-06T07:01:27Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:27Z\",\"conclusion\":\"success\",\"name\":\"Post Run actions/checkout@v4\",\"number\":30,\"startedAt\":\"2026-10-06T07:01:27Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T07:01:27Z\",\"conclusion\":\"success\",\"name\":\"Complete job\",\"number\":31,\"startedAt\":\"2026-10-06T07:01:27Z\",\"status\":\"completed\"}],\"url\":\"https://github.com/Urizums/A111/actions/runs/37426876905/job/112148433917\"},{\"completedAt\":\"2026-10-06T06:59:25Z\",\"conclusion\":\"success\",\"databaseId\":112148433952,\"name\":\"windows-preflight\",\"startedAt\":\"2026-10-06T06:59:10Z\",\"status\":\"completed\",\"steps\":[{\"completedAt\":\"2026-10-06T06:59:12Z\",\"conclusion\":\"success\",\"name\":\"Set up job\",\"number\":1,\"startedAt\":\"2026-10-06T06:59:11Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:20Z\",\"conclusion\":\"success\",\"name\":\"Run actions/checkout@v4\",\"number\":2,\"startedAt\":\"2026-10-06T06:59:12Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:20Z\",\"conclusion\":\"success\",\"name\":\"Run actions/setup-python@v5\",\"number\":3,\"startedAt\":\"2026-10-06T06:59:20Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:22Z\",\"conclusion\":\"success\",\"name\":\"Read-only preflight behavior on native Windows\",\"number\":4,\"startedAt\":\"2026-10-06T06:59:20Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:22Z\",\"conclusion\":\"success\",\"name\":\"Post Run actions/setup-python@v5\",\"number\":7,\"startedAt\":\"2026-10-06T06:59:22Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:24Z\",\"conclusion\":\"success\",\"name\":\"Post Run actions/checkout@v4\",\"number\":8,\"startedAt\":\"2026-10-06T06:59:22Z\",\"status\":\"completed\"},{\"completedAt\":\"2026-10-06T06:59:24Z\",\"conclusion\":\"success\",\"name\":\"Complete job\",\"number\":9,\"startedAt\":\"2026-10-06T06:59:24Z\",\"status\":\"completed\"}],\"url\":\"https://github.com/Urizums/A111/actions/runs/37426876905/job/112148433952\"}],\"status\":\"completed\",\"url\":\"https://github.com/Urizums/A111/actions/runs/37426876905\"}\n",
+      "stderr": ""
+    }
+  ],
+  "behavior_passed": false,
+  "full_product_passed": false,
+  "limits": "Source payload was published and CI passed; original exhausted workflow case remains failed. Receipt metadata is committed subsequently.",
+  "tokens": null,
+  "cost": null
+}
