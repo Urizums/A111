@@ -1,0 +1,401 @@
+{
+  "schema": "forge-observed-publication/1",
+  "observed_at": "2026-10-07T04:36:43.086108+00:00",
+  "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+  "repository": "https://github.com/Urizums/A111",
+  "branch": "main",
+  "source_ci": {
+    "conclusion": "success",
+    "headSha": "0258f31753a1a96126c66a4681c694696c3d2371",
+    "jobs": [
+      {
+        "completedAt": "2026-10-07T04:34:13Z",
+        "conclusion": "success",
+        "databaseId": 112632686735,
+        "name": "windows-preflight",
+        "startedAt": "2026-10-07T04:33:56Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-07T04:33:58Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-07T04:33:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:06Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-07T04:33:58Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:06Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "startedAt": "2026-10-07T04:34:06Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:09Z",
+            "conclusion": "success",
+            "name": "Read-only preflight behavior on native Windows",
+            "number": 4,
+            "startedAt": "2026-10-07T04:34:06Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:09Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 7,
+            "startedAt": "2026-10-07T04:34:09Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:11Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 8,
+            "startedAt": "2026-10-07T04:34:09Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:11Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 9,
+            "startedAt": "2026-10-07T04:34:11Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Urizums/A111/actions/runs/37572065972/job/112632686735"
+      },
+      {
+        "completedAt": "2026-10-07T04:35:42Z",
+        "conclusion": "success",
+        "databaseId": 112632686933,
+        "name": "validate (3.12)",
+        "startedAt": "2026-10-07T04:33:56Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-07T04:33:58Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-07T04:33:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:01Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-07T04:33:58Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:01Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "startedAt": "2026-10-07T04:34:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:02Z",
+            "conclusion": "success",
+            "name": "Verify immutable evidence, revision and phase history",
+            "number": 4,
+            "startedAt": "2026-10-07T04:34:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:12Z",
+            "conclusion": "success",
+            "name": "Original controller regression",
+            "number": 5,
+            "startedAt": "2026-10-07T04:34:02Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:25Z",
+            "conclusion": "success",
+            "name": "C3 versioned candidate regression",
+            "number": 6,
+            "startedAt": "2026-10-07T04:34:12Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:34Z",
+            "conclusion": "success",
+            "name": "C5 versioned candidate regression",
+            "number": 7,
+            "startedAt": "2026-10-07T04:34:25Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:44Z",
+            "conclusion": "success",
+            "name": "C6 takeover candidate and restore recovery",
+            "number": 8,
+            "startedAt": "2026-10-07T04:34:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:53Z",
+            "conclusion": "success",
+            "name": "C7 short-entry candidate regression",
+            "number": 9,
+            "startedAt": "2026-10-07T04:34:44Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:57Z",
+            "conclusion": "success",
+            "name": "Snapshot, bounded repairs, local provider and approval regressions",
+            "number": 10,
+            "startedAt": "2026-10-07T04:34:53Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:28Z",
+            "conclusion": "success",
+            "name": "Handoff and recorder regression",
+            "number": 11,
+            "startedAt": "2026-10-07T04:34:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:28Z",
+            "conclusion": "success",
+            "name": "Actual support desk HTTP journey",
+            "number": 12,
+            "startedAt": "2026-10-07T04:35:28Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:34Z",
+            "conclusion": "success",
+            "name": "Install and exercise CLI with fresh state",
+            "number": 13,
+            "startedAt": "2026-10-07T04:35:28Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:38Z",
+            "conclusion": "success",
+            "name": "Package source and reports",
+            "number": 14,
+            "startedAt": "2026-10-07T04:35:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:40Z",
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 15,
+            "startedAt": "2026-10-07T04:35:38Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:40Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 29,
+            "startedAt": "2026-10-07T04:35:40Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:40Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 30,
+            "startedAt": "2026-10-07T04:35:40Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:40Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 31,
+            "startedAt": "2026-10-07T04:35:40Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Urizums/A111/actions/runs/37572065972/job/112632686933"
+      },
+      {
+        "completedAt": "2026-10-07T04:35:36Z",
+        "conclusion": "success",
+        "databaseId": 112632686988,
+        "name": "validate (3.10)",
+        "startedAt": "2026-10-07T04:33:57Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-07T04:33:59Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-07T04:33:57Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:01Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-07T04:33:59Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:02Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "startedAt": "2026-10-07T04:34:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:02Z",
+            "conclusion": "success",
+            "name": "Verify immutable evidence, revision and phase history",
+            "number": 4,
+            "startedAt": "2026-10-07T04:34:02Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:14Z",
+            "conclusion": "success",
+            "name": "Original controller regression",
+            "number": 5,
+            "startedAt": "2026-10-07T04:34:02Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:25Z",
+            "conclusion": "success",
+            "name": "C3 versioned candidate regression",
+            "number": 6,
+            "startedAt": "2026-10-07T04:34:14Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:40Z",
+            "conclusion": "success",
+            "name": "C5 versioned candidate regression",
+            "number": 7,
+            "startedAt": "2026-10-07T04:34:25Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:34:51Z",
+            "conclusion": "success",
+            "name": "C6 takeover candidate and restore recovery",
+            "number": 8,
+            "startedAt": "2026-10-07T04:34:40Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:01Z",
+            "conclusion": "success",
+            "name": "C7 short-entry candidate regression",
+            "number": 9,
+            "startedAt": "2026-10-07T04:34:51Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:05Z",
+            "conclusion": "success",
+            "name": "Snapshot, bounded repairs, local provider and approval regressions",
+            "number": 10,
+            "startedAt": "2026-10-07T04:35:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:25Z",
+            "conclusion": "success",
+            "name": "Handoff and recorder regression",
+            "number": 11,
+            "startedAt": "2026-10-07T04:35:05Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:25Z",
+            "conclusion": "success",
+            "name": "Actual support desk HTTP journey",
+            "number": 12,
+            "startedAt": "2026-10-07T04:35:25Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:29Z",
+            "conclusion": "success",
+            "name": "Install and exercise CLI with fresh state",
+            "number": 13,
+            "startedAt": "2026-10-07T04:35:25Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:33Z",
+            "conclusion": "success",
+            "name": "Package source and reports",
+            "number": 14,
+            "startedAt": "2026-10-07T04:35:29Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:35Z",
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 15,
+            "startedAt": "2026-10-07T04:35:33Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:35Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 29,
+            "startedAt": "2026-10-07T04:35:35Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:35Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 30,
+            "startedAt": "2026-10-07T04:35:35Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-07T04:35:35Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 31,
+            "startedAt": "2026-10-07T04:35:35Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Urizums/A111/actions/runs/37572065972/job/112632686988"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/Urizums/A111/actions/runs/37572065972"
+  },
+  "source_push": "runs/R17/publication/source-push-command.json",
+  "local_regression": "runs/R17/final/linux-full-regression-command.json",
+  "C10_package": "runs/R17/package/Forge-C10-meta-workflow.zip",
+  "product_document_files": 9,
+  "product_scripts": 0,
+  "original_case_first_step": "runs/R18/first-step-integration.json",
+  "full_product_acceptance_passed": false,
+  "complete_contest_paper_delivered": false,
+  "limits": "Exact source commit and observed CI only; later receipt commit CI is separate. Old experiment failures are not regraded."
+}

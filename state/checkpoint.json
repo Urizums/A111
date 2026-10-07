@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-07T04:31:18.291501+00:00",
+  "updated_at": "2026-10-07T04:36:43.173354+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Continue original R16-02 from frozen first slice: next version stacking/constraint baseline and original Q1/Q2; full paper and independent review pending.",
+  "next_action": "Continue same original R16-02 with a new versioned stacking/constraint slice; full paper and independent review pending.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -134,6 +134,16 @@
         "sha256": "4727eaf0cec0c127715fd7863d3c33b30dacac39ab19749a491ac59d1abbb8af"
       },
       "at": "2026-10-05T01:50:25.654984+00:00"
+    },
+    "C10-meta-workflow-and-original-case-first-step": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R17/publication/publication.json",
+        "sha256": "d932b0399999e955c9717ba59587ea0e729ce102b49fa8337bfbc54b6b81e8b5"
+      },
+      "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+      "full_acceptance": false,
+      "at": "2026-10-07T04:36:43.127593+00:00"
     }
   },
   "next_queue_task_id": "R16-02",
@@ -563,7 +573,12 @@
     "R18_status": "real_first_step_observed_full_case_incomplete",
     "current_task_process_state": "R16-02 unfinished at checkpoint; producer first slice terminal; no background worker.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
-    "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance"
+    "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
+    "current_publication": "runs/R17/publication/publication.json",
+    "current_source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+    "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
+    "current_source_ci_observed": "success",
+    "receipt_commit_observation": "pending"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -583,7 +598,7 @@
     "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
   "current_native_pending": [],
-  "unpublished_work": true,
+  "unpublished_work": false,
   "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
   "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
   "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
@@ -774,10 +789,14 @@
   "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
   "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
   "R17_plan": "runs/R17/PLAN.md",
-  "R17_status": "done_with_real_successor",
+  "R17_status": "published_with_actual_R18_first_step",
   "next_prospective_plan": "runs/R18/PLAN.md",
   "R18_plan": "runs/R18/PLAN.md",
   "R18_status": "actual_first_slice_only",
   "current_report": "runs/R17/REPORT.md",
-  "final_checks": "runs/R17/final/linux-full-regression-command.json"
+  "final_checks": "runs/R17/final/linux-full-regression-command.json",
+  "publication": "runs/R17/publication/publication.json",
+  "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+  "source_ci_observed": "success",
+  "receipt_commit_pending_at_this_snapshot": true
 }

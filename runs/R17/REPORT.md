@@ -31,3 +31,7 @@
 R17登记和政策/研究整合时46份历史任务哈希一致。原source-lock、C9及R14/R16原材料/失败/预算保持；R08主阶段没有归档为通过，R14联合验收/真实前端仍blocked，R15未启动。新政策不能追认旧受控实验通过。
 
 同一原始R16-02 actor/题目已前瞻接续：runs/R18/另存原任务、旧2/2判定、用户授权及新操作政策，p1–p5不变；旧尝试保持原条件下未通过。真实baseline读取附件1，产出两方案各3000件坐标，车型1-only 75趟/33750元、车型2-only 40趟/28000元；producer自检未发现其检查范围内的违规。这些是floor-only启发式候选，不是最优解、独立模型验收或完整论文。见runs/R16/prospective-20261007/和runs/R18/first-step-integration.json。原38份任务及其他45份历史任务哈希不变，唯一R16-02前瞻修改有显式修订及旧尝试原字节比对。旧source纠正2不归零；队列计数3包括此次政策接续，不伪称第三个source错误。R17-next有实际后继首步；十月大数据赛表现、奖项与完整成品能力均未证明。
+
+## 实际上传
+
+源提交[0258f31753a1a96126c66a4681c694696c3d2371](https://github.com/Urizums/A111/commit/0258f31753a1a96126c66a4681c694696c3d2371)已上传main，其[GitHub CI](https://github.com/Urizums/A111/actions/runs/37572065972)三项job实际成功（Windows预检、Python3.10、Python3.12）。原始CLI观察在publication/source-ci-final-command.json。后续receipt提交及其CI是另一个观察，不能当作该源提交CI证据。当前任务前沿见runs/R18/TODO-LIVE.md；没有后台agent或定时推进。

@@ -38,6 +38,16 @@
         "sha256": "4727eaf0cec0c127715fd7863d3c33b30dacac39ab19749a491ac59d1abbb8af"
       },
       "at": "2026-10-05T01:50:25.654984+00:00"
+    },
+    "C10-meta-workflow-and-original-case-first-step": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R17/publication/publication.json",
+        "sha256": "d932b0399999e955c9717ba59587ea0e729ce102b49fa8337bfbc54b6b81e8b5"
+      },
+      "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+      "full_acceptance": false,
+      "at": "2026-10-07T04:36:43.127593+00:00"
     }
   },
   "tasks": [
@@ -6598,7 +6608,12 @@
     "R18_status": "real_first_step_observed_full_case_incomplete",
     "current_task_process_state": "R16-02 unfinished at checkpoint; producer first slice terminal; no background worker.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
-    "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance"
+    "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
+    "current_publication": "runs/R17/publication/publication.json",
+    "current_source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+    "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
+    "current_source_ci_observed": "success",
+    "receipt_commit_observation": "pending"
   },
   "events": [
     {
@@ -8594,6 +8609,15 @@
         "original_case_complete": false,
         "original_case_actor_terminal": true,
         "old_failures_retained": true
+      }
+    },
+    {
+      "at": "2026-10-07T04:36:43.127609+00:00",
+      "command": "observed_C10_source_publication",
+      "result": {
+        "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+        "source_ci": "success",
+        "full_product_pass": false
       }
     }
   ],
