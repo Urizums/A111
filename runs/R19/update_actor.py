@@ -27,12 +27,17 @@ with ctl.locked(ROOT):
     paper_level=state['execution']['current_paper_level']
     state['execution'].update(current_native_pending=rows,native_pending_current=rows,
         current_task_process_state=f'R19 L{level}: {role} {status}; actual pending count {len(rows)}.',
-        current_report='runs/R19/PLAN.md',R19_current_level=level)
+        current_report='runs/R19/PLAN.md',R19_current_level=paper_level,latest_observed_actor_level=level)
     state['execution'].setdefault('pre_R19_publication',{
         key:state['execution'].get(key) for key in ['current_publication','current_source_commit','current_source_ci','current_source_ci_observed']})
-    state['execution'].update(current_frontier_task=f'R19-L{paper_level}',R19_publication_status='not_yet_published',
-        current_publication=None,current_source_commit=None,current_source_ci=None,current_source_ci_observed=None,
-        source_ci_scope='Old C10 CI stays in pre_R19_publication; no C11 or paper acceptance follows from it.')
+    state['execution']['current_frontier_task']=f'R19-L{paper_level}'
+    if state['execution'].get('R19_publication_status')=='source_pushed_observed':
+        state['execution'].update(R19_unpublished_followups=True,
+            source_ci_scope='Preserve actual published source observation; later working changes and paper quality are separate.')
+    else:
+        state['execution'].update(R19_publication_status='not_yet_published',
+            current_publication=None,current_source_commit=None,current_source_ci=None,current_source_ci_observed=None,
+            source_ci_scope='Old C10 CI stays in pre_R19_publication; no C11 or paper acceptance follows from it.')
     state['events'].append(dict(at=ctl.stamp(),command='parent_actor_observation',actor=actor,status=status))
     ctl.write_json(ROOT/'state/continuation.json',state)
     ctl.synchronize(ROOT,state)

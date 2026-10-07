@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "wsl",
+    "-d",
+    "Ubuntu-24.04",
+    "--cd",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+    "python3",
+    "runs/R19/publication/observe.py",
+    "--commit",
+    "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-07T09:49:15.920531+00:00",
+    "monotonic_ns": 114287703000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-07T09:49:18.245062+00:00",
+    "monotonic_ns": 114290015000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\r\u0000\n\u0000Traceback (most recent call last):\n  File \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R19/publication/observe.py\", line 11, in <module>\n    runs=json.loads(command(['gh','run','list','--repo','Urizums/A111','--commit',a.commit,'--limit','3','--json','databaseId,status,conclusion,url,headSha,workflowName']))\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R19/publication/observe.py\", line 8, in command\n    def command(args):return subprocess.check_output(args,cwd=ROOT,text=True,encoding='utf-8').strip()\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/subprocess.py\", line 466, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/subprocess.py\", line 548, in run\n    with Popen(*popenargs, **kwargs) as process:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/subprocess.py\", line 1026, in __init__\n    self._execute_child(args, executable, preexec_fn, close_fds,\n  File \"/usr/lib/python3.12/subprocess.py\", line 1955, in _execute_child\n    raise child_exception_type(errno_num, err_msg, err_filename)\nFileNotFoundError: [Errno 2] No such file or directory: 'gh'\n",
+  "stdout_base64": "",
+  "stderr_base64": "dwBzAGwAOgAgAMBoS20wUiAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0TZFufwz/Rk8qZ1yVz1AwUiAAVwBTAEwAAjBOAEEAVAAgACFqD18LToR2IABXAFMATAAgAA1OL2UBYyAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0AjANAAoAVHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIi9tbnQvYy9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvQ29kZXgvMjAyNi0xMC0wNS91cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kL3dvcmsvQTExMS9ydW5zL1IxOS9wdWJsaWNhdGlvbi9vYnNlcnZlLnB5IiwgbGluZSAxMSwgaW4gPG1vZHVsZT4KICAgIHJ1bnM9anNvbi5sb2Fkcyhjb21tYW5kKFsnZ2gnLCdydW4nLCdsaXN0JywnLS1yZXBvJywnVXJpenVtcy9BMTExJywnLS1jb21taXQnLGEuY29tbWl0LCctLWxpbWl0JywnMycsJy0tanNvbicsJ2RhdGFiYXNlSWQsc3RhdHVzLGNvbmNsdXNpb24sdXJsLGhlYWRTaGEsd29ya2Zsb3dOYW1lJ10pKQogICAgICAgICAgICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvbW50L2MvVXNlcnMvYWRtaW4vRG9jdW1lbnRzL0NvZGV4LzIwMjYtMTAtMDUvdXJpenVtcy1hMTExLW1haW4tY29kZXgtaGFuZG9mZi1tZC93b3JrL0ExMTEvcnVucy9SMTkvcHVibGljYXRpb24vb2JzZXJ2ZS5weSIsIGxpbmUgOCwgaW4gY29tbWFuZAogICAgZGVmIGNvbW1hbmQoYXJncyk6cmV0dXJuIHN1YnByb2Nlc3MuY2hlY2tfb3V0cHV0KGFyZ3MsY3dkPVJPT1QsdGV4dD1UcnVlLGVuY29kaW5nPSd1dGYtOCcpLnN0cmlwKCkKICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXgogIEZpbGUgIi91c3IvbGliL3B5dGhvbjMuMTIvc3VicHJvY2Vzcy5weSIsIGxpbmUgNDY2LCBpbiBjaGVja19vdXRwdXQKICAgIHJldHVybiBydW4oKnBvcGVuYXJncywgc3Rkb3V0PVBJUEUsIHRpbWVvdXQ9dGltZW91dCwgY2hlY2s9VHJ1ZSwKICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvdXNyL2xpYi9weXRob24zLjEyL3N1YnByb2Nlc3MucHkiLCBsaW5lIDU0OCwgaW4gcnVuCiAgICB3aXRoIFBvcGVuKCpwb3BlbmFyZ3MsICoqa3dhcmdzKSBhcyBwcm9jZXNzOgogICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvdXNyL2xpYi9weXRob24zLjEyL3N1YnByb2Nlc3MucHkiLCBsaW5lIDEwMjYsIGluIF9faW5pdF9fCiAgICBzZWxmLl9leGVjdXRlX2NoaWxkKGFyZ3MsIGV4ZWN1dGFibGUsIHByZWV4ZWNfZm4sIGNsb3NlX2ZkcywKICBGaWxlICIvdXNyL2xpYi9weXRob24zLjEyL3N1YnByb2Nlc3MucHkiLCBsaW5lIDE5NTUsIGluIF9leGVjdXRlX2NoaWxkCiAgICByYWlzZSBjaGlsZF9leGNlcHRpb25fdHlwZShlcnJub19udW0sIGVycl9tc2csIGVycl9maWxlbmFtZSkKRmlsZU5vdEZvdW5kRXJyb3I6IFtFcnJubyAyXSBObyBzdWNoIGZpbGUgb3IgZGlyZWN0b3J5OiAnZ2gnCg=="
+}

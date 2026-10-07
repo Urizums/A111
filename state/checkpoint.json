@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-07T09:43:51.064004+00:00",
+  "updated_at": "2026-10-07T09:52:48.350430+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Same_reviewer_independently_recompute_L1_frozen_delivery_then_correct_material_defects_before_L2_execution",
+  "next_action": "Complete independent L1 initial review and required corrections, then sequential L2-L4 papers; no old budget reset.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -32,7 +32,7 @@
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
-  "publication_evidence": "runs/R16/publication/source-receipt.json",
+  "publication_evidence": "runs/R19/publication/observation-2.json",
   "lifecycle": "active",
   "c1_audit": "completed_with_historical_gaps; efficacy remains inconclusive",
   "historical_handoff_repair_scope": "Existing functional_repairs fields describe S00 only; current candidate budgets are separate.",
@@ -588,10 +588,19 @@
     "current_task_process_state": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": null,
-    "current_source_commit": null,
-    "current_source_ci": null,
-    "current_source_ci_observed": null,
+    "current_publication": "runs/R19/publication/observation-2.json",
+    "current_source_commit": "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0",
+    "current_source_ci": [
+      {
+        "conclusion": "success",
+        "databaseId": 37603060537,
+        "headSha": "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0",
+        "status": "completed",
+        "url": "https://github.com/Urizums/A111/actions/runs/37603060537",
+        "workflowName": "Cloud delivery validation"
+      }
+    ],
+    "current_source_ci_observed": "2026-10-07T09:52:48.282223+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
     "R19_current_level": 1,
@@ -658,7 +667,7 @@
       "current_source_ci_observed": "success"
     },
     "current_frontier_task": "R19-L1",
-    "R19_publication_status": "not_yet_published",
+    "R19_publication_status": "source_pushed_observed",
     "source_ci_scope": "Old C10 CI stays in pre_R19_publication; no C11 or paper acceptance follows from it.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
     "current_paper_level": 1,
@@ -909,5 +918,16 @@
   "receipt_commit_pending_at_this_snapshot": true,
   "R19_status": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
   "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
-  "current_frontier_task": "R19-L1"
+  "current_frontier_task": "R19-L1",
+  "current_source_commit": "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0",
+  "current_source_ci": [
+    {
+      "conclusion": "success",
+      "databaseId": 37603060537,
+      "headSha": "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0",
+      "status": "completed",
+      "url": "https://github.com/Urizums/A111/actions/runs/37603060537",
+      "workflowName": "Cloud delivery validation"
+    }
+  ]
 }

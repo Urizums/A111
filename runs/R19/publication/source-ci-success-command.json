@@ -1,0 +1,32 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "gh",
+    "run",
+    "view",
+    "37603060537",
+    "--repo",
+    "Urizums/A111",
+    "--json",
+    "status,conclusion,url,jobs",
+    "--jq",
+    "{status,conclusion,url,jobs:[.jobs[]|{name,status,conclusion}]}"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-07T09:52:39.341980+00:00",
+    "monotonic_ns": 114491125000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-07T09:52:44.355866+00:00",
+    "monotonic_ns": 114496125000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\"conclusion\":\"success\",\"jobs\":[{\"conclusion\":\"success\",\"name\":\"validate (3.12)\",\"status\":\"completed\"},{\"conclusion\":\"success\",\"name\":\"windows-preflight\",\"status\":\"completed\"},{\"conclusion\":\"success\",\"name\":\"validate (3.10)\",\"status\":\"completed\"}],\"status\":\"completed\",\"url\":\"https://github.com/Urizums/A111/actions/runs/37603060537\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJjb25jbHVzaW9uIjoic3VjY2VzcyIsImpvYnMiOlt7ImNvbmNsdXNpb24iOiJzdWNjZXNzIiwibmFtZSI6InZhbGlkYXRlICgzLjEyKSIsInN0YXR1cyI6ImNvbXBsZXRlZCJ9LHsiY29uY2x1c2lvbiI6InN1Y2Nlc3MiLCJuYW1lIjoid2luZG93cy1wcmVmbGlnaHQiLCJzdGF0dXMiOiJjb21wbGV0ZWQifSx7ImNvbmNsdXNpb24iOiJzdWNjZXNzIiwibmFtZSI6InZhbGlkYXRlICgzLjEwKSIsInN0YXR1cyI6ImNvbXBsZXRlZCJ9XSwic3RhdHVzIjoiY29tcGxldGVkIiwidXJsIjoiaHR0cHM6Ly9naXRodWIuY29tL1VyaXp1bXMvQTExMS9hY3Rpb25zL3J1bnMvMzc2MDMwNjA1MzcifQo=",
+  "stderr_base64": ""
+}
