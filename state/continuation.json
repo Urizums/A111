@@ -7203,14 +7203,8 @@
     "current_native_pending": [
       {
         "worker": "/root/r19_l2_executor",
-        "state": "created",
-        "evidence": "runs/R19/levels/L2/executor-created-observation.json",
-        "actual_model": null
-      },
-      {
-        "worker": "/root/r19_l2_reviewer",
-        "state": "created",
-        "evidence": "runs/R19/levels/L2/reviewer-created-observation.json",
+        "state": "running_observed",
+        "evidence": "runs/R19/levels/L2/executor-running_observed-observation.json",
         "actual_model": null
       }
     ],
@@ -7564,14 +7558,8 @@
     "native_pending_current": [
       {
         "worker": "/root/r19_l2_executor",
-        "state": "created",
-        "evidence": "runs/R19/levels/L2/executor-created-observation.json",
-        "actual_model": null
-      },
-      {
-        "worker": "/root/r19_l2_reviewer",
-        "state": "created",
-        "evidence": "runs/R19/levels/L2/reviewer-created-observation.json",
+        "state": "running_observed",
+        "evidence": "runs/R19/levels/L2/executor-running_observed-observation.json",
         "actual_model": null
       }
     ],
@@ -7584,22 +7572,22 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "L1_diagnostic_done_initial_fail_preserved_v2_independent_pass_L2_executor_and_source_reviewer_started",
+    "current_task_process_state": "L2_execution_resumed_source_review_19_files_frozen_no_product_verdict",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R19/publication/observation-2.json",
-    "current_source_commit": "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0",
+    "current_publication": "runs/R19/publication/observation-4.json",
+    "current_source_commit": "1dbd0ab3864aef472795864ccf2558fd21de654a",
     "current_source_ci": [
       {
         "conclusion": "success",
-        "databaseId": 37603060537,
-        "headSha": "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0",
+        "databaseId": 37610454335,
+        "headSha": "1dbd0ab3864aef472795864ccf2558fd21de654a",
         "status": "completed",
-        "url": "https://github.com/Urizums/A111/actions/runs/37603060537",
+        "url": "https://github.com/Urizums/A111/actions/runs/37610454335",
         "workflowName": "Cloud delivery validation"
       }
     ],
-    "current_source_ci_observed": "2026-10-07T09:52:48.282223+00:00",
+    "current_source_ci_observed": "2026-10-07T15:21:50.023334+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
     "R19_current_level": 2,
@@ -7675,6 +7663,12 @@
         "state": "terminal_informed_recheck_pass",
         "evidence": "runs/R19/levels/L1/reviewer-terminal_informed_recheck_pass-observation.json",
         "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_reviewer",
+        "state": "terminal_source_preparation",
+        "evidence": "runs/R19/levels/L2/reviewer-terminal_source_preparation-observation.json",
+        "actual_model": null
       }
     ],
     "pre_R19_publication": {
@@ -7705,7 +7699,7 @@
         "runtime_accepted": false
       }
     ],
-    "R19_resource_observation": "runs/R19/resource-interruption-and-resume.json",
+    "R19_resource_observation": "runs/R19/levels/L2/resource-resume-observation.json",
     "latest_observed_actor_level": 2,
     "R19_unpublished_followups": true,
     "R19_completed_diagnostics": [
@@ -9924,6 +9918,39 @@
       "command": "parent_actor_observation",
       "actor": "/root/r19_l2_reviewer",
       "status": "created"
+    },
+    {
+      "at": "2026-10-07T10:55:01.880170+00:00",
+      "command": "observe_R19_main_publication",
+      "evidence": "runs/R19/publication/observation-3.json"
+    },
+    {
+      "at": "2026-10-07T15:21:11.135455+00:00",
+      "command": "reconcile_and_resume_same_L2_actors",
+      "evidence": "runs/R19/levels/L2/resource-resume-observation.json"
+    },
+    {
+      "at": "2026-10-07T15:21:43.151774+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l2_executor",
+      "status": "running_observed"
+    },
+    {
+      "at": "2026-10-07T15:21:43.844435+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l2_reviewer",
+      "status": "running_observed"
+    },
+    {
+      "at": "2026-10-07T15:21:50.023352+00:00",
+      "command": "observe_R19_main_publication",
+      "evidence": "runs/R19/publication/observation-4.json"
+    },
+    {
+      "at": "2026-10-07T15:24:22.149180+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l2_reviewer",
+      "status": "terminal_source_preparation"
     }
   ],
   "task_expansion_basis": [

@@ -11,6 +11,7 @@ assert remote==a.commit,'Remote main differs; do not claim this source is the cu
 runs=json.loads(command([a.gh,'run','list','--repo','Urizums/A111','--commit',a.commit,'--limit','3','--json','databaseId,status,conclusion,url,headSha,workflowName']))
 with ctl.locked(ROOT):
     state=ctl.load(ROOT)
+    checkpoint_before=json.loads((ROOT/'state/checkpoint.json').read_text(encoding='utf-8'))
     old=json.loads((ROOT/'runs/R19/before/task-identities.json').read_text(encoding='utf-8'))
     assert all(ctl.identity(ctl.task_map(state)[k])==v for k,v in old.items())
     serial=1
@@ -25,7 +26,7 @@ with ctl.locked(ROOT):
     ctl.write_json(ROOT/'state/continuation.json',state);ctl.synchronize(ROOT,state)
     cp=json.loads((ROOT/'state/checkpoint.json').read_text(encoding='utf-8'))
     cp.update(current_report='runs/R19/REPORT.md',publication_evidence=evidence,current_source_commit=a.commit,
-        current_source_ci=runs)
+        current_source_ci=runs,next_action=checkpoint_before['next_action'])
     # Publishing a snapshot does not change the actual trial frontier or next action.
     ctl.write_json(ROOT/'state/checkpoint.json',cp)
 print(json.dumps(dict(remote_main=remote,ci=runs,evidence=evidence)))

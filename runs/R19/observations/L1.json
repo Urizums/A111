@@ -1,0 +1,53 @@
+{
+  "schema": "forge-single-trial-observation/1",
+  "observed_at": "2026-10-07T10:58:02.859960+00:00",
+  "level": 1,
+  "candidate": "C11",
+  "status": "completed_diagnostic_initial_fail_informed_repair_pass",
+  "evidence": [
+    "runs/R19/levels/L1/diagnostic-result.json",
+    "runs/R19/levels/L1/design-lock.json",
+    "runs/R19/levels/L1/execution-lock.json",
+    "runs/R19/levels/L1/execution-v2-lock.json",
+    "runs/R19/levels/L1/review/initial-lock.json",
+    "runs/R19/levels/L1/review/recheck-1-lock.json"
+  ],
+  "actual_roles": {
+    "builder": "/root/r19_l1_builder",
+    "executor": "/root/r19_l1_executor",
+    "independent_reviewer": "/root/r19_l1_reviewer"
+  },
+  "first_review": {
+    "pass_count": 5,
+    "fail": [
+      "a4"
+    ],
+    "failure": "Output category metadata could override raw cargo identity and bypass fragile physical constraints; original frozen layouts independently legal."
+  },
+  "correction": {
+    "informed": true,
+    "same_author": true,
+    "same_reviewer": true,
+    "latest_pass_count": 6,
+    "initial_failure_preserved": true,
+    "original_bytes_unchanged": true
+  },
+  "actual_independent_evidence": {
+    "source_boundary_tests": 83,
+    "affected_layouts": 235,
+    "main_solutions_rerun_from_raw": 7,
+    "zip_main_solutions_rerun_from_raw": 7,
+    "zip_paper_rebuilt": true,
+    "pdf_pages": 17
+  },
+  "tentative_source_design_question": "Do receiving contracts make raw-derived constraint identity authoritative over producer-carried labels/configuration, and test contradictory metadata with legal controls?",
+  "source_relation": "C11 already requires source provenance, receiving checks and counterexamples. L1 design lists physical boundaries; observed missing identity probe is an implementation/design translation gap. This single observation does not prove a general skill defect or justify task-specific tests inside the package.",
+  "action": "Keep C11 frozen across remaining three trials. Consider a generic source-identity receiving requirement only in final synthesis if material, with a separate prospective behavioral check.",
+  "limits": [
+    "One instance, one execution sample.",
+    "Informed repair does not pass the first blind trial.",
+    "Global continuous geometric optimum remains unknown.",
+    "Historical search and full parameter optimization were not all rerun in re-review.",
+    "No award, causal level ranking or October big-data performance inference."
+  ]
+}

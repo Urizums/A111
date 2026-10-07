@@ -1,0 +1,157 @@
+{
+  "schema": "forge-independent-review-preparation/1",
+  "task_id": "R19-C11-L2-independent-review-preparation",
+  "actor": "r19_l2_reviewer",
+  "status": "preparation_complete_ready_for_root_freeze_not_product_review",
+  "created_utc": "2026-10-07T15:23:42.033900+00:00",
+  "level": "L2",
+  "candidate": "C11",
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "scope": {
+    "read": "official L2 request/raw/locks, C11 design/locks, frozen acceptance/quality/evaluation, applicable AGENTS, PDF skill, own preparation",
+    "write": "runs/R19/levels/L2/review/preparation",
+    "execution_domain_accessed": false,
+    "other_level_content_read": false,
+    "historical_runs_or_shared_state_read": false,
+    "root_expected_answer_or_author_execution_diagnosis_received": false,
+    "producer_contacted": false,
+    "network_used": false,
+    "installed_software": false,
+    "solver_or_producer_answer_generated": false
+  },
+  "actual_source_checks": {
+    "raw_files": 3,
+    "pdf_pages_extracted_rendered_visually_inspected": 3,
+    "docx_main_paragraphs": 22,
+    "docx_tables": 1,
+    "xlsx_all_sheets_and_nonempty_cells": {
+      "箱装产品尺寸": 59,
+      "车型尺寸": 96,
+      "Sheet3": 0
+    },
+    "locked_file_entries": 23,
+    "all_locked_bytes_match": true,
+    "original_docx_direct_binding_ran": true
+  },
+  "actual_method_controls": {
+    "fixture_origin": "reviewer synthetic analytical controls, no execution output",
+    "cases": 25,
+    "all_passed": true,
+    "unit_anchors_passed": true,
+    "latest_utc": "2026-10-07T10:55:30.035575+00:00",
+    "successful_control_command_invocations": 3,
+    "scope": "accept/refuse review checker only; not production solver or author validator acceptance",
+    "initial_evidence_retained": "checker-controls-initial.json",
+    "changes_retained": [
+      "local center defect initially confounded with vehicle boundary; narrowed lower support width, then actual rerun",
+      "pressure threshold argument allows declared sensitivity context, default raw threshold500; actual controls rerun"
+    ]
+  },
+  "frozen_method_request": {
+    "plan": "review-plan.md",
+    "source_anchors": "source-anchors.md",
+    "a1_a6": [
+      "a1",
+      "a2",
+      "a3",
+      "a4",
+      "a5",
+      "a6"
+    ],
+    "quality_dimensions": [
+      "problem fidelity",
+      "mathematical justification",
+      "empirical sufficiency and fair alternatives",
+      "reproduction and result-to-paper traceability",
+      "clarity and completeness of scientific argument",
+      "workflow transferability and autonomous gap resolution"
+    ],
+    "rule": "methods ready for root freeze; mandatory checks not lowered; extra source-backed falsification can be added; optional sophistication has no model/page quota",
+    "attachment2": "raw optional complete generality expansion; mandatory source audit/qualified range answer; no fabricated full-order data"
+  },
+  "product_verdicts": {
+    "a1": "not_reviewed_wait_complete_execution_lock",
+    "a2": "not_reviewed_wait_complete_execution_lock",
+    "a3": "not_reviewed_wait_complete_execution_lock",
+    "a4": "not_reviewed_wait_complete_execution_lock",
+    "a5": "not_reviewed_wait_complete_execution_lock",
+    "a6": "not_reviewed_wait_complete_execution_lock"
+  },
+  "quality_diagnosis": {
+    "problem fidelity": "not_reviewed_wait_complete_execution_lock",
+    "mathematical justification": "not_reviewed_wait_complete_execution_lock",
+    "empirical sufficiency and fair alternatives": "not_reviewed_wait_complete_execution_lock",
+    "reproduction and result-to-paper traceability": "not_reviewed_wait_complete_execution_lock",
+    "clarity and completeness of scientific argument": "not_reviewed_wait_complete_execution_lock",
+    "workflow transferability and autonomous gap resolution": "not_reviewed_wait_complete_execution_lock"
+  },
+  "failures_and_limits": [
+    {
+      "id": "L2-RP-E01",
+      "kind": "tool_path_recovery",
+      "actual_observation": "Get-ChildItem target A111/inputs/raw does not exist",
+      "changed": "use runs/R19/inputs/raw",
+      "recovered": true
+    },
+    {
+      "id": "L2-RP-E02",
+      "kind": "tool_path_recovery",
+      "actual_observation": "relative .\\AGENTS.md not found under tool working directory",
+      "changed": "explicit absolute AGENTS path; fixed all later workdir to A111",
+      "recovered": true
+    },
+    {
+      "id": "L2-RP-L01",
+      "kind": "observation_capacity_limit",
+      "actual_observation": "C11 batched read output truncated in frontend/iteration portion",
+      "changed": "read those two files separately",
+      "recovered": true
+    }
+  ],
+  "counters": {
+    "failed_file_access_operations": 2,
+    "failed_python_or_control_runs": 0,
+    "output_truncation_observations": 1,
+    "method_refinements": 2,
+    "production_runs": 0,
+    "substantive_production_corrections": 0
+  },
+  "resume_record": {
+    "root_resume_message_received": true,
+    "prior_state": "source/control preparation complete, review plan/result not yet written",
+    "checked_own_files": true,
+    "previous_python_calls_all_terminal_exit_zero": true,
+    "matched_still_running_python_processes": 0,
+    "unknown_calls": 0,
+    "duplicate_pending_call_started": false,
+    "completion_work": "write frozen method and terminal evidence only, no repeated completed tests",
+    "account_ordinary_usage_allowed": "root-supplied logistics, not independently queried"
+  },
+  "process_terminal": {
+    "extract_originals.py": {
+      "exit_code": 0,
+      "finished": true
+    },
+    "verify_source_locks.py": {
+      "exit_code": 0,
+      "finished": true
+    },
+    "check_method_controls.py": {
+      "exit_code": 0,
+      "finished": true,
+      "successful_calls": 3
+    },
+    "read_official_data.py": {
+      "exit_code": 0,
+      "finished": true
+    }
+  },
+  "next_action": {
+    "owner": "root",
+    "action": "freeze this preparation after terminal notification, then deliver terminal complete execution artifacts and lock to this same actor",
+    "reviewer_state": "waiting_no_execution_access",
+    "no_product_pass_claim": true
+  }
+}

@@ -20,3 +20,7 @@
 状态登记补充：executor-progress-checkpoint-command.json重复观察同一已创建actor，用了created状态标签；没有第二次spawn或新执行者。该helper当时覆盖了未冻结的首次created观察JSON，因此不可把其后来的observed_at当初次创建时间；首次实际命令回执executor-created-command.json保留。后续helper改为唯一观察文件名并使用running_observed，保留再次观察，不从状态标签推算创建次数或provider运行时间。
 
 - L1复审终态入口更新首轮段落索引误选第二段，读回发现后从Git当前版本保留原第二段并正确更新第一段；尚未发布错误版本，历史锁未改。来源/协调文本编辑恢复单独记录，不计入L1作者修正或旧预算。
+
+- 新接续发现publication.observe中synchronize重写checkpoint.next_action；现保存观察前next_action并恢复，保持实际L2前沿。记录L2资源恢复首轮错用native Python，import fcntl失败且未写状态；改为明确WSL命令成功，不属于论文作者修复或旧预算。
+
+- L2方法冻结后发布的文本检查发现两个已冻结Python文件末尾额外空行（check_method_controls.py:52、independent_checker.py:87）；保留文件字节，不改历史锁。仅将EOF空行列为可选样式说明；继续检查行尾空格/缩进，独立算法与数学验收标准不变。

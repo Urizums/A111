@@ -1,0 +1,1157 @@
+{
+  "status": "review_method_controls_only_not_producer_verdict",
+  "created_utc": "2026-10-07T10:55:30.035575+00:00",
+  "fixture_data_origin": "reviewer synthetic analytical examples; no execution artifact",
+  "count": 25,
+  "all_passed": true,
+  "unit_anchors": {
+    "1_m2_in_mm2": 1000000,
+    "250_kg_on_half_m2_pressure": 500.0,
+    "union_area_with_hole_mm2": 999000.0,
+    "full_union_area_mm2": 1000000.0
+  },
+  "unit_anchors_passed": true,
+  "cases": [
+    {
+      "case": "legal_touching_faces",
+      "expected_valid": true,
+      "expected_rule": null,
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 2,
+            "volume_mm3": 2000000,
+            "volume_utilization": 0.002,
+            "weight_utilization": 0.0002,
+            "cost": 450,
+            "counts": {
+              "a": 1,
+              "b": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          },
+          "b": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1,
+          "b": 1
+        }
+      }
+    },
+    {
+      "case": "reject_positive_overlap",
+      "expected_valid": false,
+      "expected_rule": "overlap",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "overlap",
+            "items": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 2,
+            "volume_mm3": 2000000,
+            "volume_utilization": 0.002,
+            "weight_utilization": 0.0002,
+            "cost": 450,
+            "counts": {
+              "a": 1,
+              "b": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          },
+          "b": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1,
+          "b": 1
+        }
+      }
+    },
+    {
+      "case": "legal_exact_top_clearance",
+      "expected_valid": true,
+      "expected_rule": null,
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 9700000,
+            "volume_utilization": 0.0097,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "reject_clearance_plus_one_mm",
+      "expected_valid": false,
+      "expected_rule": "boundary_clearance",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "boundary_clearance",
+            "item": "a"
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 9710000,
+            "volume_utilization": 0.00971,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "reject_negative_coordinate",
+      "expected_valid": false,
+      "expected_rule": "boundary_clearance",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "boundary_clearance",
+            "item": "a"
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 1000000,
+            "volume_utilization": 0.001,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "reject_directional_swap",
+      "expected_valid": false,
+      "expected_rule": "orientation",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "orientation",
+            "item": "a"
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 2000000,
+            "volume_utilization": 0.002,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "legal_standard_permutation",
+      "expected_valid": true,
+      "expected_rule": null,
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 2000000,
+            "volume_utilization": 0.002,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "legal_fragile_planar_rotation",
+      "expected_valid": true,
+      "expected_rule": null,
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 3000000,
+            "volume_utilization": 0.003,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "reject_fragile_vertical_rotation",
+      "expected_valid": false,
+      "expected_rule": "orientation",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "orientation",
+            "item": "a"
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 3000000,
+            "volume_utilization": 0.003,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "legal_fragile_coplanar_union_support",
+      "expected_valid": true,
+      "expected_rule": null,
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 17,
+            "volume_mm3": 200000000,
+            "volume_utilization": 0.2,
+            "weight_utilization": 0.0017,
+            "cost": 450,
+            "counts": {
+              "a": 1,
+              "b": 1,
+              "f": 1
+            }
+          }
+        },
+        "loads": {
+          "f": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 15.0
+          },
+          "a": {
+            "incoming_load_kg": 7.5,
+            "self_plus_transmitted_kg": 8.5
+          },
+          "b": {
+            "incoming_load_kg": 7.5,
+            "self_plus_transmitted_kg": 8.5
+          }
+        },
+        "contacts": [
+          {
+            "upper": "f",
+            "lower": "a",
+            "area_mm2": 500000
+          },
+          {
+            "upper": "f",
+            "lower": "b",
+            "area_mm2": 500000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1,
+          "b": 1,
+          "f": 1
+        }
+      }
+    },
+    {
+      "case": "reject_one_mm_support_hole",
+      "expected_valid": false,
+      "expected_rule": "fragile_full_support",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "fragile_full_support",
+            "item": "f",
+            "coverage": 0.999
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 17,
+            "volume_mm3": 199900000,
+            "volume_utilization": 0.1999,
+            "weight_utilization": 0.0017,
+            "cost": 450,
+            "counts": {
+              "a": 1,
+              "b": 1,
+              "f": 1
+            }
+          }
+        },
+        "loads": {
+          "f": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 15.0
+          },
+          "a": {
+            "incoming_load_kg": 7.5075075075075075,
+            "self_plus_transmitted_kg": 8.507507507507508
+          },
+          "b": {
+            "incoming_load_kg": 7.4924924924924925,
+            "self_plus_transmitted_kg": 8.492492492492492
+          }
+        },
+        "contacts": [
+          {
+            "upper": "f",
+            "lower": "a",
+            "area_mm2": 500000
+          },
+          {
+            "upper": "f",
+            "lower": "b",
+            "area_mm2": 499000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1,
+          "b": 1,
+          "f": 1
+        }
+      }
+    },
+    {
+      "case": "reject_fragile_supported_by_directional",
+      "expected_valid": false,
+      "expected_rule": "fragile_support_material",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "fragile_support_material",
+            "items": [
+              "f",
+              "d"
+            ]
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 2,
+            "volume_mm3": 2000000,
+            "volume_utilization": 0.002,
+            "weight_utilization": 0.0002,
+            "cost": 450,
+            "counts": {
+              "d": 1,
+              "f": 1
+            }
+          }
+        },
+        "loads": {
+          "f": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          },
+          "d": {
+            "incoming_load_kg": 1.0,
+            "self_plus_transmitted_kg": 2.0
+          }
+        },
+        "contacts": [
+          {
+            "upper": "f",
+            "lower": "d",
+            "area_mm2": 10000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "d": 1,
+          "f": 1
+        }
+      }
+    },
+    {
+      "case": "reject_load_on_fragile",
+      "expected_valid": false,
+      "expected_rule": "fragile_no_load",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "fragile_no_load",
+            "items": [
+              "a",
+              "f"
+            ]
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 2,
+            "volume_mm3": 2000000,
+            "volume_utilization": 0.002,
+            "weight_utilization": 0.0002,
+            "cost": 450,
+            "counts": {
+              "f": 1,
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          },
+          "f": {
+            "incoming_load_kg": 1.0,
+            "self_plus_transmitted_kg": 2.0
+          }
+        },
+        "contacts": [
+          {
+            "upper": "a",
+            "lower": "f",
+            "area_mm2": 10000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "f": 1,
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "reject_floating",
+      "expected_valid": false,
+      "expected_rule": "floating",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "floating",
+            "item": "a"
+          },
+          {
+            "rule": "load_conservation",
+            "vehicle": "v"
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "partial_nonfragile_support_requires_stability_assumption",
+            "item": "a"
+          }
+        ],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 1000000,
+            "volume_utilization": 0.001,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "legal_contact_pressure_equality",
+      "expected_valid": true,
+      "expected_rule": null,
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 501,
+            "volume_mm3": 200000000,
+            "volume_utilization": 0.2,
+            "weight_utilization": 0.0501,
+            "cost": 450,
+            "counts": {
+              "a": 1,
+              "b": 1
+            }
+          }
+        },
+        "loads": {
+          "b": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 500.0
+          },
+          "a": {
+            "incoming_load_kg": 500.0,
+            "self_plus_transmitted_kg": 501.0
+          }
+        },
+        "contacts": [
+          {
+            "upper": "b",
+            "lower": "a",
+            "area_mm2": 1000000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1,
+          "b": 1
+        }
+      }
+    },
+    {
+      "case": "reject_contact_pressure_above_equality",
+      "expected_valid": false,
+      "expected_rule": "cumulative_contact_pressure",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "cumulative_contact_pressure",
+            "upper": "b",
+            "lower": "a",
+            "pressure_kg_m2": 500.001
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 501.001,
+            "volume_mm3": 200000000,
+            "volume_utilization": 0.2,
+            "weight_utilization": 0.050100099999999995,
+            "cost": 450,
+            "counts": {
+              "a": 1,
+              "b": 1
+            }
+          }
+        },
+        "loads": {
+          "b": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 500.001
+          },
+          "a": {
+            "incoming_load_kg": 500.001,
+            "self_plus_transmitted_kg": 501.001
+          }
+        },
+        "contacts": [
+          {
+            "upper": "b",
+            "lower": "a",
+            "area_mm2": 1000000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1,
+          "b": 1
+        }
+      }
+    },
+    {
+      "case": "reject_cumulative_chain_not_only_direct_load",
+      "expected_valid": false,
+      "expected_rule": "cumulative_contact_pressure",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "cumulative_contact_pressure",
+            "upper": "b",
+            "lower": "a",
+            "pressure_kg_m2": 501.0
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 502,
+            "volume_mm3": 300000000,
+            "volume_utilization": 0.3,
+            "weight_utilization": 0.0502,
+            "cost": 450,
+            "counts": {
+              "a": 1,
+              "b": 1,
+              "c": 1
+            }
+          }
+        },
+        "loads": {
+          "c": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 251.0
+          },
+          "b": {
+            "incoming_load_kg": 251.0,
+            "self_plus_transmitted_kg": 501.0
+          },
+          "a": {
+            "incoming_load_kg": 501.0,
+            "self_plus_transmitted_kg": 502.0
+          }
+        },
+        "contacts": [
+          {
+            "upper": "b",
+            "lower": "a",
+            "area_mm2": 1000000
+          },
+          {
+            "upper": "c",
+            "lower": "b",
+            "area_mm2": 1000000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1,
+          "b": 1,
+          "c": 1
+        }
+      }
+    },
+    {
+      "case": "reject_local_directional_center_outside",
+      "expected_valid": false,
+      "expected_rule": "directional_local_center",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "directional_local_center",
+            "items": [
+              "a",
+              "d"
+            ]
+          }
+        ],
+        "warnings": [
+          {
+            "rule": "partial_nonfragile_support_requires_stability_assumption",
+            "item": "a"
+          }
+        ],
+        "metrics": {
+          "v": {
+            "weight": 2,
+            "volume_mm3": 140000000,
+            "volume_utilization": 0.14,
+            "weight_utilization": 0.0002,
+            "cost": 450,
+            "counts": {
+              "d": 1,
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          },
+          "d": {
+            "incoming_load_kg": 1.0,
+            "self_plus_transmitted_kg": 2.0
+          }
+        },
+        "contacts": [
+          {
+            "upper": "a",
+            "lower": "d",
+            "area_mm2": 400000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "d": 1,
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "legal_local_directional_center_on_edge",
+      "expected_valid": true,
+      "expected_rule": null,
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "warnings": [
+          {
+            "rule": "partial_nonfragile_support_requires_stability_assumption",
+            "item": "a"
+          }
+        ],
+        "metrics": {
+          "v": {
+            "weight": 2,
+            "volume_mm3": 150000000,
+            "volume_utilization": 0.15,
+            "weight_utilization": 0.0002,
+            "cost": 450,
+            "counts": {
+              "d": 1,
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          },
+          "d": {
+            "incoming_load_kg": 1.0,
+            "self_plus_transmitted_kg": 2.0
+          }
+        },
+        "contacts": [
+          {
+            "upper": "a",
+            "lower": "d",
+            "area_mm2": 500000
+          }
+        ],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "d": 1,
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "reject_duplicate_id",
+      "expected_valid": false,
+      "expected_rule": "duplicate_item",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "duplicate_item"
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 2,
+            "volume_mm3": 2000000,
+            "volume_utilization": 0.002,
+            "weight_utilization": 0.0002,
+            "cost": 450,
+            "counts": {
+              "a": 2
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 2
+        }
+      }
+    },
+    {
+      "case": "reject_full_inventory_omission",
+      "expected_valid": false,
+      "expected_rule": "inventory_equality",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "inventory_equality",
+            "missing": [
+              "b"
+            ]
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 1000000,
+            "volume_utilization": 0.001,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "legal_single_vehicle_subset",
+      "expected_valid": true,
+      "expected_rule": null,
+      "options": {
+        "full": false
+      },
+      "passed": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 1,
+            "volume_mm3": 1000000,
+            "volume_utilization": 0.001,
+            "weight_utilization": 0.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 1.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    },
+    {
+      "case": "reject_missing_weight",
+      "expected_valid": false,
+      "expected_rule": "nonfinite_or_missing",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "nonfinite_or_missing",
+            "item": "a"
+          }
+        ],
+        "warnings": [],
+        "metrics": {},
+        "loads": {},
+        "contacts": [],
+        "total_cost": 0,
+        "vehicles_used": 0,
+        "inventory": {}
+      }
+    },
+    {
+      "case": "reject_nonfinite_coordinate",
+      "expected_valid": false,
+      "expected_rule": "nonfinite_or_missing",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "nonfinite_or_missing",
+            "item": "a"
+          }
+        ],
+        "warnings": [],
+        "metrics": {},
+        "loads": {},
+        "contacts": [],
+        "total_cost": 0,
+        "vehicles_used": 0,
+        "inventory": {}
+      }
+    },
+    {
+      "case": "reject_over_payload",
+      "expected_valid": false,
+      "expected_rule": "payload",
+      "options": {},
+      "passed": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          {
+            "rule": "payload",
+            "vehicle": "v"
+          }
+        ],
+        "warnings": [],
+        "metrics": {
+          "v": {
+            "weight": 10001,
+            "volume_mm3": 1000000,
+            "volume_utilization": 0.001,
+            "weight_utilization": 1.0001,
+            "cost": 450,
+            "counts": {
+              "a": 1
+            }
+          }
+        },
+        "loads": {
+          "a": {
+            "incoming_load_kg": 0.0,
+            "self_plus_transmitted_kg": 10001.0
+          }
+        },
+        "contacts": [],
+        "total_cost": 450,
+        "vehicles_used": 1,
+        "inventory": {
+          "a": 1
+        }
+      }
+    }
+  ]
+}

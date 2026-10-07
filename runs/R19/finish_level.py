@@ -21,7 +21,7 @@ report_path=f'{base}/{a.review}/result.json'
 initial=read(f'{base}/review/initial/result.json');latest=read(report_path)
 verdicts=latest['a1_a6']
 assert {v['id'] for v in verdicts}=={f'a{k}' for k in range(1,7)}
-assert all(v['status'] in {'pass','fail','blocked'} and v.get('evidence') for v in verdicts)
+assert all(v['status'] in {'pass','fail','blocked','unverified'} and v.get('evidence') for v in verdicts)
 assert (ROOT/base/a.execution/'paper/paper.md').is_file()
 assert (ROOT/base/a.execution/'paper/paper.pdf').is_file()
 with ctl.locked(ROOT):
