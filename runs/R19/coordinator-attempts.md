@@ -28,3 +28,7 @@
 - L2质量接续提示只写QUALITY_FOLLOWUP.md文件名而未给全路径，原作者错查runs/R19/后报告不存在；root明确levels/L2/绝对路径，保留原失败，物流澄清不新增解法/评分。
 
 - L2初审发布文本检查指出冻结paper-regeneration.diff.txt第1/3行的空文件标签差异头带尾空格（--- / +++）。这是实际差异工具原文，保留字节/锁；样式检查明确仅排除该证据文件，其他正文/源码行尾空白检查继续，科学验收未改变。
+
+- 本轮CI接续首轮误把命令记录器定位于runs/R19/record_command.py，Python在启动前报文件不存在；实际工具位于scripts/record_command.py。未写执行回执、未修改锁或论文，明确正确路径后继续。协调者随后将日志写入的字面换行纠正；只读准备时误查L3/design/README.md，文件不存在，后续以文件清单定位。
+
+- L2 v2冻结后交接核查首轮误给verify_handoff.py追加不支持的--root参数，参数解析即失败，未执行验证；回执l2-v2-handoff-command.json保留。随后在真实checkout使用该脚本支持的--json选项，另存新回执。不属于论文作者缺陷、不改旧预算。

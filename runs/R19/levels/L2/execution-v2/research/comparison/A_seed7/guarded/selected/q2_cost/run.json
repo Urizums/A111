@@ -1,0 +1,48 @@
+{
+  "scenario": "q2_cost",
+  "objective": "cost",
+  "full_inventory": true,
+  "validation_status": true,
+  "unplaced_items": [],
+  "vehicle_count": 16,
+  "cost_yuan": 10200,
+  "volume_utilization": 0.49764814276015906,
+  "weight_utilization": 0.28541666666666665,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "method": "column_patterns_MILP",
+  "bounds": {
+    "volume_mm3": 287350000000,
+    "weight_kg": 41100.0,
+    "lower_bound": 5350,
+    "relaxation_pair": [
+      1,
+      7
+    ],
+    "height_quantum_mm": 50,
+    "bound_model": "vertical_line_integral_height_quantization"
+  },
+  "config": {
+    "seed": 7,
+    "starts": 22,
+    "time_limit": 45,
+    "pressure": 500,
+    "platforms": false,
+    "geometry": "A"
+  },
+  "solver": {
+    "status": 1,
+    "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+    "pattern_count": 160,
+    "seconds": 45.00837799999863,
+    "restricted_mip_gap": 0.02608850269112469,
+    "restricted_dual_bound": 9933.897273292114
+  },
+  "candidate_guard": {
+    "selected_candidate_index": 78,
+    "raw_vehicles": 16,
+    "raw_cost": 10200,
+    "raw_solver_status_preserved": true
+  }
+}

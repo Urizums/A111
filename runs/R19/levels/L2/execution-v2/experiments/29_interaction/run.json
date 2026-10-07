@@ -1,0 +1,48 @@
+{
+  "scenario": "sensitivity_29_interaction",
+  "objective": "cost",
+  "full_inventory": true,
+  "validation_status": true,
+  "unplaced_items": [],
+  "vehicle_count": 14,
+  "cost_yuan": 9800,
+  "volume_utilization": 0.5475523542750433,
+  "weight_utilization": 0.2935714285714286,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "solver": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "pattern_count": 76,
+    "seconds": 0.14481530000011844,
+    "restricted_mip_gap": 0.0,
+    "restricted_dual_bound": 9800.000000666667,
+    "candidate_guard": {
+      "selected_index": 15,
+      "candidates": 25,
+      "raw_incumbent_count": 14,
+      "selected_count": 14,
+      "raw_status_not_upgraded": true
+    }
+  },
+  "bounds": {
+    "volume_mm3": 287350000000,
+    "weight_kg": 41100.0,
+    "lower_bound": 5600.0,
+    "relaxation_pair": [
+      0,
+      8
+    ],
+    "height_quantum_mm": 50,
+    "bound_model": "vertical_line_integral_height_quantization"
+  },
+  "config": {
+    "seed": 19,
+    "starts": 5,
+    "time_limit": 8,
+    "pressure": 500,
+    "platforms": true,
+    "geometry": "C"
+  }
+}

@@ -1,6 +1,6 @@
 # Codex 当前研发交接
 
-R19最新现场：L1诊断done，原初审a4 fail及知情修订pass均保留。L2设计9/完整执行691/方法准备19/首审350文件分别冻结，含11页论文和2页企业报告；首次独立a1–a6 pass，五维achieved、实验充分性partial（界松/受限几何与易碎尾车）。原作者已接收正式同层首审，在execution-v2/实际启动知情质量研究与公平对照，C11不变、不读其他层，不追认或替换首次结果。L3/L4设计冻结、论文未启动，保持顺序。已上传源a15bd8e和三个CI作业success仅证明对应仓库/工件检查。旧失败/预算/锁不重置；见runs/R19/REPORT.md、TODO.md、levels/L2/QUALITY_FOLLOWUP.md及state/checkpoint.json。
+R19最新现场：L1诊断done，原初审a4 fail及知情修订pass保留。L2首次执行691/方法准备19/首审350文件冻结，首审a1–a6 pass、五维achieved/实验充分性partial保持。原作者知情质量修订execution-v2已终态冻结2616文件：12页论文+2页报告、7图、9原始配对/9统一保护、36新参数及原件/ZIP全流程重放；真实缺陷/修正与额外资源保留，尚非独立通过。同一reviewer已实际启动知情复审，写review/recheck-1/。C11不变；L3/L4设计冻结、论文未启动，仍顺序。最近已观察发布3304768及对应CI success仅证明该源仓库/工件检查，其后上传观察以checkpoint/publication为准。旧失败/预算/锁不重置；见runs/R19/REPORT.md、TODO.md、levels/L2/execution-v2/README.md及state/checkpoint.json。
 
 最新用户范围为R19：只测试Level1–4，依次制作可转交工作流、由新上下文执行至完整论文、再由独立上下文实质验收；5–8不启动。新C11纯文档候选在runs/R19/candidate/C11/forge-agent-flow/，增加从论文核心结论倒推证据及执行者可用性的设计要求；尚未完整行为验收，不替代C10已交付状态。四层使用同一官方修订D题原始PDF/DOCX/XLSX、同一C11与用户原层级文本（只规范排版），不发给生产者共用的高信息验收表，不读取旧解法/论文或其他层结果。统一独立验收与六维质量诊断已在论文执行前冻结。当前实质前沿、实际actor和论文状态见runs/R19/TODO.md及state/checkpoint.json。R19是新授权前瞻试验，原50份任务/所有失败/锁/计数保留；R16/R18完整旧试解仍未通过。工作流/代码/论文均属试验产物，算法脚本不进入技能包；不声明奖项或虚构评分。顺序试验完成与各层原题/论文质量通过分开记录。
 

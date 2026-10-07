@@ -1,0 +1,137 @@
+[
+  {
+    "name": "tangent_legal",
+    "expected_valid": true,
+    "actual_valid": true,
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "overlap_1mm_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "b: overlap a"
+    ]
+  },
+  {
+    "name": "clearance_equal_legal",
+    "expected_valid": true,
+    "actual_valid": true,
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "top_gap_exact_legal",
+    "expected_valid": true,
+    "actual_valid": true,
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "overheight_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "a: orientation",
+      "a: boundary/clearance"
+    ]
+  },
+  {
+    "name": "direction_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "di: orientation"
+    ]
+  },
+  {
+    "name": "fragile_on_floor_legal",
+    "expected_valid": true,
+    "actual_valid": true,
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "fragile_gap_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "f: incomplete support"
+    ]
+  },
+  {
+    "name": "fragile_directional_support_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "f: incomplete support",
+      "f: fragile support not standard"
+    ]
+  },
+  {
+    "name": "fragile_top_load_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "a: cargo on fragile"
+    ]
+  },
+  {
+    "name": "duplicate_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "duplicate item_id"
+    ]
+  },
+  {
+    "name": "omission_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "inventory omission or extra"
+    ]
+  },
+  {
+    "name": "missing_weight_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "a: invalid or missing input"
+    ]
+  },
+  {
+    "name": "cumulative_600kg_per_m2_reject",
+    "expected_valid": false,
+    "actual_valid": false,
+    "passed": true,
+    "errors": [
+      "bottom: cumulative contact pressure",
+      "bottom: average top pressure"
+    ]
+  },
+  {
+    "name": "pressure_equal_500_legal",
+    "expected_valid": true,
+    "actual_valid": true,
+    "passed": true,
+    "errors": []
+  },
+  {
+    "name": "union_standard_support_legal",
+    "expected_valid": true,
+    "actual_valid": true,
+    "passed": true,
+    "errors": []
+  }
+]

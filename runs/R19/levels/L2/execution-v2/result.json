@@ -1,0 +1,356 @@
+{
+  "schema": "R19-L2-execution-v2/1",
+  "task_id": "R19-C11-L2-informed-quality-revision",
+  "level": "L2",
+  "status": "complete_author_checked_ready_for_same_reviewer_informed_review",
+  "completed_utc": "2026-10-07T17:28:37.379743+00:00",
+  "offline": true,
+  "installed_software": false,
+  "uploaded_or_submitted": false,
+  "children_spawned": 0,
+  "write_domain": "runs/R19/levels/L2/execution-v2",
+  "write_boundary_is_os_isolation": false,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "deadline": null,
+  "prior_not_replaced": {
+    "first_independent_mandatory_verdict": "a1-a6 pass",
+    "first_empirical_sufficiency_and_fair_alternatives": "partial",
+    "same_task_same_original_question_informed_revision": true,
+    "prior_author_execution691_unchanged": true,
+    "initial_review_scope_preserved": "history/review_initial/report.md and result.json, original350 lock only (other reviewer files not copied/read)",
+    "prior_failures_sha256": "4491feb42fc1739e73eb04cd9f517f989eb9979dcb18c3f82bbf977b1d796e29"
+  },
+  "main_input": {
+    "items": 3000,
+    "volume_m3": 287.35,
+    "weight_kg": 41100,
+    "official_raw": "raw/ original3 hash in checks/prior_integrity_final.json",
+    "optional_attachment2": "qualification audit only, insufficient full-order fields"
+  },
+  "current_version": {
+    "algorithm_sha256": "f6d81e3f296e0fa97208fecb44ad8e9215129177a6746b43f8e9c2b86457ef3e",
+    "blocks_sha256": "675374c33d3d7a4de6fb68e9ada52891e663fdecd2c309b805422ce81041c4d5",
+    "validator_sha256": "2155fdd7c0b792a923d6d6d02080a23c8caf12efd8fdf2ffe40c5724bb4e4533",
+    "config": "configs/main.json",
+    "selected": "corrected full raw replay2, C seed19 fixed prospectively, no best-seed cherry-pick",
+    "raw_replay_code_identity_matches_current": true
+  },
+  "main_results": [
+    {
+      "scenario": "q1_all_v1",
+      "objective": "vehicles",
+      "vehicle_count": 22,
+      "cost_yuan": 9900,
+      "volume_utilization": 0.6731273776728323,
+      "weight_utilization": 0.31136363636363634,
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 16,
+        "relaxation_pair": [
+          16,
+          0
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "solver": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "pattern_count": 109,
+        "seconds": 0.2474025999999867,
+        "restricted_mip_gap": 0.0,
+        "restricted_dual_bound": 22.000733333333333,
+        "candidate_guard": {
+          "selected_index": 7,
+          "candidates": 77,
+          "raw_incumbent_count": 22,
+          "selected_count": 22,
+          "raw_status_not_upgraded": true
+        }
+      },
+      "validation_status": true
+    },
+    {
+      "scenario": "q1_all_v2",
+      "objective": "vehicles",
+      "vehicle_count": 12,
+      "cost_yuan": 8400,
+      "volume_utilization": 0.5749299719887955,
+      "weight_utilization": 0.3425,
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 8,
+        "relaxation_pair": [
+          0,
+          8
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "solver": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "pattern_count": 116,
+        "seconds": 1.037983100000929,
+        "restricted_mip_gap": 0.0,
+        "restricted_dual_bound": 12.000399999999999,
+        "candidate_guard": {
+          "selected_index": 40,
+          "candidates": 79,
+          "raw_incumbent_count": 12,
+          "selected_count": 12,
+          "raw_status_not_upgraded": true
+        }
+      },
+      "validation_status": true
+    },
+    {
+      "scenario": "q2_vehicles",
+      "objective": "vehicles",
+      "vehicle_count": 12,
+      "cost_yuan": 8400,
+      "volume_utilization": 0.5749299719887955,
+      "weight_utilization": 0.3425,
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 8,
+        "relaxation_pair": [
+          0,
+          8
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "solver": {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+        "pattern_count": 225,
+        "seconds": 45.0133532000018,
+        "restricted_mip_gap": 0.16137988918777788,
+        "restricted_dual_bound": 10.902374924743159,
+        "candidate_guard": {
+          "selected_index": 40,
+          "candidates": 81,
+          "raw_incumbent_count": 13,
+          "selected_count": 12,
+          "raw_status_not_upgraded": true
+        }
+      },
+      "validation_status": true
+    },
+    {
+      "scenario": "q2_cost",
+      "objective": "cost",
+      "vehicle_count": 13,
+      "cost_yuan": 7850,
+      "volume_utilization": 0.6679140904653433,
+      "weight_utilization": 0.37363636363636366,
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 5350,
+        "relaxation_pair": [
+          1,
+          7
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "solver": {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+        "pattern_count": 225,
+        "seconds": 45.008902800000214,
+        "restricted_mip_gap": 0.06435557687738637,
+        "restricted_dual_bound": 7531.937606760077,
+        "candidate_guard": {
+          "selected_index": 79,
+          "candidates": 83,
+          "raw_incumbent_count": 14,
+          "selected_count": 13,
+          "raw_status_not_upgraded": true
+        }
+      },
+      "validation_status": true
+    }
+  ],
+  "distinct_mixed_targets": {
+    "vehicles_objective": {
+      "vehicles": 12,
+      "cost_yuan": 8400,
+      "composition": {
+        "V1": 0,
+        "V2": 12
+      }
+    },
+    "cost_objective": {
+      "vehicles": 13,
+      "cost_yuan": 7850,
+      "composition": {
+        "V1": 5,
+        "V2": 8
+      }
+    }
+  },
+  "single_vehicle": [
+    {
+      "scenario": "single_V1_00",
+      "counts": [
+        63,
+        300,
+        0,
+        0,
+        0
+      ],
+      "volume_utilization": 0.9101731601731602,
+      "weight_utilization": 0.526,
+      "validation_status": true
+    },
+    {
+      "scenario": "single_V1_01",
+      "counts": [
+        63,
+        264,
+        18,
+        0,
+        0
+      ],
+      "volume_utilization": 0.9588744588744589,
+      "weight_utilization": 0.523,
+      "validation_status": true
+    },
+    {
+      "scenario": "single_V2_00",
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        408
+      ],
+      "volume_utilization": 0.9404081632653061,
+      "weight_utilization": 0.7344,
+      "validation_status": true
+    }
+  ],
+  "research": {
+    "height_bound_proof": "research/bound_proof.md",
+    "bound_effect": "old16/7/7/4900 ->16/8/8/5350; original orthogonal domain necessary not sufficient",
+    "controlled_methods": "A/B only platform switch; C compound finite geometry; three paired seeds, same weights/stated caps",
+    "raw_calls": 9,
+    "uniform_guard_steps": 9,
+    "raw_all_terminal": true,
+    "guard_all_terminal": true,
+    "comparison_guarded": "research/comparison/guarded_summary.json",
+    "paired_B_to_C_savings_yuan": [
+      1000,
+      1600,
+      1150
+    ],
+    "mean_paired_saving_yuan": 1250,
+    "mean_relative_saving_percent": 13.711151736745888,
+    "mean_actual_B_seconds": 72.064893533332,
+    "mean_actual_C_seconds": 78.45426623333272,
+    "empirical_claim_limit": "finite source batch/three seeds; complete original optimum still unknown; current low-budget instability explicit",
+    "guard_pool_repair_did_not_affect9_postprocessors": "checked36 scenario combinations; all fs + raw4 pooled before evaluation, not sequential select; checks/guard_pool_reconciliation.json",
+    "current_parameter_cases": 36,
+    "current_parameter_valid": 35,
+    "current_parameter_failed": 1,
+    "prior_parameter_cases_retained": 36,
+    "q3_32_36_trace_corrected": true,
+    "parameter_last_pool_fix_unaffected": "single select per case, local raw already compared; only later shared targets side effect added; no unnecessary rerun",
+    "resource_ledger": "research/resource_ledger.json"
+  },
+  "actual_outputs": {
+    "readme": "README.md",
+    "todo": "TODO.md",
+    "paper_md": "paper/paper.md",
+    "paper_pdf": "paper/paper.pdf",
+    "paper_pages": 12,
+    "paper_chars": 14844,
+    "report_md": "report.md",
+    "report_pdf": "report.pdf",
+    "report_pages": 2,
+    "figures": 7,
+    "figure_directory": "figures",
+    "main_layouts": "results/final",
+    "parameter_cases": "experiments",
+    "code": "code",
+    "algorithm_zip": "algorithm.zip",
+    "zip_sha256": "b012cac706b3be2f582a8ae36e6994eaf78b8070a1d9741f0e66bdcbdf7ba63e",
+    "new_version_differences": "DIFFERENCES.md",
+    "failure_history": "logs/failure_history.md",
+    "claim_trace": "claim_evidence.csv",
+    "all_files": "artifact_manifest.json"
+  },
+  "checks": {
+    "author_requirement_verdict": "checks/requirement_verdict.md",
+    "raw_XML_and_all_output_audit": "checks/source_result_audit.json",
+    "current_saved_mode_count": 225,
+    "all225_validated": "checks/pattern_library_validation.json",
+    "original16_boundary_tests_reexecuted": "checks/boundary_tests.json",
+    "current_C_smoke15_and_hybrid_controls": "checks/smoke_C; checks/protected_block_controls.json",
+    "actual_CLI_reject_exit": 2,
+    "guard_pool_36_reconciliations": "checks/guard_pool_reconciliation.json",
+    "manuscript_tables": 7,
+    "manuscript_rows_recomputed": 82,
+    "manuscript": "checks/manuscript_consistency.json",
+    "rendered_and_visual_pages": 14,
+    "outside_pdf_blocks": 0,
+    "PDF_hash_visual_binding": "checks/pdf_visual_qa.json",
+    "old_lock_final": "checks/prior_integrity_final.json",
+    "independence": "same author context separate geometry/parser implementations; v1 independent review inherited; v2 informed independent rereview pending"
+  },
+  "reproduction": {
+    "preserved_first_current_raw_replay": {
+      "seconds": 114.4568890999999,
+      "quality_defect": "cross-objective raw incumbent lost; all output/code preserved, not falsely success for quality",
+      "path": "research/guard_correction_1_result"
+    },
+    "current_raw_replay": {
+      "seconds": 115.90379900000153,
+      "all3000_all_scenarios": true,
+      "path": "research/clean_replay_package_2",
+      "receipt": "logs/clean_replay_package_2/receipt.json"
+    },
+    "actual_ZIP_full_raw3000": {
+      "seconds": 118.83884440000111,
+      "all11_layouts_recomputed": true,
+      "objective_equal_to_delivered": true,
+      "receipt": "logs/zip_full/receipt.json",
+      "verification": "checks/zip_full_validation.json"
+    }
+  },
+  "failure_history": {
+    "all_old_author_failures_retained": true,
+    "initial_review_failures_retained": "formal initial report/result/lock, independent reviewer files remain original",
+    "v2_log": "logs/failure_history.md",
+    "substantive_quality_fixes": 2,
+    "normal_research_rejections": "candidate block certificates and low-height failed case retained",
+    "no_general_two_failure_cap": true
+  },
+  "limitations": [
+    "Original 3D global optimum/Pareto frontier unproved; vehicle8–12/cost5350–7850 interval remains",
+    "Full-support and local directional-center engineering model conservative; wider partial-support/torque not implemented",
+    "Uniform mass and area load sharing, no material/dynamic/door/path/axle/handling validation",
+    "Attachment2 lacks full order fields; no invented weights/quantity/payload",
+    "Three full-budget seeds and one batch do not establish general superiority; low-budget four-seed variation retained",
+    "Finite MILP tolerance/time caps do not guarantee restricted secondary optimum; raw statuses/gaps unchanged",
+    "Official submission I/O/AI rules unknown, no upload",
+    "Old aggregate resource telemetry incomplete, model/token/cost unknown"
+  ],
+  "unfinished_execution_items": [],
+  "pending_external_action": "root freeze then same reviewer informed review; not author-granted independent pass",
+  "terminal": {
+    "all_solver_children_terminated": true,
+    "pending_solver_calls": [],
+    "process_snapshot": "logs/process_snapshot.json",
+    "final_document_writes_ending_in_this_call": true,
+    "parent_freeze_authorized_after_return": true
+  }
+}

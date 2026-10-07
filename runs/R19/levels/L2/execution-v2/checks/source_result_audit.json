@@ -1,0 +1,642 @@
+{
+  "source_reconciliation": "raw DOCX XML independently parsed",
+  "source_rows": [
+    {
+      "type": "G1",
+      "category": "标准件",
+      "dims": [
+        600,
+        400,
+        300
+      ],
+      "weight": 12.0,
+      "quantity": 800
+    },
+    {
+      "type": "G2",
+      "category": "标准件",
+      "dims": [
+        500,
+        350,
+        250
+      ],
+      "weight": 8.0,
+      "quantity": 1000
+    },
+    {
+      "type": "G3",
+      "category": "易碎件",
+      "dims": [
+        700,
+        500,
+        400
+      ],
+      "weight": 15.0,
+      "quantity": 300
+    },
+    {
+      "type": "G4",
+      "category": "定向件",
+      "dims": [
+        800,
+        600,
+        500
+      ],
+      "weight": 25.0,
+      "quantity": 400
+    },
+    {
+      "type": "G5",
+      "category": "定向件",
+      "dims": [
+        400,
+        400,
+        600
+      ],
+      "weight": 18.0,
+      "quantity": 500
+    }
+  ],
+  "total_volume_mm3": 287350000000,
+  "total_mass_kg": 41100.0,
+  "q_mm": 50,
+  "capacity_mm3": [
+    18963000000,
+    40817000000
+  ],
+  "bounds": [
+    16,
+    8,
+    8,
+    5350
+  ],
+  "all_outputs": [
+    {
+      "folder": "results/final/baseline/q1_all_v1",
+      "items": 3000,
+      "vehicles": 29,
+      "cost": 13050,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/baseline/q1_all_v2",
+      "items": 3000,
+      "vehicles": 16,
+      "cost": 11200,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/baseline/q2_cost",
+      "items": 3000,
+      "vehicles": 20,
+      "cost": 10750,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/baseline/q2_vehicles",
+      "items": 3000,
+      "vehicles": 16,
+      "cost": 10950,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/selected/q1_all_v1",
+      "items": 3000,
+      "vehicles": 22,
+      "cost": 9900,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/selected/q1_all_v2",
+      "items": 3000,
+      "vehicles": 12,
+      "cost": 8400,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/selected/q2_cost",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 7850,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/selected/q2_vehicles",
+      "items": 3000,
+      "vehicles": 12,
+      "cost": 8400,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/single/V1_00",
+      "items": 363,
+      "vehicles": 1,
+      "cost": 450,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/single/V1_01",
+      "items": 345,
+      "vehicles": 1,
+      "cost": 450,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "results/final/single/V2_00",
+      "items": 408,
+      "vehicles": 1,
+      "cost": 700,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/00_vehicle_length",
+      "items": 3000,
+      "vehicles": 14,
+      "cost": 9800,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/01_vehicle_length",
+      "items": 3000,
+      "vehicles": 12,
+      "cost": 8400,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/02_vehicle_width",
+      "items": 3000,
+      "vehicles": 17,
+      "cost": 9650,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/03_vehicle_width",
+      "items": 3000,
+      "vehicles": 12,
+      "cost": 8150,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/04_vehicle_height",
+      "items": 3000,
+      "vehicles": 11,
+      "cost": 7700,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/05_vehicle_height",
+      "items": 3000,
+      "vehicles": 10,
+      "cost": 7000,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/06_payload",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 9100,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/07_payload",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 9100,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/08_cost_v1",
+      "items": 3000,
+      "vehicles": 22,
+      "cost": 8910.0,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/09_cost_v1",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 9100,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/10_cost_v2",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 8190.0,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/11_cost_v2",
+      "items": 3000,
+      "vehicles": 22,
+      "cost": 9900,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/12_cargo_size",
+      "items": 3000,
+      "vehicles": 9,
+      "cost": 6050,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/13_cargo_size",
+      "items": 3000,
+      "vehicles": 16,
+      "cost": 10950,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/14_cargo_weight",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 9100,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/15_cargo_weight",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 9100,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/16_quantity",
+      "items": 2400,
+      "vehicles": 12,
+      "cost": 7400,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/17_quantity",
+      "items": 3600,
+      "vehicles": 18,
+      "cost": 10850,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/18_dense_share",
+      "items": 2680,
+      "vehicles": 15,
+      "cost": 10500,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/19_dense_share",
+      "items": 3320,
+      "vehicles": 11,
+      "cost": 7700,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/20_pressure",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 9100,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/21_pressure",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 9100,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/22_clearance",
+      "items": 3000,
+      "vehicles": 11,
+      "cost": 7450,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/23_clearance",
+      "items": 3000,
+      "vehicles": 14,
+      "cost": 9050,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/24_baseline",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 9100,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/25_fragile_fixed",
+      "items": 3000,
+      "vehicles": 15,
+      "cost": 9000,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/26_quantity",
+      "items": 6000,
+      "vehicles": 31,
+      "cost": 17450,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/28_interaction",
+      "items": 3000,
+      "vehicles": 21,
+      "cost": 9685.0,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/29_interaction",
+      "items": 3000,
+      "vehicles": 14,
+      "cost": 9800,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/30_interaction",
+      "items": 3000,
+      "vehicles": 19,
+      "cost": 7695.0,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/31_interaction",
+      "items": 3000,
+      "vehicles": 12,
+      "cost": 8195.0,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/32_fragile_floor",
+      "items": 3000,
+      "vehicles": 14,
+      "cost": 9800,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/33_seed",
+      "items": 3000,
+      "vehicles": 13,
+      "cost": 7850,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/34_seed",
+      "items": 3000,
+      "vehicles": 17,
+      "cost": 9650,
+      "valid": true,
+      "metrics_match": true
+    },
+    {
+      "folder": "experiments/35_seed",
+      "items": 3000,
+      "vehicles": 18,
+      "cost": 9600,
+      "valid": true,
+      "metrics_match": true
+    }
+  ],
+  "parameter_input_mutations": [
+    {
+      "case": "00_vehicle_length",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "01_vehicle_length",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "02_vehicle_width",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "03_vehicle_width",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "04_vehicle_height",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "05_vehicle_height",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "06_payload",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "07_payload",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "08_cost_v1",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "09_cost_v1",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "10_cost_v2",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "11_cost_v2",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "12_cargo_size",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "13_cargo_size",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "14_cargo_weight",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "15_cargo_weight",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "16_quantity",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "17_quantity",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "18_dense_share",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "19_dense_share",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "20_pressure",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "21_pressure",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "22_clearance",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "23_clearance",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "24_baseline",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "25_fragile_fixed",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "26_quantity",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "27_vehicle_height",
+      "all_fields_match_source_mutation": true,
+      "status": "failed"
+    },
+    {
+      "case": "28_interaction",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "29_interaction",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "30_interaction",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "31_interaction",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "32_fragile_floor",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "33_seed",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "34_seed",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    },
+    {
+      "case": "35_seed",
+      "all_fields_match_source_mutation": true,
+      "status": "validated"
+    }
+  ],
+  "single_dominance": [
+    {
+      "scenario": "single_V1_00",
+      "not_dominated_by_library": true
+    },
+    {
+      "scenario": "single_V1_01",
+      "not_dominated_by_library": true
+    },
+    {
+      "scenario": "single_V2_00",
+      "not_dominated_by_library": true
+    }
+  ],
+  "guard_regression_pass": true,
+  "seconds": 69.43157380000048,
+  "independence": "author same context, separate parser/validator code; informed external rereview pending"
+}

@@ -1,0 +1,34 @@
+{
+  "scenario": "q2_cost",
+  "objective": "cost",
+  "full_inventory": true,
+  "validation_status": true,
+  "unplaced_items": [],
+  "vehicle_count": 20,
+  "cost_yuan": 10750,
+  "volume_utilization": 0.5284092371855933,
+  "weight_utilization": 0.2777027027027027,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "method": "equal_priority_columns",
+  "bounds": {
+    "volume_mm3": 287350000000,
+    "weight_kg": 41100.0,
+    "lower_bound": 5350,
+    "relaxation_pair": [
+      1,
+      7
+    ],
+    "height_quantum_mm": 50,
+    "bound_model": "vertical_line_integral_height_quantization"
+  },
+  "config": {
+    "seed": 7,
+    "starts": 22,
+    "time_limit": 45,
+    "pressure": 500,
+    "platforms": false,
+    "geometry": "A"
+  }
+}
