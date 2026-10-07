@@ -1,0 +1,916 @@
+{
+  "kind": "informed author self-check, not independent acceptance",
+  "tests": [
+    {
+      "name": "valid face contact",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": true,
+      "observed_valid": true,
+      "required_rules": [],
+      "observed_rules": [],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "positive volume overlap .01cm",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "overlap",
+        "support_gap"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "rotated box beyond wall",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "boundary_clearance"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "top clearance short with grounded stack",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "boundary_clearance"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "over payload",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "payload"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "duplicate IDs",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "duplicate_ids"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "missing full inventory",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": true,
+      "required_rules": [],
+      "observed_rules": [],
+      "input_unmodified": true,
+      "pass_self_check": false
+    },
+    {
+      "name": "directional rotated",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "orientation"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "fragile loaded",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "fragile_loaded"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "gap under fragile",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "fragile_support",
+        "support_gap"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "noncoplanar support",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "support_gap"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "cumulative load exceeds though direct load does not",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "cumulative_bearing"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "direct center outside one directional support",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "directional_contact_center"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "inventory overflow",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "inventory_conservation",
+        "item_source_identity"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "source category relabel conceals load above G3",
+      "origin": "initial reviewer disclosed; informed replay",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [],
+      "observed_rules": [
+        "category_source_mismatch",
+        "fragile_loaded"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "legal grounded fragile",
+      "origin": "author adjacent/control",
+      "expected_valid": true,
+      "observed_valid": true,
+      "required_rules": [],
+      "observed_rules": [],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "legal fragile union of two standard supports",
+      "origin": "author adjacent/control",
+      "expected_valid": true,
+      "observed_valid": true,
+      "required_rules": [],
+      "observed_rules": [],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G1 relabeled as fragile",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G1 relabeled as directional",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G2 relabeled as fragile",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G2 relabeled as directional",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G3 relabeled as standard",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G3 relabeled as directional",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G4 relabeled as standard",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G4 relabeled as fragile",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G5 relabeled as standard",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "G5 relabeled as fragile",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "F1 original loaded fragile category spoof",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch",
+        "fragile_loaded"
+      ],
+      "observed_rules": [
+        "category_source_mismatch",
+        "fragile_loaded"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "directional centroid cannot be disabled by category spoof",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch",
+        "directional_contact_center"
+      ],
+      "observed_rules": [
+        "category_source_mismatch",
+        "directional_contact_center"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "legal relaxed directional scenario",
+      "origin": "author adjacent/control",
+      "expected_valid": true,
+      "observed_valid": true,
+      "required_rules": [],
+      "observed_rules": [],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "directional support cannot be relabeled for fragile",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch",
+        "fragile_support"
+      ],
+      "observed_rules": [
+        "category_source_mismatch",
+        "fragile_support"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "legal fragile horizontal rotation",
+      "origin": "author adjacent/control",
+      "expected_valid": true,
+      "observed_valid": true,
+      "required_rules": [],
+      "observed_rules": [],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "legal fragile floor-only control",
+      "origin": "author adjacent/control",
+      "expected_valid": true,
+      "observed_valid": true,
+      "required_rules": [],
+      "observed_rules": [],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfloor fragile forbidden in floor-only scenario",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "fragile_floor_only"
+      ],
+      "observed_rules": [
+        "fragile_floor_only"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "config category identity tamper G1",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "invalid_source_config"
+      ],
+      "observed_rules": [
+        "invalid_source_config"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "config category identity tamper G2",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "invalid_source_config"
+      ],
+      "observed_rules": [
+        "invalid_source_config"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "config category identity tamper G3",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "invalid_source_config"
+      ],
+      "observed_rules": [
+        "invalid_source_config"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "config category identity tamper G4",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "invalid_source_config"
+      ],
+      "observed_rules": [
+        "invalid_source_config"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "config category identity tamper G5",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "invalid_source_config"
+      ],
+      "observed_rules": [
+        "invalid_source_config"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "duplicate config type identity",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "invalid_source_config"
+      ],
+      "observed_rules": [
+        "invalid_source_config"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "cross-type item identity",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "item_source_identity"
+      ],
+      "observed_rules": [
+        "item_source_identity"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "unknown type rejected structurally",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "unknown_cargo_type"
+      ],
+      "observed_rules": [
+        "unknown_cargo_type"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "invalid source serial G1-0000",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "item_source_identity"
+      ],
+      "observed_rules": [
+        "item_source_identity"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "invalid source serial G1-0801",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "item_source_identity"
+      ],
+      "observed_rules": [
+        "item_source_identity"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "invalid source serial G1-00001",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "item_source_identity"
+      ],
+      "observed_rules": [
+        "item_source_identity"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "invalid source serial G1-one",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "item_source_identity"
+      ],
+      "observed_rules": [
+        "item_source_identity"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "invalid source serial None",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "item_source_identity"
+      ],
+      "observed_rules": [
+        "item_source_identity"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "missing category metadata",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "category_source_mismatch"
+      ],
+      "observed_rules": [
+        "category_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "item assigned to different truck",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "truck_assignment_mismatch"
+      ],
+      "observed_rules": [
+        "truck_assignment_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "vehicle payload metadata cannot relax source",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "vehicle_source_mismatch",
+        "payload"
+      ],
+      "observed_rules": [
+        "payload",
+        "vehicle_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "vehicle bounds metadata cannot relax source",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "vehicle_source_mismatch",
+        "boundary_clearance"
+      ],
+      "observed_rules": [
+        "boundary_clearance",
+        "vehicle_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "unknown vehicle type",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "unknown_vehicle_type"
+      ],
+      "observed_rules": [
+        "unknown_vehicle_type"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed x nan",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "observed_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed x inf",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "observed_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed x True",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "observed_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed x 12",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "observed_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed dx nan",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "observed_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed dx inf",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "observed_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed dx True",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "observed_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed dx 12",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "observed_rules": [
+        "nonfinite_or_invalid_geometry"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed weight nan",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "weight_source_mismatch"
+      ],
+      "observed_rules": [
+        "weight_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed weight inf",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "weight_source_mismatch"
+      ],
+      "observed_rules": [
+        "weight_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed weight True",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "weight_source_mismatch"
+      ],
+      "observed_rules": [
+        "weight_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "nonfinite/typed weight 12",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "weight_source_mismatch"
+      ],
+      "observed_rules": [
+        "weight_source_mismatch"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "boolean orientation rejected",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "orientation_label"
+      ],
+      "observed_rules": [
+        "orientation_label"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "legal numeric parameter variation",
+      "origin": "author adjacent/control",
+      "expected_valid": true,
+      "observed_valid": true,
+      "required_rules": [],
+      "observed_rules": [],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "invalid config nonfinite bearing",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "invalid_source_config"
+      ],
+      "observed_rules": [
+        "invalid_source_config"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    },
+    {
+      "name": "invalid config fractional inventory",
+      "origin": "author adjacent/control",
+      "expected_valid": false,
+      "observed_valid": false,
+      "required_rules": [
+        "invalid_source_config"
+      ],
+      "observed_rules": [
+        "invalid_source_config"
+      ],
+      "input_unmodified": true,
+      "pass_self_check": true
+    }
+  ],
+  "total": 68,
+  "passed": 67,
+  "seconds": 0.04861370001162868
+}

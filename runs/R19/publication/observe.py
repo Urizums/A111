@@ -25,6 +25,7 @@ with ctl.locked(ROOT):
     ctl.write_json(ROOT/'state/continuation.json',state);ctl.synchronize(ROOT,state)
     cp=json.loads((ROOT/'state/checkpoint.json').read_text(encoding='utf-8'))
     cp.update(current_report='runs/R19/REPORT.md',publication_evidence=evidence,current_source_commit=a.commit,
-        current_source_ci=runs,next_action='Complete independent L1 initial review and required corrections, then sequential L2-L4 papers; no old budget reset.')
+        current_source_ci=runs)
+    # Publishing a snapshot does not change the actual trial frontier or next action.
     ctl.write_json(ROOT/'state/checkpoint.json',cp)
 print(json.dumps(dict(remote_main=remote,ci=runs,evidence=evidence)))

@@ -1,6 +1,6 @@
 # Codex 接续入口
 
-最新工作是[Level1–4顺序试验](runs/R19/PLAN.md)：[C11实验候选](runs/R19/candidate/C11/forge-agent-flow/SKILL.md)、[当前TODO](runs/R19/TODO.md)、[独立验收](runs/R19/acceptance.json)。L1–L4工作流都已冻结；[L1完整中文论文](runs/R19/levels/L1/execution/paper/paper.pdf)、算法附件及32参数情景等250文件已冻结。[完整独立初审](runs/R19/levels/L1/review/initial/report.md)5pass/1fail，a4货类标签绕过，整体未通过；冻结方案合法且论文独立复现，实验/反证仍partial。原作者已在新增execution-v2/知情修复，原版和初审不改；随后原审查者知情复审，未追认首次通过。三者先前额度失败保留，资源实际可用后接续同一actor，没有替换或归零预算。论文求解和验收按1→4顺序，L2–4论文尚未开始，见[调度补充](runs/R19/PREPARATION_ADDENDUM.md)。C11仍是待完整行为验收的纯文档候选；各层不接触其他层结果和反馈，首次生产者不见统一外部验收表，具体接续以checkpoint为准。
+R19最新现场：L1完整诊断已完成。原16页/250文件与初审406文件保留，初审5pass/1fail（a4来源类别绕过）；新增17页修订/396文件及知情复审668文件分别冻结，修订版a1–a6均pass、六维在明示范围achieved，不追认首次通过。L2已实际启动：新executor按本层9份冻结工作流离线推进完整论文，新reviewer先只读原件建立独立方法；双方不读取L1。L3/L4设计已冻结、论文未开始，按1→4顺序。C11仍是九份Markdown的冻结实验候选，四层完整行为未完成。详见runs/R19/REPORT.md、TODO.md、WORKFLOW_BUILDING.md及state/checkpoint.json；旧失败/预算/锁不重置。
 
 成品方向为Forge meta-workflow，当前候选C10是九份纯文档：
 [技能入口](runs/R17/candidate/C10/forge-agent-flow/SKILL.md)、

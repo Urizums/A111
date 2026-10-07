@@ -1,0 +1,79 @@
+{
+  "kind": "actual author execution log; compact, not full platform tool transcript",
+  "invocations": [
+    {
+      "command": "repair_regression.py",
+      "attempt": 1,
+      "exit_code": 1,
+      "total": 68,
+      "passed": 67,
+      "failure": "missing full inventory complete mode omitted by replay harness",
+      "evidence": "history/repair_regression_attempt_01_failed.json"
+    },
+    {
+      "command": "repair_regression.py",
+      "attempt": 2,
+      "exit_code": 0,
+      "passed": 68
+    },
+    {
+      "command": "boundary_tests.py",
+      "attempt": 1,
+      "exit_code": 0,
+      "passed": 15
+    },
+    {
+      "command": "recheck_affected.py",
+      "attempt": 1,
+      "exit_code": 0,
+      "passed": 235,
+      "seconds": 61.84845849999692,
+      "evidence": "history/affected_layout_recheck_01.json"
+    },
+    {
+      "command": "reproduce.py --out results/clean_reproduction_final",
+      "attempt": 1,
+      "exit_code": 0,
+      "tasks": 7,
+      "seconds": 14.9944475999946
+    },
+    {
+      "command": "repair_regression.py",
+      "attempt": 3,
+      "exit_code": 0,
+      "passed": 68,
+      "reason": "final serial length protection"
+    },
+    {
+      "command": "recheck_affected.py",
+      "attempt": 2,
+      "exit_code": 0,
+      "passed": 235,
+      "seconds": 49.31503180001164
+    },
+    {
+      "command": "make_paper.py + render_paper.py",
+      "attempt": 1,
+      "exit_code": 0,
+      "chars": 20530,
+      "pages": 17
+    },
+    {
+      "command": "make_paper.py + render_paper.py",
+      "attempt": 2,
+      "exit_code": 0,
+      "reason": "refresh final recheck time",
+      "chars": 20530,
+      "pages": 17
+    }
+  ],
+  "past_counts_preserved": {
+    "tool_recovery": 1,
+    "substantive_corrections_before_F1": 4,
+    "substantive_corrections_cumulative": 5,
+    "revision_replay_harness_fixes": 1
+  },
+  "provider_model": null,
+  "provider_tokens": null,
+  "provider_cost": null
+}

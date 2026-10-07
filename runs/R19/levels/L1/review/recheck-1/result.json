@@ -1,0 +1,372 @@
+{
+  "schema": "R19-L1-independent-informed-re-review/1",
+  "status": "informed_re_review_complete_pass",
+  "informed_re_review": true,
+  "round": "recheck-1",
+  "same_reviewer": true,
+  "frozen_method_unchanged": true,
+  "frozen_method": "runs/R19/levels/L1/review/preparation-lock.json",
+  "reviewed_execution": "runs/R19/levels/L1/execution-v2-lock.json",
+  "original_initial_status_preserved": "initial_review_complete_mandatory_failure",
+  "original_initial_a1_a6": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "frozen-final-independent-audit.json",
+        "extra-source-history-audit.json",
+        "paper-crosscheck.json"
+      ],
+      "reason": "所有原主问题与技术报告/程序交付；附件2可选几何及缺口有源。",
+      "limits": "有限候选最优范围明示；附件2完整业务数据不足不强加。"
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "frozen-final-loads.csv",
+        "independent-bounds-pool.json",
+        "independent-pool-cost-cut.json"
+      ],
+      "reason": "原件单位/目标/累计载荷/支撑/方向兑现；独立有效界和有限池求解。",
+      "limits": "静态均匀密度及保守支撑模型；不证明原几何全局最优。"
+    },
+    {
+      "id": "a3",
+      "status": "pass",
+      "evidence": [
+        "raw-reproduce-receipt.json",
+        "raw-rerun-independent-audit.json",
+        "zip-raw-reproduce-receipt.json",
+        "zip-raw-rerun-independent-audit.json",
+        "selected-replay-independent-audit.json",
+        "paper-crosscheck.json"
+      ],
+      "reason": "从官方原件两种原版入口真实重跑七组；全部关键主数值独立复算。",
+      "limits": "选中配方复算不等于全历史搜索重演；ZIP研究历史命令不齐全。"
+    },
+    {
+      "id": "a4",
+      "status": "fail",
+      "evidence": [
+        "independent-boundary-tests.json",
+        "independent_boundary.py",
+        "independent-experiment-audit.json"
+      ],
+      "reason": "F1:源G3易碎属性可被输出category=standard绕过，实际受压非法布局被原检查器接受。",
+      "limits": "现有冻结布局全合法；其余边界/参数/界证据不能抵消该失败。"
+    },
+    {
+      "id": "a5",
+      "status": "pass",
+      "evidence": [
+        "paper-crosscheck.json",
+        "paper-pdf-extraction.json",
+        "paper-pages/"
+      ],
+      "reason": "完整中文论文和16页PDF实读，主表/图源/坐标/逐车数值一致，科学论证完整。",
+      "limits": "小处图间距可改善；历史绝对耗时不独立复现。"
+    },
+    {
+      "id": "a6",
+      "status": "pass",
+      "evidence": [
+        "raw-reproduce-receipt.json",
+        "zip-raw-reproduce-receipt.json",
+        "extra-source-history-audit.json",
+        "process-terminal-and-events.json"
+      ],
+      "reason": "新接收者无需设计者私有解题提示可启动；smoke/full分离；角色和旧失败/修正保留。",
+      "limits": "a6通过不等于检查器无漏洞；历史调用身份/绝对时间仅保留产物支持。"
+    }
+  ],
+  "original_initial_quality_diagnosis": [
+    {
+      "dimension": "problem fidelity",
+      "status": "achieved",
+      "evidence": [
+        "frozen-final-independent-audit.json",
+        "paper-crosscheck.json",
+        "extra-source-history-audit.json"
+      ],
+      "material_gap": null
+    },
+    {
+      "dimension": "mathematical justification",
+      "status": "achieved",
+      "evidence": [
+        "frozen-final-loads.csv",
+        "independent-bounds-pool.json",
+        "independent-pool-cost-cut.json"
+      ],
+      "material_gap": null,
+      "scope": "静态模型与有限候选；原几何最优未知是已披露限制。"
+    },
+    {
+      "dimension": "empirical sufficiency and fair alternatives",
+      "status": "partial",
+      "evidence": [
+        "independent-boundary-tests.json",
+        "independent-experiment-audit.json",
+        "selected-replay-independent-audit.json"
+      ],
+      "material_gap": "F1 source-category false acceptance",
+      "next_action": "源类别绑定及有效/无效成对测试和相关完整布局回归。"
+    },
+    {
+      "dimension": "reproduction and result-to-paper traceability",
+      "status": "achieved",
+      "evidence": [
+        "raw-rerun-independent-audit.json",
+        "zip-raw-rerun-independent-audit.json",
+        "paper-crosscheck.json"
+      ],
+      "material_gap": null,
+      "scope": "关键结果复现；未称ZIP可重演全部研究历史。"
+    },
+    {
+      "dimension": "clarity and completeness of scientific argument",
+      "status": "achieved",
+      "evidence": [
+        "paper-pdf-extraction.json",
+        "paper-pages/",
+        "paper-crosscheck.json"
+      ],
+      "material_gap": null,
+      "optional_polish": "T1布局图坐标标签与下方标题间距。"
+    },
+    {
+      "dimension": "workflow transferability and autonomous gap resolution",
+      "status": "achieved",
+      "evidence": [
+        "extra-source-history-audit.json",
+        "raw-reproduce-receipt.json",
+        "zip-raw-reproduce-receipt.json"
+      ],
+      "material_gap": null,
+      "next_action": "接收检查补入F1；不抹去当前整体失败。"
+    }
+  ],
+  "original_initial_overall_pass": false,
+  "initial_failure_retroactively_passed": false,
+  "overall_mandatory_pass": true,
+  "complete_paper_produced": true,
+  "paper_pages": 17,
+  "a1_a6": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "frozen-final-independent-audit.json",
+        "independent-experiment-audit.json",
+        "paper-crosscheck.json",
+        "../initial/report.md"
+      ],
+      "reason": "全部原问题链和合法主方案保持。",
+      "scope": "原PDF附件2可选；完整业务输入不足，不强加业务解。"
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "frozen-final-loads.csv",
+        "affected-layout-independent-recheck.json",
+        "source-differences.diff",
+        "../initial/independent-bounds-pool.json",
+        "../initial/independent-pool-cost-cut.json"
+      ],
+      "reason": "物理模型/算法未改变；原数学与模式池证明适用，来源约束修复。",
+      "scope": "静态均匀密度/保守支撑模型，原连续几何最优仍未证明。"
+    },
+    {
+      "id": "a3",
+      "status": "pass",
+      "evidence": [
+        "raw-reproduce-receipt.json",
+        "raw-rerun-independent-audit.json",
+        "zip-raw-reproduce-receipt.json",
+        "zip-raw-rerun-independent-audit.json",
+        "zip-paper-rebuild-audit.json"
+      ],
+      "reason": "修订代码和ZIP从原件真实重建七方案；独立几何/指标吻合；图文真实重建。",
+      "scope": "不称为重新运行全部历史搜索或原题全局求解。"
+    },
+    {
+      "id": "a4",
+      "status": "pass",
+      "evidence": [
+        "independent-source-boundary-tests.json",
+        "affected-layout-independent-recheck.json",
+        "../initial/selected-replay-independent-audit.json",
+        "../initial/independent-single-pool-replay.json"
+      ],
+      "reason": "F1实拒且物理违规仍检出；自构83检查匹配预期，235布局独立及修订验证有效。",
+      "scope": "有限反例/参数证据，不保证任意恶意输入/所有数值尺度；原最优界范围不变。"
+    },
+    {
+      "id": "a5",
+      "status": "pass",
+      "evidence": [
+        "paper-crosscheck.json",
+        "paper-pdf-extraction.json",
+        "paper-pages/",
+        "zip-paper-rebuild-audit.json"
+      ],
+      "reason": "17页成稿及修订论证实读，17组主数值与全部图文重建一致。",
+      "scope": "未核验年度模板/AI规则/提交接口；完整练习论文与算法附件。"
+    },
+    {
+      "id": "a6",
+      "status": "pass",
+      "evidence": [
+        "source-history-consistency.json",
+        "source-differences.diff",
+        "raw-reproduce-receipt.json",
+        "zip-raw-reproduce-receipt.json",
+        "process-terminal-and-events.json"
+      ],
+      "reason": "新接收者实际启动，初审F1和67/68回归失败保留，接收合同源绑定，作者自检与知情复审区别明确。",
+      "scope": "单actor历史由保留产物支持，不推断全部历史工具身份/绝对时间。"
+    }
+  ],
+  "quality_diagnosis": [
+    {
+      "dimension": "problem fidelity",
+      "status": "achieved",
+      "evidence": [
+        "frozen-final-independent-audit.json",
+        "paper-crosscheck.json"
+      ],
+      "scope": "沿用初审原题/附件2解释，来源原库存及规则保持。",
+      "remaining_gap": null
+    },
+    {
+      "dimension": "mathematical justification",
+      "status": "achieved",
+      "evidence": [
+        "source-differences.diff",
+        "affected-layout-independent-recheck.json",
+        "../initial/independent-bounds-pool.json",
+        "../initial/independent-pool-cost-cut.json"
+      ],
+      "scope": "原数学模型与有限池证据；原几何全局最优未知且公开。",
+      "remaining_gap": null
+    },
+    {
+      "dimension": "empirical sufficiency and fair alternatives",
+      "status": "achieved",
+      "evidence": [
+        "independent-source-boundary-tests.json",
+        "affected-layout-independent-recheck.json",
+        "../initial/selected-replay-independent-audit.json",
+        "../initial/independent-single-pool-replay.json"
+      ],
+      "scope": "F1关闭使初审partial转achieved；沿用初审真实公平候选/关键参数/有效界证据；不主张穷尽反例或统计泛化。",
+      "remaining_gap": null
+    },
+    {
+      "dimension": "reproduction and result-to-paper traceability",
+      "status": "achieved",
+      "evidence": [
+        "raw-rerun-independent-audit.json",
+        "zip-raw-rerun-independent-audit.json",
+        "paper-crosscheck.json",
+        "zip-paper-rebuild-audit.json"
+      ],
+      "scope": "原件最终方案与图文复现；ZIP含新增构建依赖，不是所有过去历史自动重演。",
+      "remaining_gap": null
+    },
+    {
+      "dimension": "clarity and completeness of scientific argument",
+      "status": "achieved",
+      "evidence": [
+        "paper-pdf-extraction.json",
+        "paper-pages/",
+        "source-differences.diff"
+      ],
+      "scope": "17页完整论文、首次失败与修订范围解释克制。",
+      "remaining_gap": null,
+      "optional_polish": "第13页因整张参数表移到下一页而留白；可调整排版，不影响读数/论证。"
+    },
+    {
+      "dimension": "workflow transferability and autonomous gap resolution",
+      "status": "achieved",
+      "evidence": [
+        "source-history-consistency.json",
+        "raw-reproduce-receipt.json",
+        "zip-raw-reproduce-receipt.json"
+      ],
+      "scope": "同一案例实际接收/修正/失败保留，不作跨层因果或一般能力宣称。",
+      "remaining_gap": null
+    }
+  ],
+  "findings": [
+    {
+      "id": "F1",
+      "initial_status": "open_initial_a4_fail",
+      "current_status": "closed_in_execution_v2",
+      "witness": "independent-source-boundary-tests.json",
+      "same_original_witness": true,
+      "revised_valid": false,
+      "rules": [
+        "category_source_mismatch",
+        "fragile_loaded"
+      ],
+      "initial_unchanged": true
+    }
+  ],
+  "added_independent_checks": {
+    "source_boundary_controls": 83,
+    "original_boundary_cases": 15,
+    "layout_sets": 235,
+    "final_tasks": 7,
+    "patterns": 99,
+    "scenarios": 32,
+    "scenario_fleets": 128,
+    "smoke": 1,
+    "raw_copy_rerun_tasks": 7,
+    "zip_raw_rerun_tasks": 7,
+    "zip_entries": 145,
+    "paper_numeric_groups": 17,
+    "pdf_pages_visually_reviewed": 17,
+    "zip_paper_texts_and_pixels_match": true
+  },
+  "inherited_initial_checks": [
+    "raw-bound mathematical and source interpretation",
+    "five critical parameter solver reruns",
+    "32 single candidate regeneration and dominance",
+    "independent99-pool count/cost proofs with original60s timeout preserved",
+    "attachment2 raw64 geometry pairs and business missing fields",
+    "retained initial failures and process probe recovery"
+  ],
+  "not_repeated": [
+    "all32 parameter solver optimization paths",
+    "full12 baseline batch/6 module historic search",
+    "MILP optimality proofs already validated for byte-identical99-pattern pool",
+    "dynamic road/material/door loading scenarios without original inputs",
+    "all historical absolute times"
+  ],
+  "remaining_nonmandatory_limits": [
+    "original continuous geometry optimum unproved: T1[16,20],T2/mixed[7,10],cost[4900,7000]",
+    "arbitrary new cargo identity/schema and malicious input scales not validated",
+    "attachment2 full business optimization lacks fields",
+    "single case and deterministic scenarios do not establish general statistical performance"
+  ],
+  "all_received_and_post_review_locks_match": true,
+  "locked_entries_checked": 656,
+  "original_execution_changed": false,
+  "v2_execution_changed": false,
+  "preparation_or_initial_changed": false,
+  "author_selfcheck_used_as_independent_evidence": false,
+  "actual_model": null,
+  "token_usage": null,
+  "cost": null,
+  "award_prediction": null,
+  "reviewer_tool_recoveries": 0,
+  "reviewer_production_substantive_repairs": 0,
+  "all_reviewer_processes_terminal": true,
+  "pending_calls": [],
+  "spawned_child_agents": [],
+  "report": "report.md",
+  "completed_utc": "2026-10-07T10:45:26.470390+00:00"
+}

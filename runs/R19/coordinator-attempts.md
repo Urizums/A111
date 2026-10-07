@@ -18,3 +18,5 @@
 完整初审1449项revision哈希检查实际通过，随后Windows Git首次索引审查者复现副本因嵌套路径超过默认长度而失败。该次后续commit没有成果，push只报Everything up-to-date，不算新发布；父工具输出已直接观察，记录于此。下一动作使用Git原生core.longpaths=true的单次命令，不搬动/缩短或修改被冻结的审查路径，也不改变原判定。后续依赖命令逐项执行，避免前步失败被最后成功退出码遮蔽。
 
 状态登记补充：executor-progress-checkpoint-command.json重复观察同一已创建actor，用了created状态标签；没有第二次spawn或新执行者。该helper当时覆盖了未冻结的首次created观察JSON，因此不可把其后来的observed_at当初次创建时间；首次实际命令回执executor-created-command.json保留。后续helper改为唯一观察文件名并使用running_observed，保留再次观察，不从状态标签推算创建次数或provider运行时间。
+
+- L1复审终态入口更新首轮段落索引误选第二段，读回发现后从Git当前版本保留原第二段并正确更新第一段；尚未发布错误版本，历史锁未改。来源/协调文本编辑恢复单独记录，不计入L1作者修正或旧预算。

@@ -1,0 +1,149 @@
+[
+  {
+    "name": "exact floor contact",
+    "expected_valid": true,
+    "observed_valid": true,
+    "expected_rule": null,
+    "observed_rules": [],
+    "test_pass": true
+  },
+  {
+    "name": "positive overlap .01cm",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "overlap",
+    "observed_rules": [
+      "overlap",
+      "support_gap"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "rotated boundary",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "boundary_clearance",
+    "observed_rules": [
+      "boundary_clearance"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "missing 3cm top gap",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "boundary_clearance",
+    "observed_rules": [
+      "boundary_clearance",
+      "support_gap"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "payload exceeded",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "payload",
+    "observed_rules": [
+      "payload"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "duplicate ID",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "duplicate_ids",
+    "observed_rules": [
+      "duplicate_ids"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "missing entire inventory",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "inventory_conservation",
+    "observed_rules": [
+      "inventory_conservation"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "directional rotated",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "orientation",
+    "observed_rules": [
+      "orientation"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "fragile compressed",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "fragile_loaded",
+    "observed_rules": [
+      "fragile_loaded"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "gap under fragile",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "support_gap",
+    "observed_rules": [
+      "fragile_support",
+      "support_gap"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "noncoplanar support",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "support_gap",
+    "observed_rules": [
+      "support_gap"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "cumulative high stack",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "cumulative_bearing",
+    "observed_rules": [
+      "cumulative_bearing"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "direct contact COM outside",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "directional_contact_center",
+    "observed_rules": [
+      "directional_contact_center"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "inventory overflow",
+    "expected_valid": false,
+    "observed_valid": false,
+    "expected_rule": "inventory_conservation",
+    "observed_rules": [
+      "inventory_conservation",
+      "item_source_identity"
+    ],
+    "test_pass": true
+  },
+  {
+    "name": "attachment2 missing business fields",
+    "test_pass": true,
+    "observed_reason": "cargo: unsupported original identities"
+  }
+]

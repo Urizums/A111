@@ -1,0 +1,2603 @@
+{
+  "tests": [
+    {
+      "name": "valid face contact",
+      "expected_valid": true,
+      "independent_valid": true,
+      "independent_violations": [],
+      "author_checker_valid": true,
+      "author_errors": [],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G1-0002",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 60,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "positive volume overlap .01cm",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "collision",
+          "items": [
+            "G1-0001",
+            "G1-0002"
+          ]
+        },
+        {
+          "code": "support_gap",
+          "lower": "G1-0001",
+          "upper": "G1-0002"
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "overlap",
+          "items": [
+            "G1-0001",
+            "G1-0002"
+          ]
+        },
+        {
+          "rule": "support_gap",
+          "items": [
+            "G1-0002"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G1-0002",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 59.99,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "rotated box beyond wall",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "boundary_clearance",
+          "item": "G1-0001"
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "boundary_clearance",
+          "items": [
+            "G1-0001"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 0,
+                "y": 180,
+                "z": 0,
+                "dx": 30,
+                "dy": 60,
+                "dz": 40,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  2,
+                  0,
+                  1
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "top clearance short with grounded stack",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "boundary_clearance",
+          "item": "G2-0001"
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "boundary_clearance",
+          "items": [
+            "G2-0001"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G5-0001",
+                "type_id": "G5",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 40.0,
+                "dy": 40.0,
+                "dz": 60.0,
+                "weight": 18.0,
+                "category": "directional",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G5-0002",
+                "type_id": "G5",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 60,
+                "dx": 40.0,
+                "dy": 40.0,
+                "dz": 60.0,
+                "weight": 18.0,
+                "category": "directional",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G5-0003",
+                "type_id": "G5",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 120,
+                "dx": 40.0,
+                "dy": 40.0,
+                "dz": 60.0,
+                "weight": 18.0,
+                "category": "directional",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G2-0001",
+                "type_id": "G2",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 180,
+                "dx": 25,
+                "dy": 35,
+                "dz": 50,
+                "weight": 8.0,
+                "category": "standard",
+                "orientation": [
+                  2,
+                  1,
+                  0
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "over payload",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "payload",
+          "truck": "test",
+          "mass": 12.0
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "payload",
+          "items": [
+            "test"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 10,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 10,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "duplicate IDs",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "duplicate_item_ids"
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "duplicate_ids"
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 60,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "missing full inventory",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "empty_active_truck",
+          "truck": "test"
+        },
+        {
+          "code": "missing_or_extra_items",
+          "missing": 3000,
+          "extra": 0
+        },
+        {
+          "code": "inventory",
+          "type": "G1",
+          "count": 0,
+          "expected": 800
+        },
+        {
+          "code": "inventory",
+          "type": "G2",
+          "count": 0,
+          "expected": 1000
+        },
+        {
+          "code": "inventory",
+          "type": "G3",
+          "count": 0,
+          "expected": 300
+        },
+        {
+          "code": "inventory",
+          "type": "G4",
+          "count": 0,
+          "expected": 400
+        },
+        {
+          "code": "inventory",
+          "type": "G5",
+          "count": 0,
+          "expected": 500
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "inventory_conservation",
+          "type": "G1",
+          "actual": 0,
+          "expected": 800
+        },
+        {
+          "rule": "inventory_conservation",
+          "type": "G2",
+          "actual": 0,
+          "expected": 1000
+        },
+        {
+          "rule": "inventory_conservation",
+          "type": "G3",
+          "actual": 0,
+          "expected": 300
+        },
+        {
+          "rule": "inventory_conservation",
+          "type": "G4",
+          "actual": 0,
+          "expected": 400
+        },
+        {
+          "rule": "inventory_conservation",
+          "type": "G5",
+          "actual": 0,
+          "expected": 500
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "directional rotated",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "directional_orientation",
+          "item": "G4-0001"
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "orientation",
+          "items": [
+            "G4-0001"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G4-0001",
+                "type_id": "G4",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 60,
+                "dy": 80,
+                "dz": 50,
+                "weight": 25.0,
+                "category": "directional",
+                "orientation": [
+                  1,
+                  0,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "fragile loaded",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "fragile_loaded",
+          "lower": "G3-0001",
+          "upper": "G1-0001"
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "fragile_loaded",
+          "items": [
+            "G1-0001"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G3-0001",
+                "type_id": "G3",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 70.0,
+                "dy": 50.0,
+                "dz": 40.0,
+                "weight": 15.0,
+                "category": "fragile",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 40,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "gap under fragile",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "bottom_no_support",
+          "truck": "test",
+          "item": "G3-0001",
+          "xy": [
+            37.5,
+            25.0
+          ]
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "support_gap",
+          "items": [
+            "G3-0001"
+          ]
+        },
+        {
+          "rule": "fragile_support",
+          "items": [
+            "G3-0001"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G2-0001",
+                "type_id": "G2",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 35,
+                "dy": 50,
+                "dz": 25,
+                "weight": 8.0,
+                "category": "standard",
+                "orientation": [
+                  1,
+                  0,
+                  2
+                ]
+              },
+              {
+                "item_id": "G2-0002",
+                "type_id": "G2",
+                "truck_id": "test",
+                "x": 40,
+                "y": 0,
+                "z": 0,
+                "dx": 35,
+                "dy": 50,
+                "dz": 25,
+                "weight": 8.0,
+                "category": "standard",
+                "orientation": [
+                  1,
+                  0,
+                  2
+                ]
+              },
+              {
+                "item_id": "G3-0001",
+                "type_id": "G3",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 25,
+                "dx": 70.0,
+                "dy": 50.0,
+                "dz": 40.0,
+                "weight": 15.0,
+                "category": "fragile",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "noncoplanar support",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "support_gap",
+          "lower": "G2-0001",
+          "upper": "G3-0001"
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "support_gap",
+          "items": [
+            "G3-0001"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G2-0001",
+                "type_id": "G2",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 35,
+                "dy": 50,
+                "dz": 25,
+                "weight": 8.0,
+                "category": "standard",
+                "orientation": [
+                  1,
+                  0,
+                  2
+                ]
+              },
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 35,
+                "y": 0,
+                "z": 0,
+                "dx": 40,
+                "dy": 60,
+                "dz": 30,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  1,
+                  0,
+                  2
+                ]
+              },
+              {
+                "item_id": "G3-0001",
+                "type_id": "G3",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 30,
+                "dx": 70.0,
+                "dy": 50.0,
+                "dz": 40.0,
+                "weight": 15.0,
+                "category": "fragile",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "cumulative load exceeds though direct load does not",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "cumulative_local_pressure",
+          "item": "G5-0001",
+          "pressure": 225.0
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "cumulative_bearing",
+          "items": [
+            "G5-0001"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 200,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G5-0001",
+                "type_id": "G5",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 40.0,
+                "dy": 40.0,
+                "dz": 60.0,
+                "weight": 18.0,
+                "category": "directional",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G5-0002",
+                "type_id": "G5",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 60,
+                "dx": 40.0,
+                "dy": 40.0,
+                "dz": 60.0,
+                "weight": 18.0,
+                "category": "directional",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G5-0003",
+                "type_id": "G5",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 120,
+                "dx": 40.0,
+                "dy": 40.0,
+                "dz": 60.0,
+                "weight": 18.0,
+                "category": "directional",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "direct center outside one directional support",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "direct_directional_centroid",
+          "upper": "G1-0001",
+          "lower": "G4-0002",
+          "center": [
+            79.0,
+            20.0
+          ]
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "directional_contact_center",
+          "items": [
+            "G4-0002",
+            "G1-0001"
+          ]
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G4-0001",
+                "type_id": "G4",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 80.0,
+                "dy": 60.0,
+                "dz": 50.0,
+                "weight": 25.0,
+                "category": "directional",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G4-0002",
+                "type_id": "G4",
+                "truck_id": "test",
+                "x": 80,
+                "y": 0,
+                "z": 0,
+                "dx": 80.0,
+                "dy": 60.0,
+                "dz": 50.0,
+                "weight": 25.0,
+                "category": "directional",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 49,
+                "y": 0,
+                "z": 50,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "inventory overflow",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "unknown_item_ids",
+          "examples": [
+            "G1-0002"
+          ]
+        },
+        {
+          "code": "inventory",
+          "type": "G1",
+          "count": 2,
+          "expected": 1
+        }
+      ],
+      "author_checker_valid": false,
+      "author_errors": [
+        {
+          "rule": "inventory_conservation",
+          "type": "G1",
+          "actual": 2,
+          "expected": 1
+        }
+      ],
+      "author_exception": null,
+      "author_checker_correct": true,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 1
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G1-0002",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 60,
+                "y": 0,
+                "z": 0,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "source category relabel conceals load above G3",
+      "expected_valid": false,
+      "independent_valid": false,
+      "independent_violations": [
+        {
+          "code": "item_source_field_mismatch",
+          "item": "G3-0001"
+        },
+        {
+          "code": "fragile_loaded",
+          "lower": "G3-0001",
+          "upper": "G1-0001"
+        }
+      ],
+      "author_checker_valid": true,
+      "author_errors": [],
+      "author_exception": null,
+      "author_checker_correct": false,
+      "independent_correct": true,
+      "input": {
+        "config": {
+          "vehicles": [
+            {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            {
+              "id": "T2",
+              "dims": [
+                680.0,
+                245.0,
+                250.0
+              ],
+              "payload": 10000.0,
+              "cost": 700.0
+            }
+          ],
+          "cargo": [
+            {
+              "id": "G1",
+              "category": "standard",
+              "dims": [
+                60.0,
+                40.0,
+                30.0
+              ],
+              "weight": 12.0,
+              "quantity": 800
+            },
+            {
+              "id": "G2",
+              "category": "standard",
+              "dims": [
+                50.0,
+                35.0,
+                25.0
+              ],
+              "weight": 8.0,
+              "quantity": 1000
+            },
+            {
+              "id": "G3",
+              "category": "fragile",
+              "dims": [
+                70.0,
+                50.0,
+                40.0
+              ],
+              "weight": 15.0,
+              "quantity": 300
+            },
+            {
+              "id": "G4",
+              "category": "directional",
+              "dims": [
+                80.0,
+                60.0,
+                50.0
+              ],
+              "weight": 25.0,
+              "quantity": 400
+            },
+            {
+              "id": "G5",
+              "category": "directional",
+              "dims": [
+                40.0,
+                40.0,
+                60.0
+              ],
+              "weight": 18.0,
+              "quantity": 500
+            }
+          ],
+          "clearance": 3,
+          "bearing": 500,
+          "fragile_rotation": false,
+          "directional_center_each": true,
+          "fragile_floor_only": false,
+          "version": "3.0"
+        },
+        "fleet": [
+          {
+            "truck_id": "test",
+            "vehicle_type": "T1",
+            "vehicle": {
+              "id": "T1",
+              "dims": [
+                420.0,
+                210.0,
+                220.0
+              ],
+              "payload": 6000.0,
+              "cost": 450.0
+            },
+            "items": [
+              {
+                "item_id": "G3-0001",
+                "type_id": "G3",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "dx": 70.0,
+                "dy": 50.0,
+                "dz": 40.0,
+                "weight": 15.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              },
+              {
+                "item_id": "G1-0001",
+                "type_id": "G1",
+                "truck_id": "test",
+                "x": 0,
+                "y": 0,
+                "z": 40,
+                "dx": 60.0,
+                "dy": 40.0,
+                "dz": 30.0,
+                "weight": 12.0,
+                "category": "standard",
+                "orientation": [
+                  0,
+                  1,
+                  2
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "author_correct_count": 14,
+  "independent_correct_count": 15,
+  "test_count": 15,
+  "missing_business_input_rejected": true,
+  "missing_business_error": "ValueError('Missing required cargo business field: weight')",
+  "order": "run after own frozen final and all scenario audits, then inspect author checker as tested object",
+  "claim_limit": "controlled task-relevant mutations; final immutable placements audited separately"
+}

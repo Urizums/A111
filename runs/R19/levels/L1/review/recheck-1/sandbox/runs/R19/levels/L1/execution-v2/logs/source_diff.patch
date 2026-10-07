@@ -1,0 +1,195 @@
+--- frozen execution/src/audit_delivery.py
++++ execution-v2/src/audit_delivery.py
+@@ -9,10 +9,12 @@
+     single=json.loads((ROOT/'results/final/single_pareto.json').read_text())['solutions'];gate('Q1_SINGLE','P1a/P1c',{'candidate_counts':{v:len(ps) for v,ps in single.items()},'epsilon_scan':str((ROOT/'results/final/epsilon_scan.json').relative_to(ROOT))},all(check_fleet(p['fleet'],cfg,False)['valid'] for ps in single.values() for p in ps),'searched finite Pareto set, not global front')
+     frozen=json.loads((ROOT/'configs/experiments.json').read_text())['scenarios'];exps=json.loads((ROOT/'results/sensitivity/experiments.json').read_text());gate('Q3_PARAMETERS','P3',{'declared':len(frozen),'completed':sum(r.get('status')=='checked' for r in exps)},len(exps)==len(frozen) and all(r.get('status')=='checked' and r['feasible'] for r in exps),'one-instance deterministic scenarios; no statistical generalization')
+     bt=json.loads((ROOT/'review/boundary_tests.json').read_text());gate('BOUNDARY_REJECTION','A1g/A1f/A1o/A1p/A1h',{'tests':len(bt)},all(r['test_pass'] for r in bt),'finite targeted defects, not exhaustive proof of checker reliability')
++    rr=json.loads((ROOT/'review/repair_regression.json').read_text());gate('F1_INFORMED_REGRESSION','disclosed F1 + adjacent controls',{'passed':rr['passed'],'total':rr['total']},rr['passed']==rr['total'],'informed author self-check, not blind acceptance')
++    ar=json.loads((ROOT/'review/affected_layout_recheck.json').read_text());gate('AFFECTED_LAYOUTS','all published layouts',{'passed':ar['passed'],'total':ar['total_fleets']},ar['passed']==ar['total_fleets'],'static recheck, not new optimization')
+     smoke=json.loads((ROOT/'results/smoke_v3.json').read_text());sr=check_fleet(smoke['fleet'],smoke['config'],True);gate('SMOKE_V3','A1/P4',{'count':sr['counts'],'vehicles':len(smoke['fleet']),'lower_bound':1},sr['valid'] and len(smoke['fleet'])==1,'old v1 smoke failed stricter directional check and is retained; only v3 accepted')
+     repro=json.loads((ROOT/'results/clean_reproduction_final/reproduction_report.json').read_text());gate('REPRODUCE','P4',repro,all(r['feasible'] and r['metrics_match'] and r['geometry_match'] for r in repro['comparisons']),'author clean output; same host')
+     qa=json.loads((ROOT/'paper/qa/render_report.json').read_text());gate('PAPER','U1/P3/P4',{'chars':len(paper),'pdf_pages':qa['pages'],'sections':len(re.findall(r'^## ',paper,re.M)),'tables_figures':True},len(paper)>10000 and all(x in paper for x in ['问题1','问题2','问题3','参考资料','限制']) and not qa['out_of_page_text_blocks'] and qa.get('visual_review_completed',False),'self-defined practice format; no official submission/rule verification')
+-    rows+= [{'requirement_id':'GLOBAL_OPTIMALITY','source_id':'P1b/P2','status':'unverified','observation':'feasible N1=20,N2=10,mixed=10,C=7000; global necessary lower bounds N1=16,N2/mixed=7,C=4900','violating_items':[],'tolerance':None,'limit':'99-pattern master proved only restricted-pool optimality','checker':'author'}, {'requirement_id':'INDEPENDENT_ACCEPTANCE','source_id':'handoff','status':'unverified','observation':'parent assigned fresh review after delivery; not executed by this author','violating_items':[],'tolerance':None,'limit':'producer self-check cannot establish independence','checker':'unavailable in this execution'}, {'requirement_id':'A2_BUSINESS_GENERALITY','source_id':'P5/A2','status':'unverified','observation':'64 real geometry pairs audited; mass, quantity, category, payload, trip-cost basis missing','violating_items':[],'tolerance':None,'limit':'optional business validation not executable from supplied fields','checker':'author'}]
++    rows+= [{'requirement_id':'GLOBAL_OPTIMALITY','source_id':'P1b/P2','status':'unverified','observation':'feasible N1=20,N2=10,mixed=10,C=7000; global necessary lower bounds N1=16,N2/mixed=7,C=4900','violating_items':[],'tolerance':None,'limit':'99-pattern master proved only restricted-pool optimality','checker':'author'}, {'requirement_id':'INDEPENDENT_ACCEPTANCE','source_id':'handoff','status':'unverified','observation':'initial independent review completed: 5 pass, a4 fail F1; informed repair is not independent re-review; re-review pending','violating_items':[],'tolerance':None,'limit':'producer self-check cannot establish independence','checker':'unavailable in this execution'}, {'requirement_id':'A2_BUSINESS_GENERALITY','source_id':'P5/A2','status':'unverified','observation':'64 real geometry pairs audited; mass, quantity, category, payload, trip-cost basis missing','violating_items':[],'tolerance':None,'limit':'optional business validation not executable from supplied fields','checker':'author'}]
+     (ROOT/'review/check_report.json').write_text(json.dumps(rows,ensure_ascii=False,indent=2),encoding='utf8')
+     versions={'python':sys.version,'platform':platform.platform(),'cpu_logical_count':__import__('os').cpu_count(),'libraries':{n:importlib.import_module(n).__version__ for n in ['numpy','scipy','matplotlib','pandas','docx','openpyxl','reportlab','pypdf']}}
+     (ROOT/'logs/environment.json').write_text(json.dumps(versions,ensure_ascii=False,indent=2),encoding='utf8')
+--- frozen execution/src/check.py
++++ execution-v2/src/check.py
+@@ -1,11 +1,12 @@
+ """Independent sweep of exported boxes. Does not import packing feasibility.
+ Full support and local vertical stress are checked by planar cell partition.
+ """
+-import math,itertools
++import math,itertools,re
++from contracts import validate_config,finite_number
+ import numpy as np
+ TOL=1e-7
+ 
+-def check_truck(tr,cfg):
++def _physical_check_truck(tr,cfg):
+     boxes=tr['items'];v=tr['vehicle'];types={c['id']:c for c in cfg['cargo']};errors=[];maxstress=0.;minclear=float('inf');support_contacts=[]
+     def bad(rule,ids):errors.append({'rule':rule,'items':ids})
+     if sum(i['weight'] for i in boxes)>v['payload']+TOL:bad('payload',[tr.get('truck_id')])
+@@ -60,12 +61,67 @@
+     unique={(e['rule'],tuple(e['items'])):e for e in errors}
+     return {'valid':not unique,'errors':list(unique.values()),'max_local_pressure_kg_m2':maxstress,'min_top_clearance_cm':minclear,'support_contacts':support_contacts}
+ 
++def _invalid(rule, detail=None):
++    error={'rule':rule}
++    if detail is not None:error['detail']=detail
++    return {'valid':False,'errors':[error],'trucks':[]}
++
++
++def check_truck(tr,cfg):
++    """Bind all physical branches to authoritative scenario/source metadata.
++
++    Contradictory output metadata is rejected, then known valid geometry is
++    audited using the source category/weight/vehicle; no input is mutated.
++    """
++    try:validate_config(cfg)
++    except ValueError as e:return _invalid('invalid_source_config',str(e))
++    errors=[]
++    def bad(rule,ids=None):errors.append({'rule':rule,'items':ids or []})
++    if not isinstance(tr,dict) or not isinstance(tr.get('items'),list):return _invalid('invalid_truck_schema')
++    vid=tr.get('vehicle_type');vehicles={v['id']:v for v in cfg['vehicles']}
++    if not isinstance(vid,str) or vid not in vehicles:return _invalid('unknown_vehicle_type')
++    v=vehicles[vid];export=tr.get('vehicle')
++    if not isinstance(export,dict) or any(export.get(k)!=v[k] for k in ['id','dims','payload','cost']):bad('vehicle_source_mismatch',[tr.get('truck_id')])
++    types={c['id']:c for c in cfg['cargo']};boxes=[]
++    for exported in tr['items']:
++        if not isinstance(exported,dict):bad('invalid_item_schema');continue
++        i=dict(exported);iid=i.get('item_id');tid=i.get('type_id')
++        if not isinstance(tid,str) or tid not in types:bad('unknown_cargo_type',[str(iid)]);continue
++        c=types[tid];match=re.fullmatch(r'(G[1-5])-(\d{4,})',iid) if isinstance(iid,str) else None
++        if not match or match[1]!=tid or len(match[2])>max(4,len(str(c['quantity']))) or not(1<=int(match[2])<=c['quantity']) or iid!=f'{tid}-{int(match[2]):04d}':bad('item_source_identity',[str(iid)])
++        if not isinstance(iid,str):continue
++        if i.get('category')!=c['category']:bad('category_source_mismatch',[iid])
++        if not finite_number(i.get('weight')) or abs(i['weight']-c['weight'])>TOL:bad('weight_source_mismatch',[iid])
++        if 'truck_id' in i and i['truck_id']!=tr.get('truck_id'):bad('truck_assignment_mismatch',[iid])
++        if any(not finite_number(i.get(k)) for k in ['x','y','z','dx','dy','dz']) or any(i[k]<=0 for k in ['dx','dy','dz']):bad('nonfinite_or_invalid_geometry',[iid]);continue
++        ori=i.get('orientation')
++        if not isinstance(ori,list) or len(ori)!=3 or any(type(x)!=int for x in ori) or sorted(ori)!=[0,1,2]:
++            bad('orientation_label',[iid]);i['orientation']=[0,1,2]
++        # Output category and weight can never control support, centroid, stress
++        # or payload. Preserve geometry so the physical counterexample is seen.
++        i['category']=c['category'];i['weight']=c['weight'];boxes.append(i)
++    report=_physical_check_truck({**tr,'vehicle':v,'items':boxes},cfg)
++    report['errors']=errors+report['errors'];report['valid']=not report['errors']
++    return report
++
++
+ def check_fleet(fleet,cfg,complete=True):
+-    ids=[i['item_id'] for t in fleet for i in t['items']];errs=[];reports=[];counts={c['id']:sum(i['type_id']==c['id'] for t in fleet for i in t['items']) for c in cfg['cargo']}
++    try:validate_config(cfg)
++    except ValueError as e:return _invalid('invalid_source_config',str(e))
++    if not isinstance(fleet,list) or not isinstance(complete,bool):return _invalid('invalid_fleet_schema')
++    errs=[];reports=[];counts={c['id']:0 for c in cfg['cargo']};ids=[];truck_ids=[]
++    for t in fleet:
++        if isinstance(t,dict):
++            truck_ids.append(t.get('truck_id'))
++            for i in t.get('items',[]) if isinstance(t.get('items'),list) else []:
++                if not isinstance(i,dict):continue
++                iid=i.get('item_id');tid=i.get('type_id')
++                if isinstance(iid,str):ids.append(iid)
++                if isinstance(tid,str) and tid in counts:counts[tid]+=1
++        r=check_truck(t,cfg);reports.append({'truck_id':t.get('truck_id') if isinstance(t,dict) else None,**r});errs+=r['errors']
+     if len(ids)!=len(set(ids)):errs.append({'rule':'duplicate_ids'})
++    if any(not isinstance(i,str) or not i for i in truck_ids) or len(set(str(i) for i in truck_ids))!=len(truck_ids):errs.append({'rule':'truck_identity'})
+     for c in cfg['cargo']:
+-      n=counts[c['id']]
+-      if n>c['quantity'] or(complete and n!=c['quantity']):errs.append({'rule':'inventory_conservation','type':c['id'],'actual':n,'expected':c['quantity']})
+-    for t in fleet:
+-      r=check_truck(t,cfg);reports.append({'truck_id':t.get('truck_id'),**r});errs+=r['errors']
+-    return {'valid':not errs,'complete':complete,'counts':counts,'errors':errs,'trucks':reports,'tolerance_cm':TOL,'force_model':'vertical cell force transfer; own mass uniformly distributed, nonnegative reactions; no dynamic claim'}
++        n=counts[c['id']]
++        if n>c['quantity'] or(complete and n!=c['quantity']):errs.append({'rule':'inventory_conservation','type':c['id'],'actual':n,'expected':c['quantity']})
++    return {'valid':not errs,'complete':complete,'counts':counts,'errors':errs,'trucks':reports,'tolerance_cm':TOL,'source_contract':'original G1-G5 categories; scenario numeric fields; canonical physical metadata; revision F1','force_model':'vertical cell force transfer; own mass uniformly distributed, nonnegative reactions; no dynamic claim'}
+
+ADDED execution-v2/src/contracts.py
+--- frozen execution/src/make_paper.py
++++ execution-v2/src/make_paper.py
+@@ -48,7 +48,7 @@
+    a=fig.add_subplot(subplot)
+    for i in sorted(tr['items'],key=lambda i:i['z']):a.add_patch(plt.Rectangle((i[ha],i[va]),i[hd],i[vd],facecolor=COLORS[i['type_id']],edgecolor='white',linewidth=.35,alpha=.45))
+    a.set(xlim=(0,L if ha=='x' else B),ylim=(0,B if va=='y' else H),xlabel=f'{ha}/cm',ylabel=f'{va}/cm',title=label);a.set_aspect('equal');a.grid(alpha=.12)
+-  fig.suptitle('G1蓝  G2绿  G3橙（易碎）  G4紫  G5红；投影只展示布局，不代替校验');fig.tight_layout();savefig(f'layout_{vid}')
++  fig.suptitle('G1蓝  G2绿  G3橙（易碎）  G4紫  G5红；投影只展示布局，不代替校验');fig.tight_layout(rect=(0,0,1,.95));savefig(f'layout_{vid}')
+  fig,axs=plt.subplots(2,1,figsize=(10,7),sharex=True);names=[r['scenario'] for r in completed];x=np.arange(len(names));axs[0].plot(x,[r['N_cost'] for r in completed],'o-',color='#3b7fa4',markersize=3);axs[0].set_ylabel('最低成本候选车数');axs[1].plot(x,[r['C_cost'] for r in completed],'o-',color='#60a57d',markersize=3);axs[1].set_ylabel('成本/元');axs[1].set_xticks(x,names,rotation=65,ha='right',fontsize=7)
+  for ax in axs:ax.grid(alpha=.2)
+  fig.suptitle('逐项管理情景，均重新求解并逐件校验');fig.tight_layout();savefig('sensitivity')
+@@ -289,8 +289,8 @@
+ ### 7.3 可复现接口
+ 
+ ```text
+-py -3.12 -X utf8 -B runs/R19/levels/L1/execution/src/reproduce.py
+-  --out runs/R19/levels/L1/execution/results/reproduction_new
++py -3.12 -X utf8 -B runs/R19/levels/L1/execution-v2/src/reproduce.py
++  --out runs/R19/levels/L1/execution-v2/results/reproduction_new
+ ```
+ 
+ 在仓库根执行上述一条命令（参数在同一行），从官方原DOCX/XLSX读取，重建已选算法配方、生成七项任务全部坐标、重新核算约束和关键值。输出目录必须不存在或为空，避免覆盖既有证据。此次干净目录复现报告列出七项几何和关键数值均一致；实际耗时REPRO_SECONDS秒，非独立验收。完整探索可用solve.py、模块扫描与finalize.py，敏感性用experiments.py；README给出具体命令和依赖版本。MILP时间限可能使重新搜索的incumbent不同，因此推荐配方的几何确定性复现与搜索质量重试明确区分。
+@@ -387,6 +387,22 @@
+  modeltext=modeltext.replace('完整探索可用solve.py、模块扫描与finalize.py','完整探索可用solve.py、module_sweep.py模块扫描与finalize.py')
+  modeltext=modeltext.replace('用附件1各货类3件构成15件真实小链，经历原始读取、摆放、输出、独立校验和违规变体拒绝。','用附件1各货类3件构成15件真实小链。早期v1小链在后续严格定向重心规则下出现G1-0003与G5-0001接触重心越界，最终依赖核查拒绝了该旧证据；已保留真实失败并以v3重新求解全部15件。最新版小链经历原始读取、摆放、输出、独立校验和0.01cm抬高违规变体拒绝，全部通过当前严格口径。证据为results/smoke_v3.json与review/smoke_v3_check.json，未沿用旧版本通过标签。')
+  modeltext=modeltext.replace('### 7.2 算法比较和资源','15件小实例可行解为1辆车型1，非空运输车数下界为1、费用下界为最便宜一趟450元，故这条小链的车数和费用达到精确下界。这是有界的小规模参照，不能外推主实例。\n\n### 7.2 算法比较和资源')
++ # Informed F1 revision: retain initial failure; no retroactive acceptance.
++ repair=read('review/repair_regression.json');affected=read('review/affected_layout_recheck.json')
++ revision=f"""### 7.4 初审暴露的类别来源缺陷与知情修订
++
++首次独立初审的六项门槛中五项通过，a4因F1失败。反例把G3-0001的输出category改为standard，仍保留原货号、尺寸和质量，再在其顶部放G1；原作者检查器误判可行，而独立检查发现类别不一致及易碎件承载。首次失败保留在history，不能由本轮修订追认为首次通过。
++
++原因是姿态检查读取配置类别，但底面支撑、易碎禁载与定向接触重心分支读取输出类别，两个来源混用。修订统一从type_id对应的原件/情景配置取得类别和重量、从vehicle_type取得车辆尺寸与载重；输出元数据冲突单独拒绝，之后仍用原类别检查真实几何。原附件1的G1/G2标准、G3易碎、G4/G5定向身份固定，货号必须与类型及库存序号一致，未知身份、重复配置身份、非有限物理字段及车辆元数据伪装均拒绝。参数情景仍可改变原货类的尺寸、质量、数量及车型数值和已声明的规则开关，不把类别重命名当成合法情景，也未新增几何约束。
++
++本轮作者知情回归{repair['passed']}/{repair['total']}项，包括15个已公开初审用例、合法地面与多个标准件支撑的易碎箱、原F1、两种定向类别绕过、各货类元数据冲突、身份序号、车辆载重/边界伪装、非有限值和规则开关合法控制。第一轮复播漏设完整库存用例的complete模式而得到67/68，按公开测试程序恢复该模式后通过，首轮报告保留；它是复播器修正，不改库存物理规则。有限回归不能证明所有恶意输入或所有数值尺度上可靠。
++
++已用修订检查器重新扫描7项主任务、99个模式、32个参数情景的128份车队及15件小链，共{affected['total_fleets']}个车队实例，全部可行，实际{affected['seconds']:.2f}秒。这是所有既有几何的重新检查，未重做参数优化或模式MILP，原求解耗时和初始窗口超出事实保留。另从三份官方原件重新生成七项主交付，全部逐件几何与指标一致，耗时{repro['seconds']:.2f}秒，故保留原正确数值和最优性边界。本修订及ZIP的检查保证仅是作者自检，同一原审查者的知情复审在冻结后另行进行。
++
++"""
++ modeltext=modeltext.replace('## 8 ',revision+'## 8 ',1)
++ modeltext=modeltext.replace('本文尚未取得独立验收','本文首次独立初审因F1未通过，本轮知情修订尚待独立复审')
++ modeltext=modeltext.replace('src/check.py为独立实现检查器','src/contracts.py固定原货类身份与合法情景合同；src/check.py为修订后的来源绑定检查器；src/repair_regression.py为知情回归；src/recheck_affected.py为所有受影响几何复核')
+  # Avoid stale hardcoded claims when original input version changes.
+  assert V==287.35 and W==41100 and sol['fixed_T1']['statistics']['vehicles']==20 and sol['fixed_T2']['statistics']['vehicles']==10
+  (ROOT/'paper/paper.md').write_text(modeltext,encoding='utf8');(ROOT/'paper/paper_build.json').write_text(json.dumps({'completed_scenarios':len(completed),'all_scenarios':len(read('configs/experiments.json')['scenarios']),'volume_m3':V,'mass_kg':W,'bounds':lower,'figures':['pareto','fleet_comparison','layout_T1','layout_T2','sensitivity','bearing'],'sources':'results/final, results/sensitivity, review/full_check'},ensure_ascii=False,indent=2),encoding='utf8')
+--- frozen execution/src/normalize.py
++++ execution-v2/src/normalize.py
+@@ -15,8 +15,10 @@
+       v['dims']=[int(x) for x in re.findall(r'(\d+)\s*cm',lines[0])];v['payload']=int(re.search(r'(\d+)kg',lines[1]).group(1));v['cost']=int(re.search(r'(\d+)\s*元',lines[2]).group(1))
+       sources.append({'object':v['id'],'location':f'附件1正文 {3 if v["id"]=="T1" else 7} 至 {6 if v["id"]=="T1" else 10}','original':lines})
+     for c,row in zip(cfg['cargo'],doc.tables[0].rows[1:]):
+-      vals=[x.text for x in row.cells];c.update(id=vals[0],dims=[int(x) for x in vals[2].split('×')],weight=float(vals[3]),quantity=int(vals[4]));sources.append({'object':c['id'],'location':f'附件1表1第{len(sources)}行（按货号识别）','original':vals})
+-    cfg.update(directional_center_each=True,version='3.0',fragile_floor_only=False)
++      vals=[x.text for x in row.cells];c.update(id=vals[0],category={'标准件':'standard','易碎件':'fragile','定向件':'directional'}[vals[1].strip()],dims=[int(x) for x in vals[2].split('×')],weight=float(vals[3]),quantity=int(vals[4]));sources.append({'object':c['id'],'location':f'附件1表1第{len(sources)}行（按货号识别）','original':vals})
++    cfg.update(directional_center_each=True,version='3.1-informed-F1',fragile_floor_only=False)
++    from contracts import validate_config
++    validate_config(cfg)
+     (ROOT/'configs/base.json').write_text(json.dumps(cfg,ensure_ascii=False,indent=2),encoding='utf8')
+     (ROOT/'inputs/normalized.json').write_text(json.dumps({'config':cfg,'sources':sources,'hashes':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in raw.iterdir()}},ensure_ascii=False,indent=2),encoding='utf8')
+     for name,items in [('vehicles',cfg['vehicles']),('cargo_types',cfg['cargo'])]:
+
+ADDED execution-v2/src/package_delivery.py
+
+ADDED execution-v2/src/recheck_affected.py
+
+ADDED execution-v2/src/repair_regression.py
+--- frozen execution/src/solve.py
++++ execution-v2/src/solve.py
+@@ -275,15 +275,8 @@
+     return best,master,single,records
+ 
+ def validate_config(cfg):
+-    for c in cfg.get('cargo',[]):
+-      for key in ['id','category','dims','weight','quantity']:
+-        if c.get(key) is None:raise ValueError(f'Missing required cargo business field: {key}')
+-      if c['category'] not in ['standard','fragile','directional'] or c['quantity']<0 or c['weight']<=0 or min(c['dims'])<=0:raise ValueError('Invalid cargo fields')
+-    for v in cfg.get('vehicles',[]):
+-      for key in ['id','dims','payload','cost']:
+-        if v.get(key) is None:raise ValueError(f'Missing required vehicle business field: {key}')
+-      if min(v['dims'])<=0 or v['payload']<=0 or v['cost']<=0:raise ValueError('Invalid vehicle fields')
+-    if not cfg.get('cargo') or not cfg.get('vehicles') or cfg.get('clearance',0)<0 or cfg.get('bearing',0)<=0:raise ValueError('Empty/invalid configuration')
++    from contracts import validate_config as validate_source_contract
++    return validate_source_contract(cfg)
+ 
+ if __name__=='__main__':
+     ap=argparse.ArgumentParser();ap.add_argument('--config',type=Path,default=ROOT/'configs/base.json');ap.add_argument('--out',type=Path,default=ROOT/'results/main');ap.add_argument('--budget',type=int,default=12);args=ap.parse_args()
