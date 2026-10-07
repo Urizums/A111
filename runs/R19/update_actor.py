@@ -27,7 +27,7 @@ with ctl.locked(ROOT):
     paper_level=state['execution']['current_paper_level']
     state['execution'].update(current_native_pending=rows,native_pending_current=rows,
         current_task_process_state=f'R19 L{level}: {role} {status}; actual pending count {len(rows)}.',
-        current_report='runs/R19/PLAN.md',R19_current_level=paper_level,latest_observed_actor_level=level)
+        current_report='runs/R19/REPORT.md',R19_current_level=paper_level,latest_observed_actor_level=level)
     state['execution'].setdefault('pre_R19_publication',{
         key:state['execution'].get(key) for key in ['current_publication','current_source_commit','current_source_ci','current_source_ci_observed']})
     state['execution']['current_frontier_task']=f'R19-L{paper_level}'
@@ -42,7 +42,7 @@ with ctl.locked(ROOT):
     ctl.write_json(ROOT/'state/continuation.json',state)
     ctl.synchronize(ROOT,state)
     cp=json.loads((ROOT/'state/checkpoint.json').read_text(encoding='utf-8'))
-    cp.update(current_native_pending=rows,current_report='runs/R19/PLAN.md',R19_status=f'L{level}_{role}_{status}',
+    cp.update(current_native_pending=rows,current_report='runs/R19/REPORT.md',R19_status=f'L{level}_{role}_{status}',
         next_action=f'Continue L{paper_level} paper execution/review in L1–L4 order; other levels may independently prepare designs under PREPARATION_ADDENDUM. Latest L{level} {role} {status}.',unpublished_work=True)
     ctl.write_json(ROOT/'state/checkpoint.json',cp)
 print(json.dumps(dict(actor=actor,status=status,pending=len(rows))))

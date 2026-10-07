@@ -7029,7 +7029,7 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R19/REPORT.md",
+    "current_report": "runs/R19/PLAN.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
@@ -7038,7 +7038,7 @@
       {
         "worker": "/root/r19_l1_reviewer",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
         "actual_model": null
       }
     ],
@@ -7393,7 +7393,7 @@
       {
         "worker": "/root/r19_l1_reviewer",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
         "actual_model": null
       }
     ],
@@ -7406,7 +7406,7 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
+    "current_task_process_state": "R19 L1: reviewer running_observed; actual pending count 1.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
     "current_publication": "runs/R19/publication/observation-2.json",
@@ -7489,7 +7489,7 @@
     },
     "current_frontier_task": "R19-L1",
     "R19_publication_status": "source_pushed_observed",
-    "source_ci_scope": "Old C10 CI stays in pre_R19_publication; no C11 or paper acceptance follows from it.",
+    "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
     "current_paper_level": 1,
     "R19_prepared_designs": [
@@ -7509,7 +7509,9 @@
         "runtime_accepted": false
       }
     ],
-    "R19_resource_observation": "runs/R19/resource-interruption-and-resume.json"
+    "R19_resource_observation": "runs/R19/resource-interruption-and-resume.json",
+    "latest_observed_actor_level": 1,
+    "R19_unpublished_followups": true
   },
   "events": [
     {
@@ -9665,6 +9667,12 @@
       "at": "2026-10-07T09:52:48.282242+00:00",
       "command": "observe_R19_main_publication",
       "evidence": "runs/R19/publication/observation-2.json"
+    },
+    {
+      "at": "2026-10-07T10:09:59.525340+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_reviewer",
+      "status": "running_observed"
     }
   ],
   "task_expansion_basis": [

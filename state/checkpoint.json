@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-07T09:52:48.350430+00:00",
+  "updated_at": "2026-10-07T10:09:59.640969+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Complete independent L1 initial review and required corrections, then sequential L2-L4 papers; no old budget reset.",
+  "next_action": "Continue L1 paper execution/review in L1–L4 order; other levels may independently prepare designs under PREPARATION_ADDENDUM. Latest L1 reviewer running_observed.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -94,7 +94,7 @@
       "purpose": "bounded conformance retest"
     }
   ],
-  "current_validation": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
+  "current_validation": "L1_independent_initial_review_in_progress_checker_category_identity_counterexample_observed_final_verdict_pending",
   "delivery_evidence": [
     "runs/cloud/github-pr.json",
     "runs/cloud/github-publication-reports.json",
@@ -208,7 +208,7 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R19/REPORT.md",
+    "current_report": "runs/R19/PLAN.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
@@ -217,7 +217,7 @@
       {
         "worker": "/root/r19_l1_reviewer",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
         "actual_model": null
       }
     ],
@@ -572,7 +572,7 @@
       {
         "worker": "/root/r19_l1_reviewer",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
         "actual_model": null
       }
     ],
@@ -585,7 +585,7 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
+    "current_task_process_state": "R19 L1: reviewer running_observed; actual pending count 1.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
     "current_publication": "runs/R19/publication/observation-2.json",
@@ -668,7 +668,7 @@
     },
     "current_frontier_task": "R19-L1",
     "R19_publication_status": "source_pushed_observed",
-    "source_ci_scope": "Old C10 CI stays in pre_R19_publication; no C11 or paper acceptance follows from it.",
+    "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
     "current_paper_level": 1,
     "R19_prepared_designs": [
@@ -688,7 +688,9 @@
         "runtime_accepted": false
       }
     ],
-    "R19_resource_observation": "runs/R19/resource-interruption-and-resume.json"
+    "R19_resource_observation": "runs/R19/resource-interruption-and-resume.json",
+    "latest_observed_actor_level": 1,
+    "R19_unpublished_followups": true
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -711,7 +713,7 @@
     {
       "worker": "/root/r19_l1_reviewer",
       "state": "running_observed",
-      "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+      "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
       "actual_model": null
     }
   ],
@@ -910,13 +912,13 @@
   "next_prospective_plan": "runs/R18/PLAN.md",
   "R18_plan": "runs/R18/PLAN.md",
   "R18_status": "actual_first_slice_only",
-  "current_report": "runs/R19/REPORT.md",
+  "current_report": "runs/R19/PLAN.md",
   "final_checks": "runs/R17/final/linux-full-regression-command.json",
   "publication": "runs/R17/publication/publication.json",
   "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
   "source_ci_observed": "success",
   "receipt_commit_pending_at_this_snapshot": true,
-  "R19_status": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
+  "R19_status": "L1_reviewer_running_observed",
   "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
   "current_frontier_task": "R19-L1",
   "current_source_commit": "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0",
