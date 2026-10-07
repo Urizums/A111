@@ -1,0 +1,425 @@
+{
+  "created_utc": "2026-10-07T16:09:09.230127+00:00",
+  "analytical_cases": [
+    {
+      "case": "legal_touching_faces",
+      "expected_valid": true,
+      "target_valid": true,
+      "passed": true,
+      "target_errors": [],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_positive_overlap",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "b: overlap a"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "legal_exact_top_clearance",
+      "expected_valid": true,
+      "target_valid": true,
+      "passed": true,
+      "target_errors": [],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_clearance_plus_one_mm",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: boundary/clearance"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_negative_coordinate",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: boundary/clearance"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_directional_swap",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: orientation"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "legal_standard_permutation",
+      "expected_valid": true,
+      "target_valid": true,
+      "passed": true,
+      "target_errors": [],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "legal_fragile_planar_rotation",
+      "expected_valid": true,
+      "target_valid": true,
+      "passed": true,
+      "target_errors": [],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_fragile_vertical_rotation",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: orientation"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "legal_fragile_coplanar_union_support",
+      "expected_valid": true,
+      "target_valid": true,
+      "passed": true,
+      "target_errors": [],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_one_mm_support_hole",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "f: incomplete support"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_fragile_supported_by_directional",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "f: fragile support not standard"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_load_on_fragile",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: cargo on fragile"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_floating",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: incomplete support",
+        "T001: load conservation"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "legal_contact_pressure_equality",
+      "expected_valid": true,
+      "target_valid": true,
+      "passed": true,
+      "target_errors": [],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_contact_pressure_above_equality",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: cumulative contact pressure",
+        "a: average top pressure"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_cumulative_chain_not_only_direct_load",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: cumulative contact pressure",
+        "a: average top pressure"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_local_directional_center_outside",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: incomplete support",
+        "a: local center of gravity"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "legal_local_directional_center_on_edge",
+      "expected_valid": true,
+      "target_valid": false,
+      "passed": false,
+      "target_errors": [
+        "a: incomplete support"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_duplicate_id",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "duplicate item_id"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_full_inventory_omission",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "inventory omission or extra"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "legal_single_vehicle_subset",
+      "expected_valid": true,
+      "target_valid": true,
+      "passed": true,
+      "target_errors": [],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_missing_weight",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: invalid or missing input"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_nonfinite_coordinate",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "a: invalid or missing input"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    },
+    {
+      "case": "reject_over_payload",
+      "expected_valid": false,
+      "target_valid": false,
+      "passed": true,
+      "target_errors": [
+        "T001: payload"
+      ],
+      "exception": null,
+      "scope": "producer validator run on reviewer analytical input, not used as oracle"
+    }
+  ],
+  "cli_controls": [
+    {
+      "case": "legal_contact_pressure_equality",
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\staged\\code\\validate.py",
+        "--placements",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\legal_contact_pressure_equality\\placements.csv",
+        "--items",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\legal_contact_pressure_equality\\items.csv",
+        "--vehicles",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\legal_contact_pressure_equality\\vehicles.json",
+        "--output",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\legal_contact_pressure_equality\\actual.json"
+      ],
+      "exit_code": 0,
+      "expected_valid": true,
+      "correct_code": true,
+      "actual": {
+        "valid": true,
+        "errors": [],
+        "checked_items": 2,
+        "vehicles": [
+          {
+            "vehicle_id": "T001",
+            "vehicle_type": "V1",
+            "item_count": 2,
+            "a": 1,
+            "b": 1,
+            "weight_kg": 501.0,
+            "volume_mm3": 200000000.0,
+            "volume_utilization": 0.2,
+            "weight_utilization": 0.0501,
+            "cost_yuan": 450,
+            "floor_load_kg": 501.0
+          }
+        ],
+        "supports": [
+          {
+            "vehicle_id": "T001",
+            "upper": "b",
+            "lower": "a",
+            "contact_mm2": 1000000.0,
+            "transferred_kg": 500.0,
+            "pressure_kg_m2": 500.0
+          }
+        ],
+        "claim": "author executed separate implementation, not independent agent acceptance"
+      }
+    },
+    {
+      "case": "reject_cumulative_chain_not_only_direct_load",
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\staged\\code\\validate.py",
+        "--placements",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\reject_cumulative_chain_not_only_direct_load\\placements.csv",
+        "--items",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\reject_cumulative_chain_not_only_direct_load\\items.csv",
+        "--vehicles",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\reject_cumulative_chain_not_only_direct_load\\vehicles.json",
+        "--output",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\reject_cumulative_chain_not_only_direct_load\\actual.json"
+      ],
+      "exit_code": 2,
+      "expected_valid": false,
+      "correct_code": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          "a: cumulative contact pressure",
+          "a: average top pressure"
+        ],
+        "checked_items": 3,
+        "vehicles": [
+          {
+            "vehicle_id": "T001",
+            "vehicle_type": "V1",
+            "item_count": 3,
+            "a": 1,
+            "b": 1,
+            "c": 1,
+            "weight_kg": 502.0,
+            "volume_mm3": 300000000.0,
+            "volume_utilization": 0.3,
+            "weight_utilization": 0.0502,
+            "cost_yuan": 450,
+            "floor_load_kg": 502.0
+          }
+        ],
+        "supports": [
+          {
+            "vehicle_id": "T001",
+            "upper": "c",
+            "lower": "b",
+            "contact_mm2": 1000000.0,
+            "transferred_kg": 251.0,
+            "pressure_kg_m2": 251.0
+          },
+          {
+            "vehicle_id": "T001",
+            "upper": "b",
+            "lower": "a",
+            "contact_mm2": 1000000.0,
+            "transferred_kg": 501.0,
+            "pressure_kg_m2": 501.0
+          }
+        ],
+        "claim": "author executed separate implementation, not independent agent acceptance"
+      }
+    },
+    {
+      "case": "reject_missing_weight",
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\staged\\code\\validate.py",
+        "--placements",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\reject_missing_weight\\placements.csv",
+        "--items",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\reject_missing_weight\\items.csv",
+        "--vehicles",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\reject_missing_weight\\vehicles.json",
+        "--output",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L2\\review\\initial\\control_inputs\\reject_missing_weight\\actual.json"
+      ],
+      "exit_code": 2,
+      "expected_valid": false,
+      "correct_code": true,
+      "actual": {
+        "valid": false,
+        "errors": [
+          "a: invalid or missing input"
+        ],
+        "checked_items": 0,
+        "vehicles": [],
+        "supports": [],
+        "claim": "author executed separate implementation, not independent agent acceptance"
+      }
+    }
+  ],
+  "all_passed": false,
+  "target_not_oracle": true,
+  "small_oracle_proof": "nonempty items requires >=1 vehicle; all costs >=450/trip; zip15 layout independently feasible in V1 gives count1/cost450 achieving both lower bounds"
+}

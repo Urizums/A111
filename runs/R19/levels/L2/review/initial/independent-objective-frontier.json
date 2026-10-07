@@ -1,0 +1,378 @@
+{
+  "milp": [
+    {
+      "scenario": "q1_all_v1",
+      "primary": "vehicles",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.46735699999953795,
+      "utc_start": "2026-10-07T16:13:45.812131+00:00",
+      "limit_seconds": 40,
+      "recomputed_counts_constraint": true,
+      "primary_objective": 25.0,
+      "primary_dual": 25.0,
+      "primary_gap": 0.0,
+      "secondary": {
+        "status": 0,
+        "seconds": 0.34420030000001134,
+        "objective": 11250.0,
+        "gap": 0.0
+      }
+    },
+    {
+      "scenario": "q1_all_v2",
+      "primary": "vehicles",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.5015188999987004,
+      "utc_start": "2026-10-07T16:13:46.623635+00:00",
+      "limit_seconds": 40,
+      "recomputed_counts_constraint": true,
+      "primary_objective": 13.0,
+      "primary_dual": 13.000000000000014,
+      "primary_gap": 0.0,
+      "secondary": {
+        "status": 0,
+        "seconds": 0.25914519999969343,
+        "objective": 9100.0,
+        "gap": 0.0
+      }
+    },
+    {
+      "scenario": "q2_vehicles",
+      "primary": "vehicles",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 0.1701152000005095,
+      "utc_start": "2026-10-07T16:13:47.384768+00:00",
+      "limit_seconds": 40,
+      "recomputed_counts_constraint": true,
+      "primary_objective": 13.0,
+      "primary_dual": 13.0,
+      "primary_gap": 0.0,
+      "secondary": {
+        "status": 0,
+        "seconds": 2.3830925000002026,
+        "objective": 8850.0,
+        "gap": 0.0
+      }
+    },
+    {
+      "scenario": "q2_cost",
+      "primary": "cost",
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "seconds": 8.096222100000887,
+      "utc_start": "2026-10-07T16:13:49.938500+00:00",
+      "limit_seconds": 40,
+      "recomputed_counts_constraint": true,
+      "primary_objective": 8850.0,
+      "primary_dual": 8850.0,
+      "primary_gap": 0.0,
+      "secondary": {
+        "status": 0,
+        "seconds": 1.4042451000004803,
+        "objective": 13.0,
+        "gap": 0.0
+      }
+    }
+  ],
+  "frontier": [
+    {
+      "vehicle": "V1",
+      "candidate_count_vectors": 104,
+      "actual_scanned_layouts": [
+        {
+          "alpha": 0.0,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.1,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.2,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.30000000000000004,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.4,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.5,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.6000000000000001,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.7000000000000001,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.8,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.9,
+          "valid": true,
+          "counts": [
+            0,
+            384,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 1.0,
+          "valid": true,
+          "counts": [
+            245,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "independently_nondominated": [
+        {
+          "volume": 0.9101731601731602,
+          "weight": 0.526,
+          "counts": [
+            63,
+            300,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "volume": 0.9426406926406926,
+          "weight": 0.524,
+          "counts": [
+            63,
+            276,
+            12,
+            0,
+            0
+          ]
+        }
+      ],
+      "emitted_counts_match": true,
+      "claim_scope": "only tested candidate library/weighted construction, not full Pareto optimality"
+    },
+    {
+      "vehicle": "V2",
+      "candidate_count_vectors": 109,
+      "actual_scanned_layouts": [
+        {
+          "alpha": 0.0,
+          "valid": true,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            408
+          ]
+        },
+        {
+          "alpha": 0.1,
+          "valid": true,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            408
+          ]
+        },
+        {
+          "alpha": 0.2,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.30000000000000004,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.4,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.5,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.6000000000000001,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.7000000000000001,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.8,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 0.9,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "alpha": 1.0,
+          "valid": true,
+          "counts": [
+            4,
+            819,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "independently_nondominated": [
+        {
+          "volume": 0.9404081632653061,
+          "weight": 0.7344,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            408
+          ]
+        }
+      ],
+      "emitted_counts_match": true,
+      "claim_scope": "only tested candidate library/weighted construction, not full Pareto optimality"
+    }
+  ],
+  "independence": "A recounted from actual placements, costs/demand original DOCX, primary/secondary separate exact solve; constructors used only as target for candidate generation"
+}

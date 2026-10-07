@@ -7,7 +7,7 @@
 | 层级 | 工作流 | 实际执行与论文 | 独立数值/论文验收 |
 | --- | --- | --- | --- |
 | L1 | 已完成，7份实际文件冻结；原件逐页/段落/单元格定位 | 原16页/250文件及知情修订17页/396文件分别冻结；v2来源绑定、68项自检和235布局核查已交付，原作者终态 | 初审406文件已冻结：a1/a2/a3/a5/a6 pass，a4 fail；实验/反证partial，其余五维明示范围achieved。知情复审668文件已冻结：修订版a1–a6 pass，六维在明示范围achieved；初审a4 fail不变，L1完整诊断done |
-| L2 | 已完成，9份实际设计文件冻结；设计准备任务done不等于论文通过 | 691份完整执行已终态冻结：论文11页/企业报告2页、6图、代码与算法ZIP、36实验 | 19份事前只读原件方法冻结，23项来源/设计/验收锁及25项审查控制已核查；同一reviewer独立首审已启动，尚无成品判定 |
+| L2 | 已完成，9份实际设计文件冻结；设计准备任务done不等于论文通过 | 691份完整执行已终态冻结：论文11页/企业报告2页、6图、代码与算法ZIP、36实验 | 19份事前只读原件方法冻结，23项来源/设计/验收锁及25项审查控制已核查；350份首审已终态冻结，六必需门pass；实验充分性partial、其余五维achieved。原作者另版知情质量研究实际启动 |
 | L3 | 已完成，9份实际设计文件冻结；设计准备任务done不等于论文通过 | 等L2后顺序启动 | 未开始 |
 | L4 | 原构建者资源恢复后完成7份实际设计文件，已冻结；一次PowerShell解析恢复保留 | 未开始 | 未开始 |
 
@@ -36,3 +36,11 @@ L2真实资源接续：执行者曾收到额度错误。用户继续后当前账
 源1dbd0ab3864aef472795864ccf2558fd21de654a的[CI 37610454335](https://github.com/Urizums/A111/actions/runs/37610454335)现已实际completed/success，见publication/observation-4.json。发布观察保留L2的实际next_action；它不改变论文验收或旧阶段判定。
 
 L2完整交付终态：execution/result.json为complete_author_checked_ready_for_external_review；root实际冻结691文件（作者manifest列690payload，不含manifest自身）。论文11页、企业报告2页、6图、36例实验中35合法/1极端高度失败、213模式/16边界/七方案原件重算均为作者检查；干净3000件复跑42.37秒，ZIP解压仅15件smoke；未知旧run时间/启动代码身份保留null。原额度中断与复播收据车数/费用单位错误保留，原设置/结果不重置。作者已停止写入、进程探针为空、无子agent/待会话。随后root仅交冻结版和物流schema给事前准备的同一reviewer，未发预期答案/诊断或其他层信息；其首审在review/initial/，实际独立结果待交付。
+
+L2冻结交付及首审启动现场已实际上传main：[a15bd8e](https://github.com/Urizums/A111/commit/a15bd8e46644a889b2d870d982e0ebdda675b3f8)。对应publication/observation-6.json确认远端一致，CI 37649214197当次为in_progress，未预填success。本地完整接续身份检查实际ok，3223 revision文件核对一致；不替代正在进行的独立科学首审。
+
+源a15bd8e对应CI现已实际completed/success，Windows preflight及Python3.10/3.12三作业均success；完整jobs工具返回保存于publication/l2-full-paper-ci-jobs-command.json，远端/CI观察为observation-7.json。它仍不替代L2科学首审。首审当前已报告真实全量复跑和独立关键参数/布局核查，图文/模式目标/六维判定仍在进行；追溯CSV旧32与正文36的局部不一致影响待终态判定，未先发作者改写冻结版本。
+
+L2首次独立首审终态已冻结350文件，见[首审报告](levels/L2/review/initial/report.md)/result.json。全量原件实际重跑11布局46.82秒，35成功实验全部输入/布局/目标独立复算，9关键成功+1高度失败独立重求解，213模式/22单车候选/四库内主次目标独立核算，73行/6图及13页实际图文检查。ZIP仅独立15件smoke加主代码/原件字节绑定，未另跑ZIP完整3000件；其余26成功实验未新求解，范围明确。a1–a6 pass，不需要拒收；empirical sufficiency and fair alternatives为partial，界区间较大且受限几何/易碎尾车可能改变企业方案。
+
+用户目标要求实质论文质量，root不以必需门pass默认已充分。正式首审已给原作者，原作者在execution-v2/实际启动自己的有据研究与公平对照，同时修正Q3追溯表元数据，见[前瞻说明](levels/L2/QUALITY_FOLLOWUP.md)。首次pass/partial、原参数窗口/失败不改；同层知情迭代不作新盲样本、不传其他层答案、不增原必需门/算法配额、不强求无限全局最优，C11冻结。研究后的有证据结果由同一reviewer另轮知情核查，再决定关闭诊断/启动L3。

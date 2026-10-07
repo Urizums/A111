@@ -24,3 +24,7 @@
 - 新接续发现publication.observe中synchronize重写checkpoint.next_action；现保存观察前next_action并恢复，保持实际L2前沿。记录L2资源恢复首轮错用native Python，import fcntl失败且未写状态；改为明确WSL命令成功，不属于论文作者修复或旧预算。
 
 - L2方法冻结后发布的文本检查发现两个已冻结Python文件末尾额外空行（check_method_controls.py:52、independent_checker.py:87）；保留文件字节，不改历史锁。仅将EOF空行列为可选样式说明；继续检查行尾空格/缩进，独立算法与数学验收标准不变。
+
+- L2质量接续提示只写QUALITY_FOLLOWUP.md文件名而未给全路径，原作者错查runs/R19/后报告不存在；root明确levels/L2/绝对路径，保留原失败，物流澄清不新增解法/评分。
+
+- L2初审发布文本检查指出冻结paper-regeneration.diff.txt第1/3行的空文件标签差异头带尾空格（--- / +++）。这是实际差异工具原文，保留字节/锁；样式检查明确仅排除该证据文件，其他正文/源码行尾空白检查继续，科学验收未改变。

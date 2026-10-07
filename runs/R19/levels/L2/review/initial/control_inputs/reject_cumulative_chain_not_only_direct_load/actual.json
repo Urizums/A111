@@ -1,0 +1,43 @@
+{
+  "valid": false,
+  "errors": [
+    "a: cumulative contact pressure",
+    "a: average top pressure"
+  ],
+  "checked_items": 3,
+  "vehicles": [
+    {
+      "vehicle_id": "T001",
+      "vehicle_type": "V1",
+      "item_count": 3,
+      "a": 1,
+      "b": 1,
+      "c": 1,
+      "weight_kg": 502.0,
+      "volume_mm3": 300000000.0,
+      "volume_utilization": 0.3,
+      "weight_utilization": 0.0502,
+      "cost_yuan": 450,
+      "floor_load_kg": 502.0
+    }
+  ],
+  "supports": [
+    {
+      "vehicle_id": "T001",
+      "upper": "c",
+      "lower": "b",
+      "contact_mm2": 1000000.0,
+      "transferred_kg": 251.0,
+      "pressure_kg_m2": 251.0
+    },
+    {
+      "vehicle_id": "T001",
+      "upper": "b",
+      "lower": "a",
+      "contact_mm2": 1000000.0,
+      "transferred_kg": 501.0,
+      "pressure_kg_m2": 501.0
+    }
+  ],
+  "claim": "author executed separate implementation, not independent agent acceptance"
+}

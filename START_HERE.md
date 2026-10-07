@@ -1,6 +1,6 @@
 # Codex 接续入口
 
-R19最新现场：L1完整诊断done；原16页/250执行与初审406保留，首次5pass/1fail（a4来源类别绕过）；17页修订/396与知情复审668冻结，修订版a1–a6 pass，不追认首次通过。L2完整执行691文件已终态冻结，含11页论文、2页企业报告、代码、6图、36实验；19份原件方法准备事前冻结，同一独立审查者现开始首审，尚无L2质量判定。L3/L4设计冻结、论文未开始，继续1→4顺序。C11仍为九份Markdown冻结实验候选；脚本是试验任务产物。旧失败/预算/锁不重置。见runs/R19/REPORT.md、TODO.md、WORKFLOW_BUILDING.md及state/checkpoint.json。
+R19最新现场：L1诊断done，原初审a4 fail及知情修订pass均保留。L2设计9/完整执行691/方法准备19/首审350文件分别冻结，含11页论文和2页企业报告；首次独立a1–a6 pass，五维achieved、实验充分性partial（界松/受限几何与易碎尾车）。原作者已接收正式同层首审，在execution-v2/实际启动知情质量研究与公平对照，C11不变、不读其他层，不追认或替换首次结果。L3/L4设计冻结、论文未启动，保持顺序。已上传源a15bd8e和三个CI作业success仅证明对应仓库/工件检查。旧失败/预算/锁不重置；见runs/R19/REPORT.md、TODO.md、levels/L2/QUALITY_FOLLOWUP.md及state/checkpoint.json。
 
 成品方向为Forge meta-workflow，当前候选C10是九份纯文档：
 [技能入口](runs/R17/candidate/C10/forge-agent-flow/SKILL.md)、

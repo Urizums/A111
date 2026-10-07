@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\admin\Documents\Codex\2026-10-05\urizums-a111-main-codex-handoff-md\work\A111\runs\R19\levels\L2\review\initial\staged\code\main.py", line 196, in <module>
+    ts=typesfrom(items);cs=[t['count'] for t in ts];vv=[vs[0]] if a.scenario.endswith('v1') else [vs[1]] if a.scenario.endswith('v2') else vs;obj='cost' if a.scenario=='q2_cost' else 'vehicles';ps,_=library(ts,vs,cs,cfg);f,info=select(ps,vv,cs,obj,cfg.get('time_limit',60));export(f,ts,vv,items,a.output,a.scenario,{'objective':obj,'bounds':bounds(ts,vv,cs,obj),'solver':info,'config':cfg})
+                                                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\Documents\Codex\2026-10-05\urizums-a111-main-codex-handoff-md\work\A111\runs\R19\levels\L2\review\initial\staged\code\main.py", line 118, in library
+    f=fleet(types,vs0,counts,w,{**config,'platforms':config.get('platforms',True)});fleets.append(f)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\Documents\Codex\2026-10-05\urizums-a111-main-codex-handoff-md\work\A111\runs\R19\levels\L2\review\initial\staged\code\main.py", line 105, in fleet
+    if not choices:raise ValueError('heuristic_no_fit_not_mathematical_infeasibility: '+str(rem.tolist()))
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: heuristic_no_fit_not_mathematical_infeasibility: [800, 1000, 300, 400, 500]

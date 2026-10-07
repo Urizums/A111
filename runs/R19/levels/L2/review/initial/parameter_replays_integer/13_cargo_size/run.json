@@ -1,0 +1,39 @@
+{
+  "scenario": "q2_cost",
+  "objective": "cost",
+  "full_inventory": true,
+  "validation_status": true,
+  "unplaced_items": [],
+  "vehicle_count": 18,
+  "cost_yuan": 11850.0,
+  "volume_utilization": 0.5600060471885698,
+  "weight_utilization": 0.24464285714285713,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "bounds": {
+    "volume_mm3": 382462850000,
+    "weight_kg": 41100.0,
+    "lower_bound": 6750.0,
+    "relaxation_pair": [
+      1,
+      9
+    ]
+  },
+  "solver": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "pattern_count": 83,
+    "seconds": 1.4978238999992755,
+    "restricted_mip_gap": 0.0,
+    "restricted_dual_bound": 11850.00000085713
+  },
+  "config": {
+    "pressure": 500,
+    "fragile_fixed": false,
+    "platforms": true,
+    "seed": 19,
+    "starts": 5,
+    "time_limit": 8
+  }
+}

@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "C:\Users\admin\Documents\Codex\2026-10-05\urizums-a111-main-codex-handoff-md\work\A111\runs\R19\levels\L2\review\initial\staged\code\main.py", line 196, in <module>
+    ts=typesfrom(items);cs=[t['count'] for t in ts];vv=[vs[0]] if a.scenario.endswith('v1') else [vs[1]] if a.scenario.endswith('v2') else vs;obj='cost' if a.scenario=='q2_cost' else 'vehicles';ps,_=library(ts,vs,cs,cfg);f,info=select(ps,vv,cs,obj,cfg.get('time_limit',60));export(f,ts,vv,items,a.output,a.scenario,{'objective':obj,'bounds':bounds(ts,vv,cs,obj),'solver':info,'config':cfg})
+                                                                                                                                                                                                       ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\Documents\Codex\2026-10-05\urizums-a111-main-codex-handoff-md\work\A111\runs\R19\levels\L2\review\initial\staged\code\main.py", line 118, in library
+    f=fleet(types,vs0,counts,w,{**config,'platforms':config.get('platforms',True)});fleets.append(f)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\Documents\Codex\2026-10-05\urizums-a111-main-codex-handoff-md\work\A111\runs\R19\levels\L2\review\initial\staged\code\main.py", line 104, in fleet
+    choices=[pack(types,v,rem,weights,config) for v in vehicles];choices=[p for p in choices if sum(p['counts'])]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\admin\Documents\Codex\2026-10-05\urizums-a111-main-codex-handoff-md\work\A111\runs\R19\levels\L2\review\initial\staged\code\main.py", line 91, in pack
+    for h in range(k):parts.append({'cargo_type':types[ti]['cargo_type'],'x_mm':x,'y_mm':y,'z_mm':h*dz,'dx_mm':dx,'dy_mm':dy,'dz_mm':dz,'orientation_id':ori})
+             ^^^^^^^^
+TypeError: 'float' object cannot be interpreted as an integer
