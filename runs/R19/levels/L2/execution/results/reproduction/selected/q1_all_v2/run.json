@@ -1,0 +1,71 @@
+{
+  "scenario": "q1_all_v2",
+  "objective": "vehicles",
+  "full_inventory": true,
+  "validation_status": true,
+  "unplaced_items": [],
+  "vehicle_count": 13,
+  "cost_yuan": 9100,
+  "volume_utilization": 0.5307045895281189,
+  "weight_utilization": 0.3161538461538462,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "method": "column_patterns_MILP",
+  "bounds": {
+    "volume_mm3": 287350000000,
+    "weight_kg": 41100.0,
+    "lower_bound": 7,
+    "relaxation_pair": [
+      0,
+      7
+    ]
+  },
+  "solver": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "pattern_count": 109,
+    "seconds": 0.4737873000003674,
+    "restricted_mip_gap": 0.0,
+    "restricted_dual_bound": 13.000433333333348
+  },
+  "config": {
+    "seed": 19,
+    "starts": 22,
+    "time_limit": 60,
+    "pressure": 500
+  },
+  "audit_identity": {
+    "raw_source": [
+      {
+        "path": "runs/R19/inputs/raw/2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf",
+        "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d"
+      },
+      {
+        "path": "runs/R19/inputs/raw/附件1.docx",
+        "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0"
+      },
+      {
+        "path": "runs/R19/inputs/raw/附件2：验证数据集.xlsx",
+        "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda"
+      }
+    ],
+    "items_sha256": "e08b37924dcd7836bfb3562f6dcf7ffdad706f74d5ede0c8487d8769573d44d5",
+    "vehicles_sha256": "a24335a597fe67f1554d0a9d6266825e2c00e1b3d3a1d6ef17b5088da4643e8b",
+    "config_sha256": "865dc3168e8b4b8c3bbdfab25b9b1d4a198d4494f0c0821f154e9691bb8a4a36",
+    "executed_main_sha256": "e138ca3cf32bb420214529fac1c1d11ed1420f58280352216a132a430d452cd6",
+    "code_identity_limit": null,
+    "assumptions_sha256": "011d786a8300396ee79f9a278e2771f749ec2fad74e6e0294868e2163629a144",
+    "seed": 19,
+    "pipeline_utc_start": "2026-10-07T15:28:51.057134+00:00",
+    "pipeline_utc_finish": "2026-10-07T15:29:33.427641+00:00",
+    "individual_run_utc_start": null,
+    "individual_run_utc_finish": null,
+    "timing_limit": "Individual run timestamps were not recorded; actual pipeline and MILP seconds remain in summary/solver receipts.",
+    "metadata_enriched_utc": "2026-10-07T15:51:33.293561+00:00",
+    "metadata_operation": "post-run identity binding, not original solver receipt timing",
+    "model": null,
+    "tokens": null,
+    "cost": null
+  }
+}
