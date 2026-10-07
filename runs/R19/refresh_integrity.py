@@ -51,7 +51,7 @@ with ctl.locked(ROOT):
         index['locks'].append(lock_path)
         ctl.write_json(ROOT/'state/revision-locks.json',index)
     for level in range(1,5):
-        for scope in ['execution','review/preparation','review/initial']:
+        for scope in ['execution','execution-v2','review/preparation','review/initial','review/recheck-1']:
             relative=f'runs/R19/levels/L{level}/{scope}-lock.json'
             if (ROOT/relative).exists() and relative not in index['locks']:
                 for entry in json.loads((ROOT/relative).read_text(encoding='utf-8'))['files']:

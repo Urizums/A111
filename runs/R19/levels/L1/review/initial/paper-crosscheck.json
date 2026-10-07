@@ -1,0 +1,110 @@
+{
+  "all_checks_match": true,
+  "checks": [
+    {
+      "check": "all4 primary fleet answers",
+      "paper_line": 166,
+      "matches": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "fixed_T1 every truck counts/rates",
+      "paper_line": 190,
+      "matches": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "fixed_T2 every truck counts/rates",
+      "paper_line": 215,
+      "matches": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "all single candidates counts/weights/two objectives",
+      "paper_line": 150,
+      "matches": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "all32 scenario numerical rows; historical time sourced not independently timed",
+      "paper_line": 313,
+      "matches": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "representative coordinate rows",
+      "paper_line": 230,
+      "matches": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "raw vehicle dimensions/capacities/costs",
+      "paper_line": 21,
+      "matches": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "raw5 cargo fields/volumes/densities",
+      "paper_line": 26,
+      "matches": true,
+      "actual": null,
+      "expected": null
+    },
+    {
+      "check": "fixed_T1 actual CSV equals audited JSON",
+      "matches": true,
+      "row_count": 3000
+    },
+    {
+      "check": "fixed_T2 actual CSV equals audited JSON",
+      "matches": true,
+      "row_count": 3000
+    },
+    {
+      "check": "mixed_count actual CSV equals audited JSON",
+      "matches": true,
+      "row_count": 3000
+    },
+    {
+      "check": "mixed_cost actual CSV equals audited JSON",
+      "matches": true,
+      "row_count": 3000
+    },
+    {
+      "check": "bearing figure source all vehicle pressures independently match",
+      "matches": true
+    },
+    {
+      "check": "pareto source single_T1_0",
+      "matches": true
+    },
+    {
+      "check": "pareto source single_T1_1",
+      "matches": true
+    },
+    {
+      "check": "pareto source single_T2_0",
+      "matches": true
+    },
+    {
+      "check": "epsilon finite candidate scan",
+      "matches": true,
+      "rows": 10
+    }
+  ],
+  "pdf_pages_visually_reviewed": 16,
+  "pdf_visual_scope": "own full-page rendering plus all16-page contact layouts; key formula/table/figure pages further viewed individually",
+  "text_scope": "paper.md complete read; numeric summary/primary/scenario/truck/coordinate/raw tables checked above",
+  "limits": [
+    "historical elapsed times sourced to output records and code timing range, not exact independent repetition",
+    "figure visuals inspected and source arrays checked; no image pixel comparison required for semantic fidelity",
+    "original global optimum remains unknown; finite pool proof verified separately"
+  ]
+}

@@ -1,0 +1,336 @@
+[
+  {
+    "requirement_id": "fixed_T1",
+    "source_id": "P1b/P2a/P2b/A1",
+    "observation": {
+      "counts": {
+        "G1": 800,
+        "G2": 1000,
+        "G3": 300,
+        "G4": 400,
+        "G5": 500
+      },
+      "statistics": {
+        "vehicles": 20,
+        "cost": 9000,
+        "volume_cm3": 287350000,
+        "weight_kg": 41100,
+        "volume_rate": 0.7404401154401155,
+        "load_rate": 0.3425,
+        "vehicle_counts": {
+          "T1": 20,
+          "T2": 0
+        }
+      }
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "static full-support local-pressure interpretation; optimum not established",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "fixed_T2",
+    "source_id": "P1b/P2a/P2b/A1",
+    "observation": {
+      "counts": {
+        "G1": 800,
+        "G2": 1000,
+        "G3": 300,
+        "G4": 400,
+        "G5": 500
+      },
+      "statistics": {
+        "vehicles": 10,
+        "cost": 7000,
+        "volume_cm3": 287350000,
+        "weight_kg": 41100,
+        "volume_rate": 0.6899159663865546,
+        "load_rate": 0.411,
+        "vehicle_counts": {
+          "T1": 0,
+          "T2": 10
+        }
+      }
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "static full-support local-pressure interpretation; optimum not established",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "mixed_count",
+    "source_id": "P1b/P2a/P2b/A1",
+    "observation": {
+      "counts": {
+        "G1": 800,
+        "G2": 1000,
+        "G3": 300,
+        "G4": 400,
+        "G5": 500
+      },
+      "statistics": {
+        "vehicles": 10,
+        "cost": 7000,
+        "volume_cm3": 287350000,
+        "weight_kg": 41100,
+        "volume_rate": 0.6899159663865546,
+        "load_rate": 0.411,
+        "vehicle_counts": {
+          "T1": 0,
+          "T2": 10
+        }
+      }
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "static full-support local-pressure interpretation; optimum not established",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "mixed_cost",
+    "source_id": "P1b/P2a/P2b/A1",
+    "observation": {
+      "counts": {
+        "G1": 800,
+        "G2": 1000,
+        "G3": 300,
+        "G4": 400,
+        "G5": 500
+      },
+      "statistics": {
+        "vehicles": 10,
+        "cost": 7000,
+        "volume_cm3": 287350000,
+        "weight_kg": 41100,
+        "volume_rate": 0.6899159663865546,
+        "load_rate": 0.411,
+        "vehicle_counts": {
+          "T1": 0,
+          "T2": 10
+        }
+      }
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "static full-support local-pressure interpretation; optimum not established",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "Q1_SINGLE",
+    "source_id": "P1a/P1c",
+    "observation": {
+      "candidate_counts": {
+        "T1": 2,
+        "T2": 1
+      },
+      "epsilon_scan": "results\\final\\epsilon_scan.json"
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "searched finite Pareto set, not global front",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "Q3_PARAMETERS",
+    "source_id": "P3",
+    "observation": {
+      "declared": 32,
+      "completed": 32
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "one-instance deterministic scenarios; no statistical generalization",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "BOUNDARY_REJECTION",
+    "source_id": "A1g/A1f/A1o/A1p/A1h",
+    "observation": {
+      "tests": 15
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "finite targeted defects, not exhaustive proof of checker reliability",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "SMOKE_V3",
+    "source_id": "A1/P4",
+    "observation": {
+      "count": {
+        "G1": 3,
+        "G2": 3,
+        "G3": 3,
+        "G4": 3,
+        "G5": 3
+      },
+      "vehicles": 1,
+      "lower_bound": 1
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "old v1 smoke failed stricter directional check and is retained; only v3 accepted",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "REPRODUCE",
+    "source_id": "P4",
+    "observation": {
+      "comparisons": [
+        {
+          "task": "fixed_T1",
+          "feasible": true,
+          "metrics_match": true,
+          "geometry_match": true,
+          "counts": {
+            "G1": 800,
+            "G2": 1000,
+            "G3": 300,
+            "G4": 400,
+            "G5": 500
+          }
+        },
+        {
+          "task": "fixed_T2",
+          "feasible": true,
+          "metrics_match": true,
+          "geometry_match": true,
+          "counts": {
+            "G1": 800,
+            "G2": 1000,
+            "G3": 300,
+            "G4": 400,
+            "G5": 500
+          }
+        },
+        {
+          "task": "mixed_count",
+          "feasible": true,
+          "metrics_match": true,
+          "geometry_match": true,
+          "counts": {
+            "G1": 800,
+            "G2": 1000,
+            "G3": 300,
+            "G4": 400,
+            "G5": 500
+          }
+        },
+        {
+          "task": "mixed_cost",
+          "feasible": true,
+          "metrics_match": true,
+          "geometry_match": true,
+          "counts": {
+            "G1": 800,
+            "G2": 1000,
+            "G3": 300,
+            "G4": 400,
+            "G5": 500
+          }
+        },
+        {
+          "task": "single_T1_0",
+          "feasible": true,
+          "metrics_match": true,
+          "geometry_match": true,
+          "counts": {
+            "G1": 0,
+            "G2": 344,
+            "G3": 20,
+            "G4": 0,
+            "G5": 0
+          }
+        },
+        {
+          "task": "single_T1_1",
+          "feasible": true,
+          "metrics_match": true,
+          "geometry_match": true,
+          "counts": {
+            "G1": 0,
+            "G2": 384,
+            "G3": 0,
+            "G4": 0,
+            "G5": 0
+          }
+        },
+        {
+          "task": "single_T2_0",
+          "feasible": true,
+          "metrics_match": true,
+          "geometry_match": true,
+          "counts": {
+            "G1": 0,
+            "G2": 0,
+            "G3": 0,
+            "G4": 0,
+            "G5": 408
+          }
+        }
+      ],
+      "seconds": 16.262158099998487,
+      "from": "official original DOCX/XLSX",
+      "independence": "author fresh output, not independent acceptance",
+      "search_optimality_claim": false
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "author clean output; same host",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "PAPER",
+    "source_id": "U1/P3/P4",
+    "observation": {
+      "chars": 19574,
+      "pdf_pages": 16,
+      "sections": 13,
+      "tables_figures": true
+    },
+    "status": "pass",
+    "violating_items": [],
+    "tolerance": 1e-07,
+    "limit": "self-defined practice format; no official submission/rule verification",
+    "checker": "author self-check; not independent acceptance"
+  },
+  {
+    "requirement_id": "GLOBAL_OPTIMALITY",
+    "source_id": "P1b/P2",
+    "status": "unverified",
+    "observation": "feasible N1=20,N2=10,mixed=10,C=7000; global necessary lower bounds N1=16,N2/mixed=7,C=4900",
+    "violating_items": [],
+    "tolerance": null,
+    "limit": "99-pattern master proved only restricted-pool optimality",
+    "checker": "author"
+  },
+  {
+    "requirement_id": "INDEPENDENT_ACCEPTANCE",
+    "source_id": "handoff",
+    "status": "unverified",
+    "observation": "parent assigned fresh review after delivery; not executed by this author",
+    "violating_items": [],
+    "tolerance": null,
+    "limit": "producer self-check cannot establish independence",
+    "checker": "unavailable in this execution"
+  },
+  {
+    "requirement_id": "A2_BUSINESS_GENERALITY",
+    "source_id": "P5/A2",
+    "status": "unverified",
+    "observation": "64 real geometry pairs audited; mass, quantity, category, payload, trip-cost basis missing",
+    "violating_items": [],
+    "tolerance": null,
+    "limit": "optional business validation not executable from supplied fields",
+    "checker": "author"
+  }
+]

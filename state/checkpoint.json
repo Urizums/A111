@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-07T10:09:59.640969+00:00",
+  "updated_at": "2026-10-07T10:17:09.116251+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Continue L1 paper execution/review in L1–L4 order; other levels may independently prepare designs under PREPARATION_ADDENDUM. Latest L1 reviewer running_observed.",
+  "next_action": "Freeze_actual_v2_then_same_reviewer_informed_recheck_original_fail_preserved_before_L2_paper",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -94,7 +94,7 @@
       "purpose": "bounded conformance retest"
     }
   ],
-  "current_validation": "L1_independent_initial_review_in_progress_checker_category_identity_counterexample_observed_final_verdict_pending",
+  "current_validation": "L1_initial_review_frozen_5pass_a4fail_original_author_informed_repair_execution_v2_running",
   "delivery_evidence": [
     "runs/cloud/github-pr.json",
     "runs/cloud/github-publication-reports.json",
@@ -208,16 +208,16 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R19/PLAN.md",
+    "current_report": "runs/R19/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
     "current_native_pending": [
       {
-        "worker": "/root/r19_l1_reviewer",
+        "worker": "/root/r19_l1_executor",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
+        "evidence": "runs/R19/levels/L1/executor-running_observed-observation-3.json",
         "actual_model": null
       }
     ],
@@ -570,9 +570,9 @@
     "next_prospective_plan": "runs/R18/PLAN.md",
     "native_pending_current": [
       {
-        "worker": "/root/r19_l1_reviewer",
+        "worker": "/root/r19_l1_executor",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
+        "evidence": "runs/R19/levels/L1/executor-running_observed-observation-3.json",
         "actual_model": null
       }
     ],
@@ -585,7 +585,7 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "R19 L1: reviewer running_observed; actual pending count 1.",
+    "current_task_process_state": "L1_initial_review_frozen_5pass_a4fail_original_author_informed_repair_execution_v2_running",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
     "current_publication": "runs/R19/publication/observation-2.json",
@@ -658,6 +658,12 @@
         "state": "terminal",
         "evidence": "runs/R19/levels/L1/executor-terminal-observation.json",
         "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "terminal_initial_fail_a4",
+        "evidence": "runs/R19/levels/L1/reviewer-terminal_initial_fail_a4-observation.json",
+        "actual_model": null
       }
     ],
     "pre_R19_publication": {
@@ -711,9 +717,9 @@
   ],
   "current_native_pending": [
     {
-      "worker": "/root/r19_l1_reviewer",
+      "worker": "/root/r19_l1_executor",
       "state": "running_observed",
-      "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
+      "evidence": "runs/R19/levels/L1/executor-running_observed-observation-3.json",
       "actual_model": null
     }
   ],
@@ -912,13 +918,13 @@
   "next_prospective_plan": "runs/R18/PLAN.md",
   "R18_plan": "runs/R18/PLAN.md",
   "R18_status": "actual_first_slice_only",
-  "current_report": "runs/R19/PLAN.md",
+  "current_report": "runs/R19/REPORT.md",
   "final_checks": "runs/R17/final/linux-full-regression-command.json",
   "publication": "runs/R17/publication/publication.json",
   "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
   "source_ci_observed": "success",
   "receipt_commit_pending_at_this_snapshot": true,
-  "R19_status": "L1_reviewer_running_observed",
+  "R19_status": "L1_initial_review_frozen_5pass_a4fail_original_author_informed_repair_execution_v2_running",
   "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
   "current_frontier_task": "R19-L1",
   "current_source_commit": "b4c0f374818f25ba0fbb18ae8f09d97d0b18e1d0",

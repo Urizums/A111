@@ -7029,16 +7029,16 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R19/PLAN.md",
+    "current_report": "runs/R19/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
     "current_native_pending": [
       {
-        "worker": "/root/r19_l1_reviewer",
+        "worker": "/root/r19_l1_executor",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
+        "evidence": "runs/R19/levels/L1/executor-running_observed-observation-3.json",
         "actual_model": null
       }
     ],
@@ -7391,9 +7391,9 @@
     "next_prospective_plan": "runs/R18/PLAN.md",
     "native_pending_current": [
       {
-        "worker": "/root/r19_l1_reviewer",
+        "worker": "/root/r19_l1_executor",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-3.json",
+        "evidence": "runs/R19/levels/L1/executor-running_observed-observation-3.json",
         "actual_model": null
       }
     ],
@@ -7406,7 +7406,7 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "R19 L1: reviewer running_observed; actual pending count 1.",
+    "current_task_process_state": "L1_initial_review_frozen_5pass_a4fail_original_author_informed_repair_execution_v2_running",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
     "current_publication": "runs/R19/publication/observation-2.json",
@@ -7478,6 +7478,12 @@
         "worker": "/root/r19_l1_executor",
         "state": "terminal",
         "evidence": "runs/R19/levels/L1/executor-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "terminal_initial_fail_a4",
+        "evidence": "runs/R19/levels/L1/reviewer-terminal_initial_fail_a4-observation.json",
         "actual_model": null
       }
     ],
@@ -9672,6 +9678,18 @@
       "at": "2026-10-07T10:09:59.525340+00:00",
       "command": "parent_actor_observation",
       "actor": "/root/r19_l1_reviewer",
+      "status": "running_observed"
+    },
+    {
+      "at": "2026-10-07T10:15:20.091051+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_reviewer",
+      "status": "terminal_initial_fail_a4"
+    },
+    {
+      "at": "2026-10-07T10:16:01.386940+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_executor",
       "status": "running_observed"
     }
   ],
