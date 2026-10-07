@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-07T04:36:43.173354+00:00",
+  "updated_at": "2026-10-07T09:43:51.064004+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Continue same original R16-02 with a new versioned stacking/constraint slice; full paper and independent review pending.",
+  "next_action": "Same_reviewer_independently_recompute_L1_frozen_delivery_then_correct_material_defects_before_L2_execution",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -28,7 +28,7 @@
   "provider_tokens": null,
   "provider_cost": null,
   "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
-  "termination": "Rule audit saved; solution remains paused, all original task states/counters unchanged; no background actor.",
+  "termination": null,
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
@@ -94,7 +94,7 @@
       "purpose": "bounded conformance retest"
     }
   ],
-  "current_validation": "C9 structure/package identity passed. R14 math diagnostics38pass/2fail. Frontend/combined gate blocked. R16 source passed, solution stopped2/2 without paper.",
+  "current_validation": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
   "delivery_evidence": [
     "runs/cloud/github-pr.json",
     "runs/cloud/github-publication-reports.json",
@@ -208,12 +208,19 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R17/REPORT.md",
+    "current_report": "runs/R19/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
-    "current_native_pending": [],
+    "current_native_pending": [
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "running_observed",
+        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+        "actual_model": null
+      }
+    ],
     "current_native_completed": [
       {
         "worker": "/root/r08_simple",
@@ -534,10 +541,10 @@
       ],
       "evidence": "runs/R16/publication/source-ci-completion-command.json"
     },
-    "current_user_steering": "C10 progress/search policy implemented; same original R16-02 prospectively continued.",
+    "current_user_steering": "Level1-4 only, sequential workflow construction/fresh execution through paper/independent substantive quality diagnosis.",
     "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
     "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
-    "current_candidate": "runs/R17/candidate/C10-lock.json",
+    "current_candidate": "runs/R19/candidate/C11-lock.json",
     "R17_policy": "runs/R17/scope-decision.json",
     "completed_native_R17": [
       {
@@ -561,7 +568,14 @@
     ],
     "R17_status": "delivered_policy_with_actual_R18_first_step",
     "next_prospective_plan": "runs/R18/PLAN.md",
-    "native_pending_current": [],
+    "native_pending_current": [
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "running_observed",
+        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+        "actual_model": null
+      }
+    ],
     "completed_native_R18": [
       {
         "worker": "/root/r16_original_solution",
@@ -571,14 +585,101 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "R16-02 unfinished at checkpoint; producer first slice terminal; no background worker.",
+    "current_task_process_state": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R17/publication/publication.json",
-    "current_source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
-    "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
-    "current_source_ci_observed": "success",
-    "receipt_commit_observation": "pending"
+    "current_publication": null,
+    "current_source_commit": null,
+    "current_source_ci": null,
+    "current_source_ci_observed": null,
+    "receipt_commit_observation": "pending",
+    "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
+    "R19_current_level": 1,
+    "completed_native_R19": [
+      {
+        "worker": "/root/r19_l1_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L1/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L3/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L2/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_executor",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L1/executor-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L1/reviewer-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_builder",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L4/builder-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L4/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "terminal_source_preparation",
+        "evidence": "runs/R19/levels/L1/reviewer-terminal_source_preparation-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_executor",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L1/executor-terminal-observation.json",
+        "actual_model": null
+      }
+    ],
+    "pre_R19_publication": {
+      "current_publication": "runs/R17/publication/publication.json",
+      "current_source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+      "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
+      "current_source_ci_observed": "success"
+    },
+    "current_frontier_task": "R19-L1",
+    "R19_publication_status": "not_yet_published",
+    "source_ci_scope": "Old C10 CI stays in pre_R19_publication; no C11 or paper acceptance follows from it.",
+    "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
+    "current_paper_level": 1,
+    "R19_prepared_designs": [
+      {
+        "level": 3,
+        "lock": "runs/R19/levels/L3/design-lock.json",
+        "runtime_accepted": false
+      },
+      {
+        "level": 2,
+        "lock": "runs/R19/levels/L2/design-lock.json",
+        "runtime_accepted": false
+      },
+      {
+        "level": 4,
+        "lock": "runs/R19/levels/L4/design-lock.json",
+        "runtime_accepted": false
+      }
+    ],
+    "R19_resource_observation": "runs/R19/resource-interruption-and-resume.json"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -597,8 +698,15 @@
     "runs/future/versioned_preset_catalog/independent/completed-return.json",
     "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
-  "current_native_pending": [],
-  "unpublished_work": false,
+  "current_native_pending": [
+    {
+      "worker": "/root/r19_l1_reviewer",
+      "state": "running_observed",
+      "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+      "actual_model": null
+    }
+  ],
+  "unpublished_work": true,
   "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
   "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
   "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
@@ -747,7 +855,7 @@
   "reviewed_protocol_research_artifact": "runs/R12/protocol/v2/evaluation-protocol.md",
   "R12_R13_published_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
   "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
-  "current_candidate": "runs/R17/candidate/C10-lock.json",
+  "current_candidate": "runs/R19/candidate/C11-lock.json",
   "current_R14_report": "runs/R14/REPORT.md",
   "current_R16_report": "runs/R16/REPORT.md",
   "C9_candidate": "runs/R14/candidate/C9-lock.json",
@@ -793,10 +901,13 @@
   "next_prospective_plan": "runs/R18/PLAN.md",
   "R18_plan": "runs/R18/PLAN.md",
   "R18_status": "actual_first_slice_only",
-  "current_report": "runs/R17/REPORT.md",
+  "current_report": "runs/R19/REPORT.md",
   "final_checks": "runs/R17/final/linux-full-regression-command.json",
   "publication": "runs/R17/publication/publication.json",
   "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
   "source_ci_observed": "success",
-  "receipt_commit_pending_at_this_snapshot": true
+  "receipt_commit_pending_at_this_snapshot": true,
+  "R19_status": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
+  "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
+  "current_frontier_task": "R19-L1"
 }

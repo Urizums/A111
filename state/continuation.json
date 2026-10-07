@@ -6181,6 +6181,792 @@
           "unsupported unchanged path; diagnose before further execution"
         ]
       }
+    },
+    {
+      "id": "R19-01",
+      "title": "冻结四层原始输入、纯文档C11和独立验收",
+      "queue": "challenges",
+      "category": "prospective_workflow_transfer_trial",
+      "complexity": 3,
+      "priority": 20,
+      "depends_on": [],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/candidate/",
+        "runs/R19/inputs/"
+      ],
+      "inputs": [
+        "runs/R19/PLAN.md"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Exact level inputs, same official raw materials, same document-only candidate and independent acceptance frozen before dispatch; old trials unchanged."
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R19/preparation-result-v2.json",
+          "sha256": "3d05d223748fc11bf8c5dddda326d26b0a3db7f96e69771680231f4a075785f0"
+        },
+        {
+          "path": "runs/R19/candidate/C11-lock.json",
+          "sha256": "41ebee812efe998f04e4d840e45cdc94b56b3d255d3f01432a592005976adf13"
+        },
+        {
+          "path": "runs/R19/inputs/raw-lock.json",
+          "sha256": "fad117b2db06201ef6322c215015b742e9a2e291862da09178f9f1df9f04d540"
+        },
+        {
+          "path": "runs/R19/acceptance.json",
+          "sha256": "686c68ba44c4f298e8b4a067326f8e40ea62a492e99944d1c359c76152491f0d"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R19-01-1",
+          "started_at": "2026-10-07T05:19:02.275687+00:00",
+          "requirements_hash": "b651b9120842746f0b449d114f596e2a98e92ba82aea4e759adaeb163cc652ed",
+          "inputs": [
+            {
+              "path": "runs/R19/PLAN.md",
+              "sha256": "d87de52fb98c8c627d7b69dc3e826a632364194df194e2e0c9ecc99c90b22c5c"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R19/prepare-command.json",
+            "sha256": "c052198caa74d4278d30b48462b75eb1c25415d2c63813f2617f95aac15482a4"
+          },
+          "status": "done",
+          "execution_policy_hash": "68244eef50e1c5d00bdfc1dd9709acca159472973471594815f7424b093cb37d",
+          "ended_at": "2026-10-07T05:19:02.519451+00:00",
+          "result": {
+            "path": "runs/R19/preparation-result-v2.json",
+            "sha256": "3d05d223748fc11bf8c5dddda326d26b0a3db7f96e69771680231f4a075785f0"
+          },
+          "evidence": [
+            {
+              "path": "runs/R19/preparation-result-v2.json",
+              "sha256": "3d05d223748fc11bf8c5dddda326d26b0a3db7f96e69771680231f4a075785f0"
+            },
+            {
+              "path": "runs/R19/candidate/C11-lock.json",
+              "sha256": "41ebee812efe998f04e4d840e45cdc94b56b3d255d3f01432a592005976adf13"
+            },
+            {
+              "path": "runs/R19/inputs/raw-lock.json",
+              "sha256": "fad117b2db06201ef6322c215015b742e9a2e291862da09178f9f1df9f04d540"
+            },
+            {
+              "path": "runs/R19/acceptance.json",
+              "sha256": "686c68ba44c4f298e8b4a067326f8e40ea62a492e99944d1c359c76152491f0d"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "L1 original-input workflow construction, fresh execution through paper, independent review.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PLAN.md",
+          "sha256": "d87de52fb98c8c627d7b69dc3e826a632364194df194e2e0c9ecc99c90b22c5c"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-L1",
+      "title": "Level1完整工作流转交执行及论文诊断",
+      "queue": "challenges",
+      "category": "prospective_workflow_transfer_trial",
+      "complexity": 3,
+      "priority": 20,
+      "depends_on": [
+        "R19-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/levels/L1/"
+      ],
+      "inputs": [
+        "runs/R19/inputs/L1.md",
+        "runs/R19/candidate/C11-lock.json",
+        "runs/R19/inputs/raw-lock.json",
+        "runs/R19/acceptance.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Fresh builder produced transferable workflow from this level request/skill/raw input only, and a different fresh executor actually used it."
+        },
+        {
+          "id": "t2",
+          "assertion": "Execution produced actual code/results/figures and a complete paper attempt covering original questions, with all missing or unsupported outcomes explicit."
+        },
+        {
+          "id": "t3",
+          "assertion": "Fresh reviewer performed source/numerical/paper checks and returned original a1-a6 and quality verdicts; failed acceptance is retained, not equated with diagnostic task completion."
+        }
+      ],
+      "status": "in_progress",
+      "evidence": [],
+      "attempts": [
+        {
+          "id": "R19-L1-1",
+          "started_at": "2026-10-07T05:20:01.009798+00:00",
+          "requirements_hash": "d657277af6e3a60160e03815068db9f78de5e68a883b3b4279050c2f95d86a35",
+          "inputs": [
+            {
+              "path": "runs/R19/inputs/L1.md",
+              "sha256": "da9c7e9f52adc384b0ed8a3653e11cbc1f6eee77996c71eaf6328f977f0ca430"
+            },
+            {
+              "path": "runs/R19/candidate/C11-lock.json",
+              "sha256": "41ebee812efe998f04e4d840e45cdc94b56b3d255d3f01432a592005976adf13"
+            },
+            {
+              "path": "runs/R19/inputs/raw-lock.json",
+              "sha256": "fad117b2db06201ef6322c215015b742e9a2e291862da09178f9f1df9f04d540"
+            },
+            {
+              "path": "runs/R19/acceptance.json",
+              "sha256": "686c68ba44c4f298e8b4a067326f8e40ea62a492e99944d1c359c76152491f0d"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R19/levels/L1/input-inspection-command.json",
+            "sha256": "d09016a209a604b4f97d79aea4d5b9fca5dfcc3b75ce4bba671ecad0209b6a90"
+          },
+          "status": "in_progress",
+          "execution_policy_hash": "68244eef50e1c5d00bdfc1dd9709acca159472973471594815f7424b093cb37d"
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "Level1完整工作流转交执行及论文诊断",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PLAN.md",
+          "sha256": "d87de52fb98c8c627d7b69dc3e826a632364194df194e2e0c9ecc99c90b22c5c"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-L2",
+      "title": "Level2完整工作流转交执行及论文诊断",
+      "queue": "challenges",
+      "category": "prospective_workflow_transfer_trial",
+      "complexity": 3,
+      "priority": 20,
+      "depends_on": [
+        "R19-L1"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/levels/L2/"
+      ],
+      "inputs": [
+        "runs/R19/inputs/L2.md",
+        "runs/R19/candidate/C11-lock.json",
+        "runs/R19/inputs/raw-lock.json",
+        "runs/R19/acceptance.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Fresh builder produced transferable workflow from this level request/skill/raw input only, and a different fresh executor actually used it."
+        },
+        {
+          "id": "t2",
+          "assertion": "Execution produced actual code/results/figures and a complete paper attempt covering original questions, with all missing or unsupported outcomes explicit."
+        },
+        {
+          "id": "t3",
+          "assertion": "Fresh reviewer performed source/numerical/paper checks and returned original a1-a6 and quality verdicts; failed acceptance is retained, not equated with diagnostic task completion."
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "Level2完整工作流转交执行及论文诊断",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PLAN.md",
+          "sha256": "d87de52fb98c8c627d7b69dc3e826a632364194df194e2e0c9ecc99c90b22c5c"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-L3",
+      "title": "Level3完整工作流转交执行及论文诊断",
+      "queue": "challenges",
+      "category": "prospective_workflow_transfer_trial",
+      "complexity": 3,
+      "priority": 20,
+      "depends_on": [
+        "R19-L2"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/levels/L3/"
+      ],
+      "inputs": [
+        "runs/R19/inputs/L3.md",
+        "runs/R19/candidate/C11-lock.json",
+        "runs/R19/inputs/raw-lock.json",
+        "runs/R19/acceptance.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Fresh builder produced transferable workflow from this level request/skill/raw input only, and a different fresh executor actually used it."
+        },
+        {
+          "id": "t2",
+          "assertion": "Execution produced actual code/results/figures and a complete paper attempt covering original questions, with all missing or unsupported outcomes explicit."
+        },
+        {
+          "id": "t3",
+          "assertion": "Fresh reviewer performed source/numerical/paper checks and returned original a1-a6 and quality verdicts; failed acceptance is retained, not equated with diagnostic task completion."
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "Level3完整工作流转交执行及论文诊断",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PLAN.md",
+          "sha256": "d87de52fb98c8c627d7b69dc3e826a632364194df194e2e0c9ecc99c90b22c5c"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-L4",
+      "title": "Level4完整工作流转交执行及论文诊断",
+      "queue": "challenges",
+      "category": "prospective_workflow_transfer_trial",
+      "complexity": 3,
+      "priority": 20,
+      "depends_on": [
+        "R19-L3"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/levels/L4/"
+      ],
+      "inputs": [
+        "runs/R19/inputs/L4.md",
+        "runs/R19/candidate/C11-lock.json",
+        "runs/R19/inputs/raw-lock.json",
+        "runs/R19/acceptance.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Fresh builder produced transferable workflow from this level request/skill/raw input only, and a different fresh executor actually used it."
+        },
+        {
+          "id": "t2",
+          "assertion": "Execution produced actual code/results/figures and a complete paper attempt covering original questions, with all missing or unsupported outcomes explicit."
+        },
+        {
+          "id": "t3",
+          "assertion": "Fresh reviewer performed source/numerical/paper checks and returned original a1-a6 and quality verdicts; failed acceptance is retained, not equated with diagnostic task completion."
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "Level4完整工作流转交执行及论文诊断",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PLAN.md",
+          "sha256": "d87de52fb98c8c627d7b69dc3e826a632364194df194e2e0c9ecc99c90b22c5c"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-05",
+      "title": "汇总四层行为并按证据检查源头设计",
+      "queue": "challenges",
+      "category": "prospective_workflow_transfer_trial",
+      "complexity": 3,
+      "priority": 20,
+      "depends_on": [
+        "R19-L4"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/final/"
+      ],
+      "inputs": [
+        "runs/R19/acceptance.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Four actual trials compared with original verdicts/failures and limits; any source revision has distinct identity and relevant forward check."
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "汇总四层行为并按证据检查源头设计",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PLAN.md",
+          "sha256": "d87de52fb98c8c627d7b69dc3e826a632364194df194e2e0c9ecc99c90b22c5c"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-next",
+      "title": "启动下一阶段任务",
+      "queue": "challenges",
+      "category": "prospective_workflow_transfer_trial",
+      "complexity": 3,
+      "priority": 20,
+      "depends_on": [
+        "R19-05"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R20/"
+      ],
+      "inputs": [
+        "runs/R19/PLAN.md"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "A justified successor has a plan and actual task-relevant first step; a plan alone is not completion."
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "启动下一阶段任务",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PLAN.md",
+          "sha256": "d87de52fb98c8c627d7b69dc3e826a632364194df194e2e0c9ecc99c90b22c5c"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-D2",
+      "title": "独立准备并冻结Level2工作流设计",
+      "queue": "challenges",
+      "category": "prospective_independent_design_preparation",
+      "complexity": 2,
+      "priority": 20,
+      "depends_on": [
+        "R19-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/levels/L2/design/"
+      ],
+      "inputs": [
+        "runs/R19/inputs/L2.md",
+        "runs/R19/candidate/C11-lock.json",
+        "runs/R19/inputs/raw-lock.json",
+        "runs/R19/PREPARATION_ADDENDUM.md"
+      ],
+      "acceptance": [
+        {
+          "id": "d1",
+          "assertion": "Actual fresh builder delivered original-source-mapped workflow/handoff, frozen bytes and truthful design-only status; no runtime or paper acceptance implied."
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R19/levels/L2/design-preparation-result.json",
+          "sha256": "f9b1017e120e119c4715b26edfdec03b9a3d878a7376a7dd491cb6e99a3aaf67"
+        },
+        {
+          "path": "runs/R19/levels/L2/design-lock.json",
+          "sha256": "33975a1cb35c92ed4acae205649888f90f50d23efcf7c55d2aa4e84bfde3d2bf"
+        },
+        {
+          "path": "runs/R19/levels/L2/design/result.json",
+          "sha256": "aaad01e6a4a98f1899796bc622402dc80af9966134dfee48da98f14c5cb2f5e3"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R19-D2-1",
+          "started_at": "2026-10-07T05:49:28.383164+00:00",
+          "requirements_hash": "52b7e6354909f234ec249bbaee320f441bd42fd66ef6d4695185ef06622e83ef",
+          "inputs": [
+            {
+              "path": "runs/R19/inputs/L2.md",
+              "sha256": "692090211018d82684594c77a4d94720d48271d9ccc980953a76cb8cab1f818c"
+            },
+            {
+              "path": "runs/R19/candidate/C11-lock.json",
+              "sha256": "41ebee812efe998f04e4d840e45cdc94b56b3d255d3f01432a592005976adf13"
+            },
+            {
+              "path": "runs/R19/inputs/raw-lock.json",
+              "sha256": "fad117b2db06201ef6322c215015b742e9a2e291862da09178f9f1df9f04d540"
+            },
+            {
+              "path": "runs/R19/PREPARATION_ADDENDUM.md",
+              "sha256": "f8a04060af9be15a48cb0a53adcf9d1f107efba89f6e9f7bbe6911f01d0ea01f"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R19/levels/L2/design-input-inspection-command.json",
+            "sha256": "8cfabd51569f51d78b1be5196fa3424dbc26642342ee9291b38ce73c67a63e83"
+          },
+          "status": "done",
+          "execution_policy_hash": "32fc94f4d4c56d65e7fe0d0291f150165d7f2b8fbb7d83192ebc30451d14a851",
+          "ended_at": "2026-10-07T06:01:05.706662+00:00",
+          "result": {
+            "path": "runs/R19/levels/L2/design-preparation-result.json",
+            "sha256": "f9b1017e120e119c4715b26edfdec03b9a3d878a7376a7dd491cb6e99a3aaf67"
+          },
+          "evidence": [
+            {
+              "path": "runs/R19/levels/L2/design-preparation-result.json",
+              "sha256": "f9b1017e120e119c4715b26edfdec03b9a3d878a7376a7dd491cb6e99a3aaf67"
+            },
+            {
+              "path": "runs/R19/levels/L2/design-lock.json",
+              "sha256": "33975a1cb35c92ed4acae205649888f90f50d23efcf7c55d2aa4e84bfde3d2bf"
+            },
+            {
+              "path": "runs/R19/levels/L2/design/result.json",
+              "sha256": "aaad01e6a4a98f1899796bc622402dc80af9966134dfee48da98f14c5cb2f5e3"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "Wait for sequential R19-L2 execution after predecessor diagnosis; do not count design pass as paper acceptance.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PREPARATION_ADDENDUM.md",
+          "sha256": "f8a04060af9be15a48cb0a53adcf9d1f107efba89f6e9f7bbe6911f01d0ea01f"
+        },
+        "stop_conditions": [
+          "actual host/resource boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged failed path"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-D3",
+      "title": "独立准备并冻结Level3工作流设计",
+      "queue": "challenges",
+      "category": "prospective_independent_design_preparation",
+      "complexity": 2,
+      "priority": 20,
+      "depends_on": [
+        "R19-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/levels/L3/design/"
+      ],
+      "inputs": [
+        "runs/R19/inputs/L3.md",
+        "runs/R19/candidate/C11-lock.json",
+        "runs/R19/inputs/raw-lock.json",
+        "runs/R19/PREPARATION_ADDENDUM.md"
+      ],
+      "acceptance": [
+        {
+          "id": "d1",
+          "assertion": "Actual fresh builder delivered original-source-mapped workflow/handoff, frozen bytes and truthful design-only status; no runtime or paper acceptance implied."
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R19/levels/L3/design-preparation-result.json",
+          "sha256": "3dc99e2fb0d17767ac08b0a030dab7ea0e3b6f8b87daf1ea28f3fe9fc7694526"
+        },
+        {
+          "path": "runs/R19/levels/L3/design-lock.json",
+          "sha256": "4836cd1c4e53c0e89c1e76d3ed23de48c6e8f6372cf882382139711a3eeff197"
+        },
+        {
+          "path": "runs/R19/levels/L3/design/result.json",
+          "sha256": "6923f24baa927e601b92e93daeb3eeaea93556f1030c2c4759014feed561bad5"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R19-D3-1",
+          "started_at": "2026-10-07T05:49:28.595515+00:00",
+          "requirements_hash": "52b7e6354909f234ec249bbaee320f441bd42fd66ef6d4695185ef06622e83ef",
+          "inputs": [
+            {
+              "path": "runs/R19/inputs/L3.md",
+              "sha256": "81c4f8cd9d8cf7909c8732eb90595b3f794e327509a479717313538d66f2b62f"
+            },
+            {
+              "path": "runs/R19/candidate/C11-lock.json",
+              "sha256": "41ebee812efe998f04e4d840e45cdc94b56b3d255d3f01432a592005976adf13"
+            },
+            {
+              "path": "runs/R19/inputs/raw-lock.json",
+              "sha256": "fad117b2db06201ef6322c215015b742e9a2e291862da09178f9f1df9f04d540"
+            },
+            {
+              "path": "runs/R19/PREPARATION_ADDENDUM.md",
+              "sha256": "f8a04060af9be15a48cb0a53adcf9d1f107efba89f6e9f7bbe6911f01d0ea01f"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R19/levels/L3/design-input-inspection-command.json",
+            "sha256": "815894d5d0dd8ff686e597d3132f9be935101e3c1f66b12cb60418b5ccd6ec71"
+          },
+          "status": "done",
+          "execution_policy_hash": "32fc94f4d4c56d65e7fe0d0291f150165d7f2b8fbb7d83192ebc30451d14a851",
+          "ended_at": "2026-10-07T05:58:17.344775+00:00",
+          "result": {
+            "path": "runs/R19/levels/L3/design-preparation-result.json",
+            "sha256": "3dc99e2fb0d17767ac08b0a030dab7ea0e3b6f8b87daf1ea28f3fe9fc7694526"
+          },
+          "evidence": [
+            {
+              "path": "runs/R19/levels/L3/design-preparation-result.json",
+              "sha256": "3dc99e2fb0d17767ac08b0a030dab7ea0e3b6f8b87daf1ea28f3fe9fc7694526"
+            },
+            {
+              "path": "runs/R19/levels/L3/design-lock.json",
+              "sha256": "4836cd1c4e53c0e89c1e76d3ed23de48c6e8f6372cf882382139711a3eeff197"
+            },
+            {
+              "path": "runs/R19/levels/L3/design/result.json",
+              "sha256": "6923f24baa927e601b92e93daeb3eeaea93556f1030c2c4759014feed561bad5"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "Wait for sequential R19-L3 execution after predecessor diagnosis; do not count design pass as paper acceptance.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PREPARATION_ADDENDUM.md",
+          "sha256": "f8a04060af9be15a48cb0a53adcf9d1f107efba89f6e9f7bbe6911f01d0ea01f"
+        },
+        "stop_conditions": [
+          "actual host/resource boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged failed path"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R19-D4",
+      "title": "独立准备并冻结Level4工作流设计",
+      "queue": "challenges",
+      "category": "prospective_independent_design_preparation",
+      "complexity": 2,
+      "priority": 20,
+      "depends_on": [
+        "R19-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R19/levels/L4/design/"
+      ],
+      "inputs": [
+        "runs/R19/inputs/L4.md",
+        "runs/R19/candidate/C11-lock.json",
+        "runs/R19/inputs/raw-lock.json",
+        "runs/R19/PREPARATION_ADDENDUM.md"
+      ],
+      "acceptance": [
+        {
+          "id": "d1",
+          "assertion": "Actual fresh builder delivered original-source-mapped workflow/handoff, frozen bytes and truthful design-only status; no runtime or paper acceptance implied."
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R19/levels/L4/design-preparation-result.json",
+          "sha256": "99a1379081474483bfb3d49cc455886e0a1659272428530dca8e95f972e9dec1"
+        },
+        {
+          "path": "runs/R19/levels/L4/design-lock.json",
+          "sha256": "ee018415f3557449af336d2ce69660de4145ea2b802c0037e2a361394c2f0bba"
+        },
+        {
+          "path": "runs/R19/levels/L4/design/result.json",
+          "sha256": "d4c7af5bc3ecfc727ff5fd6e1f2361b7506d5f9d622da3843c170ad1fc901612"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R19-D4-1",
+          "started_at": "2026-10-07T05:59:06.215197+00:00",
+          "requirements_hash": "52b7e6354909f234ec249bbaee320f441bd42fd66ef6d4695185ef06622e83ef",
+          "inputs": [
+            {
+              "path": "runs/R19/inputs/L4.md",
+              "sha256": "13123b9e1579fd1424ad574539fe8af693cf394928898c9ac79f05c909e23d37"
+            },
+            {
+              "path": "runs/R19/candidate/C11-lock.json",
+              "sha256": "41ebee812efe998f04e4d840e45cdc94b56b3d255d3f01432a592005976adf13"
+            },
+            {
+              "path": "runs/R19/inputs/raw-lock.json",
+              "sha256": "fad117b2db06201ef6322c215015b742e9a2e291862da09178f9f1df9f04d540"
+            },
+            {
+              "path": "runs/R19/PREPARATION_ADDENDUM.md",
+              "sha256": "f8a04060af9be15a48cb0a53adcf9d1f107efba89f6e9f7bbe6911f01d0ea01f"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R19/levels/L4/design-input-inspection-command.json",
+            "sha256": "6f102ddde121e13d50784ac0b3d7c1fea68a1789f51915eb58b8b2ebd6c737c8"
+          },
+          "status": "done",
+          "execution_policy_hash": "32fc94f4d4c56d65e7fe0d0291f150165d7f2b8fbb7d83192ebc30451d14a851",
+          "ended_at": "2026-10-07T09:34:08.374661+00:00",
+          "result": {
+            "path": "runs/R19/levels/L4/design-preparation-result.json",
+            "sha256": "99a1379081474483bfb3d49cc455886e0a1659272428530dca8e95f972e9dec1"
+          },
+          "evidence": [
+            {
+              "path": "runs/R19/levels/L4/design-preparation-result.json",
+              "sha256": "99a1379081474483bfb3d49cc455886e0a1659272428530dca8e95f972e9dec1"
+            },
+            {
+              "path": "runs/R19/levels/L4/design-lock.json",
+              "sha256": "ee018415f3557449af336d2ce69660de4145ea2b802c0037e2a361394c2f0bba"
+            },
+            {
+              "path": "runs/R19/levels/L4/design/result.json",
+              "sha256": "d4c7af5bc3ecfc727ff5fd6e1f2361b7506d5f9d622da3843c170ad1fc901612"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "Wait for sequential R19-L4 execution after predecessor diagnosis; do not count design pass as paper acceptance.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R19/PREPARATION_ADDENDUM.md",
+          "sha256": "f8a04060af9be15a48cb0a53adcf9d1f107efba89f6e9f7bbe6911f01d0ea01f"
+        },
+        "stop_conditions": [
+          "actual host/resource boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged failed path"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
     }
   ],
   "execution": {
@@ -6243,12 +7029,19 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R17/REPORT.md",
+    "current_report": "runs/R19/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
-    "current_native_pending": [],
+    "current_native_pending": [
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "running_observed",
+        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+        "actual_model": null
+      }
+    ],
     "current_native_completed": [
       {
         "worker": "/root/r08_simple",
@@ -6569,10 +7362,10 @@
       ],
       "evidence": "runs/R16/publication/source-ci-completion-command.json"
     },
-    "current_user_steering": "C10 progress/search policy implemented; same original R16-02 prospectively continued.",
+    "current_user_steering": "Level1-4 only, sequential workflow construction/fresh execution through paper/independent substantive quality diagnosis.",
     "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
     "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
-    "current_candidate": "runs/R17/candidate/C10-lock.json",
+    "current_candidate": "runs/R19/candidate/C11-lock.json",
     "R17_policy": "runs/R17/scope-decision.json",
     "completed_native_R17": [
       {
@@ -6596,7 +7389,14 @@
     ],
     "R17_status": "delivered_policy_with_actual_R18_first_step",
     "next_prospective_plan": "runs/R18/PLAN.md",
-    "native_pending_current": [],
+    "native_pending_current": [
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "running_observed",
+        "evidence": "runs/R19/levels/L1/reviewer-running_observed-observation-2.json",
+        "actual_model": null
+      }
+    ],
     "completed_native_R18": [
       {
         "worker": "/root/r16_original_solution",
@@ -6606,14 +7406,101 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "R16-02 unfinished at checkpoint; producer first slice terminal; no background worker.",
+    "current_task_process_state": "Four_designs_frozen_L1_complete_paper_and_code_frozen_independent_initial_review_dispatched_no_verdict",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R17/publication/publication.json",
-    "current_source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
-    "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
-    "current_source_ci_observed": "success",
-    "receipt_commit_observation": "pending"
+    "current_publication": null,
+    "current_source_commit": null,
+    "current_source_ci": null,
+    "current_source_ci_observed": null,
+    "receipt_commit_observation": "pending",
+    "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
+    "R19_current_level": 1,
+    "completed_native_R19": [
+      {
+        "worker": "/root/r19_l1_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L1/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L3/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L2/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_executor",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L1/executor-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L1/reviewer-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_builder",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L4/builder-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L4/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "terminal_source_preparation",
+        "evidence": "runs/R19/levels/L1/reviewer-terminal_source_preparation-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_executor",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L1/executor-terminal-observation.json",
+        "actual_model": null
+      }
+    ],
+    "pre_R19_publication": {
+      "current_publication": "runs/R17/publication/publication.json",
+      "current_source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+      "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
+      "current_source_ci_observed": "success"
+    },
+    "current_frontier_task": "R19-L1",
+    "R19_publication_status": "not_yet_published",
+    "source_ci_scope": "Old C10 CI stays in pre_R19_publication; no C11 or paper acceptance follows from it.",
+    "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
+    "current_paper_level": 1,
+    "R19_prepared_designs": [
+      {
+        "level": 3,
+        "lock": "runs/R19/levels/L3/design-lock.json",
+        "runtime_accepted": false
+      },
+      {
+        "level": 2,
+        "lock": "runs/R19/levels/L2/design-lock.json",
+        "runtime_accepted": false
+      },
+      {
+        "level": 4,
+        "lock": "runs/R19/levels/L4/design-lock.json",
+        "runtime_accepted": false
+      }
+    ],
+    "R19_resource_observation": "runs/R19/resource-interruption-and-resume.json"
   },
   "events": [
     {
@@ -8619,6 +9506,146 @@
         "source_ci": "success",
         "full_product_pass": false
       }
+    },
+    {
+      "at": "2026-10-07T05:19:02.711411+00:00",
+      "command": "register_user_four_level_trial",
+      "old_tasks_preserved": 50
+    },
+    {
+      "at": "2026-10-07T05:20:01.175301+00:00",
+      "command": "start_level",
+      "level": 1
+    },
+    {
+      "at": "2026-10-07T05:21:35.958248+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_builder",
+      "status": "created"
+    },
+    {
+      "at": "2026-10-07T05:29:39.214814+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_builder",
+      "status": "terminal"
+    },
+    {
+      "at": "2026-10-07T05:30:04.727538+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_executor",
+      "status": "created"
+    },
+    {
+      "at": "2026-10-07T05:41:54.839097+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_executor",
+      "status": "created"
+    },
+    {
+      "at": "2026-10-07T05:42:50.169771+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_executor",
+      "status": "running_observed"
+    },
+    {
+      "at": "2026-10-07T05:50:37.635731+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l2_builder",
+      "status": "created"
+    },
+    {
+      "at": "2026-10-07T05:50:38.258274+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l3_builder",
+      "status": "created"
+    },
+    {
+      "at": "2026-10-07T05:58:18.031943+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l3_builder",
+      "status": "terminal"
+    },
+    {
+      "at": "2026-10-07T05:59:06.424716+00:00",
+      "command": "start_level",
+      "level": 4
+    },
+    {
+      "at": "2026-10-07T05:59:07.157574+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l4_builder",
+      "status": "created"
+    },
+    {
+      "at": "2026-10-07T06:01:06.526166+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l2_builder",
+      "status": "terminal"
+    },
+    {
+      "at": "2026-10-07T09:30:11.074256+00:00",
+      "command": "resume_same_R19_actors_after_observed_resource_availability",
+      "evidence": "runs/R19/resource-interruption-and-resume.json"
+    },
+    {
+      "at": "2026-10-07T09:30:23.275640+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_executor",
+      "status": "errored_usage_limit"
+    },
+    {
+      "at": "2026-10-07T09:30:23.657925+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_executor",
+      "status": "running_observed"
+    },
+    {
+      "at": "2026-10-07T09:30:24.009483+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_reviewer",
+      "status": "errored_usage_limit"
+    },
+    {
+      "at": "2026-10-07T09:30:24.366166+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_reviewer",
+      "status": "running_observed"
+    },
+    {
+      "at": "2026-10-07T09:30:24.729659+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l4_builder",
+      "status": "errored_usage_limit"
+    },
+    {
+      "at": "2026-10-07T09:30:25.129953+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l4_builder",
+      "status": "running_observed"
+    },
+    {
+      "at": "2026-10-07T09:34:08.988660+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l4_builder",
+      "status": "terminal"
+    },
+    {
+      "at": "2026-10-07T09:36:47.707775+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_reviewer",
+      "status": "terminal_source_preparation"
+    },
+    {
+      "at": "2026-10-07T09:43:19.848689+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_executor",
+      "status": "terminal"
+    },
+    {
+      "at": "2026-10-07T09:43:50.380226+00:00",
+      "command": "parent_actor_observation",
+      "actor": "/root/r19_l1_reviewer",
+      "status": "running_observed"
     }
   ],
   "task_expansion_basis": [

@@ -1,0 +1,212 @@
+{
+  "task_id": "R19-C11-L2-design",
+  "delivery_type": "workflow_design_only",
+  "status": "design_complete_not_executed",
+  "level": "L2",
+  "candidate_skill": "runs/R19/candidate/C11/forge-agent-flow/SKILL.md",
+  "design_author_model": null,
+  "tokens": null,
+  "cost": null,
+  "deadline": null,
+  "runtime_experiment_budget": null,
+  "input_files": [
+    {
+      "path": "runs/R19/inputs/L2.md",
+      "sha256": "692090211018d82684594c77a4d94720d48271d9ccc980953a76cb8cab1f818c"
+    },
+    {
+      "path": "runs/R19/inputs/raw/2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf",
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d",
+      "bytes": 131983
+    },
+    {
+      "path": "runs/R19/inputs/raw/附件1.docx",
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0",
+      "bytes": 14540
+    },
+    {
+      "path": "runs/R19/inputs/raw/附件2：验证数据集.xlsx",
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda",
+      "bytes": 15973
+    }
+  ],
+  "outputs": [
+    "workflow.md",
+    "handoff.md",
+    "TODO.md",
+    "result.json",
+    "source_notes.md",
+    "source_extract.json",
+    "source_pdf_page_1.png",
+    "source_pdf_page_2.png",
+    "source_pdf_page_3.png"
+  ],
+  "actual_work": {
+    "raw_pdf_pages_extracted_and_visually_inspected": 3,
+    "docx_main_paragraphs_extracted": 22,
+    "docx_tables_extracted": 1,
+    "xlsx_sheets_inspected": [
+      "箱装产品尺寸",
+      "车型尺寸",
+      "Sheet3"
+    ],
+    "initial_confirmed_progress_saved_before_source_extraction": true,
+    "workflow_built": true,
+    "tools_guides_read_for_source_processing": true,
+    "mathematical_model_solved": false,
+    "numerical_experiments_executed": false,
+    "paper_written": false,
+    "runtime_smoke_executed": false,
+    "independent_acceptance_performed": false,
+    "children_spawned": 0,
+    "next_stage_started": false
+  },
+  "design_checks": [
+    {
+      "check": "artifacts_nonempty_utf8",
+      "passed": true,
+      "evidence": [
+        "workflow.md",
+        "handoff.md",
+        "TODO.md",
+        "source_notes.md",
+        "source_extract.json"
+      ],
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "raw_identity",
+      "passed": true,
+      "evidence": [
+        {
+          "file": "2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf",
+          "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d"
+        },
+        {
+          "file": "附件1.docx",
+          "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0"
+        },
+        {
+          "file": "附件2：验证数据集.xlsx",
+          "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda"
+        }
+      ],
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "source_coverage",
+      "passed": true,
+      "evidence": {
+        "pdf_pages": 3,
+        "docx_main_paragraphs": 22,
+        "docx_tables": 1,
+        "xlsx_sheets": [
+          "箱装产品尺寸",
+          "车型尺寸",
+          "Sheet3"
+        ]
+      },
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "mandatory_question_map",
+      "passed": true,
+      "evidence": [
+        "Q1-A",
+        "Q1-B",
+        "Q1-C",
+        "Q2-A",
+        "Q2-B",
+        "Q3-A"
+      ],
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "gate_plan_coverage",
+      "passed": true,
+      "evidence": "G0-G6 planned, not executed",
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "stage_coverage",
+      "passed": true,
+      "evidence": "S0-S8 blueprint",
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "handoff_next_action",
+      "passed": true,
+      "evidence": "read-only start action in handoff",
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "recovery_history_retained",
+      "passed": true,
+      "evidence": "two actual tool-construction failures retained, no whole-task stop rule",
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "design_not_runtime_claim",
+      "passed": true,
+      "evidence": "explicit status in workflow/handoff",
+      "scope": "design_self_check_only"
+    },
+    {
+      "check": "handoff_sources_exist",
+      "passed": true,
+      "evidence": "all original referenced source files exist",
+      "scope": "design_self_check_only"
+    }
+  ],
+  "runtime_gates": {
+    "model_acceptance": "not_executed_design_only",
+    "raw_to_result_smoke": "not_executed_design_only",
+    "all_scenarios_feasibility": "not_executed_design_only",
+    "performance_and_parameter_experiments": "not_executed_design_only",
+    "paper_consistency": "not_executed_design_only",
+    "clean_reproduction": "not_executed_design_only",
+    "independent_acceptance": "not_executed_design_only"
+  },
+  "failures": [
+    {
+      "id": "L2-ERR01",
+      "classification": "tool_command_construction",
+      "observation": "PowerShell ParserError: Missing expression after unary operator due to embedded here-string delimiter closing outer here-string",
+      "python_child_started": false,
+      "successful_artifact_write": false,
+      "changed_path": "direct apply_patch text write",
+      "recovery_status": "recovered_artifacts_read_verified"
+    },
+    {
+      "id": "L2-ERR02",
+      "classification": "tool_patch_construction",
+      "observation": "apply_patch verification failed: invalid patch: multiple operations target TODO.md",
+      "successful_artifact_write": false,
+      "changed_path": "Update File instead of combined Delete/Add",
+      "recovery_status": "recovered_TODO_read_verified"
+    }
+  ],
+  "counters": {
+    "actual_failed_constructions": 2,
+    "tool_recovery_actions": 2,
+    "substantive_model_corrections": 0,
+    "research_or_solver_iterations": 0
+  },
+  "observation_limits": [
+    "One batched tool-guide read output was truncated; no complete-tool-guide validation claim is made.",
+    "Python package presence probed with find_spec; actual optimization APIs and paper renderer not yet probed."
+  ],
+  "material_limits": [
+    "Attachment2 lacks item counts, weights, categories and vehicle payload; mixed measurement units/ranges, transport fee units and some nonrectangular vehicle geometries require separate audit.",
+    "Fragile orientation/single-layer interpretation, multi-box support and bearing-load allocation require frozen assumptions and sensitivity checks.",
+    "Current organizer submission format, AI rules, contest dates and testing I/O protocol absent and unverified offline."
+  ],
+  "next_action": {
+    "task_id": "L2-E00",
+    "owner": "receiving_executor",
+    "plan": "workflow.md S0-S8",
+    "instruction": "Use handoff read-only command to hash raw files and probe APIs; freeze requirements/resources, then S1 data audit.",
+    "started": false
+  },
+  "scope_statement": "All writes confined to runs/R19/levels/L2/design. Cooperative write domain is not enforced security isolation. No shared state mutation, network search or software installation."
+}

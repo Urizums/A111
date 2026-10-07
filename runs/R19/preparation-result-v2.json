@@ -1,0 +1,35 @@
+{
+  "task_id": "R19-01",
+  "attempt_id": "R19-01-1",
+  "requirements_hash": "b651b9120842746f0b449d114f596e2a98e92ba82aea4e759adaeb163cc652ed",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R19/candidate/C11-lock.json",
+        "runs/R19/inputs/raw-lock.json",
+        "runs/R19/acceptance.json"
+      ]
+    }
+  ],
+  "evidence": [
+    "runs/R19/candidate/C11-lock.json",
+    "runs/R19/inputs/raw-lock.json",
+    "runs/R19/acceptance.json"
+  ],
+  "effect": {
+    "target": "Prospective fair workflow transfer trial",
+    "hypothesis": "Evidence-first paper decisions support sparse-input workflows; untested.",
+    "baseline": "Frozen C10 and historical trials retained",
+    "conditions": "Same C11 and raw question, exact L1-4",
+    "observations": "9 Markdown files and 4 prompt files prepared; not behavior acceptance",
+    "limits": "Preparation only",
+    "metrics": {
+      "documents": 9,
+      "levels": 4,
+      "papers": 0
+    }
+  },
+  "next_action": "L1 original-input workflow construction, fresh execution through paper, independent review."
+}

@@ -1,0 +1,1429 @@
+{
+  "status": "source_review_prepared_artifacts_pending",
+  "generated_at": "2026-10-07T09:29:49.190558+00:00",
+  "python": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]",
+  "sources": [
+    {
+      "path": "runs/R19/inputs/raw/2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf",
+      "bytes": 131983,
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d",
+      "pages": [
+        {
+          "page": 1,
+          "text": "2026 年第十六届MathorCup 数学应用挑战赛题目\nD 题多场景、多目标货物运输装箱策略优化\n我国拥有全球规模最大、体系最完整的物流产业链，这是我国\n参与全球供应链竞争、降低全社会物流成本的核心战略优势。“十五\n五”规划建议明确强调“降低全社会物流成本”，这不仅是经济账，\n更是国家战略。现代物流与制造业中，装箱策略直接影响运输工具（车、\n船、箱）的装载率和中转效率，优化装箱方案是解决“最初一公里”\n和“最后一公里”衔接损耗、实现总体物流成本下降的微观基础。货\n物满容率（货物占用空间与整个空间之比）直接影响运输成本、车辆\n（货物）周转效率与碳排放。“十五五”规划强调培育“新质生产力”，\n要求物流行业由传统要素驱动向智慧化、绿色化转变，并扩大强制性\n国家标准供给解决物流装箱优化是必须被攻克的“技术堵点”。\n在实际运输配送场景中，货车箱体空间有限，货物尺寸多样、承\n重约束严格、摆放规则复杂（如易碎、倒置禁忌、堆叠限制、方向约\n束等），如何在满足各类约束前提下，实现装箱空间利用率最大化、\n车辆运输次数最少、综合成本最低，是物流与制造业企业核心决策问\n题。\n本题立足于真实物流场景，要求建立不同场景下的三维装箱优化\n模型，设计相应的求解算法，并对不同策略进行对比分析与成本测算，\n为企业提供可落地的货物运输装箱方案。\n",
+          "render": "runs/R19/levels/L1/review/preparation/official-pdf-page-1.png"
+        },
+        {
+          "page": 2,
+          "text": "问题1：短途单车型三维装箱策略优化模型\n（1）物流公司为了利润最大化，一般都采用搭配装载，即将“重\n货”（密度大、体积小）和“泡货/抛货”（密度小、体积大）搭配装\n载，力求同时达到集装箱的“满容”和“满载”，最大摊薄单票货物\n的运费成本。分别以车型1、车型2 为装载对象（尺寸见附件1），货\n物为附件1 中的货物类型，假设不同货物的单位运输费用相同，考虑\n尺寸、重量、可否堆叠、放置方向等约束，建立相应的三维装箱策略\n模型，目标为单车同时达到满容率与满载率最大化。另外，若考虑只\n有一种型号的车辆，目标是把附件1 中的货物装完且所用车辆最少，\n考虑尺寸、重量、堆叠、方向等约束，建立相应的模型。\n（2）设计合适的求解算法并根据附件1 中的问题，给出具体装\n箱方案（包含每件货物的摆放坐标（以车厢右后下为坐标原点）、姿\n态方向），并计算空间利用率、载重利用率。\n问题2：短途多车型组合配送优化\n在同时可选用车型1、车型2 的条件下，为了把附件1 中的货物\n运完，是建立模型并求解如下问题：\n（1）以总运输车辆最少为目标，建立装箱策略优化模型并给出\n配送方案；\n（2）以总运输成本最低为目标，重新优化方案，对比两种目标\n下的结果差异。\n",
+          "render": "runs/R19/levels/L1/review/preparation/official-pdf-page-2.png"
+        },
+        {
+          "page": 3,
+          "text": "问题3：根据上述问题1、问题2 得到的结论，撰写一份技术报\n告，向物流企业管理者说明模型、求解算法、程序实现与模型与算法\n的性能分析。分别分析各个参数变化对装载率与运输成本的影响；\n说明：1.请各个参赛队务必上传算法执行的程序附件，组委会评\n阅时会运行测试程序打分；2.参赛队伍可基于上述模型与算法，根据\n附件2 中更大规模测试数据，验证模型通用性。\n",
+          "render": "runs/R19/levels/L1/review/preparation/official-pdf-page-3.png"
+        }
+      ]
+    },
+    {
+      "path": "runs/R19/inputs/raw/附件1.docx",
+      "bytes": 14540,
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0",
+      "body": [
+        {
+          "body_element": 1,
+          "kind": "paragraph",
+          "text": "一、基本数据与假设"
+        },
+        {
+          "body_element": 2,
+          "kind": "paragraph",
+          "text": "1. 货车箱体参数（两种标准车型）"
+        },
+        {
+          "body_element": 3,
+          "kind": "paragraph",
+          "text": "- 车型1（轻型厢式货车）"
+        },
+        {
+          "body_element": 4,
+          "kind": "paragraph",
+          "text": "内尺寸：长 420cm × 宽 210cm × 高 220cm"
+        },
+        {
+          "body_element": 5,
+          "kind": "paragraph",
+          "text": "额定载重：6000kg"
+        },
+        {
+          "body_element": 6,
+          "kind": "paragraph",
+          "text": "单次运输成本：450 元/趟（含油费、过路费、人工）"
+        },
+        {
+          "body_element": 7,
+          "kind": "paragraph",
+          "text": "- 车型2（中型厢式货车）"
+        },
+        {
+          "body_element": 8,
+          "kind": "paragraph",
+          "text": "内尺寸：长 680cm × 宽 245cm × 高 250cm"
+        },
+        {
+          "body_element": 9,
+          "kind": "paragraph",
+          "text": "额定载重：10000kg"
+        },
+        {
+          "body_element": 10,
+          "kind": "paragraph",
+          "text": "单次运输成本：700 元/趟"
+        },
+        {
+          "body_element": 11,
+          "kind": "paragraph",
+          "text": "2. 货物类型与基础约束"
+        },
+        {
+          "body_element": 12,
+          "kind": "paragraph",
+          "text": "现有一批待运货物，分为三类："
+        },
+        {
+          "body_element": 13,
+          "kind": "paragraph",
+          "text": "（1）标准件：长方体纸箱，可任意方向摆放，可堆叠，无特殊约束；"
+        },
+        {
+          "body_element": 14,
+          "kind": "paragraph",
+          "text": "（2）易碎件：仅允许单层放置，不可堆叠，摆放时底面必须完全贴合箱体底面或其他标准件顶面；"
+        },
+        {
+          "body_element": 15,
+          "kind": "paragraph",
+          "text": "（3）定向件：有明确方向要求（如“向上”标识），仅允许一种摆放姿态，可堆叠但上层货物重心不得超出下层投影范围。"
+        },
+        {
+          "body_element": 16,
+          "kind": "paragraph",
+          "text": "所有货物均为刚性长方体，不可挤压、不可拆分，装箱时货物之间、货物与箱体之间不得重叠，必须保持正交摆放（棱与箱体棱平行）。"
+        },
+        {
+          "body_element": 17,
+          "kind": "paragraph",
+          "text": "3. 附加约束"
+        },
+        {
+          "body_element": 18,
+          "kind": "paragraph",
+          "text": "（1）承重约束：下层货物承重上限为 500kg/平方米，超重则不允许堆叠；"
+        },
+        {
+          "body_element": 19,
+          "kind": "paragraph",
+          "text": "（2）稳定性约束：货物高度不得超过车厢高度，且顶层货物距车厢顶部预留不小于 3cm 安全间隙。"
+        },
+        {
+          "body_element": 20,
+          "kind": "paragraph",
+          "text": "二、任务数据"
+        },
+        {
+          "body_element": 21,
+          "kind": "paragraph",
+          "text": "现有某批次货物参数信息如下（单位：cm，kg）："
+        },
+        {
+          "body_element": 22,
+          "kind": "table",
+          "rows": [
+            {
+              "row": 1,
+              "cells": [
+                {
+                  "col": 1,
+                  "text": "货物编号"
+                },
+                {
+                  "col": 2,
+                  "text": "类型"
+                },
+                {
+                  "col": 3,
+                  "text": "长×宽×高"
+                },
+                {
+                  "col": 4,
+                  "text": "单重"
+                },
+                {
+                  "col": 5,
+                  "text": "数量"
+                }
+              ]
+            },
+            {
+              "row": 2,
+              "cells": [
+                {
+                  "col": 1,
+                  "text": "G1"
+                },
+                {
+                  "col": 2,
+                  "text": "标准件"
+                },
+                {
+                  "col": 3,
+                  "text": "60×40×30"
+                },
+                {
+                  "col": 4,
+                  "text": "12"
+                },
+                {
+                  "col": 5,
+                  "text": "800"
+                }
+              ]
+            },
+            {
+              "row": 3,
+              "cells": [
+                {
+                  "col": 1,
+                  "text": "G2"
+                },
+                {
+                  "col": 2,
+                  "text": "标准件"
+                },
+                {
+                  "col": 3,
+                  "text": "50×35×25"
+                },
+                {
+                  "col": 4,
+                  "text": "8"
+                },
+                {
+                  "col": 5,
+                  "text": "1000"
+                }
+              ]
+            },
+            {
+              "row": 4,
+              "cells": [
+                {
+                  "col": 1,
+                  "text": "G3"
+                },
+                {
+                  "col": 2,
+                  "text": "易碎件"
+                },
+                {
+                  "col": 3,
+                  "text": "70×50×40"
+                },
+                {
+                  "col": 4,
+                  "text": "15"
+                },
+                {
+                  "col": 5,
+                  "text": "300"
+                }
+              ]
+            },
+            {
+              "row": 5,
+              "cells": [
+                {
+                  "col": 1,
+                  "text": "G4"
+                },
+                {
+                  "col": 2,
+                  "text": "定向件"
+                },
+                {
+                  "col": 3,
+                  "text": "80×60×50"
+                },
+                {
+                  "col": 4,
+                  "text": "25"
+                },
+                {
+                  "col": 5,
+                  "text": "400"
+                }
+              ]
+            },
+            {
+              "row": 6,
+              "cells": [
+                {
+                  "col": 1,
+                  "text": "G5"
+                },
+                {
+                  "col": 2,
+                  "text": "定向件"
+                },
+                {
+                  "col": 3,
+                  "text": "40×40×60"
+                },
+                {
+                  "col": 4,
+                  "text": "18"
+                },
+                {
+                  "col": 5,
+                  "text": "500"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "body_element": 23,
+          "kind": "paragraph",
+          "text": ""
+        }
+      ],
+      "media_members": [],
+      "other_xml_text": {
+        "word/endnotes.xml": "",
+        "word/footnotes.xml": ""
+      }
+    },
+    {
+      "path": "runs/R19/inputs/raw/附件2：验证数据集.xlsx",
+      "bytes": 15973,
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda",
+      "sheets": [
+        {
+          "name": "箱装产品尺寸",
+          "state": "visible",
+          "max_row": 10,
+          "max_column": 8,
+          "merged_ranges": [
+            "A1:G1"
+          ],
+          "cells": [
+            {
+              "coordinate": "A1",
+              "value": "成品油箱装尺寸",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B2",
+              "value": "长（mm）   （化验尺寸）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C2",
+              "value": "长（mm）  （仓库测量）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D2",
+              "value": "宽（mm）   （化验尺寸）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E2",
+              "value": "宽（mm）  （仓库测量）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F2",
+              "value": "高（mm）   （化验尺寸）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G2",
+              "value": "高（mm）  （仓库测量）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "H2",
+              "value": "备注",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A3",
+              "value": "3.68L*4",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C3",
+              "value": 301,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E3",
+              "value": 301,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G3",
+              "value": 347,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "H3",
+              "value": "新品，无实际纸箱标准，根据新瓶型提供厂家样箱尺寸",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A4",
+              "value": "1.8L*6",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B4",
+              "value": 345,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C4",
+              "value": "345-347",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D4",
+              "value": 234,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E4",
+              "value": "236-238",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F4",
+              "value": 304,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G4",
+              "value": "307-320",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A5",
+              "value": "4L*4",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B5",
+              "value": 316,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C5",
+              "value": "316-318",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D5",
+              "value": 262,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E5",
+              "value": "264-265",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F5",
+              "value": 367,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G5",
+              "value": "370-380",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A6",
+              "value": "5L*4(异形瓶）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C6",
+              "value": 345,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E6",
+              "value": 345,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G6",
+              "value": 395,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A7",
+              "value": "5L*4（常规品）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B7",
+              "value": 320,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C7",
+              "value": "321-323",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D7",
+              "value": 320,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E7",
+              "value": "321-322",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F7",
+              "value": 367,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G7",
+              "value": "370-385",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A8",
+              "value": "8L*2",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B8",
+              "value": 432,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C8",
+              "value": "433-435",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D8",
+              "value": 223,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E8",
+              "value": "224-226",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F8",
+              "value": 357,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G8",
+              "value": "360-370",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A9",
+              "value": "10L*2",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B9",
+              "value": 432,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C9",
+              "value": "436-438",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D9",
+              "value": 223,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E9",
+              "value": "224-225",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F9",
+              "value": 425,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G9",
+              "value": "428-430",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A10",
+              "value": "20L（软）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B10",
+              "value": 305,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C10",
+              "value": "305-306",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D10",
+              "value": 175,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E10",
+              "value": "176-178",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F10",
+              "value": 490,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "G10",
+              "value": "490-495",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            }
+          ]
+        },
+        {
+          "name": "车型尺寸",
+          "state": "visible",
+          "max_row": 20,
+          "max_column": 6,
+          "merged_ranges": [
+            "A20:D20"
+          ],
+          "cells": [
+            {
+              "coordinate": "C1",
+              "value": "",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D1",
+              "value": "",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A2",
+              "value": "A",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B2",
+              "value": "B",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C2",
+              "value": "C",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D2",
+              "value": "D",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E2",
+              "value": "E",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A3",
+              "value": "车型",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B3",
+              "value": "长",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C3",
+              "value": "宽",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D3",
+              "value": "高",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E3",
+              "value": "公路单位运输费用元/1000km",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A4",
+              "value": "单节柜",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B4",
+              "value": "5.8-5.9米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C4",
+              "value": "2.35米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D4",
+              "value": "2.39米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E4",
+              "value": "以铁路运输为主",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F4",
+              "value": 3625,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A5",
+              "value": "集装箱",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B5",
+              "value": "12米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C5",
+              "value": "2.35米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D5",
+              "value": "2.39米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E5",
+              "value": "以海路运输为主",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F5",
+              "value": 2000,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A6",
+              "value": "超高柜",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B6",
+              "value": "12米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C6",
+              "value": "2.35米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D6",
+              "value": "2.69米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E6",
+              "value": "以海路运输为主",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "F6",
+              "value": 3900,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A7",
+              "value": "4.2米箱货",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B7",
+              "value": "4-4.1米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C7",
+              "value": "1.8-1.9米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D7",
+              "value": "1.65-2米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E7",
+              "value": 2800,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A8",
+              "value": "6.2米箱货",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B8",
+              "value": "5.9-6米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C8",
+              "value": "1.9-2.0米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D8",
+              "value": "1.9米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E8",
+              "value": 4500,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A9",
+              "value": "6.8米箱货",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B9",
+              "value": "6.6-6.8米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C9",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D9",
+              "value": "2.2米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E9",
+              "value": 5000,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A10",
+              "value": "9.6米箱货",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B10",
+              "value": "9.4-9.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C10",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D10",
+              "value": "2.2米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E10",
+              "value": 6500,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A11",
+              "value": "17米箱货",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B11",
+              "value": "16.7-17米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C11",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D11",
+              "value": "2.2米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E11",
+              "value": 11000,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A12",
+              "value": "4.2低栏板",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B12",
+              "value": "4-4.2米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C12",
+              "value": "2.1米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D12",
+              "value": "0.5米（栏板高度）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E12",
+              "value": 3500,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A13",
+              "value": "4.2高栏",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B13",
+              "value": "4-4.2米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C13",
+              "value": "2.1米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D13",
+              "value": "1.6-2.4米（栏板高度）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E13",
+              "value": 4000,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A14",
+              "value": "6米8高栏",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B14",
+              "value": "6.6-6.8米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C14",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D14",
+              "value": "1.6-2.4米（栏板高度）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E14",
+              "value": 5000,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A15",
+              "value": "6米8低栏板",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B15",
+              "value": "6.6-6.8米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C15",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D15",
+              "value": "0.5米（栏板高度）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E15",
+              "value": 4500,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A16",
+              "value": "9米6高栏",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B16",
+              "value": "9.4-9.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C16",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D16",
+              "value": "1.6-2.4米（栏板高度）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E16",
+              "value": 7000,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A17",
+              "value": "9米6低栏板",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B17",
+              "value": "9.4-9.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C17",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D17",
+              "value": "0.5米（栏板高度）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E17",
+              "value": 5000,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A18",
+              "value": "13米高栏",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B18",
+              "value": "12.94-12.98米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C18",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D18",
+              "value": "1.6-2.4米（栏板高度）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E18",
+              "value": 9000,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A19",
+              "value": "13米高低板",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "B19",
+              "value": "12.94-12.98米（车前段长约4米长是高板，后面是低板，高低板的高度差约25公分）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "C19",
+              "value": "2.3-2.5米",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "D19",
+              "value": "1.6-2.4米（栏板高度）",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "E19",
+              "value": 8800,
+              "type": "n",
+              "number_format": "General",
+              "comment": null
+            },
+            {
+              "coordinate": "A20",
+              "value": "+",
+              "type": "s",
+              "number_format": "General",
+              "comment": null
+            }
+          ]
+        },
+        {
+          "name": "Sheet3",
+          "state": "visible",
+          "max_row": 1,
+          "max_column": 1,
+          "merged_ranges": [],
+          "cells": []
+        }
+      ]
+    }
+  ]
+}

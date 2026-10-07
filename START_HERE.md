@@ -1,5 +1,7 @@
 # Codex 接续入口
 
+最新工作是[Level1–4顺序试验](runs/R19/PLAN.md)：[C11实验候选](runs/R19/candidate/C11/forge-agent-flow/SKILL.md)、[当前TODO](runs/R19/TODO.md)、[独立验收](runs/R19/acceptance.json)。L1–L4工作流都已冻结；[L1完整中文论文](runs/R19/levels/L1/execution/paper/paper.pdf)、算法附件、32个参数情景与代码/坐标等250文件已冻结，同一独立审查者正按先于结果冻结的方法做实质初审，尚无论文通过结论。三者先前额度失败保留，实际资源查询可用后接续同一actor，没有替换或归零预算。准备工作流可以重叠，论文求解和验收按1→4顺序，见[调度补充](runs/R19/PREPARATION_ADDENDUM.md)。C11是新的纯文档候选，未以旧C10政策检查冒充完整行为通过。各层输入不见其他层结果，生产者不收到统一高信息外部验收表；具体接续以checkpoint为准。
+
 成品方向为Forge meta-workflow，当前候选C10是九份纯文档：
 [技能入口](runs/R17/candidate/C10/forge-agent-flow/SKILL.md)、
 [可分发包](runs/R17/package/Forge-C10-meta-workflow.zip)、

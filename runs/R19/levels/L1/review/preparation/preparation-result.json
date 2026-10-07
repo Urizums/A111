@@ -1,0 +1,148 @@
+{
+  "schema": "R19-L1-independent-review-source-preparation/1",
+  "status": "source_review_prepared_artifacts_pending",
+  "prepared_at": "2026-10-07T09:36:21.044815+00:00",
+  "actor": "/root/r19_l1_reviewer",
+  "delivery_type": "source_only_review_preparation",
+  "plan_path": "runs/R19/levels/L1/review/preparation/review-plan.md",
+  "read_boundary": [
+    "runs/R19/inputs/L1.md",
+    "runs/R19/inputs/raw/ (three official originals)",
+    "runs/R19/candidate/C11/forge-agent-flow/ documents",
+    "runs/R19/levels/L1/design/ frozen documents",
+    "runs/R19/levels/L1/design-lock.json",
+    "runs/R19/acceptance.json",
+    "runs/R19/quality-diagnosis.md",
+    "runs/R19/evaluation-lock.json"
+  ],
+  "write_boundary": "runs/R19/levels/L1/review/preparation/",
+  "blindness": {
+    "execution_artifacts_read": false,
+    "other_level_contents_read": false,
+    "other_level_filenames_seen_in_initial_directory_listing": true,
+    "old_runs_read": false,
+    "producer_diagnosis_or_prior_verdict_read": false,
+    "network_used": false,
+    "software_installed": false,
+    "review_plan_shared_with_producer": false
+  },
+  "source_observations": {
+    "pdf_pages_extracted_and_independently_viewed": 3,
+    "docx_extracted_from_official_ooxml": true,
+    "docx_embedded_omml_math_count": 0,
+    "xlsx_all_nonempty_cells_read_with_coordinates": true,
+    "xlsx_sheets": [
+      "箱装产品尺寸",
+      "车型尺寸",
+      "Sheet3"
+    ],
+    "xlsx_formulas": 0,
+    "raw_inventory_arithmetic_controls_recomputed": true,
+    "evaluation_and_design_locked_files_verified": 9,
+    "locked_file_hashes_match": true
+  },
+  "execution_and_verdict": {
+    "solver_run": false,
+    "frozen_execution_outputs_received": false,
+    "full_artifact_rerun": false,
+    "independent_all_item_verification": false,
+    "boundary_tests_run": false,
+    "paper_read_or_accepted": false,
+    "mandatory_verdicts": {
+      "a1": "pending_frozen_artifacts",
+      "a2": "pending_frozen_artifacts",
+      "a3": "pending_frozen_artifacts",
+      "a4": "pending_frozen_artifacts",
+      "a5": "pending_frozen_artifacts",
+      "a6": "pending_frozen_artifacts"
+    },
+    "quality_diagnosis": {
+      "problem fidelity": "not_assessed_artifacts_pending",
+      "mathematical justification": "not_assessed_artifacts_pending",
+      "empirical sufficiency and fair alternatives": "not_assessed_artifacts_pending",
+      "reproduction and result-to-paper traceability": "not_assessed_artifacts_pending",
+      "clarity and completeness of scientific argument": "not_assessed_artifacts_pending",
+      "workflow transferability and autonomous gap resolution": "not_assessed_artifacts_pending"
+    }
+  },
+  "actual_preparation_commands": [
+    {
+      "command": "py -3.12 -X utf8 -B runs/R19/levels/L1/review/preparation/source_extract.py",
+      "exit_code": 0,
+      "observation": "three official files parsed and hashed; three PDF page images saved"
+    },
+    {
+      "command": "py -3.12 -X utf8 -B runs/R19/levels/L1/review/preparation/source_controls.py",
+      "exit_code": 0,
+      "observation": "raw inventory controls computed; 9 lock entries match"
+    }
+  ],
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null,
+    "whole_task_resource_budget": null
+  },
+  "events": {
+    "scope": "only this source preparation actor turn",
+    "observed_tool_or_command_errors": 0,
+    "tool_recoveries": 0,
+    "substantive_corrections": 0,
+    "planned_numerical_research_iterations": 0,
+    "note": "truncated multi-file tool output was reread in bounded chunks; parent-reported previous quota error belongs to preserved parent history and is not regraded by this record"
+  },
+  "limitations": [
+    "official DOCX was audited structurally and textually, not visually rendered; PDF text was cross-checked against all three rendered pages",
+    "Attachment2 lacks complete business fields and is optional; no full-scale official Attachment2 optimization is presumed",
+    "no execution results, numerical answers, paper, experiments or author pass reports received or inspected",
+    "design byte identity and source fidelity preparation do not prove execution correctness or workflow transfer success"
+  ],
+  "next_action": "Root freezes preparation; after producer terminal complete and byte freeze, same reviewer receives explicit artifact paths/lock and performs full independent acceptance under review-plan.md.",
+  "artifacts": [
+    {
+      "path": "runs/R19/levels/L1/review/preparation/input-lock-verification.json",
+      "size_bytes": 3226,
+      "sha256": "9247b44ab7e60155d67ff9fc43fc4946253549ab7ec832d9b39e8befd658a7c3"
+    },
+    {
+      "path": "runs/R19/levels/L1/review/preparation/official-pdf-page-1.png",
+      "size_bytes": 198195,
+      "sha256": "c36371e49dd9eaf8d6ead69266d5ee547077424b756cffc62636d9d8275f61cf"
+    },
+    {
+      "path": "runs/R19/levels/L1/review/preparation/official-pdf-page-2.png",
+      "size_bytes": 173595,
+      "sha256": "577dfe4e41b79bb935beee2ed3495a0c8ce6960db159f7cfd0e3a38f820ab4a1"
+    },
+    {
+      "path": "runs/R19/levels/L1/review/preparation/official-pdf-page-3.png",
+      "size_bytes": 65024,
+      "sha256": "867808eceb899c769593a2f46db276313b740ead1c857a3b2338893b2aac81d6"
+    },
+    {
+      "path": "runs/R19/levels/L1/review/preparation/official-source-extraction.json",
+      "size_bytes": 45255,
+      "sha256": "8ca20d40d8e56d8ea4215ec032096495e2bee65b47864dcc75e07345cd296ed5"
+    },
+    {
+      "path": "runs/R19/levels/L1/review/preparation/raw-inventory-controls.json",
+      "size_bytes": 2292,
+      "sha256": "311bb714661a261e966bd16b8314ac0adcddfaa65b150a2dc3d5f7a1a96ed16a"
+    },
+    {
+      "path": "runs/R19/levels/L1/review/preparation/review-plan.md",
+      "size_bytes": 23658,
+      "sha256": "ee57a433de6a616e3ec7477ac0341f279305d5b36270da4af3b6a55bfd206475"
+    },
+    {
+      "path": "runs/R19/levels/L1/review/preparation/source_controls.py",
+      "size_bytes": 2262,
+      "sha256": "7a5e911918e83592a2ae79b065a058da47f56bc9445d57ede66637295e16c587"
+    },
+    {
+      "path": "runs/R19/levels/L1/review/preparation/source_extract.py",
+      "size_bytes": 3300,
+      "sha256": "b744669a8d709912615676b12b00879bbf0716e9036430f9988789d093e5ea20"
+    }
+  ]
+}

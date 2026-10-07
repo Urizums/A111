@@ -1,0 +1,28 @@
+{
+  "task_id": "R19-D3",
+  "attempt_id": "R19-D3-1",
+  "requirements_hash": "52b7e6354909f234ec249bbaee320f441bd42fd66ef6d4695185ef06622e83ef",
+  "criteria": [
+    {
+      "id": "d1",
+      "status": "pass",
+      "evidence": [
+        "runs/R19/levels/L3/design-lock.json",
+        "runs/R19/levels/L3/design/result.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Independent design preparation",
+    "hypothesis": "Transferability will be tested by a different executor.",
+    "baseline": "Same C11/raw problem and own exact level input",
+    "conditions": "Design only, separate context and write domain",
+    "observations": "9 actual files frozen; no execution/paper claim",
+    "limits": "Scientific quality and workflow usability remain untested",
+    "metrics": {
+      "design_artifacts": 9,
+      "papers": 0
+    }
+  },
+  "next_action": "Wait for sequential R19-L3 execution after predecessor diagnosis; do not count design pass as paper acceptance."
+}

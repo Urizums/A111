@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "scripts/verify_handoff.py",
+    "--json"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-07T09:30:42.336984+00:00",
+    "monotonic_ns": 113174125000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-07T09:30:45.908470+00:00",
+    "monotonic_ns": 113177687000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\scripts\\verify_handoff.py\", line 232, in <module>\r\n    sys.exit(main())\r\n             ^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\scripts\\verify_handoff.py\", line 208, in main\r\n    errors += validate_continuation(checkpoint, read(ROOT / 'state/continuation.json'), ROOT)\r\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\scripts\\verify_handoff.py\", line 164, in validate_continuation\r\n    from continuation import summary, validate\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\scripts\\continuation.py\", line 6, in <module>\r\n    import fcntl\r\nModuleNotFoundError: No module named 'fcntl'\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxzY3JpcHRzXHZlcmlmeV9oYW5kb2ZmLnB5IiwgbGluZSAyMzIsIGluIDxtb2R1bGU+DQogICAgc3lzLmV4aXQobWFpbigpKQ0KICAgICAgICAgICAgIF5eXl5eXg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxzY3JpcHRzXHZlcmlmeV9oYW5kb2ZmLnB5IiwgbGluZSAyMDgsIGluIG1haW4NCiAgICBlcnJvcnMgKz0gdmFsaWRhdGVfY29udGludWF0aW9uKGNoZWNrcG9pbnQsIHJlYWQoUk9PVCAvICdzdGF0ZS9jb250aW51YXRpb24uanNvbicpLCBST09UKQ0KICAgICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eDQogIEZpbGUgIkM6XFVzZXJzXGFkbWluXERvY3VtZW50c1xDb2RleFwyMDI2LTEwLTA1XHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcd29ya1xBMTExXHNjcmlwdHNcdmVyaWZ5X2hhbmRvZmYucHkiLCBsaW5lIDE2NCwgaW4gdmFsaWRhdGVfY29udGludWF0aW9uDQogICAgZnJvbSBjb250aW51YXRpb24gaW1wb3J0IHN1bW1hcnksIHZhbGlkYXRlDQogIEZpbGUgIkM6XFVzZXJzXGFkbWluXERvY3VtZW50c1xDb2RleFwyMDI2LTEwLTA1XHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcd29ya1xBMTExXHNjcmlwdHNcY29udGludWF0aW9uLnB5IiwgbGluZSA2LCBpbiA8bW9kdWxlPg0KICAgIGltcG9ydCBmY250bA0KTW9kdWxlTm90Rm91bmRFcnJvcjogTm8gbW9kdWxlIG5hbWVkICdmY250bCcNCg=="
+}
