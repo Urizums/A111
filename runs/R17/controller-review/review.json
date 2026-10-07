@@ -1,0 +1,78 @@
+{
+  "schema": "forge-controller-review/1",
+  "scope": {
+    "read": [
+      "AGENTS.md",
+      "scripts/continuation.py",
+      "scripts/test_continuation.py",
+      "scripts/record_command.py",
+      "runs/R17/scope-decision.json",
+      "runs/R17/acceptance.json#delivery.d1"
+    ],
+    "written": "runs/R17/controller-review/",
+    "excluded": ["author reports", "ledgers", "prior regression output", "other agent results", "shared continuation state"]
+  },
+  "verdict": "delivery.d1_not_met",
+  "required_defects": [
+    {
+      "id": "deadline-overrun-can-complete",
+      "source": ["scripts/continuation.py:60-79", "scripts/continuation.py:231-263"],
+      "evidence": "probe-command.json shows a passing result finished after deadline_utc was changed to an expired timestamp; finish returned status done.",
+      "impact": "A declared task resource window is not honored at completion.",
+      "fix": "Re-evaluate the configured deadline before accepting a successful finish; keep the cooperative execution limitation explicit."
+    },
+    {
+      "id": "terminal-acceptance-drift-unnoticed",
+      "source": ["scripts/continuation.py:111-184", "scripts/continuation.py:237-245"],
+      "evidence": "immutability-probe-command.json shows acceptance assertion weakened after a successful finish; validate returned an empty error list.",
+      "impact": "A done result is no longer guaranteed to represent the acceptance hash recorded for its attempt.",
+      "fix": "Validate terminal acceptance against its recorded completion attempt hash; reject or report drift."
+    },
+    {
+      "id": "retry-can-reuse-old-command-receipt",
+      "source": ["scripts/continuation.py:196-229", "scripts/test_continuation.py:96-110"],
+      "evidence": "The >2-retry supplied test reuses step.json for every attempt and passes. begin checks finished shape but not receipt freshness/reuse.",
+      "impact": "Distinct recovery notes can authorize repeated attempts without evidence the changed action was actually executed.",
+      "fix": "Require and retain a fresh actual command receipt for each retry; semantic progress remains a human/host judgment."
+    }
+  ],
+  "optional": [
+    {
+      "id": "normalize-write-scopes",
+      "source": "scripts/continuation.py:188-194",
+      "note": "Lexical Path comparison can miss overlapping scopes containing '..' or absolute forms. This is a cooperative concurrency guard, not a security boundary."
+    },
+    {
+      "id": "clarify-stop-conditions",
+      "source": "scripts/continuation.py:140-156",
+      "note": "Non-empty stop_conditions are validated but their contents do not affect scheduling; the field is descriptive."
+    },
+    {
+      "id": "record-command-resource-limit",
+      "source": "scripts/record_command.py:27-44",
+      "note": "The child process has no timeout/cancellation and output is captured in memory. Keep host limitations explicit."
+    }
+  ],
+  "observations": {
+    "legacy_fixed_mode": "pass_for_exercised_behavior; original attempt plus repair_limit retries then no further ready task",
+    "supplied_tests": {"count": 12, "result": "passed", "receipt": "legacy-tests-command.json"},
+    "progress_mode": "partial; >2 justified retries and duplicate rationale rejection work, but reused actual receipts undermine changed-action evidence",
+    "deadline_expired_failed_path": "blocks selection/start as covered by supplied tests",
+    "deadline_expired_success_path": "done; defect reproduced in probe-command.json",
+    "post_completion_acceptance_drift": "validate returned []; defect reproduced in immutability-probe-command.json",
+    "provider_hard_isolation": "not provided; local controller is cooperative",
+    "semantic_progress_oracle": "not provided; human/host judgment remains necessary",
+    "historical_bytes_counters_prior_verdicts": "unknown; shared state and prior evidence were outside read scope",
+    "research_trial_and_independent_review_acceptance": "unknown; outside assigned scope"
+  },
+  "limitations": [
+    "Probe imported continuation.py with a local delivery.read_file shim because delivery.py was outside the authorized read set.",
+    "Observed command receipts are local subprocess telemetry only and establish no provider-side telemetry or resource quota.",
+    "The behavior tests are not proof of live model/tool recovery."
+  ],
+  "evidence_files": [
+    "legacy-tests-command.json",
+    "probe-command.json",
+    "immutability-probe-command.json"
+  ]
+}

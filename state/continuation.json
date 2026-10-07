@@ -5015,16 +5015,19 @@
       "depends_on": [
         "R16-01"
       ],
-      "owner": "fresh_executor_luna",
+      "owner": "/root/r16_original_solution",
       "write_paths": [
-        "runs/R16/solution/"
+        "runs/R16/prospective-20261007/"
       ],
       "inputs": [
         "runs/R16/PLAN.md",
         "runs/R16/scope-decision.json",
         "runs/R16/acceptance.json",
         "runs/R16/input-lock.json",
-        "runs/R14/candidate/C9-lock.json"
+        "runs/R14/candidate/C9-lock.json",
+        "runs/R18/amendment.json",
+        "runs/R18/prospective-acceptance.json",
+        "runs/R17/candidate/C10-lock.json"
       ],
       "acceptance": [
         {
@@ -5049,86 +5052,18 @@
         },
         {
           "id": "p6",
-          "assertion": "Original producer context runs bounded autonomous TODO/handoffs using frozen C9; self-check and independent review distinct; failures, cumulative case correction limit2, candidate-author history2/2 and unknown telemetry preserved"
+          "assertion": "Same original R16-02 identity and actor continue using frozen C10 under explicit prospective user policy; bounded task-specific resources and classified recoveries/progress; self-check vs independent review separate. Retain old failed fixed-condition attempt2/2 and all source/C9/other historical counts; unknown telemetry null; no retrospective pass."
         }
       ],
-      "status": "blocked",
+      "status": "in_progress",
       "evidence": [
         {
-          "path": "runs/R16/R16-02-result.json",
-          "sha256": "b0db9c575dee4e668c4a48fadecbc7570e53a213e876f52da71809f2f966f3e4"
+          "path": "runs/R16/prospective-20261007/first-step.json",
+          "sha256": "e0e3ce3e28b8ec37c4510ddd834c3d33c64fe2c93430db874e5e6e0e70c3f356"
         },
         {
-          "path": "runs/R16/budget-decision.json",
-          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
-        },
-        {
-          "path": "runs/R16/solution/attempt-ledger.md",
-          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
-        },
-        {
-          "path": "runs/R16/REPORT.md",
-          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
-        },
-        {
-          "path": "runs/R16/budget-decision.json",
-          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
-        },
-        {
-          "path": "runs/R16/solution/attempt-ledger.md",
-          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
-        },
-        {
-          "path": "runs/R16/REPORT.md",
-          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
-        },
-        {
-          "path": "runs/R16/budget-decision.json",
-          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
-        },
-        {
-          "path": "runs/R16/solution/attempt-ledger.md",
-          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
-        },
-        {
-          "path": "runs/R16/REPORT.md",
-          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
-        },
-        {
-          "path": "runs/R16/budget-decision.json",
-          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
-        },
-        {
-          "path": "runs/R16/solution/attempt-ledger.md",
-          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
-        },
-        {
-          "path": "runs/R16/REPORT.md",
-          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
-        },
-        {
-          "path": "runs/R16/budget-decision.json",
-          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
-        },
-        {
-          "path": "runs/R16/solution/attempt-ledger.md",
-          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
-        },
-        {
-          "path": "runs/R16/REPORT.md",
-          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
-        },
-        {
-          "path": "runs/R16/budget-decision.json",
-          "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
-        },
-        {
-          "path": "runs/R16/solution/attempt-ledger.md",
-          "sha256": "ac0eb13218d4435d6bb38f1882f3d17183ba7e048bf928da66da322cb81f1ef0"
-        },
-        {
-          "path": "runs/R16/REPORT.md",
-          "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
+          "path": "runs/R16/prospective-20261007/receipts/01-baseline.json",
+          "sha256": "b7f11d6dbf7014141377ded410bbcb5b5a1949752160475ac4695abd53e3a39a"
         }
       ],
       "attempts": [
@@ -5246,12 +5181,110 @@
               "sha256": "eca4c5172e6264de4dd82f740141079ac43500cb17ee1464b31649b617ca7287"
             }
           ]
+        },
+        {
+          "id": "R16-02-2",
+          "started_at": "2026-10-07T04:26:05.154503+00:00",
+          "requirements_hash": "bb5a0192aa67582f59f277056add2187e59ab42a89f5cf3d548e8511b5afa121",
+          "inputs": [
+            {
+              "path": "runs/R16/PLAN.md",
+              "sha256": "eca99fc7645ffbf42e2ea23f557e52b7397f17619cc309600f31cb3174e663e0"
+            },
+            {
+              "path": "runs/R16/scope-decision.json",
+              "sha256": "ad506b94f3dd53641b97679938e019f8a065cbcc0759111559a2aaefa73da93b"
+            },
+            {
+              "path": "runs/R16/acceptance.json",
+              "sha256": "d2550e9ff1c13efb68ee02855ca73dd85e8df0fb6754b79630b2c59732231e09"
+            },
+            {
+              "path": "runs/R16/input-lock.json",
+              "sha256": "e9dfc55420b59d73819540122f40f75d77e662d854cb3346707cbde3d62a5a92"
+            },
+            {
+              "path": "runs/R14/candidate/C9-lock.json",
+              "sha256": "239cf5fde33dafca7926ce669055024b0c81c55f6200342630f7427b64be81b4"
+            },
+            {
+              "path": "runs/R18/amendment.json",
+              "sha256": "443e8c25a01c71a894ff798eefa3e5962d9328305061364bbcd98a13653acb59"
+            },
+            {
+              "path": "runs/R18/prospective-acceptance.json",
+              "sha256": "086ee48b10d8203367dd2ca1f4c79a55f0f07abefafac0016acdad98d43801f7"
+            },
+            {
+              "path": "runs/R17/candidate/C10-lock.json",
+              "sha256": "08e1d8cc27a4006ac0d0bb1abb3cad4b44320844af71cb9cda392b36b026ff51"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R16/prospective-20261007/receipts/01-baseline.json",
+            "sha256": "b7f11d6dbf7014141377ded410bbcb5b5a1949752160475ac4695abd53e3a39a"
+          },
+          "status": "in_progress",
+          "execution_policy_hash": "ae106fee87b40ec927fa3b8d33e3bd9599c23d81a108d6ace03f0a89993c1b26",
+          "recovery_signature": "2ee8c19fa66d081fa27b9e999f172c0445e181a1ddacecaec5695b949e1f23ac",
+          "recovery_note": {
+            "observation": "Original case stopped after two local source recoveries, no model execution.",
+            "change_or_new_information": "Current user authorized classified-progress policy; same actor/input/goal under C10.",
+            "expected_check": "Keep p1-p5; actually compute baseline and check original constraints before paper.",
+            "evidence": [
+              {
+                "path": "runs/R18/amendment.json",
+                "sha256": "443e8c25a01c71a894ff798eefa3e5962d9328305061364bbcd98a13653acb59"
+              },
+              {
+                "path": "runs/R16/budget-decision.json",
+                "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+              }
+            ]
+          }
         }
       ],
-      "repairs_used": 2,
-      "repair_limit": 2,
-      "blocker": "Repair budget exhausted; original criteria and all attempts retained.",
-      "next_action": "Await explicit original-case limit increase with used2 retained; no replacement actor or sample."
+      "repairs_used": 3,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "Continue original full solve from actual baseline/constraint slice; no full-paper acceptance yet.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R18/amendment.json",
+          "sha256": "443e8c25a01c71a894ff798eefa3e5962d9328305061364bbcd98a13653acb59"
+        },
+        "progress_state": "ready",
+        "deadline_utc": null,
+        "stop_conditions": [
+          "original mandatory output verified",
+          "actual resource/authority boundary",
+          "unsupported unchanged path"
+        ]
+      },
+      "prospective_continuation": {
+        "amendment": "runs/R18/amendment.json",
+        "original_task": "runs/R18/original-task.json",
+        "legacy_repairs_used": 2,
+        "legacy_repair_limit": 2,
+        "legacy_verdict": "blocked",
+        "queue_restart_is_not_source_error": true
+      },
+      "recovery_note": {
+        "observation": "Original case stopped after two local source recoveries, no model execution.",
+        "change_or_new_information": "Current user authorized classified-progress policy; same actor/input/goal under C10.",
+        "expected_check": "Keep p1-p5; actually compute baseline and check original constraints before paper.",
+        "evidence": [
+          {
+            "path": "runs/R18/amendment.json",
+            "sha256": "443e8c25a01c71a894ff798eefa3e5962d9328305061364bbcd98a13653acb59"
+          },
+          {
+            "path": "runs/R16/budget-decision.json",
+            "sha256": "a899c2f520d5ea9c86b575bc8140b8ba29d294f6d6db97344875008c3add2a12"
+          }
+        ]
+      }
     },
     {
       "id": "R16-03",
@@ -5342,6 +5375,802 @@
       "repair_limit": 2,
       "blocker": "R16-02 stopped at original cumulative budget2/2 without model results or a complete paper.",
       "next_action": "Preserve original dependencies; do not dispatch review or claim full report until original solution gate passes."
+    },
+    {
+      "id": "R17-01",
+      "title": "制作进展政策/搜索规划C10及兼容实现",
+      "queue": "challenges",
+      "category": "user_progress_and_search_policy",
+      "priority": 50,
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "runs/R17/candidate/",
+        "scripts/continuation.py",
+        "scripts/test_continuation.py"
+      ],
+      "status": "done",
+      "acceptance": [
+        {
+          "id": "a1",
+          "assertion": "九份纯文档源锁/链接/frontmatter检查，用户前瞻政策及原历史均保留"
+        },
+        {
+          "id": "a2",
+          "assertion": "研发控制器可选新政策执行有实际回归，旧固定模式保持且不作为技能运行依赖"
+        }
+      ],
+      "inputs": [
+        "runs/R17/scope-decision.json",
+        "runs/R17/acceptance.json",
+        "runs/R17/input-lock.json",
+        "runs/R17/candidate/C10-lock.json"
+      ],
+      "next_action": "Receive independent policy and actual search observations; preserve source lock.",
+      "evidence": [
+        {
+          "path": "runs/R17/R17-01-result.json",
+          "sha256": "26698aff27a33568c51124d29d87d16c91dc9b75db4d0fb992805c7173fdb61a"
+        },
+        {
+          "path": "runs/R17/freeze-candidate-command.json",
+          "sha256": "4db1e4049c3a1e8d27bcf3e98f0c1175fec83dcce71cab24e77b84f561ddc800"
+        },
+        {
+          "path": "runs/R17/structure-command.json",
+          "sha256": "20d519f7a4a9ca19ce0ba0bcd4d8fece448691859af5732fecad56e568698224"
+        },
+        {
+          "path": "runs/R17/baseline.json",
+          "sha256": "0bf710953abb8479c223c7fc6ed417d249db2484f54c1b11aa3a6c0f870704ea"
+        },
+        {
+          "path": "runs/R17/author-ledger.json",
+          "sha256": "0343c93de6e90d2fafff0971f4e55bea371b89f796db06128fb5ce0ade2b07d8"
+        },
+        {
+          "path": "runs/R17/controller-regression-command.json",
+          "sha256": "28845c5113be2275ad8f96cf8ccde1351df0268b2e4222125cef6e23b3d51e9c"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R17-01-1",
+          "started_at": "2026-10-07T04:06:24.365524+00:00",
+          "requirements_hash": "7ea67da6854fc6cbbc11ee3a9f02c2691d18056dbbcf96e0ef22de039e427e3c",
+          "inputs": [
+            {
+              "path": "runs/R17/scope-decision.json",
+              "sha256": "d94e4d2df768000a96a49c8c9c52904bc1d24235c900eed2c5f920b020795641"
+            },
+            {
+              "path": "runs/R17/acceptance.json",
+              "sha256": "8d14a332aca201cab875bd8b51eb3bb6f0202c7f5fe2be2d24bb02dbce6a15c7"
+            },
+            {
+              "path": "runs/R17/input-lock.json",
+              "sha256": "9d00ec04d365be5500b491fc543be967dff9f86fe3bc0b51078af6ceddb644f8"
+            },
+            {
+              "path": "runs/R17/candidate/C10-lock.json",
+              "sha256": "08e1d8cc27a4006ac0d0bb1abb3cad4b44320844af71cb9cda392b36b026ff51"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R17/prepare-command.json",
+            "sha256": "29ef515ccc102f9c4ac5a149664c08d7c67f6645d8dc05a942a39ee0dbbb4c0b"
+          },
+          "status": "done",
+          "ended_at": "2026-10-07T04:06:24.889907+00:00",
+          "result": {
+            "path": "runs/R17/R17-01-result.json",
+            "sha256": "26698aff27a33568c51124d29d87d16c91dc9b75db4d0fb992805c7173fdb61a"
+          },
+          "evidence": [
+            {
+              "path": "runs/R17/R17-01-result.json",
+              "sha256": "26698aff27a33568c51124d29d87d16c91dc9b75db4d0fb992805c7173fdb61a"
+            },
+            {
+              "path": "runs/R17/freeze-candidate-command.json",
+              "sha256": "4db1e4049c3a1e8d27bcf3e98f0c1175fec83dcce71cab24e77b84f561ddc800"
+            },
+            {
+              "path": "runs/R17/structure-command.json",
+              "sha256": "20d519f7a4a9ca19ce0ba0bcd4d8fece448691859af5732fecad56e568698224"
+            },
+            {
+              "path": "runs/R17/baseline.json",
+              "sha256": "0bf710953abb8479c223c7fc6ed417d249db2484f54c1b11aa3a6c0f870704ea"
+            },
+            {
+              "path": "runs/R17/author-ledger.json",
+              "sha256": "0343c93de6e90d2fafff0971f4e55bea371b89f796db06128fb5ce0ade2b07d8"
+            },
+            {
+              "path": "runs/R17/controller-regression-command.json",
+              "sha256": "28845c5113be2275ad8f96cf8ccde1351df0268b2e4222125cef6e23b3d51e9c"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R17/scope-decision.json",
+          "sha256": "d94e4d2df768000a96a49c8c9c52904bc1d24235c900eed2c5f920b020795641"
+        },
+        "progress_state": "ready",
+        "deadline_utc": null,
+        "stop_conditions": [
+          "verified requested output",
+          "actual resource or permission boundary",
+          "unsupported unchanged path; diagnose before further execution"
+        ]
+      }
+    },
+    {
+      "id": "R17-02",
+      "title": "新上下文政策与场景独立核查",
+      "queue": "challenges",
+      "category": "user_progress_and_search_policy",
+      "priority": 51,
+      "owner": "/root/r17_policy_review",
+      "depends_on": [
+        "R17-01"
+      ],
+      "write_paths": [
+        "runs/R17/review/"
+      ],
+      "status": "done",
+      "acceptance": [
+        {
+          "id": "p1",
+          "assertion": "C10 removes the universal two-correction business stop; separates recoveries/research/model corrections, requires evidence-backed next action and stops unproductive or unauthorized paths without declaring the whole goal complete."
+        },
+        {
+          "id": "p2",
+          "assertion": "Search is planned by decision/question and expected evidence, with alternate hypotheses, primary verification, conflict/missing-evidence handling, raw-source isolation and compact context; no query-count substitute for coverage or source quality."
+        },
+        {
+          "id": "p3",
+          "assertion": "Smoke/acceptance remains tied to original mandatory outputs and actual checks; progress policy does not excuse missing evidence, edit frozen history, reset counters, or bypass explicit tool/permission refusal."
+        },
+        {
+          "id": "v1",
+          "assertion": "Fresh reviewer receives original user goal, frozen candidate and raw neutral scenarios only; produces source/observation-backed decisions and falsifiable requirement verdicts without author diagnoses."
+        },
+        {
+          "id": "v2",
+          "assertion": "Review covers >2 justified recovery/lookup actions, repeated no-information action, conflicting source, external instruction contamination, actual hard stop and legacy frozen-case semantics; optional improvements separated from mandatory defects."
+        }
+      ],
+      "inputs": [
+        "runs/R17/scope-decision.json",
+        "runs/R17/acceptance.json",
+        "runs/R17/input-lock.json",
+        "runs/R17/candidate/C10-lock.json"
+      ],
+      "next_action": "Preserve observations and integrate with independently reviewed controller and package.",
+      "evidence": [
+        {
+          "path": "runs/R17/R17-02-result.json",
+          "sha256": "ba07bdba843cbb16ab97338f10cded4514ed3a26989c2d748a64724ed749f8dc"
+        },
+        {
+          "path": "runs/R17/review/C10-review-evidence.json",
+          "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+        },
+        {
+          "path": "runs/R17/review/C10-policy-review.md",
+          "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+        },
+        {
+          "path": "runs/R17/review/C10-scenario-decisions.json",
+          "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+        },
+        {
+          "path": "runs/R17/review/C10-review-evidence.json",
+          "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+        },
+        {
+          "path": "runs/R17/review/C10-policy-review.md",
+          "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+        },
+        {
+          "path": "runs/R17/review/C10-scenario-decisions.json",
+          "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+        },
+        {
+          "path": "runs/R17/review/C10-review-evidence.json",
+          "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+        },
+        {
+          "path": "runs/R17/review/C10-policy-review.md",
+          "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+        },
+        {
+          "path": "runs/R17/review/C10-scenario-decisions.json",
+          "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+        },
+        {
+          "path": "runs/R17/review/C10-review-evidence.json",
+          "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+        },
+        {
+          "path": "runs/R17/review/C10-policy-review.md",
+          "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+        },
+        {
+          "path": "runs/R17/review/C10-scenario-decisions.json",
+          "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+        },
+        {
+          "path": "runs/R17/review/C10-review-evidence.json",
+          "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+        },
+        {
+          "path": "runs/R17/review/C10-policy-review.md",
+          "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+        },
+        {
+          "path": "runs/R17/review/C10-scenario-decisions.json",
+          "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R17-02-1",
+          "started_at": "2026-10-07T04:06:24.951756+00:00",
+          "requirements_hash": "82878ce127fa92eeeb8de9fb8dfa1fb9cdbae3f5b5de3ee009813c40130b5efb",
+          "inputs": [
+            {
+              "path": "runs/R17/scope-decision.json",
+              "sha256": "d94e4d2df768000a96a49c8c9c52904bc1d24235c900eed2c5f920b020795641"
+            },
+            {
+              "path": "runs/R17/acceptance.json",
+              "sha256": "8d14a332aca201cab875bd8b51eb3bb6f0202c7f5fe2be2d24bb02dbce6a15c7"
+            },
+            {
+              "path": "runs/R17/input-lock.json",
+              "sha256": "9d00ec04d365be5500b491fc543be967dff9f86fe3bc0b51078af6ceddb644f8"
+            },
+            {
+              "path": "runs/R17/candidate/C10-lock.json",
+              "sha256": "08e1d8cc27a4006ac0d0bb1abb3cad4b44320844af71cb9cda392b36b026ff51"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R17/freeze-candidate-command.json",
+            "sha256": "4db1e4049c3a1e8d27bcf3e98f0c1175fec83dcce71cab24e77b84f561ddc800"
+          },
+          "status": "done",
+          "ended_at": "2026-10-07T04:09:42.517299+00:00",
+          "result": {
+            "path": "runs/R17/R17-02-result.json",
+            "sha256": "ba07bdba843cbb16ab97338f10cded4514ed3a26989c2d748a64724ed749f8dc"
+          },
+          "evidence": [
+            {
+              "path": "runs/R17/R17-02-result.json",
+              "sha256": "ba07bdba843cbb16ab97338f10cded4514ed3a26989c2d748a64724ed749f8dc"
+            },
+            {
+              "path": "runs/R17/review/C10-review-evidence.json",
+              "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+            },
+            {
+              "path": "runs/R17/review/C10-policy-review.md",
+              "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+            },
+            {
+              "path": "runs/R17/review/C10-scenario-decisions.json",
+              "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+            },
+            {
+              "path": "runs/R17/review/C10-review-evidence.json",
+              "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+            },
+            {
+              "path": "runs/R17/review/C10-policy-review.md",
+              "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+            },
+            {
+              "path": "runs/R17/review/C10-scenario-decisions.json",
+              "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+            },
+            {
+              "path": "runs/R17/review/C10-review-evidence.json",
+              "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+            },
+            {
+              "path": "runs/R17/review/C10-policy-review.md",
+              "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+            },
+            {
+              "path": "runs/R17/review/C10-scenario-decisions.json",
+              "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+            },
+            {
+              "path": "runs/R17/review/C10-review-evidence.json",
+              "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+            },
+            {
+              "path": "runs/R17/review/C10-policy-review.md",
+              "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+            },
+            {
+              "path": "runs/R17/review/C10-scenario-decisions.json",
+              "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+            },
+            {
+              "path": "runs/R17/review/C10-review-evidence.json",
+              "sha256": "a19ec6b74a2698b53354c6c11af290d7917a3b4ba3c6804207ab149e3940c9a9"
+            },
+            {
+              "path": "runs/R17/review/C10-policy-review.md",
+              "sha256": "2eff024556593a3e61ea9fb744d9c41f198e3789653334e970a7b0d30ec3f6d6"
+            },
+            {
+              "path": "runs/R17/review/C10-scenario-decisions.json",
+              "sha256": "c315f1125b5705c634518fd5fcdebae74d8cd448322451f66549d5ced2fadcfa"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R17/scope-decision.json",
+          "sha256": "d94e4d2df768000a96a49c8c9c52904bc1d24235c900eed2c5f920b020795641"
+        },
+        "progress_state": "ready",
+        "deadline_utc": null,
+        "stop_conditions": [
+          "verified requested output",
+          "actual resource or permission boundary",
+          "unsupported unchanged path; diagnose before further execution"
+        ]
+      }
+    },
+    {
+      "id": "R17-03",
+      "title": "实际多步检索与上下文整理试运行",
+      "queue": "challenges",
+      "category": "user_progress_and_search_policy",
+      "priority": 52,
+      "owner": "/root/r17_research_trial",
+      "depends_on": [
+        "R17-01"
+      ],
+      "write_paths": [
+        "runs/R17/research-trial/"
+      ],
+      "status": "done",
+      "acceptance": [
+        {
+          "id": "s1",
+          "assertion": "A usable question-to-decision search plan exists before actual web retrieval; queries/routes are adapted to observed gaps and bias, sources checked in primary passages."
+        },
+        {
+          "id": "s2",
+          "assertion": "Actual multi-step search/open trajectory, retained/discarded-source rationale and supported synthesis are recorded; compact working context excludes irrelevant raw text, instruction payloads and duplicate reposts."
+        },
+        {
+          "id": "s3",
+          "assertion": "Actual scope, resource window, tool errors if any, missing evidence and telemetry limits retained; more than two useful steps do not falsely imply >2 actual corrections, no unbounded exact repeats or unsupported capability claim."
+        }
+      ],
+      "inputs": [
+        "runs/R17/scope-decision.json",
+        "runs/R17/acceptance.json",
+        "runs/R17/input-lock.json",
+        "runs/R17/candidate/C10-lock.json"
+      ],
+      "next_action": "Preserve observations and integrate with independently reviewed controller and package.",
+      "evidence": [
+        {
+          "path": "runs/R17/R17-03-result.json",
+          "sha256": "c0e550765f5dc5d3a3a280e681f482e83152d2b3b3614df0ea05ebc8f4a93ef3"
+        },
+        {
+          "path": "runs/R17/research-trial/result.json",
+          "sha256": "290ac95234db7fa002f3c64d3640bc0839b2c326cbcef917ea3e2ca74231846a"
+        },
+        {
+          "path": "runs/R17/research-trial/plan.md",
+          "sha256": "ecc19fcc44e650c54c4d9b574f22f43df6f7419fb05c0ec5f67e36281b7ee141"
+        },
+        {
+          "path": "runs/R17/research-trial/query-log.json",
+          "sha256": "9576e8c1e575e41e63a48dff15e594c8b6d42c03da9d2023cdbd5631ec4b3442"
+        },
+        {
+          "path": "runs/R17/research-trial/evidence-cards.md",
+          "sha256": "e473701002ebbc61838ed18cbc8e2a5b5783811a3fbade44cb66a21cbf4cf5ff"
+        },
+        {
+          "path": "runs/R17/research-trial/synthesis.md",
+          "sha256": "a9dfeedd7368b941e7ea12370107e1ee192f74780947b581f0fd397015f0f272"
+        },
+        {
+          "path": "runs/R17/research-trial/retained-and-excluded.md",
+          "sha256": "15747252570de444b6292575fba3af8754fc771ac2c20790b323d3af0a59de8c"
+        },
+        {
+          "path": "runs/R17/research-trial/result.json",
+          "sha256": "290ac95234db7fa002f3c64d3640bc0839b2c326cbcef917ea3e2ca74231846a"
+        },
+        {
+          "path": "runs/R17/research-trial/plan.md",
+          "sha256": "ecc19fcc44e650c54c4d9b574f22f43df6f7419fb05c0ec5f67e36281b7ee141"
+        },
+        {
+          "path": "runs/R17/research-trial/query-log.json",
+          "sha256": "9576e8c1e575e41e63a48dff15e594c8b6d42c03da9d2023cdbd5631ec4b3442"
+        },
+        {
+          "path": "runs/R17/research-trial/evidence-cards.md",
+          "sha256": "e473701002ebbc61838ed18cbc8e2a5b5783811a3fbade44cb66a21cbf4cf5ff"
+        },
+        {
+          "path": "runs/R17/research-trial/synthesis.md",
+          "sha256": "a9dfeedd7368b941e7ea12370107e1ee192f74780947b581f0fd397015f0f272"
+        },
+        {
+          "path": "runs/R17/research-trial/retained-and-excluded.md",
+          "sha256": "15747252570de444b6292575fba3af8754fc771ac2c20790b323d3af0a59de8c"
+        },
+        {
+          "path": "runs/R17/research-trial/result.json",
+          "sha256": "290ac95234db7fa002f3c64d3640bc0839b2c326cbcef917ea3e2ca74231846a"
+        },
+        {
+          "path": "runs/R17/research-trial/plan.md",
+          "sha256": "ecc19fcc44e650c54c4d9b574f22f43df6f7419fb05c0ec5f67e36281b7ee141"
+        },
+        {
+          "path": "runs/R17/research-trial/query-log.json",
+          "sha256": "9576e8c1e575e41e63a48dff15e594c8b6d42c03da9d2023cdbd5631ec4b3442"
+        },
+        {
+          "path": "runs/R17/research-trial/evidence-cards.md",
+          "sha256": "e473701002ebbc61838ed18cbc8e2a5b5783811a3fbade44cb66a21cbf4cf5ff"
+        },
+        {
+          "path": "runs/R17/research-trial/synthesis.md",
+          "sha256": "a9dfeedd7368b941e7ea12370107e1ee192f74780947b581f0fd397015f0f272"
+        },
+        {
+          "path": "runs/R17/research-trial/retained-and-excluded.md",
+          "sha256": "15747252570de444b6292575fba3af8754fc771ac2c20790b323d3af0a59de8c"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R17-03-1",
+          "started_at": "2026-10-07T04:06:25.134780+00:00",
+          "requirements_hash": "472531f3fbb28cf6137bee087103d888805988ae6ba58f9985bde494b4497ba1",
+          "inputs": [
+            {
+              "path": "runs/R17/scope-decision.json",
+              "sha256": "d94e4d2df768000a96a49c8c9c52904bc1d24235c900eed2c5f920b020795641"
+            },
+            {
+              "path": "runs/R17/acceptance.json",
+              "sha256": "8d14a332aca201cab875bd8b51eb3bb6f0202c7f5fe2be2d24bb02dbce6a15c7"
+            },
+            {
+              "path": "runs/R17/input-lock.json",
+              "sha256": "9d00ec04d365be5500b491fc543be967dff9f86fe3bc0b51078af6ceddb644f8"
+            },
+            {
+              "path": "runs/R17/candidate/C10-lock.json",
+              "sha256": "08e1d8cc27a4006ac0d0bb1abb3cad4b44320844af71cb9cda392b36b026ff51"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R17/freeze-candidate-command.json",
+            "sha256": "4db1e4049c3a1e8d27bcf3e98f0c1175fec83dcce71cab24e77b84f561ddc800"
+          },
+          "status": "done",
+          "ended_at": "2026-10-07T04:09:43.160652+00:00",
+          "result": {
+            "path": "runs/R17/R17-03-result.json",
+            "sha256": "c0e550765f5dc5d3a3a280e681f482e83152d2b3b3614df0ea05ebc8f4a93ef3"
+          },
+          "evidence": [
+            {
+              "path": "runs/R17/R17-03-result.json",
+              "sha256": "c0e550765f5dc5d3a3a280e681f482e83152d2b3b3614df0ea05ebc8f4a93ef3"
+            },
+            {
+              "path": "runs/R17/research-trial/result.json",
+              "sha256": "290ac95234db7fa002f3c64d3640bc0839b2c326cbcef917ea3e2ca74231846a"
+            },
+            {
+              "path": "runs/R17/research-trial/plan.md",
+              "sha256": "ecc19fcc44e650c54c4d9b574f22f43df6f7419fb05c0ec5f67e36281b7ee141"
+            },
+            {
+              "path": "runs/R17/research-trial/query-log.json",
+              "sha256": "9576e8c1e575e41e63a48dff15e594c8b6d42c03da9d2023cdbd5631ec4b3442"
+            },
+            {
+              "path": "runs/R17/research-trial/evidence-cards.md",
+              "sha256": "e473701002ebbc61838ed18cbc8e2a5b5783811a3fbade44cb66a21cbf4cf5ff"
+            },
+            {
+              "path": "runs/R17/research-trial/synthesis.md",
+              "sha256": "a9dfeedd7368b941e7ea12370107e1ee192f74780947b581f0fd397015f0f272"
+            },
+            {
+              "path": "runs/R17/research-trial/retained-and-excluded.md",
+              "sha256": "15747252570de444b6292575fba3af8754fc771ac2c20790b323d3af0a59de8c"
+            },
+            {
+              "path": "runs/R17/research-trial/result.json",
+              "sha256": "290ac95234db7fa002f3c64d3640bc0839b2c326cbcef917ea3e2ca74231846a"
+            },
+            {
+              "path": "runs/R17/research-trial/plan.md",
+              "sha256": "ecc19fcc44e650c54c4d9b574f22f43df6f7419fb05c0ec5f67e36281b7ee141"
+            },
+            {
+              "path": "runs/R17/research-trial/query-log.json",
+              "sha256": "9576e8c1e575e41e63a48dff15e594c8b6d42c03da9d2023cdbd5631ec4b3442"
+            },
+            {
+              "path": "runs/R17/research-trial/evidence-cards.md",
+              "sha256": "e473701002ebbc61838ed18cbc8e2a5b5783811a3fbade44cb66a21cbf4cf5ff"
+            },
+            {
+              "path": "runs/R17/research-trial/synthesis.md",
+              "sha256": "a9dfeedd7368b941e7ea12370107e1ee192f74780947b581f0fd397015f0f272"
+            },
+            {
+              "path": "runs/R17/research-trial/retained-and-excluded.md",
+              "sha256": "15747252570de444b6292575fba3af8754fc771ac2c20790b323d3af0a59de8c"
+            },
+            {
+              "path": "runs/R17/research-trial/result.json",
+              "sha256": "290ac95234db7fa002f3c64d3640bc0839b2c326cbcef917ea3e2ca74231846a"
+            },
+            {
+              "path": "runs/R17/research-trial/plan.md",
+              "sha256": "ecc19fcc44e650c54c4d9b574f22f43df6f7419fb05c0ec5f67e36281b7ee141"
+            },
+            {
+              "path": "runs/R17/research-trial/query-log.json",
+              "sha256": "9576e8c1e575e41e63a48dff15e594c8b6d42c03da9d2023cdbd5631ec4b3442"
+            },
+            {
+              "path": "runs/R17/research-trial/evidence-cards.md",
+              "sha256": "e473701002ebbc61838ed18cbc8e2a5b5783811a3fbade44cb66a21cbf4cf5ff"
+            },
+            {
+              "path": "runs/R17/research-trial/synthesis.md",
+              "sha256": "a9dfeedd7368b941e7ea12370107e1ee192f74780947b581f0fd397015f0f272"
+            },
+            {
+              "path": "runs/R17/research-trial/retained-and-excluded.md",
+              "sha256": "15747252570de444b6292575fba3af8754fc771ac2c20790b323d3af0a59de8c"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R17/scope-decision.json",
+          "sha256": "d94e4d2df768000a96a49c8c9c52904bc1d24235c900eed2c5f920b020795641"
+        },
+        "progress_state": "ready",
+        "deadline_utc": null,
+        "stop_conditions": [
+          "verified requested output",
+          "actual resource or permission boundary",
+          "unsupported unchanged path; diagnose before further execution"
+        ]
+      }
+    },
+    {
+      "id": "R17-04",
+      "title": "历史/独立结果/纯文档包装与接续整合",
+      "queue": "challenges",
+      "category": "user_progress_and_search_policy",
+      "priority": 53,
+      "owner": "root",
+      "depends_on": [
+        "R17-01",
+        "R17-02",
+        "R17-03"
+      ],
+      "write_paths": [
+        "runs/R17/package/",
+        "runs/R17/final/"
+      ],
+      "status": "done",
+      "acceptance": [
+        {
+          "id": "d1",
+          "assertion": "Meaningful legacy/new controller guards and immutable byte/history checks pass; source and independent behavior conclusions separated."
+        },
+        {
+          "id": "d2",
+          "assertion": "Freshly unpacked C10 package contains only locked Markdown, with byte comparisons; TODO/checkpoint/entry policy reflect current user change without changing old verdicts."
+        }
+      ],
+      "inputs": [
+        "runs/R17/scope-decision.json",
+        "runs/R17/acceptance.json",
+        "runs/R17/input-lock.json",
+        "runs/R17/candidate/C10-lock.json"
+      ],
+      "next_action": "Prospectively continue same original R16-02 actor/input/goal; preserve stopped attempt and p1-p5.",
+      "evidence": [
+        {
+          "path": "runs/R17/R17-04-result.json",
+          "sha256": "5b925ff6363169bf4e55a84d411a72d996885c4d7a16fd5e77a588220fdb227e"
+        },
+        {
+          "path": "runs/R17/controller-review/review.json",
+          "sha256": "bd9b25c478c97eeed29cf0ef6aa0493d0ae69ce8eeb7a5732e572e4a5137efb5"
+        },
+        {
+          "path": "runs/R17/controller-review/addendum.json",
+          "sha256": "45410178685d51dc78fd74b0fba4182a74db2509b6d0dacad2d8b20527361e9d"
+        },
+        {
+          "path": "runs/R17/controller-review/addendum2.json",
+          "sha256": "5393e4d8d325ed29c02bc6e27b81988e9b89d8bda24ae8f7c41a8ef8bbab5c0d"
+        },
+        {
+          "path": "runs/R17/controller-regression-second-fix-command.json",
+          "sha256": "ba75d5fadc61d12b3a7ea3f5e60ef01a1e701a4ab9f39980bd6f51dc60e91960"
+        },
+        {
+          "path": "runs/R17/handoff-check-after-fixes-command.json",
+          "sha256": "080df212abbf5483e2532366b9c2a597e88e346cdb0f0514d6ef4cca47d049e9"
+        },
+        {
+          "path": "runs/R17/history-verification.json",
+          "sha256": "62f4137ccaef01a66a62039c771e109c2dea52d9d2984596f5e96a88ebb33b46"
+        },
+        {
+          "path": "runs/R17/package/build-command.json",
+          "sha256": "1c729878b2d3b5fb87cf58085a12d20c5b9eb1787a0ef9367cdf3502c0a1a2fc"
+        },
+        {
+          "path": "runs/R17/package/verification.json",
+          "sha256": "a7b5963bdefec124c0957590c94f01162f70b50e25eb6c866906fad9bbde3674"
+        },
+        {
+          "path": "runs/R17/entry-policy-snapshot.json",
+          "sha256": "e56805cdbc19787e6c2810b9d48eaffaab03fa5f15ea8a28d1ff0b935cb7ee0a"
+        },
+        {
+          "path": "runs/R17/R17-02-result.json",
+          "sha256": "ba07bdba843cbb16ab97338f10cded4514ed3a26989c2d748a64724ed749f8dc"
+        },
+        {
+          "path": "runs/R17/R17-03-result.json",
+          "sha256": "c0e550765f5dc5d3a3a280e681f482e83152d2b3b3614df0ea05ebc8f4a93ef3"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R17-04-1",
+          "started_at": "2026-10-07T04:19:50.856215+00:00",
+          "requirements_hash": "6848c8dc6e47d2226b633e10fa8ceae36c08ed1d5c9d4886e810864da60ccbe1",
+          "inputs": [
+            {
+              "path": "runs/R17/scope-decision.json",
+              "sha256": "d94e4d2df768000a96a49c8c9c52904bc1d24235c900eed2c5f920b020795641"
+            },
+            {
+              "path": "runs/R17/acceptance.json",
+              "sha256": "8d14a332aca201cab875bd8b51eb3bb6f0202c7f5fe2be2d24bb02dbce6a15c7"
+            },
+            {
+              "path": "runs/R17/input-lock.json",
+              "sha256": "9d00ec04d365be5500b491fc543be967dff9f86fe3bc0b51078af6ceddb644f8"
+            },
+            {
+              "path": "runs/R17/candidate/C10-lock.json",
+              "sha256": "08e1d8cc27a4006ac0d0bb1abb3cad4b44320844af71cb9cda392b36b026ff51"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R17/controller-regression-second-fix-command.json",
+            "sha256": "ba75d5fadc61d12b3a7ea3f5e60ef01a1e701a4ab9f39980bd6f51dc60e91960"
+          },
+          "status": "done",
+          "execution_policy_hash": "a7b5c2a3b65eff87607342de7cfeaed26ef83a32c8cd2855bcdde8cc550be7d7",
+          "ended_at": "2026-10-07T04:19:51.633565+00:00",
+          "result": {
+            "path": "runs/R17/R17-04-result.json",
+            "sha256": "5b925ff6363169bf4e55a84d411a72d996885c4d7a16fd5e77a588220fdb227e"
+          },
+          "evidence": [
+            {
+              "path": "runs/R17/R17-04-result.json",
+              "sha256": "5b925ff6363169bf4e55a84d411a72d996885c4d7a16fd5e77a588220fdb227e"
+            },
+            {
+              "path": "runs/R17/controller-review/review.json",
+              "sha256": "bd9b25c478c97eeed29cf0ef6aa0493d0ae69ce8eeb7a5732e572e4a5137efb5"
+            },
+            {
+              "path": "runs/R17/controller-review/addendum.json",
+              "sha256": "45410178685d51dc78fd74b0fba4182a74db2509b6d0dacad2d8b20527361e9d"
+            },
+            {
+              "path": "runs/R17/controller-review/addendum2.json",
+              "sha256": "5393e4d8d325ed29c02bc6e27b81988e9b89d8bda24ae8f7c41a8ef8bbab5c0d"
+            },
+            {
+              "path": "runs/R17/controller-regression-second-fix-command.json",
+              "sha256": "ba75d5fadc61d12b3a7ea3f5e60ef01a1e701a4ab9f39980bd6f51dc60e91960"
+            },
+            {
+              "path": "runs/R17/handoff-check-after-fixes-command.json",
+              "sha256": "080df212abbf5483e2532366b9c2a597e88e346cdb0f0514d6ef4cca47d049e9"
+            },
+            {
+              "path": "runs/R17/history-verification.json",
+              "sha256": "62f4137ccaef01a66a62039c771e109c2dea52d9d2984596f5e96a88ebb33b46"
+            },
+            {
+              "path": "runs/R17/package/build-command.json",
+              "sha256": "1c729878b2d3b5fb87cf58085a12d20c5b9eb1787a0ef9367cdf3502c0a1a2fc"
+            },
+            {
+              "path": "runs/R17/package/verification.json",
+              "sha256": "a7b5963bdefec124c0957590c94f01162f70b50e25eb6c866906fad9bbde3674"
+            },
+            {
+              "path": "runs/R17/entry-policy-snapshot.json",
+              "sha256": "e56805cdbc19787e6c2810b9d48eaffaab03fa5f15ea8a28d1ff0b935cb7ee0a"
+            },
+            {
+              "path": "runs/R17/R17-02-result.json",
+              "sha256": "ba07bdba843cbb16ab97338f10cded4514ed3a26989c2d748a64724ed749f8dc"
+            },
+            {
+              "path": "runs/R17/R17-03-result.json",
+              "sha256": "c0e550765f5dc5d3a3a280e681f482e83152d2b3b3614df0ea05ebc8f4a93ef3"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R17/scope-decision.json",
+          "sha256": "d94e4d2df768000a96a49c8c9c52904bc1d24235c900eed2c5f920b020795641"
+        },
+        "progress_state": "ready",
+        "deadline_utc": null,
+        "stop_conditions": [
+          "verified requested output",
+          "actual resource or permission boundary",
+          "unsupported unchanged path; diagnose before further execution"
+        ]
+      }
     }
   ],
   "execution": {
@@ -5389,7 +6218,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-r14-resume",
+    "current_coordinator": "root-codex-r17-policy",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -5404,7 +6233,7 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R16/REPORT.md",
+    "current_report": "runs/R17/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
@@ -5424,7 +6253,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R16/publication/lease-release-observation.json",
+    "coordinator_release_evidence": "runs/R16/rule-audit/lease-release.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -5729,7 +6558,47 @@
         }
       ],
       "evidence": "runs/R16/publication/source-ci-completion-command.json"
-    }
+    },
+    "current_user_steering": "C10 progress/search policy implemented; same original R16-02 prospectively continued.",
+    "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
+    "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
+    "current_candidate": "runs/R17/candidate/C10-lock.json",
+    "R17_policy": "runs/R17/scope-decision.json",
+    "completed_native_R17": [
+      {
+        "worker": "/root/r17_policy_review",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/review/C10-review-evidence.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r17_research_trial",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/research-trial/result.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r17_controller_review",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/controller-review/addendum2.json",
+        "actual_model": null
+      }
+    ],
+    "R17_status": "delivered_policy_with_actual_R18_first_step",
+    "next_prospective_plan": "runs/R18/PLAN.md",
+    "native_pending_current": [],
+    "completed_native_R18": [
+      {
+        "worker": "/root/r16_original_solution",
+        "state": "final_notification_received",
+        "evidence": "runs/R16/prospective-20261007/first-step.json",
+        "actual_model": null
+      }
+    ],
+    "R18_status": "real_first_step_observed_full_case_incomplete",
+    "current_task_process_state": "R16-02 unfinished at checkpoint; producer first slice terminal; no background worker.",
+    "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
+    "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance"
   },
   "events": [
     {
@@ -7525,6 +8394,206 @@
         "source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
         "conclusion": "success",
         "full_acceptance_passed": false
+      }
+    },
+    {
+      "at": "2026-10-07T03:23:26.999913+00:00",
+      "command": "record_user_rule_review",
+      "result": {
+        "rules_changed": false,
+        "budgets_changed": false,
+        "solution_resumed": false,
+        "prior_2_to_6_proposal": "deferred_for_rule_review",
+        "report": "runs/R16/rule-audit/REPORT.md"
+      }
+    },
+    {
+      "at": "2026-10-07T04:06:25.294225+00:00",
+      "command": "register_user_progress_policy",
+      "result": {
+        "old_tasks_preserved": 46,
+        "new_tasks": 4,
+        "global_two_error_limit": false,
+        "original_case_regraded": false,
+        "actual_child_creations": [
+          "/root/r17_policy_review",
+          "/root/r17_research_trial",
+          "/root/r17_controller_review"
+        ]
+      }
+    },
+    {
+      "at": "2026-10-07T04:19:51.662703+00:00",
+      "command": "C10_policy_delivery",
+      "result": {
+        "status": "done",
+        "historical_46_unchanged": true,
+        "full_product_pass": false
+      }
+    },
+    {
+      "at": "2026-10-07T04:23:35.413969+00:00",
+      "command": "original_actor_followup",
+      "result": {
+        "worker": "/root/r16_original_solution",
+        "task": "R16-02",
+        "state": "followup_dispatched_observed",
+        "policy_amendment": "runs/R18/amendment.json",
+        "scope": "prospective original-case first slice; original task not yet mutated",
+        "actual_model": null
+      }
+    },
+    {
+      "at": "2026-10-07T04:26:05.521910+00:00",
+      "command": "prospective_same_original_case_start",
+      "result": {
+        "checked_at": "2026-10-07T04:26:05.509748+00:00",
+        "original_38_unchanged": true,
+        "pre_R17_45_other_tasks_unchanged": true,
+        "one_authorized_prospective_amendment": "R16-02",
+        "old_attempt_bytes_equal": true,
+        "p1_to_p5_unchanged": true,
+        "old_source_corrections": 2,
+        "queue_restart_counter": 3,
+        "new_actor_events": [
+          {
+            "event": "prospective queue continuation after original C9 stop",
+            "classification": "policy-amendment queue restart; not a third observed source error",
+            "state": "historical repairs_used=2 retained; prospective queue counter increments to 3; new actor ledger opened in prospective domain"
+          },
+          {
+            "event": "baseline execution",
+            "classification": "planned baseline computation",
+            "state": "exit 0; complete 3000-piece outputs produced for two single-type candidate fleets"
+          },
+          {
+            "event": "coordinate receiving check",
+            "classification": "producer self-check using a separate implementation and raw-DOCX re-read; not independent review",
+            "state": "exit 0; zero detected issues"
+          },
+          {
+            "event": "prior source-manifest accidental access",
+            "classification": "unauthorized read boundary event in immutable old ledger",
+            "state": "old disclosure retained; no manifest content used; not reread"
+          }
+        ],
+        "original_verdict": "blocked/unpassed under old2/2",
+        "full_solution_passed": false,
+        "first_step": {
+          "schema": "forge-prospective-first-slice/1",
+          "task_id": "R16-02",
+          "actor": "/root/r16_original_solution",
+          "amendment": "runs/R18/amendment.json",
+          "policy": "runs/R17/candidate/C10-lock.json",
+          "old_attempt_status": "blocked_and_unpassed_at_2_of_2; retained unchanged",
+          "historical_repairs_used": 2,
+          "prospective_queue_restart_count": 1,
+          "prospective_cumulative_queue_counter": 3,
+          "queue_restart_is_source_error": false,
+          "retrospective_regrade": false,
+          "declared_resource_window": {
+            "duration": "12 minutes",
+            "scope": "first local CPU baseline plus receiving check",
+            "declared_before_first_execution": true,
+            "provider_enforced": false,
+            "unknowns": [
+              "provider/model tokens",
+              "cost",
+              "host CPU model"
+            ]
+          },
+          "actual_start_receipt": "runs/R16/prospective-20261007/receipts/01-baseline.json",
+          "receiving_check_receipt": "runs/R16/prospective-20261007/receipts/02-independent-check.json",
+          "inputs_actually_processed": [
+            "runs/R16/source/official_extracted/D_corrected/附件1.docx"
+          ],
+          "outputs": [
+            "runs/R16/prospective-20261007/baseline.py",
+            "runs/R16/prospective-20261007/placements.csv",
+            "runs/R16/prospective-20261007/results.json",
+            "runs/R16/prospective-20261007/constraint-audit.json",
+            "runs/R16/prospective-20261007/verify_baseline.py",
+            "runs/R16/prospective-20261007/independent-check.json"
+          ],
+          "observed_outcomes": {
+            "raw_product_types": 5,
+            "raw_piece_count": 3000,
+            "recomputed_total_mass_kg": 41100,
+            "recomputed_total_volume_cm3": 287350000,
+            "all_type_1_candidate": {
+              "trips": 75,
+              "cost_yuan": 33750,
+              "mean_per_trip_space_utilization_pct": 19.745069745069745,
+              "mean_per_trip_payload_utilization_pct": 9.133333333333333,
+              "independent_checker_issues": 0
+            },
+            "all_type_2_candidate": {
+              "trips": 40,
+              "cost_yuan": 28000,
+              "mean_per_trip_space_utilization_pct": 17.247899159663866,
+              "mean_per_trip_payload_utilization_pct": 10.275,
+              "independent_checker_issues": 0
+            },
+            "actual_computation_runtime_reported_by_solver_s": 0.698,
+            "baseline_command_elapsed_from_receipt_s": 1.81,
+            "checker_command_elapsed_from_receipt_s": 0.545
+          },
+          "check_scope": [
+            "all item IDs/counts reconstructed from raw Attachment 1",
+            "dimensions/orientations and item masses checked against raw table",
+            "coordinates within both horizontal vehicle boundaries",
+            "all z coordinates equal zero, satisfying floor support for fragile pieces",
+            "top faces preserve at least 3 cm headroom",
+            "pairwise 3D non-overlap within each truck",
+            "per-truck payload does not exceed rated capacity",
+            "directional G4/G5 remain in printed L/W/H orientation"
+          ],
+          "actual_events": [
+            {
+              "event": "prospective queue continuation after original C9 stop",
+              "classification": "policy-amendment queue restart; not a third observed source error",
+              "state": "historical repairs_used=2 retained; prospective queue counter increments to 3; new actor ledger opened in prospective domain"
+            },
+            {
+              "event": "baseline execution",
+              "classification": "planned baseline computation",
+              "state": "exit 0; complete 3000-piece outputs produced for two single-type candidate fleets"
+            },
+            {
+              "event": "coordinate receiving check",
+              "classification": "producer self-check using a separate implementation and raw-DOCX re-read; not independent review",
+              "state": "exit 0; zero detected issues"
+            },
+            {
+              "event": "prior source-manifest accidental access",
+              "classification": "unauthorized read boundary event in immutable old ledger",
+              "state": "old disclosure retained; no manifest content used; not reread"
+            }
+          ],
+          "limitations": [
+            "The heuristic places every piece on the floor and does not use stacking. It thereby satisfies the support, fragile-ground-contact and load-transmission constraints for this candidate, but it may use far more trips than a stacking-enabled method.",
+            "Shelf packing is a feasible candidate construction, not a proof of minimum trips or minimum cost.",
+            "The Q1 single-truck simultaneous space/payload multiobjective packing was not computed.",
+            "The mixed-fleet Q2 objectives were not optimized or compared; the two all-one-type candidates do not prove an optimum.",
+            "Attachment 2 genericity, parameter sensitivity, full paper, figures, and independent fresh-context review remain undone.",
+            "The checker was authored and executed by the same producer context, so it is a self-check and not independent acceptance."
+          ],
+          "full_paper_complete": false,
+          "full_task_complete": false,
+          "continuation": "Continue the same task identity and actor. Preserve all artifacts and findings; next examine stacked placements and Q1 single-truck objectives, then compare a feasible stacked baseline against this floor-only candidate before addressing mixed-fleet and Attachment 2 requirements. Do not call current candidates optimal."
+        }
+      }
+    },
+    {
+      "at": "2026-10-07T04:31:18.238122+00:00",
+      "command": "final_C10_and_original_case_checkpoint",
+      "result": {
+        "document_files": 9,
+        "bundled_scripts": 0,
+        "script_tests": 62,
+        "original_case_complete": false,
+        "original_case_actor_terminal": true,
+        "old_failures_retained": true
       }
     }
   ],

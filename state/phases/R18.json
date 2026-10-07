@@ -1,0 +1,97 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R18",
+  "goal": "Same R16-02 original identity under prospective user policy, with old attempt retained",
+  "tasks": [
+    {
+      "id": "R16-02",
+      "title": "不读既有解法的原创完整试解与论文",
+      "owner": "/root/r16_original_solution",
+      "write_paths": [
+        "runs/R16/prospective-20261007/"
+      ],
+      "status": "in_progress",
+      "blocker": null,
+      "next_action": "Continue original full solve from actual baseline/constraint slice; no full-paper acceptance yet.",
+      "depends_on": [],
+      "acceptance": [
+        "Workflow and question coverage map trace every official subquestion to actual inputs, model/decision, result, receiving check and limitation; skipped or unsupported subquestions cannot count as complete",
+        "Mathematical definitions, units, assumptions and constraints match the original task; feasible proportionate baseline precedes justified main method; necessary alternatives or simplifications receive actual evidence rather than model-name lists",
+        "Original code processes official raw data and actually computes reported results; retained reproduction instructions and real command evidence; no fabricated numeric answer, hardcoded reported result or disguised mock",
+        "Task-relevant substantive validation independently recomputable from raw material; fair baseline/main comparison and a meaningful failure/boundary path; sensitivity/robustness where material to the original conclusions; unavailable observations remain unverified",
+        "Complete paper answers official questions with coherent analysis/models/results/validation/conclusions/limits and source attribution; substantive tables/figures/equations agree with code/results and carry units; restrained uncertainty and no competition rank/prize claim",
+        "Same original R16-02 identity and actor continue using frozen C10 under explicit prospective user policy; bounded task-specific resources and classified recoveries/progress; self-check vs independent review separate. Retain old failed fixed-condition attempt2/2 and all source/C9/other historical counts; unknown telemetry null; no retrospective pass."
+      ],
+      "evidence": [
+        "runs/R16/prospective-20261007/first-step.json",
+        "runs/R16/prospective-20261007/receipts/01-baseline.json",
+        "runs/R16/freeze-input-command.json",
+        "runs/R16/prospective-20261007/receipts/01-baseline.json"
+      ]
+    },
+    {
+      "id": "R16-03",
+      "title": "原题原数据与论文代码的独立核验",
+      "owner": "fresh_reviewer_luna",
+      "write_paths": [
+        "runs/R16/review/"
+      ],
+      "status": "blocked",
+      "blocker": "R16-02 stopped at original cumulative budget2/2 without model results or a complete paper.",
+      "next_action": "Preserve original dependencies; do not dispatch review or claim full report until original solution gate passes.",
+      "depends_on": [
+        "R16-02"
+      ],
+      "acceptance": [
+        "Fresh reviewer receives official raw source, frozen requirements and actual artifacts without intended answer/producer diagnoses/previous verdict; recomputes critical quantities and checks question coverage rather than trusting pass reports",
+        "One source/evidence-backed verdict per p1-p6, mandatory defects separated from optional polish; actual reproduction/check observations and model/data/paper disagreements retained"
+      ],
+      "evidence": [
+        "runs/R16/R16-02-result.json"
+      ]
+    },
+    {
+      "id": "R16-04",
+      "title": "汇总真实证据与大数据赛迁移边界",
+      "owner": "root",
+      "write_paths": [
+        "runs/R16/report/"
+      ],
+      "status": "blocked",
+      "blocker": "R16-02 stopped at original cumulative budget2/2 without model results or a complete paper.",
+      "next_action": "Preserve original dependencies; do not dispatch review or claim full report until original solution gate passes.",
+      "depends_on": [
+        "R16-02",
+        "R16-03"
+      ],
+      "acceptance": [
+        "逐问证据与失败真实保留，原题试解/复现/独立核验/竞争力推论分开，不改旧失败预算",
+        "明确常规赛与大数据赛迁移的依据和差异，交付论文及工件与可执行下一项而不保证奖项"
+      ],
+      "evidence": [
+        "runs/R16/R16-02-result.json"
+      ]
+    },
+    {
+      "id": "R18-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R16-02",
+        "R16-03",
+        "R16-04"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "acceptance": [
+        "完成原要求后真实启动后继，否则保留阻塞"
+      ],
+      "status": "blocked",
+      "evidence": [],
+      "blocker": "Original full solution/paper and independent acceptance incomplete.",
+      "next_action": "Continue the same original-case goal; do not infer a pass from its first slice."
+    }
+  ]
+}

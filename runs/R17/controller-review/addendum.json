@@ -1,0 +1,79 @@
+{
+  "schema": "forge-controller-review-addendum/1",
+  "prior_review": "review.md",
+  "historical_verdict_preserved": "delivery.d1_not_met",
+  "updated_source_verdict": "delivery.d1_not_met",
+  "tests": {
+    "command_receipt": "addendum-tests-command.json",
+    "count": 15,
+    "result": "passed"
+  },
+  "rechecked_findings": [
+    {
+      "id": "deadline-completion-boundary",
+      "result": "repaired_for_progress_guard",
+      "source": "scripts/continuation.py:67-86, 250-282",
+      "evidence": "addendum-probe-command.json; real deadline set 0.6 seconds ahead, attempt began before it, finish occurred after a 0.9 second wait and returned blocked with result retained.",
+      "limits": "Local real-clock behavior only; no provider quota or hard subprocess timeout."
+    },
+    {
+      "id": "terminal-acceptance-freezing",
+      "result": "progress_guard_repaired_legacy_still_open",
+      "source": "scripts/continuation.py:116-184",
+      "evidence": "Progress task assertion mutation produces changed frozen acceptance; legacy task mutation produces no validate errors in addendum-legacy-freeze-retry-command.json.",
+      "required_defect": "Terminal acceptance hash enforcement is gated on progress_policy although legacy attempts also record requirements_hash."
+    },
+    {
+      "id": "fresh-retry-receipt",
+      "result": "exact_progress_receipt_reuse_rejected",
+      "source": "scripts/continuation.py:209-245",
+      "evidence": "addendum-probe-command.json shows same receipt rejected and a newly recorded distinct command accepted on retry.",
+      "limits": "Distinct local records are cooperative evidence, not a semantic-progress or provider-execution oracle. Legacy retries intentionally retain old behavior."
+    },
+    {
+      "id": "legacy-opt-in",
+      "result": "numeric_fixed_cap_retained_for_exercised_case",
+      "source": "scripts/continuation.py:67-73, 104-113, 224-244",
+      "evidence": "No execution_policy plus repair_limit=1 produced two failed attempts, repairs_used=1, blocked status, and no ready task in addendum-legacy-freeze-retry-command.json.",
+      "limits": "Does not inspect real historical task records or prove their byte immutability."
+    },
+    {
+      "id": "policy-identity-and-stalled-transition",
+      "result": "tested_source_terms_frozen_stalled_runtime_mutable",
+      "source": "scripts/continuation.py:61-65, 170-178, 238-244",
+      "evidence": "Current 15 tests include source-byte drift and policy deadline drift checks. Probe changed progress_state to stalled while active: validate returned no errors and finish returned blocked.",
+      "limits": "Source-policy and runtime-state claims are confined to fields exercised."
+    }
+  ],
+  "remaining_required_defects": [
+    {
+      "id": "legacy-terminal-acceptance-drift",
+      "source": "scripts/continuation.py:170-178",
+      "evidence": "A completed legacy task with a stored requirements_hash accepted post-completion assertion weakening; validate returned [].",
+      "needed": "Check terminal attempt acceptance hash for legacy tasks too when a recorded hash exists, preserving historical records rather than rewriting them."
+    },
+    {
+      "id": "malformed-deadline-can-disable-or-crash",
+      "source": "scripts/continuation.py:75-86, 157-164",
+      "evidence": "deadline_utc empty string passed validate and task remained ready; numeric 123 raised AttributeError in validate.",
+      "needed": "Accept only null or a non-empty timezone-aware string, and convert all wrong types to structured validation errors."
+    }
+  ],
+  "receipt_files": [
+    "addendum-probe-command.json",
+    "addendum-tests-command.json",
+    "addendum-legacy-freeze-command.json",
+    "addendum-legacy-freeze-retry-command.json"
+  ],
+  "unknown": [
+    "historical bytes and task counters",
+    "immutable history of actual R17 state",
+    "provider-side resource limits",
+    "semantic progress quality beyond observed fixtures"
+  ],
+  "failed_setup_retained": {
+    "receipt": "addendum-legacy-freeze-command.json",
+    "reason": "Exclusive command receipt path already existed in reused fixture; test body did not run.",
+    "recovery_receipt": "addendum-legacy-freeze-retry-command.json"
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "schema": "forge-phase-todo/1",
+  "phase_id": "R17",
+  "goal": "用户授权的分类恢复、进展管理、搜索规划和上下文筛选",
+  "tasks": [
+    {
+      "id": "R17-01",
+      "title": "制作进展政策/搜索规划C10及兼容实现",
+      "owner": "root",
+      "depends_on": [],
+      "write_paths": [
+        "runs/R17/candidate/",
+        "scripts/continuation.py",
+        "scripts/test_continuation.py"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Receive independent policy and actual search observations; preserve source lock.",
+      "acceptance": [
+        "九份纯文档源锁/链接/frontmatter检查，用户前瞻政策及原历史均保留",
+        "研发控制器可选新政策执行有实际回归，旧固定模式保持且不作为技能运行依赖"
+      ],
+      "evidence": [
+        "runs/R17/R17-01-result.json",
+        "runs/R17/freeze-candidate-command.json",
+        "runs/R17/structure-command.json",
+        "runs/R17/baseline.json",
+        "runs/R17/author-ledger.json",
+        "runs/R17/controller-regression-command.json",
+        "runs/R17/prepare-command.json"
+      ]
+    },
+    {
+      "id": "R17-02",
+      "title": "新上下文政策与场景独立核查",
+      "owner": "/root/r17_policy_review",
+      "depends_on": [
+        "R17-01"
+      ],
+      "write_paths": [
+        "runs/R17/review/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Preserve observations and integrate with independently reviewed controller and package.",
+      "acceptance": [
+        "C10 removes the universal two-correction business stop; separates recoveries/research/model corrections, requires evidence-backed next action and stops unproductive or unauthorized paths without declaring the whole goal complete.",
+        "Search is planned by decision/question and expected evidence, with alternate hypotheses, primary verification, conflict/missing-evidence handling, raw-source isolation and compact context; no query-count substitute for coverage or source quality.",
+        "Smoke/acceptance remains tied to original mandatory outputs and actual checks; progress policy does not excuse missing evidence, edit frozen history, reset counters, or bypass explicit tool/permission refusal.",
+        "Fresh reviewer receives original user goal, frozen candidate and raw neutral scenarios only; produces source/observation-backed decisions and falsifiable requirement verdicts without author diagnoses.",
+        "Review covers >2 justified recovery/lookup actions, repeated no-information action, conflicting source, external instruction contamination, actual hard stop and legacy frozen-case semantics; optional improvements separated from mandatory defects."
+      ],
+      "evidence": [
+        "runs/R17/R17-02-result.json",
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json",
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json",
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json",
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json",
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json",
+        "runs/R17/freeze-candidate-command.json"
+      ]
+    },
+    {
+      "id": "R17-03",
+      "title": "实际多步检索与上下文整理试运行",
+      "owner": "/root/r17_research_trial",
+      "depends_on": [
+        "R17-01"
+      ],
+      "write_paths": [
+        "runs/R17/research-trial/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Preserve observations and integrate with independently reviewed controller and package.",
+      "acceptance": [
+        "A usable question-to-decision search plan exists before actual web retrieval; queries/routes are adapted to observed gaps and bias, sources checked in primary passages.",
+        "Actual multi-step search/open trajectory, retained/discarded-source rationale and supported synthesis are recorded; compact working context excludes irrelevant raw text, instruction payloads and duplicate reposts.",
+        "Actual scope, resource window, tool errors if any, missing evidence and telemetry limits retained; more than two useful steps do not falsely imply >2 actual corrections, no unbounded exact repeats or unsupported capability claim."
+      ],
+      "evidence": [
+        "runs/R17/R17-03-result.json",
+        "runs/R17/research-trial/result.json",
+        "runs/R17/research-trial/plan.md",
+        "runs/R17/research-trial/query-log.json",
+        "runs/R17/research-trial/evidence-cards.md",
+        "runs/R17/research-trial/synthesis.md",
+        "runs/R17/research-trial/retained-and-excluded.md",
+        "runs/R17/research-trial/result.json",
+        "runs/R17/research-trial/plan.md",
+        "runs/R17/research-trial/query-log.json",
+        "runs/R17/research-trial/evidence-cards.md",
+        "runs/R17/research-trial/synthesis.md",
+        "runs/R17/research-trial/retained-and-excluded.md",
+        "runs/R17/research-trial/result.json",
+        "runs/R17/research-trial/plan.md",
+        "runs/R17/research-trial/query-log.json",
+        "runs/R17/research-trial/evidence-cards.md",
+        "runs/R17/research-trial/synthesis.md",
+        "runs/R17/research-trial/retained-and-excluded.md",
+        "runs/R17/freeze-candidate-command.json"
+      ]
+    },
+    {
+      "id": "R17-04",
+      "title": "历史/独立结果/纯文档包装与接续整合",
+      "owner": "root",
+      "depends_on": [
+        "R17-01",
+        "R17-02",
+        "R17-03"
+      ],
+      "write_paths": [
+        "runs/R17/package/",
+        "runs/R17/final/"
+      ],
+      "status": "done",
+      "blocker": null,
+      "next_action": "Prospectively continue same original R16-02 actor/input/goal; preserve stopped attempt and p1-p5.",
+      "acceptance": [
+        "Meaningful legacy/new controller guards and immutable byte/history checks pass; source and independent behavior conclusions separated.",
+        "Freshly unpacked C10 package contains only locked Markdown, with byte comparisons; TODO/checkpoint/entry policy reflect current user change without changing old verdicts."
+      ],
+      "evidence": [
+        "runs/R17/R17-04-result.json",
+        "runs/R17/controller-review/review.json",
+        "runs/R17/controller-review/addendum.json",
+        "runs/R17/controller-review/addendum2.json",
+        "runs/R17/controller-regression-second-fix-command.json",
+        "runs/R17/handoff-check-after-fixes-command.json",
+        "runs/R17/history-verification.json",
+        "runs/R17/package/build-command.json",
+        "runs/R17/package/verification.json",
+        "runs/R17/entry-policy-snapshot.json",
+        "runs/R17/R17-02-result.json",
+        "runs/R17/R17-03-result.json",
+        "runs/R17/controller-regression-second-fix-command.json"
+      ]
+    },
+    {
+      "id": "R17-next",
+      "title": "启动下一阶段任务",
+      "owner": "root",
+      "depends_on": [
+        "R17-01",
+        "R17-02",
+        "R17-03",
+        "R17-04"
+      ],
+      "write_paths": [
+        "state/",
+        "runs/"
+      ],
+      "status": "done",
+      "acceptance": [
+        "原要求通过并有真实后继首步；否则保留真实阻塞"
+      ],
+      "evidence": [
+        "runs/R16/prospective-20261007/receipts/01-baseline.json"
+      ],
+      "blocker": null,
+      "next_action": "Continue actual original R16-02 slice toward full paper.",
+      "transition": {
+        "next_phase_id": "R18",
+        "todo_path": "state/phases/R18.json",
+        "first_task_id": "R16-02",
+        "start_evidence": [
+          "runs/R16/prospective-20261007/receipts/01-baseline.json"
+        ]
+      }
+    }
+  ]
+}

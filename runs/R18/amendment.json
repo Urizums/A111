@@ -1,0 +1,28 @@
+{
+  "schema": "forge-prospective-original-task-amendment/1",
+  "task_id": "R16-02",
+  "actor": "/root/r16_original_solution",
+  "user_authorization": "Current direct request to adjust universal two-attempt correction policy, particularly search errors, and keep search planning.",
+  "original_task": "runs/R18/original-task.json",
+  "original_acceptance": "runs/R16/acceptance.json",
+  "original_budget_verdict": "runs/R16/budget-decision.json",
+  "original_stopped_attempt_status": "blocked_and_unpassed_at_2_of_2",
+  "retrospective_regrade": false,
+  "new_policy": "runs/R17/candidate/C10-lock.json",
+  "new_acceptance": "runs/R18/prospective-acceptance.json",
+  "changed_assertions": [
+    "p6_operational_policy_only"
+  ],
+  "unchanged_assertions": [
+    "p1",
+    "p2",
+    "p3",
+    "p4",
+    "p5"
+  ],
+  "first_slice": "actual original-source baseline and constraint checking; full task remains incomplete",
+  "queue_counter_semantics": "repairs_used retains old value2 and increments on queue attempt restart; a policy-amendment restart is not a third observed source error. Actual old/new tool corrections are separately recorded in immutable old ledger and new actor ledger.",
+  "requires_R17_gates": true,
+  "tokens": null,
+  "cost": null
+}

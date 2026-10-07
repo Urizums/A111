@@ -1,0 +1,16 @@
+{
+  "task":"Use the supplied Forge C10 to research how an open-ended agent should plan searches, handle inconclusive retrieval and retain a useful evidence context while preserving rigorous completion checks.",
+  "questions":[
+    "Which evidence can justify continuing or stopping an open-ended task without a universal two-error stop?",
+    "How should a research agent detect query/source bias and resolve a material conflict or unavailable original source?",
+    "How can working-context compression preserve provenance, uncertainty and contradictory evidence instead of importing instruction payloads?",
+    "What does the obtained evidence fail to establish about general reliability, cost or performance?"
+  ],
+  "resources":"Actual public web tools, primary technical/research/publisher sources. Declare a 20-minute local trial window before retrieval and check observed elapsed time. This window is a scoped experiment condition, not a global task policy or provider quota.",
+  "permissions":"Read publicly available originals; no installation, browser/security-policy workarounds, posting or messages. No MathorCup/CUMCM papers or solutions; this is unrelated methodology research.",
+  "delivery":["plan.md saved before web retrieval","query-log.json with actual query/open intents, observations and route decisions","evidence-cards.md","retained-and-excluded.md","synthesis.md","result.json with limits and actual event counts"],
+  "trial_probe":"Exercise at least three justified retrieval actions across the material questions, changing route where actual observations justify it. This minimum demonstrates a multi-step controlled trial, not a universal search quota. Do not invent failures to claim >2 corrections.",
+  "independence":"Only supplied request, C10 and acceptance may be read; no parent reports/diagnoses/other agent outputs.",
+  "tool_evidence":"Where raw tool-return persistence is unavailable, explicitly label the query log as a contemporaneous agent transcription; do not claim complete provider telemetry. Give actual source URLs/passages/date context.",
+  "telemetry":{"authenticated_model":null,"tokens":null,"cost":null}
+}

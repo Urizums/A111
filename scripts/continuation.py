@@ -53,11 +53,64 @@ def task_map(state):
     return {t['id']: t for t in state['tasks']}
 
 
+def progress_policy(task):
+    policy = task.get('execution_policy')
+    return isinstance(policy, dict) and policy.get('mode') == 'progress_guard'
+
+
+def policy_identity(task):
+    """Freeze policy terms; progress_state is a current path observation."""
+    return identity({k: v for k, v in task['execution_policy'].items()
+                     if k != 'progress_state'})
+
+
+def stop_reason(task):
+    """Cooperative queue checks, not a provider quota or semantic-progress oracle."""
+    if not progress_policy(task):
+        return ('Repair budget exhausted; original criteria and all attempts retained.'
+                if task['repairs_used'] >= task['repair_limit'] else None)
+    policy = task['execution_policy']
+    if policy.get('progress_state') == 'stalled':
+        return 'Progress guard stopped this path; retain observations and diagnose the next action.'
+    deadline = policy.get('deadline_utc')
+    if deadline is not None:
+        if not isinstance(deadline, str) or not deadline.strip():
+            return 'Invalid resource deadline; expected null or a timezone-aware nonempty string.'
+        try:
+            instant = datetime.fromisoformat(deadline.replace('Z', '+00:00'))
+            if instant.tzinfo is None:
+                return 'Resource deadline lacks a timezone; correct the policy before execution.'
+            if datetime.now(timezone.utc) >= instant:
+                return 'Declared resource deadline reached; retain partial outputs and missing evidence.'
+        except (ValueError, TypeError):
+            return 'Invalid resource deadline; correct the policy before execution.'
+    return None
+
+
+def check_recovery(task, root):
+    """Bind a changed recovery rationale to retained observations before a retry."""
+    note = task.get('recovery_note')
+    if not isinstance(note, dict) or not all(
+            isinstance(note.get(k), str) and note[k].strip()
+            for k in ['observation', 'change_or_new_information', 'expected_check']):
+        raise ValueError('Progress retry requires an observation, changed action/new information and receiving check')
+    if not note.get('evidence'):
+        raise ValueError('Progress retry requires retained observation evidence')
+    for item in note['evidence']:
+        if ref(root, item['path']) != item:
+            raise ValueError('Changed recovery evidence: ' + item['path'])
+    signature = identity(note)
+    if any(a.get('recovery_signature') == signature for a in task['attempts']):
+        raise ValueError('Unchanged recovery rationale cannot authorize repeated execution')
+    return signature
+
+
 def ready(state):
     tasks = task_map(state)
     return sorted((t for t in tasks.values()
                    if t['status'] in {'planned', 'failed'}
-                   and (t['status'] == 'planned' or t['repairs_used'] < t['repair_limit'])
+                   and (not stop_reason(t) if progress_policy(t)
+                        else (t['status'] == 'planned' or t['repairs_used'] < t['repair_limit']))
                    and all(tasks[d]['status'] == 'done' for d in t['depends_on'])),
                   key=lambda t: (t['priority'], t['id']))
 
@@ -92,9 +145,41 @@ def validate(state, root):
             errors.append(t['id'] + ': no completion evidence')
         if t['status'] == 'blocked' and not t['blocker']:
             errors.append(t['id'] + ': no blocker/recovery condition')
+        policy = t.get('execution_policy')
+        if policy is not None:
+            if not isinstance(policy, dict) or policy.get('mode') not in {'fixed', 'progress_guard'}:
+                errors.append(t['id'] + ': invalid execution policy')
+            elif progress_policy(t):
+                if t['repair_limit'] is not None:
+                    errors.append(t['id'] + ': progress policy must not hide a numeric repair cap')
+                if (not policy.get('stop_conditions') or
+                        policy.get('progress_state') not in {'ready', 'stalled'} or
+                        not isinstance(policy.get('source'), dict)):
+                    errors.append(t['id'] + ': incomplete progress policy/provenance')
+                deadline = policy.get('deadline_utc')
+                if deadline is not None:
+                    try:
+                        if not isinstance(deadline, str) or not deadline.strip():
+                            raise ValueError('expected null or nonempty string')
+                        parsed = datetime.fromisoformat(deadline.replace('Z', '+00:00'))
+                        if parsed.tzinfo is None:
+                            raise ValueError('missing timezone')
+                    except (ValueError, TypeError):
+                        errors.append(t['id'] + ': invalid timezone-aware resource deadline')
+        if not progress_policy(t) and (type(t['repair_limit']) is not int or t['repair_limit'] < 0):
+            errors.append(t['id'] + ': invalid fixed repair limit')
         evidence = list(t['evidence'])
+        if progress_policy(t) and isinstance(t['execution_policy'].get('source'), dict):
+            evidence.append(t['execution_policy']['source'])
         for attempt in t['attempts']:
+            if attempt is t['attempts'][-1]:
+                if attempt.get('requirements_hash') != identity(t['acceptance']):
+                    errors.append(t['id'] + ': changed frozen acceptance')
+                if (progress_policy(t) and attempt.get('execution_policy_hash') is not None and
+                        attempt['execution_policy_hash'] != policy_identity(t)):
+                    errors.append(t['id'] + ': changed frozen execution policy')
             evidence += attempt.get('evidence', []) + attempt.get('inputs', [])
+            evidence += attempt.get('recovery_note', {}).get('evidence', [])
             evidence.append(attempt['start_evidence'])
             if attempt.get('result'):
                 evidence.append(attempt['result'])
@@ -141,13 +226,26 @@ def begin(state, root, task_id, evidence):
             or type(raw.get('exit_code')) is not int or not raw.get('begin') or not raw.get('end')):
         raise ValueError('Start requires an actual finished command record, including failed first steps')
     if task['attempts']:
-        if task['repairs_used'] >= task['repair_limit']:
-            raise ValueError('Repair budget exhausted')
+        if stop_reason(task):
+            raise ValueError(stop_reason(task))
+        if progress_policy(task) and any(
+                a['start_evidence']['sha256'] == ref(root, evidence)['sha256']
+                for a in task['attempts']):
+            raise ValueError('Progress retry requires a fresh actual execution receipt')
+        recovery_signature = check_recovery(task, root) if progress_policy(task) else None
         task['repairs_used'] += 1
+    else:
+        recovery_signature = None
     attempt = dict(id=task_id + '-' + str(len(task['attempts']) + 1), started_at=stamp(),
                    requirements_hash=identity(task['acceptance']),
                    inputs=[ref(root,p) for p in task['inputs']], start_evidence=ref(root,evidence),
                    status='in_progress')
+    if progress_policy(task):
+        attempt['execution_policy_hash'] = policy_identity(task)
+    if recovery_signature:
+        # Freeze this observation/rationale; later edits must not rewrite a retry.
+        attempt.update(recovery_signature=recovery_signature,
+                       recovery_note=json.loads(json.dumps(task['recovery_note'])))
     task['attempts'].append(attempt)
     task.update(status='in_progress', blocker=None)
     return attempt
@@ -158,6 +256,9 @@ def finish(state, root, task_id, result_path):
     if task['status'] != 'in_progress':
         raise ValueError('Task has no active attempt')
     attempt = task['attempts'][-1]
+    if (progress_policy(task) and attempt.get('execution_policy_hash') is not None and
+            attempt['execution_policy_hash'] != policy_identity(task)):
+        raise ValueError('Changed frozen execution policy')
     result = json.loads(read_file(root,result_path))
     if (result.get('task_id') != task_id or result.get('attempt_id') != attempt['id']
             or result.get('requirements_hash') != attempt['requirements_hash']
@@ -178,12 +279,15 @@ def finish(state, root, task_id, result_path):
         if key not in result.get('effect', {}):
             raise ValueError('Missing effect-evaluation field: ' + key)
     outcome = 'done' if all(c['status']=='pass' for c in criteria) else 'failed'
-    if outcome == 'failed' and task['repairs_used'] >= task['repair_limit']:
+    reason = stop_reason(task)
+    if outcome == 'failed' and reason:
+        outcome = 'blocked'
+    elif progress_policy(task) and reason:
         outcome = 'blocked'
     attempt.update(status=outcome, ended_at=stamp(), result=ref(root,result_path), evidence=refs)
     task.update(status=outcome, evidence=refs, next_action=result.get('next_action',task['next_action']))
     if outcome == 'blocked':
-        task['blocker'] = 'Repair budget exhausted; original criteria and all attempts retained.'
+        task['blocker'] = reason
     return dict(task_id=task_id,status=outcome,repairs_used=task['repairs_used'])
 
 

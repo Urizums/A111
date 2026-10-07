@@ -1,0 +1,739 @@
+{
+  "schema": "forge-checkpoint/2",
+  "updated_at": "2026-10-07T03:23:27.029893+00:00",
+  "active_phase": "R08",
+  "next_task_id": null,
+  "next_action": "Review repair policy with user before implementing any rule change or continuing R16. Earlier 2-to-6 prompt is deferred, not authorization.",
+  "source_lock": "state/source-lock.json",
+  "phase_todo": "state/phase-todo.json",
+  "native_calls_in_current_handoff": [
+    {
+      "worker": "/root/luna_r07_restore_validation",
+      "evidence": "runs/R07/flow-challenge/host/final-notifications.json",
+      "state": "final_notification_received"
+    },
+    {
+      "worker": "/root/luna_r07_native_task",
+      "evidence": "runs/R07/flow-challenge/host/final-notifications.json",
+      "state": "final_notification_received"
+    }
+  ],
+  "unresolved_historical_call": {
+    "sample": "C1 project A2",
+    "observed_status": "running at original Q5 cutoff",
+    "portable_resume_allowed": false
+  },
+  "functional_repairs_used_current_handoff": 0,
+  "functional_repair_limit": 2,
+  "provider_tokens": null,
+  "provider_cost": null,
+  "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
+  "termination": "Rule audit saved; solution remains paused, all original task states/counters unchanged; no background actor.",
+  "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
+  "remaining_audit_checks": [],
+  "github_repository": "Urizums/A111",
+  "publication_evidence": "runs/R16/publication/source-receipt.json",
+  "lifecycle": "active",
+  "c1_audit": "completed_with_historical_gaps; efficacy remains inconclusive",
+  "historical_handoff_repair_scope": "Existing functional_repairs fields describe S00 only; current candidate budgets are separate.",
+  "current_delivery_repair_budgets": {
+    "C2_recorder": {
+      "used": 1,
+      "limit": 2
+    },
+    "handoff_validator": {
+      "used": 2,
+      "limit": 2
+    },
+    "cloud_smoke_harness": {
+      "used": 1,
+      "limit": 2
+    },
+    "S03_coordinator": {
+      "used": 1,
+      "limit": 2
+    },
+    "R00_installer": {
+      "used": 2,
+      "limit": 2,
+      "scope": "exact-tree/source-path fix then standalone Python3.10 venv fix",
+      "evidence": "runs/R00/issues.json"
+    },
+    "R06_release_integration": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R06/final/integration-repair-2.json"
+    },
+    "R06_handoff_root": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R06/handoff/root-repair-budget.json"
+    },
+    "R07_release_integration": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R07/validation/integration-repair.json"
+    },
+    "R07_native_pilot_harness": {
+      "used": 1,
+      "limit": 2,
+      "evidence": "runs/R07/flow-challenge/worker/evidence/repair-ledger.json"
+    }
+  },
+  "native_calls_in_current_delivery": [
+    {
+      "worker": "/root/luna_forge_5630af6429d8",
+      "purpose": "fresh offline audit"
+    },
+    {
+      "worker": "/root/luna_forge_fe59e381cb4d",
+      "purpose": "original smoke; coordinator capture failed"
+    },
+    {
+      "worker": "/root/luna_forge_d847e131cd3a",
+      "purpose": "bounded conformance retest"
+    }
+  ],
+  "current_validation": "C9 structure/package identity passed. R14 math diagnostics38pass/2fail. Frontend/combined gate blocked. R16 source passed, solution stopped2/2 without paper.",
+  "delivery_evidence": [
+    "runs/cloud/github-pr.json",
+    "runs/cloud/github-publication-reports.json",
+    "runs/cloud/github-verification.json"
+  ],
+  "delivery_pr": "https://github.com/Urizums/A111/pull/1",
+  "project_goal_status": "active",
+  "delivery_status": {
+    "D00": {
+      "status": "delivered",
+      "evidence": "runs/cloud/github-pr.json"
+    },
+    "R00-review": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R00/github-publication-1.json",
+        "sha256": "fd90cc5d2d0fc3785de68b71e66e9ff55f6576dc672c9e7f0151613c42d56fed"
+      },
+      "at": "2026-10-04T05:31:54.399954+00:00"
+    },
+    "R05-R06-upstream-handoff": {
+      "status": "delivered",
+      "mode": "unfinished_upstream_handoff",
+      "full_acceptance_passed": false,
+      "evidence": {
+        "path": "runs/R06/upstream-handoff/publication.json",
+        "sha256": "b7f117a7597c2d75974d4f372a6c6cfd0419eaac00c85d27d5f41d8eb7a6532b"
+      },
+      "commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
+      "pr": "https://github.com/Urizums/A111/pull/1",
+      "at": "2026-10-04T07:55:26.705220+00:00"
+    },
+    "R07-owner-dev": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R07/publication.json",
+        "sha256": "4727eaf0cec0c127715fd7863d3c33b30dacac39ab19749a491ac59d1abbb8af"
+      },
+      "at": "2026-10-05T01:50:25.654984+00:00"
+    }
+  },
+  "next_queue_task_id": null,
+  "continuation_state": "state/continuation.json",
+  "execution": {
+    "mode": "cooperative_host",
+    "background_available": null,
+    "background_probe": "R04-01",
+    "native_pending": [],
+    "limit": "Current native host validated one assisted local pilot; provider-global and independent cold-start conditions remain unverified. Timer remains disabled.",
+    "monitor_configured": true,
+    "monitor_id": "6ac1e1f6159081919cd571f6fa15d397",
+    "monitor_schedule": "hourly",
+    "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
+    "background_code_execution_verified": false,
+    "session_state": "R14_diagnostic_complete_R16_original_budget_stop",
+    "checkpoint_reason": "Original failures retained; no full real-paper delivery. Explicit original-case limit change pending.",
+    "coordinator_heartbeat": "2026-10-06T18:06:17.268147+00:00",
+    "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
+    "scheduled_trigger_code_execution_verified": true,
+    "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
+    "coordinator_lease": "state/coordinator-lease.json",
+    "latest_capability_probe": "runs/R09/preflight/wsl-probe.json",
+    "coordinator_lease_state": "state/coordinator-lease.json",
+    "recovery": "runs/R06/RECOVERY.md",
+    "final_validation": "runs/R06/final/summary.json",
+    "publication_check": "runs/R06/upstream-handoff/strict-acceptance.json",
+    "review_bundle": "runs/R06/final/complete-review.json",
+    "post_release_trigger_verified": true,
+    "last_scheduled_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+    "latest_resumption_report": "runs/R06/scheduling/resume-20261004T072138Z/REPORT.md",
+    "previous_coordinator_released_at": "2026-10-04T07:13:18.042263+00:00",
+    "coordinator_release_instruction": "Probe the actual lease before acquiring in the new checkout; this coordinator releases after preparing the final handoff.",
+    "monitor_enabled": false,
+    "monitor_status": "disabled_by_user",
+    "monitor_disabled_at": "2026-10-04T07:43:35.078201+00:00",
+    "monitor_cancellation_evidence": "runs/R06/scheduling/cancel-20261004T074313Z/automation-after.json",
+    "monitor_cancellation_report": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
+    "upstream_handoff": "state/upstream-handoff.json",
+    "upstream_handoff_report": "runs/R06/upstream-handoff/README.md",
+    "handoff_publication": "runs/R06/upstream-handoff/publication.json",
+    "handoff_pr_verification": "runs/R06/upstream-handoff/pr-verification.json",
+    "historical_native_pending": [
+      {
+        "worker": "/root/luna_forge_ec0ef35b347f",
+        "run": "runs/future/preset_browser_acceptance/independent",
+        "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
+      }
+    ],
+    "current_coordinator": "root-codex-r16-rule-audit",
+    "completed_native_R07": [
+      {
+        "worker": "/root/luna_r07_restore_validation",
+        "scope": "R07-03",
+        "state": "final_notification_received",
+        "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
+      },
+      {
+        "worker": "/root/luna_r07_native_task",
+        "scope": "R07-04",
+        "state": "final_notification_received",
+        "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
+      }
+    ],
+    "current_report": "runs/R16/rule-audit/REPORT.md",
+    "next_plan": "runs/R16/PLAN.md",
+    "deferred_tasks": [
+      "R08-ZCODE-01"
+    ],
+    "current_native_pending": [],
+    "current_native_completed": [
+      {
+        "worker": "/root/r08_simple",
+        "outcome": "business_passed",
+        "evidence": "runs/R08/validation/simple/result.json"
+      },
+      {
+        "worker": "/root/r08_complex",
+        "outcome": "failed_budget_exceeded",
+        "evidence": "runs/R08/validation/complex-terminal.json"
+      }
+    ],
+    "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
+    "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
+    "coordinator_release_evidence": "runs/R16/rule-audit/lease-release.json",
+    "latest_scope_decision": "runs/R10/scope-decision.json",
+    "completed_native_R09": [
+      {
+        "worker": "/root/r09_independent",
+        "state": "terminal_report_on_disk",
+        "evidence": "runs/R09/independent/report.json"
+      }
+    ],
+    "completed_native_R10": [
+      {
+        "worker": "/root/c8_workflow_trial",
+        "state": "terminal_failure_received_budget_exceeded",
+        "evidence": "runs/R10/resumption/native-terminal.json"
+      }
+    ],
+    "final_checkpoint_lease": "runs/R10/publication/final-checkpoint-lease.json",
+    "publication_receipt": "runs/R16/publication/source-receipt.json",
+    "publication_source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "source_ci": {
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984",
+      "jobs": [
+        {
+          "name": "windows-preflight",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.10)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "evidence": "runs/R16/publication/source-ci-completion-command.json"
+    },
+    "completed_native_R12": [
+      {
+        "worker": "/root/r12_protocol_review",
+        "evidence": "runs/R12/review/native-terminal.json"
+      },
+      {
+        "worker": "/root/r12_protocol_review",
+        "evidence": "runs/R12/review/native-terminal-v2.json"
+      }
+    ],
+    "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
+    "R12_R13_publication_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
+    "R14_resumption": "runs/R14/resumption/reconciliation.json",
+    "completed_native_R14_observation": [
+      {
+        "worker": "/root/r14_math_l1",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L1/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l2",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L2/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l3",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L3/result.json",
+        "case_corrections_used": 3,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l4",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L4/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l5",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L5/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l6",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L6/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l7",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L7/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l8",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L8/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_frontend",
+        "state": "terminal_runtime_blocked",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "evidence": "runs/R14/R14-03-result.json",
+        "actual_model": null
+      }
+    ],
+    "R16_plan": "runs/R16/PLAN.md",
+    "R16_source_actor": "/root/r16_official_problem_packet",
+    "R16_original_solution_search": false,
+    "completed_native_R14_R16_observation": [
+      {
+        "worker": "/root/r14_math_l1",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L1/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l2",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L2/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l3",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L3/result.json",
+        "case_corrections_used": 3,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l4",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L4/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l5",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L5/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l6",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L6/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l7",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L7/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l8",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L8/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_frontend",
+        "state": "terminal_runtime_blocked",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "evidence": "runs/R14/R14-03-result.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_independent_final",
+        "state": "terminal_second_addendum_received",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R14/trials/math/independent-review/addendum.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r16_official_problem_packet",
+        "state": "terminal_official_material_delivered",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R16/source/source-manifest.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r16_original_solution",
+        "state": "terminal_paused_original_budget_boundary",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R16/budget-decision.json",
+        "actual_model": null
+      }
+    ],
+    "R14_report": "runs/R14/REPORT.md",
+    "R16_solution_actor": "/root/r16_original_solution",
+    "R16_case_budget": {
+      "used": 2,
+      "limit": 2
+    },
+    "R14_case_budgets": {
+      "L1": {
+        "used": 1,
+        "limit": 2
+      },
+      "L2": {
+        "used": 0,
+        "limit": 2
+      },
+      "L3": {
+        "used": 3,
+        "limit": 2
+      },
+      "L4": {
+        "used": 0,
+        "limit": 2
+      },
+      "L5": {
+        "used": 1,
+        "limit": 2
+      },
+      "L6": {
+        "used": 2,
+        "limit": 2
+      },
+      "L7": {
+        "used": 2,
+        "limit": 2
+      },
+      "L8": {
+        "used": 0,
+        "limit": 2
+      }
+    },
+    "tokens": null,
+    "cost": null,
+    "R14_R16_publication_source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "R14_R16_publication_receipt": "runs/R16/publication/source-receipt.json",
+    "R14_R16_source_ci_at_discovery": {
+      "conclusion": "",
+      "databaseId": 37509319984,
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+      "status": "queued",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984"
+    },
+    "R14_R16_source_ci": {
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984",
+      "jobs": [
+        {
+          "name": "windows-preflight",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.10)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "evidence": "runs/R16/publication/source-ci-completion-command.json"
+    },
+    "current_user_steering": "Pause solution and investigate the unreviewed repair rule before policy or budget changes.",
+    "R16_budget_proposal_status": "superseded_by_policy_review_not_authorized",
+    "repair_policy_review": "runs/R16/rule-audit/REPORT.md"
+  },
+  "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
+  "native_calls_in_current_revision": [
+    {
+      "worker": "/root/luna_forge_66ef7f034e26",
+      "status": "committed",
+      "evidence": "runs/R01/sqlite-research/reconcile-final.json"
+    }
+  ],
+  "current_native_receipts": [
+    "runs/R01/sqlite-research/completed-return.json",
+    "runs/R02/handoff/completed-return.json",
+    "runs/R03/ui-independent/completed-return.json",
+    "runs/R06/handoff/simple/completed-return.json",
+    "runs/R06/handoff/complex/completed-return.json",
+    "runs/future/versioned_preset_catalog/independent/completed-return.json",
+    "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
+  ],
+  "current_native_pending": [],
+  "unpublished_work": true,
+  "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
+  "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+  "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
+  "upstream_handoff": {
+    "mode": "unfinished_work_for_upstream",
+    "authorization": "state/upstream-handoff.json",
+    "report": "runs/R06/upstream-handoff/README.md",
+    "publication_state": "published_for_upstream_continuation",
+    "full_acceptance_passed": false,
+    "publication_commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
+    "publication_evidence": "runs/R06/upstream-handoff/publication.json",
+    "pr_verification": "runs/R06/upstream-handoff/pr-verification.json"
+  },
+  "unpublished_work_R07": {
+    "branch": "rd/takeover-r07",
+    "report": "runs/R07/REPORT.md",
+    "status": "published_scoped_owner_branch",
+    "full_acceptance_passed": false,
+    "published_commit": "b0d9093d979fa69035ec51a25a453c32bdbd69bc",
+    "publication_evidence": "runs/R07/publication.json"
+  },
+  "publication_evidence_R07": "runs/R07/publication.json",
+  "delivery_pr_state": "closed_unmerged",
+  "current_ci_R07": {
+    "run_id": 37252912799,
+    "head_sha": "b0d9093d979fa69035ec51a25a453c32bdbd69bc",
+    "matrices": {
+      "3.10": "success",
+      "3.12": "success"
+    },
+    "evidence": "runs/R07/ci-jobs.json",
+    "url": "https://github.com/Urizums/A111/actions/runs/37252912799",
+    "scope": "Tested source commit, not full product acceptance"
+  },
+  "baseline_integration": {
+    "pr": "https://github.com/Urizums/A111/pull/2",
+    "state": "merged",
+    "main_commit": "7fd80faad93bb454a3bdfa1cff10f0fa0c6bbbca",
+    "evidence": "runs/R08/zcode-bridge/merge-result.json",
+    "ci": "runs/R08/zcode-bridge/merge-ci.json",
+    "mode": "development baseline, full acceptance remains blocked"
+  },
+  "zcode_handoff": {
+    "task_id": "R08-ZCODE-01",
+    "state": "blocked_missing_local_entry",
+    "branch": "rd/zcode-bridge-r08",
+    "entry": "integrations/zcode/README.md",
+    "report": "runs/R08/zcode-bridge/STATUS.md",
+    "model_called": false,
+    "tokens": null,
+    "cost": null,
+    "priority": "deferred_by_user",
+    "required_for_current_phase": false,
+    "decision": "runs/R08/codex-handoff/decision.json"
+  },
+  "codex_handoff": {
+    "entry": "CODEX_HANDOFF.md",
+    "branch": "main",
+    "next_task_id": "R08-02",
+    "phase_plan": "runs/R08/PLAN.md",
+    "decision": "runs/R08/codex-handoff/decision.json",
+    "baseline_commit": "7fd80faad93bb454a3bdfa1cff10f0fa0c6bbbca",
+    "publication_status": "reviewable_handoff",
+    "report": "runs/R08/codex-handoff/STATUS.md"
+  },
+  "R08_validation_budget": "runs/R08/validation/root-repair-ledger.json",
+  "R09_branch": {
+    "status": "done_with_actual_R11_successor",
+    "evidence": "runs/R09/R09-02-result.json"
+  },
+  "R08_budget_and_failures": "runs/R08/validation/root-repair-ledger.json",
+  "R09_actual_first_step": "runs/R09/preflight/formal-first-step.json",
+  "R08_final_regressions": {
+    "inherited": 376,
+    "auxiliary_stable": 53,
+    "windows_preflight": 6,
+    "wsl_preflight": 6,
+    "semantic_R08_03": "failed_complex_budget_overrun"
+  },
+  "R08_latest_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
+  "meta_workflow_R10": {
+    "scope": "runs/R10/scope-decision.json",
+    "candidate": "runs/R10/candidate/C8-lock.json",
+    "plan": "runs/R10/PLAN.md"
+  },
+  "R10_current_budget": {
+    "actor_used": 3,
+    "actor_limit": 2,
+    "coordinator_used": 2,
+    "coordinator_limit": 2,
+    "candidate_source_repairs": 0,
+    "evidence": "runs/R10/resumption/native-terminal.json"
+  },
+  "R11_actual_first_step": "runs/R11/package/first-command.json",
+  "publication_scope": "C8 development candidate and evidence; independent behavior/full product not accepted",
+  "C8_delivery": {
+    "source": "runs/R10/candidate/C8-lock.json",
+    "package": "runs/R11/package/Forge-C8-meta-workflow.zip",
+    "behavior_passed": false,
+    "personal_installation": false
+  },
+  "R11_branch": {
+    "packaging": "done",
+    "actual_first_step": "runs/R11/package/first-command.json",
+    "continuation": "blocked_dependency"
+  },
+  "publication_source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+  "publication_evidence_C8": "runs/R10/publication/source-push-receipt.json",
+  "current_ci_C8": {
+    "id": 37426876905,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Urizums/A111/actions/runs/37426876905",
+    "jobs": [
+      {
+        "name": "validate (3.10)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "validate (3.12)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "windows-preflight",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "R12_current_plan": "runs/R12/PLAN.md",
+  "R12_current_budget": {
+    "cumulative_case_used": 2,
+    "reviewer_internal_used": 0,
+    "limit": 2
+  },
+  "R13_actual_first_step": "runs/R13/adopt-command.json",
+  "R13_current_budget": {
+    "used": 2,
+    "limit": 2,
+    "status": "blocked_failed_adoption"
+  },
+  "current_development_report": "runs/R16/rule-audit/REPORT.md",
+  "root_entries_rolled_back": true,
+  "reviewed_protocol_research_artifact": "runs/R12/protocol/v2/evaluation-protocol.md",
+  "R12_R13_published_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
+  "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
+  "current_candidate": "runs/R14/candidate/C9-lock.json",
+  "current_R14_report": "runs/R14/REPORT.md",
+  "current_R16_report": "runs/R16/REPORT.md",
+  "C9_candidate": "runs/R14/candidate/C9-lock.json",
+  "C9_package": "runs/R14/package/Forge-C9-meta-workflow.zip",
+  "R16_budget_decision": "runs/R16/budget-decision.json",
+  "R14_R16_source_ci_at_discovery": {
+    "conclusion": "",
+    "databaseId": 37509319984,
+    "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "status": "queued",
+    "url": "https://github.com/Urizums/A111/actions/runs/37509319984"
+  },
+  "publication_note": "Identified development source push and its three CI jobs succeeded; later receipt commit does not alter frozen candidate/trial inputs or pass failed behavioral gates.",
+  "root_entries_rollback_scope": "R13 historical protocol rollback remains preserved; current entries expose R14/R16 observations without adopting that protocol.",
+  "current_ci_R14_R16": {
+    "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Urizums/A111/actions/runs/37509319984",
+    "jobs": [
+      {
+        "name": "windows-preflight",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "validate (3.10)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "validate (3.12)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "evidence": "runs/R16/publication/source-ci-completion-command.json"
+  },
+  "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
+  "R16_budget_proposal_status": "superseded_by_policy_review_not_authorized"
+}

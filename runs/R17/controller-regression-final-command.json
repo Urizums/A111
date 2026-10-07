@@ -1,0 +1,38 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "wsl",
+    "-d",
+    "Ubuntu-24.04",
+    "--cd",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+    "--",
+    "python3",
+    "-B",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_continuation.py",
+    "-v"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-07T04:08:50.732126+00:00",
+    "monotonic_ns": 93862875000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-07T04:08:51.284328+00:00",
+    "monotonic_ns": 93863421000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "",
+  "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\r\u0000\n\u0000test_blocked_branch_does_not_block_independent_challenge (test_continuation.ContinuationCases.test_blocked_branch_does_not_block_independent_challenge) ... ok\ntest_completed_progress_acceptance_and_policy_remain_frozen (test_continuation.ContinuationCases.test_completed_progress_acceptance_and_policy_remain_frozen) ... ok\ntest_delivery_does_not_close_goal_or_hide_ready_tasks (test_continuation.ContinuationCases.test_delivery_does_not_close_goal_or_hide_ready_tasks) ... ok\ntest_failures_retained_and_repair_budget_cannot_reset (test_continuation.ContinuationCases.test_failures_retained_and_repair_budget_cannot_reset) ... ok\ntest_missing_evidence_cannot_complete_task (test_continuation.ContinuationCases.test_missing_evidence_cannot_complete_task) ... ok\ntest_next_phase_requires_real_first_step_and_preserves_old_phase (test_continuation.ContinuationCases.test_next_phase_requires_real_first_step_and_preserves_old_phase) ... ok\ntest_progress_completion_after_deadline_retains_result_but_blocks (test_continuation.ContinuationCases.test_progress_completion_after_deadline_retains_result_but_blocks) ... ok\ntest_progress_policy_cannot_weaken_criteria_or_ignore_drift (test_continuation.ContinuationCases.test_progress_policy_cannot_weaken_criteria_or_ignore_drift) ... ok\ntest_progress_policy_honors_actual_deadline_and_stalled_path (test_continuation.ContinuationCases.test_progress_policy_honors_actual_deadline_and_stalled_path) ... ok\ntest_progress_recovery_beyond_two_retains_all_failures (test_continuation.ContinuationCases.test_progress_recovery_beyond_two_retains_all_failures) ... ok\ntest_progress_retry_rejects_old_receipt_even_with_changed_note (test_continuation.ContinuationCases.test_progress_retry_rejects_old_receipt_even_with_changed_note) ... ok\ntest_progress_retry_requires_change_and_rejects_reused_rationale (test_continuation.ContinuationCases.test_progress_retry_requires_change_and_rejects_reused_rationale) ... ok\ntest_reject_stale_acceptance_or_changed_input (test_continuation.ContinuationCases.test_reject_stale_acceptance_or_changed_input) ... ok\ntest_scope_overlap_defers_concurrent_writer (test_continuation.ContinuationCases.test_scope_overlap_defers_concurrent_writer) ... ok\ntest_start_requires_actual_execution_and_ready_dependencies (test_continuation.ContinuationCases.test_start_requires_actual_execution_and_ready_dependencies) ... ok\n\n----------------------------------------------------------------------\nRan 15 tests in 0.199s\n\nOK\n",
+  "stdout_base64": "",
+  "stderr_base64": "dwBzAGwAOgAgAMBoS20wUiAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0TZFufwz/Rk8qZ1yVz1AwUiAAVwBTAEwAAjBOAEEAVAAgACFqD18LToR2IABXAFMATAAgAA1OL2UBYyAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0AjANAAoAdGVzdF9ibG9ja2VkX2JyYW5jaF9kb2VzX25vdF9ibG9ja19pbmRlcGVuZGVudF9jaGFsbGVuZ2UgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfYmxvY2tlZF9icmFuY2hfZG9lc19ub3RfYmxvY2tfaW5kZXBlbmRlbnRfY2hhbGxlbmdlKSAuLi4gb2sKdGVzdF9jb21wbGV0ZWRfcHJvZ3Jlc3NfYWNjZXB0YW5jZV9hbmRfcG9saWN5X3JlbWFpbl9mcm96ZW4gKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfY29tcGxldGVkX3Byb2dyZXNzX2FjY2VwdGFuY2VfYW5kX3BvbGljeV9yZW1haW5fZnJvemVuKSAuLi4gb2sKdGVzdF9kZWxpdmVyeV9kb2VzX25vdF9jbG9zZV9nb2FsX29yX2hpZGVfcmVhZHlfdGFza3MgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfZGVsaXZlcnlfZG9lc19ub3RfY2xvc2VfZ29hbF9vcl9oaWRlX3JlYWR5X3Rhc2tzKSAuLi4gb2sKdGVzdF9mYWlsdXJlc19yZXRhaW5lZF9hbmRfcmVwYWlyX2J1ZGdldF9jYW5ub3RfcmVzZXQgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfZmFpbHVyZXNfcmV0YWluZWRfYW5kX3JlcGFpcl9idWRnZXRfY2Fubm90X3Jlc2V0KSAuLi4gb2sKdGVzdF9taXNzaW5nX2V2aWRlbmNlX2Nhbm5vdF9jb21wbGV0ZV90YXNrICh0ZXN0X2NvbnRpbnVhdGlvbi5Db250aW51YXRpb25DYXNlcy50ZXN0X21pc3NpbmdfZXZpZGVuY2VfY2Fubm90X2NvbXBsZXRlX3Rhc2spIC4uLiBvawp0ZXN0X25leHRfcGhhc2VfcmVxdWlyZXNfcmVhbF9maXJzdF9zdGVwX2FuZF9wcmVzZXJ2ZXNfb2xkX3BoYXNlICh0ZXN0X2NvbnRpbnVhdGlvbi5Db250aW51YXRpb25DYXNlcy50ZXN0X25leHRfcGhhc2VfcmVxdWlyZXNfcmVhbF9maXJzdF9zdGVwX2FuZF9wcmVzZXJ2ZXNfb2xkX3BoYXNlKSAuLi4gb2sKdGVzdF9wcm9ncmVzc19jb21wbGV0aW9uX2FmdGVyX2RlYWRsaW5lX3JldGFpbnNfcmVzdWx0X2J1dF9ibG9ja3MgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfcHJvZ3Jlc3NfY29tcGxldGlvbl9hZnRlcl9kZWFkbGluZV9yZXRhaW5zX3Jlc3VsdF9idXRfYmxvY2tzKSAuLi4gb2sKdGVzdF9wcm9ncmVzc19wb2xpY3lfY2Fubm90X3dlYWtlbl9jcml0ZXJpYV9vcl9pZ25vcmVfZHJpZnQgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfcHJvZ3Jlc3NfcG9saWN5X2Nhbm5vdF93ZWFrZW5fY3JpdGVyaWFfb3JfaWdub3JlX2RyaWZ0KSAuLi4gb2sKdGVzdF9wcm9ncmVzc19wb2xpY3lfaG9ub3JzX2FjdHVhbF9kZWFkbGluZV9hbmRfc3RhbGxlZF9wYXRoICh0ZXN0X2NvbnRpbnVhdGlvbi5Db250aW51YXRpb25DYXNlcy50ZXN0X3Byb2dyZXNzX3BvbGljeV9ob25vcnNfYWN0dWFsX2RlYWRsaW5lX2FuZF9zdGFsbGVkX3BhdGgpIC4uLiBvawp0ZXN0X3Byb2dyZXNzX3JlY292ZXJ5X2JleW9uZF90d29fcmV0YWluc19hbGxfZmFpbHVyZXMgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfcHJvZ3Jlc3NfcmVjb3ZlcnlfYmV5b25kX3R3b19yZXRhaW5zX2FsbF9mYWlsdXJlcykgLi4uIG9rCnRlc3RfcHJvZ3Jlc3NfcmV0cnlfcmVqZWN0c19vbGRfcmVjZWlwdF9ldmVuX3dpdGhfY2hhbmdlZF9ub3RlICh0ZXN0X2NvbnRpbnVhdGlvbi5Db250aW51YXRpb25DYXNlcy50ZXN0X3Byb2dyZXNzX3JldHJ5X3JlamVjdHNfb2xkX3JlY2VpcHRfZXZlbl93aXRoX2NoYW5nZWRfbm90ZSkgLi4uIG9rCnRlc3RfcHJvZ3Jlc3NfcmV0cnlfcmVxdWlyZXNfY2hhbmdlX2FuZF9yZWplY3RzX3JldXNlZF9yYXRpb25hbGUgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfcHJvZ3Jlc3NfcmV0cnlfcmVxdWlyZXNfY2hhbmdlX2FuZF9yZWplY3RzX3JldXNlZF9yYXRpb25hbGUpIC4uLiBvawp0ZXN0X3JlamVjdF9zdGFsZV9hY2NlcHRhbmNlX29yX2NoYW5nZWRfaW5wdXQgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3RfcmVqZWN0X3N0YWxlX2FjY2VwdGFuY2Vfb3JfY2hhbmdlZF9pbnB1dCkgLi4uIG9rCnRlc3Rfc2NvcGVfb3ZlcmxhcF9kZWZlcnNfY29uY3VycmVudF93cml0ZXIgKHRlc3RfY29udGludWF0aW9uLkNvbnRpbnVhdGlvbkNhc2VzLnRlc3Rfc2NvcGVfb3ZlcmxhcF9kZWZlcnNfY29uY3VycmVudF93cml0ZXIpIC4uLiBvawp0ZXN0X3N0YXJ0X3JlcXVpcmVzX2FjdHVhbF9leGVjdXRpb25fYW5kX3JlYWR5X2RlcGVuZGVuY2llcyAodGVzdF9jb250aW51YXRpb24uQ29udGludWF0aW9uQ2FzZXMudGVzdF9zdGFydF9yZXF1aXJlc19hY3R1YWxfZXhlY3V0aW9uX2FuZF9yZWFkeV9kZXBlbmRlbmNpZXMpIC4uLiBvawoKLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLQpSYW4gMTUgdGVzdHMgaW4gMC4xOTlzCgpPSwo="
+}

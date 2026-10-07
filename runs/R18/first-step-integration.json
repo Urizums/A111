@@ -1,0 +1,137 @@
+{
+  "checked_at": "2026-10-07T04:26:05.509748+00:00",
+  "original_38_unchanged": true,
+  "pre_R17_45_other_tasks_unchanged": true,
+  "one_authorized_prospective_amendment": "R16-02",
+  "old_attempt_bytes_equal": true,
+  "p1_to_p5_unchanged": true,
+  "old_source_corrections": 2,
+  "queue_restart_counter": 3,
+  "new_actor_events": [
+    {
+      "event": "prospective queue continuation after original C9 stop",
+      "classification": "policy-amendment queue restart; not a third observed source error",
+      "state": "historical repairs_used=2 retained; prospective queue counter increments to 3; new actor ledger opened in prospective domain"
+    },
+    {
+      "event": "baseline execution",
+      "classification": "planned baseline computation",
+      "state": "exit 0; complete 3000-piece outputs produced for two single-type candidate fleets"
+    },
+    {
+      "event": "coordinate receiving check",
+      "classification": "producer self-check using a separate implementation and raw-DOCX re-read; not independent review",
+      "state": "exit 0; zero detected issues"
+    },
+    {
+      "event": "prior source-manifest accidental access",
+      "classification": "unauthorized read boundary event in immutable old ledger",
+      "state": "old disclosure retained; no manifest content used; not reread"
+    }
+  ],
+  "original_verdict": "blocked/unpassed under old2/2",
+  "full_solution_passed": false,
+  "first_step": {
+    "schema": "forge-prospective-first-slice/1",
+    "task_id": "R16-02",
+    "actor": "/root/r16_original_solution",
+    "amendment": "runs/R18/amendment.json",
+    "policy": "runs/R17/candidate/C10-lock.json",
+    "old_attempt_status": "blocked_and_unpassed_at_2_of_2; retained unchanged",
+    "historical_repairs_used": 2,
+    "prospective_queue_restart_count": 1,
+    "prospective_cumulative_queue_counter": 3,
+    "queue_restart_is_source_error": false,
+    "retrospective_regrade": false,
+    "declared_resource_window": {
+      "duration": "12 minutes",
+      "scope": "first local CPU baseline plus receiving check",
+      "declared_before_first_execution": true,
+      "provider_enforced": false,
+      "unknowns": [
+        "provider/model tokens",
+        "cost",
+        "host CPU model"
+      ]
+    },
+    "actual_start_receipt": "runs/R16/prospective-20261007/receipts/01-baseline.json",
+    "receiving_check_receipt": "runs/R16/prospective-20261007/receipts/02-independent-check.json",
+    "inputs_actually_processed": [
+      "runs/R16/source/official_extracted/D_corrected/附件1.docx"
+    ],
+    "outputs": [
+      "runs/R16/prospective-20261007/baseline.py",
+      "runs/R16/prospective-20261007/placements.csv",
+      "runs/R16/prospective-20261007/results.json",
+      "runs/R16/prospective-20261007/constraint-audit.json",
+      "runs/R16/prospective-20261007/verify_baseline.py",
+      "runs/R16/prospective-20261007/independent-check.json"
+    ],
+    "observed_outcomes": {
+      "raw_product_types": 5,
+      "raw_piece_count": 3000,
+      "recomputed_total_mass_kg": 41100,
+      "recomputed_total_volume_cm3": 287350000,
+      "all_type_1_candidate": {
+        "trips": 75,
+        "cost_yuan": 33750,
+        "mean_per_trip_space_utilization_pct": 19.745069745069745,
+        "mean_per_trip_payload_utilization_pct": 9.133333333333333,
+        "independent_checker_issues": 0
+      },
+      "all_type_2_candidate": {
+        "trips": 40,
+        "cost_yuan": 28000,
+        "mean_per_trip_space_utilization_pct": 17.247899159663866,
+        "mean_per_trip_payload_utilization_pct": 10.275,
+        "independent_checker_issues": 0
+      },
+      "actual_computation_runtime_reported_by_solver_s": 0.698,
+      "baseline_command_elapsed_from_receipt_s": 1.81,
+      "checker_command_elapsed_from_receipt_s": 0.545
+    },
+    "check_scope": [
+      "all item IDs/counts reconstructed from raw Attachment 1",
+      "dimensions/orientations and item masses checked against raw table",
+      "coordinates within both horizontal vehicle boundaries",
+      "all z coordinates equal zero, satisfying floor support for fragile pieces",
+      "top faces preserve at least 3 cm headroom",
+      "pairwise 3D non-overlap within each truck",
+      "per-truck payload does not exceed rated capacity",
+      "directional G4/G5 remain in printed L/W/H orientation"
+    ],
+    "actual_events": [
+      {
+        "event": "prospective queue continuation after original C9 stop",
+        "classification": "policy-amendment queue restart; not a third observed source error",
+        "state": "historical repairs_used=2 retained; prospective queue counter increments to 3; new actor ledger opened in prospective domain"
+      },
+      {
+        "event": "baseline execution",
+        "classification": "planned baseline computation",
+        "state": "exit 0; complete 3000-piece outputs produced for two single-type candidate fleets"
+      },
+      {
+        "event": "coordinate receiving check",
+        "classification": "producer self-check using a separate implementation and raw-DOCX re-read; not independent review",
+        "state": "exit 0; zero detected issues"
+      },
+      {
+        "event": "prior source-manifest accidental access",
+        "classification": "unauthorized read boundary event in immutable old ledger",
+        "state": "old disclosure retained; no manifest content used; not reread"
+      }
+    ],
+    "limitations": [
+      "The heuristic places every piece on the floor and does not use stacking. It thereby satisfies the support, fragile-ground-contact and load-transmission constraints for this candidate, but it may use far more trips than a stacking-enabled method.",
+      "Shelf packing is a feasible candidate construction, not a proof of minimum trips or minimum cost.",
+      "The Q1 single-truck simultaneous space/payload multiobjective packing was not computed.",
+      "The mixed-fleet Q2 objectives were not optimized or compared; the two all-one-type candidates do not prove an optimum.",
+      "Attachment 2 genericity, parameter sensitivity, full paper, figures, and independent fresh-context review remain undone.",
+      "The checker was authored and executed by the same producer context, so it is a self-check and not independent acceptance."
+    ],
+    "full_paper_complete": false,
+    "full_task_complete": false,
+    "continuation": "Continue the same task identity and actor. Preserve all artifacts and findings; next examine stacked placements and Q1 single-truck objectives, then compare a feasible stacked baseline against this floor-only candidate before addressing mixed-fleet and Attachment 2 requirements. Do not call current candidates optimal."
+  }
+}

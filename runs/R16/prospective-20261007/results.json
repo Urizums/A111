@@ -1,0 +1,39 @@
+{
+  "schema": "R16-02-floor-baseline/1",
+  "source": "official corrected Attachment 1.docx",
+  "units": {
+    "length": "cm",
+    "mass": "kg",
+    "cost": "yuan/trip"
+  },
+  "assumptions": [
+    "all items remain at z=0; no stacking",
+    "G4 and G5 stay in printed L/W/H posture",
+    "other rigid boxes may use any axis permutation",
+    "shelf rows are fixed-depth; packing is a heuristic, not an optimum"
+  ],
+  "plans": {
+    "1": {
+      "truck_type": 1,
+      "truck_count": 75,
+      "cost_yuan": 33750,
+      "pieces": 3000,
+      "cargo_volume_cm3": 287350000,
+      "cargo_mass_kg": 41100.0,
+      "aggregate_space_utilization_pct": 19.745069745069745,
+      "aggregate_payload_utilization_pct": 9.133333333333333,
+      "checker_issues": 0
+    },
+    "2": {
+      "truck_type": 2,
+      "truck_count": 40,
+      "cost_yuan": 28000,
+      "pieces": 3000,
+      "cargo_volume_cm3": 287350000,
+      "cargo_mass_kg": 41100.0,
+      "aggregate_space_utilization_pct": 17.247899159663866,
+      "aggregate_payload_utilization_pct": 10.275,
+      "checker_issues": 0
+    }
+  }
+}

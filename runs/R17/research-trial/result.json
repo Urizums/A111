@@ -1,0 +1,64 @@
+{
+  "schema": "r17-research-trial-result/1",
+  "candidate": "C10",
+  "request": "runs/R17/cases/research-request.json",
+  "plan_saved_before_retrieval": true,
+  "window": {
+    "declared_minutes": 20,
+    "start_utc": "2026-10-07 04:00:13 UTC",
+    "start_clock_checked_utc": "2026-10-07 04:00:13 UTC",
+    "end_clock_checked_utc": "2026-10-07 04:03:28 UTC",
+    "elapsed_observed_minutes": 3.25,
+    "window_expired": false,
+    "provider_enforcement": false
+  },
+  "files": [
+    "plan.md",
+    "query-log.json",
+    "evidence-cards.md",
+    "retained-and-excluded.md",
+    "synthesis.md",
+    "result.json"
+  ],
+  "requirements": {
+    "s1": {
+      "status": "observed in this trial",
+      "evidence": "plan.md precedes retrieval; routes changed from initial agent/retrieval searches to a targeted context-attribution search based on surfaced gaps; original publisher passages checked",
+      "limit": "single task; source abstracts only in most cases"
+    },
+    "s2": {
+      "status": "observed in this trial",
+      "evidence": "query-log records actual search/open sequence, rationale, observations, source qualification and conflict; evidence cards bind claims to primary URLs and line locators",
+      "limit": "query log is contemporaneous agent transcription, not complete provider telemetry or raw archive"
+    },
+    "s3": {
+      "status": "observed with limitations",
+      "evidence": "20-minute local window declared and clock-checked; zero tool errors/corrections; gaps and null telemetry reported; more than two useful search/open actions occurred",
+      "limit": "short local trial does not test general reliability, cost, or performance"
+    }
+  },
+  "actual_events": {
+    "search_queries": 5,
+    "search_tool_calls": 2,
+    "open_tool_calls": 2,
+    "primary_pages_checked": 8,
+    "web_tool_errors": 0,
+    "recovery_corrections": 0,
+    "substantive_research_iterations": 2,
+    "repeated_exact_no_information_queries": 0,
+    "raw_returns_saved": false,
+    "raw_return_status": "not persistently exportable in this session; query-log records contemporaneous agent transcription, not complete tool trace"
+  },
+  "telemetry": {
+    "authenticated_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "scope_exclusions": [
+    "MathorCup materials",
+    "national contest papers or solutions",
+    "installation",
+    "external posting or messaging"
+  ],
+  "overall_limit": "A bounded descriptive trial, not an independent acceptance verdict or proof of C10's general behavior."
+}

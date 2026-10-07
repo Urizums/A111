@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-06T18:14:52.199868+00:00",
+  "updated_at": "2026-10-07T04:31:18.291501+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Inspect branch-specific blockers and the independent ready queue.",
+  "next_action": "Continue original R16-02 from frozen first slice: next version stacking/constraint baseline and original Q1/Q2; full paper and independent review pending.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -28,7 +28,7 @@
   "provider_tokens": null,
   "provider_cost": null,
   "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
-  "termination": "Concrete bounded checkpoint; all current actors terminal, historical unresolved call retained; no automatic background work.",
+  "termination": "Rule audit saved; solution remains paused, all original task states/counters unchanged; no background actor.",
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
@@ -136,7 +136,7 @@
       "at": "2026-10-05T01:50:25.654984+00:00"
     }
   },
-  "next_queue_task_id": null,
+  "next_queue_task_id": "R16-02",
   "continuation_state": "state/continuation.json",
   "execution": {
     "mode": "cooperative_host",
@@ -183,7 +183,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-r14-resume",
+    "current_coordinator": "root-codex-r17-policy",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -198,7 +198,7 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R16/REPORT.md",
+    "current_report": "runs/R17/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
@@ -218,7 +218,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R16/publication/lease-release-observation.json",
+    "coordinator_release_evidence": "runs/R16/rule-audit/lease-release.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -523,7 +523,47 @@
         }
       ],
       "evidence": "runs/R16/publication/source-ci-completion-command.json"
-    }
+    },
+    "current_user_steering": "C10 progress/search policy implemented; same original R16-02 prospectively continued.",
+    "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
+    "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
+    "current_candidate": "runs/R17/candidate/C10-lock.json",
+    "R17_policy": "runs/R17/scope-decision.json",
+    "completed_native_R17": [
+      {
+        "worker": "/root/r17_policy_review",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/review/C10-review-evidence.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r17_research_trial",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/research-trial/result.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r17_controller_review",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/controller-review/addendum2.json",
+        "actual_model": null
+      }
+    ],
+    "R17_status": "delivered_policy_with_actual_R18_first_step",
+    "next_prospective_plan": "runs/R18/PLAN.md",
+    "native_pending_current": [],
+    "completed_native_R18": [
+      {
+        "worker": "/root/r16_original_solution",
+        "state": "final_notification_received",
+        "evidence": "runs/R16/prospective-20261007/first-step.json",
+        "actual_model": null
+      }
+    ],
+    "R18_status": "real_first_step_observed_full_case_incomplete",
+    "current_task_process_state": "R16-02 unfinished at checkpoint; producer first slice terminal; no background worker.",
+    "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
+    "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -543,7 +583,7 @@
     "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
   "current_native_pending": [],
-  "unpublished_work": false,
+  "unpublished_work": true,
   "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
   "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
   "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
@@ -687,12 +727,12 @@
     "limit": 2,
     "status": "blocked_failed_adoption"
   },
-  "current_development_report": "runs/R14/REPORT.md",
+  "current_development_report": "runs/R16/rule-audit/REPORT.md",
   "root_entries_rolled_back": true,
   "reviewed_protocol_research_artifact": "runs/R12/protocol/v2/evaluation-protocol.md",
   "R12_R13_published_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
   "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
-  "current_candidate": "runs/R14/candidate/C9-lock.json",
+  "current_candidate": "runs/R17/candidate/C10-lock.json",
   "current_R14_report": "runs/R14/REPORT.md",
   "current_R16_report": "runs/R16/REPORT.md",
   "C9_candidate": "runs/R14/candidate/C9-lock.json",
@@ -730,5 +770,14 @@
       }
     ],
     "evidence": "runs/R16/publication/source-ci-completion-command.json"
-  }
+  },
+  "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
+  "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
+  "R17_plan": "runs/R17/PLAN.md",
+  "R17_status": "done_with_real_successor",
+  "next_prospective_plan": "runs/R18/PLAN.md",
+  "R18_plan": "runs/R18/PLAN.md",
+  "R18_status": "actual_first_slice_only",
+  "current_report": "runs/R17/REPORT.md",
+  "final_checks": "runs/R17/final/linux-full-regression-command.json"
 }

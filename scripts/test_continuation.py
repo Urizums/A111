@@ -4,8 +4,10 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
+from datetime import datetime, timezone
+from unittest.mock import patch
 
-from continuation import advance, begin, finish, identity, ready, summary, validate, write_json
+from continuation import advance, begin, finish, identity, ready, summary, validate, write_json, ref
 
 
 class ContinuationCases(unittest.TestCase):
@@ -78,6 +80,128 @@ class ContinuationCases(unittest.TestCase):
         result=self.result('a')
         (self.root/'step.json').unlink()
         with self.assertRaises(ValueError):finish(self.state,self.root,'a',result)
+
+    def enable_progress_policy(self):
+        (self.root/'user-policy.txt').write_text('Explicit current user policy amendment')
+        self.state['tasks'][0].update(repair_limit=None, execution_policy=dict(
+            mode='progress_guard', source=ref(self.root,'user-policy.txt'),
+            progress_state='ready', deadline_utc=None,
+            stop_conditions=['verified outcome', 'resource/authority boundary', 'unsupported repeated path']))
+
+    def recovery(self, n):
+        name='observation-'+str(n)+'.txt'
+        (self.root/name).write_text('Observed defect '+str(n))
+        self.state['tasks'][0]['recovery_note']=dict(observation='defect '+str(n),
+            change_or_new_information='test a changed method for defect '+str(n),
+            expected_check='original outcome assertion', evidence=[ref(self.root,name)])
+
+    def fresh_step(self, n):
+        """Synthetic receipt fixture; not a live execution claim."""
+        name='step-'+str(n)+'.json'
+        write_json(self.root/name,dict(state='finished',argv=['python','changed-step.py',str(n)],
+            exit_code=0,begin={'utc':'fixture-start-'+str(n)},end={'utc':'fixture-end-'+str(n)}))
+        return name
+
+    def test_progress_recovery_beyond_two_retains_all_failures(self):
+        self.enable_progress_policy()
+        for n in range(4):
+            if n:self.recovery(n)
+            begin(self.state,self.root,'a',self.fresh_step(n))
+            finish(self.state,self.root,'a',self.result('a','fail','failure-'+str(n)+'.json'))
+        task=self.state['tasks'][0]
+        self.assertEqual(task['status'],'failed')
+        self.assertEqual(task['repairs_used'],3)
+        self.assertEqual(len(task['attempts']),4)
+        self.assertFalse(validate(self.state,self.root))
+        self.recovery(4)
+        begin(self.state,self.root,'a',self.fresh_step(4))
+        finish(self.state,self.root,'a',self.result('a','pass','verified.json'))
+        self.assertEqual(task['status'],'done')
+        self.assertEqual(task['repairs_used'],4)
+
+    def test_progress_retry_requires_change_and_rejects_reused_rationale(self):
+        self.enable_progress_policy()
+        begin(self.state,self.root,'a','step.json')
+        finish(self.state,self.root,'a',self.result('a','fail','first.json'))
+        with self.assertRaises(ValueError):begin(self.state,self.root,'a','step.json')
+        self.recovery(1)
+        begin(self.state,self.root,'a',self.fresh_step(1))
+        finish(self.state,self.root,'a',self.result('a','fail','second.json'))
+        with self.assertRaises(ValueError):begin(self.state,self.root,'a',self.fresh_step(2))
+        self.assertEqual(self.state['tasks'][0]['repairs_used'],1)
+
+    def test_progress_policy_honors_actual_deadline_and_stalled_path(self):
+        self.enable_progress_policy()
+        task=self.state['tasks'][0]
+        task['execution_policy']['deadline_utc']='1970-01-01T00:00:00+00:00'
+        self.assertNotIn('a',[t['id'] for t in ready(self.state)])
+        with self.assertRaises(ValueError):begin(self.state,self.root,'a','step.json')
+        task['execution_policy']['deadline_utc']=None
+        begin(self.state,self.root,'a','step.json')
+        task['execution_policy']['progress_state']='stalled'
+        finish(self.state,self.root,'a',self.result('a','fail','stalled.json'))
+        self.assertEqual(task['status'],'blocked')
+        self.assertIn('Progress guard',task['blocker'])
+        self.assertEqual(task['repairs_used'],0)
+        self.assertFalse(validate(self.state,self.root))
+
+    def test_progress_retry_rejects_old_receipt_even_with_changed_note(self):
+        self.enable_progress_policy()
+        begin(self.state,self.root,'a','step.json')
+        finish(self.state,self.root,'a',self.result('a','fail','first.json'))
+        self.recovery(1)
+        with self.assertRaisesRegex(ValueError,'fresh actual execution receipt'):
+            begin(self.state,self.root,'a','step.json')
+        self.assertEqual(self.state['tasks'][0]['repairs_used'],0)
+
+    def test_progress_completion_after_deadline_retains_result_but_blocks(self):
+        self.enable_progress_policy()
+        task=self.state['tasks'][0]
+        task['execution_policy']['deadline_utc']='2026-01-01T00:00:00+00:00'
+        with patch('continuation.datetime') as clock:
+            clock.fromisoformat.side_effect=datetime.fromisoformat
+            clock.now.return_value=datetime(2025,12,31,tzinfo=timezone.utc)
+            begin(self.state,self.root,'a','step.json')
+        finish(self.state,self.root,'a',self.result('a'))
+        self.assertEqual(task['status'],'blocked')
+        self.assertIn('deadline reached',task['blocker'])
+        self.assertTrue(task['attempts'][-1]['result'])
+
+    def test_completed_progress_acceptance_and_policy_remain_frozen(self):
+        self.enable_progress_policy()
+        begin(self.state,self.root,'a','step.json')
+        finish(self.state,self.root,'a',self.result('a'))
+        self.assertFalse(validate(self.state,self.root))
+        self.state['tasks'][0]['acceptance'][0]['assertion']='weakened'
+        self.assertTrue(any('changed frozen acceptance' in e for e in validate(self.state,self.root)))
+        self.state['tasks'][0]['acceptance'][0]['assertion']='Actual output is correct'
+        self.state['tasks'][0]['execution_policy']['deadline_utc']='2100-01-01T00:00:00+00:00'
+        self.assertTrue(any('changed frozen execution policy' in e for e in validate(self.state,self.root)))
+
+    def test_completed_legacy_acceptance_remains_frozen(self):
+        begin(self.state,self.root,'a','step.json')
+        finish(self.state,self.root,'a',self.result('a'))
+        self.state['tasks'][0]['acceptance'][0]['assertion']='weakened'
+        self.assertTrue(any('changed frozen acceptance' in e for e in validate(self.state,self.root)))
+
+    def test_malformed_deadline_cannot_disable_boundary_or_crash(self):
+        self.enable_progress_policy()
+        for invalid in ['',123,False,[],{}]:
+            with self.subTest(value=invalid):
+                self.state['tasks'][0]['execution_policy']['deadline_utc']=invalid
+                self.assertTrue(any('invalid timezone-aware resource deadline' in e
+                                    for e in validate(self.state,self.root)))
+                self.assertNotIn('a',[t['id'] for t in ready(self.state)])
+
+    def test_progress_policy_cannot_weaken_criteria_or_ignore_drift(self):
+        self.enable_progress_policy()
+        begin(self.state,self.root,'a','step.json')
+        result=self.result('a')
+        self.state['tasks'][0]['acceptance'][0]['assertion']='weakened requirement'
+        with self.assertRaises(ValueError):finish(self.state,self.root,'a',result)
+        self.state['tasks'][0]['acceptance'][0]['assertion']='Actual output is correct'
+        (self.root/'user-policy.txt').write_text('Unrecorded replacement policy')
+        self.assertTrue(validate(self.state,self.root))
 
     def test_scope_overlap_defers_concurrent_writer(self):
         self.state['tasks'][1]['write_paths']=['a/child/']

@@ -1,0 +1,162 @@
+{
+  "task_id": "R17-02",
+  "attempt_id": "R17-02-1",
+  "requirements_hash": "82878ce127fa92eeeb8de9fb8dfa1fb9cdbae3f5b5de3ee009813c40130b5efb",
+  "criteria": [
+    {
+      "id": "p1",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json"
+      ]
+    },
+    {
+      "id": "p2",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json"
+      ]
+    },
+    {
+      "id": "p3",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json"
+      ]
+    },
+    {
+      "id": "v1",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json"
+      ]
+    },
+    {
+      "id": "v2",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/review/C10-review-evidence.json",
+        "runs/R17/review/C10-policy-review.md",
+        "runs/R17/review/C10-scenario-decisions.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "新上下文政策与场景独立核查",
+    "hypothesis": "Evidence-driven continuation and planned research",
+    "baseline": "Fixed two-error business stop and weak search planning",
+    "conditions": "Frozen C10 and assertions; new worker context; scoped local trial",
+    "observations": {
+      "schema": "forge-c10-independent-review-evidence/1",
+      "reviewer": "independent fresh-context reviewer",
+      "scope": [
+        "runs/R17/candidate/C10/forge-agent-flow/ (nine locked Markdown files)",
+        "runs/R17/candidate/C10-lock.json",
+        "runs/R17/acceptance.json",
+        "runs/R17/cases/scenarios.json",
+        "runs/R17/scope-decision.json",
+        "AGENTS.md (worker-boundary instruction only)"
+      ],
+      "excluded": [
+        "root report",
+        "author ledger/diagnoses",
+        "other reviewer results",
+        "MathorCup/national-contest solutions"
+      ],
+      "lock_check": {
+        "method": "Read each declared candidate path as bytes; calculate byte length and SHA-256; compare with lock.",
+        "all_nine_match": true,
+        "meaning": "Source identity only; lock explicitly disclaims behavioral acceptance."
+      },
+      "verdicts": [
+        {
+          "id": "p1",
+          "verdict": "pass",
+          "source": [
+            "SKILL.md:92-106",
+            "references/iteration-and-recovery.md:4-30,32-60",
+            "references/continuation.md:30-38"
+          ],
+          "observation": "Classified recovery and research, evidence-backed changed actions, path-local repeated-no-information stop, real boundary stops, fixed-trial history retention.",
+          "reason": "Trace A allows three distinct justified repairs; D-F preserve refusal, deadline and historical outcomes.",
+          "limits": "Synthetic decisions; no live recoveries; local budget declarations are not provider enforcement."
+        },
+        {
+          "id": "p2",
+          "verdict": "pass",
+          "source": [
+            "references/source-evaluation.md:7-47,80-98",
+            "SKILL.md:103-105"
+          ],
+          "observation": "Question/decision plan, expected evidence, alternate/disconfirming routes, primary-passage check, conflict/unknown handling, source cards, deduplication and instruction quarantine.",
+          "reason": "Trace B repeat yields no information; changed official route can discriminate. Trace C orders current primary over superseded version and isolates bad text.",
+          "limits": "No real search route or accuracy was measured."
+        },
+        {
+          "id": "p3",
+          "verdict": "pass",
+          "source": [
+            "SKILL.md:48-68,92-106",
+            "references/evaluation.md:4-29,48-60,68-97",
+            "references/continuation.md:20-38",
+            "references/iteration-and-recovery.md:44-60"
+          ],
+          "observation": "Acceptance remains tied to original requirements and actual artifacts; missing checks remain unverified; refusal and frozen conditions remain binding.",
+          "reason": "Scenario decisions do not turn progress or a new policy into acceptance and do not erase old failure.",
+          "limits": "No product smoke/acceptance execution in this review."
+        },
+        {
+          "id": "v1",
+          "verdict": "pass",
+          "source": [
+            "references/collaboration.md:20-31",
+            "references/evaluation.md:48-60",
+            "neutral scenario packet and C10 lock"
+          ],
+          "observation": "Fresh reviewer saw goal/scope, locked candidate, assertions and neutral scenarios; no author diagnosis or reviewer conclusion.",
+          "reason": "Independent decisions were mapped to sources, observations, reasons and limits.",
+          "limits": "Independent policy judgment only; not live behavior acceptance."
+        },
+        {
+          "id": "v2",
+          "verdict": "pass",
+          "source": [
+            "references/iteration-and-recovery.md:7-30,44-60",
+            "references/source-evaluation.md:25-47,80-98",
+            "references/evaluation.md:48-72",
+            "scenarios A-F"
+          ],
+          "observation": "A: three distinct recoveries; B: repeated no-information; C: conflict and injected instruction; D: refused route; E: fixed legacy case; F: elapsed window with missing evidence.",
+          "reason": "All requested branches receive a concrete decision; optional advice remains distinct from mandatory defects.",
+          "limits": "Synthetic fixtures do not establish actual hard host rejection, actual multi-step web lookup or live recovery."
+        }
+      ],
+      "internal_consistency": {
+        "finding": "No material contradiction found. One optional ambiguity in SKILL.md:23-26 ('within the original budget') is bounded by iteration-and-recovery.md:48-60; interpret as an explicitly fixed experiment/resource budget, never the retired universal two-correction rule.",
+        "open_task_use": "Directly usable as a task-adaptable workflow design/decision guide; not a self-running controller and not proof of task completion.",
+        "unbounded_action_risk": "Not indicated: same cause without meaningful change/information stops that path; real authority/resource boundaries and task completion/user stop also apply."
+      },
+      "commands": {
+        "review_command_errors": [],
+        "review_recoveries": [],
+        "authenticated_model": null,
+        "tokens": null,
+        "cost": null
+      }
+    },
+    "limits": "Fresh-context policy judgments on synthetic A-F traces; not live recovery.",
+    "metrics": {
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Preserve observations and integrate with independently reviewed controller and package."
+}

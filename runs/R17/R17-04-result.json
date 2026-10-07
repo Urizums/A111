@@ -1,0 +1,46 @@
+{
+  "task_id": "R17-04",
+  "attempt_id": "R17-04-1",
+  "requirements_hash": "6848c8dc6e47d2226b633e10fa8ceae36c08ed1d5c9d4886e810864da60ccbe1",
+  "criteria": [
+    {
+      "id": "d1",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/controller-review/review.json",
+        "runs/R17/controller-review/addendum.json",
+        "runs/R17/controller-review/addendum2.json",
+        "runs/R17/controller-regression-second-fix-command.json",
+        "runs/R17/handoff-check-after-fixes-command.json",
+        "runs/R17/history-verification.json"
+      ]
+    },
+    {
+      "id": "d2",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/package/build-command.json",
+        "runs/R17/package/verification.json",
+        "runs/R17/entry-policy-snapshot.json",
+        "runs/R17/R17-02-result.json",
+        "runs/R17/R17-03-result.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "C10 policy and document-only delivery",
+    "hypothesis": "Remove arbitrary premature stops while retaining checks and history",
+    "baseline": "Universal 2-correction business stop; real R16 stopped before model execution",
+    "conditions": "Current user amendment; controlled policy review; one real web research; independent informed controller rechecks",
+    "observations": "Original failures retained; 17 target tests and local independent probes pass; 46 old tasks and frozen locks unchanged; fresh nine-document package verified",
+    "limits": "Cooperative metadata controls; no general search correctness, real >2 recovery, full MathorCup paper, frontend acceptance or provider quota claim",
+    "metrics": {
+      "documents": 9,
+      "bundled_scripts": 0,
+      "target_tests": 17,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Prospectively continue same original R16-02 actor/input/goal; preserve stopped attempt and p1-p5."
+}

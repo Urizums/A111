@@ -1,0 +1,27 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "-B",
+    "runs/R17/controller-review/addendum_probe.py",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R17/controller-review"
+  ],
+  "cwd": "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+  "begin": {
+    "utc": "2026-10-07T04:10:42.687264+00:00",
+    "monotonic_ns": 1016532175951,
+    "boot_id": "cbe1819c-3691-4179-85f2-610d12299c81"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-07T04:10:43.213211+00:00",
+    "monotonic_ns": 1017058119328,
+    "boot_id": "cbe1819c-3691-4179-85f2-610d12299c81"
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R17/controller-review/addendum_probe.py\", line 46, in <module>\n    s=state_for(t); r1=receipt('deadline-start.json','deadline attempt'); begin(s,root,'t',r1)\n                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R17/controller-review/addendum_probe.py\", line 20, in receipt\n    assert p.returncode == 0, (p.returncode, p.stderr)\n           ^^^^^^^^^^^^^^^^^\nAssertionError: (1, 'Traceback (most recent call last):\\n  File \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/scripts/record_command.py\", line 52, in <module>\\n    raise SystemExit(main())\\n                     ^^^^^^\\n  File \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/scripts/record_command.py\", line 30, in main\\n    with args.out.open(\\'x\\', encoding=\\'utf-8\\') as f:\\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\n  File \"/usr/lib/python3.12/pathlib.py\", line 1015, in open\\n    return io.open(self, mode, buffering, encoding, errors, newline)\\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nFileExistsError: [Errno 17] File exists: \\'/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R17/controller-review/fixture/deadline-start.json\\'\\n')\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOgogIEZpbGUgIi9tbnQvYy9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvQ29kZXgvMjAyNi0xMC0wNS91cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kL3dvcmsvQTExMS9ydW5zL1IxNy9jb250cm9sbGVyLXJldmlldy9hZGRlbmR1bV9wcm9iZS5weSIsIGxpbmUgNDYsIGluIDxtb2R1bGU+CiAgICBzPXN0YXRlX2Zvcih0KTsgcjE9cmVjZWlwdCgnZGVhZGxpbmUtc3RhcnQuanNvbicsJ2RlYWRsaW5lIGF0dGVtcHQnKTsgYmVnaW4ocyxyb290LCd0JyxyMSkKICAgICAgICAgICAgICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eCiAgRmlsZSAiL21udC9jL1VzZXJzL2FkbWluL0RvY3VtZW50cy9Db2RleC8yMDI2LTEwLTA1L3VyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWQvd29yay9BMTExL3J1bnMvUjE3L2NvbnRyb2xsZXItcmV2aWV3L2FkZGVuZHVtX3Byb2JlLnB5IiwgbGluZSAyMCwgaW4gcmVjZWlwdAogICAgYXNzZXJ0IHAucmV0dXJuY29kZSA9PSAwLCAocC5yZXR1cm5jb2RlLCBwLnN0ZGVycikKICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXgpBc3NlcnRpb25FcnJvcjogKDEsICdUcmFjZWJhY2sgKG1vc3QgcmVjZW50IGNhbGwgbGFzdCk6XG4gIEZpbGUgIi9tbnQvYy9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvQ29kZXgvMjAyNi0xMC0wNS91cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kL3dvcmsvQTExMS9zY3JpcHRzL3JlY29yZF9jb21tYW5kLnB5IiwgbGluZSA1MiwgaW4gPG1vZHVsZT5cbiAgICByYWlzZSBTeXN0ZW1FeGl0KG1haW4oKSlcbiAgICAgICAgICAgICAgICAgICAgIF5eXl5eXlxuICBGaWxlICIvbW50L2MvVXNlcnMvYWRtaW4vRG9jdW1lbnRzL0NvZGV4LzIwMjYtMTAtMDUvdXJpenVtcy1hMTExLW1haW4tY29kZXgtaGFuZG9mZi1tZC93b3JrL0ExMTEvc2NyaXB0cy9yZWNvcmRfY29tbWFuZC5weSIsIGxpbmUgMzAsIGluIG1haW5cbiAgICB3aXRoIGFyZ3Mub3V0Lm9wZW4oXCd4XCcsIGVuY29kaW5nPVwndXRmLThcJykgYXMgZjpcbiAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXlxuICBGaWxlICIvdXNyL2xpYi9weXRob24zLjEyL3BhdGhsaWIucHkiLCBsaW5lIDEwMTUsIGluIG9wZW5cbiAgICByZXR1cm4gaW8ub3BlbihzZWxmLCBtb2RlLCBidWZmZXJpbmcsIGVuY29kaW5nLCBlcnJvcnMsIG5ld2xpbmUpXG4gICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXlxuRmlsZUV4aXN0c0Vycm9yOiBbRXJybm8gMTddIEZpbGUgZXhpc3RzOiBcJy9tbnQvYy9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvQ29kZXgvMjAyNi0xMC0wNS91cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kL3dvcmsvQTExMS9ydW5zL1IxNy9jb250cm9sbGVyLXJldmlldy9maXh0dXJlL2RlYWRsaW5lLXN0YXJ0Lmpzb25cJ1xuJykK"
+}

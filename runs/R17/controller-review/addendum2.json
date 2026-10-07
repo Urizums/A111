@@ -1,0 +1,49 @@
+{
+  "schema": "forge-controller-review-addendum/2",
+  "review_type": "informed_re-review",
+  "prior_verdicts_preserved": [
+    "review.json: delivery.d1_not_met",
+    "addendum.json: delivery.d1_not_met"
+  ],
+  "scope": "Recheck the two remaining required findings from addendum.md and affected legacy/progress behavior; not a new blind trial.",
+  "current_recheck": "both_prior_findings_repaired_in_exercised_cases",
+  "tests": {
+    "receipt": "addendum2-tests-command.json",
+    "count": 17,
+    "result": "passed"
+  },
+  "findings": [
+    {
+      "id": "terminal-acceptance-freezing-legacy-and-progress",
+      "result": "pass_for_both_modes",
+      "source": "scripts/continuation.py:166-179",
+      "evidence": "addendum2-probe-command.json: after successful completion, weakening acceptance in both a progress_guard and a legacy fixed task caused validate() to return changed frozen acceptance."
+    },
+    {
+      "id": "malformed-deadline-validation",
+      "result": "pass_fail_closed_for_tested_values",
+      "source": "scripts/continuation.py:75-88, 157-168",
+      "evidence": "Empty string, 123, false, [], and {} each returned a structured invalid timezone-aware resource deadline error and made ready() omit the task. No uncaught AttributeError occurred."
+    },
+    {
+      "id": "frozen-policy-vs-runtime-stalled-state",
+      "result": "pass_for_tested_fields",
+      "source": "scripts/continuation.py:61-65, 242-282",
+      "evidence": "Changed deadline after begin caused finish() to reject Changed frozen execution policy. Changing progress_state only to stalled left validate() clean and finish() retained the result while blocking the task."
+    },
+    {
+      "id": "legacy-fixed-cap-opt-in",
+      "result": "pass_for_exercised_case",
+      "source": "scripts/continuation.py:67-73, 104-113, 224-246",
+      "evidence": "A legacy task without execution_policy and repair_limit=1 ended blocked after two attempts, repairs_used=1, with no ready task."
+    }
+  ],
+  "current_narrow_conclusion": "No remaining required defect found in the two prior findings or affected behaviors exercised. This is not a full delivery.d1 pass.",
+  "unknown": [
+    "historical R17 byte/history immutability and counters",
+    "provider-side resource enforcement",
+    "hard subprocess isolation",
+    "semantic progress beyond tested local fixtures"
+  ],
+  "evidence_files": ["addendum2-probe-command.json", "addendum2-tests-command.json"]
+}

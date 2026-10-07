@@ -1,0 +1,97 @@
+{
+  "schema": "forge-classified-author-events/1",
+  "candidate": "C10",
+  "policy": "Current user progress-based policy; no fixed global correction count",
+  "events": [
+    {
+      "id": 1,
+      "type": "construction_defect",
+      "observation": "Initial acceptance JSON contained duplicate policy keys, which would erase its policy assertions when parsed.",
+      "change": "Rename the explanatory string key to recovery_policy; preserve initial bytes in acceptance-before-correction-1.json.",
+      "status": "corrected_before_candidate_freeze"
+    },
+    {
+      "id": 2,
+      "type": "patch_construction_failure",
+      "observation": "Multi-file patch failed expected-line verification in the C10 working-copy router; the tool made no mutations.",
+      "change": "Inspect exact original line, reconstruct patch with actual surrounding text and apply successfully.",
+      "status": "corrected"
+    },
+    {
+      "id": 3,
+      "type": "substantive_controller_defects",
+      "observation": "Independent initial review: completion deadline, terminal acceptance drift and receipt reuse fail d1",
+      "change": "Retain original source/tests; repair guards, add actual regression",
+      "evidence": "runs/R17/controller-review/review.json",
+      "status": "repaired_then_reviewed"
+    },
+    {
+      "id": 4,
+      "type": "substantive_controller_defects",
+      "observation": "Independent informed addendum: legacy terminal drift and malformed deadline still fail d1",
+      "change": "Apply hash enforcement to legacy latest attempts; reject empty/wrong-type deadlines; recheck original assertions",
+      "evidence": "runs/R17/controller-review/addendum.json",
+      "status": "second_recheck_pending"
+    },
+    {
+      "id": 5,
+      "type": "verification_platform_recovery",
+      "observation": "Native Windows verify_handoff invocation fails import fcntl",
+      "change": "Use observed Linux/WSL environment, retain failed receipt",
+      "evidence": "runs/R17/handoff-check-command.json",
+      "status": "WSL_recheck"
+    },
+    {
+      "id": 6,
+      "type": "orchestration_order_error",
+      "observation": "Started dependent checks while release-freeze command was yielded, rather than confirmed complete",
+      "change": "Await actual terminal freeze before final dependent checks; retain prior results",
+      "status": "final_serial_verification_required"
+    },
+    {
+      "id": 7,
+      "type": "evidence_mutation",
+      "observation": "Appended followup events to author ledger already hashed by R17-01, actual handoff validation failed",
+      "change": "Preserve appended version separately; restore only byte-exact sealed original hash; future events separate",
+      "evidence": "runs/R17/handoff-check-wsl-command.json",
+      "status": "restored_exact_original_hash"
+    },
+    {
+      "id": 8,
+      "type": "full_regression_fixture_setup",
+      "observation": "Non-final suite started while new locked inputs remained untracked, so git-index export used by install tests omitted required C10/R17 files; two install setup failures and interrupted run preserved",
+      "change": "Stop this invalid path, include actual final tracked inputs and rerun full suite from a byte-identical local Linux delivery export",
+      "evidence": "runs/R17/full-scripts-tests-command.json",
+      "status": "proper_export_verification_pending"
+    },
+    {
+      "id": 9,
+      "type": "patch_context_error",
+      "observation": "Final handoff patch expected a paragraph fragment as a full line; no mutations",
+      "change": "Read exact lines and apply complete-line patch",
+      "status": "corrected"
+    }
+  ],
+  "candidate_source_corrections_observed": 2,
+  "C9_author_unchanged": {
+    "used": 2,
+    "limit": 2
+  },
+  "telemetry": {
+    "model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "limits": "Parent tool observations transcribed; not fabricated subprocess receipts. These new author events do not erase or consume another historical case's count.",
+  "controller_mandatory_findings_observed": 5,
+  "verification_recoveries_observed": 2,
+  "final_observation": {
+    "controller_required_findings_fixed": 5,
+    "target_tests_passed": 17,
+    "full_scripts_tests_passed": 62,
+    "full_regression": "runs/R17/final/linux-full-regression-command.json",
+    "history": "runs/R18/first-step-integration.json",
+    "old_failures_and_counters_preserved": true,
+    "full_product_acceptance_passed": false
+  }
+}

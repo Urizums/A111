@@ -1,0 +1,13 @@
+{
+  "schema": "forge-classified-author-events/1",
+  "candidate": "C10",
+  "policy": "Current user progress-based policy; no fixed global correction count",
+  "events": [
+    {"id":1,"type":"construction_defect","observation":"Initial acceptance JSON contained duplicate policy keys, which would erase its policy assertions when parsed.","change":"Rename the explanatory string key to recovery_policy; preserve initial bytes in acceptance-before-correction-1.json.","status":"corrected_before_candidate_freeze"},
+    {"id":2,"type":"patch_construction_failure","observation":"Multi-file patch failed expected-line verification in the C10 working-copy router; the tool made no mutations.","change":"Inspect exact original line, reconstruct patch with actual surrounding text and apply successfully.","status":"corrected"}
+  ],
+  "candidate_source_corrections_observed": 2,
+  "C9_author_unchanged": {"used":2,"limit":2},
+  "telemetry": {"model":null,"tokens":null,"cost":null},
+  "limits": "Parent tool observations transcribed; not fabricated subprocess receipts. These new author events do not erase or consume another historical case's count."
+}

@@ -1,0 +1,40 @@
+{
+  "task_id": "R17-01",
+  "attempt_id": "R17-01-1",
+  "requirements_hash": "7ea67da6854fc6cbbc11ee3a9f02c2691d18056dbbcf96e0ef22de039e427e3c",
+  "criteria": [
+    {
+      "id": "a1",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/freeze-candidate-command.json",
+        "runs/R17/structure-command.json",
+        "runs/R17/baseline.json",
+        "runs/R17/author-ledger.json"
+      ]
+    },
+    {
+      "id": "a2",
+      "status": "pass",
+      "evidence": [
+        "runs/R17/controller-regression-command.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Document policy and opt-in development-queue compatibility",
+    "hypothesis": "Classified evidence-backed continuation avoids arbitrary whole-task two-error stops",
+    "baseline": "Original fixed cap; two local source-read recoveries stopped the full real-paper case",
+    "conditions": "Explicit user change; nine C10 docs and local controller tests",
+    "observations": "Actual structure/link/hash checks and 12 controller tests pass; author errors retained",
+    "limits": "Author/structure/local guards only, independent scenario/research/implementation conclusions separate",
+    "metrics": {
+      "document_files": 9,
+      "controller_tests": 12,
+      "bundled_scripts": 0,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "Receive independent policy and actual search observations; preserve source lock."
+}
