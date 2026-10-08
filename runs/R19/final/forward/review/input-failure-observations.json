@@ -1,0 +1,99 @@
+{
+  "scope": "Actual source-domain/declared unsupported-input routes; copied review inputs only, not original feasibility answers",
+  "cases": [
+    {
+      "case": "unequal_dimensions",
+      "expected_rejection": "identical fixed dimensions",
+      "actual_receipt": {
+        "command": [
+          "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-B",
+          "-X",
+          "pycache_prefix=C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\bytecode-not-used",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py",
+          "--input",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\input-failures\\unequal_dimensions-raw.json",
+          "--output",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\input-failures\\unequal_dimensions-solution.json"
+        ],
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 82, in <module>\n    if __name__=='__main__': main()\n                             ^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 80, in main\n    result=solve(data,items,digest); write_json(args.output,result)\n           ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 11, in solve\n    raise ValueError('Exact solver requires all items to have identical fixed dimensions; no discretized heuristic fallback')\nValueError: Exact solver requires all items to have identical fixed dimensions; no discretized heuristic fallback\n",
+        "state": "finished"
+      },
+      "result_file_exists": false,
+      "rejected_as_expected": true
+    },
+    {
+      "case": "multi_vehicle_type",
+      "expected_rejection": "exactly one homogeneous vehicle type",
+      "actual_receipt": {
+        "command": [
+          "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-B",
+          "-X",
+          "pycache_prefix=C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\bytecode-not-used",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py",
+          "--input",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\input-failures\\multi_vehicle_type-raw.json",
+          "--output",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\input-failures\\multi_vehicle_type-solution.json"
+        ],
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 82, in <module>\n    if __name__=='__main__': main()\n                             ^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 79, in main\n    data,items,digest=read_input(args.input)\n                      ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\common.py\", line 17, in read_input\n    raise ValueError('This implementation supports exactly one homogeneous vehicle type')\nValueError: This implementation supports exactly one homogeneous vehicle type\n",
+        "state": "finished"
+      },
+      "result_file_exists": false,
+      "rejected_as_expected": true
+    },
+    {
+      "case": "duplicate_source_id",
+      "expected_rejection": "invalid or duplicated item id",
+      "actual_receipt": {
+        "command": [
+          "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-B",
+          "-X",
+          "pycache_prefix=C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\bytecode-not-used",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py",
+          "--input",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\input-failures\\duplicate_source_id-raw.json",
+          "--output",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\input-failures\\duplicate_source_id-solution.json"
+        ],
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 82, in <module>\n    if __name__=='__main__': main()\n                             ^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 79, in main\n    data,items,digest=read_input(args.input)\n                      ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\common.py\", line 40, in read_input\n    raise ValueError('invalid or duplicated item id')\nValueError: invalid or duplicated item id\n",
+        "state": "finished"
+      },
+      "result_file_exists": false,
+      "rejected_as_expected": true
+    },
+    {
+      "case": "source_payload_nan",
+      "expected_rejection": "finite numerical value required",
+      "actual_receipt": {
+        "command": [
+          "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+          "-B",
+          "-X",
+          "pycache_prefix=C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\bytecode-not-used",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py",
+          "--input",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\input-failures\\source_payload_nan-raw.json",
+          "--output",
+          "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\review\\input-failures\\source_payload_nan-solution.json"
+        ],
+        "exit_code": 1,
+        "stdout": "",
+        "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 82, in <module>\n    if __name__=='__main__': main()\n                             ^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\solve.py\", line 79, in main\n    data,items,digest=read_input(args.input)\n                      ^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\common.py\", line 22, in read_input\n    number(v[k], k, True)\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\common.py\", line 8, in number\n    raise ValueError(f'{name}: finite numerical value required')\nValueError: payload_kg: finite numerical value required\n",
+        "state": "finished"
+      },
+      "result_file_exists": false,
+      "rejected_as_expected": true
+    }
+  ],
+  "all_reject_as_expected": true,
+  "all_started_processes_terminal": true
+}

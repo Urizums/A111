@@ -1,0 +1,611 @@
+{
+  "floor_only_baseline": {
+    "solution": {
+      "schema": "fixed-box-solution/1",
+      "source_sha256": "d1cde1cd001f16052ec90bdb227a7930e4f68938cf77369fd889a1e0353ca99a",
+      "vehicle_type_id": "T",
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T2",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T2",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        }
+      ],
+      "objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      }
+    },
+    "checks": {
+      "valid": true,
+      "errors": [],
+      "per_vehicle": {
+        "T1": {
+          "mass_kg": 160,
+          "payload_slack_kg": 340,
+          "item_count": 2
+        },
+        "T2": {
+          "mass_kg": 200,
+          "payload_slack_kg": 300,
+          "item_count": 2
+        }
+      },
+      "per_item": {
+        "F1": {
+          "source_category": "fragile",
+          "source_mass_kg": 60,
+          "computed_support_id": null,
+          "top_z_m": 1,
+          "top_clearance_m": 2.2,
+          "external_load_kg": 0,
+          "top_area_m2": 1,
+          "external_load_kg_per_m2": 0.0,
+          "standard_load_slack_kg_per_m2": null
+        },
+        "S1": {
+          "source_category": "standard",
+          "source_mass_kg": 100,
+          "computed_support_id": null,
+          "top_z_m": 1,
+          "top_clearance_m": 2.2,
+          "external_load_kg": 0,
+          "top_area_m2": 1,
+          "external_load_kg_per_m2": 0.0,
+          "standard_load_slack_kg_per_m2": 150.0
+        },
+        "S2": {
+          "source_category": "standard",
+          "source_mass_kg": 100,
+          "computed_support_id": null,
+          "top_z_m": 1,
+          "top_clearance_m": 2.2,
+          "external_load_kg": 0,
+          "top_area_m2": 1,
+          "external_load_kg_per_m2": 0.0,
+          "standard_load_slack_kg_per_m2": 150.0
+        },
+        "S3": {
+          "source_category": "standard",
+          "source_mass_kg": 100,
+          "computed_support_id": null,
+          "top_z_m": 1,
+          "top_clearance_m": 2.2,
+          "external_load_kg": 0,
+          "top_area_m2": 1,
+          "external_load_kg_per_m2": 0.0,
+          "standard_load_slack_kg_per_m2": 150.0
+        }
+      },
+      "recomputed_objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "tolerance": 1e-08
+    }
+  },
+  "parameter_variants": [
+    {
+      "case": "original",
+      "standard_limit_kg_per_m2": 150,
+      "payload_kg": 500,
+      "objective": {
+        "vehicle_count": 1,
+        "total_cost_CNY": 200
+      },
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S1"
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S2"
+        }
+      ],
+      "valid": true,
+      "errors": [],
+      "search": {
+        "permutation_cut_candidates": 51,
+        "legal_chain_partitions": 1,
+        "vehicle_assignments": 1,
+        "elapsed_seconds": 9.119999594986439e-05
+      },
+      "optimality": {
+        "status": "proved_for_supported_identical_dimensions",
+        "vehicle_lower_bound": 1,
+        "achieved_vehicle_count": 1,
+        "all_smaller_vehicle_counts_examined": [],
+        "floor_slots_per_vehicle": 2,
+        "height_levels_available": 3,
+        "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+      },
+      "is_original_input": true
+    },
+    {
+      "case": "load_160",
+      "standard_limit_kg_per_m2": 160,
+      "payload_kg": 500,
+      "objective": {
+        "vehicle_count": 1,
+        "total_cost_CNY": 200
+      },
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S1"
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S2"
+        }
+      ],
+      "valid": true,
+      "errors": [],
+      "search": {
+        "permutation_cut_candidates": 51,
+        "legal_chain_partitions": 1,
+        "vehicle_assignments": 1,
+        "elapsed_seconds": 7.219999679364264e-05
+      },
+      "optimality": {
+        "status": "proved_for_supported_identical_dimensions",
+        "vehicle_lower_bound": 1,
+        "achieved_vehicle_count": 1,
+        "all_smaller_vehicle_counts_examined": [],
+        "floor_slots_per_vehicle": 2,
+        "height_levels_available": 3,
+        "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+      },
+      "is_original_input": false
+    },
+    {
+      "case": "load_100_boundary",
+      "standard_limit_kg_per_m2": 100,
+      "payload_kg": 500,
+      "objective": {
+        "vehicle_count": 1,
+        "total_cost_CNY": 200
+      },
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S1"
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S2"
+        }
+      ],
+      "valid": true,
+      "errors": [],
+      "search": {
+        "permutation_cut_candidates": 51,
+        "legal_chain_partitions": 1,
+        "vehicle_assignments": 1,
+        "elapsed_seconds": 6.369999027810991e-05
+      },
+      "optimality": {
+        "status": "proved_for_supported_identical_dimensions",
+        "vehicle_lower_bound": 1,
+        "achieved_vehicle_count": 1,
+        "all_smaller_vehicle_counts_examined": [],
+        "floor_slots_per_vehicle": 2,
+        "height_levels_available": 3,
+        "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+      },
+      "is_original_input": false
+    },
+    {
+      "case": "load_99",
+      "standard_limit_kg_per_m2": 99,
+      "payload_kg": 500,
+      "objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T2",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T2",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        }
+      ],
+      "valid": true,
+      "errors": [],
+      "search": {
+        "permutation_cut_candidates": 200,
+        "legal_chain_partitions": 1,
+        "vehicle_assignments": 4,
+        "elapsed_seconds": 0.0001947999990079552
+      },
+      "optimality": {
+        "status": "proved_for_supported_identical_dimensions",
+        "vehicle_lower_bound": 1,
+        "achieved_vehicle_count": 2,
+        "all_smaller_vehicle_counts_examined": [
+          1
+        ],
+        "floor_slots_per_vehicle": 2,
+        "height_levels_available": 3,
+        "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+      },
+      "is_original_input": false
+    },
+    {
+      "case": "load_60_boundary",
+      "standard_limit_kg_per_m2": 60,
+      "payload_kg": 500,
+      "objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T2",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T2",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        }
+      ],
+      "valid": true,
+      "errors": [],
+      "search": {
+        "permutation_cut_candidates": 200,
+        "legal_chain_partitions": 1,
+        "vehicle_assignments": 4,
+        "elapsed_seconds": 0.0001790999958757311
+      },
+      "optimality": {
+        "status": "proved_for_supported_identical_dimensions",
+        "vehicle_lower_bound": 1,
+        "achieved_vehicle_count": 2,
+        "all_smaller_vehicle_counts_examined": [
+          1
+        ],
+        "floor_slots_per_vehicle": 2,
+        "height_levels_available": 3,
+        "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+      },
+      "is_original_input": false
+    },
+    {
+      "case": "load_59",
+      "standard_limit_kg_per_m2": 59,
+      "payload_kg": 500,
+      "objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T2",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T2",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        }
+      ],
+      "valid": true,
+      "errors": [],
+      "search": {
+        "permutation_cut_candidates": 200,
+        "legal_chain_partitions": 1,
+        "vehicle_assignments": 4,
+        "elapsed_seconds": 0.00017349999689031392
+      },
+      "optimality": {
+        "status": "proved_for_supported_identical_dimensions",
+        "vehicle_lower_bound": 1,
+        "achieved_vehicle_count": 2,
+        "all_smaller_vehicle_counts_examined": [
+          1
+        ],
+        "floor_slots_per_vehicle": 2,
+        "height_levels_available": 3,
+        "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+      },
+      "is_original_input": false
+    },
+    {
+      "case": "payload_360_boundary",
+      "standard_limit_kg_per_m2": 150,
+      "payload_kg": 360,
+      "objective": {
+        "vehicle_count": 1,
+        "total_cost_CNY": 200
+      },
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S1"
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S2"
+        }
+      ],
+      "valid": true,
+      "errors": [],
+      "search": {
+        "permutation_cut_candidates": 51,
+        "legal_chain_partitions": 1,
+        "vehicle_assignments": 1,
+        "elapsed_seconds": 5.490001058205962e-05
+      },
+      "optimality": {
+        "status": "proved_for_supported_identical_dimensions",
+        "vehicle_lower_bound": 1,
+        "achieved_vehicle_count": 1,
+        "all_smaller_vehicle_counts_examined": [],
+        "floor_slots_per_vehicle": 2,
+        "height_levels_available": 3,
+        "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+      },
+      "is_original_input": false
+    },
+    {
+      "case": "payload_359",
+      "standard_limit_kg_per_m2": 150,
+      "payload_kg": 359,
+      "objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "placements": [
+        {
+          "item_id": "F1",
+          "vehicle_id": "T1",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S1",
+          "vehicle_id": "T1",
+          "x_m": 1,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S2",
+          "vehicle_id": "T2",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 0,
+          "support_id": null
+        },
+        {
+          "item_id": "S3",
+          "vehicle_id": "T2",
+          "x_m": 0,
+          "y_m": 0,
+          "z_m": 1,
+          "support_id": "S2"
+        }
+      ],
+      "valid": true,
+      "errors": [],
+      "search": {
+        "permutation_cut_candidates": 4,
+        "legal_chain_partitions": 1,
+        "vehicle_assignments": 2,
+        "elapsed_seconds": 1.7999991541728377e-05
+      },
+      "optimality": {
+        "status": "proved_for_supported_identical_dimensions",
+        "vehicle_lower_bound": 2,
+        "achieved_vehicle_count": 2,
+        "all_smaller_vehicle_counts_examined": [],
+        "floor_slots_per_vehicle": 2,
+        "height_levels_available": 3,
+        "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+      },
+      "is_original_input": false
+    }
+  ],
+  "scope": "Only the listed deterministic variants; no empirical road, axle or loading-channel measurements."
+}

@@ -1,0 +1,14 @@
+{
+  "first_check": "runs/R19/publication/c12-accepted-r20-first-step-style-command.json",
+  "actual_exit_code": 1,
+  "actual_findings": [
+    "runs/R19/final/forward/production/README.md:17: new blank line at EOF",
+    "runs/R19/final/forward/production/recovery/render_paper_before_layout_correction.py:105: new blank line at EOF",
+    "runs/R19/final/forward/production/render_paper.py:105: new blank line at EOF"
+  ],
+  "classification": "Optional Git source cosmetics in already frozen author artifacts; not an original b1-b5 defect or a failing scientific assertion.",
+  "action": "Preserve frozen production bytes. Keep default Git whitespace checks for all other changed code/documents; check these exact three for trailing-space/indent concerns with blank-at-EOF disabled.",
+  "mandatory_acceptance_lowered": false,
+  "historical_failure_or_budget_reset": false,
+  "limits": "No claim that the first style invocation passed. Independent workflow/code/paper acceptance remains its original external verdict."
+}

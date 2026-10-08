@@ -1,0 +1,1248 @@
+{
+  "new_and_original": {
+    "newly_executed": {
+      "valid": true,
+      "errors": [],
+      "recomputed": {
+        "lexicographic_objective": [
+          1,
+          200
+        ],
+        "mass_by_vehicle_kg": {
+          "T1": 360.0
+        },
+        "cumulative_external_load_kg": {
+          "F1": 0.0,
+          "S1": 60.0,
+          "S2": 100.0,
+          "S3": 0.0
+        },
+        "stress_kg_per_m2": {
+          "F1": 0.0,
+          "S1": 60.0,
+          "S2": 100.0,
+          "S3": 0.0
+        },
+        "support": {
+          "F1": "S1",
+          "S1": null,
+          "S2": null,
+          "S3": "S2"
+        },
+        "activation": {
+          "nonfloor_items": 2,
+          "support_edges": 2,
+          "recursive_depth": 1,
+          "fragile_on_standard": 1
+        },
+        "unused_declared_vehicles": []
+      }
+    },
+    "frozen_original": {
+      "valid": true,
+      "errors": [],
+      "recomputed": {
+        "lexicographic_objective": [
+          1,
+          200
+        ],
+        "mass_by_vehicle_kg": {
+          "T1": 360.0
+        },
+        "cumulative_external_load_kg": {
+          "F1": 0.0,
+          "S1": 60.0,
+          "S2": 100.0,
+          "S3": 0.0
+        },
+        "stress_kg_per_m2": {
+          "F1": 0.0,
+          "S1": 60.0,
+          "S2": 100.0,
+          "S3": 0.0
+        },
+        "support": {
+          "F1": "S1",
+          "S1": null,
+          "S2": null,
+          "S3": "S2"
+        },
+        "activation": {
+          "nonfloor_items": 2,
+          "support_edges": 2,
+          "recursive_depth": 1,
+          "fragile_on_standard": 1
+        },
+        "unused_declared_vehicles": []
+      }
+    }
+  },
+  "solution_semantic_match": true,
+  "original_optimality": {
+    "positive_nonempty_source_lower_bound": 1,
+    "achieved": 1,
+    "conclusion": "Achieved one and nonempty lower bound one independently close optimum; identical fixed cost closes secondary objective"
+  },
+  "baseline": {
+    "valid": true,
+    "errors": [],
+    "recomputed": {
+      "lexicographic_objective": [
+        2,
+        400
+      ],
+      "mass_by_vehicle_kg": {
+        "T1": 160.0,
+        "T2": 200.0
+      },
+      "cumulative_external_load_kg": {
+        "F1": 0.0,
+        "S1": 0.0,
+        "S2": 0.0,
+        "S3": 0.0
+      },
+      "stress_kg_per_m2": {
+        "F1": 0.0,
+        "S1": 0.0,
+        "S2": 0.0,
+        "S3": 0.0
+      },
+      "support": {
+        "F1": null,
+        "S1": null,
+        "S2": null,
+        "S3": null
+      },
+      "activation": {
+        "nonfloor_items": 0,
+        "support_edges": 0,
+        "recursive_depth": 0,
+        "fragile_on_standard": 0
+      },
+      "unused_declared_vehicles": []
+    }
+  },
+  "variants": [
+    {
+      "case": "original",
+      "parameters": {
+        "standard_limit_kg_per_m2": 150,
+        "payload_kg": 500
+      },
+      "actual_producer_objective": {
+        "vehicle_count": 1,
+        "total_cost_CNY": 200
+      },
+      "independent_recompute": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "T1": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S1": 60.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S1": 60.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": "S1",
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      },
+      "independent_optimum": {
+        "objective": {
+          "vehicle_count": 1,
+          "total_cost_CNY": 200
+        },
+        "candidate": {
+          "source_sha256": null,
+          "vehicle_type_id": "T",
+          "placements": [
+            {
+              "item_id": "S1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "F1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S1"
+            },
+            {
+              "item_id": "S2",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S3",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S2"
+            }
+          ],
+          "objective": {
+            "vehicle_count": 1,
+            "total_cost_CNY": 200
+          }
+        },
+        "independent_check": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "lexicographic_objective": [
+              1,
+              200
+            ],
+            "mass_by_vehicle_kg": {
+              "oracle-0": 360.0
+            },
+            "cumulative_external_load_kg": {
+              "S1": 60.0,
+              "F1": 0.0,
+              "S2": 100.0,
+              "S3": 0.0
+            },
+            "stress_kg_per_m2": {
+              "S1": 60.0,
+              "F1": 0.0,
+              "S2": 100.0,
+              "S3": 0.0
+            },
+            "support": {
+              "S1": null,
+              "F1": "S1",
+              "S2": null,
+              "S3": "S2"
+            },
+            "activation": {
+              "nonfloor_items": 2,
+              "support_edges": 2,
+              "recursive_depth": 1,
+              "fragile_on_standard": 1
+            },
+            "unused_declared_vehicles": []
+          }
+        },
+        "full_candidates_examined": 87,
+        "smaller_counts_exhausted": []
+      },
+      "objective_matches_independent_oracle": true
+    },
+    {
+      "case": "load_160",
+      "parameters": {
+        "standard_limit_kg_per_m2": 160,
+        "payload_kg": 500
+      },
+      "actual_producer_objective": {
+        "vehicle_count": 1,
+        "total_cost_CNY": 200
+      },
+      "independent_recompute": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "T1": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S1": 60.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S1": 60.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": "S1",
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      },
+      "independent_optimum": {
+        "objective": {
+          "vehicle_count": 1,
+          "total_cost_CNY": 200
+        },
+        "candidate": {
+          "source_sha256": null,
+          "vehicle_type_id": "T",
+          "placements": [
+            {
+              "item_id": "S1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "F1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S1"
+            },
+            {
+              "item_id": "S2",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S3",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S2"
+            }
+          ],
+          "objective": {
+            "vehicle_count": 1,
+            "total_cost_CNY": 200
+          }
+        },
+        "independent_check": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "lexicographic_objective": [
+              1,
+              200
+            ],
+            "mass_by_vehicle_kg": {
+              "oracle-0": 360.0
+            },
+            "cumulative_external_load_kg": {
+              "S1": 60.0,
+              "F1": 0.0,
+              "S2": 100.0,
+              "S3": 0.0
+            },
+            "stress_kg_per_m2": {
+              "S1": 60.0,
+              "F1": 0.0,
+              "S2": 100.0,
+              "S3": 0.0
+            },
+            "support": {
+              "S1": null,
+              "F1": "S1",
+              "S2": null,
+              "S3": "S2"
+            },
+            "activation": {
+              "nonfloor_items": 2,
+              "support_edges": 2,
+              "recursive_depth": 1,
+              "fragile_on_standard": 1
+            },
+            "unused_declared_vehicles": []
+          }
+        },
+        "full_candidates_examined": 87,
+        "smaller_counts_exhausted": []
+      },
+      "objective_matches_independent_oracle": true
+    },
+    {
+      "case": "load_100_boundary",
+      "parameters": {
+        "standard_limit_kg_per_m2": 100,
+        "payload_kg": 500
+      },
+      "actual_producer_objective": {
+        "vehicle_count": 1,
+        "total_cost_CNY": 200
+      },
+      "independent_recompute": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "T1": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S1": 60.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S1": 60.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": "S1",
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      },
+      "independent_optimum": {
+        "objective": {
+          "vehicle_count": 1,
+          "total_cost_CNY": 200
+        },
+        "candidate": {
+          "source_sha256": null,
+          "vehicle_type_id": "T",
+          "placements": [
+            {
+              "item_id": "S1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "F1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S1"
+            },
+            {
+              "item_id": "S2",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S3",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S2"
+            }
+          ],
+          "objective": {
+            "vehicle_count": 1,
+            "total_cost_CNY": 200
+          }
+        },
+        "independent_check": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "lexicographic_objective": [
+              1,
+              200
+            ],
+            "mass_by_vehicle_kg": {
+              "oracle-0": 360.0
+            },
+            "cumulative_external_load_kg": {
+              "S1": 60.0,
+              "F1": 0.0,
+              "S2": 100.0,
+              "S3": 0.0
+            },
+            "stress_kg_per_m2": {
+              "S1": 60.0,
+              "F1": 0.0,
+              "S2": 100.0,
+              "S3": 0.0
+            },
+            "support": {
+              "S1": null,
+              "F1": "S1",
+              "S2": null,
+              "S3": "S2"
+            },
+            "activation": {
+              "nonfloor_items": 2,
+              "support_edges": 2,
+              "recursive_depth": 1,
+              "fragile_on_standard": 1
+            },
+            "unused_declared_vehicles": []
+          }
+        },
+        "full_candidates_examined": 87,
+        "smaller_counts_exhausted": []
+      },
+      "objective_matches_independent_oracle": true
+    },
+    {
+      "case": "load_99",
+      "parameters": {
+        "standard_limit_kg_per_m2": 99,
+        "payload_kg": 500
+      },
+      "actual_producer_objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "independent_recompute": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            2,
+            400
+          ],
+          "mass_by_vehicle_kg": {
+            "T1": 160.0,
+            "T2": 200.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S1": 0.0,
+            "S2": 0.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S1": 0.0,
+            "S2": 0.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": null,
+            "S1": null,
+            "S2": null,
+            "S3": null
+          },
+          "activation": {
+            "nonfloor_items": 0,
+            "support_edges": 0,
+            "recursive_depth": 0,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      },
+      "independent_optimum": {
+        "objective": {
+          "vehicle_count": 2,
+          "total_cost_CNY": 400
+        },
+        "candidate": {
+          "source_sha256": null,
+          "vehicle_type_id": "T",
+          "placements": [
+            {
+              "item_id": "F1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S1",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S2",
+              "vehicle_id": "oracle-1",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S3",
+              "vehicle_id": "oracle-1",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            }
+          ],
+          "objective": {
+            "vehicle_count": 2,
+            "total_cost_CNY": 400
+          }
+        },
+        "independent_check": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "lexicographic_objective": [
+              2,
+              400
+            ],
+            "mass_by_vehicle_kg": {
+              "oracle-0": 160.0,
+              "oracle-1": 200.0
+            },
+            "cumulative_external_load_kg": {
+              "F1": 0.0,
+              "S1": 0.0,
+              "S2": 0.0,
+              "S3": 0.0
+            },
+            "stress_kg_per_m2": {
+              "F1": 0.0,
+              "S1": 0.0,
+              "S2": 0.0,
+              "S3": 0.0
+            },
+            "support": {
+              "F1": null,
+              "S1": null,
+              "S2": null,
+              "S3": null
+            },
+            "activation": {
+              "nonfloor_items": 0,
+              "support_edges": 0,
+              "recursive_depth": 0,
+              "fragile_on_standard": 0
+            },
+            "unused_declared_vehicles": []
+          }
+        },
+        "full_candidates_examined": 356,
+        "smaller_counts_exhausted": [
+          1
+        ]
+      },
+      "objective_matches_independent_oracle": true
+    },
+    {
+      "case": "load_60_boundary",
+      "parameters": {
+        "standard_limit_kg_per_m2": 60,
+        "payload_kg": 500
+      },
+      "actual_producer_objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "independent_recompute": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            2,
+            400
+          ],
+          "mass_by_vehicle_kg": {
+            "T1": 160.0,
+            "T2": 200.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S1": 0.0,
+            "S2": 0.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S1": 0.0,
+            "S2": 0.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": null,
+            "S1": null,
+            "S2": null,
+            "S3": null
+          },
+          "activation": {
+            "nonfloor_items": 0,
+            "support_edges": 0,
+            "recursive_depth": 0,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      },
+      "independent_optimum": {
+        "objective": {
+          "vehicle_count": 2,
+          "total_cost_CNY": 400
+        },
+        "candidate": {
+          "source_sha256": null,
+          "vehicle_type_id": "T",
+          "placements": [
+            {
+              "item_id": "F1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S1",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S2",
+              "vehicle_id": "oracle-1",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S3",
+              "vehicle_id": "oracle-1",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            }
+          ],
+          "objective": {
+            "vehicle_count": 2,
+            "total_cost_CNY": 400
+          }
+        },
+        "independent_check": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "lexicographic_objective": [
+              2,
+              400
+            ],
+            "mass_by_vehicle_kg": {
+              "oracle-0": 160.0,
+              "oracle-1": 200.0
+            },
+            "cumulative_external_load_kg": {
+              "F1": 0.0,
+              "S1": 0.0,
+              "S2": 0.0,
+              "S3": 0.0
+            },
+            "stress_kg_per_m2": {
+              "F1": 0.0,
+              "S1": 0.0,
+              "S2": 0.0,
+              "S3": 0.0
+            },
+            "support": {
+              "F1": null,
+              "S1": null,
+              "S2": null,
+              "S3": null
+            },
+            "activation": {
+              "nonfloor_items": 0,
+              "support_edges": 0,
+              "recursive_depth": 0,
+              "fragile_on_standard": 0
+            },
+            "unused_declared_vehicles": []
+          }
+        },
+        "full_candidates_examined": 356,
+        "smaller_counts_exhausted": [
+          1
+        ]
+      },
+      "objective_matches_independent_oracle": true
+    },
+    {
+      "case": "load_59",
+      "parameters": {
+        "standard_limit_kg_per_m2": 59,
+        "payload_kg": 500
+      },
+      "actual_producer_objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "independent_recompute": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            2,
+            400
+          ],
+          "mass_by_vehicle_kg": {
+            "T1": 160.0,
+            "T2": 200.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S1": 0.0,
+            "S2": 0.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S1": 0.0,
+            "S2": 0.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": null,
+            "S1": null,
+            "S2": null,
+            "S3": null
+          },
+          "activation": {
+            "nonfloor_items": 0,
+            "support_edges": 0,
+            "recursive_depth": 0,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      },
+      "independent_optimum": {
+        "objective": {
+          "vehicle_count": 2,
+          "total_cost_CNY": 400
+        },
+        "candidate": {
+          "source_sha256": null,
+          "vehicle_type_id": "T",
+          "placements": [
+            {
+              "item_id": "F1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S1",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S2",
+              "vehicle_id": "oracle-1",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S3",
+              "vehicle_id": "oracle-1",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            }
+          ],
+          "objective": {
+            "vehicle_count": 2,
+            "total_cost_CNY": 400
+          }
+        },
+        "independent_check": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "lexicographic_objective": [
+              2,
+              400
+            ],
+            "mass_by_vehicle_kg": {
+              "oracle-0": 160.0,
+              "oracle-1": 200.0
+            },
+            "cumulative_external_load_kg": {
+              "F1": 0.0,
+              "S1": 0.0,
+              "S2": 0.0,
+              "S3": 0.0
+            },
+            "stress_kg_per_m2": {
+              "F1": 0.0,
+              "S1": 0.0,
+              "S2": 0.0,
+              "S3": 0.0
+            },
+            "support": {
+              "F1": null,
+              "S1": null,
+              "S2": null,
+              "S3": null
+            },
+            "activation": {
+              "nonfloor_items": 0,
+              "support_edges": 0,
+              "recursive_depth": 0,
+              "fragile_on_standard": 0
+            },
+            "unused_declared_vehicles": []
+          }
+        },
+        "full_candidates_examined": 356,
+        "smaller_counts_exhausted": [
+          1
+        ]
+      },
+      "objective_matches_independent_oracle": true
+    },
+    {
+      "case": "payload_360_boundary",
+      "parameters": {
+        "standard_limit_kg_per_m2": 150,
+        "payload_kg": 360
+      },
+      "actual_producer_objective": {
+        "vehicle_count": 1,
+        "total_cost_CNY": 200
+      },
+      "independent_recompute": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "T1": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S1": 60.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S1": 60.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": "S1",
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      },
+      "independent_optimum": {
+        "objective": {
+          "vehicle_count": 1,
+          "total_cost_CNY": 200
+        },
+        "candidate": {
+          "source_sha256": null,
+          "vehicle_type_id": "T",
+          "placements": [
+            {
+              "item_id": "S1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "F1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S1"
+            },
+            {
+              "item_id": "S2",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S3",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S2"
+            }
+          ],
+          "objective": {
+            "vehicle_count": 1,
+            "total_cost_CNY": 200
+          }
+        },
+        "independent_check": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "lexicographic_objective": [
+              1,
+              200
+            ],
+            "mass_by_vehicle_kg": {
+              "oracle-0": 360.0
+            },
+            "cumulative_external_load_kg": {
+              "S1": 60.0,
+              "F1": 0.0,
+              "S2": 100.0,
+              "S3": 0.0
+            },
+            "stress_kg_per_m2": {
+              "S1": 60.0,
+              "F1": 0.0,
+              "S2": 100.0,
+              "S3": 0.0
+            },
+            "support": {
+              "S1": null,
+              "F1": "S1",
+              "S2": null,
+              "S3": "S2"
+            },
+            "activation": {
+              "nonfloor_items": 2,
+              "support_edges": 2,
+              "recursive_depth": 1,
+              "fragile_on_standard": 1
+            },
+            "unused_declared_vehicles": []
+          }
+        },
+        "full_candidates_examined": 87,
+        "smaller_counts_exhausted": []
+      },
+      "objective_matches_independent_oracle": true
+    },
+    {
+      "case": "payload_359",
+      "parameters": {
+        "standard_limit_kg_per_m2": 150,
+        "payload_kg": 359
+      },
+      "actual_producer_objective": {
+        "vehicle_count": 2,
+        "total_cost_CNY": 400
+      },
+      "independent_recompute": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            2,
+            400
+          ],
+          "mass_by_vehicle_kg": {
+            "T1": 160.0,
+            "T2": 200.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": null,
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 1,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      },
+      "independent_optimum": {
+        "objective": {
+          "vehicle_count": 2,
+          "total_cost_CNY": 400
+        },
+        "candidate": {
+          "source_sha256": null,
+          "vehicle_type_id": "T",
+          "placements": [
+            {
+              "item_id": "F1",
+              "vehicle_id": "oracle-0",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S1",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            },
+            {
+              "item_id": "S2",
+              "vehicle_id": "oracle-0",
+              "x_m": 1,
+              "y_m": 0,
+              "z_m": 1,
+              "support_id": "S1"
+            },
+            {
+              "item_id": "S3",
+              "vehicle_id": "oracle-1",
+              "x_m": 0,
+              "y_m": 0,
+              "z_m": 0,
+              "support_id": null
+            }
+          ],
+          "objective": {
+            "vehicle_count": 2,
+            "total_cost_CNY": 400
+          }
+        },
+        "independent_check": {
+          "valid": true,
+          "errors": [],
+          "recomputed": {
+            "lexicographic_objective": [
+              2,
+              400
+            ],
+            "mass_by_vehicle_kg": {
+              "oracle-0": 260.0,
+              "oracle-1": 100.0
+            },
+            "cumulative_external_load_kg": {
+              "F1": 0.0,
+              "S1": 100.0,
+              "S2": 0.0,
+              "S3": 0.0
+            },
+            "stress_kg_per_m2": {
+              "F1": 0.0,
+              "S1": 100.0,
+              "S2": 0.0,
+              "S3": 0.0
+            },
+            "support": {
+              "F1": null,
+              "S1": null,
+              "S2": "S1",
+              "S3": null
+            },
+            "activation": {
+              "nonfloor_items": 1,
+              "support_edges": 1,
+              "recursive_depth": 1,
+              "fragile_on_standard": 0
+            },
+            "unused_declared_vehicles": []
+          }
+        },
+        "full_candidates_examined": 351,
+        "smaller_counts_exhausted": [
+          1
+        ]
+      },
+      "objective_matches_independent_oracle": true
+    }
+  ],
+  "oracle_scope": "Only original four equal unit cubes, one homogeneous type and the listed load/payload variants; structural two-column completeness stated in code"
+}

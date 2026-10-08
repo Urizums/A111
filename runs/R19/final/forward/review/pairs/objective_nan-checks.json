@@ -1,0 +1,64 @@
+{
+  "valid": false,
+  "errors": [
+    "reported objective differs from raw-source recomputation"
+  ],
+  "per_vehicle": {
+    "T1": {
+      "mass_kg": 360,
+      "payload_slack_kg": 140,
+      "item_count": 4
+    }
+  },
+  "per_item": {
+    "F1": {
+      "source_category": "fragile",
+      "source_mass_kg": 60,
+      "computed_support_id": "S1",
+      "top_z_m": 2,
+      "top_clearance_m": 1.2000000000000002,
+      "external_load_kg": 0,
+      "top_area_m2": 1,
+      "external_load_kg_per_m2": 0.0,
+      "standard_load_slack_kg_per_m2": null
+    },
+    "S1": {
+      "source_category": "standard",
+      "source_mass_kg": 100,
+      "computed_support_id": null,
+      "top_z_m": 1,
+      "top_clearance_m": 2.2,
+      "external_load_kg": 60,
+      "top_area_m2": 1,
+      "external_load_kg_per_m2": 60.0,
+      "standard_load_slack_kg_per_m2": 90.0
+    },
+    "S2": {
+      "source_category": "standard",
+      "source_mass_kg": 100,
+      "computed_support_id": null,
+      "top_z_m": 1,
+      "top_clearance_m": 2.2,
+      "external_load_kg": 100,
+      "top_area_m2": 1,
+      "external_load_kg_per_m2": 100.0,
+      "standard_load_slack_kg_per_m2": 50.0
+    },
+    "S3": {
+      "source_category": "standard",
+      "source_mass_kg": 100,
+      "computed_support_id": "S2",
+      "top_z_m": 2,
+      "top_clearance_m": 1.2000000000000002,
+      "external_load_kg": 0,
+      "top_area_m2": 1,
+      "external_load_kg_per_m2": 0.0,
+      "standard_load_slack_kg_per_m2": 150.0
+    }
+  },
+  "recomputed_objective": {
+    "vehicle_count": 1,
+    "total_cost_CNY": 200
+  },
+  "tolerance": 1e-08
+}

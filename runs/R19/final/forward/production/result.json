@@ -1,0 +1,186 @@
+{
+  "revision": "C12-forward-new-raw",
+  "author_status": "produced_and_self_checked_independent_acceptance_pending",
+  "delivery_scope": "runs/R19/final/forward/production only",
+  "input_sha256": "d1cde1cd001f16052ec90bdb227a7930e4f68938cf77369fd889a1e0353ca99a",
+  "objectives": {
+    "vehicle_count": 1,
+    "total_cost_CNY": 200
+  },
+  "actually_completed": [
+    "Frozen workflow and consumer interface before solver execution",
+    "Lock file hash checks",
+    "Exact identical-dimension chain enumeration from actual raw input",
+    "Source-bound geometry/identity/payload/recursive-load/objective validation",
+    "12 actually executed acceptance/rejection assertions",
+    "Actual floor-only baseline and 8 targeted parameter cases",
+    "Full Chinese mathematical model, proof, results, interpretation and limitations in editable source",
+    "8-page PDF with embedded Chinese font, Poppler rendering and actual view of all 8 final pages",
+    "Four fresh Python subprocess reruns with semantic equality checks"
+  ],
+  "artifact_paths": {
+    "workflow": "workflow.md",
+    "editable_paper": "paper.md",
+    "paper_pdf": "paper.pdf",
+    "programs": [
+      "common.py",
+      "solve.py",
+      "verify.py",
+      "tests.py",
+      "experiments.py",
+      "reproduce.py",
+      "render_paper.py"
+    ],
+    "actual_results": [
+      "solution.json",
+      "checks.json",
+      "test_results.json",
+      "experiments.json"
+    ],
+    "reproduction_receipt": "reproduction/receipt.json",
+    "pdf_check": "pdf_review.json"
+  },
+  "requirement_evidence": [
+    {
+      "requirement": "全部原件运输、最少车再最小费用、每件坐标",
+      "evidence": [
+        "solution.json",
+        "checks.json",
+        "paper.md sections 2-4"
+      ],
+      "author_observation": "one feasible vehicle, nonempty lower bound one, cost 200"
+    },
+    {
+      "requirement": "方向、边界、不重叠、质量与顶部间隙",
+      "evidence": [
+        "checks.json",
+        "verify.py",
+        "paper.md section 4"
+      ],
+      "author_observation": "all recomputed from raw; 360 kg; highest top 2 m; gap 1.2 m"
+    },
+    {
+      "requirement": "原身份、完整支撑、累计外载、fragile规则",
+      "evidence": [
+        "verify.py",
+        "checks.json",
+        "test_results.json"
+      ],
+      "author_observation": "S1 external 60; S2 external 100; 160 kg bottom-load counterexample actually rejected"
+    },
+    {
+      "requirement": "完整中文科学论证、PDF与可编辑源文",
+      "evidence": [
+        "paper.md",
+        "paper.pdf",
+        "pdf_review.json"
+      ],
+      "author_observation": "problem, formal model, method completeness, actual result, optimum proof, baseline, tests, interpretation, limitations and reproduction"
+    },
+    {
+      "requirement": "原始输入可重算、可交接流程",
+      "evidence": [
+        "workflow.md",
+        "README.md",
+        "reproduction/receipt.json"
+      ],
+      "author_observation": "clean subprocess semantic equality true; consumer controls independent verdict"
+    }
+  ],
+  "recovery_and_resource_events": [
+    {
+      "kind": "provider_usage_boundary",
+      "source": "Root continuation message reported received usage-limit error",
+      "local_details": null,
+      "retained_observation": "Paused/resumed same actor, same C12/raw/objective/write domain; no reset credit, purchase, model or actor replacement reported; Root ordinaryUsageAllowed observation authorized resumption",
+      "own_usage_telemetry": null
+    },
+    {
+      "kind": "tool_error",
+      "receipt": "35db02",
+      "exit_code": 1,
+      "observation": "First PDF font glyph audit: SimHei lacks U+00B2 U+00B3 U+2200; PDF was not created by that invocation",
+      "changed_path": "probe existing installed font coverage; source/numerical data unchanged"
+    },
+    {
+      "kind": "tool_error",
+      "receipt": "9e966b",
+      "exit_code": 1,
+      "observation": "Noto Sans SC (TrueType).otf has PostScript outlines unsupported by reportlab TTFont",
+      "changed_path": "use existing TrueType variable NotoSansSC-VF.ttf"
+    },
+    {
+      "kind": "caught_diagnostic_error",
+      "receipt": "ceb7e7",
+      "exit_code": 0,
+      "observation": "Three font diagnostic print operations hit GBK UnicodeEncodeError; variable font coverage reported no missing glyphs",
+      "changed_path": "ASCII-safe JSON diagnostic output"
+    },
+    {
+      "kind": "tool_error",
+      "receipt": "font-license-probe",
+      "exit_code": 1,
+      "observation": "Printing font copyright metadata raised GBK UnicodeEncodeError for U+00A9; no file mutation",
+      "changed_path": "json.dumps ensure_ascii=True; successful metadata output retained in font_provenance.json"
+    },
+    {
+      "kind": "visual_correction",
+      "observation": "First successful PDF had title final character on a separate line and variable font default weight 100 was thin",
+      "changed_path": "title 18.5 pt, table widths within frame, static font weight 400; prior PDF/source retained under recovery; rebuilt and reviewed all pages"
+    }
+  ],
+  "tool_receipts_summary": {
+    "original_compute_receipts": [
+      "7e0931",
+      "96bcbb",
+      "9df16a",
+      "07c3b1"
+    ],
+    "original_compute_exit_codes": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "pdf_marker_receipt": "049261",
+    "pdf_marker_exit_code": 0,
+    "final_pdf_and_reproduction_receipt": "433ab3",
+    "final_pdf_and_reproduction_exit_code": 0
+  },
+  "processes_and_sessions": {
+    "known_yielded_session_ids": [
+      80540
+    ],
+    "final_states": {
+      "80540": {
+        "operation": "static font instantiation",
+        "exit_code": 0,
+        "receipt": "1afa4b"
+      }
+    },
+    "reproduction_subprocesses": "all four returned exit 0 synchronously; none running",
+    "background_workers_started": false,
+    "unresolved_calls": [],
+    "all_self_started_known_sessions_terminal": true
+  },
+  "unverified_scope": [
+    "Independent acceptance by a new context is pending; author self-check is not that verdict",
+    "General unequal-dimension or multi-vehicle-type solver completeness is not claimed; solver rejects these inputs",
+    "Actual axle loads, road vibration, loading channels and operational safety have no supplied measurements",
+    "No competition submission, award score, model comparison causal claim or generalized performance evidence",
+    "Finite rejection tests do not prove universal checker correctness"
+  ],
+  "actual_provider": null,
+  "actual_model": null,
+  "actual_token_usage": null,
+  "actual_cost": null,
+  "resource_observations": {
+    "python_version": "3.12.8",
+    "network_searches": 0,
+    "installs": 0,
+    "spawned_agents": 0,
+    "app_threads_started": 0,
+    "deadline_imposed": false
+  },
+  "write_stop_intent": "After final manifest write and read-only verification, no further production mutation; notify Root for independent consumption."
+}

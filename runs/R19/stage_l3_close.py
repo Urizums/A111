@@ -6,7 +6,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[2]
 paths = set()
 for relative in ['START_HERE.md', 'CODEX_HANDOFF.md', 'artifact-manifest.json',
-                 'state/checkpoint.json', 'state/continuation.json', 'state/revision-locks.json',
+                 'state/checkpoint.json', 'state/continuation.json', 'state/revision-locks.json', 'state/project-todo.json',
                  'runs/R19/TODO.md', 'runs/R19/REPORT.md', 'runs/R19/coordinator-attempts.md',
                  'runs/R19/integrate_l3_diagnosis_l4_start.py', 'runs/R19/integrate_l4_preparation.py',
                  'runs/R19/stage_l3_close.py', 'runs/R19/refresh_integrity.py']:
@@ -69,6 +69,11 @@ for path in (ROOT / 'runs/R19/final').glob('*'):
         paths.add(path.relative_to(ROOT).as_posix())
 for path in (ROOT / 'runs/R19/observations/forward-case-preparation').glob('*'):
     if path.is_file():
+        paths.add(path.relative_to(ROOT).as_posix())
+for path in (ROOT / 'runs/R20').glob('*'):
+    if path.is_file() and path.suffix in {'.py', '.json', '.md'}:
+        if path.name.endswith('command.json') and json.loads(path.read_text(encoding='utf-8')).get('state') == 'started':
+            continue
         paths.add(path.relative_to(ROOT).as_posix())
 for relative in paths:
     if relative.endswith('command.json'):

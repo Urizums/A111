@@ -1,8 +1,15 @@
 # Codex 接续入口
 
-R19最新现场：L1–L4完整诊断已实际done；L1/L2/L4当前六门pass，L3当前a1–a5 pass、a6 partial，旧调用/并发缺口保留。首次失败、partial和预算均不追认或重置。R19-05已实际启动：四层证据汇总及C12新候选（九份Markdown、无包内脚本/测试），仅修订验收与建模两份引用。新的独立接收方法已冻结，原创小题的工作流/程序/完整中文论文仍在生产，尚无C12行为通过结论。四层原C11字节不变；下一阶段R20尚未启动。发布及CI实际状态以checkpoint/publication观察为准，CI不代替论文验收。
+R19最新现场：L1–L4诊断、来源绑定汇总和R19-next已实际done；L1/L2/L4当前六门pass，L3当前a1–a5 pass/a6 partial，原首次失败和预算保留。C12九份Markdown、包内零脚本/测试，仅修验收/建模引用；新原创小题由两个新上下文实际生产与独立首审，b1–b5在本材料范围pass，完整中文及8页最终PDF实际检查。不作通用、因果或竞赛能力认证。R20-01已真实取得并逐页核读本届官方七页报名通知/章程，详细提交/AI补充规则及实际题面数据仍待核实；前沿见runs/R20/REPORT.md和checkpoint。四层C11/旧失败/锁/预算不变，CI与论文判定分开。
 
-成品方向为Forge meta-workflow，当前候选C10是九份纯文档：
+成品方向为Forge meta-workflow。当前受检C12及四层实测入口：
+[C12技能入口](runs/R19/final/candidate/C12/forge-agent-flow/SKILL.md)、
+[C12纯文档包](runs/R19/final/package/Forge-C12-meta-workflow-candidate.zip)、
+[四层论文与独立诊断](runs/R19/final/PAPERS.md)、
+[来源综合及受影响行为验证](runs/R19/final/SYNTHESIS.md)、
+[当前R20前沿](runs/R20/REPORT.md)。
+
+前阶段C10九份纯文档和政策交付原件仍保留：
 [技能入口](runs/R17/candidate/C10/forge-agent-flow/SKILL.md)、
 [可分发包](runs/R17/package/Forge-C10-meta-workflow.zip)、
 [政策与验证](runs/R17/REPORT.md)、

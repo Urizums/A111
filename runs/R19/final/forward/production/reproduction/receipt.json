@@ -1,0 +1,75 @@
+{
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "solve.py",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\inputs\\raw.json",
+        "--output",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\reproduction\\solution.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Produced C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\reproduction\\solution.json: {'vehicle_count': 1, 'total_cost_CNY': 200}\n",
+      "stderr": "",
+      "elapsed_seconds": 0.07873839999956544
+    },
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "verify.py",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\inputs\\raw.json",
+        "--solution",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\reproduction\\solution.json",
+        "--output",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\reproduction\\checks.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Verification: valid=True; errors=[]\n",
+      "stderr": "",
+      "elapsed_seconds": 0.07800459999998566
+    },
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "tests.py",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\inputs\\raw.json",
+        "--solution",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\reproduction\\solution.json",
+        "--output",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\reproduction\\test_results.json"
+      ],
+      "exit_code": 0,
+      "stdout": "Actual test assertions: 12/12\n",
+      "stderr": "",
+      "elapsed_seconds": 0.08224309999786783
+    },
+    {
+      "command": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-B",
+        "experiments.py",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\inputs\\raw.json",
+        "--output",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\final\\forward\\production\\reproduction\\experiments.json"
+      ],
+      "exit_code": 0,
+      "stdout": "[('original', {'vehicle_count': 1, 'total_cost_CNY': 200}), ('load_160', {'vehicle_count': 1, 'total_cost_CNY': 200}), ('load_100_boundary', {'vehicle_count': 1, 'total_cost_CNY': 200}), ('load_99', {'vehicle_count': 2, 'total_cost_CNY': 400}), ('load_60_boundary', {'vehicle_count': 2, 'total_cost_CNY': 400}), ('load_59', {'vehicle_count': 2, 'total_cost_CNY': 400}), ('payload_360_boundary', {'vehicle_count': 1, 'total_cost_CNY': 200}), ('payload_359', {'vehicle_count': 2, 'total_cost_CNY': 400})]\n",
+      "stderr": "",
+      "elapsed_seconds": 0.08842929999809712
+    }
+  ],
+  "all_commands_finished": true,
+  "solution_semantic_match": true,
+  "checks_match": true,
+  "test_verdicts_match": true,
+  "experiments_semantic_match": true,
+  "excluded_comparison": "elapsed_seconds only",
+  "semantic_match": true
+}

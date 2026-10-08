@@ -12,8 +12,9 @@ header = ('R19最新现场：L1–L4完整诊断已实际done；L1/L2/L4当前�
           'L3当前a1–a5 pass、a6 partial，旧调用/并发缺口保留。'
           '首次失败、partial和预算均不追认或重置。R19-05已实际启动：四层证据汇总及'
           'C12新候选（九份Markdown、无包内脚本/测试），仅修订验收与建模两份引用。'
-          '新的独立接收方法已冻结，原创小题的工作流/程序/完整中文论文仍在生产，'
-          '尚无C12行为通过结论。四层原C11字节不变；下一阶段R20尚未启动。'
+          '原创小题的工作流/程序/完整中文论文及8页PDF已冻结，'
+          '新的独立消费者正在正式接收，尚无C12行为通过结论。'
+          '四层原C11字节不变；下一阶段R20尚未启动。'
           '发布及CI实际状态以checkpoint/publication观察为准，CI不代替论文验收。')
 
 with ctl.locked(ROOT):
@@ -21,6 +22,7 @@ with ctl.locked(ROOT):
     old = json.loads((ROOT / 'runs/R19/before/task-identities.json').read_text(encoding='utf-8'))
     assert all(ctl.identity(ctl.task_map(state)[k]) == v for k, v in old.items())
     assert all(ctl.task_map(state)[f'R19-L{k}']['status'] == 'done' for k in range(1, 5))
+    assert (ROOT / 'runs/R19/final/forward/production-lock.json').exists()
     for relative in ['START_HERE.md', 'CODEX_HANDOFF.md']:
         path = ROOT / relative
         content = path.read_text(encoding='utf-8').splitlines()
@@ -83,5 +85,18 @@ with ctl.locked(ROOT):
         if relative not in index['locks']:
             index['locks'].append(relative)
     ctl.write_json(index_path, index)
+    state['execution'].update(current_candidate='runs/R19/final/candidate/C12-lock.json',
+        frozen_four_level_candidate='runs/R19/candidate/C11-lock.json',
+        candidate_status='targeted_forward_independent_review_in_progress')
+    ctl.write_json(ROOT / 'state/continuation.json', state)
+    ctl.synchronize(ROOT, state)
+    cp_path = ROOT / 'state/checkpoint.json'
+    cp = json.loads(cp_path.read_text(encoding='utf-8'))
+    cp.update(current_frontier_task='R19-05', current_candidate='runs/R19/final/candidate/C12-lock.json',
+        frozen_four_level_candidate='runs/R19/candidate/C11-lock.json',
+        R19_status='four_diagnostics_done_C12_actual_independent_review_in_progress',
+        next_action='Receive actual C12 forward review; preserve first verdict, then close evidence synthesis and start justified R20 with a real first step.',
+        current_native_pending=state['execution']['current_native_pending'], unpublished_work=True)
+    ctl.write_json(cp_path, cp)
 print(json.dumps(dict(old_tasks_unchanged=len(old), registered_frozen_sources=sources,
                       four_diagnostics_closed=True, forward_accepted=False)))

@@ -1,0 +1,58 @@
+{
+  "schema": "fixed-box-solution/1",
+  "source_sha256": "d1cde1cd001f16052ec90bdb227a7930e4f68938cf77369fd889a1e0353ca99a",
+  "vehicle_type_id": "T",
+  "placements": [
+    {
+      "item_id": "F1",
+      "vehicle_id": "T1",
+      "x_m": 0,
+      "y_m": 0,
+      "z_m": 1,
+      "support_id": "S1"
+    },
+    {
+      "item_id": "S1",
+      "vehicle_id": "T1",
+      "x_m": 0,
+      "y_m": 0,
+      "z_m": 0,
+      "support_id": null
+    },
+    {
+      "item_id": "S2",
+      "vehicle_id": "T1",
+      "x_m": 1,
+      "y_m": 0,
+      "z_m": 0,
+      "support_id": null
+    },
+    {
+      "item_id": "S3",
+      "vehicle_id": "T1",
+      "x_m": 1,
+      "y_m": 0,
+      "z_m": 1,
+      "support_id": "S2"
+    }
+  ],
+  "objective": {
+    "vehicle_count": 1,
+    "total_cost_CNY": 200
+  },
+  "optimality": {
+    "status": "proved_for_supported_identical_dimensions",
+    "vehicle_lower_bound": 1,
+    "achieved_vehicle_count": 1,
+    "all_smaller_vehicle_counts_examined": [],
+    "floor_slots_per_vehicle": 2,
+    "height_levels_available": 3,
+    "basis": "Geometric grid injection bound; exhaustive ordered chains and truck assignments; lexicographic cost is fixed per identical truck."
+  },
+  "search": {
+    "permutation_cut_candidates": 51,
+    "legal_chain_partitions": 1,
+    "vehicle_assignments": 1,
+    "elapsed_seconds": 8.250000246334821e-05
+  }
+}

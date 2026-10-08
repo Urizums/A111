@@ -1,6 +1,6 @@
 {
   "schema": "upgrade-work-record/1",
-  "updated_at": "2026-10-07T16:35:04.146880+00:00",
+  "updated_at": "2026-10-08T18:34:48.012205+00:00",
   "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
   "todo": [
     {
@@ -1035,24 +1035,30 @@
     {
       "id": "R19-level1-4",
       "owner": "root",
-      "status": "in_progress",
+      "status": "done",
       "write_scope": [
         "runs/R19/"
       ],
       "acceptance": "Independent sequential L1-4 workflow transfer through actual paper and evidence-backed quality review; diagnostic completion differs from quality pass.",
       "evidence": [
-        "runs/R19/PLAN.md",
-        "runs/R19/candidate/C11-lock.json",
-        "runs/R19/acceptance.json",
-        "runs/R19/levels/L1/diagnostic-result.json",
-        "runs/R19/levels/L1/review/recheck-1-lock.json",
-        "runs/R19/levels/L2/start-execution-command.json",
-        "runs/R19/levels/L2/execution-lock.json",
-        "runs/R19/levels/L2/review/preparation-lock.json",
-        "runs/R19/levels/L2/review/initial-lock.json",
-        "runs/R19/levels/L2/QUALITY_FOLLOWUP.md"
+        "runs/R19/final/result.json",
+        "runs/R20/transition-result.json"
       ],
-      "next_action": "L2 initial mandatory pass/empirical partial frozen; same author informed quality research in new version, then independent receiving review and sequential L3/L4. First outcomes preserved."
+      "next_action": "R20-01 actual official first audit; original scientific verdicts unchanged."
+    },
+    {
+      "id": "R20-data-workflow",
+      "owner": "root",
+      "status": "in_progress",
+      "write_scope": [
+        "runs/R20/"
+      ],
+      "acceptance": "Current-source audit followed by original data-semantic sparse-request transfer through independently reviewed complete Chinese paper.",
+      "evidence": [
+        "runs/R20/PLAN.md",
+        "runs/R20/research/first-step-command.json"
+      ],
+      "next_action": "R20-01: acquire exact current submission and AI/assistance supplements; preserve actual unknown data status, then freeze original data-workflow trial."
     }
   ],
   "stop_conditions": [

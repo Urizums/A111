@@ -1,0 +1,42 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R19/publication/verify_git_snapshot.py",
+    "--commit",
+    "HEAD",
+    "--lock",
+    "runs/R19/levels/L4/review/recheck-1-lock.json",
+    "--lock",
+    "runs/R19/final/candidate/C12-lock.json",
+    "--lock",
+    "runs/R19/final/package/package-lock.json",
+    "--lock",
+    "runs/R19/final/forward/inputs/input-lock.json",
+    "--lock",
+    "runs/R19/final/forward/evaluation-lock.json",
+    "--lock",
+    "runs/R19/final/forward/review-preparation-lock.json"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T18:03:40.140351+00:00",
+    "monotonic_ns": 102051937000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T18:03:43.078790+00:00",
+    "monotonic_ns": 102054875000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\"commit\": \"HEAD\", \"registered_locks_present\": 45, \"registered_frozen_paths_present\": true, \"selected_frozen_files_checked\": 876, \"distinct_blobs_checked\": 475, \"ok\": true, \"scope\": \"Committed Git byte identity/coverage only; not paper or runtime acceptance.\"}\r\n",
+  "stderr": "",
+  "stdout_base64": "eyJjb21taXQiOiAiSEVBRCIsICJyZWdpc3RlcmVkX2xvY2tzX3ByZXNlbnQiOiA0NSwgInJlZ2lzdGVyZWRfZnJvemVuX3BhdGhzX3ByZXNlbnQiOiB0cnVlLCAic2VsZWN0ZWRfZnJvemVuX2ZpbGVzX2NoZWNrZWQiOiA4NzYsICJkaXN0aW5jdF9ibG9ic19jaGVja2VkIjogNDc1LCAib2siOiB0cnVlLCAic2NvcGUiOiAiQ29tbWl0dGVkIEdpdCBieXRlIGlkZW50aXR5L2NvdmVyYWdlIG9ubHk7IG5vdCBwYXBlciBvciBydW50aW1lIGFjY2VwdGFuY2UuIn0NCg==",
+  "stderr_base64": ""
+}
