@@ -1,4 +1,4 @@
-"""Stage completed L3/L4 frozen evidence, excluding all active actor scopes."""
+"""Stage frozen R19 evidence and root integration; exclude active actor scopes."""
 import json
 import subprocess
 from pathlib import Path
@@ -54,6 +54,22 @@ for scope in ['review/initial', 'execution-v2', 'review/recheck-1', 'review/rech
         paths.add(relative)
         frozen_L4_followups.update(scope_paths)
         frozen_L4_followups.add(relative)
+index = json.loads((ROOT / 'state/revision-locks.json').read_text(encoding='utf-8'))
+frozen_final = set()
+for relative in index['locks']:
+    paths.add(relative)
+    for entry in json.loads((ROOT / relative).read_text(encoding='utf-8'))['files']:
+        paths.add(entry['path'])
+        if entry['path'].startswith('runs/R19/final/'):
+            frozen_final.add(entry['path'])
+for path in (ROOT / 'runs/R19/final').glob('*'):
+    if path.is_file() and path.suffix in {'.py', '.json', '.md'}:
+        if path.name.endswith('command.json') and json.loads(path.read_text(encoding='utf-8')).get('state') == 'started':
+            continue
+        paths.add(path.relative_to(ROOT).as_posix())
+for path in (ROOT / 'runs/R19/observations/forward-case-preparation').glob('*'):
+    if path.is_file():
+        paths.add(path.relative_to(ROOT).as_posix())
 for relative in paths:
     if relative.endswith('command.json'):
         receipt = json.loads((ROOT / relative).read_text(encoding='utf-8'))
@@ -73,6 +89,8 @@ for relative in staged:
         assert (relative == 'runs/R19/levels/L4/review/preparation-lock.json' or relative.startswith('runs/R19/levels/L4/review/preparation/') or relative in frozen_L4_followups), ('Unfrozen L4 review', relative)
     if relative.startswith('runs/R19/levels/L4/execution-v2/'):
         assert relative in frozen_L4_followups, ('Unfrozen L4 informed production', relative)
+    if relative.startswith('runs/R19/final/forward/') and not relative.endswith('-lock.json'):
+        assert relative in frozen_final, ('Unfrozen forward actor/input file', relative)
 tracked = set(subprocess.check_output(['git', '-c', 'core.longpaths=true', 'ls-files', '-z'],
                                      cwd=ROOT, encoding='utf-8').split('\0'))
 index = json.loads((ROOT / 'state/revision-locks.json').read_text(encoding='utf-8'))

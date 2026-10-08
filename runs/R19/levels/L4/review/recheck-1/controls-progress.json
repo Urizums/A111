@@ -1,0 +1,4162 @@
+[
+  {
+    "name": "valid_real_floor",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_real_floor\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_real_floor\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_real_floor\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_real_floor\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 0,
+    "elapsed_seconds": 0.18907680000120308,
+    "expected": "legal",
+    "observed_result": {
+      "valid": true,
+      "errors": [],
+      "inventory": {
+        "G1": 1
+      },
+      "truck_count": 1,
+      "cost": 450.0,
+      "mass_kg": 12.0,
+      "volume_cm3": 72000.0,
+      "UV": 0.0037105751391465678,
+      "UW": 0.002,
+      "trucks": [
+        {
+          "truck_id": "TR0001",
+          "vehicle_type": "T1",
+          "items": 1,
+          "mass_kg": 12.0,
+          "volume_cm3": 72000.0,
+          "UV": 0.0037105751391465678,
+          "UW": 0.002,
+          "usable_UV": 0.003761873412959654,
+          "cost": 450.0
+        }
+      ],
+      "support_loads": [
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0001",
+          "support_id": "FLOOR",
+          "external_load_kg": 0.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        }
+      ]
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "valid_boundary_touch",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_boundary_touch\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_boundary_touch\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_boundary_touch\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_boundary_touch\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 0,
+    "elapsed_seconds": 0.19069969998963643,
+    "expected": "legal",
+    "observed_result": {
+      "valid": true,
+      "errors": [],
+      "inventory": {
+        "G1": 2
+      },
+      "truck_count": 1,
+      "cost": 450.0,
+      "mass_kg": 24.0,
+      "volume_cm3": 144000.0,
+      "UV": 0.0074211502782931356,
+      "UW": 0.004,
+      "trucks": [
+        {
+          "truck_id": "TR0001",
+          "vehicle_type": "T1",
+          "items": 2,
+          "mass_kg": 24.0,
+          "volume_cm3": 144000.0,
+          "UV": 0.0074211502782931356,
+          "UW": 0.004,
+          "usable_UV": 0.007523746825919308,
+          "cost": 450.0
+        }
+      ],
+      "support_loads": [
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0001",
+          "support_id": "FLOOR",
+          "external_load_kg": 0.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        },
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0002",
+          "support_id": "FLOOR",
+          "external_load_kg": 0.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        }
+      ]
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "valid_supported_stack",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_supported_stack\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_supported_stack\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_supported_stack\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_supported_stack\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 0,
+    "elapsed_seconds": 0.1870965999987675,
+    "expected": "legal",
+    "observed_result": {
+      "valid": true,
+      "errors": [],
+      "inventory": {
+        "G1": 2
+      },
+      "truck_count": 1,
+      "cost": 450.0,
+      "mass_kg": 24.0,
+      "volume_cm3": 144000.0,
+      "UV": 0.0074211502782931356,
+      "UW": 0.004,
+      "trucks": [
+        {
+          "truck_id": "TR0001",
+          "vehicle_type": "T1",
+          "items": 2,
+          "mass_kg": 24.0,
+          "volume_cm3": 144000.0,
+          "UV": 0.0074211502782931356,
+          "UW": 0.004,
+          "usable_UV": 0.007523746825919308,
+          "cost": 450.0
+        }
+      ],
+      "support_loads": [
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0001",
+          "support_id": "FLOOR",
+          "external_load_kg": 12.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        },
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0002",
+          "support_id": "G1-0001",
+          "external_load_kg": 0.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        }
+      ]
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "valid_zero_class_quantity",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_zero_class_quantity\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_zero_class_quantity\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_zero_class_quantity\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\valid_zero_class_quantity\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 0,
+    "elapsed_seconds": 0.19224199999007396,
+    "expected": "legal",
+    "observed_result": {
+      "valid": true,
+      "errors": [],
+      "inventory": {
+        "G1": 1
+      },
+      "truck_count": 1,
+      "cost": 450.0,
+      "mass_kg": 12.0,
+      "volume_cm3": 72000.0,
+      "UV": 0.0037105751391465678,
+      "UW": 0.002,
+      "trucks": [
+        {
+          "truck_id": "TR0001",
+          "vehicle_type": "T1",
+          "items": 1,
+          "mass_kg": 12.0,
+          "volume_cm3": 72000.0,
+          "UV": 0.0037105751391465678,
+          "UW": 0.002,
+          "usable_UV": 0.003761873412959654,
+          "cost": 450.0
+        }
+      ],
+      "support_loads": [
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0001",
+          "support_id": "FLOOR",
+          "external_load_kg": 0.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        }
+      ]
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_x_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.186877000000095,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].x:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_x_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.19447600000421517,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].x:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_x_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_x_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18674820000887848,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].x:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_y_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18423050000274088,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].y:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_y_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.19226569999591447,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].y:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_y_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_y_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18251790000067558,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].y:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_z_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18146779999369755,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].z:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_z_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.17849790000764187,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].z:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_z_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_z_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1866359999985434,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].z:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_l_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18314539999119006,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].l:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_l_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.19153219999861903,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].l:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_l_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_l_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.17768219999561552,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].l:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_w_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18524800000886898,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].w:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_w_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18455959999118932,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].w:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_w_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_w_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18459259999508504,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].w:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_h_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.19051600000238977,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].h:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_h_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18711769999936223,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].h:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_h_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_h_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18254320000414737,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].h:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "negative_x",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_x\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_x\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_x\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_x\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18466889999399427,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].x"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "negative_y",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_y\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_y\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_y\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_y\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18440589999954682,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].y"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "negative_z",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_z\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_z\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_z\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\negative_z\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18387039999652188,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].z"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "nonpositive_l_0",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_l_0\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_l_0\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_l_0\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_l_0\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18539089999103453,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].l"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "nonpositive_l_-1",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_l_-1\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_l_-1\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_l_-1\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_l_-1\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18763509999553207,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].l"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "nonpositive_w_0",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_w_0\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_w_0\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_w_0\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_w_0\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18552440000348724,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].w"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "nonpositive_w_-1",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_w_-1\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_w_-1\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_w_-1\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_w_-1\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18789689999539405,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].w"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "nonpositive_h_0",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_h_0\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_h_0\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_h_0\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_h_0\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18500399999902584,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].h"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "nonpositive_h_-1",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_h_-1\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_h_-1\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_h_-1\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\nonpositive_h_-1\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18659850000403821,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:placement[0].h"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_blank",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_blank\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_blank\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_blank\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_blank\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18273149999731686,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].x:not_a_real_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "csv_text",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_text\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_text\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_text\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\csv_text\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18364610000571702,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:placement[0].x:not_a_real_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "positive_overlap",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\positive_overlap\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\positive_overlap\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\positive_overlap\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\positive_overlap\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1847186000086367,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "errors": [
+        "overlap:TR0001"
+      ],
+      "inventory": {
+        "G1": 2
+      },
+      "truck_count": 1,
+      "cost": 450.0,
+      "mass_kg": 24.0,
+      "volume_cm3": 144000.0,
+      "UV": 0.0074211502782931356,
+      "UW": 0.004,
+      "trucks": [
+        {
+          "truck_id": "TR0001",
+          "vehicle_type": "T1",
+          "items": 2,
+          "mass_kg": 24.0,
+          "volume_cm3": 144000.0,
+          "UV": 0.0074211502782931356,
+          "UW": 0.004,
+          "usable_UV": 0.007523746825919308,
+          "cost": 450.0
+        }
+      ],
+      "support_loads": [
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0001",
+          "support_id": "FLOOR",
+          "external_load_kg": 0.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        },
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0002",
+          "support_id": "FLOOR",
+          "external_load_kg": 0.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        }
+      ]
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "height_gap",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\height_gap\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\height_gap\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\height_gap\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\height_gap\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18277810000290629,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "errors": [
+        "boundary:TR0001",
+        "full_support:G1-0001"
+      ],
+      "inventory": {
+        "G1": 1
+      },
+      "truck_count": 1,
+      "cost": 450.0,
+      "mass_kg": 12.0,
+      "volume_cm3": 72000.0,
+      "UV": 0.0037105751391465678,
+      "UW": 0.002,
+      "trucks": [
+        {
+          "truck_id": "TR0001",
+          "vehicle_type": "T1",
+          "items": 1,
+          "mass_kg": 12.0,
+          "volume_cm3": 72000.0,
+          "UV": 0.0037105751391465678,
+          "UW": 0.002,
+          "usable_UV": 0.003761873412959654,
+          "cost": 450.0
+        }
+      ],
+      "support_loads": [
+        {
+          "truck_id": "TR0001",
+          "item_id": "G1-0001",
+          "support_id": "FLOOR",
+          "external_load_kg": 0.0,
+          "top_area_m2": 0.24,
+          "load_limit_kg": 120.0
+        }
+      ]
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_dimension_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18605980000575073,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[0]:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_dimension_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18356370000401512,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[0]:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_dimension_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18670179999026004,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[0]:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_dimension_zero",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_zero\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_zero\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_zero\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_zero\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1896190999977989,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.cargo[0].dims[0]"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_dimension_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18250090000219643,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.cargo[0].dims[0]"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_dimension_boolean",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_boolean\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_boolean\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_boolean\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_boolean\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1826230000006035,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[0]:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_dimension_string",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_string\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_string\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_string\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_dimension_string\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1814136999892071,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[0]:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_mass_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18556519999401644,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_mass_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18938309999066405,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_mass_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1910280000010971,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_mass_zero",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_zero\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_zero\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_zero\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_zero\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1923131000075955,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.cargo[0].mass"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_mass_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1949534000013955,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.cargo[0].mass"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_mass_boolean",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_boolean\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_boolean\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_boolean\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_boolean\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.19107810000423342,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_cargo_mass_string",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_string\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_string\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_string\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_string\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18759480000881013,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_dimension_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18820639999466948,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].dims[0]:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_dimension_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18439550000766758,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].dims[0]:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_dimension_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18337080000492278,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].dims[0]:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_dimension_zero",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_zero\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_zero\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_zero\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_zero\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18667549999372568,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.vehicles[0].dims[0]"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_dimension_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18847799999639392,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.vehicles[0].dims[0]"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_dimension_boolean",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_boolean\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_boolean\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_boolean\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_boolean\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18656190000183415,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].dims[0]:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_dimension_string",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_string\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_string\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_string\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_dimension_string\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18513109999184962,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].dims[0]:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_capacity_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18491210001229774,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].capacity:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_capacity_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18098120001377538,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].capacity:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_capacity_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1833872999995947,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].capacity:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_capacity_zero",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_zero\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_zero\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_zero\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_zero\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18248460000904743,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.vehicles[0].capacity"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_capacity_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18674750000354834,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.vehicles[0].capacity"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_capacity_boolean",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_boolean\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_boolean\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_boolean\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_boolean\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.186696300006588,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].capacity:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_capacity_string",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_string\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_string\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_string\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_capacity_string\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1863013999973191,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].capacity:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_cost_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18343440000899136,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].cost:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_cost_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18485140000120737,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].cost:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_cost_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18481639999663457,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].cost:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_cost_zero",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_zero\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_zero\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_zero\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_zero\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18508429999928921,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.vehicles[0].cost"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_cost_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18865979999827687,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.vehicles[0].cost"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_cost_boolean",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_boolean\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_boolean\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_boolean\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_boolean\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18053909999434836,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].cost:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_vehicle_cost_string",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_string\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_string\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_string\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_string\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18753930000821128,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].cost:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_quantity_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1858875000034459,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].quantity:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_quantity_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18401369999628514,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].quantity:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_quantity_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18590409999887925,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].quantity:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_quantity_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18208230000163894,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.cargo[0].quantity"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_quantity_boolean",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_boolean\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_boolean\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_boolean\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_boolean\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1879478999908315,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].quantity:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "data_quantity_string",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_string\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_string\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_string\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_quantity_string\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18383090000133961,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].quantity:expected_JSON_number"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "quantity_fraction",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\quantity_fraction\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\quantity_fraction\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\quantity_fraction\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\quantity_fraction\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18704460001026746,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.cargo[0].quantity"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "quantity_float_integer",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\quantity_float_integer\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\quantity_float_integer\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\quantity_float_integer\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\quantity_float_integer\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18596020000404678,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:input.cargo[0].quantity"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_gap_cm_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18927630000689533,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.gap_cm:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_gap_cm_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18098710000049323,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.gap_cm:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_gap_cm_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18548280000686646,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.gap_cm:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_gap_cm_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_gap_cm_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1848625999991782,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:config.gap_cm"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_pressure_kg_m2_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18444820000149775,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.pressure_kg_m2:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_pressure_kg_m2_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18385130001115613,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.pressure_kg_m2:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_pressure_kg_m2_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18559239999740385,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.pressure_kg_m2:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_pressure_kg_m2_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_pressure_kg_m2_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1863722999987658,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:config.pressure_kg_m2"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_tolerance_cm_nan",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_nan\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_nan\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_nan\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_nan\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.19149290000495967,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.tolerance_cm:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_tolerance_cm_posinf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_posinf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_posinf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_posinf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_posinf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.1867226999893319,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.tolerance_cm:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_tolerance_cm_neginf",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_neginf\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_neginf\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_neginf\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_neginf\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.19195989999570884,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:config.tolerance_cm:not_finite"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "config_tolerance_cm_negative",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_negative\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_negative\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_negative\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\config_tolerance_cm_negative\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18182730000989977,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:config.tolerance_cm"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "gap_reaches_vehicle_height",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\gap_reaches_vehicle_height\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\gap_reaches_vehicle_height\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\gap_reaches_vehicle_height\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\gap_reaches_vehicle_height\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.17899129999568686,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:config.gap_cm:leaves_no_height_in_vehicle[0]"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "zero_pressure",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\zero_pressure\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\zero_pressure\\config.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\zero_pressure\\placements.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\zero_pressure\\result.json",
+      "--single"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 1,
+    "elapsed_seconds": 0.18842579999181908,
+    "expected": "reject",
+    "observed_result": {
+      "valid": false,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_range:config.pressure_kg_m2"
+      ],
+      "checks_not_run": [
+        "geometry",
+        "support",
+        "load",
+        "metrics"
+      ],
+      "trucks": [],
+      "support_loads": []
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "solver_invalid_mass",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/solve.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_mass\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_mass\\config.json",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_mass\\run",
+      "--method",
+      "maxrects"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 2,
+    "elapsed_seconds": 0.6580116999975871,
+    "expected": "reject",
+    "observed_result": {
+      "status": "invalid_input",
+      "valid": false,
+      "message": "invalid_numeric:input.cargo[0].mass:not_finite",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:not_finite"
+      ],
+      "successful_summary_created": false
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "solver_invalid_gap",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/solve.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_gap\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_gap\\config.json",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_gap\\run",
+      "--method",
+      "maxrects"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 2,
+    "elapsed_seconds": 0.6607845999969868,
+    "expected": "reject",
+    "observed_result": {
+      "status": "invalid_input",
+      "valid": false,
+      "message": "invalid_numeric:config.gap_cm:not_finite",
+      "errors": [
+        "invalid_numeric:config.gap_cm:not_finite"
+      ],
+      "successful_summary_created": false
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "solver_impossible_1001_cube",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/solve.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_impossible_1001_cube\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_impossible_1001_cube\\config.json",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_impossible_1001_cube\\run",
+      "--method",
+      "maxrects"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 3,
+    "elapsed_seconds": 0.661546699993778,
+    "expected": "clear_infeasible",
+    "observed_result": {
+      "status": "infeasible_input",
+      "valid": false,
+      "message": "Cargo G1 (dimensions_cm=[1001, 1001, 1001], mass_kg=12.0) cannot fit any allowed vehicle with its permitted orientation, gap_cm=3 and payload limits. No transport solution exists for this input.",
+      "errors": [
+        "Cargo G1 (dimensions_cm=[1001, 1001, 1001], mass_kg=12.0) cannot fit any allowed vehicle with its permitted orientation, gap_cm=3 and payload limits. No transport solution exists for this input."
+      ],
+      "successful_summary_created": false
+    },
+    "successful_summary_files": [],
+    "assertion_passed": true,
+    "process_state": "finished"
+  },
+  {
+    "name": "solver_valid_changed_inventory",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/solve.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_valid_changed_inventory\\data.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_valid_changed_inventory\\config.json",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_valid_changed_inventory\\run",
+      "--method",
+      "maxrects"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+    "exit_code": 0,
+    "elapsed_seconds": 0.8415792000014335,
+    "expected": "legal",
+    "observed_result": null,
+    "successful_summary_files": [
+      "controls\\solver_valid_changed_inventory\\run\\greedy_T1\\summary.json",
+      "controls\\solver_valid_changed_inventory\\run\\greedy_T2\\summary.json",
+      "controls\\solver_valid_changed_inventory\\run\\Q1_fleet_T1\\summary.json",
+      "controls\\solver_valid_changed_inventory\\run\\Q1_fleet_T2\\summary.json",
+      "controls\\solver_valid_changed_inventory\\run\\Q1_single_T1_P00\\summary.json",
+      "controls\\solver_valid_changed_inventory\\run\\Q1_single_T2_P00\\summary.json",
+      "controls\\solver_valid_changed_inventory\\run\\Q2_min_cost\\summary.json",
+      "controls\\solver_valid_changed_inventory\\run\\Q2_min_vehicles\\summary.json"
+    ],
+    "assertion_passed": true,
+    "process_state": "finished"
+  }
+]

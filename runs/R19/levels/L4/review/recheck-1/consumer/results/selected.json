@@ -1,0 +1,39 @@
+{
+  "scenarios": {
+    "Q1_fleet_T1": {
+      "root": "results/classic_refined/Q1_fleet_T1",
+      "method": "classic_refined",
+      "truck_count": 20,
+      "cost": 9000,
+      "valid": true,
+      "source_of_choice": "minimize requested primary objective, then secondary, then full-route runtime; author recheck"
+    },
+    "Q1_fleet_T2": {
+      "root": "results/classic_refined/Q1_fleet_T2",
+      "method": "classic_refined",
+      "truck_count": 10,
+      "cost": 7000,
+      "valid": true,
+      "source_of_choice": "minimize requested primary objective, then secondary, then full-route runtime; author recheck"
+    },
+    "Q2_min_vehicles": {
+      "root": "results/classic_refined/Q2_min_vehicles",
+      "method": "classic_refined",
+      "truck_count": 10,
+      "cost": 6750,
+      "valid": true,
+      "source_of_choice": "minimize requested primary objective, then secondary, then full-route runtime; author recheck"
+    },
+    "Q2_min_cost": {
+      "root": "results/classic_refined/Q2_min_cost",
+      "method": "classic_refined",
+      "truck_count": 10,
+      "cost": 6750,
+      "valid": true,
+      "source_of_choice": "minimize requested primary objective, then secondary, then full-route runtime; author recheck"
+    }
+  },
+  "single_root": "results/selected_single",
+  "rule": "best checked official candidate; finite merged archive, no complete-frontier or global-optimum claim",
+  "created_by": "/root/r19_l4_executor"
+}

@@ -1,0 +1,87 @@
+{
+  "schema": "C12-forward-review-preparation/1",
+  "phase": "preparation",
+  "state": "complete_stopped",
+  "production_read": false,
+  "production_verdict": false,
+  "frozen_at": "2026-10-08T14:52:30.065102+00:00",
+  "source_locks_match": true,
+  "controls": {
+    "count": 22,
+    "all_agree": true,
+    "false_acceptances": 0,
+    "false_rejections": 0
+  },
+  "mandatory": [
+    {
+      "id": "b1",
+      "verdict": "unverified",
+      "reason": "Production not authorized or received; preparation is not production acceptance"
+    },
+    {
+      "id": "b2",
+      "verdict": "unverified",
+      "reason": "Production not authorized or received; preparation is not production acceptance"
+    },
+    {
+      "id": "b3",
+      "verdict": "unverified",
+      "reason": "Production not authorized or received; preparation is not production acceptance"
+    },
+    {
+      "id": "b4",
+      "verdict": "unverified",
+      "reason": "Production not authorized or received; preparation is not production acceptance"
+    },
+    {
+      "id": "b5",
+      "verdict": "unverified",
+      "reason": "Production not authorized or received; preparation is not production acceptance"
+    }
+  ],
+  "telemetry": {
+    "provider": null,
+    "model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "processes": "All preparation commands started by this reviewer have terminal receipts; none left running",
+  "next_action": "Stop writes and notify root; wait for actual frozen production lock, then write only review/",
+  "payload": [
+    {
+      "path": "runs/R19/final/forward/review-preparation/control-observations.json",
+      "size_bytes": 28525,
+      "sha256": "4906701690d665ee13e33fef4f6711a18b031e8b75a110cc870b06384993c948"
+    },
+    {
+      "path": "runs/R19/final/forward/review-preparation/control_run.py",
+      "size_bytes": 3594,
+      "sha256": "1674d336d7461311d88d995b3a3d8e3ccb55f7104aeadccbb6c0dac7bfd6082d"
+    },
+    {
+      "path": "runs/R19/final/forward/review-preparation/finalize_preparation.py",
+      "size_bytes": 3666,
+      "sha256": "39662ffa92db90798717cc6d9fd0b5cab01f9bd992e954afc7e828d12f9eeb04"
+    },
+    {
+      "path": "runs/R19/final/forward/review-preparation/independent_check.py",
+      "size_bytes": 8708,
+      "sha256": "12fb6c9981e90cc6b2d48cb78d4bfd4430d7fd3da739b25ef0e42bd43e2ebbdb"
+    },
+    {
+      "path": "runs/R19/final/forward/review-preparation/method.md",
+      "size_bytes": 8206,
+      "sha256": "bb1b015b22c41f74c6308782328eff75455fce1c13def07092e507c03d2dc30b"
+    },
+    {
+      "path": "runs/R19/final/forward/review-preparation/source-identity-observations.json",
+      "size_bytes": 7347,
+      "sha256": "8a9aab95a257dc3a3c90623d0f3f481121db46281ffa179849f1ffdf20c2f51c"
+    }
+  ],
+  "limitations": [
+    "22 self-constructed controls are not actual production receiver tests or production smoke",
+    "No production computation, workflow consumption, Chinese paper/source review or PDF rendering performed",
+    "No causal comparison, level/prize/October performance claim"
+  ]
+}

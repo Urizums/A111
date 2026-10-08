@@ -1,0 +1,35 @@
+{
+  "name": "solver_invalid_gap",
+  "command": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "code/solve.py",
+    "--data",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_gap\\data.json",
+    "--config",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_gap\\config.json",
+    "--out",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_invalid_gap\\run",
+    "--method",
+    "maxrects"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+  "exit_code": 2,
+  "elapsed_seconds": 0.6607845999969868,
+  "expected": "reject",
+  "observed_result": {
+    "status": "invalid_input",
+    "valid": false,
+    "message": "invalid_numeric:config.gap_cm:not_finite",
+    "errors": [
+      "invalid_numeric:config.gap_cm:not_finite"
+    ],
+    "successful_summary_created": false
+  },
+  "successful_summary_files": [],
+  "assertion_passed": true,
+  "process_state": "finished"
+}

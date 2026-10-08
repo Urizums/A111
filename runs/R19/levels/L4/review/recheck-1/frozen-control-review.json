@@ -1,0 +1,479 @@
+{
+  "checks": [
+    {
+      "case": "csv_blank",
+      "result": {
+        "valid": false,
+        "errors": [
+          "unparseable_real"
+        ]
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_h_nan",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_h_neginf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_h_posinf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_l_nan",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_l_neginf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_l_posinf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_text",
+      "result": {
+        "valid": false,
+        "errors": [
+          "unparseable_real"
+        ]
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_w_nan",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_w_neginf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_w_posinf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_x_nan",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_x_neginf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_x_posinf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_y_nan",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_y_neginf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_y_posinf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_z_nan",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_z_neginf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "csv_z_posinf",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "height_gap",
+      "result": {
+        "valid": false,
+        "errors": [
+          "floating",
+          "incomplete_support",
+          "safety_gap"
+        ],
+        "metrics": {
+          "volume_cm3": 72000.0,
+          "weight_kg": 12.0,
+          "UV": 0.0037105751391465678,
+          "UV_usable": 0.003761873412959654,
+          "UW": 0.002
+        },
+        "forces": null
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "negative_x",
+      "result": {
+        "valid": false,
+        "errors": [
+          "boundary"
+        ],
+        "metrics": {
+          "volume_cm3": 72000.0,
+          "weight_kg": 12.0,
+          "UV": 0.0037105751391465678,
+          "UV_usable": 0.003761873412959654,
+          "UW": 0.002
+        },
+        "forces": null
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "negative_y",
+      "result": {
+        "valid": false,
+        "errors": [
+          "boundary"
+        ],
+        "metrics": {
+          "volume_cm3": 72000.0,
+          "weight_kg": 12.0,
+          "UV": 0.0037105751391465678,
+          "UV_usable": 0.003761873412959654,
+          "UW": 0.002
+        },
+        "forces": null
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "negative_z",
+      "result": {
+        "valid": false,
+        "errors": [
+          "boundary",
+          "floating",
+          "incomplete_support"
+        ],
+        "metrics": {
+          "volume_cm3": 72000.0,
+          "weight_kg": 12.0,
+          "UV": 0.0037105751391465678,
+          "UV_usable": 0.003761873412959654,
+          "UW": 0.002
+        },
+        "forces": null
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "nonpositive_h_-1",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "nonpositive_h_0",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "nonpositive_l_-1",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "nonpositive_l_0",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "nonpositive_w_-1",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "nonpositive_w_0",
+      "result": {
+        "errors": [
+          "invalid_numeric"
+        ],
+        "valid": false
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "positive_overlap",
+      "result": {
+        "valid": false,
+        "errors": [
+          "overlap"
+        ],
+        "metrics": {
+          "volume_cm3": 144000.0,
+          "weight_kg": 24.0,
+          "UV": 0.0074211502782931356,
+          "UV_usable": 0.007523746825919308,
+          "UW": 0.004
+        },
+        "forces": null
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "valid_boundary_touch",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 144000.0,
+          "weight_kg": 24.0,
+          "UV": 0.0074211502782931356,
+          "UV_usable": 0.007523746825919308,
+          "UW": 0.004
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "contact",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            0.0,
+            0.0
+          ],
+          "limits_kg": [
+            0.0,
+            0.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": 0.0
+        }
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "valid_real_floor",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 72000.0,
+          "weight_kg": 12.0,
+          "UV": 0.0037105751391465678,
+          "UV_usable": 0.003761873412959654,
+          "UW": 0.002
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "contact",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            0.0
+          ],
+          "limits_kg": [
+            0.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": -0.0
+        }
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "valid_supported_stack",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 144000.0,
+          "weight_kg": 24.0,
+          "UV": 0.0074211502782931356,
+          "UV_usable": 0.007523746825919308,
+          "UW": 0.004
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "contact",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            12.0,
+            0.0
+          ],
+          "limits_kg": [
+            120.0,
+            0.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": -0.0
+        }
+      },
+      "assertion_passed": true
+    },
+    {
+      "case": "valid_zero_class_quantity",
+      "result": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 72000.0,
+          "weight_kg": 12.0,
+          "UV": 0.0037105751391465678,
+          "UV_usable": 0.003761873412959654,
+          "UW": 0.002
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "contact",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            0.0
+          ],
+          "limits_kg": [
+            0.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": -0.0
+        }
+      },
+      "assertion_passed": true
+    }
+  ],
+  "all_assertions_passed": true
+}

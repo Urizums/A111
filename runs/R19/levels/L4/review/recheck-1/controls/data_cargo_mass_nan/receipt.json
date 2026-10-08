@@ -1,0 +1,42 @@
+{
+  "name": "data_cargo_mass_nan",
+  "command": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "code/validator.py",
+    "--data",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_nan\\data.json",
+    "--config",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_nan\\config.json",
+    "--placements",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_nan\\placements.csv",
+    "--out",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_cargo_mass_nan\\result.json",
+    "--single"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+  "exit_code": 1,
+  "elapsed_seconds": 0.18556519999401644,
+  "expected": "reject",
+  "observed_result": {
+    "valid": false,
+    "status": "invalid_input",
+    "errors": [
+      "invalid_numeric:input.cargo[0].mass:not_finite"
+    ],
+    "checks_not_run": [
+      "geometry",
+      "support",
+      "load",
+      "metrics"
+    ],
+    "trucks": [],
+    "support_loads": []
+  },
+  "successful_summary_files": [],
+  "assertion_passed": true,
+  "process_state": "finished"
+}

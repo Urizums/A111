@@ -1,0 +1,1128 @@
+{
+  "scope": "review preparation only; no production inspected or judged",
+  "raw_sha256": "d1cde1cd001f16052ec90bdb227a7930e4f68938cf77369fd889a1e0353ca99a",
+  "false_acceptances": 0,
+  "false_rejections": 0,
+  "controls": [
+    {
+      "control": "valid_stacked",
+      "expected_valid": true,
+      "expected_rejection_code": null,
+      "control_agrees": true,
+      "observation": {
+        "valid": true,
+        "errors": [],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "F1": "S1",
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "recursive_overload",
+      "expected_valid": false,
+      "expected_rejection_code": "cumulative_standard_load",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "cumulative_standard_load",
+            "item_id": "S1",
+            "stress_kg_per_m2": 160.0
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 160.0,
+            "S2": 60.0,
+            "F1": 0.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 160.0,
+            "S2": 60.0,
+            "F1": 0.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "S2": "S1",
+            "F1": "S2",
+            "S3": null
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 2,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "fragile_bearing",
+      "expected_valid": false,
+      "expected_rejection_code": "fragile_bears_cargo",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "fragile_bears_cargo",
+            "lower": "F1",
+            "upper": "S1"
+          },
+          {
+            "code": "fragile_external_load",
+            "item_id": "F1",
+            "load_kg": 100.0
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 100.0,
+            "S1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 100.0,
+            "S1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": null,
+            "S1": "F1",
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "spoofed_source_category",
+      "expected_valid": false,
+      "expected_rejection_code": "item_source_conflict",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "item_source_conflict",
+            "item_id": "F1",
+            "field": "category"
+          },
+          {
+            "code": "fragile_bears_cargo",
+            "lower": "F1",
+            "upper": "S1"
+          },
+          {
+            "code": "fragile_external_load",
+            "item_id": "F1",
+            "load_kg": 100.0
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 100.0,
+            "S1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 100.0,
+            "S1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "F1": null,
+            "S1": "F1",
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "x_m_nan",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "x_m_inf",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "x_m_minus_inf",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "y_m_nan",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "y_m_inf",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "y_m_minus_inf",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "z_m_nan",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "z_m_inf",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "z_m_minus_inf",
+      "expected_valid": false,
+      "expected_rejection_code": "coordinate_domain",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "coordinate_domain",
+            "item_id": "S1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "missing_item",
+      "expected_valid": false,
+      "expected_rejection_code": "item_multiplicity",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "item_multiplicity",
+            "item_id": "S3",
+            "count": 0
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 0.0
+          },
+          "support": {
+            "S1": null,
+            "F1": "S1",
+            "S2": null
+          },
+          "activation": {
+            "nonfloor_items": 1,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "duplicate_item",
+      "expected_valid": false,
+      "expected_rejection_code": "item_multiplicity",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "item_multiplicity",
+            "item_id": "S1",
+            "count": 2
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 260.0
+          },
+          "cumulative_external_load_kg": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "floating_item",
+      "expected_valid": false,
+      "expected_rejection_code": "single_complete_support",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 0.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 0.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "partial_support",
+      "expected_valid": false,
+      "expected_rejection_code": "single_complete_support",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "overlap",
+            "items": [
+              "F1",
+              "S3"
+            ]
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 0.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 0.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "overlap",
+      "expected_valid": false,
+      "expected_rejection_code": "overlap",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "overlap",
+            "items": [
+              "S1",
+              "F1"
+            ]
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 0.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 0.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "clearance_breach",
+      "expected_valid": false,
+      "expected_rejection_code": "vehicle_bounds_or_clearance",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "vehicle_bounds_or_clearance",
+            "item_id": "F1"
+          },
+          {
+            "code": "single_complete_support",
+            "item_id": "F1",
+            "candidates": []
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 0.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 0.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 1,
+            "recursive_depth": 1,
+            "fragile_on_standard": 0
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "dimension_spoof",
+      "expected_valid": false,
+      "expected_rejection_code": "item_source_conflict",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "item_source_conflict",
+            "item_id": "S1",
+            "field": "length_m"
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "F1": "S1",
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "vehicle_spoof",
+      "expected_valid": false,
+      "expected_rejection_code": "vehicle_source_conflict",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "vehicle_source_conflict",
+            "vehicle_id": "review-control-v",
+            "field": "payload_kg"
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "F1": "S1",
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    },
+    {
+      "control": "objective_nan",
+      "expected_valid": false,
+      "expected_rejection_code": "objective_report_conflict",
+      "control_agrees": true,
+      "observation": {
+        "valid": false,
+        "errors": [
+          {
+            "code": "objective_report_conflict",
+            "field": "total_cost_CNY"
+          }
+        ],
+        "recomputed": {
+          "lexicographic_objective": [
+            1,
+            200
+          ],
+          "mass_by_vehicle_kg": {
+            "review-control-v": 360.0
+          },
+          "cumulative_external_load_kg": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "stress_kg_per_m2": {
+            "S1": 60.0,
+            "F1": 0.0,
+            "S2": 100.0,
+            "S3": 0.0
+          },
+          "support": {
+            "S1": null,
+            "F1": "S1",
+            "S2": null,
+            "S3": "S2"
+          },
+          "activation": {
+            "nonfloor_items": 2,
+            "support_edges": 2,
+            "recursive_depth": 1,
+            "fragile_on_standard": 1
+          },
+          "unused_declared_vehicles": []
+        }
+      }
+    }
+  ]
+}

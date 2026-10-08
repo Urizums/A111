@@ -1,0 +1,42 @@
+{
+  "name": "zero_pressure",
+  "command": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "code/validator.py",
+    "--data",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\zero_pressure\\data.json",
+    "--config",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\zero_pressure\\config.json",
+    "--placements",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\zero_pressure\\placements.csv",
+    "--out",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\zero_pressure\\result.json",
+    "--single"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+  "exit_code": 1,
+  "elapsed_seconds": 0.18842579999181908,
+  "expected": "reject",
+  "observed_result": {
+    "valid": false,
+    "status": "invalid_input",
+    "errors": [
+      "invalid_range:config.pressure_kg_m2"
+    ],
+    "checks_not_run": [
+      "geometry",
+      "support",
+      "load",
+      "metrics"
+    ],
+    "trucks": [],
+    "support_loads": []
+  },
+  "successful_summary_files": [],
+  "assertion_passed": true,
+  "process_state": "finished"
+}

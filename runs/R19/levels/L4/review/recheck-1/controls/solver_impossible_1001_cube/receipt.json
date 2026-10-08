@@ -1,0 +1,35 @@
+{
+  "name": "solver_impossible_1001_cube",
+  "command": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "code/solve.py",
+    "--data",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_impossible_1001_cube\\data.json",
+    "--config",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_impossible_1001_cube\\config.json",
+    "--out",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\solver_impossible_1001_cube\\run",
+    "--method",
+    "maxrects"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+  "exit_code": 3,
+  "elapsed_seconds": 0.661546699993778,
+  "expected": "clear_infeasible",
+  "observed_result": {
+    "status": "infeasible_input",
+    "valid": false,
+    "message": "Cargo G1 (dimensions_cm=[1001, 1001, 1001], mass_kg=12.0) cannot fit any allowed vehicle with its permitted orientation, gap_cm=3 and payload limits. No transport solution exists for this input.",
+    "errors": [
+      "Cargo G1 (dimensions_cm=[1001, 1001, 1001], mass_kg=12.0) cannot fit any allowed vehicle with its permitted orientation, gap_cm=3 and payload limits. No transport solution exists for this input."
+    ],
+    "successful_summary_created": false
+  },
+  "successful_summary_files": [],
+  "assertion_passed": true,
+  "process_state": "finished"
+}

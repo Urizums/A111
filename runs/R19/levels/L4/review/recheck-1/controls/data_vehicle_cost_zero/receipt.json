@@ -1,0 +1,42 @@
+{
+  "name": "data_vehicle_cost_zero",
+  "command": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "code/validator.py",
+    "--data",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_zero\\data.json",
+    "--config",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_zero\\config.json",
+    "--placements",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_zero\\placements.csv",
+    "--out",
+    "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\controls\\data_vehicle_cost_zero\\result.json",
+    "--single"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\recheck-1\\consumer",
+  "exit_code": 1,
+  "elapsed_seconds": 0.18508429999928921,
+  "expected": "reject",
+  "observed_result": {
+    "valid": false,
+    "status": "invalid_input",
+    "errors": [
+      "invalid_range:input.vehicles[0].cost"
+    ],
+    "checks_not_run": [
+      "geometry",
+      "support",
+      "load",
+      "metrics"
+    ],
+    "trucks": [],
+    "support_loads": []
+  },
+  "successful_summary_files": [],
+  "assertion_passed": true,
+  "process_state": "finished"
+}
