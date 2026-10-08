@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/review/source-recheck/verify_freeze_reference.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:18:14.166586+00:00",
+    "monotonic_ns": 110125812000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:18:14.253377+00:00",
+    "monotonic_ns": 110125890000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"mistaken_path_in_initial_first_result\": \"runs/R20/execution/evidence/production-freeze-command.json\",\r\n  \"mistaken_path_exists\": false,\r\n  \"correct_path\": \"runs/R20/coordination/production-freeze-command.json\",\r\n  \"correct_bytes\": 1705,\r\n  \"correct_sha256\": \"be920505db17ed9c4882d0864d88207286df71a7a8e77819b8c161711ca097b3\",\r\n  \"state\": \"finished\",\r\n  \"exit_code\": 0,\r\n  \"begin_utc\": \"2026-10-08T20:01:02.869748+00:00\",\r\n  \"end_utc\": \"2026-10-08T20:01:22.055586+00:00\",\r\n  \"argv\": [\r\n    \"wsl\",\r\n    \"-d\",\r\n    \"Ubuntu-24.04\",\r\n    \"--cd\",\r\n    \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111\",\r\n    \"python3\",\r\n    \"runs/R20/manage.py\",\r\n    \"freeze\",\r\n    \"--scope\",\r\n    \"runs/R20/execution\",\r\n    \"--lock\",\r\n    \"runs/R20/execution-lock.json\"\r\n  ],\r\n  \"stdout\": \"{\\\"files\\\": 602}\\n{\\\"action\\\": \\\"freeze\\\", \\\"frontier\\\": \\\"R20-04\\\", \\\"previous_tasks_preserved\\\": 60, \\\"queue_valid\\\": true}\\n\",\r\n  \"execution_lock_target\": \"runs/R20/execution-lock.json\",\r\n  \"result\": \"The initial first-result path field was wrong; the freeze receipt itself is valid finished/0. This is a provenance-reference correction only.\"\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAibWlzdGFrZW5fcGF0aF9pbl9pbml0aWFsX2ZpcnN0X3Jlc3VsdCI6ICJydW5zL1IyMC9leGVjdXRpb24vZXZpZGVuY2UvcHJvZHVjdGlvbi1mcmVlemUtY29tbWFuZC5qc29uIiwNCiAgIm1pc3Rha2VuX3BhdGhfZXhpc3RzIjogZmFsc2UsDQogICJjb3JyZWN0X3BhdGgiOiAicnVucy9SMjAvY29vcmRpbmF0aW9uL3Byb2R1Y3Rpb24tZnJlZXplLWNvbW1hbmQuanNvbiIsDQogICJjb3JyZWN0X2J5dGVzIjogMTcwNSwNCiAgImNvcnJlY3Rfc2hhMjU2IjogImJlOTIwNTA1ZGIxN2VkOWM0ODgyZDA4NjRkODgyMDcyODZkZjcxYTdhOGU3NzgxOWI4YzE2MTcxMWNhMDk3YjMiLA0KICAic3RhdGUiOiAiZmluaXNoZWQiLA0KICAiZXhpdF9jb2RlIjogMCwNCiAgImJlZ2luX3V0YyI6ICIyMDI2LTEwLTA4VDIwOjAxOjAyLjg2OTc0OCswMDowMCIsDQogICJlbmRfdXRjIjogIjIwMjYtMTAtMDhUMjA6MDE6MjIuMDU1NTg2KzAwOjAwIiwNCiAgImFyZ3YiOiBbDQogICAgIndzbCIsDQogICAgIi1kIiwNCiAgICAiVWJ1bnR1LTI0LjA0IiwNCiAgICAiLS1jZCIsDQogICAgIi9tbnQvYy9Vc2Vycy9hZG1pbi9Eb2N1bWVudHMvQ29kZXgvMjAyNi0xMC0wNS91cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kL3dvcmsvQTExMSIsDQogICAgInB5dGhvbjMiLA0KICAgICJydW5zL1IyMC9tYW5hZ2UucHkiLA0KICAgICJmcmVlemUiLA0KICAgICItLXNjb3BlIiwNCiAgICAicnVucy9SMjAvZXhlY3V0aW9uIiwNCiAgICAiLS1sb2NrIiwNCiAgICAicnVucy9SMjAvZXhlY3V0aW9uLWxvY2suanNvbiINCiAgXSwNCiAgInN0ZG91dCI6ICJ7XCJmaWxlc1wiOiA2MDJ9XG57XCJhY3Rpb25cIjogXCJmcmVlemVcIiwgXCJmcm9udGllclwiOiBcIlIyMC0wNFwiLCBcInByZXZpb3VzX3Rhc2tzX3ByZXNlcnZlZFwiOiA2MCwgXCJxdWV1ZV92YWxpZFwiOiB0cnVlfVxuIiwNCiAgImV4ZWN1dGlvbl9sb2NrX3RhcmdldCI6ICJydW5zL1IyMC9leGVjdXRpb24tbG9jay5qc29uIiwNCiAgInJlc3VsdCI6ICJUaGUgaW5pdGlhbCBmaXJzdC1yZXN1bHQgcGF0aCBmaWVsZCB3YXMgd3Jvbmc7IHRoZSBmcmVlemUgcmVjZWlwdCBpdHNlbGYgaXMgdmFsaWQgZmluaXNoZWQvMC4gVGhpcyBpcyBhIHByb3ZlbmFuY2UtcmVmZXJlbmNlIGNvcnJlY3Rpb24gb25seS4iDQp9DQo=",
+  "stderr_base64": ""
+}

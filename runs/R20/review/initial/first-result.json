@@ -1,0 +1,48 @@
+{
+  "schema": "R20-independent-first-result/1",
+  "stage": "first_frozen_acceptance",
+  "execution_lock": "runs/R20/execution-lock.json",
+  "execution_freeze_command": {"path": "runs/R20/execution/evidence/production-freeze-command.json", "state": "finished", "exit_code": 0},
+  "holdout_truth_opened_after_pre_holdout_freeze": true,
+  "holdout_truth_lock": "runs/R20/evaluation-lock.json",
+  "holdout_truth_sha256_verified": "9141c7fbac486443cf5ddb57ce8993854372d15b24801ba9145912c07bc5a0d4",
+  "pre_holdout_freeze": "runs/R20/review/initial/pre_holdout_freeze.json",
+  "result": "PASS",
+  "domains": {
+    "d1": {"verdict": "PASS", "evidence": ["command-identity-check.json", "command-production-path-controls.json", "command-independent-recompute-retry.json"], "limitation": "Synthetic source scope only."},
+    "d2": {"verdict": "PASS", "evidence": ["command-independent-rerun.json", "command-independent-recompute-retry.json", "command-holdout-evaluation.json"], "limitation": "Historical selection/holdout windows are limited; synthetic future is not real-world evidence."},
+    "d3": {"verdict": "PASS", "evidence": ["command-check-current-delivery.json", "command-scenario-recompute-retry2.json", "command-holdout-evaluation.json"], "limitation": "Optimality applies only to frozen empirical scenarios/objective."},
+    "d4": {"verdict": "PASS", "evidence": ["command-independent-rerun.json", "command-compare-artifacts.json", "command-render-delivery-pdf.json"], "limitation": "Measured solver timings vary; core artifacts reproduce byte-identically."},
+    "d5": {"verdict": "PASS", "evidence": ["runs/R20/execution/delivery/paper/paper.md", "runs/R20/execution/delivery/paper/paper.pdf", "delivery-pages/page-01.png through page-11.png"], "limitation": "Visual and scientific review is bounded to the frozen paper/version."}
+  },
+  "holdout_evaluation": {
+    "file": "runs/R20/evaluation/holdout_truth.csv",
+    "identity": {"bytes": 30843, "sha256": "9141c7fbac486443cf5ddb57ce8993854372d15b24801ba9145912c07bc5a0d4"},
+    "rows": 1344,
+    "days": 14,
+    "MAE_units_per_store_item_day": 3.638453463844494,
+    "RMSE_units_per_store_item_day": 4.670400504497998,
+    "bias_pred_minus_truth_units_per_store_item_day": -0.6871083377563988,
+    "nominal90_interval_coverage": 0.8571428571428571,
+    "mean_interval_width_units": 14.14077990902686,
+    "total_q_units": 22400,
+    "total_purchase_yuan": 78851.0,
+    "total_shortage_units": 4578,
+    "total_waste_units": 1904,
+    "shortage_loss_yuan": 22286.4,
+    "waste_loss_yuan": 2585.55,
+    "total_two_part_loss_yuan": 24871.949999999997,
+    "mean_daily_two_part_loss_yuan": 1776.5678571428568,
+    "all_daily_capacity_budget_and_item_caps_ok": true,
+    "used_for_tuning": false,
+    "interpretation": "Post-freeze evaluation on a wholly synthetic holdout; not real-world evidence."
+  },
+  "telemetry": {"model": null, "tokens": null, "cost": null, "requested_configuration": {"model": "gpt-6-luna", "reasoning_effort": "high", "provider_observed": false}},
+  "failures_retained": [
+    {"record": "command-independent-recompute.json", "cause": "timezone-aware pandas value was incorrectly localized again by the independent checker", "resolved_by": "command-independent-recompute-retry.json"},
+    {"record": "command-scenario-recompute.json", "cause": "syntax error in independent checker", "resolved_by": "command-scenario-recompute-retry2.json"},
+    {"record": "command-scenario-recompute-retry.json", "cause": "indentation error in independent checker", "resolved_by": "command-scenario-recompute-retry2.json"}
+  ],
+  "author_feedback_sent": false,
+  "overall_limit": "This is a first acceptance judgment on one frozen synthetic artifact, not a competition ranking, award judgment, or evidence of real deployment performance."
+}

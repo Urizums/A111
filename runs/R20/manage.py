@@ -104,7 +104,9 @@ with ctl.locked(ROOT):
     frontier = active[0] if active else 'R20-next'
     state['execution'].update(current_frontier_task=frontier,current_report='runs/R20/REPORT.md',
         current_task_process_state='R20 original data trial; actual pending actors recorded separately.',
-        R20_status='current-source-audit-closed-with-unknowns_original-data-trial')
+        R20_status=('original_data_paper_independently_accepted_scoped'
+            if ctl.task_map(state)['R20-04']['status']=='done'
+            else 'current-source-audit-closed-with-unknowns_original-data-trial'))
     assert all(ctl.identity(ctl.task_map(state)[k]) == v for k, v in old.items())
     errors = ctl.validate(state, ROOT)
     assert not errors, errors

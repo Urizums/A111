@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/review/initial/evaluate_holdout.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:11:05.722377+00:00",
+    "monotonic_ns": 109697375000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:11:06.470434+00:00",
+    "monotonic_ns": 109698125000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"truth_sha256\": \"9141c7fbac486443cf5ddb57ce8993854372d15b24801ba9145912c07bc5a0d4\",\r\n  \"truth_bytes\": 30843,\r\n  \"keys_exact\": true,\r\n  \"rows\": 1344,\r\n  \"days\": 14,\r\n  \"MAE_units_per_store_item_day\": 3.638453463844494,\r\n  \"RMSE_units_per_store_item_day\": 4.670400504497998,\r\n  \"bias_pred_minus_truth_units_per_store_item_day\": -0.6871083377563988,\r\n  \"90_interval_coverage_fraction\": 0.8571428571428571,\r\n  \"mean_interval_width_units\": 14.14077990902686,\r\n  \"total_actual_demand_units\": 25074,\r\n  \"total_point_prediction_units\": 24150.5263940554,\r\n  \"total_q_units\": 22400,\r\n  \"total_purchase_yuan\": 78851.0,\r\n  \"total_shortage_units\": 4578,\r\n  \"total_waste_units\": 1904,\r\n  \"total_shortage_loss_yuan\": 22286.4,\r\n  \"total_waste_loss_yuan\": 2585.55,\r\n  \"total_two_part_loss_yuan\": 24871.949999999997,\r\n  \"mean_daily_two_part_loss_yuan\": 1776.5678571428568,\r\n  \"daily_q_min_max\": [\r\n    1600,\r\n    1600\r\n  ],\r\n  \"daily_purchase_min_max\": [\r\n    5610.0,\r\n    5644.0\r\n  ],\r\n  \"all_days_capacity_ok\": true,\r\n  \"all_days_budget_ok\": true,\r\n  \"all_item_caps_ok\": true,\r\n  \"holdout_used_for_tuning\": false,\r\n  \"interpretation\": \"Evaluation of the already frozen synthetic future against its sealed truth; not real-world evidence and not used for selection.\"\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAidHJ1dGhfc2hhMjU2IjogIjkxNDFjN2ZiYWM0ODY0NDNjZjVkZGI1N2NlODk5Mzg1NDM3MmQxNWIyNDgwMWJhOTE0NTkxMmMwN2JjNWEwZDQiLA0KICAidHJ1dGhfYnl0ZXMiOiAzMDg0MywNCiAgImtleXNfZXhhY3QiOiB0cnVlLA0KICAicm93cyI6IDEzNDQsDQogICJkYXlzIjogMTQsDQogICJNQUVfdW5pdHNfcGVyX3N0b3JlX2l0ZW1fZGF5IjogMy42Mzg0NTM0NjM4NDQ0OTQsDQogICJSTVNFX3VuaXRzX3Blcl9zdG9yZV9pdGVtX2RheSI6IDQuNjcwNDAwNTA0NDk3OTk4LA0KICAiYmlhc19wcmVkX21pbnVzX3RydXRoX3VuaXRzX3Blcl9zdG9yZV9pdGVtX2RheSI6IC0wLjY4NzEwODMzNzc1NjM5ODgsDQogICI5MF9pbnRlcnZhbF9jb3ZlcmFnZV9mcmFjdGlvbiI6IDAuODU3MTQyODU3MTQyODU3MSwNCiAgIm1lYW5faW50ZXJ2YWxfd2lkdGhfdW5pdHMiOiAxNC4xNDA3Nzk5MDkwMjY4NiwNCiAgInRvdGFsX2FjdHVhbF9kZW1hbmRfdW5pdHMiOiAyNTA3NCwNCiAgInRvdGFsX3BvaW50X3ByZWRpY3Rpb25fdW5pdHMiOiAyNDE1MC41MjYzOTQwNTU0LA0KICAidG90YWxfcV91bml0cyI6IDIyNDAwLA0KICAidG90YWxfcHVyY2hhc2VfeXVhbiI6IDc4ODUxLjAsDQogICJ0b3RhbF9zaG9ydGFnZV91bml0cyI6IDQ1NzgsDQogICJ0b3RhbF93YXN0ZV91bml0cyI6IDE5MDQsDQogICJ0b3RhbF9zaG9ydGFnZV9sb3NzX3l1YW4iOiAyMjI4Ni40LA0KICAidG90YWxfd2FzdGVfbG9zc195dWFuIjogMjU4NS41NSwNCiAgInRvdGFsX3R3b19wYXJ0X2xvc3NfeXVhbiI6IDI0ODcxLjk0OTk5OTk5OTk5NywNCiAgIm1lYW5fZGFpbHlfdHdvX3BhcnRfbG9zc195dWFuIjogMTc3Ni41Njc4NTcxNDI4NTY4LA0KICAiZGFpbHlfcV9taW5fbWF4IjogWw0KICAgIDE2MDAsDQogICAgMTYwMA0KICBdLA0KICAiZGFpbHlfcHVyY2hhc2VfbWluX21heCI6IFsNCiAgICA1NjEwLjAsDQogICAgNTY0NC4wDQogIF0sDQogICJhbGxfZGF5c19jYXBhY2l0eV9vayI6IHRydWUsDQogICJhbGxfZGF5c19idWRnZXRfb2siOiB0cnVlLA0KICAiYWxsX2l0ZW1fY2Fwc19vayI6IHRydWUsDQogICJob2xkb3V0X3VzZWRfZm9yX3R1bmluZyI6IGZhbHNlLA0KICAiaW50ZXJwcmV0YXRpb24iOiAiRXZhbHVhdGlvbiBvZiB0aGUgYWxyZWFkeSBmcm96ZW4gc3ludGhldGljIGZ1dHVyZSBhZ2FpbnN0IGl0cyBzZWFsZWQgdHJ1dGg7IG5vdCByZWFsLXdvcmxkIGV2aWRlbmNlIGFuZCBub3QgdXNlZCBmb3Igc2VsZWN0aW9uLiINCn0NCg==",
+  "stderr_base64": ""
+}

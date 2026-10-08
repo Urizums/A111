@@ -1,0 +1,17 @@
+{
+  "schema": "R20-freeze-reference-correction/1",
+  "prior_file": "runs/R20/review/initial/first-result.json",
+  "prior_file_sha256_at_initial_freeze": "e6ff4f4baffa6ba431e6aa157826fe18107690477b864510780a31012134f8d8",
+  "incorrect_receipt_path": "runs/R20/execution/evidence/production-freeze-command.json",
+  "incorrect_path_exists": false,
+  "correct_receipt_path": "runs/R20/coordination/production-freeze-command.json",
+  "correct_receipt_sha256": "be920505db17ed9c4882d0864d88207286df71a7a8e77819b8c161711ca097b3",
+  "correct_receipt_bytes": 1705,
+  "state": "finished",
+  "exit_code": 0,
+  "begin_utc": "2026-10-08T20:01:02.869748+00:00",
+  "end_utc": "2026-10-08T20:01:22.055586+00:00",
+  "argv": ["wsl","-d","Ubuntu-24.04","--cd","/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111","python3","runs/R20/manage.py","freeze","--scope","runs/R20/execution","--lock","runs/R20/execution-lock.json"],
+  "stdout": "{\"files\": 602}\n{\"action\": \"freeze\", \"frontier\": \"R20-04\", \"previous_tasks_preserved\": 60, \"queue_valid\": true}\n",
+  "scope": "Corrects only the receipt pointer in the prior record; does not alter the initial report/result or its verdicts."
+}

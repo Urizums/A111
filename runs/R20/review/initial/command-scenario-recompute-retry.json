@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/review/initial/scenario_recompute.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:09:11.191150+00:00",
+    "monotonic_ns": 109582843000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:09:11.257162+00:00",
+    "monotonic_ns": 109582906000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\review\\initial\\scenario_recompute.py\", line 53\r\n    daily.append({'date':d,'q_units':int(q.sum()),'source_procurement_yuan':float(q@c),'scenario_mean_loss_yuan':float(sl.mean()),'scenario_shortage_yuan':float(short.sum(axis=1).mean()),'scenario_waste_yuan':float(waste.sum(axis=1).mean()),'scenario_p90_daily_loss_yuan':float(np.quantile(sl,.9)),'max_q_bound_violations':int(np.sum(q>mx))})\r\nIndentationError: unexpected indent\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "ICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMFxyZXZpZXdcaW5pdGlhbFxzY2VuYXJpb19yZWNvbXB1dGUucHkiLCBsaW5lIDUzDQogICAgZGFpbHkuYXBwZW5kKHsnZGF0ZSc6ZCwncV91bml0cyc6aW50KHEuc3VtKCkpLCdzb3VyY2VfcHJvY3VyZW1lbnRfeXVhbic6ZmxvYXQocUBjKSwnc2NlbmFyaW9fbWVhbl9sb3NzX3l1YW4nOmZsb2F0KHNsLm1lYW4oKSksJ3NjZW5hcmlvX3Nob3J0YWdlX3l1YW4nOmZsb2F0KHNob3J0LnN1bShheGlzPTEpLm1lYW4oKSksJ3NjZW5hcmlvX3dhc3RlX3l1YW4nOmZsb2F0KHdhc3RlLnN1bShheGlzPTEpLm1lYW4oKSksJ3NjZW5hcmlvX3A5MF9kYWlseV9sb3NzX3l1YW4nOmZsb2F0KG5wLnF1YW50aWxlKHNsLC45KSksJ21heF9xX2JvdW5kX3Zpb2xhdGlvbnMnOmludChucC5zdW0ocT5teCkpfSkNCkluZGVudGF0aW9uRXJyb3I6IHVuZXhwZWN0ZWQgaW5kZW50DQo="
+}

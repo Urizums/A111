@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/review/initial/production_controls.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:07:02.493190+00:00",
+    "monotonic_ns": 109454140000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:07:08.363286+00:00",
+    "monotonic_ns": 109460015000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"scope\": \"actual frozen production functions; no production source or raw file modified\",\r\n  \"late_revision_control\": {\r\n    \"origin\": \"2026-08-31T18:00:00\",\r\n    \"key\": [\r\n      \"2026-08-29\",\r\n      \"S01\",\r\n      \"K06\"\r\n    ],\r\n    \"selected_revision\": 1,\r\n    \"selected_units\": 25,\r\n    \"selected_available_at\": \"2026-08-30T09:00:00+08:00\",\r\n    \"later_revision\": 2,\r\n    \"later_units\": 27,\r\n    \"later_available_at\": \"2026-09-01T09:00:00+08:00\",\r\n    \"legal_selected_and_late_rejected\": true\r\n  },\r\n  \"weather_control\": {\r\n    \"key\": [\r\n      \"2026-09-30\",\r\n      \"Z1\"\r\n    ],\r\n    \"feature_rain_mm\": 1.86,\r\n    \"forecast_rain_mm\": 1.86,\r\n    \"forecast_available_at\": \"2026-09-29T16:00:00+08:00\",\r\n    \"observed_rain_mm\": 7.5,\r\n    \"observed_available_at\": \"2026-10-01T09:00:00+08:00\",\r\n    \"forecast_included_observed_excluded\": true,\r\n    \"settlement_feature_column_present\": false\r\n  },\r\n  \"numeric_control\": {\r\n    \"nan_demand_rejected_by_production_audit\": true,\r\n    \"mutated_memory_restored\": true\r\n  },\r\n  \"q_control\": {\r\n    \"delivered_days_accepted\": 14,\r\n    \"illegal_q_results\": {\r\n      \"fraction\": \"rejected\",\r\n      \"negative\": \"rejected\",\r\n      \"nan\": \"rejected\"\r\n    }\r\n  },\r\n  \"formal_verdict\": \"not determined by this control alone\"\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAic2NvcGUiOiAiYWN0dWFsIGZyb3plbiBwcm9kdWN0aW9uIGZ1bmN0aW9uczsgbm8gcHJvZHVjdGlvbiBzb3VyY2Ugb3IgcmF3IGZpbGUgbW9kaWZpZWQiLA0KICAibGF0ZV9yZXZpc2lvbl9jb250cm9sIjogew0KICAgICJvcmlnaW4iOiAiMjAyNi0wOC0zMVQxODowMDowMCIsDQogICAgImtleSI6IFsNCiAgICAgICIyMDI2LTA4LTI5IiwNCiAgICAgICJTMDEiLA0KICAgICAgIkswNiINCiAgICBdLA0KICAgICJzZWxlY3RlZF9yZXZpc2lvbiI6IDEsDQogICAgInNlbGVjdGVkX3VuaXRzIjogMjUsDQogICAgInNlbGVjdGVkX2F2YWlsYWJsZV9hdCI6ICIyMDI2LTA4LTMwVDA5OjAwOjAwKzA4OjAwIiwNCiAgICAibGF0ZXJfcmV2aXNpb24iOiAyLA0KICAgICJsYXRlcl91bml0cyI6IDI3LA0KICAgICJsYXRlcl9hdmFpbGFibGVfYXQiOiAiMjAyNi0wOS0wMVQwOTowMDowMCswODowMCIsDQogICAgImxlZ2FsX3NlbGVjdGVkX2FuZF9sYXRlX3JlamVjdGVkIjogdHJ1ZQ0KICB9LA0KICAid2VhdGhlcl9jb250cm9sIjogew0KICAgICJrZXkiOiBbDQogICAgICAiMjAyNi0wOS0zMCIsDQogICAgICAiWjEiDQogICAgXSwNCiAgICAiZmVhdHVyZV9yYWluX21tIjogMS44NiwNCiAgICAiZm9yZWNhc3RfcmFpbl9tbSI6IDEuODYsDQogICAgImZvcmVjYXN0X2F2YWlsYWJsZV9hdCI6ICIyMDI2LTA5LTI5VDE2OjAwOjAwKzA4OjAwIiwNCiAgICAib2JzZXJ2ZWRfcmFpbl9tbSI6IDcuNSwNCiAgICAib2JzZXJ2ZWRfYXZhaWxhYmxlX2F0IjogIjIwMjYtMTAtMDFUMDk6MDA6MDArMDg6MDAiLA0KICAgICJmb3JlY2FzdF9pbmNsdWRlZF9vYnNlcnZlZF9leGNsdWRlZCI6IHRydWUsDQogICAgInNldHRsZW1lbnRfZmVhdHVyZV9jb2x1bW5fcHJlc2VudCI6IGZhbHNlDQogIH0sDQogICJudW1lcmljX2NvbnRyb2wiOiB7DQogICAgIm5hbl9kZW1hbmRfcmVqZWN0ZWRfYnlfcHJvZHVjdGlvbl9hdWRpdCI6IHRydWUsDQogICAgIm11dGF0ZWRfbWVtb3J5X3Jlc3RvcmVkIjogdHJ1ZQ0KICB9LA0KICAicV9jb250cm9sIjogew0KICAgICJkZWxpdmVyZWRfZGF5c19hY2NlcHRlZCI6IDE0LA0KICAgICJpbGxlZ2FsX3FfcmVzdWx0cyI6IHsNCiAgICAgICJmcmFjdGlvbiI6ICJyZWplY3RlZCIsDQogICAgICAibmVnYXRpdmUiOiAicmVqZWN0ZWQiLA0KICAgICAgIm5hbiI6ICJyZWplY3RlZCINCiAgICB9DQogIH0sDQogICJmb3JtYWxfdmVyZGljdCI6ICJub3QgZGV0ZXJtaW5lZCBieSB0aGlzIGNvbnRyb2wgYWxvbmUiDQp9DQo=",
+  "stderr_base64": ""
+}

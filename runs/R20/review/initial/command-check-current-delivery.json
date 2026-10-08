@@ -1,0 +1,32 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/review/reception-preparation/check_delivery.py",
+    "--forecast",
+    "runs/R20/execution/delivery/results/future_predictions.csv",
+    "--replenishment",
+    "runs/R20/execution/delivery/results/future_replenishment.csv"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:06:37.242799+00:00",
+    "monotonic_ns": 109428890000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:06:37.356891+00:00",
+    "monotonic_ns": 109429015000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"expected_rows\": 1344,\r\n  \"key_columns\": [\r\n    \"service_date\",\r\n    \"store_id\",\r\n    \"item_id\"\r\n  ],\r\n  \"raw_cost_source\": \"runs/R20/inputs/raw/items.csv\",\r\n  \"forecast\": {\r\n    \"path\": \"C:\\\\Users\\\\admin\\\\Documents\\\\Codex\\\\2026-10-05\\\\urizums-a111-main-codex-handoff-md\\\\work\\\\A111\\\\runs\\\\R20\\\\execution\\\\delivery\\\\results\\\\future_predictions.csv\",\r\n    \"sha256\": \"5a488defed0058422a70bda5a1d6376d7aedcfab0d46ad773f987353818df086\",\r\n    \"rows\": 1344,\r\n    \"columns\": [\r\n      \"service_date\",\r\n      \"store_id\",\r\n      \"item_id\",\r\n      \"demand_point_units\",\r\n      \"lower90_units\",\r\n      \"upper90_units\",\r\n      \"interval_level\"\r\n    ],\r\n    \"errors\": [],\r\n    \"valid\": true\r\n  },\r\n  \"replenishment\": {\r\n    \"path\": \"C:\\\\Users\\\\admin\\\\Documents\\\\Codex\\\\2026-10-05\\\\urizums-a111-main-codex-handoff-md\\\\work\\\\A111\\\\runs\\\\R20\\\\execution\\\\delivery\\\\results\\\\future_replenishment.csv\",\r\n    \"sha256\": \"6bb23bfccad61ef06fe27d29135eb1d5e788a26576ad617782a2453b6c2bb028\",\r\n    \"rows\": 1344,\r\n    \"columns\": [\r\n      \"service_date\",\r\n      \"store_id\",\r\n      \"item_id\",\r\n      \"q_units\"\r\n    ],\r\n    \"errors\": [],\r\n    \"valid\": true\r\n  },\r\n  \"formal_status\": \"unverified until frozen author outputs are supplied and independently checked\"\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiZXhwZWN0ZWRfcm93cyI6IDEzNDQsDQogICJrZXlfY29sdW1ucyI6IFsNCiAgICAic2VydmljZV9kYXRlIiwNCiAgICAic3RvcmVfaWQiLA0KICAgICJpdGVtX2lkIg0KICBdLA0KICAicmF3X2Nvc3Rfc291cmNlIjogInJ1bnMvUjIwL2lucHV0cy9yYXcvaXRlbXMuY3N2IiwNCiAgImZvcmVjYXN0Ijogew0KICAgICJwYXRoIjogIkM6XFxVc2Vyc1xcYWRtaW5cXERvY3VtZW50c1xcQ29kZXhcXDIwMjYtMTAtMDVcXHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcXHdvcmtcXEExMTFcXHJ1bnNcXFIyMFxcZXhlY3V0aW9uXFxkZWxpdmVyeVxccmVzdWx0c1xcZnV0dXJlX3ByZWRpY3Rpb25zLmNzdiIsDQogICAgInNoYTI1NiI6ICI1YTQ4OGRlZmVkMDA1ODQyMmE3MGJkYTVhMWQ2Mzc2ZDdhZWRjZmFiMGQ0NmFkNzczZjk4NzM1MzgxOGRmMDg2IiwNCiAgICAicm93cyI6IDEzNDQsDQogICAgImNvbHVtbnMiOiBbDQogICAgICAic2VydmljZV9kYXRlIiwNCiAgICAgICJzdG9yZV9pZCIsDQogICAgICAiaXRlbV9pZCIsDQogICAgICAiZGVtYW5kX3BvaW50X3VuaXRzIiwNCiAgICAgICJsb3dlcjkwX3VuaXRzIiwNCiAgICAgICJ1cHBlcjkwX3VuaXRzIiwNCiAgICAgICJpbnRlcnZhbF9sZXZlbCINCiAgICBdLA0KICAgICJlcnJvcnMiOiBbXSwNCiAgICAidmFsaWQiOiB0cnVlDQogIH0sDQogICJyZXBsZW5pc2htZW50Ijogew0KICAgICJwYXRoIjogIkM6XFxVc2Vyc1xcYWRtaW5cXERvY3VtZW50c1xcQ29kZXhcXDIwMjYtMTAtMDVcXHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcXHdvcmtcXEExMTFcXHJ1bnNcXFIyMFxcZXhlY3V0aW9uXFxkZWxpdmVyeVxccmVzdWx0c1xcZnV0dXJlX3JlcGxlbmlzaG1lbnQuY3N2IiwNCiAgICAic2hhMjU2IjogIjZiYjIzYmZjY2FkNjFlZjA2ZmUyN2QyOTEzNWViMWQ1ZTc4OGEyNjU3NmFkNjE3NzgyYTI0NTNiNmMyYmIwMjgiLA0KICAgICJyb3dzIjogMTM0NCwNCiAgICAiY29sdW1ucyI6IFsNCiAgICAgICJzZXJ2aWNlX2RhdGUiLA0KICAgICAgInN0b3JlX2lkIiwNCiAgICAgICJpdGVtX2lkIiwNCiAgICAgICJxX3VuaXRzIg0KICAgIF0sDQogICAgImVycm9ycyI6IFtdLA0KICAgICJ2YWxpZCI6IHRydWUNCiAgfSwNCiAgImZvcm1hbF9zdGF0dXMiOiAidW52ZXJpZmllZCB1bnRpbCBmcm96ZW4gYXV0aG9yIG91dHB1dHMgYXJlIHN1cHBsaWVkIGFuZCBpbmRlcGVuZGVudGx5IGNoZWNrZWQiDQp9DQo=",
+  "stderr_base64": ""
+}
