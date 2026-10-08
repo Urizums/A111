@@ -6,6 +6,8 @@ sys.path.insert(0,str(ROOT/'scripts'))
 import continuation as ctl
 p=argparse.ArgumentParser();p.add_argument('level',type=int,choices=range(1,5))
 p.add_argument('--execution',default='execution');p.add_argument('--review',default='review/initial')
+p.add_argument('--paper-source',default='paper/paper.md')
+p.add_argument('--paper-pdf',default='paper/paper.pdf')
 p.add_argument('--closure-reason',required=True,help='Actual completed correction or evidenced remaining limitation; not a quality override.')
 a=p.parse_args();base=f'runs/R19/levels/L{a.level}'
 def read(path):return json.loads((ROOT/path).read_text(encoding='utf-8'))
@@ -22,8 +24,12 @@ initial=read(f'{base}/review/initial/result.json');latest=read(report_path)
 verdicts=latest['a1_a6']
 assert {v['id'] for v in verdicts}=={f'a{k}' for k in range(1,7)}
 assert all(v['status'] in {'pass','fail','blocked','unverified'} and v.get('evidence') for v in verdicts)
-assert (ROOT/base/a.execution/'paper/paper.md').is_file()
-assert (ROOT/base/a.execution/'paper/paper.pdf').is_file()
+execution_root=(ROOT/base/a.execution).resolve()
+execution_paths={entry['path'] for entry in read(f'{base}/{a.execution}-lock.json')['files']}
+for relative in [a.paper_source,a.paper_pdf]:
+    path=(execution_root/relative).resolve()
+    assert path.is_relative_to(execution_root),'Paper must be inside the frozen execution scope.'
+    assert path.is_file() and path.relative_to(ROOT).as_posix() in execution_paths
 with ctl.locked(ROOT):
     state=ctl.load(ROOT);task=ctl.task_map(state)[f'R19-L{a.level}']
     assert task['status']=='in_progress'
@@ -39,6 +45,7 @@ with ctl.locked(ROOT):
         initial_scientific_verdict=initial['a1_a6'],latest_scientific_verdict=verdicts,
         initial_quality=initial['quality_diagnosis'],latest_quality=latest['quality_diagnosis'],
         closure_reason=a.closure_reason,latest_mandatory_pass=all(v['status']=='pass' for v in verdicts),
+        paper_artifacts=[f'{base}/{a.execution}/{a.paper_source}',f'{base}/{a.execution}/{a.paper_pdf}'],
         claim='Completed transfer/paper/independent diagnostic. First review failures remain; informed repairs do not retroactively pass the first trial.',
         effect=dict(target=f'Level{a.level} actual workflow transfer to paper',
             hypothesis='Frozen meta-workflow supports sparse-input end-to-end execution; single case observations only.',

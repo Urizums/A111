@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json,hashlib; from datetime import datetime,timezone; r=Path('.').resolve(); scope=r/'runs/R19/design-contract-audit'; rows=[dict(path=p.relative_to(r).as_posix(),size_bytes=p.stat().st_size,sha256=hashlib.sha256(p.read_bytes()).hexdigest()) for p in sorted(scope.rglob('*')) if p.is_file()]; path=r/'runs/R19/design-contract-audit-lock.json'; f=path.open('x',encoding='utf-8'); json.dump(dict(schema='forge-revision-lock/1',revision='R19-independent-design-contract-audit',frozen_at=datetime.now(timezone.utc).isoformat(),files=rows,claim='Actual terminal independent design audit bytes; no paper or full-product acceptance.'),f,ensure_ascii=False,indent=2); f.write('\\n'); f.close(); print(json.dumps(dict(files=len(rows),scope='design-contract-audit')))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T00:31:47.551869+00:00",
+    "monotonic_ns": 38940468000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T00:31:47.640995+00:00",
+    "monotonic_ns": 38940562000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\"files\": 6, \"scope\": \"design-contract-audit\"}\r\n",
+  "stderr": "",
+  "stdout_base64": "eyJmaWxlcyI6IDYsICJzY29wZSI6ICJkZXNpZ24tY29udHJhY3QtYXVkaXQifQ0K",
+  "stderr_base64": ""
+}

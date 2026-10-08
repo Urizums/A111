@@ -1,0 +1,346 @@
+{
+  "checker_version": "coordinate-chain-v1",
+  "role": "producer self-check; not independent acceptance",
+  "passed": false,
+  "tolerance_cm": 1e-07,
+  "checks": [
+    "unique ID",
+    "inventory",
+    "orientation",
+    "boundary and 3cm",
+    "all pairs overlap",
+    "full single support",
+    "fragile conditions",
+    "directional center",
+    "cumulative contact pressure",
+    "mass capacity",
+    "ground mass conservation",
+    "support trace",
+    "objective recomputation"
+  ],
+  "errors": [
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G2-0005",
+        "G2-0006"
+      ],
+      "detail": {
+        "actual_kg_m2": 64.0,
+        "limit": 1,
+        "upper_subtree_kg": 8.0,
+        "contact_m2": 0.125
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G4-0003",
+        "G4-0004"
+      ],
+      "detail": {
+        "actual_kg_m2": 52.083333333333336,
+        "limit": 1,
+        "upper_subtree_kg": 25.0,
+        "contact_m2": 0.48
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G2-0004",
+        "G2-0005"
+      ],
+      "detail": {
+        "actual_kg_m2": 128.0,
+        "limit": 1,
+        "upper_subtree_kg": 16.0,
+        "contact_m2": 0.125
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G5-0005",
+        "G5-0006"
+      ],
+      "detail": {
+        "actual_kg_m2": 112.5,
+        "limit": 1,
+        "upper_subtree_kg": 18.0,
+        "contact_m2": 0.16
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G5-0002",
+        "G5-0003"
+      ],
+      "detail": {
+        "actual_kg_m2": 112.5,
+        "limit": 1,
+        "upper_subtree_kg": 18.0,
+        "contact_m2": 0.16
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G1-0008",
+        "G3-0002"
+      ],
+      "detail": {
+        "actual_kg_m2": 75.0,
+        "limit": 1,
+        "upper_subtree_kg": 15.0,
+        "contact_m2": 0.2
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G1-0004",
+        "G3-0001"
+      ],
+      "detail": {
+        "actual_kg_m2": 75.0,
+        "limit": 1,
+        "upper_subtree_kg": 15.0,
+        "contact_m2": 0.2
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G2-0003",
+        "G2-0004"
+      ],
+      "detail": {
+        "actual_kg_m2": 192.0,
+        "limit": 1,
+        "upper_subtree_kg": 24.0,
+        "contact_m2": 0.125
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G4-0002",
+        "G4-0003"
+      ],
+      "detail": {
+        "actual_kg_m2": 104.16666666666667,
+        "limit": 1,
+        "upper_subtree_kg": 50.0,
+        "contact_m2": 0.48
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G1-0007",
+        "G1-0008"
+      ],
+      "detail": {
+        "actual_kg_m2": 112.5,
+        "limit": 1,
+        "upper_subtree_kg": 27.0,
+        "contact_m2": 0.24
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G1-0003",
+        "G1-0004"
+      ],
+      "detail": {
+        "actual_kg_m2": 112.5,
+        "limit": 1,
+        "upper_subtree_kg": 27.0,
+        "contact_m2": 0.24
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G2-0002",
+        "G2-0003"
+      ],
+      "detail": {
+        "actual_kg_m2": 256.0,
+        "limit": 1,
+        "upper_subtree_kg": 32.0,
+        "contact_m2": 0.125
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G1-0006",
+        "G1-0007"
+      ],
+      "detail": {
+        "actual_kg_m2": 162.5,
+        "limit": 1,
+        "upper_subtree_kg": 39.0,
+        "contact_m2": 0.24
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G1-0002",
+        "G1-0003"
+      ],
+      "detail": {
+        "actual_kg_m2": 162.5,
+        "limit": 1,
+        "upper_subtree_kg": 39.0,
+        "contact_m2": 0.24
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G5-0004",
+        "G5-0005"
+      ],
+      "detail": {
+        "actual_kg_m2": 225.0,
+        "limit": 1,
+        "upper_subtree_kg": 36.0,
+        "contact_m2": 0.16
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G5-0001",
+        "G5-0002"
+      ],
+      "detail": {
+        "actual_kg_m2": 225.0,
+        "limit": 1,
+        "upper_subtree_kg": 36.0,
+        "contact_m2": 0.16
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G4-0001",
+        "G4-0002"
+      ],
+      "detail": {
+        "actual_kg_m2": 156.25,
+        "limit": 1,
+        "upper_subtree_kg": 75.0,
+        "contact_m2": 0.48
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G2-0007",
+        "G2-0008"
+      ],
+      "detail": {
+        "actual_kg_m2": 91.42857142857143,
+        "limit": 1,
+        "upper_subtree_kg": 8.0,
+        "contact_m2": 0.0875
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G2-0001",
+        "G2-0002"
+      ],
+      "detail": {
+        "actual_kg_m2": 320.0,
+        "limit": 1,
+        "upper_subtree_kg": 40.0,
+        "contact_m2": 0.125
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G1-0005",
+        "G1-0006"
+      ],
+      "detail": {
+        "actual_kg_m2": 212.5,
+        "limit": 1,
+        "upper_subtree_kg": 51.0,
+        "contact_m2": 0.24
+      }
+    },
+    {
+      "rule": "cumulative_pressure",
+      "vehicle": "V001",
+      "items": [
+        "G1-0001",
+        "G1-0002"
+      ],
+      "detail": {
+        "actual_kg_m2": 212.5,
+        "limit": 1,
+        "upper_subtree_kg": 51.0,
+        "contact_m2": 0.24
+      }
+    }
+  ],
+  "counts": {
+    "G2": 8,
+    "G1": 8,
+    "G3": 2,
+    "G4": 4,
+    "G5": 6
+  },
+  "N": 1,
+  "n1": 1,
+  "n2": 0,
+  "C": 450,
+  "Uv": 0.14131106988249845,
+  "Uw": 0.06633333333333333,
+  "vehicles": [
+    {
+      "vehicle_id": "V001",
+      "vehicle_type": "T1",
+      "items": 28,
+      "volume_m3": 2.742,
+      "weight_kg": 398.0,
+      "Uv": 0.14131106988249845,
+      "Uw": 0.06633333333333333,
+      "max_pressure_kg_m2": 320.0,
+      "min_top_gap_cm": 10.0,
+      "support_relations": 21,
+      "floor_load_kg": 398.0,
+      "pair_count": 378
+    }
+  ]
+}

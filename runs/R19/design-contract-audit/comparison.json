@@ -1,0 +1,66 @@
+{
+  "schema": "r19-design-contract-comparison/1",
+  "scope": "Frozen design mechanisms and directly read raw material only; no paper/runtime/stage verdict",
+  "base_path": "C:/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+  "source_aliases": {
+    "W1": "runs/R19/levels/L1/design/workflow.md",
+    "W2": "runs/R19/levels/L2/design/workflow.md",
+    "W3": "runs/R19/levels/L3/design/workflow.md",
+    "W4": "runs/R19/levels/L4/design/workflow.md"
+  },
+  "lock_check": {"locks": 7, "file_records": 46, "hash_matches": 46, "sized_records": 44, "size_matches": 44, "evidence": "lock-verification.json"},
+  "raw_facts": [
+    {"locator": "PDF p2 Q1(1)(2)", "fact": "Two single-vehicle multiobjective scenarios; two single-type full-fleet minimum counts; item coordinates/orientations and utilization with rear-right-bottom origin"},
+    {"locator": "PDF p2 Q2(1)(2)", "fact": "Complete fleet, distinct minimum count and reoptimized minimum cost"},
+    {"locator": "PDF p3 Q3 and notes 1/2", "fact": "Manager report, performance and parameter effects; runnable program required; Attachment2 generality use optional"},
+    {"locator": "DOCX paragraphs 13-19, table1 rows2-6", "fact": "Five cargo types/stock; orthogonal geometry, fragile/oriented restrictions, 500 kg/m2 and 3 cm; not every support/pressure/orientation interpretation specified"},
+    {"locator": "XLSX 箱装产品尺寸!B2:G10; 车型尺寸!B3:F19; Sheet3", "fact": "mm/m mixed units and intervals; missing weights/count/classes/payload; road fee per1000km, F4:F6 cost ambiguity, special open/stepped geometry; empty Sheet3"}
+  ],
+  "levels": [
+    {
+      "level": "L1",
+      "derivation": {"status": "explicit_mechanism", "anchors": ["W1:17", "W1:27", "W1:31", "W1:49"], "mechanism": "Sparse user deliverables expanded from original questions into six scenarios, constraint semantics, data and paper contracts"},
+      "smoke": {"status": "designed_not_observed", "anchors": ["W1:75", "W1:111", "W1:117"], "raw_selection": "Attachment1 small real subset with three categories", "user_output": "Placements, recomputed table/figure and paper-table trace", "rejection": "At least one actually rejected invalid variant; further relevant numerical boundaries", "active_cumulative_chain_required_in_primary_slice": false},
+      "reception": {"anchors": ["W1:9", "W1:64", "W1:112"], "facts": "Reconstruct geometry, load, stock/objectives from normalized originals and coordinates; ignore feasible flag", "owner": "Checker and receiving role; coordinator integration", "independence": "Fresh authorized context required for independent claim; otherwise author self-check"},
+      "research_stop": {"anchors": ["W1:60", "W1:77", "W1:95", "W1:123", "W1:125"], "triggers": "Bottleneck, loose bound, objective tradeoff, consequential assumptions", "stop": "No-information path stop; full task only completion/user/real boundary; preserve partial and failures"},
+      "consistency_transfer": {"anchors": ["W1:68", "W1:87", "W1:114", "W1:127"], "mechanism": "Versioned data/config/assumptions/results, raw clean rerun, table-to-paper values; E00 handoff", "runtime_usability": "unverified"}
+    },
+    {
+      "level": "L2",
+      "derivation": {"status": "explicit_mechanism", "anchors": ["W2:15", "W2:29", "W2:33", "W2:48"], "mechanism": "Competition-quality language converted into reliability/comparison/interpretation/consistency rather than awards; six scenarios and mm contracts"},
+      "smoke": {"status": "designed_not_observed", "anchors": ["W2:59", "W2:103", "W2:104", "W2:110"], "raw_selection": "Attachment1 subset containing standard/fragile/oriented; original vehicles", "user_output": "Layout, single/two-vehicle allocation, utilization and Chinese table", "rejection": "Height/overlap/missing-weight explicit failure; separate manual load-chain and cumulative boundary", "active_cumulative_chain_required_in_primary_slice": false},
+      "reception": {"anchors": ["W2:11", "W2:70", "W2:74", "W2:105", "W2:107"], "facts": "Raw dimensions and placements reconstruct support, pressure, quantities/objectives and paper values", "owner": "Receiving role/new reader; coordinator correction", "independence": "Fresh context preferred; unavailable means independent acceptance incomplete"},
+      "research_stop": {"anchors": ["W2:61", "W2:86", "W2:96", "W2:128"], "triggers": "Geometry holes, difficult residual cargo, combination/pressure bottleneck; baseline plus one justified candidate", "stop": "Keep baseline when sophistication no benefit; no-information path stop and real-boundary partial delivery"},
+      "consistency_transfer": {"anchors": ["W2:68", "W2:72", "W2:108", "W2:122"], "mechanism": "Unit/schema/identity receiving check, claim_evidence and chosen-run identity; clean raw rerun; L2-E00 handoff", "runtime_usability": "unverified"}
+    },
+    {
+      "level": "L3",
+      "derivation": {"status": "explicit_mechanism", "anchors": ["W3:13", "W3:24", "W3:39", "W3:55"], "mechanism": "Question/data understanding precedes abstraction and model selection; six tasks, comparable candidate conditions"},
+      "smoke": {"status": "designed_not_observed", "anchors": ["W3:79", "W3:99", "W3:103"], "raw_selection": "Attachment1 real subset including standard support, fragile and oriented with real quantities/masses", "user_output": "Algorithm placements, separately written checker, small table/paper paragraph", "rejection": "Out-of-bound/overlap/press-fragile corrupted copy rejected with ID and magnitude", "active_cumulative_chain_required_in_primary_slice": false},
+      "reception": {"anchors": ["W3:69", "W3:73", "W3:100", "W3:103"], "facts": "Original dimensions/orientations and coordinates reconstruct geometry/support/load; support_ids/accepted not truth", "owner": "Checking role and integrator", "independence": "One-context role split not independent; actual fresh authorized checker only"},
+      "research_stop": {"anchors": ["W3:80", "W3:88", "W3:90", "W3:92", "W3:111"], "triggers": "Holes/tail cargo/pressure/fleet ratios; consequential random variation leads more runs; inactive parameter requires evidence", "stop": "No-information path stop; finish all mandatory evidence or real boundary with preserved gaps"},
+      "consistency_transfer": {"anchors": ["W3:61", "W3:86", "W3:109", "runs/R19/levels/L3/design/handoff.md:16"], "mechanism": "Requirements-to-raw-to-formula-to-run-to-CSV/figure-to-check-to-paper, six-task clean rerun; A-data-audit start", "runtime_usability": "unverified", "local_gap": "D1 coordinate-corner wording"}
+    },
+    {
+      "level": "L4",
+      "derivation": {"status": "explicit_mechanism", "anchors": ["W4:27", "W4:55", "W4:61", "W4:98"], "mechanism": "Per-question decision variables/constraints/evaluation, baseline/classic/improvement conditional routes and multi-criterion comparison"},
+      "smoke": {"status": "designed_not_observed", "anchors": ["W4:90", "W4:94"], "raw_selection": "A few each of all five Attachment1 types and one original vehicle", "user_output": "Real baseline coordinates, independently implemented recomputation, table/data-backed paper fragment", "rejection": "Actual corrupt overlap/orientation/fragile pressure/overload plus coverage-hole/clearance boundaries", "active_cumulative_chain_required_in_primary_slice": true},
+      "reception": {"anchors": ["W4:19", "W4:21", "W4:91", "W4:96"], "facts": "All item/collision candidates, raw quantities, objective/cost/bounds, load chain recalculated; solver legal flag ignored", "owner": "Receiver and lead", "independence": "Same context not independent; fresh context gets originals and actual artifacts only"},
+      "research_stop": {"anchors": ["W4:62", "W4:63", "W4:107", "W4:129", "W4:133"], "triggers": "Fragmentation/high fleet count/low utilization/tradeoff; mechanism ablation for selected improvement", "stop": "No benefit means do not select; no new information stops route; actual limits preserve partial without pass"},
+      "consistency_transfer": {"anchors": ["W4:75", "W4:83", "W4:121", "W4:129", "runs/R19/levels/L4/design/handoff.md:15"], "mechanism": "Config semantics/identity, result-source figures, changed-input recomputation and clean rerun; L4-S0-AUDIT start", "runtime_usability": "unverified"}
+    }
+  ],
+  "findings": [
+    {"id": "M1", "classification": "explicit_different_defaults", "anchors": ["W1:33", "W1:40", "W1:43", "W2:38", "W2:39", "W2:41", "W3:43", "W3:44", "W3:46", "W4:43", "W4:45", "W4:47"], "hypothesis": "Observed numerical difference may arise from admissible-set assumptions rather than search method", "opposing_explanation": "Assumptions inactive in selected layouts or same interpretation used in actual fair comparisons", "existing_evidence_needed": "Frozen actual config/assumptions/placements and existing conditional scenario or limits; no new mandatory gate"},
+    {"id": "M2", "classification": "explicit_smoke_coverage_difference_runtime_unknown", "anchors": ["W1:75", "W1:117", "W2:104", "W2:110", "W3:79", "W3:103", "W4:94"], "hypothesis": "Active cumulative chain in primary smoke can expose a stacking interface defect before scale-up", "opposing_explanation": "Separate boundary/manual checks already expose it or optional actual smoke also has the chain", "existing_evidence_needed": "Actual smoke placements, rejected variant, calls and repairs; category names alone insufficient"},
+    {"id": "D1", "classification": "local_design_text_ambiguity", "anchors": ["W3:26", "W3:53", "W3:63", "W3:69"], "observation": "Right-rear-bottom origin and y-left convention coexist with left-lower-back item-corner wording", "hypothesis": "Consumer may interpret exported corner differently from minimum-coordinate checker", "opposing_explanation": "Left label only schematic wording and actual exporter/checker use minimum-coordinate corner", "runtime_verdict": "unknown", "existing_evidence_needed": "Actual coordinate semantics, diagrams and raw geometry reconstruction; original gate sufficient"}
+  ],
+  "deferred_claims": ["Correct independent recomputation", "Substantive post-feasible research and fair alternatives", "Scientific paper sufficiency and cross-artifact consistency", "Actual new-context transfer and reviewer independence"],
+  "causal_level_ranking": null,
+  "award_prediction": null,
+  "full_product_acceptance": null,
+  "new_mandatory_gates": [],
+  "actual_provider_model": null,
+  "token_usage": null,
+  "cost": null
+}

@@ -57,6 +57,11 @@ with ctl.locked(ROOT):
                 for entry in json.loads((ROOT/relative).read_text(encoding='utf-8'))['files']:
                     assert row(ROOT/entry['path'])==entry,entry['path']
                 index['locks'].append(relative)
+    extra='runs/R19/design-contract-audit-lock.json'
+    if (ROOT/extra).exists() and extra not in index['locks']:
+        for entry in json.loads((ROOT/extra).read_text(encoding='utf-8'))['files']:
+            assert row(ROOT/entry['path'])==entry,entry['path']
+        index['locks'].append(extra)
     ctl.write_json(ROOT/'state/revision-locks.json',index)
     # These catalogs previously used CRLF. Keep their existing Git style so
     # a two-entry update does not introduce thousands of unrelated line changes.
