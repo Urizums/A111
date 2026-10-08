@@ -8065,8 +8065,29 @@
           "assertion": "Fresh builder uses only specified candidate/own request/raw; produces usable handoff covering data, research, baseline, justified methods, actual experiments, receiving checks and full Chinese paper."
         }
       ],
-      "status": "in_progress",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R20/R20-03-result.json",
+          "sha256": "ff2d99de52bfb2f93b0bd92773ee1fc72765161989ad9b613bc5ef54bd2440b4"
+        },
+        {
+          "path": "runs/R20/design-lock.json",
+          "sha256": "3d721f6d0fe74cb502c92691f2072af209127d48048e1e22a420f46738e1337f"
+        },
+        {
+          "path": "runs/R20/design/HANDOFF.md",
+          "sha256": "d5675d4387966776a6bc469cd4da9265a4b6cdc3b851e7846406824f68f5978e"
+        },
+        {
+          "path": "runs/R20/design/REPORT.md",
+          "sha256": "1b5b60299036ea6cd8cb0f36ec8174fe3cda6b60a033e450faa46a7cb8df0aa2"
+        },
+        {
+          "path": "runs/R20/coordination/design-reception-check-command.json",
+          "sha256": "038e7317389c628150aa6946795edc34574569d928e0c1beb124867c0c3a8829"
+        }
+      ],
       "attempts": [
         {
           "id": "R20-03-1",
@@ -8086,14 +8107,41 @@
             "path": "runs/R20/coordination/data-generation-command.json",
             "sha256": "d7487f3386582aeb2b39fa16615f75e8363de1a89dc40999d61589cd4f41c3da"
           },
-          "status": "in_progress",
-          "execution_policy_hash": "7141d7d2648a10428aaeb998ef6fcca632e7918d43957b5587049a1a532fc271"
+          "status": "done",
+          "execution_policy_hash": "7141d7d2648a10428aaeb998ef6fcca632e7918d43957b5587049a1a532fc271",
+          "ended_at": "2026-10-08T19:23:32.813156+00:00",
+          "result": {
+            "path": "runs/R20/R20-03-result.json",
+            "sha256": "ff2d99de52bfb2f93b0bd92773ee1fc72765161989ad9b613bc5ef54bd2440b4"
+          },
+          "evidence": [
+            {
+              "path": "runs/R20/R20-03-result.json",
+              "sha256": "ff2d99de52bfb2f93b0bd92773ee1fc72765161989ad9b613bc5ef54bd2440b4"
+            },
+            {
+              "path": "runs/R20/design-lock.json",
+              "sha256": "3d721f6d0fe74cb502c92691f2072af209127d48048e1e22a420f46738e1337f"
+            },
+            {
+              "path": "runs/R20/design/HANDOFF.md",
+              "sha256": "d5675d4387966776a6bc469cd4da9265a4b6cdc3b851e7846406824f68f5978e"
+            },
+            {
+              "path": "runs/R20/design/REPORT.md",
+              "sha256": "1b5b60299036ea6cd8cb0f36ec8174fe3cda6b60a033e450faa46a7cb8df0aa2"
+            },
+            {
+              "path": "runs/R20/coordination/design-reception-check-command.json",
+              "sha256": "038e7317389c628150aa6946795edc34574569d928e0c1beb124867c0c3a8829"
+            }
+          ]
         }
       ],
       "repairs_used": 0,
       "repair_limit": null,
       "blocker": null,
-      "next_action": "新上下文构建可交接数据工作流",
+      "next_action": "R20-04: distinct fresh executor actually consumes frozen design through full paper, then independent reception.",
       "execution_policy": {
         "mode": "progress_guard",
         "source": {
@@ -8135,9 +8183,31 @@
           "assertion": "Different fresh executor consumes frozen workflow to code/results/complete Chinese paper and final PDF; fresh reviewer actually checks original goal/data/metrics, leakage/fair comparison where relevant, scientific explanation and output fidelity; first failures and informed revisions separate."
         }
       ],
-      "status": "planned",
+      "status": "in_progress",
       "evidence": [],
-      "attempts": [],
+      "attempts": [
+        {
+          "id": "R20-04-1",
+          "started_at": "2026-10-08T19:23:32.824648+00:00",
+          "requirements_hash": "4946d6f58f52d68acc618a093dc4423108414d5d28230476aa16c66288a72a3e",
+          "inputs": [
+            {
+              "path": "runs/R20/PLAN.md",
+              "sha256": "c2b24bad90624d3d0a7567e22a6c8b1b657779a9e73f264eaba77cf0ea52d32e"
+            },
+            {
+              "path": "runs/R19/final/candidate/C12-lock.json",
+              "sha256": "4fccaa677c0319502ed0a7f5bc897757e05f0bc72cf8de799e0154d61bb39f66"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R20/coordination/design-reception-check-command.json",
+            "sha256": "038e7317389c628150aa6946795edc34574569d928e0c1beb124867c0c3a8829"
+          },
+          "status": "in_progress",
+          "execution_policy_hash": "7141d7d2648a10428aaeb998ef6fcca632e7918d43957b5587049a1a532fc271"
+        }
+      ],
       "repairs_used": 0,
       "repair_limit": null,
       "blocker": null,
@@ -8320,9 +8390,15 @@
     ],
     "current_native_pending": [
       {
-        "worker": "/root/r20_builder",
+        "worker": "/root/r20_executor",
         "state": "running",
-        "evidence": "runs/R20/coordination/r20_builder-running-1.json",
+        "evidence": "runs/R20/coordination/r20_executor-running-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "running",
+        "evidence": "runs/R20/coordination/r20_acceptor-running-3.json",
         "actual_model": null
       }
     ],
@@ -8675,9 +8751,15 @@
     "next_prospective_plan": "runs/R18/PLAN.md",
     "native_pending_current": [
       {
-        "worker": "/root/r20_builder",
+        "worker": "/root/r20_executor",
         "state": "running",
-        "evidence": "runs/R20/coordination/r20_builder-running-1.json",
+        "evidence": "runs/R20/coordination/r20_executor-running-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "running",
+        "evidence": "runs/R20/coordination/r20_acceptor-running-3.json",
         "actual_model": null
       }
     ],
@@ -8693,19 +8775,19 @@
     "current_task_process_state": "R20 original data trial; actual pending actors recorded separately.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R19/publication/observation-40.json",
-    "current_source_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
+    "current_publication": "runs/R19/publication/observation-41.json",
+    "current_source_commit": "d53acd6c94f22d01b03544730faccfa5b82787a3",
     "current_source_ci": [
       {
         "conclusion": "",
-        "databaseId": 37826234607,
-        "headSha": "ca282442b11d63cf14d4fe8128c8cb552581e040",
+        "databaseId": 37831075599,
+        "headSha": "d53acd6c94f22d01b03544730faccfa5b82787a3",
         "status": "in_progress",
-        "url": "https://github.com/Urizums/A111/actions/runs/37826234607",
+        "url": "https://github.com/Urizums/A111/actions/runs/37831075599",
         "workflowName": "Cloud delivery validation"
       }
     ],
-    "current_source_ci_observed": "2026-10-08T18:43:45.385986+00:00",
+    "current_source_ci_observed": "2026-10-08T19:20:26.888486+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
     "R19_current_level": 4,
@@ -8927,7 +9009,7 @@
       "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
       "current_source_ci_observed": "success"
     },
-    "current_frontier_task": "R20-03",
+    "current_frontier_task": "R20-04",
     "R19_publication_status": "source_pushed_observed",
     "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
@@ -9385,8 +9467,15 @@
         "state": "completed",
         "evidence": "runs/R20/coordination/r20_acceptor-completed-2.json",
         "actual_model": null
+      },
+      {
+        "worker": "/root/r20_builder",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_builder-completed-1.json",
+        "actual_model": null
       }
-    ]
+    ],
+    "R20_design_lock": "runs/R20/design-lock.json"
   },
   "events": [
     {
@@ -12084,6 +12173,11 @@
       "at": "2026-10-08T18:58:38.293731+00:00",
       "command": "R20_terminal_source_ci_observation",
       "evidence": "runs/R20/source-ci-observation-2-command.json"
+    },
+    {
+      "at": "2026-10-08T19:20:26.888500+00:00",
+      "command": "observe_R19_main_publication",
+      "evidence": "runs/R19/publication/observation-41.json"
     }
   ],
   "task_expansion_basis": [

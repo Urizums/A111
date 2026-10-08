@@ -1,0 +1,38 @@
+{
+  "task_id": "R20-03",
+  "attempt_id": "R20-03-1",
+  "requirements_hash": "6f2f744f68ac09c4cb97d0b6c8243900d271ea36e131350aba2e2b6f6ec7adf1",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R20/design-lock.json",
+        "runs/R20/design/HANDOFF.md",
+        "runs/R20/design/REPORT.md",
+        "runs/R20/coordination/design-reception-check-command.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Fresh sparse-request reusable data workflow design",
+    "hypothesis": "C12 can guide a usable source-aware research-to-paper handoff on original data.",
+    "baseline": "Source-bound synthetic raw/request; scoped spring and C12 toy evidence retained.",
+    "conditions": "Fresh builder, only specified C12/request/raw; author audit and finite one-day smoke; root reads full design.",
+    "observations": {
+      "workflow_docs": 5,
+      "frozen_files": 26,
+      "raw_audit": true,
+      "bounded_smoke": "one day 96 keys",
+      "informed_acceptor_preparation": "Separate source-interface v2, never sent to builder",
+      "full_paper": false,
+      "independent_formal_acceptance": false
+    },
+    "limits": "Usable design only. Not independently accepted full solution or model-performance proof. Historical weather/promotion and holiday transfer limitations explicit.",
+    "metrics": {
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R20-04: distinct fresh executor actually consumes frozen design through full paper, then independent reception."
+}

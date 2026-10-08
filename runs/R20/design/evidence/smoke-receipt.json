@@ -1,0 +1,114 @@
+{
+  "scope": "One future date, simple point baseline; no model selection, interval calibration, held-out loss, optimality or full paper.",
+  "origin": "2026-09-30T18:00:00",
+  "date": "2026-10-01",
+  "rows": 96,
+  "total_q_units": 1326,
+  "procurement_yuan": "4652",
+  "capacity_slack_units": 274,
+  "budget_slack_yuan": "1348",
+  "loss_at_point_baseline_yuan": "30.37499999999999840",
+  "loss_excludes_procurement": true,
+  "bad_plan_receiving_checks": [
+    {
+      "case": "negative",
+      "rejected": true,
+      "reason": "quantity bound"
+    },
+    {
+      "case": "fraction",
+      "rejected": true,
+      "reason": "non-integer or nonfinite quantity"
+    },
+    {
+      "case": "nan",
+      "rejected": true,
+      "reason": "non-integer or nonfinite quantity"
+    },
+    {
+      "case": "cap",
+      "rejected": true,
+      "reason": "quantity bound"
+    },
+    {
+      "case": "capacity",
+      "rejected": true,
+      "reason": "capacity",
+      "total_units": 5280,
+      "procurement_yuan": "18480"
+    },
+    {
+      "case": "budget",
+      "rejected": true,
+      "reason": "budget",
+      "total_units": 1320,
+      "procurement_yuan": "6600"
+    }
+  ],
+  "late_report_boundary": {
+    "rejected_2026_09_30_rows": 96,
+    "included_2026_09_30_labels": 0
+  },
+  "historical_availability": [
+    {
+      "origin": "2026-07-31T18:00:00",
+      "weather_forecast_days": [
+        "2026-08-01"
+      ],
+      "known_promotion_keys": 960,
+      "expected_horizon_keys": 1344,
+      "train_latest_labels_changed_later": 19
+    },
+    {
+      "origin": "2026-08-14T18:00:00",
+      "weather_forecast_days": [
+        "2026-08-15"
+      ],
+      "known_promotion_keys": 960,
+      "expected_horizon_keys": 1344,
+      "train_latest_labels_changed_later": 12
+    },
+    {
+      "origin": "2026-08-28T18:00:00",
+      "weather_forecast_days": [
+        "2026-08-29"
+      ],
+      "known_promotion_keys": 960,
+      "expected_horizon_keys": 1344,
+      "train_latest_labels_changed_later": 18
+    },
+    {
+      "origin": "2026-09-11T18:00:00",
+      "weather_forecast_days": [
+        "2026-09-12"
+      ],
+      "known_promotion_keys": 960,
+      "expected_horizon_keys": 1344,
+      "train_latest_labels_changed_later": 17
+    },
+    {
+      "origin": "2026-09-16T18:00:00",
+      "weather_forecast_days": [
+        "2026-09-17"
+      ],
+      "known_promotion_keys": 960,
+      "expected_horizon_keys": 1344,
+      "train_latest_labels_changed_later": 14
+    }
+  ],
+  "calendar_holiday_dates": [
+    "2026-06-19",
+    "2026-09-25",
+    "2026-10-01",
+    "2026-10-02",
+    "2026-10-03",
+    "2026-10-04",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-07"
+  ],
+  "training_holiday_keys": 192,
+  "weather_features_used": false,
+  "promo_features_used": false,
+  "independent_acceptance": false
+}

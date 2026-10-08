@@ -1,0 +1,58 @@
+{
+  "schema": "r20-designer-checkpoint/1",
+  "task_id": "R20-design",
+  "owner": "root/r20_builder",
+  "write_boundary": "runs/R20/design/",
+  "input_lock": "runs/R20/input-lock.json",
+  "source_skill_lock": "runs/R19/final/candidate/C12-lock.json",
+  "delivery_type": "workflow_design_with_bounded_real_audit_and_smoke",
+  "state": "design_produced_and_author_checked; root_freeze_and_fresh_execution_pending",
+  "entry": "runs/R20/design/forge-freshfood-flow/SKILL.md",
+  "handoff": "runs/R20/design/HANDOFF.md",
+  "report": "runs/R20/design/REPORT.md",
+  "manifest": "runs/R20/design/manifest.json",
+  "performed": [
+    "Read original request/problem and all raw CSV rows",
+    "Actual source bytes and input/C12 lock hash matching",
+    "Availability/revision/missingness/calendar audit",
+    "One future date 96-key point baseline and feasible integer plan",
+    "Controlled rejection of late report and negative/fraction/NaN/item-limit/capacity/budget plan defects",
+    "Fresh CSV reread and raw item-cost/loss recomputation by author",
+    "Pure Markdown skill and relative-reference checks"
+  ],
+  "not_performed": [
+    "Full 14-day production model selection or forecasts/replenishment",
+    "Held-out model-performance evaluation or uncertainty calibration",
+    "Integer optimum proof",
+    "Full Chinese paper and rendered final-format verification",
+    "Clean full production rerun",
+    "Independent acceptance"
+  ],
+  "recovery": {
+    "archive_shell_construction_failures": 1,
+    "error_evidence": "runs/R20/design/evidence/archive-construction-failure.json",
+    "original_failure_start_end": null,
+    "reason_for_null": "Original host receipt did not expose UTC timestamps; no retrospective fabrication",
+    "changed_action": "Run recover_archive.py via record_command",
+    "actual_recovery_evidence": "runs/R20/design/evidence/006-archive-recovery.json",
+    "substantive_scientific_failures_observed": 0,
+    "planned_smoke_invocations": 2,
+    "controlled_bad_artifacts_are_tests_not_solver_failures": true
+  },
+  "capabilities": {
+    "native_python_3_12_utf8_stdlib": "observed",
+    "production_solver": null,
+    "production_numeric_libraries": null,
+    "Chinese_paper_renderer": null,
+    "fresh_executor": null
+  },
+  "telemetry": {"model": null, "tokens": null, "cost": null},
+  "unresolved_host_calls": [],
+  "next": {
+    "owner": "root",
+    "task_id": "NEXT->T01",
+    "state": "pending_actual_start",
+    "action": "Freeze complete design bytes, then dispatch fresh executor with HANDOFF.md and original raw inputs; assign execution write domain."
+  },
+  "stop_policy": "Designer stops writing after terminal handoff; waiting for root freeze. No background task or submission claimed."
+}

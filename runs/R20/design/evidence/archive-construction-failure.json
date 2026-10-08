@@ -1,0 +1,17 @@
+{
+  "schema": "r20-host-construction-event/1",
+  "category": "tool_environment_recovery",
+  "action": "Reconstruct source archive for invocation 003 via inline Python",
+  "actual_argv_at_shell_boundary": "py -3.12 -X utf8 -B -c \"from pathlib import Path; p=Path('runs/R20/design/research/smoke.py'); s=p.read_text(encoding='utf-8'); a=s.index(\\\"    for name in ['capacity','budget']:\\\"); b=s.index(\\\"    assert len([r for r in raw\\\",a); Path('runs/R20/design/research/smoke-invocation-003.py').write_text(s[:a]+s[b:],encoding='utf-8')\"",
+  "cwd": "C:/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+  "host_receipt_chunk_id": "06939b",
+  "host_receipt_wall_time_seconds": 0.3525355,
+  "begin": null,
+  "end": null,
+  "timestamps_limit": "UTC begin/end not exposed by the original host tool receipt; do not retroactively invent them.",
+  "exit_code": 1,
+  "complete_host_output": "ParserError: \r\nLine |\r\n   2 |  �� e in ['capacity','budget']:\\\"); b=s.index(\\\"    assert len([r for r i ��\r\n     |                                                                 ~\r\n     | Missing ] at end of attribute or type literal.\r\n",
+  "python_child_started": false,
+  "artifact_written": false,
+  "recovery_change": "Use recover_archive.py file instead of nested inline quoting; record actual execution with record_command."
+}
