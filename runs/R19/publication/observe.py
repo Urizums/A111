@@ -25,7 +25,7 @@ with ctl.locked(ROOT):
     state['events'].append(dict(at=ctl.stamp(),command='observe_R19_main_publication',evidence=evidence))
     ctl.write_json(ROOT/'state/continuation.json',state);ctl.synchronize(ROOT,state)
     cp=json.loads((ROOT/'state/checkpoint.json').read_text(encoding='utf-8'))
-    cp.update(current_report='runs/R19/REPORT.md',publication_evidence=evidence,current_source_commit=a.commit,
+    cp.update(current_report=state['execution'].get('current_report','runs/R19/REPORT.md'),publication_evidence=evidence,current_source_commit=a.commit,
         current_source_ci=runs,next_action=checkpoint_before['next_action'])
     # Publishing a snapshot does not change the actual trial frontier or next action.
     ctl.write_json(ROOT/'state/checkpoint.json',cp)
