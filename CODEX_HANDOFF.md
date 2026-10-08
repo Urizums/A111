@@ -1,6 +1,6 @@
 # Codex 当前研发交接
 
-R19最新现场：L1–L3完整诊断done，首次失败/partial保留。L3同一原作者354文件知情修订及同一原reviewer4271文件正式知情复审分别冻结；当前a1–a5 pass、a6 partial，科学记号及完整中文论证通过，旧三CLI原流/PID缺失和两次并发目标偏离不可补回。当前六维4achieved/2partial，不宣称全门通过；原首次a5 fail/a6 partial不变。L4已由中性输入检查和实际任务启动接续，新executor已实际完成原件审计/真实小烟测并进入全量求解，独立reviewer17文件原件/方法准备终态冻结，25小控制通过但生产判定为空，等待正式成稿。四层C11不改，语言、数值、图表、实验及职责质量共同验收，不期待后续AI补齐本轮实质缺陷。源02b0a946已上传，CI实际观察见checkpoint/publication；后续4271文件复审及L4启动现场待本次发布。当前证据见runs/R19/REPORT.md、TODO.md和state/checkpoint.json，仓库CI不替代论文验收。
+R19最新现场：L1–L3完整诊断done，首次失败/partial保留。L3同一原作者354文件知情修订及同一原reviewer4271文件正式知情复审分别冻结；当前a1–a5 pass、a6 partial，完整中文论证/PDF科学记号通过，旧调用/并发缺口不补造。L4原executor额度中断后经用户continue和当前ordinaryUsageAllowed=true接续同一actor，先核对旧调用/已完成实验再补完整论文；独立reviewer17文件准备已冻结、25小控制通过但未接收生产。四层C11不改，语言、数值、图表、实验与职责质量共同验收，不推给后续AI补齐。main当前3c732fbb，对应CI 37736667345实际success；前提交dc621f9遗漏复审锁导致CI失败及修复记录保留。当前前沿见runs/R19/REPORT.md、TODO.md和state/checkpoint.json，仓库CI不替代论文验收。
 
 最新用户范围为R19：只测试Level1–4，依次制作可转交工作流、由新上下文执行至完整论文、再由独立上下文实质验收；5–8不启动。新C11纯文档候选在runs/R19/candidate/C11/forge-agent-flow/，增加从论文核心结论倒推证据及执行者可用性的设计要求；尚未完整行为验收，不替代C10已交付状态。四层使用同一官方修订D题原始PDF/DOCX/XLSX、同一C11与用户原层级文本（只规范排版），不发给生产者共用的高信息验收表，不读取旧解法/论文或其他层结果。统一独立验收与六维质量诊断已在论文执行前冻结。当前实质前沿、实际actor和论文状态见runs/R19/TODO.md及state/checkpoint.json。R19是新授权前瞻试验，原50份任务/所有失败/锁/计数保留；R16/R18完整旧试解仍未通过。工作流/代码/论文均属试验产物，算法脚本不进入技能包；不声明奖项或虚构评分。顺序试验完成与各层原题/论文质量通过分开记录。
 

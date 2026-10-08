@@ -52,3 +52,7 @@
 - 源dc621f9的CI 37736189267实际失败：本地完整身份检查读到了未提交的L3/review/recheck-final-1-lock.json，但暂存选择器只遍历L3顶层及final目录，遗漏嵌套review中的锁本身，远端fresh checkout因此缺文件。Windows作业success、Python3.10身份检查fail、3.12矩阵作业cancelled，不能称全CI通过。冻结锁字节未改；补齐该原锁并给选择器增加全部revision索引/文件的Git跟踪覆盖检查，另次提交和CI验证；原失败/日志保留，不重跑论文或改其科学判定。
 
 - 新覆盖检查首轮使用Git普通行式ls-files，中文路径被转义成带引号文本，产生旧R16中文PDF未跟踪的假警报；锁/文件实际未变。失败回执保留，改用Git原生NUL分隔-z读取确切UTF-8文件名，避免按显示文本判身份。
+
+- verify_git_snapshot实际从已提交对象核对4341新增冻结文件/2819不同blob，35注册锁及所有指向路径存在，修订3c732fb通过；对旧dc621f9实际缺锁版本的同一检查exit1拒绝，是有意负控制而非待修新错误。相关回执保留，仍不代替论文/运行验收。
+
+- L4资源接续时root只读猜测execution/logs/resource-resume.json，实际不存在，原工具失败保留；已读取真实events.jsonl中的资源事件，不从不存在文件推断未发生接续，不重复猜路径。此错误仅是协调读取，作者计数/预算和冻结源不改。

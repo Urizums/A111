@@ -1,6 +1,6 @@
 # Codex 接续入口
 
-R19最新现场：L1–L3完整诊断done，首次失败/partial保留。L3同一原作者354文件知情修订及同一原reviewer4271文件正式知情复审分别冻结；当前a1–a5 pass、a6 partial，科学记号及完整中文论证通过，旧三CLI原流/PID缺失和两次并发目标偏离不可补回。当前六维4achieved/2partial，不宣称全门通过；原首次a5 fail/a6 partial不变。L4已由中性输入检查和实际任务启动接续，新executor已实际完成原件审计/真实小烟测并进入全量求解，独立reviewer17文件原件/方法准备终态冻结，25小控制通过但生产判定为空，等待正式成稿。四层C11不改，语言、数值、图表、实验及职责质量共同验收，不期待后续AI补齐本轮实质缺陷。源02b0a946已上传，CI实际观察见checkpoint/publication；后续4271文件复审及L4启动现场待本次发布。当前证据见runs/R19/REPORT.md、TODO.md和state/checkpoint.json，仓库CI不替代论文验收。
+R19最新现场：L1–L3完整诊断done，首次失败/partial保留。L3同一原作者354文件知情修订及同一原reviewer4271文件正式知情复审分别冻结；当前a1–a5 pass、a6 partial，完整中文论证/PDF科学记号通过，旧调用/并发缺口不补造。L4原executor额度中断后经用户continue和当前ordinaryUsageAllowed=true接续同一actor，先核对旧调用/已完成实验再补完整论文；独立reviewer17文件准备已冻结、25小控制通过但未接收生产。四层C11不改，语言、数值、图表、实验与职责质量共同验收，不推给后续AI补齐。main当前3c732fbb，对应CI 37736667345实际success；前提交dc621f9遗漏复审锁导致CI失败及修复记录保留。当前前沿见runs/R19/REPORT.md、TODO.md和state/checkpoint.json，仓库CI不替代论文验收。
 
 成品方向为Forge meta-workflow，当前候选C10是九份纯文档：
 [技能入口](runs/R17/candidate/C10/forge-agent-flow/SKILL.md)、
