@@ -1,0 +1,21 @@
+{
+  "builder": {
+    "actual_creation_return": {"task_name": "/root/r20_builder"},
+    "fresh_context": true,
+    "reads": ["runs/R20/inputs/", "runs/R20/input-lock.json", "runs/R19/final/candidate/C12/forge-agent-flow/", "runs/R19/final/candidate/C12-lock.json", "AGENTS.md", "scripts/record_command.py"],
+    "writes": ["runs/R20/design/"],
+    "withheld": ["evaluation", "holdout_truth", "generator", "previous solutions/diagnoses", "shared synthesis"],
+    "model": null, "tokens": null, "cost": null
+  },
+  "acceptor": {
+    "actual_creation_return": {"task_name": "/root/r20_acceptor"},
+    "fresh_context": true,
+    "requested_configuration": {"model": "gpt-6-luna", "reasoning_effort": "high", "basis": "AGENTS.md available Luna for independent verification"},
+    "actual_model": null, "tokens": null, "cost": null,
+    "reads": ["runs/R20/inputs/", "runs/R20/input-lock.json", "runs/R20/evaluation/ACCEPTANCE.md", "runs/R20/evaluation-lock.json", "AGENTS.md", "scripts/record_command.py"],
+    "writes": ["runs/R20/review/preparation/"],
+    "preparation_withheld": ["holdout_truth.csv", "generation.json", "design", "execution", "prior solutions/diagnoses"],
+    "formal_gate_status": "unverified until actual frozen production reception"
+  },
+  "scope_note": "Local read/write contracts are coordination, not filesystem isolation. Root serializes shared state. No original Level5–8 trial launched."
+}

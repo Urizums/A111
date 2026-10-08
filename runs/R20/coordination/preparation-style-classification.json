@@ -1,0 +1,8 @@
+{
+  "original_failed_receipt": "runs/R20/coordination/preparation-style-command.json",
+  "actual_failure": ["runs/R20/review/preparation/raw_audit.py:73 extra EOF blank line", "runs/R20/review/preparation-v2/raw_audit_v2.py:81 extra EOF blank line"],
+  "classification": "Optional EOF formatting in frozen receiver preparation, not a domain gate or scientific rejection.",
+  "action": "Keep frozen exact bytes and failed receipt; check all other changed source with default whitespace, these two with EOF-only exception while retaining trailing-space/indent checks.",
+  "mandatory_d1_d5_unchanged": true,
+  "navigation_format_recovery": "Native header updater introduced CRLF into LF navigation/project records. Preserve actual first history, then restore existing HEAD newline style for mutable records only; no actor/immutable input rewrite."
+}

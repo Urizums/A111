@@ -1,0 +1,40 @@
+{
+  "task_id": "R20-02",
+  "attempt_id": "R20-02-1",
+  "requirements_hash": "f86f585ba72359dc129461280a45c578f44d8568e63f4db0e0dadc84c08a58f5",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R20/input-lock.json",
+        "runs/R20/evaluation-lock.json",
+        "runs/R20/coordination/data-generation-command.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "冻结原创数据任务、稀疏请求和独立验收",
+    "hypothesis": "Source-bound preparation supports the next actual workflow step.",
+    "baseline": "Previous scoped spring/C12 reception and immutable history retained.",
+    "conditions": "Offline original data; source policy unknowns do not imply participation permission.",
+    "observations": {
+      "frozen": {
+        "audit": 5,
+        "inputs": 9,
+        "evaluation": 3
+      },
+      "raw_history_report_rows": 17577,
+      "holdout_rows": 1344,
+      "independent_criteria": 5,
+      "future_truth_withheld_from_production": true,
+      "request": "single sparse request, not new Level5–8 trial"
+    },
+    "limits": "Preparation acceptance only; not paper quality, formal compliance, prize or future performance.",
+    "metrics": {
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R20-03: fresh builder consumes only C12/request/problem/raw/input lock."
+}

@@ -1,0 +1,24 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "runs/R20/review/preparation/raw_audit.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T19:09:46.946835+00:00",
+    "monotonic_ns": 106018656000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T19:09:47.126948+00:00",
+    "monotonic_ns": 106018843000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\review\\preparation\\raw_audit.py\", line 36, in <module>\r\n    future=[r for r in demand if parse_dt(r.get('available_at','')) and parse_dt(r['available_at']) > cutoff]\r\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: can't compare offset-naive and offset-aware datetimes\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMFxyZXZpZXdccHJlcGFyYXRpb25ccmF3X2F1ZGl0LnB5IiwgbGluZSAzNiwgaW4gPG1vZHVsZT4NCiAgICBmdXR1cmU9W3IgZm9yIHIgaW4gZGVtYW5kIGlmIHBhcnNlX2R0KHIuZ2V0KCdhdmFpbGFibGVfYXQnLCcnKSkgYW5kIHBhcnNlX2R0KHJbJ2F2YWlsYWJsZV9hdCddKSA+IGN1dG9mZl0NCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXg0KVHlwZUVycm9yOiBjYW4ndCBjb21wYXJlIG9mZnNldC1uYWl2ZSBhbmQgb2Zmc2V0LWF3YXJlIGRhdGV0aW1lcw0K"
+}

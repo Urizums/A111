@@ -1,0 +1,36 @@
+{
+  "task_id": "R20-01",
+  "attempt_id": "R20-01-1",
+  "requirements_hash": "276824fc13cd7091c7369ebb7ea5010858c243eb9985839cae1b1cc4cc34f0e8",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R20/first-audit-lock.json",
+        "runs/R20/supplement-audit-1-lock.json",
+        "runs/R20/supplement-audit-2-lock.json",
+        "runs/R20/research/supplement-audit-2/DECISION.md"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "核实当前官方赛事、规则与原始数据状态",
+    "hypothesis": "Source-bound preparation supports the next actual workflow step.",
+    "baseline": "Previous scoped spring/C12 reception and immutable history retained.",
+    "conditions": "Offline original data; source policy unknowns do not imply participation permission.",
+    "observations": {
+      "current_platform_link_verified": true,
+      "current_platform_body": "unavailable in actual read",
+      "exact_supplements": "unresolved",
+      "current_contest_data": "not acquired",
+      "offline_original_trial_allowed": true
+    },
+    "limits": "Preparation acceptance only; not paper quality, formal compliance, prize or future performance.",
+    "metrics": {
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R20-02: freeze explicitly original data and external acceptance, then fresh builder."
+}

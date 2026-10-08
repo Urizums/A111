@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-08T18:58:38.355134+00:00",
+  "updated_at": "2026-10-08T19:15:36.729256+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Inspect branch-specific blockers and the independent ready queue.",
+  "next_action": "R20-03: continue original data workflow to independent reception; retain policy unknowns and old failures.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -28,7 +28,7 @@
   "provider_tokens": null,
   "provider_cost": null,
   "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
-  "termination": "phase_result_and_actual_successor_first_step_saved_no_live_actor",
+  "termination": null,
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
@@ -213,7 +213,14 @@
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
-    "current_native_pending": [],
+    "current_native_pending": [
+      {
+        "worker": "/root/r20_builder",
+        "state": "running",
+        "evidence": "runs/R20/coordination/r20_builder-running-1.json",
+        "actual_model": null
+      }
+    ],
     "current_native_completed": [
       {
         "worker": "/root/r08_simple",
@@ -561,7 +568,14 @@
     ],
     "R17_status": "delivered_policy_with_actual_R18_first_step",
     "next_prospective_plan": "runs/R18/PLAN.md",
-    "native_pending_current": [],
+    "native_pending_current": [
+      {
+        "worker": "/root/r20_builder",
+        "state": "running",
+        "evidence": "runs/R20/coordination/r20_builder-running-1.json",
+        "actual_model": null
+      }
+    ],
     "completed_native_R18": [
       {
         "worker": "/root/r16_original_solution",
@@ -571,7 +585,7 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "No live actors/pending calls. Actual first official audit and bounded supplement search saved; R20-01 remains incomplete, not a background scheduler.",
+    "current_task_process_state": "R20 original data trial; actual pending actors recorded separately.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
     "current_publication": "runs/R19/publication/observation-40.json",
@@ -808,7 +822,7 @@
       "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
       "current_source_ci_observed": "success"
     },
-    "current_frontier_task": "R20-01",
+    "current_frontier_task": "R20-03",
     "R19_publication_status": "source_pushed_observed",
     "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
@@ -1251,7 +1265,23 @@
       "status": "completed",
       "url": "https://github.com/Urizums/A111/actions/runs/37826234607"
     },
-    "receipt_metadata_commit_pending": true
+    "receipt_metadata_commit_pending": true,
+    "R20_preparation_bridge": "One actual data generation, not separate solver runs.",
+    "R20_status": "current-source-audit-closed-with-unknowns_original-data-trial",
+    "completed_native_R20": [
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_acceptor-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_acceptor-completed-2.json",
+        "actual_model": null
+      }
+    ]
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -1270,7 +1300,14 @@
     "runs/future/versioned_preset_catalog/independent/completed-return.json",
     "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
-  "current_native_pending": [],
+  "current_native_pending": [
+    {
+      "worker": "/root/r20_builder",
+      "state": "running",
+      "evidence": "runs/R20/coordination/r20_builder-running-1.json",
+      "actual_model": null
+    }
+  ],
   "unpublished_work": true,
   "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
   "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
@@ -1474,7 +1511,7 @@
   "receipt_commit_pending_at_this_snapshot": true,
   "R19_status": "closed_with_actual_R20_first_step",
   "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
-  "current_frontier_task": "R20-01",
+  "current_frontier_task": "R20-03",
   "current_source_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
   "current_source_ci": [
     {
@@ -1488,7 +1525,7 @@
   ],
   "current_user_language_steering": "runs/R19/levels/L3/resource-language-resumption-1.json",
   "frozen_four_level_candidate": "runs/R19/candidate/C11-lock.json",
-  "R20_status": "actual_official_first_audit_in_progress",
+  "R20_status": "current-source-audit-closed-with-unknowns_original-data-trial",
   "candidate_status": "C12_scoped_forward_first_reception_pass",
   "handback": "runs/R20/handback.json",
   "actual_lease_release": "runs/R20/lease-release-observation.json",
