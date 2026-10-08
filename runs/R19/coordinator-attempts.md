@@ -48,3 +48,7 @@
 - L3终态暂存选择器首次把自身尚在运行的publication命令回执选入候选；写索引前assert拒绝，实际未暂存任何文件。原失败l3-close-safe-stage-command.json保留。对publication顶层同样先排除started回执，再另存恢复调用，不更改冻结生产/审查文件。
 
 - L4冻结准备的source-readback.txt第77行是原DOCX空段落的实际转录“DOCX P22: ”，Git文本样式检查报尾空格。保留转录/锁原字节，只将此原件读回证据从样式检查排除；其余文档/程序继续检查。这不降低几何、论文或独立验收门槛。
+
+- 源dc621f9的CI 37736189267实际失败：本地完整身份检查读到了未提交的L3/review/recheck-final-1-lock.json，但暂存选择器只遍历L3顶层及final目录，遗漏嵌套review中的锁本身，远端fresh checkout因此缺文件。Windows作业success、Python3.10身份检查fail、3.12矩阵作业cancelled，不能称全CI通过。冻结锁字节未改；补齐该原锁并给选择器增加全部revision索引/文件的Git跟踪覆盖检查，另次提交和CI验证；原失败/日志保留，不重跑论文或改其科学判定。
+
+- 新覆盖检查首轮使用Git普通行式ls-files，中文路径被转义成带引号文本，产生旧R16中文PDF未跟踪的假警报；锁/文件实际未变。失败回执保留，改用Git原生NUL分隔-z读取确切UTF-8文件名，避免按显示文本判身份。

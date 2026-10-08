@@ -31,6 +31,7 @@ for path in (ROOT / 'runs/R19/levels/L3/review/recheck-final-1').rglob('*'):
     if path.is_file():
         assert '__pycache__' not in path.parts
         paths.add(path.relative_to(ROOT).as_posix())
+paths.add('runs/R19/levels/L3/review/recheck-final-1-lock.json')
 preparation_lock = json.loads((ROOT / 'runs/R19/levels/L4/review/preparation-lock.json').read_text(encoding='utf-8'))
 for entry in preparation_lock['files']:
     paths.add(entry['path'])
@@ -51,5 +52,12 @@ for relative in staged:
     assert not relative.startswith('runs/R19/levels/L4/execution/')
     if relative.startswith('runs/R19/levels/L4/review/'):
         assert relative == 'runs/R19/levels/L4/review/preparation-lock.json' or relative.startswith('runs/R19/levels/L4/review/preparation/')
+tracked = set(subprocess.check_output(['git', '-c', 'core.longpaths=true', 'ls-files', '-z'],
+                                     cwd=ROOT, encoding='utf-8').split('\0'))
+index = json.loads((ROOT / 'state/revision-locks.json').read_text(encoding='utf-8'))
+for relative in index['locks']:
+    assert relative in tracked, ('Unstaged revision lock', relative)
+    for entry in json.loads((ROOT / relative).read_text(encoding='utf-8'))['files']:
+        assert entry['path'] in tracked, ('Unstaged frozen file', entry['path'])
 print(json.dumps({'selected_files': len(ordered), 'staged_changes': len(staged),
-                  'live_L4_and_lease_excluded': True}))
+                  'live_L4_and_lease_excluded': True, 'revision_index_paths_present': True}))
