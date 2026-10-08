@@ -1,0 +1,96 @@
+{
+  "gap": 3,
+  "pressure": 500,
+  "run_seconds": 120,
+  "declared_phase_window_seconds": 900,
+  "memory_target_MB": 1800,
+  "reserve_support": true,
+  "fragile_priority": 3,
+  "method": "maxrect",
+  "seed": 11,
+  "alpha": 1,
+  "data_sha256": "f1624f0f0f873f98160f3c2ffdccd75112878dbd5fd682c344ec37be8e8e5d1c",
+  "task_id": "Q1-S1",
+  "instance": {
+    "cargo": [
+      {
+        "cargo_type": "G1",
+        "category": "standard",
+        "l_cm": 60,
+        "w_cm": 40,
+        "h_cm": 30,
+        "weight_kg": 12,
+        "quantity": 800,
+        "source": "附件1 表1 R2",
+        "origin": "official"
+      },
+      {
+        "cargo_type": "G2",
+        "category": "standard",
+        "l_cm": 50,
+        "w_cm": 35,
+        "h_cm": 25,
+        "weight_kg": 8,
+        "quantity": 1000,
+        "source": "附件1 表1 R3",
+        "origin": "official"
+      },
+      {
+        "cargo_type": "G3",
+        "category": "fragile",
+        "l_cm": 70,
+        "w_cm": 50,
+        "h_cm": 40,
+        "weight_kg": 15,
+        "quantity": 300,
+        "source": "附件1 表1 R4",
+        "origin": "official"
+      },
+      {
+        "cargo_type": "G4",
+        "category": "directional",
+        "l_cm": 80,
+        "w_cm": 60,
+        "h_cm": 50,
+        "weight_kg": 25,
+        "quantity": 400,
+        "source": "附件1 表1 R5",
+        "origin": "official"
+      },
+      {
+        "cargo_type": "G5",
+        "category": "directional",
+        "l_cm": 40,
+        "w_cm": 40,
+        "h_cm": 60,
+        "weight_kg": 18,
+        "quantity": 500,
+        "source": "附件1 表1 R6",
+        "origin": "official"
+      }
+    ],
+    "vehicles": [
+      {
+        "vehicle_type": "T1",
+        "l_cm": 420,
+        "w_cm": 210,
+        "h_cm": 220,
+        "capacity_kg": 6000,
+        "cost_yuan": 450,
+        "source": "附件1 P4-P6",
+        "origin": "official"
+      },
+      {
+        "vehicle_type": "T2",
+        "l_cm": 680,
+        "w_cm": 245,
+        "h_cm": 250,
+        "capacity_kg": 10000,
+        "cost_yuan": 700,
+        "source": "附件1 P8-P10",
+        "origin": "official"
+      }
+    ]
+  },
+  "algorithm_version": "columns-maxrect-v1"
+}

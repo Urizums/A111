@@ -1,0 +1,158 @@
+{
+  "phase": "completed_informed_recheck",
+  "calls": [
+    "receive.py exit0 7.1657679s tool wall",
+    "exercise_consumer.py attempt1 exit1 6.2084237s: own source dependency omission after formal CLI exit0",
+    "exercise_consumer.py recovery exit0 4.634376s: reused known terminal receipts",
+    "text_source_audit.py exit1 1.8546243s: successful audits written, GBK console print only",
+    "persisted audit read exit0; no repeated audit",
+    "PDF export wrapper exit0 1.6461674s tool wall; exporter child .9410247s",
+    "producer receipt audit and raw-input comparison synchronous exit0",
+    "seal.py terminal on normal return; no pending sessions"
+  ],
+  "runtime_receipts": "runtime/",
+  "registered_child_receipts": "consumer/execution-v2/attempts/",
+  "consumer_outer_CLI_calls": [
+    {
+      "label": "inspect-start",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\src\\receipt_cli.py",
+        "--mode",
+        "inspect"
+      ],
+      "pid": 39880,
+      "exit_code": 0,
+      "elapsed_seconds": 0.13365230000636075,
+      "stdout_sha256": "84ee24e17bed57f22e317646caad7db9b6dfd0a81d59c51aa0600ec078fc5bfb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "terminal": true,
+      "resume_from_known_terminal_receipt": true
+    },
+    {
+      "label": "formal-replay",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\src\\receipt_cli.py",
+        "--mode",
+        "replay"
+      ],
+      "pid": 35344,
+      "exit_code": 0,
+      "elapsed_seconds": 5.578952800002298,
+      "stdout_sha256": "3f5a93d90dd905d8f837fe39e07dcc42401a10828c2f26523b699f0b4a7715cf",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "terminal": true,
+      "resume_from_known_terminal_receipt": true
+    },
+    {
+      "label": "small-1",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\src\\receipt_cli.py",
+        "--mode",
+        "solver",
+        "--task",
+        "Q1-S1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\qa\\reviewer-small.json"
+      ],
+      "pid": 40156,
+      "exit_code": 0,
+      "elapsed_seconds": 0.3210183999981382,
+      "stdout_sha256": "25ba2399e0d70cd39a49a1437990eac26196da84160c40cfa9ab30ff08d38a7b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "terminal": true
+    },
+    {
+      "label": "small-2",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\src\\receipt_cli.py",
+        "--mode",
+        "solver",
+        "--task",
+        "Q1-S1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\qa\\reviewer-small.json"
+      ],
+      "pid": 27256,
+      "exit_code": 0,
+      "elapsed_seconds": 0.3384656999987783,
+      "stdout_sha256": "a6c06c9bc96c8e4df7389293a6ea6cc239688cc1139c1feff4d0e91fedfcbba5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "terminal": true
+    },
+    {
+      "label": "invalid-input",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\src\\receipt_cli.py",
+        "--mode",
+        "solver",
+        "--task",
+        "Q1-S1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\qa\\reviewer-invalid.json"
+      ],
+      "pid": 2904,
+      "exit_code": 2,
+      "elapsed_seconds": 0.3171906999996281,
+      "stdout_sha256": "ec4bdc1e2dd8847eec9b95070b1d6cd170209a782ec50194371e5baddc506e13",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "terminal": true
+    },
+    {
+      "label": "inspect-end",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\recheck-final-1\\consumer\\execution-v2\\src\\receipt_cli.py",
+        "--mode",
+        "inspect"
+      ],
+      "pid": 28676,
+      "exit_code": 0,
+      "elapsed_seconds": 0.109327400001348,
+      "stdout_sha256": "84ee24e17bed57f22e317646caad7db9b6dfd0a81d59c51aa0600ec078fc5bfb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "terminal": true
+    }
+  ],
+  "formal_CLI_seconds": 5.578952800002298,
+  "consumer_registered_numerical_children": 4,
+  "registry_probe_children": 3,
+  "PDF_export_children": 1,
+  "per_registry_child_limit_seconds": 120,
+  "timeout_probe_seconds": 0.15,
+  "outer_CLI_receipt_wait_seconds": 135,
+  "aggregate_memory_peak_bytes": null,
+  "OS_memory_enforcement": false,
+  "model": null,
+  "token_usage": null,
+  "cost": null,
+  "whole_task_deadline": null,
+  "unknown_calls_restarted": false,
+  "failures_and_recovery": "failures.json",
+  "pending_calls": [],
+  "active_self_started_processes": [],
+  "child_agents": [],
+  "all_calls_terminal_on_normal_return": true
+}

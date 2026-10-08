@@ -1,0 +1,25 @@
+[
+  {
+    "phase": "reviewer own independent-check adapter",
+    "tool_receipt": "6684bd",
+    "exit_code": 1,
+    "wall_seconds": 6.2084237,
+    "error": "FileNotFoundError: independent-source-audit.json missing beside copied independent_checker.py",
+    "cause": "Reviewer copied own checking modules but omitted their own raw-source dependency.",
+    "state_at_failure": "Consumer inspect and formal replay CLI calls already terminal exit0; each stdout/stderr and receipt retained. Registry active_child absent. No new solver pending.",
+    "repair": "Copy own immutable initial independent-source-audit.json, reuse known terminal CLI receipts rather than run six-task replay again; preserve attempt1 script.",
+    "scope": "Reviewer adapter only, not author defect or evidence against numeric solution.",
+    "old_historical_evidence_recovered": false,
+    "complete_tool_traceback_retained": "Current conversation tool output 6684bd; summarized in file without pretending a pre-existing raw stderr file."
+  },
+  {
+    "phase": "reviewer console output",
+    "tool_receipt": "3451d8",
+    "exit_code": 1,
+    "wall_seconds": 1.8546243,
+    "error": "UnicodeEncodeError: GBK console cannot encode superscript 2",
+    "actual_state": "Source, table and ordered PDF audits completed and JSON/crops written before console print; assertions passed.",
+    "recovery": "Read persisted JSON with escaped console output, without rerunning or overwriting successful audit.",
+    "author_defect": false
+  }
+]

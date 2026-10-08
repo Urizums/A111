@@ -1,0 +1,26 @@
+{
+  "coordinate": "right-rear-bottom; x forward, y left, z up",
+  "units": {
+    "length": "cm",
+    "mass": "kg",
+    "cost": "yuan/trip"
+  },
+  "tolerance_cm": 1e-07,
+  "top_gap_cm": 3,
+  "pressure_limit_kg_m2": 500,
+  "orientation": "standard and fragile: all distinct orthogonal permutations; directional: original only",
+  "support": "non-floor complete bottom coverage by one lower box; fragile support must be standard; nothing above fragile",
+  "load": "cumulative upper mass/contact area, own mass excluded at box top; single-parent vertical chains preserve mass",
+  "gravity": "uniform mass, geometric center; contained footprints guarantee directional center condition",
+  "scenario_variants": [
+    "fragile upright",
+    "fragile floor only",
+    "pressure own mass included",
+    "pressure 300/700",
+    "multi-support not exploited"
+  ],
+  "independence": "producer self-check; external review pending",
+  "unknown_model": null,
+  "unknown_tokens": null,
+  "unknown_cost": null
+}

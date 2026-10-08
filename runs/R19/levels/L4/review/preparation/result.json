@@ -1,0 +1,237 @@
+{
+  "task_id": "R19-C11-L4-independent-review-preparation",
+  "actor": "/root/r19_l4_reviewer",
+  "status": "preparation_complete_frozen",
+  "phase": "pre_production_handoff",
+  "method_frozen_before_production_access": true,
+  "production_received": false,
+  "production_read": false,
+  "production_acceptance_performed": false,
+  "production_verdict": null,
+  "mandatory": [
+    {
+      "id": "a1",
+      "status": "not_evaluated",
+      "verdict": null
+    },
+    {
+      "id": "a2",
+      "status": "not_evaluated",
+      "verdict": null
+    },
+    {
+      "id": "a3",
+      "status": "not_evaluated",
+      "verdict": null
+    },
+    {
+      "id": "a4",
+      "status": "not_evaluated",
+      "verdict": null
+    },
+    {
+      "id": "a5",
+      "status": "not_evaluated",
+      "verdict": null
+    },
+    {
+      "id": "a6",
+      "status": "not_evaluated",
+      "verdict": null
+    }
+  ],
+  "quality_diagnosis": [
+    {
+      "dimension": "problem fidelity",
+      "judgment": null,
+      "status": "not_evaluated"
+    },
+    {
+      "dimension": "mathematical justification",
+      "judgment": null,
+      "status": "not_evaluated"
+    },
+    {
+      "dimension": "empirical sufficiency and fair alternatives",
+      "judgment": null,
+      "status": "not_evaluated"
+    },
+    {
+      "dimension": "reproduction and result-to-paper traceability",
+      "judgment": null,
+      "status": "not_evaluated"
+    },
+    {
+      "dimension": "clarity and completeness of scientific argument",
+      "judgment": null,
+      "status": "not_evaluated"
+    },
+    {
+      "dimension": "workflow transferability and autonomous gap resolution",
+      "judgment": null,
+      "status": "not_evaluated"
+    }
+  ],
+  "source_identity": [
+    {
+      "path": "runs/R19/inputs/raw/2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf",
+      "size_bytes": 131983,
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d"
+    },
+    {
+      "path": "runs/R19/inputs/raw/附件1.docx",
+      "size_bytes": 14540,
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0"
+    },
+    {
+      "path": "runs/R19/inputs/raw/附件2：验证数据集.xlsx",
+      "size_bytes": 15973,
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda"
+    }
+  ],
+  "source_checks": {
+    "original_pdf_pages_direct_read": 3,
+    "original_pdf_pages_rendered_and_visually_read": 3,
+    "original_docx_paragraphs": 22,
+    "original_docx_tables": 1,
+    "original_docx_xml_inspected": true,
+    "xlsx_sheets_all_direct_read": [
+      "箱装产品尺寸",
+      "车型尺寸",
+      "Sheet3"
+    ],
+    "raw_lock_match": true,
+    "evaluation_lock_match": true,
+    "design_lock_match": true,
+    "source_contract": "runs/R19/levels/L4/review/preparation/source-contract.json"
+  },
+  "method": {
+    "path": "runs/R19/levels/L4/review/preparation/method.md",
+    "plan": "runs/R19/levels/L4/review/preparation/plan.md",
+    "checker": "runs/R19/levels/L4/review/preparation/independent_checks.py",
+    "independence": "reviewer-owned geometry/support/load/objective logic; author pass not truth",
+    "paper_reading": "actual full Chinese language/mathematics/scientific-argument reading at production; no keyword/file-count proxy"
+  },
+  "controls": {
+    "scope": "synthetic_preparation_only_not_production_acceptance",
+    "count": 25,
+    "all_pass": true,
+    "actual_latest_elapsed_seconds": 0.014421300002140924,
+    "false_acceptance_rate": null,
+    "false_rejection_rate": null,
+    "attempts": [
+      {
+        "attempt": 1,
+        "control_count": 23,
+        "exit_code": 0,
+        "all_pass": true,
+        "elapsed_seconds": 0.018781299993861467,
+        "evidence": "original tool receipt; original 23 controls retained in later reports"
+      },
+      {
+        "attempt": 2,
+        "control_count": 25,
+        "exit_code": 1,
+        "all_pass": false,
+        "elapsed_seconds": 0.01557689999754075,
+        "evidence": "runs/R19/levels/L4/review/preparation/small-controls-attempt-02-failed.json"
+      },
+      {
+        "attempt": 3,
+        "control_count": 25,
+        "exit_code": 0,
+        "all_pass": true,
+        "elapsed_seconds": 0.014421300002140924,
+        "evidence": "runs/R19/levels/L4/review/preparation/small-controls-results.json"
+      }
+    ]
+  },
+  "failures_and_corrections": [
+    {
+      "type": "input_logistics",
+      "original_operation": "Get-Content runs/R19/raw-lock.json",
+      "actual_error": "Cannot find path .../runs/R19/raw-lock.json because it does not exist.",
+      "cause": "coordinator supplied incorrect path",
+      "authority": "root message explicitly authorized corrected runs/R19/inputs/raw-lock.json",
+      "changed_operation": "read exact corrected path; did not expand search domain",
+      "outcome": "corrected raw lock read and all bytes match"
+    },
+    {
+      "type": "preparation_control_data_defect",
+      "attempt": 2,
+      "actual_exit_code": 1,
+      "actual_error": "directed_lower_upper_center control_pass=False; expected outside point was exactly on allowed closed boundary",
+      "old_geometry": "directed lower x in [0,80], upper x30 length100 => center80",
+      "changed_geometry": "upper x40 length100 => center90 truly outside",
+      "retained_old_output": "small-controls-attempt-02-failed.json",
+      "checker_semantics_changed": false,
+      "outcome": "attempt3 all25 pass; failure not erased"
+    }
+  ],
+  "observed_events": [
+    {
+      "type": "tool_output_truncation",
+      "effect": "large batch outputs truncated; targeted reads and direct raw extraction used; not evidence of completed authoring"
+    }
+  ],
+  "environment": {
+    "python": "3.12.8",
+    "libraries": {
+      "PyMuPDF": "1.27.2.2",
+      "python-docx": "1.2.0",
+      "openpyxl": "3.1.5",
+      "numpy": "2.5.3",
+      "scipy": "1.17.1",
+      "pypdf": "6.10.2",
+      "pdfplumber": "0.11.9"
+    }
+  },
+  "resources": {
+    "provider": null,
+    "model": null,
+    "tokens": null,
+    "cost": null,
+    "total_elapsed_seconds": null,
+    "network_searches": 0,
+    "software_installs": 0,
+    "subagents_spawned": 0,
+    "individual_static_LP_time_limit_seconds": 10,
+    "whole_task_short_deadline": null
+  },
+  "boundaries": {
+    "write_domain": "runs/R19/levels/L4/review/preparation/",
+    "read_domains": [
+      "runs/R19/inputs/L4.md",
+      "runs/R19/candidate/C11/forge-agent-flow/",
+      "runs/R19/levels/L4/design/",
+      "runs/R19/inputs/raw/",
+      "runs/R19/acceptance.json",
+      "runs/R19/quality-diagnosis.md",
+      "runs/R19/evaluation-lock.json",
+      "runs/R19/inputs/raw-lock.json",
+      "runs/R19/levels/L4/design-lock.json",
+      "necessary read-only PDF/DOCX/XLSX tool guides"
+    ],
+    "execution_domains_read": false,
+    "other_levels_read": false,
+    "shared_status_or_report_read": false,
+    "old_solutions_or_papers_read": false,
+    "shared_state_modified": false
+  },
+  "limitations": [
+    "production schema adaptation, full scenario checks, clean rerun and actual final paper reading are pending",
+    "full-support and multi-support directed-center strict branches are conservative interpretations, not extra universal official constraints",
+    "LP establishes only static reaction feasibility under uniform-centre and declared area assumptions, not local material or transport dynamics safety",
+    "Attachment2 cannot supply complete real optimization instance or cost validation without missing measured fields",
+    "synthetic known controls do not measure general checker reliability or establish production acceptance"
+  ],
+  "termination": {
+    "background_processes_started": 0,
+    "ongoing_tool_session_ids": [],
+    "all_prior_exec_calls_completed": true,
+    "finalizer_synchronous_exit0_receipt_required": true,
+    "no_post_terminal_write": true
+  },
+  "next_action": "wait for explicit official frozen production handoff from root; do not read production domains until authorized",
+  "frozen_at": "2026-10-08T06:04:58.620009+00:00"
+}

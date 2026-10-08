@@ -1,0 +1,32 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "scripts/host_preflight.py",
+    "--root",
+    ".",
+    "--lock",
+    "artifact-manifest.json",
+    "--lock",
+    "runs/R19/levels/L3/review/recheck-final-1-lock.json",
+    "--lock",
+    "runs/R19/frozen-release-lock.json"
+  ],
+  "cwd": "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+  "begin": {
+    "utc": "2026-10-08T05:57:53.628595+00:00",
+    "monotonic_ns": 3440107530983,
+    "boot_id": "e02f53f2-bf93-416b-afb3-dfe029558aef"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T06:00:46.436199+00:00",
+    "monotonic_ns": 3612915135949,
+    "boot_id": "e02f53f2-bf93-416b-afb3-dfe029558aef"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"schema\": \"forge-host-preflight/1\",\n  \"root\": \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111\",\n  \"python\": \"3.12.3\",\n  \"platform\": \"Linux\",\n  \"capabilities\": {\n    \"fcntl\": true,\n    \"posix_component_open\": true,\n    \"linux_boot_marker\": true\n  },\n  \"locks\": [\n    {\n      \"lock\": \"artifact-manifest.json\",\n      \"files_checked\": 1062,\n      \"ok\": true,\n      \"errors\": []\n    },\n    {\n      \"lock\": \"runs/R19/levels/L3/review/recheck-final-1-lock.json\",\n      \"files_checked\": 4271,\n      \"ok\": true,\n      \"errors\": []\n    },\n    {\n      \"lock\": \"runs/R19/frozen-release-lock.json\",\n      \"files_checked\": 53,\n      \"ok\": true,\n      \"errors\": []\n    }\n  ],\n  \"byte_identity\": true,\n  \"continuation_runtime_compatible\": true,\n  \"eligible_for_lease_probe\": true,\n  \"actions\": [\n    \"Probe the actual coordinator lease, reconcile pending native calls, then hold the lease before shared-state mutation.\"\n  ],\n  \"limits\": [\n    \"Read-only byte identity and API availability; no concurrent filesystem safety proof\",\n    \"Does not acquire a lease, reconcile workers, replay effects or invoke providers\",\n    \"Snapshot renameat2/filesystem support and installed-product behavior require actual separate checks\"\n  ],\n  \"tokens\": null,\n  \"cost\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtaG9zdC1wcmVmbGlnaHQvMSIsCiAgInJvb3QiOiAiL21udC9jL1VzZXJzL2FkbWluL0RvY3VtZW50cy9Db2RleC8yMDI2LTEwLTA1L3VyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWQvd29yay9BMTExIiwKICAicHl0aG9uIjogIjMuMTIuMyIsCiAgInBsYXRmb3JtIjogIkxpbnV4IiwKICAiY2FwYWJpbGl0aWVzIjogewogICAgImZjbnRsIjogdHJ1ZSwKICAgICJwb3NpeF9jb21wb25lbnRfb3BlbiI6IHRydWUsCiAgICAibGludXhfYm9vdF9tYXJrZXIiOiB0cnVlCiAgfSwKICAibG9ja3MiOiBbCiAgICB7CiAgICAgICJsb2NrIjogImFydGlmYWN0LW1hbmlmZXN0Lmpzb24iLAogICAgICAiZmlsZXNfY2hlY2tlZCI6IDEwNjIsCiAgICAgICJvayI6IHRydWUsCiAgICAgICJlcnJvcnMiOiBbXQogICAgfSwKICAgIHsKICAgICAgImxvY2siOiAicnVucy9SMTkvbGV2ZWxzL0wzL3Jldmlldy9yZWNoZWNrLWZpbmFsLTEtbG9jay5qc29uIiwKICAgICAgImZpbGVzX2NoZWNrZWQiOiA0MjcxLAogICAgICAib2siOiB0cnVlLAogICAgICAiZXJyb3JzIjogW10KICAgIH0sCiAgICB7CiAgICAgICJsb2NrIjogInJ1bnMvUjE5L2Zyb3plbi1yZWxlYXNlLWxvY2suanNvbiIsCiAgICAgICJmaWxlc19jaGVja2VkIjogNTMsCiAgICAgICJvayI6IHRydWUsCiAgICAgICJlcnJvcnMiOiBbXQogICAgfQogIF0sCiAgImJ5dGVfaWRlbnRpdHkiOiB0cnVlLAogICJjb250aW51YXRpb25fcnVudGltZV9jb21wYXRpYmxlIjogdHJ1ZSwKICAiZWxpZ2libGVfZm9yX2xlYXNlX3Byb2JlIjogdHJ1ZSwKICAiYWN0aW9ucyI6IFsKICAgICJQcm9iZSB0aGUgYWN0dWFsIGNvb3JkaW5hdG9yIGxlYXNlLCByZWNvbmNpbGUgcGVuZGluZyBuYXRpdmUgY2FsbHMsIHRoZW4gaG9sZCB0aGUgbGVhc2UgYmVmb3JlIHNoYXJlZC1zdGF0ZSBtdXRhdGlvbi4iCiAgXSwKICAibGltaXRzIjogWwogICAgIlJlYWQtb25seSBieXRlIGlkZW50aXR5IGFuZCBBUEkgYXZhaWxhYmlsaXR5OyBubyBjb25jdXJyZW50IGZpbGVzeXN0ZW0gc2FmZXR5IHByb29mIiwKICAgICJEb2VzIG5vdCBhY3F1aXJlIGEgbGVhc2UsIHJlY29uY2lsZSB3b3JrZXJzLCByZXBsYXkgZWZmZWN0cyBvciBpbnZva2UgcHJvdmlkZXJzIiwKICAgICJTbmFwc2hvdCByZW5hbWVhdDIvZmlsZXN5c3RlbSBzdXBwb3J0IGFuZCBpbnN0YWxsZWQtcHJvZHVjdCBiZWhhdmlvciByZXF1aXJlIGFjdHVhbCBzZXBhcmF0ZSBjaGVja3MiCiAgXSwKICAidG9rZW5zIjogbnVsbCwKICAiY29zdCI6IG51bGwKfQo=",
+  "stderr_base64": ""
+}

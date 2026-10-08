@@ -1,6 +1,6 @@
 # Codex 接续入口
 
-R19最新现场：L1/L2完整诊断done，原首次失败/partial保留。L3原生产3723/准备21/首审3052/知情修订354/复审方法准备9文件分别冻结。首次a1–a4 pass、a5 fail（PDF科学记号失真）、a6 partial（旧记录/并发目标缺口）保持。原作者修订11页论文和3页企业报告的完整中文表达、论证衔接及PDF科学语义，数值代码/数据/配置/图表原字节不改；作者750显示单元/40记号/14页检查仅自检。同一原reviewer已正式接收组合包，在review/recheck-final-1实质知情复核中，尚无修订判定，原9文件方法准备不覆盖。旧PID/stdout保留null，预算不重置。L4仅设计冻结及中性输入身份预检查、论文未启动。四层C11不改；源88da305已上传，CI实际观察见checkpoint/publication。当前证据见runs/R19/REPORT.md、TODO.md和state/checkpoint.json，仓库CI不替代论文验收。
+R19最新现场：L1–L3完整诊断done，首次失败/partial保留。L3同一原作者354文件知情修订及同一原reviewer4271文件正式知情复审分别冻结；当前a1–a5 pass、a6 partial，科学记号及完整中文论证通过，旧三CLI原流/PID缺失和两次并发目标偏离不可补回。当前六维4achieved/2partial，不宣称全门通过；原首次a5 fail/a6 partial不变。L4已由中性输入检查和实际任务启动接续，新executor已实际完成原件审计/真实小烟测并进入全量求解，独立reviewer17文件原件/方法准备终态冻结，25小控制通过但生产判定为空，等待正式成稿。四层C11不改，语言、数值、图表、实验及职责质量共同验收，不期待后续AI补齐本轮实质缺陷。源02b0a946已上传，CI实际观察见checkpoint/publication；后续4271文件复审及L4启动现场待本次发布。当前证据见runs/R19/REPORT.md、TODO.md和state/checkpoint.json，仓库CI不替代论文验收。
 
 成品方向为Forge meta-workflow，当前候选C10是九份纯文档：
 [技能入口](runs/R17/candidate/C10/forge-agent-flow/SKILL.md)、

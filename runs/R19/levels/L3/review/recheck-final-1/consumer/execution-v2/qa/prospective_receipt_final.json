@@ -1,0 +1,393 @@
+{
+  "producer_self_check": true,
+  "initial_checks": "prospective_receipt_checks.json",
+  "new_checks": {
+    "launch_failure_retains_receipt_and_closes_streams": true,
+    "public_consumer_CLI_actual_small_run_checked": true,
+    "nine_child_receipts_complete_or_expected_terminal": true,
+    "nine_stream_pairs_unique_byte_retained": true,
+    "final_registry_idle": true
+  },
+  "all_receipts": [
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\active-probe-a228cceb168644d5bf9f974e67687572",
+      "label": "active-probe",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "import time; print('active-probe',flush=True); time.sleep(.4)"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:21:59.492004+00:00",
+      "started_monotonic": 56352.2730532,
+      "timeout_seconds": 120,
+      "status": "complete",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5"
+      },
+      "parent_pid": 25592,
+      "pid": 4084,
+      "process_create_time": 1791436919.4942796,
+      "returncode": 0,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\active-probe-a228cceb168644d5bf9f974e67687572\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\active-probe-a228cceb168644d5bf9f974e67687572\\stderr.log",
+      "sampled_peak_RSS_bytes": 20459520,
+      "ended_utc": "2026-10-08T05:21:59.955959+00:00",
+      "elapsed_seconds": 0.4638580000028014,
+      "stdout_sha256": "695fd81c75dcc5612a8129f6c55a605add9a0786442d96a7a2b4484fb8d0bdd8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-10-08T05:21:59.509856+00:00",
+      "status": "blocked_before_child_start",
+      "reason": {
+        "state": "live_block",
+        "identity_matches": true,
+        "running": true,
+        "record": {
+          "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\active-probe-a228cceb168644d5bf9f974e67687572",
+          "label": "active-probe",
+          "argv": [
+            "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+            "-X",
+            "utf8",
+            "-B",
+            "-c",
+            "import time; print('active-probe',flush=True); time.sleep(.4)"
+          ],
+          "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+          "started_utc": "2026-10-08T05:21:59.492004+00:00",
+          "started_monotonic": 56352.2730532,
+          "timeout_seconds": 120,
+          "status": "running",
+          "source_files": {
+            "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5"
+          },
+          "parent_pid": 25592,
+          "pid": 4084,
+          "process_create_time": 1791436919.4942796,
+          "returncode": null,
+          "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\active-probe-a228cceb168644d5bf9f974e67687572\\stdout.log",
+          "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\active-probe-a228cceb168644d5bf9f974e67687572\\stderr.log",
+          "sampled_peak_RSS_bytes": null
+        }
+      },
+      "pid": null,
+      "stdout": null,
+      "numerical_solver_started": false
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\consumer-cli-checker-4c700225762742eab57c1c1a4268fecd",
+      "label": "consumer-cli-checker",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\checker.py",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\solver-c8e215f894f24d8888e5eeff4a339062\\output"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:24:19.541764+00:00",
+      "started_monotonic": 56492.3218088,
+      "timeout_seconds": 120,
+      "status": "complete",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\checker.py": "dc0106e391080b0dd191de759387cc35946b2a2c606a7667a3c237a92c55d3b0"
+      },
+      "parent_pid": 24060,
+      "pid": 37032,
+      "process_create_time": 1791437059.544351,
+      "returncode": 0,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\consumer-cli-checker-4c700225762742eab57c1c1a4268fecd\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\consumer-cli-checker-4c700225762742eab57c1c1a4268fecd\\stderr.log",
+      "sampled_peak_RSS_bytes": 37732352,
+      "ended_utc": "2026-10-08T05:24:19.743549+00:00",
+      "elapsed_seconds": 0.2014287999991211,
+      "stdout_sha256": "5bee6c4c6613e7e7525560af2223311100589768a5d947f1bb2d8897c889e225",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\expected-launch-failure-92665f516198418c945604ca17399511",
+      "label": "expected-launch-failure",
+      "argv": [
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\qa\\no-such-executable.exe"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:24:19.537735+00:00",
+      "started_monotonic": 56492.3181474,
+      "timeout_seconds": 120,
+      "status": "launch_failed",
+      "source_files": {},
+      "parent_pid": 24060,
+      "pid": null,
+      "process_create_time": null,
+      "returncode": null,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\expected-launch-failure-92665f516198418c945604ca17399511\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\expected-launch-failure-92665f516198418c945604ca17399511\\stderr.log",
+      "sampled_peak_RSS_bytes": null,
+      "error": "FileNotFoundError(2, '系统找不到指定的文件。', None, 2, None)",
+      "ended_utc": "2026-10-08T05:24:19.538723+00:00"
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\nonzero-probe-ceb6c7ec83504ceb9d7f05cf64372554",
+      "label": "nonzero-probe",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "import sys; print('expected exit7',flush=True); sys.exit(7)"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:21:59.959468+00:00",
+      "started_monotonic": 56352.7403903,
+      "timeout_seconds": 120,
+      "status": "failed",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5"
+      },
+      "parent_pid": 25592,
+      "pid": 33788,
+      "process_create_time": 1791436919.961729,
+      "returncode": 7,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\nonzero-probe-ceb6c7ec83504ceb9d7f05cf64372554\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\nonzero-probe-ceb6c7ec83504ceb9d7f05cf64372554\\stderr.log",
+      "sampled_peak_RSS_bytes": 19886080,
+      "ended_utc": "2026-10-08T05:22:00.022012+00:00",
+      "elapsed_seconds": 0.0623081000012462,
+      "stdout_sha256": "08b8aa48d95cff2656bc227f3cffbcf87e01ca5a0fd311ce587d476f8fbbacb6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-checker-1-e3720d3b1bb048dcaca3c3ae8138a0a0",
+      "label": "small-checker-1",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\checker.py",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-1-500f42a538dd4872999c1292ab9e4c7a\\output"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:22:00.445808+00:00",
+      "started_monotonic": 56353.2266823,
+      "timeout_seconds": 120,
+      "status": "complete",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\checker.py": "dc0106e391080b0dd191de759387cc35946b2a2c606a7667a3c237a92c55d3b0"
+      },
+      "parent_pid": 25592,
+      "pid": 9884,
+      "process_create_time": 1791436920.4479225,
+      "returncode": 0,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-checker-1-e3720d3b1bb048dcaca3c3ae8138a0a0\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-checker-1-e3720d3b1bb048dcaca3c3ae8138a0a0\\stderr.log",
+      "sampled_peak_RSS_bytes": 37777408,
+      "ended_utc": "2026-10-08T05:22:00.646216+00:00",
+      "elapsed_seconds": 0.200186299996858,
+      "stdout_sha256": "5bee6c4c6613e7e7525560af2223311100589768a5d947f1bb2d8897c889e225",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-checker-2-a8c2dcbf8acc4b839afa8a8e5deb6d02",
+      "label": "small-checker-2",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\checker.py",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-2-1af66f6a16e346b4a0880715b1eb353d\\output"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:22:00.877577+00:00",
+      "started_monotonic": 56353.6585367,
+      "timeout_seconds": 120,
+      "status": "complete",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\checker.py": "dc0106e391080b0dd191de759387cc35946b2a2c606a7667a3c237a92c55d3b0"
+      },
+      "parent_pid": 25592,
+      "pid": 28352,
+      "process_create_time": 1791436920.8797812,
+      "returncode": 0,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-checker-2-a8c2dcbf8acc4b839afa8a8e5deb6d02\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-checker-2-a8c2dcbf8acc4b839afa8a8e5deb6d02\\stderr.log",
+      "sampled_peak_RSS_bytes": 37740544,
+      "ended_utc": "2026-10-08T05:22:01.072265+00:00",
+      "elapsed_seconds": 0.1943909999972675,
+      "stdout_sha256": "5bee6c4c6613e7e7525560af2223311100589768a5d947f1bb2d8897c889e225",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-1-500f42a538dd4872999c1292ab9e4c7a",
+      "label": "small-solver-1",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\solver.py",
+        "--task",
+        "Q1-S1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\qa\\receipt_small_instance.json",
+        "--out",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-1-500f42a538dd4872999c1292ab9e4c7a/output"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:22:00.213707+00:00",
+      "started_monotonic": 56352.9948572,
+      "timeout_seconds": 120,
+      "status": "complete",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\solver.py": "87e10a2aa9e9c332436a181e234f51bed8516a5bd61db0f16e61455c34381651",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\qa\\receipt_small_instance.json": "13ad8e29224cc017c687bbc242f44a64a679b24ca11d2e3dcf6276d9f46f4e08"
+      },
+      "parent_pid": 25592,
+      "pid": 34484,
+      "process_create_time": 1791436920.2161937,
+      "returncode": 0,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-1-500f42a538dd4872999c1292ab9e4c7a\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-1-500f42a538dd4872999c1292ab9e4c7a\\stderr.log",
+      "sampled_peak_RSS_bytes": 41914368,
+      "ended_utc": "2026-10-08T05:22:00.442803+00:00",
+      "elapsed_seconds": 0.22876949999772478,
+      "stdout_sha256": "55a8f88965d284d6c5855c8aa55f4e5a66ce37b0d7498da93f8b1ac77e66d13e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-2-1af66f6a16e346b4a0880715b1eb353d",
+      "label": "small-solver-2",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\solver.py",
+        "--task",
+        "Q1-S1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\qa\\receipt_small_instance.json",
+        "--out",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-2-1af66f6a16e346b4a0880715b1eb353d/output"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:22:00.649221+00:00",
+      "started_monotonic": 56353.4304103,
+      "timeout_seconds": 120,
+      "status": "complete",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\solver.py": "87e10a2aa9e9c332436a181e234f51bed8516a5bd61db0f16e61455c34381651",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\qa\\receipt_small_instance.json": "13ad8e29224cc017c687bbc242f44a64a679b24ca11d2e3dcf6276d9f46f4e08"
+      },
+      "parent_pid": 25592,
+      "pid": 3824,
+      "process_create_time": 1791436920.6522667,
+      "returncode": 0,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-2-1af66f6a16e346b4a0880715b1eb353d\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\small-solver-2-1af66f6a16e346b4a0880715b1eb353d\\stderr.log",
+      "sampled_peak_RSS_bytes": 41603072,
+      "ended_utc": "2026-10-08T05:22:00.874563+00:00",
+      "elapsed_seconds": 0.22493430000031367,
+      "stdout_sha256": "06c9fd048f29d573edd4827fe93d5d3d777352f54271574fdb6a6e2399ed5cb6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\solver-c8e215f894f24d8888e5eeff4a339062",
+      "label": "solver",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\solver.py",
+        "--task",
+        "Q1-S1",
+        "--out",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\solver-c8e215f894f24d8888e5eeff4a339062/output",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\qa\\receipt_small_instance.json"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:23:30.510154+00:00",
+      "started_monotonic": 56443.2903748,
+      "timeout_seconds": 120,
+      "status": "complete",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution\\src\\solver.py": "87e10a2aa9e9c332436a181e234f51bed8516a5bd61db0f16e61455c34381651",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\qa\\receipt_small_instance.json": "13ad8e29224cc017c687bbc242f44a64a679b24ca11d2e3dcf6276d9f46f4e08"
+      },
+      "parent_pid": 7692,
+      "pid": 15128,
+      "process_create_time": 1791437010.5126421,
+      "returncode": 0,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\solver-c8e215f894f24d8888e5eeff4a339062\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\solver-c8e215f894f24d8888e5eeff4a339062\\stderr.log",
+      "sampled_peak_RSS_bytes": 41918464,
+      "ended_utc": "2026-10-08T05:23:30.732669+00:00",
+      "elapsed_seconds": 0.2226269999955548,
+      "stdout_sha256": "3c22c712a9c4307c90eccd3762540d520bbfbb81482e3858a88f2085d6502aaa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "attempt": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\timeout-probe-34ed5cc036ec4cb3a4b80cb14cfb8676",
+      "label": "timeout-probe",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "import time; print('before timeout',flush=True); time.sleep(3)"
+      ],
+      "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2",
+      "started_utc": "2026-10-08T05:22:00.025017+00:00",
+      "started_monotonic": 56352.8056807,
+      "timeout_seconds": 0.15,
+      "status": "timed_out",
+      "source_files": {
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe": "1a078825122b059f04b6c1545909f1d3ed0838dd24ab80d1c7fa60ca68ff9af5"
+      },
+      "parent_pid": 25592,
+      "pid": 29744,
+      "process_create_time": 1791436920.0268176,
+      "returncode": 1,
+      "stdout_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\timeout-probe-34ed5cc036ec4cb3a4b80cb14cfb8676\\stdout.log",
+      "stderr_path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\execution-v2\\attempts\\timeout-probe-34ed5cc036ec4cb3a4b80cb14cfb8676\\stderr.log",
+      "sampled_peak_RSS_bytes": 20414464,
+      "ended_utc": "2026-10-08T05:22:00.210707+00:00",
+      "elapsed_seconds": 0.1856326999986777,
+      "stdout_sha256": "a92d720a6e780988a62cfe4a84624a1bd097a9e1fcb055eed65aeaaaeb20db18",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "actual_children": 9,
+  "actual_small_solver_calls": 3,
+  "actual_coordinate_checker_calls": 3,
+  "actual_process_probes": 3,
+  "blocked_before_launch": 1,
+  "expected_launch_failure_no_pid": 1,
+  "main_formal_solves": 0,
+  "final_code_binding": {
+    "receipts.py": "fe2b89495e81ca832e034f707a24095a8513d8b9fad87bc0f10695420fbf1346",
+    "receipt_cli.py": "c0cbb0611f1481a72f0a39e28a08ea000a8ddd45fa34345c3d60333f0a506c0c",
+    "finish_receipt_checks.py": "fb8f3818ba58b8e2230683b0f7b273e6a9b4e6cb00635085ca0f12823286dfa1"
+  },
+  "additional_child_elapsed_seconds": 1.9841356999895652,
+  "sampled_child_peak_RSS_bytes": 41918464,
+  "registry": "idle",
+  "original_PID_stdout_gap_recovered": false
+}

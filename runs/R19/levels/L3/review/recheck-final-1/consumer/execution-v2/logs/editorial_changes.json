@@ -1,0 +1,236 @@
+{
+  "scope": "complete paper and enterprise report reviewed, not limited to exponent fixes",
+  "important_edits": [
+    {
+      "document": "paper",
+      "section": "1",
+      "original_sentence": "题目背景中的利润和运输费用相同不足以建立每件利润模型，缺少运价和收入数据。",
+      "revised_sentence": "题面虽说明不同货物的单位运输费用相同，但没有收入或各件运价数值，因而本文按明示的利用率、车数和每趟成本建模，不估算利润。",
+      "reason": "避免把利润与费用混为同一已知条件，说明为何选择明列目标。",
+      "evidence": "原PDF问题1；旧data/contracts.json",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "1",
+      "original_sentence": "单车任务允许从有限库存选取子集，未装货不构成丢失；整批任务必须使全部3000件恰好出现一次。",
+      "revised_sentence": "单车决策与整批决策的库存约束不同：单车允许从有限库存选择子集；整批必须把每件货物恰好运走一次。",
+      "reason": "先说明决策差异，再连接为什么单车模式不能直接复制。",
+      "evidence": "原PDF问题1；旧plans/*/selected/metrics.json",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "2",
+      "original_sentence": "G4占96m³，是最大体积来源；G3不能承受上层货物，G5必须保持40×40×60方向，这些规则造成空隙，不能只做体积装箱。",
+      "revised_sentence": "除总体积外，G3上方不能继续放货、G5只能保持40×40×60 cm姿态，也限制空间拼排。",
+      "reason": "从守恒量衔接到几何/方向限制，不把一般空隙解释写成新实验。",
+      "evidence": "附件1表1/P14-P15；旧data/instance.json",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "3/4.2",
+      "original_sentence": "界面压强采用质量面密度：",
+      "revised_sentence": "题目使用kg/m²，这是单位面积承载质量，本文称为承载面密度，而非以Pa计量的机械压强。",
+      "reason": "kg/m²不是SI压强，统一物理术语且保持T/A计算不变。",
+      "evidence": "附件1P18；旧src/checker.py；旧paper4.2",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "4.1",
+      "original_sentence": "这些公式定义原目标的几何可行域；程序用明确坐标构造代替同时求解所有连续变量的大规模混合整数模型，从而使每个候选都可检查。",
+      "revised_sentence": "程序直接构造坐标，并在输出后重新检验这些条件，而不是只按总体积决定可装件数。",
+      "reason": "将变量约束与构造/检查接口连接；补明a(i,k)=1时适用边界，无数值模型改动。",
+      "evidence": "旧src/solver.py/checker.py；首审a2",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "4.3",
+      "original_sentence": "单车搜索中的质量偏好参数α=0、0.5、1只引导候选生成，最终比较仍按(Uv,Uw)非支配关系；它不替代题目的双目标。",
+      "revised_sentence": "生成候选时的质量偏好α=0、0.5、1只改变搜索方向，不把双目标改成最终加权得分。",
+      "reason": "统一生成偏好与最终目标的区别，先定义支配关系再给推荐规则。",
+      "evidence": "旧src/experiment.py；旧plans/Q1-S*/pareto.json",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "4.4",
+      "original_sentence": "模板库MILP最优不等于原问题最优，最小占地也不直接等于最少车。",
+      "revised_sentence": "库内占地最优、二维装车结果和原三维全局最优属于不同层次，后文分别报告。",
+      "reason": "建立模型层级，减少重复否定并明确接收证据不同。",
+      "evidence": "旧column_milp/*/solver_receipt.json；首审报告界说明",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "5.2",
+      "original_sentence": "这是同一原始库存与解释下的描述性比较，不能据单个题目泛化为所有物流数据都改善同样百分比。",
+      "revised_sentence": "一次基准与27次多启动、后续整数规划和重装的搜索努力不同，因此不能把改善全部归因为某单一算法在同等总计算预算下更优，也不能推广为其他库存的固定降幅。",
+      "reason": "明确真正不公平处在搜索努力，而不只保留泛化限定。",
+      "evidence": "旧logs/comparison_declaration.json；首审a4",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "6.2",
+      "original_sentence": "T1的总空间利用率较高却费用较高，说明“平均更满”不能替代低费用目标。",
+      "revised_sentence": "T1的空间利用率更高，却因车数和单趟费用合计而花费更多；利用率不能替代运输费用目标。",
+      "reason": "将观察与费用机制接在一起，避免停留在评价句。",
+      "evidence": "旧plans/Q1-F1/Q1-F2/selected/metrics.json",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "7",
+      "original_sentence": "另一个新上下文审查者将接收终态材料，本文写作时其结论尚未产生。",
+      "revised_sentence": "除生产者自检外，另一个审查者从原件重建输入，复算六任务、168候选、348参数及四个库整数规划，并以自有检查器核查主要空间和数值结果；验证范围仍是明确的单支持、均匀质量和静态条件。64次扩展装车与1674次历史重装未被完整重复验证，其记录作为未改善研究保留。文档版本、导出检查和历史运行限制由接收入口README及qa/、logs/提供。",
+      "reason": "修订稿时间状态更新，同时不把旧PDF fail和a6 partial抹为整体通过。；论文保留验证方法与覆盖范围，开发轮次/日志缺口移入接收记录；不删历史、不夸验证范围。",
+      "evidence": "review/initial/report.md/result.json",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true,
+      "first_draft_sentence": "独立首审已直接从原件重建输入，复算六任务、168候选、348参数及四个库MILP，并以自有检查器核查主要空间和数值结果；其通过范围仍是明确的单支持、均匀质量和静态条件。"
+    },
+    {
+      "document": "paper",
+      "section": "8.2",
+      "original_sentence": "额定载重降低50%时需11T2、7700元，车队重量利用率74.73%；提高50%时仍10T2，但利用率降至27.40%，证明加大载重不是当前主瓶颈。",
+      "revised_sentence": "在本批需求和搜索配置内，增大额定载重未改善所得车队，提示后续优化优先检查空间拼排与易碎支持。",
+      "reason": "将未经全局证明的因果/瓶颈断言改为有范围的观察和研究提示；数值保留前句。",
+      "evidence": "旧sensitivity/results.json capacity_0.5/1.5",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "8.2",
+      "original_sentence": "其机制是承压改变可堆叠层数，而不是把500解释成单件重量上限。",
+      "revised_sentence": "上限改变合法堆叠层数，是模型内的可解释作用路径，车数变化仍取决于构造搜索。",
+      "reason": "区分数学规则的机制与启发式观测，不将观察当全局效应。",
+      "evidence": "旧src/solver.py catalogue；旧pressure_300/700配置",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "8.3",
+      "original_sentence": "本题观察近似比例，不是任意需求下严格线性定律。",
+      "revised_sentence": "全类型数量0.5倍、1.5倍得到5T2、3500元和15T2、10500元，三个观测点呈比例关系；整数余货效应使这一关系不能保证适用于任意批量。",
+      "reason": "把具体点与限定放同段，避免空泛结论。",
+      "evidence": "旧sensitivity/results.json demand_*",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "9",
+      "original_sentence": "这里验证的是解析与单件适配通道，不能推断大规模整批泛化性能。",
+      "revised_sentence": "这验证尺寸解析和单件适配，不验证官方整批运输。",
+      "reason": "直接对应输入缺失与测试范围，删技术套语。",
+      "evidence": "旧extension/attachment2_normalized.json；首审extension范围",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "paper",
+      "section": "10",
+      "original_sentence": "这些是上界-下界差，不是实际最优误差的精确测量。",
+      "revised_sentence": "相对下界的差为25.00%、42.86%和42.86%，只是界间差，不是与未知真实最优值的精确误差。",
+      "reason": "在句内绑定指标含义，防止百分比被误认为算法误差。",
+      "evidence": "旧plans/*/selected/metrics.json bounds；首审数值表",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "report",
+      "section": "1",
+      "original_sentence": "每一件都有实际坐标并经生产者自检，方案无需靠总体体积猜测可装下。",
+      "revised_sentence": "这些是已有逐件坐标的可行方案，尚未证明原三维问题全局最优；必要下界为车型1至少16车、车型2或混合至少7车，混合费用至少4900元。",
+      "reason": "管理建议首先给可用方案和余下不确定性，删自我评价。",
+      "evidence": "旧六plans坐标/metrics；首审a1-a4",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "report",
+      "section": "4",
+      "original_sentence": "载重利用率不是支撑承压，二者均需检查。",
+      "revised_sentence": "现场改动重量或包装承载能力后，应重算合法堆叠，不能只核整车吨位。",
+      "reason": "将概念区别转化为管理动作；承载面密度术语与论文统一。",
+      "evidence": "附件1P18；旧checker；sensitivity载荷组",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "report",
+      "section": "3",
+      "original_sentence": "这是该批次一次有控制条件的比较。",
+      "revised_sentence": "每任务1次基准与27次多启动、后续整数规划的搜索努力不同，这说明本批次配置得到更好的可行方案，不证明某方法在同等总计算预算下普遍更优。",
+      "reason": "避免“有控制”暗示等总预算比较。",
+      "evidence": "旧比较声明；review/initial/report.md",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "report",
+      "section": "4",
+      "original_sentence": "这批货物主要受几何与易碎区域限制，不建议仅通过升级载重吨位解决装载问题。",
+      "revised_sentence": "在本批次搜索结果中，单纯增加载重能力没有带来费用改善。",
+      "reason": "限定经营建议证据范围，不新增全局瓶颈判断。",
+      "evidence": "旧sensitivity capacity_1.5/base",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "report",
+      "section": "3/6",
+      "original_sentence": "以上通过的是明确静态假设下的生产者自检，新上下文独立审查尚未发生。",
+      "revised_sentence": "主要数值另经从原件重建输入、重新求解和坐标复核，支持明确静态范围内的可行性判断。道路加速度、摩擦、绑扎及叉车可达性不在已核查范围内；现场实施前仍需工程确认。文档版本和具体核查范围见接收入口README。",
+      "reason": "同步最新审查事实，完整保留fail/partial。；企业报告让验证证据服务实施判断，审查轮次/旧导出错误分配到接收说明。",
+      "evidence": "首审report/result；REPAIR_FOLLOWUP",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true,
+      "first_draft_sentence": "独立首审从原件重建并复算主要数值，接受明确静态范围内的模型与可行结果，但旧PDF科学记号导出失败、历史日志保留部分不足；本版修复文字和PDF，知情复审尚未完成。"
+    },
+    {
+      "document": "report",
+      "section": "4",
+      "original_sentence": "在“有限司机/场地”和“预算控制”之间需先确定经营目标，不能只比较平均满容率。",
+      "revised_sentence": "司机或停车位紧张时应关注前者，预算优先时比较后者；这仍是有限可行池内的建议，未认证全局最优。",
+      "reason": "让9400与10000方案实际支持经营取舍，补选择范围。",
+      "evidence": "旧T2_cost_1000 Q2N/Q2C结果",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    },
+    {
+      "document": "report",
+      "section": "5",
+      "original_sentence": "README.md提供正式六任务重算及通用输入运行命令。",
+      "revised_sentence": "当前execution-v2/README是组合接收入口，指向冻结原程序、数据、全部候选及新论文/报告；重算输出只能放新域的独立attempt目录，避免覆盖原证据。",
+      "reason": "修订域与数值底座分开，避免读者向冻结域写入。",
+      "evidence": "本次写域授权；原数值程序--out接口",
+      "numerical_semantics": "no model/data/config change; values checked against frozen tables/records",
+      "producer_editorial_review": true
+    }
+  ],
+  "uniform_terms": {
+    "满容率": "空间利用率",
+    "满载率": "载重利用率",
+    "kg/m²压力": "承载面密度（单位面积承载质量）",
+    "最低费用方案": "有限候选池费用候选",
+    "独立编写检查器": "生产者另写的坐标检查器；独立首审为另一个角色"
+  },
+  "all_original_tables_unchanged": true,
+  "no_new_empirical_claims": true
+}

@@ -1,0 +1,720 @@
+{
+  "purpose": "independently parsed raw fields, not answers or rankings",
+  "units": {
+    "attachment1": "cm, kg, yuan/trip",
+    "attachment2_products": "mm",
+    "attachment2_vehicles": "m",
+    "area_conversion_cm2_to_m2": 0.0001
+  },
+  "vehicles": [
+    {
+      "type_id": "1",
+      "dims_cm": [
+        420.0,
+        210.0,
+        220.0
+      ],
+      "capacity_kg": 6000.0,
+      "cost_per_trip_yuan": 450.0,
+      "source": "附件1.docx",
+      "locators": {
+        "dims": "P4",
+        "capacity": "P5",
+        "cost": "P6"
+      }
+    },
+    {
+      "type_id": "2",
+      "dims_cm": [
+        680.0,
+        245.0,
+        250.0
+      ],
+      "capacity_kg": 10000.0,
+      "cost_per_trip_yuan": 700.0,
+      "source": "附件1.docx",
+      "locators": {
+        "dims": "P8",
+        "capacity": "P9",
+        "cost": "P10"
+      }
+    }
+  ],
+  "cargo": [
+    {
+      "type_id": "G1",
+      "class": "标准件",
+      "dims_cm": [
+        60.0,
+        40.0,
+        30.0
+      ],
+      "mass_kg": 12.0,
+      "quantity": 800,
+      "source": "附件1.docx",
+      "locator": "T1 R2"
+    },
+    {
+      "type_id": "G2",
+      "class": "标准件",
+      "dims_cm": [
+        50.0,
+        35.0,
+        25.0
+      ],
+      "mass_kg": 8.0,
+      "quantity": 1000,
+      "source": "附件1.docx",
+      "locator": "T1 R3"
+    },
+    {
+      "type_id": "G3",
+      "class": "易碎件",
+      "dims_cm": [
+        70.0,
+        50.0,
+        40.0
+      ],
+      "mass_kg": 15.0,
+      "quantity": 300,
+      "source": "附件1.docx",
+      "locator": "T1 R4"
+    },
+    {
+      "type_id": "G4",
+      "class": "定向件",
+      "dims_cm": [
+        80.0,
+        60.0,
+        50.0
+      ],
+      "mass_kg": 25.0,
+      "quantity": 400,
+      "source": "附件1.docx",
+      "locator": "T1 R5"
+    },
+    {
+      "type_id": "G5",
+      "class": "定向件",
+      "dims_cm": [
+        40.0,
+        40.0,
+        60.0
+      ],
+      "mass_kg": 18.0,
+      "quantity": 500,
+      "source": "附件1.docx",
+      "locator": "T1 R6"
+    }
+  ],
+  "attachment2_products": [
+    {
+      "product": "3.68L*4",
+      "row": 3,
+      "measurements": {
+        "B3": {
+          "raw": null,
+          "interval_mm": null,
+          "interval_cm": null,
+          "origin": "laboratory"
+        },
+        "C3": {
+          "raw": 301,
+          "interval_mm": [
+            301.0,
+            301.0
+          ],
+          "interval_cm": [
+            30.1,
+            30.1
+          ],
+          "origin": "warehouse"
+        },
+        "D3": {
+          "raw": null,
+          "interval_mm": null,
+          "interval_cm": null,
+          "origin": "laboratory"
+        },
+        "E3": {
+          "raw": 301,
+          "interval_mm": [
+            301.0,
+            301.0
+          ],
+          "interval_cm": [
+            30.1,
+            30.1
+          ],
+          "origin": "warehouse"
+        },
+        "F3": {
+          "raw": null,
+          "interval_mm": null,
+          "interval_cm": null,
+          "origin": "laboratory"
+        },
+        "G3": {
+          "raw": 347,
+          "interval_mm": [
+            347.0,
+            347.0
+          ],
+          "interval_cm": [
+            34.7,
+            34.7
+          ],
+          "origin": "warehouse"
+        }
+      },
+      "note": "新品，无实际纸箱标准，根据新瓶型提供厂家样箱尺寸"
+    },
+    {
+      "product": "1.8L*6",
+      "row": 4,
+      "measurements": {
+        "B4": {
+          "raw": 345,
+          "interval_mm": [
+            345.0,
+            345.0
+          ],
+          "interval_cm": [
+            34.5,
+            34.5
+          ],
+          "origin": "laboratory"
+        },
+        "C4": {
+          "raw": "345-347",
+          "interval_mm": [
+            345.0,
+            347.0
+          ],
+          "interval_cm": [
+            34.5,
+            34.7
+          ],
+          "origin": "warehouse"
+        },
+        "D4": {
+          "raw": 234,
+          "interval_mm": [
+            234.0,
+            234.0
+          ],
+          "interval_cm": [
+            23.4,
+            23.4
+          ],
+          "origin": "laboratory"
+        },
+        "E4": {
+          "raw": "236-238",
+          "interval_mm": [
+            236.0,
+            238.0
+          ],
+          "interval_cm": [
+            23.6,
+            23.8
+          ],
+          "origin": "warehouse"
+        },
+        "F4": {
+          "raw": 304,
+          "interval_mm": [
+            304.0,
+            304.0
+          ],
+          "interval_cm": [
+            30.4,
+            30.4
+          ],
+          "origin": "laboratory"
+        },
+        "G4": {
+          "raw": "307-320",
+          "interval_mm": [
+            307.0,
+            320.0
+          ],
+          "interval_cm": [
+            30.7,
+            32.0
+          ],
+          "origin": "warehouse"
+        }
+      },
+      "note": null
+    },
+    {
+      "product": "4L*4",
+      "row": 5,
+      "measurements": {
+        "B5": {
+          "raw": 316,
+          "interval_mm": [
+            316.0,
+            316.0
+          ],
+          "interval_cm": [
+            31.6,
+            31.6
+          ],
+          "origin": "laboratory"
+        },
+        "C5": {
+          "raw": "316-318",
+          "interval_mm": [
+            316.0,
+            318.0
+          ],
+          "interval_cm": [
+            31.6,
+            31.8
+          ],
+          "origin": "warehouse"
+        },
+        "D5": {
+          "raw": 262,
+          "interval_mm": [
+            262.0,
+            262.0
+          ],
+          "interval_cm": [
+            26.2,
+            26.2
+          ],
+          "origin": "laboratory"
+        },
+        "E5": {
+          "raw": "264-265",
+          "interval_mm": [
+            264.0,
+            265.0
+          ],
+          "interval_cm": [
+            26.4,
+            26.5
+          ],
+          "origin": "warehouse"
+        },
+        "F5": {
+          "raw": 367,
+          "interval_mm": [
+            367.0,
+            367.0
+          ],
+          "interval_cm": [
+            36.7,
+            36.7
+          ],
+          "origin": "laboratory"
+        },
+        "G5": {
+          "raw": "370-380",
+          "interval_mm": [
+            370.0,
+            380.0
+          ],
+          "interval_cm": [
+            37.0,
+            38.0
+          ],
+          "origin": "warehouse"
+        }
+      },
+      "note": null
+    },
+    {
+      "product": "5L*4(异形瓶）",
+      "row": 6,
+      "measurements": {
+        "B6": {
+          "raw": null,
+          "interval_mm": null,
+          "interval_cm": null,
+          "origin": "laboratory"
+        },
+        "C6": {
+          "raw": 345,
+          "interval_mm": [
+            345.0,
+            345.0
+          ],
+          "interval_cm": [
+            34.5,
+            34.5
+          ],
+          "origin": "warehouse"
+        },
+        "D6": {
+          "raw": null,
+          "interval_mm": null,
+          "interval_cm": null,
+          "origin": "laboratory"
+        },
+        "E6": {
+          "raw": 345,
+          "interval_mm": [
+            345.0,
+            345.0
+          ],
+          "interval_cm": [
+            34.5,
+            34.5
+          ],
+          "origin": "warehouse"
+        },
+        "F6": {
+          "raw": null,
+          "interval_mm": null,
+          "interval_cm": null,
+          "origin": "laboratory"
+        },
+        "G6": {
+          "raw": 395,
+          "interval_mm": [
+            395.0,
+            395.0
+          ],
+          "interval_cm": [
+            39.5,
+            39.5
+          ],
+          "origin": "warehouse"
+        }
+      },
+      "note": null
+    },
+    {
+      "product": "5L*4（常规品）",
+      "row": 7,
+      "measurements": {
+        "B7": {
+          "raw": 320,
+          "interval_mm": [
+            320.0,
+            320.0
+          ],
+          "interval_cm": [
+            32.0,
+            32.0
+          ],
+          "origin": "laboratory"
+        },
+        "C7": {
+          "raw": "321-323",
+          "interval_mm": [
+            321.0,
+            323.0
+          ],
+          "interval_cm": [
+            32.1,
+            32.3
+          ],
+          "origin": "warehouse"
+        },
+        "D7": {
+          "raw": 320,
+          "interval_mm": [
+            320.0,
+            320.0
+          ],
+          "interval_cm": [
+            32.0,
+            32.0
+          ],
+          "origin": "laboratory"
+        },
+        "E7": {
+          "raw": "321-322",
+          "interval_mm": [
+            321.0,
+            322.0
+          ],
+          "interval_cm": [
+            32.1,
+            32.2
+          ],
+          "origin": "warehouse"
+        },
+        "F7": {
+          "raw": 367,
+          "interval_mm": [
+            367.0,
+            367.0
+          ],
+          "interval_cm": [
+            36.7,
+            36.7
+          ],
+          "origin": "laboratory"
+        },
+        "G7": {
+          "raw": "370-385",
+          "interval_mm": [
+            370.0,
+            385.0
+          ],
+          "interval_cm": [
+            37.0,
+            38.5
+          ],
+          "origin": "warehouse"
+        }
+      },
+      "note": null
+    },
+    {
+      "product": "8L*2",
+      "row": 8,
+      "measurements": {
+        "B8": {
+          "raw": 432,
+          "interval_mm": [
+            432.0,
+            432.0
+          ],
+          "interval_cm": [
+            43.2,
+            43.2
+          ],
+          "origin": "laboratory"
+        },
+        "C8": {
+          "raw": "433-435",
+          "interval_mm": [
+            433.0,
+            435.0
+          ],
+          "interval_cm": [
+            43.3,
+            43.5
+          ],
+          "origin": "warehouse"
+        },
+        "D8": {
+          "raw": 223,
+          "interval_mm": [
+            223.0,
+            223.0
+          ],
+          "interval_cm": [
+            22.3,
+            22.3
+          ],
+          "origin": "laboratory"
+        },
+        "E8": {
+          "raw": "224-226",
+          "interval_mm": [
+            224.0,
+            226.0
+          ],
+          "interval_cm": [
+            22.4,
+            22.6
+          ],
+          "origin": "warehouse"
+        },
+        "F8": {
+          "raw": 357,
+          "interval_mm": [
+            357.0,
+            357.0
+          ],
+          "interval_cm": [
+            35.7,
+            35.7
+          ],
+          "origin": "laboratory"
+        },
+        "G8": {
+          "raw": "360-370",
+          "interval_mm": [
+            360.0,
+            370.0
+          ],
+          "interval_cm": [
+            36.0,
+            37.0
+          ],
+          "origin": "warehouse"
+        }
+      },
+      "note": null
+    },
+    {
+      "product": "10L*2",
+      "row": 9,
+      "measurements": {
+        "B9": {
+          "raw": 432,
+          "interval_mm": [
+            432.0,
+            432.0
+          ],
+          "interval_cm": [
+            43.2,
+            43.2
+          ],
+          "origin": "laboratory"
+        },
+        "C9": {
+          "raw": "436-438",
+          "interval_mm": [
+            436.0,
+            438.0
+          ],
+          "interval_cm": [
+            43.6,
+            43.8
+          ],
+          "origin": "warehouse"
+        },
+        "D9": {
+          "raw": 223,
+          "interval_mm": [
+            223.0,
+            223.0
+          ],
+          "interval_cm": [
+            22.3,
+            22.3
+          ],
+          "origin": "laboratory"
+        },
+        "E9": {
+          "raw": "224-225",
+          "interval_mm": [
+            224.0,
+            225.0
+          ],
+          "interval_cm": [
+            22.4,
+            22.5
+          ],
+          "origin": "warehouse"
+        },
+        "F9": {
+          "raw": 425,
+          "interval_mm": [
+            425.0,
+            425.0
+          ],
+          "interval_cm": [
+            42.5,
+            42.5
+          ],
+          "origin": "laboratory"
+        },
+        "G9": {
+          "raw": "428-430",
+          "interval_mm": [
+            428.0,
+            430.0
+          ],
+          "interval_cm": [
+            42.8,
+            43.0
+          ],
+          "origin": "warehouse"
+        }
+      },
+      "note": null
+    },
+    {
+      "product": "20L（软）",
+      "row": 10,
+      "measurements": {
+        "B10": {
+          "raw": 305,
+          "interval_mm": [
+            305.0,
+            305.0
+          ],
+          "interval_cm": [
+            30.5,
+            30.5
+          ],
+          "origin": "laboratory"
+        },
+        "C10": {
+          "raw": "305-306",
+          "interval_mm": [
+            305.0,
+            306.0
+          ],
+          "interval_cm": [
+            30.5,
+            30.6
+          ],
+          "origin": "warehouse"
+        },
+        "D10": {
+          "raw": 175,
+          "interval_mm": [
+            175.0,
+            175.0
+          ],
+          "interval_cm": [
+            17.5,
+            17.5
+          ],
+          "origin": "laboratory"
+        },
+        "E10": {
+          "raw": "176-178",
+          "interval_mm": [
+            176.0,
+            178.0
+          ],
+          "interval_cm": [
+            17.6,
+            17.8
+          ],
+          "origin": "warehouse"
+        },
+        "F10": {
+          "raw": 490,
+          "interval_mm": [
+            490.0,
+            490.0
+          ],
+          "interval_cm": [
+            49.0,
+            49.0
+          ],
+          "origin": "laboratory"
+        },
+        "G10": {
+          "raw": "490-495",
+          "interval_mm": [
+            490.0,
+            495.0
+          ],
+          "interval_cm": [
+            49.0,
+            49.5
+          ],
+          "origin": "warehouse"
+        }
+      },
+      "note": null
+    }
+  ],
+  "attachment2_missing": [
+    "product batch quantity",
+    "single mass",
+    "class/orientation constraints",
+    "vehicle weight capacity",
+    "distance and complete cost semantics"
+  ],
+  "attachment2_vehicle_limits": {
+    "E3": "公路单位运输费用元/1000km",
+    "F4:F6": "numeric values without independent header; do not treat as yuan/trip",
+    "rows_12_19": "railing/nonuniform-floor geometry requires extra structure model; not closed rectangular inner height"
+  }
+}

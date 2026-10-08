@@ -1,0 +1,58 @@
+[
+  {
+    "document": "paper",
+    "original_draft_sentence": "尺寸、易碎需求和朝向解释会显著改变所得车队",
+    "final_sentence": "部分尺寸、易碎需求和朝向场景改变了所得车队",
+    "reason": "摘要对应已运行的具体场景，消除显著一词可能暗示统计检验/普遍未来结论的歧义。",
+    "evidence": "../execution/sensitivity/results.json 原29场景",
+    "numeric_or_model_change": false
+  },
+  {
+    "document": "paper",
+    "original_draft_sentence": "需求有效体积/单车有效体积",
+    "final_sentence": "货物总体积/单车有效体积",
+    "reason": "分子是货物实体体积，只有分母扣除顶部间隙；统一松弛界的物理含义。",
+    "evidence": "../execution/src/solver.py bounds; ../execution/data/instance.json",
+    "numeric_or_model_change": false
+  },
+  {
+    "document": "paper",
+    "original_draft_sentence": "其左下后角为x(i)、y(i)、z(i)。",
+    "final_sentence": "其各坐标分量最小的顶点为(x(i),y(i),z(i))。",
+    "reason": "原点右后下、y朝左的定义使原角名有歧义；与区间[x,x+dx]等真实代码统一。",
+    "evidence": "../execution/src/solver.py expand; ../execution/src/checker.py 边界/重叠区间",
+    "numeric_or_model_change": false
+  },
+  {
+    "document": "paper",
+    "original_draft_sentence": "独立首审已直接从原件重建输入，复算六任务、168候选、348参数及四个库MILP，并以自有检查器核查主要空间和数值结果；其通过范围仍是明确的单支持、均匀质量和静态条件。首审未完整重跑64次扩展装车与1674次历史重装，且发现旧PDF科学上标丢失、原三项CLI日志细节缺失和两次并发目标偏离。本修订修复表达与导出，不追溯补造历史；修订稿的知情复审仍待进行。",
+    "final_sentence": "除生产者自检外，另一个审查者从原件重建输入，复算六任务、168候选、348参数及四个库整数规划，并以自有检查器核查主要空间和数值结果；验证范围仍是明确的单支持、均匀质量和静态条件。64次扩展装车与1674次历史重装未被完整重复验证，其记录作为未改善研究保留。文档版本、导出检查和历史运行限制由接收入口README及qa/、logs/提供。",
+    "reason": "论文保留验证方法与覆盖范围，开发轮次/日志缺口移入接收记录；不删历史、不夸验证范围。",
+    "evidence": "../review/initial/report.md/result.json; logs/resources.json",
+    "numeric_or_model_change": false
+  },
+  {
+    "document": "paper",
+    "original_draft_sentence": "原计算声明3600秒窗口，已耗1929.69895秒；两次峰值2违反单求解进程目标，首轮3个CLI的原PID/stdout不可恢复，保持null。原全部峰值内存也未观测。新文档修复与前瞻日志测试资源另记，不追认原历史符合；具体收据、表达修改与导出核查见本域logs/和qa/。当前修订仅有作者自检，知情复审待另行完成；比赛规则及真实提交合规仍未核实，本研究没有联网、安装、上传或投稿。",
+    "final_sentence": "正文结论由逐件坐标、库存守恒、静态荷载核算和参数结果支撑，原三维全局最优与动态运输安全保持未验证。组合接收入口README提供程序身份、复现步骤、文档核查和完整运行限制；这些记录用于判断可复现范围，不改变本研究的条件结论。",
+    "reason": "将论文附录面向科学复现，原资源/null和待验状态保留README/result/logs。",
+    "evidence": "../execution/logs/resource_final.json; ../execution/logs/invocations.json; 当前README/result",
+    "numeric_or_model_change": false
+  },
+  {
+    "document": "technical_report",
+    "original_draft_sentence": "独立首审从原件重建并复算主要数值，接受明确静态范围内的模型与可行结果，但旧PDF科学记号导出失败、历史日志保留部分不足；本版修复文字和PDF，知情复审尚未完成。道路加速度、摩擦、绑扎及叉车可达性不在已核查范围内。",
+    "final_sentence": "主要数值另经从原件重建输入、重新求解和坐标复核，支持明确静态范围内的可行性判断。道路加速度、摩擦、绑扎及叉车可达性不在已核查范围内；现场实施前仍需工程确认。文档版本和具体核查范围见接收入口README。",
+    "reason": "企业报告让验证证据服务实施判断，审查轮次/旧导出错误分配到接收说明。",
+    "evidence": "../review/initial/report.md/result.json; 原静态模型假设",
+    "numeric_or_model_change": false
+  },
+  {
+    "document": "technical_report",
+    "original_draft_sentence": "本建议建立在单支持嵌套列、均匀质量和静态承重上，原空间最优与动态安全均未证。原首审及原3600秒窗口内已耗1929.69895秒的事实不改变；旧3个CLI原PID/stdout缺失保持null，两次并发目标偏离不追认符合。新域保留逐次收据、科学表达修改和PDF接收检查，独立知情复审待进行。原程序和数值配置未改，本轮不重复无影响的历史求解。",
+    "final_sentence": "本建议建立在单支持嵌套列、均匀质量和静态承重上，原三维全局最优与动态安全均未证。实施时优先确认包装规则和支持关系；需求或价格变化后重新选方案。接收入口README集中说明数值程序、配置、证据覆盖和版本状态，完整运行限制留在logs/与qa/，便于技术人员复核。",
+    "reason": "管理结论回到条件与操作；首审及不可补历史限制完整留入口与机器状态。",
+    "evidence": "原模型/主结果/参数实验；logs/resources.json; 当前README/result",
+    "numeric_or_model_change": false
+  }
+]

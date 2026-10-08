@@ -1,0 +1,90 @@
+{
+  "checker_version": "coordinate-chain-v1",
+  "role": "producer self-check; not independent acceptance",
+  "passed": false,
+  "tolerance_cm": 1e-07,
+  "checks": [
+    "unique ID",
+    "inventory",
+    "orientation",
+    "boundary and 3cm",
+    "all pairs overlap",
+    "full single support",
+    "fragile conditions",
+    "directional center",
+    "cumulative contact pressure",
+    "mass capacity",
+    "ground mass conservation",
+    "support trace",
+    "objective recomputation"
+  ],
+  "errors": [
+    {
+      "rule": "floor_support_trace",
+      "vehicle": "V001",
+      "items": [
+        "G2-0002"
+      ],
+      "detail": "G2-0001"
+    },
+    {
+      "rule": "single_full_support",
+      "vehicle": "V001",
+      "items": [
+        "G2-0003"
+      ],
+      "detail": []
+    },
+    {
+      "rule": "nonoverlap",
+      "vehicle": "V001",
+      "items": [
+        "G2-0001",
+        "G2-0002"
+      ],
+      "detail": [
+        25.0,
+        50.0,
+        35.0
+      ]
+    },
+    {
+      "rule": "load_conservation",
+      "vehicle": "V001",
+      "items": [],
+      "detail": {
+        "ground_kg": 366,
+        "mass_kg": 398.0
+      }
+    }
+  ],
+  "counts": {
+    "G2": 8,
+    "G1": 8,
+    "G3": 2,
+    "G4": 4,
+    "G5": 6
+  },
+  "N": 1,
+  "n1": 1,
+  "n2": 0,
+  "C": 450,
+  "Uv": 0.14131106988249845,
+  "Uw": 0.06633333333333333,
+  "vehicles": [
+    {
+      "vehicle_id": "V001",
+      "vehicle_type": "T1",
+      "items": 28,
+      "volume_m3": 2.742,
+      "weight_kg": 398.0,
+      "Uv": 0.14131106988249845,
+      "Uw": 0.06633333333333333,
+      "max_pressure_kg_m2": 225.0,
+      "min_top_gap_cm": 10.0,
+      "support_relations": 19,
+      "floor_load_kg": 366.0,
+      "pair_count": 378
+    }
+  ]
+}

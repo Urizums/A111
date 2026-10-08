@@ -1,0 +1,873 @@
+{
+  "scope": "preparation_only_not_production_acceptance",
+  "all_controls_pass": true,
+  "control_count": 25,
+  "elapsed_seconds": 0.014421300002140924,
+  "cases": [
+    {
+      "name": "boundary_touch_is_legal",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": true,
+      "expected_error": null,
+      "observed": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 200000,
+          "weight_kg": 200,
+          "UV": 0.03333333333333333,
+          "UV_usable": 0.03436426116838488,
+          "UW": 0.04
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            0.0,
+            0.0
+          ],
+          "limits_kg": [
+            500.0,
+            500.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": 0.0
+        }
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "a",
+          "type": "S",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        },
+        {
+          "id": "b",
+          "type": "S",
+          "x": 99,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "positive_volume_overlap",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "overlap",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "overlap"
+        ],
+        "metrics": {
+          "volume_cm3": 200000,
+          "weight_kg": 200,
+          "UV": 0.03333333333333333,
+          "UV_usable": 0.03436426116838488,
+          "UW": 0.04
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "a",
+          "type": "S",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        },
+        {
+          "id": "b",
+          "type": "S",
+          "x": 99,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "horizontal_boundary",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "boundary",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "boundary"
+        ],
+        "metrics": {
+          "volume_cm3": 200000,
+          "weight_kg": 200,
+          "UV": 0.03333333333333333,
+          "UV_usable": 0.03436426116838488,
+          "UW": 0.04
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "a",
+          "type": "S",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        },
+        {
+          "id": "b",
+          "type": "S",
+          "x": 201,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "exact_3cm_gap",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "floating",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "floating",
+          "incomplete_support"
+        ],
+        "metrics": {
+          "volume_cm3": 240000,
+          "weight_kg": 25,
+          "UV": 0.04,
+          "UV_usable": 0.041237113402061855,
+          "UW": 0.005
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "d",
+          "type": "D",
+          "x": 0,
+          "y": 0,
+          "z": 47,
+          "l": 80,
+          "w": 60,
+          "h": 50,
+          "mass": 25
+        }
+      ]
+    },
+    {
+      "name": "exact_3cm_gap_on_floor",
+      "expected_valid": true,
+      "observed": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 970000,
+          "weight_kg": 100,
+          "UV": 0.16166666666666665,
+          "UV_usable": 0.16666666666666666,
+          "UW": 0.02
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            0.0
+          ],
+          "limits_kg": [
+            500.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": -0.0
+        }
+      },
+      "control_pass": true
+    },
+    {
+      "name": "gap_2_9cm_rejected",
+      "expected_error": "safety_gap",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "safety_gap"
+        ],
+        "metrics": {
+          "volume_cm3": 971000.0,
+          "weight_kg": 100,
+          "UV": 0.16183333333333333,
+          "UV_usable": 0.16683848797250858,
+          "UW": 0.02
+        },
+        "forces": null
+      },
+      "control_pass": true
+    },
+    {
+      "name": "directed_rotation",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "orientation",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "orientation"
+        ],
+        "metrics": {
+          "volume_cm3": 240000,
+          "weight_kg": 25,
+          "UV": 0.04,
+          "UV_usable": 0.041237113402061855,
+          "UW": 0.005
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "d",
+          "type": "D",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 60,
+          "w": 80,
+          "h": 50,
+          "mass": 25
+        }
+      ]
+    },
+    {
+      "name": "fragile_on_standard",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": true,
+      "expected_error": null,
+      "observed": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 200000,
+          "weight_kg": 200,
+          "UV": 0.03333333333333333,
+          "UV_usable": 0.03436426116838488,
+          "UW": 0.04
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            100.0,
+            0.0
+          ],
+          "limits_kg": [
+            500.0,
+            500.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": -0.0
+        }
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "a",
+          "type": "S",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        },
+        {
+          "id": "f",
+          "type": "F",
+          "x": 0,
+          "y": 0,
+          "z": 10,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "fragile_on_floor",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": true,
+      "expected_error": null,
+      "observed": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 100000,
+          "weight_kg": 100,
+          "UV": 0.016666666666666666,
+          "UV_usable": 0.01718213058419244,
+          "UW": 0.02
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            0.0
+          ],
+          "limits_kg": [
+            500.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": -0.0
+        }
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "f",
+          "type": "F",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "fragile_topped",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "fragile_topped",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "fragile_topped"
+        ],
+        "metrics": {
+          "volume_cm3": 200000,
+          "weight_kg": 200,
+          "UV": 0.03333333333333333,
+          "UV_usable": 0.03436426116838488,
+          "UW": 0.04
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "f",
+          "type": "F",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        },
+        {
+          "id": "b",
+          "type": "S",
+          "x": 0,
+          "y": 0,
+          "z": 10,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "floating_fragile",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "floating",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "floating",
+          "incomplete_support"
+        ],
+        "metrics": {
+          "volume_cm3": 100000,
+          "weight_kg": 100,
+          "UV": 0.016666666666666666,
+          "UV_usable": 0.01718213058419244,
+          "UW": 0.02
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "f",
+          "type": "F",
+          "x": 0,
+          "y": 0,
+          "z": 1,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "partial_fragile_support",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "incomplete_support",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "incomplete_support"
+        ],
+        "metrics": {
+          "volume_cm3": 200000,
+          "weight_kg": 200,
+          "UV": 0.03333333333333333,
+          "UV_usable": 0.03436426116838488,
+          "UW": 0.04
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "a",
+          "type": "S",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        },
+        {
+          "id": "f",
+          "type": "F",
+          "x": 10,
+          "y": 0,
+          "z": 10,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "union_hole_and_duplicate_rectangles",
+      "observed_area": 80.0,
+      "expected_area": 80,
+      "control_pass": true
+    },
+    {
+      "name": "cumulative_not_immediate_load",
+      "expected_error": "static_load_infeasible",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "static_load_infeasible"
+        ],
+        "metrics": {
+          "volume_cm3": 300000,
+          "weight_kg": 900,
+          "UV": 0.05,
+          "UV_usable": 0.05154639175257732,
+          "UW": 0.18
+        },
+        "forces": {
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10
+        }
+      },
+      "hand_control": "bottom external load 600kg exceeds 500kg; each immediate item 300kg",
+      "control_pass": true
+    },
+    {
+      "name": "cumulative_valid_chain",
+      "observed": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 300000,
+          "weight_kg": 600,
+          "UV": 0.05,
+          "UV_usable": 0.05154639175257732,
+          "UW": 0.12
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            400.0,
+            200.0,
+            0.0
+          ],
+          "limits_kg": [
+            500.0,
+            500.0,
+            500.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": -0.0
+        }
+      },
+      "expected_loads": [
+        400,
+        200,
+        0
+      ],
+      "control_pass": true
+    },
+    {
+      "name": "pressure_semantics_are_separate",
+      "observed_top": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 125000,
+          "weight_kg": 260,
+          "UV": 0.020833333333333332,
+          "UV_usable": 0.02147766323024055,
+          "UW": 0.052
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            160.0,
+            0.0
+          ],
+          "limits_kg": [
+            500.0,
+            125.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": 0.0
+        }
+      },
+      "observed_contact": {
+        "valid": false,
+        "errors": [
+          "static_load_infeasible"
+        ],
+        "metrics": {
+          "volume_cm3": 125000,
+          "weight_kg": 260,
+          "UV": 0.020833333333333332,
+          "UV_usable": 0.02147766323024055,
+          "UW": 0.052
+        },
+        "forces": {
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "pressure_basis": "contact",
+          "time_limit_seconds": 10
+        }
+      },
+      "hand_control": "top-area limit500kg vs actual contact-area125kg; imposed load160kg",
+      "control_pass": true
+    },
+    {
+      "name": "source_mass_spoof",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "mass_not_source_bound",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "mass_not_source_bound"
+        ],
+        "metrics": {
+          "volume_cm3": 100000,
+          "weight_kg": 1,
+          "UV": 0.016666666666666666,
+          "UV_usable": 0.01718213058419244,
+          "UW": 0.0002
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "a",
+          "type": "S",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 1
+        }
+      ]
+    },
+    {
+      "name": "truck_weight_capacity",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "truck_weight"
+        ],
+        "metrics": {
+          "volume_cm3": 100000,
+          "weight_kg": 100,
+          "UV": 0.016666666666666666,
+          "UV_usable": 0.01718213058419244,
+          "UW": 1.0101010101010102
+        },
+        "forces": null
+      },
+      "control_pass": true
+    },
+    {
+      "name": "directed_lower_upper_center",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "directed_upper_center",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "directed_upper_center"
+        ],
+        "metrics": {
+          "volume_cm3": 340000,
+          "weight_kg": 125,
+          "UV": 0.056666666666666664,
+          "UV_usable": 0.058419243986254296,
+          "UW": 0.025
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "d",
+          "type": "D",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 80,
+          "w": 60,
+          "h": 50,
+          "mass": 25
+        },
+        {
+          "id": "a",
+          "type": "S",
+          "x": 40,
+          "y": 0,
+          "z": 50,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "duplicate_id",
+      "kind": "synthetic_preparation_control",
+      "expected_valid": false,
+      "expected_error": "duplicate_item_id",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "duplicate_item_id"
+        ],
+        "metrics": {
+          "volume_cm3": 200000,
+          "weight_kg": 200,
+          "UV": 0.03333333333333333,
+          "UV_usable": 0.03436426116838488,
+          "UW": 0.04
+        },
+        "forces": null
+      },
+      "control_pass": true,
+      "items": [
+        {
+          "id": "a",
+          "type": "S",
+          "x": 0,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        },
+        {
+          "id": "a",
+          "type": "S",
+          "x": 100,
+          "y": 0,
+          "z": 0,
+          "l": 100,
+          "w": 100,
+          "h": 10,
+          "mass": 100
+        }
+      ]
+    },
+    {
+      "name": "partial_single_vs_complete_batch",
+      "observed_single": [],
+      "observed_batch": [
+        "inventory_missing_or_excess"
+      ],
+      "control_pass": true
+    },
+    {
+      "name": "original_volume_denominator",
+      "observed": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 500000,
+          "weight_kg": 1000,
+          "UV": 0.5,
+          "UV_usable": 0.5154639175257731,
+          "UW": 0.5
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            0.0
+          ],
+          "limits_kg": [
+            500.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": -0.0
+        }
+      },
+      "expected_UV": 0.5,
+      "expected_UW": 0.5,
+      "control_pass": true
+    },
+    {
+      "name": "aggregate_ratios_and_cost",
+      "observed": {
+        "N": 2,
+        "cost": 1150,
+        "UV": 0.3333333333333333,
+        "UW": 0.3333333333333333
+      },
+      "expected_N": 2,
+      "expected_cost": 1150,
+      "expected_UV": 0.3333333333333333,
+      "expected_UW": 0.3333333333333333,
+      "control_pass": true
+    },
+    {
+      "name": "two_supports_equilibrium",
+      "observed": {
+        "valid": true,
+        "errors": [],
+        "metrics": {
+          "volume_cm3": 200000,
+          "weight_kg": 400,
+          "UV": 0.03333333333333333,
+          "UV_usable": 0.03436426116838488,
+          "UW": 0.08
+        },
+        "forces": {
+          "status": 0,
+          "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10,
+          "incoming_loads_kg": [
+            100.0,
+            100.0,
+            0.0
+          ],
+          "limits_kg": [
+            250.0,
+            250.0,
+            500.0
+          ],
+          "max_balance_residual": 0.0,
+          "minimum_reaction": 0.0
+        }
+      },
+      "control_pass": true
+    },
+    {
+      "name": "force_moment_impossible_overhang",
+      "observed": {
+        "valid": false,
+        "errors": [
+          "static_load_infeasible"
+        ],
+        "metrics": {
+          "volume_cm3": 120000,
+          "weight_kg": 110,
+          "UV": 0.02,
+          "UV_usable": 0.020618556701030927,
+          "UW": 0.022
+        },
+        "forces": {
+          "status": 2,
+          "message": "The problem is infeasible. (HiGHS Status 8: model_status is Infeasible; primal_status is None)",
+          "pressure_basis": "top",
+          "time_limit_seconds": 10
+        }
+      },
+      "control_pass": true
+    }
+  ]
+}

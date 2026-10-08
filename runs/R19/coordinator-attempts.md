@@ -40,3 +40,11 @@
 - L3发布编排中两次依赖操作过早派发：完整核查在refresh命令返回session而未收回终态时开始，push在commit返回session而未收回终态时开始。随后逐个收回原会话，refresh/完整10438文件检查/commit/push均实际exit0，远端身份另查，不重复副作用。已返回session不等于完成，后续必须先收回上游终态再派发依赖操作；本记录不推断此前具体进程完成先后，也不改任何科研失败/预算。
 
 - L3原审查者以partial记录a6不可还原的历史缺口，root收集器旧枚举只允许pass/fail/blocked/unverified。前瞻增加对原生partial的保存，不强迫审查者改成pass或覆盖初判；partial仍计为非pass，latest_mandatory_pass仍只有全pass才true。关闭完整诊断与科学门通过继续分开。
+
+- L4 reviewer初次物流提示误写runs/R19/raw-lock.json，实际文件为runs/R19/inputs/raw-lock.json。审查者真实报告不存在后root明确授权正确原锁路径，保留错误及恢复，不增加答案/评分或扩大其他层读域。这是协调者路径错误，不归入作者科学缺陷或旧预算。
+
+- L3关闭/L4启动整合时，root先启动catalog刷新但工具返回尚在运行，随后运行publication观察；二者控制器实际各自持锁，后续收取刷新exit0并再次检查共享台账。此调度未遵守依赖前先收终态的协调纪律，保留观察，不用于证明并发安全。另只读CI文件定位误猜cloud-delivery.yml而文件不存在，随后rg文件清单定位实际validate.yml；未影响CI或源文件。
+
+- L3终态暂存选择器首次把自身尚在运行的publication命令回执选入候选；写索引前assert拒绝，实际未暂存任何文件。原失败l3-close-safe-stage-command.json保留。对publication顶层同样先排除started回执，再另存恢复调用，不更改冻结生产/审查文件。
+
+- L4冻结准备的source-readback.txt第77行是原DOCX空段落的实际转录“DOCX P22: ”，Git文本样式检查报尾空格。保留转录/锁原字节，只将此原件读回证据从样式检查排除；其余文档/程序继续检查。这不降低几何、论文或独立验收门槛。
