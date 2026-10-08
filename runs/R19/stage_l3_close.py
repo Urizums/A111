@@ -1,4 +1,4 @@
-"""Stage completed L3 evidence and L4 dispatch, excluding live L4 work."""
+"""Stage completed L3/L4 frozen evidence, excluding all active actor scopes."""
 import json
 import subprocess
 from pathlib import Path
@@ -43,6 +43,17 @@ if execution_lock_path.exists():
     frozen_L4_execution = {entry['path'] for entry in execution_lock['files']}
     paths.update(frozen_L4_execution)
     paths.add('runs/R19/levels/L4/execution-lock.json')
+frozen_L4_followups = set()
+for scope in ['review/initial', 'execution-v2', 'review/recheck-1']:
+    relative = f'runs/R19/levels/L4/{scope}-lock.json'
+    lock_path = ROOT / relative
+    if lock_path.exists():
+        lock = json.loads(lock_path.read_text(encoding='utf-8'))
+        scope_paths = {entry['path'] for entry in lock['files']}
+        paths.update(scope_paths)
+        paths.add(relative)
+        frozen_L4_followups.update(scope_paths)
+        frozen_L4_followups.add(relative)
 for relative in paths:
     if relative.endswith('command.json'):
         receipt = json.loads((ROOT / relative).read_text(encoding='utf-8'))
@@ -59,7 +70,9 @@ for relative in staged:
     if relative.startswith('runs/R19/levels/L4/execution/'):
         assert relative in frozen_L4_execution, ('Unfrozen L4 production', relative)
     if relative.startswith('runs/R19/levels/L4/review/'):
-        assert relative == 'runs/R19/levels/L4/review/preparation-lock.json' or relative.startswith('runs/R19/levels/L4/review/preparation/')
+        assert (relative == 'runs/R19/levels/L4/review/preparation-lock.json' or relative.startswith('runs/R19/levels/L4/review/preparation/') or relative in frozen_L4_followups), ('Unfrozen L4 review', relative)
+    if relative.startswith('runs/R19/levels/L4/execution-v2/'):
+        assert relative in frozen_L4_followups, ('Unfrozen L4 informed production', relative)
 tracked = set(subprocess.check_output(['git', '-c', 'core.longpaths=true', 'ls-files', '-z'],
                                      cwd=ROOT, encoding='utf-8').split('\0'))
 index = json.loads((ROOT / 'state/revision-locks.json').read_text(encoding='utf-8'))

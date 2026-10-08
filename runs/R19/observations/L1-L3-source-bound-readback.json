@@ -1,0 +1,798 @@
+{
+  "status": "coordinator_readback_only_not_new_acceptance",
+  "L4": "first_review_running_not_included",
+  "trials": [
+    {
+      "level": 1,
+      "diagnostic_path": "runs/R19/levels/L1/diagnostic-result.json",
+      "sha256": "cc6a7affb3d954671c905775e3812ab743704ef1ad4e2d578b203a8c77f3d08b",
+      "first_verdicts": [
+        {
+          "id": "a1",
+          "status": "pass",
+          "evidence": [
+            "frozen-final-independent-audit.json",
+            "extra-source-history-audit.json",
+            "paper-crosscheck.json"
+          ],
+          "reason": "所有原主问题与技术报告/程序交付；附件2可选几何及缺口有源。",
+          "limits": "有限候选最优范围明示；附件2完整业务数据不足不强加。"
+        },
+        {
+          "id": "a2",
+          "status": "pass",
+          "evidence": [
+            "frozen-final-loads.csv",
+            "independent-bounds-pool.json",
+            "independent-pool-cost-cut.json"
+          ],
+          "reason": "原件单位/目标/累计载荷/支撑/方向兑现；独立有效界和有限池求解。",
+          "limits": "静态均匀密度及保守支撑模型；不证明原几何全局最优。"
+        },
+        {
+          "id": "a3",
+          "status": "pass",
+          "evidence": [
+            "raw-reproduce-receipt.json",
+            "raw-rerun-independent-audit.json",
+            "zip-raw-reproduce-receipt.json",
+            "zip-raw-rerun-independent-audit.json",
+            "selected-replay-independent-audit.json",
+            "paper-crosscheck.json"
+          ],
+          "reason": "从官方原件两种原版入口真实重跑七组；全部关键主数值独立复算。",
+          "limits": "选中配方复算不等于全历史搜索重演；ZIP研究历史命令不齐全。"
+        },
+        {
+          "id": "a4",
+          "status": "fail",
+          "evidence": [
+            "independent-boundary-tests.json",
+            "independent_boundary.py",
+            "independent-experiment-audit.json"
+          ],
+          "reason": "F1:源G3易碎属性可被输出category=standard绕过，实际受压非法布局被原检查器接受。",
+          "limits": "现有冻结布局全合法；其余边界/参数/界证据不能抵消该失败。"
+        },
+        {
+          "id": "a5",
+          "status": "pass",
+          "evidence": [
+            "paper-crosscheck.json",
+            "paper-pdf-extraction.json",
+            "paper-pages/"
+          ],
+          "reason": "完整中文论文和16页PDF实读，主表/图源/坐标/逐车数值一致，科学论证完整。",
+          "limits": "小处图间距可改善；历史绝对耗时不独立复现。"
+        },
+        {
+          "id": "a6",
+          "status": "pass",
+          "evidence": [
+            "raw-reproduce-receipt.json",
+            "zip-raw-reproduce-receipt.json",
+            "extra-source-history-audit.json",
+            "process-terminal-and-events.json"
+          ],
+          "reason": "新接收者无需设计者私有解题提示可启动；smoke/full分离；角色和旧失败/修正保留。",
+          "limits": "a6通过不等于检查器无漏洞；历史调用身份/绝对时间仅保留产物支持。"
+        }
+      ],
+      "current_verdicts": [
+        {
+          "id": "a1",
+          "status": "pass",
+          "evidence": [
+            "frozen-final-independent-audit.json",
+            "independent-experiment-audit.json",
+            "paper-crosscheck.json",
+            "../initial/report.md"
+          ],
+          "reason": "全部原问题链和合法主方案保持。",
+          "scope": "原PDF附件2可选；完整业务输入不足，不强加业务解。"
+        },
+        {
+          "id": "a2",
+          "status": "pass",
+          "evidence": [
+            "frozen-final-loads.csv",
+            "affected-layout-independent-recheck.json",
+            "source-differences.diff",
+            "../initial/independent-bounds-pool.json",
+            "../initial/independent-pool-cost-cut.json"
+          ],
+          "reason": "物理模型/算法未改变；原数学与模式池证明适用，来源约束修复。",
+          "scope": "静态均匀密度/保守支撑模型，原连续几何最优仍未证明。"
+        },
+        {
+          "id": "a3",
+          "status": "pass",
+          "evidence": [
+            "raw-reproduce-receipt.json",
+            "raw-rerun-independent-audit.json",
+            "zip-raw-reproduce-receipt.json",
+            "zip-raw-rerun-independent-audit.json",
+            "zip-paper-rebuild-audit.json"
+          ],
+          "reason": "修订代码和ZIP从原件真实重建七方案；独立几何/指标吻合；图文真实重建。",
+          "scope": "不称为重新运行全部历史搜索或原题全局求解。"
+        },
+        {
+          "id": "a4",
+          "status": "pass",
+          "evidence": [
+            "independent-source-boundary-tests.json",
+            "affected-layout-independent-recheck.json",
+            "../initial/selected-replay-independent-audit.json",
+            "../initial/independent-single-pool-replay.json"
+          ],
+          "reason": "F1实拒且物理违规仍检出；自构83检查匹配预期，235布局独立及修订验证有效。",
+          "scope": "有限反例/参数证据，不保证任意恶意输入/所有数值尺度；原最优界范围不变。"
+        },
+        {
+          "id": "a5",
+          "status": "pass",
+          "evidence": [
+            "paper-crosscheck.json",
+            "paper-pdf-extraction.json",
+            "paper-pages/",
+            "zip-paper-rebuild-audit.json"
+          ],
+          "reason": "17页成稿及修订论证实读，17组主数值与全部图文重建一致。",
+          "scope": "未核验年度模板/AI规则/提交接口；完整练习论文与算法附件。"
+        },
+        {
+          "id": "a6",
+          "status": "pass",
+          "evidence": [
+            "source-history-consistency.json",
+            "source-differences.diff",
+            "raw-reproduce-receipt.json",
+            "zip-raw-reproduce-receipt.json",
+            "process-terminal-and-events.json"
+          ],
+          "reason": "新接收者实际启动，初审F1和67/68回归失败保留，接收合同源绑定，作者自检与知情复审区别明确。",
+          "scope": "单actor历史由保留产物支持，不推断全部历史工具身份/绝对时间。"
+        }
+      ],
+      "current_quality": [
+        {
+          "dimension": "problem fidelity",
+          "status": "achieved",
+          "evidence": [
+            "frozen-final-independent-audit.json",
+            "paper-crosscheck.json"
+          ],
+          "scope": "沿用初审原题/附件2解释，来源原库存及规则保持。",
+          "remaining_gap": null
+        },
+        {
+          "dimension": "mathematical justification",
+          "status": "achieved",
+          "evidence": [
+            "source-differences.diff",
+            "affected-layout-independent-recheck.json",
+            "../initial/independent-bounds-pool.json",
+            "../initial/independent-pool-cost-cut.json"
+          ],
+          "scope": "原数学模型与有限池证据；原几何全局最优未知且公开。",
+          "remaining_gap": null
+        },
+        {
+          "dimension": "empirical sufficiency and fair alternatives",
+          "status": "achieved",
+          "evidence": [
+            "independent-source-boundary-tests.json",
+            "affected-layout-independent-recheck.json",
+            "../initial/selected-replay-independent-audit.json",
+            "../initial/independent-single-pool-replay.json"
+          ],
+          "scope": "F1关闭使初审partial转achieved；沿用初审真实公平候选/关键参数/有效界证据；不主张穷尽反例或统计泛化。",
+          "remaining_gap": null
+        },
+        {
+          "dimension": "reproduction and result-to-paper traceability",
+          "status": "achieved",
+          "evidence": [
+            "raw-rerun-independent-audit.json",
+            "zip-raw-rerun-independent-audit.json",
+            "paper-crosscheck.json",
+            "zip-paper-rebuild-audit.json"
+          ],
+          "scope": "原件最终方案与图文复现；ZIP含新增构建依赖，不是所有过去历史自动重演。",
+          "remaining_gap": null
+        },
+        {
+          "dimension": "clarity and completeness of scientific argument",
+          "status": "achieved",
+          "evidence": [
+            "paper-pdf-extraction.json",
+            "paper-pages/",
+            "source-differences.diff"
+          ],
+          "scope": "17页完整论文、首次失败与修订范围解释克制。",
+          "remaining_gap": null,
+          "optional_polish": "第13页因整张参数表移到下一页而留白；可调整排版，不影响读数/论证。"
+        },
+        {
+          "dimension": "workflow transferability and autonomous gap resolution",
+          "status": "achieved",
+          "evidence": [
+            "source-history-consistency.json",
+            "raw-reproduce-receipt.json",
+            "zip-raw-reproduce-receipt.json"
+          ],
+          "scope": "同一案例实际接收/修正/失败保留，不作跨层因果或一般能力宣称。",
+          "remaining_gap": null
+        }
+      ],
+      "closure_reason": "Actual independent informed recheck passes six criteria after source-binding repair; initial a4 failure and scope limits preserved."
+    },
+    {
+      "level": 2,
+      "diagnostic_path": "runs/R19/levels/L2/diagnostic-result.json",
+      "sha256": "238710ce92fe13b74fac384eb24b40998e6085d85e86fb4bf13759b1fa2d4660",
+      "first_verdicts": [
+        {
+          "id": "a1",
+          "status": "pass",
+          "evidence": [
+            "independent-frozen-audit.json",
+            "paper-figures-audit.json",
+            "report.md",
+            "zip-scope-audit.json"
+          ],
+          "reason": "完整回应Q1单车双目标及两单车型全运、Q2混合两目标和Q3技术报告；原件逐字段/库存/坐标姿态两率独立核算，附件2原单元格资格审计且完整扩展为原题可选。",
+          "limits": [
+            "原三维问题全局最优未证明；库内最优和必要容量界分别限定",
+            "更宽部分支撑/力矩、真实材料/动态/装卸路径未验证",
+            "未知正式官方I/O和提交规则、附件2缺失完整订单及总体泛化未验证"
+          ]
+        },
+        {
+          "id": "a2",
+          "status": "pass",
+          "evidence": [
+            "independent-frozen-audit.json",
+            "independent-objective-frontier.json",
+            "producer-checker-controls.json",
+            "parameter-replay-audit.json"
+          ],
+          "reason": "官方单位、约束、累计传载/压力、间隙和类别条件进入独立几何检查，支撑/易碎/重心假设明确，双目标与库内/全局范围有数学区分。",
+          "limits": [
+            "完全支撑为声明的保守可行子域，不能据其拒绝推断更宽原题不可行",
+            "接触面积比例分担是静态模型假设"
+          ]
+        },
+        {
+          "id": "a3",
+          "status": "pass",
+          "evidence": [
+            "full_raw_reproduction.receipt.json",
+            "reproduction-independent-audit.json",
+            "parameter-replay-audit.json",
+            "zip_smoke_reproduction.receipt.json",
+            "paper-figures-audit.json",
+            "staging.json"
+          ],
+          "reason": "从官方raw真正完整重跑并由不同程序核11套布局；9关键成功/1必要高度失败真实重放；ZIP独立烟雾，6图再生和73行数值原件追溯均成立，不以作者validation或退出码为真值。",
+          "limits": [
+            "26保存成功参数例未再次调用求解，全部当前输入/布局/目标已独立复算",
+            "旧历史调用未捕获的代码身份/UTC/遥测仍未知，未补造",
+            "ZIP full3000没有重复第二次求解；同代码在staged full3000真实执行"
+          ]
+        },
+        {
+          "id": "a4",
+          "status": "pass",
+          "evidence": [
+            "independent-frozen-audit.json",
+            "independent-objective-frontier.json",
+            "producer-checker-controls.json",
+            "parameter-replay-audit.json",
+            "reviewer-failures.json"
+          ],
+          "reason": "实际基线、36成功/失败实验、易碎分支、种子/规模/承压/几何扰动和有意义边界反证齐备；独立有效上下界及候选最优核算准确限定，未把失败或宽松界变成原题最优结论。",
+          "limits": [
+            "仍有大原问题解质量区间及受限几何库，实验充分性质量维度为partial",
+            "25源宽口径布尔控制24一致，1部分支撑合法控制被声明保守模型拒绝，原差异保留"
+          ]
+        },
+        {
+          "id": "a5",
+          "status": "pass",
+          "evidence": [
+            "paper-pdf-text.txt",
+            "report-pdf-text.txt",
+            "pdf-render-audit.json",
+            "paper-figures-audit.json",
+            "paper-regeneration.diff.txt",
+            "report.md"
+          ],
+          "reason": "完整中文科学论文11页与企业报告2页已实际逐页/六图查看，73行表值和6图独立一致；题意、模型、方法、验证、结果、局限链完整，摘要与正文范围相符。",
+          "limits": [
+            "排版/图表连线和日志式附录有可选表达改进，不构成事前门缺失",
+            "未预测分数、奖项或真实材料安全"
+          ]
+        },
+        {
+          "id": "a6",
+          "status": "pass",
+          "evidence": [
+            "workflow-observations.json",
+            "received-locks.json",
+            "immutability-final.json",
+            "staging.json",
+            "reviewer-failures.json",
+            "environment-and-raw-final.json"
+          ],
+          "reason": "冻结交接使独立reviewer无需设计者私有解释从原件执行完整流程及关键分支，smoke与full区分、恢复/错误/checkpoint/未知资源字段真实保留；作者同上下文多角色未被当独立验收。",
+          "limits": [
+            "只验证本次L2单个交接，不证明通用工作流能力或层级因果",
+            "claim_evidence的Q3原32例描述需同步最终36例；属于可追溯元数据残余",
+            "外部host全部事件真实性及未知provider遥测未另行审计"
+          ]
+        }
+      ],
+      "current_verdicts": [
+        {
+          "id": "a1",
+          "status": "pass",
+          "evidence": [
+            "independent-audit.json",
+            "affected-replay-audit.json",
+            "paper-numeric-audit.json",
+            "final-checks.json"
+          ],
+          "reason": "所有原问和程序/中文报告完整，12/8400车数目标与13/7850费用目标独立且3000件真实可行；附件2直接全单元格资格审计符合原题可选范围。",
+          "limits": [
+            "只到附件1/明确合成扰动和有限预算；原题全局最优与完整Pareto未证明",
+            "原问题混合8–12车辆、5350–7850元必要界与可行上界不闭合",
+            "保守全支撑和面积比例分担非真实材料/动力实验",
+            "未知正式官方I/O、投稿AI规则、完整附件2订单及总体泛化"
+          ]
+        },
+        {
+          "id": "a2",
+          "status": "pass",
+          "evidence": [
+            "independent-audit.json",
+            "new-controls-objectives.json",
+            "continuous-bound-control.json",
+            "comparison-version-audit.json",
+            "blocks-version.diff.txt"
+          ],
+          "reason": "新界自行原件推导对原宽正交域有效；全部物理约束及单位独立重建；新旧代码/配对资源/候选保护范围准确，库主目标证明不冒充原题最优。",
+          "limits": [
+            "没有重证次级库内最优；更宽部分支撑/力矩与动态材料未知",
+            "原比对旧blocks与当前缓存键不同真实保存，无此floor开关时构造相同"
+          ]
+        },
+        {
+          "id": "a3",
+          "status": "pass",
+          "evidence": [
+            "zip_full_raw.receipt.json",
+            "zip-code-receive.json",
+            "independent-audit.json",
+            "affected-replay-audit.json",
+            "paper-numeric-audit.json",
+            "delivery_regeneration.receipt.json",
+            "final-checks.json"
+          ],
+          "reason": "解压ZIP从官方原件真实3000full且全部新布局独立核；A/B完整和6关键成功+1高度失败实际重放；所有受影响保存布局/输入、82表行与7图再生一致。",
+          "limits": [
+            "旧raw9与另29个当前成功参数没有再次求解，但全部保存结果/当前输入已独立核算",
+            "主raw与ZIP共享同代码一次真实full，不伪装两个独立新full",
+            "原调用完整host事件/未知历史遥测没有补造"
+          ]
+        },
+        {
+          "id": "a4",
+          "status": "pass",
+          "evidence": [
+            "independent-audit.json",
+            "new-controls-objectives.json",
+            "affected-replay-audit.json",
+            "comparison-version-audit.json",
+            "paper-numeric-audit.json",
+            "failures-and-resource-events.json"
+          ],
+          "reason": "针对易碎几何瓶颈公平控制、原宽域合法界、真实种子反常/失败/规模及候选池反例均能改变/限定旧结论；真实目标与未知范围有清晰界。",
+          "limits": [
+            "三种子单批资料不能证明总体显著性；C复合几何非单机制归因",
+            "旧合法部分支撑反例与保守scope仍继承；没有将未知最优性消除"
+          ]
+        },
+        {
+          "id": "a5",
+          "status": "pass",
+          "evidence": [
+            "paper-numeric-audit.json",
+            "paper-pdf-text.txt",
+            "report-pdf-text.txt",
+            "pdf-render-audit.json",
+            "report.md"
+          ],
+          "reason": "完整12页中文论文和2页企业报告科学链/原问题/机制/局限齐备，82行关键表值、七图和全部源PDF页真实核，摘要和范围相符。",
+          "limits": [
+            "页面留白与13.71%统计量标签可选细化；实际指平均节省/平均B费，不是配对百分比均值",
+            "未验证提交规范、竞赛分数或获奖"
+          ]
+        },
+        {
+          "id": "a6",
+          "status": "pass",
+          "evidence": [
+            "received-locks.json",
+            "final-checks.json",
+            "affected-replay-audit.json",
+            "method-adjustments.md",
+            "failures-and-resource-events.json",
+            "zip_full_raw.receipt.json"
+          ],
+          "reason": "同一作者知情修订、同一reviewer知情复审真实区分；原件/程序/研究界面和完整PDF交接可运行；真实资源中断/恢复/原失败保持，未重复未知调用/换样本。",
+          "limits": [
+            "单次L2知情迁移不证明通用能力/层级因果",
+            "旧资源计数/整体遥测未知继续null，未从新账号窗口估算历史",
+            "作者原9窗口日志存在/内容可核，不能独立回溯全部host事件"
+          ]
+        }
+      ],
+      "current_quality": [
+        {
+          "dimension": "problem fidelity",
+          "status": "achieved",
+          "evidence": [
+            "independent-audit.json",
+            "final-checks.json",
+            "paper-numeric-audit.json"
+          ],
+          "material_gap": null,
+          "remaining_gap": "未知更严现场规则和附件2完整订单需要新增实际数据；原题所有问题已覆盖。",
+          "scope/limits": [
+            "只到附件1/明确合成扰动和有限预算；原题全局最优与完整Pareto未证明",
+            "原问题混合8–12车辆、5350–7850元必要界与可行上界不闭合",
+            "保守全支撑和面积比例分担非真实材料/动力实验",
+            "未知正式官方I/O、投稿AI规则、完整附件2订单及总体泛化"
+          ]
+        },
+        {
+          "dimension": "mathematical justification",
+          "status": "achieved",
+          "evidence": [
+            "independent-audit.json",
+            "new-controls-objectives.json",
+            "continuous-bound-control.json",
+            "comparison-version-audit.json"
+          ],
+          "material_gap": null,
+          "remaining_gap": "原全局界不闭合；力矩/材料/动态模型不在声明假设内。",
+          "scope/limits": "独立原件单位/几何/传载、宽正交域必要界与库主目标成立；无主次级通用最优承诺"
+        },
+        {
+          "dimension": "empirical sufficiency and fair alternatives",
+          "status": "achieved",
+          "evidence": [
+            "independent-audit.json",
+            "affected-replay-audit.json",
+            "comparison-version-audit.json",
+            "new-controls-objectives.json",
+            "paper-numeric-audit.json"
+          ],
+          "material_gap": null,
+          "remaining_gap": "原题车数33.33%和费用31.85%相对必要界差距、有限几何/低预算波动及跨实例泛化未知；更强界/尾车控制有价值但不需为已有有限上界与配对主张继续无目的搜索。",
+          "scope/limits": "相对首次partial，本轮新界/原瓶颈A-B单开关及C复合范围/真实三配对/36当前实验/反例足以限定本论文主张；不以算法数或证明原题最优作为新增门槛",
+          "change_from_initial": "partial -> achieved within explicit finite-instance claims; initial judgment retained forever"
+        },
+        {
+          "dimension": "reproduction and result-to-paper traceability",
+          "status": "achieved",
+          "evidence": [
+            "zip_full_raw.receipt.json",
+            "affected-replay-audit.json",
+            "paper-numeric-audit.json",
+            "delivery_regeneration.receipt.json",
+            "final-checks.json"
+          ],
+          "material_gap": null,
+          "remaining_gap": "另29成功当前例/旧raw9没有重调用；旧未知启动/遥测不补造。",
+          "scope/limits": "所有当前布局/输入独立核，主原件full、A/B完整、6参数成功与1必要失败实际复跑；82行7图当前源追溯与PDF目视"
+        },
+        {
+          "dimension": "clarity and completeness of scientific argument",
+          "status": "achieved",
+          "evidence": [
+            "paper-numeric-audit.json",
+            "pdf-render-audit.json",
+            "paper-pdf-text.txt",
+            "report-pdf-text.txt",
+            "report.md"
+          ],
+          "material_gap": null,
+          "remaining_gap": "可选优化页6/报告页2留白，13.71%统计量标签更精确。",
+          "scope/limits": "全部源PDF12+2页与7图实看，完整科学链、受支持摘要/企业条件；没有论文页数硬门"
+        },
+        {
+          "dimension": "workflow transferability and autonomous gap resolution",
+          "status": "achieved",
+          "evidence": [
+            "affected-replay-audit.json",
+            "comparison-version-audit.json",
+            "method-adjustments.md",
+            "failures-and-resource-events.json",
+            "final-checks.json"
+          ],
+          "material_gap": null,
+          "remaining_gap": "单一L2受控迁移与知情修订不能外推总体能力/层级效果，外部host整体事件未知。",
+          "scope/limits": "当前新原件附件实际可跑，自主补几何/界/池/对照缺口且失败保存；原首次结论与资源不归零"
+        }
+      ],
+      "closure_reason": "Substantive informed research independently substantiates current bounded paper claims with six gates and scoped quality achieved; first pass/partial remains, original optimum and generalization unknown, no material repair required for current claims."
+    },
+    {
+      "level": 3,
+      "diagnostic_path": "runs/R19/levels/L3/diagnostic-result.json",
+      "sha256": "eb80249f97543a9d3ba6967a016a5fa61be3fbbf46f5385825dc2ab82cdc5999",
+      "first_verdicts": [
+        {
+          "id": "a1",
+          "status": "pass",
+          "evidence": [
+            "independent-source-audit.json",
+            "numeric-summary.json",
+            "experiment-audit.json",
+            "extension-independent.json",
+            "figure-paper-audit.json"
+          ],
+          "reason": "All six original formal objectives, coordinates, full original inventory, management report/parameter duties and runnable program addressed; Attachment2 supported audit/fit scope matches original optional extension wording.",
+          "limits": [
+            "Accepts explicitly conditional feasible candidates, not completed proof of original global minima",
+            "Attachment2 complete official transportation batch absent; no invented fields"
+          ]
+        },
+        {
+          "id": "a2",
+          "status": "pass",
+          "evidence": [
+            "receipt-and-adapter.json",
+            "adapter-amendment.md",
+            "numeric/",
+            "experiment-audit.json",
+            "cli-and-restricted-model.json"
+          ],
+          "reason": "Mathematics and source dimensions/masses/units substantiate all independently tested candidates and scenarios; full support, cumulative load, orientations, clearance, quantities and goals recomputed.",
+          "limits": [
+            "single-support/static/uniform assumptions are conditional, not organizer facts",
+            "PDF scientific notation defect is a5 failure and is not excused by mathematical Markdown correctness"
+          ]
+        },
+        {
+          "id": "a3",
+          "status": "pass",
+          "evidence": [
+            "replay_raw/receipt.json",
+            "numeric-summary.json",
+            "experiment-audit.json",
+            "cli-receipts.json",
+            "figure-paper-audit.json"
+          ],
+          "reason": "Reviewer directly rebuilds input from raw and actually reruns six tasks, 168 comparison calls, 348 parameter calls and four library MILPs. Own source-based checker, not author validator, recomputes critical correctness and paper values.",
+          "limits": [
+            "Original/new CSV bytes differ due integer-to-float formatting; complete coordinate semantics separately equal",
+            "Expanded64 floor packs and historical1674 local attempts not fully independently replayed"
+          ]
+        },
+        {
+          "id": "a4",
+          "status": "pass",
+          "evidence": [
+            "experiment-audit.json",
+            "cli-and-restricted-model.json",
+            "smoke-independent.json",
+            "method-controls-result.json",
+            "extension-independent.json"
+          ],
+          "reason": "Actual boundary rejection, source-derived counterexamples, baseline/multistart comparison, parameter and assumption branches, valid relaxation and library bounds support restrained finite-case conclusions.",
+          "limits": [
+            "Global3D optima and continuous Pareto frontier unproved",
+            "One baseline vs27 multistarts; no equal-total-CPU pure-algorithm superiority claim supported",
+            "No dynamic-road certificate or Attachment2 large-batch generality"
+          ]
+        },
+        {
+          "id": "a5",
+          "status": "fail",
+          "evidence": [
+            "figure-paper-audit.json",
+            "pdf_visual/pdf-inspection.json",
+            "pdf_visual/paper-02.png",
+            "pdf_visual/paper-03.png",
+            "pdf_visual/paper-08.png",
+            "pdf_visual/technical_report-01.png"
+          ],
+          "reason": "Both supplied PDFs visibly omit superscripts. paper p3 gives500kg/m instead of500kg/m², p8 givesO(R) andO(n_k) instead of squared complexity, p2 gives cubic volumes as m; report p1 likewise corrupts pressure units. Markdown is correct but PDFs materially contradict scientific units/formulas/code.",
+          "limits": [
+            "Data/Markdown tables and five figure CSV groups are consistent",
+            "This is a scientific delivery defect, not a page-count or decorative-format quota"
+          ]
+        },
+        {
+          "id": "a6",
+          "status": "partial",
+          "evidence": [
+            "retention-and-method-check.json",
+            "report.md",
+            "execution/logs/failures.json (read-only source)",
+            "execution/logs/invocations.json (read-only source)",
+            "execution/logs/resource_final.json (read-only source)"
+          ],
+          "reason": "Actual new execution transferred workflow and corrected smoke support and candidate-pool gaps, with actual roles/limits disclosed. Nevertheless self-declared single-solver peak1 was exceeded twice and original first three CLI PID/stdout receipts were overwritten; current logs transparently record counts/status and null unknowns but cannot restore original raw evidence.",
+          "limits": [
+            "Current reviewer reruns do not retroactively reconstruct old invocations",
+            "Historical total peak memory and exact overlap remain unobserved",
+            "No whole-task two-error stop applied"
+          ]
+        }
+      ],
+      "current_verdicts": [
+        {
+          "id": "a1",
+          "status": "pass",
+          "evidence": [
+            "raw-to-current-input.json",
+            "consumer-run.json",
+            "report.md"
+          ],
+          "reason": "原六目标、完整技术报告、程序和附2有界范围直接回答，主输入与正式库存未改变。",
+          "limits": [
+            "只接受所声明静态可行候选；原全局最优及附2完整业务批次未证。"
+          ]
+        },
+        {
+          "id": "a2",
+          "status": "pass",
+          "evidence": [
+            "raw-reread.json",
+            "text-and-source-audit.json",
+            "numeric/",
+            "adapter-and-observation.md"
+          ],
+          "reason": "原单位、源数值、支撑/质量/目标公式与数学解释相符，六任务独立逐件复算成立。",
+          "limits": [
+            "单支持、均匀质量、静态与易碎朝向均为明确解释；不能推广道路安全。"
+          ]
+        },
+        {
+          "id": "a3",
+          "status": "pass",
+          "evidence": [
+            "lock-start.json",
+            "lock-end.json",
+            "consumer-run.json",
+            "pdf-regeneration.json",
+            "numeric-identity.json"
+          ],
+          "reason": "组合版本真正接收，当前消费者六正式任务实际干净重求，自有checker复核；图表、正文和PDF可追溯，副本导出14页文本/像素同新版。",
+          "limits": [
+            "168/348/四库/4508等未本次全部再跑，引用自己首次实查与同字节身份；历史64/1674未完全复跑。"
+          ]
+        },
+        {
+          "id": "a4",
+          "status": "pass",
+          "evidence": [
+            "consumer-run.json",
+            "producer-receipt-audit.json",
+            "review/initial evidence identity",
+            "report.md"
+          ],
+          "reason": "原真实边界、比较和界保留，当前非法输入/流程负路径实际执行；正文没有升级最优性、公平预算或泛化主张。",
+          "limits": [
+            "一基准对27重启及后续研究努力不同；连续Pareto、原3D全局最优、多支持/动态工程仍未证。"
+          ]
+        },
+        {
+          "id": "a5",
+          "status": "pass",
+          "evidence": [
+            "text-and-source-audit.json",
+            "pdf_visual/",
+            "pdf-regeneration.json",
+            "adapter-and-observation.md",
+            "report.md"
+          ],
+          "reason": "完整新中文论文与报告问题—假设/选模—实验—图表—结论链充分，重要单位和平方/负幂实际可见；750单元按顺序保真，82结果表行保持首次数值。",
+          "limits": [
+            "视觉为全部14页总览、4页放大及31科学局部行；文本匹配只是转录证据，科学/中文判断另由全文实读及源算支持。"
+          ]
+        },
+        {
+          "id": "a6",
+          "status": "partial",
+          "evidence": [
+            "consumer-run.json",
+            "producer-receipt-audit.json",
+            "failures.json",
+            "report.md"
+          ],
+          "reason": "当前唯一attempt原流/PID和活跃后继阻止、超时及退出保留真实改善；原三CLI原流/PID丢失和两次并行目标偏离不可追认恢复。",
+          "limits": [
+            "真正监视器崩溃后退出子进程reconcile分支未实验；整体历史峰值内存未知null；当前改善不使首次a6变pass。"
+          ]
+        }
+      ],
+      "current_quality": [
+        {
+          "dimension": "problem fidelity",
+          "status": "achieved",
+          "evidence": [
+            "raw-reread.json",
+            "raw-to-current-input.json",
+            "report.md"
+          ],
+          "material_gap": "原问题与数据解释完整；权威包装规则/完整附2业务输入尚缺。",
+          "next_action": "取得权威规则或新业务输入后只重算受影响范围。"
+        },
+        {
+          "dimension": "mathematical justification",
+          "status": "achieved",
+          "evidence": [
+            "numeric/",
+            "text-and-source-audit.json",
+            "report.md"
+          ],
+          "material_gap": "保守模型数学充分支持所述结果，原最优、多支持/动态工程未知。",
+          "next_action": "若提升研究质量，研究联合支持与更紧有效界；不作为固定配额。"
+        },
+        {
+          "dimension": "empirical sufficiency and fair alternatives",
+          "status": "achieved",
+          "evidence": [
+            "numeric-identity.json",
+            "consumer-run.json",
+            "report.md"
+          ],
+          "material_gap": "单题、声明配置的实证充分；比较努力不同，历史局部研究未全复跑。",
+          "next_action": "若提出同预算因果优势或更广泛化，先补目标相应的新实证再提高主张。"
+        },
+        {
+          "dimension": "reproduction and result-to-paper traceability",
+          "status": "partial",
+          "evidence": [
+            "consumer-run.json",
+            "text-and-source-audit.json",
+            "pdf-regeneration.json",
+            "producer-receipt-audit.json"
+          ],
+          "material_gap": "当前源算/表图/正文/PDF一致；历史三CLI原始流不可恢复，峰值内存未知。",
+          "next_action": "保留未知，每新attempt保留原始流，不补造旧证据。"
+        },
+        {
+          "dimension": "clarity and completeness of scientific argument",
+          "status": "achieved",
+          "evidence": [
+            "adapter-and-observation.md",
+            "pdf_visual/",
+            "report.md"
+          ],
+          "material_gap": "全文理解与推理链充分、PDF科学语义正确；没有必须继续修复的表达缺陷。",
+          "next_action": "货物表跨页/末附录空白可选优化，无页数/改句配额。"
+        },
+        {
+          "dimension": "workflow transferability and autonomous gap resolution",
+          "status": "partial",
+          "evidence": [
+            "consumer-run.json",
+            "producer-receipt-audit.json",
+            "report.md"
+          ],
+          "material_gap": "前瞻接收与进程机制实测改善；历史资源/原流缺口及崩溃分支未验证。",
+          "next_action": "未来有需求时独立有界实测崩溃接续，保留真实退出未知。"
+        }
+      ],
+      "closure_reason": "Current a1-a5 pass after same-author scientific notation and full Chinese argument repair; historical missing original receipts and concurrency deviations remain a6 partial. Preserve first four-pass one-fail one-partial verdict. No current mandatory repair identified; this closes diagnosis rather than claiming all gates pass."
+    }
+  ],
+  "limits": "Actual independent verdicts preserved; no causal level rank or score/prize inference."
+}

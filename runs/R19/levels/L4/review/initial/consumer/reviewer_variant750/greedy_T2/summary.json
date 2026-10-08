@@ -1,0 +1,94 @@
+{
+  "valid": true,
+  "errors": [],
+  "inventory": {
+    "G2": 250,
+    "G1": 200,
+    "G5": 125,
+    "G4": 100,
+    "G3": 75
+  },
+  "truck_count": 3,
+  "cost": 2100.0,
+  "mass_kg": 10275.0,
+  "volume_cm3": 71837500.0,
+  "UV": 0.5749299719887955,
+  "UW": 0.3425,
+  "trucks": [
+    {
+      "truck_id": "TR0001",
+      "vehicle_type": "T2",
+      "items": 565,
+      "mass_kg": 6480.0,
+      "volume_cm3": 36429750.0,
+      "UV": 0.8746638655462184,
+      "UW": 0.648,
+      "usable_UV": 0.8852873133058892,
+      "cost": 700.0
+    },
+    {
+      "truck_id": "TR0002",
+      "vehicle_type": "T2",
+      "items": 126,
+      "mass_kg": 2907.0,
+      "volume_cm3": 27191750.0,
+      "UV": 0.6528631452581033,
+      "UW": 0.2907,
+      "usable_UV": 0.6607926571438292,
+      "cost": 700.0
+    },
+    {
+      "truck_id": "TR0003",
+      "vehicle_type": "T2",
+      "items": 59,
+      "mass_kg": 888.0,
+      "volume_cm3": 8216000.0,
+      "UV": 0.19726290516206482,
+      "UW": 0.0888,
+      "usable_UV": 0.19965881089277818,
+      "cost": 700.0
+    }
+  ],
+  "status": "feasible",
+  "elapsed_seconds": 0.5896604000008665,
+  "candidate": "maxrects",
+  "objective": "greedy_baseline",
+  "bounds": {
+    "volume_cm3": 71837500.0,
+    "mass_kg": 10275.0,
+    "vehicle_lower_bound": 2,
+    "cost_lower_bound": 1400.0,
+    "scope": "total physical volume and weight relaxation; ignores all geometry/support"
+  },
+  "source_hashes": {
+    "2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf": {
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d",
+      "size_bytes": 131983
+    },
+    "附件1.docx": {
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0",
+      "size_bytes": 14540
+    },
+    "附件2：验证数据集.xlsx": {
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda",
+      "size_bytes": 15973
+    }
+  },
+  "config": {
+    "gap_cm": 3,
+    "pressure_kg_m2": 500,
+    "support": "single_full_rectangle",
+    "fragile_orientation": "all_unique_orthogonal",
+    "fragile_rule": "no_cargo_above; floor_or_standard_support",
+    "oriented_rule": "original_dimensions; geometric_center_in_support_rectangle",
+    "external_load_area": "support_top_and_contact_area_both",
+    "tolerance_cm": 1e-06,
+    "seed": 1904,
+    "pattern_count_per_vehicle": 24,
+    "master_time_limit_seconds": 8,
+    "model": null,
+    "tokens": null,
+    "cost": null,
+    "inventory_restarts": 4
+  }
+}

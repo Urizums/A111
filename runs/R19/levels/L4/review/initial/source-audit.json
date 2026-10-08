@@ -1,0 +1,1504 @@
+{
+  "source_identity": [
+    {
+      "path": "runs/R19/inputs/raw/2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf",
+      "size_bytes": 131983,
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d"
+    },
+    {
+      "path": "runs/R19/inputs/raw/附件1.docx",
+      "size_bytes": 14540,
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0"
+    },
+    {
+      "path": "runs/R19/inputs/raw/附件2：验证数据集.xlsx",
+      "size_bytes": 15973,
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda"
+    }
+  ],
+  "pdf": [
+    {
+      "page": 1,
+      "text": "2026 年第十六届MathorCup 数学应用挑战赛题目\nD 题多场景、多目标货物运输装箱策略优化\n我国拥有全球规模最大、体系最完整的物流产业链，这是我国\n参与全球供应链竞争、降低全社会物流成本的核心战略优势。“十五\n五”规划建议明确强调“降低全社会物流成本”，这不仅是经济账，\n更是国家战略。现代物流与制造业中，装箱策略直接影响运输工具（车、\n船、箱）的装载率和中转效率，优化装箱方案是解决“最初一公里”\n和“最后一公里”衔接损耗、实现总体物流成本下降的微观基础。货\n物满容率（货物占用空间与整个空间之比）直接影响运输成本、车辆\n（货物）周转效率与碳排放。“十五五”规划强调培育“新质生产力”，\n要求物流行业由传统要素驱动向智慧化、绿色化转变，并扩大强制性\n国家标准供给解决物流装箱优化是必须被攻克的“技术堵点”。\n在实际运输配送场景中，货车箱体空间有限，货物尺寸多样、承\n重约束严格、摆放规则复杂（如易碎、倒置禁忌、堆叠限制、方向约\n束等），如何在满足各类约束前提下，实现装箱空间利用率最大化、\n车辆运输次数最少、综合成本最低，是物流与制造业企业核心决策问\n题。\n本题立足于真实物流场景，要求建立不同场景下的三维装箱优化\n模型，设计相应的求解算法，并对不同策略进行对比分析与成本测算，\n为企业提供可落地的货物运输装箱方案。\n",
+      "images": 0
+    },
+    {
+      "page": 2,
+      "text": "问题1：短途单车型三维装箱策略优化模型\n（1）物流公司为了利润最大化，一般都采用搭配装载，即将“重\n货”（密度大、体积小）和“泡货/抛货”（密度小、体积大）搭配装\n载，力求同时达到集装箱的“满容”和“满载”，最大摊薄单票货物\n的运费成本。分别以车型1、车型2 为装载对象（尺寸见附件1），货\n物为附件1 中的货物类型，假设不同货物的单位运输费用相同，考虑\n尺寸、重量、可否堆叠、放置方向等约束，建立相应的三维装箱策略\n模型，目标为单车同时达到满容率与满载率最大化。另外，若考虑只\n有一种型号的车辆，目标是把附件1 中的货物装完且所用车辆最少，\n考虑尺寸、重量、堆叠、方向等约束，建立相应的模型。\n（2）设计合适的求解算法并根据附件1 中的问题，给出具体装\n箱方案（包含每件货物的摆放坐标（以车厢右后下为坐标原点）、姿\n态方向），并计算空间利用率、载重利用率。\n问题2：短途多车型组合配送优化\n在同时可选用车型1、车型2 的条件下，为了把附件1 中的货物\n运完，是建立模型并求解如下问题：\n（1）以总运输车辆最少为目标，建立装箱策略优化模型并给出\n配送方案；\n（2）以总运输成本最低为目标，重新优化方案，对比两种目标\n下的结果差异。\n",
+      "images": 0
+    },
+    {
+      "page": 3,
+      "text": "问题3：根据上述问题1、问题2 得到的结论，撰写一份技术报\n告，向物流企业管理者说明模型、求解算法、程序实现与模型与算法\n的性能分析。分别分析各个参数变化对装载率与运输成本的影响；\n说明：1.请各个参赛队务必上传算法执行的程序附件，组委会评\n阅时会运行测试程序打分；2.参赛队伍可基于上述模型与算法，根据\n附件2 中更大规模测试数据，验证模型通用性。\n",
+      "images": 0
+    }
+  ],
+  "docx": {
+    "paragraphs": [
+      {
+        "paragraph": 1,
+        "text": "一、基本数据与假设"
+      },
+      {
+        "paragraph": 2,
+        "text": "1. 货车箱体参数（两种标准车型）"
+      },
+      {
+        "paragraph": 3,
+        "text": "- 车型1（轻型厢式货车）"
+      },
+      {
+        "paragraph": 4,
+        "text": "内尺寸：长 420cm × 宽 210cm × 高 220cm"
+      },
+      {
+        "paragraph": 5,
+        "text": "额定载重：6000kg"
+      },
+      {
+        "paragraph": 6,
+        "text": "单次运输成本：450 元/趟（含油费、过路费、人工）"
+      },
+      {
+        "paragraph": 7,
+        "text": "- 车型2（中型厢式货车）"
+      },
+      {
+        "paragraph": 8,
+        "text": "内尺寸：长 680cm × 宽 245cm × 高 250cm"
+      },
+      {
+        "paragraph": 9,
+        "text": "额定载重：10000kg"
+      },
+      {
+        "paragraph": 10,
+        "text": "单次运输成本：700 元/趟"
+      },
+      {
+        "paragraph": 11,
+        "text": "2. 货物类型与基础约束"
+      },
+      {
+        "paragraph": 12,
+        "text": "现有一批待运货物，分为三类："
+      },
+      {
+        "paragraph": 13,
+        "text": "（1）标准件：长方体纸箱，可任意方向摆放，可堆叠，无特殊约束；"
+      },
+      {
+        "paragraph": 14,
+        "text": "（2）易碎件：仅允许单层放置，不可堆叠，摆放时底面必须完全贴合箱体底面或其他标准件顶面；"
+      },
+      {
+        "paragraph": 15,
+        "text": "（3）定向件：有明确方向要求（如“向上”标识），仅允许一种摆放姿态，可堆叠但上层货物重心不得超出下层投影范围。"
+      },
+      {
+        "paragraph": 16,
+        "text": "所有货物均为刚性长方体，不可挤压、不可拆分，装箱时货物之间、货物与箱体之间不得重叠，必须保持正交摆放（棱与箱体棱平行）。"
+      },
+      {
+        "paragraph": 17,
+        "text": "3. 附加约束"
+      },
+      {
+        "paragraph": 18,
+        "text": "（1）承重约束：下层货物承重上限为 500kg/平方米，超重则不允许堆叠；"
+      },
+      {
+        "paragraph": 19,
+        "text": "（2）稳定性约束：货物高度不得超过车厢高度，且顶层货物距车厢顶部预留不小于 3cm 安全间隙。"
+      },
+      {
+        "paragraph": 20,
+        "text": "二、任务数据"
+      },
+      {
+        "paragraph": 21,
+        "text": "现有某批次货物参数信息如下（单位：cm，kg）："
+      },
+      {
+        "paragraph": 22,
+        "text": ""
+      }
+    ],
+    "tables": [
+      {
+        "table": 1,
+        "rows": [
+          [
+            "货物编号",
+            "类型",
+            "长×宽×高",
+            "单重",
+            "数量"
+          ],
+          [
+            "G1",
+            "标准件",
+            "60×40×30",
+            "12",
+            "800"
+          ],
+          [
+            "G2",
+            "标准件",
+            "50×35×25",
+            "8",
+            "1000"
+          ],
+          [
+            "G3",
+            "易碎件",
+            "70×50×40",
+            "15",
+            "300"
+          ],
+          [
+            "G4",
+            "定向件",
+            "80×60×50",
+            "25",
+            "400"
+          ],
+          [
+            "G5",
+            "定向件",
+            "40×40×60",
+            "18",
+            "500"
+          ]
+        ]
+      }
+    ],
+    "parts": [
+      "[Content_Types].xml",
+      "_rels/",
+      "_rels/.rels",
+      "docProps/",
+      "docProps/app.xml",
+      "docProps/core.xml",
+      "docProps/custom.xml",
+      "word/",
+      "word/_rels/",
+      "word/_rels/document.xml.rels",
+      "word/document.xml",
+      "word/endnotes.xml",
+      "word/fontTable.xml",
+      "word/footnotes.xml",
+      "word/settings.xml",
+      "word/styles.xml",
+      "word/theme/",
+      "word/theme/theme1.xml"
+    ],
+    "document_xml": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\r\n<w:document xmlns:wpc=\"http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas\" xmlns:mc=\"http://schemas.openxmlformats.org/markup-compatibility/2006\" xmlns:o=\"urn:schemas-microsoft-com:office:office\" xmlns:r=\"http://schemas.openxmlformats.org/officeDocument/2006/relationships\" xmlns:m=\"http://schemas.openxmlformats.org/officeDocument/2006/math\" xmlns:v=\"urn:schemas-microsoft-com:vml\" xmlns:wp14=\"http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing\" xmlns:wp=\"http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing\" xmlns:w=\"http://schemas.openxmlformats.org/wordprocessingml/2006/main\" xmlns:w14=\"http://schemas.microsoft.com/office/word/2010/wordml\" xmlns:w10=\"urn:schemas-microsoft-com:office:word\" xmlns:w15=\"http://schemas.microsoft.com/office/word/2012/wordml\" xmlns:wpg=\"http://schemas.microsoft.com/office/word/2010/wordprocessingGroup\" xmlns:wpi=\"http://schemas.microsoft.com/office/word/2010/wordprocessingInk\" xmlns:wne=\"http://schemas.microsoft.com/office/word/2006/wordml\" xmlns:wps=\"http://schemas.microsoft.com/office/word/2010/wordprocessingShape\" xmlns:wpsCustomData=\"http://www.wps.cn/officeDocument/2013/wpsCustomData\" mc:Ignorable=\"w14 w15 wp14\"><w:body><w:p w14:paraId=\"72D9A7A3\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:b/><w:bCs/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:b/><w:bCs/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>一、基本数据与假设</w:t></w:r></w:p><w:p w14:paraId=\"3FC6D51E\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>1. 货车箱体参数（两种标准车型）</w:t></w:r></w:p><w:p w14:paraId=\"3105270A\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>- 车型1（轻型厢式货车）</w:t></w:r></w:p><w:p w14:paraId=\"4D10767C\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>内尺寸：长 420cm × 宽 210cm × 高 220cm</w:t></w:r></w:p><w:p w14:paraId=\"31721803\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>额定载重：6000kg</w:t></w:r></w:p><w:p w14:paraId=\"0FCF9AC8\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>单次运输成本：450 元/趟（含油费、过路费、人工）</w:t></w:r></w:p><w:p w14:paraId=\"77996179\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>- 车型2（中型厢式货车）</w:t></w:r></w:p><w:p w14:paraId=\"278F79CB\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>内尺寸：长 680cm × 宽 245cm × 高 250cm</w:t></w:r></w:p><w:p w14:paraId=\"760B6847\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>额定载重：10000kg</w:t></w:r></w:p><w:p w14:paraId=\"152FC0A0\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>单次运输成本：700 元/趟</w:t></w:r></w:p><w:p w14:paraId=\"0E4CBA37\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>2. 货物类型与基础约束</w:t></w:r></w:p><w:p w14:paraId=\"384B56BB\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>现有一批待运货物，分为三类：</w:t></w:r></w:p><w:p w14:paraId=\"63D05EB7\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>（1）标准件：长方体纸箱，可任意方向摆放，可堆叠，无特殊约束；</w:t></w:r></w:p><w:p w14:paraId=\"0FD2A3D7\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>（2）易碎件：仅允许单层放置，不可堆叠，摆放时底面必须完全贴合箱体底面或其他标准件顶面；</w:t></w:r></w:p><w:p w14:paraId=\"66AC9FA2\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>（3）定向件：有明确方向要求（如“向上”标识</w:t></w:r><w:bookmarkStart w:id=\"0\" w:name=\"_GoBack\"/><w:bookmarkEnd w:id=\"0\"/><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>），仅允许一种摆放姿态，可堆叠但上层货物重心不得超出下层投影范围。</w:t></w:r></w:p><w:p w14:paraId=\"1E701118\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>所有货物均为刚性长方体，不可挤压、不可拆分，装箱时货物之间、货物与箱体之间不得重叠，必须保持正交摆放（棱与箱体棱平行）。</w:t></w:r></w:p><w:p w14:paraId=\"7ECA0444\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>3. 附加约束</w:t></w:r></w:p><w:p w14:paraId=\"09EAD3A8\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>（1）承重约束：下层货物承重上限为 500kg/平方米，超重则不允许堆叠；</w:t></w:r></w:p><w:p w14:paraId=\"0D67C9B4\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t xml:space=\"preserve\">（2）稳定性约束：货物高度不得超过车厢高度，且顶层货物距车厢顶部预留不小于 </w:t></w:r><w:r><w:rPr><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>3</w:t></w:r><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>cm 安全间隙。</w:t></w:r></w:p><w:p w14:paraId=\"25331B16\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:b/><w:bCs/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:b/><w:bCs/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>二、任务数据</w:t></w:r></w:p><w:p w14:paraId=\"168540AA\"><w:pPr><w:jc w:val=\"both\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"28\"/><w:szCs w:val=\"32\"/></w:rPr><w:t>现有某批次货物参数信息如下（单位：cm，kg）：</w:t></w:r></w:p><w:tbl><w:tblPr><w:tblStyle w:val=\"5\"/><w:tblW w:w=\"0\" w:type=\"auto\"/><w:tblInd w:w=\"0\" w:type=\"dxa\"/><w:tblBorders><w:top w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:left w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:bottom w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:right w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideH w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideV w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/></w:tblBorders><w:tblLayout w:type=\"autofit\"/><w:tblCellMar><w:top w:w=\"0\" w:type=\"dxa\"/><w:left w:w=\"108\" w:type=\"dxa\"/><w:bottom w:w=\"0\" w:type=\"dxa\"/><w:right w:w=\"108\" w:type=\"dxa\"/></w:tblCellMar></w:tblPr><w:tblGrid><w:gridCol w:w=\"1704\"/><w:gridCol w:w=\"1704\"/><w:gridCol w:w=\"1704\"/><w:gridCol w:w=\"1705\"/><w:gridCol w:w=\"1705\"/></w:tblGrid><w:tr w14:paraId=\"6032B006\"><w:tblPrEx><w:tblBorders><w:top w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:left w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:bottom w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:right w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideH w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideV w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/></w:tblBorders><w:tblCellMar><w:top w:w=\"0\" w:type=\"dxa\"/><w:left w:w=\"108\" w:type=\"dxa\"/><w:bottom w:w=\"0\" w:type=\"dxa\"/><w:right w:w=\"108\" w:type=\"dxa\"/></w:tblCellMar></w:tblPrEx><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"6D3C3C25\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>货物编号</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"73CD2D7C\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>类型</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"1010B917\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>长×宽×高</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"0661CEF3\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>单重</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"291BAF07\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>数量</w:t></w:r></w:p></w:tc></w:tr><w:tr w14:paraId=\"04E61C0F\"><w:tblPrEx><w:tblBorders><w:top w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:left w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:bottom w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:right w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideH w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideV w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/></w:tblBorders><w:tblCellMar><w:top w:w=\"0\" w:type=\"dxa\"/><w:left w:w=\"108\" w:type=\"dxa\"/><w:bottom w:w=\"0\" w:type=\"dxa\"/><w:right w:w=\"108\" w:type=\"dxa\"/></w:tblCellMar></w:tblPrEx><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"19C6CD61\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>G1</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"413B3689\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>标准件</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"266B32C4\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>60×40×30</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"5B68A038\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>12</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"31079EA5\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\" w:eastAsiaTheme=\"minorEastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>80</w:t></w:r><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr><w:t>0</w:t></w:r></w:p></w:tc></w:tr><w:tr w14:paraId=\"4615EDC3\"><w:tblPrEx><w:tblBorders><w:top w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:left w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:bottom w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:right w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideH w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideV w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/></w:tblBorders><w:tblCellMar><w:top w:w=\"0\" w:type=\"dxa\"/><w:left w:w=\"108\" w:type=\"dxa\"/><w:bottom w:w=\"0\" w:type=\"dxa\"/><w:right w:w=\"108\" w:type=\"dxa\"/></w:tblCellMar></w:tblPrEx><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"556E0648\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>G2</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"670A70AD\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>标准件</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"5C7AEB58\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>50×35×25</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"02C2C72D\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>8</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"2ECB39B4\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\" w:eastAsiaTheme=\"minorEastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>100</w:t></w:r><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr><w:t>0</w:t></w:r></w:p></w:tc></w:tr><w:tr w14:paraId=\"6CCB0935\"><w:tblPrEx><w:tblBorders><w:top w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:left w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:bottom w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:right w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideH w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideV w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/></w:tblBorders><w:tblCellMar><w:top w:w=\"0\" w:type=\"dxa\"/><w:left w:w=\"108\" w:type=\"dxa\"/><w:bottom w:w=\"0\" w:type=\"dxa\"/><w:right w:w=\"108\" w:type=\"dxa\"/></w:tblCellMar></w:tblPrEx><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"59858A62\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>G3</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"23FBFF6C\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>易碎件</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"015217A4\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>70×50×40</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"3C446A99\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>15</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"5BDF9815\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\" w:eastAsiaTheme=\"minorEastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>30</w:t></w:r><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr><w:t>0</w:t></w:r></w:p></w:tc></w:tr><w:tr w14:paraId=\"244D7EF4\"><w:tblPrEx><w:tblBorders><w:top w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:left w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:bottom w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:right w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideH w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideV w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/></w:tblBorders><w:tblCellMar><w:top w:w=\"0\" w:type=\"dxa\"/><w:left w:w=\"108\" w:type=\"dxa\"/><w:bottom w:w=\"0\" w:type=\"dxa\"/><w:right w:w=\"108\" w:type=\"dxa\"/></w:tblCellMar></w:tblPrEx><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"3EED9F28\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>G4</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"2D6E5F20\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>定向件</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"65851AAD\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>80×60×50</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"0408618E\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>25</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"7DD73970\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\" w:eastAsiaTheme=\"minorEastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>40</w:t></w:r><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr><w:t>0</w:t></w:r></w:p></w:tc></w:tr><w:tr w14:paraId=\"0243C979\"><w:tblPrEx><w:tblBorders><w:top w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:left w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:bottom w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:right w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideH w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/><w:insideV w:val=\"single\" w:color=\"auto\" w:sz=\"4\" w:space=\"0\"/></w:tblBorders><w:tblCellMar><w:top w:w=\"0\" w:type=\"dxa\"/><w:left w:w=\"108\" w:type=\"dxa\"/><w:bottom w:w=\"0\" w:type=\"dxa\"/><w:right w:w=\"108\" w:type=\"dxa\"/></w:tblCellMar></w:tblPrEx><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"401CC67F\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>G5</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"5018C001\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>定向件</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1704\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"7F2FDB70\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>40×40×60</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"35159EDF\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>18</w:t></w:r></w:p></w:tc><w:tc><w:tcPr><w:tcW w:w=\"1705\" w:type=\"dxa\"/><w:vAlign w:val=\"center\"/></w:tcPr><w:p w14:paraId=\"29E77918\"><w:pPr><w:jc w:val=\"center\"/><w:rPr><w:rFonts w:hint=\"eastAsia\" w:eastAsiaTheme=\"minorEastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:vertAlign w:val=\"baseline\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr></w:pPr><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/></w:rPr><w:t>50</w:t></w:r><w:r><w:rPr><w:rFonts w:hint=\"eastAsia\"/><w:sz w:val=\"24\"/><w:szCs w:val=\"24\"/><w:lang w:val=\"en-US\" w:eastAsia=\"zh-CN\"/></w:rPr><w:t>0</w:t></w:r></w:p></w:tc></w:tr></w:tbl><w:p w14:paraId=\"0B5445EE\"/><w:sectPr><w:pgSz w:w=\"11906\" w:h=\"16838\"/><w:pgMar w:top=\"1440\" w:right=\"1800\" w:bottom=\"1440\" w:left=\"1800\" w:header=\"851\" w:footer=\"992\" w:gutter=\"0\"/><w:cols w:space=\"425\" w:num=\"1\"/><w:docGrid w:type=\"lines\" w:linePitch=\"312\" w:charSpace=\"0\"/></w:sectPr></w:body></w:document>"
+  },
+  "xlsx": {
+    "箱装产品尺寸": {
+      "dimension": "A1:H10",
+      "merged_ranges": [
+        "A1:G1"
+      ],
+      "cells": [
+        {
+          "cell": "A1",
+          "value": "成品油箱装尺寸",
+          "cached": "成品油箱装尺寸",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B2",
+          "value": "长（mm）   （化验尺寸）",
+          "cached": "长（mm）   （化验尺寸）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C2",
+          "value": "长（mm）  （仓库测量）",
+          "cached": "长（mm）  （仓库测量）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D2",
+          "value": "宽（mm）   （化验尺寸）",
+          "cached": "宽（mm）   （化验尺寸）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E2",
+          "value": "宽（mm）  （仓库测量）",
+          "cached": "宽（mm）  （仓库测量）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F2",
+          "value": "高（mm）   （化验尺寸）",
+          "cached": "高（mm）   （化验尺寸）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "G2",
+          "value": "高（mm）  （仓库测量）",
+          "cached": "高（mm）  （仓库测量）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "H2",
+          "value": "备注",
+          "cached": "备注",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A3",
+          "value": "3.68L*4",
+          "cached": "3.68L*4",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C3",
+          "value": 301,
+          "cached": 301,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "E3",
+          "value": 301,
+          "cached": 301,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "G3",
+          "value": 347,
+          "cached": 347,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "H3",
+          "value": "新品，无实际纸箱标准，根据新瓶型提供厂家样箱尺寸",
+          "cached": "新品，无实际纸箱标准，根据新瓶型提供厂家样箱尺寸",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A4",
+          "value": "1.8L*6",
+          "cached": "1.8L*6",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B4",
+          "value": 345,
+          "cached": 345,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "C4",
+          "value": "345-347",
+          "cached": "345-347",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D4",
+          "value": 234,
+          "cached": 234,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "E4",
+          "value": "236-238",
+          "cached": "236-238",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F4",
+          "value": 304,
+          "cached": 304,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "G4",
+          "value": "307-320",
+          "cached": "307-320",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A5",
+          "value": "4L*4",
+          "cached": "4L*4",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B5",
+          "value": 316,
+          "cached": 316,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "C5",
+          "value": "316-318",
+          "cached": "316-318",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D5",
+          "value": 262,
+          "cached": 262,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "E5",
+          "value": "264-265",
+          "cached": "264-265",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F5",
+          "value": 367,
+          "cached": 367,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "G5",
+          "value": "370-380",
+          "cached": "370-380",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A6",
+          "value": "5L*4(异形瓶）",
+          "cached": "5L*4(异形瓶）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C6",
+          "value": 345,
+          "cached": 345,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "E6",
+          "value": 345,
+          "cached": 345,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "G6",
+          "value": 395,
+          "cached": 395,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A7",
+          "value": "5L*4（常规品）",
+          "cached": "5L*4（常规品）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B7",
+          "value": 320,
+          "cached": 320,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "C7",
+          "value": "321-323",
+          "cached": "321-323",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D7",
+          "value": 320,
+          "cached": 320,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "E7",
+          "value": "321-322",
+          "cached": "321-322",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F7",
+          "value": 367,
+          "cached": 367,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "G7",
+          "value": "370-385",
+          "cached": "370-385",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A8",
+          "value": "8L*2",
+          "cached": "8L*2",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B8",
+          "value": 432,
+          "cached": 432,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "C8",
+          "value": "433-435",
+          "cached": "433-435",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D8",
+          "value": 223,
+          "cached": 223,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "E8",
+          "value": "224-226",
+          "cached": "224-226",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F8",
+          "value": 357,
+          "cached": 357,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "G8",
+          "value": "360-370",
+          "cached": "360-370",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A9",
+          "value": "10L*2",
+          "cached": "10L*2",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B9",
+          "value": 432,
+          "cached": 432,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "C9",
+          "value": "436-438",
+          "cached": "436-438",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D9",
+          "value": 223,
+          "cached": 223,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "E9",
+          "value": "224-225",
+          "cached": "224-225",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F9",
+          "value": 425,
+          "cached": 425,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "G9",
+          "value": "428-430",
+          "cached": "428-430",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A10",
+          "value": "20L（软）",
+          "cached": "20L（软）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B10",
+          "value": 305,
+          "cached": 305,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "C10",
+          "value": "305-306",
+          "cached": "305-306",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D10",
+          "value": 175,
+          "cached": 175,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "E10",
+          "value": "176-178",
+          "cached": "176-178",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F10",
+          "value": 490,
+          "cached": 490,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "G10",
+          "value": "490-495",
+          "cached": "490-495",
+          "data_type": "s",
+          "number_format": "General"
+        }
+      ]
+    },
+    "车型尺寸": {
+      "dimension": "A1:F20",
+      "merged_ranges": [
+        "A20:D20"
+      ],
+      "cells": [
+        {
+          "cell": "C1",
+          "value": "",
+          "cached": "",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D1",
+          "value": "",
+          "cached": "",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A2",
+          "value": "A",
+          "cached": "A",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B2",
+          "value": "B",
+          "cached": "B",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C2",
+          "value": "C",
+          "cached": "C",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D2",
+          "value": "D",
+          "cached": "D",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E2",
+          "value": "E",
+          "cached": "E",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A3",
+          "value": "车型",
+          "cached": "车型",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B3",
+          "value": "长",
+          "cached": "长",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C3",
+          "value": "宽",
+          "cached": "宽",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D3",
+          "value": "高",
+          "cached": "高",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E3",
+          "value": "公路单位运输费用元/1000km",
+          "cached": "公路单位运输费用元/1000km",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "A4",
+          "value": "单节柜",
+          "cached": "单节柜",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B4",
+          "value": "5.8-5.9米",
+          "cached": "5.8-5.9米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C4",
+          "value": "2.35米",
+          "cached": "2.35米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D4",
+          "value": "2.39米",
+          "cached": "2.39米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E4",
+          "value": "以铁路运输为主",
+          "cached": "以铁路运输为主",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F4",
+          "value": 3625,
+          "cached": 3625,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A5",
+          "value": "集装箱",
+          "cached": "集装箱",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B5",
+          "value": "12米",
+          "cached": "12米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C5",
+          "value": "2.35米",
+          "cached": "2.35米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D5",
+          "value": "2.39米",
+          "cached": "2.39米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E5",
+          "value": "以海路运输为主",
+          "cached": "以海路运输为主",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F5",
+          "value": 2000,
+          "cached": 2000,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A6",
+          "value": "超高柜",
+          "cached": "超高柜",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B6",
+          "value": "12米",
+          "cached": "12米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C6",
+          "value": "2.35米",
+          "cached": "2.35米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D6",
+          "value": "2.69米",
+          "cached": "2.69米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E6",
+          "value": "以海路运输为主",
+          "cached": "以海路运输为主",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "F6",
+          "value": 3900,
+          "cached": 3900,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A7",
+          "value": "4.2米箱货",
+          "cached": "4.2米箱货",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B7",
+          "value": "4-4.1米",
+          "cached": "4-4.1米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C7",
+          "value": "1.8-1.9米",
+          "cached": "1.8-1.9米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D7",
+          "value": "1.65-2米",
+          "cached": "1.65-2米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E7",
+          "value": 2800,
+          "cached": 2800,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A8",
+          "value": "6.2米箱货",
+          "cached": "6.2米箱货",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B8",
+          "value": "5.9-6米",
+          "cached": "5.9-6米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C8",
+          "value": "1.9-2.0米",
+          "cached": "1.9-2.0米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D8",
+          "value": "1.9米",
+          "cached": "1.9米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E8",
+          "value": 4500,
+          "cached": 4500,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A9",
+          "value": "6.8米箱货",
+          "cached": "6.8米箱货",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B9",
+          "value": "6.6-6.8米",
+          "cached": "6.6-6.8米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C9",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D9",
+          "value": "2.2米",
+          "cached": "2.2米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E9",
+          "value": 5000,
+          "cached": 5000,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A10",
+          "value": "9.6米箱货",
+          "cached": "9.6米箱货",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B10",
+          "value": "9.4-9.5米",
+          "cached": "9.4-9.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C10",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D10",
+          "value": "2.2米",
+          "cached": "2.2米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E10",
+          "value": 6500,
+          "cached": 6500,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A11",
+          "value": "17米箱货",
+          "cached": "17米箱货",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B11",
+          "value": "16.7-17米",
+          "cached": "16.7-17米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C11",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D11",
+          "value": "2.2米",
+          "cached": "2.2米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E11",
+          "value": 11000,
+          "cached": 11000,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A12",
+          "value": "4.2低栏板",
+          "cached": "4.2低栏板",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B12",
+          "value": "4-4.2米",
+          "cached": "4-4.2米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C12",
+          "value": "2.1米",
+          "cached": "2.1米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D12",
+          "value": "0.5米（栏板高度）",
+          "cached": "0.5米（栏板高度）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E12",
+          "value": 3500,
+          "cached": 3500,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A13",
+          "value": "4.2高栏",
+          "cached": "4.2高栏",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B13",
+          "value": "4-4.2米",
+          "cached": "4-4.2米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C13",
+          "value": "2.1米",
+          "cached": "2.1米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D13",
+          "value": "1.6-2.4米（栏板高度）",
+          "cached": "1.6-2.4米（栏板高度）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E13",
+          "value": 4000,
+          "cached": 4000,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A14",
+          "value": "6米8高栏",
+          "cached": "6米8高栏",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B14",
+          "value": "6.6-6.8米",
+          "cached": "6.6-6.8米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C14",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D14",
+          "value": "1.6-2.4米（栏板高度）",
+          "cached": "1.6-2.4米（栏板高度）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E14",
+          "value": 5000,
+          "cached": 5000,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A15",
+          "value": "6米8低栏板",
+          "cached": "6米8低栏板",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B15",
+          "value": "6.6-6.8米",
+          "cached": "6.6-6.8米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C15",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D15",
+          "value": "0.5米（栏板高度）",
+          "cached": "0.5米（栏板高度）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E15",
+          "value": 4500,
+          "cached": 4500,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A16",
+          "value": "9米6高栏",
+          "cached": "9米6高栏",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B16",
+          "value": "9.4-9.5米",
+          "cached": "9.4-9.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C16",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D16",
+          "value": "1.6-2.4米（栏板高度）",
+          "cached": "1.6-2.4米（栏板高度）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E16",
+          "value": 7000,
+          "cached": 7000,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A17",
+          "value": "9米6低栏板",
+          "cached": "9米6低栏板",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B17",
+          "value": "9.4-9.5米",
+          "cached": "9.4-9.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C17",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D17",
+          "value": "0.5米（栏板高度）",
+          "cached": "0.5米（栏板高度）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E17",
+          "value": 5000,
+          "cached": 5000,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A18",
+          "value": "13米高栏",
+          "cached": "13米高栏",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B18",
+          "value": "12.94-12.98米",
+          "cached": "12.94-12.98米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C18",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D18",
+          "value": "1.6-2.4米（栏板高度）",
+          "cached": "1.6-2.4米（栏板高度）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E18",
+          "value": 9000,
+          "cached": 9000,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A19",
+          "value": "13米高低板",
+          "cached": "13米高低板",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "B19",
+          "value": "12.94-12.98米（车前段长约4米长是高板，后面是低板，高低板的高度差约25公分）",
+          "cached": "12.94-12.98米（车前段长约4米长是高板，后面是低板，高低板的高度差约25公分）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "C19",
+          "value": "2.3-2.5米",
+          "cached": "2.3-2.5米",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "D19",
+          "value": "1.6-2.4米（栏板高度）",
+          "cached": "1.6-2.4米（栏板高度）",
+          "data_type": "s",
+          "number_format": "General"
+        },
+        {
+          "cell": "E19",
+          "value": 8800,
+          "cached": 8800,
+          "data_type": "n",
+          "number_format": "General"
+        },
+        {
+          "cell": "A20",
+          "value": "+",
+          "cached": "+",
+          "data_type": "s",
+          "number_format": "General"
+        }
+      ]
+    },
+    "Sheet3": {
+      "dimension": "A1:A1",
+      "merged_ranges": [],
+      "cells": []
+    }
+  },
+  "locks": [
+    {
+      "lock": {
+        "path": "runs/R19/inputs/raw-lock.json",
+        "size_bytes": 843,
+        "sha256": "fad117b2db06201ef6322c215015b742e9a2e291862da09178f9f1df9f04d540"
+      },
+      "entries": [
+        {
+          "expected": {
+            "path": "runs/R19/inputs/raw/2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf",
+            "size_bytes": 131983,
+            "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d"
+          },
+          "observed": {
+            "path": "runs/R19/inputs/raw/2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf",
+            "size_bytes": 131983,
+            "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/inputs/raw/附件1.docx",
+            "size_bytes": 14540,
+            "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0"
+          },
+          "observed": {
+            "path": "runs/R19/inputs/raw/附件1.docx",
+            "size_bytes": 14540,
+            "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/inputs/raw/附件2：验证数据集.xlsx",
+            "size_bytes": 15973,
+            "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda"
+          },
+          "observed": {
+            "path": "runs/R19/inputs/raw/附件2：验证数据集.xlsx",
+            "size_bytes": 15973,
+            "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda"
+          },
+          "match": true
+        }
+      ],
+      "all_match": true
+    },
+    {
+      "lock": {
+        "path": "runs/R19/evaluation-lock.json",
+        "size_bytes": 357,
+        "sha256": "902367fd78e2590e3870c3f6f90629fc3c82579998c4f72dc6d3f6b8b6bffd6a"
+      },
+      "entries": [
+        {
+          "expected": {
+            "path": "runs/R19/acceptance.json",
+            "sha256": "686c68ba44c4f298e8b4a067326f8e40ea62a492e99944d1c359c76152491f0d"
+          },
+          "observed": {
+            "path": "runs/R19/acceptance.json",
+            "size_bytes": 3402,
+            "sha256": "686c68ba44c4f298e8b4a067326f8e40ea62a492e99944d1c359c76152491f0d"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/quality-diagnosis.md",
+            "sha256": "c4cc75996f183161765da4f6212e536f8d521d60d68a0e0130599daa27e790cb"
+          },
+          "observed": {
+            "path": "runs/R19/quality-diagnosis.md",
+            "size_bytes": 2786,
+            "sha256": "c4cc75996f183161765da4f6212e536f8d521d60d68a0e0130599daa27e790cb"
+          },
+          "match": true
+        }
+      ],
+      "all_match": true
+    },
+    {
+      "lock": {
+        "path": "runs/R19/levels/L4/design-lock.json",
+        "size_bytes": 1554,
+        "sha256": "ee018415f3557449af336d2ce69660de4145ea2b802c0037e2a361394c2f0bba"
+      },
+      "entries": [
+        {
+          "expected": {
+            "path": "runs/R19/levels/L4/design/handoff.md",
+            "size_bytes": 5471,
+            "sha256": "cb858c5738729bfc1b2f4487786a783ff10841e8912b1a62478b0d3cc66316ba"
+          },
+          "observed": {
+            "path": "runs/R19/levels/L4/design/handoff.md",
+            "size_bytes": 5471,
+            "sha256": "cb858c5738729bfc1b2f4487786a783ff10841e8912b1a62478b0d3cc66316ba"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/levels/L4/design/result.json",
+            "size_bytes": 6615,
+            "sha256": "d4c7af5bc3ecfc727ff5fd6e1f2361b7506d5f9d622da3843c170ad1fc901612"
+          },
+          "observed": {
+            "path": "runs/R19/levels/L4/design/result.json",
+            "size_bytes": 6615,
+            "sha256": "d4c7af5bc3ecfc727ff5fd6e1f2361b7506d5f9d622da3843c170ad1fc901612"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/levels/L4/design/source-extract.txt",
+            "size_bytes": 8616,
+            "sha256": "0d992481fa6e6bc13d2b3337e67977fdebcbff682e4127f699a06f03506a00a9"
+          },
+          "observed": {
+            "path": "runs/R19/levels/L4/design/source-extract.txt",
+            "size_bytes": 8616,
+            "sha256": "0d992481fa6e6bc13d2b3337e67977fdebcbff682e4127f699a06f03506a00a9"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/levels/L4/design/source-map.md",
+            "size_bytes": 3054,
+            "sha256": "e8d5fc082fe3a840d14a078059d40851df7b71d25a617c74ad6b84b05133414a"
+          },
+          "observed": {
+            "path": "runs/R19/levels/L4/design/source-map.md",
+            "size_bytes": 3054,
+            "sha256": "e8d5fc082fe3a840d14a078059d40851df7b71d25a617c74ad6b84b05133414a"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/levels/L4/design/source-pdf-preview.png",
+            "size_bytes": 435374,
+            "sha256": "34d275abbf64a622bd7438c8f775f80abc5f8677e194fb6d1ab739b1fd0e4301"
+          },
+          "observed": {
+            "path": "runs/R19/levels/L4/design/source-pdf-preview.png",
+            "size_bytes": 435374,
+            "sha256": "34d275abbf64a622bd7438c8f775f80abc5f8677e194fb6d1ab739b1fd0e4301"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/levels/L4/design/TODO.md",
+            "size_bytes": 3519,
+            "sha256": "b28ac9e48b46725634c51e4b4202eb52ca37e49eaaf5e27ad99bf413da8ced32"
+          },
+          "observed": {
+            "path": "runs/R19/levels/L4/design/TODO.md",
+            "size_bytes": 3519,
+            "sha256": "b28ac9e48b46725634c51e4b4202eb52ca37e49eaaf5e27ad99bf413da8ced32"
+          },
+          "match": true
+        },
+        {
+          "expected": {
+            "path": "runs/R19/levels/L4/design/workflow.md",
+            "size_bytes": 25258,
+            "sha256": "62b216118a815373849f3a1e84bdca408d611a773a9de5c2a69797f73d864ad7"
+          },
+          "observed": {
+            "path": "runs/R19/levels/L4/design/workflow.md",
+            "size_bytes": 25258,
+            "sha256": "62b216118a815373849f3a1e84bdca408d611a773a9de5c2a69797f73d864ad7"
+          },
+          "match": true
+        }
+      ],
+      "all_match": true
+    }
+  ],
+  "environment": {
+    "python": "3.12.8",
+    "libraries": {
+      "PyMuPDF": "1.27.2.2",
+      "python-docx": "1.2.0",
+      "openpyxl": "3.1.5",
+      "numpy": "2.5.3",
+      "scipy": "1.17.1",
+      "pypdf": "6.10.2",
+      "pdfplumber": "0.11.9"
+    }
+  }
+}
