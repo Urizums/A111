@@ -1,0 +1,65 @@
+{
+  "valid": true,
+  "errors": [],
+  "inventory": {
+    "G2": 250,
+    "G5": 124,
+    "G1": 200,
+    "G4": 4
+  },
+  "truck_count": 1,
+  "cost": 700,
+  "mass_kg": 6732.0,
+  "volume_cm3": 38201500.0,
+  "UV": 0.917202881152461,
+  "UW": 0.6732,
+  "trucks": [
+    {
+      "truck_id": "TR0001",
+      "vehicle_type": "T2",
+      "items": 578,
+      "mass_kg": 6732.0,
+      "volume_cm3": 38201500.0,
+      "UV": 0.917202881152461,
+      "UW": 0.6732,
+      "usable_UV": 0.9283429971178755,
+      "cost": 700
+    }
+  ],
+  "status": "feasible",
+  "elapsed_seconds": 0.5116368000017246,
+  "candidate": "maxrects",
+  "objective": "Pareto_archive",
+  "complete_frontier": false,
+  "source_hashes": {
+    "2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf": {
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d",
+      "size_bytes": 131983
+    },
+    "附件1.docx": {
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0",
+      "size_bytes": 14540
+    },
+    "附件2：验证数据集.xlsx": {
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda",
+      "size_bytes": 15973
+    }
+  },
+  "config": {
+    "gap_cm": 3,
+    "pressure_kg_m2": 500,
+    "support": "single_full_rectangle",
+    "fragile_orientation": "all_unique_orthogonal",
+    "fragile_rule": "no_cargo_above; floor_or_standard_support",
+    "oriented_rule": "original_dimensions; geometric_center_in_support_rectangle",
+    "external_load_area": "support_top_and_contact_area_both",
+    "tolerance_cm": 1e-06,
+    "seed": 1904,
+    "pattern_count_per_vehicle": 24,
+    "master_time_limit_seconds": 8,
+    "model": null,
+    "tokens": null,
+    "cost": null,
+    "inventory_restarts": 4
+  }
+}

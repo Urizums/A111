@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import hashlib,json; from pathlib import Path; m=json.loads(Path('artifact-manifest.json').read_text(encoding='utf-8')); rows=[e for e in m['entries'] if e['path'] in ['START_HERE.md','CODEX_HANDOFF.md']]; assert len(rows)==2; assert all(len(Path(e['path']).read_bytes())==e['size_bytes'] and hashlib.sha256(Path(e['path']).read_bytes()).hexdigest()==e['sha256'] for e in rows); print(json.dumps({'changed_entry_bytes_checked':len(rows),'ok':True,'scope':'Mutable entry identity only; historical lock bytes unchanged'}))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T13:02:31.092220+00:00",
+    "monotonic_ns": 83983531000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T13:02:31.228443+00:00",
+    "monotonic_ns": 83983656000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\"changed_entry_bytes_checked\": 2, \"ok\": true, \"scope\": \"Mutable entry identity only; historical lock bytes unchanged\"}\r\n",
+  "stderr": "",
+  "stdout_base64": "eyJjaGFuZ2VkX2VudHJ5X2J5dGVzX2NoZWNrZWQiOiAyLCAib2siOiB0cnVlLCAic2NvcGUiOiAiTXV0YWJsZSBlbnRyeSBpZGVudGl0eSBvbmx5OyBoaXN0b3JpY2FsIGxvY2sgYnl0ZXMgdW5jaGFuZ2VkIn0NCg==",
+  "stderr_base64": ""
+}

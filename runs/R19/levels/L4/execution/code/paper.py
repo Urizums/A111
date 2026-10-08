@@ -1,0 +1,367 @@
+"""Evidence-consuming Chinese paper/report and embedded-font PDF reading copies."""
+from pathlib import Path
+from collections import Counter
+import json,csv,math,re,html
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.lib.styles import ParagraphStyle
+from reportlab.lib import colors
+from reportlab.lib.enums import TA_CENTER
+from reportlab.platypus import SimpleDocTemplate,Paragraph,Spacer,Table,TableStyle,Image,KeepTogether
+from reportlab.lib.pagesizes import A4
+
+E=Path(__file__).resolve().parents[1]
+def table(headers,rows):
+    return '\n'.join(['| '+' | '.join(map(str,headers))+' |','| '+' | '.join(['---']*len(headers))+' |']+['| '+' | '.join(map(str,r))+' |' for r in rows])
+def pct(x):return f'{100*x:.3f}%'
+def read_csv(p):return list(csv.DictReader(p.open(encoding='utf-8-sig',newline='')))
+def pdf_from_md(source,target,title):
+    pdfmetrics.registerFont(TTFont('Chinese','C:/Windows/Fonts/simsun.ttc',subfontIndex=0))
+    normal=ParagraphStyle('body',fontName='Chinese',fontSize=9.5,leading=15.5,wordWrap='CJK',spaceAfter=6)
+    cell=ParagraphStyle('cell',parent=normal,fontSize=7.2,leading=11,spaceAfter=1)
+    headings={1:ParagraphStyle('h1',parent=normal,fontSize=17,leading=25,spaceAfter=16,alignment=TA_CENTER,keepWithNext=True),2:ParagraphStyle('h2',parent=normal,fontSize=13,leading=19,spaceBefore=12,spaceAfter=8,keepWithNext=True),3:ParagraphStyle('h3',parent=normal,fontSize=11,leading=17,spaceBefore=8,keepWithNext=True)}
+    def para(s,style=normal):
+        s=html.escape(s);s=re.sub(r'\*\*(.+?)\*\*',r'<b>\1</b>',s);s=re.sub(r'`([^`]+)`',r'\1',s);return Paragraph(s,style)
+    lines=source.read_text(encoding='utf8').splitlines();story=[];i=0;inside=False
+    while i<len(lines):
+        line=lines[i].strip()
+        if not line:i+=1;continue
+        if line.startswith('```'):inside=not inside;i+=1;continue
+        if line.startswith('|'):
+            block=[]
+            while i<len(lines) and lines[i].strip().startswith('|'):
+                rr=[x.strip() for x in lines[i].strip().strip('|').split('|')]
+                if not all(re.fullmatch(r'[-: ]+',x) for x in rr):block.append([para(x,cell) for x in rr])
+                i+=1
+            if block:
+                t=Table(block,colWidths=[(A4[0]-94)/len(block[0])]*len(block[0]),repeatRows=1,hAlign='LEFT');t.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#e5edf3')),('GRID',(0,0),(-1,-1),.35,colors.HexColor('#b8c4cc')),('VALIGN',(0,0),(-1,-1),'TOP'),('LEFTPADDING',(0,0),(-1,-1),4),('RIGHTPADDING',(0,0),(-1,-1),4),('TOPPADDING',(0,0),(-1,-1),4),('BOTTOMPADDING',(0,0),(-1,-1),4)]));story.extend([t,Spacer(1,9)])
+            continue
+        match=re.match(r'!\[(.*?)\]\((.*?)\)',line)
+        if match:
+            f=(source.parent/match.group(2)).resolve();img=Image(str(f));scale=min((A4[0]-100)/img.imageWidth,290/img.imageHeight);img.drawWidth=img.imageWidth*scale;img.drawHeight=img.imageHeight*scale;story.append(KeepTogether([img,para(match.group(1),cell),Spacer(1,9)]));i+=1;continue
+        mh=re.match(r'^(#{1,3})\s+(.+)',line)
+        if mh:story.append(para(mh.group(2),headings[len(mh.group(1))]));i+=1;continue
+        text=line;i+=1
+        while i<len(lines) and lines[i].strip() and not lines[i].lstrip().startswith(('#','|','!','```','- ')):
+            text+=' '+lines[i].strip();i+=1
+        story.append(para(text))
+    def page(canvas,doc):
+        canvas.setFont('Chinese',8);canvas.setFillColor(colors.HexColor('#667580'));canvas.drawString(47,22,title);canvas.drawRightString(A4[0]-47,22,str(doc.page));canvas.setTitle(title);canvas.setAuthor('R19 L4 execution')
+    SimpleDocTemplate(str(target),pagesize=A4,rightMargin=47,leftMargin=47,topMargin=44,bottomMargin=41).build(story,onFirstPage=page,onLaterPages=page)
+
+def main():
+    I=json.loads((E/'data/instance.json').read_text(encoding='utf8'));selection=json.loads((E/'results/selected.json').read_text(encoding='utf8'));methods=['baseline_refined','classic_refined','improved_refined'];names={'baseline_refined':'条带baseline','classic_refined':'经典最大空闲矩形','improved_refined':'固定种子评分扰动'}
+    sums={name:json.loads((E/ss['root']/'summary.json').read_text(encoding='utf8')) for name,ss in selection['scenarios'].items()};cost=sums['Q2_min_cost'];few=sums['Q2_min_vehicles'];cb=cost['bounds'];vt=Counter(t['vehicle_type'] for t in cost['trucks']);par=read_csv(E/'results/parameter_results.csv');pmap={r['scenario']:r for r in par};pareto=json.loads((E/selection['single_root']/'pareto.json').read_text(encoding='utf8'))
+    cargo_table=table(['编号/类别','长×宽×高/cm','单重/kg','件数','体积/m³','重量/kg'],[[g['id']+'/'+{'standard':'标准','fragile':'易碎','oriented':'定向'}[g['class']],'×'.join(map(str,g['dims'])),g['mass'],g['quantity'],f"{math.prod(g['dims'])*g['quantity']/1e6:.2f}",g['mass']*g['quantity']] for g in I['cargo']])
+    vehicle_table=table(['车型','内尺寸/cm','安全可用高度/cm','载重/kg','费用/元·趟'],[[v['id'],'×'.join(map(str,v['dims'])),v['dims'][2]-3,v['capacity'],v['cost']] for v in I['vehicles']])
+    results_table=table(['目标','T1辆','T2辆','总辆','费用/元','整体UV','整体UW'],[[name,sum(t['vehicle_type']=='T1' for t in s['trucks']),sum(t['vehicle_type']=='T2' for t in s['trucks']),s['truck_count'],s['cost'],pct(s['UV']),pct(s['UW'])] for name,s in sums.items()])
+    cmp_rows=[]
+    for m in methods:
+        r=json.loads((E/'results'/m/'run_summary.json').read_text(encoding='utf8'));ss=r['scenarios'];cmp_rows.append([names[m],ss[0]['truck_count'],ss[1]['truck_count'],ss[2]['truck_count'],ss[2]['cost'],ss[3]['cost'],f"{r['elapsed_seconds']:.2f}"])
+    comparison=table(['路线','T1车数','T2车数','混型车数','最少车费用','最低费/元','全运行/s'],cmp_rows)
+    single_rows=[];rec_rows=[]
+    for v in I['vehicles']:
+        pts=pareto[v['id']];idealV=max(p['UV'] for p in pts);idealW=max(p['UW'] for p in pts);rec=max(pts,key=lambda p:min(p['UV']/idealV,p['UW']/idealW));rec_rows.append([v['id'],rec['scenario'],pct(rec['UV']),pct(rec['UW']),','.join(map(str,rec['counts']))])
+        for p in pts:single_rows.append([v['id'],p['scenario'],pct(p['UV']),pct(p['UW']),','.join(map(str,p['counts']))])
+    single_table=table(['车型','档案方案','UV','UW','G1,G2,G3,G4,G5件数'],single_rows);rec_table=table(['车型','推荐方案','UV','UW','类型件数'],rec_rows)
+    gap_table=table(['场景','可行值','合法下界','相对差距(UB-LB)/LB','全局最优'],[[n,s['cost'] if n=='Q2_min_cost' else s['truck_count'],s['bounds']['cost_lower_bound'] if n=='Q2_min_cost' else s['bounds']['vehicle_lower_bound'],pct(((s['cost'] if n=='Q2_min_cost' else s['truck_count'])/(s['bounds']['cost_lower_bound'] if n=='Q2_min_cost' else s['bounds']['vehicle_lower_bound']))-1),'未证明'] for n,s in sums.items()])
+    truck_table=table(['车辆','车型','件数','重量/kg','体积/m³','UV','UW'],[[t['truck_id'],t['vehicle_type'],t['items'],int(t['mass_kg']),f"{t['volume_cm3']/1e6:.5f}",pct(t['UV']),pct(t['UW'])] for t in cost['trucks']])
+    param_table=table(['实验场景','车辆数','费用/元','整体UV','整体UW','耗时/s'],[[r['scenario'],r['truck_count'],r['cost'],pct(float(r['UV'])),pct(float(r['UW'])),f"{float(r['elapsed_seconds']):.3f}"] for r in par])
+    loads=read_csv(E/selection['scenarios']['Q2_min_cost']['root']/'support_loads.csv');placements=read_csv(E/selection['scenarios']['Q2_min_cost']['root']/'placements.csv');byid={r['item_id']:r for r in placements};ll={r['item_id']:r for r in loads};baseitem=max(loads,key=lambda r:float(r['external_load_kg']));chain=[baseitem['item_id']]
+    while True:
+        nxt=[r['item_id'] for r in placements if r['support_ids']==chain[-1]]
+        if not nxt:break
+        chain.append(nxt[0])
+    hand=sum(next(g['mass'] for g in I['cargo'] if g['id']==byid[n]['cargo_type']) for n in chain[1:]);assert abs(hand-float(baseitem['external_load_kg']))<1e-8
+    chain_table=table(['件号','z/cm','自身重/kg','累计外载/kg','下层承载上限/kg'],[[n,byid[n]['z'],next(g['mass'] for g in I['cargo'] if g['id']==byid[n]['cargo_type']),ll[n]['external_load_kg'],ll[n]['load_limit_kg']] for n in chain])
+    sample=table(['件号','车型/车号','xyz/cm','lwh/cm','姿态','支撑'],[[r['item_id'],r['vehicle_type']+'/'+r['truck_id'],','.join(r[k] for k in ['x','y','z']),','.join(r[k] for k in ['l','w','h']),r['orientation'],r['support_ids']] for r in placements[:10]])
+    geom=read_csv(E/'results/attachment2_geometry.csv');geom_table=table(['产品','车辆','保守格点数量','乐观格点数量'],[[r['product'],r['vehicle'],r['conservative_grid_count'],r['optimistic_grid_count']] for r in geom if r['vehicle']=='6.8米箱货'])
+    cp=json.loads((E/'checks/clean_rerun.json').read_text(encoding='utf8')) if (E/'checks/clean_rerun.json').exists() else {'status':'not_yet_checked'}
+    abstract=f'''针对五类、共3000件货物的短途装箱问题，建立统一的姿态、几何分离、完整支撑、易碎封顶、安全间隙和累计载荷可行域，将装箱拆为垂直柱构造、二维排布与五类需求等式整数模式选择。采用同一输入和模式预算比较条带、最大空闲矩形和固定种子评分扰动，并用独立于放置过程的坐标校验器全量重算。原货物总体积287.35m³、总重41100kg；选中单车型方案分别为{sums['Q1_fleet_T1']['truck_count']}辆T1和{sums['Q1_fleet_T2']['truck_count']}辆T2；混型最少车候选为{few['truck_count']}辆，最低费候选为{vt['T1']}辆T1、{vt['T2']}辆T2，共{cost['cost']}元。混型车数与费用的总量下界分别为{cb['vehicle_lower_bound']}辆、{cb['cost_lower_bound']}元，最优性未闭合。两车型单车给出有限非支配档案及全部坐标。最高货物密度187.5kg/m³意味着在3cm间隙下，T1、T2的满载率理论上限分别为59.808%和77.158%，故双100%目标不可达。17组重优化参数、规模和种子实验均输出可行坐标；易碎原高固定实验费用{pmap['fragile_original_height']['cost']}元，相比同预算基准{pmap['base']['cost']}元，说明方向解释会实质改变推荐。附件2仅进行64组尺寸区间格点验证。本文结果是保守支撑模型中的已检查可行上界，不是原问题全局最优证明。'''
+    text=f'''# 带类型、支撑与累计承重约束的多目标三维装箱及车型组合优化
+
+## 摘要
+
+{abstract}
+
+关键词：三维装箱；Pareto非支配档案；完整支撑；累计承重；整数模式选择；车型组合
+
+## 1 问题重述与原始数据审计
+
+### 1.1 每问目标与依赖
+
+题目[1]要求在附件1的两种车型及五类库存[2]上解决三个相互关联的任务。问题1首先对每车型单车同时追求满容率UV与满载率UW，然后分别在仅用该车型时运完全部货物并尽量减少车辆；所有方案须给每件以车厢右后下为原点的坐标和姿态。问题2允许混车型，分别最少车和最低费，不能假设两个目标等价。问题3须向管理者解释模型、算法、程序、性能和参数影响，并附可执行程序。附件2[3]是可选的通用性验证材料。
+
+单车变量包含选货、姿态和坐标；整批还包含分车、车型与车辆启用。单车库存仅为上限，未装件合法；整批库存必须恰好全部运输一次。评价分别使用非支配性、车数/费用、合法下界差距、全量约束可行率和实际计算耗时。问题2使用与问题1相同可行域而重新优化车型；问题3消费前两问的已检查数据，并在参数改变后再次求解。
+
+### 1.2 三份材料与单位
+
+执行前逐页读取3页PDF、DOCX全部22段及库存表、XLSX全部非空单元，核对SHA256。三文件均与冻结设计身份一致，审计保存在checks/audit.json与data/source-extract.txt。附件1长宽高是cm、单重kg、费用元/趟，程序用cm计算，面积限载时除10000转m²。3000件稳定ID按G1-0001至各类型末号展开，原件保持只读。
+
+{vehicle_table}
+
+{cargo_table}
+
+总物理体积为57.6+43.75+42+96+48=287.35m³，总重为9600+8000+4500+10000+9000=41100kg。整批属于体积与类型约束较强、载重相对宽松的实例，但这个判断还需坐标可行性验证，不能直接据总量构造装箱。
+
+### 1.3 附件2不能充当完整运输实例
+
+附件2有8行产品，仓测尺寸存在单值与区间，以mm记录；部分化验尺寸缺失。车型维度以m给出，部分费用是元/1000km，铁路/海路文本旁的F4:F6没有明确数值表头。高低板描述前4m高板与约25cm高差，高栏/低栏高度不等于闭合车厢内高。该附件没有批量、单重、货物类别/姿态、车辆载重和运输距离，因此本研究不补造真实最少车或最低费结论。尺寸区间与闭合车型的64组几何验证见第8节。
+
+## 2 假设、坐标与符号
+
+### 2.1 可计算解释及其后果
+
+假设A1：箱体与货物都是轴对齐刚性长方体，质心取均质箱几何中心；x从后向前，y从右向左，z向上，原点为右后下。每件坐标是其最小角。标准件允许三边全部唯一置换，定向件固定原长宽高；易碎未给方向限制，主分支允许全部正交置换，另测保持原高的保守分支。
+
+假设A2：易碎“单层、不可堆叠”解释为不能有任何货物由易碎件承载，易碎件不能互相上下叠放；它可以位于地板或标准件顶部，不强加全车同一z层。这是题面语义的可逆解释，而非官方补充规定。
+
+假设A3：所有非地板件用一个下层件完整覆盖其底面。题面对易碎要求完整贴合；将同样条件用于其他类别是运输稳定的保守假设。本文算法排除多件同高顶面拼接支撑，因而可能增加车辆。上层箱中心投影必须在直接下层矩形内；完整覆盖已经保证定向支撑上的中心条件。
+
+假设A4：500kg/m²作用于下层外部累计载荷/下层顶面积，同时逐接触检查整条上部链重量/接触面积不超过阈值。地板不使用该货物承重限值。单父支撑使载荷沿竖直链守恒；没有用任意平均分摊假装力学平衡。下层承担所有间接上层自重，而不是只检查相邻件。
+
+假设A5：所有z+h≤H-3，允许边界接触但禁止正体积交叠。统一容差为1e-6cm，用于小数扰动与浮点加法，不吸收3cm间隙或超载。主指标UV分母为原LWH，另报以L×W×(H-3)为分母的usable_UV；整批用总量除总容量，不作车辆比值的无权平均。
+
+这些假设使每个输出都能从坐标验证，但不构成道路振动认证。没有实测非均质质心、车轴分载、绑扎与装卸顺序数据，不对这些未建模机制作数值保证。
+
+### 2.2 符号表
+
+{table(['符号','含义/单位'],[['i,g,k,t','物品、货物类型、车辆实例、车型索引'],['a_ik','物品i是否分配到车k，二元'],['b_kt,e_k','车型选择与车辆启用，二元'],['r_i,(l_i,w_i,h_i)','姿态置换和放置后尺寸/cm'],['(x_i,y_i,z_i)','最小角坐标/cm'],['m_i,V_i,q_g','单重kg、体积cm³、库存件数'],['s_ji','上层j直接由下层i支撑，二元'],['Q_i,A_i','累计外载kg、下层顶面积m²'],['L_t,W_t,H_t,C_t,c_t','车型尺寸cm、额定载重kg、费用元/趟'],['p_gj,n_j','装载模式j的类型g件数、模式使用整数次数']])}
+
+## 3 统一可行域与目标模型
+
+### 3.1 几何、库存、姿态与载重
+
+整批要求Σ_k a_ik=1；单车要求Σ_k a_ik≤1。车型满足Σ_t b_kt=e_k，分配只能进入启用车。姿态r_i从各类型许可集合取值，产生(l_i,w_i,h_i)，保持V_i=l_i w_i h_i。对车中每件：0≤x_i，x_i+l_i≤L_t；0≤y_i，y_i+w_i≤W_t；0≤z_i，z_i+h_i≤H_t-3。载重为Σ_i m_i a_ik≤C_t。
+
+同车任意两件i,j至少满足以下六个分离式之一：x_i+l_i≤x_j，x_j+l_j≤x_i，y_i+w_i≤y_j，y_j+w_j≤y_i，z_i+h_i≤z_j，z_j+h_j≤z_i。实施校验器直接以三轴区间正交集重算所有可能相交对，没有仅凭布局图片或作者标志通过。
+
+### 3.2 支撑、易碎与累积载荷
+
+每个z_i>0的物品恰有一个父件j，需z_j+h_j=z_i且[x_i,x_i+l_i]×[y_i,y_i+w_i]包含于父件顶面矩形。支撑图沿z严格上升，故无环。若i为易碎，其父必须标准；若j为易碎，不允许任何子件。若父为定向，上层中心(x_i+l_i/2,y_i+w_i/2)不得超出父的投影。
+
+由顶向下计算Q_i=Σ_(j直接在i上)(m_j+Q_j)。令A_i=l_i w_i/10000，要求Q_i≤500 A_i；每条直接接触还需(m_j+Q_j)/(l_j w_j/10000)≤500。单支撑完整底面时接触面积等于上件底面。程序保存每件父ID、外载、顶面积与限载值，并且校验器自己从坐标恢复父件后对输出support_ids交叉检查。
+
+### 3.3 多目标与车型组合
+
+单车UV=Σ_i V_i a_i/(L_t W_t H_t)，UW=Σ_i m_i a_i/C_t。优化向量为max(UV,UW)，不暗设一个权重声称两个分量都达到独立最大。对于两可行方案A,B，A支配B当两指标均不小且至少一个严格大。算法仅输出已搜索集合的非支配档案，不称真实完整Pareto前沿。
+
+单车型整批min Σ_k e_k；混车型最少车也min Σ_k e_k，本文对已知同车数候选以费用选择较小者，但限时求解不保证二级目标全局最优。混车型最低费用min Σ_(k,t)c_t b_kt，即450n_1+700n_2。两目标分别求解，最低费用不能简单从两个单车型方案中挑选而代替混型优化。
+
+### 3.4 不可达满载与合法界限
+
+五类密度依次为166.667、182.857、107.143、104.167、187.5kg/m³。设ρ_max=187.5，则任意可行单车重量≤ρ_max L_t W_t(H_t-3)，因此UW≤ρ_max L_t W_t(H_t-3)/C_t。T1可用体积19.1394m³，UW≤3588.6375/6000=59.808%；T2可用体积41.1512m³，UW≤7715.85/10000=77.158%。此界忽略其他限制，仍是合法上界，故题目的“同时满容满载”应理解为尽量提高双指标，不能期待100%载重。
+
+单车型车数下界为max(ceil(总体积/车型原体积),ceil(总重/载重))，分别为15和7。混型枚举非负整数(n_1,n_2)，仅保留19.404n_1+41.65n_2≥287.35和6000n_1+10000n_2≥41100，得到车数下界7、费用下界4900。这些是放松几何/类型后的界，不能据此宣称7辆一定装得下。受限装载模式的MILP optimal或gap只适用于当前模式集合，其LP值不是原问题全局下界。
+
+## 4 求解方法、预算与程序接口
+
+### 4.1 可行柱：先保证支撑，再排底面
+
+对每车型枚举许可朝向和一段/两段同类堆叠柱。下段不能易碎，上段底面不能大于下段，易碎只允许上段一件且直接下段必须标准。枚举层数时同步检查安全高度、每层累计外载和接触压力。T1生成577个柱、T2生成778个柱；柱覆盖底面矩形，故同车柱底面不重叠便足以保证柱间三维不重叠。该分解舍弃跨柱拼接支撑和超过两类的复杂链，换来可复算的稳定装载。
+
+### 4.2 三条路线与公平条件
+
+baseline按行条带顺序放柱，当前行放不下则新行；经典方法维护全部最大空闲矩形，对每个拟放矩形拆分相交空闲矩形并删除包含冗余；改进在同一最大空闲矩形框架中给柱评分添加固定seed的±4%扰动。评分使用不同货类偏好与体积/重量倾向引导搜索，但原单车目标仍按Pareto保留，不把评分等同题面目标。
+
+经典路线同时是去掉±4%评分扰动的针对机制消融，其余输入、可行域、模式预算和seed相同；它检验扰动是否值得增加复杂性。每路线每车型同样96个偏好/供给量模式、纯类型及小件数补充模式，并增加12个整批起点。整批起点给易碎件偏好，尽早保留G1标准件作底座，再填其他货，缓解尾部只有易碎件的低装载车。种子1904；整数主问题每次90秒。三路线顺序执行，避免并发混淆CPU时间。单车档案时间为所属批模式构建的累计时间，不冒充单个候选放置耗时。未可靠获取峰值内存、模型名、token或费用的字段为null。
+
+首轮没有整批库存感知起点，贪心24辆T1/11辆T2；模式选择得到22/10。记录显示后段易碎车UV仅约0.26至0.29，而前段标准货车约0.90。这个实际弱点触发12起点补充，首轮成果和失败均保留在results/improved与logs/events.jsonl。小数尺寸实验还暴露空闲空间拆分将边长转整数，校验器拒绝了重叠；修复为保留小数后同一输入重新通过，原失败保留。另一真实缺陷是限时成本求解返回7850元而已知最少车方案7000元；修复后所有整批构造/主问题候选组成可行方案库，给整数模型加合法incumbent目标上界并始终保留最便宜已知方案。没有把限时结果当最优，也没有删除失败。
+
+### 4.3 五类等式模式选择
+
+每个已验证装载模式j有车型、逐件相对坐标和计数p_gj。主问题为Σ_j p_gj n_j=q_g，n_j≥0且整数，目标为Σ_j n_j或Σ_j c_(t(j)) n_j。使用scipy.optimize.milp。每种货的单件模式提供受限主问题的可行后备，不把单件一车作为最终主要算法。选择完模式后给各实例重新分配唯一ID及父ID，再从最终坐标重新验证，模式自报合法标志不参与判定。
+
+### 4.4 程序和输出
+
+程序从JSON数据和config读取车型、库存、姿态解释、间隙、阈值、预算与seed，不硬编码答案。核心接口为：py -3.12 -X utf8 -B code/solve.py --data data/instance.json --config configs/refined.json --out results/new_run --method maxrects。校验接口为validator.py的--data、--config、--placements、--out参数；单车加--single。结果每车每件输出placements.csv，载荷输出support_loads.csv，汇总与求解状态输出summary.json。README说明新输入和非零退出码。官方评测输入格式未提供，当前接口是可运行公开JSON合同，不声称兼容未知CLI。
+
+## 5 问题1：单车双目标和两套单车型整批方案
+
+### 5.1 单车非支配档案与折中选择
+
+合并相同预算三路线的单车候选，重新去除被支配者，结果如下。类型件数顺序为G1至G5；所有逐件方案保存在results/selected_single下。
+
+{single_table}
+
+![图1 两车型有限非支配档案，数据来自pareto.json](../figures/pareto.png)
+
+推荐规则取档案理想值UV*和UW*，最大化min(UV/UV*,UW/UW*)，避免某一指标相对档案端点下降过多。它是透明管理折中规则，不是题面指定权重，更不证明两独立最优同时实现。推荐如下；用户若只关心可承接体积，则可以直接采用UV最大端点。
+
+{rec_table}
+
+### 5.2 单车型整批与下界
+
+{results_table}
+
+T1、T2单车型方案都覆盖G1=800、G2=1000、G3=300、G4=400、G5=500，恰好3000个有效ID。完整坐标不是本文抽样图的替代：对应selected.json列出的root/placements.csv每件均有xyz、lwh、方向和父件。整体UV使用总货物287.35m³除所有车厢原体积，UW使用41100kg除总额定载重。满载率远低于100%与密度上界相符。
+
+{gap_table}
+
+这些方案回答的是最少车优化目标的已检查上界，T1、T2尚有5辆和3辆绝对下界间隙。间隙同时包含总量松弛偏松、柱/单支撑保守性、模式不足与限时搜索因素，不能把全部差距归因于求解器。
+
+![图2 T1整批代表车辆，O为右后下原点](../figures/layout_Q1_fleet_T1.png)
+
+![图3 T2整批代表车辆，投影覆盖并不表示三维交叠](../figures/layout_Q1_fleet_T2.png)
+
+## 6 问题2：混型最少车与最低费用
+
+在同一库存和约束下，选中最少车候选{few['truck_count']}辆、费用{few['cost']}元；最低费用候选{vt['T1']}辆T1+{vt['T2']}辆T2、{cost['truck_count']}辆、费用{cost['cost']}元。由于本次已检查集合中二者{'一致' if few['cost']==cost['cost'] and few['truck_count']==cost['truck_count'] else '存在目标值差异'}，不能强行编造“车数和费用必然冲突”的结论。两个目标在其他数据中可以冲突，本题只支持当前可行候选比较；二级费用选择和限时限制已公开。
+
+相对于全部使用T2的{sums['Q1_fleet_T2']['cost']}元，混型候选节约{sums['Q1_fleet_T2']['cost']-cost['cost']}元（{pct(1-cost['cost']/sums['Q1_fleet_T2']['cost'])}），相对于T1方案节约{sums['Q1_fleet_T1']['cost']-cost['cost']}元。原运输费用含油费、过路费、人工，不外加无源路线长度、碳价或配送点变量。企业只能将这些节约视为给定静态单趟成本下的候选方案比较。
+
+### 6.1 最低費候选逐车汇总
+
+{truck_table}
+
+![图4 混型最低费代表车辆](../figures/layout_Q2_min_cost.png)
+
+### 6.2 方法比较与选择
+
+{comparison}
+
+![图5 同可行域与同模式预算方法对比](../figures/method_comparison.png)
+
+合理性上三路线共用保守支撑、压力、库存和高度规则，全部selected坐标可行。效果上以表中已知上界比较，随机扰动没有显示必须保留的整批优势；单车档案却可由不同路线贡献端点。可解释性上条带最简单、最大空闲矩形更能利用碎片、随机扰动需保存seed；计算成本如实记录全部场景用时。正式选中方案从所有已检查官方候选按原目标择优，而不是按算法名称挑选。参数/seed稳定性另外按共同8秒窗口测试，不能把不同预算的数值混入本表宣称优越。
+
+## 7 数值接收、反例与载荷手算
+
+### 7.1 小路径与非法输出拒绝
+
+G1从附件1取五类数量[3,4,1,2,2]，12件体积1.203m³、169kg，实际baseline输出UV=6.199753%、UW=2.816667%。另构造G1三层承载G3、G4承载G5的链，校验器自己重算父关系和累积载荷。首次手工测试链总高220cm超过217cm被拒绝，后把第二个G5放地板，未降低安全条件。受控修改实际触发重叠、定向旋转、压易碎顶、底面不完整支撑、安全间隙和累计压力六种拒绝；合法边界接触被接受。小切片不能替代全量质量检查。
+
+### 7.2 完整库存、每对几何与每层荷载
+
+校验器不导入求解器，只读原数据/config和最终CSV，逐物品重算尺寸/姿态，逐车全对区间交叠，逐非地板物品恢复一个完整父件，按z递减传递全部外载，检查易碎/定向/压力并重算UV、UW、费用。每个整批结果检查3000个ID恰好一次；单车允许不装但不超过原库存。全量检查范围不是抽样图，也不是作者的valid字段。
+
+从最低費方案选取实际累计外载最大的支撑链：
+
+{chain_table}
+
+底层{baseitem['item_id']}的外载按链中其他件自重相加为{hand}kg，与support_loads.csv的{baseitem['external_load_kg']}kg相等；其限载为{baseitem['load_limit_kg']}kg。该手算验证累计荷载逻辑，所有其余件仍由全量程序检查。检查方法属于作者自检，不声称独立第三方验收。
+
+### 7.3 清洁复跑与输入变化
+
+清洁目录用同一源数据与配置重新运行主要程序，保留首次结果并比较库存、可行性、车辆数、费用和指标，记录为checks/clean_rerun.json；当前记录状态为{cp['status']}。限时MILP受实际墙钟停止点影响，固定seed控制构造而不能保证任何机器坐标字节一致。允许另一个可行候选但必须公开目标变化；不得只凭程序退出0宣称复现成功。规模0.25和载重0.5实验改变了外部输入，并重新生成输出，支持程序会响应输入而不是复印答案。
+
+## 8 问题3：参数、规模、稳定性与附件2
+
+### 8.1 实验条件
+
+参数实验采用共同24偏好模式、每车型4整批起点、8秒混型最低费主问题，与正式96/12/90结果分表。每个参数变更重新构造柱、排布、模式和需求模型。载重0.5/1/1.5倍；间隙3/10/30cm；承重250/500/750kg/m²；全部货物边长0.95/1/1.05倍；易碎原高固定；T1费用315/450/585元；规模0.25/0.5/1/2倍；种子1904/1905/1906，共17组。除base以外均标为合成反事实，原件不改。
+
+{param_table}
+
+![图6 参数改变后的最低費可行候选曲线](../figures/parameters.png)
+
+载重减半后的费用为{pmap['payload_0.5']['cost']}元，增至1.5倍为{pmap['payload_1.5']['cost']}元，基准为{pmap['base']['cost']}元。无变化表明在本搜索与阈值下仍未触及该瓶颈，不等于任何载重都无关；某些车的UW会随分母改变，即便装箱结构未变。间隙增至10/30cm费用分别为{pmap['gap_10']['cost']}/{pmap['gap_30']['cost']}元，它改变可叠层数而非线性按体积缩放。承重250/750的费用分别为{pmap['pressure_250']['cost']}/{pmap['pressure_750']['cost']}元；若相同，不作“承重阈值总是无影响”的推论。尺寸0.95/1.05的费用为{pmap['dimensions_0.95']['cost']}/{pmap['dimensions_1.05']['cost']}元，整数层/行数量会造成跳变；限时启发式也可能产生非单调，实际表保留而不平滑成规律。
+
+易碎固定原高实验需要更多地板或不同底座，费用为{pmap['fragile_original_height']['cost']}元，比同预算基准变化{int(pmap['fragile_original_height']['cost'])-int(pmap['base']['cost'])}元。企业必须核实70×50×40箱是否可换底面；这个问题比小幅费用系数调节更直接改变可行域。由于单支撑限制，原高40cm的G3底面不能由单个G1或G2完全覆盖，故该分支无法使用这些单件底座。若允许同高多个标准件拼面，需要完整矩形并集覆盖和受力分配的新验证，不能直接把本实验当原题精确答案。
+
+T1费315与585时重求费用分别为{pmap['T1_cost_315']['cost']}与{pmap['T1_cost_585']['cost']}元。给定旧装箱费用直接按单价比例折算不足以代表优化反应；车型结构必须重新选择。因此在费率、箱体或库存变更后应重跑，而不是照旧坐标套新总价。
+
+### 8.2 规模与种子稳定性
+
+![图7 规模与实际计算成本](../figures/performance.png)
+
+原库存0.25、0.5、1、2倍分别为750、1500、3000、6000件。耗时包括柱构造、多模式排布、整数求解和完整坐标校验，计时用perf_counter，输出表给实际时间；墙钟8秒窗口可能使复杂规模目标质量下降，故耗时曲线不用于推断普遍渐近复杂度。几何校验每车全对矩阵，内存随单车件数平方增长，是扩展时明确弱点。
+
+种子1904/1905/1906最低费用分别为{pmap['base']['cost']}/{pmap['seed_1905']['cost']}/{pmap['seed_1906']['cost']}元，三次都经过全量校验，观察可行率为3/3。这是同一实例的描述性稳定性，三次不能证明总体可靠概率。若结果差异明显，应保留最好已检方案并扩大有目的搜索，而非只报告最佳一次。未测到的峰值内存保留null。
+
+### 8.3 附件2尺寸区间的边界验证
+
+仓测长宽高区间先从mm乘0.1转cm，矩形闭合车维度从m乘100转cm。以车辆区间下端和产品上端计算保守固定姿态格点数量，以相反端点计算乐观数量；竖向仍留3cm。这只验证尺度解析、区间以及规则格点几何，未考虑缺失重量、类别和承重。例：6.8米箱货对8产品结果为：
+
+{geom_table}
+
+全部64行保存在results/attachment2_geometry.csv，数量是单一产品假设下的几何格点容量，不是真实装运批量；标准朝向与堆叠只是此几何测试假设，不伪造原表给出许可。栏板和高低板排除该矩形闭合模型；不把元/1000km或F列无头数值冒认为元/趟。补全重量/库存/类别/载重/距离后，才可用同一schema做完整真实运输验证。
+
+## 9 企业技术报告要点与落地决策
+
+独立可读报告另存paper/enterprise_report.md和PDF。本题给定批次建议采用{vt['T1']}辆T1加{vt['T2']}辆T2的{cost['cost']}元已检查候选，按照对应坐标文件逐车逐件装载；单车接单可从第5节两端点按需求选取。总量下界4900元与可行候选的差距仍为{pct(cost['cost']/4900-1)}，不得作为采购或调度系统中已证明最低价的承诺。
+
+装载应先放底层，再沿support_ids放上层，易碎件放其标准底座上并封顶，定向LWH保持原姿态。程序不提供装卸可达性或轴载认证；上线前需实际核实原长宽高、可旋转方向与载荷语义。静态计算结果在库存、费率、车型、安全间隙或承重改变时重跑。企业人员应保留原输入、config和输出，便于追踪变更引起的费用变化。
+
+## 10 优缺点、局限与结论
+
+模型把几何和类型规则统一为一个可复算合同；可行柱使支撑与累计载荷解释明确，整数需求等式避免单车贪心造成重复或遗漏。实际反例验证、高度错误恢复、最优下界与全部输出坐标使论文主张可被否证。算法在Windows Python3.12及现有科学库离线运行，无网络或安装依赖。
+
+主要局限是单父完整支撑与两段柱限制、有限模式集合、限时MILP和未建模实测力学/装卸信息。Pareto档案不是完整真实前沿，正式结果与总量下界未闭合。附件2缺失关键字段，只能有限几何验证。正式参赛与AI使用、匿名封面、上传格式及评测CLI未给，成果定位为内部练习技术论文和可运行程序，未验证官方提交规则，也未投稿或上传。
+
+所有问题均有具体可行候选、每件坐标和姿态、空间/载重/费用指标及参数性能分析。结论是给定保守可行域下可执行且经过作者全量自检的运输方案；原问题最优性仍待更充分模式搜索、拼接支撑模型或更强证明。若不允许易碎旋转，应采用相应保守分支重新求解，不能沿用主方案。
+
+## 参考文献
+
+[1] 2026年第十六届MathorCup数学应用挑战赛题目：D题《多场景、多目标货物运输装箱策略优化》，官方给定PDF，第1至3页。
+
+[2] 附件1.docx，官方给定数据，段落3至19、库存表第2至6行。
+
+[3] 附件2：验证数据集.xlsx，官方给定数据，箱装产品尺寸A1:H10、车型尺寸A3:F20。
+
+本文离线原创；没有查阅其他队题解、历史论文或网络文献。不编造算法出处、奖项或实验引用。
+
+## 附录A 坐标、方向与程序目录
+
+以下仅为最低費候选前10件的示例，完整3000件在selected.json指向的placements.csv中，每件姿态由L/W/H原边置换编码。FLOOR表示地板，其余support_ids指唯一父件。
+
+{sample}
+
+data/instance.json与configs/refined.json包含原数据合同及假设；code/solve.py是求解主程序；code/validator.py从坐标验算；code/experiments.py重跑合成实验；code/figures.py与code/paper.py从真实结果消费图表和文本。README给完整复现与输入变更方式，checks保存审计、烟雾、清洁复跑、全量接收与图表来源。manifest.json逐文件哈希相对工作根，排除自身。
+'''
+    # no generated numerical placeholder is allowed
+    text=text.replace('最低費','最低费').replace('59.808','59.811').replace('77.158','77.157').replace('41.1512','41.1502').replace('7715.85','7715.6625')
+    (E/'paper/paper.md').write_text(text,encoding='utf8')
+    report=f'''# 企业装箱与车型组合技术报告
+
+## 1 决策摘要
+
+给定附件1的3000件货物、287.35m³和41100kg，推荐采用{vt['T1']}辆T1与{vt['T2']}辆T2，共{cost['truck_count']}辆、{cost['cost']}元/批次。与本研究已检查全T2候选相比节约{sums['Q1_fleet_T2']['cost']-cost['cost']}元，与全T1候选相比节约{sums['Q1_fleet_T1']['cost']-cost['cost']}元。这个方案是已检查可行候选，原问题最低价未证明：只考虑总体积/载重的费用下界为4900元，差距{pct(cost['cost']/4900-1)}。
+
+## 2 输入、目标与操作约定
+
+T1内尺寸420×210×220cm、载重6000kg、450元/趟；T2为680×245×250cm、10000kg、700元/趟。货物包括800件G1、1000件G2标准件，300件G3易碎件、400件G4和500件G5定向件。题目要求单车提高空间/载重利用率，整批最少车，并在混型时最低费。程序只使用附件1给定静态费用，没有外加路程、配送点或碳价。
+
+所有坐标以车厢右后下为O，x向前、y向左、z向上，单位cm。定向件保持原LWH；标准/主分支易碎件可换底面。非地板物品必须完全落在一个下层件顶面；易碎件的下层只允许标准件，易碎顶面不再放货。所有最高点低于车顶至少3cm，累计外载及接触面压力不超过500kg/m²。
+
+## 3 具体执行与交接
+
+调度采用下面逐车汇总，并从results/selected.json中Q2_min_cost对应root读取placements.csv。CSV不是示意图：3000件每件唯一ID，含车号、车型、xyz、放置后lwh、原边置换方向和support_ids。support_loads.csv给每件累计外载和限值。先装FLOOR底层，再按z从低到高装支撑链；G3装完后封顶，G4/G5不能旋转。
+
+{truck_table}
+
+![最低費候选代表装载图](../figures/layout_Q2_min_cost.png)
+
+最低費方案整体UV为{pct(cost['UV'])}、整体UW为{pct(cost['UW'])}。整批率按总货量除总容量计算。单车不应追求满载100%：当前货物最大密度187.5kg/m³，即使忽略其他几何困难，3cm间隙下T1、T2满载率也不超过59.808%、77.158%。低载重率在此批次主要反映货物密度与箱体配置，不必然说明调度差。
+
+## 4 模型、算法与实现
+
+模型统一边界、六方向分离、原库存、许可姿态、载重、支撑和累积载荷；算法枚举一至两段可行堆叠柱，按条带或最大空闲矩形摆柱，再以五类货量等式整数主问题选择装载模式。它避免把“单车尽量装满”当作“整批必然最少车”。实际首轮发生易碎件尾部空余，加入12个整批易碎优先起点后改善；随机扰动整批效果没有胜出，保留更简单方法与已检查最好方案。
+
+程序在Python3.12本地离线运行，既有numpy/scipy等库，不安装、不联网。运行和检查命令见README。输入JSON替换库存、尺寸、重量、车型参数后重新计算，输出目录另建。程序附件包括源代码、数据/config、所有坐标和实际复跑检查，未知官方测试CLI格式未声称兼容。
+
+{comparison}
+
+## 5 参数变化与管理建议
+
+在共同8秒整数主问题窗口下，基准费用{pmap['base']['cost']}元；载重减半为{pmap['payload_0.5']['cost']}元，安全间隙30cm为{pmap['gap_30']['cost']}元，货物全部边长增加5%为{pmap['dimensions_1.05']['cost']}元。易碎件保持原高40cm的分支费用{pmap['fragile_original_height']['cost']}元。参数实验预算与正式方案不同，数字用于识别敏感方向，不能把短窗口较差候选当正式推荐。
+
+最应核实的是G3能否旋转、实测外包装尺寸与承重含义。若G3不能换底面，必须使用原高固定分支；不得仅在主方案上把姿态文字改掉。费率、库存、车型、间隙或阈值改变后重跑，尤其尺寸可能跨过整数层数/排数临界点。T1费315/585元重优化费用为{pmap['T1_cost_315']['cost']}/{pmap['T1_cost_585']['cost']}元，说明应重新选择车型，而非只改旧总价。
+
+库存750/1500/3000/6000件的合成规模与3种seed都已实际求解并验证；具体耗时和目标见parameter_results.csv。三seed的可行率3/3只是此实例的观察；固定seed与限时求解在不同机器可能停止于不同搜索点。运行完成后应再次运行独立坐标校验器，不能只看求解器退出0。
+
+## 6 检查、适用边界与待核事项
+
+每件库存/姿态、每车边界/交叠/载重、每层支撑/累计压力/易碎顶、所有UV/UW和成本均从最终CSV重算。实际小切片与六类故意错误证明拒绝路径可用；最低費中的最大载荷支撑链另作逐层手算。清洁复跑记录状态为{cp['status']}，完整证据保存在checks。上述是作者自检，不替代现场安全与独立接收。
+
+保守单件完整支撑和两段柱排除了拼接平台，最优性仍有间隙。非均质质心、绑扎、轴载、运输振动、装卸通道未给数据，实施前需由企业人员核实。附件2仅验证闭合车型尺寸区间几何，没有补造批量/单重/车辆载重；高栏、低栏、高低板及费用距离语义待补。比赛规则、AI边界与评测格式未给，本成果只作练习技术交付，无外部上传或投稿。
+
+## 7 可复用交付
+
+主论文paper.md/PDF给统一数学模型、单车档案、两类整批及混型结果、下界、17组参数/规模/稳定性与64组附件2几何验证。README与code目录供运行，selected.json是最终坐标目录索引，checks是实际证据，manifest.json给文件身份。下一接收者可先对原题核对，再从坐标独立重算，并对未知现场参数提出补充数据。
+'''
+    report=report.replace('最低費','最低费').replace('59.808','59.811').replace('77.158','77.157');(E/'paper/enterprise_report.md').write_text(report,encoding='utf8')
+    pdf_from_md(E/'paper/paper.md',E/'paper/paper.pdf','多目标三维装箱与车型组合 - L4练习论文')
+    pdf_from_md(E/'paper/enterprise_report.md',E/'paper/enterprise_report.pdf','企业装箱与车型组合技术报告')
+    (E/'checks/paper_numbers.json').write_text(json.dumps({'selected_results':selection,'parameter_rows':par,'hand_chain':{'ids':chain,'external_mass_sum':hand,'reported':baseitem['external_load_kg']},'paper_characters':len(text),'report_characters':len(report),'figure_sources':'checks/figure_provenance.json','clean_rerun_status':cp['status']},ensure_ascii=False,indent=2),encoding='utf8')
+    print('paper characters',len(text),'report characters',len(report))
+if __name__=='__main__':main()

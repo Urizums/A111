@@ -1,0 +1,167 @@
+{
+  "valid": true,
+  "errors": [],
+  "inventory": {
+    "G1": 800,
+    "G3": 300,
+    "G2": 1000,
+    "G4": 400,
+    "G5": 500
+  },
+  "truck_count": 9,
+  "cost": 6300,
+  "mass_kg": 41100.0,
+  "volume_cm3": 246366706.25,
+  "UV": 0.6572407796451915,
+  "UW": 0.45666666666666667,
+  "trucks": [
+    {
+      "truck_id": "TR0001",
+      "vehicle_type": "T2",
+      "items": 501,
+      "mass_kg": 6059.0,
+      "volume_cm3": 33981200.75,
+      "UV": 0.8158751680672269,
+      "UW": 0.6059,
+      "usable_UV": 0.8257845830639948,
+      "cost": 700
+    },
+    {
+      "truck_id": "TR0002",
+      "vehicle_type": "T2",
+      "items": 86,
+      "mass_kg": 1290.0,
+      "volume_cm3": 10322795.0,
+      "UV": 0.24784621848739496,
+      "UW": 0.129,
+      "usable_UV": 0.25085649644473174,
+      "cost": 700
+    },
+    {
+      "truck_id": "TR0003",
+      "vehicle_type": "T2",
+      "items": 167,
+      "mass_kg": 1875.0,
+      "volume_cm3": 12618416.5625,
+      "UV": 0.30296318277310924,
+      "UW": 0.1875,
+      "usable_UV": 0.30664289754363283,
+      "cost": 700
+    },
+    {
+      "truck_id": "TR0004",
+      "vehicle_type": "T2",
+      "items": 300,
+      "mass_kg": 4950.0,
+      "volume_cm3": 36492023.4375,
+      "UV": 0.8761590261104442,
+      "UW": 0.495,
+      "usable_UV": 0.8868006337150245,
+      "cost": 700
+    },
+    {
+      "truck_id": "TR0005",
+      "vehicle_type": "T2",
+      "items": 755,
+      "mass_kg": 7065.0,
+      "volume_cm3": 35214534.6875,
+      "UV": 0.8454870273109244,
+      "UW": 0.7065,
+      "usable_UV": 0.8557561005171299,
+      "cost": 700
+    },
+    {
+      "truck_id": "TR0006",
+      "vehicle_type": "T2",
+      "items": 313,
+      "mass_kg": 6089.0,
+      "volume_cm3": 33787434.0,
+      "UV": 0.8112229051620649,
+      "UW": 0.6089,
+      "usable_UV": 0.8210758149413612,
+      "cost": 700
+    },
+    {
+      "truck_id": "TR0007",
+      "vehicle_type": "T2",
+      "items": 168,
+      "mass_kg": 3024.0,
+      "volume_cm3": 13827744.0,
+      "UV": 0.3319986554621849,
+      "UW": 0.3024,
+      "usable_UV": 0.3360310277957337,
+      "cost": 700
+    },
+    {
+      "truck_id": "TR0008",
+      "vehicle_type": "T2",
+      "items": 526,
+      "mass_kg": 6316.0,
+      "volume_cm3": 35223965.8125,
+      "UV": 0.8457134648859543,
+      "UW": 0.6316,
+      "usable_UV": 0.8559852883461077,
+      "cost": 700
+    },
+    {
+      "truck_id": "TR0009",
+      "vehicle_type": "T2",
+      "items": 184,
+      "mass_kg": 4432.0,
+      "volume_cm3": 34898592.0,
+      "UV": 0.8379013685474189,
+      "UW": 0.4432,
+      "usable_UV": 0.8480783082463754,
+      "cost": 700
+    }
+  ],
+  "status": "feasible",
+  "elapsed_seconds": 2.429522699996596,
+  "candidate": "parameter_budget_improved",
+  "objective": "cost",
+  "bounds": {
+    "volume_cm3": 246366706.25,
+    "mass_kg": 41100,
+    "vehicle_lower_bound": 6,
+    "cost_lower_bound": 4200,
+    "scope": "total physical volume and weight relaxation; ignores all geometry/support"
+  },
+  "synthetic_scenario": true,
+  "experiment_window": "24 preference modes + 4 full-inventory starts per vehicle + 8-second master",
+  "restricted_status": 0,
+  "restricted_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "restricted_gap": 0.0,
+  "pattern_count": 170,
+  "claim": "optimality/status only within generated pattern pool; retain best known complete incumbent",
+  "source_hashes": {
+    "2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf": {
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d",
+      "size_bytes": 131983
+    },
+    "附件1.docx": {
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0",
+      "size_bytes": 14540
+    },
+    "附件2：验证数据集.xlsx": {
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda",
+      "size_bytes": 15973
+    }
+  },
+  "config": {
+    "gap_cm": 3,
+    "pressure_kg_m2": 500,
+    "support": "single_full_rectangle",
+    "fragile_orientation": "all_unique_orthogonal",
+    "fragile_rule": "no_cargo_above; floor_or_standard_support",
+    "oriented_rule": "original_dimensions; geometric_center_in_support_rectangle",
+    "external_load_area": "support_top_and_contact_area_both",
+    "tolerance_cm": 1e-06,
+    "seed": 1904,
+    "pattern_count_per_vehicle": 24,
+    "master_time_limit_seconds": 8,
+    "model": null,
+    "tokens": null,
+    "cost": null,
+    "inventory_restarts": 4
+  }
+}

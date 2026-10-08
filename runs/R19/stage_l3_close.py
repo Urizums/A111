@@ -36,6 +36,13 @@ preparation_lock = json.loads((ROOT / 'runs/R19/levels/L4/review/preparation-loc
 for entry in preparation_lock['files']:
     paths.add(entry['path'])
 paths.add('runs/R19/levels/L4/review/preparation-lock.json')
+frozen_L4_execution = set()
+execution_lock_path = ROOT / 'runs/R19/levels/L4/execution-lock.json'
+if execution_lock_path.exists():
+    execution_lock = json.loads(execution_lock_path.read_text(encoding='utf-8'))
+    frozen_L4_execution = {entry['path'] for entry in execution_lock['files']}
+    paths.update(frozen_L4_execution)
+    paths.add('runs/R19/levels/L4/execution-lock.json')
 for relative in paths:
     if relative.endswith('command.json'):
         receipt = json.loads((ROOT / relative).read_text(encoding='utf-8'))
@@ -49,7 +56,8 @@ staged = subprocess.check_output(['git', '-c', 'core.longpaths=true', 'diff', '-
                                 cwd=ROOT, encoding='utf-8').splitlines()
 for relative in staged:
     assert relative != 'state/coordinator-lease.json'
-    assert not relative.startswith('runs/R19/levels/L4/execution/')
+    if relative.startswith('runs/R19/levels/L4/execution/'):
+        assert relative in frozen_L4_execution, ('Unfrozen L4 production', relative)
     if relative.startswith('runs/R19/levels/L4/review/'):
         assert relative == 'runs/R19/levels/L4/review/preparation-lock.json' or relative.startswith('runs/R19/levels/L4/review/preparation/')
 tracked = set(subprocess.check_output(['git', '-c', 'core.longpaths=true', 'ls-files', '-z'],
@@ -60,4 +68,4 @@ for relative in index['locks']:
     for entry in json.loads((ROOT / relative).read_text(encoding='utf-8'))['files']:
         assert entry['path'] in tracked, ('Unstaged frozen file', entry['path'])
 print(json.dumps({'selected_files': len(ordered), 'staged_changes': len(staged),
-                  'live_L4_and_lease_excluded': True, 'revision_index_paths_present': True}))
+                  'live_L4_review_and_lease_excluded': True, 'revision_index_paths_present': True}))
