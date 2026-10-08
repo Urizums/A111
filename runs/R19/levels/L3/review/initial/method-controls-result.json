@@ -1,0 +1,820 @@
+{
+  "phase": "preparation_method_self_validation_only",
+  "control_origin": "reviewer created from raw DOCX source dimensions/masses; no original task solution",
+  "source_anchors": [
+    "附件1.docx T1 parameters P4-P6",
+    "附件1.docx P13-P19",
+    "附件1.docx table1 R2-R6"
+  ],
+  "caveat": "12-box pressure control also violates official height; confirms named cumulative check, not isolated pressure-only feasibility.",
+  "actual_controls": [
+    {
+      "name": "legal-all-types-support",
+      "expected": "valid",
+      "expected_code": null,
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": true,
+        "violations": [],
+        "counts": {
+          "G1": 1,
+          "G2": 1,
+          "G3": 1,
+          "G4": 1,
+          "G5": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 5,
+            "mass_kg": 78.0,
+            "volume_cm3": 591750.0,
+            "Uv": 0.030496289424860854,
+            "Uw": 0.013,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 45.714285714285715
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.0002707999956328422
+    },
+    {
+      "name": "legal-touching-face",
+      "expected": "valid",
+      "expected_code": null,
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": true,
+        "violations": [],
+        "counts": {
+          "G1": 2
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 2,
+            "mass_kg": 24.0,
+            "volume_cm3": 144000.0,
+            "Uv": 0.0074211502782931356,
+            "Uw": 0.004,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 0.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00026530000468483195
+    },
+    {
+      "name": "legal-box-wall",
+      "expected": "valid",
+      "expected_code": null,
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": true,
+        "violations": [],
+        "counts": {
+          "G4": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 1,
+            "mass_kg": 25.0,
+            "volume_cm3": 240000.0,
+            "Uv": 0.012368583797155226,
+            "Uw": 0.004166666666666667,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 0.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00023950000468175858
+    },
+    {
+      "name": "legal-fragile-standard-top-six-rotation",
+      "expected": "valid",
+      "expected_code": null,
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": true,
+        "violations": [],
+        "counts": {
+          "G1": 1,
+          "G3": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 2,
+            "mass_kg": 27.0,
+            "volume_cm3": 212000.0,
+            "Uv": 0.010925582354153782,
+            "Uw": 0.0045,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 75.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.000262400004430674
+    },
+    {
+      "name": "legal-seven-source-box-stack",
+      "expected": "valid",
+      "expected_code": null,
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": true,
+        "violations": [],
+        "counts": {
+          "G1": 7
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 7,
+            "mass_kg": 84.0,
+            "volume_cm3": 504000.0,
+            "Uv": 0.025974025974025976,
+            "Uw": 0.014,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 300.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00033350000012433156
+    },
+    {
+      "name": "illegal-positive-overlap",
+      "expected": "reject",
+      "expected_code": "overlap",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "overlap",
+            "items": [
+              "a",
+              "b"
+            ]
+          }
+        ],
+        "counts": {
+          "G1": 2
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 2,
+            "mass_kg": 24.0,
+            "volume_cm3": 144000.0,
+            "Uv": 0.0074211502782931356,
+            "Uw": 0.004,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 0.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.0002784999960567802
+    },
+    {
+      "name": "illegal-negative-coordinate",
+      "expected": "reject",
+      "expected_code": "negative_coordinate",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "negative_coordinate",
+            "item": "a"
+          }
+        ],
+        "counts": {
+          "G1": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 1,
+            "mass_kg": 12.0,
+            "volume_cm3": 72000.0,
+            "Uv": 0.0037105751391465678,
+            "Uw": 0.002,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 0.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00024169999960577115
+    },
+    {
+      "name": "illegal-top-clearance",
+      "expected": "reject",
+      "expected_code": "bounds_or_clearance",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "bounds_or_clearance",
+            "item": "7"
+          }
+        ],
+        "counts": {
+          "G1": 8
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 8,
+            "mass_kg": 96.0,
+            "volume_cm3": 576000.0,
+            "Uv": 0.029684601113172542,
+            "Uw": 0.016,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 350.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.0007396000000881031
+    },
+    {
+      "name": "illegal-fixed-orientation",
+      "expected": "reject",
+      "expected_code": "orientation_or_size",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "orientation_or_size",
+            "item": "a"
+          }
+        ],
+        "counts": {
+          "G4": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 1,
+            "mass_kg": 25.0,
+            "volume_cm3": 240000.0,
+            "Uv": 0.012368583797155226,
+            "Uw": 0.004166666666666667,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 0.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00045680000039283186
+    },
+    {
+      "name": "illegal-raw-size-substitution",
+      "expected": "reject",
+      "expected_code": "orientation_or_size",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "orientation_or_size",
+            "item": "a"
+          }
+        ],
+        "counts": {
+          "G1": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 1,
+            "mass_kg": 12.0,
+            "volume_cm3": 72000.0,
+            "Uv": 0.0037105751391465678,
+            "Uw": 0.002,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 0.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.0005275000003166497
+    },
+    {
+      "name": "illegal-floating",
+      "expected": "reject",
+      "expected_code": "full_support",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "full_support",
+            "item": "a",
+            "covered": 0.0,
+            "bottom": 2400.0
+          },
+          {
+            "code": "load_conservation",
+            "vehicle": "control-T1",
+            "ground_kg": 0.0,
+            "mass_kg": 12.0
+          }
+        ],
+        "counts": {
+          "G1": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 1,
+            "mass_kg": 12.0,
+            "volume_cm3": 72000.0,
+            "Uv": 0.0037105751391465678,
+            "Uw": 0.002,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 0.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.0002815000043483451
+    },
+    {
+      "name": "illegal-partial-fragile-support",
+      "expected": "reject",
+      "expected_code": "fragile_standard_support",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "full_support",
+            "item": "b",
+            "covered": 2400.0,
+            "bottom": 3500.0
+          },
+          {
+            "code": "fragile_standard_support",
+            "item": "b"
+          },
+          {
+            "code": "load_conservation",
+            "vehicle": "control-T1",
+            "ground_kg": 22.285714285714285,
+            "mass_kg": 27.0
+          }
+        ],
+        "counts": {
+          "G1": 1,
+          "G3": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 2,
+            "mass_kg": 27.0,
+            "volume_cm3": 212000.0,
+            "Uv": 0.010925582354153782,
+            "Uw": 0.0045,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 42.85714285714286
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00026920000527752563
+    },
+    {
+      "name": "illegal-on-fragile",
+      "expected": "reject",
+      "expected_code": "on_fragile",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "on_fragile",
+            "items": [
+              "b",
+              "a"
+            ]
+          }
+        ],
+        "counts": {
+          "G3": 1,
+          "G2": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 2,
+            "mass_kg": 23.0,
+            "volume_cm3": 183750.0,
+            "Uv": 0.00946969696969697,
+            "Uw": 0.003833333333333333,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 45.714285714285715
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.0002549999990151264
+    },
+    {
+      "name": "illegal-duplicate-id",
+      "expected": "reject",
+      "expected_code": "duplicate_id",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "duplicate_id",
+            "item": "a"
+          }
+        ],
+        "counts": {
+          "G1": 1,
+          "G2": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 2,
+            "mass_kg": 20.0,
+            "volume_cm3": 115750.0,
+            "Uv": 0.005965264893836322,
+            "Uw": 0.0033333333333333335,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 0.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00023949999740580097
+    },
+    {
+      "name": "illegal-full-batch-omission",
+      "expected": "reject",
+      "expected_code": "full_batch_coverage",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "full_batch_coverage",
+            "cargo_type": "G1",
+            "actual": 1,
+            "required": 800
+          },
+          {
+            "code": "full_batch_coverage",
+            "cargo_type": "G2",
+            "actual": 1,
+            "required": 1000
+          },
+          {
+            "code": "full_batch_coverage",
+            "cargo_type": "G3",
+            "actual": 1,
+            "required": 300
+          },
+          {
+            "code": "full_batch_coverage",
+            "cargo_type": "G4",
+            "actual": 1,
+            "required": 400
+          },
+          {
+            "code": "full_batch_coverage",
+            "cargo_type": "G5",
+            "actual": 1,
+            "required": 500
+          }
+        ],
+        "counts": {
+          "G1": 1,
+          "G2": 1,
+          "G3": 1,
+          "G4": 1,
+          "G5": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 5,
+            "mass_kg": 78.0,
+            "volume_cm3": 591750.0,
+            "Uv": 0.030496289424860854,
+            "Uw": 0.013,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 45.714285714285715
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00026500000240048394
+    },
+    {
+      "name": "illegal-nonfinite",
+      "expected": "reject",
+      "expected_code": "nonfinite",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "nonfinite",
+            "row": 0
+          }
+        ],
+        "counts": {},
+        "vehicles": [],
+        "N": 0,
+        "C": 0
+      },
+      "elapsed_seconds": 0.00022570000146515667
+    },
+    {
+      "name": "illegal-cumulative-pressure-also-too-tall",
+      "expected": "reject",
+      "expected_code": "cumulative_pressure",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "bounds_or_clearance",
+            "item": "7"
+          },
+          {
+            "code": "bounds_or_clearance",
+            "item": "8"
+          },
+          {
+            "code": "bounds_or_clearance",
+            "item": "9"
+          },
+          {
+            "code": "bounds_or_clearance",
+            "item": "10"
+          },
+          {
+            "code": "bounds_or_clearance",
+            "item": "11"
+          },
+          {
+            "code": "cumulative_pressure",
+            "item": "0",
+            "pressure_kg_m2": 550.0
+          }
+        ],
+        "counts": {
+          "G1": 12
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 12,
+            "mass_kg": 144.0,
+            "volume_cm3": 864000.0,
+            "Uv": 0.04452690166975881,
+            "Uw": 0.024,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 550.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00042039999971166253
+    },
+    {
+      "name": "alternative-upright-fragile-rejects-rotated-control",
+      "expected": "reject",
+      "expected_code": "orientation_or_size",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "orientation_or_size",
+            "item": "b"
+          }
+        ],
+        "counts": {
+          "G1": 1,
+          "G3": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 2,
+            "mass_kg": 27.0,
+            "volume_cm3": 212000.0,
+            "Uv": 0.010925582354153782,
+            "Uw": 0.0045,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 75.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.0002593000026536174
+    },
+    {
+      "name": "illegal-directed-upper-center",
+      "expected": "reject",
+      "expected_code": "directional_center",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "directional_center",
+            "items": [
+              "b",
+              "a"
+            ]
+          },
+          {
+            "code": "full_support",
+            "item": "b",
+            "covered": 400.0,
+            "bottom": 2400.0
+          },
+          {
+            "code": "load_conservation",
+            "vehicle": "control-T1",
+            "ground_kg": 27.0,
+            "mass_kg": 37.0
+          }
+        ],
+        "counts": {
+          "G4": 1,
+          "G1": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 2,
+            "mass_kg": 37.0,
+            "volume_cm3": 312000.0,
+            "Uv": 0.016079158936301793,
+            "Uw": 0.006166666666666667,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 50.0
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00024730000586714596
+    },
+    {
+      "name": "legal-union-standard-fragile-support",
+      "expected": "valid",
+      "expected_code": null,
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": true,
+        "violations": [],
+        "counts": {
+          "G1": 2,
+          "G3": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 3,
+            "mass_kg": 39.0,
+            "volume_cm3": 284000.0,
+            "Uv": 0.01463615749330035,
+            "Uw": 0.0065,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 42.85714285714286
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00025720000121509656
+    },
+    {
+      "name": "alternative-single-support-rejects-union-control",
+      "expected": "reject",
+      "expected_code": "fragile_single_standard_support",
+      "self_test_pass": true,
+      "observed": {
+        "scope": "conservative full-support / uniform redistribution model only",
+        "valid_under_declared_model": false,
+        "violations": [
+          {
+            "code": "fragile_single_standard_support",
+            "item": "c"
+          }
+        ],
+        "counts": {
+          "G1": 2,
+          "G3": 1
+        },
+        "vehicles": [
+          {
+            "vehicle_id": "control-T1",
+            "vehicle_type": "T1",
+            "count": 3,
+            "mass_kg": 39.0,
+            "volume_cm3": 284000.0,
+            "Uv": 0.01463615749330035,
+            "Uw": 0.0065,
+            "cost": 450.0,
+            "max_pressure_kg_m2": 42.85714285714286
+          }
+        ],
+        "N": 1,
+        "C": 450.0
+      },
+      "elapsed_seconds": 0.00025240000104531646
+    }
+  ],
+  "metric_tests": {
+    "faithful": [],
+    "corrupt": [
+      "control-T1:Uv"
+    ]
+  },
+  "rectangle_union_tests": {
+    "overlapping_rectangles_union": 6.0,
+    "touching_rectangles_union": 2.0
+  },
+  "all_method_controls_pass": true,
+  "production_acceptance_run": false,
+  "elapsed_seconds": 0.006918300001416355
+}

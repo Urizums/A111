@@ -1,0 +1,161 @@
+{
+  "phase_window_seconds": 900,
+  "per_run_seconds": 120,
+  "memory_target_MB": 1800,
+  "seeds": [
+    0,
+    11,
+    23
+  ],
+  "alpha": 0.2,
+  "fragile_priority": 3,
+  "same_heuristic_budget": true,
+  "all_scenarios_are_artificial_except_base": true,
+  "scenarios": [
+    {
+      "name": "base",
+      "group": "baseline",
+      "description": "same fixed scenario comparison; alpha=.2 and three seeds, not selected search above"
+    },
+    {
+      "name": "vehicle_l_0.9",
+      "group": "geometry",
+      "description": "both vehicle l lengths x0.9; scenario, cost unchanged"
+    },
+    {
+      "name": "vehicle_l_1.1",
+      "group": "geometry",
+      "description": "both vehicle l lengths x1.1; scenario, cost unchanged"
+    },
+    {
+      "name": "vehicle_w_0.9",
+      "group": "geometry",
+      "description": "both vehicle w lengths x0.9; scenario, cost unchanged"
+    },
+    {
+      "name": "vehicle_w_1.1",
+      "group": "geometry",
+      "description": "both vehicle w lengths x1.1; scenario, cost unchanged"
+    },
+    {
+      "name": "vehicle_h_0.9",
+      "group": "geometry",
+      "description": "both vehicle h lengths x0.9; scenario, cost unchanged"
+    },
+    {
+      "name": "vehicle_h_1.1",
+      "group": "geometry",
+      "description": "both vehicle h lengths x1.1; scenario, cost unchanged"
+    },
+    {
+      "name": "gap_0",
+      "group": "geometry",
+      "description": "scenario safe gap cm"
+    },
+    {
+      "name": "gap_6",
+      "group": "geometry",
+      "description": "scenario safe gap cm"
+    },
+    {
+      "name": "gap_10",
+      "group": "geometry",
+      "description": "scenario safe gap cm"
+    },
+    {
+      "name": "capacity_0.5",
+      "group": "load",
+      "description": "rated payload independently scaled"
+    },
+    {
+      "name": "capacity_1.5",
+      "group": "load",
+      "description": "rated payload independently scaled"
+    },
+    {
+      "name": "item_mass_0.8",
+      "group": "load",
+      "description": "fixed geometry, independent mass scenario"
+    },
+    {
+      "name": "item_mass_1.2",
+      "group": "load",
+      "description": "fixed geometry, independent mass scenario"
+    },
+    {
+      "name": "pressure_300",
+      "group": "load",
+      "description": "stack pressure threshold kg/m²; reoptimize"
+    },
+    {
+      "name": "pressure_700",
+      "group": "load",
+      "description": "stack pressure threshold kg/m²; reoptimize"
+    },
+    {
+      "name": "cargo_dimension_0.9",
+      "group": "cargo_geometry",
+      "description": "all box dimensions scaled, mass held independently"
+    },
+    {
+      "name": "fixed_density_0.9",
+      "group": "cargo_geometry",
+      "description": "all dimensions xfactor and mass xfactor³, constant density"
+    },
+    {
+      "name": "cargo_dimension_1.1",
+      "group": "cargo_geometry",
+      "description": "all box dimensions scaled, mass held independently"
+    },
+    {
+      "name": "fixed_density_1.1",
+      "group": "cargo_geometry",
+      "description": "all dimensions xfactor and mass xfactor³, constant density"
+    },
+    {
+      "name": "demand_0.5",
+      "group": "demand",
+      "description": "all counts scaled"
+    },
+    {
+      "name": "demand_1.5",
+      "group": "demand",
+      "description": "all counts scaled"
+    },
+    {
+      "name": "fragile_count_0.5",
+      "group": "demand",
+      "description": "fragile demand changes; other types fixed"
+    },
+    {
+      "name": "fragile_count_1.5",
+      "group": "demand",
+      "description": "fragile demand changes; other types fixed"
+    },
+    {
+      "name": "T2_cost_450",
+      "group": "cost",
+      "description": "T1 cost450 fixed; T2 cost scenario"
+    },
+    {
+      "name": "T2_cost_1000",
+      "group": "cost",
+      "description": "T1 cost450 fixed; T2 cost scenario"
+    },
+    {
+      "name": "fragile_upright",
+      "group": "interpretation",
+      "description": "G3 original height40; only floor legal with one-standard full support"
+    },
+    {
+      "name": "fragile_floor",
+      "group": "interpretation",
+      "description": "stricter no-elevation scenario"
+    },
+    {
+      "name": "own_mass_pressure",
+      "group": "interpretation",
+      "description": "include parent own mass in each contact pressure"
+    }
+  ]
+}

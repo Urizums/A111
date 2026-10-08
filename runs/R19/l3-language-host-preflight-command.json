@@ -1,0 +1,30 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python3",
+    "scripts/host_preflight.py",
+    "--root",
+    ".",
+    "--lock",
+    "runs/R19/candidate/C11-lock.json",
+    "--lock",
+    "runs/R19/levels/L3/review/initial-lock.json"
+  ],
+  "cwd": "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+  "begin": {
+    "utc": "2026-10-08T05:04:29.970310+00:00",
+    "monotonic_ns": 236862140809,
+    "boot_id": "e02f53f2-bf93-416b-afb3-dfe029558aef"
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T05:06:22.188281+00:00",
+    "monotonic_ns": 349080112640,
+    "boot_id": "e02f53f2-bf93-416b-afb3-dfe029558aef"
+  },
+  "exit_code": 0,
+  "stdout": "{\n  \"schema\": \"forge-host-preflight/1\",\n  \"root\": \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111\",\n  \"python\": \"3.12.3\",\n  \"platform\": \"Linux\",\n  \"capabilities\": {\n    \"fcntl\": true,\n    \"posix_component_open\": true,\n    \"linux_boot_marker\": true\n  },\n  \"locks\": [\n    {\n      \"lock\": \"runs/R19/candidate/C11-lock.json\",\n      \"files_checked\": 9,\n      \"ok\": true,\n      \"errors\": []\n    },\n    {\n      \"lock\": \"runs/R19/levels/L3/review/initial-lock.json\",\n      \"files_checked\": 3052,\n      \"ok\": true,\n      \"errors\": []\n    }\n  ],\n  \"byte_identity\": true,\n  \"continuation_runtime_compatible\": true,\n  \"eligible_for_lease_probe\": true,\n  \"actions\": [\n    \"Probe the actual coordinator lease, reconcile pending native calls, then hold the lease before shared-state mutation.\"\n  ],\n  \"limits\": [\n    \"Read-only byte identity and API availability; no concurrent filesystem safety proof\",\n    \"Does not acquire a lease, reconcile workers, replay effects or invoke providers\",\n    \"Snapshot renameat2/filesystem support and installed-product behavior require actual separate checks\"\n  ],\n  \"tokens\": null,\n  \"cost\": null\n}\n",
+  "stderr": "",
+  "stdout_base64": "ewogICJzY2hlbWEiOiAiZm9yZ2UtaG9zdC1wcmVmbGlnaHQvMSIsCiAgInJvb3QiOiAiL21udC9jL1VzZXJzL2FkbWluL0RvY3VtZW50cy9Db2RleC8yMDI2LTEwLTA1L3VyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWQvd29yay9BMTExIiwKICAicHl0aG9uIjogIjMuMTIuMyIsCiAgInBsYXRmb3JtIjogIkxpbnV4IiwKICAiY2FwYWJpbGl0aWVzIjogewogICAgImZjbnRsIjogdHJ1ZSwKICAgICJwb3NpeF9jb21wb25lbnRfb3BlbiI6IHRydWUsCiAgICAibGludXhfYm9vdF9tYXJrZXIiOiB0cnVlCiAgfSwKICAibG9ja3MiOiBbCiAgICB7CiAgICAgICJsb2NrIjogInJ1bnMvUjE5L2NhbmRpZGF0ZS9DMTEtbG9jay5qc29uIiwKICAgICAgImZpbGVzX2NoZWNrZWQiOiA5LAogICAgICAib2siOiB0cnVlLAogICAgICAiZXJyb3JzIjogW10KICAgIH0sCiAgICB7CiAgICAgICJsb2NrIjogInJ1bnMvUjE5L2xldmVscy9MMy9yZXZpZXcvaW5pdGlhbC1sb2NrLmpzb24iLAogICAgICAiZmlsZXNfY2hlY2tlZCI6IDMwNTIsCiAgICAgICJvayI6IHRydWUsCiAgICAgICJlcnJvcnMiOiBbXQogICAgfQogIF0sCiAgImJ5dGVfaWRlbnRpdHkiOiB0cnVlLAogICJjb250aW51YXRpb25fcnVudGltZV9jb21wYXRpYmxlIjogdHJ1ZSwKICAiZWxpZ2libGVfZm9yX2xlYXNlX3Byb2JlIjogdHJ1ZSwKICAiYWN0aW9ucyI6IFsKICAgICJQcm9iZSB0aGUgYWN0dWFsIGNvb3JkaW5hdG9yIGxlYXNlLCByZWNvbmNpbGUgcGVuZGluZyBuYXRpdmUgY2FsbHMsIHRoZW4gaG9sZCB0aGUgbGVhc2UgYmVmb3JlIHNoYXJlZC1zdGF0ZSBtdXRhdGlvbi4iCiAgXSwKICAibGltaXRzIjogWwogICAgIlJlYWQtb25seSBieXRlIGlkZW50aXR5IGFuZCBBUEkgYXZhaWxhYmlsaXR5OyBubyBjb25jdXJyZW50IGZpbGVzeXN0ZW0gc2FmZXR5IHByb29mIiwKICAgICJEb2VzIG5vdCBhY3F1aXJlIGEgbGVhc2UsIHJlY29uY2lsZSB3b3JrZXJzLCByZXBsYXkgZWZmZWN0cyBvciBpbnZva2UgcHJvdmlkZXJzIiwKICAgICJTbmFwc2hvdCByZW5hbWVhdDIvZmlsZXN5c3RlbSBzdXBwb3J0IGFuZCBpbnN0YWxsZWQtcHJvZHVjdCBiZWhhdmlvciByZXF1aXJlIGFjdHVhbCBzZXBhcmF0ZSBjaGVja3MiCiAgXSwKICAidG9rZW5zIjogbnVsbCwKICAiY29zdCI6IG51bGwKfQo=",
+  "stderr_base64": ""
+}

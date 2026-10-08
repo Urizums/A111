@@ -1,0 +1,49 @@
+{
+  "checker_version": "coordinate-chain-v1",
+  "role": "producer self-check; not independent acceptance",
+  "passed": true,
+  "tolerance_cm": 1e-07,
+  "checks": [
+    "unique ID",
+    "inventory",
+    "orientation",
+    "boundary and 3cm",
+    "all pairs overlap",
+    "full single support",
+    "fragile conditions",
+    "directional center",
+    "cumulative contact pressure",
+    "mass capacity",
+    "ground mass conservation",
+    "support trace",
+    "objective recomputation"
+  ],
+  "errors": [],
+  "counts": {
+    "G1": 330,
+    "G3": 65,
+    "G2": 93
+  },
+  "N": 1,
+  "n1": 0,
+  "n2": 1,
+  "C": 700.0,
+  "Uv": 0.8060405980574047,
+  "Uw": 0.5679,
+  "vehicles": [
+    {
+      "vehicle_id": "V001",
+      "vehicle_type": "T2",
+      "items": 488,
+      "volume_m3": 36.92875,
+      "weight_kg": 5679.0,
+      "Uv": 0.8060405980574047,
+      "Uw": 0.5679,
+      "max_pressure_kg_m2": 384.0,
+      "min_top_gap_cm": 5.0,
+      "support_relations": 409,
+      "floor_load_kg": 5679.0,
+      "pair_count": 118828
+    }
+  ]
+}

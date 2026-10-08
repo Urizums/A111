@@ -1,0 +1,27 @@
+{
+  "created": "2026-10-08T00:42:11.990861+00:00",
+  "phase_window_seconds": 900,
+  "per_run_seconds": 120,
+  "methods": [
+    "baseline guillotine",
+    "maxrect column priority"
+  ],
+  "seeds": [
+    0,
+    11,
+    23
+  ],
+  "mass_preference": [
+    0,
+    0.5,
+    1
+  ],
+  "fragile_priority": [
+    1,
+    3,
+    6
+  ],
+  "single_selection": "nondominated union of all checked candidates; recommend max Uv then Uw",
+  "fleet_selection": "min N then C for F/N; min C then N for C",
+  "all_runs_retained": true
+}

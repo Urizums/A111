@@ -23,7 +23,7 @@ report_path=f'{base}/{a.review}/result.json'
 initial=read(f'{base}/review/initial/result.json');latest=read(report_path)
 verdicts=latest['a1_a6']
 assert {v['id'] for v in verdicts}=={f'a{k}' for k in range(1,7)}
-assert all(v['status'] in {'pass','fail','blocked','unverified'} and v.get('evidence') for v in verdicts)
+assert all(v['status'] in {'pass','fail','partial','blocked','unverified'} and v.get('evidence') for v in verdicts)
 execution_root=(ROOT/base/a.execution).resolve()
 execution_paths={entry['path'] for entry in read(f'{base}/{a.execution}-lock.json')['files']}
 for relative in [a.paper_source,a.paper_pdf]:

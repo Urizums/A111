@@ -1,0 +1,231 @@
+{
+  "valid": {
+    "scope": "conservative full-support / uniform redistribution model only",
+    "valid_under_declared_model": true,
+    "violations": [],
+    "counts": {
+      "G2": 8,
+      "G1": 8,
+      "G3": 2,
+      "G4": 4,
+      "G5": 6
+    },
+    "vehicles": [
+      {
+        "vehicle_id": "V001",
+        "vehicle_type": "T1",
+        "count": 28,
+        "mass_kg": 398.0,
+        "volume_cm3": 2742000.0,
+        "Uv": 0.14131106988249845,
+        "Uw": 0.06633333333333333,
+        "cost": 450.0,
+        "max_pressure_kg_m2": 320.0
+      }
+    ],
+    "N": 1,
+    "C": 450.0,
+    "volume_m3": 2.742,
+    "weight_kg": 398.0,
+    "n1": 1,
+    "n2": 0,
+    "Uv": 0.14131106988249845,
+    "Uw": 0.06633333333333333,
+    "min_top_gap_cm": 10.0,
+    "pair_count": 378,
+    "support_relations": 21,
+    "adapter_errors": [],
+    "independent_pass_under_declared_model": true,
+    "metric_deltas": {
+      "N": 0,
+      "n1": 0,
+      "n2": 0,
+      "C": 0.0,
+      "Uv": 0.0,
+      "Uw": 0.0,
+      "volume_m3": 0.0,
+      "weight_kg": 0.0
+    },
+    "elapsed_seconds": 0.0014490000030491501,
+    "source": "explicit declared scenario checked against direct raw transformations separately"
+  },
+  "invalid_boundary": {
+    "scope": "conservative full-support / uniform redistribution model only",
+    "valid_under_declared_model": false,
+    "violations": [
+      {
+        "code": "bounds_or_clearance",
+        "item": "G2-0001"
+      },
+      {
+        "code": "full_support",
+        "item": "G2-0002",
+        "covered": 0.0,
+        "bottom": 1250.0
+      },
+      {
+        "code": "load_conservation",
+        "vehicle": "V001",
+        "ground_kg": 358.0,
+        "mass_kg": 398.0
+      }
+    ],
+    "counts": {
+      "G2": 8,
+      "G1": 8,
+      "G3": 2,
+      "G4": 4,
+      "G5": 6
+    },
+    "vehicles": [
+      {
+        "vehicle_id": "V001",
+        "vehicle_type": "T1",
+        "count": 28,
+        "mass_kg": 398.0,
+        "volume_cm3": 2742000.0,
+        "Uv": 0.14131106988249845,
+        "Uw": 0.06633333333333333,
+        "cost": 450.0,
+        "max_pressure_kg_m2": 256.0
+      }
+    ],
+    "N": 1,
+    "C": 450.0
+  },
+  "artificial_pressure1": {
+    "scope": "conservative full-support / uniform redistribution model only",
+    "valid_under_declared_model": false,
+    "violations": [
+      {
+        "code": "cumulative_pressure",
+        "item": "G2-0005",
+        "pressure_kg_m2": 64.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G4-0003",
+        "pressure_kg_m2": 52.083333333333336
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G2-0004",
+        "pressure_kg_m2": 128.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G1-0004",
+        "pressure_kg_m2": 75.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G1-0008",
+        "pressure_kg_m2": 75.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G5-0002",
+        "pressure_kg_m2": 112.5
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G5-0005",
+        "pressure_kg_m2": 112.5
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G2-0003",
+        "pressure_kg_m2": 192.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G4-0002",
+        "pressure_kg_m2": 104.16666666666667
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G1-0003",
+        "pressure_kg_m2": 112.5
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G1-0007",
+        "pressure_kg_m2": 112.5
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G2-0002",
+        "pressure_kg_m2": 256.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G1-0002",
+        "pressure_kg_m2": 162.5
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G1-0006",
+        "pressure_kg_m2": 162.5
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G5-0001",
+        "pressure_kg_m2": 225.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G5-0004",
+        "pressure_kg_m2": 225.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G4-0001",
+        "pressure_kg_m2": 156.25
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G2-0007",
+        "pressure_kg_m2": 91.42857142857143
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G2-0001",
+        "pressure_kg_m2": 320.0
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G1-0001",
+        "pressure_kg_m2": 212.5
+      },
+      {
+        "code": "cumulative_pressure",
+        "item": "G1-0005",
+        "pressure_kg_m2": 212.5
+      }
+    ],
+    "counts": {
+      "G2": 8,
+      "G1": 8,
+      "G3": 2,
+      "G4": 4,
+      "G5": 6
+    },
+    "vehicles": [
+      {
+        "vehicle_id": "V001",
+        "vehicle_type": "T1",
+        "count": 28,
+        "mass_kg": 398.0,
+        "volume_cm3": 2742000.0,
+        "Uv": 0.14131106988249845,
+        "Uw": 0.06633333333333333,
+        "cost": 450.0,
+        "max_pressure_kg_m2": 320.0
+      }
+    ],
+    "N": 1,
+    "C": 450.0
+  },
+  "fragile_on_standard_observed": true,
+  "scope": "28-source-dimension small batch only; separate from full acceptance"
+}

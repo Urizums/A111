@@ -1,0 +1,164 @@
+{
+  "declared_window_seconds": 900,
+  "cli_calls": [
+    {
+      "name": "generic_new_quantity",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\sandbox\\src\\solver.py",
+        "--task",
+        "Q1-F1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\boundary\\generic_new_quantity\\input.json",
+        "--out",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\boundary\\generic_new_quantity\\plan"
+      ],
+      "pid": 31700,
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "{\"N\": 1, \"n1\": 1, \"n2\": 0, \"C\": 450.0, \"volume_m3\": 0.864, \"weight_kg\": 144.0, \"Uv\": 0.04452690166975881, \"Uw\": 0.024, \"loaded_counts\": {\"G1\": 12}, \"runtime_seconds\": 0.0006905999980517663, \"method\": \"maxrect\", \"seed\": 0, \"alpha_mass_preference\": 0.2, \"stop_reason\": \"finite column constructive completion\", \"optimality\": \"feasible heuristic; global optimum unproved\", \"bounds\": {\"count_lower_bound\": 1, \"cost_lower_bound\": 450.0, \"basis\": \"integer nonnegative vehicle combinations; total volume using H-gap and total mass only\", \"count_relaxation_combo\": [1, 450.0, 1, 0], \"cost_relaxation_combo\": [1, 450.0, 1, 0]}, \"unloaded_counts\": {\"G1\": 0, \"G2\": 0, \"G3\": 0, \"G4\": 0, \"G5\": 0}, \"catalogue_sizes\": {\"T1\": 401, \"T2\": 536}}\n",
+      "stderr": "",
+      "seconds": 0.20505640000192216,
+      "terminal": true
+    },
+    {
+      "name": "negative_dimension",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\sandbox\\src\\solver.py",
+        "--task",
+        "Q1-F1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\boundary\\negative_dimension\\input.json",
+        "--out",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\boundary\\negative_dimension\\plan"
+      ],
+      "pid": 4372,
+      "returncode": 2,
+      "expected": 2,
+      "stdout": "{\"state\": \"failed\", \"error_type\": \"ValueError\", \"message\": \"positive finite l_cm required\", \"optimality\": null}\n",
+      "stderr": "",
+      "seconds": 0.1739753000001656,
+      "terminal": true
+    },
+    {
+      "name": "no_fitting_column",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\sandbox\\src\\solver.py",
+        "--task",
+        "Q1-F1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\boundary\\no_fitting_column\\input.json",
+        "--out",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\boundary\\no_fitting_column\\plan"
+      ],
+      "pid": 32624,
+      "returncode": 2,
+      "expected": 2,
+      "stdout": "{\"state\": \"failed\", \"error_type\": \"ValueError\", \"message\": \"No legal column can fit remaining cargo; instance not certified infeasible\", \"optimality\": null}\n",
+      "stderr": "",
+      "seconds": 0.18838269999832846,
+      "terminal": true
+    },
+    {
+      "name": "tiny_volume_oracle",
+      "argv": [
+        "C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
+        "-X",
+        "utf8",
+        "-B",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\sandbox\\src\\solver.py",
+        "--task",
+        "Q1-S1",
+        "--input",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\boundary\\tiny_volume_oracle\\input.json",
+        "--out",
+        "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L3\\review\\initial\\boundary\\tiny_volume_oracle\\plan"
+      ],
+      "pid": 28888,
+      "returncode": 0,
+      "expected": 0,
+      "stdout": "{\"N\": 1, \"n1\": 1, \"n2\": 0, \"C\": 450.0, \"volume_m3\": 0.144, \"weight_kg\": 24.0, \"Uv\": 0.9523809523809523, \"Uw\": 0.004, \"loaded_counts\": {\"G1\": 2}, \"runtime_seconds\": 0.0002741999996942468, \"method\": \"maxrect\", \"seed\": 0, \"alpha_mass_preference\": 0.2, \"stop_reason\": \"no additional catalogue column fits\", \"optimality\": \"feasible heuristic; global optimum unproved\", \"bounds\": null, \"unloaded_counts\": {\"G1\": 2, \"G2\": 0, \"G3\": 0, \"G4\": 0, \"G5\": 0}, \"catalogue_sizes\": {\"T1\": 12, \"T2\": 536}}\n",
+      "stderr": "",
+      "seconds": 0.18745289999787929,
+      "terminal": true
+    }
+  ],
+  "tiny_proof": {
+    "effective_volume_cm3": 144000,
+    "raw_G1_volume_cm3": 72000.0,
+    "volume_upper_count": 2,
+    "actual_count": 2,
+    "scope": "artificial homogeneous tiny instance only"
+  },
+  "libraries": [
+    {
+      "vehicle": "T1",
+      "library": "initial",
+      "patterns_independently_feasible": 401,
+      "status": 0,
+      "area_cm2": 1635575.0,
+      "dual_bound_cm2": 1635575.0,
+      "mip_gap": 0.0,
+      "restricted_floor_area_vehicle_lower_bound": 19,
+      "seconds": 0.04643299999588635,
+      "limit_seconds": 60,
+      "scope": "restricted library area only, not original continuous 3D minimum"
+    },
+    {
+      "vehicle": "T1",
+      "library": "expanded",
+      "patterns_independently_feasible": 1374,
+      "status": 0,
+      "area_cm2": 1635575.0,
+      "dual_bound_cm2": 1635575.0,
+      "mip_gap": 0.0,
+      "restricted_floor_area_vehicle_lower_bound": 19,
+      "seconds": 0.14228729999740608,
+      "limit_seconds": 60,
+      "scope": "restricted library area only, not original continuous 3D minimum"
+    },
+    {
+      "vehicle": "T2",
+      "library": "initial",
+      "patterns_independently_feasible": 536,
+      "status": 0,
+      "area_cm2": 1504875.0,
+      "dual_bound_cm2": 1504875.0,
+      "mip_gap": 0.0,
+      "restricted_floor_area_vehicle_lower_bound": 10,
+      "seconds": 0.05792150000343099,
+      "limit_seconds": 60,
+      "scope": "restricted library area only, not original continuous 3D minimum"
+    },
+    {
+      "vehicle": "T2",
+      "library": "expanded",
+      "patterns_independently_feasible": 2197,
+      "status": 0,
+      "area_cm2": 1504875.0,
+      "dual_bound_cm2": 1504875.0,
+      "mip_gap": 0.0,
+      "restricted_floor_area_vehicle_lower_bound": 10,
+      "seconds": 0.238622500000929,
+      "limit_seconds": 60,
+      "scope": "restricted library area only, not original continuous 3D minimum"
+    }
+  ],
+  "pending_calls": [],
+  "seconds": 1.2511358999981894,
+  "failure_semantics": "No legal column is constructive failure, not a general infeasibility certificate",
+  "model": null,
+  "token": null,
+  "cost": null
+}

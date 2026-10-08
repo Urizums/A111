@@ -1,0 +1,30 @@
+{
+  "role":"/root/r19_l3_reviewer",
+  "receipt_type":"source-bound transcription of actual tool returns; not replacement execution",
+  "script_receipts":[
+    {"script":"verify_lock.py start","exit_code":0,"script_seconds":0.7672948999970686,"session_id":null},
+    {"script":"receive.py","exit_code":0,"script_seconds":0.1697065999978804,"session_id":null},
+    {"script":"sandbox/src/reproduce.py","exit_code":0,"script_seconds":1.6529845999975805,"tool_wall_seconds":2.5224815,"session_id":null},
+    {"script":"independent_review.py","exit_code":0,"tool_wall_seconds":5.2723221,"session_id":null},
+    {"script":"sandbox/src/experiment.py","session_id":78044,"initial_return":"running","final_exit_code":0,"script_seconds":48.56343480000214},
+    {"script":"pdf_visual.py","exit_code":0,"tool_wall_seconds":1.4312229,"session_id":null},
+    {"script":"sandbox/src/sensitivity.py","session_id":45016,"initial_return":"running","final_exit_code":0,"script_seconds":88.77373430000443},
+    {"script":"sandbox/src/unify_sensitivity.py","session_id":21738,"initial_return":"running","final_exit_code":0},
+    {"script":"audit_experiments.py","session_id":80015,"initial_return":"running","final_exit_code":0,"script_seconds":111.96651959999872},
+    {"script":"figure_and_paper_audit.py","exit_code":0,"tool_wall_seconds":0.3718763,"session_id":null},
+    {"script":"cli_and_model_checks.py","exit_code":0,"script_seconds":1.251987800002098,"tool_wall_seconds":2.1372279,"child_receipts":"cli-receipts.json; all4 children terminal"},
+    {"script":"sandbox/src/smoke.py","exit_code":0,"tool_wall_seconds":0.4791682,"session_id":null},
+    {"script":"extension_smoke_and_retention.py","exit_code":0,"tool_wall_seconds":0.457282,"adapted_controls_script_seconds":0.006918300001416355,"child_status":"exit0"},
+    {"script":"verify_lock.py end","exit_code":0,"script_seconds":0.6635406999994302,"session_id":null}
+  ],
+  "read_path_failures_retained":[
+    {"observation":"Probed execution/execution-lock.json; absent, no bytes; authoritative execution-lock is the sibling path specified by root","recovery":"sibling lock used; all3723 entries matched"},
+    {"observation":"Optional logs/assumptions.json absent, batched read exit1","recovery":"inventory found actual data/assumptions.json; read it"},
+    {"observation":"Guessed experiments/comparison.csv and sensitivity/summary.csv absent, batched read exit1","recovery":"Used relevant rg file inventory; actual experiments/summary and sensitivity/results inspected"}
+  ],
+  "expected_negative_cli_outcomes":{"negative_dimension":2,"no_fitting_column":2,"classification":"actual controlled rejection, not reviewer tool failure or general infeasibility proof"},
+  "known_check_overlap":"selection session21738 pending when audit session80015 started; both later reconciled exit0, selected outputs read after candidate audit; no original source writes, no equality-of-runtime inference",
+  "resource_policy":{"phase_window_seconds":900,"per_cli_or_library_seconds":60,"ordinary_comparison_parameter_run_config_seconds":120,"memory_target_MB":1800,"os_memory_enforced":false,"overall_deadline":null,"no_generic_two_error_stop":true},
+  "pending_calls":[],"active_self_started_processes":[],"child_agents":[],"background_work_created":false,
+  "historical_peak_memory_MB":null,"model":null,"token_usage":null,"cost":null
+}

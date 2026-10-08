@@ -1,0 +1,79 @@
+{
+  "data_and_markdown_trace_pass": true,
+  "checks": [
+    "method comparison CSV: all 12 rows tied to independently computed candidates/main outputs",
+    "single-frontier CSV: 56 points tied to source recomputation",
+    "fleet CSV: all 30 trucks independently recomputed",
+    "3D CSV: exact selected Q1-F2 first-truck rows already independently checked",
+    "sensitivity CSV: 29 recommendations tied to independently checked declared scenarios"
+  ],
+  "markdown_table_checks": [
+    {
+      "document": "paper",
+      "main_rows_checked": 6,
+      "scenario_rows_checked": 29,
+      "superscript_2_count": 11,
+      "superscript_3_count": 15
+    },
+    {
+      "document": "technical_report",
+      "main_rows_checked": 6,
+      "scenario_rows_checked": 29,
+      "superscript_2_count": 2,
+      "superscript_3_count": 1
+    }
+  ],
+  "data_errors": [],
+  "pdf_scientific_notation_damage": [
+    {
+      "document": "paper",
+      "pages": 11,
+      "pdf_superscript_2_count": 0,
+      "pdf_superscript_3_count": 0,
+      "key_counterexamples": [
+        {
+          "page": 2,
+          "lines": [
+            "间隙后的有效体积为19.1394m和41.1502m，但计算满容率仍使用名义体积19.404m和41.65m。"
+          ]
+        },
+        {
+          "page": 3,
+          "lines": [
+            "p(parent(i),i) = T(i) / A(i) <= 500 kg/m"
+          ]
+        },
+        {
+          "page": 8,
+          "lines": [
+            "O(P×R×K)量级，P为列数、R为剩余片数、K为选列数；包含片删除的朴素实现为O(R)。检查器在",
+            "车k上使用O(n_k)轴向比较，支持搜索也为O(n_k)，适合本批千件数量级。外层模板MILP是整数优"
+          ]
+        },
+        {
+          "page": 9,
+          "lines": [
+            "32.88%和49.32%。500kg/m降为300时需1T1+10T2、7450元，提高至700仍10T2。其机制是承压改变可堆"
+          ]
+        }
+      ]
+    },
+    {
+      "document": "technical_report",
+      "pages": 3,
+      "pdf_superscript_2_count": 0,
+      "pdf_superscript_3_count": 0,
+      "key_counterexamples": [
+        {
+          "page": 1,
+          "lines": [
+            "允许易碎件正交置换、易碎件可以被一个标准件完整支持、下层累计承压500kg/m且顶部留3cm的研"
+          ]
+        }
+      ]
+    }
+  ],
+  "visual_observation": "All 14 pages seen in independent contact sheets; paper pages2/3/8 and report page1 viewed full size. Exponents visibly absent, not merely text extraction.",
+  "defect": "PDF export drops units and complexity powers while source Markdown retains them; a deliverable cross-artifact contradiction.",
+  "suggested_repair": "Use fonts or explicit superscript markup/ASCII powers that preserve m^2, m^3, O(n_k^2), and negative density powers; regenerate both PDFs and visually check every affected formula/table plus extracted semantic text."
+}

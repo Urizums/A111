@@ -1,0 +1,958 @@
+[
+  {
+    "name": "legal-all-types-support",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G2",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 50.0,
+        "dy": 35.0,
+        "dz": 25.0
+      },
+      {
+        "item_id": "c",
+        "cargo_type": "G3",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 100,
+        "y": 0,
+        "z": 0,
+        "dx": 70.0,
+        "dy": 50.0,
+        "dz": 40.0
+      },
+      {
+        "item_id": "d",
+        "cargo_type": "G4",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 200,
+        "y": 0,
+        "z": 0,
+        "dx": 80.0,
+        "dy": 60.0,
+        "dz": 50.0
+      },
+      {
+        "item_id": "e",
+        "cargo_type": "G5",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 300,
+        "y": 0,
+        "z": 0,
+        "dx": 40.0,
+        "dy": 40.0,
+        "dz": 60.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "valid",
+    "expected_code": null
+  },
+  {
+    "name": "legal-touching-face",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 60,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "valid",
+    "expected_code": null
+  },
+  {
+    "name": "legal-box-wall",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G4",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 340,
+        "y": 150,
+        "z": 0,
+        "dx": 80.0,
+        "dy": 60.0,
+        "dz": 50.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "valid",
+    "expected_code": null
+  },
+  {
+    "name": "legal-fragile-standard-top-six-rotation",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G3",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 50,
+        "dy": 40,
+        "dz": 70
+      }
+    ],
+    "kwargs": {},
+    "expected": "valid",
+    "expected_code": null
+  },
+  {
+    "name": "legal-seven-source-box-stack",
+    "input": [
+      {
+        "item_id": "0",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "1",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "2",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 60,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "3",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 90,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "4",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 120,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "5",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 150,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "6",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 180,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "valid",
+    "expected_code": null
+  },
+  {
+    "name": "illegal-positive-overlap",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 59.9,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "overlap"
+  },
+  {
+    "name": "illegal-negative-coordinate",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": -0.01,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "negative_coordinate"
+  },
+  {
+    "name": "illegal-top-clearance",
+    "input": [
+      {
+        "item_id": "0",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "1",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "2",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 60,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "3",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 90,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "4",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 120,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "5",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 150,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "6",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 180,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "7",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 210,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "bounds_or_clearance"
+  },
+  {
+    "name": "illegal-fixed-orientation",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G4",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60,
+        "dy": 80,
+        "dz": 50
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "orientation_or_size"
+  },
+  {
+    "name": "illegal-raw-size-substitution",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 59,
+        "dy": 40,
+        "dz": 30
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "orientation_or_size"
+  },
+  {
+    "name": "illegal-floating",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 1,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "full_support"
+  },
+  {
+    "name": "illegal-partial-fragile-support",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G3",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 70.0,
+        "dy": 50.0,
+        "dz": 40.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "fragile_standard_support"
+  },
+  {
+    "name": "illegal-on-fragile",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G3",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 70.0,
+        "dy": 50.0,
+        "dz": 40.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G2",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 40,
+        "dx": 50.0,
+        "dy": 35.0,
+        "dz": 25.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "on_fragile"
+  },
+  {
+    "name": "illegal-duplicate-id",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "a",
+        "cargo_type": "G2",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 100,
+        "y": 0,
+        "z": 0,
+        "dx": 50.0,
+        "dy": 35.0,
+        "dz": 25.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "duplicate_id"
+  },
+  {
+    "name": "illegal-full-batch-omission",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G2",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 50.0,
+        "dy": 35.0,
+        "dz": 25.0
+      },
+      {
+        "item_id": "c",
+        "cargo_type": "G3",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 100,
+        "y": 0,
+        "z": 0,
+        "dx": 70.0,
+        "dy": 50.0,
+        "dz": 40.0
+      },
+      {
+        "item_id": "d",
+        "cargo_type": "G4",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 200,
+        "y": 0,
+        "z": 0,
+        "dx": 80.0,
+        "dy": 60.0,
+        "dz": 50.0
+      },
+      {
+        "item_id": "e",
+        "cargo_type": "G5",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 300,
+        "y": 0,
+        "z": 0,
+        "dx": 40.0,
+        "dy": 40.0,
+        "dz": 60.0
+      }
+    ],
+    "kwargs": {
+      "full_batch": true
+    },
+    "expected": "reject",
+    "expected_code": "full_batch_coverage"
+  },
+  {
+    "name": "illegal-nonfinite",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": {
+          "encoded_nonfinite_float": "nan"
+        },
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "nonfinite"
+  },
+  {
+    "name": "illegal-cumulative-pressure-also-too-tall",
+    "input": [
+      {
+        "item_id": "0",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "1",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "2",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 60,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "3",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 90,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "4",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 120,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "5",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 150,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "6",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 180,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "7",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 210,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "8",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 240,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "9",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 270,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "10",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 300,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "11",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 330,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "cumulative_pressure"
+  },
+  {
+    "name": "alternative-upright-fragile-rejects-rotated-control",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G3",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 50,
+        "dy": 40,
+        "dz": 70
+      }
+    ],
+    "kwargs": {
+      "fragile_rotation": "upright"
+    },
+    "expected": "reject",
+    "expected_code": "orientation_or_size"
+  },
+  {
+    "name": "illegal-directed-upper-center",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G4",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 80.0,
+        "dy": 60.0,
+        "dz": 50.0
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 70,
+        "y": 0,
+        "z": 50,
+        "dx": 60.0,
+        "dy": 40.0,
+        "dz": 30.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "reject",
+    "expected_code": "directional_center"
+  },
+  {
+    "name": "legal-union-standard-fragile-support",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 40,
+        "dy": 60,
+        "dz": 30
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 40,
+        "y": 0,
+        "z": 0,
+        "dx": 40,
+        "dy": 60,
+        "dz": 30
+      },
+      {
+        "item_id": "c",
+        "cargo_type": "G3",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 70.0,
+        "dy": 50.0,
+        "dz": 40.0
+      }
+    ],
+    "kwargs": {},
+    "expected": "valid",
+    "expected_code": null
+  },
+  {
+    "name": "alternative-single-support-rejects-union-control",
+    "input": [
+      {
+        "item_id": "a",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 0,
+        "dx": 40,
+        "dy": 60,
+        "dz": 30
+      },
+      {
+        "item_id": "b",
+        "cargo_type": "G1",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 40,
+        "y": 0,
+        "z": 0,
+        "dx": 40,
+        "dy": 60,
+        "dz": 30
+      },
+      {
+        "item_id": "c",
+        "cargo_type": "G3",
+        "vehicle_id": "control-T1",
+        "vehicle_type": "T1",
+        "x": 0,
+        "y": 0,
+        "z": 30,
+        "dx": 70.0,
+        "dy": 50.0,
+        "dz": 40.0
+      }
+    ],
+    "kwargs": {
+      "fragile_support": "single"
+    },
+    "expected": "reject",
+    "expected_code": "fragile_single_standard_support"
+  }
+]
