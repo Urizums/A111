@@ -1,0 +1,25 @@
+{
+  "phase": "informed_recheck_preparation_only",
+  "write_boundary": "runs/R19/levels/L3/review/recheck-1/",
+  "actual_calls": [
+    {"kind": "read", "scope": "own frozen initial result, report, figure-paper audit, retention audit; frozen acceptance/quality; own preparation plan", "state": "terminal", "revised_outputs_read": false},
+    {"kind": "edit", "scope": "new review-plan, TODO and preparation consistency script", "state": "terminal", "recovery": "Corrected parent-path index before any script launch; no failed or repeated unresolved invocation."},
+    {"kind": "python", "command": "python -B runs/R19/levels/L3/review/recheck-1/prepare_recheck.py", "state": "terminal", "exit_code": 0, "tool_wall_seconds": 0.5238944, "checks_passed": 10, "checks_total": 10},
+    {"kind": "finalize", "scope": "JSON/AST/payload and retained-source hashes; final-check and manifest only in authorized domain", "state": "terminal_on_success", "receipt": "final-check.json"}
+  ],
+  "method_selfcheck_scope": "Preparation consistency and source identity only; no revised science/Chinese/PDF acceptance test run.",
+  "solver_invocations": 0,
+  "pending_calls": [],
+  "active_self_started_processes": [],
+  "child_agents": [],
+  "background_jobs_started": false,
+  "model": null,
+  "token_usage": null,
+  "cost": null,
+  "network_used": false,
+  "software_installed": false,
+  "uploaded": false,
+  "author_messaged": false,
+  "historic_receipts_recovered": false,
+  "unfrozen_execution_v2_read": false
+}

@@ -1,0 +1,63 @@
+[
+  {
+    "classification": "tool recovery",
+    "tool_receipt": "e780ff",
+    "exit_code": 1,
+    "error": "AttributeError: TypeFace has no attribute charToGlyph",
+    "cause": "Registered font name Symbol collided with ReportLab built-in Symbol",
+    "repair": "Use unique L3Chinese/L3Symbols names",
+    "terminal": "embedded-font export subsequently succeeded",
+    "numeric_effect": false,
+    "raw_stderr_file": null,
+    "evidence": "actual tool output retained in session; summarized here, not manufactured full log"
+  },
+  {
+    "classification": "tool recovery",
+    "tool_receipt": "72231f",
+    "exit_code": 1,
+    "error": "ValueError: Cannot map family/bold/italic for cn",
+    "cause": "Paragraph style retained obsolete CN font alias",
+    "repair": "Set styles/footer fontName to actual L3Chinese",
+    "terminal": "embedded-font export and all glyph checks succeeded",
+    "numeric_effect": false,
+    "raw_stderr_file": null
+  },
+  {
+    "classification": "tool recovery",
+    "tool_receipt": "8d9be7",
+    "exit_code": 1,
+    "error": "FileNotFoundError: runs/inputs/L3.md",
+    "cause": "Final binding helper used parents[3], one directory too high",
+    "repair": "Use parents[2] for R19 approved input roots",
+    "terminal": "b6c64b source identity checks succeeded",
+    "numeric_effect": false,
+    "raw_stderr_file": null
+  },
+  {
+    "classification": "substantive expression repair",
+    "scope": "full manuscripts",
+    "observed": "mass per contact area terminology; unqualified bottleneck wording; finite search effort comparison; coordinate corner ambiguity; scientific exponent loss in old PDFs",
+    "terminal": "Final original/new edit pairs, full-text quality audit and all PDF pages checked",
+    "numeric_model_change": false
+  },
+  {
+    "classification": "normal publication iteration",
+    "scope": "three export/semantic-QA success rounds",
+    "observed": "Initial revised draft then informed reader feedback then two final clarity edits",
+    "terminal": "Earlier PDFs and QA kept in named draft archives; root PDFs and qa/pdf authoritative",
+    "numeric_effect": false
+  },
+  {
+    "classification": "intentional negative process tests",
+    "scope": "attempts",
+    "observed": "exit7, timeout, missing executable launch and live successor block",
+    "terminal": "all expected behaviors retained in per-attempt receipts, stdout/stderr where child exists",
+    "not_original_failure_repair": true
+  },
+  {
+    "classification": "unrecoverable original history",
+    "scope": "first three boundary CLI receipts and two original concurrency deviations",
+    "terminal": "known original status/counter/returncode preserved; PID/stdout null; original deviation still deviation",
+    "resources_unchanged": true
+  }
+]

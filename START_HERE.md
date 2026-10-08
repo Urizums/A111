@@ -1,6 +1,6 @@
 # Codex 接续入口
 
-R19最新现场：L1/L2完整诊断done，原首次失败/partial保留。L3完整生产3723文件及独立准备21文件已冻结，首次独立首审3052文件终态冻结：a1–a4 pass、a5 fail（最终PDF科学上标丢失，改变单位/复杂度）、a6 partial（旧调用记录缺口和并发目标偏离）。原作者因额度中断后已实际恢复，在新execution-v2/同时修复PDF科学语义、中文表达和论证衔接；不能把作者自检或后续润色预期当成独立验收。旧PID/stdout缺口保留null，不以新调用补造。L4仅设计冻结、论文未启动。四层C11不改，源6899417已上传且对应CI实际success；最新论文状态与调用证据见runs/R19/REPORT.md、TODO.md和state/checkpoint.json，仓库CI不替代论文验收。旧失败和预算不重置。
+R19最新现场：L1/L2完整诊断done，原首次失败/partial保留。L3原生产3723/准备21/首审3052/知情修订354/复审方法准备9文件分别冻结。首次a1–a4 pass、a5 fail（PDF科学记号失真）、a6 partial（旧记录/并发目标缺口）保持。原作者修订11页论文和3页企业报告的完整中文表达、论证衔接及PDF科学语义，数值代码/数据/配置/图表原字节不改；作者750显示单元/40记号/14页检查仅自检。同一原reviewer已正式接收组合包，在review/recheck-final-1实质知情复核中，尚无修订判定，原9文件方法准备不覆盖。旧PID/stdout保留null，预算不重置。L4仅设计冻结及中性输入身份预检查、论文未启动。四层C11不改；源88da305已上传，CI实际观察见checkpoint/publication。当前证据见runs/R19/REPORT.md、TODO.md和state/checkpoint.json，仓库CI不替代论文验收。
 
 成品方向为Forge meta-workflow，当前候选C10是九份纯文档：
 [技能入口](runs/R17/candidate/C10/forge-agent-flow/SKILL.md)、
