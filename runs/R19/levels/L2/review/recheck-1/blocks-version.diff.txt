@@ -1,0 +1,11 @@
+--- initial blocks
++++ final blocks
+@@ -3,7 +3,7 @@
+ import numpy as np
+ CACHE={};CERTIFICATES=[]
+ def catalog(types,v,config,orientations):
+- key=json.dumps([types,v,config.get('pressure',500),config.get('fragile_fixed',False)],sort_keys=True)
++ key=json.dumps([types,v,config.get('pressure',500),config.get('fragile_fixed',False),config.get('fragile_floor',False)],sort_keys=True)
+  if key in CACHE:return CACHE[key]
+  start=time.perf_counter();out=[];seen=set();failed=[]
+  from validate import validate

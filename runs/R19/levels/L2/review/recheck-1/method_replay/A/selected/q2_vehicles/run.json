@@ -1,0 +1,53 @@
+{
+  "scenario": "q2_vehicles",
+  "objective": "vehicles",
+  "full_inventory": true,
+  "validation_status": true,
+  "unplaced_items": [],
+  "vehicle_count": 14,
+  "cost_yuan": 9800,
+  "volume_utilization": 0.492797118847539,
+  "weight_utilization": 0.2935714285714286,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "method": "column_patterns_MILP",
+  "bounds": {
+    "volume_mm3": 287350000000,
+    "weight_kg": 41100.0,
+    "lower_bound": 8,
+    "relaxation_pair": [
+      0,
+      8
+    ],
+    "height_quantum_mm": 50,
+    "bound_model": "vertical_line_integral_height_quantization"
+  },
+  "solver": {
+    "status": 0,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "pattern_count": 180,
+    "seconds": 23.234580899996217,
+    "restricted_mip_gap": 0.0,
+    "restricted_dual_bound": 14.000466666610528,
+    "candidate_guard": {
+      "selected_index": 32,
+      "candidates": 81,
+      "raw_incumbent_count": 14,
+      "selected_count": 14,
+      "raw_status_not_upgraded": true
+    }
+  },
+  "config": {
+    "seed": 19,
+    "starts": 22,
+    "time_limit": 45,
+    "pressure": 500,
+    "geometry": "A",
+    "platforms": false
+  },
+  "candidate_guard": {
+    "post_all_scenarios": true,
+    "selected_index": 32
+  }
+}

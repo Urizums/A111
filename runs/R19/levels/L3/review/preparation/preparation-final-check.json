@@ -1,0 +1,60 @@
+{
+  "status": "preparation_internal_consistency_checked",
+  "utc": "2026-10-08T00:10:42.760642+00:00",
+  "script_syntax": [
+    "finalize_preparation.py",
+    "independent_checker.py",
+    "prepare_sources.py",
+    "run_method_controls.py"
+  ],
+  "json_checks": [
+    {
+      "file": "events.json",
+      "status": "strict_json_valid"
+    },
+    {
+      "file": "independent-source-audit.json",
+      "status": "strict_json_valid"
+    },
+    {
+      "file": "input-lock-verification.json",
+      "status": "strict_json_valid"
+    },
+    {
+      "file": "method-controls-input.attempt1.json",
+      "status": "retained_known_attempt1_nonstandard_NaN; current file repaired"
+    },
+    {
+      "file": "method-controls-input.json",
+      "status": "strict_json_valid"
+    },
+    {
+      "file": "method-controls-result.attempt1.json",
+      "status": "strict_json_valid"
+    },
+    {
+      "file": "method-controls-result.json",
+      "status": "strict_json_valid"
+    },
+    {
+      "file": "resource-probe.json",
+      "status": "strict_json_valid"
+    },
+    {
+      "file": "result.json",
+      "status": "strict_json_valid"
+    },
+    {
+      "file": "run-receipts.json",
+      "status": "strict_json_valid"
+    }
+  ],
+  "scope": "own preparation only",
+  "actual_source_lock_match": true,
+  "method_controls": 21,
+  "producer_verdict_created": false,
+  "pending_calls": [],
+  "background_processes_created": [],
+  "synchronous_check_terminal_on_exit": true,
+  "elapsed_seconds": 0.008379099999729078
+}

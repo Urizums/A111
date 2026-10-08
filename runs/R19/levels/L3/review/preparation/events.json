@@ -1,0 +1,52 @@
+{
+  "role": "/root/r19_l3_reviewer",
+  "phase": "preparation_only",
+  "events": [
+    {
+      "id": "P1",
+      "action": "identity and designated source inventory",
+      "observation": "Get-Item could not find runs/R19/candidate/C11/C11-lock.json; nonterminating error, whole command exit0",
+      "classification": "tool/path recovery",
+      "change": "Used designated lock at runs/R19/candidate/C11-lock.json; no missing-path bytes returned",
+      "result": "actual lock read and all 9 candidate hashes matched",
+      "retained": true
+    },
+    {
+      "id": "P2",
+      "action": "original source audit",
+      "observation": "23 locked byte identities match; 3 PDF pages visually inspected; original DOCX and all XLSX cells read",
+      "classification": "preparation source check",
+      "result": "source and resource audit completed, not solving"
+    },
+    {
+      "id": "P3",
+      "action": "first method controls",
+      "observation": "18 actual controls passed; final JSON input emitted bare NaN for the deliberate nonfinite control",
+      "classification": "method evidence serialization defect",
+      "change": "Retained attempt1 input/result, encoded nonfinite value explicitly in current input JSON; runtime still checks actual NaN",
+      "result": "strict JSON parse of current controls input passed; numerical controls rerun",
+      "retained": true
+    },
+    {
+      "id": "P4",
+      "action": "expand discriminating self-controls before method freeze",
+      "classification": "planned method refinement",
+      "change": "Added directional upper center and union/single fragile support branch controls",
+      "result": "21 actual controls passed; 6 valid, 15 reject; metrics and rectangle union tests passed"
+    },
+    {
+      "id": "P5",
+      "action": "preparation evidence cross-check",
+      "observation": "Draft prose had 7 valid/14 reject; actual method-controls-result is 6 valid/15 reject",
+      "classification": "documentation correction before freeze",
+      "change": "Corrected prose to actual counts; all individual results retained",
+      "result": "plan counts match actual evidence"
+    }
+  ],
+  "no_universal_two_error_stop": true,
+  "unknown_calls_restarted": false,
+  "producer_results_read": false,
+  "provider_model": null,
+  "token_usage": null,
+  "cost": null
+}

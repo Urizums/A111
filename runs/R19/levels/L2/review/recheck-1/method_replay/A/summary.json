@@ -1,0 +1,420 @@
+{
+  "runs": [
+    {
+      "scenario": "q1_all_v1",
+      "objective": "vehicles",
+      "full_inventory": true,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 29,
+      "cost_yuan": 13050,
+      "volume_utilization": 0.5106483554759417,
+      "weight_utilization": 0.23620689655172414,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "equal_priority_columns",
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 16,
+        "relaxation_pair": [
+          16,
+          0
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      }
+    },
+    {
+      "scenario": "q1_all_v1",
+      "objective": "vehicles",
+      "full_inventory": true,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 28,
+      "cost_yuan": 12600,
+      "volume_utilization": 0.5288857967429396,
+      "weight_utilization": 0.24464285714285713,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "column_patterns_MILP",
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 16,
+        "relaxation_pair": [
+          16,
+          0
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "solver": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "pattern_count": 91,
+        "seconds": 1.7881715000039549,
+        "restricted_mip_gap": 0.0,
+        "restricted_dual_bound": 28.000933333333332,
+        "candidate_guard": {
+          "selected_index": 7,
+          "candidates": 77,
+          "raw_incumbent_count": 28,
+          "selected_count": 28,
+          "raw_status_not_upgraded": true
+        }
+      },
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      },
+      "candidate_guard": {
+        "post_all_scenarios": true,
+        "selected_index": 7
+      }
+    },
+    {
+      "scenario": "q1_all_v2",
+      "objective": "vehicles",
+      "full_inventory": true,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 16,
+      "cost_yuan": 11200,
+      "volume_utilization": 0.43119747899159666,
+      "weight_utilization": 0.256875,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "equal_priority_columns",
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 8,
+        "relaxation_pair": [
+          0,
+          8
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      }
+    },
+    {
+      "scenario": "q1_all_v2",
+      "objective": "vehicles",
+      "full_inventory": true,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 14,
+      "cost_yuan": 9800,
+      "volume_utilization": 0.492797118847539,
+      "weight_utilization": 0.2935714285714286,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "column_patterns_MILP",
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 8,
+        "relaxation_pair": [
+          0,
+          8
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "solver": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "pattern_count": 89,
+        "seconds": 0.5916206999972928,
+        "restricted_mip_gap": 0.0,
+        "restricted_dual_bound": 14.000466666666666,
+        "candidate_guard": {
+          "selected_index": 32,
+          "candidates": 79,
+          "raw_incumbent_count": 14,
+          "selected_count": 14,
+          "raw_status_not_upgraded": true
+        }
+      },
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      },
+      "candidate_guard": {
+        "post_all_scenarios": true,
+        "selected_index": 32
+      }
+    },
+    {
+      "scenario": "q2_vehicles",
+      "objective": "vehicles",
+      "full_inventory": true,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 16,
+      "cost_yuan": 10950,
+      "volume_utilization": 0.44608897872247943,
+      "weight_utilization": 0.26346153846153847,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "equal_priority_columns",
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 8,
+        "relaxation_pair": [
+          0,
+          8
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      }
+    },
+    {
+      "scenario": "q2_vehicles",
+      "objective": "vehicles",
+      "full_inventory": true,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 14,
+      "cost_yuan": 9800,
+      "volume_utilization": 0.492797118847539,
+      "weight_utilization": 0.2935714285714286,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "column_patterns_MILP",
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 8,
+        "relaxation_pair": [
+          0,
+          8
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "solver": {
+        "status": 0,
+        "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+        "pattern_count": 180,
+        "seconds": 23.234580899996217,
+        "restricted_mip_gap": 0.0,
+        "restricted_dual_bound": 14.000466666610528,
+        "candidate_guard": {
+          "selected_index": 32,
+          "candidates": 81,
+          "raw_incumbent_count": 14,
+          "selected_count": 14,
+          "raw_status_not_upgraded": true
+        }
+      },
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      },
+      "candidate_guard": {
+        "post_all_scenarios": true,
+        "selected_index": 32
+      }
+    },
+    {
+      "scenario": "q2_cost",
+      "objective": "cost",
+      "full_inventory": true,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 20,
+      "cost_yuan": 10750,
+      "volume_utilization": 0.5284092371855933,
+      "weight_utilization": 0.2777027027027027,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "equal_priority_columns",
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 5350,
+        "relaxation_pair": [
+          1,
+          7
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      }
+    },
+    {
+      "scenario": "q2_cost",
+      "objective": "cost",
+      "full_inventory": true,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 14,
+      "cost_yuan": 9800,
+      "volume_utilization": 0.492797118847539,
+      "weight_utilization": 0.2935714285714286,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "column_patterns_MILP",
+      "bounds": {
+        "volume_mm3": 287350000000,
+        "weight_kg": 41100.0,
+        "lower_bound": 5350,
+        "relaxation_pair": [
+          1,
+          7
+        ],
+        "height_quantum_mm": 50,
+        "bound_model": "vertical_line_integral_height_quantization"
+      },
+      "solver": {
+        "status": 1,
+        "message": "Time limit reached. (HiGHS Status 13: Time limit reached)",
+        "pattern_count": 180,
+        "seconds": 45.00599240000156,
+        "restricted_mip_gap": 0.041011944831524545,
+        "restricted_dual_bound": 9589.880552369747,
+        "candidate_guard": {
+          "selected_index": 32,
+          "candidates": 83,
+          "raw_incumbent_count": 15,
+          "selected_count": 14,
+          "raw_status_not_upgraded": true
+        }
+      },
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      },
+      "candidate_guard": {
+        "post_all_scenarios": true,
+        "selected_index": 32
+      }
+    }
+  ],
+  "singles": [
+    {
+      "scenario": "single_V1_00",
+      "objective": "volume_weight",
+      "full_inventory": false,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 1,
+      "cost_yuan": 450,
+      "volume_utilization": 0.9101731601731602,
+      "weight_utilization": 0.526,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "search_nondominated",
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      },
+      "counts": [
+        63,
+        300,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "single_V2_00",
+      "objective": "volume_weight",
+      "full_inventory": false,
+      "validation_status": true,
+      "unplaced_items": [],
+      "vehicle_count": 1,
+      "cost_yuan": 700,
+      "volume_utilization": 0.9404081632653061,
+      "weight_utilization": 0.7344,
+      "model": null,
+      "tokens": null,
+      "cost": null,
+      "method": "search_nondominated",
+      "config": {
+        "seed": 19,
+        "starts": 22,
+        "time_limit": 45,
+        "pressure": 500,
+        "geometry": "A",
+        "platforms": false
+      },
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        408
+      ]
+    }
+  ],
+  "library_size": 180,
+  "seconds": 88.90190689999872,
+  "instance_count": 3000,
+  "utc_start": "2026-10-07T23:47:13.972690+00:00",
+  "utc_finish": "2026-10-07T23:48:42.878232+00:00",
+  "code_sha256": "f6d81e3f296e0fa97208fecb44ad8e9215129177a6746b43f8e9c2b86457ef3e"
+}

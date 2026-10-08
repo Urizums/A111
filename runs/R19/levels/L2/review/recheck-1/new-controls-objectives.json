@@ -1,0 +1,1019 @@
+{
+  "utc": "2026-10-07T23:51:27.879014+00:00",
+  "all1176_blocks": [
+    {
+      "vehicle_type": "V1",
+      "count": 567,
+      "all_reviewer_valid": true,
+      "invalid": []
+    },
+    {
+      "vehicle_type": "V2",
+      "count": 609,
+      "all_reviewer_valid": true,
+      "invalid": []
+    }
+  ],
+  "controls": [
+    {
+      "id": "certified_directional_standard_fragile",
+      "expected": true,
+      "reviewer_valid": true,
+      "reviewer_errors": [],
+      "target_valid": true,
+      "target_errors": [],
+      "fixture_items": [
+        {
+          "item_id": "0",
+          "cargo_type": "G4",
+          "category": "定向件",
+          "canonical_l_mm": 800,
+          "canonical_w_mm": 600,
+          "canonical_h_mm": 500,
+          "weight_kg": 25.0
+        },
+        {
+          "item_id": "1",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "2",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "3",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "4",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "5",
+          "cargo_type": "G3",
+          "category": "易碎件",
+          "canonical_l_mm": 700,
+          "canonical_w_mm": 500,
+          "canonical_h_mm": 400,
+          "weight_kg": 15.0
+        }
+      ],
+      "fixture_placements": [
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "0",
+          "cargo_type": "G4",
+          "x_mm": 0,
+          "y_mm": 0,
+          "z_mm": 0,
+          "dx_mm": 800,
+          "dy_mm": 600,
+          "dz_mm": 500,
+          "orientation_id": "012"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "1",
+          "cargo_type": "G1",
+          "x_mm": 0,
+          "y_mm": 0,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "2",
+          "cargo_type": "G1",
+          "x_mm": 0,
+          "y_mm": 300,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "3",
+          "cargo_type": "G1",
+          "x_mm": 400,
+          "y_mm": 0,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "4",
+          "cargo_type": "G1",
+          "x_mm": 400,
+          "y_mm": 300,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "5",
+          "cargo_type": "G3",
+          "x_mm": 50,
+          "y_mm": 50,
+          "z_mm": 1100,
+          "dx_mm": 700,
+          "dy_mm": 500,
+          "dz_mm": 400,
+          "orientation_id": "012"
+        }
+      ]
+    },
+    {
+      "id": "fragile_support_shift300",
+      "expected": false,
+      "reviewer_valid": false,
+      "reviewer_errors": [
+        {
+          "rule": "fragile_full_support",
+          "item": "5",
+          "coverage": 0.6428571428571429
+        }
+      ],
+      "target_valid": false,
+      "target_errors": [
+        "5: incomplete support"
+      ],
+      "fixture_items": [
+        {
+          "item_id": "0",
+          "cargo_type": "G4",
+          "category": "定向件",
+          "canonical_l_mm": 800,
+          "canonical_w_mm": 600,
+          "canonical_h_mm": 500,
+          "weight_kg": 25.0
+        },
+        {
+          "item_id": "1",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "2",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "3",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "4",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "5",
+          "cargo_type": "G3",
+          "category": "易碎件",
+          "canonical_l_mm": 700,
+          "canonical_w_mm": 500,
+          "canonical_h_mm": 400,
+          "weight_kg": 15.0
+        }
+      ],
+      "fixture_placements": [
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "0",
+          "cargo_type": "G4",
+          "x_mm": 0,
+          "y_mm": 0,
+          "z_mm": 0,
+          "dx_mm": 800,
+          "dy_mm": 600,
+          "dz_mm": 500,
+          "orientation_id": "012"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "1",
+          "cargo_type": "G1",
+          "x_mm": 0,
+          "y_mm": 0,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "2",
+          "cargo_type": "G1",
+          "x_mm": 0,
+          "y_mm": 300,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "3",
+          "cargo_type": "G1",
+          "x_mm": 400,
+          "y_mm": 0,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "4",
+          "cargo_type": "G1",
+          "x_mm": 400,
+          "y_mm": 300,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "5",
+          "cargo_type": "G3",
+          "x_mm": 350,
+          "y_mm": 50,
+          "z_mm": 1100,
+          "dx_mm": 700,
+          "dy_mm": 500,
+          "dz_mm": 400,
+          "orientation_id": "012"
+        }
+      ]
+    },
+    {
+      "id": "directional_base_cumulative_overpressure",
+      "expected": false,
+      "reviewer_valid": false,
+      "reviewer_errors": [
+        {
+          "rule": "cumulative_contact_pressure",
+          "upper": "1",
+          "lower": "0",
+          "pressure_kg_m2": 2531.25
+        },
+        {
+          "rule": "cumulative_contact_pressure",
+          "upper": "2",
+          "lower": "0",
+          "pressure_kg_m2": 2531.25
+        },
+        {
+          "rule": "cumulative_contact_pressure",
+          "upper": "3",
+          "lower": "0",
+          "pressure_kg_m2": 2531.25
+        },
+        {
+          "rule": "cumulative_contact_pressure",
+          "upper": "4",
+          "lower": "0",
+          "pressure_kg_m2": 2531.25
+        }
+      ],
+      "target_valid": false,
+      "target_errors": [
+        "0: cumulative contact pressure",
+        "0: cumulative contact pressure",
+        "0: cumulative contact pressure",
+        "0: cumulative contact pressure",
+        "0: average top pressure"
+      ],
+      "fixture_items": [
+        {
+          "item_id": "0",
+          "cargo_type": "G4",
+          "category": "定向件",
+          "canonical_l_mm": 800,
+          "canonical_w_mm": 600,
+          "canonical_h_mm": 500,
+          "weight_kg": 25.0
+        },
+        {
+          "item_id": "1",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 300
+        },
+        {
+          "item_id": "2",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 300
+        },
+        {
+          "item_id": "3",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 300
+        },
+        {
+          "item_id": "4",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 300
+        },
+        {
+          "item_id": "5",
+          "cargo_type": "G3",
+          "category": "易碎件",
+          "canonical_l_mm": 700,
+          "canonical_w_mm": 500,
+          "canonical_h_mm": 400,
+          "weight_kg": 15.0
+        }
+      ],
+      "fixture_placements": [
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "0",
+          "cargo_type": "G4",
+          "x_mm": 0,
+          "y_mm": 0,
+          "z_mm": 0,
+          "dx_mm": 800,
+          "dy_mm": 600,
+          "dz_mm": 500,
+          "orientation_id": "012"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "1",
+          "cargo_type": "G1",
+          "x_mm": 0,
+          "y_mm": 0,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "2",
+          "cargo_type": "G1",
+          "x_mm": 0,
+          "y_mm": 300,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "3",
+          "cargo_type": "G1",
+          "x_mm": 400,
+          "y_mm": 0,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "4",
+          "cargo_type": "G1",
+          "x_mm": 400,
+          "y_mm": 300,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "5",
+          "cargo_type": "G3",
+          "x_mm": 50,
+          "y_mm": 50,
+          "z_mm": 1100,
+          "dx_mm": 700,
+          "dy_mm": 500,
+          "dz_mm": 400,
+          "orientation_id": "012"
+        }
+      ]
+    },
+    {
+      "id": "standard_load_on_fragile",
+      "expected": false,
+      "reviewer_valid": false,
+      "reviewer_errors": [
+        {
+          "rule": "fragile_no_load",
+          "items": [
+            "1",
+            "5"
+          ]
+        },
+        {
+          "rule": "fragile_full_support",
+          "item": "5",
+          "coverage": 0.75
+        }
+      ],
+      "target_valid": false,
+      "target_errors": [
+        "1: cargo on fragile",
+        "5: incomplete support"
+      ],
+      "fixture_items": [
+        {
+          "item_id": "0",
+          "cargo_type": "G4",
+          "category": "定向件",
+          "canonical_l_mm": 800,
+          "canonical_w_mm": 600,
+          "canonical_h_mm": 500,
+          "weight_kg": 25.0
+        },
+        {
+          "item_id": "1",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "2",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "3",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "4",
+          "cargo_type": "G1",
+          "category": "标准件",
+          "canonical_l_mm": 600,
+          "canonical_w_mm": 400,
+          "canonical_h_mm": 300,
+          "weight_kg": 12.0
+        },
+        {
+          "item_id": "5",
+          "cargo_type": "G3",
+          "category": "易碎件",
+          "canonical_l_mm": 700,
+          "canonical_w_mm": 500,
+          "canonical_h_mm": 400,
+          "weight_kg": 15.0
+        }
+      ],
+      "fixture_placements": [
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "0",
+          "cargo_type": "G4",
+          "x_mm": 0,
+          "y_mm": 0,
+          "z_mm": 0,
+          "dx_mm": 800,
+          "dy_mm": 600,
+          "dz_mm": 500,
+          "orientation_id": "012"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "1",
+          "cargo_type": "G1",
+          "x_mm": 50,
+          "y_mm": 50,
+          "z_mm": 1500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "2",
+          "cargo_type": "G1",
+          "x_mm": 0,
+          "y_mm": 300,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "3",
+          "cargo_type": "G1",
+          "x_mm": 400,
+          "y_mm": 0,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "4",
+          "cargo_type": "G1",
+          "x_mm": 400,
+          "y_mm": 300,
+          "z_mm": 500,
+          "dx_mm": 400,
+          "dy_mm": 300,
+          "dz_mm": 600,
+          "orientation_id": "120"
+        },
+        {
+          "vehicle_id": "T",
+          "vehicle_type": "V1",
+          "item_id": "5",
+          "cargo_type": "G3",
+          "x_mm": 50,
+          "y_mm": 50,
+          "z_mm": 1100,
+          "dx_mm": 700,
+          "dy_mm": 500,
+          "dz_mm": 400,
+          "orientation_id": "012"
+        }
+      ]
+    }
+  ],
+  "independent_library_MILP": [
+    {
+      "scenario": "v1",
+      "objective": "vehicles",
+      "actual_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "actual_seconds": 0.3901975999979186,
+      "limit_seconds": 60,
+      "independent_incumbent": 22.0,
+      "dual_bound": 22.0,
+      "gap": 0.0,
+      "matrix_inventory_equality": true,
+      "scope": "only independently recounted physical pattern library; no original3D optimal claim"
+    },
+    {
+      "scenario": "v2",
+      "objective": "vehicles",
+      "actual_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "actual_seconds": 0.9878087999968557,
+      "limit_seconds": 60,
+      "independent_incumbent": 12.0,
+      "dual_bound": 12.0,
+      "gap": 0.0,
+      "matrix_inventory_equality": true,
+      "scope": "only independently recounted physical pattern library; no original3D optimal claim"
+    },
+    {
+      "scenario": "mixed",
+      "objective": "vehicles",
+      "actual_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "actual_seconds": 2.344602600001963,
+      "limit_seconds": 60,
+      "independent_incumbent": 12.0,
+      "dual_bound": 12.0,
+      "gap": 0.0,
+      "matrix_inventory_equality": true,
+      "scope": "only independently recounted physical pattern library; no original3D optimal claim"
+    },
+    {
+      "scenario": "cost",
+      "objective": "cost",
+      "actual_status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "actual_seconds": 47.16887879999558,
+      "limit_seconds": 60,
+      "independent_incumbent": 7850.0,
+      "dual_bound": 7850.0,
+      "gap": 0.0,
+      "matrix_inventory_equality": true,
+      "scope": "only independently recounted physical pattern library; no original3D optimal claim"
+    }
+  ],
+  "single22_actual_candidates": [
+    {
+      "vehicle": "V1",
+      "alpha": 0.0,
+      "valid": true,
+      "counts": [
+        0,
+        384,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.1,
+      "valid": true,
+      "counts": [
+        0,
+        384,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.2,
+      "valid": true,
+      "counts": [
+        0,
+        384,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.30000000000000004,
+      "valid": true,
+      "counts": [
+        0,
+        384,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.4,
+      "valid": true,
+      "counts": [
+        0,
+        384,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.5,
+      "valid": true,
+      "counts": [
+        0,
+        384,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.6000000000000001,
+      "valid": true,
+      "counts": [
+        0,
+        336,
+        24,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.7000000000000001,
+      "valid": true,
+      "counts": [
+        0,
+        336,
+        24,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.8,
+      "valid": true,
+      "counts": [
+        0,
+        336,
+        24,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 0.9,
+      "valid": true,
+      "counts": [
+        0,
+        336,
+        24,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V1",
+      "alpha": 1.0,
+      "valid": true,
+      "counts": [
+        0,
+        336,
+        24,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.0,
+      "valid": true,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        408
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.1,
+      "valid": true,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        408
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.2,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.30000000000000004,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.4,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.5,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.6000000000000001,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.7000000000000001,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.8,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 0.9,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "vehicle": "V2",
+      "alpha": 1.0,
+      "valid": true,
+      "counts": [
+        4,
+        819,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "independent_search_nondominated_counts": {
+    "V1": [
+      [
+        63,
+        264,
+        18,
+        0,
+        0
+      ],
+      [
+        63,
+        300,
+        0,
+        0,
+        0
+      ]
+    ],
+    "V2": [
+      [
+        0,
+        0,
+        0,
+        0,
+        408
+      ]
+    ]
+  },
+  "guard_control": {
+    "source": "real independently checked13/7850 and12/8400 fleets; mocked solver returns explicitly labelled",
+    "vehicles_choice": [
+      12,
+      8400.0
+    ],
+    "raw_cheaper_incumbent_retained": true,
+    "next_cost_choice": [
+      7850.0,
+      13
+    ],
+    "actual_control_pass": true
+  },
+  "theory_controls": {
+    "q_original": 50,
+    "q_size_0_9": 45,
+    "q_size_1_1": 55,
+    "continuous_translation_control": "vertical segment lengths unchanged under arbitrary non-grid x/y/z translation; non-overlapping segment sum remains q-multiple even with gaps",
+    "proof_valid_for_wider_partial_support": true,
+    "not_valid_for_nonorthogonal_rotation": true
+  },
+  "seconds": 55.976966000001994
+}

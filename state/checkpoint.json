@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-07T23:44:13.863154+00:00",
+  "updated_at": "2026-10-08T00:14:31.192730+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "Same reviewer reconciled existing ZIP full call as terminal without duplicate start; complete remaining independent scientific review, preserve initial pass/partial, then actual L3 paper start after L2 diagnostic.",
+  "next_action": "Receive terminal full L3 paper execution, freeze actual bytes, then formally hand the packet to the same independently prepared reviewer. L4 paper remains unstarted; C11 unchanged.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -32,7 +32,7 @@
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
-  "publication_evidence": "runs/R19/publication/observation-9.json",
+  "publication_evidence": "runs/R19/publication/observation-12.json",
   "lifecycle": "active",
   "c1_audit": "completed_with_historical_gaps; efficacy remains inconclusive",
   "historical_handoff_repair_scope": "Existing functional_repairs fields describe S00 only; current candidate budgets are separate.",
@@ -94,7 +94,7 @@
       "purpose": "bounded conformance retest"
     }
   ],
-  "current_validation": "L2_v2_2616_frozen_same_reviewer_resumed_after_preserved_usage_interruption",
+  "current_validation": "L1_L2_diagnostics_done_initial_verdicts_retained_L3_execution_running_source_preparation_frozen",
   "delivery_evidence": [
     "runs/cloud/github-pr.json",
     "runs/cloud/github-publication-reports.json",
@@ -215,9 +215,9 @@
     ],
     "current_native_pending": [
       {
-        "worker": "/root/r19_l2_reviewer",
+        "worker": "/root/r19_l3_executor",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L2/reviewer-running_observed-observation-4.json",
+        "evidence": "runs/R19/levels/L3/executor-running_observed-observation.json",
         "actual_model": null
       }
     ],
@@ -570,9 +570,9 @@
     "next_prospective_plan": "runs/R18/PLAN.md",
     "native_pending_current": [
       {
-        "worker": "/root/r19_l2_reviewer",
+        "worker": "/root/r19_l3_executor",
         "state": "running_observed",
-        "evidence": "runs/R19/levels/L2/reviewer-running_observed-observation-4.json",
+        "evidence": "runs/R19/levels/L3/executor-running_observed-observation.json",
         "actual_model": null
       }
     ],
@@ -585,25 +585,25 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "L2_v2_2616_frozen_same_reviewer_resumed_after_preserved_usage_interruption",
+    "current_task_process_state": "L1_L2_diagnostics_done_initial_verdicts_retained_L3_execution_running_source_preparation_frozen",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R19/publication/observation-9.json",
-    "current_source_commit": "330476848d0dc8bcd809fbe0ef19e656e5ca026f",
+    "current_publication": "runs/R19/publication/observation-12.json",
+    "current_source_commit": "a374e36b77209152ecd998cd1941c99075271b0d",
     "current_source_ci": [
       {
         "conclusion": "success",
-        "databaseId": 37653537427,
-        "headSha": "330476848d0dc8bcd809fbe0ef19e656e5ca026f",
+        "databaseId": 37704480281,
+        "headSha": "a374e36b77209152ecd998cd1941c99075271b0d",
         "status": "completed",
-        "url": "https://github.com/Urizums/A111/actions/runs/37653537427",
+        "url": "https://github.com/Urizums/A111/actions/runs/37704480281",
         "workflowName": "Cloud delivery validation"
       }
     ],
-    "current_source_ci_observed": "2026-10-07T16:51:02.893678+00:00",
+    "current_source_ci_observed": "2026-10-08T00:10:27.852073+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
-    "R19_current_level": 2,
+    "R19_current_level": 3,
     "completed_native_R19": [
       {
         "worker": "/root/r19_l1_builder",
@@ -706,6 +706,18 @@
         "state": "errored_usage_limit",
         "evidence": "runs/R19/levels/L2/reviewer-errored_usage_limit-observation.json",
         "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_reviewer",
+        "state": "completed_informed_review",
+        "evidence": "runs/R19/levels/L2/reviewer-completed_informed_review-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_reviewer",
+        "state": "preparation_completed_waiting_frozen_execution",
+        "evidence": "runs/R19/levels/L3/reviewer-preparation_completed_waiting_frozen_execution-observation.json",
+        "actual_model": null
       }
     ],
     "pre_R19_publication": {
@@ -714,11 +726,11 @@
       "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
       "current_source_ci_observed": "success"
     },
-    "current_frontier_task": "R19-L2",
+    "current_frontier_task": "R19-L3",
     "R19_publication_status": "source_pushed_observed",
     "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
-    "current_paper_level": 2,
+    "current_paper_level": 3,
     "R19_prepared_designs": [
       {
         "level": 3,
@@ -737,13 +749,19 @@
       }
     ],
     "R19_resource_observation": "runs/R19/levels/L2/resource-recheck-interruption-1.json",
-    "latest_observed_actor_level": 2,
+    "latest_observed_actor_level": 3,
     "R19_unpublished_followups": true,
     "R19_completed_diagnostics": [
       {
         "level": 1,
         "result": "runs/R19/levels/L1/diagnostic-result.json",
         "initial_mandatory_pass": false,
+        "informed_repair": true
+      },
+      {
+        "level": 2,
+        "result": "runs/R19/levels/L2/diagnostic-result.json",
+        "initial_mandatory_pass": true,
         "informed_repair": true
       }
     ]
@@ -767,9 +785,9 @@
   ],
   "current_native_pending": [
     {
-      "worker": "/root/r19_l2_reviewer",
+      "worker": "/root/r19_l3_executor",
       "state": "running_observed",
-      "evidence": "runs/R19/levels/L2/reviewer-running_observed-observation-4.json",
+      "evidence": "runs/R19/levels/L3/executor-running_observed-observation.json",
       "actual_model": null
     }
   ],
@@ -974,17 +992,17 @@
   "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
   "source_ci_observed": "success",
   "receipt_commit_pending_at_this_snapshot": true,
-  "R19_status": "L2_v2_2616_frozen_same_reviewer_resumed_after_preserved_usage_interruption",
+  "R19_status": "L1_L2_diagnostics_done_initial_verdicts_retained_L3_execution_running_source_preparation_frozen",
   "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
-  "current_frontier_task": "R19-L2",
-  "current_source_commit": "330476848d0dc8bcd809fbe0ef19e656e5ca026f",
+  "current_frontier_task": "R19-L3",
+  "current_source_commit": "a374e36b77209152ecd998cd1941c99075271b0d",
   "current_source_ci": [
     {
       "conclusion": "success",
-      "databaseId": 37653537427,
-      "headSha": "330476848d0dc8bcd809fbe0ef19e656e5ca026f",
+      "databaseId": 37704480281,
+      "headSha": "a374e36b77209152ecd998cd1941c99075271b0d",
       "status": "completed",
-      "url": "https://github.com/Urizums/A111/actions/runs/37653537427",
+      "url": "https://github.com/Urizums/A111/actions/runs/37704480281",
       "workflowName": "Cloud delivery validation"
     }
   ]
