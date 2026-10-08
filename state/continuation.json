@@ -8390,15 +8390,9 @@
     ],
     "current_native_pending": [
       {
-        "worker": "/root/r20_executor",
-        "state": "running",
-        "evidence": "runs/R20/coordination/r20_executor-running-1.json",
-        "actual_model": null
-      },
-      {
         "worker": "/root/r20_acceptor",
         "state": "running",
-        "evidence": "runs/R20/coordination/r20_acceptor-running-3.json",
+        "evidence": "runs/R20/coordination/r20_acceptor-running-4.json",
         "actual_model": null
       }
     ],
@@ -8751,15 +8745,9 @@
     "next_prospective_plan": "runs/R18/PLAN.md",
     "native_pending_current": [
       {
-        "worker": "/root/r20_executor",
-        "state": "running",
-        "evidence": "runs/R20/coordination/r20_executor-running-1.json",
-        "actual_model": null
-      },
-      {
         "worker": "/root/r20_acceptor",
         "state": "running",
-        "evidence": "runs/R20/coordination/r20_acceptor-running-3.json",
+        "evidence": "runs/R20/coordination/r20_acceptor-running-4.json",
         "actual_model": null
       }
     ],
@@ -8775,19 +8763,19 @@
     "current_task_process_state": "R20 original data trial; actual pending actors recorded separately.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R19/publication/observation-41.json",
-    "current_source_commit": "d53acd6c94f22d01b03544730faccfa5b82787a3",
+    "current_publication": "runs/R19/publication/observation-43.json",
+    "current_source_commit": "fc07cd1e3b76751889b6b5422b4f798d7daa8978",
     "current_source_ci": [
       {
-        "conclusion": "",
-        "databaseId": 37831075599,
-        "headSha": "d53acd6c94f22d01b03544730faccfa5b82787a3",
-        "status": "in_progress",
-        "url": "https://github.com/Urizums/A111/actions/runs/37831075599",
+        "conclusion": "success",
+        "databaseId": 37832410218,
+        "headSha": "fc07cd1e3b76751889b6b5422b4f798d7daa8978",
+        "status": "completed",
+        "url": "https://github.com/Urizums/A111/actions/runs/37832410218",
         "workflowName": "Cloud delivery validation"
       }
     ],
-    "current_source_ci_observed": "2026-10-08T19:20:26.888486+00:00",
+    "current_source_ci_observed": "2026-10-08T19:53:23.373445+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
     "R19_current_level": 4,
@@ -9472,6 +9460,18 @@
         "worker": "/root/r20_builder",
         "state": "completed",
         "evidence": "runs/R20/coordination/r20_builder-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_acceptor-completed-3.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_executor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_executor-completed-1.json",
         "actual_model": null
       }
     ],
@@ -12178,6 +12178,16 @@
       "at": "2026-10-08T19:20:26.888500+00:00",
       "command": "observe_R19_main_publication",
       "evidence": "runs/R19/publication/observation-41.json"
+    },
+    {
+      "at": "2026-10-08T19:30:34.255216+00:00",
+      "command": "observe_R19_main_publication",
+      "evidence": "runs/R19/publication/observation-42.json"
+    },
+    {
+      "at": "2026-10-08T19:53:23.373457+00:00",
+      "command": "observe_R19_main_publication",
+      "evidence": "runs/R19/publication/observation-43.json"
     }
   ],
   "task_expansion_basis": [

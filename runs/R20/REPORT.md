@@ -27,3 +27,13 @@ R20-03设计终态：root实际读全部五份流程文档、handoff及报告，
 独立准备首版两条实际退出1保留。Root检查发现天气样本接收用缺失store_id匹配、决策原点未读origin，首个实际例碰巧同区并不证明通用接口正确；同一接收者仅在preparation-v2修正来源键及原点，执行同区/跨区控制exit0，原准备不改。新域3文件锁与首版7文件锁分开。准备未收到作者成果，也未看留出真值，所有正式门仍unverified；root准备反馈不是模型答案。
 
 R20-04真实派发/root/r20_executor：只收原件和冻结设计，写execution，外部门、独立准备及留出真值不提供。当前已开始实际从raw到整题程序/预测/备货/图表/完整中文论文，终态后才冻结给独立者。此阶段启动与完整生产完成分开记录，具体实际返回在coordination/executor-dispatch.json。
+
+## 完整产物冻结与正式独立接收
+
+执行者已完成并停止写入。唯一正式产物是execution/delivery：完整中文源稿与11页PDF、1344预测/1344整数备货、真实历史实验、83日误差情景及7张分析图。Root完整读取README和中文稿，实际核验作者600项manifest字节与18条终态命令；两条作者接收检查exit1仍保留。Root总锁execution-lock.json覆盖602文件（含manifest和最终包装回执），实际检查/冻结exit0。此前所有版本都保留，但output/output_initial/output_corrected/final不得被误认作当前交付。完整生产不等于独立五门通过。
+
+作者自检发现并修复校准向量末端标签未到达、概率CSV舍入未归一化、整数区间端点精度漂移，并修正首版论文分页/单位。受影响链实际从raw重跑，013/014终态exit0，015当前作者重算exit0；这些是作者证据，未替代独立判定。现有旧修复与原60任务身份没有重置。
+
+独立接收者原件准备第三域已终态，6文件另锁；首轮天气搜索范围/晚到版本判断不当及修订回执仍保留，只算接收工具准备。正式首判由同一独立上下文/root/r20_acceptor在review/initial进行，实际followup派发已返回。只接收原始原件、外部五门和当前被冻结实际程序/论文/结果，无预期数字/作者自检判定；从raw重跑、重算关键实验/资源/损失、完整中文及最终PDF逐页实际查看。未来真值只在此次第一次生产冻结后开放，用于该版本留出评价，不反馈选模；若后续修订，其知情属性必须保留。当前d1–d5仍unverified。
+
+当前main源码fc07cd1的三项CI均completed/success，完整任务返回在coordination/design-ci-observation-2-command.json；终态远端观察为R19/publication/observation-43.json。该CI尚不包含本次新602文件锁与正式接收，不能扩充其证明范围。技能C12九份Markdown及派生工作流5份Markdown均未加入算法、测试或执行器。

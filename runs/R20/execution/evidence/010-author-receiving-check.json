@@ -1,0 +1,32 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/execution/code/selfcheck.py",
+    "--out",
+    "runs/R20/execution/final",
+    "--compare",
+    "runs/R20/execution/output_corrected"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T19:50:39.754911+00:00",
+    "monotonic_ns": 108471421000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T19:50:40.895534+00:00",
+    "monotonic_ns": 108472562000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\execution\\code\\selfcheck.py\", line 94, in <module>\r\n    if __name__=='__main__': main()\r\n                             ^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\execution\\code\\selfcheck.py\", line 44, in main\r\n    np.testing.assert_allclose(objective,ds.scenario_mean_loss_yuan,atol=1e-6,rtol=0)\r\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\testing\\_private\\utils.py\", line 1780, in assert_allclose\r\n    assert_array_compare(compare, actual, desired, err_msg=str(err_msg),\r\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\numpy\\testing\\_private\\utils.py\", line 988, in assert_array_compare\r\n    raise AssertionError(msg)\r\nAssertionError: \r\nNot equal to tolerance rtol=0, atol=1e-06\r\n\r\nMismatched elements: 14 / 14 (100%)\r\nFirst 5 mismatches are at indices:\r\n [0]: 1162.5125804959025 (ACTUAL), 1162.5125777057 (DESIRED)\r\n [1]: 1270.232289938029 (ACTUAL), 1270.2322868894 (DESIRED)\r\n [2]: 2568.6885587266393 (ACTUAL), 2568.6885525618 (DESIRED)\r\n [3]: 2556.062502833085 (ACTUAL), 2556.0624966986 (DESIRED)\r\n [4]: 1229.6569173204466 (ACTUAL), 1229.656914369 (DESIRED)\r\nMax absolute difference among violations: 6.16483931e-06\r\nMax relative difference among violations: 2.4002195e-09\r\n ACTUAL: array([1162.51258 , 1270.23229 , 2568.688559, 2556.062503, 1229.656917,\r\n       1203.707375, 1237.479927,  793.191158,  814.836576, 1519.809293,\r\n       1509.832839,  807.910902,  802.590464,  809.186491])\r\n DESIRED: array([1162.512578, 1270.232287, 2568.688553, 2556.062497, 1229.656914,\r\n       1203.707373, 1237.479924,  793.191156,  814.836574, 1519.80929 ,\r\n       1509.832836,  807.9109  ,  802.590462,  809.186489])\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMFxleGVjdXRpb25cY29kZVxzZWxmY2hlY2sucHkiLCBsaW5lIDk0LCBpbiA8bW9kdWxlPg0KICAgIGlmIF9fbmFtZV9fPT0nX19tYWluX18nOiBtYWluKCkNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eXl5eDQogIEZpbGUgIkM6XFVzZXJzXGFkbWluXERvY3VtZW50c1xDb2RleFwyMDI2LTEwLTA1XHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcd29ya1xBMTExXHJ1bnNcUjIwXGV4ZWN1dGlvblxjb2RlXHNlbGZjaGVjay5weSIsIGxpbmUgNDQsIGluIG1haW4NCiAgICBucC50ZXN0aW5nLmFzc2VydF9hbGxjbG9zZShvYmplY3RpdmUsZHMuc2NlbmFyaW9fbWVhbl9sb3NzX3l1YW4sYXRvbD0xZS02LHJ0b2w9MCkNCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cQXBwRGF0YVxMb2NhbFxQcm9ncmFtc1xQeXRob25cUHl0aG9uMzEyXExpYlxzaXRlLXBhY2thZ2VzXG51bXB5XHRlc3RpbmdcX3ByaXZhdGVcdXRpbHMucHkiLCBsaW5lIDE3ODAsIGluIGFzc2VydF9hbGxjbG9zZQ0KICAgIGFzc2VydF9hcnJheV9jb21wYXJlKGNvbXBhcmUsIGFjdHVhbCwgZGVzaXJlZCwgZXJyX21zZz1zdHIoZXJyX21zZyksDQogIEZpbGUgIkM6XFVzZXJzXGFkbWluXEFwcERhdGFcTG9jYWxcUHJvZ3JhbXNcUHl0aG9uXFB5dGhvbjMxMlxMaWJcc2l0ZS1wYWNrYWdlc1xudW1weVx0ZXN0aW5nXF9wcml2YXRlXHV0aWxzLnB5IiwgbGluZSA5ODgsIGluIGFzc2VydF9hcnJheV9jb21wYXJlDQogICAgcmFpc2UgQXNzZXJ0aW9uRXJyb3IobXNnKQ0KQXNzZXJ0aW9uRXJyb3I6IA0KTm90IGVxdWFsIHRvIHRvbGVyYW5jZSBydG9sPTAsIGF0b2w9MWUtMDYNCg0KTWlzbWF0Y2hlZCBlbGVtZW50czogMTQgLyAxNCAoMTAwJSkNCkZpcnN0IDUgbWlzbWF0Y2hlcyBhcmUgYXQgaW5kaWNlczoNCiBbMF06IDExNjIuNTEyNTgwNDk1OTAyNSAoQUNUVUFMKSwgMTE2Mi41MTI1Nzc3MDU3IChERVNJUkVEKQ0KIFsxXTogMTI3MC4yMzIyODk5MzgwMjkgKEFDVFVBTCksIDEyNzAuMjMyMjg2ODg5NCAoREVTSVJFRCkNCiBbMl06IDI1NjguNjg4NTU4NzI2NjM5MyAoQUNUVUFMKSwgMjU2OC42ODg1NTI1NjE4IChERVNJUkVEKQ0KIFszXTogMjU1Ni4wNjI1MDI4MzMwODUgKEFDVFVBTCksIDI1NTYuMDYyNDk2Njk4NiAoREVTSVJFRCkNCiBbNF06IDEyMjkuNjU2OTE3MzIwNDQ2NiAoQUNUVUFMKSwgMTIyOS42NTY5MTQzNjkgKERFU0lSRUQpDQpNYXggYWJzb2x1dGUgZGlmZmVyZW5jZSBhbW9uZyB2aW9sYXRpb25zOiA2LjE2NDgzOTMxZS0wNg0KTWF4IHJlbGF0aXZlIGRpZmZlcmVuY2UgYW1vbmcgdmlvbGF0aW9uczogMi40MDAyMTk1ZS0wOQ0KIEFDVFVBTDogYXJyYXkoWzExNjIuNTEyNTggLCAxMjcwLjIzMjI5ICwgMjU2OC42ODg1NTksIDI1NTYuMDYyNTAzLCAxMjI5LjY1NjkxNywNCiAgICAgICAxMjAzLjcwNzM3NSwgMTIzNy40Nzk5MjcsICA3OTMuMTkxMTU4LCAgODE0LjgzNjU3NiwgMTUxOS44MDkyOTMsDQogICAgICAgMTUwOS44MzI4MzksICA4MDcuOTEwOTAyLCAgODAyLjU5MDQ2NCwgIDgwOS4xODY0OTFdKQ0KIERFU0lSRUQ6IGFycmF5KFsxMTYyLjUxMjU3OCwgMTI3MC4yMzIyODcsIDI1NjguNjg4NTUzLCAyNTU2LjA2MjQ5NywgMTIyOS42NTY5MTQsDQogICAgICAgMTIwMy43MDczNzMsIDEyMzcuNDc5OTI0LCAgNzkzLjE5MTE1NiwgIDgxNC44MzY1NzQsIDE1MTkuODA5MjkgLA0KICAgICAgIDE1MDkuODMyODM2LCAgODA3LjkxMDkgICwgIDgwMi41OTA0NjIsICA4MDkuMTg2NDg5XSkNCg=="
+}

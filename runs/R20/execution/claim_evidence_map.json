@@ -1,0 +1,250 @@
+[
+  {
+    "claim_id": "C1",
+    "original_requirement": "Q1 口径可靠性",
+    "results": [
+      {
+        "path": "delivery/data/audit.json",
+        "sha256": "8f0d1ca79200436ad26b044d55ba34926b23623872338bdab824fa7a1ef3248f"
+      },
+      {
+        "path": "delivery/data/final_snapshot.csv",
+        "sha256": "f9949dee13a66f8d7e151b0b1a6c883113ae7f3acb55b5aa5667d4db923515a3"
+      },
+      {
+        "path": "delivery/data/snapshot_boundaries.csv",
+        "sha256": "1c776ffa2e91299ff3acbeb4ab452ca14193589b6b93344f65544620fce3ccb0"
+      }
+    ],
+    "columns_filter_computation": "原行去重与最高可用revision；origin和available_at筛选；逐原点训练数和later_changed_train_labels",
+    "paper_location": "2 / 表2",
+    "figures": [],
+    "raw_origin": "runs/R20/inputs/raw/ with hashes in delivery/data/audit.json",
+    "status": "author_recomputed",
+    "limitation": "身份与时间口径，不证明预测能力"
+  },
+  {
+    "claim_id": "C2",
+    "original_requirement": "Q1 日期、商品、门店规律",
+    "results": [
+      {
+        "path": "delivery/data/descriptive_panel.csv",
+        "sha256": "dceb865827859f0564e10f5bc766d23c4ad794bc7b2d31b8b8a24fb32f420aa9"
+      },
+      {
+        "path": "delivery/results/descriptive_service_date.csv",
+        "sha256": "d673fbbdc2ac46a710b845cbbbcee4058d123d9286e41da481c40fe82432a54f"
+      },
+      {
+        "path": "delivery/results/descriptive_weekday_monday_zero.csv",
+        "sha256": "0c9ad0e55bff67fa0bbf092683dca16e7300df467c0cfc0859e89d1dc77aaa0c"
+      },
+      {
+        "path": "delivery/results/descriptive_item_id.csv",
+        "sha256": "e6c464cc734fed921b54fd095369a7345be3675dcd74e113ffabe7836cf8320f"
+      },
+      {
+        "path": "delivery/results/descriptive_store_id.csv",
+        "sha256": "9d8255954479ec8a0f8801614a9ac6331aa4046a605c350c30b051b4ce9ad64f"
+      },
+      {
+        "path": "delivery/results/descriptive_holiday.csv",
+        "sha256": "4cb884a608bbccfa71b67da9c7f73487bc819e0c83409f231dde720da34a3a2b"
+      }
+    ],
+    "columns_filter_computation": "最终原点快照按service_date sum；各组demand_units mean，holiday独立日期nunique",
+    "paper_location": "3",
+    "figures": [
+      {
+        "path": "delivery/figures/01_daily.png",
+        "sha256": "5174be6ef4847fbc9800851ec5102bec9866b9c3868cbb5b4096b4f850235973"
+      },
+      {
+        "path": "delivery/figures/02_groups.png",
+        "sha256": "76c91cae3785d5265cf4e274632c4fdd9ff517804748869e90e96271f2f9b680"
+      }
+    ],
+    "raw_origin": "runs/R20/inputs/raw/ with hashes in delivery/data/audit.json",
+    "status": "author_recomputed",
+    "limitation": "相关描述，不解释因果"
+  },
+  {
+    "claim_id": "C3",
+    "original_requirement": "Q1 选模、外样本误差及覆盖",
+    "results": [
+      {
+        "path": "delivery/results/backtest_metrics.csv",
+        "sha256": "05aad9edaf1ed5dd9624493fb5347808b9718c6013b191827f261aa7540c71a6"
+      },
+      {
+        "path": "delivery/results/historical_predictions_plans.csv",
+        "sha256": "ece32f8a364d420c6ebc7a57de1c38f481580c4ccb250540e0949bdd9975dba0"
+      },
+      {
+        "path": "delivery/results/selection.json",
+        "sha256": "2018bd01bf4be79e8a01a62f97bae2fd88682e892484748135940dc2bf87ba02"
+      },
+      {
+        "path": "delivery/results/holdout_by_horizon.csv",
+        "sha256": "5db2e1bb8190f50b6dd1de85f8928593dc48f7eff7647eb728401f1f174e4d65"
+      },
+      {
+        "path": "delivery/results/holdout_by_item.csv",
+        "sha256": "1217a2e49cfbebb872b082c075f423668acbe4135a342a18b5555387491f74ea"
+      },
+      {
+        "path": "delivery/results/holdout_by_store.csv",
+        "sha256": "37d49af0da2fe6557d8353d8fc22c2733f4b18002f2d250488adc909b204b1ba"
+      }
+    ],
+    "columns_filter_computation": "选模stage=selection,policy=stochastic按model均值loss；保留stage=holdout；MAE=mean abs(actual-point), inclusive interval coverage",
+    "paper_location": "4-5 / 表3-4",
+    "figures": [
+      {
+        "path": "delivery/figures/03_holdout_horizon.png",
+        "sha256": "166636b186f9883c5c4f4f236c536482b6f00c9d9e1b0c7106bcac5c68bbe732"
+      },
+      {
+        "path": "delivery/figures/04_holdout_item.png",
+        "sha256": "f752e41da96de292ddbb0d8cc03a201c85654aacb790ef2b76fa031964017ae3"
+      }
+    ],
+    "raw_origin": "runs/R20/inputs/raw/ with hashes in delivery/data/audit.json",
+    "status": "author_recomputed",
+    "limitation": "时间冻结且保留未调参；无未来覆盖保证"
+  },
+  {
+    "claim_id": "C4",
+    "original_requirement": "Q1 全期预测和分布",
+    "results": [
+      {
+        "path": "delivery/results/future_predictions.csv",
+        "sha256": "5a488defed0058422a70bda5a1d6376d7aedcfab0d46ad773f987353818df086"
+      },
+      {
+        "path": "delivery/uncertainty/future_scenarios.csv",
+        "sha256": "23092cade1606dc514fb6bfbff286d2f26907a4fe65c29919484897256a0c7c8"
+      },
+      {
+        "path": "delivery/uncertainty/residual_vectors.csv",
+        "sha256": "db813fba8c84c5a1247fcb0917e2132fadf9c2df93d982c26dea0f6865cb7ab1"
+      },
+      {
+        "path": "delivery/uncertainty/residual_lineage.csv",
+        "sha256": "8a558fabd3a2d97cbd81a0b7ec6661ac5a126097a91dd38d365deb9fe6f94549"
+      },
+      {
+        "path": "delivery/data/final_feature_lineage.csv",
+        "sha256": "2829c70ddbffdf25cfd2108711373d8ab5848db8169b10afed8406a03ad6c7d8"
+      }
+    ],
+    "columns_filter_computation": "1344笛卡尔键，point加同日外样本error向量非负截断；ready<=origin；等权归一；经验分位数端点10位小数",
+    "paper_location": "5 / 7",
+    "figures": [],
+    "raw_origin": "runs/R20/inputs/raw/ with hashes in delivery/data/audit.json",
+    "status": "author_recomputed",
+    "limitation": "同日相关被保留，跨日场景依赖只是压力约定"
+  },
+  {
+    "claim_id": "C5",
+    "original_requirement": "Q2 整数方案、求解及分配",
+    "results": [
+      {
+        "path": "delivery/results/future_replenishment.csv",
+        "sha256": "6bb23bfccad61ef06fe27d29135eb1d5e788a26576ad617782a2453b6c2bb028"
+      },
+      {
+        "path": "delivery/results/decision_summary.csv",
+        "sha256": "0636301b4be020aa58755d8cefe27cd44ec7a84b2081a6e24f920f06de7be85a"
+      },
+      {
+        "path": "delivery/results/solver_evidence_future.csv",
+        "sha256": "3446e49e71cf5d7714accad07477cc6de8d2490f1d757e5a2fdb8278043e12ba"
+      },
+      {
+        "path": "delivery/results/solver_evidence_history.csv",
+        "sha256": "59a392eb05b39a9bb3cff8916da2cc3e37754c2309ef418c4f3b31e3b72a48db"
+      },
+      {
+        "path": "delivery/data/optimizer_tests.json",
+        "sha256": "a2babd4a5e2b577a113c4ac2b4add3302b1000ccf2c0b88f36017e26726a3c40"
+      },
+      {
+        "path": "delivery/results/allocation_item_id.csv",
+        "sha256": "a995ba376d2958a6b174f8042f6063743cd53e41fb1555030439513cb979320b"
+      },
+      {
+        "path": "delivery/results/allocation_store_id.csv",
+        "sha256": "1f5f8211bbe55896d1b6e63e5ea51d5452cf7621623abbc70b04c893326cff46"
+      }
+    ],
+    "columns_filter_computation": "由raw成本与max核对q；g平均缺货+waste；每日件量sum q与sum c*q；按店/商品sum；solver objective/bound/gap",
+    "paper_location": "6-7 / 表5-6",
+    "figures": [
+      {
+        "path": "delivery/figures/05_future_resources.png",
+        "sha256": "44d7a3d4c46c7d742fa18a923ce9e90d498ed2e38ea6afd1d0910dac2355fade"
+      },
+      {
+        "path": "delivery/figures/06_allocation.png",
+        "sha256": "18cccc49c6ca07f2de2a484440a0d9f101634901bb23074401af1af187784b15"
+      }
+    ],
+    "raw_origin": "runs/R20/inputs/raw/ with hashes in delivery/data/audit.json",
+    "status": "author_recomputed",
+    "limitation": "只证明经验分布下优化及硬可行性"
+  },
+  {
+    "claim_id": "C6",
+    "original_requirement": "Q2 风险与资源取舍",
+    "results": [
+      {
+        "path": "delivery/results/sensitivity.csv",
+        "sha256": "1600c7ce1e90c9ceb6ed60e59201db78b0492b24142343529df1c6bca5e17160"
+      },
+      {
+        "path": "delivery/results/decision_summary.csv",
+        "sha256": "0636301b4be020aa58755d8cefe27cd44ec7a84b2081a6e24f920f06de7be85a"
+      }
+    ],
+    "columns_filter_computation": "case holiday/weather为指定需求倍数的固定计划与重优化期望；case resource按capacity/budget比较；q_l1_change=sum abs(q_alt-q)",
+    "paper_location": "8 / 表7-8",
+    "figures": [
+      {
+        "path": "delivery/figures/07_sensitivity.png",
+        "sha256": "64e2bc3fe37cedd2513dd39f281e13f967685fc488928ce4a341351a0f2a6a4d"
+      }
+    ],
+    "raw_origin": "runs/R20/inputs/raw/ with hashes in delivery/data/audit.json",
+    "status": "author_recomputed",
+    "limitation": "压力假设非观测；改变资源行不替代原约束"
+  },
+  {
+    "claim_id": "C7",
+    "original_requirement": "Q3 完整论文与可复现",
+    "results": [
+      {
+        "path": "delivery/paper/paper.md",
+        "sha256": "b36aa54b54435eac350582125d0f506b5f755c2bd456876530e8c1465743a908"
+      },
+      {
+        "path": "delivery/paper/paper.pdf",
+        "sha256": "fccb98acd2785f6db5fccc45c97e43fc99d2e353e7fb60613bc903a93da2d1cb"
+      },
+      {
+        "path": "delivery/environment.json",
+        "sha256": "455cfb939d831c7fa265ff57014792cc94ccf1645f3a29270ae0d48bb88784b1"
+      },
+      {
+        "path": "delivery/results/run_summary.json",
+        "sha256": "24fcacdd65b3e9ca1caf483f8dd2378a3c90bdd3473b28090d8cf7ef2793d84e"
+      }
+    ],
+    "columns_filter_computation": "同一report块生成源稿与PDF；013/014从原件完整重跑；015全表重算；016-017最终11页逐页核查",
+    "paper_location": "9 / 表9",
+    "figures": [],
+    "raw_origin": "runs/R20/inputs/raw/ with hashes in delivery/data/audit.json",
+    "status": "author_recomputed",
+    "limitation": "作者接收不是独立通过"
+  }
+]

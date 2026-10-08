@@ -1,0 +1,20 @@
+{
+  "schema": "freshfood-experiment/1",
+  "timezone": "Asia/Shanghai",
+  "precalibration_origin": "2026-07-08T18:00:00",
+  "selection_origins": ["2026-07-22T18:00:00", "2026-08-05T18:00:00", "2026-08-19T18:00:00"],
+  "calibration_origin": "2026-09-02T18:00:00",
+  "holdout_origin": "2026-09-16T18:00:00",
+  "evaluation_label_cutoff": "2026-10-04T18:00:00",
+  "horizon_days": 14,
+  "candidates": [{"name":"weekly_median56","kind":"weekly","window":56,"stat":"median"},{"name":"weekly_mean84","kind":"weekly","window":84,"stat":"mean"},{"name":"shared_ridge10","kind":"ridge","alpha":10,"holiday_scale":0.3},{"name":"shared_ridge100","kind":"ridge","alpha":100,"holiday_scale":0.3}],
+  "selection_criterion": "minimum mean daily realized stochastic-policy loss on three selection origins; exact tie breaks by candidate order",
+  "features": "pair intercept; item-weekday; item linear time in 30-day units; item known promotion or training recent56 item mean for unknown; global shrunken holiday; settlement and weather excluded",
+  "uncertainty": "empirical full-day out-of-origin additive residual vectors from strictly earlier completed forecast windows; equal weights; truncate demand at zero; marginal central 90% interval",
+  "optimizer": "scipy milp binary marginal units; two daily resources; relative mip gap 1e-9; positive marginal improvements only; deterministic count aggregation",
+  "sensitivity": {"holiday_demand_multipliers":[0.8,1.0,1.2],"weather_demand_multipliers":[0.9,1.1],"resource_pairs":[[1440,5400],[1600,6000],[1760,6600],[1600,5400],[1440,6000]]},
+  "seed": 20261001,
+  "numeric_tolerance": 1e-7,
+  "model": null, "tokens": null, "cost": null,
+  "frozen_before_any_model_performance": true
+}

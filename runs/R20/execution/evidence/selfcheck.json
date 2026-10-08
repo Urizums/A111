@@ -1,0 +1,480 @@
+{
+  "schema": "freshfood-author-selfcheck/1",
+  "scope": "author recomputation; not independent acceptance",
+  "pass": true,
+  "raw_snapshot_rows": 14592,
+  "future_prediction_rows": 1344,
+  "future_plan_rows": 1344,
+  "daily_exact_money_checks": [
+    {
+      "date": "2026-10-01",
+      "q": 1600,
+      "cost_decimal": "5626"
+    },
+    {
+      "date": "2026-10-02",
+      "q": 1600,
+      "cost_decimal": "5639"
+    },
+    {
+      "date": "2026-10-03",
+      "q": 1600,
+      "cost_decimal": "5635"
+    },
+    {
+      "date": "2026-10-04",
+      "q": 1600,
+      "cost_decimal": "5620"
+    },
+    {
+      "date": "2026-10-05",
+      "q": 1600,
+      "cost_decimal": "5644"
+    },
+    {
+      "date": "2026-10-06",
+      "q": 1600,
+      "cost_decimal": "5635"
+    },
+    {
+      "date": "2026-10-07",
+      "q": 1600,
+      "cost_decimal": "5621"
+    },
+    {
+      "date": "2026-10-08",
+      "q": 1600,
+      "cost_decimal": "5642"
+    },
+    {
+      "date": "2026-10-09",
+      "q": 1600,
+      "cost_decimal": "5635"
+    },
+    {
+      "date": "2026-10-10",
+      "q": 1600,
+      "cost_decimal": "5623"
+    },
+    {
+      "date": "2026-10-11",
+      "q": 1600,
+      "cost_decimal": "5610"
+    },
+    {
+      "date": "2026-10-12",
+      "q": 1600,
+      "cost_decimal": "5643"
+    },
+    {
+      "date": "2026-10-13",
+      "q": 1600,
+      "cost_decimal": "5640"
+    },
+    {
+      "date": "2026-10-14",
+      "q": 1600,
+      "cost_decimal": "5638"
+    }
+  ],
+  "actual_availability_rejections": [
+    "actual 96 late September30 rows",
+    "actual later revisions at historical origin"
+  ],
+  "scenario_objective_recomputed_all_days": true,
+  "stored_scenario_weight_sum": 1.0000000023999998,
+  "weight_reconstruction": "normalize stored 10-decimal equal weights before expectation; raw sum must pass frozen 1e-7 tolerance",
+  "historical_metric_groups_recomputed": 32,
+  "feature_lineage_files_checked": 21,
+  "clean_rerun_csv_comparison": [
+    {
+      "path": "data\\calibration_lineage_2026-07-22_shared_ridge10.csv",
+      "rows": 11,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-07-22_shared_ridge100.csv",
+      "rows": 11,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-07-22_weekly_mean84.csv",
+      "rows": 11,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-07-22_weekly_median56.csv",
+      "rows": 11,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-08-05_shared_ridge10.csv",
+      "rows": 25,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-08-05_shared_ridge100.csv",
+      "rows": 25,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-08-05_weekly_mean84.csv",
+      "rows": 25,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-08-05_weekly_median56.csv",
+      "rows": 25,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-08-19_shared_ridge10.csv",
+      "rows": 39,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-08-19_shared_ridge100.csv",
+      "rows": 39,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-08-19_weekly_mean84.csv",
+      "rows": 39,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-08-19_weekly_median56.csv",
+      "rows": 39,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-09-02_shared_ridge10.csv",
+      "rows": 53,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-09-02_weekly_median56.csv",
+      "rows": 53,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-09-16_shared_ridge10.csv",
+      "rows": 67,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\calibration_lineage_2026-09-16_weekly_median56.csv",
+      "rows": 67,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\descriptive_panel.csv",
+      "rows": 14592,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\evaluation_labels.csv",
+      "rows": 14688,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-07-08_shared_ridge10.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-07-08_shared_ridge100.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-07-08_weekly_mean84.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-07-08_weekly_median56.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-07-22_shared_ridge10.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-07-22_shared_ridge100.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-07-22_weekly_mean84.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-07-22_weekly_median56.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-08-05_shared_ridge10.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-08-05_shared_ridge100.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-08-05_weekly_mean84.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-08-05_weekly_median56.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-08-19_shared_ridge10.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-08-19_shared_ridge100.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-08-19_weekly_mean84.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-08-19_weekly_median56.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-09-02_shared_ridge10.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-09-02_weekly_median56.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-09-16_shared_ridge10.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\feature_lineage_2026-09-16_weekly_median56.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\final_feature_lineage.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\final_snapshot.csv",
+      "rows": 14592,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\rejected_late_labels.csv",
+      "rows": 96,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\snapshot_2026-07-08.csv",
+      "rows": 6528,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\snapshot_2026-07-22.csv",
+      "rows": 7872,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\snapshot_2026-08-05.csv",
+      "rows": 9216,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\snapshot_2026-08-19.csv",
+      "rows": 10560,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\snapshot_2026-09-02.csv",
+      "rows": 11904,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\snapshot_2026-09-16.csv",
+      "rows": 13248,
+      "ignored_columns": []
+    },
+    {
+      "path": "data\\snapshot_boundaries.csv",
+      "rows": 6,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\allocation_item_id.csv",
+      "rows": 8,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\allocation_store_id.csv",
+      "rows": 12,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\backtest_metrics.csv",
+      "rows": 32,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\decision_summary.csv",
+      "rows": 14,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\descriptive_holiday.csv",
+      "rows": 2,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\descriptive_item_id.csv",
+      "rows": 8,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\descriptive_service_date.csv",
+      "rows": 152,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\descriptive_store_id.csv",
+      "rows": 12,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\descriptive_weekday_monday_zero.csv",
+      "rows": 7,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\descriptive_zone_id.csv",
+      "rows": 3,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\future_predictions.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\future_replenishment.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\historical_predictions_plans.csv",
+      "rows": 43008,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\holdout_by_horizon.csv",
+      "rows": 14,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\holdout_by_item.csv",
+      "rows": 8,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\holdout_by_store.csv",
+      "rows": 12,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\sensitivity.csv",
+      "rows": 9,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\sensitivity_plan_holiday_0.8.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\sensitivity_plan_holiday_1.2.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\sensitivity_plan_weather_0.9.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\sensitivity_plan_weather_1.1.csv",
+      "rows": 1344,
+      "ignored_columns": []
+    },
+    {
+      "path": "results\\solver_evidence_future.csv",
+      "rows": 14,
+      "ignored_columns": [
+        "seconds"
+      ]
+    },
+    {
+      "path": "results\\solver_evidence_history.csv",
+      "rows": 224,
+      "ignored_columns": [
+        "seconds"
+      ]
+    },
+    {
+      "path": "uncertainty\\future_scenarios.csv",
+      "rows": 111552,
+      "ignored_columns": []
+    },
+    {
+      "path": "uncertainty\\residual_lineage.csv",
+      "rows": 83,
+      "ignored_columns": []
+    },
+    {
+      "path": "uncertainty\\residual_vectors.csv",
+      "rows": 83,
+      "ignored_columns": []
+    }
+  ],
+  "pdf_pages": 11,
+  "pdf_text_key_values_checked": true,
+  "visual_review": "separately recorded after latest render",
+  "unknowns": {
+    "model": null,
+    "tokens": null,
+    "cost": null,
+    "future_true_demand": null
+  },
+  "limits": [
+    "future performance/coverage not observable",
+    "full independent receiving review pending",
+    "stress multipliers assumed; long weather migration unverified",
+    "not a universal proof of every software branch"
+  ]
+}

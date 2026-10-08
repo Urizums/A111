@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import sys,importlib.util,shutil,json; print(sys.version); print({k:bool(importlib.util.find_spec(k)) for k in ['numpy','pandas','scipy','sklearn','matplotlib','reportlab','pypdf','fitz']}); print({k:shutil.which(k) for k in ['pdftoppm','node']})"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T19:25:09.026720+00:00",
+    "monotonic_ns": 106940718000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T19:25:09.123061+00:00",
+    "monotonic_ns": 106940812000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "3.12.8 (tags/v3.12.8:2dc476b, Dec  3 2024, 19:30:04) [MSC v.1942 64 bit (AMD64)]\r\n{'numpy': True, 'pandas': True, 'scipy': True, 'sklearn': True, 'matplotlib': True, 'reportlab': True, 'pypdf': True, 'fitz': True}\r\n{'pdftoppm': 'C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\poppler\\\\Library\\\\bin\\\\pdftoppm.EXE', 'node': 'C:\\\\Program Files\\\\nodejs\\\\node.EXE'}\r\n",
+  "stderr": "",
+  "stdout_base64": "My4xMi44ICh0YWdzL3YzLjEyLjg6MmRjNDc2YiwgRGVjICAzIDIwMjQsIDE5OjMwOjA0KSBbTVNDIHYuMTk0MiA2NCBiaXQgKEFNRDY0KV0NCnsnbnVtcHknOiBUcnVlLCAncGFuZGFzJzogVHJ1ZSwgJ3NjaXB5JzogVHJ1ZSwgJ3NrbGVhcm4nOiBUcnVlLCAnbWF0cGxvdGxpYic6IFRydWUsICdyZXBvcnRsYWInOiBUcnVlLCAncHlwZGYnOiBUcnVlLCAnZml0eic6IFRydWV9DQp7J3BkZnRvcHBtJzogJ0M6XFxVc2Vyc1xcYWRtaW5cXC5jYWNoZVxcY29kZXgtcnVudGltZXNcXGNvZGV4LXByaW1hcnktcnVudGltZVxcZGVwZW5kZW5jaWVzXFxuYXRpdmVcXHBvcHBsZXJcXExpYnJhcnlcXGJpblxccGRmdG9wcG0uRVhFJywgJ25vZGUnOiAnQzpcXFByb2dyYW0gRmlsZXNcXG5vZGVqc1xcbm9kZS5FWEUnfQ0K",
+  "stderr_base64": ""
+}

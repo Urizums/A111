@@ -1,0 +1,32 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/execution/code/selfcheck.py",
+    "--out",
+    "runs/R20/execution/delivery",
+    "--compare",
+    "runs/R20/execution/clean_rerun"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T19:56:40.205409+00:00",
+    "monotonic_ns": 108831875000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T19:56:42.712788+00:00",
+    "monotonic_ns": 108834375000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"schema\": \"freshfood-author-selfcheck/1\",\r\n  \"scope\": \"author recomputation; not independent acceptance\",\r\n  \"pass\": true,\r\n  \"raw_snapshot_rows\": 14592,\r\n  \"future_prediction_rows\": 1344,\r\n  \"future_plan_rows\": 1344,\r\n  \"actual_availability_rejections\": [\r\n    \"actual 96 late September30 rows\",\r\n    \"actual later revisions at historical origin\"\r\n  ],\r\n  \"scenario_objective_recomputed_all_days\": true,\r\n  \"stored_scenario_weight_sum\": 1.0000000023999998,\r\n  \"weight_reconstruction\": \"normalize stored 10-decimal equal weights before expectation; raw sum must pass frozen 1e-7 tolerance\",\r\n  \"historical_metric_groups_recomputed\": 32,\r\n  \"feature_lineage_files_checked\": 21,\r\n  \"pdf_pages\": 11,\r\n  \"pdf_text_key_values_checked\": true,\r\n  \"visual_review\": \"separately recorded after latest render\",\r\n  \"unknowns\": {\r\n    \"model\": null,\r\n    \"tokens\": null,\r\n    \"cost\": null,\r\n    \"future_true_demand\": null\r\n  },\r\n  \"limits\": [\r\n    \"future performance/coverage not observable\",\r\n    \"full independent receiving review pending\",\r\n    \"stress multipliers assumed; long weather migration unverified\",\r\n    \"not a universal proof of every software branch\"\r\n  ]\r\n}\r\nclean CSV comparisons: 74\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAic2NoZW1hIjogImZyZXNoZm9vZC1hdXRob3Itc2VsZmNoZWNrLzEiLA0KICAic2NvcGUiOiAiYXV0aG9yIHJlY29tcHV0YXRpb247IG5vdCBpbmRlcGVuZGVudCBhY2NlcHRhbmNlIiwNCiAgInBhc3MiOiB0cnVlLA0KICAicmF3X3NuYXBzaG90X3Jvd3MiOiAxNDU5MiwNCiAgImZ1dHVyZV9wcmVkaWN0aW9uX3Jvd3MiOiAxMzQ0LA0KICAiZnV0dXJlX3BsYW5fcm93cyI6IDEzNDQsDQogICJhY3R1YWxfYXZhaWxhYmlsaXR5X3JlamVjdGlvbnMiOiBbDQogICAgImFjdHVhbCA5NiBsYXRlIFNlcHRlbWJlcjMwIHJvd3MiLA0KICAgICJhY3R1YWwgbGF0ZXIgcmV2aXNpb25zIGF0IGhpc3RvcmljYWwgb3JpZ2luIg0KICBdLA0KICAic2NlbmFyaW9fb2JqZWN0aXZlX3JlY29tcHV0ZWRfYWxsX2RheXMiOiB0cnVlLA0KICAic3RvcmVkX3NjZW5hcmlvX3dlaWdodF9zdW0iOiAxLjAwMDAwMDAwMjM5OTk5OTgsDQogICJ3ZWlnaHRfcmVjb25zdHJ1Y3Rpb24iOiAibm9ybWFsaXplIHN0b3JlZCAxMC1kZWNpbWFsIGVxdWFsIHdlaWdodHMgYmVmb3JlIGV4cGVjdGF0aW9uOyByYXcgc3VtIG11c3QgcGFzcyBmcm96ZW4gMWUtNyB0b2xlcmFuY2UiLA0KICAiaGlzdG9yaWNhbF9tZXRyaWNfZ3JvdXBzX3JlY29tcHV0ZWQiOiAzMiwNCiAgImZlYXR1cmVfbGluZWFnZV9maWxlc19jaGVja2VkIjogMjEsDQogICJwZGZfcGFnZXMiOiAxMSwNCiAgInBkZl90ZXh0X2tleV92YWx1ZXNfY2hlY2tlZCI6IHRydWUsDQogICJ2aXN1YWxfcmV2aWV3IjogInNlcGFyYXRlbHkgcmVjb3JkZWQgYWZ0ZXIgbGF0ZXN0IHJlbmRlciIsDQogICJ1bmtub3ducyI6IHsNCiAgICAibW9kZWwiOiBudWxsLA0KICAgICJ0b2tlbnMiOiBudWxsLA0KICAgICJjb3N0IjogbnVsbCwNCiAgICAiZnV0dXJlX3RydWVfZGVtYW5kIjogbnVsbA0KICB9LA0KICAibGltaXRzIjogWw0KICAgICJmdXR1cmUgcGVyZm9ybWFuY2UvY292ZXJhZ2Ugbm90IG9ic2VydmFibGUiLA0KICAgICJmdWxsIGluZGVwZW5kZW50IHJlY2VpdmluZyByZXZpZXcgcGVuZGluZyIsDQogICAgInN0cmVzcyBtdWx0aXBsaWVycyBhc3N1bWVkOyBsb25nIHdlYXRoZXIgbWlncmF0aW9uIHVudmVyaWZpZWQiLA0KICAgICJub3QgYSB1bml2ZXJzYWwgcHJvb2Ygb2YgZXZlcnkgc29mdHdhcmUgYnJhbmNoIg0KICBdDQp9DQpjbGVhbiBDU1YgY29tcGFyaXNvbnM6IDc0DQo=",
+  "stderr_base64": ""
+}

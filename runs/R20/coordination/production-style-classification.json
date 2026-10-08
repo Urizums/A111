@@ -1,0 +1,14 @@
+{
+  "failed_receipt": "runs/R20/coordination/production-complete-index-style-command.json",
+  "actual_exit_code": 1,
+  "classification": "Git heuristically treated four valid ReportLab PDF files as text and flagged their serialized whitespace. The full recorded output contains only those PDF-path diagnostics; no source code or Markdown style failure was found.",
+  "affected_paths": [
+    "runs/R20/execution/clean_rerun/paper/paper.pdf",
+    "runs/R20/execution/delivery/paper/paper.pdf",
+    "runs/R20/execution/final/paper/paper.pdf",
+    "runs/R20/execution/output_corrected/paper/paper.pdf"
+  ],
+  "correction": "Add repository .gitattributes '*.pdf binary' so Git classifies the actual format correctly and preserves PDF bytes. No frozen PDF is edited, trimmed or regenerated.",
+  "receiving_check": "Complete-index style check after the attribute is staged, followed by committed locked-file SHA256/size verification; all-page scientific PDF reception remains independently required.",
+  "legacy_failures_and_budgets": "unchanged"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "runs/R20/review/reception-preparation/check_delivery.py",
+    "--self-check"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T19:31:38.332352+00:00",
+    "monotonic_ns": 107330015000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T19:31:38.438858+00:00",
+    "monotonic_ns": 107330125000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"expected_rows\": 1344,\r\n  \"key_columns\": [\r\n    \"service_date\",\r\n    \"store_id\",\r\n    \"item_id\"\r\n  ],\r\n  \"raw_cost_source\": \"runs/R20/inputs/raw/items.csv\",\r\n  \"self_check_controls\": {\r\n    \"all_zero_valid\": true,\r\n    \"missing_key_rejected\": true,\r\n    \"duplicate_key_rejected\": true,\r\n    \"fraction_rejected\": true,\r\n    \"negative_rejected\": true,\r\n    \"per_item_max_rejected\": true,\r\n    \"capacity_control_constructed\": true,\r\n    \"capacity_excess_rejected\": true,\r\n    \"budget_control_constructed\": true,\r\n    \"budget_excess_rejected\": true,\r\n    \"forecast_full_key_valid\": true,\r\n    \"forecast_nan_rejected\": true\r\n  },\r\n  \"formal_status\": \"unverified until frozen author outputs are supplied and independently checked\"\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiZXhwZWN0ZWRfcm93cyI6IDEzNDQsDQogICJrZXlfY29sdW1ucyI6IFsNCiAgICAic2VydmljZV9kYXRlIiwNCiAgICAic3RvcmVfaWQiLA0KICAgICJpdGVtX2lkIg0KICBdLA0KICAicmF3X2Nvc3Rfc291cmNlIjogInJ1bnMvUjIwL2lucHV0cy9yYXcvaXRlbXMuY3N2IiwNCiAgInNlbGZfY2hlY2tfY29udHJvbHMiOiB7DQogICAgImFsbF96ZXJvX3ZhbGlkIjogdHJ1ZSwNCiAgICAibWlzc2luZ19rZXlfcmVqZWN0ZWQiOiB0cnVlLA0KICAgICJkdXBsaWNhdGVfa2V5X3JlamVjdGVkIjogdHJ1ZSwNCiAgICAiZnJhY3Rpb25fcmVqZWN0ZWQiOiB0cnVlLA0KICAgICJuZWdhdGl2ZV9yZWplY3RlZCI6IHRydWUsDQogICAgInBlcl9pdGVtX21heF9yZWplY3RlZCI6IHRydWUsDQogICAgImNhcGFjaXR5X2NvbnRyb2xfY29uc3RydWN0ZWQiOiB0cnVlLA0KICAgICJjYXBhY2l0eV9leGNlc3NfcmVqZWN0ZWQiOiB0cnVlLA0KICAgICJidWRnZXRfY29udHJvbF9jb25zdHJ1Y3RlZCI6IHRydWUsDQogICAgImJ1ZGdldF9leGNlc3NfcmVqZWN0ZWQiOiB0cnVlLA0KICAgICJmb3JlY2FzdF9mdWxsX2tleV92YWxpZCI6IHRydWUsDQogICAgImZvcmVjYXN0X25hbl9yZWplY3RlZCI6IHRydWUNCiAgfSwNCiAgImZvcm1hbF9zdGF0dXMiOiAidW52ZXJpZmllZCB1bnRpbCBmcm96ZW4gYXV0aG9yIG91dHB1dHMgYXJlIHN1cHBsaWVkIGFuZCBpbmRlcGVuZGVudGx5IGNoZWNrZWQiDQp9DQo=",
+  "stderr_base64": ""
+}

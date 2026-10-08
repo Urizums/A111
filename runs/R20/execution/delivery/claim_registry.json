@@ -1,0 +1,44 @@
+[
+  {
+    "claim_id": "C1",
+    "question": "Q1 reliability",
+    "result": "data/audit.json + data/final_snapshot.csv + data/snapshot_boundaries.csv",
+    "paper": "2",
+    "restriction": "identity and snapshot only"
+  },
+  {
+    "claim_id": "C2",
+    "question": "Q1 patterns",
+    "result": "data/descriptive_panel.csv + results/descriptive_*.csv",
+    "paper": "3",
+    "restriction": "descriptive association"
+  },
+  {
+    "claim_id": "C3",
+    "question": "Q1 forecast/uncertainty",
+    "result": "results/backtest_metrics.csv + uncertainty/* + results/future_predictions.csv",
+    "paper": "4-5",
+    "restriction": "future coverage unknown"
+  },
+  {
+    "claim_id": "C4",
+    "question": "Q2 integer plan",
+    "result": "results/future_replenishment.csv + results/solver_evidence_future.csv + data/optimizer_tests.json",
+    "paper": "6-7",
+    "restriction": "optimal only for empirical objective"
+  },
+  {
+    "claim_id": "C5",
+    "question": "Q2 reliability/tradeoff",
+    "result": "results/sensitivity.csv + allocation_*.csv",
+    "paper": "8",
+    "restriction": "stress is assumed, not observed"
+  },
+  {
+    "claim_id": "C6",
+    "question": "Q3 reproducibility/paper",
+    "result": "code/* + paper/* + evidence/*",
+    "paper": "9",
+    "restriction": "author selfcheck separate from independent acceptance"
+  }
+]

@@ -1,0 +1,165 @@
+[
+  {
+    "id": "T01",
+    "depends_on": [],
+    "owner": "executor",
+    "write_domain": "runs/R20/execution/",
+    "status": "done_author_scope",
+    "acceptance": "source hash, raw snapshot, actual capability",
+    "evidence": [
+      "delivery/",
+      "evidence/selfcheck.json",
+      "evidence/visual_review.json",
+      "evidence/process_terminal.json"
+    ],
+    "blocker": null,
+    "next_action": "root independent acceptance"
+  },
+  {
+    "id": "T02",
+    "depends_on": [
+      "T01"
+    ],
+    "owner": "executor",
+    "write_domain": "runs/R20/execution/",
+    "status": "done_author_scope",
+    "acceptance": "availability lineage, finite/unit/keys and true late-row rejection",
+    "evidence": [
+      "delivery/",
+      "evidence/selfcheck.json",
+      "evidence/visual_review.json",
+      "evidence/process_terminal.json"
+    ],
+    "blocker": null,
+    "next_action": "root independent acceptance"
+  },
+  {
+    "id": "T03",
+    "depends_on": [
+      "T02"
+    ],
+    "owner": "executor",
+    "write_domain": "runs/R20/execution/",
+    "status": "done_author_scope",
+    "acceptance": "before-performance config and baseline",
+    "evidence": [
+      "delivery/",
+      "evidence/selfcheck.json",
+      "evidence/visual_review.json",
+      "evidence/process_terminal.json"
+    ],
+    "blocker": null,
+    "next_action": "root independent acceptance"
+  },
+  {
+    "id": "T04",
+    "depends_on": [
+      "T03"
+    ],
+    "owner": "executor",
+    "write_domain": "runs/R20/execution/",
+    "status": "done_author_scope",
+    "acceptance": "1344 forecasts, history metrics, empirical uncertainty",
+    "evidence": [
+      "delivery/",
+      "evidence/selfcheck.json",
+      "evidence/visual_review.json",
+      "evidence/process_terminal.json"
+    ],
+    "blocker": null,
+    "next_action": "root independent acceptance"
+  },
+  {
+    "id": "T05",
+    "depends_on": [
+      "T04"
+    ],
+    "owner": "executor",
+    "write_domain": "runs/R20/execution/",
+    "status": "done_author_scope",
+    "acceptance": "1344 integers, exact raw-resource feasibility, objective and oracle",
+    "evidence": [
+      "delivery/",
+      "evidence/selfcheck.json",
+      "evidence/visual_review.json",
+      "evidence/process_terminal.json"
+    ],
+    "blocker": null,
+    "next_action": "root independent acceptance"
+  },
+  {
+    "id": "T06",
+    "depends_on": [
+      "T05"
+    ],
+    "owner": "executor",
+    "write_domain": "runs/R20/execution/",
+    "status": "done_author_scope",
+    "acceptance": "same-information comparisons, demand/resource sensitivity and allocation",
+    "evidence": [
+      "delivery/",
+      "evidence/selfcheck.json",
+      "evidence/visual_review.json",
+      "evidence/process_terminal.json"
+    ],
+    "blocker": null,
+    "next_action": "root independent acceptance"
+  },
+  {
+    "id": "T07",
+    "depends_on": [
+      "T06"
+    ],
+    "owner": "executor",
+    "write_domain": "runs/R20/execution/",
+    "status": "done_author_scope",
+    "acceptance": "complete Chinese paper, true figures, all final pages reviewed",
+    "evidence": [
+      "delivery/",
+      "evidence/selfcheck.json",
+      "evidence/visual_review.json",
+      "evidence/process_terminal.json"
+    ],
+    "blocker": null,
+    "next_action": "root independent acceptance"
+  },
+  {
+    "id": "T08",
+    "depends_on": [
+      "T07"
+    ],
+    "owner": "root",
+    "write_domain": "root-assigned independent receiving domain",
+    "status": "pending_root",
+    "acceptance": "fresh independent receiving checks",
+    "evidence": [],
+    "blocker": null,
+    "next_action": "root dispatch clean original+actual artifact bundle without expected outcomes"
+  },
+  {
+    "id": "T09",
+    "depends_on": [
+      "T08"
+    ],
+    "owner": "root",
+    "write_domain": "root-assigned independent receiving domain",
+    "status": "pending_root",
+    "acceptance": "root final decision and freeze",
+    "evidence": [],
+    "blocker": null,
+    "next_action": "root dispatch clean original+actual artifact bundle without expected outcomes"
+  },
+  {
+    "id": "NEXT",
+    "depends_on": [
+      "T07"
+    ],
+    "owner": "root",
+    "write_domain": "root-assigned independent receiving domain",
+    "status": "pending_root",
+    "acceptance": "root start independent receiving T08",
+    "evidence": [],
+    "blocker": null,
+    "next_action": "root dispatch clean original+actual artifact bundle without expected outcomes"
+  }
+]

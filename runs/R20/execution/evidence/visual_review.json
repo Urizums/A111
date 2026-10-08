@@ -1,0 +1,179 @@
+{
+  "schema": "freshfood-author-visual-review/1",
+  "method": "executor actually viewed every rendered PNG using view_image; this script records those already-made observations and hashes, it is not an automated visual verdict",
+  "scope": "author final visual review, not independent acceptance",
+  "all_pages_actually_viewed": true,
+  "pdf_sha256": "fccb98acd2785f6db5fccc45c97e43fc99d2e353e7fb60613bc903a93da2d1cb",
+  "render_receipt": "evidence/016-render-delivery-pages.json",
+  "pages": [
+    {
+      "page": 1,
+      "path": "delivery/paper/page-01.png",
+      "sha256": "bf5ac84edf6b291c6ebb9a839dbad8684bff987cfc9215fba96959401f94f9af",
+      "observation": "题名、摘要、单位符号表及假设完整可读；数字与最终表一致。",
+      "verdict": "pass"
+    },
+    {
+      "page": 2,
+      "path": "delivery/paper/page-02.png",
+      "sha256": "12a3a7f425519c9f732752da905fefc4db0611202d6249b40363cc86ae3c70ea",
+      "observation": "口径、公式、逐原点训练表和天气/促销解释可读；不再有孤立第3节标题。",
+      "verdict": "pass"
+    },
+    {
+      "page": 3,
+      "path": "delivery/paper/page-03.png",
+      "sha256": "4fb490456365d16cf40d25a5b04abfe70278c6a286e57f3edb642414c23def54",
+      "observation": "第3节与需求曲线同页；星期、商品、门店图轴和图注清楚；节假日局限完整。",
+      "verdict": "pass"
+    },
+    {
+      "page": 4,
+      "path": "delivery/paper/page-04.png",
+      "sha256": "f7d588f64500472d0a7aa1574e622d9f040c29d792321834289bd917924403a2",
+      "observation": "岭目标与169列模型方程无截断；时间分割、选择表和解释完整。",
+      "verdict": "pass"
+    },
+    {
+      "page": 5,
+      "path": "delivery/paper/page-05.png",
+      "sha256": "c98434cc239238a4a353773b40554ca38171331e8b3e4d52df5dc4aaf3e8acdb",
+      "observation": "不确定性方法、83日来源、保留表和步长图可读；88.62%与真结果一致。",
+      "verdict": "pass"
+    },
+    {
+      "page": 6,
+      "path": "delivery/paper/page-06.png",
+      "sha256": "f511566825f34eebbf56a61071dd3233cb75a7c42d14fe95c6dd501cf1c76988",
+      "observation": "商品误差图及失效解释、原损失、双约束、边际整数式完整；L_sk已定义。",
+      "verdict": "pass"
+    },
+    {
+      "page": 7,
+      "path": "delivery/paper/page-07.png",
+      "sha256": "ab87083be6f63efe3adfeb596e3f1591b672d374bdcfbc08e8f161cac1869c9a",
+      "observation": "无约束分位数、求解证据和损失分项解释可读；完整14日日计划表无裁切。",
+      "verdict": "pass"
+    },
+    {
+      "page": 8,
+      "path": "delivery/paper/page-08.png",
+      "sha256": "b3f44ece4b98c7cab70f4b0b8833198dfe8819b1f692de379cb974304f1b2168",
+      "observation": "未来资源和商品分配图清楚；商品表单位及金额、件量一致，正文正常跨页。",
+      "verdict": "pass"
+    },
+    {
+      "page": 9,
+      "path": "delivery/paper/page-09.png",
+      "sha256": "a0b6ca3d4b9b87351690b128c5b4c8516160faa86996e694b4d6f95726017a3a",
+      "observation": "假期和需求压力、资源压力图及两表清楚；已明确压力是假设、非观测。",
+      "verdict": "pass"
+    },
+    {
+      "page": 10,
+      "path": "delivery/paper/page-10.png",
+      "sha256": "4dff2b44cfc1bc9bd59bd09d1885b66bbc7db78ca556923ce2a3472d8d80c650",
+      "observation": "容量/预算取舍、真实节日加成、复现及作者检查和结论完整；每日件量用语已修正。",
+      "verdict": "pass"
+    },
+    {
+      "page": 11,
+      "path": "delivery/paper/page-11.png",
+      "sha256": "7cb22caf197210887e2b7fccf75053ce8398e9777a470da2a8e4c8a4d1810c6e",
+      "observation": "原来源与复现定位表清楚；页码11，正文无占位文字。",
+      "verdict": "pass"
+    }
+  ],
+  "source_pdf_figures_clean_rerun_hash_comparison": [
+    {
+      "path": "paper/paper.md",
+      "sha256": "b36aa54b54435eac350582125d0f506b5f755c2bd456876530e8c1465743a908",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "paper/paper.pdf",
+      "sha256": "fccb98acd2785f6db5fccc45c97e43fc99d2e353e7fb60613bc903a93da2d1cb",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/01_daily.png",
+      "sha256": "5174be6ef4847fbc9800851ec5102bec9866b9c3868cbb5b4096b4f850235973",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/02_groups.png",
+      "sha256": "76c91cae3785d5265cf4e274632c4fdd9ff517804748869e90e96271f2f9b680",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/03_holdout_horizon.png",
+      "sha256": "166636b186f9883c5c4f4f236c536482b6f00c9d9e1b0c7106bcac5c68bbe732",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/04_holdout_item.png",
+      "sha256": "f752e41da96de292ddbb0d8cc03a201c85654aacb790ef2b76fa031964017ae3",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/05_future_resources.png",
+      "sha256": "44d7a3d4c46c7d742fa18a923ce9e90d498ed2e38ea6afd1d0910dac2355fade",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/06_allocation.png",
+      "sha256": "18cccc49c6ca07f2de2a484440a0d9f101634901bb23074401af1af187784b15",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/07_sensitivity.png",
+      "sha256": "64e2bc3fe37cedd2513dd39f281e13f967685fc488928ce4a341351a0f2a6a4d",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/equation_01.png",
+      "sha256": "af0e753824120af2926d4f556e7870f13a057042a118c799699ce1d2ed929035",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/equation_02.png",
+      "sha256": "c2ded12972951f67a76b8593c107cf23fff1d20802e569e8ab579544340ea94a",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/equation_03.png",
+      "sha256": "d837330fae242b46055462facdb5cd65fcc80e8a0866cda3fc1335d9d51c6b9d",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/equation_04.png",
+      "sha256": "0996de08ac985b09451c8f2197c93e682bb627f0d29148622d5de1fd5bb42eb4",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/equation_05.png",
+      "sha256": "657e5e56c8b4b796bcb896bcccfbe512c5b32c0deb06cf8d3f7d4c4b8510a0f8",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/equation_06.png",
+      "sha256": "21ef498a4fc726e51b28bdaedb4eb1bcc99cb8f3a1fc34121868ed558e2d894c",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/equation_07.png",
+      "sha256": "383a0a711ca953c7800184b6e6ad74452d6def98aa63160ef0c0ead41e263381",
+      "identical_to_clean_rerun": true
+    },
+    {
+      "path": "figures/equation_08.png",
+      "sha256": "99245acaa91d1df49966cf8ebd9edc2d4ba412cefb56437f3d3b2ad9583740f5",
+      "identical_to_clean_rerun": true
+    }
+  ],
+  "verdict": "pass",
+  "limitations": [
+    "visual QA covers this final PDF version and seven included analysis figures plus formulas",
+    "does not validate future realized demand or independent receiving acceptance"
+  ]
+}
