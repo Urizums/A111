@@ -1,0 +1,95 @@
+{
+  "scope": "actual revision orchestration receipts available to this author; subprocess full stdout/stderr in revision-receipts and revision-archive-receipt; old v1 receipts preserved without reconstruction",
+  "new_yielded_sessions": [
+    {
+      "session_id": 26441,
+      "state": "completed",
+      "exit_code": 0,
+      "operation": "revision_checks.py controls/full-coordinate checks; terminal return observed before context continuation"
+    },
+    {
+      "session_id": 39988,
+      "state": "completed",
+      "receipt": {
+        "chunk_id": "e7c015",
+        "wall_time_seconds": 7.3e-06,
+        "exit_code": 0,
+        "original_token_count": 46,
+        "output": "Q2_min_cost {'scenario': 'Q2_min_cost', 'truck_count': 10, 'cost': 6750, 'UV': np.float64(0.7288448563616349), 'UW': 0.428125, 'elapsed_seconds': 29.540811499988195, 'valid': True}\r\n"
+      }
+    }
+  ],
+  "immediate_tools": [
+    {
+      "operation": "PDF skill artifact edit hook",
+      "exit_code": 0,
+      "operation_kind": "edit",
+      "expected_output_count": 2,
+      "output_format": "pdf",
+      "receipt_availability": "actual successful hook observed before context continuation"
+    },
+    {
+      "chunk_id": "92792a",
+      "operation": "clean-result coordinate/byte audit",
+      "exit_code": 0,
+      "output": "{'clean_elapsed_seconds': 132.56487239999115, 'groups': 4, 'all_csv_bytes_match': True}\r\n"
+    },
+    {
+      "operation": "README patch first attempt",
+      "status": "failed_before_mutation",
+      "output": "apply_patch verification failed: invalid patch: multiple operations target C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\README.md",
+      "recovery": "separate authorized delete/add in v2, succeeded; archive not started by rejected attempt"
+    },
+    {
+      "chunk_id": "c18f5b",
+      "operation": "archive build/actual extracted smoke and pair",
+      "exit_code": 0,
+      "output": "{'archive_groups': [{'scenario': 'Q1_fleet_T1', 'valid': True, 'truck_count': 5, 'cost': 2250}, {'scenario': 'Q1_fleet_T2', 'valid': True, 'truck_count': 3, 'cost': 2100}, {'scenario': 'Q2_min_vehicles', 'valid': True, 'truck_count': 3, 'cost': 2100}, {'scenario': 'Q2_min_cost', 'valid': True, 'truck_count': 3, 'cost': 2100}], 'zip_sha256': 'bce886a6929549a01c9376c1a3f4b5eb971ed3d9c46a7e1917942681ce19d185', 'status': 'actual_extracted_v2_zip_smoke_and_paired_receiver_passed'}\r\n"
+    },
+    {
+      "chunk_id": "c492d2",
+      "operation": "first delivery integrity audit",
+      "exit_code": 1,
+      "error": "FileNotFoundError: history/v1-result.json",
+      "observed_cause": "auxiliary finalizer assumed wrong historical filename; actual history/execution-v1-result.json exists",
+      "recovery": "changed only auxiliary audit filename; no scientific rerun or original mutation"
+    },
+    {
+      "chunk_id": "d5773e",
+      "operation": "delivery integrity audit after filename correction",
+      "exit_code": 0,
+      "output": "{'original_files_unchanged': 417, 'authorized_initial_files_unchanged': 5, 'numeric_fields_unchanged': {'selected_results': True, 'parameter_rows': True, 'hand_chain': True}, 'pages': [12, 3]}\r\n"
+    },
+    {
+      "chunk_id": "bdd6ac",
+      "operation": "final manuscript/report generation",
+      "exit_code": 0,
+      "output": "paper characters 16527 report characters 3421\r\n"
+    },
+    {
+      "chunk_id": "a6e971",
+      "operation": "final all-pages rendering",
+      "exit_code": 0,
+      "structured_output": "checks/reading_render.json",
+      "pages": [
+        12,
+        3
+      ]
+    },
+    {
+      "chunk_id": "bcd859",
+      "operation": "process probe before finalizer",
+      "exit_code": 0,
+      "structured_output": "checks/revision-process-probe.json",
+      "matching_python_count": 0
+    }
+  ],
+  "missing_lock_recovery": {
+    "operation": "read named initial/initial-lock.json",
+    "exit_code": 1,
+    "observed": "file absent",
+    "authorized_correct_location": "runs/R19/levels/L4/review/initial-lock.json",
+    "exact_old_tool_output_not_available_after_context_continuation": true
+  },
+  "finalizer_state": "this foreground final command writes result/manifest then returns; caller must inspect its terminal receipt and perform read-only hash/process verification before handing off"
+}

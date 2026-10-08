@@ -9,7 +9,7 @@ for relative in ['START_HERE.md', 'CODEX_HANDOFF.md', 'artifact-manifest.json',
                  'state/checkpoint.json', 'state/continuation.json', 'state/revision-locks.json',
                  'runs/R19/TODO.md', 'runs/R19/REPORT.md', 'runs/R19/coordinator-attempts.md',
                  'runs/R19/integrate_l3_diagnosis_l4_start.py', 'runs/R19/integrate_l4_preparation.py',
-                 'runs/R19/stage_l3_close.py']:
+                 'runs/R19/stage_l3_close.py', 'runs/R19/refresh_integrity.py']:
     paths.add(relative)
 for directory in ['runs/R19/observations', 'runs/R19/integrity-history', 'runs/R19/publication']:
     for path in (ROOT / directory).glob('*'):
@@ -44,7 +44,7 @@ if execution_lock_path.exists():
     paths.update(frozen_L4_execution)
     paths.add('runs/R19/levels/L4/execution-lock.json')
 frozen_L4_followups = set()
-for scope in ['review/initial', 'execution-v2', 'review/recheck-1']:
+for scope in ['review/initial', 'execution-v2', 'review/recheck-1', 'review/recheck-preparation']:
     relative = f'runs/R19/levels/L4/{scope}-lock.json'
     lock_path = ROOT / relative
     if lock_path.exists():

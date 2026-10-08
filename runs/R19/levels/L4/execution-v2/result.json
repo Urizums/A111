@@ -1,0 +1,603 @@
+{
+  "task_id": "R19-C11-L4-execution-v2",
+  "candidate_id": "C11",
+  "level": "L4",
+  "actor": "/root/r19_l4_executor",
+  "status": "informed_revision_complete_author_checked_pending_rereview",
+  "delivery_type": "full_chinese_mathematical_paper_enterprise_report_and_runnable_program",
+  "first_actual_task": "L4-S0-AUDIT",
+  "write_domain": "runs/R19/levels/L4/execution-v2/",
+  "offline": true,
+  "network_searches": 0,
+  "software_installs": 0,
+  "subagents_spawned": 0,
+  "shared_state_modified": false,
+  "external_submission_or_upload": false,
+  "source_identity": {
+    "2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf": {
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d",
+      "size_bytes": 131983
+    },
+    "附件1.docx": {
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0",
+      "size_bytes": 14540
+    },
+    "附件2：验证数据集.xlsx": {
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda",
+      "size_bytes": 15973
+    }
+  },
+  "design_identity": {
+    "workflow_sha256": "62b216118a815373849f3a1e84bdca408d611a773a9de5c2a69797f73d864ad7",
+    "handoff_sha256": "cb858c5738729bfc1b2f4487786a783ff10841e8912b1a62478b0d3cc66316ba",
+    "forge_skill_sha256": "8128c05049d3918042c89389d8b2db73f8626b94b642fcf9491952c05944adea"
+  },
+  "core_final_code_sha256": {
+    "solve.py": "83ac6da12ec7be2cd34ffde41e5b4baec7667b1b9c6d83483962c90e3655be19",
+    "validator.py": "c282ddc753cc808587b48fce7ce1bb555187999394358eb9cc9747e3e6d6f1c9",
+    "numeric_contract.py": "1a9a4443181b1d8f6484b89fe84b7f6c3bf81ec7a6f453a832a560f0c0692bdb"
+  },
+  "source_hashes_unchanged_final": true,
+  "selected_scenarios": {
+    "Q1_fleet_T1": {
+      "root": "runs/R19/levels/L4/execution-v2/results/classic_refined/Q1_fleet_T1",
+      "vehicle_count": 20,
+      "vehicle_types": {
+        "T1": 20
+      },
+      "cost_CNY": 9000,
+      "UV": 0.7404401154401155,
+      "UW": 0.3425,
+      "valid_author_recheck": true,
+      "lower_bounds": {
+        "volume_cm3": 287350000,
+        "mass_kg": 41100,
+        "vehicle_lower_bound": 15,
+        "cost_lower_bound": 6750,
+        "scope": "total physical volume and weight relaxation; ignores all geometry/support"
+      },
+      "global_optimality": "not_proved"
+    },
+    "Q1_fleet_T2": {
+      "root": "runs/R19/levels/L4/execution-v2/results/classic_refined/Q1_fleet_T2",
+      "vehicle_count": 10,
+      "vehicle_types": {
+        "T2": 10
+      },
+      "cost_CNY": 7000,
+      "UV": 0.6899159663865546,
+      "UW": 0.411,
+      "valid_author_recheck": true,
+      "lower_bounds": {
+        "volume_cm3": 287350000,
+        "mass_kg": 41100,
+        "vehicle_lower_bound": 7,
+        "cost_lower_bound": 4900,
+        "scope": "total physical volume and weight relaxation; ignores all geometry/support"
+      },
+      "global_optimality": "not_proved"
+    },
+    "Q2_min_vehicles": {
+      "root": "runs/R19/levels/L4/execution-v2/results/classic_refined/Q2_min_vehicles",
+      "vehicle_count": 10,
+      "vehicle_types": {
+        "T2": 9,
+        "T1": 1
+      },
+      "cost_CNY": 6750,
+      "UV": 0.7288448563616349,
+      "UW": 0.428125,
+      "valid_author_recheck": true,
+      "lower_bounds": {
+        "volume_cm3": 287350000,
+        "mass_kg": 41100,
+        "vehicle_lower_bound": 7,
+        "cost_lower_bound": 4900,
+        "scope": "total physical volume and weight relaxation; ignores all geometry/support"
+      },
+      "global_optimality": "not_proved"
+    },
+    "Q2_min_cost": {
+      "root": "runs/R19/levels/L4/execution-v2/results/classic_refined/Q2_min_cost",
+      "vehicle_count": 10,
+      "vehicle_types": {
+        "T2": 9,
+        "T1": 1
+      },
+      "cost_CNY": 6750,
+      "UV": 0.7288448563616349,
+      "UW": 0.428125,
+      "valid_author_recheck": true,
+      "lower_bounds": {
+        "volume_cm3": 287350000,
+        "mass_kg": 41100,
+        "vehicle_lower_bound": 7,
+        "cost_lower_bound": 4900,
+        "scope": "total physical volume and weight relaxation; ignores all geometry/support"
+      },
+      "global_optimality": "not_proved"
+    }
+  },
+  "single_vehicle_archive": {
+    "root": "runs/R19/levels/L4/execution-v2/results/selected_single",
+    "points": {
+      "T1": [
+        {
+          "scenario": "T1_P00",
+          "counts": [
+            63,
+            300,
+            0,
+            0,
+            0
+          ],
+          "UV": 0.9101731601731602,
+          "UW": 0.526,
+          "source": "results/improved_refined/Q1_single_T1_P00",
+          "method": "improved_refined"
+        },
+        {
+          "scenario": "T1_P01",
+          "counts": [
+            252,
+            0,
+            0,
+            0,
+            0
+          ],
+          "UV": 0.935064935064935,
+          "UW": 0.504,
+          "source": "results/improved_refined/Q1_single_T1_P01",
+          "method": "improved_refined"
+        }
+      ],
+      "T2": [
+        {
+          "scenario": "T2_P00",
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            408
+          ],
+          "UV": 0.9404081632653061,
+          "UW": 0.7344,
+          "source": "results/baseline_refined/Q1_single_T2_P00",
+          "method": "baseline_refined"
+        },
+        {
+          "scenario": "T2_P01",
+          "counts": [
+            0,
+            690,
+            0,
+            0,
+            96
+          ],
+          "UV": 0.946062424969988,
+          "UW": 0.7248,
+          "source": "results/improved_refined/Q1_single_T2_P01",
+          "method": "improved_refined"
+        }
+      ]
+    },
+    "complete_global_frontier": false
+  },
+  "coverage": [
+    {
+      "requirement": "Q1两车型单车双目标",
+      "source": "PDF第2页问题1(1),(2)",
+      "artifact": "results/selected_single",
+      "check": "non-dominance within all produced official archive; full coordinates/pose/load recomputation",
+      "verdict": "passed_with_finite_frontier_limit",
+      "revision_scope": "scientific evidence reused from v1; affected numeric receiving and finite final coordinates rechecked in v2; author coverage assessment only"
+    },
+    {
+      "requirement": "Q1两单车型运完最少车目标",
+      "source": "PDF第2页问题1(1),(2)",
+      "artifact": [
+        "results/classic_refined/Q1_fleet_T1",
+        "results/classic_refined/Q1_fleet_T2"
+      ],
+      "check": "3000 unique IDs and full constraints; legal15/7 lower bounds",
+      "verdict": "passed_as_feasible_upper_bounds_not_global_optima",
+      "revision_scope": "scientific evidence reused from v1; affected numeric receiving and finite final coordinates rechecked in v2; author coverage assessment only"
+    },
+    {
+      "requirement": "Q2混型两目标",
+      "source": "PDF第2页问题2",
+      "artifact": [
+        "results/classic_refined/Q2_min_vehicles",
+        "results/classic_refined/Q2_min_cost"
+      ],
+      "check": "independent objective recomputation and full inventory; legal7/4900 relaxation",
+      "verdict": "passed_as_feasible_upper_bounds_not_global_optima",
+      "revision_scope": "scientific evidence reused from v1; affected numeric receiving and finite final coordinates rechecked in v2; author coverage assessment only"
+    },
+    {
+      "requirement": "Q3性能参数企业报告和程序",
+      "source": "PDF第3页",
+      "artifact": [
+        "paper/enterprise_report.md",
+        "results/parameter_results.csv",
+        "code/solve.py"
+      ],
+      "check": "17 actual reruns and64 interval geometry cases; selected result numbers and CLI clean rerun",
+      "verdict": "passed_with_recorded_limits",
+      "revision_scope": "scientific evidence reused from v1; affected numeric receiving and finite final coordinates rechecked in v2; author coverage assessment only"
+    },
+    {
+      "requirement": "方向、易碎、支撑、承重、3cm",
+      "source": "附件1段落13至19",
+      "artifact": "all final placements/support_loads CSVs",
+      "check": "each piece/every possible pair and cumulative chain; six actual controlled defects",
+      "verdict": "passed_under_explicit_single_full_support_assumptions",
+      "revision_scope": "scientific evidence reused from v1; affected numeric receiving and finite final coordinates rechecked in v2; author coverage assessment only"
+    }
+  ],
+  "checks": {
+    "status": "all_affected_author_checks_complete",
+    "finite_and_range_contract": "code/numeric_contract.py before solve/geometry/metrics",
+    "main_actual_CLI_controls": 67,
+    "additional_nonfinite_input_receiver_calls": 24,
+    "legal_control_accepted": true,
+    "nonfinite_coordinates_and_inputs_explicitly_rejected": true,
+    "NaN_replaced_by_zero": false,
+    "old_wrong_CLI_and_matrix_traceback_reproduced_and_retained": true,
+    "impossible1001_new_exit_code": 3,
+    "impossible1001_message": "INFEASIBLE_INPUT; no allowed vehicle pose/load; failure.json, no new success summary or traceback",
+    "old_full_coordinates_rechecked_groups": 33,
+    "critical_selected_full_receiver_CLI": 4,
+    "new_full_clean_solve_scenarios": 4,
+    "new_full_clean_solve_seconds": 132.56487239999115,
+    "new_full_12000_item_rows_rechecked": true,
+    "four_selected_CSV_byte_hashes_equal": true,
+    "archive_actual_smoke_and_pair": true,
+    "archive_official_full_solve_repeated": false,
+    "reading_pages": [
+      12,
+      3
+    ],
+    "initial_verdict_retained": true,
+    "independent_informed_reception": "pending_same_reviewer_in_separate_domain",
+    "evidence": [
+      "runs/R19/levels/L4/execution-v2/checks/revision-checks.json",
+      "runs/R19/levels/L4/execution-v2/checks/revision-clean-receipt.json",
+      "runs/R19/levels/L4/execution-v2/checks/revision-archive-receipt.json",
+      "runs/R19/levels/L4/execution-v2/checks/revision-reading-review.json",
+      "runs/R19/levels/L4/execution-v2/checks/revision-integrity.json",
+      "runs/R19/levels/L4/execution-v2/checks/revision-tool-receipts.json",
+      "runs/R19/levels/L4/execution-v2/checks/revision-process-probe.json"
+    ]
+  },
+  "experiments": {
+    "official_comparison": {
+      "routes": [
+        "shelf",
+        "maxrects",
+        "improved"
+      ],
+      "same_input_and_feasible_domain": true,
+      "patterns_per_vehicle": 96,
+      "inventory_restarts_per_vehicle": 12,
+      "master_limit_seconds": 90,
+      "seed": 1904,
+      "route_total_seconds": {
+        "improved": 187.0802055000022,
+        "baseline_refined": 213.65454930000124,
+        "classic_refined": 132.5272954000029,
+        "improved_refined": 278.7812888000044
+      }
+    },
+    "parameters": {
+      "cases": 17,
+      "all_valid": true,
+      "patterns_per_vehicle": 24,
+      "inventory_restarts_per_vehicle": 4,
+      "master_limit_seconds": 8,
+      "measured_total_seconds": 64.20748780000577,
+      "seeds": [
+        1904,
+        1905,
+        1906
+      ],
+      "synthetic_scales_items": [
+        750,
+        1500,
+        3000,
+        6000
+      ]
+    },
+    "attachment2": {
+      "geometric_interval_pairs": 64,
+      "scope": "closed rectangular vehicles; fixed upright lattice; missing actual quantity/mass/class/capacity/cost-distance fields; no full real transport claim"
+    },
+    "clean_rerun_seconds": 215.7323444999929,
+    "clean_4_objectives_metrics_and_coordinate_csv_hashes_equal": true,
+    "peak_memory_bytes": null,
+    "scope": "original actual scientific research retained and bound; no new 17-case optimization or three-route comparison asserted",
+    "revision_full_clean_solve": {
+      "method": "maxrects",
+      "same_budget": {
+        "pattern_count_per_vehicle": 96,
+        "inventory_restarts": 12,
+        "master_time_limit_seconds": 90,
+        "seed": 1904
+      },
+      "elapsed_seconds": 132.56487239999115,
+      "four_scenarios_valid_and_bytes_match": true
+    },
+    "revision_archive_smoke": {
+      "synthetic_items": 750,
+      "pattern_count_per_vehicle": 12,
+      "inventory_restarts": 2,
+      "master_time_limit_seconds": 8,
+      "elapsed_seconds": 1.3136361000069883,
+      "scope": "delivered archive executable smoke; distinct from official clean full solve and old research comparison"
+    }
+  },
+  "failures_and_iterations": {
+    "ledger": "runs/R19/levels/L4/execution-v2/logs/events.jsonl",
+    "attempt_ids": [
+      "L4-E001",
+      "L4-E002",
+      "L4-E003",
+      "L4-E004",
+      "L4-E005",
+      "L4-E006",
+      "L4-E007",
+      "L4-E008",
+      "L4-E009",
+      "L4-E010",
+      "L4-E011",
+      "L4-E012",
+      "L4-V2-001",
+      "L4-V2-002",
+      "L4-V2-003",
+      "L4-V2-004",
+      "L4-V2-005"
+    ],
+    "event_classes": {
+      "preflight": 1,
+      "substantive_fixture_correction": 1,
+      "planned_research": 1,
+      "planned_research_iteration": 1,
+      "substantive_result_selection_correction": 1,
+      "planned_experiment_budget_declaration": 1,
+      "substantive_geometry_correction": 1,
+      "resource_continuation": 1,
+      "tool_recovery": 1,
+      "reading_copy_font_repair": 1,
+      "delivery_checks": 1,
+      "final_delivery": 1,
+      "informed_revision_start": 1,
+      "D1_substantive_repair": 1,
+      "actual_revision_delivery_checks": 1,
+      "auxiliary_tool_recoveries": 1,
+      "informed_revision_author_freeze": 1
+    },
+    "all_original_failure_observations_retained": true,
+    "initial_failed_decimal_coordinates_saved": false,
+    "note": "initial failed decimal input/errors and exact truncation cause saved; coordinate preservation added for future failures; old initial cost candidate and all completed experiments retained; no counts or budgets reset",
+    "revision_failures": [
+      "initial independently found NaN false acceptance",
+      "old1001 matrix traceback, actually reproduced",
+      "specified initial lock nested path missing then resolved to same authorized named lock",
+      "README patch rejected before mutation then repaired",
+      "auxiliary audit wrong history filename then repaired"
+    ],
+    "old_decimal_failure_coordinates_not_reconstructed": true
+  },
+  "resources": {
+    "model": null,
+    "tokens": null,
+    "cost": null,
+    "total_task_elapsed_seconds": null,
+    "measured_scope": "individual solver/experiment/clean perf_counter seconds above; first source-reading start not instrumented",
+    "continuation": {
+      "attempt_id": "L4-E008",
+      "class": "resource_continuation",
+      "task_identity_unchanged": true,
+      "parent_report": "continue same L4 execution; reported primary0/secondary79 ordinaryUsageAllowed=true; no reset/purchase/model replacement",
+      "actual_tool_observation": {
+        "ordinaryUsageAllowed": true,
+        "primary_used_percent": 1,
+        "secondary_used_percent": 79
+      },
+      "local_quota_error_observed": false,
+      "parent_prior_quota_error_receipt_available_here": false,
+      "reset_consumed": false,
+      "purchase": false,
+      "model_replacement": false,
+      "budgets_unchanged": "refined96/12/90; parameters24/4/8",
+      "timestamp": "2026-10-08T20:56:06.075579"
+    },
+    "budget_policy": "per declared numerical experiment; no generic two-error or invented whole-task deadline",
+    "revision_observation": {
+      "ordinaryUsageAllowed": true,
+      "primary_used_percent": 41,
+      "secondary_used_percent": 85,
+      "observation_at": "L4-V2-001 revision start",
+      "reset_consumed": false,
+      "purchase": false,
+      "model_replacement": false,
+      "identity_or_historical_budget_reset": false,
+      "actual_model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "total_revision_elapsed_seconds": null,
+    "note": "Only actual instrumented solver/subprocess windows reported; no inferred account cost/tokens or whole-task deadline."
+  },
+  "artifacts": [
+    "runs/R19/levels/L4/execution-v2/paper/paper.md",
+    "runs/R19/levels/L4/execution-v2/paper/paper.pdf",
+    "runs/R19/levels/L4/execution-v2/paper/enterprise_report.md",
+    "runs/R19/levels/L4/execution-v2/paper/enterprise_report.pdf",
+    "runs/R19/levels/L4/execution-v2/program_attachment.zip",
+    "runs/R19/levels/L4/execution-v2/README.md",
+    "runs/R19/levels/L4/execution-v2/results/selected.json",
+    "runs/R19/levels/L4/execution-v2/code/solve.py",
+    "runs/R19/levels/L4/execution-v2/code/validator.py",
+    "runs/R19/levels/L4/execution-v2/code/numeric_contract.py",
+    "runs/R19/levels/L4/execution-v2/base-binding.json",
+    "runs/R19/levels/L4/execution-v2/TODO.md"
+  ],
+  "limitations": [
+    "Global vehicle/cost optima not proved; legal total-volume/weight gaps reported",
+    "Single-full-support and one/two-segment column search conservative; no multi-support static forces or transport vibration/axis-loading certification",
+    "Fragile orientation/single-layer semantics and geometric-center assumption declared; original-height sensitivity separate",
+    "Attachment2 incomplete genuine transport fields and non-rectangular vehicles excluded",
+    "Formal competition rules,AI disclosure,anonymous cover,upload format and official evaluation CLI not supplied",
+    "Finite/range gate repaired in same-author informed version; all current revision checks are author checks, same independent reviewer still pending",
+    "Input CLI follows declared two-vehicle/five-cargo contract; no universal solver-completeness or arbitrary extreme-scale numerical claim",
+    "Original failed decimal coordinates were not saved and remain unavailable; no reconstruction performed"
+  ],
+  "still_pending_reception": [
+    "Coordinator freezes this v2 and same reviewer performs informed affected re-review in another domain; do not overwrite original initial verdict",
+    "If global optimality required, strengthen geometric bounds or expanded model search; do not relabel current candidates as optimum",
+    "Confirm actual fragile rotatability,center/strength/vehicle-field data and formal contest rules before field/submission use"
+  ],
+  "terminal_process_state": {
+    "status": "all_prior_sessions_terminal_before_final_foreground_writer",
+    "observed_at": "2026-10-08T22:08:06.3869045+08:00",
+    "matching_python_count": 0,
+    "query_scope": "own execution/execution-v2 numerical/artifact commands; author finalizer then writes result/manifest and must have actual exit receipt before handoff",
+    "historical_sessions": [
+      {
+        "session_id": 27488,
+        "state": "completed",
+        "exit_code": 0
+      },
+      {
+        "session_id": 54376,
+        "state": "completed",
+        "exit_code": 0
+      },
+      {
+        "session_id": 57965,
+        "state": "completed",
+        "exit_code": 0
+      },
+      {
+        "session_id": 44396,
+        "state": "completed",
+        "exit_code": 1
+      },
+      {
+        "session_id": 59191,
+        "state": "completed",
+        "exit_code": 0
+      },
+      {
+        "session_id": 44403,
+        "state": "completed",
+        "exit_code": 0
+      },
+      {
+        "session_id": 7841,
+        "state": "completed",
+        "exit_code": 0
+      }
+    ],
+    "revision_yielded_sessions": [
+      {
+        "state": "completed",
+        "session_id": 26441,
+        "exit_code": 0
+      },
+      {
+        "state": "completed",
+        "session_id": 39988,
+        "exit_code": 0
+      }
+    ],
+    "immediate_subprocess_receipts_terminal": true,
+    "pending_sessions": [],
+    "background_jobs_started": false,
+    "post_manifest_check": "caller read-only manifest/process check after foreground finalizer actual exit; no further writes permitted"
+  },
+  "write_freeze": "manifest is final artifact mutation; actor then performs read-only hash/process verification and sends terminal tool receipt to coordinator",
+  "completed_at_local": "2026-10-08T22:14:04.406946",
+  "manifest": "runs/R19/levels/L4/execution-v2/manifest.json",
+  "original_task_id": "R19-C11-L4-execution",
+  "same_original_author": true,
+  "version_identity": {
+    "base_binding": "runs/R19/levels/L4/execution-v2/base-binding.json",
+    "original_result": "runs/R19/levels/L4/execution-v2/history/execution-v1-result.json",
+    "original_execution_mutated": false,
+    "initial_review_mutated": false,
+    "base_unchanged_files": 417,
+    "authorized_initial_files_checked": 5,
+    "initial_locked_payload_count": 164,
+    "composition": "full v2 domain with updated three core files and manuscripts/ZIP, byte-bound copied original research and coordinates; relative selected roots resolve locally",
+    "delivered_zip_sha256": "bce886a6929549a01c9376c1a3f4b5eb971ed3d9c46a7e1917942681ce19d185",
+    "original_selected_csv_and_science_evidence_unchanged": true
+  },
+  "original_independent_review": {
+    "verdict": {
+      "a1": "pass",
+      "a2": "pass",
+      "a3": "pass",
+      "a4": "fail",
+      "a5": "pass",
+      "a6": "partial"
+    },
+    "report": "runs/R19/levels/L4/execution-v2/history/initial-review-report.md",
+    "result": "runs/R19/levels/L4/execution-v2/history/initial-review-result.json",
+    "defect": "NaN x legal pair originally accepted exit0/VALID, independently rejected",
+    "status": "original verdict retained; informed re-review pending",
+    "author_may_declare_independent_pass": false
+  },
+  "historical_checks": {
+    "G0": "passed source/capability/audit",
+    "G1": "passed real slice and actual controlled rejection",
+    "G2": "passed12 full official candidates4 selected single17 parameter cases; conservative explicit assumptions",
+    "G3": "passed12page paper3page report, current clean-core equality, clean full rerun, changed-input CLI, extracted archive runtime, reading self-review",
+    "independent_acceptance": "not_performed_pending_coordinator",
+    "evidence": [
+      "runs/R19/levels/L4/execution/checks/audit.json",
+      "runs/R19/levels/L4/execution/checks/smoke.json",
+      "runs/R19/levels/L4/execution/checks/acceptance.json",
+      "runs/R19/levels/L4/execution/checks/clean_rerun.json",
+      "runs/R19/levels/L4/execution/checks/input_change.json",
+      "runs/R19/levels/L4/execution/checks/cli_validator.json",
+      "runs/R19/levels/L4/execution/checks/reading_render.json",
+      "runs/R19/levels/L4/execution/checks/reading_review.json",
+      "runs/R19/levels/L4/execution/checks/program_attachment.json",
+      "runs/R19/levels/L4/execution/checks/processes.json"
+    ],
+    "scope": "original author checks, not renewed or independent assertions; byte binding in base-binding.json"
+  },
+  "artifact_identity": {
+    "paper/paper.md": {
+      "size_bytes": 32820,
+      "sha256": "7192d975f6ddea59345b6982808f6aedbb3a1b4c7926135358f3357045be38a8"
+    },
+    "paper/paper.pdf": {
+      "size_bytes": 1331096,
+      "sha256": "aadd77e9f9033b97dfbc73f62585d34a2d9c89fe988f8822b7f28cfbf1adbcb9"
+    },
+    "paper/enterprise_report.md": {
+      "size_bytes": 6962,
+      "sha256": "031c3eb9804279f67280216f7a85da5669ec7ac2a95ab5e2ea8a9e23a32f3f21"
+    },
+    "paper/enterprise_report.pdf": {
+      "size_bytes": 372256,
+      "sha256": "fb3de38ce245f86025ebf6e3037d37a571560ea3df1e6e9798e217d494e8a632"
+    },
+    "program_attachment.zip": {
+      "size_bytes": 327939,
+      "sha256": "bce886a6929549a01c9376c1a3f4b5eb971ed3d9c46a7e1917942681ce19d185"
+    },
+    "README.md": {
+      "size_bytes": 8009,
+      "sha256": "fb61f3af84ab3dcbf3cde0eec60c6d250e97a5b5d22c81b56b9a2a3f2e54bed6"
+    },
+    "results/selected.json": {
+      "size_bytes": 1484,
+      "sha256": "b69058822168a641a7a22522fa256d3f74adf57bf8783808138f8ddd4678ce69"
+    }
+  }
+}

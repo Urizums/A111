@@ -1,6 +1,6 @@
 # Codex 接续入口
 
-R19最新现场：L1–L3完整诊断done；L3当前a1–a5 pass、a6 partial，完整中文论证/PDF科学记号通过，旧调用/并发缺口保留。L4原417生产和164独立首审分别冻结：首次a1/a2/a3/a5 pass、a4 fail（NaN坐标实际误接收）、a6 partial，六维4achieved/2partial；当前全量方案合法、12页论文与3页报告的完整中文科学论证/最终格式通过。原作者在新execution-v2做知情有限性修订和不可行说明，待冻结与另域复审。四层C11不改，首次失败/资源/预算不重置。完整L4首版已在发布源fdef890上传，实际main/CI以前沿checkpoint和publication观察为准；CI不代替论文验收。旧dc621f9缺锁CI失败及修复保留。
+R19最新现场：L1–L3完整诊断done，首次失败/partial保留；L3当前a1–a5 pass、a6 partial，完整中文论证/PDF科学记号通过，旧调用/并发缺口保留。L4原417生产/164首审/4知情复审方法/840知情修订分别冻结；首次a1/a2/a3/a5 pass、a4 fail（NaN坐标实际误接收）、a6 partial，4achieved/2partial。12页论文+3页报告完整中文论证和首版最终格式独立通过；新版仅作者自检完成，同一reviewer已正式在recheck-1知情复审，尚无终态判定。四层C11不改，旧失败/预算不重置。已验证发布源1d01e160的CI 37787055043实际success；后续实际main/CI和前沿以checkpoint/publication观察为准，CI不代替论文验收。
 
 成品方向为Forge meta-workflow，当前候选C10是九份纯文档：
 [技能入口](runs/R17/candidate/C10/forge-agent-flow/SKILL.md)、

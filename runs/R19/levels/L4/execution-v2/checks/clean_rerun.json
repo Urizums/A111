@@ -1,0 +1,123 @@
+{
+  "status": "passed",
+  "all_geometry_valid": true,
+  "clean_directory_initially_absent": true,
+  "copied_inputs_only": [
+    "solve.py",
+    "validator.py",
+    "instance.json",
+    "refined.json"
+  ],
+  "runtime": 215.7323444999929,
+  "scenarios": [
+    {
+      "scenario": "Q1_fleet_T1",
+      "equal_objectives_and_metrics": true,
+      "new": {
+        "valid": true,
+        "truck_count": 20,
+        "cost": 9000,
+        "inventory": {
+          "G5": 500,
+          "G2": 1000,
+          "G1": 800,
+          "G3": 300,
+          "G4": 400
+        },
+        "mass_kg": 41100.0,
+        "volume_cm3": 287350000.0,
+        "UV": 0.7404401154401155,
+        "UW": 0.3425
+      },
+      "old": {
+        "truck_count": 20,
+        "cost": 9000,
+        "UV": 0.7404401154401155,
+        "UW": 0.3425
+      },
+      "coordinate_bytes_equal": true
+    },
+    {
+      "scenario": "Q1_fleet_T2",
+      "equal_objectives_and_metrics": true,
+      "new": {
+        "valid": true,
+        "truck_count": 10,
+        "cost": 7000,
+        "inventory": {
+          "G5": 500,
+          "G2": 1000,
+          "G4": 400,
+          "G1": 800,
+          "G3": 300
+        },
+        "mass_kg": 41100.0,
+        "volume_cm3": 287350000.0,
+        "UV": 0.6899159663865546,
+        "UW": 0.411
+      },
+      "old": {
+        "truck_count": 10,
+        "cost": 7000,
+        "UV": 0.6899159663865546,
+        "UW": 0.411
+      },
+      "coordinate_bytes_equal": true
+    },
+    {
+      "scenario": "Q2_min_vehicles",
+      "equal_objectives_and_metrics": true,
+      "new": {
+        "valid": true,
+        "truck_count": 10,
+        "cost": 6750,
+        "inventory": {
+          "G5": 500,
+          "G2": 1000,
+          "G4": 400,
+          "G3": 300,
+          "G1": 800
+        },
+        "mass_kg": 41100.0,
+        "volume_cm3": 287350000.0,
+        "UV": 0.7288448563616349,
+        "UW": 0.428125
+      },
+      "old": {
+        "truck_count": 10,
+        "cost": 6750,
+        "UV": 0.7288448563616349,
+        "UW": 0.428125
+      },
+      "coordinate_bytes_equal": true
+    },
+    {
+      "scenario": "Q2_min_cost",
+      "equal_objectives_and_metrics": true,
+      "new": {
+        "valid": true,
+        "truck_count": 10,
+        "cost": 6750,
+        "inventory": {
+          "G4": 400,
+          "G2": 1000,
+          "G5": 500,
+          "G1": 800,
+          "G3": 300
+        },
+        "mass_kg": 41100.0,
+        "volume_cm3": 287350000.0,
+        "UV": 0.7288448563616349,
+        "UW": 0.428125
+      },
+      "old": {
+        "truck_count": 10,
+        "cost": 6750,
+        "UV": 0.7288448563616349,
+        "UW": 0.428125
+      },
+      "coordinate_bytes_equal": true
+    }
+  ],
+  "independence": "same author; coordinate-only validator; no independent acceptor"
+}

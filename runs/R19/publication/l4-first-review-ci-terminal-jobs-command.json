@@ -1,0 +1,32 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "C:/Program Files/GitHub CLI/gh.exe",
+    "run",
+    "view",
+    "37787055043",
+    "--repo",
+    "Urizums/A111",
+    "--json",
+    "headSha,status,conclusion,jobs,url",
+    "--jq",
+    "{headSha,status,conclusion,url,jobs:[.jobs[]|{name,status,conclusion}]}"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T14:13:36.020302+00:00",
+    "monotonic_ns": 88248125000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T14:13:38.584665+00:00",
+    "monotonic_ns": 88250687000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\"conclusion\":\"success\",\"headSha\":\"1d01e160a6dd606fc93e14f3618f9d510153374a\",\"jobs\":[{\"conclusion\":\"success\",\"name\":\"windows-preflight\",\"status\":\"completed\"},{\"conclusion\":\"success\",\"name\":\"validate (3.12)\",\"status\":\"completed\"},{\"conclusion\":\"success\",\"name\":\"validate (3.10)\",\"status\":\"completed\"}],\"status\":\"completed\",\"url\":\"https://github.com/Urizums/A111/actions/runs/37787055043\"}\n",
+  "stderr": "",
+  "stdout_base64": "eyJjb25jbHVzaW9uIjoic3VjY2VzcyIsImhlYWRTaGEiOiIxZDAxZTE2MGE2ZGQ2MDZmYzkzZTE0ZjM2MThmOWQ1MTAxNTMzNzRhIiwiam9icyI6W3siY29uY2x1c2lvbiI6InN1Y2Nlc3MiLCJuYW1lIjoid2luZG93cy1wcmVmbGlnaHQiLCJzdGF0dXMiOiJjb21wbGV0ZWQifSx7ImNvbmNsdXNpb24iOiJzdWNjZXNzIiwibmFtZSI6InZhbGlkYXRlICgzLjEyKSIsInN0YXR1cyI6ImNvbXBsZXRlZCJ9LHsiY29uY2x1c2lvbiI6InN1Y2Nlc3MiLCJuYW1lIjoidmFsaWRhdGUgKDMuMTApIiwic3RhdHVzIjoiY29tcGxldGVkIn1dLCJzdGF0dXMiOiJjb21wbGV0ZWQiLCJ1cmwiOiJodHRwczovL2dpdGh1Yi5jb20vVXJpenVtcy9BMTExL2FjdGlvbnMvcnVucy8zNzc4NzA1NTA0MyJ9Cg==",
+  "stderr_base64": ""
+}

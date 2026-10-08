@@ -1,0 +1,97 @@
+{
+  "task_id": "R19-C11-L4-informed-recheck-preparation",
+  "actor": "/root/r19_l4_reviewer",
+  "status": "recheck_preparation_complete_frozen",
+  "frozen_at": "2026-10-08T13:51:49.041850+00:00",
+  "review_type": "informed_recheck_preparation",
+  "new_production_read": false,
+  "new_production_received": false,
+  "new_version_judgment": null,
+  "new_version_a1_a6": null,
+  "new_version_quality_diagnosis": null,
+  "prior_first_review": {
+    "lock": {
+      "path": "runs/R19/levels/L4/review/initial-lock.json",
+      "size_bytes": 36502,
+      "sha256": "9940e1f9fffd173fa15ebba764e72ade9ac37d8028caab92fec1e39332b52b3f"
+    },
+    "file_count": 164,
+    "all_bytes_match": true,
+    "status": "initial_review_not_fully_accepted",
+    "a1_a6": [
+      {
+        "id": "a1",
+        "status": "pass"
+      },
+      {
+        "id": "a2",
+        "status": "pass"
+      },
+      {
+        "id": "a3",
+        "status": "pass"
+      },
+      {
+        "id": "a4",
+        "status": "fail"
+      },
+      {
+        "id": "a5",
+        "status": "pass"
+      },
+      {
+        "id": "a6",
+        "status": "partial"
+      }
+    ],
+    "unchanged": true
+  },
+  "method": "runs/R19/levels/L4/review/recheck-preparation/method.md",
+  "affected_scope": [
+    "finite-value rejection",
+    "physical/declared value-range rejection",
+    "paired valid controls",
+    "meaningful cannot-fit rejection",
+    "new runnable program archive reception",
+    "new critical full scenarios independent recomputation",
+    "result-to-scientific-paper consistency"
+  ],
+  "reuse_policy": "specific old evidence only with actual unchanged identity and dependency scope; old pass never auto-passes new output; no mandatory replay of unchanged historical research",
+  "known_counterexample": "runs/R19/levels/L4/review/initial/NaN_coordinate.csv",
+  "controls_run_on_new_version": 0,
+  "production_checks_performed": false,
+  "boundaries": {
+    "write": "runs/R19/levels/L4/review/recheck-preparation/",
+    "active_execution_v2_read": false,
+    "initial_or_preparation_modified": false,
+    "other_levels_or_root_synthesis_read": false
+  },
+  "resources": {
+    "provider": null,
+    "model": null,
+    "tokens": null,
+    "cost": null,
+    "overall_elapsed_seconds": null,
+    "network_searches": 0,
+    "installs": 0,
+    "subagents": 0,
+    "generic_two_error_stop": false,
+    "whole_task_short_deadline": null
+  },
+  "actual_events": [
+    {
+      "event": "initial-lock source recheck",
+      "files": 164,
+      "all_match": true,
+      "tool_command_exit_code": 0
+    }
+  ],
+  "termination": {
+    "background_processes_started": 0,
+    "pending_tool_sessions": [],
+    "all_prior_commands_returned": true,
+    "finalizer_exit0_receipt_required": true,
+    "stop_writing_after_manifest": true
+  },
+  "next_action": "Wait for root new production-lock authorization; formal informed review writes only review/recheck-1/."
+}

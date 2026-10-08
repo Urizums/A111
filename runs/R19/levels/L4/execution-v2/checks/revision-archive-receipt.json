@@ -1,0 +1,125 @@
+{
+  "status": "actual_extracted_v2_zip_smoke_and_paired_receiver_passed",
+  "zip_sha256": "bce886a6929549a01c9376c1a3f4b5eb971ed3d9c46a7e1917942681ce19d185",
+  "crc_check": true,
+  "core_identity": {
+    "solve.py": {
+      "archive_extracted_sha256": "83ac6da12ec7be2cd34ffde41e5b4baec7667b1b9c6d83483962c90e3655be19",
+      "delivery_sha256": "83ac6da12ec7be2cd34ffde41e5b4baec7667b1b9c6d83483962c90e3655be19"
+    },
+    "validator.py": {
+      "archive_extracted_sha256": "c282ddc753cc808587b48fce7ce1bb555187999394358eb9cc9747e3e6d6f1c9",
+      "delivery_sha256": "c282ddc753cc808587b48fce7ce1bb555187999394358eb9cc9747e3e6d6f1c9"
+    },
+    "numeric_contract.py": {
+      "archive_extracted_sha256": "1a9a4443181b1d8f6484b89fe84b7f6c3bf81ec7a6f453a832a560f0c0692bdb",
+      "delivery_sha256": "1a9a4443181b1d8f6484b89fe84b7f6c3bf81ec7a6f453a832a560f0c0692bdb"
+    }
+  },
+  "smoke_solve": {
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/solve.py",
+      "--data",
+      "data/synthetic_750.json",
+      "--config",
+      "configs/smoke.json",
+      "--out",
+      "results/new_archive_smoke",
+      "--method",
+      "maxrects"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-archive-test",
+    "exit_code": 0,
+    "stdout": "catalog {'T1': 577, 'T2': 778}\ninventory restarts complete T1\ninventory restarts complete T2\nQ1_fleet_T1 {'scenario': 'Q1_fleet_T1', 'truck_count': 5, 'cost': 2250, 'UV': np.float64(0.7404401154401155), 'UW': 0.3425, 'elapsed_seconds': 0.011434100000769831, 'valid': True}\nQ1_fleet_T2 {'scenario': 'Q1_fleet_T2', 'truck_count': 3, 'cost': 2100, 'UV': np.float64(0.5749299719887955), 'UW': 0.3425, 'elapsed_seconds': 0.009167199998046272, 'valid': True}\nQ2_min_vehicles {'scenario': 'Q2_min_vehicles', 'truck_count': 3, 'cost': 2100, 'UV': np.float64(0.5749299719887955), 'UW': 0.3425, 'elapsed_seconds': 0.011768900003517047, 'valid': True}\nQ2_min_cost {'scenario': 'Q2_min_cost', 'truck_count': 3, 'cost': 2100, 'UV': np.float64(0.5749299719887955), 'UW': 0.3425, 'elapsed_seconds': 0.01323299999057781, 'valid': True}\n",
+    "stderr": "",
+    "elapsed_seconds": 1.3136361000069883,
+    "state": "completed",
+    "process_id": null
+  },
+  "smoke_input": "synthetic inventory one quarter of official (750 items), 12 patterns/2 starts/8s; not a full official archive rerun",
+  "smoke_groups": [
+    {
+      "scenario": "Q1_fleet_T1",
+      "valid": true,
+      "truck_count": 5,
+      "cost": 2250
+    },
+    {
+      "scenario": "Q1_fleet_T2",
+      "valid": true,
+      "truck_count": 3,
+      "cost": 2100
+    },
+    {
+      "scenario": "Q2_min_vehicles",
+      "valid": true,
+      "truck_count": 3,
+      "cost": 2100
+    },
+    {
+      "scenario": "Q2_min_cost",
+      "valid": true,
+      "truck_count": 3,
+      "cost": 2100
+    }
+  ],
+  "extracted_NaN_rejection": {
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "data/instance.json",
+      "--config",
+      "configs/refined.json",
+      "--single",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\history\\initial-review-NaN_coordinate.csv",
+      "--out",
+      "nan_rejection.json"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-archive-test",
+    "exit_code": 1,
+    "stdout": "['invalid_numeric:placement[0].x:not_finite']\n",
+    "stderr": "",
+    "elapsed_seconds": 0.18796710000606254,
+    "state": "completed",
+    "process_id": null
+  },
+  "extracted_legal_acceptance": {
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "data/instance.json",
+      "--config",
+      "configs/refined.json",
+      "--single",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-controls\\legal_pair.csv",
+      "--out",
+      "legal_acceptance.json"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-archive-test",
+    "exit_code": 0,
+    "stdout": "VALID\n",
+    "stderr": "",
+    "elapsed_seconds": 0.18382199999177828,
+    "state": "completed",
+    "process_id": null
+  },
+  "official_full_clean_run": "checks/revision-clean-receipt.json",
+  "not_independent_review": true
+}

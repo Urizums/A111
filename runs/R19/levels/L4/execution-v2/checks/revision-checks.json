@@ -1,0 +1,809 @@
+{
+  "status": "author_revision_checks_passed_pending_informed_review",
+  "original_v1_NaN_false_acceptance_reproduced": {
+    "name": "original_v1_NaN",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution\\code\\validator.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution\\data\\instance.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution\\configs\\refined.json",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-controls\\original_v1_NaN.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\NaN_coordinate.csv",
+      "--single"
+    ],
+    "exit_code": 0,
+    "stdout": "VALID\n",
+    "stderr": "",
+    "elapsed_seconds": 0.32158560000243597,
+    "state": "completed",
+    "process_id": null
+  },
+  "original_v1_impossible_traceback_retained": {
+    "name": "original_v1_impossible",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution\\code\\solve.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-controls\\impossible_1001.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\configs\\refined.json",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-controls\\original_impossible",
+      "--method",
+      "maxrects"
+    ],
+    "exit_code": 1,
+    "stdout": "catalog {'T1': 0, 'T2': 0}\n",
+    "stderr": "Traceback (most recent call last):\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution\\code\\solve.py\", line 212, in <module>\n    if __name__=='__main__':main()\n                            ^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution\\code\\solve.py\", line 211, in main\n    parser=argparse.ArgumentParser();parser.add_argument('--data',required=True);parser.add_argument('--config',required=True);parser.add_argument('--out',required=True);parser.add_argument('--method',choices=['shelf','maxrects','improved'],default='improved');args=parser.parse_args();solve(json.loads(Path(args.data).read_text(encoding='utf8')),json.loads(Path(args.config).read_text(encoding='utf8')),args.out,args.method)\n                                                                                                                                                                                                                                                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution\\code\\solve.py\", line 178, in solve\n    p=pack(instance,v,config,options[v['id']],available,weights,method,config['seed']+s)\n      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution\\code\\solve.py\", line 65, in pack\n    rng=np.random.default_rng(seed);value=counts@np.array(weights);base=value/(ls*ws);noise=rng.uniform(.96,1.04,len(options)) if method=='improved' else np.ones(len(options));base*=noise\n                                          ~~~~~~^~~~~~~~~~~~~~~~~~\nValueError: matmul: Input operand 1 has a mismatch in its core dimension 0, with gufunc signature (n?,k),(k,m?)->(n?,m?) (size 5 is different from 0)\n",
+    "elapsed_seconds": 1.0335435000015423,
+    "state": "completed",
+    "process_id": null
+  },
+  "controls": [
+    {
+      "name": "legal_pair",
+      "accepted": true,
+      "exit_code": 0
+    },
+    {
+      "name": "coordinate_x_NaN",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].x:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_x_positive_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].x:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_x_negative_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].x:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_y_NaN",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].y:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_y_positive_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].y:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_y_negative_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].y:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_z_NaN",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].z:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_z_positive_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].z:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_z_negative_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].z:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_l_NaN",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].l:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_l_positive_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].l:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_l_negative_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].l:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_w_NaN",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].w:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_w_positive_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].w:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_w_negative_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].w:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_h_NaN",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].h:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_h_positive_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].h:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_h_negative_Inf",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:placement[0].h:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_range_x",
+      "rejected": true,
+      "errors": [
+        "invalid_range:placement[0].x"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_range_y",
+      "rejected": true,
+      "errors": [
+        "invalid_range:placement[0].y"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_range_z",
+      "rejected": true,
+      "errors": [
+        "invalid_range:placement[0].z"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_range_l",
+      "rejected": true,
+      "errors": [
+        "invalid_range:placement[0].l"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_range_w",
+      "rejected": true,
+      "errors": [
+        "invalid_range:placement[0].w"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "coordinate_range_h",
+      "rejected": true,
+      "errors": [
+        "invalid_range:placement[0].h"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "input_cargo_length_NaN",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[0]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_length_positive_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[0]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_length_negative_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[0]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_width_NaN",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[1]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_width_positive_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[1]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_width_negative_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[1]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_height_NaN",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[2]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_height_positive_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[2]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_height_negative_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].dims[2]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_mass_NaN",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_mass_positive_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cargo_mass_negative_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].mass:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_quantity_NaN",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].quantity:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_quantity_positive_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].quantity:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_quantity_negative_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.cargo[0].quantity:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_vehicle_length_NaN",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].dims[0]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_vehicle_length_positive_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].dims[0]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_vehicle_length_negative_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].dims[0]:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_payload_NaN",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].capacity:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_payload_positive_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].capacity:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_payload_negative_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].capacity:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cost_NaN",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].cost:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cost_positive_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].cost:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_cost_negative_Inf",
+      "rejected": true,
+      "status": "invalid_input",
+      "errors": [
+        "invalid_numeric:input.vehicles[0].cost:not_finite"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "config_gap_cm_0",
+      "rejected": true,
+      "errors": [
+        "invalid_range:config.gap_cm"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_gap_cm_1",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.gap_cm:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_gap_cm_2",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.gap_cm:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_gap_cm_3",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.gap_cm:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_pressure_kg_m2_0",
+      "rejected": true,
+      "errors": [
+        "invalid_range:config.pressure_kg_m2"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_pressure_kg_m2_1",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.pressure_kg_m2:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_pressure_kg_m2_2",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.pressure_kg_m2:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_pressure_kg_m2_3",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.pressure_kg_m2:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_tolerance_cm_0",
+      "rejected": true,
+      "errors": [
+        "invalid_range:config.tolerance_cm"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_tolerance_cm_1",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.tolerance_cm:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_tolerance_cm_2",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.tolerance_cm:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "config_tolerance_cm_3",
+      "rejected": true,
+      "errors": [
+        "invalid_numeric:config.tolerance_cm:not_finite"
+      ],
+      "exit_code": 1
+    },
+    {
+      "name": "input_range_negative_mass",
+      "rejected": true,
+      "errors": [
+        "invalid_range:input.cargo[0].mass"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_range_zero_length",
+      "rejected": true,
+      "errors": [
+        "invalid_range:input.cargo[0].dims[0]"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_range_negative_payload",
+      "rejected": true,
+      "errors": [
+        "invalid_range:input.vehicles[0].capacity"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_range_zero_cost",
+      "rejected": true,
+      "errors": [
+        "invalid_range:input.vehicles[0].cost"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_range_negative_quantity",
+      "rejected": true,
+      "errors": [
+        "invalid_range:input.cargo[0].quantity"
+      ],
+      "exit_code": 2
+    },
+    {
+      "name": "input_range_fraction_quantity",
+      "rejected": true,
+      "errors": [
+        "invalid_range:input.cargo[0].quantity"
+      ],
+      "exit_code": 2
+    }
+  ],
+  "v2_impossible_receipt": {
+    "name": "v2_impossible",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\code\\solve.py",
+      "--data",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-controls\\impossible_1001.json",
+      "--config",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\configs\\refined.json",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-controls\\v2_impossible",
+      "--method",
+      "maxrects"
+    ],
+    "exit_code": 3,
+    "stdout": "INFEASIBLE_INPUT: Cargo G1 (dimensions_cm=[1001, 1001, 1001], mass_kg=12) cannot fit any allowed vehicle with its permitted orientation, gap_cm=3 and payload limits. No transport solution exists for this input.\n",
+    "stderr": "",
+    "elapsed_seconds": 0.7000399999960791,
+    "state": "completed",
+    "process_id": null
+  },
+  "v2_impossible_failure": {
+    "status": "infeasible_input",
+    "valid": false,
+    "message": "Cargo G1 (dimensions_cm=[1001, 1001, 1001], mass_kg=12) cannot fit any allowed vehicle with its permitted orientation, gap_cm=3 and payload limits. No transport solution exists for this input.",
+    "errors": [
+      "Cargo G1 (dimensions_cm=[1001, 1001, 1001], mass_kg=12) cannot fit any allowed vehicle with its permitted orientation, gap_cm=3 and payload limits. No transport solution exists for this input."
+    ],
+    "successful_summary_created": false
+  },
+  "full_coordinate_groups": [
+    {
+      "root": "results/baseline_refined/Q1_fleet_T1",
+      "valid": true,
+      "truck_count": 20,
+      "cost": 9000
+    },
+    {
+      "root": "results/baseline_refined/Q1_fleet_T2",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 7000
+    },
+    {
+      "root": "results/baseline_refined/Q2_min_vehicles",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 7000
+    },
+    {
+      "root": "results/baseline_refined/Q2_min_cost",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 7000
+    },
+    {
+      "root": "results/classic_refined/Q1_fleet_T1",
+      "valid": true,
+      "truck_count": 20,
+      "cost": 9000
+    },
+    {
+      "root": "results/classic_refined/Q1_fleet_T2",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 7000
+    },
+    {
+      "root": "results/classic_refined/Q2_min_vehicles",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 6750
+    },
+    {
+      "root": "results/classic_refined/Q2_min_cost",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 6750
+    },
+    {
+      "root": "results/improved_refined/Q1_fleet_T1",
+      "valid": true,
+      "truck_count": 20,
+      "cost": 9000
+    },
+    {
+      "root": "results/improved_refined/Q1_fleet_T2",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 7000
+    },
+    {
+      "root": "results/improved_refined/Q2_min_vehicles",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 7000
+    },
+    {
+      "root": "results/improved_refined/Q2_min_cost",
+      "valid": true,
+      "truck_count": 10,
+      "cost": 6750
+    },
+    {
+      "root": "results/selected_single/T1_P00",
+      "valid": true
+    },
+    {
+      "root": "results/selected_single/T1_P01",
+      "valid": true
+    },
+    {
+      "root": "results/selected_single/T2_P00",
+      "valid": true
+    },
+    {
+      "root": "results/selected_single/T2_P01",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/base",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/dimensions_0.95",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/dimensions_1.05",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/fragile_original_height",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/gap_10",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/gap_30",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/payload_0.5",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/payload_1.5",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/pressure_250",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/pressure_750",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/scale_0.25",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/scale_0.5",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/scale_2",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/seed_1905",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/seed_1906",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/T1_cost_315",
+      "valid": true
+    },
+    {
+      "root": "results/experiments/T1_cost_585",
+      "valid": true
+    }
+  ],
+  "group_count": 33,
+  "unchanged_geometry_and_objectives": true,
+  "independent_review_status": "pending; original a4fail/a6partial not overwritten",
+  "no_nan_replacement_or_summary_on_invalid": true
+}

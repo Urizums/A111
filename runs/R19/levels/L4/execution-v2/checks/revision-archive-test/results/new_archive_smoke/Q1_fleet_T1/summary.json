@@ -1,0 +1,121 @@
+{
+  "valid": true,
+  "errors": [],
+  "inventory": {
+    "G1": 200,
+    "G3": 75,
+    "G2": 250,
+    "G5": 125,
+    "G4": 100
+  },
+  "truck_count": 5,
+  "cost": 2250,
+  "mass_kg": 10275.0,
+  "volume_cm3": 71837500.0,
+  "UV": 0.7404401154401155,
+  "UW": 0.3425,
+  "trucks": [
+    {
+      "truck_id": "TR0001",
+      "vehicle_type": "T1",
+      "items": 193,
+      "mass_kg": 2303.0,
+      "volume_cm3": 15349000.0,
+      "UV": 0.7910224695938982,
+      "UW": 0.38383333333333336,
+      "usable_UV": 0.8019582641044128,
+      "cost": 450
+    },
+    {
+      "truck_id": "TR0002",
+      "vehicle_type": "T1",
+      "items": 175,
+      "mass_kg": 2451.0,
+      "volume_cm3": 14662000.0,
+      "UV": 0.7556173984745413,
+      "UW": 0.4085,
+      "usable_UV": 0.7660637219557562,
+      "cost": 450
+    },
+    {
+      "truck_id": "TR0003",
+      "vehicle_type": "T1",
+      "items": 92,
+      "mass_kg": 1481.0,
+      "volume_cm3": 9409500.0,
+      "UV": 0.48492578849721707,
+      "UW": 0.24683333333333332,
+      "usable_UV": 0.49162983165616475,
+      "cost": 450
+    },
+    {
+      "truck_id": "TR0004",
+      "vehicle_type": "T1",
+      "items": 121,
+      "mass_kg": 1940.0,
+      "volume_cm3": 16388250.0,
+      "UV": 0.8445810142238713,
+      "UW": 0.3233333333333333,
+      "usable_UV": 0.8562572494435562,
+      "cost": 450
+    },
+    {
+      "truck_id": "TR0005",
+      "vehicle_type": "T1",
+      "items": 169,
+      "mass_kg": 2100.0,
+      "volume_cm3": 16028750.0,
+      "UV": 0.8260539064110493,
+      "UW": 0.35,
+      "usable_UV": 0.8374740064996813,
+      "cost": 450
+    }
+  ],
+  "status": "feasible",
+  "elapsed_seconds": 0.011434100000769831,
+  "candidate": "maxrects",
+  "objective": "vehicles",
+  "bounds": {
+    "volume_cm3": 71837500,
+    "mass_kg": 10275,
+    "vehicle_lower_bound": 4,
+    "cost_lower_bound": 1800,
+    "scope": "total physical volume and weight relaxation; ignores all geometry/support"
+  },
+  "restricted_status": 0,
+  "restricted_message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+  "restricted_gap": 0.0,
+  "pattern_count": 74,
+  "claim": "optimality/status only within generated pattern pool; retain best known complete incumbent",
+  "source_hashes": {
+    "2026年第十六届MathorCup数学应用挑战赛题目—D题.pdf": {
+      "sha256": "33a0cabb68a4318cb77006f72053a57c4c3805a812905d4ee8125abb8c67094d",
+      "size_bytes": 131983
+    },
+    "附件1.docx": {
+      "sha256": "c5043af544588fe5183a1785364b5c69dfda4d9d7706444d0375263f631115d0",
+      "size_bytes": 14540
+    },
+    "附件2：验证数据集.xlsx": {
+      "sha256": "0fc33382d59919993c8ce4ed8a91c6e35e770db6a82bcd02e2e9e680493b8eda",
+      "size_bytes": 15973
+    }
+  },
+  "config": {
+    "gap_cm": 3,
+    "pressure_kg_m2": 500,
+    "support": "single_full_rectangle",
+    "fragile_orientation": "all_unique_orthogonal",
+    "fragile_rule": "no_cargo_above; floor_or_standard_support",
+    "oriented_rule": "original_dimensions; geometric_center_in_support_rectangle",
+    "external_load_area": "support_top_and_contact_area_both",
+    "tolerance_cm": 1e-06,
+    "seed": 1904,
+    "pattern_count_per_vehicle": 12,
+    "master_time_limit_seconds": 8,
+    "model": null,
+    "tokens": null,
+    "cost": null,
+    "inventory_restarts": 2
+  }
+}

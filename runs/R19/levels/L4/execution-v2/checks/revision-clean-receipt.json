@@ -1,0 +1,143 @@
+{
+  "status": "actual_v2_full_clean_solve_and_coordinate_recheck_completed",
+  "operation": "new solve from initially absent directory, only three core files plus data/config copied",
+  "session_id": 39988,
+  "session_exit_code": 0,
+  "method": "maxrects",
+  "budget": {
+    "pattern_count_per_vehicle": 96,
+    "inventory_restarts": 12,
+    "master_time_limit_seconds": 90,
+    "seed": 1904
+  },
+  "elapsed_seconds": 132.56487239999115,
+  "core_identity": {
+    "solve.py": {
+      "delivery_sha256": "83ac6da12ec7be2cd34ffde41e5b4baec7667b1b9c6d83483962c90e3655be19",
+      "clean_sha256": "83ac6da12ec7be2cd34ffde41e5b4baec7667b1b9c6d83483962c90e3655be19"
+    },
+    "validator.py": {
+      "delivery_sha256": "c282ddc753cc808587b48fce7ce1bb555187999394358eb9cc9747e3e6d6f1c9",
+      "clean_sha256": "c282ddc753cc808587b48fce7ce1bb555187999394358eb9cc9747e3e6d6f1c9"
+    },
+    "numeric_contract.py": {
+      "delivery_sha256": "1a9a4443181b1d8f6484b89fe84b7f6c3bf81ec7a6f453a832a560f0c0692bdb",
+      "clean_sha256": "1a9a4443181b1d8f6484b89fe84b7f6c3bf81ec7a6f453a832a560f0c0692bdb"
+    }
+  },
+  "scenarios": [
+    {
+      "scenario": "Q1_fleet_T1",
+      "valid": true,
+      "recomputed": {
+        "truck_count": 20,
+        "cost": 9000,
+        "UV": 0.7404401154401155,
+        "UW": 0.3425,
+        "mass_kg": 41100.0,
+        "volume_cm3": 287350000.0
+      },
+      "same_selected_metrics": {
+        "truck_count": true,
+        "cost": true,
+        "UV": true,
+        "UW": true,
+        "mass_kg": true,
+        "volume_cm3": true
+      },
+      "placements_sha256": "8f29cefcae59c67c859a9c07ede3c1964d174bca867e8856660e59214314d12e",
+      "same_selected_csv_bytes": true
+    },
+    {
+      "scenario": "Q1_fleet_T2",
+      "valid": true,
+      "recomputed": {
+        "truck_count": 10,
+        "cost": 7000,
+        "UV": 0.6899159663865546,
+        "UW": 0.411,
+        "mass_kg": 41100.0,
+        "volume_cm3": 287350000.0
+      },
+      "same_selected_metrics": {
+        "truck_count": true,
+        "cost": true,
+        "UV": true,
+        "UW": true,
+        "mass_kg": true,
+        "volume_cm3": true
+      },
+      "placements_sha256": "e231424019f4955fbbe8d2345561286725ee1f6cd28944fa0edba0ef6dc78b60",
+      "same_selected_csv_bytes": true
+    },
+    {
+      "scenario": "Q2_min_vehicles",
+      "valid": true,
+      "recomputed": {
+        "truck_count": 10,
+        "cost": 6750,
+        "UV": 0.7288448563616349,
+        "UW": 0.428125,
+        "mass_kg": 41100.0,
+        "volume_cm3": 287350000.0
+      },
+      "same_selected_metrics": {
+        "truck_count": true,
+        "cost": true,
+        "UV": true,
+        "UW": true,
+        "mass_kg": true,
+        "volume_cm3": true
+      },
+      "placements_sha256": "17614336d7a834c745b2dc625f4a88e5d843a92ce9b8b5d68ce630c8b9d462f9",
+      "same_selected_csv_bytes": true
+    },
+    {
+      "scenario": "Q2_min_cost",
+      "valid": true,
+      "recomputed": {
+        "truck_count": 10,
+        "cost": 6750,
+        "UV": 0.7288448563616349,
+        "UW": 0.428125,
+        "mass_kg": 41100.0,
+        "volume_cm3": 287350000.0
+      },
+      "same_selected_metrics": {
+        "truck_count": true,
+        "cost": true,
+        "UV": true,
+        "UW": true,
+        "mass_kg": true,
+        "volume_cm3": true
+      },
+      "placements_sha256": "08cad658b15d57d516fd1e89fe01ce52ea392c6f5fd46e76f14d4be03a433286",
+      "same_selected_csv_bytes": true
+    }
+  ],
+  "not_independent_review": true,
+  "session_terminal_tool_receipt": {
+    "chunk_id": "e7c015",
+    "wall_time_seconds": 7.3e-06,
+    "exit_code": 0,
+    "original_token_count": 46,
+    "output": "Q2_min_cost {'scenario': 'Q2_min_cost', 'truck_count': 10, 'cost': 6750, 'UV': np.float64(0.7288448563616349), 'UW': 0.428125, 'elapsed_seconds': 29.540811499988195, 'valid': True}\r\n"
+  },
+  "command": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "code/solve.py",
+    "--data",
+    "data/instance.json",
+    "--config",
+    "configs/refined.json",
+    "--out",
+    "results",
+    "--method",
+    "maxrects"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\execution-v2\\checks\\revision-clean"
+}

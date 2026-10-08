@@ -1,0 +1,127 @@
+[
+  {
+    "name": "valid_single_real_row",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "data/raw_rebuilt.json",
+      "--config",
+      "configs/refined.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\valid_single_real_row.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\valid_single_real_row-author-check.json",
+      "--single"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.35556569999607746,
+    "stdout": "VALID\n",
+    "stderr": "",
+    "author_valid": true,
+    "author_errors": [],
+    "independent_valid": true,
+    "independent_errors": []
+  },
+  {
+    "name": "NaN_coordinate",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "data/raw_rebuilt.json",
+      "--config",
+      "configs/refined.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\NaN_coordinate.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\NaN_coordinate-author-check.json",
+      "--single"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.33020169999508653,
+    "stdout": "VALID\n",
+    "stderr": "",
+    "author_valid": true,
+    "author_errors": [],
+    "independent_valid": false,
+    "independent_errors": [
+      "invalid_numeric"
+    ]
+  },
+  {
+    "name": "height_gap_violation",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "data/raw_rebuilt.json",
+      "--config",
+      "configs/refined.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\height_gap_violation.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\height_gap_violation-author-check.json",
+      "--single"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.339430000007269,
+    "stdout": "['boundary:TR0001', 'full_support:G1-0001']\n",
+    "stderr": "",
+    "author_valid": false,
+    "author_errors": [
+      "boundary:TR0001",
+      "full_support:G1-0001"
+    ],
+    "independent_valid": false,
+    "independent_errors": [
+      "floating",
+      "incomplete_support",
+      "safety_gap"
+    ]
+  },
+  {
+    "name": "positive_overlap",
+    "command": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "code/validator.py",
+      "--data",
+      "data/raw_rebuilt.json",
+      "--config",
+      "configs/refined.json",
+      "--placements",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\positive_overlap.csv",
+      "--out",
+      "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R19\\levels\\L4\\review\\initial\\positive_overlap-author-check.json",
+      "--single"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 0.33447260000684764,
+    "stdout": "['overlap:TR0001']\n",
+    "stderr": "",
+    "author_valid": false,
+    "author_errors": [
+      "overlap:TR0001"
+    ],
+    "independent_valid": false,
+    "independent_errors": [
+      "overlap"
+    ]
+  }
+]
