@@ -54,3 +54,17 @@
 ## 决策优先级
 
 先满足真实原任务和权限，随后保障可复验、避免不可逆副作用，之后才优化效率、体验和可移植性。无实质风险时不增加大规模审批；计划是为了推动验证，不是阻止所有可逆实施。
+
+
+## 本研究包的真实静态集成审计（2026-10-10）
+
+本节是对提交 7a3fccffbefc14f3e083895ddfc93d71f772d287 的实际 GitHub 只读核查，不是研究方法行为试验，也不是最新提交的 CI 成功报告。
+
+- GitHub 对 R24/research/ 的 9 个 Markdown 与 1 个 JSON 文件逐个读取成功；文本返回均未发现 U+FFFD 替换字符或意外的字面反斜杠 n。
+- INDEX.md 中 8 个相对文档链接逐个与本研究包路径核对，未发现缺失目标；RESEARCH_INDEX.json 可 JSON.parse 且包含 H01–H09 九张研究题目索引。
+- R24/PLAN.md 的失效根级 CURRENT_STATUS.md 引用已改为 runs/R24/CURRENT_STATUS.md；原 R24 执行/独立对照的任务状态未改写。
+- GitHub 对比此前 main 基线 8fedb92c310d85adf7a516adb28de69f85514aeb 与该提交，仅发现 runs/R24/ 下文件差异，没有根目录受静态 release manifest 保护的文件变动。
+- 先前修复提交 4eda912f1054067c75848213cda4607b07706a92 的 push 和 PR 两次 CI 已从 GitHub 读取到 completed/success；但此后新增研究资料的提交有其各自的 CI，必须重新观察对应 head 才能声明完整通过。
+- 以上测试是文本/readback/路径/JSON/变更域层级，没有实际新 Agent、浏览器、跨会话恢复或 C13/C14 行为比较，不能被用作那些门的通过证据。
+
+下一次实际推进时优先检查研究包所在分支**当前 head** 的 CI/job 状态、受锁文件 diff 和对应的真实宿主 preflight。若存在失败，应绑定具体步骤修复、保留首败；不要基于本节静态结果自动提升 C14。
