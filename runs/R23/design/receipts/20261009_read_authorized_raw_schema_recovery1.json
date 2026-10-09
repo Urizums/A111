@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    " = @'\nfrom pathlib import Path\nimport csv, itertools\nbase=Path('runs/R21/inputs')\nprint('=== BASELINE ===')\nprint((base/'reference/BASELINE.md').read_text(encoding='utf-8'))\nprint('=== EXPERIMENT ===')\nprint((base/'reference/experiment.json').read_text(encoding='utf-8'))\nprint('=== RUN.PY TOP ===')\nprint('\\\\n'.join((base/'reference/run.py').read_text(encoding='utf-8').splitlines()[:180]))\nprint('=== CSV HEADERS / FIRST 2 ===')\nfor name in ['calendar.csv','demand_reports.csv','items.csv','promotions.csv','stores.csv','weather.csv']:\n p=base/'raw'/name\n with p.open(encoding='utf-8-sig', newline='') as f:\n  rows=list(csv.reader(f))\n print(name, 'rows', len(rows)-1, 'header', rows[0], 'sample', rows[1:3])\nprint('=== DECISION ===')\nprint((base/'raw/decision.json').read_text(encoding='utf-8'))\n'@;  | py -3.12 -X utf8 -B -"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:31:15.538440+00:00",
+    "monotonic_ns": 172106109000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:31:15.742134+00:00",
+    "monotonic_ns": 172106312000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "At line:19 char:6\r\n+ '@;  | py -3.12 -X utf8 -B -\r\n+      ~\r\nAn empty pipe element is not allowed.\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : EmptyPipeElement\r\n \r\n",
+  "stdout_base64": "",
+  "stderr_base64": "QXQgbGluZToxOSBjaGFyOjYNCisgJ0A7ICB8IHB5IC0zLjEyIC1YIHV0ZjggLUIgLQ0KKyAgICAgIH4NCkFuIGVtcHR5IHBpcGUgZWxlbWVudCBpcyBub3QgYWxsb3dlZC4NCiAgICArIENhdGVnb3J5SW5mbyAgICAgICAgICA6IFBhcnNlckVycm9yOiAoOikgW10sIFBhcmVudENvbnRhaW5zRXJyb3JSZWNvcmRFeGNlcHRpb24NCiAgICArIEZ1bGx5UXVhbGlmaWVkRXJyb3JJZCA6IEVtcHR5UGlwZUVsZW1lbnQNCiANCg=="
+}

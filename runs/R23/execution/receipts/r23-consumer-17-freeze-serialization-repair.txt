@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json; p=Path('runs/R23/execution/consumer-slice-freeze.json'); raw=p.read_text(encoding='utf-8'); Path('runs/R23/execution/consumer-slice-freeze-v2-invalid.json').write_text(raw,encoding='utf-8'); fixed=raw[:-2]+chr(10) if raw.endswith('}'+chr(92)+'n') else raw; data=json.loads(fixed); p.write_text(fixed,encoding='utf-8'); print('preserved malformed v2; valid freeze code hash',data['code_sha256'])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:48:46.105298+00:00",
+    "monotonic_ns": 173156687000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:48:46.187073+00:00",
+    "monotonic_ns": 173156765000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "preserved malformed v2; valid freeze code hash d80fbdc7bccbe0c63c04d139feeef82e0b65a4ec9209095f07e3ffaf47203c6f\r\n",
+  "stderr": "",
+  "stdout_base64": "cHJlc2VydmVkIG1hbGZvcm1lZCB2MjsgdmFsaWQgZnJlZXplIGNvZGUgaGFzaCBkODBmYmRjN2JjY2JlMGM2M2MwNGQxMzlmZWVlZjgyZTBiNjVhNGVjOTIwOTA5NWYwN2UzZmZhZjQ3MjAzYzZmDQo=",
+  "stderr_base64": ""
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; import hashlib,json; b=Path('runs/R23/review/clean-initial'); files=['verifier-config.json','verify_slice.py','freeze.json','freeze-v1-before-config-correction.json','recomputation.json','source-process-fields.json','receiver-process-fields.json','records/11-independent-source-recomputation.json','records/14-independent-source-recomputation.json','records/19-extract-receiver-processes.json']; print(json.dumps([{'path':str(p),'size_bytes':(b/p).stat().st_size,'sha256':hashlib.sha256((b/p).read_bytes()).hexdigest()} for p in files],ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:25:59.566088+00:00",
+    "monotonic_ns": 175390140000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:25:59.649049+00:00",
+    "monotonic_ns": 175390218000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n  {\r\n    \"path\": \"verifier-config.json\",\r\n    \"size_bytes\": 1948,\r\n    \"sha256\": \"d094a9b56961d64007a9353cf6c27c4d453c9ae62111ae1febf2d947db080e52\"\r\n  },\r\n  {\r\n    \"path\": \"verify_slice.py\",\r\n    \"size_bytes\": 14074,\r\n    \"sha256\": \"fa8ce5bc1d33083dd2ecdc701fac7435b638726a8a21cb9044b98791faae2de0\"\r\n  },\r\n  {\r\n    \"path\": \"freeze.json\",\r\n    \"size_bytes\": 8276,\r\n    \"sha256\": \"7b0c8d832e157bc3c4371cca9e18e97477c752cb36b60399c924b9a4c80fdec5\"\r\n  },\r\n  {\r\n    \"path\": \"freeze-v1-before-config-correction.json\",\r\n    \"size_bytes\": 8276,\r\n    \"sha256\": \"02af35ce6a7411b268e51407dbadc864758527a77f446d7f6353972b2c3eb1b5\"\r\n  },\r\n  {\r\n    \"path\": \"recomputation.json\",\r\n    \"size_bytes\": 14605,\r\n    \"sha256\": \"c14f37f82e7f26e9dae8e993ee0207f5841273d7df054885436cb1ef64a39e6b\"\r\n  },\r\n  {\r\n    \"path\": \"source-process-fields.json\",\r\n    \"size_bytes\": 24342,\r\n    \"sha256\": \"2891160f92bcf1f7f04fc8cbee2acdc573fcc4d98ee9b76d12de2c6edd02ca53\"\r\n  },\r\n  {\r\n    \"path\": \"receiver-process-fields.json\",\r\n    \"size_bytes\": 10915,\r\n    \"sha256\": \"bc036d1b83791f00e9d7a9ebe2145da682c04f988fb95e53068eeda0f754b8f1\"\r\n  },\r\n  {\r\n    \"path\": \"records/11-independent-source-recomputation.json\",\r\n    \"size_bytes\": 1813,\r\n    \"sha256\": \"72dcef6e5af66940f0386509d5ce0408803ee25d2a29a6d551c10bd2df74a514\"\r\n  },\r\n  {\r\n    \"path\": \"records/14-independent-source-recomputation.json\",\r\n    \"size_bytes\": 36292,\r\n    \"sha256\": \"e5592eefbf850cd15d3ba31a84ebebca8923aed59652577d31870b630a57d375\"\r\n  },\r\n  {\r\n    \"path\": \"records/19-extract-receiver-processes.json\",\r\n    \"size_bytes\": 951,\r\n    \"sha256\": \"acea11d3c14da3627f90a3254fb49d06afa3a69d85fbd45b08577d28ecf503ab\"\r\n  }\r\n]\r\n",
+  "stderr": "",
+  "stdout_base64": "Ww0KICB7DQogICAgInBhdGgiOiAidmVyaWZpZXItY29uZmlnLmpzb24iLA0KICAgICJzaXplX2J5dGVzIjogMTk0OCwNCiAgICAic2hhMjU2IjogImQwOTRhOWI1Njk2MWQ2NDAwN2E5MzUzY2Y2YzI3YzRkNDUzYzlhZTYyMTExYWUxZmViZjJkOTQ3ZGIwODBlNTIiDQogIH0sDQogIHsNCiAgICAicGF0aCI6ICJ2ZXJpZnlfc2xpY2UucHkiLA0KICAgICJzaXplX2J5dGVzIjogMTQwNzQsDQogICAgInNoYTI1NiI6ICJmYThjZTViYzFkMzMwODNkZDJlY2RjNzAxZmFjNzQzNWI2Mzg3MjZhOGEyMWNiOTA0NGI5ODc5MWZhYWUyZGUwIg0KICB9LA0KICB7DQogICAgInBhdGgiOiAiZnJlZXplLmpzb24iLA0KICAgICJzaXplX2J5dGVzIjogODI3NiwNCiAgICAic2hhMjU2IjogIjdiMGM4ZDgzMmUxNTdiYzNjNDM3MWNjYTllMThlOTc0NzdjNzUyY2IzNmI2MDM5OWM5MjRiOWE0YzgwZmRlYzUiDQogIH0sDQogIHsNCiAgICAicGF0aCI6ICJmcmVlemUtdjEtYmVmb3JlLWNvbmZpZy1jb3JyZWN0aW9uLmpzb24iLA0KICAgICJzaXplX2J5dGVzIjogODI3NiwNCiAgICAic2hhMjU2IjogIjAyYWYzNWNlNmE3NDExYjI2OGU1MTQwN2RiYWRjODY0NzU4NTI3YTc3ZjQ0NmQ3ZjYzNTM5NzJiMmMzZWIxYjUiDQogIH0sDQogIHsNCiAgICAicGF0aCI6ICJyZWNvbXB1dGF0aW9uLmpzb24iLA0KICAgICJzaXplX2J5dGVzIjogMTQ2MDUsDQogICAgInNoYTI1NiI6ICJjMTRmMzdmODJlN2YyNmU5ZGFlOGU5OTNlZTAyMDdmNTg0MTI3M2Q3ZGYwNTQ4ODU0MzZjYjFlZjY0YTM5ZTZiIg0KICB9LA0KICB7DQogICAgInBhdGgiOiAic291cmNlLXByb2Nlc3MtZmllbGRzLmpzb24iLA0KICAgICJzaXplX2J5dGVzIjogMjQzNDIsDQogICAgInNoYTI1NiI6ICIyODkxMTYwZjkyYmNmMWY3ZjA0ZmM4Y2JlZTJhY2RjNTczZmNjNGQ5OGVlOWI3NmQxMmRlMmM2ZWRkMDJjYTUzIg0KICB9LA0KICB7DQogICAgInBhdGgiOiAicmVjZWl2ZXItcHJvY2Vzcy1maWVsZHMuanNvbiIsDQogICAgInNpemVfYnl0ZXMiOiAxMDkxNSwNCiAgICAic2hhMjU2IjogImJjMDM2ZDFiODM3OTFmMDBlOWQ3YTllYmUyMTQ1ZGE2ODJjMDRmOTg4ZmI5NWU1MzA2OGVlZGEwZjc1NGI4ZjEiDQogIH0sDQogIHsNCiAgICAicGF0aCI6ICJyZWNvcmRzLzExLWluZGVwZW5kZW50LXNvdXJjZS1yZWNvbXB1dGF0aW9uLmpzb24iLA0KICAgICJzaXplX2J5dGVzIjogMTgxMywNCiAgICAic2hhMjU2IjogIjcyZGNlZjZlNWFmNjY5NDBmMDM4NjUwOWQ1Y2UwNDA4ODAzZWUyNWQyYTI5YTZkNTUxYzEwYmQyZGY3NGE1MTQiDQogIH0sDQogIHsNCiAgICAicGF0aCI6ICJyZWNvcmRzLzE0LWluZGVwZW5kZW50LXNvdXJjZS1yZWNvbXB1dGF0aW9uLmpzb24iLA0KICAgICJzaXplX2J5dGVzIjogMzYyOTIsDQogICAgInNoYTI1NiI6ICJlNTU5MmVlZmJmODUwY2QxNWQzYmEzMWE4NGViZWJjYTg5MjNhZWQ1OTY1MjU3N2QzMTg3MGI2MzBhNTdkMzc1Ig0KICB9LA0KICB7DQogICAgInBhdGgiOiAicmVjb3Jkcy8xOS1leHRyYWN0LXJlY2VpdmVyLXByb2Nlc3Nlcy5qc29uIiwNCiAgICAic2l6ZV9ieXRlcyI6IDk1MSwNCiAgICAic2hhMjU2IjogImFjZWExMWQzYzE0ZGEzNjI3ZjkwYTMyNTRmYjQ5ZDA2YWZhM2E2OWQ4NWZiZDQ1YjA4NTc3ZDI4ZWNmNTAzYWIiDQogIH0NCl0NCg==",
+  "stderr_base64": ""
+}

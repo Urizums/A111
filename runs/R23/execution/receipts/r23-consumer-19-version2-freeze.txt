@@ -1,0 +1,30 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import shutil,json,hashlib; root=Path('runs/R23/execution'); old=root/'consumer_slice.py'; v1=root/'attempt-v1'; v1.mkdir(exist_ok=True); [shutil.copy2(root/name,v1/name) for name in ['consumer-point-slice.csv','consumer-point-slice-report.json']]; src=old.read_text(encoding='utf-8'); src=src.replace('OUT = ROOT / \\\\\\",
+    "runs/R23/execution\\\\\\','OUT = ROOT / \\\\\\runs/R23/execution/v2\\\\\\'); src=src.replace('eligible_train = demand[(demand.service_date < target) & (demand.available_at <= origin)]','eligible_train = demand[(demand.service_date < origin.strftime(\\\\\\%Y-%m-%d\\\\\\)) & (demand.available_at <= origin)]'); src=src.replace('not train.service_date.lt(target).all()','not train.service_date.lt(origin.strftime(\\\\\\%Y-%m-%d\\\\\\)).all()'); assert 'eligible_train = demand[(demand.service_date < origin.strftime(\\\\\\%Y-%m-%d\\\\\\))' in src; d=root/'v2'; d.mkdir(exist_ok=True); (d/'consumer_slice.py').write_text(src,encoding='utf-8'); shutil.copy2(root/'consumer-slice-config.json',d/'consumer-slice-config.json'); sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest(); prev=json.loads((root/'consumer-slice-freeze.json').read_text(encoding='utf-8')); f={'freeze_state':'version 2 frozen before recomputation','slice_id':prev['slice_config'],'config_sha256':sha(d/'consumer-slice-config.json'),'code_sha256':sha(d/'consumer_slice.py'),'source_lock_sha256':prev['source_lock_sha256'],'raw_source_sha256':prev['raw_source_sha256'],'methods_and_metrics':'unchanged from frozen v1 config','correction':'Strictly restrict service_date to dates before origin date; preserve v1 result under attempt-v1.','telemetry':{'actual_model':None,'tokens':None,'cost':None}}; (d/'consumer-slice-freeze.json').write_text(json.dumps(f,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8'); print(json.dumps(f,ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:49:13.344855+00:00",
+    "monotonic_ns": 173183921000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:49:13.404812+00:00",
+    "monotonic_ns": 173183984000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "  File \"<string>\", line 1\r\n    from pathlib import Path; import shutil,json,hashlib; root=Path('runs/R23/execution'); old=root/'consumer_slice.py'; v1=root/'attempt-v1'; v1.mkdir(exist_ok=True); [shutil.copy2(root/name,v1/name) for name in ['consumer-point-slice.csv','consumer-point-slice-report.json']]; src=old.read_text(encoding='utf-8'); src=src.replace('OUT = ROOT / \\\\\\\r\n                                                                                                                                                                                                                                                                                                                                            ^\r\nSyntaxError: unterminated string literal (detected at line 1)\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "ICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMQ0KICAgIGZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aDsgaW1wb3J0IHNodXRpbCxqc29uLGhhc2hsaWI7IHJvb3Q9UGF0aCgncnVucy9SMjMvZXhlY3V0aW9uJyk7IG9sZD1yb290Lydjb25zdW1lcl9zbGljZS5weSc7IHYxPXJvb3QvJ2F0dGVtcHQtdjEnOyB2MS5ta2RpcihleGlzdF9vaz1UcnVlKTsgW3NodXRpbC5jb3B5Mihyb290L25hbWUsdjEvbmFtZSkgZm9yIG5hbWUgaW4gWydjb25zdW1lci1wb2ludC1zbGljZS5jc3YnLCdjb25zdW1lci1wb2ludC1zbGljZS1yZXBvcnQuanNvbiddXTsgc3JjPW9sZC5yZWFkX3RleHQoZW5jb2Rpbmc9J3V0Zi04Jyk7IHNyYz1zcmMucmVwbGFjZSgnT1VUID0gUk9PVCAvIFxcXA0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeDQpTeW50YXhFcnJvcjogdW50ZXJtaW5hdGVkIHN0cmluZyBsaXRlcmFsIChkZXRlY3RlZCBhdCBsaW5lIDEpDQo="
+}

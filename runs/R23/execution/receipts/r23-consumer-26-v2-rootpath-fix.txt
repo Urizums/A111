@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json,hashlib; d=Path('runs/R23/execution/v2'); p=d/'consumer_slice.py'; src=p.read_text(encoding='utf-8'); Path(d/'consumer_slice-v2-rootpath-invalid.py').write_text(src,encoding='utf-8'); old='ROOT = Path(__file__).resolve().parents[3]'; assert old in src; src=src.replace(old,'ROOT = Path(__file__).resolve().parents[4]'); p.write_text(src,encoding='utf-8'); f=d/'consumer-slice-freeze.json'; data=json.loads(f.read_text(encoding='utf-8')); data['code_sha256']=hashlib.sha256(p.read_bytes()).hexdigest(); data['correction']='Corrected repository-root resolution after v2 nested-directory layout; strict origin-date cutoff retained.'; f.write_text(json.dumps(data,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8'); print(data['code_sha256'])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:49:58.982557+00:00",
+    "monotonic_ns": 173229562000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:49:59.091793+00:00",
+    "monotonic_ns": 173229671000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "e71e26127e662daa68217cd08a6836e34b7b8a2c9c1f556bbf623ca5e768352f\r\n",
+  "stderr": "",
+  "stdout_base64": "ZTcxZTI2MTI3ZTY2MmRhYTY4MjE3Y2QwOGE2ODM2ZTM0YjdiOGEyYzljMWY1NTZiYmY2MjNjYTVlNzY4MzUyZg0K",
+  "stderr_base64": ""
+}

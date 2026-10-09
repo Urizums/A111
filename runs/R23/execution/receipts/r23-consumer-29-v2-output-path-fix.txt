@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import hashlib,json; d=Path('runs/R23/execution/v2'); p=d/'consumer_slice.py'; src=p.read_text(encoding='utf-8'); old='OUT = ROOT / '+chr(34)+'runs/R23/execution'+chr(34); new='OUT = ROOT / '+chr(34)+'runs/R23/execution/v2'+chr(34); assert old in src; p.write_text(src.replace(old,new),encoding='utf-8'); f=d/'consumer-slice-freeze.json'; data=json.loads(f.read_text(encoding='utf-8')); data['code_sha256']=hashlib.sha256(p.read_bytes()).hexdigest(); data['correction']='Set v2 output/config/freeze paths to isolated v2 subdirectory; strict origin-date cutoff retained.'; f.write_text(json.dumps(data,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8'); print('frozen v2 code',data['code_sha256'])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:50:19.131320+00:00",
+    "monotonic_ns": 173249703000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:50:19.244829+00:00",
+    "monotonic_ns": 173249828000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "frozen v2 code d25ce59e091a04d2b1549e1a81353fe60610c16420f8e2242b344e334051b109\r\n",
+  "stderr": "",
+  "stdout_base64": "ZnJvemVuIHYyIGNvZGUgZDI1Y2U1OWUwOTFhMDRkMmIxNTQ5ZTFhODEzNTNmZTYwNjEwYzE2NDIwZjhlMjI0MmIzNDRlMzM0MDUxYjEwOQ0K",
+  "stderr_base64": ""
+}

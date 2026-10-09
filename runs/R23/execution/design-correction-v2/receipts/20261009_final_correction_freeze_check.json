@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json; from pathlib import Path; root=Path(\"runs/R23/execution/design-correction-v2\"); files=sorted(p for p in root.rglob(\"*\") if p.is_file()); assert all(p.resolve().is_relative_to(root.resolve()) for p in files); w=(root/\"WORKFLOW.md\").read_text(encoding=\"utf-8\"); i=(root/\"METHOD-OUTPUT-INTERFACE.md\").read_text(encoding=\"utf-8\"); assert \"j1\" not in w+i and \"prior Stage 7\" not in w+i; assert \"every `method_id` in the frozen `requested_methods` registry\" in w; assert 42*12*8==4032; rs=[]\nfor p in sorted((root/\"receipts\").glob(\"*.json\")):\n if p.name==\"INDEX.json\": continue\n d=json.loads(p.read_text(encoding=\"utf-8\"));\n if \"end\" not in d: continue\n assert d.get(\"schema\")==\"forge-command-record/1\" and d.get(\"state\")==\"finished\" and isinstance(d.get(\"exit_code\"),int); rs.append((p.name,d[\"exit_code\"]))\nstatus=json.loads((root/\"CORRECTION-STATUS.json\").read_text(encoding=\"utf-8\")); assert status[\"independent_reception\"]==\"pending\"; print(json.dumps({\"files_in_correction_domain\":len(files),\"terminal_receipts_before_this_command\":len(rs),\"nonzero_receipts_preserved\":[n for n,c in rs if c!=0],\"current_docs_have_only_current_contract\":True,\"per_method_rows\":4032,\"status\":\"author correction complete; awaiting root freeze and new independent reception\"},ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:14:34.776159+00:00",
+    "monotonic_ns": 174705359000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:14:34.866827+00:00",
+    "monotonic_ns": 174705437000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"files_in_correction_domain\": 16,\r\n  \"terminal_receipts_before_this_command\": 9,\r\n  \"nonzero_receipts_preserved\": [],\r\n  \"current_docs_have_only_current_contract\": true,\r\n  \"per_method_rows\": 4032,\r\n  \"status\": \"author correction complete; awaiting root freeze and new independent reception\"\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiZmlsZXNfaW5fY29ycmVjdGlvbl9kb21haW4iOiAxNiwNCiAgInRlcm1pbmFsX3JlY2VpcHRzX2JlZm9yZV90aGlzX2NvbW1hbmQiOiA5LA0KICAibm9uemVyb19yZWNlaXB0c19wcmVzZXJ2ZWQiOiBbXSwNCiAgImN1cnJlbnRfZG9jc19oYXZlX29ubHlfY3VycmVudF9jb250cmFjdCI6IHRydWUsDQogICJwZXJfbWV0aG9kX3Jvd3MiOiA0MDMyLA0KICAic3RhdHVzIjogImF1dGhvciBjb3JyZWN0aW9uIGNvbXBsZXRlOyBhd2FpdGluZyByb290IGZyZWV6ZSBhbmQgbmV3IGluZGVwZW5kZW50IHJlY2VwdGlvbiINCn0NCg==",
+  "stderr_base64": ""
+}

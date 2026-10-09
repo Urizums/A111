@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; root=Path('.'); paths=['runs/R21/inputs','runs/R20/final']; [(print('## '+p), print('\\\\n'.join(str(x) for x in sorted((root/p).iterdir())) if (root/p).exists() else 'MISSING')) for p in paths]"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:11:56.874648+00:00",
+    "monotonic_ns": 174547453000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:11:56.950270+00:00",
+    "monotonic_ns": 174547531000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "## runs/R21/inputs\r\nruns\\R21\\inputs\\PROBLEM.md\\nruns\\R21\\inputs\\raw\\nruns\\R21\\inputs\\reference\\nruns\\R21\\inputs\\REQUEST.md\r\n## runs/R20/final\r\nruns\\R20\\final\\C13-FORWARD.md\\nruns\\R20\\final\\candidate\\nruns\\R20\\final\\package\\nruns\\R20\\final\\PAPER.md\\nruns\\R20\\final\\SYNTHESIS.md\r\n",
+  "stderr": "",
+  "stdout_base64": "IyMgcnVucy9SMjEvaW5wdXRzDQpydW5zXFIyMVxpbnB1dHNcUFJPQkxFTS5tZFxucnVuc1xSMjFcaW5wdXRzXHJhd1xucnVuc1xSMjFcaW5wdXRzXHJlZmVyZW5jZVxucnVuc1xSMjFcaW5wdXRzXFJFUVVFU1QubWQNCiMjIHJ1bnMvUjIwL2ZpbmFsDQpydW5zXFIyMFxmaW5hbFxDMTMtRk9SV0FSRC5tZFxucnVuc1xSMjBcZmluYWxcY2FuZGlkYXRlXG5ydW5zXFIyMFxmaW5hbFxwYWNrYWdlXG5ydW5zXFIyMFxmaW5hbFxQQVBFUi5tZFxucnVuc1xSMjBcZmluYWxcU1lOVEhFU0lTLm1kDQo=",
+  "stderr_base64": ""
+}

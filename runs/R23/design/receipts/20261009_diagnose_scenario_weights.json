@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import pandas as pd; p=pd.read_csv(\"runs/R23/design/probe-output-v2/scenarios.csv\"); print(p.weight.unique(), p.scenario_id.nunique(), p.groupby(\"scenario_id\").weight.agg([\"min\",\"max\"]).head(20).to_string(), p.groupby(\"scenario_id\").weight.min().sum())"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:35:47.897657+00:00",
+    "monotonic_ns": 172378468000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:35:48.560936+00:00",
+    "monotonic_ns": 172379140000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[0.07142857] 14                   min       max\r\nscenario_id                    \r\n0            0.071429  0.071429\r\n1            0.071429  0.071429\r\n2            0.071429  0.071429\r\n3            0.071429  0.071429\r\n4            0.071429  0.071429\r\n5            0.071429  0.071429\r\n6            0.071429  0.071429\r\n7            0.071429  0.071429\r\n8            0.071429  0.071429\r\n9            0.071429  0.071429\r\n10           0.071429  0.071429\r\n11           0.071429  0.071429\r\n12           0.071429  0.071429\r\n13           0.071429  0.071429 0.9999999996000002\r\n",
+  "stderr": "",
+  "stdout_base64": "WzAuMDcxNDI4NTddIDE0ICAgICAgICAgICAgICAgICAgIG1pbiAgICAgICBtYXgNCnNjZW5hcmlvX2lkICAgICAgICAgICAgICAgICAgICANCjAgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjEgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjIgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjMgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjQgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjUgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjYgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjcgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjggICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjkgICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjEwICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjExICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjEyICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkNCjEzICAgICAgICAgICAwLjA3MTQyOSAgMC4wNzE0MjkgMC45OTk5OTk5OTk2MDAwMDAyDQo=",
+  "stderr_base64": ""
+}

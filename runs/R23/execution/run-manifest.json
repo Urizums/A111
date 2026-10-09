@@ -1,0 +1,186 @@
+{
+  "schema": "r23-independent-consumer-slice/1",
+  "status": "bounded one-day calculation complete; independent acceptance and full production pending",
+  "slice_id": "R23-CONSUMER-POINT-IN-TIME-2026-10-14",
+  "origin": "2026-10-14T18:00:00+08:00",
+  "target_service_date": "2026-10-15",
+  "evaluation_label_cutoff": "2026-10-31T18:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "read_domain": [
+    "AGENTS.md",
+    "runs/R23/brief/TASK.md",
+    "runs/R23/brief/INPUTS.json",
+    "runs/R23/design/WORKFLOW.md",
+    "runs/R23/design/probe.py",
+    "runs/R23/design-lock.json identity",
+    "runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md",
+    "runs/R20/final/candidate/C13/forge-agent-flow/references/*.md (8 files)",
+    "runs/R20/final/candidate/C13-lock.json identity",
+    "runs/R21/inputs/raw/*",
+    "runs/R21/inputs/reference/BASELINE.md",
+    "runs/R21/inputs/reference/experiment.json",
+    "runs/R21/input-lock.json identity only; REQUEST.md and PROBLEM.md contents not read"
+  ],
+  "write_domain": "runs/R23/execution/** (cooperative directory boundary; not OS isolation)",
+  "input_lock_sha256": {
+    "R21-input-lock.json": "dcd4f9ffd67097e6dc53cc919ed0333f9340f7dc938d7c6ea3694af7f33d53d7",
+    "C13-lock.json": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a",
+    "R23-design-lock.json": "83a599b90637fb2befe6e47e00ee16568785b1cd8bbfb61e29cecbf3d3ee55c4"
+  },
+  "raw_source_sha256": {
+    "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+    "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+    "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+    "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+    "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+    "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403",
+    "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753"
+  },
+  "freeze": {
+    "config_path": "runs/R23/execution/v2/consumer-slice-config.json",
+    "config_sha256": "3cf7228a0289cf272941ad8eb1d499c644d5e5487f9e22e338d33cc9f6063c06",
+    "source_path": "runs/R23/execution/v2/consumer_slice.py",
+    "source_sha256": "d25ce59e091a04d2b1549e1a81353fe60610c16420f8e2242b344e334051b109",
+    "freeze_path": "runs/R23/execution/v2/consumer-slice-freeze.json",
+    "code_sha256": "d25ce59e091a04d2b1549e1a81353fe60610c16420f8e2242b344e334051b109"
+  },
+  "methods": [
+    "shared_ridge10_consumer",
+    "weekly_median56_consumer"
+  ],
+  "output_paths": [
+    "runs/R23/execution/v2/consumer-point-slice.csv",
+    "runs/R23/execution/v2/consumer-point-slice-report.json",
+    "runs/R23/execution/REPORT.md"
+  ],
+  "result": {
+    "shared_ridge10_consumer": {
+      "mae_units_per_pair": 2.3345852721777587,
+      "rmse_units_per_pair": 2.8712789665214618,
+      "mean_signed_error_units_per_pair": 1.5008410004200332
+    },
+    "weekly_median56_consumer": {
+      "mae_units_per_pair": 2.5104166666666665,
+      "rmse_units_per_pair": 3.0413812651491097,
+      "mean_signed_error_units_per_pair": 1.1666666666666667
+    },
+    "point_rows": 192,
+    "target_keys_per_method": 96,
+    "excluded_later_published_training_rows": 166,
+    "visible_training_keys_with_later_rows": 44,
+    "target_label_rows_after_origin": 96,
+    "weekly_fallback_counts": {
+      "store_item": 0,
+      "item_weekday": 0
+    }
+  },
+  "checks": [
+    "raw input hashes match identity manifest",
+    "96 unique target keys per method",
+    "training demand availability and service-date cutoff enforced",
+    "actual later revision boundary exercised and excluded",
+    "all target score labels selected after origin and by fixed cutoff",
+    "promotion announcements at or before origin",
+    "weather and settlement excluded from predictors"
+  ],
+  "producer_self_check": "Not read or used; source content was not opened.",
+  "independent_acceptance": "Pending; this consumer report is not an acceptor verdict.",
+  "uncovered": [
+    "multiple chronological folds, candidate ranking, untouched holdout",
+    "interval calibration and coverage",
+    "stochastic scenarios and constrained replenishment optimization",
+    "daily resource/objective recomputation",
+    "42-day outputs, sensitivity, figures, Chinese paper",
+    "independent receiving verdict and 42-day reliability"
+  ],
+  "runtime": {
+    "python": "3.12",
+    "pandas": "3.0.2",
+    "numpy": "2.5.3",
+    "scikit_learn": "1.8.0"
+  },
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "command_receipts": [
+    "receipts/r23-consumer-01-sources.txt",
+    "receipts/r23-consumer-02-identities.txt",
+    "receipts/r23-consumer-03-method-sources.txt",
+    "receipts/r23-consumer-04-eligibility.txt",
+    "receipts/r23-consumer-05-boundary-window.txt",
+    "receipts/r23-consumer-06-boundary-window-retry.txt",
+    "receipts/r23-consumer-07-revision-boundary-eligibility.txt",
+    "receipts/r23-consumer-08-freeze.txt",
+    "receipts/r23-consumer-09-compute.txt",
+    "receipts/r23-consumer-10-inspect-freeze-error.txt",
+    "receipts/r23-consumer-11-freeze-repair.txt",
+    "receipts/r23-consumer-12-freeze-repair-retry.txt",
+    "receipts/r23-consumer-13-compute-retry.txt",
+    "receipts/r23-consumer-14-source-hash-diagnosis.txt",
+    "receipts/r23-consumer-15-source-fix-and-refreeze.txt",
+    "receipts/r23-consumer-16-compute-final.txt",
+    "receipts/r23-consumer-17-freeze-serialization-repair.txt",
+    "receipts/r23-consumer-18-compute-retry.txt",
+    "receipts/r23-consumer-19-version2-freeze.txt",
+    "receipts/r23-consumer-20-version2-freeze-retry.txt",
+    "receipts/r23-consumer-21-compute-v2.txt",
+    "receipts/r23-consumer-22-v2-source-repair.txt",
+    "receipts/r23-consumer-23-source-check.txt",
+    "receipts/r23-consumer-24-v2-condition-fix.txt",
+    "receipts/r23-consumer-25-compute-v2-final.txt",
+    "receipts/r23-consumer-26-v2-rootpath-fix.txt",
+    "receipts/r23-consumer-27-compute-v2-retry.txt",
+    "receipts/r23-consumer-28-freeze-hash-diagnosis.txt",
+    "receipts/r23-consumer-29-v2-output-path-fix.txt",
+    "receipts/r23-consumer-30-compute-v2-final.txt",
+    "receipts/r23-consumer-31-manifest-consistency.txt",
+    "receipts/r23-consumer-32-final-artifact-identities.txt",
+    "receipts/r23-consumer-33-manifest-versions.txt",
+    "receipts/r23-consumer-34-final-manifest-audit.txt"
+  ],
+  "code_versions": [
+    {
+      "path": "runs/R23/execution/consumer_slice-v1-preserved.py",
+      "sha256": "48dd62137512db0d4448b22bfec0411e493f7a4644097765395043c28edd9d24",
+      "state": "initial frozen source with weather hash transcription error; not a successful run"
+    },
+    {
+      "path": "runs/R23/execution/consumer_slice.py",
+      "sha256": "d80fbdc7bccbe0c63c04d139feeef82e0b65a4ec9209095f07e3ffaf47203c6f",
+      "state": "v1 computed source; original-date cutoff weaker than frozen contract; output retained in attempt-v1"
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer_slice.py",
+      "sha256": "d25ce59e091a04d2b1549e1a81353fe60610c16420f8e2242b344e334051b109",
+      "state": "final v2 strict service-date-before-origin-date source; computed successfully"
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer_slice-v2-invalid.py",
+      "sha256": "80f25c22746c4fafc86126d81c3a7242e8d2d92abbcfc6e1dc009c8d83e3b6e2",
+      "state": "malformed newline construction; syntax error retained"
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer_slice-v2-unmodified.py",
+      "sha256": "f4975129bcd07414aecf7532a4f383477f670a8cdca4133828eb0d962da1fc53",
+      "state": "intermediate source before strict cutoff replacement"
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer_slice-v2-rootpath-invalid.py",
+      "sha256": "32b3e50673a1b67fa9923a0cf6a9ee97dc5d801bc38e3b318c642258b85b78c3",
+      "state": "strict cutoff source with incorrect root-depth assumption; path failure retained"
+    }
+  ],
+  "compute_invocations": {
+    "total": 8,
+    "failed": 6,
+    "completed": 2
+  },
+  "output_sha256": {
+    "attempt-v1/consumer-point-slice.csv": "64bf5de75b1767b77e5b0f31ce13102fb3e8aa5b413e0772223fd7cb38d896ac",
+    "attempt-v1/consumer-point-slice-report.json": "f26f09206e432eb533304fe701e5fd04222ca5b7d962f5c8bbcf617e24197ec4",
+    "v2/consumer-point-slice.csv": "64bf5de75b1767b77e5b0f31ce13102fb3e8aa5b413e0772223fd7cb38d896ac",
+    "v2/consumer-point-slice-report.json": "44097b85ad16a3fb0cf1b77c9308ad5ce2027101842c800b24bff8b0631b28f6"
+  }
+}

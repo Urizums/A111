@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; p=Path(\"runs/R23/design/probe.py\"); lines=p.read_text(encoding=\"utf-8\").splitlines(True); a=lines.index(\"    scenario_rows = []\\n\"); b=lines.index(\"    pred.to_csv(out / \\\"predictions.csv\\\", index=False, encoding=\\\"utf-8\\\", float_format=\\\"%.10f\\\")\\n\"); del lines[a:b]; a=lines.index(\"    features[KEY + [\\\"origin\\\", \\\"promo_known\\\", \\\"announced_at\\\", \\\"discount_fraction\\\", \\\"holiday\\\", \\\"weekday_monday_zero\\\"]].to_csv(\\n\"); b=lines.index(\"    hashes = {f\\\"{name}.csv\\\": sha256(raw / f\\\"{name}.csv\\\") for name in TABLES}\\n\"); del lines[a:b]; out=Path(\"runs/R23/design/versions/probe-v1.py\"); out.parent.mkdir(parents=True, exist_ok=True); out.write_text(\"\".join(lines), encoding=\"utf-8\"); print(out, out.stat().st_size)"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:35:10.011997+00:00",
+    "monotonic_ns": 172340593000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:35:10.092203+00:00",
+    "monotonic_ns": 172340671000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "runs\\R23\\design\\versions\\probe-v1.py 10134\r\n",
+  "stderr": "",
+  "stdout_base64": "cnVuc1xSMjNcZGVzaWduXHZlcnNpb25zXHByb2JlLXYxLnB5IDEwMTM0DQo=",
+  "stderr_base64": ""
+}

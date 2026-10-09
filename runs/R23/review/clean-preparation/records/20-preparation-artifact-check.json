@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; import json; b=Path('runs/R23/review/clean-preparation'); s=json.loads((b/'status.json').read_text(encoding='utf-8')); print(json.dumps({'files':{n:(b/n).stat().st_size for n in ['PLAN.md','read-domain.md','status.json']},'status':s['status'],'result':s['result'],'formal_reception_started':s['formal_reception_started'],'telemetry':s['receipt_fields']},ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:13:59.510959+00:00",
+    "monotonic_ns": 174670093000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:13:59.591933+00:00",
+    "monotonic_ns": 174670171000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"files\": {\r\n    \"PLAN.md\": 3710,\r\n    \"read-domain.md\": 3524,\r\n    \"status.json\": 1216\r\n  },\r\n  \"status\": \"preparation_complete_waiting_formal_assignment\",\r\n  \"result\": \"not_assessed\",\r\n  \"formal_reception_started\": false,\r\n  \"telemetry\": {\r\n    \"actual_model\": null,\r\n    \"tokens\": null,\r\n    \"cost\": null\r\n  }\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiZmlsZXMiOiB7DQogICAgIlBMQU4ubWQiOiAzNzEwLA0KICAgICJyZWFkLWRvbWFpbi5tZCI6IDM1MjQsDQogICAgInN0YXR1cy5qc29uIjogMTIxNg0KICB9LA0KICAic3RhdHVzIjogInByZXBhcmF0aW9uX2NvbXBsZXRlX3dhaXRpbmdfZm9ybWFsX2Fzc2lnbm1lbnQiLA0KICAicmVzdWx0IjogIm5vdF9hc3Nlc3NlZCIsDQogICJmb3JtYWxfcmVjZXB0aW9uX3N0YXJ0ZWQiOiBmYWxzZSwNCiAgInRlbGVtZXRyeSI6IHsNCiAgICAiYWN0dWFsX21vZGVsIjogbnVsbCwNCiAgICAidG9rZW5zIjogbnVsbCwNCiAgICAiY29zdCI6IG51bGwNCiAgfQ0KfQ0K",
+  "stderr_base64": ""
+}

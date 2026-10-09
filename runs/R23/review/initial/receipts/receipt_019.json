@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path;p=Path('runs/R23/design/probe.py');lines=p.read_text(encoding='utf-8').splitlines();print('total lines',len(lines));\nfor i,line in enumerate(lines,1):\n if any(t in line for t in ['add_argument','out/','scenarios.csv','feature_lineage.csv','probe-output','if __name__','def main','write_']):print(f'{i}: {line}')"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:03:05.070296+00:00",
+    "monotonic_ns": 174015640000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:03:05.149483+00:00",
+    "monotonic_ns": 174015718000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "total lines 218\r\n135: def main() -> None:\r\n137:     ap.add_argument(\"--out\", required=True)\r\n184:     pd.concat(scenario_rows, ignore_index=True).to_csv(out / \"scenarios.csv\", index=False, encoding=\"utf-8\", float_format=\"%.10f\")\r\n188:         out / \"feature_lineage.csv\", index=False, encoding=\"utf-8\"\r\n213:     (out / \"summary.json\").write_text(json.dumps(summary, ensure_ascii=False, indent=2) + \"\\n\", encoding=\"utf-8\")\r\n217: if __name__ == \"__main__\":\r\n",
+  "stderr": "",
+  "stdout_base64": "dG90YWwgbGluZXMgMjE4DQoxMzU6IGRlZiBtYWluKCkgLT4gTm9uZToNCjEzNzogICAgIGFwLmFkZF9hcmd1bWVudCgiLS1vdXQiLCByZXF1aXJlZD1UcnVlKQ0KMTg0OiAgICAgcGQuY29uY2F0KHNjZW5hcmlvX3Jvd3MsIGlnbm9yZV9pbmRleD1UcnVlKS50b19jc3Yob3V0IC8gInNjZW5hcmlvcy5jc3YiLCBpbmRleD1GYWxzZSwgZW5jb2Rpbmc9InV0Zi04IiwgZmxvYXRfZm9ybWF0PSIlLjEwZiIpDQoxODg6ICAgICAgICAgb3V0IC8gImZlYXR1cmVfbGluZWFnZS5jc3YiLCBpbmRleD1GYWxzZSwgZW5jb2Rpbmc9InV0Zi04Ig0KMjEzOiAgICAgKG91dCAvICJzdW1tYXJ5Lmpzb24iKS53cml0ZV90ZXh0KGpzb24uZHVtcHMoc3VtbWFyeSwgZW5zdXJlX2FzY2lpPUZhbHNlLCBpbmRlbnQ9MikgKyAiXG4iLCBlbmNvZGluZz0idXRmLTgiKQ0KMjE3OiBpZiBfX25hbWVfXyA9PSAiX19tYWluX18iOg0K",
+  "stderr_base64": ""
+}

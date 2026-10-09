@@ -1,0 +1,85 @@
+{
+  "schema": "r23-independent-reception-verdict/1",
+  "state": "terminal_first_verdict",
+  "overall": "fail",
+  "criteria": {
+    "j1": {
+      "status": "fail",
+      "source": [
+        "runs/R23/brief/TASK.md:7",
+        "runs/R23/brief/TASK.md:9",
+        "runs/R23/acceptance.json:4"
+      ],
+      "artifact": [
+        "runs/R23/design/WORKFLOW.md:7",
+        "runs/R23/design/WORKFLOW.md:40-44",
+        "runs/R23/design/WORKFLOW.md:53-54"
+      ],
+      "check": "Compared the original output/interface requirement with the frozen end-to-end workflow. The task specifies per-method forecast/interval and replenishment tables. Stage 7 instead refits only the selected eligible method; the table interface specifies 4,032 keys per selected method. Earlier stages compare methods, but no final future-output/receiving interface is provided for every compared method.",
+      "evidence": "This is a missing mandatory execution/receiving interface for the requested per-method outputs, not a missing numeric result in the bounded slice. Other fixed units and constraints are mapped in the workflow.",
+      "limits": "Finding is limited to the frozen workflow's final-output contract; it does not judge an unbuilt full production result."
+    },
+    "j2": {
+      "status": "pass",
+      "source": [
+        "runs/R23/acceptance.json:5",
+        "runs/R23/brief/TASK.md:7"
+      ],
+      "artifact": [
+        "runs/R23/design/WORKFLOW.md:39-44",
+        "runs/R23/design/WORKFLOW.md:64-66",
+        "runs/R23/execution/v2/consumer-slice-config.json:3",
+        "runs/R23/execution/v2/consumer-slice-config.json:30-34",
+        "runs/R23/execution/v2/consumer-point-slice-report.json"
+      ],
+      "check": "The workflow distinguishes historical folds from the fixed 42-day plan, requires time-eligible labels/features, and states that one-date smoke evidence does not establish a ranking or reliability. The consumer configuration explicitly limits its claim to one historical target date, point forecasts only, and no 42-day production/reliability. Independent recomputation confirmed exactly 96 target labels available only after origin and by the stated evaluation cutoff.",
+      "evidence": "The selected slice covers 2026-10-15 only. The design leaves 90% interval calibration, replenishment optimization, full-horizon delivery, and future reliability for later checks. This is an explicit scope gap with feasible next checks in the full workflow; no reviewer-imposed experiment count was used.",
+      "limits": "Pass supports honest scope treatment, not the accuracy or reliability of a 42-day future plan."
+    },
+    "j3": {
+      "status": "pass",
+      "source": [
+        "runs/R23/acceptance.json:6",
+        "runs/R23/brief/TASK.md:7"
+      ],
+      "artifact": [
+        "runs/R23/execution/v2/consumer_slice.py",
+        "runs/R23/execution/v2/consumer-slice-config.json",
+        "runs/R23/execution/v2/consumer-point-slice.csv",
+        "runs/R23/execution/v2/consumer-point-slice-report.json",
+        "runs/R23/execution/receipts/r23-consumer-30-compute-v2-final.txt",
+        "runs/R23/execution-lock.json",
+        "runs/R23/review/initial/recompute-v2.py",
+        "runs/R23/review/initial/independent-recomputation.json"
+      ],
+      "check": "The v2 consumer was actually invoked from raw inputs; its exit-0 terminal receipt and all 34 process receipts match the frozen execution lock. I independently rebuilt both point methods from R21 raw data and reproduced every output key, forecast, selected actual/revision/availability, and reported metric. The late-report boundary was activated: 166 post-origin report rows were excluded; 44 training keys had later reports. For S01/K03 on 2026-10-12, revision 1 available 2026-10-13 09:00 was used at the 2026-10-14 18:00 origin; revision 2 arrived 2026-10-15 09:00. The 96 scoring labels were all post-origin and available by cutoff (75 revision 1, 21 revision 2); all 96 target promotions were announced by origin.",
+      "evidence": "The independent Ridge prediction maximum absolute difference from the CSV was 4.94e-11; weekly-median difference was 0. Recomputed MAE/RMSE/mean signed error matched the consumer report for both methods. The one-day slice is an actual raw-input-to-output path with a source-activated revision/availability boundary.",
+      "limits": "This slice has point forecasts only. It does not exercise nominal 90% intervals, replenishment quantities, resource/objective checks, the 42-day horizon, paper production, or future realized reliability. The consumer process preserved ten nonzero command receipts and a later successful v2 run; those failures remain part of history."
+    },
+    "j4": {
+      "status": "pass",
+      "source": [
+        "runs/R23/acceptance.json:7",
+        "runs/R23/brief/TASK.md:7-9"
+      ],
+      "artifact": [
+        "runs/R23/design-lock.json",
+        "runs/R23/execution-lock.json",
+        "runs/R23/design/WORKFLOW.md",
+        "runs/R23/execution/v2/consumer-slice-config.json",
+        "runs/R23/execution/v2/consumer-point-slice.csv",
+        "runs/R23/review/initial/independent-freeze-v2.json",
+        "runs/R23/review/initial/independent-recomputation.json"
+      ],
+      "check": "This receiving context was assigned separately from designer and consumer. It received the original requirements, frozen source identities, actual workflow/slice and output; no author diagnosis, expected answer, root verdict, or other reviewer verdict was supplied. The consumer report was inspected only as an artifact, not accepted as an oracle. I froze a separate checker before running it and recomputed source facts and outputs. The workflow identifies a Chinese paper as the eventual reader deliverable and marks production/paper/acceptance as pending; the slice/report consistently limit their language to one-date descriptive point forecasts.",
+      "evidence": "Design and consumed artifact identities match their locks; raw identities match the R21 input lock. Actual model, tokens, and cost remain null. No model/page/window/retry/quality-award quota was added.",
+      "limits": "No final paper or full production artifact exists in this reception packet, so this verdict checks workflow and slice language, not a rendered paper."
+    }
+  },
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "next_action": "Stop writing after this first complete verdict. Root may freeze and review this judgment before any response or repair feedback."
+}

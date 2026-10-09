@@ -1,0 +1,29 @@
+{
+  "schema": "r23-informed-design-correction/1",
+  "state": "author_revision_complete_pending_new_independent_reception",
+  "revision_kind": "informed correction; not a new blind design",
+  "basis": {
+    "source": "runs/R23/brief/TASK.md:9",
+    "initial_verdict": "runs/R23/review/initial/verdict.json#criteria.j1",
+    "initial_reception_lock": "runs/R23/initial-reception-lock.json",
+    "finding": "Stage 7 and shared output interface only required future tables for the selected method, while TASK line 9 requires them for each method."
+  },
+  "changed_contract": [
+    "Freeze all compared methods in requested_methods before scores.",
+    "Generate full 42x96 future prediction/interval and replenishment tables for every requested method, including methods not recommended.",
+    "Validate 4032 unique date/store/item keys per method and equality of prediction/replenishment key sets.",
+    "Add method registry with producer and independent status, row/key coverage, outputs, checks, and failure/recovery details.",
+    "A failed or unverified method remains in the registry and leaves the requested deliverable incomplete; no empty or fabricated rows count as delivery."
+  ],
+  "not_changed": [
+    "The original runs/R23/design/** package is left untouched.",
+    "The original one-day consumer slice and all its uncovered scope remain unchanged.",
+    "No full 42-day model, paper, or production output was run or generated for this documentation correction.",
+    "No science bytes or outputs from consumer v1/v2 were opened or consumed."
+  ],
+  "actual_model": null,
+  "tokens": null,
+  "cost": null,
+  "write_domain_contract_only": true,
+  "independent_reception": "pending"
+}

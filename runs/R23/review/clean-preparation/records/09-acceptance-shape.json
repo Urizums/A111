@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; import json; x=json.loads(Path('runs/R23/acceptance.json').read_text(encoding='utf-8')); print(type(x).__name__, list(x) if isinstance(x,dict) else len(x) if isinstance(x,list) else x)"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:12:16.371819+00:00",
+    "monotonic_ns": 174566953000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:12:16.448040+00:00",
+    "monotonic_ns": 174567031000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "dict ['schema', 'criteria', 'not_sent_to_designer', 'policy']\r\n",
+  "stderr": "",
+  "stdout_base64": "ZGljdCBbJ3NjaGVtYScsICdjcml0ZXJpYScsICdub3Rfc2VudF90b19kZXNpZ25lcicsICdwb2xpY3knXQ0K",
+  "stderr_base64": ""
+}

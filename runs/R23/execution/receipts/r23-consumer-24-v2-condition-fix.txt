@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json,hashlib; root=Path('runs/R23/execution'); d=root/'v2'; bad=d/'consumer_slice.py'; (d/'consumer_slice-v2-unmodified.py').write_text(bad.read_text(encoding='utf-8'),encoding='utf-8'); src=(root/'consumer_slice.py').read_text(encoding='utf-8'); q=chr(39); old1='    eligible_train = demand[(demand.service_date < target) & (demand.available_at <= origin)]'; new1='    eligible_train = demand[(demand.service_date < origin.strftime('+q+'%Y-%m-%d'+q+')) & (demand.available_at <= origin)]'; old2='    if train.empty or not train.available_at.le(origin).all() or not train.service_date.lt(target).all():'; new2='    if train.empty or not train.available_at.le(origin).all() or not train.service_date.lt(origin.strftime('+q+'%Y-%m-%d'+q+')).all():'; assert old1 in src and old2 in src; src=src.replace(old1,new1).replace(old2,new2).replace('OUT = ROOT / '+q+'runs/R23/execution'+q,'OUT = ROOT / '+q+'runs/R23/execution/v2'+q); bad.write_text(src,encoding='utf-8'); fpath=d/'consumer-slice-freeze.json'; f=json.loads(fpath.read_text(encoding='utf-8')); f['code_sha256']=hashlib.sha256(bad.read_bytes()).hexdigest(); f['correction']='Strict origin-date training-label cutoff; v1 preserved under attempt-v1; invalid v2 source construction retained.'; fpath.write_text(json.dumps(f,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8'); print('strict cutoff source hash',f['code_sha256'])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:49:49.099904+00:00",
+    "monotonic_ns": 173219671000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:49:49.212520+00:00",
+    "monotonic_ns": 173219796000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "strict cutoff source hash 32b3e50673a1b67fa9923a0cf6a9ee97dc5d801bc38e3b318c642258b85b78c3\r\n",
+  "stderr": "",
+  "stdout_base64": "c3RyaWN0IGN1dG9mZiBzb3VyY2UgaGFzaCAzMmIzZTUwNjczYTFiNjdmYTk5MjNhMGNmNmE5ZWU5N2RjNWQ4MDFiYzM4ZTNiMzE4YzY0MjI1OGI4NWI3OGMzDQo=",
+  "stderr_base64": ""
+}

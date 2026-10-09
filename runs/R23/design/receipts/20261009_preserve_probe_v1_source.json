@@ -1,0 +1,32 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; p=Path('runs/R23/design/probe.py'); lines=p.read_text(encoding='utf-8').splitlines(True); start=lines.index('    scenario_rows = []\\\\n'); end=lines.index('    pred.to_csv(out / \\\\\\",
+    "predictions.csv\\\\\\, index=False, encoding=\\\\\\utf-8\\\\\\, float_format=\\\\\\%.10f\\\\\\)\\\\n'); del lines[start:end]; start=lines.index('    features[KEY + [\\\\\\origin\\\\\\, \\\\\\promo_known\\\\\\, \\\\\\announced_at\\\\\\, \\\\\\discount_fraction\\\\\\, \\\\\\holiday\\\\\\, \\\\\\weekday_monday_zero\\\\\\]].to_csv(\\\\n'); end=lines.index('    hashes = {f\\\\\\",
+    "\\\\\\: sha256(raw / f\\\\\\",
+    "\\\\\\) for name in TABLES}\\\\n'); del lines[start:end]; out=Path('runs/R23/design/versions/probe-v1.py'); out.parent.mkdir(parents=True, exist_ok=True); out.write_text(''.join(lines), encoding='utf-8'); print(out, out.stat().st_size)"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:34:51.364142+00:00",
+    "monotonic_ns": 172321937000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:34:51.422654+00:00",
+    "monotonic_ns": 172322000000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "  File \"<string>\", line 1\r\n    from pathlib import Path; p=Path('runs/R23/design/probe.py'); lines=p.read_text(encoding='utf-8').splitlines(True); start=lines.index('    scenario_rows = []\\\\n'); end=lines.index('    pred.to_csv(out / \\\\\\\r\n                                                                                                                                                                                        ^\r\nSyntaxError: unterminated string literal (detected at line 1)\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "ICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMQ0KICAgIGZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aDsgcD1QYXRoKCdydW5zL1IyMy9kZXNpZ24vcHJvYmUucHknKTsgbGluZXM9cC5yZWFkX3RleHQoZW5jb2Rpbmc9J3V0Zi04Jykuc3BsaXRsaW5lcyhUcnVlKTsgc3RhcnQ9bGluZXMuaW5kZXgoJyAgICBzY2VuYXJpb19yb3dzID0gW11cXG4nKTsgZW5kPWxpbmVzLmluZGV4KCcgICAgcHJlZC50b19jc3Yob3V0IC8gXFxcDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXg0KU3ludGF4RXJyb3I6IHVudGVybWluYXRlZCBzdHJpbmcgbGl0ZXJhbCAoZGV0ZWN0ZWQgYXQgbGluZSAxKQ0K"
+}

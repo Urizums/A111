@@ -1,0 +1,36 @@
+{
+  "schema": "r23-independent-reception-freeze/1",
+  "frozen_before_recomputation": true,
+  "checker_path": "runs/R23/review/initial/recompute.py",
+  "checker_sha256": "bd28027c46e0cd3d84b5b63c9e77006a5284deb1f07dddec4da01e8e4fdbe1f6",
+  "source_sha256": {
+    "runs/R23/acceptance.json": "7337cb672c53b9ddd838c28e7cd754a9d612a4c444e443ec795bc445c9984ac7",
+    "runs/R23/brief/TASK.md": "9f0d2b1bd4c4ef8d56d75ab119193ed6c9eba7a0019f7f2615f7c12b64426dc5",
+    "runs/R21/input-lock.json": "dcd4f9ffd67097e6dc53cc919ed0333f9340f7dc938d7c6ea3694af7f33d53d7",
+    "runs/R20/final/candidate/C13-lock.json": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a",
+    "runs/R23/design-lock.json": "83a599b90637fb2befe6e47e00ee16568785b1cd8bbfb61e29cecbf3d3ee55c4",
+    "runs/R23/design/WORKFLOW.md": "521330e008b88633523d0ebd384fb440c1fa37e0c8a2c3ec04302c0201e5279a",
+    "runs/R23/design/probe.py": "c27bfcebea01263095a12dc06e5a76c748bd43938c682f750121e3fb00c6bdf2",
+    "runs/R23/execution-lock.json": "17200710e446c091d09d1c189f1fb9dc7f5b43e5652206cbc46a0e4c78c16ecb",
+    "runs/R23/execution/v2/consumer_slice.py": "d25ce59e091a04d2b1549e1a81353fe60610c16420f8e2242b344e334051b109",
+    "runs/R23/execution/v2/consumer-slice-config.json": "3cf7228a0289cf272941ad8eb1d499c644d5e5487f9e22e338d33cc9f6063c06",
+    "runs/R23/execution/v2/consumer-slice-freeze.json": "7551ed2a74f2f02d75491731a4a3a32153139deb0c401552e9622206b19aed44",
+    "runs/R23/execution/v2/consumer-point-slice.csv": "64bf5de75b1767b77e5b0f31ce13102fb3e8aa5b413e0772223fd7cb38d896ac",
+    "runs/R23/execution/v2/consumer-point-slice-report.json": "44097b85ad16a3fb0cf1b77c9308ad5ce2027101842c800b24bff8b0631b28f6"
+  },
+  "planned_checks": [
+    "locked source/artifact byte identity",
+    "as-of training revision eligibility",
+    "actual later-revision boundary activation",
+    "target-label cutoff and post-origin status",
+    "promotion announcement cutoff",
+    "independent recomputation of both frozen point methods",
+    "exact key/schema/label match to consumer CSV",
+    "independent metric recomputation"
+  ],
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  }
+}

@@ -1,0 +1,118 @@
+{
+  "schema": "r23-independent-recomputation/1",
+  "state": "source recomputation complete",
+  "slice_id": "R23-CONSUMER-POINT-IN-TIME-2026-10-14",
+  "origin": "2026-10-14T18:00:00+08:00",
+  "target": "2026-10-15",
+  "cutoff": "2026-10-31T18:00:00+08:00",
+  "raw_identity_matches_lock": true,
+  "locked_artifact_identity": [
+    {
+      "path": "runs/R23/design/WORKFLOW.md",
+      "matches_identity": true
+    },
+    {
+      "path": "runs/R23/design/probe.py",
+      "matches_identity": true
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer_slice.py",
+      "matches_identity": true
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer-slice-config.json",
+      "matches_identity": true
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer-slice-freeze.json",
+      "matches_identity": true
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer-point-slice.csv",
+      "matches_identity": true
+    },
+    {
+      "path": "runs/R23/execution/v2/consumer-point-slice-report.json",
+      "matches_identity": true
+    }
+  ],
+  "training_rows": 15936,
+  "56_day_rows": 5376,
+  "late_rows_excluded": 166,
+  "training_keys_with_later_reports": 44,
+  "activated_boundary_example": {
+    "key": {
+      "service_date": "2026-10-12",
+      "store_id": "S01",
+      "item_id": "K03"
+    },
+    "visible_revision": 1,
+    "visible_time": "2026-10-13T09:00:00+08:00",
+    "later_revision": 2,
+    "later_time": "2026-10-15T09:00:00+08:00"
+  },
+  "target_labels": {
+    "keys": 96,
+    "post_origin": 96,
+    "by_cutoff": 96,
+    "revision_counts": {
+      "1": 75,
+      "2": 21
+    }
+  },
+  "target_promotions_known": 96,
+  "weekly_fallbacks": {
+    "store_item": 0,
+    "item_weekday": 0
+  },
+  "output_comparison": {
+    "shared_ridge10_consumer": {
+      "rows": 96,
+      "max_abs_output_difference": 4.9407589131078566e-11,
+      "recomputed_metrics": {
+        "mae_units_per_pair": 2.3345852721777587,
+        "rmse_units_per_pair": 2.8712789665214618,
+        "mean_signed_error_units_per_pair": 1.5008410004200332
+      }
+    },
+    "weekly_median56_consumer": {
+      "rows": 96,
+      "max_abs_output_difference": 0.0,
+      "recomputed_metrics": {
+        "mae_units_per_pair": 2.5104166666666665,
+        "rmse_units_per_pair": 3.0413812651491097,
+        "mean_signed_error_units_per_pair": 1.1666666666666667
+      }
+    }
+  },
+  "report_crosschecks": {
+    "train_rows": true,
+    "window_rows": true,
+    "late_rows": true,
+    "boundary_keys": true,
+    "target_labels": true,
+    "known_promos": true,
+    "fallbacks": true,
+    "shared_ridge10_consumer.mae_units_per_pair": true,
+    "shared_ridge10_consumer.rmse_units_per_pair": true,
+    "shared_ridge10_consumer.mean_signed_error_units_per_pair": true,
+    "weekly_median56_consumer.mae_units_per_pair": true,
+    "weekly_median56_consumer.rmse_units_per_pair": true,
+    "weekly_median56_consumer.mean_signed_error_units_per_pair": true
+  },
+  "scope_limit": "One historical date and point forecasts only; no interval calibration, replenishment optimization, full 42-day output, or future reliability claim.",
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "raw_source_sha256": {
+    "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+    "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+    "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+    "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+    "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+    "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403",
+    "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753"
+  }
+}

@@ -26,6 +26,9 @@ for rel in staged:
     if rel.startswith(scopes):assert rel in frozen,('Unfrozen actor/input/result staged',rel)
     p=ROOT/rel
     if p.suffix=='.json':
-        obj=json.loads(p.read_text(encoding='utf-8'))
+        try:obj=json.loads(p.read_text(encoding='utf-8'))
+        except (ValueError,UnicodeDecodeError):
+            assert rel in frozen and 'receipts' not in p.parts,('Unfrozen or invalid command JSON',rel)
+            continue
         if isinstance(obj,dict) and obj.get('schema')=='forge-command-record/1':assert obj['state']=='finished',rel
 print(json.dumps(dict(staged_changes=len(staged),all_selected_actor_scopes_frozen=True,all_receipts_terminal=True,lease_excluded=True)))

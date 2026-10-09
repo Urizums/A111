@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import hashlib,json; d=Path('runs/R23/execution/v2'); sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest(); f=json.loads((d/'consumer-slice-freeze.json').read_text(encoding='utf-8')); print('actual config/code',sha(d/'consumer-slice-config.json'),sha(d/'consumer_slice.py')); print('frozen',f['config_sha256'],f['code_sha256']); print('paths',[x for x in (d/'consumer_slice.py').read_text(encoding='utf-8').splitlines() if x.startswith(('ROOT =','OUT =','CONFIG_PATH =','FREEZE_PATH ='))])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:50:10.986138+00:00",
+    "monotonic_ns": 173241562000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:50:11.071209+00:00",
+    "monotonic_ns": 173241640000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "actual config/code 3cf7228a0289cf272941ad8eb1d499c644d5e5487f9e22e338d33cc9f6063c06 e71e26127e662daa68217cd08a6836e34b7b8a2c9c1f556bbf623ca5e768352f\r\nfrozen 3cf7228a0289cf272941ad8eb1d499c644d5e5487f9e22e338d33cc9f6063c06 e71e26127e662daa68217cd08a6836e34b7b8a2c9c1f556bbf623ca5e768352f\r\npaths ['ROOT = Path(__file__).resolve().parents[4]', 'OUT = ROOT / \"runs/R23/execution\"', 'CONFIG_PATH = OUT / \"consumer-slice-config.json\"', 'FREEZE_PATH = OUT / \"consumer-slice-freeze.json\"']\r\n",
+  "stderr": "",
+  "stdout_base64": "YWN0dWFsIGNvbmZpZy9jb2RlIDNjZjcyMjhhMDI4OWNmMjcyOTQxYWQ4ZWIxZDQ5OWM2NDRkNWU1NDg3ZjllMjJlMzM4ZDMzY2M5ZjYwNjNjMDYgZTcxZTI2MTI3ZTY2MmRhYTY4MjE3Y2QwOGE2ODM2ZTM0YjdiOGEyYzljMWY1NTZiYmY2MjNjYTVlNzY4MzUyZg0KZnJvemVuIDNjZjcyMjhhMDI4OWNmMjcyOTQxYWQ4ZWIxZDQ5OWM2NDRkNWU1NDg3ZjllMjJlMzM4ZDMzY2M5ZjYwNjNjMDYgZTcxZTI2MTI3ZTY2MmRhYTY4MjE3Y2QwOGE2ODM2ZTM0YjdiOGEyYzljMWY1NTZiYmY2MjNjYTVlNzY4MzUyZg0KcGF0aHMgWydST09UID0gUGF0aChfX2ZpbGVfXykucmVzb2x2ZSgpLnBhcmVudHNbNF0nLCAnT1VUID0gUk9PVCAvICJydW5zL1IyMy9leGVjdXRpb24iJywgJ0NPTkZJR19QQVRIID0gT1VUIC8gImNvbnN1bWVyLXNsaWNlLWNvbmZpZy5qc29uIicsICdGUkVFWkVfUEFUSCA9IE9VVCAvICJjb25zdW1lci1zbGljZS1mcmVlemUuanNvbiInXQ0K",
+  "stderr_base64": ""
+}

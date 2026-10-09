@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import hashlib,json; root=Path('runs/R23/execution'); names=['consumer_slice-v1-preserved.py','consumer_slice.py','v2/consumer_slice.py','v2/consumer_slice-v2-invalid.py','v2/consumer_slice-v2-unmodified.py','v2/consumer_slice-v2-rootpath-invalid.py','consumer-slice-config.json','v2/consumer-slice-freeze.json','attempt-v1/consumer-point-slice.csv','attempt-v1/consumer-point-slice-report.json','v2/consumer-point-slice.csv','v2/consumer-point-slice-report.json']; print(json.dumps({n:hashlib.sha256((root/n).read_bytes()).hexdigest() for n in names},indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:51:50.726745+00:00",
+    "monotonic_ns": 173341296000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:51:50.836248+00:00",
+    "monotonic_ns": 173341406000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"consumer_slice-v1-preserved.py\": \"48dd62137512db0d4448b22bfec0411e493f7a4644097765395043c28edd9d24\",\r\n  \"consumer_slice.py\": \"d80fbdc7bccbe0c63c04d139feeef82e0b65a4ec9209095f07e3ffaf47203c6f\",\r\n  \"v2/consumer_slice.py\": \"d25ce59e091a04d2b1549e1a81353fe60610c16420f8e2242b344e334051b109\",\r\n  \"v2/consumer_slice-v2-invalid.py\": \"80f25c22746c4fafc86126d81c3a7242e8d2d92abbcfc6e1dc009c8d83e3b6e2\",\r\n  \"v2/consumer_slice-v2-unmodified.py\": \"f4975129bcd07414aecf7532a4f383477f670a8cdca4133828eb0d962da1fc53\",\r\n  \"v2/consumer_slice-v2-rootpath-invalid.py\": \"32b3e50673a1b67fa9923a0cf6a9ee97dc5d801bc38e3b318c642258b85b78c3\",\r\n  \"consumer-slice-config.json\": \"3cf7228a0289cf272941ad8eb1d499c644d5e5487f9e22e338d33cc9f6063c06\",\r\n  \"v2/consumer-slice-freeze.json\": \"7551ed2a74f2f02d75491731a4a3a32153139deb0c401552e9622206b19aed44\",\r\n  \"attempt-v1/consumer-point-slice.csv\": \"64bf5de75b1767b77e5b0f31ce13102fb3e8aa5b413e0772223fd7cb38d896ac\",\r\n  \"attempt-v1/consumer-point-slice-report.json\": \"f26f09206e432eb533304fe701e5fd04222ca5b7d962f5c8bbcf617e24197ec4\",\r\n  \"v2/consumer-point-slice.csv\": \"64bf5de75b1767b77e5b0f31ce13102fb3e8aa5b413e0772223fd7cb38d896ac\",\r\n  \"v2/consumer-point-slice-report.json\": \"44097b85ad16a3fb0cf1b77c9308ad5ce2027101842c800b24bff8b0631b28f6\"\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiY29uc3VtZXJfc2xpY2UtdjEtcHJlc2VydmVkLnB5IjogIjQ4ZGQ2MjEzNzUxMmRiMGQ0NDQ4YjIyYmZlYzA0MTFlNDkzZjdhNDY0NDA5Nzc2NTM5NTA0M2MyOGVkZDlkMjQiLA0KICAiY29uc3VtZXJfc2xpY2UucHkiOiAiZDgwZmJkYzdiY2NiZTBjNjNjMDRkMTM5ZmVlZWY4MmUwYjY1YTRlYzkyMDkwOTVmMDdlM2ZmYWY0NzIwM2M2ZiIsDQogICJ2Mi9jb25zdW1lcl9zbGljZS5weSI6ICJkMjVjZTU5ZTA5MWEwNGQyYjE1NDllMWE4MTM1M2ZlNjA2MTBjMTY0MjBmOGUyMjQyYjM0NGUzMzQwNTFiMTA5IiwNCiAgInYyL2NvbnN1bWVyX3NsaWNlLXYyLWludmFsaWQucHkiOiAiODBmMjVjMjI3NDZjNGZhZmM4NjEyNmQ4MWMzYTcyNDJlOGQyZDkyYWJiY2ZjNmUxZGMwMDljOGQ4M2UzYjZlMiIsDQogICJ2Mi9jb25zdW1lcl9zbGljZS12Mi11bm1vZGlmaWVkLnB5IjogImY0OTc1MTI5YmNkMDc0MTRhZWNmNzUzMmE0ZjM4MzQ3N2Y2NzBhOGNkY2E0MTMzODI4ZWIwZDk2MmRhMWZjNTMiLA0KICAidjIvY29uc3VtZXJfc2xpY2UtdjItcm9vdHBhdGgtaW52YWxpZC5weSI6ICIzMmIzZTUwNjczYTFiNjdmYTk5MjNhMGNmNmE5ZWU5N2RjNWQ4MDFiYzM4ZTNiMzE4YzY0MjI1OGI4NWI3OGMzIiwNCiAgImNvbnN1bWVyLXNsaWNlLWNvbmZpZy5qc29uIjogIjNjZjcyMjhhMDI4OWNmMjcyOTQxYWQ4ZWIxZDQ5OWM2NDRkNWU1NDg3ZjllMjJlMzM4ZDMzY2M5ZjYwNjNjMDYiLA0KICAidjIvY29uc3VtZXItc2xpY2UtZnJlZXplLmpzb24iOiAiNzU1MWVkMmE3NGYyZjAyZDc1NDkxNzMxYTRhM2EzMjE1MzEzOWRlYjBjNDAxNTUyZTk2MjIyMDZiMTlhZWQ0NCIsDQogICJhdHRlbXB0LXYxL2NvbnN1bWVyLXBvaW50LXNsaWNlLmNzdiI6ICI2NGJmNWRlNzViMTc2N2I3N2U1YjBmMzFjZTEzMTAyZmIzZThhYTViNDEzZTA3NzIyMjNmZDdjYjM4ZDg5NmFjIiwNCiAgImF0dGVtcHQtdjEvY29uc3VtZXItcG9pbnQtc2xpY2UtcmVwb3J0Lmpzb24iOiAiZjI2ZjA5MjA2ZTQzMmViNTMzMzA0ZmU3MDFlNWZkMDQyMjJjYTViN2Q5NjJmNWM4YmJjZjYxN2UyNDE5N2VjNCIsDQogICJ2Mi9jb25zdW1lci1wb2ludC1zbGljZS5jc3YiOiAiNjRiZjVkZTc1YjE3NjdiNzdlNWIwZjMxY2UxMzEwMmZiM2U4YWE1YjQxM2UwNzcyMjIzZmQ3Y2IzOGQ4OTZhYyIsDQogICJ2Mi9jb25zdW1lci1wb2ludC1zbGljZS1yZXBvcnQuanNvbiI6ICI0NDA5N2I4NWFkMTZhM2ZiMGNmMWI3N2M5MzA4YWQ1Y2UyMDI3MTAxODQyYzgwMGIyNGJmZjhiMDYzMWIyOGY2Ig0KfQ0K",
+  "stderr_base64": ""
+}

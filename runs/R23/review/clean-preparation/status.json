@@ -1,0 +1,24 @@
+{
+  "schema": "r23-clean-receiver-preparation/1",
+  "status": "preparation_complete_waiting_formal_assignment",
+  "result": "not_assessed",
+  "passed": null,
+  "failed": null,
+  "formal_reception_started": false,
+  "prepared_by": "independent clean receiver",
+  "write_domain": "runs/R23/review/clean-preparation/**",
+  "plan": "runs/R23/review/clean-preparation/PLAN.md",
+  "read_domain": "runs/R23/review/clean-preparation/read-domain.md",
+  "command_records": "runs/R23/review/clean-preparation/records/",
+  "receipt_fields": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "preparation_errors": [
+    "One recorder invocation from the handoff parent directory could not locate scripts/record_command.py; no child process was started.",
+    "One later inventory invocation repeated the wrong working directory; no child process was started.",
+    "Two Python one-line extraction commands had syntax errors; corrected commands completed the intended bounded reads/checks."
+  ],
+  "next_action": "Wait for root to formally assign the frozen workflow and actual consumer slice; then perform independent source-bound reception without expected answers, author diagnoses, or prior verdicts."
+}

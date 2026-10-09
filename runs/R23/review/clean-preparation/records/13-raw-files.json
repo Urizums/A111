@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; roots=[Path('runs/R21/inputs/raw'),Path('runs/R21/inputs/reference')]; [(print('## '+str(p)),print('\\\\n'.join(str(q) for q in sorted(p.rglob('*')) if q.is_file()))) for p in roots]"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:12:34.980667+00:00",
+    "monotonic_ns": 174585562000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:12:35.052365+00:00",
+    "monotonic_ns": 174585625000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "## runs\\R21\\inputs\\raw\r\nruns\\R21\\inputs\\raw\\calendar.csv\\nruns\\R21\\inputs\\raw\\decision.json\\nruns\\R21\\inputs\\raw\\demand_reports.csv\\nruns\\R21\\inputs\\raw\\items.csv\\nruns\\R21\\inputs\\raw\\promotions.csv\\nruns\\R21\\inputs\\raw\\stores.csv\\nruns\\R21\\inputs\\raw\\weather.csv\r\n## runs\\R21\\inputs\\reference\r\nruns\\R21\\inputs\\reference\\BASELINE.md\\nruns\\R21\\inputs\\reference\\experiment.json\\nruns\\R21\\inputs\\reference\\run.py\r\n",
+  "stderr": "",
+  "stdout_base64": "IyMgcnVuc1xSMjFcaW5wdXRzXHJhdw0KcnVuc1xSMjFcaW5wdXRzXHJhd1xjYWxlbmRhci5jc3ZcbnJ1bnNcUjIxXGlucHV0c1xyYXdcZGVjaXNpb24uanNvblxucnVuc1xSMjFcaW5wdXRzXHJhd1xkZW1hbmRfcmVwb3J0cy5jc3ZcbnJ1bnNcUjIxXGlucHV0c1xyYXdcaXRlbXMuY3N2XG5ydW5zXFIyMVxpbnB1dHNccmF3XHByb21vdGlvbnMuY3N2XG5ydW5zXFIyMVxpbnB1dHNccmF3XHN0b3Jlcy5jc3ZcbnJ1bnNcUjIxXGlucHV0c1xyYXdcd2VhdGhlci5jc3YNCiMjIHJ1bnNcUjIxXGlucHV0c1xyZWZlcmVuY2UNCnJ1bnNcUjIxXGlucHV0c1xyZWZlcmVuY2VcQkFTRUxJTkUubWRcbnJ1bnNcUjIxXGlucHV0c1xyZWZlcmVuY2VcZXhwZXJpbWVudC5qc29uXG5ydW5zXFIyMVxpbnB1dHNccmVmZXJlbmNlXHJ1bi5weQ0K",
+  "stderr_base64": ""
+}

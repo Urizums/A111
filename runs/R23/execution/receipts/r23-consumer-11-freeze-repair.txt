@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json; p=Path('runs/R23/execution/consumer-slice-freeze.json'); raw=p.read_text(encoding='utf-8'); Path('runs/R23/execution/consumer-slice-freeze-v1-invalid.json').write_text(raw,encoding='utf-8'); fixed=raw[:-2]+'\\\\n' if raw.endswith('\\\\\\\\n') else raw; json.loads(fixed); p.write_text(fixed,encoding='utf-8'); print('preserved invalid freeze v1; corrected serialization; parsed keys',list(json.loads(p.read_text(encoding='utf-8')).keys()))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:48:08.689937+00:00",
+    "monotonic_ns": 173119265000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:48:08.764873+00:00",
+    "monotonic_ns": 173119343000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\__init__.py\", line 346, in loads\r\n    return _default_decoder.decode(s)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\json\\decoder.py\", line 341, in decode\r\n    raise JSONDecodeError(\"Extra data\", s, end)\r\njson.decoder.JSONDecodeError: Extra data: line 46 column 2 (char 2184)\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMSwgaW4gPG1vZHVsZT4NCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cQXBwRGF0YVxMb2NhbFxQcm9ncmFtc1xQeXRob25cUHl0aG9uMzEyXExpYlxqc29uXF9faW5pdF9fLnB5IiwgbGluZSAzNDYsIGluIGxvYWRzDQogICAgcmV0dXJuIF9kZWZhdWx0X2RlY29kZXIuZGVjb2RlKHMpDQogICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eDQogIEZpbGUgIkM6XFVzZXJzXGFkbWluXEFwcERhdGFcTG9jYWxcUHJvZ3JhbXNcUHl0aG9uXFB5dGhvbjMxMlxMaWJcanNvblxkZWNvZGVyLnB5IiwgbGluZSAzNDEsIGluIGRlY29kZQ0KICAgIHJhaXNlIEpTT05EZWNvZGVFcnJvcigiRXh0cmEgZGF0YSIsIHMsIGVuZCkNCmpzb24uZGVjb2Rlci5KU09ORGVjb2RlRXJyb3I6IEV4dHJhIGRhdGE6IGxpbmUgNDYgY29sdW1uIDIgKGNoYXIgMjE4NCkNCg=="
+}

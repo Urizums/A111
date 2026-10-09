@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path;ids=[6,7,8,10,12,14,15,17,18,20,23,24,26,28,29,30];out=[]\nfor i in ids:\n n=f'runs/R23/execution/receipts/r23-consumer-{i:02d}-'; matches=list(Path('runs/R23/execution/receipts').glob(n+'*.txt')); assert len(matches)==1,(i,matches);d=json.loads(matches[0].read_text(encoding='utf-8')); argv=d.get('argv',[]); out.append({'path':str(matches[0]),'begin':d.get('begin'),'end':d.get('end'),'exit_code':d.get('exit_code'),'command':argv[-1] if argv else None,'stdout_prefix':d.get('stdout','')[:900] if d.get('exit_code')==0 else '','stderr':d.get('stderr','')})\nprint(json.dumps(out,ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:01:12.246347+00:00",
+    "monotonic_ns": 173902828000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:01:12.319401+00:00",
+    "monotonic_ns": 173902890000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 3, in <module>\r\nAssertionError: (6, [])\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMywgaW4gPG1vZHVsZT4NCkFzc2VydGlvbkVycm9yOiAoNiwgW10pDQo="
+}

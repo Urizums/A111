@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import pandas as pd; from pathlib import Path; raw=Path('runs/R21/inputs/raw'); o=pd.Timestamp('2026-10-14T18:00:00').tz_localize('Asia/Shanghai'); d='2026-10-15'; r=pd.read_csv(raw/'demand_reports.csv'); r['available_at']=pd.to_datetime(r.available_at).dt.tz_localize('Asia/Shanghai'); labels=r[(r.service_date==d)&(r.available_at<=pd.Timestamp('2026-10-31T18:00:00').tz_localize('Asia/Shanghai'))]; print('label coords',len(labels),'unique',labels[['service_date','store_id','item_id']].drop_duplicates().shape[0],'revisions',labels.revision.max(),'available_after_forecast_origin',int(labels.available_at.gt(o).sum())); p=pd.read_csv(raw/'promotions.csv'); p['announced_at']=pd.to_datetime(p.announced_at).dt.tz_localize('Asia/Shanghai'); p=p[p.service_date==d]; print('promotion rows',len(p),'announced_by_origin',int(p.announced_at.le(o).sum()),'announced_after_origin',int(p.announced_at.gt(o).sum()),'latest_announce',p.announced_at.max()); print('training rows before origin',int((r[(r.service_date<d)&(r.available_at<=o)].drop_duplicates(['service_date','store_id','item_id'],keep='last').shape[0]))); print('weekday forecast target',pd.read_csv(raw/'calendar.csv').query('service_date == @d').to_dict(orient='records'))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:46:19.082396+00:00",
+    "monotonic_ns": 173009656000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:46:19.915889+00:00",
+    "monotonic_ns": 173010500000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "label coords 117 unique 96 revisions 2 available_after_forecast_origin 117\r\npromotion rows 96 announced_by_origin 96 announced_after_origin 0 latest_announce 2026-10-05 12:00:00+08:00\r\ntraining rows before origin 15936\r\nweekday forecast target [{'service_date': '2026-10-15', 'weekday_monday_zero': 3, 'holiday': 0}]\r\n",
+  "stderr": "",
+  "stdout_base64": "bGFiZWwgY29vcmRzIDExNyB1bmlxdWUgOTYgcmV2aXNpb25zIDIgYXZhaWxhYmxlX2FmdGVyX2ZvcmVjYXN0X29yaWdpbiAxMTcNCnByb21vdGlvbiByb3dzIDk2IGFubm91bmNlZF9ieV9vcmlnaW4gOTYgYW5ub3VuY2VkX2FmdGVyX29yaWdpbiAwIGxhdGVzdF9hbm5vdW5jZSAyMDI2LTEwLTA1IDEyOjAwOjAwKzA4OjAwDQp0cmFpbmluZyByb3dzIGJlZm9yZSBvcmlnaW4gMTU5MzYNCndlZWtkYXkgZm9yZWNhc3QgdGFyZ2V0IFt7J3NlcnZpY2VfZGF0ZSc6ICcyMDI2LTEwLTE1JywgJ3dlZWtkYXlfbW9uZGF5X3plcm8nOiAzLCAnaG9saWRheSc6IDB9XQ0K",
+  "stderr_base64": ""
+}

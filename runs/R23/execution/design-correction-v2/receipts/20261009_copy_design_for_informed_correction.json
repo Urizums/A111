@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; src=Path(\"runs/R23/design/WORKFLOW.md\"); dst=Path(\"runs/R23/execution/design-correction-v2/WORKFLOW.md\"); dst.parent.mkdir(parents=True, exist_ok=True); dst.write_bytes(src.read_bytes()); print(\"copied frozen workflow source\", len(dst.read_bytes()), \"bytes\")"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:11:13.107042+00:00",
+    "monotonic_ns": 174503687000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:11:13.178583+00:00",
+    "monotonic_ns": 174503750000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "copied frozen workflow source 15729 bytes\r\n",
+  "stderr": "",
+  "stdout_base64": "Y29waWVkIGZyb3plbiB3b3JrZmxvdyBzb3VyY2UgMTU3MjkgYnl0ZXMNCg==",
+  "stderr_base64": ""
+}

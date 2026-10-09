@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path;import hashlib,json;root=Path('.'); code=Path('runs/R23/review/initial/recompute.py'); names=['runs/R23/acceptance.json','runs/R23/brief/TASK.md','runs/R21/input-lock.json','runs/R20/final/candidate/C13-lock.json','runs/R23/design-lock.json','runs/R23/design/WORKFLOW.md','runs/R23/design/probe.py','runs/R23/execution-lock.json','runs/R23/execution/v2/consumer_slice.py','runs/R23/execution/v2/consumer-slice-config.json','runs/R23/execution/v2/consumer-slice-freeze.json','runs/R23/execution/v2/consumer-point-slice.csv','runs/R23/execution/v2/consumer-point-slice-report.json']; hashes={n:hashlib.sha256((root/n).read_bytes()).hexdigest() for n in names}; data={'schema':'r23-independent-reception-freeze/1','frozen_before_recomputation':True,'checker_path':'runs/R23/review/initial/recompute.py','checker_sha256':hashlib.sha256(code.read_bytes()).hexdigest(),'source_sha256':hashes,'planned_checks':['locked source/artifact byte identity','as-of training revision eligibility','actual later-revision boundary activation','target-label cutoff and post-origin status','promotion announcement cutoff','independent recomputation of both frozen point methods','exact key/schema/label match to consumer CSV','independent metric recomputation'],'telemetry':{'actual_model':None,'tokens':None,'cost':None}};p=Path('runs/R23/review/initial/independent-freeze.json');p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\\\\n',encoding='utf-8');print(json.dumps(data,ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:59:16.824250+00:00",
+    "monotonic_ns": 173787406000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:59:16.920424+00:00",
+    "monotonic_ns": 173787500000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py\", line 1019, in read_bytes\r\n    with self.open(mode='rb') as f:\r\n         ^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py\", line 1013, in open\r\n    return io.open(self, mode, buffering, encoding, errors, newline)\r\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nFileNotFoundError: [Errno 2] No such file or directory: 'runs\\\\R23\\\\review\\\\initial\\\\recompute.py'\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMSwgaW4gPG1vZHVsZT4NCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cQXBwRGF0YVxMb2NhbFxQcm9ncmFtc1xQeXRob25cUHl0aG9uMzEyXExpYlxwYXRobGliLnB5IiwgbGluZSAxMDE5LCBpbiByZWFkX2J5dGVzDQogICAgd2l0aCBzZWxmLm9wZW4obW9kZT0ncmInKSBhcyBmOg0KICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl4NCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cQXBwRGF0YVxMb2NhbFxQcm9ncmFtc1xQeXRob25cUHl0aG9uMzEyXExpYlxwYXRobGliLnB5IiwgbGluZSAxMDEzLCBpbiBvcGVuDQogICAgcmV0dXJuIGlvLm9wZW4oc2VsZiwgbW9kZSwgYnVmZmVyaW5nLCBlbmNvZGluZywgZXJyb3JzLCBuZXdsaW5lKQ0KICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4NCkZpbGVOb3RGb3VuZEVycm9yOiBbRXJybm8gMl0gTm8gc3VjaCBmaWxlIG9yIGRpcmVjdG9yeTogJ3J1bnNcXFIyM1xccmV2aWV3XFxpbml0aWFsXFxyZWNvbXB1dGUucHknDQo="
+}

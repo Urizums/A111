@@ -1,0 +1,121 @@
+{
+  "schema": "r23-clean-initial-reception-verdict/1",
+  "scope": "Independent reception against original criteria j1-j4 for the frozen design-correction-v2 workflow and the actual v2 one-day point-forecast consumer slice.",
+  "overall_j1_j4": "pass_with_scoped_limits",
+  "not_full_product_acceptance": true,
+  "criteria": {
+    "j1": {
+      "status": "pass",
+      "source": [
+        "runs/R23/brief/TASK.md",
+        "runs/R23/brief/INPUTS.json",
+        "runs/R21/inputs/raw/**",
+        "runs/R21/inputs/reference/BASELINE.md",
+        "runs/R20/final/candidate/C13/forge-agent-flow/**",
+        "runs/R23/acceptance.json#criteria[j1]"
+      ],
+      "artifact": [
+        "runs/R23/execution/design-correction-v2/WORKFLOW.md",
+        "runs/R23/execution/design-correction-v2/METHOD-OUTPUT-INTERFACE.md"
+      ],
+      "check": "Mapped task quantities, horizon, information times, losses, model comparison, outputs and receiver gates to the workflow's stages and per-method interfaces; checked that the old reference is treated as a migration baseline rather than validated performance authority.",
+      "evidence": "The workflow specifies 42x96=4,032 keyed rows per method, forecast and replenishment contracts, method registry, point-in-time training/features, complete residual-vector eligibility, chronological evaluation, two-loss objective and daily constraints, failure branches, and paper traceability.",
+      "limits": "The actual received slice has local *_consumer method IDs and point forecasts only; it does not demonstrate the final registry, intervals or replenishment interface end to end."
+    },
+    "j2": {
+      "status": "pass",
+      "source": [
+        "runs/R23/brief/TASK.md",
+        "runs/R21/inputs/raw/**",
+        "runs/R21/inputs/reference/BASELINE.md",
+        "runs/R23/acceptance.json#criteria[j2]"
+      ],
+      "artifact": [
+        "runs/R23/execution/design-correction-v2/WORKFLOW.md",
+        "runs/R23/execution/v2/consumer-slice-config.json",
+        "runs/R23/execution/v2/consumer-point-slice-report.json",
+        "runs/R23/review/clean-initial/recomputation.json"
+      ],
+      "check": "Compared each observed claim with the frozen slice scope and independently recomputed evidence; checked whether the workflow states a feasible source-bound next check for uncovered required outcomes.",
+      "evidence": "Both workflow and numeric report mark full production and broader performance claims pending or excluded; the one-date results independently reproduce, and the workflow defines later checks for all methods, folds, 42-day outputs, constraints, scenario losses and paper traceability.",
+      "limits": "This packet contains no full-horizon results, interval calibration, replenishment outputs, sensitivity, final paper, or reliability evidence."
+    },
+    "j3": {
+      "status": "pass",
+      "source": [
+        "runs/R21/inputs/raw/**",
+        "runs/R23/acceptance.json#criteria[j3]",
+        "runs/R23/receiving-packet/process-terminals.json"
+      ],
+      "artifact": [
+        "runs/R23/execution/v2/consumer_slice.py",
+        "runs/R23/execution/v2/consumer-slice-config.json",
+        "runs/R23/execution/v2/consumer-point-slice.csv",
+        "runs/R23/execution/v2/consumer-point-slice-report.json",
+        "runs/R23/execution/receipts/r23-consumer-30-compute-v2-final.txt",
+        "runs/R23/review/clean-initial/verify_slice.py",
+        "runs/R23/review/clean-initial/recomputation.json"
+      ],
+      "check": "Independently reproduced both one-day methods from raw data, reconstructed the origin snapshot and cutoff labels, activated the real later-publication boundary, and compared every output key, prediction, label revision/time and metric.",
+      "evidence": "Each method has 96 unique target keys; max prediction differences were 4.9407589131078566e-11 and 0 within 1e-8. The raw source yielded 166 later-published rows and 44 affected visible training keys; all 96 target labels were post-origin. Recomputed metrics matched the report. The source command receipt is finished with exit 0.",
+      "limits": "The slice is one historical date and contains point forecasts and scored labels only. It has no interval, scenario, q_units, solver evidence, final method registry or 42-day outputs. The workflow-named interval/optimization probe is not shown executed. Ten earlier source receipts have nonzero exit codes; their source fields are preserved, but causes were not inspected."
+    },
+    "j4": {
+      "status": "pass",
+      "source": [
+        "runs/R23/brief/TASK.md",
+        "runs/R23/brief/INPUTS.json",
+        "runs/R23/acceptance.json#criteria[j4]",
+        "runs/R21/input-lock.json",
+        "runs/R20/final/candidate/C13-lock.json",
+        "runs/R23/design-correction-v2-lock.json",
+        "runs/R23/execution-lock.json",
+        "runs/R23/receiving-packet/process-terminals.json"
+      ],
+      "artifact": [
+        "runs/R23/review/clean-initial/freeze.json",
+        "runs/R23/review/clean-initial/recomputation.json",
+        "runs/R23/review/clean-initial/source-process-fields.json",
+        "runs/R23/review/clean-initial/REPORT.md"
+      ],
+      "check": "A fresh receiver independently checked the original sources, locked workflow/slice identities, actual source and output, process fields and claim language; the reproduction code/config were frozen before the numerical recomputation.",
+      "evidence": "All authorized source identities matched; independent predictions, labels and metrics matched raw data; the report preserves the actual scope and explicit unverified outcomes. No author diagnosis, expected answer, old verdict or actor summary was consumed. Telemetry remains null.",
+      "limits": "This verdict covers only j1-j4 for the specified version and bounded slice; it does not approve full delivery."
+    }
+  },
+  "process_evidence": {
+    "projection_path": "runs/R23/receiving-packet/process-terminals.json",
+    "projection_size_bytes": 21899,
+    "projection_sha256": "9eec93e8b0f75eff1e771905d20ff6273c5a003bc0d0ad0077018282e3d24307",
+    "projection_schema": "r23-source-bound-terminal-projection/1",
+    "record_count": 34,
+    "source_receipt_fields_verified": 34,
+    "nonzero_exit_count": 10,
+    "per_receipt_fields": "runs/R23/review/clean-initial/source-process-fields.json",
+    "actual_consumer_receipt": {
+      "path": "runs/R23/execution/receipts/r23-consumer-30-compute-v2-final.txt",
+      "size_bytes": 7668,
+      "sha256": "07bd5f8517a053050fc5f1f315d0dcc9b7f04b5f225fd7273b500b8ba2c48f49",
+      "schema": "forge-command-record/1",
+      "state": "finished",
+      "begin": "2026-10-09T13:50:22.915932+00:00",
+      "end": "2026-10-09T13:50:25.154102+00:00",
+      "exit_code": 0
+    }
+  },
+  "receiver_failures_preserved": [
+    {
+      "record": "runs/R23/review/clean-initial/records/01-packet-identities.json",
+      "description": "Initial identity command used a nonexistent execution/v2/execution-lock.json path; corrected to runs/R23/execution-lock.json."
+    },
+    {
+      "record": "runs/R23/review/clean-initial/records/11-independent-source-recomputation.json",
+      "description": "First frozen verifier config omitted timezone; the computation stopped before fitting. Original freeze snapshot retained, config corrected, then re-frozen before the successful run."
+    }
+  ],
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  }
+}

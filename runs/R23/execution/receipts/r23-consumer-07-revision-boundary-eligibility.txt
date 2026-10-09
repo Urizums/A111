@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import pandas as pd; from pathlib import Path; r=pd.read_csv('runs/R21/inputs/raw/demand_reports.csv'); r['available_at']=pd.to_datetime(r.available_at).dt.tz_localize('Asia/Shanghai'); o=pd.Timestamp('2026-10-14T18:00:00').tz_localize('Asia/Shanghai'); base=r[(r.service_date<'2026-10-14')]; visible=base[base.available_at<=o].sort_values(['service_date','store_id','item_id','revision']).drop_duplicates(['service_date','store_id','item_id'],keep='last'); later=base[base.available_at>o]; keys=set(map(tuple,later[['service_date','store_id','item_id']].drop_duplicates().to_numpy())); old=visible[visible[['service_date','store_id','item_id']].apply(tuple,axis=1).isin(keys)]; print('training snapshot candidates with later-after-origin rows',len(old)); print(old.sort_values(['available_at']).head(5).to_string(index=False)); print('late row count',len(later),'training keys',len(visible))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:46:51.894231+00:00",
+    "monotonic_ns": 173042468000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:46:53.112312+00:00",
+    "monotonic_ns": 173043687000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "training snapshot candidates with later-after-origin rows 44\r\nservice_date store_id item_id  revision              available_at  demand_units  settlement_yuan\r\n  2026-10-12      S01     K03         1 2026-10-13 09:00:00+08:00             4               36\r\n  2026-10-12      S12     K06         1 2026-10-13 09:00:00+08:00            15              128\r\n  2026-10-12      S12     K04         1 2026-10-13 09:00:00+08:00             9               54\r\n  2026-10-12      S12     K01         1 2026-10-13 09:00:00+08:00            11               77\r\n  2026-10-12      S11     K02         1 2026-10-13 09:00:00+08:00             9               72\r\nlate row count 44 training keys 15936\r\n",
+  "stderr": "",
+  "stdout_base64": "dHJhaW5pbmcgc25hcHNob3QgY2FuZGlkYXRlcyB3aXRoIGxhdGVyLWFmdGVyLW9yaWdpbiByb3dzIDQ0DQpzZXJ2aWNlX2RhdGUgc3RvcmVfaWQgaXRlbV9pZCAgcmV2aXNpb24gICAgICAgICAgICAgIGF2YWlsYWJsZV9hdCAgZGVtYW5kX3VuaXRzICBzZXR0bGVtZW50X3l1YW4NCiAgMjAyNi0xMC0xMiAgICAgIFMwMSAgICAgSzAzICAgICAgICAgMSAyMDI2LTEwLTEzIDA5OjAwOjAwKzA4OjAwICAgICAgICAgICAgIDQgICAgICAgICAgICAgICAzNg0KICAyMDI2LTEwLTEyICAgICAgUzEyICAgICBLMDYgICAgICAgICAxIDIwMjYtMTAtMTMgMDk6MDA6MDArMDg6MDAgICAgICAgICAgICAxNSAgICAgICAgICAgICAgMTI4DQogIDIwMjYtMTAtMTIgICAgICBTMTIgICAgIEswNCAgICAgICAgIDEgMjAyNi0xMC0xMyAwOTowMDowMCswODowMCAgICAgICAgICAgICA5ICAgICAgICAgICAgICAgNTQNCiAgMjAyNi0xMC0xMiAgICAgIFMxMiAgICAgSzAxICAgICAgICAgMSAyMDI2LTEwLTEzIDA5OjAwOjAwKzA4OjAwICAgICAgICAgICAgMTEgICAgICAgICAgICAgICA3Nw0KICAyMDI2LTEwLTEyICAgICAgUzExICAgICBLMDIgICAgICAgICAxIDIwMjYtMTAtMTMgMDk6MDA6MDArMDg6MDAgICAgICAgICAgICAgOSAgICAgICAgICAgICAgIDcyDQpsYXRlIHJvdyBjb3VudCA0NCB0cmFpbmluZyBrZXlzIDE1OTM2DQo=",
+  "stderr_base64": ""
+}

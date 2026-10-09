@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json,hashlib; root=Path('runs/R23/execution'); d=root/'v2'; bad=d/'consumer_slice.py'; (d/'consumer_slice-v2-invalid.py').write_text(bad.read_text(encoding='utf-8'),encoding='utf-8'); src=(root/'consumer_slice.py').read_text(encoding='utf-8'); q=chr(39); lines=src.splitlines(); lines=[('OUT = ROOT / '+q+'runs/R23/execution/v2'+q) if line.startswith('OUT = ROOT / ') else ('eligible_train = demand[(demand.service_date < origin.strftime('+q+'%Y-%m-%d'+q+')) & (demand.available_at <= origin)]') if line.startswith('eligible_train = ') else ('if train.empty or not train.available_at.le(origin).all() or not train.service_date.lt(origin.strftime('+q+'%Y-%m-%d'+q+')).all():') if line.startswith('if train.empty or not train.available_at.le(origin).all()') else line for line in lines]; bad.write_text(chr(10).join(lines)+chr(10),encoding='utf-8'); fpath=d/'consumer-slice-freeze.json'; f=json.loads(fpath.read_text(encoding='utf-8')); f['code_sha256']=hashlib.sha256(bad.read_bytes()).hexdigest(); fpath.write_text(json.dumps(f,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8'); print('valid source lines',len(lines),'code hash',f['code_sha256'],'strict cutoff line',[x for x in lines if x.startswith('eligible_train = ')][0])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:49:35.123453+00:00",
+    "monotonic_ns": 173205703000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:49:35.237664+00:00",
+    "monotonic_ns": 173205812000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"<string>\", line 1, in <module>\r\nIndexError: list index out of range\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMSwgaW4gPG1vZHVsZT4NCkluZGV4RXJyb3I6IGxpc3QgaW5kZXggb3V0IG9mIHJhbmdlDQo="
+}

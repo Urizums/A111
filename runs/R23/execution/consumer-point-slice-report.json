@@ -1,0 +1,69 @@
+{
+  "state": "computed one-day consumer slice; not accepted",
+  "slice_id": "R23-CONSUMER-POINT-IN-TIME-2026-10-14",
+  "origin": "2026-10-14T18:00:00+08:00",
+  "target_service_date": "2026-10-15",
+  "evaluation_label_cutoff": "2026-10-31T18:00:00+08:00",
+  "source_sha256": {
+    "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+    "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+    "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+    "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+    "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+    "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403",
+    "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753"
+  },
+  "config_sha256": "3cf7228a0289cf272941ad8eb1d499c644d5e5487f9e22e338d33cc9f6063c06",
+  "code_sha256": "d80fbdc7bccbe0c63c04d139feeef82e0b65a4ec9209095f07e3ffaf47203c6f",
+  "input_rows": {
+    "training_snapshot": 15936,
+    "training_window_56d": 5376,
+    "target_pairs": 96,
+    "later_published_training_rows_excluded": 166,
+    "visible_training_keys_with_later_after_origin_rows": 44,
+    "target_labels_post_origin": 96,
+    "target_promotion_known_at_origin": 96,
+    "target_promotion_unknown_at_origin": 0
+  },
+  "weekly_fallback_counts": {
+    "store_item": 0,
+    "item_weekday": 0
+  },
+  "metrics": {
+    "shared_ridge10_consumer": {
+      "mae_units_per_pair": 2.3345852721777587,
+      "rmse_units_per_pair": 2.8712789665214618,
+      "mean_signed_error_units_per_pair": 1.5008410004200332
+    },
+    "weekly_median56_consumer": {
+      "mae_units_per_pair": 2.5104166666666665,
+      "rmse_units_per_pair": 3.0413812651491097,
+      "mean_signed_error_units_per_pair": 1.1666666666666667
+    }
+  },
+  "assertions": {
+    "96_unique_target_keys": true,
+    "all_training_labels_visible_by_origin": true,
+    "training_service_dates_precede_target": true,
+    "later_revision_boundary_activated_and_excluded": true,
+    "target_labels_scored_only_after_origin_at_cutoff": true,
+    "promotion_announcements_at_or_before_origin": true,
+    "weather_and_settlement_excluded": true
+  },
+  "excluded_claims": [
+    "one origin and one target date; not a fold ranking or generalization claim",
+    "point forecasts only; no nominal 90% interval, stochastic scenario calibration, or replenishment optimization",
+    "no full 42-day production, sensitivity, paper, acceptance, or reliability claim"
+  ],
+  "runtime": {
+    "python": "3.12",
+    "pandas": "3.0.2",
+    "numpy": "2.5.3",
+    "scikit_learn": "1.8.0"
+  },
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json,hashlib; root=Path('runs/R23/execution'); p=root/'run-manifest.json'; m=json.loads(p.read_text(encoding='utf-8')); checks={k:hashlib.sha256((root/k).read_bytes()).hexdigest() for k in m['output_sha256']}; assert checks==m['output_sha256']; report=json.loads((root/'v2/consumer-point-slice-report.json').read_text(encoding='utf-8')); assert m['raw_source_sha256']==report['source_sha256']; assert m['compute_invocations']=={'total':8,'failed':6,'completed':2}; missing=[x for x in m['command_receipts'] if not (root/x).exists()]; assert not missing,missing; m['command_receipts'].append('receipts/r23-consumer-34-final-manifest-audit.txt'); p.write_text(json.dumps(m,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8'); print('JSON valid; output hashes and source identities match; prior receipts exist; total receipt count including this command will be',len(m['command_receipts']))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:52:23.400686+00:00",
+    "monotonic_ns": 173373984000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:52:23.485518+00:00",
+    "monotonic_ns": 173374062000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "JSON valid; output hashes and source identities match; prior receipts exist; total receipt count including this command will be 34\r\n",
+  "stderr": "",
+  "stdout_base64": "SlNPTiB2YWxpZDsgb3V0cHV0IGhhc2hlcyBhbmQgc291cmNlIGlkZW50aXRpZXMgbWF0Y2g7IHByaW9yIHJlY2VpcHRzIGV4aXN0OyB0b3RhbCByZWNlaXB0IGNvdW50IGluY2x1ZGluZyB0aGlzIGNvbW1hbmQgd2lsbCBiZSAzNA0K",
+  "stderr_base64": ""
+}

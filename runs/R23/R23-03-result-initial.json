@@ -1,0 +1,42 @@
+{
+  "task_id": "R23-03",
+  "attempt_id": "R23-03-1",
+  "requirements_hash": "9e00d303c4826f1b95f988f3681c327179a530d83e49b4726db6d3908702e47d",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "fail",
+      "evidence": [
+        "runs/R23/review/initial/verdict.json",
+        "runs/R23/initial-reception-lock.json",
+        "runs/R23/execution-lock.json",
+        "runs/R23/execution/v2/consumer-point-slice.csv",
+        "runs/R23/execution/receipts/r23-consumer-30-compute-v2-final.txt",
+        "runs/R23/initial-reception-composition.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "另一消费者真实切片与独立设计接收",
+    "hypothesis": "A different consumer can operate a meaningful proposed slice and a fresh receiver can check design/source/interfaces/scope without author diagnosis.",
+    "baseline": "Same known synthetic raw inputs; no causal or new blind scientific comparison.",
+    "conditions": "Original frozen j1-j4; actual terminal consumer and versioned raw-source reception; packet provenance separately audited.",
+    "observations": "Actual criterion statuses: {\"j1\": \"fail\", \"j2\": \"pass\", \"j3\": \"pass\", \"j4\": \"unverified\"}. Original scientific and failed process records remain unchanged.",
+    "metrics": {
+      "criteria": {
+        "j1": "fail",
+        "j2": "pass",
+        "j3": "pass",
+        "j4": "unverified"
+      },
+      "consumer_methods": 2,
+      "consumer_point_rows": 192,
+      "consumer_days": 1,
+      "actual_model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "limits": "One historical date point forecasts only; no interval, optimization,42-day production/paper,reliability,award or source causal-gain claim."
+  },
+  "next_action": "Repair the original source-bound design/receiving-packet defects prospectively; preserve this failed verdict and attempt."
+}

@@ -1,0 +1,35 @@
+{
+  "slice_id": "R23-CONSUMER-POINT-IN-TIME-2026-10-14",
+  "purpose": "Independent one-day historical point-forecast and availability-boundary slice; descriptive only.",
+  "origin": "2026-10-14T18:00:00+08:00",
+  "target_service_date": "2026-10-15",
+  "evaluation_label_cutoff": "2026-10-31T18:00:00+08:00",
+  "timezone": "Asia/Shanghai",
+  "methods": {
+    "shared_ridge10_consumer": {
+      "alpha": 10,
+      "fit_intercept": false,
+      "features": "96 store-item indicators; 56 item-weekday indicators; 8 item time trends in 30-day units from 2026-05-01; 8 item announced-promotion values; one global holiday value scaled by 0.3; nonnegative prediction truncation",
+      "unknown_promotion": "mean announced promotion by item in training rows from the preceding 56 calendar days, then zero",
+      "weather_and_settlement": "excluded"
+    },
+    "weekly_median56_consumer": {
+      "window": "56 calendar days before origin through the day before target",
+      "statistic": "median demand grouped by store, item, and Monday-zero weekday",
+      "fallback_order": ["store-item median in same window", "item-weekday median across stores in same window"],
+      "fail_if_all_fallbacks_empty": true
+    }
+  },
+  "frozen_metrics": ["MAE units per pair", "RMSE units per pair", "mean signed error units per pair"],
+  "frozen_boundary_assertions": [
+    "Training labels use only revisions available at or before origin and service dates earlier than origin.",
+    "At least one actual training key has a later report row published after origin; the fitted snapshot must retain the earlier visible revision.",
+    "All 96 target labels are selected only at the evaluation cutoff; target labels are not model inputs.",
+    "Promotion features use only rows announced at or before origin."
+  ],
+  "scope_limits": [
+    "one origin and one target date; not a fold ranking or generalization claim",
+    "point forecasts only; no nominal 90% interval, stochastic scenario calibration, or replenishment optimization",
+    "no full 42-day production, sensitivity, paper, acceptance, or reliability claim"
+  ]
+}

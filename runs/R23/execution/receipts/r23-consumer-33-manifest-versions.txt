@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json; p=Path('runs/R23/execution/run-manifest.json'); m=json.loads(p.read_text(encoding='utf-8')); m['code_versions']=[{'path':'runs/R23/execution/consumer_slice-v1-preserved.py','sha256':'48dd62137512db0d4448b22bfec0411e493f7a4644097765395043c28edd9d24','state':'initial frozen source with weather hash transcription error; not a successful run'},{'path':'runs/R23/execution/consumer_slice.py','sha256':'d80fbdc7bccbe0c63c04d139feeef82e0b65a4ec9209095f07e3ffaf47203c6f','state':'v1 computed source; original-date cutoff weaker than frozen contract; output retained in attempt-v1'},{'path':'runs/R23/execution/v2/consumer_slice.py','sha256':'d25ce59e091a04d2b1549e1a81353fe60610c16420f8e2242b344e334051b109','state':'final v2 strict service-date-before-origin-date source; computed successfully'},{'path':'runs/R23/execution/v2/consumer_slice-v2-invalid.py','sha256':'80f25c22746c4fafc86126d81c3a7242e8d2d92abbcfc6e1dc009c8d83e3b6e2','state':'malformed newline construction; syntax error retained'},{'path':'runs/R23/execution/v2/consumer_slice-v2-unmodified.py','sha256':'f4975129bcd07414aecf7532a4f383477f670a8cdca4133828eb0d962da1fc53','state':'intermediate source before strict cutoff replacement'},{'path':'runs/R23/execution/v2/consumer_slice-v2-rootpath-invalid.py','sha256':'32b3e50673a1b67fa9923a0cf6a9ee97dc5d801bc38e3b318c642258b85b78c3','state':'strict cutoff source with incorrect root-depth assumption; path failure retained'}]; m['compute_invocations']={'total':8,'failed':6,'completed':2}; m['output_sha256']={'attempt-v1/consumer-point-slice.csv':'64bf5de75b1767b77e5b0f31ce13102fb3e8aa5b413e0772223fd7cb38d896ac','attempt-v1/consumer-point-slice-report.json':'f26f09206e432eb533304fe701e5fd04222ca5b7d962f5c8bbcf617e24197ec4','v2/consumer-point-slice.csv':'64bf5de75b1767b77e5b0f31ce13102fb3e8aa5b413e0772223fd7cb38d896ac','v2/consumer-point-slice-report.json':'44097b85ad16a3fb0cf1b77c9308ad5ce2027101842c800b24bff8b0631b28f6'}; m['command_receipts'].append('receipts/r23-consumer-32-final-artifact-identities.txt'); m['command_receipts'].append('receipts/r23-consumer-33-manifest-versions.txt'); p.write_text(json.dumps(m,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8'); print('manifest updated; code versions',len(m['code_versions']),'compute attempts',m['compute_invocations'])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:52:12.004035+00:00",
+    "monotonic_ns": 173362578000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:52:12.087089+00:00",
+    "monotonic_ns": 173362656000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "manifest updated; code versions 6 compute attempts {'total': 8, 'failed': 6, 'completed': 2}\r\n",
+  "stderr": "",
+  "stdout_base64": "bWFuaWZlc3QgdXBkYXRlZDsgY29kZSB2ZXJzaW9ucyA2IGNvbXB1dGUgYXR0ZW1wdHMgeyd0b3RhbCc6IDgsICdmYWlsZWQnOiA2LCAnY29tcGxldGVkJzogMn0NCg==",
+  "stderr_base64": ""
+}

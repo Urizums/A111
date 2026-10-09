@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import hashlib,json; root=Path('runs/R23/execution'); code=root/'consumer_slice.py'; old=code.read_text(encoding='utf-8'); Path('runs/R23/execution/consumer_slice-v1-preserved.py').write_text(old,encoding='utf-8'); fpath=root/'consumer-slice-freeze.json'; freeze=json.loads(fpath.read_text(encoding='utf-8')); Path('runs/R23/execution/consumer-slice-freeze-v1.json').write_text(json.dumps(freeze,ensure_ascii=False,indent=2)+'\\\\n',encoding='utf-8'); oldhash='8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c840'; newhash='8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403'; assert old.count(oldhash)==1; code.write_text(old.replace(oldhash,newhash),encoding='utf-8'); freeze['code_sha256']=hashlib.sha256(code.read_bytes()).hexdigest(); freeze['revision_reason']='Corrected a transcription typo in the expected raw weather hash after identity mismatch; original source preserved and failed attempt retained.'; fpath.write_text(json.dumps(freeze,ensure_ascii=False,indent=2)+'\\\\n',encoding='utf-8'); print('old source preserved; corrected weather hash and froze revised source',freeze['code_sha256'])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:48:35.718083+00:00",
+    "monotonic_ns": 173146296000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:48:35.832498+00:00",
+    "monotonic_ns": 173146406000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "old source preserved; corrected weather hash and froze revised source d80fbdc7bccbe0c63c04d139feeef82e0b65a4ec9209095f07e3ffaf47203c6f\r\n",
+  "stderr": "",
+  "stdout_base64": "b2xkIHNvdXJjZSBwcmVzZXJ2ZWQ7IGNvcnJlY3RlZCB3ZWF0aGVyIGhhc2ggYW5kIGZyb3plIHJldmlzZWQgc291cmNlIGQ4MGZiZGM3YmNjYmUwYzYzYzA0ZDEzOWZlZWVmODJlMGI2NWE0ZWM5MjA5MDk1ZjA3ZTNmZmFmNDcyMDNjNmYNCg==",
+  "stderr_base64": ""
+}

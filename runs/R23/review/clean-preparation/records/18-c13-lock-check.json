@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; import json,hashlib; l=json.loads(Path('runs/R20/final/candidate/C13-lock.json').read_text(encoding='utf-8')); rows=[]; [(rows.append((f['path'],Path(f['path']).stat().st_size==f['size_bytes'],hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['sha256']))) for f in l['files']); print(json.dumps({'schema':l['schema'],'revision':l['revision'],'frozen_at':l['frozen_at'],'claim':l['claim'],'checks':[{'path':p,'size_match':s,'sha256_match':h} for p,s,h in rows]},ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:13:17.007164+00:00",
+    "monotonic_ns": 174627578000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:13:17.063798+00:00",
+    "monotonic_ns": 174627640000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "  File \"<string>\", line 1\r\n    from pathlib import Path; import json,hashlib; l=json.loads(Path('runs/R20/final/candidate/C13-lock.json').read_text(encoding='utf-8')); rows=[]; [(rows.append((f['path'],Path(f['path']).stat().st_size==f['size_bytes'],hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['sha256']))) for f in l['files']); print(json.dumps({'schema':l['schema'],'revision':l['revision'],'frozen_at':l['frozen_at'],'claim':l['claim'],'checks':[{'path':p,'size_match':s,'sha256_match':h} for p,s,h in rows]},ensure_ascii=False,indent=2))\r\n                                                                                                                                                                                                                                                                                                                           ^\r\nSyntaxError: closing parenthesis ')' does not match opening parenthesis '['\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "ICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMQ0KICAgIGZyb20gcGF0aGxpYiBpbXBvcnQgUGF0aDsgaW1wb3J0IGpzb24saGFzaGxpYjsgbD1qc29uLmxvYWRzKFBhdGgoJ3J1bnMvUjIwL2ZpbmFsL2NhbmRpZGF0ZS9DMTMtbG9jay5qc29uJykucmVhZF90ZXh0KGVuY29kaW5nPSd1dGYtOCcpKTsgcm93cz1bXTsgWyhyb3dzLmFwcGVuZCgoZlsncGF0aCddLFBhdGgoZlsncGF0aCddKS5zdGF0KCkuc3Rfc2l6ZT09Zlsnc2l6ZV9ieXRlcyddLGhhc2hsaWIuc2hhMjU2KFBhdGgoZlsncGF0aCddKS5yZWFkX2J5dGVzKCkpLmhleGRpZ2VzdCgpPT1mWydzaGEyNTYnXSkpKSBmb3IgZiBpbiBsWydmaWxlcyddKTsgcHJpbnQoanNvbi5kdW1wcyh7J3NjaGVtYSc6bFsnc2NoZW1hJ10sJ3JldmlzaW9uJzpsWydyZXZpc2lvbiddLCdmcm96ZW5fYXQnOmxbJ2Zyb3plbl9hdCddLCdjbGFpbSc6bFsnY2xhaW0nXSwnY2hlY2tzJzpbeydwYXRoJzpwLCdzaXplX21hdGNoJzpzLCdzaGEyNTZfbWF0Y2gnOmh9IGZvciBwLHMsaCBpbiByb3dzXX0sZW5zdXJlX2FzY2lpPUZhbHNlLGluZGVudD0yKSkNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4NClN5bnRheEVycm9yOiBjbG9zaW5nIHBhcmVudGhlc2lzICcpJyBkb2VzIG5vdCBtYXRjaCBvcGVuaW5nIHBhcmVudGhlc2lzICdbJw0K"
+}

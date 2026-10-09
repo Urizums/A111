@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import hashlib; from pathlib import Path; import json; p=Path('runs/R23/execution/consumer_slice.py'); s=p.read_text(encoding='utf-8'); import ast; tree=ast.parse(s); expected=ast.literal_eval(next(n.value for n in tree.body if isinstance(n,ast.Assign) and any(getattr(t,'id',None)=='EXPECTED_RAW_HASHES' for t in n.targets))); actual={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in Path('runs/R21/inputs/raw').iterdir() if p.is_file()}; print('actual',json.dumps(actual,indent=2)); print('mismatches',{k:(v,actual.get(k)) for k,v in expected.items() if actual.get(k)!=v})"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:48:24.691293+00:00",
+    "monotonic_ns": 173135265000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:48:24.781501+00:00",
+    "monotonic_ns": 173135359000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "actual {\r\n  \"calendar.csv\": \"1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd\",\r\n  \"decision.json\": \"7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753\",\r\n  \"demand_reports.csv\": \"80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b\",\r\n  \"items.csv\": \"bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167\",\r\n  \"promotions.csv\": \"580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45\",\r\n  \"stores.csv\": \"65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220\",\r\n  \"weather.csv\": \"8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403\"\r\n}\r\nmismatches {'weather.csv': ('8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c840', '8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403')}\r\n",
+  "stderr": "",
+  "stdout_base64": "YWN0dWFsIHsNCiAgImNhbGVuZGFyLmNzdiI6ICIxNjc2ZTM4YjA0N2Q5NmI3YjY2ZDI5NGQ4NTY3M2Y4NmY4NzY4MjZlOTZjMDNiMjkyMDBjMzQwY2FkMjRmYmZkIiwNCiAgImRlY2lzaW9uLmpzb24iOiAiNzU0MGNmNzA4M2YwMTYzZjYwZTQzMWU4YTc1ZjU1MmJhYTg2ZWQxNzQ4NjlmM2M1NWFhYzY5ZjkwNDA1Njc1MyIsDQogICJkZW1hbmRfcmVwb3J0cy5jc3YiOiAiODBhM2E5OTRiODI4NWNhYTBiNDhiZjQzMzcyNGQ0NzY2OTM1MDk2NTZiMzJjZmY5OWI4YTY3OThlZWJkNjY2YiIsDQogICJpdGVtcy5jc3YiOiAiYmM4MWNiOWFkNmMyOGUxMDhiYmQ0ZTFmY2Q2ODJjNGM4YWE3MWU0MGMyMmU3ZmY4NDExYjU0NWE0ZmU2NTE2NyIsDQogICJwcm9tb3Rpb25zLmNzdiI6ICI1ODBjMTViYzgyN2E4ZDg2MTEzYzhjZWI0N2VkY2UyYmZhOTRiMzE3ZjRkODhmZjNhNDViM2U3YzBjNTViYjQ1IiwNCiAgInN0b3Jlcy5jc3YiOiAiNjVjZTYzNmM4ZDdmNmM3MmRmM2QwNmExZTg0ZTU5ZDEyMmYzM2RhYjFjMjIzZDRlOTk2Mzk4MmM5YmY1NDIyMCIsDQogICJ3ZWF0aGVyLmNzdiI6ICI4ZGQzOGNhOTI2YmE1OWIwZGUyOTJlMGI1N2EzZTA3Y2I0MzUzZDg5MmNjM2RkMjQyYWVhOGNjNmY1NmM4NDAzIg0KfQ0KbWlzbWF0Y2hlcyB7J3dlYXRoZXIuY3N2JzogKCc4ZGQzOGNhOTI2YmE1OWIwZGUyOTJlMGI1N2EzZTA3Y2I0MzUzZDg5MmNjM2RkMjQyYWVhOGNjNmY1NmM4NDAnLCAnOGRkMzhjYTkyNmJhNTliMGRlMjkyZTBiNTdhM2UwN2NiNDM1M2Q4OTJjYzNkZDI0MmFlYThjYzZmNTZjODQwMycpfQ0K",
+  "stderr_base64": ""
+}

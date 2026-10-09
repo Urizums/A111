@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path;d=json.loads(Path('runs/R23/execution/v2/consumer-slice-config.json').read_text(encoding='utf-8'));print(json.dumps(d['methods']['weekly_median56_consumer'],ensure_ascii=False,indent=2));print('key types:',[(k,type(v).__name__,repr(v)) for k,v in d['methods']['weekly_median56_consumer'].items()])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:00:23.489094+00:00",
+    "monotonic_ns": 173854062000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:00:23.561615+00:00",
+    "monotonic_ns": 173854140000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"window\": \"56 calendar days before origin through the day before target\",\r\n  \"statistic\": \"median demand grouped by store, item, and Monday-zero weekday\",\r\n  \"fallback_order\": [\r\n    \"store-item median in same window\",\r\n    \"item-weekday median across stores in same window\"\r\n  ],\r\n  \"fail_if_all_fallbacks_empty\": true\r\n}\r\nkey types: [('window', 'str', \"'56 calendar days before origin through the day before target'\"), ('statistic', 'str', \"'median demand grouped by store, item, and Monday-zero weekday'\"), ('fallback_order', 'list', \"['store-item median in same window', 'item-weekday median across stores in same window']\"), ('fail_if_all_fallbacks_empty', 'bool', 'True')]\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAid2luZG93IjogIjU2IGNhbGVuZGFyIGRheXMgYmVmb3JlIG9yaWdpbiB0aHJvdWdoIHRoZSBkYXkgYmVmb3JlIHRhcmdldCIsDQogICJzdGF0aXN0aWMiOiAibWVkaWFuIGRlbWFuZCBncm91cGVkIGJ5IHN0b3JlLCBpdGVtLCBhbmQgTW9uZGF5LXplcm8gd2Vla2RheSIsDQogICJmYWxsYmFja19vcmRlciI6IFsNCiAgICAic3RvcmUtaXRlbSBtZWRpYW4gaW4gc2FtZSB3aW5kb3ciLA0KICAgICJpdGVtLXdlZWtkYXkgbWVkaWFuIGFjcm9zcyBzdG9yZXMgaW4gc2FtZSB3aW5kb3ciDQogIF0sDQogICJmYWlsX2lmX2FsbF9mYWxsYmFja3NfZW1wdHkiOiB0cnVlDQp9DQprZXkgdHlwZXM6IFsoJ3dpbmRvdycsICdzdHInLCAiJzU2IGNhbGVuZGFyIGRheXMgYmVmb3JlIG9yaWdpbiB0aHJvdWdoIHRoZSBkYXkgYmVmb3JlIHRhcmdldCciKSwgKCdzdGF0aXN0aWMnLCAnc3RyJywgIidtZWRpYW4gZGVtYW5kIGdyb3VwZWQgYnkgc3RvcmUsIGl0ZW0sIGFuZCBNb25kYXktemVybyB3ZWVrZGF5JyIpLCAoJ2ZhbGxiYWNrX29yZGVyJywgJ2xpc3QnLCAiWydzdG9yZS1pdGVtIG1lZGlhbiBpbiBzYW1lIHdpbmRvdycsICdpdGVtLXdlZWtkYXkgbWVkaWFuIGFjcm9zcyBzdG9yZXMgaW4gc2FtZSB3aW5kb3cnXSIpLCAoJ2ZhaWxfaWZfYWxsX2ZhbGxiYWNrc19lbXB0eScsICdib29sJywgJ1RydWUnKV0NCg==",
+  "stderr_base64": ""
+}

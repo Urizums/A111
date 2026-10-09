@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R23/execution/v2/consumer_slice.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:49:28.166583+00:00",
+    "monotonic_ns": 173198750000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:49:28.224485+00:00",
+    "monotonic_ns": 173198796000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R23\\execution\\v2\\consumer_slice.py\", line 1\r\n    from __future__ import annotations\\n\\nimport hashlib\\nimport json\\nfrom pathlib import Path\\n\\nimport numpy as np\\nimport pandas as pd\\nimport sklearn\\nfrom sklearn.linear_model import Ridge\\n\\nROOT = Path(__file__).resolve().parents[3]\\nOUT = ROOT / 'runs/R23/execution/v2'\\nRAW = ROOT / \"runs/R21/inputs/raw\"\\nCONFIG_PATH = OUT / \"consumer-slice-config.json\"\\nFREEZE_PATH = OUT / \"consumer-slice-freeze.json\"\\nKEY = [\"service_date\", \"store_id\", \"item_id\"]\\nTABLES = [\"demand_reports.csv\", \"stores.csv\", \"items.csv\", \"calendar.csv\", \"promotions.csv\", \"weather.csv\", \"decision.json\"]\\nEXPECTED_RAW_HASHES = {\\n    \"calendar.csv\": \"1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd\",\\n    \"decision.json\": \"7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753\",\\n    \"demand_reports.csv\": \"80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b\",\\n    \"items.csv\": \"bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167\",\\n    \"promotions.csv\": \"580c15\r\n                                       ^\r\nSyntaxError: unexpected character after line continuation character\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "ICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyM1xleGVjdXRpb25cdjJcY29uc3VtZXJfc2xpY2UucHkiLCBsaW5lIDENCiAgICBmcm9tIF9fZnV0dXJlX18gaW1wb3J0IGFubm90YXRpb25zXG5cbmltcG9ydCBoYXNobGliXG5pbXBvcnQganNvblxuZnJvbSBwYXRobGliIGltcG9ydCBQYXRoXG5cbmltcG9ydCBudW1weSBhcyBucFxuaW1wb3J0IHBhbmRhcyBhcyBwZFxuaW1wb3J0IHNrbGVhcm5cbmZyb20gc2tsZWFybi5saW5lYXJfbW9kZWwgaW1wb3J0IFJpZGdlXG5cblJPT1QgPSBQYXRoKF9fZmlsZV9fKS5yZXNvbHZlKCkucGFyZW50c1szXVxuT1VUID0gUk9PVCAvICdydW5zL1IyMy9leGVjdXRpb24vdjInXG5SQVcgPSBST09UIC8gInJ1bnMvUjIxL2lucHV0cy9yYXciXG5DT05GSUdfUEFUSCA9IE9VVCAvICJjb25zdW1lci1zbGljZS1jb25maWcuanNvbiJcbkZSRUVaRV9QQVRIID0gT1VUIC8gImNvbnN1bWVyLXNsaWNlLWZyZWV6ZS5qc29uIlxuS0VZID0gWyJzZXJ2aWNlX2RhdGUiLCAic3RvcmVfaWQiLCAiaXRlbV9pZCJdXG5UQUJMRVMgPSBbImRlbWFuZF9yZXBvcnRzLmNzdiIsICJzdG9yZXMuY3N2IiwgIml0ZW1zLmNzdiIsICJjYWxlbmRhci5jc3YiLCAicHJvbW90aW9ucy5jc3YiLCAid2VhdGhlci5jc3YiLCAiZGVjaXNpb24uanNvbiJdXG5FWFBFQ1RFRF9SQVdfSEFTSEVTID0ge1xuICAgICJjYWxlbmRhci5jc3YiOiAiMTY3NmUzOGIwNDdkOTZiN2I2NmQyOTRkODU2NzNmODZmODc2ODI2ZTk2YzAzYjI5MjAwYzM0MGNhZDI0ZmJmZCIsXG4gICAgImRlY2lzaW9uLmpzb24iOiAiNzU0MGNmNzA4M2YwMTYzZjYwZTQzMWU4YTc1ZjU1MmJhYTg2ZWQxNzQ4NjlmM2M1NWFhYzY5ZjkwNDA1Njc1MyIsXG4gICAgImRlbWFuZF9yZXBvcnRzLmNzdiI6ICI4MGEzYTk5NGI4Mjg1Y2FhMGI0OGJmNDMzNzI0ZDQ3NjY5MzUwOTY1NmIzMmNmZjk5YjhhNjc5OGVlYmQ2NjZiIixcbiAgICAiaXRlbXMuY3N2IjogImJjODFjYjlhZDZjMjhlMTA4YmJkNGUxZmNkNjgyYzRjOGFhNzFlNDBjMjJlN2ZmODQxMWI1NDVhNGZlNjUxNjciLFxuICAgICJwcm9tb3Rpb25zLmNzdiI6ICI1ODBjMTUNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4NClN5bnRheEVycm9yOiB1bmV4cGVjdGVkIGNoYXJhY3RlciBhZnRlciBsaW5lIGNvbnRpbnVhdGlvbiBjaGFyYWN0ZXINCg=="
+}

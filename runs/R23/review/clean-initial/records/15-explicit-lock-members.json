@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; import json,hashlib; groups=[('receiving-packet-lock.json',Path('runs/R23/receiving-packet-lock.json')),('execution-lock.json',Path('runs/R23/execution-lock.json'))]; out={}; [(lambda n,p,l:out.update({n:[{'path':f['path'],'size_match':Path(f['path']).stat().st_size==f['size_bytes'],'sha256_match':hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['sha256']} for f in l['files'] if n!='execution-lock.json' or '/v2/' in f['path'] or f['path']=='runs/R23/execution/receipts/r23-consumer-30-compute-v2-final.txt']}))(n,p,json.loads(p.read_text(encoding='utf-8'))) for n,p in groups]; print(json.dumps(out,ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:23:24.938103+00:00",
+    "monotonic_ns": 175235515000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:23:25.027785+00:00",
+    "monotonic_ns": 175235609000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"receiving-packet-lock.json\": [\r\n    {\r\n      \"path\": \"runs/R23/receiving-packet/manifest.json\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/receiving-packet/process-terminals.json\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    }\r\n  ],\r\n  \"execution-lock.json\": [\r\n    {\r\n      \"path\": \"runs/R23/execution/receipts/r23-consumer-30-compute-v2-final.txt\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/execution/v2/consumer-point-slice-report.json\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/execution/v2/consumer-point-slice.csv\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/execution/v2/consumer-slice-config.json\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/execution/v2/consumer-slice-freeze.json\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/execution/v2/consumer_slice-v2-invalid.py\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/execution/v2/consumer_slice-v2-rootpath-invalid.py\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/execution/v2/consumer_slice-v2-unmodified.py\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    },\r\n    {\r\n      \"path\": \"runs/R23/execution/v2/consumer_slice.py\",\r\n      \"size_match\": true,\r\n      \"sha256_match\": true\r\n    }\r\n  ]\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAicmVjZWl2aW5nLXBhY2tldC1sb2NrLmpzb24iOiBbDQogICAgew0KICAgICAgInBhdGgiOiAicnVucy9SMjMvcmVjZWl2aW5nLXBhY2tldC9tYW5pZmVzdC5qc29uIiwNCiAgICAgICJzaXplX21hdGNoIjogdHJ1ZSwNCiAgICAgICJzaGEyNTZfbWF0Y2giOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJydW5zL1IyMy9yZWNlaXZpbmctcGFja2V0L3Byb2Nlc3MtdGVybWluYWxzLmpzb24iLA0KICAgICAgInNpemVfbWF0Y2giOiB0cnVlLA0KICAgICAgInNoYTI1Nl9tYXRjaCI6IHRydWUNCiAgICB9DQogIF0sDQogICJleGVjdXRpb24tbG9jay5qc29uIjogWw0KICAgIHsNCiAgICAgICJwYXRoIjogInJ1bnMvUjIzL2V4ZWN1dGlvbi9yZWNlaXB0cy9yMjMtY29uc3VtZXItMzAtY29tcHV0ZS12Mi1maW5hbC50eHQiLA0KICAgICAgInNpemVfbWF0Y2giOiB0cnVlLA0KICAgICAgInNoYTI1Nl9tYXRjaCI6IHRydWUNCiAgICB9LA0KICAgIHsNCiAgICAgICJwYXRoIjogInJ1bnMvUjIzL2V4ZWN1dGlvbi92Mi9jb25zdW1lci1wb2ludC1zbGljZS1yZXBvcnQuanNvbiIsDQogICAgICAic2l6ZV9tYXRjaCI6IHRydWUsDQogICAgICAic2hhMjU2X21hdGNoIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgInBhdGgiOiAicnVucy9SMjMvZXhlY3V0aW9uL3YyL2NvbnN1bWVyLXBvaW50LXNsaWNlLmNzdiIsDQogICAgICAic2l6ZV9tYXRjaCI6IHRydWUsDQogICAgICAic2hhMjU2X21hdGNoIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgInBhdGgiOiAicnVucy9SMjMvZXhlY3V0aW9uL3YyL2NvbnN1bWVyLXNsaWNlLWNvbmZpZy5qc29uIiwNCiAgICAgICJzaXplX21hdGNoIjogdHJ1ZSwNCiAgICAgICJzaGEyNTZfbWF0Y2giOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJydW5zL1IyMy9leGVjdXRpb24vdjIvY29uc3VtZXItc2xpY2UtZnJlZXplLmpzb24iLA0KICAgICAgInNpemVfbWF0Y2giOiB0cnVlLA0KICAgICAgInNoYTI1Nl9tYXRjaCI6IHRydWUNCiAgICB9LA0KICAgIHsNCiAgICAgICJwYXRoIjogInJ1bnMvUjIzL2V4ZWN1dGlvbi92Mi9jb25zdW1lcl9zbGljZS12Mi1pbnZhbGlkLnB5IiwNCiAgICAgICJzaXplX21hdGNoIjogdHJ1ZSwNCiAgICAgICJzaGEyNTZfbWF0Y2giOiB0cnVlDQogICAgfSwNCiAgICB7DQogICAgICAicGF0aCI6ICJydW5zL1IyMy9leGVjdXRpb24vdjIvY29uc3VtZXJfc2xpY2UtdjItcm9vdHBhdGgtaW52YWxpZC5weSIsDQogICAgICAic2l6ZV9tYXRjaCI6IHRydWUsDQogICAgICAic2hhMjU2X21hdGNoIjogdHJ1ZQ0KICAgIH0sDQogICAgew0KICAgICAgInBhdGgiOiAicnVucy9SMjMvZXhlY3V0aW9uL3YyL2NvbnN1bWVyX3NsaWNlLXYyLXVubW9kaWZpZWQucHkiLA0KICAgICAgInNpemVfbWF0Y2giOiB0cnVlLA0KICAgICAgInNoYTI1Nl9tYXRjaCI6IHRydWUNCiAgICB9LA0KICAgIHsNCiAgICAgICJwYXRoIjogInJ1bnMvUjIzL2V4ZWN1dGlvbi92Mi9jb25zdW1lcl9zbGljZS5weSIsDQogICAgICAic2l6ZV9tYXRjaCI6IHRydWUsDQogICAgICAic2hhMjU2X21hdGNoIjogdHJ1ZQ0KICAgIH0NCiAgXQ0KfQ0K",
+  "stderr_base64": ""
+}

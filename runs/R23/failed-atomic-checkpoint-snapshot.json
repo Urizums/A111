@@ -1,0 +1,2093 @@
+{
+  "schema": "forge-checkpoint/2",
+  "updated_at": "2026-10-09T13:55:22.861888+00:00",
+  "active_phase": "R08",
+  "next_task_id": null,
+  "next_action": "Inspect branch-specific blockers and the independent ready queue.",
+  "source_lock": "state/source-lock.json",
+  "phase_todo": "state/phase-todo.json",
+  "native_calls_in_current_handoff": [
+    {
+      "worker": "/root/luna_r07_restore_validation",
+      "evidence": "runs/R07/flow-challenge/host/final-notifications.json",
+      "state": "final_notification_received"
+    },
+    {
+      "worker": "/root/luna_r07_native_task",
+      "evidence": "runs/R07/flow-challenge/host/final-notifications.json",
+      "state": "final_notification_received"
+    }
+  ],
+  "unresolved_historical_call": {
+    "sample": "C1 project A2",
+    "observed_status": "running at original Q5 cutoff",
+    "portable_resume_allowed": false
+  },
+  "functional_repairs_used_current_handoff": 0,
+  "functional_repair_limit": 2,
+  "provider_tokens": null,
+  "provider_cost": null,
+  "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
+  "termination": null,
+  "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
+  "remaining_audit_checks": [],
+  "github_repository": "Urizums/A111",
+  "publication_evidence": "runs/R19/publication/observation-55.json",
+  "lifecycle": "active",
+  "c1_audit": "completed_with_historical_gaps; efficacy remains inconclusive",
+  "historical_handoff_repair_scope": "Existing functional_repairs fields describe S00 only; current candidate budgets are separate.",
+  "current_delivery_repair_budgets": {
+    "C2_recorder": {
+      "used": 1,
+      "limit": 2
+    },
+    "handoff_validator": {
+      "used": 2,
+      "limit": 2
+    },
+    "cloud_smoke_harness": {
+      "used": 1,
+      "limit": 2
+    },
+    "S03_coordinator": {
+      "used": 1,
+      "limit": 2
+    },
+    "R00_installer": {
+      "used": 2,
+      "limit": 2,
+      "scope": "exact-tree/source-path fix then standalone Python3.10 venv fix",
+      "evidence": "runs/R00/issues.json"
+    },
+    "R06_release_integration": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R06/final/integration-repair-2.json"
+    },
+    "R06_handoff_root": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R06/handoff/root-repair-budget.json"
+    },
+    "R07_release_integration": {
+      "used": 2,
+      "limit": 2,
+      "evidence": "runs/R07/validation/integration-repair.json"
+    },
+    "R07_native_pilot_harness": {
+      "used": 1,
+      "limit": 2,
+      "evidence": "runs/R07/flow-challenge/worker/evidence/repair-ledger.json"
+    }
+  },
+  "native_calls_in_current_delivery": [
+    {
+      "worker": "/root/luna_forge_5630af6429d8",
+      "purpose": "fresh offline audit"
+    },
+    {
+      "worker": "/root/luna_forge_fe59e381cb4d",
+      "purpose": "original smoke; coordinator capture failed"
+    },
+    {
+      "worker": "/root/luna_forge_d847e131cd3a",
+      "purpose": "bounded conformance retest"
+    }
+  ],
+  "current_validation": "informed_revision_frozen_independent_recheck_running",
+  "delivery_evidence": [
+    "runs/cloud/github-pr.json",
+    "runs/cloud/github-publication-reports.json",
+    "runs/cloud/github-verification.json"
+  ],
+  "delivery_pr": "https://github.com/Urizums/A111/pull/1",
+  "project_goal_status": "active",
+  "delivery_status": {
+    "D00": {
+      "status": "delivered",
+      "evidence": "runs/cloud/github-pr.json"
+    },
+    "R00-review": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R00/github-publication-1.json",
+        "sha256": "fd90cc5d2d0fc3785de68b71e66e9ff55f6576dc672c9e7f0151613c42d56fed"
+      },
+      "at": "2026-10-04T05:31:54.399954+00:00"
+    },
+    "R05-R06-upstream-handoff": {
+      "status": "delivered",
+      "mode": "unfinished_upstream_handoff",
+      "full_acceptance_passed": false,
+      "evidence": {
+        "path": "runs/R06/upstream-handoff/publication.json",
+        "sha256": "b7f117a7597c2d75974d4f372a6c6cfd0419eaac00c85d27d5f41d8eb7a6532b"
+      },
+      "commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
+      "pr": "https://github.com/Urizums/A111/pull/1",
+      "at": "2026-10-04T07:55:26.705220+00:00"
+    },
+    "R07-owner-dev": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R07/publication.json",
+        "sha256": "4727eaf0cec0c127715fd7863d3c33b30dacac39ab19749a491ac59d1abbb8af"
+      },
+      "at": "2026-10-05T01:50:25.654984+00:00"
+    },
+    "C10-meta-workflow-and-original-case-first-step": {
+      "status": "delivered",
+      "evidence": {
+        "path": "runs/R17/publication/publication.json",
+        "sha256": "d932b0399999e955c9717ba59587ea0e729ce102b49fa8337bfbc54b6b81e8b5"
+      },
+      "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+      "full_acceptance": false,
+      "at": "2026-10-07T04:36:43.127593+00:00"
+    }
+  },
+  "next_queue_task_id": "R16-02",
+  "continuation_state": "state/continuation.json",
+  "execution": {
+    "mode": "cooperative_host",
+    "background_available": null,
+    "background_probe": "R04-01",
+    "native_pending": [],
+    "limit": "Current native host validated one assisted local pilot; provider-global and independent cold-start conditions remain unverified. Timer remains disabled.",
+    "monitor_configured": true,
+    "monitor_id": "6ac1e1f6159081919cd571f6fa15d397",
+    "monitor_schedule": "hourly",
+    "monitor_evidence": "runs/R04/capability-probe/automation-create.json",
+    "background_code_execution_verified": false,
+    "session_state": "R14_diagnostic_complete_R16_original_budget_stop",
+    "checkpoint_reason": "Original failures retained; no full real-paper delivery. Explicit original-case limit change pending.",
+    "coordinator_heartbeat": "2026-10-09T13:31:55.256092+00:00",
+    "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
+    "scheduled_trigger_code_execution_verified": true,
+    "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
+    "coordinator_lease": "state/coordinator-lease.json",
+    "latest_capability_probe": "runs/R09/preflight/wsl-probe.json",
+    "coordinator_lease_state": "state/coordinator-lease.json",
+    "recovery": "runs/R06/RECOVERY.md",
+    "final_validation": "runs/R06/final/summary.json",
+    "publication_check": "runs/R06/upstream-handoff/strict-acceptance.json",
+    "review_bundle": "runs/R06/final/complete-review.json",
+    "post_release_trigger_verified": true,
+    "last_scheduled_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+    "latest_resumption_report": "runs/R06/scheduling/resume-20261004T072138Z/REPORT.md",
+    "previous_coordinator_released_at": "2026-10-04T07:13:18.042263+00:00",
+    "coordinator_release_instruction": "Probe the actual lease before acquiring in the new checkout; this coordinator releases after preparing the final handoff.",
+    "monitor_enabled": false,
+    "monitor_status": "disabled_by_user",
+    "monitor_disabled_at": "2026-10-04T07:43:35.078201+00:00",
+    "monitor_cancellation_evidence": "runs/R06/scheduling/cancel-20261004T074313Z/automation-after.json",
+    "monitor_cancellation_report": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
+    "upstream_handoff": "state/upstream-handoff.json",
+    "upstream_handoff_report": "runs/R06/upstream-handoff/README.md",
+    "handoff_publication": "runs/R06/upstream-handoff/publication.json",
+    "handoff_pr_verification": "runs/R06/upstream-handoff/pr-verification.json",
+    "historical_native_pending": [
+      {
+        "worker": "/root/luna_forge_ec0ef35b347f",
+        "run": "runs/future/preset_browser_acceptance/independent",
+        "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
+      }
+    ],
+    "current_coordinator": "root-codex-r23-design",
+    "completed_native_R07": [
+      {
+        "worker": "/root/luna_r07_restore_validation",
+        "scope": "R07-03",
+        "state": "final_notification_received",
+        "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
+      },
+      {
+        "worker": "/root/luna_r07_native_task",
+        "scope": "R07-04",
+        "state": "final_notification_received",
+        "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
+      }
+    ],
+    "current_report": "runs/R23/REPORT.md",
+    "next_plan": "runs/R16/PLAN.md",
+    "deferred_tasks": [
+      "R08-ZCODE-01"
+    ],
+    "current_native_pending": [],
+    "current_native_completed": [
+      {
+        "worker": "/root/r08_simple",
+        "outcome": "business_passed",
+        "evidence": "runs/R08/validation/simple/result.json"
+      },
+      {
+        "worker": "/root/r08_complex",
+        "outcome": "failed_budget_exceeded",
+        "evidence": "runs/R08/validation/complex-terminal.json"
+      }
+    ],
+    "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
+    "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
+    "coordinator_release_evidence": null,
+    "latest_scope_decision": "runs/R10/scope-decision.json",
+    "completed_native_R09": [
+      {
+        "worker": "/root/r09_independent",
+        "state": "terminal_report_on_disk",
+        "evidence": "runs/R09/independent/report.json"
+      }
+    ],
+    "completed_native_R10": [
+      {
+        "worker": "/root/c8_workflow_trial",
+        "state": "terminal_failure_received_budget_exceeded",
+        "evidence": "runs/R10/resumption/native-terminal.json"
+      }
+    ],
+    "final_checkpoint_lease": "runs/R10/publication/final-checkpoint-lease.json",
+    "publication_receipt": "runs/R16/publication/source-receipt.json",
+    "publication_source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "source_ci": {
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984",
+      "jobs": [
+        {
+          "name": "windows-preflight",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.10)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "evidence": "runs/R16/publication/source-ci-completion-command.json"
+    },
+    "completed_native_R12": [
+      {
+        "worker": "/root/r12_protocol_review",
+        "evidence": "runs/R12/review/native-terminal.json"
+      },
+      {
+        "worker": "/root/r12_protocol_review",
+        "evidence": "runs/R12/review/native-terminal-v2.json"
+      }
+    ],
+    "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
+    "R12_R13_publication_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
+    "R14_resumption": "runs/R14/resumption/reconciliation.json",
+    "completed_native_R14_observation": [
+      {
+        "worker": "/root/r14_math_l1",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L1/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l2",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L2/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l3",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L3/result.json",
+        "case_corrections_used": 3,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l4",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L4/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l5",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L5/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l6",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L6/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l7",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L7/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l8",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L8/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_frontend",
+        "state": "terminal_runtime_blocked",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "evidence": "runs/R14/R14-03-result.json",
+        "actual_model": null
+      }
+    ],
+    "R16_plan": "runs/R16/PLAN.md",
+    "R16_source_actor": "/root/r16_official_problem_packet",
+    "R16_original_solution_search": false,
+    "completed_native_R14_R16_observation": [
+      {
+        "worker": "/root/r14_math_l1",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L1/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l2",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L2/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l3",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L3/result.json",
+        "case_corrections_used": 3,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l4",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L4/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l5",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L5/result.json",
+        "case_corrections_used": 1,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l6",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L6/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l7",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L7/result.json",
+        "case_corrections_used": 2,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_l8",
+        "state": "terminal_observation_received",
+        "evidence": "runs/R14/trials/math/L8/result.json",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_frontend",
+        "state": "terminal_runtime_blocked",
+        "case_corrections_used": 0,
+        "case_limit": 2,
+        "evidence": "runs/R14/R14-03-result.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r14_math_independent_final",
+        "state": "terminal_second_addendum_received",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R14/trials/math/independent-review/addendum.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r16_official_problem_packet",
+        "state": "terminal_official_material_delivered",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R16/source/source-manifest.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r16_original_solution",
+        "state": "terminal_paused_original_budget_boundary",
+        "corrections_used": 2,
+        "limit": 2,
+        "evidence": "runs/R16/budget-decision.json",
+        "actual_model": null
+      }
+    ],
+    "R14_report": "runs/R14/REPORT.md",
+    "R16_solution_actor": "/root/r16_original_solution",
+    "R16_case_budget": {
+      "used": 2,
+      "limit": 2
+    },
+    "R14_case_budgets": {
+      "L1": {
+        "used": 1,
+        "limit": 2
+      },
+      "L2": {
+        "used": 0,
+        "limit": 2
+      },
+      "L3": {
+        "used": 3,
+        "limit": 2
+      },
+      "L4": {
+        "used": 0,
+        "limit": 2
+      },
+      "L5": {
+        "used": 1,
+        "limit": 2
+      },
+      "L6": {
+        "used": 2,
+        "limit": 2
+      },
+      "L7": {
+        "used": 2,
+        "limit": 2
+      },
+      "L8": {
+        "used": 0,
+        "limit": 2
+      }
+    },
+    "tokens": null,
+    "cost": null,
+    "R14_R16_publication_source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "R14_R16_publication_receipt": "runs/R16/publication/source-receipt.json",
+    "R14_R16_source_ci_at_discovery": {
+      "conclusion": "",
+      "databaseId": 37509319984,
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+      "status": "queued",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984"
+    },
+    "R14_R16_source_ci": {
+      "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Urizums/A111/actions/runs/37509319984",
+      "jobs": [
+        {
+          "name": "windows-preflight",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.10)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "validate (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "evidence": "runs/R16/publication/source-ci-completion-command.json"
+    },
+    "current_user_steering": "Level1-4 only, sequential workflow construction/fresh execution through paper/independent substantive quality diagnosis.",
+    "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
+    "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
+    "current_candidate": "runs/R20/final/candidate/C13-lock.json",
+    "R17_policy": "runs/R17/scope-decision.json",
+    "completed_native_R17": [
+      {
+        "worker": "/root/r17_policy_review",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/review/C10-review-evidence.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r17_research_trial",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/research-trial/result.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r17_controller_review",
+        "state": "final_notification_received",
+        "evidence": "runs/R17/controller-review/addendum2.json",
+        "actual_model": null
+      }
+    ],
+    "R17_status": "delivered_policy_with_actual_R18_first_step",
+    "next_prospective_plan": "runs/R18/PLAN.md",
+    "native_pending_current": [],
+    "completed_native_R18": [
+      {
+        "worker": "/root/r16_original_solution",
+        "state": "final_notification_received",
+        "evidence": "runs/R16/prospective-20261007/first-step.json",
+        "actual_model": null
+      }
+    ],
+    "R18_status": "real_first_step_observed_full_case_incomplete",
+    "current_task_process_state": "Bounded autonomous workflow-design probe; actual pending actors recorded separately.",
+    "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
+    "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
+    "current_publication": "runs/R19/publication/observation-55.json",
+    "current_source_commit": "6d2222d198ebafcbdd3faab4f2a8905cdd7c22be",
+    "current_source_ci": [
+      {
+        "databaseId": 37920111228,
+        "headSha": "6d2222d198ebafcbdd3faab4f2a8905cdd7c22be",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/Urizums/A111/actions/runs/37920111228",
+        "workflowName": "Cloud delivery validation"
+      }
+    ],
+    "current_source_ci_observed": "2026-10-09T13:28:10.078531+00:00",
+    "receipt_commit_observation": "pending",
+    "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
+    "R19_current_level": 4,
+    "completed_native_R19": [
+      {
+        "worker": "/root/r19_l1_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L1/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L3/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L2/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_executor",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L1/executor-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L1/reviewer-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_builder",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L4/builder-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_builder",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L4/builder-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "terminal_source_preparation",
+        "evidence": "runs/R19/levels/L1/reviewer-terminal_source_preparation-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_executor",
+        "state": "terminal",
+        "evidence": "runs/R19/levels/L1/executor-terminal-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "terminal_initial_fail_a4",
+        "evidence": "runs/R19/levels/L1/reviewer-terminal_initial_fail_a4-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_executor",
+        "state": "terminal_informed_repair_v2",
+        "evidence": "runs/R19/levels/L1/executor-terminal_informed_repair_v2-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l1_reviewer",
+        "state": "terminal_informed_recheck_pass",
+        "evidence": "runs/R19/levels/L1/reviewer-terminal_informed_recheck_pass-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_reviewer",
+        "state": "terminal_source_preparation",
+        "evidence": "runs/R19/levels/L2/reviewer-terminal_source_preparation-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_executor",
+        "state": "terminal_full_paper_author_checked",
+        "evidence": "runs/R19/levels/L2/executor-terminal_full_paper_author_checked-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_reviewer",
+        "state": "terminal_initial_mandatory_pass_empirical_partial",
+        "evidence": "runs/R19/levels/L2/reviewer-terminal_initial_mandatory_pass_empirical_partial-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_executor",
+        "state": "completed_quality_revision",
+        "evidence": "runs/R19/levels/L2/executor-completed_quality_revision-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_reviewer",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L2/reviewer-errored_usage_limit-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l2_reviewer",
+        "state": "completed_informed_review",
+        "evidence": "runs/R19/levels/L2/reviewer-completed_informed_review-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_reviewer",
+        "state": "preparation_completed_waiting_frozen_execution",
+        "evidence": "runs/R19/levels/L3/reviewer-preparation_completed_waiting_frozen_execution-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_design_contract_audit",
+        "state": "completed",
+        "evidence": "runs/R19/design-audit-completed-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_executor",
+        "state": "completed",
+        "evidence": "runs/R19/levels/L3/executor-completed-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_reviewer",
+        "state": "completed_first_review",
+        "evidence": "runs/R19/levels/L3/reviewer-completed_first_review-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_executor",
+        "state": "errored_usage_limit",
+        "evidence": "runs/R19/levels/L3/resource-language-resumption-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_reviewer",
+        "state": "language_preparation_completed_waiting_frozen_revision",
+        "evidence": "runs/R19/levels/L3/reviewer-language_preparation_completed_waiting_frozen_revision-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_executor",
+        "state": "completed_language_revision",
+        "evidence": "runs/R19/levels/L3/executor-completed_language_revision-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l3_reviewer",
+        "state": "completed_first_substantive_informed_recheck",
+        "evidence": "runs/R19/levels/L3/reviewer-completed_first_substantive_informed_recheck-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_reviewer",
+        "state": "completed_preparation",
+        "evidence": "runs/R19/levels/L4/reviewer-completed_preparation-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_executor",
+        "state": "completed_execution",
+        "evidence": "runs/R19/levels/L4/executor-completed_execution-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_reviewer",
+        "state": "completed_initial_review",
+        "evidence": "runs/R19/levels/L4/reviewer-completed_initial_review-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_reviewer",
+        "state": "completed_informed_method",
+        "evidence": "runs/R19/levels/L4/reviewer-completed_informed_method-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_executor",
+        "state": "completed_informed_revision",
+        "evidence": "runs/R19/levels/L4/executor-completed_informed_revision-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_l4_reviewer",
+        "state": "completed_informed_recheck",
+        "evidence": "runs/R19/levels/L4/reviewer-completed_informed_recheck-observation.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_c12_acceptor",
+        "state": "completed",
+        "evidence": "runs/R19/final/actor-r19_c12_acceptor-completed.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_c12_producer",
+        "state": "completed",
+        "evidence": "runs/R19/final/actor-r19_c12_producer-completed.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r19_c12_acceptor",
+        "state": "completed",
+        "evidence": "runs/R19/final/actor-r19_c12_acceptor-completed-2.json",
+        "actual_model": null
+      }
+    ],
+    "pre_R19_publication": {
+      "current_publication": "runs/R17/publication/publication.json",
+      "current_source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+      "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
+      "current_source_ci_observed": "success"
+    },
+    "current_frontier_task": "R23-03",
+    "R19_publication_status": "source_pushed_observed",
+    "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
+    "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
+    "current_paper_level": 4,
+    "R19_prepared_designs": [
+      {
+        "level": 3,
+        "lock": "runs/R19/levels/L3/design-lock.json",
+        "runtime_accepted": false
+      },
+      {
+        "level": 2,
+        "lock": "runs/R19/levels/L2/design-lock.json",
+        "runtime_accepted": false
+      },
+      {
+        "level": 4,
+        "lock": "runs/R19/levels/L4/design-lock.json",
+        "runtime_accepted": false
+      }
+    ],
+    "R19_resource_observation": "runs/R19/levels/L3/resource-language-resumption-1.json",
+    "latest_observed_actor_level": 4,
+    "R19_unpublished_followups": true,
+    "R19_completed_diagnostics": [
+      {
+        "level": 1,
+        "result": "runs/R19/levels/L1/diagnostic-result.json",
+        "initial_mandatory_pass": false,
+        "informed_repair": true
+      },
+      {
+        "level": 2,
+        "result": "runs/R19/levels/L2/diagnostic-result.json",
+        "initial_mandatory_pass": true,
+        "informed_repair": true
+      },
+      {
+        "level": 3,
+        "result": "runs/R19/levels/L3/diagnostic-result.json",
+        "initial_mandatory_pass": false,
+        "informed_repair": true
+      },
+      {
+        "level": 4,
+        "result": "runs/R19/levels/L4/diagnostic-result.json",
+        "initial_mandatory_pass": false,
+        "informed_repair": true
+      }
+    ],
+    "current_user_language_steering": "runs/R19/levels/L3/resource-language-resumption-1.json",
+    "frozen_four_level_candidate": "runs/R19/candidate/C11-lock.json",
+    "candidate_status": "C13_targeted_forward_reception_pass_scoped",
+    "R19_status": "four_diagnostics_and_source_synthesis_done_successor_actually_started",
+    "R20_plan": "runs/R20/PLAN.md",
+    "final_lease_release": null,
+    "source_artifact_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
+    "final_source_ci_observation": {
+      "conclusion": "success",
+      "headSha": "ca282442b11d63cf14d4fe8128c8cb552581e040",
+      "jobs": [
+        {
+          "completedAt": "2026-10-08T18:53:34Z",
+          "conclusion": "success",
+          "databaseId": 113479703147,
+          "name": "validate (3.10)",
+          "startedAt": "2026-10-08T18:41:33Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-08T18:41:36Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-08T18:41:34Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:41:54Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-08T18:41:36Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:41:54Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-08T18:41:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:03Z",
+              "conclusion": "success",
+              "name": "Verify immutable evidence, revision and phase history",
+              "number": 4,
+              "startedAt": "2026-10-08T18:41:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:16Z",
+              "conclusion": "success",
+              "name": "Original controller regression",
+              "number": 5,
+              "startedAt": "2026-10-08T18:42:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:30Z",
+              "conclusion": "success",
+              "name": "C3 versioned candidate regression",
+              "number": 6,
+              "startedAt": "2026-10-08T18:42:16Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:42Z",
+              "conclusion": "success",
+              "name": "C5 versioned candidate regression",
+              "number": 7,
+              "startedAt": "2026-10-08T18:42:30Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:54Z",
+              "conclusion": "success",
+              "name": "C6 takeover candidate and restore recovery",
+              "number": 8,
+              "startedAt": "2026-10-08T18:42:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:43:06Z",
+              "conclusion": "success",
+              "name": "C7 short-entry candidate regression",
+              "number": 9,
+              "startedAt": "2026-10-08T18:42:54Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:43:11Z",
+              "conclusion": "success",
+              "name": "Snapshot, bounded repairs, local provider and approval regressions",
+              "number": 10,
+              "startedAt": "2026-10-08T18:43:06Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:49:27Z",
+              "conclusion": "success",
+              "name": "Handoff and recorder regression",
+              "number": 11,
+              "startedAt": "2026-10-08T18:43:11Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:49:27Z",
+              "conclusion": "success",
+              "name": "Actual support desk HTTP journey",
+              "number": 12,
+              "startedAt": "2026-10-08T18:49:27Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:50:31Z",
+              "conclusion": "success",
+              "name": "Install and exercise CLI with fresh state",
+              "number": 13,
+              "startedAt": "2026-10-08T18:49:27Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:53:19Z",
+              "conclusion": "success",
+              "name": "Package source and reports",
+              "number": 14,
+              "startedAt": "2026-10-08T18:50:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:53:31Z",
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 15,
+              "startedAt": "2026-10-08T18:53:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:53:31Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 29,
+              "startedAt": "2026-10-08T18:53:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:53:31Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 30,
+              "startedAt": "2026-10-08T18:53:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:53:31Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 31,
+              "startedAt": "2026-10-08T18:53:31Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Urizums/A111/actions/runs/37826234607/job/113479703147"
+        },
+        {
+          "completedAt": "2026-10-08T18:50:28Z",
+          "conclusion": "success",
+          "databaseId": 113479703425,
+          "name": "validate (3.12)",
+          "startedAt": "2026-10-08T18:41:33Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-08T18:41:36Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-08T18:41:34Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:02Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-08T18:41:36Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:02Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-08T18:42:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:08Z",
+              "conclusion": "success",
+              "name": "Verify immutable evidence, revision and phase history",
+              "number": 4,
+              "startedAt": "2026-10-08T18:42:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:25Z",
+              "conclusion": "success",
+              "name": "Original controller regression",
+              "number": 5,
+              "startedAt": "2026-10-08T18:42:08Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:34Z",
+              "conclusion": "success",
+              "name": "C3 versioned candidate regression",
+              "number": 6,
+              "startedAt": "2026-10-08T18:42:25Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:41Z",
+              "conclusion": "success",
+              "name": "C5 versioned candidate regression",
+              "number": 7,
+              "startedAt": "2026-10-08T18:42:34Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:50Z",
+              "conclusion": "success",
+              "name": "C6 takeover candidate and restore recovery",
+              "number": 8,
+              "startedAt": "2026-10-08T18:42:41Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:58Z",
+              "conclusion": "success",
+              "name": "C7 short-entry candidate regression",
+              "number": 9,
+              "startedAt": "2026-10-08T18:42:50Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:43:01Z",
+              "conclusion": "success",
+              "name": "Snapshot, bounded repairs, local provider and approval regressions",
+              "number": 10,
+              "startedAt": "2026-10-08T18:42:58Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:47:44Z",
+              "conclusion": "success",
+              "name": "Handoff and recorder regression",
+              "number": 11,
+              "startedAt": "2026-10-08T18:43:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:47:45Z",
+              "conclusion": "success",
+              "name": "Actual support desk HTTP journey",
+              "number": 12,
+              "startedAt": "2026-10-08T18:47:44Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:48:31Z",
+              "conclusion": "success",
+              "name": "Install and exercise CLI with fresh state",
+              "number": 13,
+              "startedAt": "2026-10-08T18:47:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:50:15Z",
+              "conclusion": "success",
+              "name": "Package source and reports",
+              "number": 14,
+              "startedAt": "2026-10-08T18:48:31Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:50:23Z",
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 15,
+              "startedAt": "2026-10-08T18:50:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:50:24Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 29,
+              "startedAt": "2026-10-08T18:50:23Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:50:24Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 30,
+              "startedAt": "2026-10-08T18:50:24Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:50:24Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 31,
+              "startedAt": "2026-10-08T18:50:24Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Urizums/A111/actions/runs/37826234607/job/113479703425"
+        },
+        {
+          "completedAt": "2026-10-08T18:42:25Z",
+          "conclusion": "success",
+          "databaseId": 113479703457,
+          "name": "windows-preflight",
+          "startedAt": "2026-10-08T18:41:33Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-08T18:41:35Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-08T18:41:34Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:10Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-08T18:41:35Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:11Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-08T18:42:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:21Z",
+              "conclusion": "success",
+              "name": "Read-only preflight behavior on native Windows",
+              "number": 4,
+              "startedAt": "2026-10-08T18:42:11Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:21Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 7,
+              "startedAt": "2026-10-08T18:42:21Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:23Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 8,
+              "startedAt": "2026-10-08T18:42:21Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-08T18:42:23Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 9,
+              "startedAt": "2026-10-08T18:42:23Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Urizums/A111/actions/runs/37826234607/job/113479703457"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/Urizums/A111/actions/runs/37826234607"
+    },
+    "receipt_metadata_commit_pending": true,
+    "R20_preparation_bridge": "One actual data generation, not separate solver runs.",
+    "R20_status": "source_synthesis_closed_successor_actually_started",
+    "completed_native_R20": [
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_acceptor-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_acceptor-completed-2.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_builder",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_builder-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_acceptor-completed-3.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_executor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_executor-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_acceptor-completed-4.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_acceptor-completed-5.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_c13_forward_maker",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_c13_forward_maker-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_c13_forward_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_c13_forward_acceptor-completed-1.json",
+        "actual_model": null
+      }
+    ],
+    "R20_design_lock": "runs/R20/design-lock.json",
+    "R21_status": "complete_with_first_five_gate_reception_and_below_nominal_coverage",
+    "historical_coordinator_snapshots": [
+      {
+        "at": "2026-10-09T02:23:54.157507+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r19-l3-language-resume",
+          "coordinator_heartbeat": "2026-10-06T18:06:17.268147+00:00",
+          "final_lease_release": "runs/R20/lease-release-observation.json",
+          "coordinator_release_evidence": "runs/R16/rule-audit/lease-release.json"
+        },
+        "note": "Retained inherited aliases; current release now binds the actual R20 owner and current handback."
+      },
+      {
+        "at": "2026-10-09T03:20:36.380514+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r20-data-transfer",
+          "final_lease_release": "runs/R21/handback.json",
+          "coordinator_release_evidence": "runs/R21/handback.json"
+        }
+      },
+      {
+        "at": "2026-10-09T04:31:57.122835+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r21-prospective",
+          "coordinator_heartbeat": "2026-10-09T03:20:36.380526+00:00",
+          "final_lease_release": null,
+          "coordinator_release_evidence": null
+        },
+        "note": "Actual R21 owner released after R21 closure and R22 real first step; prior aliases retained."
+      },
+      {
+        "at": "2026-10-09T08:49:16.135932+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r21-prospective",
+          "coordinator_heartbeat": "2026-10-09T04:31:57.122848+00:00",
+          "final_lease_release": "runs/R22/handback.json",
+          "coordinator_release_evidence": "runs/R22/handback.json"
+        }
+      },
+      {
+        "at": "2026-10-09T13:31:55.256069+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r22-horizon",
+          "coordinator_heartbeat": "2026-10-09T10:35:57.917963+00:00",
+          "final_lease_release": "runs/R22/handback2.json",
+          "coordinator_release_evidence": "runs/R22/handback2.json"
+        }
+      }
+    ],
+    "actual_lease_pid": 355,
+    "actual_lease_session": 93759,
+    "R21_prestart_binding": "New original inputs/protocol/C13 identity and derived workflow scope added before first R21-03 attempt; acceptance and old66 tasks unchanged.",
+    "completed_native_R21": [
+      {
+        "worker": "/root/r21_builder",
+        "state": "completed",
+        "evidence": "runs/R21/coordination/r21_builder-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r21_receiver",
+        "state": "completed",
+        "evidence": "runs/R21/coordination/r21_receiver-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r21_executor",
+        "state": "completed",
+        "evidence": "runs/R21/coordination/r21_executor-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r21_receiver",
+        "state": "completed",
+        "evidence": "runs/R21/coordination/r21_receiver-completed-2.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r21_receiver",
+        "state": "completed",
+        "evidence": "runs/R21/coordination/r21_receiver-completed-3.json",
+        "actual_model": null
+      }
+    ],
+    "R22_status": "same_horizon_reception_and_source_synthesis_complete_C13_retained",
+    "completed_native_R22": [
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-2.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-2.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-3.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-3.json",
+        "actual_model": null
+      }
+    ],
+    "R23_status": "real_raw_first_step_done_design_not_started",
+    "completed_native_R23": [
+      {
+        "worker": "/root/r23_builder",
+        "state": "completed",
+        "evidence": "runs/R23/coordination/r23_builder-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r23_receiver",
+        "state": "completed",
+        "evidence": "runs/R23/coordination/r23_receiver-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r23_consumer",
+        "state": "completed",
+        "evidence": "runs/R23/coordination/r23_consumer-completed-1.json",
+        "actual_model": null
+      }
+    ]
+  },
+  "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
+  "native_calls_in_current_revision": [
+    {
+      "worker": "/root/luna_forge_66ef7f034e26",
+      "status": "committed",
+      "evidence": "runs/R01/sqlite-research/reconcile-final.json"
+    }
+  ],
+  "current_native_receipts": [
+    "runs/R01/sqlite-research/completed-return.json",
+    "runs/R02/handoff/completed-return.json",
+    "runs/R03/ui-independent/completed-return.json",
+    "runs/R06/handoff/simple/completed-return.json",
+    "runs/R06/handoff/complex/completed-return.json",
+    "runs/future/versioned_preset_catalog/independent/completed-return.json",
+    "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
+  ],
+  "current_native_pending": [
+    {
+      "worker": "/root/r23_consumer",
+      "state": "running",
+      "evidence": "runs/R23/coordination/r23_consumer-running-1.json",
+      "actual_model": null
+    }
+  ],
+  "unpublished_work": true,
+  "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
+  "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
+  "latest_goal_observation": "runs/R06/scheduling/cancel-20261004T074313Z/REPORT.md",
+  "upstream_handoff": {
+    "mode": "unfinished_work_for_upstream",
+    "authorization": "state/upstream-handoff.json",
+    "report": "runs/R06/upstream-handoff/README.md",
+    "publication_state": "published_for_upstream_continuation",
+    "full_acceptance_passed": false,
+    "publication_commit": "6ad354222119b317de2e2a3de5d842fe183af4c5",
+    "publication_evidence": "runs/R06/upstream-handoff/publication.json",
+    "pr_verification": "runs/R06/upstream-handoff/pr-verification.json"
+  },
+  "unpublished_work_R07": {
+    "branch": "rd/takeover-r07",
+    "report": "runs/R07/REPORT.md",
+    "status": "published_scoped_owner_branch",
+    "full_acceptance_passed": false,
+    "published_commit": "b0d9093d979fa69035ec51a25a453c32bdbd69bc",
+    "publication_evidence": "runs/R07/publication.json"
+  },
+  "publication_evidence_R07": "runs/R07/publication.json",
+  "delivery_pr_state": "closed_unmerged",
+  "current_ci_R07": {
+    "run_id": 37252912799,
+    "head_sha": "b0d9093d979fa69035ec51a25a453c32bdbd69bc",
+    "matrices": {
+      "3.10": "success",
+      "3.12": "success"
+    },
+    "evidence": "runs/R07/ci-jobs.json",
+    "url": "https://github.com/Urizums/A111/actions/runs/37252912799",
+    "scope": "Tested source commit, not full product acceptance"
+  },
+  "baseline_integration": {
+    "pr": "https://github.com/Urizums/A111/pull/2",
+    "state": "merged",
+    "main_commit": "7fd80faad93bb454a3bdfa1cff10f0fa0c6bbbca",
+    "evidence": "runs/R08/zcode-bridge/merge-result.json",
+    "ci": "runs/R08/zcode-bridge/merge-ci.json",
+    "mode": "development baseline, full acceptance remains blocked"
+  },
+  "zcode_handoff": {
+    "task_id": "R08-ZCODE-01",
+    "state": "blocked_missing_local_entry",
+    "branch": "rd/zcode-bridge-r08",
+    "entry": "integrations/zcode/README.md",
+    "report": "runs/R08/zcode-bridge/STATUS.md",
+    "model_called": false,
+    "tokens": null,
+    "cost": null,
+    "priority": "deferred_by_user",
+    "required_for_current_phase": false,
+    "decision": "runs/R08/codex-handoff/decision.json"
+  },
+  "codex_handoff": {
+    "entry": "CODEX_HANDOFF.md",
+    "branch": "main",
+    "next_task_id": "R08-02",
+    "phase_plan": "runs/R08/PLAN.md",
+    "decision": "runs/R08/codex-handoff/decision.json",
+    "baseline_commit": "7fd80faad93bb454a3bdfa1cff10f0fa0c6bbbca",
+    "publication_status": "reviewable_handoff",
+    "report": "runs/R08/codex-handoff/STATUS.md"
+  },
+  "R08_validation_budget": "runs/R08/validation/root-repair-ledger.json",
+  "R09_branch": {
+    "status": "done_with_actual_R11_successor",
+    "evidence": "runs/R09/R09-02-result.json"
+  },
+  "R08_budget_and_failures": "runs/R08/validation/root-repair-ledger.json",
+  "R09_actual_first_step": "runs/R09/preflight/formal-first-step.json",
+  "R08_final_regressions": {
+    "inherited": 376,
+    "auxiliary_stable": 53,
+    "windows_preflight": 6,
+    "wsl_preflight": 6,
+    "semantic_R08_03": "failed_complex_budget_overrun"
+  },
+  "R08_latest_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
+  "meta_workflow_R10": {
+    "scope": "runs/R10/scope-decision.json",
+    "candidate": "runs/R10/candidate/C8-lock.json",
+    "plan": "runs/R10/PLAN.md"
+  },
+  "R10_current_budget": {
+    "actor_used": 3,
+    "actor_limit": 2,
+    "coordinator_used": 2,
+    "coordinator_limit": 2,
+    "candidate_source_repairs": 0,
+    "evidence": "runs/R10/resumption/native-terminal.json"
+  },
+  "R11_actual_first_step": "runs/R11/package/first-command.json",
+  "publication_scope": "C8 development candidate and evidence; independent behavior/full product not accepted",
+  "C8_delivery": {
+    "source": "runs/R10/candidate/C8-lock.json",
+    "package": "runs/R11/package/Forge-C8-meta-workflow.zip",
+    "behavior_passed": false,
+    "personal_installation": false
+  },
+  "R11_branch": {
+    "packaging": "done",
+    "actual_first_step": "runs/R11/package/first-command.json",
+    "continuation": "blocked_dependency"
+  },
+  "publication_source_commit": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+  "publication_evidence_C8": "runs/R10/publication/source-push-receipt.json",
+  "current_ci_C8": {
+    "id": 37426876905,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Urizums/A111/actions/runs/37426876905",
+    "jobs": [
+      {
+        "name": "validate (3.10)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "validate (3.12)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "windows-preflight",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  "R12_current_plan": "runs/R12/PLAN.md",
+  "R12_current_budget": {
+    "cumulative_case_used": 2,
+    "reviewer_internal_used": 0,
+    "limit": 2
+  },
+  "R13_actual_first_step": "runs/R13/adopt-command.json",
+  "R13_current_budget": {
+    "used": 2,
+    "limit": 2,
+    "status": "blocked_failed_adoption"
+  },
+  "current_development_report": "runs/R16/rule-audit/REPORT.md",
+  "root_entries_rolled_back": true,
+  "reviewed_protocol_research_artifact": "runs/R12/protocol/v2/evaluation-protocol.md",
+  "R12_R13_published_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
+  "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
+  "current_candidate": "runs/R20/final/candidate/C13-lock.json",
+  "current_R14_report": "runs/R14/REPORT.md",
+  "current_R16_report": "runs/R16/REPORT.md",
+  "C9_candidate": "runs/R14/candidate/C9-lock.json",
+  "C9_package": "runs/R14/package/Forge-C9-meta-workflow.zip",
+  "R16_budget_decision": "runs/R16/budget-decision.json",
+  "R14_R16_source_ci_at_discovery": {
+    "conclusion": "",
+    "databaseId": 37509319984,
+    "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "status": "queued",
+    "url": "https://github.com/Urizums/A111/actions/runs/37509319984"
+  },
+  "publication_note": "Identified development source push and its three CI jobs succeeded; later receipt commit does not alter frozen candidate/trial inputs or pass failed behavioral gates.",
+  "root_entries_rollback_scope": "R13 historical protocol rollback remains preserved; current entries expose R14/R16 observations without adopting that protocol.",
+  "current_ci_R14_R16": {
+    "headSha": "c7dd2394b8315fd0a09bc3a90a06f0c2036894b6",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Urizums/A111/actions/runs/37509319984",
+    "jobs": [
+      {
+        "name": "windows-preflight",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "validate (3.10)",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "name": "validate (3.12)",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ],
+    "evidence": "runs/R16/publication/source-ci-completion-command.json"
+  },
+  "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
+  "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
+  "R17_plan": "runs/R17/PLAN.md",
+  "R17_status": "published_with_actual_R18_first_step",
+  "next_prospective_plan": "runs/R18/PLAN.md",
+  "R18_plan": "runs/R18/PLAN.md",
+  "R18_status": "actual_first_slice_only",
+  "current_report": "runs/R23/REPORT.md",
+  "final_checks": "runs/R17/final/linux-full-regression-command.json",
+  "publication": "runs/R17/publication/publication.json",
+  "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
+  "source_ci_observed": "success",
+  "receipt_commit_pending_at_this_snapshot": true,
+  "R19_status": "closed_with_actual_R20_first_step",
+  "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
+  "current_frontier_task": "R23-03",
+  "current_source_commit": "6d2222d198ebafcbdd3faab4f2a8905cdd7c22be",
+  "current_source_ci": [
+    {
+      "databaseId": 37920111228,
+      "headSha": "6d2222d198ebafcbdd3faab4f2a8905cdd7c22be",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/Urizums/A111/actions/runs/37920111228",
+      "workflowName": "Cloud delivery validation"
+    }
+  ],
+  "current_user_language_steering": "runs/R19/levels/L3/resource-language-resumption-1.json",
+  "frozen_four_level_candidate": "runs/R19/candidate/C11-lock.json",
+  "R20_status": "source_synthesis_closed_successor_actually_started",
+  "candidate_status": "C12_scoped_forward_first_reception_pass",
+  "handback": "runs/R22/handback2.json",
+  "actual_lease_release": "runs/R22/handback2.json",
+  "source_artifact_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
+  "final_source_ci_observation": {
+    "conclusion": "success",
+    "headSha": "ca282442b11d63cf14d4fe8128c8cb552581e040",
+    "jobs": [
+      {
+        "completedAt": "2026-10-08T18:53:34Z",
+        "conclusion": "success",
+        "databaseId": 113479703147,
+        "name": "validate (3.10)",
+        "startedAt": "2026-10-08T18:41:33Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-08T18:41:36Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-08T18:41:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:41:54Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-08T18:41:36Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:41:54Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "startedAt": "2026-10-08T18:41:54Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:03Z",
+            "conclusion": "success",
+            "name": "Verify immutable evidence, revision and phase history",
+            "number": 4,
+            "startedAt": "2026-10-08T18:41:54Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:16Z",
+            "conclusion": "success",
+            "name": "Original controller regression",
+            "number": 5,
+            "startedAt": "2026-10-08T18:42:03Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:30Z",
+            "conclusion": "success",
+            "name": "C3 versioned candidate regression",
+            "number": 6,
+            "startedAt": "2026-10-08T18:42:16Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:42Z",
+            "conclusion": "success",
+            "name": "C5 versioned candidate regression",
+            "number": 7,
+            "startedAt": "2026-10-08T18:42:30Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:54Z",
+            "conclusion": "success",
+            "name": "C6 takeover candidate and restore recovery",
+            "number": 8,
+            "startedAt": "2026-10-08T18:42:42Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:43:06Z",
+            "conclusion": "success",
+            "name": "C7 short-entry candidate regression",
+            "number": 9,
+            "startedAt": "2026-10-08T18:42:54Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:43:11Z",
+            "conclusion": "success",
+            "name": "Snapshot, bounded repairs, local provider and approval regressions",
+            "number": 10,
+            "startedAt": "2026-10-08T18:43:06Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:49:27Z",
+            "conclusion": "success",
+            "name": "Handoff and recorder regression",
+            "number": 11,
+            "startedAt": "2026-10-08T18:43:11Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:49:27Z",
+            "conclusion": "success",
+            "name": "Actual support desk HTTP journey",
+            "number": 12,
+            "startedAt": "2026-10-08T18:49:27Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:50:31Z",
+            "conclusion": "success",
+            "name": "Install and exercise CLI with fresh state",
+            "number": 13,
+            "startedAt": "2026-10-08T18:49:27Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:53:19Z",
+            "conclusion": "success",
+            "name": "Package source and reports",
+            "number": 14,
+            "startedAt": "2026-10-08T18:50:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:53:31Z",
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 15,
+            "startedAt": "2026-10-08T18:53:19Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:53:31Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 29,
+            "startedAt": "2026-10-08T18:53:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:53:31Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 30,
+            "startedAt": "2026-10-08T18:53:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:53:31Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 31,
+            "startedAt": "2026-10-08T18:53:31Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Urizums/A111/actions/runs/37826234607/job/113479703147"
+      },
+      {
+        "completedAt": "2026-10-08T18:50:28Z",
+        "conclusion": "success",
+        "databaseId": 113479703425,
+        "name": "validate (3.12)",
+        "startedAt": "2026-10-08T18:41:33Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-08T18:41:36Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-08T18:41:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:02Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-08T18:41:36Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:02Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "startedAt": "2026-10-08T18:42:02Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:08Z",
+            "conclusion": "success",
+            "name": "Verify immutable evidence, revision and phase history",
+            "number": 4,
+            "startedAt": "2026-10-08T18:42:02Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:25Z",
+            "conclusion": "success",
+            "name": "Original controller regression",
+            "number": 5,
+            "startedAt": "2026-10-08T18:42:08Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:34Z",
+            "conclusion": "success",
+            "name": "C3 versioned candidate regression",
+            "number": 6,
+            "startedAt": "2026-10-08T18:42:25Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:41Z",
+            "conclusion": "success",
+            "name": "C5 versioned candidate regression",
+            "number": 7,
+            "startedAt": "2026-10-08T18:42:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:50Z",
+            "conclusion": "success",
+            "name": "C6 takeover candidate and restore recovery",
+            "number": 8,
+            "startedAt": "2026-10-08T18:42:41Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:58Z",
+            "conclusion": "success",
+            "name": "C7 short-entry candidate regression",
+            "number": 9,
+            "startedAt": "2026-10-08T18:42:50Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:43:01Z",
+            "conclusion": "success",
+            "name": "Snapshot, bounded repairs, local provider and approval regressions",
+            "number": 10,
+            "startedAt": "2026-10-08T18:42:58Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:47:44Z",
+            "conclusion": "success",
+            "name": "Handoff and recorder regression",
+            "number": 11,
+            "startedAt": "2026-10-08T18:43:01Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:47:45Z",
+            "conclusion": "success",
+            "name": "Actual support desk HTTP journey",
+            "number": 12,
+            "startedAt": "2026-10-08T18:47:44Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:48:31Z",
+            "conclusion": "success",
+            "name": "Install and exercise CLI with fresh state",
+            "number": 13,
+            "startedAt": "2026-10-08T18:47:45Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:50:15Z",
+            "conclusion": "success",
+            "name": "Package source and reports",
+            "number": 14,
+            "startedAt": "2026-10-08T18:48:31Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:50:23Z",
+            "conclusion": "success",
+            "name": "Run actions/upload-artifact@v4",
+            "number": 15,
+            "startedAt": "2026-10-08T18:50:15Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:50:24Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 29,
+            "startedAt": "2026-10-08T18:50:23Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:50:24Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 30,
+            "startedAt": "2026-10-08T18:50:24Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:50:24Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 31,
+            "startedAt": "2026-10-08T18:50:24Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Urizums/A111/actions/runs/37826234607/job/113479703425"
+      },
+      {
+        "completedAt": "2026-10-08T18:42:25Z",
+        "conclusion": "success",
+        "databaseId": 113479703457,
+        "name": "windows-preflight",
+        "startedAt": "2026-10-08T18:41:33Z",
+        "status": "completed",
+        "steps": [
+          {
+            "completedAt": "2026-10-08T18:41:35Z",
+            "conclusion": "success",
+            "name": "Set up job",
+            "number": 1,
+            "startedAt": "2026-10-08T18:41:34Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:10Z",
+            "conclusion": "success",
+            "name": "Run actions/checkout@v4",
+            "number": 2,
+            "startedAt": "2026-10-08T18:41:35Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:11Z",
+            "conclusion": "success",
+            "name": "Run actions/setup-python@v5",
+            "number": 3,
+            "startedAt": "2026-10-08T18:42:10Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:21Z",
+            "conclusion": "success",
+            "name": "Read-only preflight behavior on native Windows",
+            "number": 4,
+            "startedAt": "2026-10-08T18:42:11Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:21Z",
+            "conclusion": "success",
+            "name": "Post Run actions/setup-python@v5",
+            "number": 7,
+            "startedAt": "2026-10-08T18:42:21Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:23Z",
+            "conclusion": "success",
+            "name": "Post Run actions/checkout@v4",
+            "number": 8,
+            "startedAt": "2026-10-08T18:42:21Z",
+            "status": "completed"
+          },
+          {
+            "completedAt": "2026-10-08T18:42:23Z",
+            "conclusion": "success",
+            "name": "Complete job",
+            "number": 9,
+            "startedAt": "2026-10-08T18:42:23Z",
+            "status": "completed"
+          }
+        ],
+        "url": "https://github.com/Urizums/A111/actions/runs/37826234607/job/113479703457"
+      }
+    ],
+    "status": "completed",
+    "url": "https://github.com/Urizums/A111/actions/runs/37826234607"
+  },
+  "terminal_source_ci_receipt": "runs/R20/source-ci-observation-2-command.json",
+  "R21_status": "first_diagnostic_done_new_protocol_ready"
+}

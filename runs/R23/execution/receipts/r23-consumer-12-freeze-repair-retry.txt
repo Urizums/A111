@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json; p=Path('runs/R23/execution/consumer-slice-freeze.json'); raw=p.read_text(encoding='utf-8'); print('bad_suffix',repr(raw[-4:])); fixed=raw[:-2]+chr(10) if raw.endswith('}'+chr(92)+'n') else raw; data=json.loads(fixed); p.write_text(fixed,encoding='utf-8'); print('corrected and parsed; keys',list(data))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:48:14.724801+00:00",
+    "monotonic_ns": 173125296000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:48:14.802809+00:00",
+    "monotonic_ns": 173125375000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "bad_suffix '\\n}\\\\n'\r\ncorrected and parsed; keys ['freeze_state', 'slice_config', 'config_sha256', 'code', 'code_sha256', 'source_lock_sha256', 'raw_source_sha256', 'chosen_case_rationale', 'precomputation_boundary_scan_receipts', 'methods_frozen', 'metrics_frozen', 'limitations_frozen', 'telemetry']\r\n",
+  "stderr": "",
+  "stdout_base64": "YmFkX3N1ZmZpeCAnXG59XFxuJw0KY29ycmVjdGVkIGFuZCBwYXJzZWQ7IGtleXMgWydmcmVlemVfc3RhdGUnLCAnc2xpY2VfY29uZmlnJywgJ2NvbmZpZ19zaGEyNTYnLCAnY29kZScsICdjb2RlX3NoYTI1NicsICdzb3VyY2VfbG9ja19zaGEyNTYnLCAncmF3X3NvdXJjZV9zaGEyNTYnLCAnY2hvc2VuX2Nhc2VfcmF0aW9uYWxlJywgJ3ByZWNvbXB1dGF0aW9uX2JvdW5kYXJ5X3NjYW5fcmVjZWlwdHMnLCAnbWV0aG9kc19mcm96ZW4nLCAnbWV0cmljc19mcm96ZW4nLCAnbGltaXRhdGlvbnNfZnJvemVuJywgJ3RlbGVtZXRyeSddDQo=",
+  "stderr_base64": ""
+}

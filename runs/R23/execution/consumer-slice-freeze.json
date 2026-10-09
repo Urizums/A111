@@ -1,0 +1,47 @@
+{
+  "freeze_state": "method/config/source code frozen before model computation",
+  "slice_config": "runs/R23/execution/consumer-slice-config.json",
+  "config_sha256": "3cf7228a0289cf272941ad8eb1d499c644d5e5487f9e22e338d33cc9f6063c06",
+  "code": "runs/R23/execution/consumer_slice.py",
+  "code_sha256": "d80fbdc7bccbe0c63c04d139feeef82e0b65a4ec9209095f07e3ffaf47203c6f",
+  "source_lock_sha256": {
+    "C13-lock.json": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a",
+    "R21-input-lock.json": "dcd4f9ffd67097e6dc53cc919ed0333f9340f7dc938d7c6ea3694af7f33d53d7",
+    "R23-design-lock.json": "83a599b90637fb2befe6e47e00ee16568785b1cd8bbfb61e29cecbf3d3ee55c4"
+  },
+  "raw_source_sha256": {
+    "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+    "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753",
+    "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+    "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+    "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+    "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+    "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403"
+  },
+  "chosen_case_rationale": "2026-10-15 has 96 labels by the frozen evaluation cutoff; for the 2026-10-14 origin, 44 actual training-report rows arrive after origin, activating a real revision-availability exclusion check.",
+  "precomputation_boundary_scan_receipts": [
+    "r23-consumer-04-eligibility.txt",
+    "r23-consumer-06-boundary-window-retry.txt",
+    "r23-consumer-07-revision-boundary-eligibility.txt"
+  ],
+  "methods_frozen": [
+    "shared_ridge10_consumer",
+    "weekly_median56_consumer"
+  ],
+  "metrics_frozen": [
+    "MAE",
+    "RMSE",
+    "mean signed error"
+  ],
+  "limitations_frozen": [
+    "single date descriptive check only",
+    "no calibrated interval or replenishment result",
+    "no model ranking/generalization/42-day reliability claim"
+  ],
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "revision_reason": "Corrected a transcription typo in the expected raw weather hash after identity mismatch; original source preserved and failed attempt retained."
+}

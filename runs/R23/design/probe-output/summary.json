@@ -1,0 +1,36 @@
+{
+  "status": "bounded author probe; independent reception pending",
+  "source_hashes": {
+    "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+    "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+    "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+    "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+    "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+    "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403",
+    "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753"
+  },
+  "decision_origin": "2026-10-31T18:00:00",
+  "historical_residual_origin": "2026-10-14T18:00:00",
+  "historical_residual_window": [
+    "2026-10-15",
+    "2026-10-28"
+  ],
+  "residual_complete_day_vectors": 14,
+  "final_rows": 96,
+  "unique_keys": 96,
+  "training_rows_final_origin": 17568,
+  "future_promotion_features_announced_by_origin": true,
+  "weather_used": false,
+  "daily_q_units": 1600,
+  "daily_procurement_yuan": 5584.0,
+  "solver": {
+    "objective_yuan": 609.8701058185684,
+    "status": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "gap": 0.0
+  },
+  "limits": [
+    "one future date only",
+    "14 historical residual vectors are a plumbing smoke, not a validated 90% calibration",
+    "no comparison, full horizon, sensitivity, paper, or independent acceptance performed"
+  ]
+}

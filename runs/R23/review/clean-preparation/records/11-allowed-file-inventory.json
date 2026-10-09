@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; roots=[Path('runs/R20/final/candidate/C13/forge-agent-flow'),Path('runs/R20/final/candidate/C13-lock.json'),Path('runs/R21/inputs/raw'),Path('runs/R21/inputs/reference'),Path('runs/R21/input-lock.json')]; [(print('## '+str(p)),print('\\\\n'.join(str(q) for q in sorted(p.rglob('*.md'))) if p.is_dir() else ('FILE EXISTS' if p.exists() else 'MISSING'))) for p in roots]"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:12:26.569084+00:00",
+    "monotonic_ns": 174577140000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:12:26.646883+00:00",
+    "monotonic_ns": 174577218000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "## runs\\R20\\final\\candidate\\C13\\forge-agent-flow\r\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\references\\collaboration.md\\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\references\\continuation.md\\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\references\\evaluation.md\\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\references\\frontend.md\\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\references\\iteration-and-recovery.md\\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\references\\modeling.md\\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\references\\source-evaluation.md\\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\references\\workflow-design.md\\nruns\\R20\\final\\candidate\\C13\\forge-agent-flow\\SKILL.md\r\n## runs\\R20\\final\\candidate\\C13-lock.json\r\nFILE EXISTS\r\n## runs\\R21\\inputs\\raw\r\n\r\n## runs\\R21\\inputs\\reference\r\nruns\\R21\\inputs\\reference\\BASELINE.md\r\n## runs\\R21\\input-lock.json\r\nFILE EXISTS\r\n",
+  "stderr": "",
+  "stdout_base64": "IyMgcnVuc1xSMjBcZmluYWxcY2FuZGlkYXRlXEMxM1xmb3JnZS1hZ2VudC1mbG93DQpydW5zXFIyMFxmaW5hbFxjYW5kaWRhdGVcQzEzXGZvcmdlLWFnZW50LWZsb3dccmVmZXJlbmNlc1xjb2xsYWJvcmF0aW9uLm1kXG5ydW5zXFIyMFxmaW5hbFxjYW5kaWRhdGVcQzEzXGZvcmdlLWFnZW50LWZsb3dccmVmZXJlbmNlc1xjb250aW51YXRpb24ubWRcbnJ1bnNcUjIwXGZpbmFsXGNhbmRpZGF0ZVxDMTNcZm9yZ2UtYWdlbnQtZmxvd1xyZWZlcmVuY2VzXGV2YWx1YXRpb24ubWRcbnJ1bnNcUjIwXGZpbmFsXGNhbmRpZGF0ZVxDMTNcZm9yZ2UtYWdlbnQtZmxvd1xyZWZlcmVuY2VzXGZyb250ZW5kLm1kXG5ydW5zXFIyMFxmaW5hbFxjYW5kaWRhdGVcQzEzXGZvcmdlLWFnZW50LWZsb3dccmVmZXJlbmNlc1xpdGVyYXRpb24tYW5kLXJlY292ZXJ5Lm1kXG5ydW5zXFIyMFxmaW5hbFxjYW5kaWRhdGVcQzEzXGZvcmdlLWFnZW50LWZsb3dccmVmZXJlbmNlc1xtb2RlbGluZy5tZFxucnVuc1xSMjBcZmluYWxcY2FuZGlkYXRlXEMxM1xmb3JnZS1hZ2VudC1mbG93XHJlZmVyZW5jZXNcc291cmNlLWV2YWx1YXRpb24ubWRcbnJ1bnNcUjIwXGZpbmFsXGNhbmRpZGF0ZVxDMTNcZm9yZ2UtYWdlbnQtZmxvd1xyZWZlcmVuY2VzXHdvcmtmbG93LWRlc2lnbi5tZFxucnVuc1xSMjBcZmluYWxcY2FuZGlkYXRlXEMxM1xmb3JnZS1hZ2VudC1mbG93XFNLSUxMLm1kDQojIyBydW5zXFIyMFxmaW5hbFxjYW5kaWRhdGVcQzEzLWxvY2suanNvbg0KRklMRSBFWElTVFMNCiMjIHJ1bnNcUjIxXGlucHV0c1xyYXcNCg0KIyMgcnVuc1xSMjFcaW5wdXRzXHJlZmVyZW5jZQ0KcnVuc1xSMjFcaW5wdXRzXHJlZmVyZW5jZVxCQVNFTElORS5tZA0KIyMgcnVuc1xSMjFcaW5wdXQtbG9jay5qc29uDQpGSUxFIEVYSVNUUw0K",
+  "stderr_base64": ""
+}

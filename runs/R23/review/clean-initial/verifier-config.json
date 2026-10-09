@@ -1,0 +1,43 @@
+{
+  "schema": "r23-clean-initial-recomputation-config/1",
+  "purpose": "Independent reproduction and checking of the frozen one-date point-forecast consumer slice from R21 raw inputs.",
+  "timezone": "Asia/Shanghai",
+  "origin": "2026-10-14T18:00:00+08:00",
+  "target_service_date": "2026-10-15",
+  "evaluation_label_cutoff": "2026-10-31T18:00:00+08:00",
+  "methods": [
+    {
+      "method_id": "shared_ridge10_consumer",
+      "alpha": 10,
+      "fit_intercept": false,
+      "features": "96 store-item indicators; 56 item-weekday indicators; 8 item time trends in 30-day units from 2026-05-01; 8 item announced-promotion values; one global holiday value scaled by 0.3; nonnegative truncation",
+      "unknown_promotion": "mean announced promotion per item among prior 56 calendar day training rows; otherwise zero",
+      "excluded": ["weather", "settlement"]
+    },
+    {
+      "method_id": "weekly_median56_consumer",
+      "window_days": 56,
+      "statistic": "median by store, item, and Monday-zero weekday",
+      "fallback_order": ["store-item median", "item-weekday median across stores"]
+    }
+  ],
+  "recompute_checks": [
+    "input identity against frozen locks and slice source hashes",
+    "point-in-time training snapshot and actual later-publication boundary",
+    "promotion announcement eligibility at origin",
+    "96-key output identity and both independent method predictions",
+    "evaluation labels selected only after origin at cutoff",
+    "actual_demand/revision/available_at binding and reported point metrics"
+  ],
+  "numeric_tolerance": 1e-8,
+  "scope_limits": [
+    "one origin and one target date only",
+    "point forecasts only; no interval, scenario calibration, or replenishment result is present in this slice",
+    "does not establish 42-day production, comparative reliability, paper completeness, or future coverage"
+  ],
+  "telemetry": {
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  }
+}

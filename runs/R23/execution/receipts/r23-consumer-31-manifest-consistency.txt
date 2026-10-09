@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json; root=Path('runs/R23/execution'); m=json.loads((root/'run-manifest.json').read_text(encoding='utf-8')); r=json.loads((root/'v2/consumer-point-slice-report.json').read_text(encoding='utf-8')); m['raw_source_sha256']=r['source_sha256']; m.pop('source_note',None); m['freeze']['code_sha256']=r['code_sha256']; m['freeze']['config_sha256']=r['config_sha256']; m['command_receipts'].append('receipts/r23-consumer-31-manifest-consistency.txt'); (root/'run-manifest.json').write_text(json.dumps(m,ensure_ascii=False,indent=2)+chr(10),encoding='utf-8'); check=json.loads((root/'run-manifest.json').read_text(encoding='utf-8')); assert check['raw_source_sha256']==r['source_sha256']; assert check['freeze']['code_sha256']==r['code_sha256']; print('manifest JSON parsed; source/config/code identities agree with v2 report')"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T13:51:27.465376+00:00",
+    "monotonic_ns": 173318046000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T13:51:27.545196+00:00",
+    "monotonic_ns": 173318125000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "manifest JSON parsed; source/config/code identities agree with v2 report\r\n",
+  "stderr": "",
+  "stdout_base64": "bWFuaWZlc3QgSlNPTiBwYXJzZWQ7IHNvdXJjZS9jb25maWcvY29kZSBpZGVudGl0aWVzIGFncmVlIHdpdGggdjIgcmVwb3J0DQo=",
+  "stderr_base64": ""
+}

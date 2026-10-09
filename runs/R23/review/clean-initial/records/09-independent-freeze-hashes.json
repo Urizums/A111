@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-c",
+    "from pathlib import Path; import hashlib,json; b=Path('runs/R23/review/clean-initial'); items=[b/'verify_slice.py',b/'verifier-config.json']; print(json.dumps([{'path':str(p),'size_bytes':p.stat().st_size,'sha256':hashlib.sha256(p.read_bytes()).hexdigest()} for p in items],indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T14:21:37.631816+00:00",
+    "monotonic_ns": 175128203000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T14:21:37.718311+00:00",
+    "monotonic_ns": 175128296000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n  {\r\n    \"path\": \"runs\\\\R23\\\\review\\\\clean-initial\\\\verify_slice.py\",\r\n    \"size_bytes\": 14074,\r\n    \"sha256\": \"fa8ce5bc1d33083dd2ecdc701fac7435b638726a8a21cb9044b98791faae2de0\"\r\n  },\r\n  {\r\n    \"path\": \"runs\\\\R23\\\\review\\\\clean-initial\\\\verifier-config.json\",\r\n    \"size_bytes\": 1917,\r\n    \"sha256\": \"ea8ba40e74f04d807d03bce32bb3f4b563e1477f7e3a4d55855f59ca3336fd58\"\r\n  }\r\n]\r\n",
+  "stderr": "",
+  "stdout_base64": "Ww0KICB7DQogICAgInBhdGgiOiAicnVuc1xcUjIzXFxyZXZpZXdcXGNsZWFuLWluaXRpYWxcXHZlcmlmeV9zbGljZS5weSIsDQogICAgInNpemVfYnl0ZXMiOiAxNDA3NCwNCiAgICAic2hhMjU2IjogImZhOGNlNWJjMWQzMzA4M2RkMmVjZGM3MDFmYWM3NDM1YjYzODcyNmE4YTIxY2I5MDQ0Yjk4NzkxZmFhZTJkZTAiDQogIH0sDQogIHsNCiAgICAicGF0aCI6ICJydW5zXFxSMjNcXHJldmlld1xcY2xlYW4taW5pdGlhbFxcdmVyaWZpZXItY29uZmlnLmpzb24iLA0KICAgICJzaXplX2J5dGVzIjogMTkxNywNCiAgICAic2hhMjU2IjogImVhOGJhNDBlNzRmMDRkODA3ZDAzYmNlMzJiYjNmNGI1NjNlMTQ3N2Y3ZTNhNGQ1NTg1NWY1OWNhMzMzNmZkNTgiDQogIH0NCl0NCg==",
+  "stderr_base64": ""
+}
