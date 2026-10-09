@@ -1,0 +1,76 @@
+{
+  "schema": "r21-reception-preparation/1",
+  "stage": "preparation_only",
+  "accepted_product": false,
+  "future_truth_opened": false,
+  "author_answer_or_verdict": false,
+  "scope": "independent receiver prepared from authorized protocol, acceptance, raw inputs, reference baseline, and command recorder only",
+  "preparation_files": [
+    "runs/R21/review/preparation/reception-plan.md",
+    "runs/R21/review/preparation/raw_audit.py",
+    "runs/R21/review/preparation/raw-audit.json",
+    "runs/R21/review/preparation/raw-audit-command-3.json",
+    "runs/R21/review/preparation/raw-schema-command.json"
+  ],
+  "protocol_identity": {
+    "lock_file_present": false,
+    "identity_method": "direct SHA-256 and byte count for the two authorized protocol files; details in raw-audit.json",
+    "identity_paths": [
+      "runs/R21/protocol/PROTOCOL.md",
+      "runs/R21/protocol/acceptance.json"
+    ]
+  },
+  "input_identity": {
+    "lock_file_present": false,
+    "identity_method": "direct SHA-256 and byte count for authorized REQUEST, PROBLEM, raw CSVs, and reference files; details in raw-audit.json"
+  },
+  "gates": {
+    "g1": {
+      "status": "prepared_with_lock_gap",
+      "raw_audit_performed": true,
+      "raw_audit_findings": {
+        "demand_rows": 21609,
+        "exact_duplicate_rows_beyond_first": 10,
+        "same_revision_conflicts": 0,
+        "revision_publication_order_violations": 0,
+        "historical_grid_keys": 17664,
+        "visible_latest_historical_labels_at_decision": 17568,
+        "complete_eligible_residual_groups_at_decision": 8,
+        "residual_group_coordinate_count": 96,
+        "late_future_promotion_rows": 3072,
+        "late_future_weather_rows": 84
+      },
+      "evidence": "runs/R21/review/preparation/raw-audit.json",
+      "limitation": "input-lock.json and protocol-lock.json are absent; direct fingerprints recorded but cannot attest a prior freeze"
+    },
+    "g2": {
+      "status": "prepared_pending_production",
+      "checks_frozen": true,
+      "baseline_transfer_and_fairness_specified": true,
+      "independent_numeric_and_negative_tests_specified": true,
+      "evidence": "runs/R21/review/preparation/reception-plan.md"
+    },
+    "g3": {
+      "status": "pending_production",
+      "clean_rerun_performed": false,
+      "critical_output_numbers_checked": false
+    },
+    "g4": {
+      "status": "pending_production",
+      "complete_paper_read": false,
+      "all_final_pdf_pages_visually_read": false
+    },
+    "g5": {
+      "status": "closed_until_root_authorizes_after_first_production_freeze",
+      "production_frozen": false,
+      "future_truth_accessed": false,
+      "future_evaluation_performed": false
+    }
+  },
+  "first_production_lock_required_before_truth": true,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "local_scope_is_host_isolation": false,
+  "stop_condition": "preparation complete; await root dispatch of a separate formal receiving context after production is frozen"
+}

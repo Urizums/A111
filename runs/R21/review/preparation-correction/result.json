@@ -1,0 +1,44 @@
+{
+  "schema": "r21-reception-preparation-correction/1",
+  "stage": "correction_preparation_only",
+  "accepted_product": false,
+  "future_truth_opened": false,
+  "model_fitted": false,
+  "candidate_performance_viewed": false,
+  "original_preparation_preserved_unchanged": true,
+  "correction_summary": [
+    "Canonical input and protocol locks are present at runs/R21/input-lock.json and runs/R21/protocol-lock.json; the original missing-lock finding came from checking nested paths and is preserved as an original preparation error, not a missing source freeze.",
+    "Residual eligibility is per completed service day with all 96 exact mature evaluation-label versions available by calibration origin; an incomplete remainder of the source 14-day window does not disqualify complete days.",
+    "Mature historical evaluation labels are selected as of 2026-11-04 18:00; training snapshots remain the latest versions visible at their original forecast origins.",
+    "Finite nonnegative fractional scenario demand is a lawful optimizer input; q remains integer."
+  ],
+  "canonical_identity_checks": {
+    "input_lock": "verified for all input lock entries; matching entries also match original direct fingerprints",
+    "protocol_lock": "verified for authorized PROTOCOL.md and acceptance.json entries only; both match original direct fingerprints",
+    "clarification_lock": "verified for CLARIFICATION.md",
+    "evidence": "runs/R21/review/preparation-correction/boundary-experiment.json"
+  },
+  "boundary_experiment": {
+    "mature_history_keys_at_2026_11_04_18": 17664,
+    "eligible_source_residual_days_at_2026_10_31_18": 112,
+    "source_windows_with_partial_actual_day_readiness": [],
+    "equal_timestamp_arrival_ready": true,
+    "one_second_late_rejected": true,
+    "95_of_96_rejected": true,
+    "complete_day_in_partial_window_accepted": true,
+    "finite_nonnegative_fractional_scenario_accepted_by_reference_optimizer": true,
+    "integer_plan_under_capacity_and_budget": true
+  },
+  "receipts": [
+    "runs/R21/review/preparation-correction/boundary-experiment-command.json",
+    "runs/R21/review/preparation-correction/boundary-experiment-command-2.json",
+    "runs/R21/review/preparation-correction/result-structure-command.json"
+  ],
+  "plan": "runs/R21/review/preparation-correction/addendum.md",
+  "experiment_source": "runs/R21/review/preparation-correction/boundary_experiment.py",
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "local_write_scope_is_host_isolation": false,
+  "stop_condition": "correction preparation complete; formal production receiver remains a later separately dispatched task"
+}

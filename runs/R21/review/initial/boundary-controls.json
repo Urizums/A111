@@ -1,0 +1,30 @@
+{
+  "schema": "r21-independent-boundary-controls/1",
+  "scope": "synthetic boundary and finite/feasible checks only; no truth access",
+  "readiness_controls": {
+    "equal_arrival_is_included": true,
+    "one_second_late_is_excluded": true,
+    "95_of_96_is_excluded": true,
+    "exact_96_is_included": true,
+    "partial_window_keeps_13_complete_days": true
+  },
+  "finite_feasibility_controls": {
+    "valid_finite_feasible_case_accepted": true,
+    "nan_prediction_rejected": true,
+    "negative_point_rejected": true,
+    "reversed_interval_rejected": true,
+    "fractional_q_rejected": true,
+    "q_above_item_cap_rejected": true,
+    "daily_units_cap_rejected": true,
+    "daily_purchase_cap_rejected": true
+  },
+  "continuous_scenario_control": {
+    "continuous_scenario_values_are_finite_nonnegative": true,
+    "continuous_values_not_forced_to_integer": true,
+    "integer_action_is_bounded": true,
+    "selected_q_is_bruteforce_argmin_two_part_loss": true,
+    "q_argmin": 2,
+    "minimum_expected_two_part_loss": 1.1333333333333335
+  },
+  "all_controls_pass": true
+}

@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R21/review/holdout/score_holdout.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T04:14:32.102217+00:00",
+    "monotonic_ns": 138702390000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T04:14:33.578265+00:00",
+    "monotonic_ns": 138703875000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"schema\": \"r21-independent-holdout-metrics/1\",\r\n  \"validation_passed\": true,\r\n  \"rows_per_route\": {\r\n    \"shared_ridge10\": 4032,\r\n    \"weekly_mean56\": 4032\r\n  },\r\n  \"metrics\": {\r\n    \"shared_ridge10\": {\r\n      \"mae\": 2.6082535939127234,\r\n      \"rmse\": 3.2686012918663603,\r\n      \"bias_pred_minus_truth\": 0.2275071234621776,\r\n      \"coverage\": 0.8673115079365079,\r\n      \"below_rate\": 0.036210317460317464,\r\n      \"above_rate\": 0.09647817460317461,\r\n      \"mean_interval_width\": 10.173032675319295,\r\n      \"mean_interval_score\": 14.147147526972569,\r\n      \"shortage_yuan\": 19844.1,\r\n      \"waste_yuan\": 10092.15,\r\n      \"two_part_loss_yuan\": 29936.25,\r\n      \"procurement_yuan\": 226028.0,\r\n      \"q_units\": 64537.0,\r\n      \"capacity_full_days\": 24,\r\n      \"budget_full_days\": 0\r\n    },\r\n    \"weekly_mean56\": {\r\n      \"mae\": 3.1378968253968256,\r\n      \"rmse\": 4.028284254212716,\r\n      \"bias_pred_minus_truth\": -1.0679563492063493,\r\n      \"coverage\": 0.8442460317460317,\r\n      \"below_rate\": 0.03993055555555555,\r\n      \"above_rate\": 0.1158234126984127,\r\n      \"mean_interval_width\": 11.0423828125,\r\n      \"mean_interval_score\": 17.39416232638889,\r\n      \"shortage_yuan\": 23470.1,\r\n      \"waste_yuan\": 11155.8,\r\n      \"two_part_loss_yuan\": 34625.899999999994,\r\n      \"procurement_yuan\": 226038.0,\r\n      \"q_units\": 64590.0,\r\n      \"capacity_full_days\": 12,\r\n      \"budget_full_days\": 0\r\n    }\r\n  },\r\n  \"group_dimensions\": {\r\n    \"overall\": 1,\r\n    \"date\": 42,\r\n    \"activity\": 2,\r\n    \"horizon_band\": 6,\r\n    \"activity_x_horizon\": 12,\r\n    \"store\": 12,\r\n    \"item\": 8\r\n  },\r\n  \"daily_pair_summary\": {\r\n    \"daily_loss_difference_weekly_minus_ridge\": {\r\n      \"mean_yuan_per_day\": 111.65833333333335,\r\n      \"days_weekly_lower\": 5,\r\n      \"days_equal\": 0,\r\n      \"days_weekly_higher\": 37\r\n    },\r\n    \"daily_interval_score_difference_weekly_minus_ridge\": {\r\n      \"mean_score_per_key_day\": 3.24701479941632,\r\n      \"days_weekly_lower\": 9,\r\n      \"days_equal\": 0,\r\n      \"days_weekly_higher\": 33\r\n    }\r\n  }\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAic2NoZW1hIjogInIyMS1pbmRlcGVuZGVudC1ob2xkb3V0LW1ldHJpY3MvMSIsDQogICJ2YWxpZGF0aW9uX3Bhc3NlZCI6IHRydWUsDQogICJyb3dzX3Blcl9yb3V0ZSI6IHsNCiAgICAic2hhcmVkX3JpZGdlMTAiOiA0MDMyLA0KICAgICJ3ZWVrbHlfbWVhbjU2IjogNDAzMg0KICB9LA0KICAibWV0cmljcyI6IHsNCiAgICAic2hhcmVkX3JpZGdlMTAiOiB7DQogICAgICAibWFlIjogMi42MDgyNTM1OTM5MTI3MjM0LA0KICAgICAgInJtc2UiOiAzLjI2ODYwMTI5MTg2NjM2MDMsDQogICAgICAiYmlhc19wcmVkX21pbnVzX3RydXRoIjogMC4yMjc1MDcxMjM0NjIxNzc2LA0KICAgICAgImNvdmVyYWdlIjogMC44NjczMTE1MDc5MzY1MDc5LA0KICAgICAgImJlbG93X3JhdGUiOiAwLjAzNjIxMDMxNzQ2MDMxNzQ2NCwNCiAgICAgICJhYm92ZV9yYXRlIjogMC4wOTY0NzgxNzQ2MDMxNzQ2MSwNCiAgICAgICJtZWFuX2ludGVydmFsX3dpZHRoIjogMTAuMTczMDMyNjc1MzE5Mjk1LA0KICAgICAgIm1lYW5faW50ZXJ2YWxfc2NvcmUiOiAxNC4xNDcxNDc1MjY5NzI1NjksDQogICAgICAic2hvcnRhZ2VfeXVhbiI6IDE5ODQ0LjEsDQogICAgICAid2FzdGVfeXVhbiI6IDEwMDkyLjE1LA0KICAgICAgInR3b19wYXJ0X2xvc3NfeXVhbiI6IDI5OTM2LjI1LA0KICAgICAgInByb2N1cmVtZW50X3l1YW4iOiAyMjYwMjguMCwNCiAgICAgICJxX3VuaXRzIjogNjQ1MzcuMCwNCiAgICAgICJjYXBhY2l0eV9mdWxsX2RheXMiOiAyNCwNCiAgICAgICJidWRnZXRfZnVsbF9kYXlzIjogMA0KICAgIH0sDQogICAgIndlZWtseV9tZWFuNTYiOiB7DQogICAgICAibWFlIjogMy4xMzc4OTY4MjUzOTY4MjU2LA0KICAgICAgInJtc2UiOiA0LjAyODI4NDI1NDIxMjcxNiwNCiAgICAgICJiaWFzX3ByZWRfbWludXNfdHJ1dGgiOiAtMS4wNjc5NTYzNDkyMDYzNDkzLA0KICAgICAgImNvdmVyYWdlIjogMC44NDQyNDYwMzE3NDYwMzE3LA0KICAgICAgImJlbG93X3JhdGUiOiAwLjAzOTkzMDU1NTU1NTU1NTU1LA0KICAgICAgImFib3ZlX3JhdGUiOiAwLjExNTgyMzQxMjY5ODQxMjcsDQogICAgICAibWVhbl9pbnRlcnZhbF93aWR0aCI6IDExLjA0MjM4MjgxMjUsDQogICAgICAibWVhbl9pbnRlcnZhbF9zY29yZSI6IDE3LjM5NDE2MjMyNjM4ODg5LA0KICAgICAgInNob3J0YWdlX3l1YW4iOiAyMzQ3MC4xLA0KICAgICAgIndhc3RlX3l1YW4iOiAxMTE1NS44LA0KICAgICAgInR3b19wYXJ0X2xvc3NfeXVhbiI6IDM0NjI1Ljg5OTk5OTk5OTk5NCwNCiAgICAgICJwcm9jdXJlbWVudF95dWFuIjogMjI2MDM4LjAsDQogICAgICAicV91bml0cyI6IDY0NTkwLjAsDQogICAgICAiY2FwYWNpdHlfZnVsbF9kYXlzIjogMTIsDQogICAgICAiYnVkZ2V0X2Z1bGxfZGF5cyI6IDANCiAgICB9DQogIH0sDQogICJncm91cF9kaW1lbnNpb25zIjogew0KICAgICJvdmVyYWxsIjogMSwNCiAgICAiZGF0ZSI6IDQyLA0KICAgICJhY3Rpdml0eSI6IDIsDQogICAgImhvcml6b25fYmFuZCI6IDYsDQogICAgImFjdGl2aXR5X3hfaG9yaXpvbiI6IDEyLA0KICAgICJzdG9yZSI6IDEyLA0KICAgICJpdGVtIjogOA0KICB9LA0KICAiZGFpbHlfcGFpcl9zdW1tYXJ5Ijogew0KICAgICJkYWlseV9sb3NzX2RpZmZlcmVuY2Vfd2Vla2x5X21pbnVzX3JpZGdlIjogew0KICAgICAgIm1lYW5feXVhbl9wZXJfZGF5IjogMTExLjY1ODMzMzMzMzMzMzM1LA0KICAgICAgImRheXNfd2Vla2x5X2xvd2VyIjogNSwNCiAgICAgICJkYXlzX2VxdWFsIjogMCwNCiAgICAgICJkYXlzX3dlZWtseV9oaWdoZXIiOiAzNw0KICAgIH0sDQogICAgImRhaWx5X2ludGVydmFsX3Njb3JlX2RpZmZlcmVuY2Vfd2Vla2x5X21pbnVzX3JpZGdlIjogew0KICAgICAgIm1lYW5fc2NvcmVfcGVyX2tleV9kYXkiOiAzLjI0NzAxNDc5OTQxNjMyLA0KICAgICAgImRheXNfd2Vla2x5X2xvd2VyIjogOSwNCiAgICAgICJkYXlzX2VxdWFsIjogMCwNCiAgICAgICJkYXlzX3dlZWtseV9oaWdoZXIiOiAzMw0KICAgIH0NCiAgfQ0KfQ0K",
+  "stderr_base64": ""
+}

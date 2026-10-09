@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R21/review/initial/boundary_controls.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T04:08:06.322098+00:00",
+    "monotonic_ns": 138316640000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T04:08:06.493250+00:00",
+    "monotonic_ns": 138316796000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"schema\": \"r21-independent-boundary-controls/1\",\r\n  \"scope\": \"synthetic boundary and finite/feasible checks only; no truth access\",\r\n  \"readiness_controls\": {\r\n    \"equal_arrival_is_included\": true,\r\n    \"one_second_late_is_excluded\": true,\r\n    \"95_of_96_is_excluded\": true,\r\n    \"exact_96_is_included\": true,\r\n    \"partial_window_keeps_13_complete_days\": true\r\n  },\r\n  \"finite_feasibility_controls\": {\r\n    \"valid_finite_feasible_case_accepted\": true,\r\n    \"nan_prediction_rejected\": true,\r\n    \"negative_point_rejected\": true,\r\n    \"reversed_interval_rejected\": true,\r\n    \"fractional_q_rejected\": true,\r\n    \"q_above_item_cap_rejected\": true,\r\n    \"daily_units_cap_rejected\": true,\r\n    \"daily_purchase_cap_rejected\": true\r\n  },\r\n  \"continuous_scenario_control\": {\r\n    \"continuous_scenario_values_are_finite_nonnegative\": true,\r\n    \"continuous_values_not_forced_to_integer\": true,\r\n    \"integer_action_is_bounded\": true,\r\n    \"selected_q_is_bruteforce_argmin_two_part_loss\": true,\r\n    \"q_argmin\": 2,\r\n    \"minimum_expected_two_part_loss\": 1.1333333333333335\r\n  },\r\n  \"all_controls_pass\": true\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAic2NoZW1hIjogInIyMS1pbmRlcGVuZGVudC1ib3VuZGFyeS1jb250cm9scy8xIiwNCiAgInNjb3BlIjogInN5bnRoZXRpYyBib3VuZGFyeSBhbmQgZmluaXRlL2ZlYXNpYmxlIGNoZWNrcyBvbmx5OyBubyB0cnV0aCBhY2Nlc3MiLA0KICAicmVhZGluZXNzX2NvbnRyb2xzIjogew0KICAgICJlcXVhbF9hcnJpdmFsX2lzX2luY2x1ZGVkIjogdHJ1ZSwNCiAgICAib25lX3NlY29uZF9sYXRlX2lzX2V4Y2x1ZGVkIjogdHJ1ZSwNCiAgICAiOTVfb2ZfOTZfaXNfZXhjbHVkZWQiOiB0cnVlLA0KICAgICJleGFjdF85Nl9pc19pbmNsdWRlZCI6IHRydWUsDQogICAgInBhcnRpYWxfd2luZG93X2tlZXBzXzEzX2NvbXBsZXRlX2RheXMiOiB0cnVlDQogIH0sDQogICJmaW5pdGVfZmVhc2liaWxpdHlfY29udHJvbHMiOiB7DQogICAgInZhbGlkX2Zpbml0ZV9mZWFzaWJsZV9jYXNlX2FjY2VwdGVkIjogdHJ1ZSwNCiAgICAibmFuX3ByZWRpY3Rpb25fcmVqZWN0ZWQiOiB0cnVlLA0KICAgICJuZWdhdGl2ZV9wb2ludF9yZWplY3RlZCI6IHRydWUsDQogICAgInJldmVyc2VkX2ludGVydmFsX3JlamVjdGVkIjogdHJ1ZSwNCiAgICAiZnJhY3Rpb25hbF9xX3JlamVjdGVkIjogdHJ1ZSwNCiAgICAicV9hYm92ZV9pdGVtX2NhcF9yZWplY3RlZCI6IHRydWUsDQogICAgImRhaWx5X3VuaXRzX2NhcF9yZWplY3RlZCI6IHRydWUsDQogICAgImRhaWx5X3B1cmNoYXNlX2NhcF9yZWplY3RlZCI6IHRydWUNCiAgfSwNCiAgImNvbnRpbnVvdXNfc2NlbmFyaW9fY29udHJvbCI6IHsNCiAgICAiY29udGludW91c19zY2VuYXJpb192YWx1ZXNfYXJlX2Zpbml0ZV9ub25uZWdhdGl2ZSI6IHRydWUsDQogICAgImNvbnRpbnVvdXNfdmFsdWVzX25vdF9mb3JjZWRfdG9faW50ZWdlciI6IHRydWUsDQogICAgImludGVnZXJfYWN0aW9uX2lzX2JvdW5kZWQiOiB0cnVlLA0KICAgICJzZWxlY3RlZF9xX2lzX2JydXRlZm9yY2VfYXJnbWluX3R3b19wYXJ0X2xvc3MiOiB0cnVlLA0KICAgICJxX2FyZ21pbiI6IDIsDQogICAgIm1pbmltdW1fZXhwZWN0ZWRfdHdvX3BhcnRfbG9zcyI6IDEuMTMzMzMzMzMzMzMzMzMzNQ0KICB9LA0KICAiYWxsX2NvbnRyb2xzX3Bhc3MiOiB0cnVlDQp9DQo=",
+  "stderr_base64": ""
+}

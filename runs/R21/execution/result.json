@@ -1,0 +1,418 @@
+{
+  "schema": "r21-scientific-first-delivery/1",
+  "status": "FIRST_DELIVERY_COMPLETE_AUTHOR_CHECKS_ONLY",
+  "delivered_at_utc": "2026-10-09T03:55:46.704045+00:00",
+  "task": "42-day fresh-food modeling workflow execution from locked raw inputs",
+  "workflow_sha256": "dfb2be241e57c79834d4e7045370f6e426c8949cf618cdef86adc78bb63fb6d8",
+  "prospective_freeze_utc": "2026-10-09T03:37:44.961335+00:00",
+  "scientific_config_sha256": "4b1393daaccabbe9a51fc5fa56907ad2b94ee31042d6630fcf73f8b2e5db6145",
+  "selected_method": "shared_ridge10",
+  "formal_candidates": [
+    "shared_ridge10",
+    "weekly_mean56"
+  ],
+  "future_output_rows_each": 4032,
+  "future_actuals_seen": false,
+  "independent_acceptance": "pending different receiver; no claim of acceptance",
+  "self_check_scope": {
+    "science": {
+      "checks": 33,
+      "passed": true,
+      "file": "self-check-v1/self-check.json"
+    },
+    "document": {
+      "passed": true,
+      "GFM_tables": 14,
+      "all_displayed_table_cells_found_in_pdf": true,
+      "file": "document-check-v1/final-document-check.json"
+    },
+    "visual": {
+      "final_pages_rendered_and_actually_viewed": 13,
+      "file": "visual-qa-final.json"
+    }
+  },
+  "summary": {
+    "selected_method": "shared_ridge10",
+    "historical_stage_metrics": {
+      "calibration|shared_ridge10|point_only": {
+        "rows": 1344,
+        "days": 14,
+        "mae": 2.4539795305518273,
+        "rmse": 3.0786277249340133,
+        "bias_units_per_key": 0.5193035500669045,
+        "coverage90": 0.8697916666666666,
+        "below90": 0.026041666666666668,
+        "above90": 0.10416666666666667,
+        "width_units": 9.906095313421948,
+        "loss_yuan_per_day": 618.9499999999999,
+        "shortage_yuan_per_day": 413.12857142857143,
+        "waste_yuan_per_day": 205.82142857142858,
+        "q_units_per_day": 1393.5714285714287,
+        "procurement_yuan_per_day": 4860.928571428572
+      },
+      "calibration|shared_ridge10|stochastic": {
+        "rows": 1344,
+        "days": 14,
+        "mae": 2.4539795305518273,
+        "rmse": 3.0786277249340133,
+        "bias_units_per_key": 0.5193035500669045,
+        "coverage90": 0.8697916666666666,
+        "below90": 0.026041666666666668,
+        "above90": 0.10416666666666667,
+        "width_units": 9.906095313421948,
+        "loss_yuan_per_day": 595.0571428571428,
+        "shortage_yuan_per_day": 332.75,
+        "waste_yuan_per_day": 262.3071428571428,
+        "q_units_per_day": 1455.357142857143,
+        "procurement_yuan_per_day": 5067.714285714285
+      },
+      "calibration|weekly_mean56|point_only": {
+        "rows": 1344,
+        "days": 14,
+        "mae": 2.6519717261904763,
+        "rmse": 3.280647620443837,
+        "bias_units_per_key": -0.11681547619047619,
+        "coverage90": 0.8787202380952381,
+        "below90": 0.061755952380952384,
+        "above90": 0.05952380952380952,
+        "width_units": 10.856175595238096,
+        "loss_yuan_per_day": 791.6857142857144,
+        "shortage_yuan_per_day": 614.4928571428572,
+        "waste_yuan_per_day": 177.19285714285712,
+        "q_units_per_day": 1338.142857142857,
+        "procurement_yuan_per_day": 4664.428571428572
+      },
+      "calibration|weekly_mean56|stochastic": {
+        "rows": 1344,
+        "days": 14,
+        "mae": 2.6519717261904763,
+        "rmse": 3.280647620443837,
+        "bias_units_per_key": -0.11681547619047619,
+        "coverage90": 0.8787202380952381,
+        "below90": 0.061755952380952384,
+        "above90": 0.05952380952380952,
+        "width_units": 10.856175595238096,
+        "loss_yuan_per_day": 657.282142857143,
+        "shortage_yuan_per_day": 327.9785714285714,
+        "waste_yuan_per_day": 329.30357142857144,
+        "q_units_per_day": 1504.7142857142858,
+        "procurement_yuan_per_day": 5240.428571428572
+      },
+      "selection|shared_ridge10|point_only": {
+        "rows": 4032,
+        "days": 42,
+        "mae": 2.6697859089602396,
+        "rmse": 3.3166942409452917,
+        "bias_units_per_key": 1.1498704523732166,
+        "coverage90": 0.8449900793650794,
+        "below90": 0.049107142857142856,
+        "above90": 0.10590277777777778,
+        "width_units": 9.56909657389427,
+        "loss_yuan_per_day": 656.3357142857143,
+        "shortage_yuan_per_day": 399.7428571428571,
+        "waste_yuan_per_day": 256.59285714285716,
+        "q_units_per_day": 1426.5714285714287,
+        "procurement_yuan_per_day": 4976.380952380952
+      },
+      "selection|shared_ridge10|stochastic": {
+        "rows": 4032,
+        "days": 42,
+        "mae": 2.6697859089602396,
+        "rmse": 3.3166942409452917,
+        "bias_units_per_key": 1.1498704523732166,
+        "coverage90": 0.8449900793650794,
+        "below90": 0.049107142857142856,
+        "above90": 0.10590277777777778,
+        "width_units": 9.56909657389427,
+        "loss_yuan_per_day": 665.0142857142857,
+        "shortage_yuan_per_day": 360.0142857142858,
+        "waste_yuan_per_day": 305.0,
+        "q_units_per_day": 1482.4285714285713,
+        "procurement_yuan_per_day": 5154.571428571428
+      },
+      "selection|weekly_mean56|point_only": {
+        "rows": 4032,
+        "days": 42,
+        "mae": 2.7310887896825395,
+        "rmse": 3.4607484037255425,
+        "bias_units_per_key": 0.0998263888888889,
+        "coverage90": 0.8184523809523809,
+        "below90": 0.08283730158730158,
+        "above90": 0.09871031746031746,
+        "width_units": 9.955518353174602,
+        "loss_yuan_per_day": 792.0130952380953,
+        "shortage_yuan_per_day": 596.4452380952381,
+        "waste_yuan_per_day": 195.56785714285715,
+        "q_units_per_day": 1355.142857142857,
+        "procurement_yuan_per_day": 4723.9047619047615
+      },
+      "selection|weekly_mean56|stochastic": {
+        "rows": 4032,
+        "days": 42,
+        "mae": 2.7310887896825395,
+        "rmse": 3.4607484037255425,
+        "bias_units_per_key": 0.0998263888888889,
+        "coverage90": 0.8184523809523809,
+        "below90": 0.08283730158730158,
+        "above90": 0.09871031746031746,
+        "width_units": 9.955518353174602,
+        "loss_yuan_per_day": 724.0119047619047,
+        "shortage_yuan_per_day": 363.85476190476186,
+        "waste_yuan_per_day": 360.15714285714284,
+        "q_units_per_day": 1523.3333333333333,
+        "procurement_yuan_per_day": 5297.761904761905
+      },
+      "validation|shared_ridge10|point_only": {
+        "rows": 4032,
+        "days": 42,
+        "mae": 2.457267293235808,
+        "rmse": 3.0897067204870035,
+        "bias_units_per_key": 0.4159629955803761,
+        "coverage90": 0.8898809523809523,
+        "below90": 0.030009920634920636,
+        "above90": 0.08010912698412699,
+        "width_units": 10.135461330668303,
+        "loss_yuan_per_day": 688.647619047619,
+        "shortage_yuan_per_day": 490.99047619047616,
+        "waste_yuan_per_day": 197.65714285714282,
+        "q_units_per_day": 1401.7619047619048,
+        "procurement_yuan_per_day": 4897.952380952381
+      },
+      "validation|shared_ridge10|stochastic": {
+        "rows": 4032,
+        "days": 42,
+        "mae": 2.457267293235808,
+        "rmse": 3.0897067204870035,
+        "bias_units_per_key": 0.4159629955803761,
+        "coverage90": 0.8898809523809523,
+        "below90": 0.030009920634920636,
+        "above90": 0.08010912698412699,
+        "width_units": 10.135461330668303,
+        "loss_yuan_per_day": 631.8071428571429,
+        "shortage_yuan_per_day": 371.4428571428572,
+        "waste_yuan_per_day": 260.3642857142857,
+        "q_units_per_day": 1479.0238095238096,
+        "procurement_yuan_per_day": 5165.285714285715
+      },
+      "validation|weekly_mean56|point_only": {
+        "rows": 4032,
+        "days": 42,
+        "mae": 2.7096354166666665,
+        "rmse": 3.4260428656486344,
+        "bias_units_per_key": -0.36123511904761907,
+        "coverage90": 0.8888888888888888,
+        "below90": 0.04290674603174603,
+        "above90": 0.06820436507936507,
+        "width_units": 10.950694444444444,
+        "loss_yuan_per_day": 856.5607142857142,
+        "shortage_yuan_per_day": 692.8785714285713,
+        "waste_yuan_per_day": 163.68214285714285,
+        "q_units_per_day": 1345.0,
+        "procurement_yuan_per_day": 4696.238095238095
+      },
+      "validation|weekly_mean56|stochastic": {
+        "rows": 4032,
+        "days": 42,
+        "mae": 2.7096354166666665,
+        "rmse": 3.4260428656486344,
+        "bias_units_per_key": -0.36123511904761907,
+        "coverage90": 0.8888888888888888,
+        "below90": 0.04290674603174603,
+        "above90": 0.06820436507936507,
+        "width_units": 10.950694444444444,
+        "loss_yuan_per_day": 698.0619047619048,
+        "shortage_yuan_per_day": 379.2261904761905,
+        "waste_yuan_per_day": 318.83571428571423,
+        "q_units_per_day": 1520.8095238095239,
+        "procurement_yuan_per_day": 5309.952380952381
+      }
+    },
+    "future_summary": {
+      "shared_ridge10": {
+        "total_q_units": 64537,
+        "total_procurement_yuan": 226028.0,
+        "mean_scenario_loss_yuan": 603.9747506745995,
+        "mean_interval_width": 10.173032675319295,
+        "pool_days": 112
+      },
+      "weekly_mean56": {
+        "total_q_units": 64590,
+        "total_procurement_yuan": 226038.0,
+        "mean_scenario_loss_yuan": 696.5968510841836,
+        "mean_interval_width": 11.0423828125,
+        "pool_days": 112
+      }
+    },
+    "runtime_seconds": 94.47303019999526,
+    "future_actuals_seen": false,
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "artifacts": [
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\prospective-freeze.json",
+      "relative_path": "prospective-freeze.json",
+      "size_bytes": 2857,
+      "sha256": "96081c236606f0f668b7e4baf607c9fc5c5e9cda0fdcc5487bd5c7a3e9872e01"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\source\\v1\\config.json",
+      "relative_path": "source/v1/config.json",
+      "size_bytes": 3742,
+      "sha256": "4b1393daaccabbe9a51fc5fa56907ad2b94ee31042d6630fcf73f8b2e5db6145"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\source\\v1\\run_science.py",
+      "relative_path": "source/v1/run_science.py",
+      "size_bytes": 20693,
+      "sha256": "d1de1adb83a881657f091c62b4c3d97ede0542e1b711921d90bf600a65dc37ea"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\source\\v1\\reference_policy.py",
+      "relative_path": "source/v1/reference_policy.py",
+      "size_bytes": 27062,
+      "sha256": "4a6198d7c2cfea627c0f74aad5aa0ca4e88841f3e23b9d961185d423a0c3cf24"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\source\\build_paper_v4.py",
+      "relative_path": "source/build_paper_v4.py",
+      "size_bytes": 43509,
+      "sha256": "b86432b4265c87293eef565ca27ec3e7febaa5eeceb0be5d5747a69ab79f9505"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\results\\selection.json",
+      "relative_path": "science-v1/results/selection.json",
+      "size_bytes": 620,
+      "sha256": "9c96cdd9a3bc4b85dedb69c8622e137c14db2ee4f9c4e260e0a1bae1a5a9a291"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\results\\science_summary.json",
+      "relative_path": "science-v1/results/science_summary.json",
+      "size_bytes": 8107,
+      "sha256": "982fe2590222ed2617ab79dd14ef4eadebbd789cf7199e5ad7f6d212bb378a48"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\results\\historical_predictions_plans.csv",
+      "relative_path": "science-v1/results/historical_predictions_plans.csv",
+      "size_bytes": 8626736,
+      "sha256": "c15b5041ffa4dc4c5652f7b364622fcfa62fae5985555b501a5f45db87b5e33b"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\uncertainty\\residual_coordinates_all.csv",
+      "relative_path": "science-v1/uncertainty/residual_coordinates_all.csv",
+      "size_bytes": 5969737,
+      "sha256": "bad64a6a121b93a1c0366a3da1585c07ac0e69cf193c9a6414cfa9c25648fcf8"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\uncertainty\\pool_membership_all_origins.csv",
+      "relative_path": "science-v1/uncertainty/pool_membership_all_origins.csv",
+      "size_bytes": 144364,
+      "sha256": "e7b790246ea7f8049c0df9dc5364266a1ec7c8eac5bf638887c3cd85e9052656"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\future\\shared_ridge10\\predictions.csv",
+      "relative_path": "science-v1/future/shared_ridge10/predictions.csv",
+      "size_bytes": 360341,
+      "sha256": "fc9e088579ac0fe414467a62ef91980e2363b66546d8a95b5401342f46ea0bcd"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\future\\shared_ridge10\\replenishment.csv",
+      "relative_path": "science-v1/future/shared_ridge10/replenishment.csv",
+      "size_bytes": 153228,
+      "sha256": "ef2c2f6421bf18345d9b1c1d855def3f1b5721eee794aceae88c47edb30c5c80"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\future\\weekly_mean56\\predictions.csv",
+      "relative_path": "science-v1/future/weekly_mean56/predictions.csv",
+      "size_bytes": 355711,
+      "sha256": "8bb043862209e63b9f775092fc9f7c29af20b082b0d317da3be071b32c1750c3"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\science-v1\\future\\weekly_mean56\\replenishment.csv",
+      "relative_path": "science-v1/future/weekly_mean56/replenishment.csv",
+      "size_bytes": 149155,
+      "sha256": "0bfe558c04b6059ea7127ced78256400a7481e05beb08866327672a31b0e3706"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\paper-final-v4\\paper.md",
+      "relative_path": "paper-final-v4/paper.md",
+      "size_bytes": 32594,
+      "sha256": "d31682137dd761eae6b39baf2d0130f8ec41ec648adcd41f28d9128247d0a129"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\paper-final-v4\\paper.pdf",
+      "relative_path": "paper-final-v4/paper.pdf",
+      "size_bytes": 855193,
+      "sha256": "c9d9b1f673209ed250f4acb3e2a985ea12479fa53dc37fcdb8a7e5ebff31d6b1"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\paper-final-v4\\claims.json",
+      "relative_path": "paper-final-v4/claims.json",
+      "size_bytes": 18115,
+      "sha256": "f74dc43148933c2858fc04b3ce0ff2357e33f33f015a1dbe4ac8407996528219"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\self-check-v1\\self-check.json",
+      "relative_path": "self-check-v1/self-check.json",
+      "size_bytes": 5830,
+      "sha256": "111fced0fe605bf469f0cf66e310cb06653fcebc9c7b9cf28ade1602220fd546"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\document-check-v1\\final-document-check.json",
+      "relative_path": "document-check-v1/final-document-check.json",
+      "size_bytes": 5943,
+      "sha256": "0972cd6ff1e8b988cb4e61c680fe5f215adf003c51603dc417cf31d09009516e"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\visual-qa-final.json",
+      "relative_path": "visual-qa-final.json",
+      "size_bytes": 5230,
+      "sha256": "633f9fd408811460e09f9304c64f27912ce0ec0cedb5cb609a4b6536c29a755d"
+    },
+    {
+      "path": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\command-index.json",
+      "relative_path": "command-index.json",
+      "size_bytes": 15706,
+      "sha256": "6c18b8412d332fc2fc5e60d78978d449d938977ed9eae7c2351a21c99e26a103"
+    }
+  ],
+  "failure_preservation": {
+    "scientific_initial_run": "commands/002-science-v1.json exit0; no scientific retuning",
+    "initial_path_recovery": "recovery-log.json; nested lock path read failure, no fit",
+    "unexpected_document_failure": "commands/006-paper-v1.json exit1; source/build_paper_v1.py and partial paper-v1 unchanged",
+    "document_repairs": [
+      "paper-repair-v2.json",
+      "paper-provenance-correction-v3.json",
+      "markdown-interface-repair-v4.json"
+    ],
+    "prior_document_versions": [
+      "paper-v1",
+      "paper-v2",
+      "paper-final"
+    ],
+    "expected_negative_control": "commands/010-existing-output-rejection.json exit1, FileExistsError before fit or writes"
+  },
+  "reproduction": {
+    "scientific_entry": "source/v1/run_science.py --raw EXPLICIT_RAW --config EXPLICIT_CONFIG --newout NONEXISTENT_OUTPUT",
+    "existing_output_rejected_actual_test": true,
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "all_original_run_writes_within": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution",
+    "record_every_science_or_validation_invocation": "scripts/record_command.py --out UNIQUE_RECEIPT -- py -3.12 -X utf8 -B ENTRY ..."
+  },
+  "limitations": [
+    "Future42-day truth unavailable and never read; no future measured coverage/loss/improvement claim.",
+    "90% empirical marginal level has no guaranteed future or joint coverage.",
+    "Historical validation horizon1-14 only; horizon15-42 not directly validated.",
+    "Activity and forecast-step effects confounded; five validation activity days, denser future weekly activity regime.",
+    "Weather and settlement excluded; no weather causal estimate.",
+    "IID day bootstrap descriptive only due temporal dependence.",
+    "Optimization numerical optimality for fixed finite empirical scenarios, not unknown true distribution.",
+    "Author self-check not independent acceptance; root will freeze terminal bytes then use different receiver.",
+    "Local write scope is collaboration contract, not OS isolation; actual host model/tokens/cost unknown null."
+  ],
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "next_action": "Root freeze all execution terminal bytes, dispatch different independent receiver from original problem/inputs. Executor stops, no future truth or retuning after first delivery."
+}

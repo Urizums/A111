@@ -1,0 +1,92 @@
+{
+  "task_id": "R21-03",
+  "attempt_id": "R21-03-1",
+  "requirements_hash": "a9705e0f93edde4ade283b2477f28a9aa44a4c33db3fcfcb133875f3fbdb6ce1",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R21/execution-lock.json",
+        "runs/R21/review/initial-lock.json",
+        "runs/R21/review/holdout-lock.json",
+        "runs/R21/final/CLOSURE.json",
+        "runs/R21/final/APPENDIX.md",
+        "runs/R21/root-decimal-holdout-command.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "新方案执行及独立接收真实新测量",
+    "hypothesis": "Independent scientific reception and first-lock future measurement expose real limitations without success quotas.",
+    "baseline": "Frozen old current-policy ridge10 algorithm refitted on original new history; weekly mean56 is an actual simpler candidate.",
+    "conditions": "Single original synthetic case; g1–g4 before truth, g5 only after first production and receiving locks.",
+    "observations": {
+      "shared_ridge10": {
+        "key_count": 4032,
+        "date_count": 42,
+        "mae": 2.6082535939127234,
+        "rmse": 3.2686012918663603,
+        "bias_pred_minus_truth": 0.2275071234621776,
+        "coverage": 0.8673115079365079,
+        "below_rate": 0.036210317460317464,
+        "above_rate": 0.09647817460317461,
+        "mean_interval_width": 10.173032675319295,
+        "mean_interval_score": 14.147147526972569,
+        "shortage_yuan": 19844.1,
+        "waste_yuan": 10092.15,
+        "two_part_loss_yuan": 29936.25,
+        "two_part_loss_yuan_per_day": 712.7678571428571,
+        "procurement_yuan": 226028.0,
+        "q_units": 64537.0,
+        "all_predictions_intervals_and_plans_finite": true,
+        "all_prediction_and_interval_bounds_valid": true,
+        "all_q_integer_and_item_bounded": true,
+        "all_dates_96_unique_keys": true,
+        "all_daily_capacity_limits_valid": true,
+        "all_daily_budget_limits_valid": true,
+        "max_daily_units": 1600,
+        "max_daily_procurement_yuan": 5611.0,
+        "capacity_full_days": 24,
+        "budget_full_days": 0
+      },
+      "weekly_mean56": {
+        "key_count": 4032,
+        "date_count": 42,
+        "mae": 3.1378968253968256,
+        "rmse": 4.028284254212716,
+        "bias_pred_minus_truth": -1.0679563492063493,
+        "coverage": 0.8442460317460317,
+        "below_rate": 0.03993055555555555,
+        "above_rate": 0.1158234126984127,
+        "mean_interval_width": 11.0423828125,
+        "mean_interval_score": 17.39416232638889,
+        "shortage_yuan": 23470.1,
+        "waste_yuan": 11155.8,
+        "two_part_loss_yuan": 34625.899999999994,
+        "two_part_loss_yuan_per_day": 824.4261904761905,
+        "procurement_yuan": 226038.0,
+        "q_units": 64590.0,
+        "all_predictions_intervals_and_plans_finite": true,
+        "all_prediction_and_interval_bounds_valid": true,
+        "all_q_integer_and_item_bounded": true,
+        "all_dates_96_unique_keys": true,
+        "all_daily_capacity_limits_valid": true,
+        "all_daily_budget_limits_valid": true,
+        "max_daily_units": 1600,
+        "max_daily_procurement_yuan": 5580.0,
+        "capacity_full_days": 12,
+        "budget_full_days": 0
+      }
+    },
+    "metrics": {
+      "groups": 166,
+      "root_numeric_cross_checks": 2242,
+      "model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "limits": "Coverage below nominal; future/date dependence and horizon mismatch retained. No causal skill/real contest/prize guarantee; C13 unchanged."
+  },
+  "next_action": "R21-next: actually audit feasible 42-day historical evidence under a source-bound R22 plan."
+}

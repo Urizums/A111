@@ -1,0 +1,75 @@
+{
+  "schema": "r21-pre-holdout-ready/1",
+  "pre_holdout_ready": true,
+  "status": "READY_FOR_ROOT_FREEZE_AND_SEPARATE_G5_DISPATCH",
+  "production_execution_lock": {
+    "path": "runs/R21/execution-lock.json",
+    "sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669",
+    "entry_count": 301
+  },
+  "canonical_identity_locks": {
+    "input_lock": {
+      "path": "runs/R21/input-lock.json",
+      "sha256": "dcd4f9ffd67097e6dc53cc919ed0333f9340f7dc938d7c6ea3694af7f33d53d7",
+      "entries_checked": 12,
+      "all_match": true
+    },
+    "protocol_lock": {
+      "path": "runs/R21/protocol-lock.json",
+      "sha256": "21d9eb179a3b341127304e3b0fcfdc01a1a152cd2ff4cfa6b451967979464977",
+      "entries_checked": 2,
+      "all_match": true
+    },
+    "clarification_lock": {
+      "path": "runs/R21/clarification-lock.json",
+      "sha256": "ca8fe9435a2ca8089f64812718a15e774486d717528f32d4ea5805b0fc0d9b15",
+      "entries_checked": 1,
+      "all_match": true
+    }
+  },
+  "route_output_map": {
+    "shared_ridge10": [
+      "runs/R21/execution/science-v1/future/shared_ridge10/predictions.csv",
+      "runs/R21/execution/science-v1/future/shared_ridge10/replenishment.csv"
+    ],
+    "weekly_mean56": [
+      "runs/R21/execution/science-v1/future/weekly_mean56/predictions.csv",
+      "runs/R21/execution/science-v1/future/weekly_mean56/replenishment.csv"
+    ],
+    "consumer_paper": [
+      "runs/R21/execution/paper-final-v4/paper.md",
+      "runs/R21/execution/paper-final-v4/paper.pdf"
+    ]
+  },
+  "gate_status": {
+    "g1": {
+      "status": "PASS",
+      "basis": "raw lock identities match; independent raw revision/as-of audit, source snapshots/features, every residual coordinate, exact 96-key day eligibility and timestamps match; no post-origin promotion/weather enters final features"
+    },
+    "g2": {
+      "status": "PASS",
+      "basis": "old current-policy algorithm reconstructed as shared ridge10; independent weekly-mean baseline; same raw information origins, dates, residual pool, integer objective and resource limits; selected on 42 historical days before 42 validation days; boundary controls reject invalid outputs while accepting continuous scenario demand"
+    },
+    "g3": {
+      "status": "PASS",
+      "basis": "clean command exited 0; 17 of 19 selected science-output files byte-identical; remaining two differ only at runtime_seconds and actual_selected_at_utc; independent reconstruction matched frozen predictions, intervals, plans, historical metrics and residual lineage; failed provenance parser attempt and repairs retained"
+    },
+    "g4": {
+      "status": "PASS_WITH_OPTIONAL_WORDING_NOTE",
+      "basis": "entire Chinese paper read; all 13 final PDF pages rendered and visually inspected; tables/claims checked against independent stage/group calculations and frozen outputs; no future truth claim or guaranteed coverage/improvement claim"
+    },
+    "g5": {
+      "status": "NOT_EXECUTED",
+      "basis": "evaluation truth remains unopened and prohibited in this receiving stage"
+    }
+  },
+  "private_truth": {
+    "opened": false,
+    "g5": "NOT_EXECUTED",
+    "next_step_requires_separate_root_authorization": true
+  },
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "receiver_locality_note": "path-scoped independent receiving was a local procedural scope, not host/OS isolation"
+}

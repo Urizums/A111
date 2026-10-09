@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R21/prepare_result.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T03:23:29.970835+00:00",
+    "monotonic_ns": 135640515000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T03:23:30.086637+00:00",
+    "monotonic_ns": 135640625000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\prepare_result.py\", line 20, in <module>\r\n    assert datetime.fromisoformat(read('runs/R21/protocol-lock.json')['frozen_at'])<datetime.fromisoformat(generation['begin'])\r\n                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nTypeError: fromisoformat: argument must be str\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMVxwcmVwYXJlX3Jlc3VsdC5weSIsIGxpbmUgMjAsIGluIDxtb2R1bGU+DQogICAgYXNzZXJ0IGRhdGV0aW1lLmZyb21pc29mb3JtYXQocmVhZCgncnVucy9SMjEvcHJvdG9jb2wtbG9jay5qc29uJylbJ2Zyb3plbl9hdCddKTxkYXRldGltZS5mcm9taXNvZm9ybWF0KGdlbmVyYXRpb25bJ2JlZ2luJ10pDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eDQpUeXBlRXJyb3I6IGZyb21pc29mb3JtYXQ6IGFyZ3VtZW50IG11c3QgYmUgc3RyDQo="
+}

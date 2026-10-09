@@ -1,0 +1,517 @@
+{
+  "task_id": "R21-next",
+  "attempt_id": "R21-next-1",
+  "requirements_hash": "c778b17f2bea6f2633d0bf6989725381fd3514e414d63ef24c45df50af007e9a",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R22/PLAN.md",
+        "runs/R22/source-lock.json",
+        "runs/R22/audit/first-step-command.json",
+        "runs/R22/audit/source-availability.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "根据实测边界决定并启动合理下一阶段",
+    "hypothesis": "Known horizon mismatch warrants evidence feasibility audit before another method.",
+    "baseline": "R21 actual historical windows are only 14 days.",
+    "conditions": "R21 five-gate reception complete; same historical inputs; no fitting or future measurement.",
+    "observations": {
+      "schema": "r22-horizon-evidence-audit/1",
+      "windows": [
+        {
+          "origin": "2026-07-22T18:00:00+08:00",
+          "target_begin": "2026-07-23",
+          "target_end": "2026-09-02",
+          "dates": 42,
+          "keys": 4032,
+          "train_keys": 7872,
+          "train_days": 82,
+          "mature_label_keys": 4032,
+          "mature_versions_not_yet_available_at_origin": 4032,
+          "residual_days": 11,
+          "residual_day_ids": [
+            "2026-07-09",
+            "2026-07-10",
+            "2026-07-11",
+            "2026-07-12",
+            "2026-07-13",
+            "2026-07-14",
+            "2026-07-15",
+            "2026-07-16",
+            "2026-07-17",
+            "2026-07-18",
+            "2026-07-19"
+          ],
+          "known_target_promotion_keys": 960,
+          "known_target_weather_region_dates": 3,
+          "activity_dates": 4,
+          "cells": [
+            {
+              "horizon_band": "1-7",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "1-7",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "8-14",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "8-14",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "15-21",
+              "activity": "0",
+              "dates": 5,
+              "keys": 480,
+              "observed": true
+            },
+            {
+              "horizon_band": "15-21",
+              "activity": "1",
+              "dates": 2,
+              "keys": 192,
+              "observed": true
+            },
+            {
+              "horizon_band": "22-28",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "22-28",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "29-35",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "29-35",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "36-42",
+              "activity": "0",
+              "dates": 5,
+              "keys": 480,
+              "observed": true
+            },
+            {
+              "horizon_band": "36-42",
+              "activity": "1",
+              "dates": 2,
+              "keys": 192,
+              "observed": true
+            }
+          ]
+        },
+        {
+          "origin": "2026-09-02T18:00:00+08:00",
+          "target_begin": "2026-09-03",
+          "target_end": "2026-10-14",
+          "dates": 42,
+          "keys": 4032,
+          "train_keys": 11904,
+          "train_days": 124,
+          "mature_label_keys": 4032,
+          "mature_versions_not_yet_available_at_origin": 4032,
+          "residual_days": 53,
+          "residual_day_ids": [
+            "2026-07-09",
+            "2026-07-10",
+            "2026-07-11",
+            "2026-07-12",
+            "2026-07-13",
+            "2026-07-14",
+            "2026-07-15",
+            "2026-07-16",
+            "2026-07-17",
+            "2026-07-18",
+            "2026-07-19",
+            "2026-07-20",
+            "2026-07-21",
+            "2026-07-22",
+            "2026-07-23",
+            "2026-07-24",
+            "2026-07-25",
+            "2026-07-26",
+            "2026-07-27",
+            "2026-07-28",
+            "2026-07-29",
+            "2026-07-30",
+            "2026-07-31",
+            "2026-08-01",
+            "2026-08-02",
+            "2026-08-03",
+            "2026-08-04",
+            "2026-08-05",
+            "2026-08-06",
+            "2026-08-07",
+            "2026-08-08",
+            "2026-08-09",
+            "2026-08-10",
+            "2026-08-11",
+            "2026-08-12",
+            "2026-08-13",
+            "2026-08-14",
+            "2026-08-15",
+            "2026-08-16",
+            "2026-08-17",
+            "2026-08-18",
+            "2026-08-19",
+            "2026-08-20",
+            "2026-08-21",
+            "2026-08-22",
+            "2026-08-23",
+            "2026-08-24",
+            "2026-08-25",
+            "2026-08-26",
+            "2026-08-27",
+            "2026-08-28",
+            "2026-08-29",
+            "2026-08-30"
+          ],
+          "known_target_promotion_keys": 960,
+          "known_target_weather_region_dates": 3,
+          "activity_dates": 4,
+          "cells": [
+            {
+              "horizon_band": "1-7",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "1-7",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "8-14",
+              "activity": "0",
+              "dates": 6,
+              "keys": 576,
+              "observed": true
+            },
+            {
+              "horizon_band": "8-14",
+              "activity": "1",
+              "dates": 1,
+              "keys": 96,
+              "observed": true
+            },
+            {
+              "horizon_band": "15-21",
+              "activity": "0",
+              "dates": 6,
+              "keys": 576,
+              "observed": true
+            },
+            {
+              "horizon_band": "15-21",
+              "activity": "1",
+              "dates": 1,
+              "keys": 96,
+              "observed": true
+            },
+            {
+              "horizon_band": "22-28",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "22-28",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "29-35",
+              "activity": "0",
+              "dates": 5,
+              "keys": 480,
+              "observed": true
+            },
+            {
+              "horizon_band": "29-35",
+              "activity": "1",
+              "dates": 2,
+              "keys": 192,
+              "observed": true
+            },
+            {
+              "horizon_band": "36-42",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "36-42",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            }
+          ]
+        },
+        {
+          "origin": "2026-09-19T18:00:00+08:00",
+          "target_begin": "2026-09-20",
+          "target_end": "2026-10-31",
+          "dates": 42,
+          "keys": 4032,
+          "train_keys": 13536,
+          "train_days": 141,
+          "mature_label_keys": 4032,
+          "mature_versions_not_yet_available_at_origin": 4032,
+          "residual_days": 70,
+          "residual_day_ids": [
+            "2026-07-09",
+            "2026-07-10",
+            "2026-07-11",
+            "2026-07-12",
+            "2026-07-13",
+            "2026-07-14",
+            "2026-07-15",
+            "2026-07-16",
+            "2026-07-17",
+            "2026-07-18",
+            "2026-07-19",
+            "2026-07-20",
+            "2026-07-21",
+            "2026-07-22",
+            "2026-07-23",
+            "2026-07-24",
+            "2026-07-25",
+            "2026-07-26",
+            "2026-07-27",
+            "2026-07-28",
+            "2026-07-29",
+            "2026-07-30",
+            "2026-07-31",
+            "2026-08-01",
+            "2026-08-02",
+            "2026-08-03",
+            "2026-08-04",
+            "2026-08-05",
+            "2026-08-06",
+            "2026-08-07",
+            "2026-08-08",
+            "2026-08-09",
+            "2026-08-10",
+            "2026-08-11",
+            "2026-08-12",
+            "2026-08-13",
+            "2026-08-14",
+            "2026-08-15",
+            "2026-08-16",
+            "2026-08-17",
+            "2026-08-18",
+            "2026-08-19",
+            "2026-08-20",
+            "2026-08-21",
+            "2026-08-22",
+            "2026-08-23",
+            "2026-08-24",
+            "2026-08-25",
+            "2026-08-26",
+            "2026-08-27",
+            "2026-08-28",
+            "2026-08-29",
+            "2026-08-30",
+            "2026-08-31",
+            "2026-09-01",
+            "2026-09-02",
+            "2026-09-03",
+            "2026-09-04",
+            "2026-09-05",
+            "2026-09-06",
+            "2026-09-07",
+            "2026-09-08",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-12",
+            "2026-09-13",
+            "2026-09-14",
+            "2026-09-15",
+            "2026-09-16"
+          ],
+          "known_target_promotion_keys": 960,
+          "known_target_weather_region_dates": 3,
+          "activity_dates": 4,
+          "cells": [
+            {
+              "horizon_band": "1-7",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "1-7",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "8-14",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "8-14",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "15-21",
+              "activity": "0",
+              "dates": 5,
+              "keys": 480,
+              "observed": true
+            },
+            {
+              "horizon_band": "15-21",
+              "activity": "1",
+              "dates": 2,
+              "keys": 192,
+              "observed": true
+            },
+            {
+              "horizon_band": "22-28",
+              "activity": "0",
+              "dates": 7,
+              "keys": 672,
+              "observed": true
+            },
+            {
+              "horizon_band": "22-28",
+              "activity": "1",
+              "dates": 0,
+              "keys": 0,
+              "observed": false
+            },
+            {
+              "horizon_band": "29-35",
+              "activity": "0",
+              "dates": 6,
+              "keys": 576,
+              "observed": true
+            },
+            {
+              "horizon_band": "29-35",
+              "activity": "1",
+              "dates": 1,
+              "keys": 96,
+              "observed": true
+            },
+            {
+              "horizon_band": "36-42",
+              "activity": "0",
+              "dates": 6,
+              "keys": 576,
+              "observed": true
+            },
+            {
+              "horizon_band": "36-42",
+              "activity": "1",
+              "dates": 1,
+              "keys": 96,
+              "observed": true
+            }
+          ]
+        }
+      ],
+      "overlap": [
+        {
+          "origins": [
+            "2026-07-22T18:00:00+08:00",
+            "2026-09-02T18:00:00+08:00"
+          ],
+          "shared_dates": 0
+        },
+        {
+          "origins": [
+            "2026-07-22T18:00:00+08:00",
+            "2026-09-19T18:00:00+08:00"
+          ],
+          "shared_dates": 0
+        },
+        {
+          "origins": [
+            "2026-09-02T18:00:00+08:00",
+            "2026-09-19T18:00:00+08:00"
+          ],
+          "shared_dates": 25
+        }
+      ],
+      "boundary_control": {
+        "origin": "2026-09-20T18:00:00+08:00",
+        "missing_historical_keys": 96,
+        "missing_date": "2026-11-01",
+        "complete_window_rejected": true
+      },
+      "source": "R21 historical raw only; no future truth, fitting or loss-based window selection",
+      "limits": "Available historical labels do not prove 42-step performance; sparse activity cells and overlapping dates must remain explicit.",
+      "model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "metrics": {
+      "model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "limits": "Audit only; does not establish long-horizon accuracy, causality or source superiority."
+  },
+  "next_action": "R22-02: freeze same-horizon research protocol and execute with independent receiving.",
+  "successor": {
+    "plan": "runs/R22/PLAN.md",
+    "first_task_id": "R22-01",
+    "actual_start": "runs/R22/audit/first-step-command.json"
+  }
+}

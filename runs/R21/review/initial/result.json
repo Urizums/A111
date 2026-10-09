@@ -1,0 +1,377 @@
+{
+  "schema": "r21-initial-receiver-result/1",
+  "pre_holdout_ready": true,
+  "status": "READY_FOR_ROOT_FREEZE_AND_SEPARATE_G5_DISPATCH",
+  "gate_status": {
+    "g1": {
+      "status": "PASS",
+      "basis": "raw lock identities match; independent raw revision/as-of audit, source snapshots/features, every residual coordinate, exact 96-key day eligibility and timestamps match; no post-origin promotion/weather enters final features"
+    },
+    "g2": {
+      "status": "PASS",
+      "basis": "old current-policy algorithm reconstructed as shared ridge10; independent weekly-mean baseline; same raw information origins, dates, residual pool, integer objective and resource limits; selected on 42 historical days before 42 validation days; boundary controls reject invalid outputs while accepting continuous scenario demand"
+    },
+    "g3": {
+      "status": "PASS",
+      "basis": "clean command exited 0; 17 of 19 selected science-output files byte-identical; remaining two differ only at runtime_seconds and actual_selected_at_utc; independent reconstruction matched frozen predictions, intervals, plans, historical metrics and residual lineage; failed provenance parser attempt and repairs retained"
+    },
+    "g4": {
+      "status": "PASS_WITH_OPTIONAL_WORDING_NOTE",
+      "basis": "entire Chinese paper read; all 13 final PDF pages rendered and visually inspected; tables/claims checked against independent stage/group calculations and frozen outputs; no future truth claim or guaranteed coverage/improvement claim"
+    },
+    "g5": {
+      "status": "NOT_EXECUTED",
+      "basis": "evaluation truth remains unopened and prohibited in this receiving stage"
+    }
+  },
+  "production_lock_sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669",
+  "canonical_identity_locks": {
+    "input_lock": {
+      "path": "runs/R21/input-lock.json",
+      "sha256": "dcd4f9ffd67097e6dc53cc919ed0333f9340f7dc938d7c6ea3694af7f33d53d7",
+      "entries_checked": 12,
+      "all_match": true
+    },
+    "protocol_lock": {
+      "path": "runs/R21/protocol-lock.json",
+      "sha256": "21d9eb179a3b341127304e3b0fcfdc01a1a152cd2ff4cfa6b451967979464977",
+      "entries_checked": 2,
+      "all_match": true
+    },
+    "clarification_lock": {
+      "path": "runs/R21/clarification-lock.json",
+      "sha256": "ca8fe9435a2ca8089f64812718a15e774486d717528f32d4ea5805b0fc0d9b15",
+      "entries_checked": 1,
+      "all_match": true
+    }
+  },
+  "evidence": {
+    "provenance_report": "runs/R21/review/initial/provenance-check.json",
+    "independent_reconstruction": "runs/R21/review/initial/independent-science-audit.json",
+    "boundary_controls": "runs/R21/review/initial/boundary-controls.json",
+    "clean_rerun_comparison": "runs/R21/review/initial/reproduction-comparison.json",
+    "clean_rerun_content_equivalent_after_volatile_metadata": true,
+    "clean_rerun_output": "runs/R21/review/initial/reproduction-new",
+    "paper_pdf_sha256": "c9d9b1f673209ed250f4acb3e2a985ea12479fa53dc37fcdb8a7e5ebff31d6b1",
+    "paper_markdown_sha256": "d31682137dd761eae6b39baf2d0130f8ec41ec648adcd41f28d9128247d0a129",
+    "pdf_pages": 13,
+    "all_13_pages_visually_inspected": true,
+    "independent_residual_coordinate_rows": 21504,
+    "independent_residual_pool_rows": 1008,
+    "reconstruction_route_checks": {
+      "shared_ridge10": {
+        "prediction_rows": 4032,
+        "plan_rows": 4032,
+        "prediction_keyset_equal": true,
+        "max_abs_point_difference": 4.998668146072305e-11,
+        "max_abs_lower_difference": 0.0,
+        "max_abs_upper_difference": 0.0,
+        "max_abs_interval_level_difference": 0.0,
+        "plan_exactly_equal": true,
+        "independent_daily_resource_valid": true,
+        "residual_pool_days": 112,
+        "first_last_residual_day": [
+          "2026-07-09",
+          "2026-10-28"
+        ],
+        "rows_and_unique_keys_valid": true,
+        "plan_integral_and_bounds_valid": true,
+        "daily_resource_limits_valid": true,
+        "finite_ordered_nominal90_output_valid": true
+      },
+      "weekly_mean56": {
+        "prediction_rows": 4032,
+        "plan_rows": 4032,
+        "prediction_keyset_equal": true,
+        "max_abs_point_difference": 0.0,
+        "max_abs_lower_difference": 0.0,
+        "max_abs_upper_difference": 0.0,
+        "max_abs_interval_level_difference": 0.0,
+        "plan_exactly_equal": true,
+        "independent_daily_resource_valid": true,
+        "residual_pool_days": 112,
+        "first_last_residual_day": [
+          "2026-07-09",
+          "2026-10-28"
+        ],
+        "rows_and_unique_keys_valid": true,
+        "plan_integral_and_bounds_valid": true,
+        "daily_resource_limits_valid": true,
+        "finite_ordered_nominal90_output_valid": true
+      }
+    },
+    "independent_historical_stage_count": 6,
+    "independent_historical_group_metric_count": 250,
+    "paper_note": "Optional clarity risk: the business recommendation phrase 可采纳已冻结的R计划 could be read operationally; adjacent prose explicitly bounds the case as synthetic and its figures as unobserved scenario outputs.",
+    "observed_nonformal_probe": "A read-only probe used the mistaken path runs/R21/science-v1/run_identity.json and returned not found; no content was read. Correct permitted path runs/R21/execution/science-v1/run_identity.json was then verified against raw/config/source identity hashes."
+  },
+  "terminal_processes_at_manifest_time": {
+    "receiver_command_count": 12,
+    "all_commands_terminal": true,
+    "all_stream_bindings_valid": true,
+    "nonzero_exit_commands": [
+      {
+        "receipt": "runs/R21/review/initial/provenance-check-command.json",
+        "exit_code": 1,
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/provenance_check.py"
+        ],
+        "begin_utc": "2026-10-09T04:02:38.091677+00:00",
+        "end_utc": "2026-10-09T04:02:38.335888+00:00"
+      }
+    ],
+    "commands": [
+      {
+        "receipt": "runs/R21/review/initial/boundary-controls-command.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/boundary_controls.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T04:08:06.322098+00:00",
+        "end_utc": "2026-10-09T04:08:06.493250+00:00",
+        "stdout_raw_bytes": 1109,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/independent-receiver-command-2.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/independent_receiver.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T04:05:34.206267+00:00",
+        "end_utc": "2026-10-09T04:06:01.105581+00:00",
+        "stdout_raw_bytes": 6224,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/independent-receiver-command.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/independent_receiver.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T04:01:50.268737+00:00",
+        "end_utc": "2026-10-09T04:02:13.809009+00:00",
+        "stdout_raw_bytes": 5848,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/pdf-info-command.json",
+        "argv": [
+          "pdfinfo",
+          "runs/R21/execution/paper-final-v4/paper.pdf"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T03:59:38.663246+00:00",
+        "end_utc": "2026-10-09T03:59:38.835801+00:00",
+        "stdout_raw_bytes": 686,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/pdf-render-command.json",
+        "argv": [
+          "pdftoppm",
+          "-png",
+          "-r",
+          "120",
+          "runs/R21/execution/paper-final-v4/paper.pdf",
+          "runs/R21/review/initial/paper-page"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T03:59:38.931394+00:00",
+        "end_utc": "2026-10-09T03:59:41.121586+00:00",
+        "stdout_raw_bytes": 0,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/provenance-check-command-2.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/provenance_check.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T04:02:46.784056+00:00",
+        "end_utc": "2026-10-09T04:02:47.033916+00:00",
+        "stdout_raw_bytes": 389,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/provenance-check-command-3.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/provenance_check.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T04:07:36.836261+00:00",
+        "end_utc": "2026-10-09T04:07:37.092388+00:00",
+        "stdout_raw_bytes": 444,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/provenance-check-command-4.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/provenance_check.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T04:07:48.249974+00:00",
+        "end_utc": "2026-10-09T04:07:48.497167+00:00",
+        "stdout_raw_bytes": 443,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/provenance-check-command.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/provenance_check.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 1,
+        "begin_utc": "2026-10-09T04:02:38.091677+00:00",
+        "end_utc": "2026-10-09T04:02:38.335888+00:00",
+        "stdout_raw_bytes": 0,
+        "stderr_raw_bytes": 863,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/reproduction-command.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/execution/source/v1/run_science.py",
+          "--raw",
+          "runs/R21/inputs/raw",
+          "--config",
+          "runs/R21/execution/source/v1/config.json",
+          "--newout",
+          "runs/R21/review/initial/reproduction-new"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T03:58:59.930148+00:00",
+        "end_utc": "2026-10-09T04:00:37.536336+00:00",
+        "stdout_raw_bytes": 8553,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/reproduction-compare-command-2.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/reproduction_compare.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T04:09:02.548005+00:00",
+        "end_utc": "2026-10-09T04:09:03.205931+00:00",
+        "stdout_raw_bytes": 1345,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      },
+      {
+        "receipt": "runs/R21/review/initial/reproduction-compare-command.json",
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/initial/reproduction_compare.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "state": "finished",
+        "exit_code": 0,
+        "begin_utc": "2026-10-09T04:08:51.070407+00:00",
+        "end_utc": "2026-10-09T04:08:51.775462+00:00",
+        "stdout_raw_bytes": 883,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true
+      }
+    ]
+  },
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "future_truth_opened": false
+}

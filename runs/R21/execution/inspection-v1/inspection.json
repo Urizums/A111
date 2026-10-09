@@ -1,0 +1,1107 @@
+{
+  "audit": {
+    "raw_rows": {
+      "raw_rows": {
+        "demand_reports": 21599,
+        "stores": 12,
+        "items": 8,
+        "calendar": 226,
+        "promotions": 21696,
+        "weather": 1230
+      },
+      "demand_original_rows": 21609,
+      "complete_duplicates_removed": 10,
+      "demand_unique_keys": 17664,
+      "weather_missing_rain": 17,
+      "unit_checks": "finite nonnegative numeric fields; integral demand/revision; promotion in [0,1]; weekday/date; unique dimensions and joins; monotone revisions",
+      "timezone": "Asia/Shanghai",
+      "raw_hashes": {
+        "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+        "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753",
+        "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+        "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+        "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+        "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+        "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403"
+      }
+    },
+    "historical_services": [
+      "2026-05-01",
+      "2026-10-31"
+    ],
+    "final_train_rows": 17568,
+    "final_train_days": 183,
+    "final_partial_days": {},
+    "evaluation_rows": 17664,
+    "future_keys": 4032,
+    "future_promotion_known_rows": 960,
+    "future_weather_known_rows": 1344,
+    "future_weather_missing_rain_rows": 2688,
+    "future_activity_dates": [
+      "2026-11-03",
+      "2026-11-04",
+      "2026-11-10",
+      "2026-11-11",
+      "2026-11-17",
+      "2026-11-18",
+      "2026-11-24",
+      "2026-11-25",
+      "2026-12-01",
+      "2026-12-02",
+      "2026-12-08",
+      "2026-12-09"
+    ],
+    "historical_activity_dates": [
+      "2026-05-06",
+      "2026-05-07",
+      "2026-05-25",
+      "2026-05-26",
+      "2026-06-13",
+      "2026-06-14",
+      "2026-07-02",
+      "2026-07-03",
+      "2026-07-21",
+      "2026-07-22",
+      "2026-08-09",
+      "2026-08-10",
+      "2026-08-28",
+      "2026-08-29",
+      "2026-09-16",
+      "2026-09-17",
+      "2026-10-05",
+      "2026-10-06",
+      "2026-10-24",
+      "2026-10-25"
+    ],
+    "demand_range": [
+      0,
+      36
+    ],
+    "training_feature_matrix_rank_final": 161,
+    "training_feature_columns": 169
+  },
+  "boundaries": [
+    {
+      "origin": "2026-07-08T18:00:00",
+      "stage": "precalibration",
+      "train_rows": 6528,
+      "train_complete_days": 68,
+      "max_train_service_date": "2026-07-07",
+      "max_train_available_at": "2026-07-08 09:00:00+08:00",
+      "changed_label_count": 14,
+      "changed_revision_count": 42,
+      "snapshot_sha256": "e6421f87e5602d676ff590cab8ca2c7c2e86288fbad79d2afd6e89a3b5423de6"
+    },
+    {
+      "origin": "2026-07-22T18:00:00",
+      "stage": "selection",
+      "train_rows": 7872,
+      "train_complete_days": 82,
+      "max_train_service_date": "2026-07-21",
+      "max_train_available_at": "2026-07-22 09:00:00+08:00",
+      "changed_label_count": 8,
+      "changed_revision_count": 45,
+      "snapshot_sha256": "67dd74d7bf2ea477e27133352c108a76bf37704f9d27536ddae55ff779cb106c"
+    },
+    {
+      "origin": "2026-08-05T18:00:00",
+      "stage": "selection",
+      "train_rows": 9216,
+      "train_complete_days": 96,
+      "max_train_service_date": "2026-08-04",
+      "max_train_available_at": "2026-08-05 09:00:00+08:00",
+      "changed_label_count": 10,
+      "changed_revision_count": 40,
+      "snapshot_sha256": "74cb9ebb05b4f85ee6f8b1db1061c3fc78e24ae8a230e14d054f2023e2684f5f"
+    },
+    {
+      "origin": "2026-08-19T18:00:00",
+      "stage": "selection",
+      "train_rows": 10560,
+      "train_complete_days": 110,
+      "max_train_service_date": "2026-08-18",
+      "max_train_available_at": "2026-08-19 09:00:00+08:00",
+      "changed_label_count": 5,
+      "changed_revision_count": 36,
+      "snapshot_sha256": "74c34a76b8ddda1bf954c53e0f8efe7b6964f28e47a8c9c2c698e36233335bb4"
+    },
+    {
+      "origin": "2026-09-02T18:00:00",
+      "stage": "calibration",
+      "train_rows": 11904,
+      "train_complete_days": 124,
+      "max_train_service_date": "2026-09-01",
+      "max_train_available_at": "2026-09-02 09:00:00+08:00",
+      "changed_label_count": 14,
+      "changed_revision_count": 47,
+      "snapshot_sha256": "3bacad866338d20860f00bfa7d0d4c29a3b16e16d91db478fca12edef7800127"
+    },
+    {
+      "origin": "2026-09-16T18:00:00",
+      "stage": "validation",
+      "train_rows": 13248,
+      "train_complete_days": 138,
+      "max_train_service_date": "2026-09-15",
+      "max_train_available_at": "2026-09-16 09:00:00+08:00",
+      "changed_label_count": 11,
+      "changed_revision_count": 48,
+      "snapshot_sha256": "b9184d0a561e59ca4f1b959ae57e62adecfd384220b9634c3cebf7c138e1170a"
+    },
+    {
+      "origin": "2026-09-30T18:00:00",
+      "stage": "validation",
+      "train_rows": 14592,
+      "train_complete_days": 152,
+      "max_train_service_date": "2026-09-29",
+      "max_train_available_at": "2026-09-30 09:00:00+08:00",
+      "changed_label_count": 9,
+      "changed_revision_count": 47,
+      "snapshot_sha256": "6df4f60c5d0406802ffff3d6a0d8f92b894330a4a67f8e195ce45f8a40f0c971"
+    },
+    {
+      "origin": "2026-10-14T18:00:00",
+      "stage": "validation",
+      "train_rows": 15936,
+      "train_complete_days": 166,
+      "max_train_service_date": "2026-10-13",
+      "max_train_available_at": "2026-10-14 09:00:00+08:00",
+      "changed_label_count": 10,
+      "changed_revision_count": 44,
+      "snapshot_sha256": "c04c56d0045f559877caef780ce3f3ab7f6542c177c6d0326d069ba3b968ce9e"
+    }
+  ],
+  "pool_by_origin": [
+    {
+      "calibration_origin": "2026-07-22T18:00:00",
+      "method_id": "shared_ridge10",
+      "sum": 11,
+      "count": 14
+    },
+    {
+      "calibration_origin": "2026-07-22T18:00:00",
+      "method_id": "weekly_mean56",
+      "sum": 11,
+      "count": 14
+    },
+    {
+      "calibration_origin": "2026-08-05T18:00:00",
+      "method_id": "shared_ridge10",
+      "sum": 25,
+      "count": 28
+    },
+    {
+      "calibration_origin": "2026-08-05T18:00:00",
+      "method_id": "weekly_mean56",
+      "sum": 25,
+      "count": 28
+    },
+    {
+      "calibration_origin": "2026-08-19T18:00:00",
+      "method_id": "shared_ridge10",
+      "sum": 39,
+      "count": 42
+    },
+    {
+      "calibration_origin": "2026-08-19T18:00:00",
+      "method_id": "weekly_mean56",
+      "sum": 39,
+      "count": 42
+    },
+    {
+      "calibration_origin": "2026-09-02T18:00:00",
+      "method_id": "shared_ridge10",
+      "sum": 53,
+      "count": 56
+    },
+    {
+      "calibration_origin": "2026-09-02T18:00:00",
+      "method_id": "weekly_mean56",
+      "sum": 53,
+      "count": 56
+    },
+    {
+      "calibration_origin": "2026-09-16T18:00:00",
+      "method_id": "shared_ridge10",
+      "sum": 67,
+      "count": 70
+    },
+    {
+      "calibration_origin": "2026-09-16T18:00:00",
+      "method_id": "weekly_mean56",
+      "sum": 67,
+      "count": 70
+    },
+    {
+      "calibration_origin": "2026-09-30T18:00:00",
+      "method_id": "shared_ridge10",
+      "sum": 81,
+      "count": 84
+    },
+    {
+      "calibration_origin": "2026-09-30T18:00:00",
+      "method_id": "weekly_mean56",
+      "sum": 81,
+      "count": 84
+    },
+    {
+      "calibration_origin": "2026-10-14T18:00:00",
+      "method_id": "shared_ridge10",
+      "sum": 95,
+      "count": 98
+    },
+    {
+      "calibration_origin": "2026-10-14T18:00:00",
+      "method_id": "weekly_mean56",
+      "sum": 95,
+      "count": 98
+    },
+    {
+      "calibration_origin": "2026-10-31T18:00:00",
+      "method_id": "shared_ridge10",
+      "sum": 112,
+      "count": 112
+    },
+    {
+      "calibration_origin": "2026-10-31T18:00:00",
+      "method_id": "weekly_mean56",
+      "sum": 112,
+      "count": 112
+    }
+  ],
+  "validation_by_origin": [
+    {
+      "origin": "2026-09-16T18:00:00",
+      "stage": "validation",
+      "method_id": "shared_ridge10",
+      "policy": "stochastic",
+      "rows": 1344,
+      "days": 14,
+      "mae": 2.4800462915,
+      "rmse": 3.1041542723,
+      "bias_units_per_key": 0.5351663736,
+      "coverage90": 0.8869047619,
+      "below90": 0.03125,
+      "above90": 0.0818452381,
+      "width_units": 10.0414159044,
+      "loss_yuan_per_day": 610.0392857143,
+      "shortage_yuan_per_day": 334.3714285714,
+      "waste_yuan_per_day": 275.6678571429,
+      "q_units_per_day": 1472.0714285714,
+      "procurement_yuan_per_day": 5133.2857142857
+    },
+    {
+      "origin": "2026-09-16T18:00:00",
+      "stage": "validation",
+      "method_id": "weekly_mean56",
+      "policy": "stochastic",
+      "rows": 1344,
+      "days": 14,
+      "mae": 2.7373511905,
+      "rmse": 3.4390080566,
+      "bias_units_per_key": -0.0892857143,
+      "coverage90": 0.8869047619,
+      "below90": 0.0491071429,
+      "above90": 0.0639880952,
+      "width_units": 10.9190104167,
+      "loss_yuan_per_day": 691.65,
+      "shortage_yuan_per_day": 357.15,
+      "waste_yuan_per_day": 334.5,
+      "q_units_per_day": 1510.1428571429,
+      "procurement_yuan_per_day": 5266.7142857143
+    },
+    {
+      "origin": "2026-09-30T18:00:00",
+      "stage": "validation",
+      "method_id": "shared_ridge10",
+      "policy": "stochastic",
+      "rows": 1344,
+      "days": 14,
+      "mae": 2.5672823553,
+      "rmse": 3.2242919254,
+      "bias_units_per_key": 0.4503898153,
+      "coverage90": 0.8802083333,
+      "below90": 0.0357142857,
+      "above90": 0.084077381,
+      "width_units": 10.1361302596,
+      "loss_yuan_per_day": 611.8857142857,
+      "shortage_yuan_per_day": 349.2142857143,
+      "waste_yuan_per_day": 262.6714285714,
+      "q_units_per_day": 1492.7857142857,
+      "procurement_yuan_per_day": 5211.2857142857
+    },
+    {
+      "origin": "2026-09-30T18:00:00",
+      "stage": "validation",
+      "method_id": "weekly_mean56",
+      "policy": "stochastic",
+      "rows": 1344,
+      "days": 14,
+      "mae": 2.7552083333,
+      "rmse": 3.4556609009,
+      "bias_units_per_key": -0.4858630952,
+      "coverage90": 0.8883928571,
+      "below90": 0.0431547619,
+      "above90": 0.068452381,
+      "width_units": 10.93359375,
+      "loss_yuan_per_day": 667.3142857143,
+      "shortage_yuan_per_day": 362.8785714286,
+      "waste_yuan_per_day": 304.4357142857,
+      "q_units_per_day": 1518.4285714286,
+      "procurement_yuan_per_day": 5298.0
+    },
+    {
+      "origin": "2026-10-14T18:00:00",
+      "stage": "validation",
+      "method_id": "shared_ridge10",
+      "policy": "stochastic",
+      "rows": 1344,
+      "days": 14,
+      "mae": 2.324473233,
+      "rmse": 2.9337741374,
+      "bias_units_per_key": 0.2623327979,
+      "coverage90": 0.9025297619,
+      "below90": 0.0230654762,
+      "above90": 0.0744047619,
+      "width_units": 10.2288378279,
+      "loss_yuan_per_day": 673.4964285714,
+      "shortage_yuan_per_day": 430.7428571429,
+      "waste_yuan_per_day": 242.7535714286,
+      "q_units_per_day": 1472.2142857143,
+      "procurement_yuan_per_day": 5151.2857142857
+    },
+    {
+      "origin": "2026-10-14T18:00:00",
+      "stage": "validation",
+      "method_id": "weekly_mean56",
+      "policy": "stochastic",
+      "rows": 1344,
+      "days": 14,
+      "mae": 2.6363467262,
+      "rmse": 3.3830371674,
+      "bias_units_per_key": -0.5085565476,
+      "coverage90": 0.8913690476,
+      "below90": 0.0364583333,
+      "above90": 0.072172619,
+      "width_units": 10.9994791667,
+      "loss_yuan_per_day": 735.2214285714,
+      "shortage_yuan_per_day": 417.65,
+      "waste_yuan_per_day": 317.5714285714,
+      "q_units_per_day": 1533.8571428571,
+      "procurement_yuan_per_day": 5365.1428571429
+    }
+  ],
+  "activity_groups": [
+    {
+      "stage": "validation",
+      "method_id": "shared_ridge10",
+      "policy": "stochastic",
+      "holiday": 0,
+      "rows": 3552,
+      "days": 37,
+      "mae": 2.3958462061,
+      "rmse": 3.0019523234,
+      "bias_units_per_key": 0.3183604216,
+      "coverage90": 0.8949887387,
+      "below90": 0.0244932432,
+      "above90": 0.080518018,
+      "width_units": 10.1329195624,
+      "loss_yuan_per_day": 579.7148648649,
+      "shortage_yuan_per_day": 310.4405405405,
+      "waste_yuan_per_day": 269.2743243243,
+      "q_units_per_day": 1462.6756756757,
+      "procurement_yuan_per_day": 5107.1081081081
+    },
+    {
+      "stage": "validation",
+      "method_id": "shared_ridge10",
+      "policy": "stochastic",
+      "holiday": 1,
+      "rows": 480,
+      "days": 5,
+      "mae": 2.9117833379,
+      "rmse": 3.674521007,
+      "bias_units_per_key": 1.1382220431,
+      "coverage90": 0.8520833333,
+      "below90": 0.0708333333,
+      "above90": 0.0770833333,
+      "width_units": 10.1542704159,
+      "loss_yuan_per_day": 1017.29,
+      "shortage_yuan_per_day": 822.86,
+      "waste_yuan_per_day": 194.43,
+      "q_units_per_day": 1600.0,
+      "procurement_yuan_per_day": 5595.8
+    },
+    {
+      "stage": "validation",
+      "method_id": "weekly_mean56",
+      "policy": "stochastic",
+      "holiday": 0,
+      "rows": 3552,
+      "days": 37,
+      "mae": 2.5730574324,
+      "rmse": 3.2272107924,
+      "bias_units_per_key": -0.0287162162,
+      "coverage90": 0.90625,
+      "below90": 0.0470157658,
+      "above90": 0.0467342342,
+      "width_units": 10.9498381194,
+      "loss_yuan_per_day": 627.9945945946,
+      "shortage_yuan_per_day": 285.2810810811,
+      "waste_yuan_per_day": 342.7135135135,
+      "q_units_per_day": 1520.2972972973,
+      "procurement_yuan_per_day": 5308.2702702703
+    },
+    {
+      "stage": "validation",
+      "method_id": "weekly_mean56",
+      "policy": "stochastic",
+      "holiday": 1,
+      "rows": 480,
+      "days": 5,
+      "mae": 3.7203125,
+      "rmse": 4.6397287995,
+      "bias_units_per_key": -2.821875,
+      "coverage90": 0.7604166667,
+      "below90": 0.0125,
+      "above90": 0.2270833333,
+      "width_units": 10.95703125,
+      "loss_yuan_per_day": 1216.56,
+      "shortage_yuan_per_day": 1074.42,
+      "waste_yuan_per_day": 142.14,
+      "q_units_per_day": 1524.6,
+      "procurement_yuan_per_day": 5322.4
+    }
+  ],
+  "interval_levels_validation": [
+    {
+      "method_id": "shared_ridge10",
+      "nominal_level": 0.8,
+      "coverage": 0.7958829365333333,
+      "width_units": 7.906771369966667
+    },
+    {
+      "method_id": "shared_ridge10",
+      "nominal_level": 0.9,
+      "coverage": 0.8898809523666666,
+      "width_units": 10.135461330633333
+    },
+    {
+      "method_id": "shared_ridge10",
+      "nominal_level": 0.95,
+      "coverage": 0.9310515872999999,
+      "width_units": 11.799662034033332
+    },
+    {
+      "method_id": "weekly_mean56",
+      "nominal_level": 0.8,
+      "coverage": 0.7983630952666667,
+      "width_units": 8.613628472233334
+    },
+    {
+      "method_id": "weekly_mean56",
+      "nominal_level": 0.9,
+      "coverage": 0.8888888888666667,
+      "width_units": 10.950694444466668
+    },
+    {
+      "method_id": "weekly_mean56",
+      "nominal_level": 0.95,
+      "coverage": 0.9357638889,
+      "width_units": 12.924606274799999
+    }
+  ],
+  "sensitivity": [
+    {
+      "case": "resource_1440_5400",
+      "method_id": "shared_ridge10",
+      "capacity": 1440,
+      "budget": 5400,
+      "fixed_original_plan_feasible": false,
+      "fixed_plan_scenario_loss_yuan_per_day": 603.9747506746,
+      "reoptimized_scenario_loss_yuan_per_day": 758.5409960483,
+      "q_l1_change_total": 4095,
+      "q_units_per_day": 1439.0952380952,
+      "procurement_yuan_per_day": 5041.4761904762
+    },
+    {
+      "case": "resource_1760_6600",
+      "method_id": "shared_ridge10",
+      "capacity": 1760,
+      "budget": 6600,
+      "fixed_original_plan_feasible": true,
+      "fixed_plan_scenario_loss_yuan_per_day": 603.9747506746,
+      "reoptimized_scenario_loss_yuan_per_day": 555.3898466756,
+      "q_l1_change_total": 3775,
+      "q_units_per_day": 1626.4761904762,
+      "procurement_yuan_per_day": 5696.2857142857
+    },
+    {
+      "case": "resource_1600_5400",
+      "method_id": "shared_ridge10",
+      "capacity": 1600,
+      "budget": 5400,
+      "fixed_original_plan_feasible": false,
+      "fixed_plan_scenario_loss_yuan_per_day": 603.9747506746,
+      "reoptimized_scenario_loss_yuan_per_day": 639.1626793147,
+      "q_l1_change_total": 1361,
+      "q_units_per_day": 1513.2857142857,
+      "procurement_yuan_per_day": 5266.4285714286
+    },
+    {
+      "case": "resource_1440_6000",
+      "method_id": "shared_ridge10",
+      "capacity": 1440,
+      "budget": 6000,
+      "fixed_original_plan_feasible": false,
+      "fixed_plan_scenario_loss_yuan_per_day": 603.9747506746,
+      "reoptimized_scenario_loss_yuan_per_day": 758.5409960483,
+      "q_l1_change_total": 4095,
+      "q_units_per_day": 1439.0952380952,
+      "procurement_yuan_per_day": 5041.4761904762
+    },
+    {
+      "case": "activity_0.8",
+      "method_id": "shared_ridge10",
+      "capacity": 1600,
+      "budget": 6000,
+      "fixed_original_plan_feasible": true,
+      "fixed_plan_scenario_loss_yuan_per_day": 585.4805663213,
+      "reoptimized_scenario_loss_yuan_per_day": 548.2481127684,
+      "q_l1_change_total": 2244,
+      "q_units_per_day": 1483.1666666667,
+      "procurement_yuan_per_day": 5194.4761904762
+    },
+    {
+      "case": "activity_1.2",
+      "method_id": "shared_ridge10",
+      "capacity": 1600,
+      "budget": 6000,
+      "fixed_original_plan_feasible": true,
+      "fixed_plan_scenario_loss_yuan_per_day": 849.8030370608,
+      "reoptimized_scenario_loss_yuan_per_day": 830.0243735066,
+      "q_l1_change_total": 1766,
+      "q_units_per_day": 1536.5952380952,
+      "procurement_yuan_per_day": 5385.8095238095
+    },
+    {
+      "case": "all_demand_0.9",
+      "method_id": "shared_ridge10",
+      "capacity": 1600,
+      "budget": 6000,
+      "fixed_original_plan_feasible": true,
+      "fixed_plan_scenario_loss_yuan_per_day": 536.3663335444,
+      "reoptimized_scenario_loss_yuan_per_day": 500.176302298,
+      "q_l1_change_total": 3983,
+      "q_units_per_day": 1467.2380952381,
+      "procurement_yuan_per_day": 5139.4761904762
+    },
+    {
+      "case": "all_demand_1.1",
+      "method_id": "shared_ridge10",
+      "capacity": 1600,
+      "budget": 6000,
+      "fixed_original_plan_feasible": true,
+      "fixed_plan_scenario_loss_yuan_per_day": 853.254247917,
+      "reoptimized_scenario_loss_yuan_per_day": 812.8728818443,
+      "q_l1_change_total": 3946,
+      "q_units_per_day": 1595.7380952381,
+      "procurement_yuan_per_day": 5588.2619047619
+    }
+  ],
+  "bootstrap": {
+    "definition": "weekly_mean56 minus shared_ridge10 validation daily realized loss",
+    "n_days": 42,
+    "mean_difference_yuan": 66.25476190476192,
+    "iid_day_bootstrap95": [
+      43.31351190476192,
+      92.08794642857141
+    ],
+    "limitations": "descriptive interval only: shared training/calibration and temporal dependence invalidate independence assumption; no route retuning",
+    "seed": 20261009
+  },
+  "oracle": {
+    "enumerated_count": 23,
+    "enumerated_min": 11.970833333333333,
+    "milp_objective": 11.970833333333333,
+    "solver": {
+      "status": 0,
+      "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+      "gap": 0.0,
+      "objective": 11.970833333333333,
+      "bound": 11.970833333333337,
+      "seconds": 0.016954599996097386,
+      "nodes": 1
+    },
+    "rejected": [
+      "negative",
+      "nan",
+      "inf",
+      "missing-coordinate",
+      "q_fraction",
+      "q_negative",
+      "q_upper",
+      "q_nan",
+      "capacity",
+      "budget",
+      "infeasible-resources"
+    ],
+    "finite_nonnegative_fraction_scenarios_accepted": true,
+    "zero_demand_and_resource_tests": true
+  },
+  "lead_groups": [
+    {
+      "method_id": "shared_ridge10",
+      "lead_group": "1-7",
+      "mae": 2.4773943040388886,
+      "coverage": 0.8824404761904762,
+      "n": 2016
+    },
+    {
+      "method_id": "shared_ridge10",
+      "lead_group": "8-14",
+      "mae": 2.43714028243249,
+      "coverage": 0.8973214285714286,
+      "n": 2016
+    },
+    {
+      "method_id": "weekly_mean56",
+      "lead_group": "1-7",
+      "mae": 2.7719494047619047,
+      "coverage": 0.8878968253968254,
+      "n": 2016
+    },
+    {
+      "method_id": "weekly_mean56",
+      "lead_group": "8-14",
+      "mae": 2.6473214285714284,
+      "coverage": 0.8898809523809523,
+      "n": 2016
+    }
+  ],
+  "validation_store_id": [
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S01",
+      "mae": 2.369538779793155,
+      "loss_per_day": 49.74880952380952,
+      "covered": 0.8988095238095238
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S02",
+      "mae": 2.4407957961949402,
+      "loss_per_day": 54.590476190476195,
+      "covered": 0.8720238095238095
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S03",
+      "mae": 2.432080732161012,
+      "loss_per_day": 54.272619047619045,
+      "covered": 0.8720238095238095
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S04",
+      "mae": 2.2977690562991073,
+      "loss_per_day": 44.15,
+      "covered": 0.9017857142857143
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S05",
+      "mae": 2.3621331549172617,
+      "loss_per_day": 51.392857142857146,
+      "covered": 0.8988095238095238
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S06",
+      "mae": 2.5321365589860116,
+      "loss_per_day": 52.11190476190476,
+      "covered": 0.875
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S07",
+      "mae": 2.4140389627729166,
+      "loss_per_day": 54.52142857142857,
+      "covered": 0.8928571428571429
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S08",
+      "mae": 2.6018613807321427,
+      "loss_per_day": 53.48928571428572,
+      "covered": 0.8898809523809523
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S09",
+      "mae": 2.4991267562592263,
+      "loss_per_day": 55.269047619047626,
+      "covered": 0.8809523809523809
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S10",
+      "mae": 2.4631618481958335,
+      "loss_per_day": 54.084523809523816,
+      "covered": 0.8928571428571429
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S11",
+      "mae": 2.522307613117262,
+      "loss_per_day": 52.854761904761894,
+      "covered": 0.9077380952380952
+    },
+    {
+      "method_id": "shared_ridge10",
+      "store_id": "S12",
+      "mae": 2.5522568793994047,
+      "loss_per_day": 55.32142857142857,
+      "covered": 0.8958333333333334
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S01",
+      "mae": 2.6160714285714284,
+      "loss_per_day": 53.56785714285714,
+      "covered": 0.8898809523809523
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S02",
+      "mae": 2.7202380952380953,
+      "loss_per_day": 59.87619047619048,
+      "covered": 0.8690476190476191
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S03",
+      "mae": 2.6011904761904763,
+      "loss_per_day": 57.311904761904756,
+      "covered": 0.8720238095238095
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S04",
+      "mae": 2.5066964285714284,
+      "loss_per_day": 54.101190476190474,
+      "covered": 0.8988095238095238
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S05",
+      "mae": 2.4947916666666665,
+      "loss_per_day": 57.23571428571428,
+      "covered": 0.8898809523809523
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S06",
+      "mae": 2.7641369047619047,
+      "loss_per_day": 57.77619047619047,
+      "covered": 0.8839285714285714
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S07",
+      "mae": 2.7202380952380953,
+      "loss_per_day": 61.460714285714296,
+      "covered": 0.8958333333333334
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S08",
+      "mae": 2.7581845238095237,
+      "loss_per_day": 58.5095238095238,
+      "covered": 0.8839285714285714
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S09",
+      "mae": 2.849702380952381,
+      "loss_per_day": 59.099999999999994,
+      "covered": 0.8839285714285714
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S10",
+      "mae": 2.755952380952381,
+      "loss_per_day": 58.7047619047619,
+      "covered": 0.9136904761904762
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S11",
+      "mae": 2.869047619047619,
+      "loss_per_day": 59.23690476190476,
+      "covered": 0.9047619047619048
+    },
+    {
+      "method_id": "weekly_mean56",
+      "store_id": "S12",
+      "mae": 2.859375,
+      "loss_per_day": 61.18095238095239,
+      "covered": 0.8809523809523809
+    }
+  ],
+  "validation_item_id": [
+    {
+      "method_id": "shared_ridge10",
+      "item_id": "K01",
+      "mae": 2.317130882699405,
+      "loss_per_day": 51.55952380952381,
+      "covered": 0.9027777777777778
+    },
+    {
+      "method_id": "shared_ridge10",
+      "item_id": "K02",
+      "mae": 2.257026578199603,
+      "loss_per_day": 54.561904761904756,
+      "covered": 0.9047619047619048
+    },
+    {
+      "method_id": "shared_ridge10",
+      "item_id": "K03",
+      "mae": 2.4691068015271824,
+      "loss_per_day": 68.95952380952382,
+      "covered": 0.8630952380952381
+    },
+    {
+      "method_id": "shared_ridge10",
+      "item_id": "K04",
+      "mae": 2.374551913120635,
+      "loss_per_day": 70.74285714285713,
+      "covered": 0.9027777777777778
+    },
+    {
+      "method_id": "shared_ridge10",
+      "item_id": "K05",
+      "mae": 2.399506385165079,
+      "loss_per_day": 84.76309523809525,
+      "covered": 0.8809523809523809
+    },
+    {
+      "method_id": "shared_ridge10",
+      "item_id": "K06",
+      "mae": 2.455450032944643,
+      "loss_per_day": 83.9095238095238,
+      "covered": 0.8888888888888888
+    },
+    {
+      "method_id": "shared_ridge10",
+      "item_id": "K07",
+      "mae": 2.6212478845196427,
+      "loss_per_day": 102.36071428571428,
+      "covered": 0.8928571428571429
+    },
+    {
+      "method_id": "shared_ridge10",
+      "item_id": "K08",
+      "mae": 2.7641178677093254,
+      "loss_per_day": 114.94999999999999,
+      "covered": 0.8829365079365079
+    },
+    {
+      "method_id": "weekly_mean56",
+      "item_id": "K01",
+      "mae": 2.513888888888889,
+      "loss_per_day": 52.94523809523809,
+      "covered": 0.8968253968253969
+    },
+    {
+      "method_id": "weekly_mean56",
+      "item_id": "K02",
+      "mae": 2.4692460317460316,
+      "loss_per_day": 60.352380952380955,
+      "covered": 0.8869047619047619
+    },
+    {
+      "method_id": "weekly_mean56",
+      "item_id": "K03",
+      "mae": 2.8110119047619047,
+      "loss_per_day": 74.2642857142857,
+      "covered": 0.8630952380952381
+    },
+    {
+      "method_id": "weekly_mean56",
+      "item_id": "K04",
+      "mae": 2.6106150793650795,
+      "loss_per_day": 80.39047619047619,
+      "covered": 0.9067460317460317
+    },
+    {
+      "method_id": "weekly_mean56",
+      "item_id": "K05",
+      "mae": 2.7296626984126986,
+      "loss_per_day": 95.36428571428571,
+      "covered": 0.8809523809523809
+    },
+    {
+      "method_id": "weekly_mean56",
+      "item_id": "K06",
+      "mae": 2.672123015873016,
+      "loss_per_day": 94.39047619047618,
+      "covered": 0.9087301587301587
+    },
+    {
+      "method_id": "weekly_mean56",
+      "item_id": "K07",
+      "mae": 2.929563492063492,
+      "loss_per_day": 114.8452380952381,
+      "covered": 0.8968253968253969
+    },
+    {
+      "method_id": "weekly_mean56",
+      "item_id": "K08",
+      "mae": 2.9409722222222223,
+      "loss_per_day": 125.5095238095238,
+      "covered": 0.871031746031746
+    }
+  ],
+  "future_resource": [
+    {
+      "method_id": "shared_ridge10",
+      "capacity_binding_days": 24,
+      "budget_binding_days": 0,
+      "min_q": 1425,
+      "max_q": 1600,
+      "max_budget": 5611.0,
+      "mean_point_total": 1463.8644933761357,
+      "mean_q": 1536.595238095238,
+      "mean_budget": 5381.619047619048,
+      "mean_shortage_scenario": 310.2634318218619,
+      "mean_waste_scenario": 293.7113188527429
+    },
+    {
+      "method_id": "weekly_mean56",
+      "capacity_binding_days": 12,
+      "budget_binding_days": 0,
+      "min_q": 1491,
+      "max_q": 1600,
+      "max_budget": 5580.0,
+      "mean_point_total": 1339.5,
+      "mean_q": 1537.857142857143,
+      "mean_budget": 5381.857142857143,
+      "mean_shortage_scenario": 356.10161033164286,
+      "mean_waste_scenario": 340.4952407525714
+    }
+  ],
+  "future_week_allocation": [
+    {
+      "week": 1,
+      "total_point_units": 10143.3870731357,
+      "total_q_units": 10712,
+      "mean_lower": 9.14319853219524,
+      "mean_upper": 19.316231207514583
+    },
+    {
+      "week": 2,
+      "total_point_units": 10180.1780024806,
+      "total_q_units": 10734,
+      "mean_lower": 9.197946938960415,
+      "mean_upper": 19.37097961427976
+    },
+    {
+      "week": 3,
+      "total_point_units": 10223.6428052632,
+      "total_q_units": 10746,
+      "mean_lower": 9.262626705005804,
+      "mean_upper": 19.43565938032604
+    },
+    {
+      "week": 4,
+      "total_point_units": 10267.6715427853,
+      "total_q_units": 10765,
+      "mean_lower": 9.328145659651488,
+      "mean_upper": 19.50117833497128
+    },
+    {
+      "week": 5,
+      "total_point_units": 10311.7002803067,
+      "total_q_units": 10780,
+      "mean_lower": 9.393664614297768,
+      "mean_upper": 19.566697289615327
+    },
+    {
+      "week": 6,
+      "total_point_units": 10355.729017828,
+      "total_q_units": 10800,
+      "mean_lower": 9.45918356894241,
+      "mean_upper": 19.632216244261905
+    }
+  ],
+  "future_item_allocation": [
+    {
+      "item_id": "K01",
+      "total_point_units": 6000.9270226403,
+      "total_q_units": 6262,
+      "mean_lower": 6.518333586863095,
+      "mean_upper": 16.20658880419345
+    },
+    {
+      "item_id": "K02",
+      "total_point_units": 5852.2124596284,
+      "total_q_units": 6210,
+      "mean_lower": 5.991765968314485,
+      "mean_upper": 15.70968044617222
+    },
+    {
+      "item_id": "K03",
+      "total_point_units": 7120.9808683388,
+      "total_q_units": 7521,
+      "mean_lower": 8.681214969980754,
+      "mean_upper": 18.79643260934008
+    },
+    {
+      "item_id": "K04",
+      "total_point_units": 6969.7745015568,
+      "total_q_units": 7417,
+      "mean_lower": 8.127407504625992,
+      "mean_upper": 18.014232046853373
+    },
+    {
+      "item_id": "K05",
+      "total_point_units": 8429.6119759557,
+      "total_q_units": 8846,
+      "mean_lower": 10.77992684629365,
+      "mean_upper": 20.795589299803773
+    },
+    {
+      "item_id": "K06",
+      "total_point_units": 8166.7990279385,
+      "total_q_units": 8562,
+      "mean_lower": 10.058275260140872,
+      "mean_upper": 20.37003466110992
+    },
+    {
+      "item_id": "K07",
+      "total_point_units": 9501.6301302359,
+      "total_q_units": 9913,
+      "mean_lower": 12.11609944074226,
+      "mean_upper": 23.04364903911508
+    },
+    {
+      "item_id": "K08",
+      "total_point_units": 9440.3727355051,
+      "total_q_units": 9806,
+      "mean_lower": 12.106664448443055,
+      "mean_upper": 22.82774252137064
+    }
+  ],
+  "fit_runtimes_by_method": [
+    {
+      "method_id": "shared_ridge10",
+      "sum": 0.6738774,
+      "max": 0.1099564
+    },
+    {
+      "method_id": "weekly_mean56",
+      "sum": 7.8965725,
+      "max": 1.0764634
+    }
+  ]
+}

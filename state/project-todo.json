@@ -1079,7 +1079,7 @@
     {
       "id": "R21-interval-reliability",
       "owner": "root",
-      "status": "in_progress",
+      "status": "done",
       "write_scope": [
         "runs/R21/"
       ],
@@ -1087,9 +1087,38 @@
       "evidence": [
         "runs/R21/PLAN.md",
         "runs/R21/first-diagnostic-lock.json",
-        "runs/R21/R21-01-result.json"
+        "runs/R21/R21-01-result.json",
+        "runs/R21/protocol-lock.json",
+        "runs/R21/input-lock.json",
+        "runs/R21/evaluation-lock.json",
+        "runs/R21/R21-02-result.json",
+        "runs/R21/preparation-audit-corrected-command.json",
+        "runs/R21/R21-03-result.json",
+        "runs/R21/successor-transition-result.json",
+        "runs/R21/final-lock.json"
       ],
-      "next_action": "R21-02: freeze a genuinely new original case and fair measurement protocol before production; known R20 truth cannot serve as a new blind test."
+      "next_action": "同期限固定策略历史计算与独立实质接收"
+    },
+    {
+      "id": "R22-horizon-aligned-validation",
+      "title": "对齐固定42日预测期限的验证证据",
+      "status": "in_progress",
+      "owner": "root",
+      "depends_on": [
+        "R21-interval-reliability"
+      ],
+      "write_paths": [
+        "runs/R22/"
+      ],
+      "acceptance": [
+        "同期限真实计算及独立接收；确证源缺口才升级纯文档skill"
+      ],
+      "evidence": [
+        "runs/R22/PLAN.md",
+        "runs/R22/audit-lock.json"
+      ],
+      "blocker": null,
+      "next_action": "同期限固定策略历史计算与独立实质接收"
     }
   ],
   "stop_conditions": [

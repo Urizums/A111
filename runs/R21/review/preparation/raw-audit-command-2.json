@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R21/review/preparation/raw_audit.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T03:26:10.738573+00:00",
+    "monotonic_ns": 135801250000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T03:26:11.150937+00:00",
+    "monotonic_ns": 135801671000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"audit\": \"runs\\\\R21\\\\review\\\\preparation\\\\raw-audit.json\",\r\n  \"rows\": {\r\n    \"demand_reports\": 21609,\r\n    \"calendar\": 226,\r\n    \"promotions\": 21696,\r\n    \"weather\": 1230,\r\n    \"stores\": 12,\r\n    \"items\": 8\r\n  },\r\n  \"coverage\": {\r\n    \"calendar_start\": \"2026-05-01\",\r\n    \"calendar_end\": \"2026-12-12\",\r\n    \"calendar_rows\": 226,\r\n    \"expected_history_days\": 184,\r\n    \"calendar_missing_history_days\": [],\r\n    \"report_missing_history_dates\": [],\r\n    \"unique_observed_demand_keys\": 17664,\r\n    \"expected_history_grid_keys\": 17664,\r\n    \"unknown_store_item_coordinates\": [],\r\n    \"invalid_or_negative_demand_rows\": []\r\n  },\r\n  \"duplicates\": {\r\n    \"exact_duplicate_rows_beyond_first\": 10,\r\n    \"unique_date_coordinate_revision_groups\": 21599,\r\n    \"same_revision_conflicts\": [],\r\n    \"same_payload_revision_with_distinct_publication_times\": []\r\n  },\r\n  \"readiness\": {\r\n    \"planned_residual_origins\": [\r\n      \"2026-07-08T18:00:00\",\r\n      \"2026-07-22T18:00:00\",\r\n      \"2026-08-05T18:00:00\",\r\n      \"2026-08-19T18:00:00\",\r\n      \"2026-09-02T18:00:00\",\r\n      \"2026-09-16T18:00:00\",\r\n      \"2026-09-30T18:00:00\",\r\n      \"2026-10-14T18:00:00\"\r\n    ],\r\n    \"eligible_groups_at_final_origin\": [\r\n      \"2026-07-08T18:00:00\",\r\n      \"2026-07-22T18:00:00\",\r\n      \"2026-08-05T18:00:00\",\r\n      \"2026-08-19T18:00:00\",\r\n      \"2026-09-02T18:00:00\",\r\n      \"2026-09-16T18:00:00\",\r\n      \"2026-09-30T18:00:00\",\r\n      \"2026-10-14T18:00:00\"\r\n    ],\r\n    \"ineligible_groups_at_final_origin\": []\r\n  },\r\n  \"locks\": {\r\n    \"runs/R21/inputs/input-lock.json\": false,\r\n    \"runs/R21/protocol/protocol-lock.json\": false\r\n  }\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiYXVkaXQiOiAicnVuc1xcUjIxXFxyZXZpZXdcXHByZXBhcmF0aW9uXFxyYXctYXVkaXQuanNvbiIsDQogICJyb3dzIjogew0KICAgICJkZW1hbmRfcmVwb3J0cyI6IDIxNjA5LA0KICAgICJjYWxlbmRhciI6IDIyNiwNCiAgICAicHJvbW90aW9ucyI6IDIxNjk2LA0KICAgICJ3ZWF0aGVyIjogMTIzMCwNCiAgICAic3RvcmVzIjogMTIsDQogICAgIml0ZW1zIjogOA0KICB9LA0KICAiY292ZXJhZ2UiOiB7DQogICAgImNhbGVuZGFyX3N0YXJ0IjogIjIwMjYtMDUtMDEiLA0KICAgICJjYWxlbmRhcl9lbmQiOiAiMjAyNi0xMi0xMiIsDQogICAgImNhbGVuZGFyX3Jvd3MiOiAyMjYsDQogICAgImV4cGVjdGVkX2hpc3RvcnlfZGF5cyI6IDE4NCwNCiAgICAiY2FsZW5kYXJfbWlzc2luZ19oaXN0b3J5X2RheXMiOiBbXSwNCiAgICAicmVwb3J0X21pc3NpbmdfaGlzdG9yeV9kYXRlcyI6IFtdLA0KICAgICJ1bmlxdWVfb2JzZXJ2ZWRfZGVtYW5kX2tleXMiOiAxNzY2NCwNCiAgICAiZXhwZWN0ZWRfaGlzdG9yeV9ncmlkX2tleXMiOiAxNzY2NCwNCiAgICAidW5rbm93bl9zdG9yZV9pdGVtX2Nvb3JkaW5hdGVzIjogW10sDQogICAgImludmFsaWRfb3JfbmVnYXRpdmVfZGVtYW5kX3Jvd3MiOiBbXQ0KICB9LA0KICAiZHVwbGljYXRlcyI6IHsNCiAgICAiZXhhY3RfZHVwbGljYXRlX3Jvd3NfYmV5b25kX2ZpcnN0IjogMTAsDQogICAgInVuaXF1ZV9kYXRlX2Nvb3JkaW5hdGVfcmV2aXNpb25fZ3JvdXBzIjogMjE1OTksDQogICAgInNhbWVfcmV2aXNpb25fY29uZmxpY3RzIjogW10sDQogICAgInNhbWVfcGF5bG9hZF9yZXZpc2lvbl93aXRoX2Rpc3RpbmN0X3B1YmxpY2F0aW9uX3RpbWVzIjogW10NCiAgfSwNCiAgInJlYWRpbmVzcyI6IHsNCiAgICAicGxhbm5lZF9yZXNpZHVhbF9vcmlnaW5zIjogWw0KICAgICAgIjIwMjYtMDctMDhUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDctMjJUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDgtMDVUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDgtMTlUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDktMDJUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDktMTZUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDktMzBUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMTAtMTRUMTg6MDA6MDAiDQogICAgXSwNCiAgICAiZWxpZ2libGVfZ3JvdXBzX2F0X2ZpbmFsX29yaWdpbiI6IFsNCiAgICAgICIyMDI2LTA3LTA4VDE4OjAwOjAwIiwNCiAgICAgICIyMDI2LTA3LTIyVDE4OjAwOjAwIiwNCiAgICAgICIyMDI2LTA4LTA1VDE4OjAwOjAwIiwNCiAgICAgICIyMDI2LTA4LTE5VDE4OjAwOjAwIiwNCiAgICAgICIyMDI2LTA5LTAyVDE4OjAwOjAwIiwNCiAgICAgICIyMDI2LTA5LTE2VDE4OjAwOjAwIiwNCiAgICAgICIyMDI2LTA5LTMwVDE4OjAwOjAwIiwNCiAgICAgICIyMDI2LTEwLTE0VDE4OjAwOjAwIg0KICAgIF0sDQogICAgImluZWxpZ2libGVfZ3JvdXBzX2F0X2ZpbmFsX29yaWdpbiI6IFtdDQogIH0sDQogICJsb2NrcyI6IHsNCiAgICAicnVucy9SMjEvaW5wdXRzL2lucHV0LWxvY2suanNvbiI6IGZhbHNlLA0KICAgICJydW5zL1IyMS9wcm90b2NvbC9wcm90b2NvbC1sb2NrLmpzb24iOiBmYWxzZQ0KICB9DQp9DQo=",
+  "stderr_base64": ""
+}

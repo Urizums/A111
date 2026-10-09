@@ -1,0 +1,86 @@
+{
+  "task_id": "R21-02",
+  "attempt_id": "R21-02-1",
+  "requirements_hash": "b60f9a2eb9792e47fdaa695aec24f1f474737b2edf046fcf287e803ee897d47d",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R21/protocol-lock.json",
+        "runs/R21/input-lock.json",
+        "runs/R21/evaluation-lock.json",
+        "runs/R21/data-generation-after-freeze-command.json",
+        "runs/R21/preparation-summary.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "冻结尚未见真值的新测量协议和原创原件",
+    "hypothesis": "Prospective measurement with activity distributed across horizons resolves old complete overlap without promising better models.",
+    "baseline": "Frozen R20 current-policy algorithm refitted on new history; old results retained.",
+    "conditions": "One original synthetic sample, source/time-bound fairness, before production; future truth held in private evaluation domain.",
+    "observations": {
+      "protocol_frozen_before_realized_generation": true,
+      "realized_samples": 1,
+      "initial_generator_invocation": "failed before generation: freeze command had not yet completed",
+      "recovery": "Waited for exact original native/WSL sessions to finish; same fixed seed and code then generated once; original exit1 retained.",
+      "public_files": 12,
+      "future_rows": 4032,
+      "future_dates": 42,
+      "groups": [
+        {
+          "horizon_band": "1-7",
+          "dates": 7,
+          "activity_dates": 2,
+          "ordinary_dates": 5
+        },
+        {
+          "horizon_band": "8-14",
+          "dates": 7,
+          "activity_dates": 2,
+          "ordinary_dates": 5
+        },
+        {
+          "horizon_band": "15-21",
+          "dates": 7,
+          "activity_dates": 2,
+          "ordinary_dates": 5
+        },
+        {
+          "horizon_band": "22-28",
+          "dates": 7,
+          "activity_dates": 2,
+          "ordinary_dates": 5
+        },
+        {
+          "horizon_band": "29-35",
+          "dates": 7,
+          "activity_dates": 2,
+          "ordinary_dates": 5
+        },
+        {
+          "horizon_band": "36-42",
+          "dates": 7,
+          "activity_dates": 2,
+          "ordinary_dates": 5
+        }
+      ],
+      "current_policy_source_copies_byte_exact": true,
+      "private_truth": "Hashed for frozen identity only; semantic contents not read or used for choosing model.",
+      "author_started": false,
+      "independent_acceptance": false,
+      "zero_improvement_allowed": true,
+      "model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "limits": "Preparation only; not independent scientific acceptance, future performance, causal skill superiority, formal compliance or prize.",
+    "metrics": {
+      "model": null,
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R21-03: fresh C13 workflow builder, different executor, independent receiver; freeze first production before truth."
+}

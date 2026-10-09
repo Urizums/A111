@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R21/review/preparation/raw_audit.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T03:25:51.196086+00:00",
+    "monotonic_ns": 135781718000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T03:25:51.628247+00:00",
+    "monotonic_ns": 135782140000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"audit\": \"runs\\\\R21\\\\review\\\\preparation\\\\raw-audit.json\",\r\n  \"rows\": {\r\n    \"demand_reports\": 21609,\r\n    \"calendar\": 226,\r\n    \"promotions\": 21696,\r\n    \"weather\": 1230,\r\n    \"stores\": 12,\r\n    \"items\": 8\r\n  },\r\n  \"coverage\": {\r\n    \"history_start\": \"2026-05-01\",\r\n    \"history_end\": \"2026-12-12\",\r\n    \"calendar_expected_days\": 184,\r\n    \"calendar_missing_days\": [],\r\n    \"report_dates_expected_days\": 184,\r\n    \"report_missing_dates\": [],\r\n    \"unique_observed_demand_keys\": 17664,\r\n    \"expected_grid_keys\": 17664,\r\n    \"unknown_store_item_coordinates\": [],\r\n    \"invalid_or_negative_demand_rows\": []\r\n  },\r\n  \"duplicates\": {\r\n    \"exact_duplicate_rows_beyond_first\": 10,\r\n    \"unique_date_coordinate_revision_groups\": 21599,\r\n    \"same_revision_conflicts\": [],\r\n    \"same_payload_revision_with_distinct_publication_times\": []\r\n  },\r\n  \"readiness\": {\r\n    \"planned_residual_origins\": [\r\n      \"2026-07-08T18:00:00\",\r\n      \"2026-07-22T18:00:00\",\r\n      \"2026-08-05T18:00:00\",\r\n      \"2026-08-19T18:00:00\",\r\n      \"2026-09-02T18:00:00\",\r\n      \"2026-09-16T18:00:00\",\r\n      \"2026-09-30T18:00:00\",\r\n      \"2026-10-14T18:00:00\"\r\n    ],\r\n    \"eligible_groups_at_final_origin\": [],\r\n    \"ineligible_groups_at_final_origin\": []\r\n  },\r\n  \"locks\": {\r\n    \"runs/R21/inputs/input-lock.json\": false,\r\n    \"runs/R21/protocol/protocol-lock.json\": false\r\n  }\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiYXVkaXQiOiAicnVuc1xcUjIxXFxyZXZpZXdcXHByZXBhcmF0aW9uXFxyYXctYXVkaXQuanNvbiIsDQogICJyb3dzIjogew0KICAgICJkZW1hbmRfcmVwb3J0cyI6IDIxNjA5LA0KICAgICJjYWxlbmRhciI6IDIyNiwNCiAgICAicHJvbW90aW9ucyI6IDIxNjk2LA0KICAgICJ3ZWF0aGVyIjogMTIzMCwNCiAgICAic3RvcmVzIjogMTIsDQogICAgIml0ZW1zIjogOA0KICB9LA0KICAiY292ZXJhZ2UiOiB7DQogICAgImhpc3Rvcnlfc3RhcnQiOiAiMjAyNi0wNS0wMSIsDQogICAgImhpc3RvcnlfZW5kIjogIjIwMjYtMTItMTIiLA0KICAgICJjYWxlbmRhcl9leHBlY3RlZF9kYXlzIjogMTg0LA0KICAgICJjYWxlbmRhcl9taXNzaW5nX2RheXMiOiBbXSwNCiAgICAicmVwb3J0X2RhdGVzX2V4cGVjdGVkX2RheXMiOiAxODQsDQogICAgInJlcG9ydF9taXNzaW5nX2RhdGVzIjogW10sDQogICAgInVuaXF1ZV9vYnNlcnZlZF9kZW1hbmRfa2V5cyI6IDE3NjY0LA0KICAgICJleHBlY3RlZF9ncmlkX2tleXMiOiAxNzY2NCwNCiAgICAidW5rbm93bl9zdG9yZV9pdGVtX2Nvb3JkaW5hdGVzIjogW10sDQogICAgImludmFsaWRfb3JfbmVnYXRpdmVfZGVtYW5kX3Jvd3MiOiBbXQ0KICB9LA0KICAiZHVwbGljYXRlcyI6IHsNCiAgICAiZXhhY3RfZHVwbGljYXRlX3Jvd3NfYmV5b25kX2ZpcnN0IjogMTAsDQogICAgInVuaXF1ZV9kYXRlX2Nvb3JkaW5hdGVfcmV2aXNpb25fZ3JvdXBzIjogMjE1OTksDQogICAgInNhbWVfcmV2aXNpb25fY29uZmxpY3RzIjogW10sDQogICAgInNhbWVfcGF5bG9hZF9yZXZpc2lvbl93aXRoX2Rpc3RpbmN0X3B1YmxpY2F0aW9uX3RpbWVzIjogW10NCiAgfSwNCiAgInJlYWRpbmVzcyI6IHsNCiAgICAicGxhbm5lZF9yZXNpZHVhbF9vcmlnaW5zIjogWw0KICAgICAgIjIwMjYtMDctMDhUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDctMjJUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDgtMDVUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDgtMTlUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDktMDJUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDktMTZUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMDktMzBUMTg6MDA6MDAiLA0KICAgICAgIjIwMjYtMTAtMTRUMTg6MDA6MDAiDQogICAgXSwNCiAgICAiZWxpZ2libGVfZ3JvdXBzX2F0X2ZpbmFsX29yaWdpbiI6IFtdLA0KICAgICJpbmVsaWdpYmxlX2dyb3Vwc19hdF9maW5hbF9vcmlnaW4iOiBbXQ0KICB9LA0KICAibG9ja3MiOiB7DQogICAgInJ1bnMvUjIxL2lucHV0cy9pbnB1dC1sb2NrLmpzb24iOiBmYWxzZSwNCiAgICAicnVucy9SMjEvcHJvdG9jb2wvcHJvdG9jb2wtbG9jay5qc29uIjogZmFsc2UNCiAgfQ0KfQ0K",
+  "stderr_base64": ""
+}

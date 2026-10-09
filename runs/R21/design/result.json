@@ -1,0 +1,26 @@
+{
+  "schema": "forge-workflow-builder-result/1",
+  "builder_status": "complete",
+  "workflow": "runs/R21/design/WORKFLOW.md",
+  "build_report": "runs/R21/design/BUILD_REPORT.md",
+  "first_input_receipt": "runs/R21/design/first-step-command.json",
+  "source_audit_receipts": [
+    "runs/R21/design/source-audit-command.json",
+    "runs/R21/design/reference-code-audit-command.json",
+    "runs/R21/design/c13-lock-audit-command.json"
+  ],
+  "input_lock_verified": true,
+  "c13_lock_verified": true,
+  "original_modeling_task_executed": false,
+  "execution_acceptance": null,
+  "scientific_results": null,
+  "future_truth_accessed": false,
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "elapsed_telemetry": null,
+  "limitations": [
+    "This records builder completion only; no model was trained, forecast/planning experiment executed, paper produced, or independent execution acceptance performed.",
+    "Public late revisions of historical service dates are present in the first input receipt. The input service-date range ends at the decision date; these later availability times are not withheld forecast-period truth and must still be excluded at earlier origins until available."
+  ]
+}

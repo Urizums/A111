@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R21/review/initial/provenance_check.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T04:02:38.091677+00:00",
+    "monotonic_ns": 137988421000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T04:02:38.335888+00:00",
+    "monotonic_ns": 137988671000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\review\\initial\\provenance_check.py\", line 69, in <module>\r\n    command_field = next((index[k] for k in index if \"command\" in k.lower() and isinstance(index[k], (int, list))), None)\r\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\review\\initial\\provenance_check.py\", line 69, in <genexpr>\r\n    command_field = next((index[k] for k in index if \"command\" in k.lower() and isinstance(index[k], (int, list))), None)\r\n                                                                  ^^^^^^^\r\nAttributeError: 'dict' object has no attribute 'lower'\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMVxyZXZpZXdcaW5pdGlhbFxwcm92ZW5hbmNlX2NoZWNrLnB5IiwgbGluZSA2OSwgaW4gPG1vZHVsZT4NCiAgICBjb21tYW5kX2ZpZWxkID0gbmV4dCgoaW5kZXhba10gZm9yIGsgaW4gaW5kZXggaWYgImNvbW1hbmQiIGluIGsubG93ZXIoKSBhbmQgaXNpbnN0YW5jZShpbmRleFtrXSwgKGludCwgbGlzdCkpKSwgTm9uZSkNCiAgICAgICAgICAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4NCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cRG9jdW1lbnRzXENvZGV4XDIwMjYtMTAtMDVcdXJpenVtcy1hMTExLW1haW4tY29kZXgtaGFuZG9mZi1tZFx3b3JrXEExMTFccnVuc1xSMjFccmV2aWV3XGluaXRpYWxccHJvdmVuYW5jZV9jaGVjay5weSIsIGxpbmUgNjksIGluIDxnZW5leHByPg0KICAgIGNvbW1hbmRfZmllbGQgPSBuZXh0KChpbmRleFtrXSBmb3IgayBpbiBpbmRleCBpZiAiY29tbWFuZCIgaW4gay5sb3dlcigpIGFuZCBpc2luc3RhbmNlKGluZGV4W2tdLCAoaW50LCBsaXN0KSkpLCBOb25lKQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eXl5eXg0KQXR0cmlidXRlRXJyb3I6ICdkaWN0JyBvYmplY3QgaGFzIG5vIGF0dHJpYnV0ZSAnbG93ZXInDQo="
+}

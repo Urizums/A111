@@ -1,0 +1,81 @@
+{
+  "raw_rows": {
+    "raw_rows": {
+      "demand_reports": 21599,
+      "stores": 12,
+      "items": 8,
+      "calendar": 226,
+      "promotions": 21696,
+      "weather": 1230
+    },
+    "demand_original_rows": 21609,
+    "complete_duplicates_removed": 10,
+    "demand_unique_keys": 17664,
+    "weather_missing_rain": 17,
+    "unit_checks": "finite nonnegative numeric fields; integral demand/revision; promotion in [0,1]; weekday/date; unique dimensions and joins; monotone revisions",
+    "timezone": "Asia/Shanghai",
+    "raw_hashes": {
+      "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+      "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753",
+      "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+      "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+      "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+      "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+      "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403"
+    }
+  },
+  "historical_services": [
+    "2026-05-01",
+    "2026-10-31"
+  ],
+  "final_train_rows": 17568,
+  "final_train_days": 183,
+  "final_partial_days": {},
+  "evaluation_rows": 17664,
+  "future_keys": 4032,
+  "future_promotion_known_rows": 960,
+  "future_weather_known_rows": 1344,
+  "future_weather_missing_rain_rows": 2688,
+  "future_activity_dates": [
+    "2026-11-03",
+    "2026-11-04",
+    "2026-11-10",
+    "2026-11-11",
+    "2026-11-17",
+    "2026-11-18",
+    "2026-11-24",
+    "2026-11-25",
+    "2026-12-01",
+    "2026-12-02",
+    "2026-12-08",
+    "2026-12-09"
+  ],
+  "historical_activity_dates": [
+    "2026-05-06",
+    "2026-05-07",
+    "2026-05-25",
+    "2026-05-26",
+    "2026-06-13",
+    "2026-06-14",
+    "2026-07-02",
+    "2026-07-03",
+    "2026-07-21",
+    "2026-07-22",
+    "2026-08-09",
+    "2026-08-10",
+    "2026-08-28",
+    "2026-08-29",
+    "2026-09-16",
+    "2026-09-17",
+    "2026-10-05",
+    "2026-10-06",
+    "2026-10-24",
+    "2026-10-25"
+  ],
+  "demand_range": [
+    0,
+    36
+  ],
+  "training_feature_matrix_rank_final": 161,
+  "training_feature_columns": 169
+}

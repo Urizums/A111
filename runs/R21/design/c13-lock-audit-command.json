@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path\nimport json,hashlib\nlockpath=Path('runs/R20/final/candidate/C13-lock.json'); lock=json.loads(lockpath.read_text(encoding='utf-8'))\nprint('LOCK',lockpath,hashlib.sha256(lockpath.read_bytes()).hexdigest())\nfor e in lock['files']:\n p=Path(e['path']); b=p.read_bytes(); actual=hashlib.sha256(b).hexdigest(); ok=(len(b)==e['size_bytes'] and actual==e['sha256']); print('SOURCE',e['path'],'bytes',len(b),'sha256',actual,'matches_lock',ok); assert ok,e['path']\nprint('C13_LOCK_AUDIT','all listed source hashes match')"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T03:26:52.208049+00:00",
+    "monotonic_ns": 135842718000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T03:26:52.291582+00:00",
+    "monotonic_ns": 135842796000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "LOCK runs\\R20\\final\\candidate\\C13-lock.json 860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md bytes 7157 sha256 8128c05049d3918042c89389d8b2db73f8626b94b642fcf9491952c05944adea matches_lock True\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/references/collaboration.md bytes 2727 sha256 e47019551555763e42275ec7077370c0bd6cb658df5e53b12a02eebd56cbcb9f matches_lock True\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/references/continuation.md bytes 2426 sha256 28c33eae756b7e0522f5a913b849f5d02c97ce5e8e81fc6c7bfcc0e269c95390 matches_lock True\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/references/evaluation.md bytes 7244 sha256 089568516bfc2f8cd4ed46bf1429fc0c4e7e0552400cdb42d1bbb363e9908a5f matches_lock True\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/references/frontend.md bytes 2563 sha256 cecbe0047fa7d61c8cbe9bc014341586d0be85128bb18724b799414cadd6f7db matches_lock True\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/references/iteration-and-recovery.md bytes 3882 sha256 5b82a336a88ea1adfef33dbc530c854290fc21965c01cf0d5d760458fea80675 matches_lock True\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/references/modeling.md bytes 9190 sha256 e102ff9db978fd4bc685836b60a8a4c9cb72bd2a14f14f73aafb191766af5c64 matches_lock True\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/references/source-evaluation.md bytes 6013 sha256 fb79b4634c5fb2cae08550243f379152f939568c66497c1ddf0f5a630edc5696 matches_lock True\r\nSOURCE runs/R20/final/candidate/C13/forge-agent-flow/references/workflow-design.md bytes 4750 sha256 61412192fa7bddb0001214083d270efa3566dbb60431ec0f156d89ad9fe655aa matches_lock True\r\nC13_LOCK_AUDIT all listed source hashes match\r\n",
+  "stderr": "",
+  "stdout_base64": "TE9DSyBydW5zXFIyMFxmaW5hbFxjYW5kaWRhdGVcQzEzLWxvY2suanNvbiA4NjBjYWVlYzc2MTAyOGZhNDc3MjM0MTBjOTllZjJmNDhkYjJmNjFmYTE2NDA1Yzg5MjlhMDAwNWUxNThhZjdhDQpTT1VSQ0UgcnVucy9SMjAvZmluYWwvY2FuZGlkYXRlL0MxMy9mb3JnZS1hZ2VudC1mbG93L1NLSUxMLm1kIGJ5dGVzIDcxNTcgc2hhMjU2IDgxMjhjMDUwNDlkMzkxODA0MmM4OTM4OWQ4YjJkYjczZjg2MjZiOTRiNjQyZmNmOTQ5MTk1MmMwNTk0NGFkZWEgbWF0Y2hlc19sb2NrIFRydWUNClNPVVJDRSBydW5zL1IyMC9maW5hbC9jYW5kaWRhdGUvQzEzL2ZvcmdlLWFnZW50LWZsb3cvcmVmZXJlbmNlcy9jb2xsYWJvcmF0aW9uLm1kIGJ5dGVzIDI3Mjcgc2hhMjU2IGU0NzAxOTU1MTU1NTc2M2U0MjI3NWVjNzA3NzM3MGMwYmQ2Y2I2NThkZjVlNTNiMTJhMDJlZWJkNTZjYmNiOWYgbWF0Y2hlc19sb2NrIFRydWUNClNPVVJDRSBydW5zL1IyMC9maW5hbC9jYW5kaWRhdGUvQzEzL2ZvcmdlLWFnZW50LWZsb3cvcmVmZXJlbmNlcy9jb250aW51YXRpb24ubWQgYnl0ZXMgMjQyNiBzaGEyNTYgMjhjMzNlYWU3NTZiN2UwNTIyZjVhOTEzYjg0OWY1ZDAyYzk3Y2U1ZThlODFmYzZjN2JmY2MwZTI2OWM5NTM5MCBtYXRjaGVzX2xvY2sgVHJ1ZQ0KU09VUkNFIHJ1bnMvUjIwL2ZpbmFsL2NhbmRpZGF0ZS9DMTMvZm9yZ2UtYWdlbnQtZmxvdy9yZWZlcmVuY2VzL2V2YWx1YXRpb24ubWQgYnl0ZXMgNzI0NCBzaGEyNTYgMDg5NTY4NTE2YmZjMmY4Y2Q0ZWQ0NmJmMTQyOWZjMGM0ZTdlMDU1MjQwMGNkYjQyZDFiYmIzNjNlOTkwOGE1ZiBtYXRjaGVzX2xvY2sgVHJ1ZQ0KU09VUkNFIHJ1bnMvUjIwL2ZpbmFsL2NhbmRpZGF0ZS9DMTMvZm9yZ2UtYWdlbnQtZmxvdy9yZWZlcmVuY2VzL2Zyb250ZW5kLm1kIGJ5dGVzIDI1NjMgc2hhMjU2IGNlY2JlMDA0N2ZhN2Q2MWM4Y2JlOWJjMDE0MzQxNTg2ZDBiZTg1MTI4YmIxODcyNGI3OTk0MTRjYWRkNmY3ZGIgbWF0Y2hlc19sb2NrIFRydWUNClNPVVJDRSBydW5zL1IyMC9maW5hbC9jYW5kaWRhdGUvQzEzL2ZvcmdlLWFnZW50LWZsb3cvcmVmZXJlbmNlcy9pdGVyYXRpb24tYW5kLXJlY292ZXJ5Lm1kIGJ5dGVzIDM4ODIgc2hhMjU2IDViODJhMzM2YTg4ZWExYWRmZWYzM2RiYzUzMGM4NTQyOTBmYzIxOTY1YzAxY2YwZDVkNzYwNDU4ZmVhODA2NzUgbWF0Y2hlc19sb2NrIFRydWUNClNPVVJDRSBydW5zL1IyMC9maW5hbC9jYW5kaWRhdGUvQzEzL2ZvcmdlLWFnZW50LWZsb3cvcmVmZXJlbmNlcy9tb2RlbGluZy5tZCBieXRlcyA5MTkwIHNoYTI1NiBlMTAyZmY5ZGI5NzhmZDRiYzY4NTgzNmI2MGE4YTRjOWNiNzJiZDJhMTRmMTRmNzNhYWZiMTkxNzY2YWY1YzY0IG1hdGNoZXNfbG9jayBUcnVlDQpTT1VSQ0UgcnVucy9SMjAvZmluYWwvY2FuZGlkYXRlL0MxMy9mb3JnZS1hZ2VudC1mbG93L3JlZmVyZW5jZXMvc291cmNlLWV2YWx1YXRpb24ubWQgYnl0ZXMgNjAxMyBzaGEyNTYgZmI3OWI0NjM0YzVmYjJjYWUwODU1MDI0M2YzNzkxNTJmOTM5NTY4YzY2NDk3YzFkZGYwZjVhNjMwZWRjNTY5NiBtYXRjaGVzX2xvY2sgVHJ1ZQ0KU09VUkNFIHJ1bnMvUjIwL2ZpbmFsL2NhbmRpZGF0ZS9DMTMvZm9yZ2UtYWdlbnQtZmxvdy9yZWZlcmVuY2VzL3dvcmtmbG93LWRlc2lnbi5tZCBieXRlcyA0NzUwIHNoYTI1NiA2MTQxMjE5MmZhN2JkZGIwMDAxMjE0MDgzZDI3MGVmYTM1NjZkYmI2MDQzMWVjMGYxNTZkODlhZDlmZTY1NWFhIG1hdGNoZXNfbG9jayBUcnVlDQpDMTNfTE9DS19BVURJVCBhbGwgbGlzdGVkIHNvdXJjZSBoYXNoZXMgbWF0Y2gNCg==",
+  "stderr_base64": ""
+}

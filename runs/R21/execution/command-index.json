@@ -1,0 +1,532 @@
+[
+  {
+    "path": "commands\\001-prospective-freeze.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/v1/freeze.py",
+      "--repo",
+      ".",
+      "--execution",
+      "runs/R21/execution"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:37:44.866559+00:00",
+      "monotonic_ns": 136495296000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:37:44.977436+00:00",
+      "monotonic_ns": 136495406000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "f56e854be9649b0b610b0a4d02de3b98ce6e4e8b1c92566223382b08203a3110",
+    "raw_stdout_bytes": 2859,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\002-science-v1.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/v1/run_science.py",
+      "--raw",
+      "runs/R21/inputs/raw",
+      "--config",
+      "runs/R21/execution/source/v1/config.json",
+      "--newout",
+      "runs/R21/execution/science-v1"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:38:03.435731+00:00",
+      "monotonic_ns": 136513875000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:39:39.558791+00:00",
+      "monotonic_ns": 136609984000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "91a33004f68918bea46bf6e4b85daf6d2553f300881c9a1a4f748ab7a6b1b1ee",
+    "raw_stdout_bytes": 8553,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\003-self-check-v1.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/self_check_v1.py",
+      "--raw",
+      "runs/R21/inputs/raw",
+      "--science",
+      "runs/R21/execution/science-v1",
+      "--config",
+      "runs/R21/execution/source/v1/config.json",
+      "--newout",
+      "runs/R21/execution/self-check-v1"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:40:21.463042+00:00",
+      "monotonic_ns": 136651890000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:40:24.196285+00:00",
+      "monotonic_ns": 136654625000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "b514d271653bd98997828c24ec8353a0c3be203b64b7518fb7685525f78b8d4f",
+    "raw_stdout_bytes": 5832,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\004-inspection-v1.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/inspect_v1.py",
+      "--science",
+      "runs/R21/execution/science-v1",
+      "--newout",
+      "runs/R21/execution/inspection-v1"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:41:02.884021+00:00",
+      "monotonic_ns": 136693312000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:41:03.683747+00:00",
+      "monotonic_ns": 136694109000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "da6d9a156f03be3ac6049ff424f51c4c0276e22091b8db0261c3d26541dd5fd5",
+    "raw_stdout_bytes": 32623,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\005-pdf-operation-marker.json",
+    "argv": [
+      "node",
+      "C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/container_tools/mark_artifact_operation_started.mjs",
+      "--operation-kind",
+      "create",
+      "--expected-output-count",
+      "1",
+      "--output-format",
+      "pdf"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:48:15.451848+00:00",
+      "monotonic_ns": 137125843000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:48:15.530552+00:00",
+      "monotonic_ns": 137125921000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "c9259d984667afd6cbca8149b24ecca8d1eb2e9e5cbdb108f08b40e70f18f08e",
+    "raw_stdout_bytes": 0,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\006-paper-v1.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/build_paper_v1.py",
+      "--science",
+      "runs/R21/execution/science-v1",
+      "--inspection",
+      "runs/R21/execution/inspection-v1",
+      "--selfcheck",
+      "runs/R21/execution/self-check-v1/self-check.json",
+      "--freeze",
+      "runs/R21/execution/prospective-freeze.json",
+      "--newout",
+      "runs/R21/execution/paper-v1"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:48:15.929550+00:00",
+      "monotonic_ns": 137126328000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:48:18.176843+00:00",
+      "monotonic_ns": 137128562000000,
+      "boot_id": null
+    },
+    "exit_code": 1,
+    "sha256": "650dcce4f006c9ab7889121fad6feea4685ba406065680f684d52c90e61b9633",
+    "raw_stdout_bytes": 0,
+    "raw_stderr_bytes": 4854
+  },
+  {
+    "path": "commands\\007-paper-repair-v2.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/repair_paper_v2.py"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:48:55.629543+00:00",
+      "monotonic_ns": 137166015000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:48:55.723821+00:00",
+      "monotonic_ns": 137166109000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "1a45d5ea8ba82c3a14a3c962a314e51835eb82dce329194ce701607c672d555c",
+    "raw_stdout_bytes": 667,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\008-paper-v2.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/build_paper_v2.py",
+      "--science",
+      "runs/R21/execution/science-v1",
+      "--inspection",
+      "runs/R21/execution/inspection-v1",
+      "--selfcheck",
+      "runs/R21/execution/self-check-v1/self-check.json",
+      "--freeze",
+      "runs/R21/execution/prospective-freeze.json",
+      "--newout",
+      "runs/R21/execution/paper-v2"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:48:56.124754+00:00",
+      "monotonic_ns": 137166515000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:48:58.678041+00:00",
+      "monotonic_ns": 137169062000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "6fca35d6cf085a22b5e28ea2239e800fb3a2d00d5220a7ecf3763af24e5021c6",
+    "raw_stdout_bytes": 284,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\009-render-paper-v2.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/render_paper_v2.py",
+      "--paper",
+      "runs/R21/execution/paper-v2/paper.pdf",
+      "--newout",
+      "runs/R21/execution/paper-v2/rendered"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:49:26.501641+00:00",
+      "monotonic_ns": 137196890000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:49:29.301980+00:00",
+      "monotonic_ns": 137199687000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "8b1f362fed261a12a261ee58c2ce09c2654fafbd0e3916582908896e6734599f",
+    "raw_stdout_bytes": 3419,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\010-existing-output-rejection.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/v1/run_science.py",
+      "--raw",
+      "runs/R21/inputs/raw",
+      "--config",
+      "runs/R21/execution/source/v1/config.json",
+      "--newout",
+      "runs/R21/execution/science-v1"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:51:04.568070+00:00",
+      "monotonic_ns": 137294953000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:51:06.067053+00:00",
+      "monotonic_ns": 137296453000000,
+      "boot_id": null
+    },
+    "exit_code": 1,
+    "sha256": "400e2fd70681ce16705a5e1a38d162488494131c9a5a3a68b9e89717e950c3c2",
+    "raw_stdout_bytes": 0,
+    "raw_stderr_bytes": 1026
+  },
+  {
+    "path": "commands\\011-paper-source-v3.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/finalize_paper_source_v3.py"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:51:06.462785+00:00",
+      "monotonic_ns": 137296843000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:51:06.553788+00:00",
+      "monotonic_ns": 137296937000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "8aac2d524500f473507d6690a72ee64e1d342287a28ea49c669c418c60de20e1",
+    "raw_stdout_bytes": 540,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\012-paper-final.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/build_paper_v3.py",
+      "--science",
+      "runs/R21/execution/science-v1",
+      "--inspection",
+      "runs/R21/execution/inspection-v1",
+      "--selfcheck",
+      "runs/R21/execution/self-check-v1/self-check.json",
+      "--freeze",
+      "runs/R21/execution/prospective-freeze.json",
+      "--newout",
+      "runs/R21/execution/paper-final"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:51:06.947946+00:00",
+      "monotonic_ns": 137297328000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:51:09.512651+00:00",
+      "monotonic_ns": 137299890000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "f39c4267c63aaa7c23350f7442334da9e29d8db2d83c99d8ff99c721e45e9268",
+    "raw_stdout_bytes": 290,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\013-render-final.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/render_paper_v2.py",
+      "--paper",
+      "runs/R21/execution/paper-final/paper.pdf",
+      "--newout",
+      "runs/R21/execution/paper-final/rendered"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:51:09.956043+00:00",
+      "monotonic_ns": 137300343000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:51:12.695884+00:00",
+      "monotonic_ns": 137303078000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "74bdb07dcc3f4f871bb5f4f20471d3d3d122e3618249fc5430e1b540cb2100f3",
+    "raw_stdout_bytes": 3458,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\014-markdown-source-v4.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/finalize_paper_source_v4.py"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:52:03.958529+00:00",
+      "monotonic_ns": 137354328000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:52:04.055206+00:00",
+      "monotonic_ns": 137354437000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "c47bd67069b7fb919b06916482ad354e3adbb06889e5cb6c557f5c472f1bb169",
+    "raw_stdout_bytes": 673,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\015-paper-final-v4.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/build_paper_v4.py",
+      "--science",
+      "runs/R21/execution/science-v1",
+      "--inspection",
+      "runs/R21/execution/inspection-v1",
+      "--selfcheck",
+      "runs/R21/execution/self-check-v1/self-check.json",
+      "--freeze",
+      "runs/R21/execution/prospective-freeze.json",
+      "--newout",
+      "runs/R21/execution/paper-final-v4"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:52:04.465093+00:00",
+      "monotonic_ns": 137354843000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:52:07.026439+00:00",
+      "monotonic_ns": 137357406000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "fce0403225d5c3cb675ff92f310c5468fdd755effbe9e7c1a02f85d8bab02e98",
+    "raw_stdout_bytes": 296,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\016-render-final-v4.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/render_paper_v2.py",
+      "--paper",
+      "runs/R21/execution/paper-final-v4/paper.pdf",
+      "--newout",
+      "runs/R21/execution/paper-final-v4/rendered"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:52:07.450292+00:00",
+      "monotonic_ns": 137357828000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:52:10.149810+00:00",
+      "monotonic_ns": 137360531000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "6031ad718b1aa2c3eecb569524105ed4e361a5680e70618f746247929e2f4063",
+    "raw_stdout_bytes": 3497,
+    "raw_stderr_bytes": 0
+  },
+  {
+    "path": "commands\\017-final-document-check.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R21/execution/source/check_final_document_v1.py",
+      "--execution",
+      "runs/R21/execution",
+      "--paper",
+      "runs/R21/execution/paper-final-v4",
+      "--newout",
+      "runs/R21/execution/document-check-v1"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin": {
+      "utc": "2026-10-09T03:53:48.910665+00:00",
+      "monotonic_ns": 137459281000000,
+      "boot_id": null
+    },
+    "end": {
+      "utc": "2026-10-09T03:53:49.307112+00:00",
+      "monotonic_ns": 137459671000000,
+      "boot_id": null
+    },
+    "exit_code": 0,
+    "sha256": "a227a9b8f2080aed7b77c1b1b965ac656be22fa01a40bb6a0e5125b352058e53",
+    "raw_stdout_bytes": 5945,
+    "raw_stderr_bytes": 0
+  }
+]

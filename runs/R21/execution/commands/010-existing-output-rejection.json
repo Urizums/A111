@@ -1,0 +1,34 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R21/execution/source/v1/run_science.py",
+    "--raw",
+    "runs/R21/inputs/raw",
+    "--config",
+    "runs/R21/execution/source/v1/config.json",
+    "--newout",
+    "runs/R21/execution/science-v1"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T03:51:04.568070+00:00",
+    "monotonic_ns": 137294953000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T03:51:06.067053+00:00",
+    "monotonic_ns": 137296453000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\source\\v1\\run_science.py\", line 161, in <module>\r\n    if __name__=='__main__':main()\r\n                            ^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R21\\execution\\source\\v1\\run_science.py\", line 41, in main\r\n    raw=Path(a.raw).resolve();cp=Path(a.config).resolve();out=Path(a.newout).resolve();out.mkdir(parents=True,exist_ok=False)\r\n                                                                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pathlib.py\", line 1311, in mkdir\r\n    os.mkdir(self, mode)\r\nFileExistsError: [WinError 183] 当文件已存在时，无法创建该文件。: 'C:\\\\Users\\\\admin\\\\Documents\\\\Codex\\\\2026-10-05\\\\urizums-a111-main-codex-handoff-md\\\\work\\\\A111\\\\runs\\\\R21\\\\execution\\\\science-v1'\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMVxleGVjdXRpb25cc291cmNlXHYxXHJ1bl9zY2llbmNlLnB5IiwgbGluZSAxNjEsIGluIDxtb2R1bGU+DQogICAgaWYgX19uYW1lX189PSdfX21haW5fXyc6bWFpbigpDQogICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eXl5eDQogIEZpbGUgIkM6XFVzZXJzXGFkbWluXERvY3VtZW50c1xDb2RleFwyMDI2LTEwLTA1XHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcd29ya1xBMTExXHJ1bnNcUjIxXGV4ZWN1dGlvblxzb3VyY2VcdjFccnVuX3NjaWVuY2UucHkiLCBsaW5lIDQxLCBpbiBtYWluDQogICAgcmF3PVBhdGgoYS5yYXcpLnJlc29sdmUoKTtjcD1QYXRoKGEuY29uZmlnKS5yZXNvbHZlKCk7b3V0PVBhdGgoYS5uZXdvdXQpLnJlc29sdmUoKTtvdXQubWtkaXIocGFyZW50cz1UcnVlLGV4aXN0X29rPUZhbHNlKQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4NCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cQXBwRGF0YVxMb2NhbFxQcm9ncmFtc1xQeXRob25cUHl0aG9uMzEyXExpYlxwYXRobGliLnB5IiwgbGluZSAxMzExLCBpbiBta2Rpcg0KICAgIG9zLm1rZGlyKHNlbGYsIG1vZGUpDQpGaWxlRXhpc3RzRXJyb3I6IFtXaW5FcnJvciAxODNdIOW9k+aWh+S7tuW3suWtmOWcqOaXtu+8jOaXoOazleWIm+W7uuivpeaWh+S7tuOAgjogJ0M6XFxVc2Vyc1xcYWRtaW5cXERvY3VtZW50c1xcQ29kZXhcXDIwMjYtMTAtMDVcXHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcXHdvcmtcXEExMTFcXHJ1bnNcXFIyMVxcZXhlY3V0aW9uXFxzY2llbmNlLXYxJw0K"
+}

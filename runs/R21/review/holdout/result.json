@@ -1,0 +1,357 @@
+{
+  "schema": "r21-independent-g5-result/1",
+  "g5_verdict": "PASS",
+  "meaning": "predefined frozen holdout evaluation completed; no separate performance quota",
+  "initial_lock_sha256": "3f693352a16ec890b66e2abc0dc03753f5d3c0bdb1393aac807f2cc3a01cebb5",
+  "execution_lock_sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669",
+  "evaluation_lock_sha256": "b9f1b4aaa2101beae7e862be5958d47d7692ef4ef885bbf10d1c368288d97d8f",
+  "truth_sha256": "b289a976abea2fd3ba819145d20a58215bcbd54d4b15165e0ea989c1503c42b4",
+  "first_truth_open_utc": "2026-10-09T04:13:12.567902+00:00",
+  "first_truth_open_receipt": "runs/R21/review/holdout/03-first-truth-open-command.json",
+  "validation": {
+    "schema": "r21-holdout-independent-validation/1",
+    "passed": true,
+    "truth_rows": 4032,
+    "truth_duplicate_keys": 0,
+    "route_rows": {
+      "shared_ridge10": 4032,
+      "weekly_mean56": 4032
+    },
+    "route_key_uniqueness": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "route_metrics_finite": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "all_route_dates_96_keys": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "all_route_resource_limits_valid": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "all_route_actions_integer_and_bounded": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "all_route_intervals_valid": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "first_truth_open_utc": "2026-10-09T04:13:12.567902+00:00",
+    "first_truth_open_receipt": "runs/R21/review/holdout/03-first-truth-open-command.json",
+    "truth_identity_sha256": "b289a976abea2fd3ba819145d20a58215bcbd54d4b15165e0ea989c1503c42b4",
+    "truth_lock_sha256": "b9f1b4aaa2101beae7e862be5958d47d7692ef4ef885bbf10d1c368288d97d8f",
+    "initial_lock_sha256": "3f693352a16ec890b66e2abc0dc03753f5d3c0bdb1393aac807f2cc3a01cebb5",
+    "execution_lock_sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669"
+  },
+  "route_metrics": {
+    "shared_ridge10": {
+      "key_count": 4032,
+      "date_count": 42,
+      "mae": 2.6082535939127234,
+      "rmse": 3.2686012918663603,
+      "bias_pred_minus_truth": 0.2275071234621776,
+      "coverage": 0.8673115079365079,
+      "below_rate": 0.036210317460317464,
+      "above_rate": 0.09647817460317461,
+      "mean_interval_width": 10.173032675319295,
+      "mean_interval_score": 14.147147526972569,
+      "shortage_yuan": 19844.1,
+      "waste_yuan": 10092.15,
+      "two_part_loss_yuan": 29936.25,
+      "two_part_loss_yuan_per_day": 712.7678571428571,
+      "procurement_yuan": 226028.0,
+      "q_units": 64537.0,
+      "all_predictions_intervals_and_plans_finite": true,
+      "all_prediction_and_interval_bounds_valid": true,
+      "all_q_integer_and_item_bounded": true,
+      "all_dates_96_unique_keys": true,
+      "all_daily_capacity_limits_valid": true,
+      "all_daily_budget_limits_valid": true,
+      "max_daily_units": 1600,
+      "max_daily_procurement_yuan": 5611.0,
+      "capacity_full_days": 24,
+      "budget_full_days": 0
+    },
+    "weekly_mean56": {
+      "key_count": 4032,
+      "date_count": 42,
+      "mae": 3.1378968253968256,
+      "rmse": 4.028284254212716,
+      "bias_pred_minus_truth": -1.0679563492063493,
+      "coverage": 0.8442460317460317,
+      "below_rate": 0.03993055555555555,
+      "above_rate": 0.1158234126984127,
+      "mean_interval_width": 11.0423828125,
+      "mean_interval_score": 17.39416232638889,
+      "shortage_yuan": 23470.1,
+      "waste_yuan": 11155.8,
+      "two_part_loss_yuan": 34625.899999999994,
+      "two_part_loss_yuan_per_day": 824.4261904761905,
+      "procurement_yuan": 226038.0,
+      "q_units": 64590.0,
+      "all_predictions_intervals_and_plans_finite": true,
+      "all_prediction_and_interval_bounds_valid": true,
+      "all_q_integer_and_item_bounded": true,
+      "all_dates_96_unique_keys": true,
+      "all_daily_capacity_limits_valid": true,
+      "all_daily_budget_limits_valid": true,
+      "max_daily_units": 1600,
+      "max_daily_procurement_yuan": 5580.0,
+      "capacity_full_days": 12,
+      "budget_full_days": 0
+    }
+  },
+  "daily_pair_summary": {
+    "daily_loss_difference_weekly_minus_ridge": {
+      "mean_yuan_per_day": 111.65833333333335,
+      "days_weekly_lower": 5,
+      "days_equal": 0,
+      "days_weekly_higher": 37
+    },
+    "daily_interval_score_difference_weekly_minus_ridge": {
+      "mean_score_per_key_day": 3.24701479941632,
+      "days_weekly_lower": 9,
+      "days_equal": 0,
+      "days_weekly_higher": 33
+    }
+  },
+  "group_dimensions": {
+    "activity": 2,
+    "activity_x_horizon": 12,
+    "date": 42,
+    "horizon_band": 6,
+    "item": 8,
+    "overall": 1,
+    "store": 12
+  },
+  "group_metrics_rows": 166,
+  "all_group_and_daily_tables_written": true,
+  "no_tuning_or_route_reselection": true,
+  "no_causal_or_significance_claim": true,
+  "4032_keys_not_independent_replicates": true,
+  "observed_unrecorded_read": {
+    "occurred": true,
+    "command": "Get-Content runs/R21/inputs/raw/items.csv -TotalCount 5; Get-Content runs/R21/inputs/raw/calendar.csv -TotalCount 5; Get-Content runs/R21/inputs/raw/decision.json; Get-Content runs/R21/execution/science-v1/future/shared_ridge10/predictions.csv -TotalCount 4; Get-Content runs/R21/execution/science-v1/future/shared_ridge10/replenishment.csv -TotalCount 4; Get-Content runs/R21/evaluation/holdout_truth.csv -TotalCount 4",
+    "scope": "read-only authorized files after first recorded truth opening; output captured in tool result, no fabricated receipt",
+    "status": "disclosed"
+  },
+  "recorded_commands_so_far": [
+    {
+      "receipt": "runs/R21/review/holdout/01-freeze-binding-command.json",
+      "state": "finished",
+      "exit_code": 0,
+      "begin_utc": "2026-10-09T04:12:40.975360+00:00",
+      "end_utc": "2026-10-09T04:12:41.084471+00:00",
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R21/review/holdout/bind_freezes.py"
+      ],
+      "stdout_bytes": 1672,
+      "stderr_bytes": 0,
+      "streams_match_base64_utf8_replace": true
+    },
+    {
+      "receipt": "runs/R21/review/holdout/02-freeze-rebind-command.json",
+      "state": "finished",
+      "exit_code": 0,
+      "begin_utc": "2026-10-09T04:12:53.288716+00:00",
+      "end_utc": "2026-10-09T04:12:53.391765+00:00",
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R21/review/holdout/bind_freezes.py"
+      ],
+      "stdout_bytes": 2392,
+      "stderr_bytes": 0,
+      "streams_match_base64_utf8_replace": true
+    },
+    {
+      "receipt": "runs/R21/review/holdout/03-first-truth-open-command.json",
+      "state": "finished",
+      "exit_code": 0,
+      "begin_utc": "2026-10-09T04:13:11.982614+00:00",
+      "end_utc": "2026-10-09T04:13:12.618294+00:00",
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R21/review/holdout/first_truth_open.py"
+      ],
+      "stdout_bytes": 301,
+      "stderr_bytes": 0,
+      "streams_match_base64_utf8_replace": true
+    },
+    {
+      "receipt": "runs/R21/review/holdout/04-independent-scoring-command.json",
+      "state": "finished",
+      "exit_code": 0,
+      "begin_utc": "2026-10-09T04:14:32.102217+00:00",
+      "end_utc": "2026-10-09T04:14:33.578265+00:00",
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R21/review/holdout/score_holdout.py"
+      ],
+      "stdout_bytes": 2013,
+      "stderr_bytes": 0,
+      "streams_match_base64_utf8_replace": true
+    }
+  ],
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "all_preregistered_metrics_and_groups_recomputed": true,
+  "truth_open_sequence_valid": true,
+  "all_routes_have_complete_metrics": true,
+  "output_sha256": {
+    "HOLDOUT_REPORT.md": "66ad03229c3da561808ac7ede2030fa2cab93bcbcca640fd3faa3fc7588fe13b",
+    "metrics.json": "47baddc0417e3cd57bd4377cc7d9320756f4b2fb981a1103ca59477458273cca",
+    "group_metrics.csv": "cfd944fdc0370f299f9151f5553adc3bd9ed4d9a906763c308365235f98a0563",
+    "daily_route_metrics.csv": "09b4dda71f3beed90e19eb3fea1dafebb197a43dfbb1a57960f9d13624e3c43c",
+    "daily_route_differences.csv": "1fa7c78c5b4c54fb8b64c65ab235baa2954b3ba1beea59caa9c918f0f21aef6d",
+    "key_metrics.csv": "1a0b976dd6723cab634991206601de03a8fad2fccf27a7e9d7056012b4ca1bd6",
+    "validation.json": "2ff38ae36bd3885f0003648366af56916e8f715957743237ba5c88a8dc6ab54d"
+  },
+  "terminal_process_audit": {
+    "all_command_receipts_seen_at_finalization_are_finished": true,
+    "recorded_command_count": 5,
+    "nonzero_exit_commands": [],
+    "commands": [
+      {
+        "receipt": "runs/R21/review/holdout/01-freeze-binding-command.json",
+        "schema": "forge-command-record/1",
+        "state": "finished",
+        "exit_code": 0,
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/holdout/bind_freezes.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "begin_utc": "2026-10-09T04:12:40.975360+00:00",
+        "end_utc": "2026-10-09T04:12:41.084471+00:00",
+        "stdout_raw_bytes": 1672,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true,
+        "terminal_and_streams_valid": true
+      },
+      {
+        "receipt": "runs/R21/review/holdout/02-freeze-rebind-command.json",
+        "schema": "forge-command-record/1",
+        "state": "finished",
+        "exit_code": 0,
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/holdout/bind_freezes.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "begin_utc": "2026-10-09T04:12:53.288716+00:00",
+        "end_utc": "2026-10-09T04:12:53.391765+00:00",
+        "stdout_raw_bytes": 2392,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true,
+        "terminal_and_streams_valid": true
+      },
+      {
+        "receipt": "runs/R21/review/holdout/03-first-truth-open-command.json",
+        "schema": "forge-command-record/1",
+        "state": "finished",
+        "exit_code": 0,
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/holdout/first_truth_open.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "begin_utc": "2026-10-09T04:13:11.982614+00:00",
+        "end_utc": "2026-10-09T04:13:12.618294+00:00",
+        "stdout_raw_bytes": 301,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true,
+        "terminal_and_streams_valid": true
+      },
+      {
+        "receipt": "runs/R21/review/holdout/04-independent-scoring-command.json",
+        "schema": "forge-command-record/1",
+        "state": "finished",
+        "exit_code": 0,
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/holdout/score_holdout.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "begin_utc": "2026-10-09T04:14:32.102217+00:00",
+        "end_utc": "2026-10-09T04:14:33.578265+00:00",
+        "stdout_raw_bytes": 2013,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true,
+        "terminal_and_streams_valid": true
+      },
+      {
+        "receipt": "runs/R21/review/holdout/write-report-command.json",
+        "schema": "forge-command-record/1",
+        "state": "finished",
+        "exit_code": 0,
+        "argv": [
+          "py",
+          "-3.12",
+          "-X",
+          "utf8",
+          "-B",
+          "runs/R21/review/holdout/write_report.py"
+        ],
+        "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+        "begin_utc": "2026-10-09T04:15:47.112141+00:00",
+        "end_utc": "2026-10-09T04:15:47.806112+00:00",
+        "stdout_raw_bytes": 449,
+        "stderr_raw_bytes": 0,
+        "stdout_base64_matches_utf8_replace": true,
+        "stderr_base64_matches_utf8_replace": true,
+        "terminal_and_streams_valid": true
+      }
+    ],
+    "no_known_command_session_remains_running": true,
+    "finalizer_receipt": "runs/R21/review/holdout/finalize-g5-command.json (recorded by wrapper after this process exits)"
+  },
+  "scope_exception": {
+    "occurred": true,
+    "command": "Get-Content runs/R21/inputs/raw/items.csv -TotalCount 5; Get-Content runs/R21/inputs/raw/calendar.csv -TotalCount 5; Get-Content runs/R21/inputs/raw/decision.json; Get-Content runs/R21/execution/science-v1/future/shared_ridge10/predictions.csv -TotalCount 4; Get-Content runs/R21/execution/science-v1/future/shared_ridge10/replenishment.csv -TotalCount 4; Get-Content runs/R21/evaluation/holdout_truth.csv -TotalCount 4",
+    "scope": "read-only authorized files after first recorded truth opening; output captured in tool result, no fabricated receipt",
+    "status": "disclosed"
+  }
+}

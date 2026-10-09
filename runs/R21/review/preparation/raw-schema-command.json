@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import csv,pathlib; p=pathlib.Path('runs/R21/inputs/raw'); [(print(f.name, next(csv.reader(f.open(encoding='utf-8-sig'))))) for f in sorted(p.glob('*.csv'))]"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T03:25:23.671950+00:00",
+    "monotonic_ns": 135754187000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T03:25:23.742112+00:00",
+    "monotonic_ns": 135754265000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "calendar.csv ['service_date', 'weekday_monday_zero', 'holiday']\r\ndemand_reports.csv ['service_date', 'store_id', 'item_id', 'revision', 'available_at', 'demand_units', 'settlement_yuan']\r\nitems.csv ['item_id', 'procurement_yuan', 'shortage_yuan', 'waste_yuan', 'daily_max_units']\r\npromotions.csv ['service_date', 'store_id', 'item_id', 'announced_at', 'discount_fraction']\r\nstores.csv ['store_id', 'zone_id']\r\nweather.csv ['service_date', 'zone_id', 'available_at', 'kind', 'rain_mm']\r\n",
+  "stderr": "",
+  "stdout_base64": "Y2FsZW5kYXIuY3N2IFsnc2VydmljZV9kYXRlJywgJ3dlZWtkYXlfbW9uZGF5X3plcm8nLCAnaG9saWRheSddDQpkZW1hbmRfcmVwb3J0cy5jc3YgWydzZXJ2aWNlX2RhdGUnLCAnc3RvcmVfaWQnLCAnaXRlbV9pZCcsICdyZXZpc2lvbicsICdhdmFpbGFibGVfYXQnLCAnZGVtYW5kX3VuaXRzJywgJ3NldHRsZW1lbnRfeXVhbiddDQppdGVtcy5jc3YgWydpdGVtX2lkJywgJ3Byb2N1cmVtZW50X3l1YW4nLCAnc2hvcnRhZ2VfeXVhbicsICd3YXN0ZV95dWFuJywgJ2RhaWx5X21heF91bml0cyddDQpwcm9tb3Rpb25zLmNzdiBbJ3NlcnZpY2VfZGF0ZScsICdzdG9yZV9pZCcsICdpdGVtX2lkJywgJ2Fubm91bmNlZF9hdCcsICdkaXNjb3VudF9mcmFjdGlvbiddDQpzdG9yZXMuY3N2IFsnc3RvcmVfaWQnLCAnem9uZV9pZCddDQp3ZWF0aGVyLmNzdiBbJ3NlcnZpY2VfZGF0ZScsICd6b25lX2lkJywgJ2F2YWlsYWJsZV9hdCcsICdraW5kJywgJ3JhaW5fbW0nXQ0K",
+  "stderr_base64": ""
+}

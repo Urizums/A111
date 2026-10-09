@@ -1,0 +1,26 @@
+{
+  "schema": "r21-executor-prospective/1",
+  "timezone": "Asia/Shanghai",
+  "precalibration_origin": "2026-07-08T18:00:00",
+  "selection_origins": ["2026-07-22T18:00:00", "2026-08-05T18:00:00", "2026-08-19T18:00:00"],
+  "calibration_origin": "2026-09-02T18:00:00",
+  "validation_origins": ["2026-09-16T18:00:00", "2026-09-30T18:00:00", "2026-10-14T18:00:00"],
+  "evaluation_label_cutoff": "2026-11-04T18:00:00",
+  "historical_horizon_days": 14,
+  "future_horizon_days": 42,
+  "candidates": [
+    {"name":"shared_ridge10", "kind":"ridge", "alpha":10, "holiday_scale":0.3},
+    {"name":"weekly_mean56", "kind":"weekly", "window":56, "stat":"mean"}
+  ],
+  "selection_criterion": "minimum equal-day mean realized shortage+waste loss of stochastic integer plan across selection origins; exact ties by listed candidate order",
+  "alternative_rationale": "recent same-store-item weekday mean has eight weekly replicates, accommodates local level without extrapolating item trend for 42 days; fixed window56 before performance, no parameter search",
+  "purposes": {"precalibration":"out-of-origin residual seeding only, no scored strategy", "selection":"42 historical days choose final route", "calibration":"14 additional historical days diagnostic and residual update, never select", "validation":"three 14-day origins evaluated once after selection; later origins may train on earlier realized labels as available; route and hyperparameters never change", "final":"as-of Oct31 refit; eligible fixed-mature-label full-day residuals, no future truth"},
+  "uncertainty":"each method own out-of-origin errors against fixed Nov4 highest mature historical labels, complete96 coordinates and exact used versions all available by calibration origin, strict earlier source origin and ended day; equal weights; max(point+error,0); numpy linear quantile .05/.95 rounded10 decimals",
+  "information_fairness":"same raw sources, asof training, forecast grids, origins, residual source days and availability rule, stochastic optimizer and daily constraints; methods intentionally use different subsets of available predictors, both CPU sequential no method-specific cap",
+  "optimizer":{"kind":"reference scipy milp positive marginal-unit binary formulation", "mip_rel_gap":1e-9, "capacity":1600, "budget":6000},
+  "diagnostics":{"policy_comparison":"same forecast and MILP with point-only singleton scenario, diagnostic not a final route", "resource_pairs":[[1440,5400],[1760,6600],[1600,5400],[1440,6000]], "activity_multipliers":[0.8,1.2], "prediction_scale_multipliers":[0.9,1.1], "central_interval_levels":[0.8,0.9,0.95], "paired_bootstrap_day_replicates":2000, "bootstrap_seed":20261009},
+  "model":null, "tokens":null, "cost":null,
+  "migration_diffs":["raw/config/output paths explicit", "evaluation_label_cutoff Oct4->Nov4", "final origin Sep30->Oct31 and future grid14->42", "residual origins July8 every14 days through Oct14", "old candidate winner not reused: fixed migrated ridge10 plus independently justified weekly_mean56", "original per-day readiness interpretation and exact fixed mature label versions enforced; complete-window restriction not added", "all formally considered final routes retained", "full residual coordinate and feature/train lineage added"],
+  "assumptions":[{"type":"derived", "text":"timestamps without offsets localized to Asia/Shanghai"}, {"type":"reversible", "text":"weekly56 local mean window fixed ex ante rather than tuned"}, {"type":"policy", "text":"same historical residual vector repeated across future days is stress dependence, not identified temporal joint law"}, {"type":"derived", "text":"same resource limits applied separately each day; procurement excluded from loss"}],
+  "no_future_actuals":true
+}

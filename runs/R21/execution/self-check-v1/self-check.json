@@ -1,0 +1,205 @@
+{
+  "scope": "author self-check only, not independent acceptance",
+  "checks": [
+    {
+      "name": "snapshot-2026-07-08T18:00:00",
+      "passed": true,
+      "detail": "independent highest revision raw recomputation"
+    },
+    {
+      "name": "snapshot-2026-07-22T18:00:00",
+      "passed": true,
+      "detail": "independent highest revision raw recomputation"
+    },
+    {
+      "name": "snapshot-2026-08-05T18:00:00",
+      "passed": true,
+      "detail": "independent highest revision raw recomputation"
+    },
+    {
+      "name": "snapshot-2026-08-19T18:00:00",
+      "passed": true,
+      "detail": "independent highest revision raw recomputation"
+    },
+    {
+      "name": "snapshot-2026-09-02T18:00:00",
+      "passed": true,
+      "detail": "independent highest revision raw recomputation"
+    },
+    {
+      "name": "snapshot-2026-09-16T18:00:00",
+      "passed": true,
+      "detail": "independent highest revision raw recomputation"
+    },
+    {
+      "name": "snapshot-2026-09-30T18:00:00",
+      "passed": true,
+      "detail": "independent highest revision raw recomputation"
+    },
+    {
+      "name": "snapshot-2026-10-14T18:00:00",
+      "passed": true,
+      "detail": "independent highest revision raw recomputation"
+    },
+    {
+      "name": "fixed-mature-evaluation",
+      "passed": true,
+      "detail": "Nov4 fixed used versions; historical only"
+    },
+    {
+      "name": "full96-vectors",
+      "passed": true,
+      "detail": "complete unique store-item coordinates per service day"
+    },
+    {
+      "name": "residual-label-version",
+      "passed": true,
+      "detail": "same fixed mature source versions for every residual"
+    },
+    {
+      "name": "residual-arithmetic",
+      "passed": true,
+      "detail": "saved residual equals label minus old point"
+    },
+    {
+      "name": "per-day-exact-version-pool",
+      "passed": true,
+      "detail": "all accepted and excluded days independently reconstructed, no whole-window completion restriction"
+    },
+    {
+      "name": "out-of-origin-forecast-lineage",
+      "passed": true,
+      "detail": {
+        "max_point_recompute_difference": 3.609557097661309e-10
+      }
+    },
+    {
+      "name": "fixed-ridge-final-refit",
+      "passed": true,
+      "detail": {
+        "coefficient_difference": 3.0100366643637244e-12,
+        "alpha": 10,
+        "fit_intercept": false,
+        "columns": 169
+      }
+    },
+    {
+      "name": "shared_ridge10-future-grid",
+      "passed": true,
+      "detail": "42 days *12 stores *8 items, unique ordered grid"
+    },
+    {
+      "name": "shared_ridge10-point",
+      "passed": true,
+      "detail": "from saved asof snapshot and exact frozen method"
+    },
+    {
+      "name": "shared_ridge10-interval-domain",
+      "passed": true,
+      "detail": "finite nonnegative central empirical90"
+    },
+    {
+      "name": "shared_ridge10-scenario-lineage",
+      "passed": true,
+      "detail": "equal weights and exact additive residuals"
+    },
+    {
+      "name": "shared_ridge10-quantile",
+      "passed": true,
+      "detail": "numpy linear quantile rounded10"
+    },
+    {
+      "name": "shared_ridge10-feasibility",
+      "passed": true,
+      "detail": {
+        "max_daily_units": 1600,
+        "max_daily_procurement": 5611.0
+      }
+    },
+    {
+      "name": "shared_ridge10-objective",
+      "passed": true,
+      "detail": "procurement excluded; shortage+waste raw item coefficients"
+    },
+    {
+      "name": "shared_ridge10-optimality-evidence",
+      "passed": true,
+      "detail": "solver status0 plus objective re-evaluation, MILP numerical tolerance"
+    },
+    {
+      "name": "weekly_mean56-future-grid",
+      "passed": true,
+      "detail": "42 days *12 stores *8 items, unique ordered grid"
+    },
+    {
+      "name": "weekly_mean56-point",
+      "passed": true,
+      "detail": "from saved asof snapshot and exact frozen method"
+    },
+    {
+      "name": "weekly_mean56-interval-domain",
+      "passed": true,
+      "detail": "finite nonnegative central empirical90"
+    },
+    {
+      "name": "weekly_mean56-scenario-lineage",
+      "passed": true,
+      "detail": "equal weights and exact additive residuals"
+    },
+    {
+      "name": "weekly_mean56-quantile",
+      "passed": true,
+      "detail": "numpy linear quantile rounded10"
+    },
+    {
+      "name": "weekly_mean56-feasibility",
+      "passed": true,
+      "detail": {
+        "max_daily_units": 1600,
+        "max_daily_procurement": 5580.0
+      }
+    },
+    {
+      "name": "weekly_mean56-objective",
+      "passed": true,
+      "detail": "procurement excluded; shortage+waste raw item coefficients"
+    },
+    {
+      "name": "weekly_mean56-optimality-evidence",
+      "passed": true,
+      "detail": "solver status0 plus objective re-evaluation, MILP numerical tolerance"
+    },
+    {
+      "name": "historical-only-selection",
+      "passed": true,
+      "detail": "same frozen primary criterion independently summed over 42 selection days"
+    },
+    {
+      "name": "unknown-resource-fields",
+      "passed": true,
+      "detail": "unknown actual host/model/token/cost preserved null"
+    }
+  ],
+  "failed": [],
+  "finals": [
+    {
+      "method_id": "shared_ridge10",
+      "rows": 4032,
+      "total_q": 64537,
+      "mean_scenario_loss": 603.9747506745995,
+      "pool_days": 112
+    },
+    {
+      "method_id": "weekly_mean56",
+      "rows": 4032,
+      "total_q": 64590,
+      "mean_scenario_loss": 696.5968510841836,
+      "pool_days": 112
+    }
+  ],
+  "selection_recomputed": {
+    "shared_ridge10": 665.0142857142857,
+    "weekly_mean56": 724.0119047619047
+  },
+  "all_passed": true
+}

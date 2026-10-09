@@ -1,0 +1,196 @@
+{
+  "schema": "r21-clean-rerun-comparison/1",
+  "scope": "selected numeric/scientific output files only; no author verdicts or future truth",
+  "files_checked": [
+    {
+      "path": "future/shared_ridge10/predictions.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 360341,
+      "rerun_bytes": 360341,
+      "frozen_sha256": "fc9e088579ac0fe414467a62ef91980e2363b66546d8a95b5401342f46ea0bcd",
+      "rerun_sha256": "fc9e088579ac0fe414467a62ef91980e2363b66546d8a95b5401342f46ea0bcd"
+    },
+    {
+      "path": "future/shared_ridge10/replenishment.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 153228,
+      "rerun_bytes": 153228,
+      "frozen_sha256": "ef2c2f6421bf18345d9b1c1d855def3f1b5721eee794aceae88c47edb30c5c80",
+      "rerun_sha256": "ef2c2f6421bf18345d9b1c1d855def3f1b5721eee794aceae88c47edb30c5c80"
+    },
+    {
+      "path": "future/weekly_mean56/predictions.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 355711,
+      "rerun_bytes": 355711,
+      "frozen_sha256": "8bb043862209e63b9f775092fc9f7c29af20b082b0d317da3be071b32c1750c3",
+      "rerun_sha256": "8bb043862209e63b9f775092fc9f7c29af20b082b0d317da3be071b32c1750c3"
+    },
+    {
+      "path": "future/weekly_mean56/replenishment.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 149155,
+      "rerun_bytes": 149155,
+      "frozen_sha256": "0bfe558c04b6059ea7127ced78256400a7481e05beb08866327672a31b0e3706",
+      "rerun_sha256": "0bfe558c04b6059ea7127ced78256400a7481e05beb08866327672a31b0e3706"
+    },
+    {
+      "path": "results/historical_predictions_plans.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 8626736,
+      "rerun_bytes": 8626736,
+      "frozen_sha256": "c15b5041ffa4dc4c5652f7b364622fcfa62fae5985555b501a5f45db87b5e33b",
+      "rerun_sha256": "c15b5041ffa4dc4c5652f7b364622fcfa62fae5985555b501a5f45db87b5e33b"
+    },
+    {
+      "path": "results/science_summary.json",
+      "both_exist": true,
+      "same_bytes": false,
+      "frozen_bytes": 8107,
+      "rerun_bytes": 8107,
+      "frozen_sha256": "982fe2590222ed2617ab79dd14ef4eadebbd789cf7199e5ad7f6d212bb378a48",
+      "rerun_sha256": "55a87d91b37dead2feea28e09c0e7c5a73c0d55a2d73c0e7a8c90998c6f3820c",
+      "parsed_json_equal": false,
+      "numeric_or_string_differences": [
+        {
+          "path": "runtime_seconds",
+          "frozen": 94.47303019999526,
+          "rerun": 95.92896869999822,
+          "delta": -1.4559385000029579
+        }
+      ]
+    },
+    {
+      "path": "results/selection.json",
+      "both_exist": true,
+      "same_bytes": false,
+      "frozen_bytes": 620,
+      "rerun_bytes": 620,
+      "frozen_sha256": "9c96cdd9a3bc4b85dedb69c8622e137c14db2ee4f9c4e260e0a1bae1a5a9a291",
+      "rerun_sha256": "999f82c146565de9e3ff32cae6b2665919e186336fd91ea5c52777af2dfd4df3",
+      "parsed_json_equal": false,
+      "numeric_or_string_differences": [
+        {
+          "path": "actual_selected_at_utc",
+          "frozen": "2026-10-09T03:38:19.712069+00:00",
+          "rerun": "2026-10-09T03:59:16.471657+00:00"
+        }
+      ]
+    },
+    {
+      "path": "results/group_stage_method_id_policy.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 2773,
+      "rerun_bytes": 2773,
+      "frozen_sha256": "271e0d8c255f0996b931357637f7d71dee752597e3bd484b57b63ac3ea2ed725",
+      "rerun_sha256": "271e0d8c255f0996b931357637f7d71dee752597e3bd484b57b63ac3ea2ed725"
+    },
+    {
+      "path": "results/group_stage_method_id_policy_holiday.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 5391,
+      "rerun_bytes": 5391,
+      "frozen_sha256": "f569e8d021c5a6043df6fe99944bd7087aa9ff8c940d0fb1d90e558bdc8dcc98",
+      "rerun_sha256": "f569e8d021c5a6043df6fe99944bd7087aa9ff8c940d0fb1d90e558bdc8dcc98"
+    },
+    {
+      "path": "results/group_stage_method_id_policy_horizon.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 36247,
+      "rerun_bytes": 36247,
+      "frozen_sha256": "ff3ade390f9720fb58c571b496191c2ce1cc9ea6d3041961b3ed984a5489d600",
+      "rerun_sha256": "ff3ade390f9720fb58c571b496191c2ce1cc9ea6d3041961b3ed984a5489d600"
+    },
+    {
+      "path": "results/group_stage_method_id_policy_item_id.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 20646,
+      "rerun_bytes": 20646,
+      "frozen_sha256": "7a58aeafbe07083cd709e461039f7ca71f064a09c67f9c15084e0c8faf4be530",
+      "rerun_sha256": "7a58aeafbe07083cd709e461039f7ca71f064a09c67f9c15084e0c8faf4be530"
+    },
+    {
+      "path": "results/group_stage_method_id_policy_store_id.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 30794,
+      "rerun_bytes": 30794,
+      "frozen_sha256": "a0cfec33eda218b1b1da7455cf038484d26b2a4d1ec28c5909d8501a8a59a759",
+      "rerun_sha256": "a0cfec33eda218b1b1da7455cf038484d26b2a4d1ec28c5909d8501a8a59a759"
+    },
+    {
+      "path": "results/interval_tradeoff.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 3796,
+      "rerun_bytes": 3796,
+      "frozen_sha256": "b5aeddbe5cc0e41f288169fd3d886167024a3525d60b1d1922ac81b268854a4c",
+      "rerun_sha256": "b5aeddbe5cc0e41f288169fd3d886167024a3525d60b1d1922ac81b268854a4c"
+    },
+    {
+      "path": "results/future_daily_summary.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 12501,
+      "rerun_bytes": 12501,
+      "frozen_sha256": "a443accec36db33f12d34f941825dfe3329dce03ea4ea6d1f359b13a48a8cd96",
+      "rerun_sha256": "a443accec36db33f12d34f941825dfe3329dce03ea4ea6d1f359b13a48a8cd96"
+    },
+    {
+      "path": "results/sensitivity.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 1116,
+      "rerun_bytes": 1116,
+      "frozen_sha256": "017633c74f3d5016de8d9a4056a1561e307d08983e887eda082f678e9a3bd417",
+      "rerun_sha256": "017633c74f3d5016de8d9a4056a1561e307d08983e887eda082f678e9a3bd417"
+    },
+    {
+      "path": "uncertainty/residual_coordinates_all.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 5969737,
+      "rerun_bytes": 5969737,
+      "frozen_sha256": "bad64a6a121b93a1c0366a3da1585c07ac0e69cf193c9a6414cfa9c25648fcf8",
+      "rerun_sha256": "bad64a6a121b93a1c0366a3da1585c07ac0e69cf193c9a6414cfa9c25648fcf8"
+    },
+    {
+      "path": "uncertainty/pool_membership_all_origins.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 144364,
+      "rerun_bytes": 144364,
+      "frozen_sha256": "e7b790246ea7f8049c0df9dc5364266a1ec7c8eac5bf638887c3cd85e9052656",
+      "rerun_sha256": "e7b790246ea7f8049c0df9dc5364266a1ec7c8eac5bf638887c3cd85e9052656"
+    },
+    {
+      "path": "uncertainty/residual_days_final_shared_ridge10.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 6522,
+      "rerun_bytes": 6522,
+      "frozen_sha256": "bacd1b18dc146f66ac5b4dd25c2992aae77238bc729cfd238c32b371fd06e4e3",
+      "rerun_sha256": "bacd1b18dc146f66ac5b4dd25c2992aae77238bc729cfd238c32b371fd06e4e3"
+    },
+    {
+      "path": "uncertainty/residual_days_final_weekly_mean56.csv",
+      "both_exist": true,
+      "same_bytes": true,
+      "frozen_bytes": 6522,
+      "rerun_bytes": 6522,
+      "frozen_sha256": "bacd1b18dc146f66ac5b4dd25c2992aae77238bc729cfd238c32b371fd06e4e3",
+      "rerun_sha256": "bacd1b18dc146f66ac5b4dd25c2992aae77238bc729cfd238c32b371fd06e4e3"
+    }
+  ],
+  "all_exist": true,
+  "all_byte_identical": false
+}

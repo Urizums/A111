@@ -1,0 +1,147 @@
+{
+  "schema": "r21-independent-holdout-metrics/1",
+  "validation": {
+    "schema": "r21-holdout-independent-validation/1",
+    "passed": true,
+    "truth_rows": 4032,
+    "truth_duplicate_keys": 0,
+    "route_rows": {
+      "shared_ridge10": 4032,
+      "weekly_mean56": 4032
+    },
+    "route_key_uniqueness": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "route_metrics_finite": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "all_route_dates_96_keys": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "all_route_resource_limits_valid": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "all_route_actions_integer_and_bounded": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "all_route_intervals_valid": {
+      "shared_ridge10": true,
+      "weekly_mean56": true
+    },
+    "first_truth_open_utc": "2026-10-09T04:13:12.567902+00:00",
+    "first_truth_open_receipt": "runs/R21/review/holdout/03-first-truth-open-command.json",
+    "truth_identity_sha256": "b289a976abea2fd3ba819145d20a58215bcbd54d4b15165e0ea989c1503c42b4",
+    "truth_lock_sha256": "b9f1b4aaa2101beae7e862be5958d47d7692ef4ef885bbf10d1c368288d97d8f",
+    "initial_lock_sha256": "3f693352a16ec890b66e2abc0dc03753f5d3c0bdb1393aac807f2cc3a01cebb5",
+    "execution_lock_sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669"
+  },
+  "metric_definitions": {
+    "bias": "mean(prediction - truth)",
+    "coverage": "fraction with lower90 <= truth <= upper90",
+    "below_rate": "fraction with truth < lower90",
+    "above_rate": "fraction with truth > upper90",
+    "interval_score": "width + 20*(lower-truth) below lower + 20*(truth-upper) above upper; width only in interval",
+    "two_part_loss": "shortage_yuan*max(truth-q,0) + waste_yuan*max(q-truth,0)",
+    "procurement": "sum procurement_yuan*integer q; constraint only, not added to two-part objective"
+  },
+  "route_source_hashes": {
+    "shared_ridge10": {
+      "predictions_sha256": "fc9e088579ac0fe414467a62ef91980e2363b66546d8a95b5401342f46ea0bcd",
+      "replenishment_sha256": "ef2c2f6421bf18345d9b1c1d855def3f1b5721eee794aceae88c47edb30c5c80"
+    },
+    "weekly_mean56": {
+      "predictions_sha256": "8bb043862209e63b9f775092fc9f7c29af20b082b0d317da3be071b32c1750c3",
+      "replenishment_sha256": "0bfe558c04b6059ea7127ced78256400a7481e05beb08866327672a31b0e3706"
+    }
+  },
+  "route_metrics": {
+    "shared_ridge10": {
+      "key_count": 4032,
+      "date_count": 42,
+      "mae": 2.6082535939127234,
+      "rmse": 3.2686012918663603,
+      "bias_pred_minus_truth": 0.2275071234621776,
+      "coverage": 0.8673115079365079,
+      "below_rate": 0.036210317460317464,
+      "above_rate": 0.09647817460317461,
+      "mean_interval_width": 10.173032675319295,
+      "mean_interval_score": 14.147147526972569,
+      "shortage_yuan": 19844.1,
+      "waste_yuan": 10092.15,
+      "two_part_loss_yuan": 29936.25,
+      "two_part_loss_yuan_per_day": 712.7678571428571,
+      "procurement_yuan": 226028.0,
+      "q_units": 64537.0,
+      "all_predictions_intervals_and_plans_finite": true,
+      "all_prediction_and_interval_bounds_valid": true,
+      "all_q_integer_and_item_bounded": true,
+      "all_dates_96_unique_keys": true,
+      "all_daily_capacity_limits_valid": true,
+      "all_daily_budget_limits_valid": true,
+      "max_daily_units": 1600,
+      "max_daily_procurement_yuan": 5611.0,
+      "capacity_full_days": 24,
+      "budget_full_days": 0
+    },
+    "weekly_mean56": {
+      "key_count": 4032,
+      "date_count": 42,
+      "mae": 3.1378968253968256,
+      "rmse": 4.028284254212716,
+      "bias_pred_minus_truth": -1.0679563492063493,
+      "coverage": 0.8442460317460317,
+      "below_rate": 0.03993055555555555,
+      "above_rate": 0.1158234126984127,
+      "mean_interval_width": 11.0423828125,
+      "mean_interval_score": 17.39416232638889,
+      "shortage_yuan": 23470.1,
+      "waste_yuan": 11155.8,
+      "two_part_loss_yuan": 34625.899999999994,
+      "two_part_loss_yuan_per_day": 824.4261904761905,
+      "procurement_yuan": 226038.0,
+      "q_units": 64590.0,
+      "all_predictions_intervals_and_plans_finite": true,
+      "all_prediction_and_interval_bounds_valid": true,
+      "all_q_integer_and_item_bounded": true,
+      "all_dates_96_unique_keys": true,
+      "all_daily_capacity_limits_valid": true,
+      "all_daily_budget_limits_valid": true,
+      "max_daily_units": 1600,
+      "max_daily_procurement_yuan": 5580.0,
+      "capacity_full_days": 12,
+      "budget_full_days": 0
+    }
+  },
+  "daily_pair_summary": {
+    "daily_loss_difference_weekly_minus_ridge": {
+      "mean_yuan_per_day": 111.65833333333335,
+      "days_weekly_lower": 5,
+      "days_equal": 0,
+      "days_weekly_higher": 37
+    },
+    "daily_interval_score_difference_weekly_minus_ridge": {
+      "mean_score_per_key_day": 3.24701479941632,
+      "days_weekly_lower": 9,
+      "days_equal": 0,
+      "days_weekly_higher": 33
+    }
+  },
+  "group_dimensions": {
+    "overall": 1,
+    "date": 42,
+    "activity": 2,
+    "horizon_band": 6,
+    "activity_x_horizon": 12,
+    "store": 12,
+    "item": 8
+  },
+  "group_metrics_rows": 166,
+  "no_model_selection_or_parameter_change": true,
+  "no_significance_or_causal_test": true,
+  "4032_keys_are_not_treated_as_independent_replicates": true
+}

@@ -1,8 +1,10 @@
 # Codex 接续入口
 
-当前前沿 R21-02：R20-01当前赛事/规则/数据状态检查完成，专项提交/AI条款仍未知，未声明正式合规；原创数据题完整11页中文论文、1344预测/整数备货已获独立五门首判通过；C13九份Markdown仅补评价转校准的来源/时点规则，受影响原创小案获独立三门首接收通过，包内零脚本/测试。R21首步已见真值描述性诊断完成，下一项冻结新原创原件与未见测量协议，不能把旧真值重新称未见测试。R19四层诊断及C12有限新题首验保留：L3当前a6 partial不追认；C12九份Markdown、包内零脚本/测试。当前实质状态见runs/R21/REPORT.md和checkpoint，原C11/失败/预算不变。
+当前前沿 R22-02：C13派生完整13页中文论文及独立g1–g5接收已完成，首锁后42日实测R/W覆盖86.73%/84.42%，总损失29936.25/34625.90元，低于名义覆盖的限制保留；新R22同期限历史证据审计已真实完成，模型实验尚未启动。当前C13仍九份纯Markdown、包内零脚本/测试；R20完整11页中文论文及独立首判、C13受影响小案三门首接收保留，不称C13的四层重跑或优于旧版的因果证据。R19 L3 a6 partial、旧失败/预算不变。正式赛事专项AI/提交规则仍未知；实质进度见runs/R22/REPORT.md、R21结果附录和checkpoint。
 
-成品方向为Forge meta-workflow。当前受检C12及四层实测入口：
+当前技能与新实测入口：[C13技能](runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md)、[C13纯文档包](runs/R20/final/package/Forge-C13-meta-workflow-candidate.zip)、[完整13页论文](runs/R21/execution/paper-final-v4/paper.pdf)、[首锁后结果附录](runs/R21/final/APPENDIX.md)、[R22当前状态](runs/R22/REPORT.md)。
+
+成品方向为Forge meta-workflow。历史C12及四层实测入口：
 [C12技能入口](runs/R19/final/candidate/C12/forge-agent-flow/SKILL.md)、
 [C12纯文档包](runs/R19/final/package/Forge-C12-meta-workflow-candidate.zip)、
 [四层论文与独立诊断](runs/R19/final/PAPERS.md)、

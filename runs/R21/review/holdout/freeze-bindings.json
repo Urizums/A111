@@ -1,0 +1,70 @@
+{
+  "schema": "r21-holdout-freeze-binding/1",
+  "initial_lock": {
+    "path": "runs/R21/review/initial-lock.json",
+    "sha256": "3f693352a16ec890b66e2abc0dc03753f5d3c0bdb1393aac807f2cc3a01cebb5",
+    "schema": "forge-revision-lock/1",
+    "revision": "runs/R21/review/initial",
+    "frozen_at": "2026-10-09T04:11:17.367716+00:00",
+    "file_count": 150
+  },
+  "execution_lock": {
+    "path": "runs/R21/execution-lock.json",
+    "sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669",
+    "schema": "forge-revision-lock/1",
+    "revision": "runs/R21/execution",
+    "frozen_at": "2026-10-09T03:56:51.544951+00:00",
+    "file_count": 301
+  },
+  "evaluation_lock": {
+    "path": "runs/R21/evaluation-lock.json",
+    "sha256": "b9f1b4aaa2101beae7e862be5958d47d7692ef4ef885bbf10d1c368288d97d8f",
+    "schema": "forge-revision-lock/1",
+    "revision": "runs/R21/evaluation",
+    "frozen_at": "2026-10-09T03:22:26.724617+00:00",
+    "file_count": 2
+  },
+  "initial_freeze_command_structure_only": {
+    "schema": "forge-command-record/1",
+    "state": "finished",
+    "exit_code": 0,
+    "argv": [
+      "wsl",
+      "-d",
+      "Ubuntu-24.04",
+      "--cd",
+      "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+      "python3",
+      "runs/R21/manage.py",
+      "freeze",
+      "--scope",
+      "runs/R21/review/initial",
+      "--lock",
+      "runs/R21/review/initial-lock.json"
+    ],
+    "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+    "begin_utc": "2026-10-09T04:11:15.910728+00:00",
+    "end_utc": "2026-10-09T04:11:32.908771+00:00"
+  },
+  "initial_result_identity_checks": [
+    {
+      "path": "runs/R21/review/initial/result.json",
+      "listed": true,
+      "matches": true
+    },
+    {
+      "path": "runs/R21/review/initial/pre-holdout-ready.json",
+      "listed": true,
+      "matches": true
+    }
+  ],
+  "holdout_truth_lock_identity_only": {
+    "path": "runs/R21/evaluation/holdout_truth.csv",
+    "listed": true,
+    "expected_bytes": 92247,
+    "expected_sha256": "b289a976abea2fd3ba819145d20a58215bcbd54d4b15165e0ea989c1503c42b4",
+    "truth_bytes_opened_by_this_command": false
+  },
+  "production_execution_lock_has_required_route_outputs": true,
+  "binding_valid": true
+}

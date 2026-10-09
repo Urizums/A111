@@ -1,0 +1,2141 @@
+{
+  "schema": "r21-preparation-raw-audit/1",
+  "scope": "authorized raw inputs only; no model fitting or future truth",
+  "identities": {
+    "runs/R21/inputs/REQUEST.md": {
+      "bytes": 494,
+      "sha256": "ba9abf0100741a7d3fa25d2f569279436509f406f3686d04b35c22c085e9af3a"
+    },
+    "runs/R21/inputs/PROBLEM.md": {
+      "bytes": 2200,
+      "sha256": "835bb83f86e4581c191bbf7e1f379e3d7cea7f6f675cc7a0f58e7ab7242caf17"
+    },
+    "runs/R21/inputs/raw/calendar.csv": {
+      "bytes": 3658,
+      "sha256": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd"
+    },
+    "runs/R21/inputs/raw/demand_reports.csv": {
+      "bytes": 1043924,
+      "sha256": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b"
+    },
+    "runs/R21/inputs/raw/items.csv": {
+      "bytes": 259,
+      "sha256": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167"
+    },
+    "runs/R21/inputs/raw/promotions.csv": {
+      "bytes": 958436,
+      "sha256": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45"
+    },
+    "runs/R21/inputs/raw/stores.csv": {
+      "bytes": 114,
+      "sha256": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220"
+    },
+    "runs/R21/inputs/raw/weather.csv": {
+      "bytes": 60058,
+      "sha256": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403"
+    },
+    "runs/R21/inputs/reference/BASELINE.md": {
+      "bytes": 1695,
+      "sha256": "edd81388fbd5e4a3115efab7d2d1f617116be59bc162e52d1fcb387975d13855"
+    },
+    "runs/R21/inputs/reference/experiment.json": {
+      "bytes": 1717,
+      "sha256": "dd5f141e37c5e1929f0f65d8d834b6a1aa7da6b0bf21d58a8d3595675a92e307"
+    },
+    "runs/R21/inputs/reference/run.py": {
+      "bytes": 27062,
+      "sha256": "4a6198d7c2cfea627c0f74aad5aa0ca4e88841f3e23b9d961185d423a0c3cf24"
+    },
+    "runs/R21/protocol/PROTOCOL.md": {
+      "bytes": 6386,
+      "sha256": "95534dc3fa79d2bf0c5415771e8e81cb477a2d0ee206682f9e668511af66e81a"
+    },
+    "runs/R21/protocol/acceptance.json": {
+      "bytes": 1530,
+      "sha256": "45469491583373393268a118bc19edffd7361918a7b374d21ba12edfc465b90a"
+    }
+  },
+  "expected_lock_files": {
+    "runs/R21/inputs/input-lock.json": false,
+    "runs/R21/protocol/protocol-lock.json": false
+  },
+  "row_counts": {
+    "demand_reports": 21609,
+    "calendar": 226,
+    "promotions": 21696,
+    "weather": 1230,
+    "stores": 12,
+    "items": 8
+  },
+  "demand_report_columns": [
+    "service_date",
+    "store_id",
+    "item_id",
+    "revision",
+    "available_at",
+    "demand_units",
+    "settlement_yuan"
+  ],
+  "coverage": {
+    "calendar_start": "2026-05-01",
+    "calendar_end": "2026-12-12",
+    "calendar_rows": 226,
+    "expected_history_days": 184,
+    "calendar_missing_history_days": [],
+    "report_missing_history_dates": [],
+    "unique_observed_demand_keys": 17664,
+    "expected_history_grid_keys": 17664,
+    "unknown_store_item_coordinates": [],
+    "invalid_or_negative_demand_rows": []
+  },
+  "duplicate_revision_audit": {
+    "exact_duplicate_rows_beyond_first": 10,
+    "unique_date_coordinate_revision_groups": 21599,
+    "same_revision_conflicts": [],
+    "same_payload_revision_with_distinct_publication_times": [],
+    "revision_publication_time_order_violations": []
+  },
+  "final_origin_asof": {
+    "origin": "2026-10-31T18:00:00",
+    "visible_demand_report_rows": 21441,
+    "latest_visible_labels": 17568,
+    "visible_label_gaps_from_expected_history_grid": 96,
+    "late_historical_labels_by_service_date": {
+      "2026-10-31": 96
+    },
+    "future_promotion_rows_announced_after_origin": 3072,
+    "future_promotion_late_dates": [
+      "2026-11-11",
+      "2026-11-12",
+      "2026-11-13",
+      "2026-11-14",
+      "2026-11-15",
+      "2026-11-16",
+      "2026-11-17",
+      "2026-11-18",
+      "2026-11-19",
+      "2026-11-20",
+      "2026-11-21",
+      "2026-11-22",
+      "2026-11-23",
+      "2026-11-24",
+      "2026-11-25",
+      "2026-11-26",
+      "2026-11-27",
+      "2026-11-28",
+      "2026-11-29",
+      "2026-11-30",
+      "2026-12-01",
+      "2026-12-02",
+      "2026-12-03",
+      "2026-12-04",
+      "2026-12-05",
+      "2026-12-06",
+      "2026-12-07",
+      "2026-12-08",
+      "2026-12-09",
+      "2026-12-10",
+      "2026-12-11",
+      "2026-12-12"
+    ],
+    "future_weather_rows_available_after_origin": 84,
+    "future_weather_late_dates": [
+      "2026-11-15",
+      "2026-11-16",
+      "2026-11-17",
+      "2026-11-18",
+      "2026-11-19",
+      "2026-11-20",
+      "2026-11-21",
+      "2026-11-22",
+      "2026-11-23",
+      "2026-11-24",
+      "2026-11-25",
+      "2026-11-26",
+      "2026-11-27",
+      "2026-11-28",
+      "2026-11-29",
+      "2026-11-30",
+      "2026-12-01",
+      "2026-12-02",
+      "2026-12-03",
+      "2026-12-04",
+      "2026-12-05",
+      "2026-12-06",
+      "2026-12-07",
+      "2026-12-08",
+      "2026-12-09",
+      "2026-12-10",
+      "2026-12-11",
+      "2026-12-12"
+    ]
+  },
+  "residual_group_readiness": [
+    {
+      "forecast_origin": "2026-07-08T18:00:00",
+      "window_start": "2026-07-09",
+      "window_end": "2026-07-22",
+      "calibration_origin": "2026-08-05T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-22",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-08T18:00:00",
+      "window_start": "2026-07-09",
+      "window_end": "2026-07-22",
+      "calibration_origin": "2026-08-19T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-22",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-08T18:00:00",
+      "window_start": "2026-07-09",
+      "window_end": "2026-07-22",
+      "calibration_origin": "2026-09-02T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-22",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-08T18:00:00",
+      "window_start": "2026-07-09",
+      "window_end": "2026-07-22",
+      "calibration_origin": "2026-09-16T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-22",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-08T18:00:00",
+      "window_start": "2026-07-09",
+      "window_end": "2026-07-22",
+      "calibration_origin": "2026-09-30T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-22",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-08T18:00:00",
+      "window_start": "2026-07-09",
+      "window_end": "2026-07-22",
+      "calibration_origin": "2026-10-14T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-22",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-08T18:00:00",
+      "window_start": "2026-07-09",
+      "window_end": "2026-07-22",
+      "calibration_origin": "2026-10-31T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-22",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-22T18:00:00",
+      "window_start": "2026-07-23",
+      "window_end": "2026-08-05",
+      "calibration_origin": "2026-08-19T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-02",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-05",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-22T18:00:00",
+      "window_start": "2026-07-23",
+      "window_end": "2026-08-05",
+      "calibration_origin": "2026-09-02T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-02",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-05",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-22T18:00:00",
+      "window_start": "2026-07-23",
+      "window_end": "2026-08-05",
+      "calibration_origin": "2026-09-16T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-02",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-05",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-22T18:00:00",
+      "window_start": "2026-07-23",
+      "window_end": "2026-08-05",
+      "calibration_origin": "2026-09-30T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-02",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-05",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-22T18:00:00",
+      "window_start": "2026-07-23",
+      "window_end": "2026-08-05",
+      "calibration_origin": "2026-10-14T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-02",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-05",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-07-22T18:00:00",
+      "window_start": "2026-07-23",
+      "window_end": "2026-08-05",
+      "calibration_origin": "2026-10-31T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-07-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-07-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-02",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-05",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-05T18:00:00",
+      "window_start": "2026-08-06",
+      "window_end": "2026-08-19",
+      "calibration_origin": "2026-09-02T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-19",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-05T18:00:00",
+      "window_start": "2026-08-06",
+      "window_end": "2026-08-19",
+      "calibration_origin": "2026-09-16T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-19",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-05T18:00:00",
+      "window_start": "2026-08-06",
+      "window_end": "2026-08-19",
+      "calibration_origin": "2026-09-30T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-19",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-05T18:00:00",
+      "window_start": "2026-08-06",
+      "window_end": "2026-08-19",
+      "calibration_origin": "2026-10-14T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-19",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-05T18:00:00",
+      "window_start": "2026-08-06",
+      "window_end": "2026-08-19",
+      "calibration_origin": "2026-10-31T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-19",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-19T18:00:00",
+      "window_start": "2026-08-20",
+      "window_end": "2026-09-02",
+      "calibration_origin": "2026-09-16T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-22",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-02",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-19T18:00:00",
+      "window_start": "2026-08-20",
+      "window_end": "2026-09-02",
+      "calibration_origin": "2026-09-30T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-22",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-02",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-19T18:00:00",
+      "window_start": "2026-08-20",
+      "window_end": "2026-09-02",
+      "calibration_origin": "2026-10-14T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-22",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-02",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-08-19T18:00:00",
+      "window_start": "2026-08-20",
+      "window_end": "2026-09-02",
+      "calibration_origin": "2026-10-31T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-08-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-22",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-30",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-08-31",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-02",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-09-02T18:00:00",
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-16",
+      "calibration_origin": "2026-09-30T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-09-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-05",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-16",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-09-02T18:00:00",
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-16",
+      "calibration_origin": "2026-10-14T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-09-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-05",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-16",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-09-02T18:00:00",
+      "window_start": "2026-09-03",
+      "window_end": "2026-09-16",
+      "calibration_origin": "2026-10-31T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-09-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-05",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-14",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-16",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-09-16T18:00:00",
+      "window_start": "2026-09-17",
+      "window_end": "2026-09-30",
+      "calibration_origin": "2026-10-14T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-09-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-22",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-30",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-09-16T18:00:00",
+      "window_start": "2026-09-17",
+      "window_end": "2026-09-30",
+      "calibration_origin": "2026-10-31T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-09-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-22",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-28",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-29",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-09-30",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-09-30T18:00:00",
+      "window_start": "2026-10-01",
+      "window_end": "2026-10-14",
+      "calibration_origin": "2026-10-31T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-10-01",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-02",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-03",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-04",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-05",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-06",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-07",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-08",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-09",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-10",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-11",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-12",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-13",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-14",
+          "coordinates_present": 96
+        }
+      ]
+    },
+    {
+      "forecast_origin": "2026-10-14T18:00:00",
+      "window_start": "2026-10-15",
+      "window_end": "2026-10-28",
+      "calibration_origin": "2026-10-31T18:00:00",
+      "all_14_days_complete_96": true,
+      "complete_days": 14,
+      "min_coordinates_on_day": 96,
+      "day_status": [
+        {
+          "service_date": "2026-10-15",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-16",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-17",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-18",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-19",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-20",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-21",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-22",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-23",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-24",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-25",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-26",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-27",
+          "coordinates_present": 96
+        },
+        {
+          "service_date": "2026-10-28",
+          "coordinates_present": 96
+        }
+      ]
+    }
+  ],
+  "readiness_summary": {
+    "planned_residual_origins": [
+      "2026-07-08T18:00:00",
+      "2026-07-22T18:00:00",
+      "2026-08-05T18:00:00",
+      "2026-08-19T18:00:00",
+      "2026-09-02T18:00:00",
+      "2026-09-16T18:00:00",
+      "2026-09-30T18:00:00",
+      "2026-10-14T18:00:00"
+    ],
+    "eligible_groups_at_final_origin": [
+      "2026-07-08T18:00:00",
+      "2026-07-22T18:00:00",
+      "2026-08-05T18:00:00",
+      "2026-08-19T18:00:00",
+      "2026-09-02T18:00:00",
+      "2026-09-16T18:00:00",
+      "2026-09-30T18:00:00",
+      "2026-10-14T18:00:00"
+    ],
+    "ineligible_groups_at_final_origin": []
+  }
+}
