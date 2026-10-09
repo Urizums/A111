@@ -17,5 +17,7 @@ Refresh from `state/checkpoint.json` and `state/continuation.json` before resumi
 
 Read in order: repo-root `AGENTS.md` → this `runs/R24/CURRENT_STATUS.md` → repo-root `START_HERE.md`
 → current candidate → specific frozen reports.
-This status pointer is in mutable research, not the release root. Review `CI-INCIDENT.md` for why the original root-level pointer was relocated.\n\nExisting histories, budgets, verdicts and original files are immutable evidence;
+This status pointer is in mutable research, not the release root. Review `CI-INCIDENT.md` for why the original root-level pointer was relocated.
+
+Existing histories, budgets, verdicts and original files are immutable evidence;
 a draft PR is not an executed test or a new certified current candidate.
