@@ -1,13 +1,10 @@
 # Agent Forge：可接续研发工作包
 
-> **状态索引（2026-10-10 审查快照）**：首先阅读 [CURRENT_STATUS.md](CURRENT_STATUS.md)。历史段落的“当前”不代表最新候选；C13 为最近的九 Markdown 候选，R23 定界已结束，R08 历史门仍 blocked。R24 文档修改仅为候选，尚无新行为验收。
-
-
 目标：让 agent 从自然语言需求完成软件或 agent flow 的设计、实现、验收和后续迭代，并把进度留在仓库中。这个仓库包含当前 skill 源码、项目历史、下一阶段任务、接续提示词，以及最近一次实验的原始截止证据。
 
-**Codex 从 [CODEX_HANDOFF.md](CODEX_HANDOFF.md) 和 [START_HERE.md](START_HERE.md) 开始。** 不需要原聊天记录，也不需要原机器上的个人 skill 路径。用户已选择从 `main` 接续；长期目标保持 active，R08-02 已完成，R08-03 历史固定门仍受阻。双队列及真实证据见 [接续状态](state/continuation.json)，当前阶段见 [checkpoint](state/checkpoint.json)。ZCode 留作延期实验，不阻塞主线。
+**Codex 从 [CODEX_HANDOFF.md](CODEX_HANDOFF.md) 和 [START_HERE.md](START_HERE.md) 开始。** 不需要原聊天记录，也不需要原机器上的个人 skill 路径。用户已选择从 `main` 接续；长期目标保持 active，当前首项是 R08-02。双队列及真实证据见 [接续状态](state/continuation.json)，当前阶段见 [checkpoint](state/checkpoint.json)。ZCode 留作延期实验，不阻塞主线。
 
-历史候选 [C6](runs/R07/candidate/C6/forge-agent-flow/SKILL.md) 修复了 C5 的 snapshot 恢复与重试缺陷，旧候选全部保留。开发基线经 PR #2 合并，结果见 [R07 报告](runs/R07/REPORT.md)，下一阶段见 [R08 计划](runs/R08/PLAN.md)。R05/R06 的预设、协议适配器与工单示例见 [原验证报告](runs/R06/VERIFICATION_REPORT.md) 和 [问题台账](runs/R06/issues.json)。原八项阻塞及 [完整发布门槛](state/publication-gate.json) 仍保留；开发成果合并不代表完整产品验收通过。
+当前候选 [C6](runs/R07/candidate/C6/forge-agent-flow/SKILL.md) 修复了 C5 的 snapshot 恢复与重试缺陷，旧候选全部保留。开发基线经 PR #2 合并，结果见 [R07 报告](runs/R07/REPORT.md)，下一阶段见 [R08 计划](runs/R08/PLAN.md)。R05/R06 的预设、协议适配器与工单示例见 [原验证报告](runs/R06/VERIFICATION_REPORT.md) 和 [问题台账](runs/R06/issues.json)。原八项阻塞及 [完整发布门槛](state/publication-gate.json) 仍保留；开发成果合并不代表完整产品验收通过。
 
 核心交付是 CLI 与研发工作包；工单挑战另提供可运行的 HTTP/SQLite 示例。已有云端 CLI 路径为 `/workspace/agent-forge-cloud`，本轮待验收安装使用独立前缀，实际路径及内容哈希见本轮报告。部署生命周期由当前宿主管理。
 
@@ -66,6 +63,6 @@ git push -u origin main
 | 离线审计与原生复测 | runs/S01/final-review.md、runs/S03/validation.json |
 | 云端部署与交付验证 | docs/CLOUD_DEPLOYMENT.md、runs/cloud/VERIFICATION_REPORT.md |
 
-原 `skills/` 与 `evidence/` 文件是逐字节保留的基线。R06 当时待发布的方法使用 `runs/R06/candidate/C5/forge-agent-flow/SKILL.md`，固定文件哈希见同目录上一级 `C5-lock.json`；C2/C3/C4 及旧失败完整保留。自动注册为某个宿主的个人 skill，需要该宿主自己的安装机制。仓库不附带原宿主的凭据、插件会话或运行中 worker。
+原 `skills/` 与 `evidence/` 文件是逐字节保留的基线。当前待发布方法使用 `runs/R06/candidate/C5/forge-agent-flow/SKILL.md`，固定文件哈希见同目录上一级 `C5-lock.json`；C2/C3/C4 及旧失败完整保留。自动注册为某个宿主的个人 skill，需要该宿主自己的安装机制。仓库不附带原宿主的凭据、插件会话或运行中 worker。
 
 此快照未附新增开源许可。上传前可由仓库所有者选择适用许可；代码来源与快照哈希见 state/source-lock.json。

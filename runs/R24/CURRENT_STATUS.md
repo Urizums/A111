@@ -1,6 +1,6 @@
 # Forge — current-status pointer (review snapshot)
 
-**As observed against main commit `8fedb92c310d85adf7a516adb28de69f85514aeb` on 2026-10-10.**
+**Historical snapshot as observed against main commit `8fedb92c310d85adf7a516adb28de69f85514aeb` on 2026-10-10.**
 This is a readable index, not an independent authority or proof of a live actor.
 Refresh from `state/checkpoint.json` and `state/continuation.json` before resuming.
 
@@ -15,7 +15,7 @@ Refresh from `state/checkpoint.json` and `state/continuation.json` before resumi
 | Research actor | No R23 actor was reported live at close; do not extrapolate this to current provider state |
 | Current draft work | `runs/R24/` on a review branch is a **proposal**, not a passed replacement or updated main checkpoint |
 
-Read in order: `AGENTS.md` → this file → `START_HERE.md`
+Read in order: repo-root `AGENTS.md` → this `runs/R24/CURRENT_STATUS.md` → repo-root `START_HERE.md`
 → current candidate → specific frozen reports.
-Existing histories, budgets, verdicts and original files are immutable evidence;
+This status pointer is in mutable research, not the release root. Review `CI-INCIDENT.md` for why the original root-level pointer was relocated.\n\nExisting histories, budgets, verdicts and original files are immutable evidence;
 a draft PR is not an executed test or a new certified current candidate.

@@ -1,16 +1,14 @@
 # Codex 当前研发交接
 
-> 先以 [CURRENT_STATUS.md](CURRENT_STATUS.md) 为状态索引，并复核实际 checkpoint/host。历史阶段的“当前”只指当时，不自动授权后续新阶段。R24 候选修改未通过独立行为验收。
-
 当前R23定界支线已完成，R23-next按目标完成取消、没有虚构R24启动。新上下文自主设计首次漏掉每方法未来交付；首判j1失败、Root严格j4未验证及全部原件保留。原任务一次知情重启后，另版契约与窄字段接收包经新接收者j1–j4范围内通过，192行单日点预测独立复算吻合；未产出/接收该工作流完整42日区间、备货或新论文。C13仍九份纯Markdown、零产品脚本/测试，源条款决定及证据见R23综合。不是Level1–4重跑、skill因果增益或获奖证明；原项目/失败/预算、L3 partial、前端宿主拒绝、正式十月规则未知保持。
 
 当前入口：[C13技能](runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md)、[C13纯文档包](runs/R20/final/package/Forge-C13-meta-workflow-candidate.zip)、[R22完整13页研究稿](runs/R22/execution/correction-v3/report/REPORT.pdf)、[R22证据综合](runs/R22/final/SYNTHESIS.md)、[R23真实首步与前沿](runs/R23/REPORT.md)。
 
-历史 R19 阶段的用户范围为：只测试Level1–4，依次制作可转交工作流、由新上下文执行至完整论文、再由独立上下文实质验收；5–8不启动。新C11纯文档候选在runs/R19/candidate/C11/forge-agent-flow/，增加从论文核心结论倒推证据及执行者可用性的设计要求；尚未完整行为验收，不替代C10已交付状态。四层使用同一官方修订D题原始PDF/DOCX/XLSX、同一C11与用户原层级文本（只规范排版），不发给生产者共用的高信息验收表，不读取旧解法/论文或其他层结果。统一独立验收与六维质量诊断已在论文执行前冻结。当前实质前沿、实际actor和论文状态见runs/R19/TODO.md及state/checkpoint.json。R19是新授权前瞻试验，原50份任务/所有失败/锁/计数保留；R16/R18完整旧试解仍未通过。工作流/代码/论文均属试验产物，算法脚本不进入技能包；不声明奖项或虚构评分。顺序试验完成与各层原题/论文质量通过分开记录。
+最新用户范围为R19：只测试Level1–4，依次制作可转交工作流、由新上下文执行至完整论文、再由独立上下文实质验收；5–8不启动。新C11纯文档候选在runs/R19/candidate/C11/forge-agent-flow/，增加从论文核心结论倒推证据及执行者可用性的设计要求；尚未完整行为验收，不替代C10已交付状态。四层使用同一官方修订D题原始PDF/DOCX/XLSX、同一C11与用户原层级文本（只规范排版），不发给生产者共用的高信息验收表，不读取旧解法/论文或其他层结果。统一独立验收与六维质量诊断已在论文执行前冻结。当前实质前沿、实际actor和论文状态见runs/R19/TODO.md及state/checkpoint.json。R19是新授权前瞻试验，原50份任务/所有失败/锁/计数保留；R16/R18完整旧试解仍未通过。工作流/代码/论文均属试验产物，算法脚本不进入技能包；不声明奖项或虚构评分。顺序试验完成与各层原题/论文质量通过分开记录。
 
 继续 Urizums/A111:main。用户授权持续研发及上传开发成果，不等待ZCode；成品是Forge纯文档meta-workflow。先读AGENTS.md、START_HERE.md、state/continuation.json和state/checkpoint.json。
 
-历史候选C10在runs/R17/candidate/C10/forge-agent-flow/，九份Markdown，无产品脚本、测试或执行器。源锁runs/R17/candidate/C10-lock.json；实际解包字节验证过的包runs/R17/package/Forge-C10-meta-workflow.zip，未安装个人skill。C10采用用户新要求：分类记录工具恢复、实质修复和正常研究迭代，按证据支持的进展及真实资源继续；无信息增益时停该路径并诊断/转向，不能因两个局部错误终止全任务。搜索先设问题/决策/预期证据/备选路线，再原文核实、保留冲突未知、来源绑定的精简上下文。验收与smoke强度不降低。
+当前候选C10在runs/R17/candidate/C10/forge-agent-flow/，九份Markdown，无产品脚本、测试或执行器。源锁runs/R17/candidate/C10-lock.json；实际解包字节验证过的包runs/R17/package/Forge-C10-meta-workflow.zip，未安装个人skill。C10采用用户新要求：分类记录工具恢复、实质修复和正常研究迭代，按证据支持的进展及真实资源继续；无信息增益时停该路径并诊断/转向，不能因两个局部错误终止全任务。搜索先设问题/决策/预期证据/备选路线，再原文核实、保留冲突未知、来源绑定的精简上下文。验收与smoke强度不降低。
 
 C10独立受控政策判断p1–p3/v1–v2通过；真实研究进行了5个查询、2次搜索调用、2次打开调用、8个原始摘要核查，实际工具错误0。轨迹是当时agent转录，非完整provider返回；单次摘要级研究不证明通用正确率或多次真实恢复。控制器独立初审发现3处漏洞，第一次复核又发现2处，两个失败报告保留；第二次复核未发现范围内必需缺陷，17项针对性回归实际通过。Root核对46份历史任务与旧锁后关闭R17交付，见runs/R17/controller-review/及REPORT.md。控制器属于研发工具，不进入技能包。包装、结构、政策判断、检索观察和完整行为验收分开。
 
