@@ -19,7 +19,7 @@ make the following operation executable without fabricating capability.
 | ID | Status on draft branch | Action, evidence and accept condition |
 | --- | --- | --- |
 | R24-01 | Proposed text implemented | Review necessity strengths for each new clause; compare diff with C13; ensure nine Markdown and no runtime/tool claims |
-| R24-02 | Not run | Static counterexample walkthrough: trivial task, multi-output modeling, independent review, cross-format reporting, user-stops-at-completion |
+| R24-02 | Author static review performed; independent behavior not run | Static counterexample walkthrough: trivial task, multi-output modeling, independent review, cross-format reporting, user-stops-at-completion |
 | R24-03 | Not run | Under a host with actual independent contexts, freeze original task, grader, baseline and changed candidate; run C13 and C14 on matched unfamiliar inputs and budgets, retain failures/visible receipts |
 | R24-04 | Not run | Review mandatory outcome coverage, unnecessary steps, independence, runtime truth and consumer values; separate blind from informed trials |
 | R24-05 | Not run | Decide promote, partially absorb, revise or reject C14 using actual comparative evidence; no promotion solely because text improved |
@@ -50,3 +50,7 @@ The user's latest request is to continue development while removing over-structu
 ## 2026-10-10 research / forward-audit addendum
 
 The new user request is planning, evidence synthesis, forward audit and reusable research handoff. A research package is provided in `runs/R24/research/INDEX.md` (history, research hypotheses, workflow method, R24–R28 proposed phases, evaluations, forward risks and handoff). Authoring this package is actual document/repository work, **not** R24-02 static counterexample execution, R24-03 C13/C14 matched behavioral comparison, independent acceptance, or an actual launch of R25. It does not alter the original R24 task statuses, predecessor gates, main checkpoint, experiment budgets, or historical verdicts. Source code/content under protected release roots is not changed. Before R24-D, inspect host permission and freeze genuinely new case materials and a grader.
+
+## 2026-10-10 reproducible outcome-checker development
+
+A standard-library research-only grader is now at `runs/R24/evaluation/casebench.py`. The author executed its eight deterministic self-tests locally, all passed, and verified that the GitHub blob exactly matches the tested file (SHA `a76ba3e8ba28d1b70d31d0ca298ccc7a6f668c09`). The tests check trivial extraction, per-method completeness, objective correctness and nonmandatory work warnings. The grader creates a private oracle, but filesystem subdirectories alone are **not** independent isolation: only a real host can keep the oracle inaccessible to a tested agent. R24-03 remains not run. Read `runs/R24/evaluation/README.md` before designing any independent comparison. Do not use the generator's fixed internal selftest seeds as new blind cases.
