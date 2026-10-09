@@ -18,6 +18,7 @@
 - [开发路线](PHASE_ROADMAP.md)：R24 的眼前工作与未来可能展开的方向。
 - [验证参考](EVALUATION_AND_CHALLENGES.md)、[前瞻审计](FORWARD_AUDIT.md)：需要评价设计或防止风险时选择相关内容。
 - [接续说明](HANDOFF.md)、[旧文档关系](CHANGE_AND_SOURCE_MAP.md)：换 Agent 或读到冲突文档时使用。
+- [本轮语言审阅](EDITORIAL_REVIEW.md)：说明简化了什么、保留了什么、哪些仅经过静态检查。
 - `RESEARCH_INDEX.json`：给工具检索主题的导航索引，不是执行状态机。
 
 ## 维护时遵守的约定

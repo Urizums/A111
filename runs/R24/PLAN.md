@@ -5,8 +5,8 @@ make the following operation executable without fabricating capability.
 
 ## Working boundaries
 
-- Use C13 as immutable baseline, edit only `runs/R24/candidate/C14-hypothesis/`.
-- This branch contains text patches and the frozen proposed evaluation,
+- Use C13 as immutable baseline. Keep original `C14-hypothesis` as a preserved trial and place language/maintenance revisions in separate versioned candidate directories (currently `C14-lean`); do not overwrite previous candidate text.
+- This branch contains the C14-hypothesis and C14-lean text candidates and a proposed evaluation,
   **not** evidence of successful behavior or a current-skill installation.
 - Original R23 first failure, R08 main block and all prior verdicts stand.
 - Coordinator owns integration and verdict; real actor/model/host abilities
@@ -42,6 +42,10 @@ make the following operation executable without fabricating capability.
 actual resource boundary, or accepted completion. Do not make the user
 answer routine internal engineering decisions or ask them to restart the
 agent at each step.
+
+## 2026-10-10 editorial iteration
+
+The user's latest request is to continue development while removing over-structured language that could distort later Skill and document maintenance. A separate versioned candidate now exists at `runs/R24/candidate/C14-lean/forge-agent-flow/`. It preserves nine Markdown files with a shorter outcome-first entry, situational references and fewer implied universal formats. The preceding C14-hypothesis is left untouched for comparison. Research navigation, handoff and roadmap have been revised to narrative form. See `runs/R24/research/EDITORIAL_REVIEW.md` for the author-only static check; this does not establish new-agent effectiveness or replace the planned R24 behavior gate.
 
 ## 2026-10-10 research / forward-audit addendum
 

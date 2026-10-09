@@ -30,7 +30,7 @@
 ## 文件/证据角色和写入目标
 
 - 长期原件与评估回执：runs/Rxx 下已有版本；新研究不要修改已冻结路径。
-- 候选方法文本：runs/R24/candidate/C14-hypothesis/forge-agent-flow/，保留 C13 原文件。
+- 候选方法文本：runs/R24/candidate/C14-hypothesis/forge-agent-flow/ 为原 C14 试验；runs/R24/candidate/C14-lean/forge-agent-flow/ 为语言精简试验。两者都保留，C13 原文件不修改。
 - 当前研究资料：runs/R24/research/，交接与后续研究优先从 INDEX.md 进入。
 - 真正的新执行及接收证据：未来在对应新 runs/ 阶段独立目录，配以版本/hash/当期前瞻计划。
 - 当前状态变更：只有协调者在核实实际工具/队列/host 后更新 state；不能由研究计划代填完成。
