@@ -27,7 +27,7 @@ make the following operation executable without fabricating capability.
 
 ## Immediate executor instruction
 
-1. Read `AGENTS.md`, `CURRENT_STATUS.md`, C13 nine files and this proposal.
+1. Read `AGENTS.md`, `runs/R24/CURRENT_STATUS.md`, C13 nine files and this proposal.
 2. Inspect the *real* current host, branch head, pending calls and protected
    ledger before executing. This branch alone does not create workers.
 3. Run R24-01 static diff/necessity review and R24-02 counterexamples.
@@ -42,3 +42,7 @@ make the following operation executable without fabricating capability.
 actual resource boundary, or accepted completion. Do not make the user
 answer routine internal engineering decisions or ask them to restart the
 agent at each step.
+
+## 2026-10-10 research / forward-audit addendum
+
+The new user request is planning, evidence synthesis, forward audit and reusable research handoff. A research package is provided in `runs/R24/research/INDEX.md` (history, research hypotheses, workflow method, R24–R28 proposed phases, evaluations, forward risks and handoff). Authoring this package is actual document/repository work, **not** R24-02 static counterexample execution, R24-03 C13/C14 matched behavioral comparison, independent acceptance, or an actual launch of R25. It does not alter the original R24 task statuses, predecessor gates, main checkpoint, experiment budgets, or historical verdicts. Source code/content under protected release roots is not changed. Before R24-D, inspect host permission and freeze genuinely new case materials and a grader.

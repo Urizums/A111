@@ -1,0 +1,103 @@
+{
+  "schema": "forge-research-handoff-index/1",
+  "status": "research_index_not_execution_ledger",
+  "as_of": "2026-10-10",
+  "basis": {
+    "repo": "Urizums/A111",
+    "main_sha": "8fedb92c310d85adf7a516adb28de69f85514aeb",
+    "review_branch": "rd/c14-necessity-review-20261010",
+    "baseline_candidate": "runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md",
+    "experimental_candidate": "runs/R24/candidate/C14-hypothesis/forge-agent-flow/SKILL.md"
+  },
+  "historical_frontier": {
+    "active_phase": "R08",
+    "r08_original_gate": "blocked",
+    "r23_bounded_study": "closed",
+    "r24_behavior_comparison": "not_run"
+  },
+  "research_topics": [
+    {
+      "id": "H01",
+      "priority": "P0",
+      "source": "runs/R23/REPORT.md",
+      "next_gate": "R24"
+    },
+    {
+      "id": "H02",
+      "priority": "P0",
+      "source": "runs/R23/final/SYNTHESIS.md",
+      "next_gate": "R24"
+    },
+    {
+      "id": "H03",
+      "priority": "P0",
+      "source": "runs/R22/final/SYNTHESIS.md",
+      "next_gate": "R24"
+    },
+    {
+      "id": "H04",
+      "priority": "P1",
+      "source": "runs/R19/final/SYNTHESIS.md",
+      "next_gate": "R25"
+    },
+    {
+      "id": "H05",
+      "priority": "P1",
+      "source": "runs/R20/final/SYNTHESIS.md",
+      "next_gate": "R25"
+    },
+    {
+      "id": "H06",
+      "priority": "P1",
+      "source": "runs/R17/REPORT.md",
+      "next_gate": "R26"
+    },
+    {
+      "id": "H07",
+      "priority": "P1",
+      "source": "runs/R08/REPORT.md",
+      "next_gate": "R26"
+    },
+    {
+      "id": "H08",
+      "priority": "P2",
+      "source": "runs/R14/REPORT.md",
+      "next_gate": "R28"
+    },
+    {
+      "id": "H09",
+      "priority": "P2",
+      "source": "runs/R17/REPORT.md",
+      "next_gate": "R27"
+    }
+  ],
+  "future_phases": [
+    {
+      "phase": "R24",
+      "state": "proposal_under_review",
+      "entry": "runs/R24/PLAN.md",
+      "next_gate": "new static and matched behavioral review"
+    },
+    {
+      "phase": "R25",
+      "state": "proposed_not_started",
+      "next_gate": "R24 material acceptance and actual successor start"
+    },
+    {
+      "phase": "R26",
+      "state": "proposed_not_started",
+      "next_gate": "R25 runnable flow interfaces and permitted host"
+    },
+    {
+      "phase": "R27",
+      "state": "proposed_not_started",
+      "next_gate": "R26 observed feedback and evaluable iteration"
+    },
+    {
+      "phase": "R28",
+      "state": "conditional_proposal_not_started",
+      "next_gate": "user value and actual permitted UI runtime"
+    }
+  ],
+  "notes": "This is a research navigation index. No status in this file updates the authoritative checkpoint or creates native actors."
+}
