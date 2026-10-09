@@ -15,3 +15,5 @@ Root额外185384项数值核对与37项相关接续回归通过；整库安装�
 R22-02/03/next已完成，R23-01已经实际从冻结原CSV核查中性输入、版本可用性和4032键交付范围；当前R23-02待新上下文自行制作验证与执行工作流，未构建新工作流、未执行消费切片或获得设计接收。[下一阶段](../R23/REPORT.md)。原71份非本轮任务身份、旧失败/预算、R08阻塞、R19 L3 partial及前端宿主拒绝保留。
 
 此前eb8d217对应CI37884838207实际success，属于该提交的源码检查；新增成果的main提交、逐blob核验和CI观察另存publication，不把旧CI算新成果通过。没有后台worker或定时接续承诺，checkpoint记录当前前沿和真实租约终态。
+
+本轮科学原件和R23首步已实际推送：[ebb8535](https://github.com/Urizums/A111/commit/ebb853574e611f8858811741078b3b5de6f947c4)。Git实际94锁全部路径存在，12选定锁811文件/497不同blob逐字节核验通过。对应[CI37918960352](https://github.com/Urizums/A111/actions/runs/37918960352)最后实际观察仍in_progress；Windows已success，Linux两版原控制器回归已success，后续接续/安装/打包尚未全部终态，不声称整体CI通过。main发布与CI终态未混同，原pending观察保持原样。
