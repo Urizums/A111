@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import csv;from pathlib import Path;p=Path('runs/R22/review/initial/rebuild-v5/results');\\nfor n in ['group_overall.csv','group_early_late.csv','group_activity.csv','group_activity_by_band.csv','group_store.csv','group_item.csv','combined_first_two.csv','paired_daily.csv','daily_solver.csv','origins.csv','reconstruction.json']:\\n f=p/n; print('\\\\n',n); print(f.read_text(encoding='utf-8-sig')[:1000])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:46:50.781840+00:00",
+    "monotonic_ns": 158640578000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:46:50.836871+00:00",
+    "monotonic_ns": 158640625000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "  File \"<string>\", line 1\r\n    import csv;from pathlib import Path;p=Path('runs/R22/review/initial/rebuild-v5/results');\\nfor n in ['group_overall.csv','group_early_late.csv','group_activity.csv','group_activity_by_band.csv','group_store.csv','group_item.csv','combined_first_two.csv','paired_daily.csv','daily_solver.csv','origins.csv','reconstruction.json']:\\n f=p/n; print('\\\\n',n); print(f.read_text(encoding='utf-8-sig')[:1000])\r\n                                                                                              ^\r\nSyntaxError: unexpected character after line continuation character\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "ICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMQ0KICAgIGltcG9ydCBjc3Y7ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoO3A9UGF0aCgncnVucy9SMjIvcmV2aWV3L2luaXRpYWwvcmVidWlsZC12NS9yZXN1bHRzJyk7XG5mb3IgbiBpbiBbJ2dyb3VwX292ZXJhbGwuY3N2JywnZ3JvdXBfZWFybHlfbGF0ZS5jc3YnLCdncm91cF9hY3Rpdml0eS5jc3YnLCdncm91cF9hY3Rpdml0eV9ieV9iYW5kLmNzdicsJ2dyb3VwX3N0b3JlLmNzdicsJ2dyb3VwX2l0ZW0uY3N2JywnY29tYmluZWRfZmlyc3RfdHdvLmNzdicsJ3BhaXJlZF9kYWlseS5jc3YnLCdkYWlseV9zb2x2ZXIuY3N2Jywnb3JpZ2lucy5jc3YnLCdyZWNvbnN0cnVjdGlvbi5qc29uJ106XG4gZj1wL247IHByaW50KCdcXG4nLG4pOyBwcmludChmLnJlYWRfdGV4dChlbmNvZGluZz0ndXRmLTgtc2lnJylbOjEwMDBdKQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIF4NClN5bnRheEVycm9yOiB1bmV4cGVjdGVkIGNoYXJhY3RlciBhZnRlciBsaW5lIGNvbnRpbnVhdGlvbiBjaGFyYWN0ZXINCg=="
+}

@@ -1,0 +1,33 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "wsl",
+    "-d",
+    "Ubuntu-24.04",
+    "--cd",
+    "/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111",
+    "python3",
+    "runs/R19/publication/observe.py",
+    "--commit",
+    "eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467",
+    "--gh",
+    "/mnt/c/Program Files/GitHub CLI/gh.exe"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:14:05.676534+00:00",
+    "monotonic_ns": 156675515000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:14:36.062987+00:00",
+    "monotonic_ns": 156705890000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\r\u0000\n\u0000failed to get runs: Get \"https://api.github.com/repos/Urizums/A111/actions/runs?per_page=3&exclude_pull_requests=true&head_sha=eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467\": net/http: TLS handshake timeout\nTraceback (most recent call last):\n  File \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R19/publication/observe.py\", line 11, in <module>\n    runs=json.loads(command([a.gh,'run','list','--repo','Urizums/A111','--commit',a.commit,'--limit','3','--json','databaseId,status,conclusion,url,headSha,workflowName']))\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111/runs/R19/publication/observe.py\", line 8, in command\n    def command(args):return subprocess.check_output(args,cwd=ROOT,text=True,encoding='utf-8').strip()\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/subprocess.py\", line 466, in check_output\n    return run(*popenargs, stdout=PIPE, timeout=timeout, check=True,\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/subprocess.py\", line 571, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command '['/mnt/c/Program Files/GitHub CLI/gh.exe', 'run', 'list', '--repo', 'Urizums/A111', '--commit', 'eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467', '--limit', '3', '--json', 'databaseId,status,conclusion,url,headSha,workflowName']' returned non-zero exit status 1.\n",
+  "stdout_base64": "",
+  "stderr_base64": "dwBzAGwAOgAgAMBoS20wUiAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0TZFufwz/Rk8qZ1yVz1AwUiAAVwBTAEwAAjBOAEEAVAAgACFqD18LToR2IABXAFMATAAgAA1OL2UBYyAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0AjANAAoAZmFpbGVkIHRvIGdldCBydW5zOiBHZXQgImh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vcmVwb3MvVXJpenVtcy9BMTExL2FjdGlvbnMvcnVucz9wZXJfcGFnZT0zJmV4Y2x1ZGVfcHVsbF9yZXF1ZXN0cz10cnVlJmhlYWRfc2hhPWViOGQyMTdhNGU2ZWI4ZDZmODE1ZjI3MzVlNmEzOGE2MGU5YzQ0NjciOiBuZXQvaHR0cDogVExTIGhhbmRzaGFrZSB0aW1lb3V0ClRyYWNlYmFjayAobW9zdCByZWNlbnQgY2FsbCBsYXN0KToKICBGaWxlICIvbW50L2MvVXNlcnMvYWRtaW4vRG9jdW1lbnRzL0NvZGV4LzIwMjYtMTAtMDUvdXJpenVtcy1hMTExLW1haW4tY29kZXgtaGFuZG9mZi1tZC93b3JrL0ExMTEvcnVucy9SMTkvcHVibGljYXRpb24vb2JzZXJ2ZS5weSIsIGxpbmUgMTEsIGluIDxtb2R1bGU+CiAgICBydW5zPWpzb24ubG9hZHMoY29tbWFuZChbYS5naCwncnVuJywnbGlzdCcsJy0tcmVwbycsJ1VyaXp1bXMvQTExMScsJy0tY29tbWl0JyxhLmNvbW1pdCwnLS1saW1pdCcsJzMnLCctLWpzb24nLCdkYXRhYmFzZUlkLHN0YXR1cyxjb25jbHVzaW9uLHVybCxoZWFkU2hhLHdvcmtmbG93TmFtZSddKSkKICAgICAgICAgICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eCiAgRmlsZSAiL21udC9jL1VzZXJzL2FkbWluL0RvY3VtZW50cy9Db2RleC8yMDI2LTEwLTA1L3VyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWQvd29yay9BMTExL3J1bnMvUjE5L3B1YmxpY2F0aW9uL29ic2VydmUucHkiLCBsaW5lIDgsIGluIGNvbW1hbmQKICAgIGRlZiBjb21tYW5kKGFyZ3MpOnJldHVybiBzdWJwcm9jZXNzLmNoZWNrX291dHB1dChhcmdzLGN3ZD1ST09ULHRleHQ9VHJ1ZSxlbmNvZGluZz0ndXRmLTgnKS5zdHJpcCgpCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4KICBGaWxlICIvdXNyL2xpYi9weXRob24zLjEyL3N1YnByb2Nlc3MucHkiLCBsaW5lIDQ2NiwgaW4gY2hlY2tfb3V0cHV0CiAgICByZXR1cm4gcnVuKCpwb3BlbmFyZ3MsIHN0ZG91dD1QSVBFLCB0aW1lb3V0PXRpbWVvdXQsIGNoZWNrPVRydWUsCiAgICAgICAgICAgXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eCiAgRmlsZSAiL3Vzci9saWIvcHl0aG9uMy4xMi9zdWJwcm9jZXNzLnB5IiwgbGluZSA1NzEsIGluIHJ1bgogICAgcmFpc2UgQ2FsbGVkUHJvY2Vzc0Vycm9yKHJldGNvZGUsIHByb2Nlc3MuYXJncywKc3VicHJvY2Vzcy5DYWxsZWRQcm9jZXNzRXJyb3I6IENvbW1hbmQgJ1snL21udC9jL1Byb2dyYW0gRmlsZXMvR2l0SHViIENMSS9naC5leGUnLCAncnVuJywgJ2xpc3QnLCAnLS1yZXBvJywgJ1VyaXp1bXMvQTExMScsICctLWNvbW1pdCcsICdlYjhkMjE3YTRlNmViOGQ2ZjgxNWYyNzM1ZTZhMzhhNjBlOWM0NDY3JywgJy0tbGltaXQnLCAnMycsICctLWpzb24nLCAnZGF0YWJhc2VJZCxzdGF0dXMsY29uY2x1c2lvbix1cmwsaGVhZFNoYSx3b3JrZmxvd05hbWUnXScgcmV0dXJuZWQgbm9uLXplcm8gZXhpdCBzdGF0dXMgMS4K"
+}

@@ -1,0 +1,156 @@
+{
+  "schema": "r22-document-repair-attempt/1",
+  "actual_recorded_at_utc": "2026-10-09T10:07:24.767056+00:00",
+  "repair_number": 1,
+  "attempt": "renderer_v2",
+  "status": "author_document_consistency_failed_waiting_root_renderer_fix",
+  "independent": false,
+  "main_md": "runs\\R22\\execution\\correction-v2\\report\\REPORT.md",
+  "main_pdf": "runs\\R22\\execution\\correction-v2\\report\\REPORT.pdf",
+  "source_freeze": "runs\\R22\\execution\\correction-v2\\source-freeze.json",
+  "original_268_bytes_unchanged": true,
+  "science_rerun": false,
+  "all_actual_v2_pages_viewed": 13,
+  "page_review": "runs\\R22\\execution\\correction-v2\\visual-qa-v2-failed.json",
+  "failed_check_receipt": "runs\\R22\\execution\\correction-v2\\receipts\\0006-full-document-selfcheck.json",
+  "counterexamples": "runs\\R22\\execution\\correction-v2\\derived-monetary-counterexamples.json",
+  "root_renderer_not_modified": true,
+  "terminal_commands_before_this_finalization": [
+    {
+      "path": "runs\\R22\\execution\\correction-v2\\receipts\\0001-freeze-correction-source.json",
+      "exit_code": 0,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; from datetime import datetime,timezone; import json,hashlib; ex=Path('runs/R22/execution/correction-v2'); sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest(); lock=Path('runs/R22/execution-lock.json'); obj=json.loads(lock.read_text(encoding='utf-8')); files=obj['files']; checked=[]; [(checked.append(f['path']) if sha(Path(f['path']))==f['sha256'] and Path(f['path']).stat().st_size==f['size_bytes'] else (_ for _ in ()).throw(AssertionError(f['path']))) for f in files]; assert len(checked)==268; sources=[ex/'source/build_report_v2.py',ex/'CHANGE.json',lock,Path('runs/R22/initial-reception-lock.json'),Path('runs/R22/execution/prospective-freeze.json')]; result={'schema':'r22-known-document-repair-source-freeze/1','actual_frozen_at_utc':datetime.now(timezone.utc).isoformat(),'repair_number':1,'identities':[{'path':str(p),'size_bytes':p.stat().st_size,'sha256':sha(p)} for p in sources],'original_execution_files_verified':checked,'claim':'prior to v2 PDF authoring; original scientific outputs retained; known repair, not new blind judgment','model':None,'tokens':None,'cost':None}; (ex/'source-freeze.json').open('x',encoding='utf-8').write(json.dumps(result,ensure_ascii=False,indent=2));print('OLD_FILES_VERIFIED',len(checked));print('CHANGE',(ex/'CHANGE.json').read_text(encoding='utf-8'));print('RENDERER',(ex/'source/build_report_v2.py').read_text(encoding='utf-8'))"
+      ],
+      "begin_utc": "2026-10-09T09:59:39.105734+00:00",
+      "end_utc": "2026-10-09T09:59:39.426155+00:00"
+    },
+    {
+      "path": "runs\\R22\\execution\\correction-v2\\receipts\\0002-artifact-marker.json",
+      "exit_code": 0,
+      "argv": [
+        "C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/container_tools/mark_artifact_operation_started.mjs",
+        "--operation-kind",
+        "create",
+        "--expected-output-count",
+        "1",
+        "--output-format",
+        "pdf"
+      ],
+      "begin_utc": "2026-10-09T10:00:01.628115+00:00",
+      "end_utc": "2026-10-09T10:00:01.764304+00:00"
+    },
+    {
+      "path": "runs\\R22\\execution\\correction-v2\\receipts\\0003-rebuild-report.json",
+      "exit_code": 0,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/correction-v2/source/build_report_v2.py"
+      ],
+      "begin_utc": "2026-10-09T10:00:08.030339+00:00",
+      "end_utc": "2026-10-09T10:00:11.455000+00:00"
+    },
+    {
+      "path": "runs\\R22\\execution\\correction-v2\\receipts\\0004-render-pdf.json",
+      "exit_code": 0,
+      "argv": [
+        "C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/pdftoppm.exe",
+        "-r",
+        "90",
+        "-png",
+        "runs/R22/execution/correction-v2/report/REPORT.pdf",
+        "runs/R22/execution/correction-v2/report/page"
+      ],
+      "begin_utc": "2026-10-09T10:00:18.508362+00:00",
+      "end_utc": "2026-10-09T10:00:20.126348+00:00"
+    },
+    {
+      "path": "runs\\R22\\execution\\correction-v2\\receipts\\0005-read-entire-new-body.json",
+      "exit_code": 0,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; from pypdf import PdfReader; import difflib; p=Path('runs/R22/execution/correction-v2/report');body=(p/'REPORT.md').read_text(encoding='utf-8');print(body);r=PdfReader(p/'REPORT.pdf');print('ACTUAL_FINAL_PAGES',len(r.pages));print('PAGEFILES',[str(f) for f in sorted(p.glob('page-*.png'))]); old=Path('runs/R22/execution/report-v1/REPORT.md').read_text(encoding='utf-8');print('TEXT_CHANGES');print('\\n'.join(difflib.unified_diff(old.splitlines(),body.splitlines(),n=0)))"
+      ],
+      "begin_utc": "2026-10-09T10:00:49.562676+00:00",
+      "end_utc": "2026-10-09T10:00:49.836051+00:00"
+    },
+    {
+      "path": "runs\\R22\\execution\\correction-v2\\receipts\\0006-full-document-selfcheck.json",
+      "exit_code": 1,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/correction-v2/source/check_document_v2.py"
+      ],
+      "begin_utc": "2026-10-09T10:03:19.621437+00:00",
+      "end_utc": "2026-10-09T10:03:19.858639+00:00"
+    },
+    {
+      "path": "runs\\R22\\execution\\correction-v2\\receipts\\0007-locate-derived-rounding-counterexamples.json",
+      "exit_code": 0,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; from decimal import Decimal,ROUND_HALF_UP; import csv,json;ex=Path('runs/R22/execution/correction-v2');lines=(ex/'report/REPORT.md').read_text(encoding='utf-8').splitlines();tabs=[];cur=[];[(cur.append(line.strip('|').split('|')) if line.startswith('|') else (tabs.append(cur[2:]),cur.clear()) if cur else None) for line in lines+['']];fail=[];fmt=lambda v:format(v.quantize(Decimal('0.01'),rounding=ROUND_HALF_UP),'.2f');[(None) for _ in []]; names=[('group_store.csv','store_id',8),('group_item.csv','item_id',11)];\nfor name,dim,start in names:\n with Path('runs/R22/execution/science-v1/results',name).open(encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))\n for oi,o in enumerate(sorted(set(r['origin'] for r in rows))):\n  for j,d in enumerate(sorted(set(r[dim] for r in rows))):\n   a=next(r for r in rows if r['origin']==o and r[dim]==d and r['method_id']=='shared_ridge10');b=next(r for r in rows if r['origin']==o and r[dim]==d and r['method_id']=='weekly_mean56');difference=Decimal(b['loss_per_day'])-Decimal(a['loss_per_day']);expected=fmt(difference);actual=tabs[start+oi][j][4]\n   if actual!=expected:fail.append({'source':name,'origin':o,'group':d,'R_published':a['loss_per_day'],'W_published':b['loss_per_day'],'difference_decimal':str(difference),'expected_half_up':expected,'actual_v2_display':actual})\n(ex/'derived-monetary-counterexamples.json').open('x',encoding='utf-8').write(json.dumps({'scope':'all 36 store and 24 item difference displays against published CSV decimals','counterexamples':fail},ensure_ascii=False,indent=2));print(json.dumps(fail,ensure_ascii=False,indent=2))"
+      ],
+      "begin_utc": "2026-10-09T10:04:08.065674+00:00",
+      "end_utc": "2026-10-09T10:04:08.150535+00:00"
+    },
+    {
+      "path": "runs\\R22\\execution\\correction-v2\\receipts\\0008-record-v2-page-review.json",
+      "exit_code": 0,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path;from datetime import datetime,timezone;import json,hashlib;from pypdf import PdfReader;ex=Path('runs/R22/execution/correction-v2');pages=sorted((ex/'report').glob('page-*.png'));count=len(PdfReader(ex/'report/REPORT.pdf').pages);assert len(pages)==count;notes=['摘要、问题及数据界限可读','训练边界、模型、残差及优化公式可读','总体表09-19W报废340.08可读','早晚表09-19W远期678.03可读','六带图及活动表开端可读','活动损失1117.93与正文一致，跨页表头清楚','活动空格热图及配对图可读','合并表、店品图、资源表可读','验证与局限正文可读','新增舍入规则及旧h6失败保留说明可读','门店附录可读；09-02S09差额6.82有金额语义失败需修正','商品附录K01W50.28可读','续商品表与活动早晚1117.93及不可估计空格可读'];assert len(notes)==count;obj={'schema':'r22-v2-actual-page-inspection/1','actual_checked_at_utc':datetime.now(timezone.utc).isoformat(),'independent':False,'actual_page_count':count,'tool':'functions.exec tools.view_image; every final v2 page emitted and actually read','pages':[{'page':i+1,'path':str(p),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'actually_viewed':True,'observation':notes[i]} for i,p in enumerate(pages)],'layout_defects_observed':[],'monetary_semantic_check':'failed; see 0006 and derived-monetary-counterexamples.json','old_first_verdict_unchanged':True};(ex/'visual-qa-v2-failed.json').open('x',encoding='utf-8').write(json.dumps(obj,ensure_ascii=False,indent=2));print('Recorded actual views',count,'; monetary consistency remains failed.')"
+      ],
+      "begin_utc": "2026-10-09T10:04:40.527411+00:00",
+      "end_utc": "2026-10-09T10:04:40.761969+00:00"
+    }
+  ],
+  "context_exposure": {
+    "tool": "collaboration.list_agents",
+    "purpose": "confirm root running while waiting",
+    "unexpected_output": "inventory included completed R21 holdout and R22 first-reception summaries, beyond document-repair required scope",
+    "use": "not used in scientific source/results or report conclusions; root notified immediately",
+    "actual_not_file_read": true,
+    "cannot_claim_entire_context_unseen_future_summary": true
+  },
+  "old_failures_retained_separately": [
+    "first h6 failure",
+    "author original read path recovery",
+    "author original expected output rejection",
+    "receiver 12 errors from root packet",
+    "v2 0006 author-display failure"
+  ],
+  "model": null,
+  "tokens": null,
+  "cost": null
+}

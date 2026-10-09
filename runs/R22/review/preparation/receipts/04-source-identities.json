@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    " = Get-Content -Raw -Encoding UTF8 runs/R21/execution-lock.json | ConvertFrom-Json; .files | Where-Object { .path -in @('runs/R21/execution/source/v1/config.json','runs/R21/execution/source/v1/reference_policy.py','runs/R21/execution/source/v1/run_science.py','runs/R21/execution/prospective-freeze.json','runs/R21/execution/science-v1/uncertainty/residual_coordinates_all.csv') -or .path -match '^runs/R21/execution/science-v1/data/(train_|train_features_|predict_features_|promotion_imputation_sources_)' -or .path -match '^runs/R21/execution/science-v1/models/coefficients_.*\\.json$' | Select-Object path,size_bytes,sha256 | ConvertTo-Json -Depth 4; Get-Content -Raw -Encoding UTF8 runs/R21/execution/prospective-freeze.json; Get-Content -Raw -Encoding UTF8 runs/R21/execution/source/v1/config.json; Select-String -Path runs/R21/execution/source/v1/reference_policy.py,runs/R21/execution/source/v1/run_science.py -Encoding UTF8 -Pattern '^def |^class |^@dataclass'"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:06:05.421824+00:00",
+    "monotonic_ns": 156195265000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:06:05.586258+00:00",
+    "monotonic_ns": 156195437000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Missing closing '}' in statement block or type definition.\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : MissingEndCurlyBrace\r\n \r\n",
+  "stdout_base64": "",
+  "stderr_base64": "TWlzc2luZyBjbG9zaW5nICd9JyBpbiBzdGF0ZW1lbnQgYmxvY2sgb3IgdHlwZSBkZWZpbml0aW9uLg0KICAgICsgQ2F0ZWdvcnlJbmZvICAgICAgICAgIDogUGFyc2VyRXJyb3I6ICg6KSBbXSwgUGFyZW50Q29udGFpbnNFcnJvclJlY29yZEV4Y2VwdGlvbg0KICAgICsgRnVsbHlRdWFsaWZpZWRFcnJvcklkIDogTWlzc2luZ0VuZEN1cmx5QnJhY2UNCiANCg=="
+}

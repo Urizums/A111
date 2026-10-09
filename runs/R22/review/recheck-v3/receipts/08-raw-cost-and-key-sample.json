@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import csv;from pathlib import Path;p=Path('runs/R21/inputs/raw/items.csv');q=csv.DictReader(p.open(encoding='utf-8-sig'));print(q.fieldnames);print(next(q));p=Path('runs/R22/execution/science-v1/results/keys.csv');q=csv.DictReader(p.open(encoding='utf-8-sig'));print(q.fieldnames);print(next(q))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:23:53.532508+00:00",
+    "monotonic_ns": 160863265000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:23:53.611183+00:00",
+    "monotonic_ns": 160863359000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "['item_id', 'procurement_yuan', 'shortage_yuan', 'waste_yuan', 'daily_max_units']\r\n{'item_id': 'K01', 'procurement_yuan': '3', 'shortage_yuan': '3.1', 'waste_yuan': '0.75', 'daily_max_units': '55'}\r\n['service_date', 'store_id', 'item_id', 'holiday', 'promo_known', 'weather_known', 'origin', 'method_id', 'horizon', 'stage', 'band', 'point', 'actual', 'actual_revision', 'actual_available_at', 'actual_raw_row', 'lower90', 'upper90', 'interval_level', 'covered', 'q_units', 'shortage_yuan', 'waste_yuan', 'procurement_yuan', 'abs_error', 'sq_error', 'interval_score', 'pool_days']\r\n{'service_date': '2026-07-23', 'store_id': 'S01', 'item_id': 'K01', 'holiday': '0', 'promo_known': '1', 'weather_known': '1', 'origin': '2026-07-22T18:00:00', 'method_id': 'shared_ridge10', 'horizon': '1', 'stage': '1-14', 'band': '1', 'point': '7.7407521579', 'actual': '10', 'actual_revision': '1', 'actual_available_at': '2026-07-24 09:00:00+08:00', 'actual_raw_row': '9752', 'lower90': '2.0817584956', 'upper90': '12.4258391540', 'interval_level': '0.9000000000', 'covered': 'True', 'q_units': '11', 'shortage_yuan': '0.0000000000', 'waste_yuan': '0.7500000000', 'procurement_yuan': '33', 'abs_error': '2.2592478421', 'sq_error': '5.1042008120', 'interval_score': '10.3440806584', 'pool_days': '11'}\r\n",
+  "stderr": "",
+  "stdout_base64": "WydpdGVtX2lkJywgJ3Byb2N1cmVtZW50X3l1YW4nLCAnc2hvcnRhZ2VfeXVhbicsICd3YXN0ZV95dWFuJywgJ2RhaWx5X21heF91bml0cyddDQp7J2l0ZW1faWQnOiAnSzAxJywgJ3Byb2N1cmVtZW50X3l1YW4nOiAnMycsICdzaG9ydGFnZV95dWFuJzogJzMuMScsICd3YXN0ZV95dWFuJzogJzAuNzUnLCAnZGFpbHlfbWF4X3VuaXRzJzogJzU1J30NClsnc2VydmljZV9kYXRlJywgJ3N0b3JlX2lkJywgJ2l0ZW1faWQnLCAnaG9saWRheScsICdwcm9tb19rbm93bicsICd3ZWF0aGVyX2tub3duJywgJ29yaWdpbicsICdtZXRob2RfaWQnLCAnaG9yaXpvbicsICdzdGFnZScsICdiYW5kJywgJ3BvaW50JywgJ2FjdHVhbCcsICdhY3R1YWxfcmV2aXNpb24nLCAnYWN0dWFsX2F2YWlsYWJsZV9hdCcsICdhY3R1YWxfcmF3X3JvdycsICdsb3dlcjkwJywgJ3VwcGVyOTAnLCAnaW50ZXJ2YWxfbGV2ZWwnLCAnY292ZXJlZCcsICdxX3VuaXRzJywgJ3Nob3J0YWdlX3l1YW4nLCAnd2FzdGVfeXVhbicsICdwcm9jdXJlbWVudF95dWFuJywgJ2Fic19lcnJvcicsICdzcV9lcnJvcicsICdpbnRlcnZhbF9zY29yZScsICdwb29sX2RheXMnXQ0KeydzZXJ2aWNlX2RhdGUnOiAnMjAyNi0wNy0yMycsICdzdG9yZV9pZCc6ICdTMDEnLCAnaXRlbV9pZCc6ICdLMDEnLCAnaG9saWRheSc6ICcwJywgJ3Byb21vX2tub3duJzogJzEnLCAnd2VhdGhlcl9rbm93bic6ICcxJywgJ29yaWdpbic6ICcyMDI2LTA3LTIyVDE4OjAwOjAwJywgJ21ldGhvZF9pZCc6ICdzaGFyZWRfcmlkZ2UxMCcsICdob3Jpem9uJzogJzEnLCAnc3RhZ2UnOiAnMS0xNCcsICdiYW5kJzogJzEnLCAncG9pbnQnOiAnNy43NDA3NTIxNTc5JywgJ2FjdHVhbCc6ICcxMCcsICdhY3R1YWxfcmV2aXNpb24nOiAnMScsICdhY3R1YWxfYXZhaWxhYmxlX2F0JzogJzIwMjYtMDctMjQgMDk6MDA6MDArMDg6MDAnLCAnYWN0dWFsX3Jhd19yb3cnOiAnOTc1MicsICdsb3dlcjkwJzogJzIuMDgxNzU4NDk1NicsICd1cHBlcjkwJzogJzEyLjQyNTgzOTE1NDAnLCAnaW50ZXJ2YWxfbGV2ZWwnOiAnMC45MDAwMDAwMDAwJywgJ2NvdmVyZWQnOiAnVHJ1ZScsICdxX3VuaXRzJzogJzExJywgJ3Nob3J0YWdlX3l1YW4nOiAnMC4wMDAwMDAwMDAwJywgJ3dhc3RlX3l1YW4nOiAnMC43NTAwMDAwMDAwJywgJ3Byb2N1cmVtZW50X3l1YW4nOiAnMzMnLCAnYWJzX2Vycm9yJzogJzIuMjU5MjQ3ODQyMScsICdzcV9lcnJvcic6ICc1LjEwNDIwMDgxMjAnLCAnaW50ZXJ2YWxfc2NvcmUnOiAnMTAuMzQ0MDgwNjU4NCcsICdwb29sX2RheXMnOiAnMTEnfQ0K",
+  "stderr_base64": ""
+}

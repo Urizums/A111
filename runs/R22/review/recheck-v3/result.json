@@ -1,0 +1,127 @@
+{
+  "schema": "r22-informed-h6-recheck/1",
+  "informed_recheck": true,
+  "first_judgment_path": "runs/R22/review/initial/result.json",
+  "first_judgment_sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711",
+  "first_judgment_h6": "fail",
+  "criterion_statuses": {
+    "h1": "pass",
+    "h2": "pass",
+    "h3": "pass",
+    "h4": "pass",
+    "h5": "pass",
+    "h6": "pass"
+  },
+  "criteria": {
+    "h1": {
+      "status": "pass",
+      "judgment": "carried from initial first acceptance",
+      "initial_result_sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711",
+      "initial_source_freeze_sha256": "8903ecb6104959c633b956a5b5c40d7145f87729d96dc6619de6679581aef78a",
+      "r22_execution_lock_sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247",
+      "science_v1_manifest_files": 107,
+      "all_science_v1_bytes_match_execution_lock": true
+    },
+    "h2": {
+      "status": "pass",
+      "judgment": "carried from initial first acceptance",
+      "initial_result_sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711",
+      "initial_source_freeze_sha256": "8903ecb6104959c633b956a5b5c40d7145f87729d96dc6619de6679581aef78a",
+      "r22_execution_lock_sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247",
+      "science_v1_manifest_files": 107,
+      "all_science_v1_bytes_match_execution_lock": true
+    },
+    "h3": {
+      "status": "pass",
+      "judgment": "carried from initial first acceptance",
+      "initial_result_sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711",
+      "initial_source_freeze_sha256": "8903ecb6104959c633b956a5b5c40d7145f87729d96dc6619de6679581aef78a",
+      "r22_execution_lock_sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247",
+      "science_v1_manifest_files": 107,
+      "all_science_v1_bytes_match_execution_lock": true
+    },
+    "h4": {
+      "status": "pass",
+      "judgment": "carried from initial first acceptance",
+      "initial_result_sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711",
+      "initial_source_freeze_sha256": "8903ecb6104959c633b956a5b5c40d7145f87729d96dc6619de6679581aef78a",
+      "r22_execution_lock_sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247",
+      "science_v1_manifest_files": 107,
+      "all_science_v1_bytes_match_execution_lock": true
+    },
+    "h5": {
+      "status": "pass",
+      "judgment": "carried from initial first acceptance",
+      "initial_result_sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711",
+      "initial_source_freeze_sha256": "8903ecb6104959c633b956a5b5c40d7145f87729d96dc6619de6679581aef78a",
+      "r22_execution_lock_sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247",
+      "science_v1_manifest_files": 107,
+      "all_science_v1_bytes_match_execution_lock": true
+    },
+    "h6": {
+      "status": "pass",
+      "judgment": "new informed h6 document-consumer review after correction-v3; no blind claim",
+      "evidence": [
+        "runs/R22/execution/correction-v3/report/REPORT.md",
+        "runs/R22/execution/correction-v3/report/REPORT.pdf",
+        "runs/R22/execution/correction-v3/report/document-data-bindings.json",
+        "runs/R22/review/recheck-v3/numeric-ledger-v2.json",
+        "runs/R22/review/recheck-v3/visual-review.json"
+      ],
+      "tables": {
+        "count": 15,
+        "exact_cell_comparisons_passed": true,
+        "critical_csv_binding_hash_failures": 0
+      },
+      "raw_money": {
+        "field_count": 72576,
+        "exact_text_equal_count": 66791,
+        "within_2e_8_count": 72576,
+        "over_2e_8_count": 0,
+        "maximum_absolute_delta_yuan": "3.2E-15",
+        "p99_absolute_delta_yuan": "1.2E-15",
+        "tolerance_yuan": "2E-8",
+        "interpretation": "Rounding-level binary float representations are retained in source CSV text; all raw-cost row products agree within 2e-8 yuan and the grouped per-day amount checks in numeric-ledger.json agree within the same bound."
+      },
+      "group_amount_checks": {
+        "count": 378,
+        "mismatches_over_2e_8": 0
+      },
+      "repeated_claims": {
+        "overall_and_paired_claim_tokens_checked": 57,
+        "missing": [],
+        "activity_leak_claims_checked": 7,
+        "missing_activity_claims": []
+      },
+      "corrected_issue": "The formerly inconsistent 09-19/W waste value now uses 340.08 yuan/day in both table 3 and repeated prose; exact CSV decimal value is 340.075 and rounds half-up to 340.08.",
+      "scope": "Complete Chinese body and every final PDF page inspected; tables/derived money and repeated claims independently cross-checked against locked CSV decimal text and the prior independent reconstruction."
+    }
+  },
+  "carry_forward_identity": {
+    "initial_source_freeze_sha256": "8903ecb6104959c633b956a5b5c40d7145f87729d96dc6619de6679581aef78a",
+    "r22_execution_lock_sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247",
+    "execution_lock_file_count": 268,
+    "science_v1_file_count": 107,
+    "all_science_v1_bytes_match_lock": true,
+    "initial_result_sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711"
+  },
+  "v3_correction_lock": {
+    "sha256": "1b220a30b1b57cee159162539bd1640c0756ce302d796fc94b9b5868d441890c",
+    "file_count": 45,
+    "all_45_byte_identities_match": true
+  },
+  "visual_review": "runs/R22/review/recheck-v3/visual-review.json",
+  "numeric_ledgers": [
+    "runs/R22/review/recheck-v3/numeric-ledger.json",
+    "runs/R22/review/recheck-v3/numeric-ledger-v2.json"
+  ],
+  "source_freezes": [
+    "runs/R22/review/recheck-v3/source-freeze.json",
+    "runs/R22/review/recheck-v3/source-freeze-v2.json"
+  ],
+  "reviewer_receipt_count_before_finalizer": 19,
+  "expected_terminal_command_receipt_count_including_finalizer_and_terminal_audit": 21,
+  "actual_model": null,
+  "tokens": null,
+  "cost": null
+}

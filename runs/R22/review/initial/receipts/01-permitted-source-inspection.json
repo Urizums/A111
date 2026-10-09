@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-Content -Raw -Encoding UTF8 runs/R22/execution/source/v1/config.json; Select-String -Path runs/R22/execution/source/v1/run_science.py,runs/R22/execution/source/v1/reference_policy.py -Encoding UTF8 -Pattern \"def main|add_argument|Data\\(|out_dir|mkdir|dump\\(|csv\\(|to_csv|argparse|print\\(\""
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:27:53.828082+00:00",
+    "monotonic_ns": 157503640000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:27:54.120913+00:00",
+    "monotonic_ns": 157503937000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "{\n  \"schema\":\"r22-fixed-replay/1\",\n  \"origins\":[\"2026-07-22T18:00:00\",\"2026-09-02T18:00:00\",\"2026-09-19T18:00:00\"],\n  \"horizon_days\":42,\"evaluation_label_cutoff\":\"2026-11-04T18:00:00\",\"last_service_date\":\"2026-10-31\",\n  \"candidates\":[{\"name\":\"shared_ridge10\",\"kind\":\"ridge\",\"alpha\":10,\"holiday_scale\":0.3},{\"name\":\"weekly_mean56\",\"kind\":\"weekly\",\"window\":56,\"stat\":\"mean\"}],\n  \"capacity\":1600,\"budget\":6000,\"published_decimals\":10,\"interval_level\":0.9,\n  \"source_science\":\"runs/R21/execution/science-v1\",\n  \"model\":null,\"tokens\":null,\"cost\":null\n}\n\r\n",
+  "stderr": "Select-String : Cannot find path 'C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A11\r\n1\\runs\\R22\\execution\\source\\v1\\run_science.py' because it does not exist.\r\nAt line:1 char:75\r\n+ ... onfig.json; Select-String -Path runs/R22/execution/source/v1/run_scie ...\r\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (C:\\Users\\admin\\...\\run_science.py:String) [Select-String], ItemNotFound \r\n   Exception\r\n    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SelectStringCommand\r\n \r\n",
+  "stdout_base64": "ewogICJzY2hlbWEiOiJyMjItZml4ZWQtcmVwbGF5LzEiLAogICJvcmlnaW5zIjpbIjIwMjYtMDctMjJUMTg6MDA6MDAiLCIyMDI2LTA5LTAyVDE4OjAwOjAwIiwiMjAyNi0wOS0xOVQxODowMDowMCJdLAogICJob3Jpem9uX2RheXMiOjQyLCJldmFsdWF0aW9uX2xhYmVsX2N1dG9mZiI6IjIwMjYtMTEtMDRUMTg6MDA6MDAiLCJsYXN0X3NlcnZpY2VfZGF0ZSI6IjIwMjYtMTAtMzEiLAogICJjYW5kaWRhdGVzIjpbeyJuYW1lIjoic2hhcmVkX3JpZGdlMTAiLCJraW5kIjoicmlkZ2UiLCJhbHBoYSI6MTAsImhvbGlkYXlfc2NhbGUiOjAuM30seyJuYW1lIjoid2Vla2x5X21lYW41NiIsImtpbmQiOiJ3ZWVrbHkiLCJ3aW5kb3ciOjU2LCJzdGF0IjoibWVhbiJ9XSwKICAiY2FwYWNpdHkiOjE2MDAsImJ1ZGdldCI6NjAwMCwicHVibGlzaGVkX2RlY2ltYWxzIjoxMCwiaW50ZXJ2YWxfbGV2ZWwiOjAuOSwKICAic291cmNlX3NjaWVuY2UiOiJydW5zL1IyMS9leGVjdXRpb24vc2NpZW5jZS12MSIsCiAgIm1vZGVsIjpudWxsLCJ0b2tlbnMiOm51bGwsImNvc3QiOm51bGwKfQoNCg==",
+  "stderr_base64": "U2VsZWN0LVN0cmluZyA6IENhbm5vdCBmaW5kIHBhdGggJ0M6XFVzZXJzXGFkbWluXERvY3VtZW50c1xDb2RleFwyMDI2LTEwLTA1XHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcd29ya1xBMTENCjFccnVuc1xSMjJcZXhlY3V0aW9uXHNvdXJjZVx2MVxydW5fc2NpZW5jZS5weScgYmVjYXVzZSBpdCBkb2VzIG5vdCBleGlzdC4NCkF0IGxpbmU6MSBjaGFyOjc1DQorIC4uLiBvbmZpZy5qc29uOyBTZWxlY3QtU3RyaW5nIC1QYXRoIHJ1bnMvUjIyL2V4ZWN1dGlvbi9zb3VyY2UvdjEvcnVuX3NjaWUgLi4uDQorICAgICAgICAgICAgICAgICB+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn4NCiAgICArIENhdGVnb3J5SW5mbyAgICAgICAgICA6IE9iamVjdE5vdEZvdW5kOiAoQzpcVXNlcnNcYWRtaW5cLi4uXHJ1bl9zY2llbmNlLnB5OlN0cmluZykgW1NlbGVjdC1TdHJpbmddLCBJdGVtTm90Rm91bmQgDQogICBFeGNlcHRpb24NCiAgICArIEZ1bGx5UXVhbGlmaWVkRXJyb3JJZCA6IFBhdGhOb3RGb3VuZCxNaWNyb3NvZnQuUG93ZXJTaGVsbC5Db21tYW5kcy5TZWxlY3RTdHJpbmdDb21tYW5kDQogDQo="
+}

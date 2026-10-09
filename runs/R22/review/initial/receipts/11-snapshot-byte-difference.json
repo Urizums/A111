@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import runpy,difflib; from pathlib import Path; n=runpy.run_path('runs/R22/review/initial/source/independent_rebuild.py',run_name='notmain'); p=n['RawPanel'](); a=n['csv_bytes'](p.snapshot('2026-07-08T18:00:00')).decode().splitlines(); b=Path('runs/R21/execution/science-v1/data/train_2026-07-08.csv').read_text(encoding='utf-8').splitlines(); print('line_counts',len(a),len(b)); print('first_different_line',next(((i,x[:200],y[:200]) for i,(x,y) in enumerate(zip(a,b)) if x!=y),None)); print('csv_bytes_equal',n['csv_bytes'](p.snapshot('2026-07-08T18:00:00'))==Path('runs/R21/execution/science-v1/data/train_2026-07-08.csv').read_bytes())"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:32:53.632632+00:00",
+    "monotonic_ns": 157803437000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:32:57.820811+00:00",
+    "monotonic_ns": 157807625000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "line_counts 6529 6529\r\nfirst_different_line None\r\ncsv_bytes_equal False\r\n",
+  "stderr": "",
+  "stdout_base64": "bGluZV9jb3VudHMgNjUyOSA2NTI5DQpmaXJzdF9kaWZmZXJlbnRfbGluZSBOb25lDQpjc3ZfYnl0ZXNfZXF1YWwgRmFsc2UNCg==",
+  "stderr_base64": ""
+}

@@ -1,0 +1,41 @@
+{
+  "task_id": "R22-02",
+  "attempt_id": "R22-02-1",
+  "requirements_hash": "981010bc85075d60fbb3e1961ac25c1fc0f83be3be4fa87242d509ba87558b67",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "fail",
+      "evidence": [
+        "runs/R22/execution-lock.json",
+        "runs/R22/initial-reception-lock.json",
+        "runs/R22/review/initial/result.json",
+        "runs/R22/review/initial/REVIEW.md",
+        "runs/R22/root-metrics-command.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "同期限固定策略历史计算与独立实质接收",
+    "hypothesis": "Full independent numerical reception can still reject inconsistent displayed paper values.",
+    "baseline": "Frozen R/W policy under the same fixed42-day protocol.",
+    "conditions": "First complete production and independent reception, known historical data.",
+    "observations": {
+      "h1": "pass",
+      "h2": "pass",
+      "h3": "pass",
+      "h4": "pass",
+      "h5": "pass",
+      "h6": "fail"
+    },
+    "metrics": {
+      "scored_keys": 24192,
+      "pdf_pages": 13,
+      "actual_model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "limits": "h1-h5 pass, mandatory h6 fails; not full delivery acceptance. Original first failure preserved."
+  },
+  "next_action": "Same R22-02: new document-only ROUND_HALF_UP renderer and informed full MD/PDF recheck; original science and first rejection unchanged."
+}

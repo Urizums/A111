@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; from decimal import Decimal,ROUND_HALF_UP; import csv,json;ex=Path('runs/R22/execution/correction-v2');lines=(ex/'report/REPORT.md').read_text(encoding='utf-8').splitlines();tabs=[];cur=[];[(cur.append(line.strip('|').split('|')) if line.startswith('|') else (tabs.append(cur[2:]),cur.clear()) if cur else None) for line in lines+['']];fail=[];fmt=lambda v:format(v.quantize(Decimal('0.01'),rounding=ROUND_HALF_UP),'.2f');[(None) for _ in []]; names=[('group_store.csv','store_id',8),('group_item.csv','item_id',11)];\nfor name,dim,start in names:\n with Path('runs/R22/execution/science-v1/results',name).open(encoding='utf-8',newline='') as f: rows=list(csv.DictReader(f))\n for oi,o in enumerate(sorted(set(r['origin'] for r in rows))):\n  for j,d in enumerate(sorted(set(r[dim] for r in rows))):\n   a=next(r for r in rows if r['origin']==o and r[dim]==d and r['method_id']=='shared_ridge10');b=next(r for r in rows if r['origin']==o and r[dim]==d and r['method_id']=='weekly_mean56');difference=Decimal(b['loss_per_day'])-Decimal(a['loss_per_day']);expected=fmt(difference);actual=tabs[start+oi][j][4]\n   if actual!=expected:fail.append({'source':name,'origin':o,'group':d,'R_published':a['loss_per_day'],'W_published':b['loss_per_day'],'difference_decimal':str(difference),'expected_half_up':expected,'actual_v2_display':actual})\n(ex/'derived-monetary-counterexamples.json').open('x',encoding='utf-8').write(json.dumps({'scope':'all 36 store and 24 item difference displays against published CSV decimals','counterexamples':fail},ensure_ascii=False,indent=2));print(json.dumps(fail,ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:04:08.065674+00:00",
+    "monotonic_ns": 159677828000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:04:08.150535+00:00",
+    "monotonic_ns": 159677921000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n  {\r\n    \"source\": \"group_store.csv\",\r\n    \"origin\": \"2026-09-02T18:00:00\",\r\n    \"group\": \"S09\",\r\n    \"R_published\": \"52.1261904762\",\r\n    \"W_published\": \"58.9511904762\",\r\n    \"difference_decimal\": \"6.8250000000\",\r\n    \"expected_half_up\": \"6.83\",\r\n    \"actual_v2_display\": \"6.82\"\r\n  }\r\n]\r\n",
+  "stderr": "",
+  "stdout_base64": "Ww0KICB7DQogICAgInNvdXJjZSI6ICJncm91cF9zdG9yZS5jc3YiLA0KICAgICJvcmlnaW4iOiAiMjAyNi0wOS0wMlQxODowMDowMCIsDQogICAgImdyb3VwIjogIlMwOSIsDQogICAgIlJfcHVibGlzaGVkIjogIjUyLjEyNjE5MDQ3NjIiLA0KICAgICJXX3B1Ymxpc2hlZCI6ICI1OC45NTExOTA0NzYyIiwNCiAgICAiZGlmZmVyZW5jZV9kZWNpbWFsIjogIjYuODI1MDAwMDAwMCIsDQogICAgImV4cGVjdGVkX2hhbGZfdXAiOiAiNi44MyIsDQogICAgImFjdHVhbF92Ml9kaXNwbGF5IjogIjYuODIiDQogIH0NCl0NCg==",
+  "stderr_base64": ""
+}

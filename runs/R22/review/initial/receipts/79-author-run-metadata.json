@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json,hashlib;from pathlib import Path;r=Path('.');lock=json.load(open(r/'runs/R22/execution-lock.json',encoding='utf-8'));by={x['path']:x for x in lock['files']};names=['0007-first-science-v1.json','0009-clean-replay.json','0011-existing-output-refused.json','0012-author-check.json','0014-build-report.json','0015-render-pdf.json','0016-read-final-body.json','0017-finalize-delivery.json','0018-final-readonly-verification.json'];out=[];\\nfor n in names:\\n p='runs/R22/execution/receipts/'+n; b=(r/p).read_bytes(); q=json.loads(b); ident=by[p]; ok=len(b)==ident['size_bytes'] and hashlib.sha256(b).hexdigest()==ident['sha256']; out.append({'path':p,'identity_matches_lock':ok,'argv':q.get('argv'),'state':q.get('state'),'begin':q.get('begin'),'end':q.get('end'),'exit_code':q.get('exit_code'),'stdout_bytes':len(q.get('stdout_base64',''))*3//4,'stderr_bytes':len(q.get('stderr_base64',''))*3//4});\\nprint(json.dumps(out,ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:49:00.195661+00:00",
+    "monotonic_ns": 158769984000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:49:00.250279+00:00",
+    "monotonic_ns": 158770031000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "  File \"<string>\", line 1\r\n    import json,hashlib;from pathlib import Path;r=Path('.');lock=json.load(open(r/'runs/R22/execution-lock.json',encoding='utf-8'));by={x['path']:x for x in lock['files']};names=['0007-first-science-v1.json','0009-clean-replay.json','0011-existing-output-refused.json','0012-author-check.json','0014-build-report.json','0015-render-pdf.json','0016-read-final-body.json','0017-finalize-delivery.json','0018-final-readonly-verification.json'];out=[];\\nfor n in names:\\n p='runs/R22/execution/receipts/'+n; b=(r/p).read_bytes(); q=json.loads(b); ident=by[p]; ok=len(b)==ident['size_bytes'] and hashlib.sha256(b).hexdigest()==ident['sha256']; out.append({'path':p,'identity_matches_lock':ok,'argv':q.get('argv'),'state':q.get('state'),'begin':q.get('begin'),'end':q.get('end'),'exit_code':q.get('exit_code'),'stdout_bytes':len(q.get('stdout_base64',''))*3//4,'stderr_bytes':len(q.get('stderr_base64',''))*3//4});\\nprint(json.dumps(out,ensure_ascii=False,indent=2))\r\n                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^\r\nSyntaxError: unexpected character after line continuation character\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "ICBGaWxlICI8c3RyaW5nPiIsIGxpbmUgMQ0KICAgIGltcG9ydCBqc29uLGhhc2hsaWI7ZnJvbSBwYXRobGliIGltcG9ydCBQYXRoO3I9UGF0aCgnLicpO2xvY2s9anNvbi5sb2FkKG9wZW4oci8ncnVucy9SMjIvZXhlY3V0aW9uLWxvY2suanNvbicsZW5jb2Rpbmc9J3V0Zi04JykpO2J5PXt4WydwYXRoJ106eCBmb3IgeCBpbiBsb2NrWydmaWxlcyddfTtuYW1lcz1bJzAwMDctZmlyc3Qtc2NpZW5jZS12MS5qc29uJywnMDAwOS1jbGVhbi1yZXBsYXkuanNvbicsJzAwMTEtZXhpc3Rpbmctb3V0cHV0LXJlZnVzZWQuanNvbicsJzAwMTItYXV0aG9yLWNoZWNrLmpzb24nLCcwMDE0LWJ1aWxkLXJlcG9ydC5qc29uJywnMDAxNS1yZW5kZXItcGRmLmpzb24nLCcwMDE2LXJlYWQtZmluYWwtYm9keS5qc29uJywnMDAxNy1maW5hbGl6ZS1kZWxpdmVyeS5qc29uJywnMDAxOC1maW5hbC1yZWFkb25seS12ZXJpZmljYXRpb24uanNvbiddO291dD1bXTtcbmZvciBuIGluIG5hbWVzOlxuIHA9J3J1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8nK247IGI9KHIvcCkucmVhZF9ieXRlcygpOyBxPWpzb24ubG9hZHMoYik7IGlkZW50PWJ5W3BdOyBvaz1sZW4oYik9PWlkZW50WydzaXplX2J5dGVzJ10gYW5kIGhhc2hsaWIuc2hhMjU2KGIpLmhleGRpZ2VzdCgpPT1pZGVudFsnc2hhMjU2J107IG91dC5hcHBlbmQoeydwYXRoJzpwLCdpZGVudGl0eV9tYXRjaGVzX2xvY2snOm9rLCdhcmd2JzpxLmdldCgnYXJndicpLCdzdGF0ZSc6cS5nZXQoJ3N0YXRlJyksJ2JlZ2luJzpxLmdldCgnYmVnaW4nKSwnZW5kJzpxLmdldCgnZW5kJyksJ2V4aXRfY29kZSc6cS5nZXQoJ2V4aXRfY29kZScpLCdzdGRvdXRfYnl0ZXMnOmxlbihxLmdldCgnc3Rkb3V0X2Jhc2U2NCcsJycpKSozLy80LCdzdGRlcnJfYnl0ZXMnOmxlbihxLmdldCgnc3RkZXJyX2Jhc2U2NCcsJycpKSozLy80fSk7XG5wcmludChqc29uLmR1bXBzKG91dCxlbnN1cmVfYXNjaWk9RmFsc2UsaW5kZW50PTIpKQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXg0KU3ludGF4RXJyb3I6IHVuZXhwZWN0ZWQgY2hhcmFjdGVyIGFmdGVyIGxpbmUgY29udGludWF0aW9uIGNoYXJhY3Rlcg0K"
+}

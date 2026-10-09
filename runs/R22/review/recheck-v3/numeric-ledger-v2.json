@@ -1,0 +1,396 @@
+{
+  "schema": "r22-v3-report-independent-data-audit/2",
+  "previous_exact_text_check": {
+    "ledger": "numeric-ledger.json",
+    "tables_all_exact_match": true,
+    "tables_checked": 15,
+    "binding_hash_failures": 0
+  },
+  "raw_items_cost_reconstruction": {
+    "field_count": 72576,
+    "exact_text_equal_count": 66791,
+    "within_2e_8_count": 72576,
+    "over_2e_8_count": 0,
+    "maximum_absolute_delta_yuan": "3.2E-15",
+    "p99_absolute_delta_yuan": "1.2E-15",
+    "tolerance_yuan": "2E-8",
+    "interpretation": "Rounding-level binary float representations are retained in source CSV text; all raw-cost row products agree within 2e-8 yuan and the grouped per-day amount checks in numeric-ledger.json agree within the same bound."
+  },
+  "group_amount_reconstruction_mismatches_over_2e_8": 0,
+  "overall_and_pair_repeated_claims": {
+    "overall 07-22/R MAE": {
+      "expected_token": "2.938",
+      "appears_in_full_markdown": true
+    },
+    "overall 07-22/R daily loss": {
+      "expected_token": "689.39",
+      "appears_in_full_markdown": true
+    },
+    "overall 07-22/R coverage": {
+      "expected_token": "77.98",
+      "appears_in_full_markdown": true
+    },
+    "overall 07-22/W MAE": {
+      "expected_token": "2.708",
+      "appears_in_full_markdown": true
+    },
+    "overall 07-22/W daily loss": {
+      "expected_token": "738.59",
+      "appears_in_full_markdown": true
+    },
+    "overall 07-22/W coverage": {
+      "expected_token": "76.76",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-02/R MAE": {
+      "expected_token": "2.566",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-02/R daily loss": {
+      "expected_token": "621.52",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-02/R coverage": {
+      "expected_token": "86.56",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-02/W MAE": {
+      "expected_token": "2.698",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-02/W daily loss": {
+      "expected_token": "683.20",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-02/W coverage": {
+      "expected_token": "88.00",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-19/R MAE": {
+      "expected_token": "2.546",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-19/R daily loss": {
+      "expected_token": "634.16",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-19/R coverage": {
+      "expected_token": "88.76",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-19/W MAE": {
+      "expected_token": "2.647",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-19/W daily loss": {
+      "expected_token": "677.79",
+      "appears_in_full_markdown": true
+    },
+    "overall 09-19/W coverage": {
+      "expected_token": "89.88",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-07-22 mean difference": {
+      "expected_token": "49.20",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-07-22 range low": {
+      "expected_token": "-107.15",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-07-22 range high": {
+      "expected_token": "446.65",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-07-22 day win counts": {
+      "expected_token": "31日R较低、11日W较低、0日相同",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-07-22 score difference": {
+      "expected_token": "2.083",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-02 mean difference": {
+      "expected_token": "61.68",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-02 range low": {
+      "expected_token": "-157.70",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-02 range high": {
+      "expected_token": "492.85",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-02 day win counts": {
+      "expected_token": "36日R较低、6日W较低、0日相同",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-02 score difference": {
+      "expected_token": "0.492",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-19 mean difference": {
+      "expected_token": "43.63",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-19 range low": {
+      "expected_token": "-138.00",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-19 range high": {
+      "expected_token": "179.35",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-19 day win counts": {
+      "expected_token": "34日R较低、8日W较低、0日相同",
+      "appears_in_full_markdown": true
+    },
+    "paired 2026-09-19 score difference": {
+      "expected_token": "0.576",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-07-22 shared_ridge10 mae": {
+      "expected_token": "3.597",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-07-22 shared_ridge10 coverage": {
+      "expected_token": "69.01",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-07-22 shared_ridge10 interval_score": {
+      "expected_token": "20.197",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-07-22 shared_ridge10 loss_per_day": {
+      "expected_token": "1260.30",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-07-22 weekly_mean56 mae": {
+      "expected_token": "4.024",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-07-22 weekly_mean56 coverage": {
+      "expected_token": "56.77",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-07-22 weekly_mean56 interval_score": {
+      "expected_token": "34.572",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-07-22 weekly_mean56 loss_per_day": {
+      "expected_token": "1454.30",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-02 shared_ridge10 mae": {
+      "expected_token": "3.150",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-02 shared_ridge10 coverage": {
+      "expected_token": "83.85",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-02 shared_ridge10 interval_score": {
+      "expected_token": "15.816",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-02 shared_ridge10 loss_per_day": {
+      "expected_token": "651.16",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-02 weekly_mean56 mae": {
+      "expected_token": "3.526",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-02 weekly_mean56 coverage": {
+      "expected_token": "77.08",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-02 weekly_mean56 interval_score": {
+      "expected_token": "20.064",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-02 weekly_mean56 loss_per_day": {
+      "expected_token": "901.25",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-19 shared_ridge10 mae": {
+      "expected_token": "3.148",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-19 shared_ridge10 coverage": {
+      "expected_token": "82.55",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-19 shared_ridge10 interval_score": {
+      "expected_token": "16.377",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-19 shared_ridge10 loss_per_day": {
+      "expected_token": "1117.93",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-19 weekly_mean56 mae": {
+      "expected_token": "3.577",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-19 weekly_mean56 coverage": {
+      "expected_token": "77.86",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-19 weekly_mean56 interval_score": {
+      "expected_token": "20.301",
+      "appears_in_full_markdown": true
+    },
+    "activity 2026-09-19 weekly_mean56 loss_per_day": {
+      "expected_token": "1241.91",
+      "appears_in_full_markdown": true
+    }
+  },
+  "missing_overall_or_pair_claim_tokens": [],
+  "activity_leak_claims": [
+    {
+      "origin": "2026-07-22T18:00:00",
+      "method": "shared_ridge10",
+      "upper_leak_percent": "13.02",
+      "lower_leak_percent": "17.97",
+      "days": "4",
+      "narrative_mentions_upper": false,
+      "narrative_mentions_lower": false
+    },
+    {
+      "origin": "2026-07-22T18:00:00",
+      "method": "weekly_mean56",
+      "upper_leak_percent": "40.63",
+      "lower_leak_percent": "2.60",
+      "days": "4",
+      "narrative_mentions_upper": true,
+      "narrative_mentions_lower": false
+    },
+    {
+      "origin": "2026-09-02T18:00:00",
+      "method": "shared_ridge10",
+      "upper_leak_percent": "5.21",
+      "lower_leak_percent": "10.94",
+      "days": "4",
+      "narrative_mentions_upper": true,
+      "narrative_mentions_lower": true
+    },
+    {
+      "origin": "2026-09-02T18:00:00",
+      "method": "weekly_mean56",
+      "upper_leak_percent": "21.35",
+      "lower_leak_percent": "1.56",
+      "days": "4",
+      "narrative_mentions_upper": true,
+      "narrative_mentions_lower": false
+    },
+    {
+      "origin": "2026-09-19T18:00:00",
+      "method": "shared_ridge10",
+      "upper_leak_percent": "7.03",
+      "lower_leak_percent": "10.42",
+      "days": "4",
+      "narrative_mentions_upper": true,
+      "narrative_mentions_lower": true
+    },
+    {
+      "origin": "2026-09-19T18:00:00",
+      "method": "weekly_mean56",
+      "upper_leak_percent": "20.83",
+      "lower_leak_percent": "1.30",
+      "days": "4",
+      "narrative_mentions_upper": true,
+      "narrative_mentions_lower": false
+    }
+  ],
+  "activity_leak_claims_explicitly_repeated_in_prose": [
+    {
+      "origin": "2026-07-22",
+      "method": "weekly_mean56",
+      "field": "above",
+      "expected_percent": "40.63",
+      "appears_in_full_markdown": true
+    },
+    {
+      "origin": "2026-09-02",
+      "method": "weekly_mean56",
+      "field": "above",
+      "expected_percent": "21.35",
+      "appears_in_full_markdown": true
+    },
+    {
+      "origin": "2026-09-19",
+      "method": "weekly_mean56",
+      "field": "above",
+      "expected_percent": "20.83",
+      "appears_in_full_markdown": true
+    },
+    {
+      "origin": "2026-09-02",
+      "method": "shared_ridge10",
+      "field": "above",
+      "expected_percent": "5.21",
+      "appears_in_full_markdown": true
+    },
+    {
+      "origin": "2026-09-19",
+      "method": "shared_ridge10",
+      "field": "above",
+      "expected_percent": "7.03",
+      "appears_in_full_markdown": true
+    },
+    {
+      "origin": "2026-09-02",
+      "method": "shared_ridge10",
+      "field": "below",
+      "expected_percent": "10.94",
+      "appears_in_full_markdown": true
+    },
+    {
+      "origin": "2026-09-19",
+      "method": "shared_ridge10",
+      "field": "below",
+      "expected_percent": "10.42",
+      "appears_in_full_markdown": true
+    }
+  ],
+  "activity_leak_claim_gaps": [],
+  "paired_daily_derived_values": {
+    "2026-07-22": {
+      "n_days": 42,
+      "mean_W_minus_R": "49.19523809523809523809523810",
+      "min_W_minus_R": "-107.1500000000",
+      "max_W_minus_R": "446.6500000000",
+      "R_lower": 31,
+      "W_lower": 11,
+      "ties": 0,
+      "mean_score_W_minus_R": "2.083037858128571428571428571"
+    },
+    "2026-09-02": {
+      "n_days": 42,
+      "mean_W_minus_R": "61.67738095238095238095238095",
+      "min_W_minus_R": "-157.7000000000",
+      "max_W_minus_R": "492.8500000000",
+      "R_lower": 36,
+      "W_lower": 6,
+      "ties": 0,
+      "mean_score_W_minus_R": "0.4918236592238095238095238095"
+    },
+    "2026-09-19": {
+      "n_days": 42,
+      "mean_W_minus_R": "43.62857142857142857142857143",
+      "min_W_minus_R": "-138.0000000000",
+      "max_W_minus_R": "179.3500000000",
+      "R_lower": 34,
+      "W_lower": 8,
+      "ties": 0,
+      "mean_score_W_minus_R": "0.5760588967"
+    }
+  },
+  "source_freeze_sha256": "aac5a4fb4fb54ee7d1754c491e2600bf0376162c02c7c8b51ec1cfaca73a9dcf",
+  "independent_rebuild_input_identity_count": 17,
+  "actual_model": null,
+  "tokens": null,
+  "cost": null
+}

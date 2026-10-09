@@ -1,0 +1,54 @@
+{
+  "day_readiness": {
+    "complete_96_accepted": true,
+    "95_of_96_rejected": true,
+    "late_one_second_rejected": true,
+    "equal_source_origin_rejected": true,
+    "unended_service_day_rejected": true,
+    "incomplete_neighbor_does_not_exclude_complete_day": true,
+    "partial_reason": "not exactly 96 unique coordinates",
+    "eligible_neighbor_days": [
+      "2026-07-09"
+    ]
+  },
+  "small_oracle": {
+    "enumerated_actions": 23,
+    "oracle_loss": 11.970833333333333,
+    "independent_solver_loss": 11.970833333333333,
+    "action": [
+      2,
+      2,
+      0
+    ],
+    "match": true
+  },
+  "value_domains": {
+    "fractional_scenarios_are_valid": true,
+    "action_rejections": {
+      "fractional": "rejected",
+      "negative": "rejected",
+      "nonfinite": "rejected",
+      "per_key": "rejected",
+      "capacity": "rejected",
+      "budget": "rejected"
+    },
+    "invalid_scenario_rejections": {
+      "nan": true,
+      "infinity": true,
+      "negative": true,
+      "wrong_coordinates": true
+    },
+    "point_interval_containment_required": false
+  },
+  "mature_revision_boundary": {
+    "raw_key": {
+      "service_date": "2026-05-01",
+      "store_id": "S01",
+      "item_id": "K03"
+    },
+    "arrival": "2026-05-04T09:00:00+08:00",
+    "revision_before_arrival": 1,
+    "revision_at_arrival": 2,
+    "late_one_second_cutoff_excludes_revision": "True"
+  }
+}

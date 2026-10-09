@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json; from pathlib import Path; p=Path('runs/R22/review/initial'); a=json.load(open(p/'rebuild-v5/results/reconstruction.json',encoding='utf-8')); b=json.load(open(p/'comparison-v2.json',encoding='utf-8')); print('rebuild',a.keys()); print('results',a.get('results',{}).keys()); print('compare',b.keys()); print('finding',b.get('findings',{}).keys() if isinstance(b.get('findings'),dict) else type(b.get('findings')))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:46:42.900346+00:00",
+    "monotonic_ns": 158632687000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:46:42.976921+00:00",
+    "monotonic_ns": 158632765000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "rebuild dict_keys(['schema', 'protocol_origins', 'routes', 'rows', 'rows_per_route_origin', 'unique_days_first_two_windows', 'third_window_overlap_dates_with_second', 'source_rebuild', 'boundary_cases', 'raw_audit', 'elapsed_seconds', 'actual_model', 'tokens', 'cost'])\r\nresults dict_keys([])\r\ncompare dict_keys(['schema', 'comparisons', 'scenario_comparisons', 'all_table_comparisons_pass', 'all_scenario_comparisons_pass', 'method', 'actual_model', 'tokens', 'cost'])\r\nfinding <class 'NoneType'>\r\n",
+  "stderr": "",
+  "stdout_base64": "cmVidWlsZCBkaWN0X2tleXMoWydzY2hlbWEnLCAncHJvdG9jb2xfb3JpZ2lucycsICdyb3V0ZXMnLCAncm93cycsICdyb3dzX3Blcl9yb3V0ZV9vcmlnaW4nLCAndW5pcXVlX2RheXNfZmlyc3RfdHdvX3dpbmRvd3MnLCAndGhpcmRfd2luZG93X292ZXJsYXBfZGF0ZXNfd2l0aF9zZWNvbmQnLCAnc291cmNlX3JlYnVpbGQnLCAnYm91bmRhcnlfY2FzZXMnLCAncmF3X2F1ZGl0JywgJ2VsYXBzZWRfc2Vjb25kcycsICdhY3R1YWxfbW9kZWwnLCAndG9rZW5zJywgJ2Nvc3QnXSkNCnJlc3VsdHMgZGljdF9rZXlzKFtdKQ0KY29tcGFyZSBkaWN0X2tleXMoWydzY2hlbWEnLCAnY29tcGFyaXNvbnMnLCAnc2NlbmFyaW9fY29tcGFyaXNvbnMnLCAnYWxsX3RhYmxlX2NvbXBhcmlzb25zX3Bhc3MnLCAnYWxsX3NjZW5hcmlvX2NvbXBhcmlzb25zX3Bhc3MnLCAnbWV0aG9kJywgJ2FjdHVhbF9tb2RlbCcsICd0b2tlbnMnLCAnY29zdCddKQ0KZmluZGluZyA8Y2xhc3MgJ05vbmVUeXBlJz4NCg==",
+  "stderr_base64": ""
+}

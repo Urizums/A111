@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import runpy,pandas as pd; n=runpy.run_path('runs/R22/review/initial/source/independent_rebuild.py',run_name='notmain'); p=n['RawPanel'](); a=p.snapshot('2026-07-08T18:00:00'); b=pd.read_csv('runs/R21/execution/science-v1/data/train_2026-07-08.csv'); print('sizes',len(a),len(b),'cols_equal',list(a.columns)==list(b.columns)); print('cols',[(c,str(a[c].dtype),str(b[c].dtype)) for c in a.columns if c in b]); print('head_raw',a.head(1).to_dict('records')); print('head_src',b.head(1).to_dict('records')); print('sha_independent',n['sha_bytes'](n['csv_bytes'](a)),'sha_source',n['sha_file'](n['TRACE']/'data/train_2026-07-08.csv'))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:32:42.095048+00:00",
+    "monotonic_ns": 157791906000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:32:46.290642+00:00",
+    "monotonic_ns": 157796093000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "sizes 6528 6528 cols_equal True\r\ncols [('service_date', 'str', 'str'), ('store_id', 'str', 'str'), ('item_id', 'str', 'str'), ('revision', 'int64', 'int64'), ('available_at', 'datetime64[us, Asia/Shanghai]', 'str'), ('demand_units', 'int64', 'int64'), ('settlement_yuan', 'int64', 'int64'), ('raw_row', 'int64', 'int64'), ('raw_hash', 'str', 'str'), ('origin', 'str', 'str'), ('purpose', 'str', 'str')]\r\nhead_raw [{'service_date': '2026-05-01', 'store_id': 'S01', 'item_id': 'K01', 'revision': 1, 'available_at': Timestamp('2026-05-02 09:00:00+0800', tz='Asia/Shanghai'), 'demand_units': 5, 'settlement_yuan': 35, 'raw_row': 2, 'raw_hash': '7e9bc4210dc41e6e62c46480d7db76e2465aea1ef8987d92bdfff653375b677d', 'origin': '2026-07-08T18:00:00+08:00', 'purpose': 'train'}]\r\nhead_src [{'service_date': '2026-05-01', 'store_id': 'S01', 'item_id': 'K01', 'revision': 1, 'available_at': '2026-05-02 09:00:00+08:00', 'demand_units': 5, 'settlement_yuan': 35, 'raw_row': 2, 'raw_hash': '7e9bc4210dc41e6e62c46480d7db76e2465aea1ef8987d92bdfff653375b677d', 'origin': '2026-07-08T18:00:00+08:00', 'purpose': 'train'}]\r\nsha_independent 2798d83fcc7bf4c6fa764662d23155a2eaf06a2b71d891397b2d4b21dc56afc6 sha_source e6421f87e5602d676ff590cab8ca2c7c2e86288fbad79d2afd6e89a3b5423de6\r\n",
+  "stderr": "",
+  "stdout_base64": "c2l6ZXMgNjUyOCA2NTI4IGNvbHNfZXF1YWwgVHJ1ZQ0KY29scyBbKCdzZXJ2aWNlX2RhdGUnLCAnc3RyJywgJ3N0cicpLCAoJ3N0b3JlX2lkJywgJ3N0cicsICdzdHInKSwgKCdpdGVtX2lkJywgJ3N0cicsICdzdHInKSwgKCdyZXZpc2lvbicsICdpbnQ2NCcsICdpbnQ2NCcpLCAoJ2F2YWlsYWJsZV9hdCcsICdkYXRldGltZTY0W3VzLCBBc2lhL1NoYW5naGFpXScsICdzdHInKSwgKCdkZW1hbmRfdW5pdHMnLCAnaW50NjQnLCAnaW50NjQnKSwgKCdzZXR0bGVtZW50X3l1YW4nLCAnaW50NjQnLCAnaW50NjQnKSwgKCdyYXdfcm93JywgJ2ludDY0JywgJ2ludDY0JyksICgncmF3X2hhc2gnLCAnc3RyJywgJ3N0cicpLCAoJ29yaWdpbicsICdzdHInLCAnc3RyJyksICgncHVycG9zZScsICdzdHInLCAnc3RyJyldDQpoZWFkX3JhdyBbeydzZXJ2aWNlX2RhdGUnOiAnMjAyNi0wNS0wMScsICdzdG9yZV9pZCc6ICdTMDEnLCAnaXRlbV9pZCc6ICdLMDEnLCAncmV2aXNpb24nOiAxLCAnYXZhaWxhYmxlX2F0JzogVGltZXN0YW1wKCcyMDI2LTA1LTAyIDA5OjAwOjAwKzA4MDAnLCB0ej0nQXNpYS9TaGFuZ2hhaScpLCAnZGVtYW5kX3VuaXRzJzogNSwgJ3NldHRsZW1lbnRfeXVhbic6IDM1LCAncmF3X3Jvdyc6IDIsICdyYXdfaGFzaCc6ICc3ZTliYzQyMTBkYzQxZTZlNjJjNDY0ODBkN2RiNzZlMjQ2NWFlYTFlZjg5ODdkOTJiZGZmZjY1MzM3NWI2NzdkJywgJ29yaWdpbic6ICcyMDI2LTA3LTA4VDE4OjAwOjAwKzA4OjAwJywgJ3B1cnBvc2UnOiAndHJhaW4nfV0NCmhlYWRfc3JjIFt7J3NlcnZpY2VfZGF0ZSc6ICcyMDI2LTA1LTAxJywgJ3N0b3JlX2lkJzogJ1MwMScsICdpdGVtX2lkJzogJ0swMScsICdyZXZpc2lvbic6IDEsICdhdmFpbGFibGVfYXQnOiAnMjAyNi0wNS0wMiAwOTowMDowMCswODowMCcsICdkZW1hbmRfdW5pdHMnOiA1LCAnc2V0dGxlbWVudF95dWFuJzogMzUsICdyYXdfcm93JzogMiwgJ3Jhd19oYXNoJzogJzdlOWJjNDIxMGRjNDFlNmU2MmM0NjQ4MGQ3ZGI3NmUyNDY1YWVhMWVmODk4N2Q5MmJkZmZmNjUzMzc1YjY3N2QnLCAnb3JpZ2luJzogJzIwMjYtMDctMDhUMTg6MDA6MDArMDg6MDAnLCAncHVycG9zZSc6ICd0cmFpbid9XQ0Kc2hhX2luZGVwZW5kZW50IDI3OThkODNmY2M3YmY0YzZmYTc2NDY2MmQyMzE1NWEyZWFmMDZhMmI3MWQ4OTEzOTdiMmQ0YjIxZGM1NmFmYzYgc2hhX3NvdXJjZSBlNjQyMWY4N2U1NjAyZDY3NmZmNTkwY2FiOGNhMmM3YzJlODYyODhmYmFkNzlkMmFmZDZlODlhM2I1NDIzZGU2DQo=",
+  "stderr_base64": ""
+}

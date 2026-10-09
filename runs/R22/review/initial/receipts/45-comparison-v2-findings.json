@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json; p=json.load(open('runs/R22/review/initial/comparison-v2.json',encoding='utf-8')); [print(c['label'],'keys=',c.get('unique_key_match'),'fail=',[(k,v) for k,v in c.get('fields',{}).items() if not v.get('equal',False)]) for c in p['comparisons'] if not c.get('unique_key_match',False) or any(not v.get('equal',False) for v in c.get('fields',{}).values())]; print('checks',len(p['comparisons']),'tables_pass',p['all_table_comparisons_pass'],'scenarios_pass',p['all_scenario_comparisons_pass']); [print('SCENARIO',s) for s in p['scenario_comparisons'] if not(s['same_shape'] and s['same_service_dates'] and s['same_residual_dates'] and s['max_abs_delta']<=1e-8)]"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:41:39.165533+00:00",
+    "monotonic_ns": 158328968000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:41:39.239292+00:00",
+    "monotonic_ns": 158329031000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "checks 66 tables_pass True scenarios_pass True\r\n",
+  "stderr": "",
+  "stdout_base64": "Y2hlY2tzIDY2IHRhYmxlc19wYXNzIFRydWUgc2NlbmFyaW9zX3Bhc3MgVHJ1ZQ0K",
+  "stderr_base64": ""
+}

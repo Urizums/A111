@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import runpy; from pathlib import Path; n=runpy.run_path('runs/R22/review/initial/source/independent_rebuild.py',run_name='notmain'); p=n['RawPanel'](); x=n['csv_bytes'](p.snapshot('2026-07-08T18:00:00')); y=Path('runs/R21/execution/science-v1/data/train_2026-07-08.csv').read_bytes(); print('lengths',len(x),len(y)); print('newlines',x.count(b'\\\\n'),x.count(b'\\\\r\\\\n'),y.count(b'\\\\n'),y.count(b'\\\\r\\\\n')); print('prefix',repr(x[:100]),repr(y[:100])); print('end',repr(x[-80:]),repr(y[-80:]))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:33:06.918366+00:00",
+    "monotonic_ns": 157816718000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:33:11.071363+00:00",
+    "monotonic_ns": 157820875000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "lengths 1013115 1019644\r\nnewlines 0 0 0 0\r\nprefix b'service_date,store_id,item_id,revision,available_at,demand_units,settlement_yuan,raw_row,raw_hash,or' b'service_date,store_id,item_id,revision,available_at,demand_units,settlement_yuan,raw_row,raw_hash,or'\r\nend b'1b9859c37b057a9a680b0b093f222900c535d6c83158117,2026-07-08T18:00:00+08:00,train\\n' b'b9859c37b057a9a680b0b093f222900c535d6c83158117,2026-07-08T18:00:00+08:00,train\\r\\n'\r\n",
+  "stderr": "",
+  "stdout_base64": "bGVuZ3RocyAxMDEzMTE1IDEwMTk2NDQNCm5ld2xpbmVzIDAgMCAwIDANCnByZWZpeCBiJ3NlcnZpY2VfZGF0ZSxzdG9yZV9pZCxpdGVtX2lkLHJldmlzaW9uLGF2YWlsYWJsZV9hdCxkZW1hbmRfdW5pdHMsc2V0dGxlbWVudF95dWFuLHJhd19yb3cscmF3X2hhc2gsb3InIGInc2VydmljZV9kYXRlLHN0b3JlX2lkLGl0ZW1faWQscmV2aXNpb24sYXZhaWxhYmxlX2F0LGRlbWFuZF91bml0cyxzZXR0bGVtZW50X3l1YW4scmF3X3JvdyxyYXdfaGFzaCxvcicNCmVuZCBiJzFiOTg1OWMzN2IwNTdhOWE2ODBiMGIwOTNmMjIyOTAwYzUzNWQ2YzgzMTU4MTE3LDIwMjYtMDctMDhUMTg6MDA6MDArMDg6MDAsdHJhaW5cbicgYidiOTg1OWMzN2IwNTdhOWE2ODBiMGIwOTNmMjIyOTAwYzUzNWQ2YzgzMTU4MTE3LDIwMjYtMDctMDhUMTg6MDA6MDArMDg6MDAsdHJhaW5cclxuJw0K",
+  "stderr_base64": ""
+}

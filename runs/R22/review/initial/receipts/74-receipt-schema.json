@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path;p=Path('runs/R22/review/initial/receipts');f=p/'33-independent-reconstruction-v5.json';q=json.load(open(f,encoding='utf-8')); print(q.keys()); print(json.dumps(q,ensure_ascii=False)[:2500])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:48:21.020071+00:00",
+    "monotonic_ns": 158730812000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:48:21.094884+00:00",
+    "monotonic_ns": 158730875000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "dict_keys(['schema', 'argv', 'cwd', 'begin', 'state', 'end', 'exit_code', 'stdout', 'stderr', 'stdout_base64', 'stderr_base64'])\r\n{\"schema\": \"forge-command-record/1\", \"argv\": [\"py\", \"-3.12\", \"-X\", \"utf8\", \"-B\", \"runs/R22/review/initial/source/independent_rebuild_v5.py\", \"--out\", \"runs/R22/review/initial/rebuild-v5\"], \"cwd\": \"C:\\\\Users\\\\admin\\\\Documents\\\\Codex\\\\2026-10-05\\\\urizums-a111-main-codex-handoff-md\\\\work\\\\A111\", \"begin\": {\"utc\": \"2026-10-09T09:37:16.354240+00:00\", \"monotonic_ns\": 158066156000000, \"boot_id\": null}, \"state\": \"finished\", \"end\": {\"utc\": \"2026-10-09T09:37:47.465495+00:00\", \"monotonic_ns\": 158097265000000, \"boot_id\": null}, \"exit_code\": 0, \"stdout\": \"{\\\"status\\\": \\\"independent reconstruction complete\\\", \\\"rows\\\": 24192, \\\"output\\\": \\\"C:\\\\\\\\Users\\\\\\\\admin\\\\\\\\Documents\\\\\\\\Codex\\\\\\\\2026-10-05\\\\\\\\urizums-a111-main-codex-handoff-md\\\\\\\\work\\\\\\\\A111\\\\\\\\runs\\\\\\\\R22\\\\\\\\review\\\\\\\\initial\\\\\\\\rebuild-v5\\\"}\\r\\n\", \"stderr\": \"\", \"stdout_base64\": \"eyJzdGF0dXMiOiAiaW5kZXBlbmRlbnQgcmVjb25zdHJ1Y3Rpb24gY29tcGxldGUiLCAicm93cyI6IDI0MTkyLCAib3V0cHV0IjogIkM6XFxVc2Vyc1xcYWRtaW5cXERvY3VtZW50c1xcQ29kZXhcXDIwMjYtMTAtMDVcXHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcXHdvcmtcXEExMTFcXHJ1bnNcXFIyMlxccmV2aWV3XFxpbml0aWFsXFxyZWJ1aWxkLXY1In0NCg==\", \"stderr_base64\": \"\"}\r\n",
+  "stderr": "",
+  "stdout_base64": "ZGljdF9rZXlzKFsnc2NoZW1hJywgJ2FyZ3YnLCAnY3dkJywgJ2JlZ2luJywgJ3N0YXRlJywgJ2VuZCcsICdleGl0X2NvZGUnLCAnc3Rkb3V0JywgJ3N0ZGVycicsICdzdGRvdXRfYmFzZTY0JywgJ3N0ZGVycl9iYXNlNjQnXSkNCnsic2NoZW1hIjogImZvcmdlLWNvbW1hbmQtcmVjb3JkLzEiLCAiYXJndiI6IFsicHkiLCAiLTMuMTIiLCAiLVgiLCAidXRmOCIsICItQiIsICJydW5zL1IyMi9yZXZpZXcvaW5pdGlhbC9zb3VyY2UvaW5kZXBlbmRlbnRfcmVidWlsZF92NS5weSIsICItLW91dCIsICJydW5zL1IyMi9yZXZpZXcvaW5pdGlhbC9yZWJ1aWxkLXY1Il0sICJjd2QiOiAiQzpcXFVzZXJzXFxhZG1pblxcRG9jdW1lbnRzXFxDb2RleFxcMjAyNi0xMC0wNVxcdXJpenVtcy1hMTExLW1haW4tY29kZXgtaGFuZG9mZi1tZFxcd29ya1xcQTExMSIsICJiZWdpbiI6IHsidXRjIjogIjIwMjYtMTAtMDlUMDk6Mzc6MTYuMzU0MjQwKzAwOjAwIiwgIm1vbm90b25pY19ucyI6IDE1ODA2NjE1NjAwMDAwMCwgImJvb3RfaWQiOiBudWxsfSwgInN0YXRlIjogImZpbmlzaGVkIiwgImVuZCI6IHsidXRjIjogIjIwMjYtMTAtMDlUMDk6Mzc6NDcuNDY1NDk1KzAwOjAwIiwgIm1vbm90b25pY19ucyI6IDE1ODA5NzI2NTAwMDAwMCwgImJvb3RfaWQiOiBudWxsfSwgImV4aXRfY29kZSI6IDAsICJzdGRvdXQiOiAie1wic3RhdHVzXCI6IFwiaW5kZXBlbmRlbnQgcmVjb25zdHJ1Y3Rpb24gY29tcGxldGVcIiwgXCJyb3dzXCI6IDI0MTkyLCBcIm91dHB1dFwiOiBcIkM6XFxcXFVzZXJzXFxcXGFkbWluXFxcXERvY3VtZW50c1xcXFxDb2RleFxcXFwyMDI2LTEwLTA1XFxcXHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcXFxcd29ya1xcXFxBMTExXFxcXHJ1bnNcXFxcUjIyXFxcXHJldmlld1xcXFxpbml0aWFsXFxcXHJlYnVpbGQtdjVcIn1cclxuIiwgInN0ZGVyciI6ICIiLCAic3Rkb3V0X2Jhc2U2NCI6ICJleUp6ZEdGMGRYTWlPaUFpYVc1a1pYQmxibVJsYm5RZ2NtVmpiMjV6ZEhKMVkzUnBiMjRnWTI5dGNHeGxkR1VpTENBaWNtOTNjeUk2SURJME1Ua3lMQ0FpYjNWMGNIVjBJam9nSWtNNlhGeFZjMlZ5YzF4Y1lXUnRhVzVjWEVSdlkzVnRaVzUwYzF4Y1EyOWtaWGhjWERJd01qWXRNVEF0TURWY1hIVnlhWHAxYlhNdFlURXhNUzF0WVdsdUxXTnZaR1Y0TFdoaGJtUnZabVl0YldSY1hIZHZjbXRjWEVFeE1URmNYSEoxYm5OY1hGSXlNbHhjY21WMmFXVjNYRnhwYm1sMGFXRnNYRnh5WldKMWFXeGtMWFkxSW4wTkNnPT0iLCAic3RkZXJyX2Jhc2U2NCI6ICIifQ0K",
+  "stderr_base64": ""
+}

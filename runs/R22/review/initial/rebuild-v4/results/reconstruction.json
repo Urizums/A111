@@ -1,0 +1,206 @@
+{
+  "schema": "r22-independent-reconstruction/1",
+  "protocol_origins": [
+    "2026-07-22T18:00:00",
+    "2026-09-02T18:00:00",
+    "2026-09-19T18:00:00"
+  ],
+  "routes": [
+    "shared_ridge10",
+    "weekly_mean56"
+  ],
+  "rows": 24192,
+  "rows_per_route_origin": 4032,
+  "unique_days_first_two_windows": 84,
+  "third_window_overlap_dates_with_second": 25,
+  "source_rebuild": {
+    "source_rows": 21504,
+    "recomputed_rows": 21504,
+    "point_error_is_rebuilt_from_raw_mature_label_minus_published_point": true,
+    "stored_error_used_as_truth": false,
+    "exact_mature_identity_matches": true,
+    "max_abs_stored_error_difference": 1.7763568394002505e-15,
+    "source_forecasts_rebuilt": [
+      {
+        "source_origin": "2026-07-08T18:00:00",
+        "method": "shared_ridge10",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 4.992273261450464e-11
+      },
+      {
+        "source_origin": "2026-07-08T18:00:00",
+        "method": "weekly_mean56",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 0.0
+      },
+      {
+        "source_origin": "2026-07-22T18:00:00",
+        "method": "shared_ridge10",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 4.994404889657744e-11
+      },
+      {
+        "source_origin": "2026-07-22T18:00:00",
+        "method": "weekly_mean56",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 0.0
+      },
+      {
+        "source_origin": "2026-08-05T18:00:00",
+        "method": "shared_ridge10",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 4.998490510388365e-11
+      },
+      {
+        "source_origin": "2026-08-05T18:00:00",
+        "method": "weekly_mean56",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 0.0
+      },
+      {
+        "source_origin": "2026-08-19T18:00:00",
+        "method": "shared_ridge10",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 4.9970694249168446e-11
+      },
+      {
+        "source_origin": "2026-08-19T18:00:00",
+        "method": "weekly_mean56",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 0.0
+      },
+      {
+        "source_origin": "2026-09-02T18:00:00",
+        "method": "shared_ridge10",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 4.9963588821810845e-11
+      },
+      {
+        "source_origin": "2026-09-02T18:00:00",
+        "method": "weekly_mean56",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 0.0
+      },
+      {
+        "source_origin": "2026-09-16T18:00:00",
+        "method": "shared_ridge10",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 4.9956483394453244e-11
+      },
+      {
+        "source_origin": "2026-09-16T18:00:00",
+        "method": "weekly_mean56",
+        "days": 14,
+        "coordinates": 1344,
+        "train_snapshot_recreated": true,
+        "max_point_delta": 0.0
+      }
+    ]
+  },
+  "boundary_cases": {
+    "day_readiness": {
+      "complete_96_accepted": true,
+      "95_of_96_rejected": true,
+      "late_one_second_rejected": true,
+      "equal_source_origin_rejected": true,
+      "unended_service_day_rejected": true,
+      "incomplete_neighbor_does_not_exclude_complete_day": true,
+      "partial_reason": "not exactly 96 unique coordinates",
+      "eligible_neighbor_days": [
+        "2026-07-09"
+      ]
+    },
+    "small_oracle": {
+      "enumerated_actions": 23,
+      "oracle_loss": 11.970833333333333,
+      "independent_solver_loss": 11.970833333333333,
+      "action": [
+        2,
+        2,
+        0
+      ],
+      "match": true
+    },
+    "value_domains": {
+      "fractional_scenarios_are_valid": true,
+      "action_rejections": {
+        "fractional": "rejected",
+        "negative": "rejected",
+        "nonfinite": "rejected",
+        "per_key": "rejected",
+        "capacity": "rejected",
+        "budget": "rejected"
+      },
+      "invalid_scenario_rejections": {
+        "nan": true,
+        "infinity": true,
+        "negative": true,
+        "wrong_coordinates": true
+      },
+      "point_interval_containment_required": false
+    },
+    "mature_revision_boundary": {
+      "raw_key": {
+        "service_date": "2026-05-01",
+        "store_id": "S01",
+        "item_id": "K03"
+      },
+      "arrival": "2026-05-04T09:00:00+08:00",
+      "revision_before_arrival": 1,
+      "revision_at_arrival": 2,
+      "late_one_second_cutoff_excludes_revision": "True"
+    }
+  },
+  "raw_audit": {
+    "raw_file_sha256": {
+      "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+      "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753",
+      "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+      "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+      "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+      "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+      "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403"
+    },
+    "raw_table_rows_before_exact_duplicate_collapse": {
+      "demand_reports": 21599,
+      "stores": 12,
+      "items": 8,
+      "calendar": 226,
+      "promotions": 21696,
+      "weather": 1230
+    },
+    "exact_demand_duplicates_removed": 10,
+    "demand_unique_coordinate_count": 17664,
+    "stores": 12,
+    "items": 8,
+    "coordinates_per_day": 96,
+    "revision_conflicts": 0,
+    "revision_arrival_monotonic": true
+  },
+  "elapsed_seconds": 26.347735999996075,
+  "actual_model": null,
+  "tokens": null,
+  "cost": null
+}

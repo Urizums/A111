@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-Content -TotalCount 1 -Encoding UTF8 runs/R22/execution/science-v1/uncertainty/source_coordinates_rebuilt.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R22/execution/science-v1/uncertainty/membership.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R22/execution/science-v1/results/daily_solver.csv"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:39:04.323181+00:00",
+    "monotonic_ns": 158174125000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:39:04.532382+00:00",
+    "monotonic_ns": 158174328000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "service_date,store_id,item_id,revision,available_at,raw_row,raw_hash,method_id,source_origin,train_snapshot_sha256,point,mature_actual,recomputed_point,error_recomputed\r\norigin,method_id,source_origin,service_date,coordinates,ready_at,eligible,reason\r\n",
+  "stderr": "Get-Content : Cannot find path 'C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\\r\nruns\\R22\\execution\\science-v1\\results\\daily_solver.csv' because it does not exist.\r\nAt line:1 char:215\r\n+ ... ership.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R22/executi ...\r\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (C:\\Users\\admin\\...aily_solver.csv:String) [Get-Content], ItemNotFoundEx \r\n   ception\r\n    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.GetContentCommand\r\n \r\n",
+  "stdout_base64": "c2VydmljZV9kYXRlLHN0b3JlX2lkLGl0ZW1faWQscmV2aXNpb24sYXZhaWxhYmxlX2F0LHJhd19yb3cscmF3X2hhc2gsbWV0aG9kX2lkLHNvdXJjZV9vcmlnaW4sdHJhaW5fc25hcHNob3Rfc2hhMjU2LHBvaW50LG1hdHVyZV9hY3R1YWwscmVjb21wdXRlZF9wb2ludCxlcnJvcl9yZWNvbXB1dGVkDQpvcmlnaW4sbWV0aG9kX2lkLHNvdXJjZV9vcmlnaW4sc2VydmljZV9kYXRlLGNvb3JkaW5hdGVzLHJlYWR5X2F0LGVsaWdpYmxlLHJlYXNvbg0K",
+  "stderr_base64": "R2V0LUNvbnRlbnQgOiBDYW5ub3QgZmluZCBwYXRoICdDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVwNCnJ1bnNcUjIyXGV4ZWN1dGlvblxzY2llbmNlLXYxXHJlc3VsdHNcZGFpbHlfc29sdmVyLmNzdicgYmVjYXVzZSBpdCBkb2VzIG5vdCBleGlzdC4NCkF0IGxpbmU6MSBjaGFyOjIxNQ0KKyAuLi4gZXJzaGlwLmNzdjsgR2V0LUNvbnRlbnQgLVRvdGFsQ291bnQgMSAtRW5jb2RpbmcgVVRGOCBydW5zL1IyMi9leGVjdXRpIC4uLg0KKyAgICAgICAgICAgICAgICAgfn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+fn5+DQogICAgKyBDYXRlZ29yeUluZm8gICAgICAgICAgOiBPYmplY3ROb3RGb3VuZDogKEM6XFVzZXJzXGFkbWluXC4uLmFpbHlfc29sdmVyLmNzdjpTdHJpbmcpIFtHZXQtQ29udGVudF0sIEl0ZW1Ob3RGb3VuZEV4IA0KICAgY2VwdGlvbg0KICAgICsgRnVsbHlRdWFsaWZpZWRFcnJvcklkIDogUGF0aE5vdEZvdW5kLE1pY3Jvc29mdC5Qb3dlclNoZWxsLkNvbW1hbmRzLkdldENvbnRlbnRDb21tYW5kDQogDQo="
+}

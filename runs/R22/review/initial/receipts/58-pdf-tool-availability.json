@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-Command pdfinfo,pdftoppm -ErrorAction SilentlyContinue | Select-Object Name,Source | ConvertTo-Json -Depth 2"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:44:38.539821+00:00",
+    "monotonic_ns": 158508328000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:44:38.703595+00:00",
+    "monotonic_ns": 158508500000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n    {\r\n        \"Name\":  \"pdfinfo.exe\",\r\n        \"Source\":  \"C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\poppler\\\\Library\\\\bin\\\\pdfinfo.exe\"\r\n    },\r\n    {\r\n        \"Name\":  \"pdftoppm.exe\",\r\n        \"Source\":  \"C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\poppler\\\\Library\\\\bin\\\\pdftoppm.exe\"\r\n    }\r\n]\r\n",
+  "stderr": "",
+  "stdout_base64": "Ww0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgInBkZmluZm8uZXhlIiwNCiAgICAgICAgIlNvdXJjZSI6ICAiQzpcXFVzZXJzXFxhZG1pblxcLmNhY2hlXFxjb2RleC1ydW50aW1lc1xcY29kZXgtcHJpbWFyeS1ydW50aW1lXFxkZXBlbmRlbmNpZXNcXG5hdGl2ZVxccG9wcGxlclxcTGlicmFyeVxcYmluXFxwZGZpbmZvLmV4ZSINCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgInBkZnRvcHBtLmV4ZSIsDQogICAgICAgICJTb3VyY2UiOiAgIkM6XFxVc2Vyc1xcYWRtaW5cXC5jYWNoZVxcY29kZXgtcnVudGltZXNcXGNvZGV4LXByaW1hcnktcnVudGltZVxcZGVwZW5kZW5jaWVzXFxuYXRpdmVcXHBvcHBsZXJcXExpYnJhcnlcXGJpblxccGRmdG9wcG0uZXhlIg0KICAgIH0NCl0NCg==",
+  "stderr_base64": ""
+}

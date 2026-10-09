@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-ChildItem runs/R22/execution/source/v1 -File | Select-Object Name,Length | ConvertTo-Json -Depth 3; Get-ChildItem runs/R22/execution -Directory | Select-Object Name | ConvertTo-Json -Depth 3"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:28:03.644845+00:00",
+    "monotonic_ns": 157513453000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:28:03.868444+00:00",
+    "monotonic_ns": 157513687000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n    {\r\n        \"Name\":  \"config.json\",\r\n        \"Length\":  548\r\n    },\r\n    {\r\n        \"Name\":  \"freeze.py\",\r\n        \"Length\":  2446\r\n    },\r\n    {\r\n        \"Name\":  \"reference_policy.py\",\r\n        \"Length\":  27062\r\n    },\r\n    {\r\n        \"Name\":  \"run_replay.py\",\r\n        \"Length\":  17431\r\n    }\r\n]\r\n[\r\n    {\r\n        \"Name\":  \"author-selfcheck-v1\"\r\n    },\r\n    {\r\n        \"Name\":  \"clean-v1\"\r\n    },\r\n    {\r\n        \"Name\":  \"receipts\"\r\n    },\r\n    {\r\n        \"Name\":  \"report-v1\"\r\n    },\r\n    {\r\n        \"Name\":  \"science-v1\"\r\n    },\r\n    {\r\n        \"Name\":  \"source\"\r\n    }\r\n]\r\n",
+  "stderr": "",
+  "stdout_base64": "Ww0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgImNvbmZpZy5qc29uIiwNCiAgICAgICAgIkxlbmd0aCI6ICA1NDgNCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgImZyZWV6ZS5weSIsDQogICAgICAgICJMZW5ndGgiOiAgMjQ0Ng0KICAgIH0sDQogICAgew0KICAgICAgICAiTmFtZSI6ICAicmVmZXJlbmNlX3BvbGljeS5weSIsDQogICAgICAgICJMZW5ndGgiOiAgMjcwNjINCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgInJ1bl9yZXBsYXkucHkiLA0KICAgICAgICAiTGVuZ3RoIjogIDE3NDMxDQogICAgfQ0KXQ0KWw0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgImF1dGhvci1zZWxmY2hlY2stdjEiDQogICAgfSwNCiAgICB7DQogICAgICAgICJOYW1lIjogICJjbGVhbi12MSINCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgInJlY2VpcHRzIg0KICAgIH0sDQogICAgew0KICAgICAgICAiTmFtZSI6ICAicmVwb3J0LXYxIg0KICAgIH0sDQogICAgew0KICAgICAgICAiTmFtZSI6ICAic2NpZW5jZS12MSINCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgInNvdXJjZSINCiAgICB9DQpdDQo=",
+  "stderr_base64": ""
+}

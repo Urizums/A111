@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json,hashlib;from pathlib import Path;r=Path('.'); lock=json.load(open(r/'runs/R22/execution-lock.json',encoding='utf-8')); initial=json.load(open(r/'runs/R22/review/initial/result.json',encoding='utf-8')); sf=json.load(open(r/'runs/R22/review/initial/source-freeze-v11.json',encoding='utf-8')); names=['runs/R22/execution-lock.json','runs/R21/input-lock.json','runs/R21/execution-lock.json','runs/R22/protocol-lock.json']; want={x['path']:x['sha256'] for x in sf['authorized_protocol_files']+sf['authorized_raw_input_files']+sf['authorized_r21_source_identities']+sf['authorized_r22_source_and_delivery_identities']}; hashes={n:hashlib.sha256((r/n).read_bytes()).hexdigest() for n in names}; sci=[x for x in lock['files'] if x['path'].startswith('runs/R22/execution/science-v1/')]; good=[hashlib.sha256((r/x['path']).read_bytes()).hexdigest()==x['sha256'] and (r/x['path']).stat().st_size==x['size_bytes'] for x in sci]; print(json.dumps({'criterion_statuses':initial['criterion_statuses'],'initial_result_sha256':hashlib.sha256((r/'runs/R22/review/initial/result.json').read_bytes()).hexdigest(),'initial_result_size':(r/'runs/R22/review/initial/result.json').stat().st_size,'source_freeze_v11_r22_execution_lock_sha_matches':sf['r22_execution_lock_sha256']==hashes['runs/R22/execution-lock.json'],'prior_lock_hash_matches_source_freeze':{n:want.get(n)==hashes[n] for n in names if n in want},'execution_lock_science_v1_file_count':len(sci),'science_v1_files_all_match_execution_lock':all(good),'execution_lock_total_files':len(lock['files'])},ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:23:00.963401+00:00",
+    "monotonic_ns": 160810703000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:23:01.125847+00:00",
+    "monotonic_ns": 160810875000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"criterion_statuses\": {\r\n    \"h1\": \"pass\",\r\n    \"h2\": \"pass\",\r\n    \"h3\": \"pass\",\r\n    \"h4\": \"pass\",\r\n    \"h5\": \"pass\",\r\n    \"h6\": \"fail\"\r\n  },\r\n  \"initial_result_sha256\": \"d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711\",\r\n  \"initial_result_size\": 26837,\r\n  \"source_freeze_v11_r22_execution_lock_sha_matches\": true,\r\n  \"prior_lock_hash_matches_source_freeze\": {},\r\n  \"execution_lock_science_v1_file_count\": 107,\r\n  \"science_v1_files_all_match_execution_lock\": true,\r\n  \"execution_lock_total_files\": 268\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiY3JpdGVyaW9uX3N0YXR1c2VzIjogew0KICAgICJoMSI6ICJwYXNzIiwNCiAgICAiaDIiOiAicGFzcyIsDQogICAgImgzIjogInBhc3MiLA0KICAgICJoNCI6ICJwYXNzIiwNCiAgICAiaDUiOiAicGFzcyIsDQogICAgImg2IjogImZhaWwiDQogIH0sDQogICJpbml0aWFsX3Jlc3VsdF9zaGEyNTYiOiAiZDNhMDZmYzA2ZTU3NGNlODQ1NTBmNGIzNDMzOWZkZDVkYTlmYmI1NDliODg4NjEzZDNhZDVlM2Q2YzI2NzcxMSIsDQogICJpbml0aWFsX3Jlc3VsdF9zaXplIjogMjY4MzcsDQogICJzb3VyY2VfZnJlZXplX3YxMV9yMjJfZXhlY3V0aW9uX2xvY2tfc2hhX21hdGNoZXMiOiB0cnVlLA0KICAicHJpb3JfbG9ja19oYXNoX21hdGNoZXNfc291cmNlX2ZyZWV6ZSI6IHt9LA0KICAiZXhlY3V0aW9uX2xvY2tfc2NpZW5jZV92MV9maWxlX2NvdW50IjogMTA3LA0KICAic2NpZW5jZV92MV9maWxlc19hbGxfbWF0Y2hfZXhlY3V0aW9uX2xvY2siOiB0cnVlLA0KICAiZXhlY3V0aW9uX2xvY2tfdG90YWxfZmlsZXMiOiAyNjgNCn0NCg==",
+  "stderr_base64": ""
+}

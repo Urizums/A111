@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-FileHash -Algorithm SHA256 runs/R22/review/preparation/identity_check.py,runs/R22/review/preparation/plan.md | Select-Object Path,Hash | ConvertTo-Json -Depth 3; Get-ChildItem runs/R22/review/preparation/receipts -File | Select-Object Name,Length | ConvertTo-Json -Depth 3"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:08:32.312968+00:00",
+    "monotonic_ns": 156342156000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:08:32.583922+00:00",
+    "monotonic_ns": 156342421000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n    {\r\n        \"Name\":  \"00-context.json\",\r\n        \"Length\":  1842\r\n    },\r\n    {\r\n        \"Name\":  \"01-agents.json\",\r\n        \"Length\":  15278\r\n    },\r\n    {\r\n        \"Name\":  \"02-required-context.json\",\r\n        \"Length\":  1921\r\n    },\r\n    {\r\n        \"Name\":  \"03-required-context.json\",\r\n        \"Length\":  191936\r\n    },\r\n    {\r\n        \"Name\":  \"04-source-identities.json\",\r\n        \"Length\":  2061\r\n    },\r\n    {\r\n        \"Name\":  \"05-source-config.json\",\r\n        \"Length\":  20600\r\n    },\r\n    {\r\n        \"Name\":  \"06-policy-source.json\",\r\n        \"Length\":  119125\r\n    },\r\n    {\r\n        \"Name\":  \"07-permitted-headers.json\",\r\n        \"Length\":  3708\r\n    },\r\n    {\r\n        \"Name\":  \"08-identity-check.json\",\r\n        \"Length\":  35961\r\n    },\r\n    {\r\n        \"Name\":  \"09-preparation-source-identities.json\",\r\n        \"Length\":  658\r\n    }\r\n]\r\n",
+  "stderr": "Get-FileHash : The term 'Get-FileHash' is not recognized as the name of a cmdlet, function, script file, or operable pr\r\nogram. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.\r\nAt line:1 char:1\r\n+ Get-FileHash -Algorithm SHA256 runs/R22/review/preparation/identity_c ...\r\n+ ~~~~~~~~~~~~\r\n    + CategoryInfo          : ObjectNotFound: (Get-FileHash:String) [], CommandNotFoundException\r\n    + FullyQualifiedErrorId : CommandNotFoundException\r\n \r\n",
+  "stdout_base64": "Ww0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgIjAwLWNvbnRleHQuanNvbiIsDQogICAgICAgICJMZW5ndGgiOiAgMTg0Mg0KICAgIH0sDQogICAgew0KICAgICAgICAiTmFtZSI6ICAiMDEtYWdlbnRzLmpzb24iLA0KICAgICAgICAiTGVuZ3RoIjogIDE1Mjc4DQogICAgfSwNCiAgICB7DQogICAgICAgICJOYW1lIjogICIwMi1yZXF1aXJlZC1jb250ZXh0Lmpzb24iLA0KICAgICAgICAiTGVuZ3RoIjogIDE5MjENCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgIjAzLXJlcXVpcmVkLWNvbnRleHQuanNvbiIsDQogICAgICAgICJMZW5ndGgiOiAgMTkxOTM2DQogICAgfSwNCiAgICB7DQogICAgICAgICJOYW1lIjogICIwNC1zb3VyY2UtaWRlbnRpdGllcy5qc29uIiwNCiAgICAgICAgIkxlbmd0aCI6ICAyMDYxDQogICAgfSwNCiAgICB7DQogICAgICAgICJOYW1lIjogICIwNS1zb3VyY2UtY29uZmlnLmpzb24iLA0KICAgICAgICAiTGVuZ3RoIjogIDIwNjAwDQogICAgfSwNCiAgICB7DQogICAgICAgICJOYW1lIjogICIwNi1wb2xpY3ktc291cmNlLmpzb24iLA0KICAgICAgICAiTGVuZ3RoIjogIDExOTEyNQ0KICAgIH0sDQogICAgew0KICAgICAgICAiTmFtZSI6ICAiMDctcGVybWl0dGVkLWhlYWRlcnMuanNvbiIsDQogICAgICAgICJMZW5ndGgiOiAgMzcwOA0KICAgIH0sDQogICAgew0KICAgICAgICAiTmFtZSI6ICAiMDgtaWRlbnRpdHktY2hlY2suanNvbiIsDQogICAgICAgICJMZW5ndGgiOiAgMzU5NjENCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgIjA5LXByZXBhcmF0aW9uLXNvdXJjZS1pZGVudGl0aWVzLmpzb24iLA0KICAgICAgICAiTGVuZ3RoIjogIDY1OA0KICAgIH0NCl0NCg==",
+  "stderr_base64": "R2V0LUZpbGVIYXNoIDogVGhlIHRlcm0gJ0dldC1GaWxlSGFzaCcgaXMgbm90IHJlY29nbml6ZWQgYXMgdGhlIG5hbWUgb2YgYSBjbWRsZXQsIGZ1bmN0aW9uLCBzY3JpcHQgZmlsZSwgb3Igb3BlcmFibGUgcHINCm9ncmFtLiBDaGVjayB0aGUgc3BlbGxpbmcgb2YgdGhlIG5hbWUsIG9yIGlmIGEgcGF0aCB3YXMgaW5jbHVkZWQsIHZlcmlmeSB0aGF0IHRoZSBwYXRoIGlzIGNvcnJlY3QgYW5kIHRyeSBhZ2Fpbi4NCkF0IGxpbmU6MSBjaGFyOjENCisgR2V0LUZpbGVIYXNoIC1BbGdvcml0aG0gU0hBMjU2IHJ1bnMvUjIyL3Jldmlldy9wcmVwYXJhdGlvbi9pZGVudGl0eV9jIC4uLg0KKyB+fn5+fn5+fn5+fn4NCiAgICArIENhdGVnb3J5SW5mbyAgICAgICAgICA6IE9iamVjdE5vdEZvdW5kOiAoR2V0LUZpbGVIYXNoOlN0cmluZykgW10sIENvbW1hbmROb3RGb3VuZEV4Y2VwdGlvbg0KICAgICsgRnVsbHlRdWFsaWZpZWRFcnJvcklkIDogQ29tbWFuZE5vdEZvdW5kRXhjZXB0aW9uDQogDQo="
+}

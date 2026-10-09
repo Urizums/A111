@@ -1,8 +1,8 @@
 # Codex 当前研发交接
 
-当前前沿 R22-02：C13派生完整13页中文论文及独立g1–g5接收已完成，首锁后42日实测R/W覆盖86.73%/84.42%，总损失29936.25/34625.90元，低于名义覆盖的限制保留；新R22同期限历史证据审计已真实完成，模型实验尚未启动。当前C13仍九份纯Markdown、包内零脚本/测试；R20完整11页中文论文及独立首判、C13受影响小案三门首接收保留，不称C13的四层重跑或优于旧版的因果证据。R19 L3 a6 partial、旧失败/预算不变。正式赛事专项AI/提交规则仍未知；实质进度见runs/R22/REPORT.md、R21结果附录和checkpoint。
+当前前沿 R23-02：R22三历史原点×两路线的42日回放及独立接收已完成；首判h1–h5通过/h6失败、v2作者金额自检失败均保留，第二次文稿修正后知情h6复审通过，原科学字节不变。C13仍九份纯Markdown、包内零脚本/测试。R23-01已真实核对中性输入与4032键固定交付范围；新工作流设计尚未开始，下一步检验新上下文能否自行推导验证范围与接收职责。不是Level1–4重跑、skill因果增益或获奖证明。旧失败、预算、R19 L3 partial、前端宿主拒绝及正式十月规则未知保留。
 
-当前技能与新实测入口：[C13技能](runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md)、[C13纯文档包](runs/R20/final/package/Forge-C13-meta-workflow-candidate.zip)、[完整13页论文](runs/R21/execution/paper-final-v4/paper.pdf)、[首锁后结果附录](runs/R21/final/APPENDIX.md)、[R22当前状态](runs/R22/REPORT.md)。
+当前入口：[C13技能](runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md)、[C13纯文档包](runs/R20/final/package/Forge-C13-meta-workflow-candidate.zip)、[R22完整13页研究稿](runs/R22/execution/correction-v3/report/REPORT.pdf)、[R22证据综合](runs/R22/final/SYNTHESIS.md)、[R23真实首步与前沿](runs/R23/REPORT.md)。
 
 最新用户范围为R19：只测试Level1–4，依次制作可转交工作流、由新上下文执行至完整论文、再由独立上下文实质验收；5–8不启动。新C11纯文档候选在runs/R19/candidate/C11/forge-agent-flow/，增加从论文核心结论倒推证据及执行者可用性的设计要求；尚未完整行为验收，不替代C10已交付状态。四层使用同一官方修订D题原始PDF/DOCX/XLSX、同一C11与用户原层级文本（只规范排版），不发给生产者共用的高信息验收表，不读取旧解法/论文或其他层结果。统一独立验收与六维质量诊断已在论文执行前冻结。当前实质前沿、实际actor和论文状态见runs/R19/TODO.md及state/checkpoint.json。R19是新授权前瞻试验，原50份任务/所有失败/锁/计数保留；R16/R18完整旧试解仍未通过。工作流/代码/论文均属试验产物，算法脚本不进入技能包；不声明奖项或虚构评分。顺序试验完成与各层原题/论文质量通过分开记录。
 

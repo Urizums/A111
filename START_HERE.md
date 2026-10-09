@@ -1,8 +1,8 @@
 # Codex 接续入口
 
-当前前沿 R22-02：C13派生完整13页中文论文及独立g1–g5接收已完成，首锁后42日实测R/W覆盖86.73%/84.42%，总损失29936.25/34625.90元，低于名义覆盖的限制保留；新R22同期限历史证据审计已真实完成，模型实验尚未启动。当前C13仍九份纯Markdown、包内零脚本/测试；R20完整11页中文论文及独立首判、C13受影响小案三门首接收保留，不称C13的四层重跑或优于旧版的因果证据。R19 L3 a6 partial、旧失败/预算不变。正式赛事专项AI/提交规则仍未知；实质进度见runs/R22/REPORT.md、R21结果附录和checkpoint。
+当前前沿 R23-02：R22三历史原点×两路线的42日回放及独立接收已完成；首判h1–h5通过/h6失败、v2作者金额自检失败均保留，第二次文稿修正后知情h6复审通过，原科学字节不变。C13仍九份纯Markdown、包内零脚本/测试。R23-01已真实核对中性输入与4032键固定交付范围；新工作流设计尚未开始，下一步检验新上下文能否自行推导验证范围与接收职责。不是Level1–4重跑、skill因果增益或获奖证明。旧失败、预算、R19 L3 partial、前端宿主拒绝及正式十月规则未知保留。
 
-当前技能与新实测入口：[C13技能](runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md)、[C13纯文档包](runs/R20/final/package/Forge-C13-meta-workflow-candidate.zip)、[完整13页论文](runs/R21/execution/paper-final-v4/paper.pdf)、[首锁后结果附录](runs/R21/final/APPENDIX.md)、[R22当前状态](runs/R22/REPORT.md)。
+当前入口：[C13技能](runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md)、[C13纯文档包](runs/R20/final/package/Forge-C13-meta-workflow-candidate.zip)、[R22完整13页研究稿](runs/R22/execution/correction-v3/report/REPORT.pdf)、[R22证据综合](runs/R22/final/SYNTHESIS.md)、[R23真实首步与前沿](runs/R23/REPORT.md)。
 
 成品方向为Forge meta-workflow。历史C12及四层实测入口：
 [C12技能入口](runs/R19/final/candidate/C12/forge-agent-flow/SKILL.md)、

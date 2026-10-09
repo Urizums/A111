@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path;import json; p=Path('runs/R22/review/initial/receipts'); fs=list(p.glob('*.json')); rs=[json.loads(f.read_text(encoding='utf-8')) for f in fs]; print(json.dumps({'finished_receipts_before_inventory':sum(x.get('state')=='finished' for x in rs),'nonzero_receipts_before_inventory':sum(x.get('exit_code') not in (0,None) for x in rs),'pending_before_inventory':[f.name for f,x in zip(fs,rs) if x.get('state')!='finished'],'total_after_this_receipt':len(rs)+1,'all_finished_after_this_receipt':all(x.get('state')=='finished' for x in rs),'nonzero_names':[f.name for f,x in zip(fs,rs) if x.get('exit_code') not in (0,None)]},ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:51:07.265013+00:00",
+    "monotonic_ns": 158897046000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:51:07.353093+00:00",
+    "monotonic_ns": 158897140000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"finished_receipts_before_inventory\": 85,\r\n  \"nonzero_receipts_before_inventory\": 12,\r\n  \"pending_before_inventory\": [\r\n    \"85-terminal-inventory.json\"\r\n  ],\r\n  \"total_after_this_receipt\": 87,\r\n  \"all_finished_after_this_receipt\": false,\r\n  \"nonzero_names\": [\r\n    \"01-permitted-source-inspection.json\",\r\n    \"08-independent-reconstruction.json\",\r\n    \"17-independent-reconstruction-v2.json\",\r\n    \"22-independent-reconstruction-v3.json\",\r\n    \"34-permitted-artifact-schemas.json\",\r\n    \"52-report-trace.json\",\r\n    \"60-independent-narrative-values.json\",\r\n    \"64-report-crosscheck-data.json\",\r\n    \"76-nonzero-summary.json\",\r\n    \"77-nonzero-summary.json\",\r\n    \"79-author-run-metadata.json\",\r\n    \"80-author-run-metadata.json\"\r\n  ]\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAiZmluaXNoZWRfcmVjZWlwdHNfYmVmb3JlX2ludmVudG9yeSI6IDg1LA0KICAibm9uemVyb19yZWNlaXB0c19iZWZvcmVfaW52ZW50b3J5IjogMTIsDQogICJwZW5kaW5nX2JlZm9yZV9pbnZlbnRvcnkiOiBbDQogICAgIjg1LXRlcm1pbmFsLWludmVudG9yeS5qc29uIg0KICBdLA0KICAidG90YWxfYWZ0ZXJfdGhpc19yZWNlaXB0IjogODcsDQogICJhbGxfZmluaXNoZWRfYWZ0ZXJfdGhpc19yZWNlaXB0IjogZmFsc2UsDQogICJub256ZXJvX25hbWVzIjogWw0KICAgICIwMS1wZXJtaXR0ZWQtc291cmNlLWluc3BlY3Rpb24uanNvbiIsDQogICAgIjA4LWluZGVwZW5kZW50LXJlY29uc3RydWN0aW9uLmpzb24iLA0KICAgICIxNy1pbmRlcGVuZGVudC1yZWNvbnN0cnVjdGlvbi12Mi5qc29uIiwNCiAgICAiMjItaW5kZXBlbmRlbnQtcmVjb25zdHJ1Y3Rpb24tdjMuanNvbiIsDQogICAgIjM0LXBlcm1pdHRlZC1hcnRpZmFjdC1zY2hlbWFzLmpzb24iLA0KICAgICI1Mi1yZXBvcnQtdHJhY2UuanNvbiIsDQogICAgIjYwLWluZGVwZW5kZW50LW5hcnJhdGl2ZS12YWx1ZXMuanNvbiIsDQogICAgIjY0LXJlcG9ydC1jcm9zc2NoZWNrLWRhdGEuanNvbiIsDQogICAgIjc2LW5vbnplcm8tc3VtbWFyeS5qc29uIiwNCiAgICAiNzctbm9uemVyby1zdW1tYXJ5Lmpzb24iLA0KICAgICI3OS1hdXRob3ItcnVuLW1ldGFkYXRhLmpzb24iLA0KICAgICI4MC1hdXRob3ItcnVuLW1ldGFkYXRhLmpzb24iDQogIF0NCn0NCg==",
+  "stderr_base64": ""
+}

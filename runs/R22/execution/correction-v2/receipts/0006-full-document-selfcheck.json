@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R22/execution/correction-v2/source/check_document_v2.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:03:19.621437+00:00",
+    "monotonic_ns": 159629390000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:03:19.858639+00:00",
+    "monotonic_ns": 159629625000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R22\\execution\\correction-v2\\source\\check_document_v2.py\", line 37, in <module>\r\n    for col,val,field in [(2,a,'R loss_per_day'),(3,b,'W loss_per_day'),(4,b-a,'W-R loss_per_day')]:equal(start+oi,i,col,display(val,2),name,o+'|'+d,field)\r\n                                                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R22\\execution\\correction-v2\\source\\check_document_v2.py\", line 19, in equal\r\n    actual=tables[table_index]['rows'][row_index][column];assert actual==expected,(table_index,row_index,column,actual,expected)\r\n                                                                 ^^^^^^^^^^^^^^^^\r\nAssertionError: (9, 8, 4, '6.82', '6.83')\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMlxleGVjdXRpb25cY29ycmVjdGlvbi12Mlxzb3VyY2VcY2hlY2tfZG9jdW1lbnRfdjIucHkiLCBsaW5lIDM3LCBpbiA8bW9kdWxlPg0KICAgIGZvciBjb2wsdmFsLGZpZWxkIGluIFsoMixhLCdSIGxvc3NfcGVyX2RheScpLCgzLGIsJ1cgbG9zc19wZXJfZGF5JyksKDQsYi1hLCdXLVIgbG9zc19wZXJfZGF5JyldOmVxdWFsKHN0YXJ0K29pLGksY29sLGRpc3BsYXkodmFsLDIpLG5hbWUsbysnfCcrZCxmaWVsZCkNCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eDQogIEZpbGUgIkM6XFVzZXJzXGFkbWluXERvY3VtZW50c1xDb2RleFwyMDI2LTEwLTA1XHVyaXp1bXMtYTExMS1tYWluLWNvZGV4LWhhbmRvZmYtbWRcd29ya1xBMTExXHJ1bnNcUjIyXGV4ZWN1dGlvblxjb3JyZWN0aW9uLXYyXHNvdXJjZVxjaGVja19kb2N1bWVudF92Mi5weSIsIGxpbmUgMTksIGluIGVxdWFsDQogICAgYWN0dWFsPXRhYmxlc1t0YWJsZV9pbmRleF1bJ3Jvd3MnXVtyb3dfaW5kZXhdW2NvbHVtbl07YXNzZXJ0IGFjdHVhbD09ZXhwZWN0ZWQsKHRhYmxlX2luZGV4LHJvd19pbmRleCxjb2x1bW4sYWN0dWFsLGV4cGVjdGVkKQ0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBeXl5eXl5eXl5eXl5eXl5eDQpBc3NlcnRpb25FcnJvcjogKDksIDgsIDQsICc2LjgyJywgJzYuODMnKQ0K"
+}

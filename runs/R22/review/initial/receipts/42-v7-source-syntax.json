@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import ast,pathlib; paths=['runs/R22/review/initial/source/compare_reconstruction_v2.py','runs/R22/review/initial/source/freeze_review_v7.py']; [ast.parse(pathlib.Path(p).read_text(encoding='utf-8'), filename=p) for p in paths]; print('syntax-ok')"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:41:22.256832+00:00",
+    "monotonic_ns": 158312046000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:41:22.349498+00:00",
+    "monotonic_ns": 158312140000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "syntax-ok\r\n",
+  "stderr": "",
+  "stdout_base64": "c3ludGF4LW9rDQo=",
+  "stderr_base64": ""
+}

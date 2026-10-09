@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-Content -TotalCount 1 -Encoding UTF8 runs/R21/inputs/raw/demand_reports.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R21/inputs/raw/promotions.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R21/inputs/raw/weather.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R21/execution/science-v1/uncertainty/residual_coordinates_all.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R21/execution/science-v1/data/train_2026-07-22.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R21/execution/science-v1/data/train_features_2026-07-22.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R21/execution/science-v1/data/predict_features_2026-07-22_shared_ridge10.csv; Get-Content -TotalCount 1 -Encoding UTF8 runs/R21/execution/science-v1/data/promotion_imputation_sources_2026-07-22.csv"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:06:48.420911+00:00",
+    "monotonic_ns": 156238265000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:06:48.619155+00:00",
+    "monotonic_ns": 156238468000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "service_date,store_id,item_id,revision,available_at,demand_units,settlement_yuan\r\nservice_date,store_id,item_id,announced_at,discount_fraction\r\nservice_date,zone_id,available_at,kind,rain_mm\r\nservice_date,store_id,item_id,revision,available_at,raw_row,raw_hash,demand_units,method_id,source_origin,train_snapshot_sha256,point,error,full_day_ready_at,coordinates\r\nservice_date,store_id,item_id,revision,available_at,demand_units,settlement_yuan,raw_row,raw_hash,origin,purpose\r\nservice_date,store_id,item_id,weekday_monday_zero,holiday,zone_id,discount_fraction,announced_at,promo_raw_row,promo_raw_hash,promo_known,rain_mm,weather_available_at,weather_raw_row,weather_known,time30,origin\r\nservice_date,store_id,item_id,weekday_monday_zero,holiday,zone_id,discount_fraction,announced_at,promo_raw_row,promo_raw_hash,promo_known,rain_mm,weather_available_at,weather_raw_row,weather_known,time30,origin\r\nservice_date,store_id,item_id,announced_at,discount_fraction,raw_row,raw_hash\r\n",
+  "stderr": "",
+  "stdout_base64": "c2VydmljZV9kYXRlLHN0b3JlX2lkLGl0ZW1faWQscmV2aXNpb24sYXZhaWxhYmxlX2F0LGRlbWFuZF91bml0cyxzZXR0bGVtZW50X3l1YW4NCnNlcnZpY2VfZGF0ZSxzdG9yZV9pZCxpdGVtX2lkLGFubm91bmNlZF9hdCxkaXNjb3VudF9mcmFjdGlvbg0Kc2VydmljZV9kYXRlLHpvbmVfaWQsYXZhaWxhYmxlX2F0LGtpbmQscmFpbl9tbQ0Kc2VydmljZV9kYXRlLHN0b3JlX2lkLGl0ZW1faWQscmV2aXNpb24sYXZhaWxhYmxlX2F0LHJhd19yb3cscmF3X2hhc2gsZGVtYW5kX3VuaXRzLG1ldGhvZF9pZCxzb3VyY2Vfb3JpZ2luLHRyYWluX3NuYXBzaG90X3NoYTI1Nixwb2ludCxlcnJvcixmdWxsX2RheV9yZWFkeV9hdCxjb29yZGluYXRlcw0Kc2VydmljZV9kYXRlLHN0b3JlX2lkLGl0ZW1faWQscmV2aXNpb24sYXZhaWxhYmxlX2F0LGRlbWFuZF91bml0cyxzZXR0bGVtZW50X3l1YW4scmF3X3JvdyxyYXdfaGFzaCxvcmlnaW4scHVycG9zZQ0Kc2VydmljZV9kYXRlLHN0b3JlX2lkLGl0ZW1faWQsd2Vla2RheV9tb25kYXlfemVybyxob2xpZGF5LHpvbmVfaWQsZGlzY291bnRfZnJhY3Rpb24sYW5ub3VuY2VkX2F0LHByb21vX3Jhd19yb3cscHJvbW9fcmF3X2hhc2gscHJvbW9fa25vd24scmFpbl9tbSx3ZWF0aGVyX2F2YWlsYWJsZV9hdCx3ZWF0aGVyX3Jhd19yb3csd2VhdGhlcl9rbm93bix0aW1lMzAsb3JpZ2luDQpzZXJ2aWNlX2RhdGUsc3RvcmVfaWQsaXRlbV9pZCx3ZWVrZGF5X21vbmRheV96ZXJvLGhvbGlkYXksem9uZV9pZCxkaXNjb3VudF9mcmFjdGlvbixhbm5vdW5jZWRfYXQscHJvbW9fcmF3X3Jvdyxwcm9tb19yYXdfaGFzaCxwcm9tb19rbm93bixyYWluX21tLHdlYXRoZXJfYXZhaWxhYmxlX2F0LHdlYXRoZXJfcmF3X3Jvdyx3ZWF0aGVyX2tub3duLHRpbWUzMCxvcmlnaW4NCnNlcnZpY2VfZGF0ZSxzdG9yZV9pZCxpdGVtX2lkLGFubm91bmNlZF9hdCxkaXNjb3VudF9mcmFjdGlvbixyYXdfcm93LHJhd19oYXNoDQo=",
+  "stderr_base64": ""
+}

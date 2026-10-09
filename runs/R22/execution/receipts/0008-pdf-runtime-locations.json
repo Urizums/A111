@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; paths=[Path('C:/Windows/Fonts'),Path('C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime'),Path('C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041')]; print('FONTS',[str(p) for p in paths[0].glob('*sim*')]); print('MARKER',[str(p) for root in paths[1:] for p in root.rglob('mark_artifact_operation_started.mjs')]); print('POPPLER',[str(p) for p in paths[1].rglob('pdftoppm.exe')]); print('PDFINFO',[str(p) for p in paths[1].rglob('pdfinfo.exe')])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:11:49.899747+00:00",
+    "monotonic_ns": 156539734000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:11:51.866641+00:00",
+    "monotonic_ns": 156541703000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "FONTS ['C:\\\\Windows\\\\Fonts\\\\simfang.ttf', 'C:\\\\Windows\\\\Fonts\\\\simhei.ttf', 'C:\\\\Windows\\\\Fonts\\\\simkai.ttf', 'C:\\\\Windows\\\\Fonts\\\\SIMLI.TTF', 'C:\\\\Windows\\\\Fonts\\\\simsun.ttc', 'C:\\\\Windows\\\\Fonts\\\\simsunb.ttf', 'C:\\\\Windows\\\\Fonts\\\\SimsunExtG.ttf', 'C:\\\\Windows\\\\Fonts\\\\SIMYOU.TTF']\r\nMARKER ['C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\plugins\\\\openai-primary-runtime\\\\plugins\\\\documents\\\\skills\\\\documents\\\\container_tools\\\\mark_artifact_operation_started.mjs', 'C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\plugins\\\\openai-primary-runtime\\\\plugins\\\\pdf\\\\skills\\\\pdf\\\\container_tools\\\\mark_artifact_operation_started.mjs', 'C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\plugins\\\\openai-primary-runtime\\\\plugins\\\\presentations\\\\skills\\\\presentations\\\\container_tools\\\\mark_artifact_operation_started.mjs', 'C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\plugins\\\\openai-primary-runtime\\\\plugins\\\\spreadsheets\\\\skills\\\\spreadsheets\\\\container_tools\\\\mark_artifact_operation_started.mjs', 'C:\\\\Users\\\\admin\\\\.codex\\\\plugins\\\\cache\\\\openai-primary-runtime\\\\pdf\\\\26.1007.11041\\\\skills\\\\pdf\\\\container_tools\\\\mark_artifact_operation_started.mjs']\r\nPOPPLER ['C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\poppler\\\\Library\\\\bin\\\\pdftoppm.exe']\r\nPDFINFO ['C:\\\\Users\\\\admin\\\\.cache\\\\codex-runtimes\\\\codex-primary-runtime\\\\dependencies\\\\native\\\\poppler\\\\Library\\\\bin\\\\pdfinfo.exe']\r\n",
+  "stderr": "",
+  "stdout_base64": "Rk9OVFMgWydDOlxcV2luZG93c1xcRm9udHNcXHNpbWZhbmcudHRmJywgJ0M6XFxXaW5kb3dzXFxGb250c1xcc2ltaGVpLnR0ZicsICdDOlxcV2luZG93c1xcRm9udHNcXHNpbWthaS50dGYnLCAnQzpcXFdpbmRvd3NcXEZvbnRzXFxTSU1MSS5UVEYnLCAnQzpcXFdpbmRvd3NcXEZvbnRzXFxzaW1zdW4udHRjJywgJ0M6XFxXaW5kb3dzXFxGb250c1xcc2ltc3VuYi50dGYnLCAnQzpcXFdpbmRvd3NcXEZvbnRzXFxTaW1zdW5FeHRHLnR0ZicsICdDOlxcV2luZG93c1xcRm9udHNcXFNJTVlPVS5UVEYnXQ0KTUFSS0VSIFsnQzpcXFVzZXJzXFxhZG1pblxcLmNhY2hlXFxjb2RleC1ydW50aW1lc1xcY29kZXgtcHJpbWFyeS1ydW50aW1lXFxwbHVnaW5zXFxvcGVuYWktcHJpbWFyeS1ydW50aW1lXFxwbHVnaW5zXFxkb2N1bWVudHNcXHNraWxsc1xcZG9jdW1lbnRzXFxjb250YWluZXJfdG9vbHNcXG1hcmtfYXJ0aWZhY3Rfb3BlcmF0aW9uX3N0YXJ0ZWQubWpzJywgJ0M6XFxVc2Vyc1xcYWRtaW5cXC5jYWNoZVxcY29kZXgtcnVudGltZXNcXGNvZGV4LXByaW1hcnktcnVudGltZVxccGx1Z2luc1xcb3BlbmFpLXByaW1hcnktcnVudGltZVxccGx1Z2luc1xccGRmXFxza2lsbHNcXHBkZlxcY29udGFpbmVyX3Rvb2xzXFxtYXJrX2FydGlmYWN0X29wZXJhdGlvbl9zdGFydGVkLm1qcycsICdDOlxcVXNlcnNcXGFkbWluXFwuY2FjaGVcXGNvZGV4LXJ1bnRpbWVzXFxjb2RleC1wcmltYXJ5LXJ1bnRpbWVcXHBsdWdpbnNcXG9wZW5haS1wcmltYXJ5LXJ1bnRpbWVcXHBsdWdpbnNcXHByZXNlbnRhdGlvbnNcXHNraWxsc1xccHJlc2VudGF0aW9uc1xcY29udGFpbmVyX3Rvb2xzXFxtYXJrX2FydGlmYWN0X29wZXJhdGlvbl9zdGFydGVkLm1qcycsICdDOlxcVXNlcnNcXGFkbWluXFwuY2FjaGVcXGNvZGV4LXJ1bnRpbWVzXFxjb2RleC1wcmltYXJ5LXJ1bnRpbWVcXHBsdWdpbnNcXG9wZW5haS1wcmltYXJ5LXJ1bnRpbWVcXHBsdWdpbnNcXHNwcmVhZHNoZWV0c1xcc2tpbGxzXFxzcHJlYWRzaGVldHNcXGNvbnRhaW5lcl90b29sc1xcbWFya19hcnRpZmFjdF9vcGVyYXRpb25fc3RhcnRlZC5tanMnLCAnQzpcXFVzZXJzXFxhZG1pblxcLmNvZGV4XFxwbHVnaW5zXFxjYWNoZVxcb3BlbmFpLXByaW1hcnktcnVudGltZVxccGRmXFwyNi4xMDA3LjExMDQxXFxza2lsbHNcXHBkZlxcY29udGFpbmVyX3Rvb2xzXFxtYXJrX2FydGlmYWN0X29wZXJhdGlvbl9zdGFydGVkLm1qcyddDQpQT1BQTEVSIFsnQzpcXFVzZXJzXFxhZG1pblxcLmNhY2hlXFxjb2RleC1ydW50aW1lc1xcY29kZXgtcHJpbWFyeS1ydW50aW1lXFxkZXBlbmRlbmNpZXNcXG5hdGl2ZVxccG9wcGxlclxcTGlicmFyeVxcYmluXFxwZGZ0b3BwbS5leGUnXQ0KUERGSU5GTyBbJ0M6XFxVc2Vyc1xcYWRtaW5cXC5jYWNoZVxcY29kZXgtcnVudGltZXNcXGNvZGV4LXByaW1hcnktcnVudGltZVxcZGVwZW5kZW5jaWVzXFxuYXRpdmVcXHBvcHBsZXJcXExpYnJhcnlcXGJpblxccGRmaW5mby5leGUnXQ0K",
+  "stderr_base64": ""
+}

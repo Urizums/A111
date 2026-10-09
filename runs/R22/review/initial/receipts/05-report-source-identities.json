@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-Content -Raw -Encoding UTF8 runs/R22/execution-lock.json | ConvertFrom-Json | ForEach-Object { $_.files } | Where-Object { $_.path -match \"^runs/R22/execution/source/\" -and $_.path -notmatch \"^runs/R22/execution/source/v1/\" } | Select-Object path,size_bytes,sha256 | ConvertTo-Json -Depth 3"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:30:58.457316+00:00",
+    "monotonic_ns": 157688265000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:30:58.655102+00:00",
+    "monotonic_ns": 157688468000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n    {\r\n        \"path\":  \"runs/R22/execution/source/author_checks_v1.py\",\r\n        \"size_bytes\":  4929,\r\n        \"sha256\":  \"b10d741a0ff1fbee4560bee09ed543d8400b425bb3037d7d0ae9e273407d87dd\"\r\n    },\r\n    {\r\n        \"path\":  \"runs/R22/execution/source/build_report_v1.py\",\r\n        \"size_bytes\":  37089,\r\n        \"sha256\":  \"01ae4cce535ec8bd1ce33492892d5c40d1da216fe536d385b276ccb102f7d166\"\r\n    },\r\n    {\r\n        \"path\":  \"runs/R22/execution/source/finalize_v1.py\",\r\n        \"size_bytes\":  6343,\r\n        \"sha256\":  \"4a46d4142def538506e6df1c0ccbc4161398626c7ba60272a0614e4aa3a321ca\"\r\n    }\r\n]\r\n",
+  "stderr": "",
+  "stdout_base64": "Ww0KICAgIHsNCiAgICAgICAgInBhdGgiOiAgInJ1bnMvUjIyL2V4ZWN1dGlvbi9zb3VyY2UvYXV0aG9yX2NoZWNrc192MS5weSIsDQogICAgICAgICJzaXplX2J5dGVzIjogIDQ5MjksDQogICAgICAgICJzaGEyNTYiOiAgImIxMGQ3NDFhMGZmMWZiZWU0NTYwYmVlMDllZDU0M2Q4NDAwYjQyNWJiMzAzN2Q3ZDBhZTllMjczNDA3ZDg3ZGQiDQogICAgfSwNCiAgICB7DQogICAgICAgICJwYXRoIjogICJydW5zL1IyMi9leGVjdXRpb24vc291cmNlL2J1aWxkX3JlcG9ydF92MS5weSIsDQogICAgICAgICJzaXplX2J5dGVzIjogIDM3MDg5LA0KICAgICAgICAic2hhMjU2IjogICIwMWFlNGNjZTUzNWVjOGJkMWNlMzM0OTI4OTJkNWM0MGQxZGEyMTZmZTUzNmQzODViMjc2Y2NiMTAyZjdkMTY2Ig0KICAgIH0sDQogICAgew0KICAgICAgICAicGF0aCI6ICAicnVucy9SMjIvZXhlY3V0aW9uL3NvdXJjZS9maW5hbGl6ZV92MS5weSIsDQogICAgICAgICJzaXplX2J5dGVzIjogIDYzNDMsDQogICAgICAgICJzaGEyNTYiOiAgIjRhNDZkNDE0MmRlZjUzODUwNmU2ZGYxYzBjY2JjNDE2MTM5ODYyNmM3YmE2MDI3MmEwNjE0ZTRhYTNhMzIxY2EiDQogICAgfQ0KXQ0K",
+  "stderr_base64": ""
+}

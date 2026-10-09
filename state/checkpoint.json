@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-09T04:35:55.607109+00:00",
+  "updated_at": "2026-10-09T10:36:20.712903+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "同期限固定策略历史计算与独立实质接收",
+  "next_action": "新上下文自主制作验证与执行工作流",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -32,7 +32,7 @@
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
-  "publication_evidence": "runs/R19/publication/observation-50.json",
+  "publication_evidence": "runs/R19/publication/observation-52.json",
   "lifecycle": "active",
   "c1_audit": "completed_with_historical_gaps; efficacy remains inconclusive",
   "historical_handoff_repair_scope": "Existing functional_repairs fields describe S00 only; current candidate budgets are separate.",
@@ -161,7 +161,7 @@
     "background_code_execution_verified": false,
     "session_state": "R14_diagnostic_complete_R16_original_budget_stop",
     "checkpoint_reason": "Original failures retained; no full real-paper delivery. Explicit original-case limit change pending.",
-    "coordinator_heartbeat": "2026-10-09T04:31:57.122848+00:00",
+    "coordinator_heartbeat": "2026-10-09T10:35:57.917963+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -193,7 +193,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-r21-prospective",
+    "current_coordinator": "root-codex-r22-horizon",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -208,7 +208,7 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R22/REPORT.md",
+    "current_report": "runs/R23/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
@@ -228,7 +228,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R22/handback.json",
+    "coordinator_release_evidence": "runs/R22/handback2.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -571,22 +571,400 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "R22-02 ready; no current worker or background scheduler; actual coordinator lease released.",
+    "current_task_process_state": "R23-02 ready; no current actor or background scheduler; actual R22 coordinator lease released.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R19/publication/observation-50.json",
-    "current_source_commit": "c321484c1b9e90d151eb44dd91e5f88079c406b1",
+    "current_publication": "runs/R19/publication/observation-52.json",
+    "current_source_commit": "eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467",
     "current_source_ci": [
       {
-        "conclusion": "",
-        "databaseId": 37884552560,
-        "headSha": "c321484c1b9e90d151eb44dd91e5f88079c406b1",
-        "status": "in_progress",
-        "url": "https://github.com/Urizums/A111/actions/runs/37884552560",
-        "workflowName": "Cloud delivery validation"
+        "conclusion": "success",
+        "databaseId": 37884838207,
+        "headSha": "eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467",
+        "jobs": [
+          {
+            "completedAt": "2026-10-09T04:39:26Z",
+            "conclusion": "success",
+            "databaseId": 113672395666,
+            "name": "windows-preflight",
+            "startedAt": "2026-10-09T04:38:43Z",
+            "status": "completed",
+            "steps": [
+              {
+                "completedAt": "2026-10-09T04:38:45Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "startedAt": "2026-10-09T04:38:44Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:19Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "number": 2,
+                "startedAt": "2026-10-09T04:38:45Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:19Z",
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "number": 3,
+                "startedAt": "2026-10-09T04:39:19Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:22Z",
+                "conclusion": "success",
+                "name": "Read-only preflight behavior on native Windows",
+                "number": 4,
+                "startedAt": "2026-10-09T04:39:19Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:22Z",
+                "conclusion": "success",
+                "name": "Post Run actions/setup-python@v5",
+                "number": 7,
+                "startedAt": "2026-10-09T04:39:22Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:24Z",
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "number": 8,
+                "startedAt": "2026-10-09T04:39:22Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:24Z",
+                "conclusion": "success",
+                "name": "Complete job",
+                "number": 9,
+                "startedAt": "2026-10-09T04:39:24Z",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395666"
+          },
+          {
+            "completedAt": "2026-10-09T04:51:44Z",
+            "conclusion": "success",
+            "databaseId": 113672395812,
+            "name": "validate (3.10)",
+            "startedAt": "2026-10-09T04:38:42Z",
+            "status": "completed",
+            "steps": [
+              {
+                "completedAt": "2026-10-09T04:38:43Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "startedAt": "2026-10-09T04:38:42Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:00Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "number": 2,
+                "startedAt": "2026-10-09T04:38:43Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:01Z",
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "number": 3,
+                "startedAt": "2026-10-09T04:39:00Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:11Z",
+                "conclusion": "success",
+                "name": "Verify immutable evidence, revision and phase history",
+                "number": 4,
+                "startedAt": "2026-10-09T04:39:01Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:24Z",
+                "conclusion": "success",
+                "name": "Original controller regression",
+                "number": 5,
+                "startedAt": "2026-10-09T04:39:11Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:38Z",
+                "conclusion": "success",
+                "name": "C3 versioned candidate regression",
+                "number": 6,
+                "startedAt": "2026-10-09T04:39:24Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:49Z",
+                "conclusion": "success",
+                "name": "C5 versioned candidate regression",
+                "number": 7,
+                "startedAt": "2026-10-09T04:39:38Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:02Z",
+                "conclusion": "success",
+                "name": "C6 takeover candidate and restore recovery",
+                "number": 8,
+                "startedAt": "2026-10-09T04:39:49Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:14Z",
+                "conclusion": "success",
+                "name": "C7 short-entry candidate regression",
+                "number": 9,
+                "startedAt": "2026-10-09T04:40:02Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:19Z",
+                "conclusion": "success",
+                "name": "Snapshot, bounded repairs, local provider and approval regressions",
+                "number": 10,
+                "startedAt": "2026-10-09T04:40:14Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:47:01Z",
+                "conclusion": "success",
+                "name": "Handoff and recorder regression",
+                "number": 11,
+                "startedAt": "2026-10-09T04:40:19Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:47:01Z",
+                "conclusion": "success",
+                "name": "Actual support desk HTTP journey",
+                "number": 12,
+                "startedAt": "2026-10-09T04:47:01Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:48:10Z",
+                "conclusion": "success",
+                "name": "Install and exercise CLI with fresh state",
+                "number": 13,
+                "startedAt": "2026-10-09T04:47:01Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:25Z",
+                "conclusion": "success",
+                "name": "Package source and reports",
+                "number": 14,
+                "startedAt": "2026-10-09T04:48:10Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:41Z",
+                "conclusion": "success",
+                "name": "Run actions/upload-artifact@v4",
+                "number": 15,
+                "startedAt": "2026-10-09T04:51:25Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:41Z",
+                "conclusion": "success",
+                "name": "Post Run actions/setup-python@v5",
+                "number": 29,
+                "startedAt": "2026-10-09T04:51:41Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:41Z",
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "number": 30,
+                "startedAt": "2026-10-09T04:51:41Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:41Z",
+                "conclusion": "success",
+                "name": "Complete job",
+                "number": 31,
+                "startedAt": "2026-10-09T04:51:41Z",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395812"
+          },
+          {
+            "completedAt": "2026-10-09T04:53:55Z",
+            "conclusion": "success",
+            "databaseId": 113672395883,
+            "name": "validate (3.12)",
+            "startedAt": "2026-10-09T04:38:42Z",
+            "status": "completed",
+            "steps": [
+              {
+                "completedAt": "2026-10-09T04:38:43Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "startedAt": "2026-10-09T04:38:42Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:02Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "number": 2,
+                "startedAt": "2026-10-09T04:38:43Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:02Z",
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "number": 3,
+                "startedAt": "2026-10-09T04:39:02Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:14Z",
+                "conclusion": "success",
+                "name": "Verify immutable evidence, revision and phase history",
+                "number": 4,
+                "startedAt": "2026-10-09T04:39:02Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:26Z",
+                "conclusion": "success",
+                "name": "Original controller regression",
+                "number": 5,
+                "startedAt": "2026-10-09T04:39:14Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:40Z",
+                "conclusion": "success",
+                "name": "C3 versioned candidate regression",
+                "number": 6,
+                "startedAt": "2026-10-09T04:39:26Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:51Z",
+                "conclusion": "success",
+                "name": "C5 versioned candidate regression",
+                "number": 7,
+                "startedAt": "2026-10-09T04:39:40Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:03Z",
+                "conclusion": "success",
+                "name": "C6 takeover candidate and restore recovery",
+                "number": 8,
+                "startedAt": "2026-10-09T04:39:51Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:15Z",
+                "conclusion": "success",
+                "name": "C7 short-entry candidate regression",
+                "number": 9,
+                "startedAt": "2026-10-09T04:40:03Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:20Z",
+                "conclusion": "success",
+                "name": "Snapshot, bounded repairs, local provider and approval regressions",
+                "number": 10,
+                "startedAt": "2026-10-09T04:40:15Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:48:47Z",
+                "conclusion": "success",
+                "name": "Handoff and recorder regression",
+                "number": 11,
+                "startedAt": "2026-10-09T04:40:20Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:48:47Z",
+                "conclusion": "success",
+                "name": "Actual support desk HTTP journey",
+                "number": 12,
+                "startedAt": "2026-10-09T04:48:47Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:50:14Z",
+                "conclusion": "success",
+                "name": "Install and exercise CLI with fresh state",
+                "number": 13,
+                "startedAt": "2026-10-09T04:48:47Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:36Z",
+                "conclusion": "success",
+                "name": "Package source and reports",
+                "number": 14,
+                "startedAt": "2026-10-09T04:50:14Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:52Z",
+                "conclusion": "success",
+                "name": "Run actions/upload-artifact@v4",
+                "number": 15,
+                "startedAt": "2026-10-09T04:53:36Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:52Z",
+                "conclusion": "success",
+                "name": "Post Run actions/setup-python@v5",
+                "number": 29,
+                "startedAt": "2026-10-09T04:53:52Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:53Z",
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "number": 30,
+                "startedAt": "2026-10-09T04:53:52Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:53Z",
+                "conclusion": "success",
+                "name": "Complete job",
+                "number": 31,
+                "startedAt": "2026-10-09T04:53:53Z",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395883"
+          }
+        ],
+        "status": "completed",
+        "url": "https://github.com/Urizums/A111/actions/runs/37884838207"
       }
     ],
-    "current_source_ci_observed": "2026-10-09T04:35:55.561538+00:00",
+    "current_source_ci_observed": "2026-10-09T05:44:03.991989+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
     "R19_current_level": 4,
@@ -808,7 +1186,7 @@
       "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
       "current_source_ci_observed": "success"
     },
-    "current_frontier_task": "R22-02",
+    "current_frontier_task": "R23-02",
     "R19_publication_status": "source_pushed_observed",
     "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
@@ -864,7 +1242,7 @@
     "candidate_status": "C13_targeted_forward_reception_pass_scoped",
     "R19_status": "four_diagnostics_and_source_synthesis_done_successor_actually_started",
     "R20_plan": "runs/R20/PLAN.md",
-    "final_lease_release": "runs/R22/handback.json",
+    "final_lease_release": "runs/R22/handback2.json",
     "source_artifact_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
     "final_source_ci_observation": {
       "conclusion": "success",
@@ -1340,10 +1718,19 @@
           "coordinator_release_evidence": null
         },
         "note": "Actual R21 owner released after R21 closure and R22 real first step; prior aliases retained."
+      },
+      {
+        "at": "2026-10-09T08:49:16.135932+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r21-prospective",
+          "coordinator_heartbeat": "2026-10-09T04:31:57.122848+00:00",
+          "final_lease_release": "runs/R22/handback.json",
+          "coordinator_release_evidence": "runs/R22/handback.json"
+        }
       }
     ],
-    "actual_lease_pid": 367,
-    "actual_lease_session": 20564,
+    "actual_lease_pid": 267,
+    "actual_lease_session": 43407,
     "R21_prestart_binding": "New original inputs/protocol/C13 identity and derived workflow scope added before first R21-03 attempt; acceptance and old66 tasks unchanged.",
     "completed_native_R21": [
       {
@@ -1377,7 +1764,46 @@
         "actual_model": null
       }
     ],
-    "R22_status": "first_source_availability_audit_done"
+    "R22_status": "same_horizon_reception_and_source_synthesis_complete_C13_retained",
+    "completed_native_R22": [
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-2.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-2.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-3.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-3.json",
+        "actual_model": null
+      }
+    ],
+    "R23_status": "real_raw_first_step_done_design_not_started"
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -1592,7 +2018,7 @@
   "next_prospective_plan": "runs/R18/PLAN.md",
   "R18_plan": "runs/R18/PLAN.md",
   "R18_status": "actual_first_slice_only",
-  "current_report": "runs/R22/REPORT.md",
+  "current_report": "runs/R23/REPORT.md",
   "final_checks": "runs/R17/final/linux-full-regression-command.json",
   "publication": "runs/R17/publication/publication.json",
   "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
@@ -1600,24 +2026,402 @@
   "receipt_commit_pending_at_this_snapshot": true,
   "R19_status": "closed_with_actual_R20_first_step",
   "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
-  "current_frontier_task": "R22-02",
-  "current_source_commit": "c321484c1b9e90d151eb44dd91e5f88079c406b1",
+  "current_frontier_task": "R23-02",
+  "current_source_commit": "eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467",
   "current_source_ci": [
     {
-      "conclusion": "",
-      "databaseId": 37884552560,
-      "headSha": "c321484c1b9e90d151eb44dd91e5f88079c406b1",
-      "status": "in_progress",
-      "url": "https://github.com/Urizums/A111/actions/runs/37884552560",
-      "workflowName": "Cloud delivery validation"
+      "conclusion": "success",
+      "databaseId": 37884838207,
+      "headSha": "eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467",
+      "jobs": [
+        {
+          "completedAt": "2026-10-09T04:39:26Z",
+          "conclusion": "success",
+          "databaseId": 113672395666,
+          "name": "windows-preflight",
+          "startedAt": "2026-10-09T04:38:43Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-09T04:38:45Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-09T04:38:44Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:19Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-09T04:38:45Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:19Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-09T04:39:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:22Z",
+              "conclusion": "success",
+              "name": "Read-only preflight behavior on native Windows",
+              "number": 4,
+              "startedAt": "2026-10-09T04:39:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:22Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 7,
+              "startedAt": "2026-10-09T04:39:22Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:24Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 8,
+              "startedAt": "2026-10-09T04:39:22Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:24Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 9,
+              "startedAt": "2026-10-09T04:39:24Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395666"
+        },
+        {
+          "completedAt": "2026-10-09T04:51:44Z",
+          "conclusion": "success",
+          "databaseId": 113672395812,
+          "name": "validate (3.10)",
+          "startedAt": "2026-10-09T04:38:42Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-09T04:38:43Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-09T04:38:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:00Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-09T04:38:43Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:01Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-09T04:39:00Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:11Z",
+              "conclusion": "success",
+              "name": "Verify immutable evidence, revision and phase history",
+              "number": 4,
+              "startedAt": "2026-10-09T04:39:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:24Z",
+              "conclusion": "success",
+              "name": "Original controller regression",
+              "number": 5,
+              "startedAt": "2026-10-09T04:39:11Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:38Z",
+              "conclusion": "success",
+              "name": "C3 versioned candidate regression",
+              "number": 6,
+              "startedAt": "2026-10-09T04:39:24Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:49Z",
+              "conclusion": "success",
+              "name": "C5 versioned candidate regression",
+              "number": 7,
+              "startedAt": "2026-10-09T04:39:38Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:40:02Z",
+              "conclusion": "success",
+              "name": "C6 takeover candidate and restore recovery",
+              "number": 8,
+              "startedAt": "2026-10-09T04:39:49Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:40:14Z",
+              "conclusion": "success",
+              "name": "C7 short-entry candidate regression",
+              "number": 9,
+              "startedAt": "2026-10-09T04:40:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:40:19Z",
+              "conclusion": "success",
+              "name": "Snapshot, bounded repairs, local provider and approval regressions",
+              "number": 10,
+              "startedAt": "2026-10-09T04:40:14Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:47:01Z",
+              "conclusion": "success",
+              "name": "Handoff and recorder regression",
+              "number": 11,
+              "startedAt": "2026-10-09T04:40:19Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:47:01Z",
+              "conclusion": "success",
+              "name": "Actual support desk HTTP journey",
+              "number": 12,
+              "startedAt": "2026-10-09T04:47:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:48:10Z",
+              "conclusion": "success",
+              "name": "Install and exercise CLI with fresh state",
+              "number": 13,
+              "startedAt": "2026-10-09T04:47:01Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:51:25Z",
+              "conclusion": "success",
+              "name": "Package source and reports",
+              "number": 14,
+              "startedAt": "2026-10-09T04:48:10Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:51:41Z",
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 15,
+              "startedAt": "2026-10-09T04:51:25Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:51:41Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 29,
+              "startedAt": "2026-10-09T04:51:41Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:51:41Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 30,
+              "startedAt": "2026-10-09T04:51:41Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:51:41Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 31,
+              "startedAt": "2026-10-09T04:51:41Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395812"
+        },
+        {
+          "completedAt": "2026-10-09T04:53:55Z",
+          "conclusion": "success",
+          "databaseId": 113672395883,
+          "name": "validate (3.12)",
+          "startedAt": "2026-10-09T04:38:42Z",
+          "status": "completed",
+          "steps": [
+            {
+              "completedAt": "2026-10-09T04:38:43Z",
+              "conclusion": "success",
+              "name": "Set up job",
+              "number": 1,
+              "startedAt": "2026-10-09T04:38:42Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:02Z",
+              "conclusion": "success",
+              "name": "Run actions/checkout@v4",
+              "number": 2,
+              "startedAt": "2026-10-09T04:38:43Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:02Z",
+              "conclusion": "success",
+              "name": "Run actions/setup-python@v5",
+              "number": 3,
+              "startedAt": "2026-10-09T04:39:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:14Z",
+              "conclusion": "success",
+              "name": "Verify immutable evidence, revision and phase history",
+              "number": 4,
+              "startedAt": "2026-10-09T04:39:02Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:26Z",
+              "conclusion": "success",
+              "name": "Original controller regression",
+              "number": 5,
+              "startedAt": "2026-10-09T04:39:14Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:40Z",
+              "conclusion": "success",
+              "name": "C3 versioned candidate regression",
+              "number": 6,
+              "startedAt": "2026-10-09T04:39:26Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:39:51Z",
+              "conclusion": "success",
+              "name": "C5 versioned candidate regression",
+              "number": 7,
+              "startedAt": "2026-10-09T04:39:40Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:40:03Z",
+              "conclusion": "success",
+              "name": "C6 takeover candidate and restore recovery",
+              "number": 8,
+              "startedAt": "2026-10-09T04:39:51Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:40:15Z",
+              "conclusion": "success",
+              "name": "C7 short-entry candidate regression",
+              "number": 9,
+              "startedAt": "2026-10-09T04:40:03Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:40:20Z",
+              "conclusion": "success",
+              "name": "Snapshot, bounded repairs, local provider and approval regressions",
+              "number": 10,
+              "startedAt": "2026-10-09T04:40:15Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:48:47Z",
+              "conclusion": "success",
+              "name": "Handoff and recorder regression",
+              "number": 11,
+              "startedAt": "2026-10-09T04:40:20Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:48:47Z",
+              "conclusion": "success",
+              "name": "Actual support desk HTTP journey",
+              "number": 12,
+              "startedAt": "2026-10-09T04:48:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:50:14Z",
+              "conclusion": "success",
+              "name": "Install and exercise CLI with fresh state",
+              "number": 13,
+              "startedAt": "2026-10-09T04:48:47Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:53:36Z",
+              "conclusion": "success",
+              "name": "Package source and reports",
+              "number": 14,
+              "startedAt": "2026-10-09T04:50:14Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:53:52Z",
+              "conclusion": "success",
+              "name": "Run actions/upload-artifact@v4",
+              "number": 15,
+              "startedAt": "2026-10-09T04:53:36Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:53:52Z",
+              "conclusion": "success",
+              "name": "Post Run actions/setup-python@v5",
+              "number": 29,
+              "startedAt": "2026-10-09T04:53:52Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:53:53Z",
+              "conclusion": "success",
+              "name": "Post Run actions/checkout@v4",
+              "number": 30,
+              "startedAt": "2026-10-09T04:53:52Z",
+              "status": "completed"
+            },
+            {
+              "completedAt": "2026-10-09T04:53:53Z",
+              "conclusion": "success",
+              "name": "Complete job",
+              "number": 31,
+              "startedAt": "2026-10-09T04:53:53Z",
+              "status": "completed"
+            }
+          ],
+          "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395883"
+        }
+      ],
+      "status": "completed",
+      "url": "https://github.com/Urizums/A111/actions/runs/37884838207"
     }
   ],
   "current_user_language_steering": "runs/R19/levels/L3/resource-language-resumption-1.json",
   "frozen_four_level_candidate": "runs/R19/candidate/C11-lock.json",
   "R20_status": "source_synthesis_closed_successor_actually_started",
   "candidate_status": "C12_scoped_forward_first_reception_pass",
-  "handback": "runs/R22/handback.json",
-  "actual_lease_release": "runs/R22/handback.json",
+  "handback": "runs/R22/handback2.json",
+  "actual_lease_release": "runs/R22/handback2.json",
   "source_artifact_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
   "final_source_ci_observation": {
     "conclusion": "success",

@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-ChildItem runs/R22/review/initial/source -File | Select-Object Name,Length | ConvertTo-Json -Depth 2; Select-String -Path runs/R22/review/initial/source/independent_rebuild_v2.py -Encoding UTF8 -Pattern \"output !=|def csv_bytes|source snapshot differs\""
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:33:53.855893+00:00",
+    "monotonic_ns": 157863656000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:33:54.052217+00:00",
+    "monotonic_ns": 157863859000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n    {\r\n        \"Name\":  \"freeze_review.py\",\r\n        \"Length\":  4956\r\n    },\r\n    {\r\n        \"Name\":  \"freeze_review_v2.py\",\r\n        \"Length\":  4956\r\n    },\r\n    {\r\n        \"Name\":  \"independent_rebuild.py\",\r\n        \"Length\":  38338\r\n    },\r\n    {\r\n        \"Name\":  \"independent_rebuild_v2.py\",\r\n        \"Length\":  38338\r\n    }\r\n]\r\n\r\nruns\\R22\\review\\initial\\source\\independent_rebuild_v2.py:50:def csv_bytes(frame: pd.DataFrame) -> bytes:\r\nruns\\R22\\review\\initial\\source\\independent_rebuild_v2.py:375:    if output != (ROOT / \"runs/R22/review/initial/rebuild\"\r\n).resolve():\r\n\r\n\r\n",
+  "stderr": "",
+  "stdout_base64": "Ww0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgImZyZWV6ZV9yZXZpZXcucHkiLA0KICAgICAgICAiTGVuZ3RoIjogIDQ5NTYNCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgImZyZWV6ZV9yZXZpZXdfdjIucHkiLA0KICAgICAgICAiTGVuZ3RoIjogIDQ5NTYNCiAgICB9LA0KICAgIHsNCiAgICAgICAgIk5hbWUiOiAgImluZGVwZW5kZW50X3JlYnVpbGQucHkiLA0KICAgICAgICAiTGVuZ3RoIjogIDM4MzM4DQogICAgfSwNCiAgICB7DQogICAgICAgICJOYW1lIjogICJpbmRlcGVuZGVudF9yZWJ1aWxkX3YyLnB5IiwNCiAgICAgICAgIkxlbmd0aCI6ICAzODMzOA0KICAgIH0NCl0NCg0KcnVuc1xSMjJccmV2aWV3XGluaXRpYWxcc291cmNlXGluZGVwZW5kZW50X3JlYnVpbGRfdjIucHk6NTA6ZGVmIGNzdl9ieXRlcyhmcmFtZTogcGQuRGF0YUZyYW1lKSAtPiBieXRlczoNCnJ1bnNcUjIyXHJldmlld1xpbml0aWFsXHNvdXJjZVxpbmRlcGVuZGVudF9yZWJ1aWxkX3YyLnB5OjM3NTogICAgaWYgb3V0cHV0ICE9IChST09UIC8gInJ1bnMvUjIyL3Jldmlldy9pbml0aWFsL3JlYnVpbGQiDQopLnJlc29sdmUoKToNCg0KDQo=",
+  "stderr_base64": ""
+}

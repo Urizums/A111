@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path;p=Path('runs/R22/review/initial/rebuild-v5/results/reconstruction.json');q=json.load(open(p,encoding='utf-8'));print(q['source_rebuild'].keys());print(q['rows'])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:50:11.216608+00:00",
+    "monotonic_ns": 158841000000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:50:11.294152+00:00",
+    "monotonic_ns": 158841078000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "dict_keys(['source_rows', 'recomputed_rows', 'point_error_is_rebuilt_from_raw_mature_label_minus_published_point', 'stored_error_used_as_truth', 'exact_mature_identity_matches', 'max_abs_stored_error_difference', 'source_forecasts_rebuilt'])\r\n24192\r\n",
+  "stderr": "",
+  "stdout_base64": "ZGljdF9rZXlzKFsnc291cmNlX3Jvd3MnLCAncmVjb21wdXRlZF9yb3dzJywgJ3BvaW50X2Vycm9yX2lzX3JlYnVpbHRfZnJvbV9yYXdfbWF0dXJlX2xhYmVsX21pbnVzX3B1Ymxpc2hlZF9wb2ludCcsICdzdG9yZWRfZXJyb3JfdXNlZF9hc190cnV0aCcsICdleGFjdF9tYXR1cmVfaWRlbnRpdHlfbWF0Y2hlcycsICdtYXhfYWJzX3N0b3JlZF9lcnJvcl9kaWZmZXJlbmNlJywgJ3NvdXJjZV9mb3JlY2FzdHNfcmVidWlsdCddKQ0KMjQxOTINCg==",
+  "stderr_base64": ""
+}

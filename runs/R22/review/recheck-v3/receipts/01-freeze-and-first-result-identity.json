@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path;r=Path('.'); names=['runs/R22/document-correction-v3-lock.json','runs/R22/execution-lock.json','runs/R22/review/initial/result.json','runs/R22/review/initial/source-freeze-v11.json']; print(json.dumps([(n,Path(n).stat().st_size) for n in names],ensure_ascii=False)); print('v3 lock keys',json.load(open(r/names[0],encoding='utf-8')).keys()); print('criteria',json.load(open(r/names[2],encoding='utf-8'))['criterion_statuses'])"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:22:42.330659+00:00",
+    "monotonic_ns": 160792078000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:22:42.406381+00:00",
+    "monotonic_ns": 160792156000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[[\"runs/R22/document-correction-v3-lock.json\", 9324], [\"runs/R22/execution-lock.json\", 55809], [\"runs/R22/review/initial/result.json\", 26837], [\"runs/R22/review/initial/source-freeze-v11.json\", 44710]]\r\nv3 lock keys dict_keys(['schema', 'revision', 'frozen_at', 'files', 'claim'])\r\ncriteria {'h1': 'pass', 'h2': 'pass', 'h3': 'pass', 'h4': 'pass', 'h5': 'pass', 'h6': 'fail'}\r\n",
+  "stderr": "",
+  "stdout_base64": "W1sicnVucy9SMjIvZG9jdW1lbnQtY29ycmVjdGlvbi12My1sb2NrLmpzb24iLCA5MzI0XSwgWyJydW5zL1IyMi9leGVjdXRpb24tbG9jay5qc29uIiwgNTU4MDldLCBbInJ1bnMvUjIyL3Jldmlldy9pbml0aWFsL3Jlc3VsdC5qc29uIiwgMjY4MzddLCBbInJ1bnMvUjIyL3Jldmlldy9pbml0aWFsL3NvdXJjZS1mcmVlemUtdjExLmpzb24iLCA0NDcxMF1dDQp2MyBsb2NrIGtleXMgZGljdF9rZXlzKFsnc2NoZW1hJywgJ3JldmlzaW9uJywgJ2Zyb3plbl9hdCcsICdmaWxlcycsICdjbGFpbSddKQ0KY3JpdGVyaWEgeydoMSc6ICdwYXNzJywgJ2gyJzogJ3Bhc3MnLCAnaDMnOiAncGFzcycsICdoNCc6ICdwYXNzJywgJ2g1JzogJ3Bhc3MnLCAnaDYnOiAnZmFpbCd9DQo=",
+  "stderr_base64": ""
+}

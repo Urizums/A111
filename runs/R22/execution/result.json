@@ -1,0 +1,65 @@
+{
+  "schema": "r22-author-result/1",
+  "task": "R22-02",
+  "status": "produced_and_author_selfchecked",
+  "independent_acceptance": false,
+  "write_domain": "runs/R22/execution/**",
+  "os_isolation": false,
+  "actual_model": null,
+  "tokens": null,
+  "cost": null,
+  "main_markdown": "runs/R22/execution/report-v1/REPORT.md",
+  "main_pdf": "runs/R22/execution/report-v1/REPORT.pdf",
+  "final_pdf_pages": 13,
+  "figures": 6,
+  "prospective_source_lock": "runs/R22/execution/prospective-freeze.json",
+  "delivery_source_lock": "runs/R22/execution/source-delivery-lock.json",
+  "science_output": "runs/R22/execution/science-v1",
+  "clean_output": "runs/R22/execution/clean-v1",
+  "author_selfcheck": "runs/R22/execution/author-selfcheck-v1/selfcheck.json",
+  "author_visual_qa": "runs/R22/execution/visual-qa-final.json",
+  "command_manifest": "runs/R22/execution/command-manifest-through-review.json",
+  "terminal_receipts_in_manifest": 16,
+  "last_finalization_receipt": "runs/R22/execution/receipts/0017-finalize-delivery.json",
+  "assertions": {
+    "six_route_origin_grids_4032": true,
+    "source_raw_backtrace": true,
+    "published_point10_error_recomputed": true,
+    "pool_days": [
+      11,
+      53,
+      70
+    ],
+    "integer_action_resources": true,
+    "solver_days": 252,
+    "meaningful_oracle_and_boundaries": true,
+    "all_predefined_groups_and_empty_cells": true,
+    "clean_semantic_numeric_equivalence": true,
+    "whole_chinese_body_actually_read": true,
+    "all_final_pdf_pages_actually_viewed": true,
+    "author_selfcheck_only": true
+  },
+  "failures": [
+    {
+      "receipt": "0002-read-implementation.json",
+      "kind": "read_path_recovery",
+      "exit_code": 1,
+      "description": "R21 prospective-freeze initially addressed at root; actual execution sibling subsequently verified; no fit yet."
+    },
+    {
+      "receipt": "0011-existing-output-refused.json",
+      "kind": "expected_rejection_boundary",
+      "exit_code": 1,
+      "description": "Existing science-v1 output refused before writing; intended boundary assertion."
+    }
+  ],
+  "scientific_source_repairs": [],
+  "restricted_reads_not_performed": [
+    "R21/evaluation/**",
+    "protocol/make_case.py",
+    "prior reports/results/selfchecks/diagnostics",
+    "R22/audit/**",
+    "root REPORT/TODO/checkpoint or shared actor artifacts"
+  ],
+  "root_next_action": "After terminal finalization and read-only verification, freeze whole first delivery domain; hand fresh acceptor protocol/raw/locked actual source/science/report, excluding result.json/author-selfcheck/visual-qa and author diagnostics as judging inputs."
+}

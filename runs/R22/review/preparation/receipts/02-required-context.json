@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "System.Text.UTF8Encoding+UTF8EncodingSealed = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); [IO.File]::ReadAllText('START_HERE.md'); [IO.File]::ReadAllText('state/phase-todo.json'); [IO.File]::ReadAllText('runs/R22/protocol/PROTOCOL.md'); [IO.File]::ReadAllText('runs/R22/protocol/acceptance.json'); [IO.File]::ReadAllText('runs/R22/protocol-lock.json'); [IO.File]::ReadAllText('runs/R21/input-lock.json'); [IO.File]::ReadAllText('runs/R21/execution-lock.json')"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:05:43.600247+00:00",
+    "monotonic_ns": 156173437000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:05:43.772024+00:00",
+    "monotonic_ns": 156173609000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "At line:1 char:107\r\n+ ...  [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); [IO.F ...\r\n+                                                                  ~\r\nAn expression was expected after '('.\r\n    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : ExpectedExpression\r\n \r\n",
+  "stdout_base64": "",
+  "stderr_base64": "QXQgbGluZToxIGNoYXI6MTA3DQorIC4uLiAgW0NvbnNvbGVdOjpPdXRwdXRFbmNvZGluZyA9IFtTeXN0ZW0uVGV4dC5VVEY4RW5jb2RpbmddOjpuZXcoKTsgW0lPLkYgLi4uDQorICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfg0KQW4gZXhwcmVzc2lvbiB3YXMgZXhwZWN0ZWQgYWZ0ZXIgJygnLg0KICAgICsgQ2F0ZWdvcnlJbmZvICAgICAgICAgIDogUGFyc2VyRXJyb3I6ICg6KSBbXSwgUGFyZW50Q29udGFpbnNFcnJvclJlY29yZEV4Y2VwdGlvbg0KICAgICsgRnVsbHlRdWFsaWZpZWRFcnJvcklkIDogRXhwZWN0ZWRFeHByZXNzaW9uDQogDQo="
+}

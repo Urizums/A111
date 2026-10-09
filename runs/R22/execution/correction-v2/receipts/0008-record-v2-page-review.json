@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path;from datetime import datetime,timezone;import json,hashlib;from pypdf import PdfReader;ex=Path('runs/R22/execution/correction-v2');pages=sorted((ex/'report').glob('page-*.png'));count=len(PdfReader(ex/'report/REPORT.pdf').pages);assert len(pages)==count;notes=['摘要、问题及数据界限可读','训练边界、模型、残差及优化公式可读','总体表09-19W报废340.08可读','早晚表09-19W远期678.03可读','六带图及活动表开端可读','活动损失1117.93与正文一致，跨页表头清楚','活动空格热图及配对图可读','合并表、店品图、资源表可读','验证与局限正文可读','新增舍入规则及旧h6失败保留说明可读','门店附录可读；09-02S09差额6.82有金额语义失败需修正','商品附录K01W50.28可读','续商品表与活动早晚1117.93及不可估计空格可读'];assert len(notes)==count;obj={'schema':'r22-v2-actual-page-inspection/1','actual_checked_at_utc':datetime.now(timezone.utc).isoformat(),'independent':False,'actual_page_count':count,'tool':'functions.exec tools.view_image; every final v2 page emitted and actually read','pages':[{'page':i+1,'path':str(p),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'actually_viewed':True,'observation':notes[i]} for i,p in enumerate(pages)],'layout_defects_observed':[],'monetary_semantic_check':'failed; see 0006 and derived-monetary-counterexamples.json','old_first_verdict_unchanged':True};(ex/'visual-qa-v2-failed.json').open('x',encoding='utf-8').write(json.dumps(obj,ensure_ascii=False,indent=2));print('Recorded actual views',count,'; monetary consistency remains failed.')"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:04:40.527411+00:00",
+    "monotonic_ns": 159710296000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:04:40.761969+00:00",
+    "monotonic_ns": 159710531000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "Recorded actual views 13 ; monetary consistency remains failed.\r\n",
+  "stderr": "",
+  "stdout_base64": "UmVjb3JkZWQgYWN0dWFsIHZpZXdzIDEzIDsgbW9uZXRhcnkgY29uc2lzdGVuY3kgcmVtYWlucyBmYWlsZWQuDQo=",
+  "stderr_base64": ""
+}

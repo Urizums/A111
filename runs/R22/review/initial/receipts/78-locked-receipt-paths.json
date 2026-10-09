@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path;p=Path('runs/R22/execution-lock.json'); q=json.load(open(p,encoding='utf-8')); print('\\\\n'.join(x['path'] for x in q['files'] if '/receipts/' in x['path']))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:48:50.178943+00:00",
+    "monotonic_ns": 158759968000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:48:50.258776+00:00",
+    "monotonic_ns": 158760046000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "runs/R22/execution/receipts/0001-read-authorized-sources.json\\nruns/R22/execution/receipts/0002-read-implementation.json\\nruns/R22/execution/receipts/0003-read-science-source.json\\nruns/R22/execution/receipts/0004-read-lineage.json\\nruns/R22/execution/receipts/0005-read-contract-and-references.json\\nruns/R22/execution/receipts/0006-freeze-science.json\\nruns/R22/execution/receipts/0007-first-science-v1.json\\nruns/R22/execution/receipts/0008-pdf-runtime-locations.json\\nruns/R22/execution/receipts/0009-clean-replay.json\\nruns/R22/execution/receipts/0010-read-produced-results.json\\nruns/R22/execution/receipts/0011-existing-output-refused.json\\nruns/R22/execution/receipts/0012-author-check.json\\nruns/R22/execution/receipts/0013-pdf-artifact-marker.json\\nruns/R22/execution/receipts/0014-build-report.json\\nruns/R22/execution/receipts/0015-render-pdf.json\\nruns/R22/execution/receipts/0016-read-final-body.json\\nruns/R22/execution/receipts/0017-finalize-delivery.json\\nruns/R22/execution/receipts/0018-final-readonly-verification.json\r\n",
+  "stderr": "",
+  "stdout_base64": "cnVucy9SMjIvZXhlY3V0aW9uL3JlY2VpcHRzLzAwMDEtcmVhZC1hdXRob3JpemVkLXNvdXJjZXMuanNvblxucnVucy9SMjIvZXhlY3V0aW9uL3JlY2VpcHRzLzAwMDItcmVhZC1pbXBsZW1lbnRhdGlvbi5qc29uXG5ydW5zL1IyMi9leGVjdXRpb24vcmVjZWlwdHMvMDAwMy1yZWFkLXNjaWVuY2Utc291cmNlLmpzb25cbnJ1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8wMDA0LXJlYWQtbGluZWFnZS5qc29uXG5ydW5zL1IyMi9leGVjdXRpb24vcmVjZWlwdHMvMDAwNS1yZWFkLWNvbnRyYWN0LWFuZC1yZWZlcmVuY2VzLmpzb25cbnJ1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8wMDA2LWZyZWV6ZS1zY2llbmNlLmpzb25cbnJ1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8wMDA3LWZpcnN0LXNjaWVuY2UtdjEuanNvblxucnVucy9SMjIvZXhlY3V0aW9uL3JlY2VpcHRzLzAwMDgtcGRmLXJ1bnRpbWUtbG9jYXRpb25zLmpzb25cbnJ1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8wMDA5LWNsZWFuLXJlcGxheS5qc29uXG5ydW5zL1IyMi9leGVjdXRpb24vcmVjZWlwdHMvMDAxMC1yZWFkLXByb2R1Y2VkLXJlc3VsdHMuanNvblxucnVucy9SMjIvZXhlY3V0aW9uL3JlY2VpcHRzLzAwMTEtZXhpc3Rpbmctb3V0cHV0LXJlZnVzZWQuanNvblxucnVucy9SMjIvZXhlY3V0aW9uL3JlY2VpcHRzLzAwMTItYXV0aG9yLWNoZWNrLmpzb25cbnJ1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8wMDEzLXBkZi1hcnRpZmFjdC1tYXJrZXIuanNvblxucnVucy9SMjIvZXhlY3V0aW9uL3JlY2VpcHRzLzAwMTQtYnVpbGQtcmVwb3J0Lmpzb25cbnJ1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8wMDE1LXJlbmRlci1wZGYuanNvblxucnVucy9SMjIvZXhlY3V0aW9uL3JlY2VpcHRzLzAwMTYtcmVhZC1maW5hbC1ib2R5Lmpzb25cbnJ1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8wMDE3LWZpbmFsaXplLWRlbGl2ZXJ5Lmpzb25cbnJ1bnMvUjIyL2V4ZWN1dGlvbi9yZWNlaXB0cy8wMDE4LWZpbmFsLXJlYWRvbmx5LXZlcmlmaWNhdGlvbi5qc29uDQo=",
+  "stderr_base64": ""
+}

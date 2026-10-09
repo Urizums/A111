@@ -1,0 +1,102 @@
+{
+  "task_id": "R23-01",
+  "attempt_id": "R23-01-1",
+  "requirements_hash": "f5948a309460298a1c9df4fff3a263cd8a8cdeedc687203c1a1bb9bcf0ba8c83",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R23/PLAN.md",
+        "runs/R23/source-lock.json",
+        "runs/R23/audit/first-step-command.json",
+        "runs/R23/audit/INPUT_AUDIT.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "固定交付范围与中性输入真实审计",
+    "hypothesis": "Neutral raw-bound brief permits a bounded autonomous-design probe.",
+    "baseline": "Same original known historical inputs, different role packet; not a new scientific sample.",
+    "conditions": "Task/reception/source frozen before actual CSV audit.",
+    "observations": {
+      "scope": "Root actual raw input audit; not a workflow, numerical experiment, independent reception or new blind case.",
+      "raw_identities": [
+        {
+          "path": "runs/R21/inputs/raw/calendar.csv",
+          "size_bytes": 3658,
+          "sha256": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd"
+        },
+        {
+          "path": "runs/R21/inputs/raw/decision.json",
+          "size_bytes": 392,
+          "sha256": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753"
+        },
+        {
+          "path": "runs/R21/inputs/raw/demand_reports.csv",
+          "size_bytes": 1043924,
+          "sha256": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b"
+        },
+        {
+          "path": "runs/R21/inputs/raw/items.csv",
+          "size_bytes": 259,
+          "sha256": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167"
+        },
+        {
+          "path": "runs/R21/inputs/raw/promotions.csv",
+          "size_bytes": 958436,
+          "sha256": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45"
+        },
+        {
+          "path": "runs/R21/inputs/raw/stores.csv",
+          "size_bytes": 114,
+          "sha256": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220"
+        },
+        {
+          "path": "runs/R21/inputs/raw/weather.csv",
+          "size_bytes": 60058,
+          "sha256": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403"
+        },
+        {
+          "path": "runs/R21/inputs/reference/BASELINE.md",
+          "size_bytes": 1695,
+          "sha256": "edd81388fbd5e4a3115efab7d2d1f617116be59bc162e52d1fcb387975d13855"
+        },
+        {
+          "path": "runs/R21/inputs/reference/experiment.json",
+          "size_bytes": 1717,
+          "sha256": "dd5f141e37c5e1929f0f65d8d834b6a1aa7da6b0bf21d58a8d3595675a92e307"
+        },
+        {
+          "path": "runs/R21/inputs/reference/run.py",
+          "size_bytes": 27062,
+          "sha256": "4a6198d7c2cfea627c0f74aad5aa0ca4e88841f3e23b9d961185d423a0c3cf24"
+        }
+      ],
+      "raw_report_rows": 21609,
+      "unique_versions": 21599,
+      "asof_train_keys": 17568,
+      "raw_history_last_service": "2026-10-31",
+      "decision_origin": "2026-10-31T18:00:00",
+      "delivery_dates": 42,
+      "stores": 12,
+      "items": 8,
+      "required_future_keys": 4032,
+      "updates_during_delivery": "none; fixed single-origin policy specified by neutral task",
+      "future_actuals_read": false,
+      "previous_design_results_read": false,
+      "model_fitted": false,
+      "designer_packet": "runs/R23/brief/INPUTS.json; this audit and acceptance are withheld from designer.",
+      "actual_model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "metrics": {
+      "actual_model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "limits": "Root input audit, not independent design acceptance or model execution."
+  },
+  "next_action": "R23-02: derive workflow without a prewritten experiment protocol or previous solution."
+}

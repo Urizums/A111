@@ -1,0 +1,17 @@
+{
+  "schema":"r23-neutral-input-packet/1",
+  "allowed_read":[
+    "runs/R20/final/candidate/C13/forge-agent-flow/",
+    "runs/R20/final/candidate/C13-lock.json",
+    "runs/R23/brief/TASK.md",
+    "runs/R23/brief/INPUTS.json",
+    "runs/R21/inputs/raw/",
+    "runs/R21/inputs/reference/",
+    "runs/R21/input-lock.json"
+  ],
+  "identity_only":"R21 input-lock metadata includes REQUEST/PROBLEM paths; do not open their contents in this new packet.",
+  "forbidden":"R21 REQUEST/PROBLEM and all existing design/execution/review/results/evaluation/generator; R22 protocol/audit/results/papers/reviews; root expected designs or diagnoses; R23 audit/acceptance until independent reception.",
+  "write_boundary":"Designer: runs/R23/design/ only; other roles assigned later, no shared TODO/checkpoint writes.",
+  "telemetry":{"actual_model":null,"tokens":null,"cost":null},
+  "scope":"A bounded workflow-construction probe using known original raw data; not a new blind performance test."
+}

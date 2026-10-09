@@ -1,0 +1,694 @@
+{
+  "schema": "r22-independent-first-review/1",
+  "review_domain": "runs/R22/review/initial/",
+  "criterion_statuses": {
+    "h1": "pass",
+    "h2": "pass",
+    "h3": "pass",
+    "h4": "pass",
+    "h5": "pass",
+    "h6": "fail"
+  },
+  "criteria": [
+    {
+      "id": "h1",
+      "status": "pass",
+      "evidence": [
+        "rebuild-v5/results/reconstruction.json",
+        "rebuild-v5/source_rebuild/summary.json",
+        "comparison-v2.json"
+      ],
+      "finding": "Raw revisions, duplicate collapse, weather/demand checks, as-of training and feature provenance were reconstructed from locked inputs. Scoring labels were kept out of as-of training."
+    },
+    {
+      "id": "h2",
+      "status": "pass",
+      "evidence": [
+        "rebuild-v5/source_rebuild/residual_coordinates_rebuilt.csv",
+        "rebuild-v5/source_rebuild/source_forecasts_rebuilt.csv",
+        "rebuild-v5/uncertainty/pool_membership.csv",
+        "comparison-v2.json"
+      ],
+      "finding": "Both routes and all six source-origin/method forecasts were independently reconstructed. Errors use mature raw labels minus the published 10-decimal point. Exact 96-coordinate/day readiness uses the mature-version arrival time; a qualifying day remains eligible when another same-window day is incomplete. No current-window residual was used."
+    },
+    {
+      "id": "h3",
+      "status": "pass",
+      "evidence": [
+        "rebuild-v5/results/keys.csv",
+        "rebuild-v5/results/group_*.csv",
+        "rebuild-v5/results/daily.csv",
+        "rebuild-v5/results/paired_daily.csv",
+        "comparison-v2.json"
+      ],
+      "finding": "Each route has 4,032 keys at each of three origins. All preset horizon, early/late, activity, activity-by-band, activity-by-stage, store, item, date and paired-day tables were compared. The first two windows have 84 unique dates; the third overlaps the prior window by 25 dates and remains separately described. Empty activity cells are explicitly retained with zero sample and not-estimable status."
+    },
+    {
+      "id": "h4",
+      "status": "pass",
+      "evidence": [
+        "rebuild-v5/validation/boundaries.json",
+        "rebuild-v5/results/daily_solver.csv",
+        "rebuild-v5/results/daily.csv",
+        "rebuild-v5/uncertainty/scenarios_*.npz"
+      ],
+      "finding": "Real-valued scenarios and intervals are accepted, including valid intervals that do not contain the point forecast. Actions are integer and feasible. A 3-coordinate exhaustive oracle matches the solver minimum; 95/96, late-by-one-second, equal-origin, unfinished-day, invalid domains, invalid scenarios and capacity/budget boundaries were exercised. All 252 solver rows have status 0 and gap 0; maximum recomputed objective/bound difference is about 1.01e-10."
+    },
+    {
+      "id": "h5",
+      "status": "pass",
+      "evidence": [
+        "source-freeze-v10.json",
+        "receipts/33-independent-reconstruction-v5.json",
+        "receipts/46-clean-explicit-output-rerun.json",
+        "clean-rerun-equivalence.json",
+        "receipts/*.json"
+      ],
+      "finding": "The independent source was frozen before reconstruction. The clean explicit-output replay finished with exit 0 and matches independent rebuilt tables and scenario tensors. Source replay and raw reconstruction are separate evidence. Initial reviewer implementation errors and repairs remain in versioned sources and receipts."
+    },
+    {
+      "id": "h6",
+      "status": "fail",
+      "evidence": [
+        "runs/R22/execution/report-v1/REPORT.md",
+        "runs/R22/execution/report-v1/REPORT.pdf",
+        "receipts/71-pdfinfo.json",
+        "receipts/72-render-final-pdf.json",
+        "final-pdf-page-01.png..final-pdf-page-13.png",
+        "receipts/69-compact-crosscheck-findings.json"
+      ],
+      "finding": "The complete Chinese body and all 13 rendered PDF pages were visually inspected. The report is readable and its caveats, units, scope, charts, grouping tables, and solver limitations are generally consistent with the rebuilt results. One internal numeric inconsistency remains: the 09-19/W table prints waste 340.07 yuan/day while nearby prose prints 340.08; independent value is exactly 340.075 yuan/day, so the two displayed values disagree at the stated precision. First judgment: fail."
+    }
+  ],
+  "production_artifact_counts": {
+    "origins": 3,
+    "routes": 2,
+    "keys_per_route_origin": 4032,
+    "total_route_origin_rows": 24192,
+    "source_trace_coordinates": 21504,
+    "solver_days": 252,
+    "pdf_pages_visualized": 13
+  },
+  "window_facts": {
+    "first_two_unique_days": 84,
+    "third_window_overlap_dates_with_second": 25
+  },
+  "clean_rerun": {
+    "schema": "r22-clean-rerun-equivalence/1",
+    "receipt": {
+      "state": "finished",
+      "exit_code": 0,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/source/v1/run_replay.py",
+        "--raw",
+        "runs/R21/inputs/raw",
+        "--config",
+        "runs/R22/execution/source/v1/config.json",
+        "--newout",
+        "runs/R22/review/initial/clean-rerun-v1"
+      ],
+      "begin": {
+        "utc": "2026-10-09T09:41:47.752158+00:00",
+        "monotonic_ns": 158337546000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:42:30.033140+00:00",
+        "monotonic_ns": 158379828000000,
+        "boot_id": null
+      },
+      "stdout_bytes": 1861,
+      "stderr_bytes": 0,
+      "full_stream_capture_verified": true
+    },
+    "raw_and_config_identity": {
+      "raw_files": {
+        "calendar.csv": "1676e38b047d96b7b66d294d85673f86f876826e96c03b29200c340cad24fbfd",
+        "decision.json": "7540cf7083f0163f60e431e8a75f552baa86ed174869f3c55aac69f904056753",
+        "demand_reports.csv": "80a3a994b8285caa0b48bf433724d476693509656b32cff99b8a6798eebd666b",
+        "items.csv": "bc81cb9ad6c28e108bbd4e1fcd682c4c8aa71e40c22e7ff8411b545a4fe65167",
+        "promotions.csv": "580c15bc827a8d86113c8ceb47edce2bfa94b317f4d88ff3a45b3e7c0c55bb45",
+        "stores.csv": "65ce636c8d7f6c72df3d06a1e84e59d122f33dab1c223d4e9963982c9bf54220",
+        "weather.csv": "8dd38ca926ba59b0de292e0b57a3e07cb4353d892cc3dd242aea8cc6f56c8403"
+      },
+      "config_sha256": "3fdd8038d8e7a85e556729085f27d3c129990e687b71afc4eef4169b1acccd00",
+      "source_hashes": {
+        "config.json": "3fdd8038d8e7a85e556729085f27d3c129990e687b71afc4eef4169b1acccd00",
+        "freeze.py": "ba1d29bd12bd57a09eb75706d88738a7aa99490a92bcb6877517b824fb404e31",
+        "reference_policy.py": "4a6198d7c2cfea627c0f74aad5aa0ca4e88841f3e23b9d961185d423a0c3cf24",
+        "run_replay.py": "9fac831d053a0bcb9ae5271a4e349918e5a1644332b4407a80bbb5a36c8912a5"
+      }
+    },
+    "all_table_comparisons_pass": true,
+    "all_scenario_comparisons_pass": true,
+    "comparison_file": "runs/R22/review/initial/clean-comparison/comparison-v2.json",
+    "interpretation": "explicit clean replay compared row-by-row to the separately frozen raw reconstruction; replay does not replace independent reconstruction",
+    "actual_model": null,
+    "tokens": null,
+    "cost": null
+  },
+  "author_receipt_metadata_only": [
+    {
+      "path": "runs/R22/execution/receipts/0001-read-authorized-sources.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; import json; p=Path.cwd(); print('CWD',p); files=['AGENTS.md','scripts/record_command.py','runs/R22/protocol/PROTOCOL.md','runs/R22/protocol/acceptance.json','runs/R22/protocol-lock.json']; [(print('FILE',f),print(Path(f).read_text(encoding='utf-8'))) for f in files]"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:05:15.001577+00:00",
+        "monotonic_ns": 156144843000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:05:15.079765+00:00",
+        "monotonic_ns": 156144921000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 16173,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0002-read-implementation.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; fs=list(Path('runs/R20/final/candidate/C13/forge-agent-flow').rglob('*.md'))+[Path(f) for f in ['runs/R20/final/candidate/C13-lock.json','runs/R21/input-lock.json','runs/R21/execution-lock.json','runs/R21/prospective-freeze.json','runs/R21/execution/source/v1/config.json','runs/R21/execution/source/v1/reference_policy.py','runs/R21/execution/source/v1/run_science.py','runs/R21/execution/source/v1/freeze.py','C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/SKILL.md']]; [(print('FILE',str(f)),print(f.read_text(encoding='utf-8'))) for f in fs]"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:05:27.611077+00:00",
+        "monotonic_ns": 156157453000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:05:27.707792+00:00",
+        "monotonic_ns": 156157546000000,
+        "boot_id": null
+      },
+      "exit_code": 1,
+      "stdout_bytes": 113589,
+      "stderr_bytes": 651
+    },
+    {
+      "path": "runs/R22/execution/receipts/0003-read-science-source.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; fs=['runs/R21/execution/source/v1/config.json','runs/R21/execution/source/v1/reference_policy.py','runs/R21/execution/source/v1/run_science.py','runs/R21/execution/source/v1/freeze.py','C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/SKILL.md']; [(print('FILE',f),print(Path(f).read_text(encoding='utf-8'))) for f in fs]"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:05:43.212019+00:00",
+        "monotonic_ns": 156173062000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:05:43.301881+00:00",
+        "monotonic_ns": 156173140000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 62157,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0004-read-lineage.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; import json,csv; f=Path('runs/R21/execution/source/v1/run_science.py'); print(f.read_text(encoding='utf-8').split('    hist=pd.concat(hist')[0]); print('INPUTS',list(Path('runs/R21/inputs').rglob('*'))); print('PROSPECTIVE',Path('runs/R21/execution/prospective-freeze.json').read_text(encoding='utf-8')); f=Path('runs/R21/execution/science-v1/uncertainty/residual_coordinates_all.csv'); r=csv.DictReader(f.open()); print('RES HEADER',r.fieldnames); print('RES SAMPLE',[next(r) for _ in range(2)]); print('MODEL SAMPLE',next(Path('runs/R21/execution/science-v1/models').glob('coefficients_*.json')).read_text()); print('C13LOCK',Path('runs/R20/final/candidate/C13-lock.json').read_text())"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:05:59.655582+00:00",
+        "monotonic_ns": 156189500000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:05:59.745087+00:00",
+        "monotonic_ns": 156189593000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 22911,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0005-read-contract-and-references.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; fs=['runs/R21/inputs/PROBLEM.md','runs/R21/inputs/REQUEST.md','runs/R20/final/candidate/C13/forge-agent-flow/references/modeling.md','runs/R20/final/candidate/C13/forge-agent-flow/references/workflow-design.md','runs/R20/final/candidate/C13/forge-agent-flow/references/iteration-and-recovery.md','runs/R20/final/candidate/C13/forge-agent-flow/references/source-evaluation.md','runs/R20/final/candidate/C13/forge-agent-flow/references/frontend.md']; [(print('FILE',f),print(Path(f).read_text(encoding='utf-8'))) for f in fs]"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:06:14.073485+00:00",
+        "monotonic_ns": 156203921000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:06:14.151623+00:00",
+        "monotonic_ns": 156204000000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 29790,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0006-freeze-science.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/source/v1/freeze.py"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:10:35.693691+00:00",
+        "monotonic_ns": 156465531000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:10:35.927606+00:00",
+        "monotonic_ns": 156465765000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 66,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0007-first-science-v1.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/source/v1/run_replay.py",
+        "--raw",
+        "runs/R21/inputs/raw",
+        "--config",
+        "runs/R22/execution/source/v1/config.json",
+        "--newout",
+        "runs/R22/execution/science-v1"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:10:44.957213+00:00",
+        "monotonic_ns": 156474796000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:11:34.515181+00:00",
+        "monotonic_ns": 156524359000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 1863,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0008-pdf-runtime-locations.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; paths=[Path('C:/Windows/Fonts'),Path('C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime'),Path('C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041')]; print('FONTS',[str(p) for p in paths[0].glob('*sim*')]); print('MARKER',[str(p) for root in paths[1:] for p in root.rglob('mark_artifact_operation_started.mjs')]); print('POPPLER',[str(p) for p in paths[1].rglob('pdftoppm.exe')]); print('PDFINFO',[str(p) for p in paths[1].rglob('pdfinfo.exe')])"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:11:49.899747+00:00",
+        "monotonic_ns": 156539734000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:11:51.866641+00:00",
+        "monotonic_ns": 156541703000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 1494,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0009-clean-replay.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/source/v1/run_replay.py",
+        "--raw",
+        "runs/R21/inputs/raw",
+        "--config",
+        "runs/R22/execution/source/v1/config.json",
+        "--newout",
+        "runs/R22/execution/clean-v1"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:12:11.896255+00:00",
+        "monotonic_ns": 156561734000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:12:55.403268+00:00",
+        "monotonic_ns": 156605234000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 1863,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0010-read-produced-results.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; import pandas as pd; root=Path('runs/R22/execution/science-v1'); fs=['data/audit.json','data/boundaries.csv','validation/boundaries.json','results/group_stage.csv','results/group_band.csv','results/group_activity.csv','results/group_activity_stage.csv','results/combined_first_two.csv']; [(print('FILE',f),print((root/f).read_text())) for f in fs]; s=pd.read_csv(root/'results/solver_daily.csv');print('SOLVER',s.groupby(['origin','method_id'])[['status','gap','capacity_slack','budget_slack']].agg(['min','max']).to_string()); k=pd.read_csv(root/'results/keys.csv'); print('OUTSIDE POINT',((k.point<k.lower90)|(k.point>k.upper90)).sum()); print('EMPTY',pd.read_csv(root/'results/group_activity_band.csv').query('rows==0')[['origin','method_id','holiday','band','rows','days','status']].to_string(index=False))"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:12:33.555864+00:00",
+        "monotonic_ns": 156583390000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:12:34.314312+00:00",
+        "monotonic_ns": 156584156000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 26088,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0011-existing-output-refused.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/source/v1/run_replay.py",
+        "--raw",
+        "runs/R21/inputs/raw",
+        "--config",
+        "runs/R22/execution/source/v1/config.json",
+        "--newout",
+        "runs/R22/execution/science-v1"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:13:53.129215+00:00",
+        "monotonic_ns": 156662968000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:13:54.754354+00:00",
+        "monotonic_ns": 156664593000000,
+        "boot_id": null
+      },
+      "exit_code": 1,
+      "stdout_bytes": 0,
+      "stderr_bytes": 1044
+    },
+    {
+      "path": "runs/R22/execution/receipts/0012-author-check.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/source/author_checks_v1.py"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:14:05.973691+00:00",
+        "monotonic_ns": 156675812000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:14:09.985844+00:00",
+        "monotonic_ns": 156679812000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 1074,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0013-pdf-artifact-marker.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+        "C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/container_tools/mark_artifact_operation_started.mjs",
+        "--operation-kind",
+        "create",
+        "--expected-output-count",
+        "1",
+        "--output-format",
+        "pdf"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:20:29.201456+00:00",
+        "monotonic_ns": 157059031000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:20:30.190420+00:00",
+        "monotonic_ns": 157060015000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0014-build-report.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/source/build_report_v1.py"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:20:35.740553+00:00",
+        "monotonic_ns": 157065562000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:20:39.441270+00:00",
+        "monotonic_ns": 157069265000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 66,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0015-render-pdf.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/pdftoppm.exe",
+        "-r",
+        "90",
+        "-png",
+        "runs/R22/execution/report-v1/REPORT.pdf",
+        "runs/R22/execution/report-v1/page"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:20:45.458129+00:00",
+        "monotonic_ns": 157075281000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:20:47.314032+00:00",
+        "monotonic_ns": 157077140000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 0,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0016-read-final-body.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; from pypdf import PdfReader; p=Path('runs/R22/execution/report-v1'); print((p/'REPORT.md').read_text(encoding='utf-8')); r=PdfReader(p/'REPORT.pdf'); print('PAGES',len(r.pages)); print('PAGEFILES',[str(f) for f in p.glob('page-*.png')]);print('PDF_TEXT_COUNTS',[len(x.extract_text()) for x in r.pages])"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:20:55.951820+00:00",
+        "monotonic_ns": 157085781000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:20:56.772808+00:00",
+        "monotonic_ns": 157086593000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 32583,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0017-finalize-delivery.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "runs/R22/execution/source/finalize_v1.py"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:23:34.205213+00:00",
+        "monotonic_ns": 157244031000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:23:35.376713+00:00",
+        "monotonic_ns": 157245203000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 150,
+      "stderr_bytes": 0
+    },
+    {
+      "path": "runs/R22/execution/receipts/0018-final-readonly-verification.json",
+      "identity_matches_execution_lock": true,
+      "argv": [
+        "py",
+        "-3.12",
+        "-X",
+        "utf8",
+        "-B",
+        "-c",
+        "from pathlib import Path; import json,hashlib; ex=Path('runs/R22/execution'); lock=json.loads((ex/'source-delivery-lock.json').read_text(encoding='utf-8')); [(None if hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['sha256'] else (_ for _ in ()).throw(AssertionError(f['path']))) for f in lock['files']]; rs=[p for p in sorted((ex/'receipts').glob('*.json')) if p.name!='0018-final-readonly-verification.json']; objs=[json.loads(p.read_text(encoding='utf-8')) for p in rs];assert all(o['state']=='finished' for o in objs);print('PRIOR_TERMINAL_COMMANDS',len(rs));print('EXITS',[(p.name,o['exit_code']) for p,o in zip(rs,objs)]);print('FINAL_ARTIFACTS',[(p.name,p.stat().st_size,hashlib.sha256(p.read_bytes()).hexdigest()) for p in [ex/'report-v1/REPORT.md',ex/'report-v1/REPORT.pdf',ex/'prospective-freeze.json',ex/'result.json']]);print('No pending command sessions. Final read-only verification completes before root freeze.')"
+      ],
+      "state": "finished",
+      "begin": {
+        "utc": "2026-10-09T09:23:58.273255+00:00",
+        "monotonic_ns": 157268093000000,
+        "boot_id": null
+      },
+      "end": {
+        "utc": "2026-10-09T09:23:58.376227+00:00",
+        "monotonic_ns": 157268203000000,
+        "boot_id": null
+      },
+      "exit_code": 0,
+      "stdout_bytes": 1137,
+      "stderr_bytes": 0
+    }
+  ],
+  "author_task_receipt_count": 18,
+  "author_task_finished_count": 18,
+  "author_task_nonzero_count": 2,
+  "reviewer_command_receipts_present_before_finalizer": 84,
+  "reviewer_nonzero_command_receipts_present_before_finalizer": 12,
+  "reviewer_command_receipts_at_terminal": 87,
+  "reviewer_terminal_count": 87,
+  "reviewer_pending_count": 0,
+  "reviewer_nonzero_count_at_terminal": 12,
+  "author_runner_invocations": 3,
+  "author_runner_successes": 2,
+  "author_nonzero_receipt_paths": [
+    "runs/R22/execution/receipts/0002-read-implementation.json",
+    "runs/R22/execution/receipts/0011-existing-output-refused.json"
+  ],
+  "reviewer_nonzero_receipt_names": [
+    "01-permitted-source-inspection.json",
+    "08-independent-reconstruction.json",
+    "17-independent-reconstruction-v2.json",
+    "22-independent-reconstruction-v3.json",
+    "34-permitted-artifact-schemas.json",
+    "52-report-trace.json",
+    "60-independent-narrative-values.json",
+    "64-report-crosscheck-data.json",
+    "76-nonzero-summary.json",
+    "77-nonzero-summary.json",
+    "79-author-run-metadata.json",
+    "80-author-run-metadata.json"
+  ],
+  "reviewer_failures_are_not_production_repairs": true,
+  "actual_model": null,
+  "tokens": null,
+  "cost": null,
+  "limitations": [
+    "Historical labels were already used in R21; this is a fixed, informed historical replay rather than a new blind test.",
+    "Window overlap makes the third origin a separate endpoint replay, not an independent sample.",
+    "Only 4 activity days occur per window; activity-by-stage empty cells are not estimable.",
+    "No external future truth, procurement deployment, causal effect, or competition claim is established.",
+    "The workspace path is not an operating-system isolation boundary."
+  ]
+}

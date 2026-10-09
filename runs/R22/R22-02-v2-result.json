@@ -1,0 +1,34 @@
+{
+  "task_id": "R22-02",
+  "attempt_id": "R22-02-2",
+  "requirements_hash": "981010bc85075d60fbb3e1961ac25c1fc0f83be3be4fa87242d509ba87558b67",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "fail",
+      "evidence": [
+        "runs/R22/document-correction-v2-lock.json",
+        "runs/R22/execution/correction-v2/receipts/0006-full-document-selfcheck.json",
+        "runs/R22/execution/correction-v2/derived-monetary-counterexamples.json",
+        "runs/R22/execution/correction-v2/ATTEMPT_STATUS.json",
+        "runs/R22/initial-reception-lock.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "同期限固定策略历史计算与独立实质接收",
+    "hypothesis": "Declared decimal display must also use decimal arithmetic for derived monetary amounts.",
+    "baseline": "v1 independent h6 rejection retained; v2 formatter-only repair.",
+    "conditions": "Author full-document selfcheck of repaired paper; not independent v2 reception.",
+    "observations": "Author selfcheck failed on float-first derived subtraction. No science rerun. Context-summary exposure disclosed.",
+    "metrics": {
+      "pdf_pages": 13,
+      "repair_number": 1,
+      "actual_model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "limits": "Original h1-h5 and h6 failure retained; v2 has no independent verdict."
+  },
+  "next_action": "Same original task: new renderer fixes decimal derived monetary arithmetic; preserve old reports, failures, budgets and criteria."
+}

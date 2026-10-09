@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path; import json,hashlib; ex=Path('runs/R22/execution'); lock=json.loads((ex/'source-delivery-lock.json').read_text(encoding='utf-8')); [(None if hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['sha256'] else (_ for _ in ()).throw(AssertionError(f['path']))) for f in lock['files']]; rs=[p for p in sorted((ex/'receipts').glob('*.json')) if p.name!='0018-final-readonly-verification.json']; objs=[json.loads(p.read_text(encoding='utf-8')) for p in rs];assert all(o['state']=='finished' for o in objs);print('PRIOR_TERMINAL_COMMANDS',len(rs));print('EXITS',[(p.name,o['exit_code']) for p,o in zip(rs,objs)]);print('FINAL_ARTIFACTS',[(p.name,p.stat().st_size,hashlib.sha256(p.read_bytes()).hexdigest()) for p in [ex/'report-v1/REPORT.md',ex/'report-v1/REPORT.pdf',ex/'prospective-freeze.json',ex/'result.json']]);print('No pending command sessions. Final read-only verification completes before root freeze.')"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:23:58.273255+00:00",
+    "monotonic_ns": 157268093000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:23:58.376227+00:00",
+    "monotonic_ns": 157268203000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "PRIOR_TERMINAL_COMMANDS 17\r\nEXITS [('0001-read-authorized-sources.json', 0), ('0002-read-implementation.json', 1), ('0003-read-science-source.json', 0), ('0004-read-lineage.json', 0), ('0005-read-contract-and-references.json', 0), ('0006-freeze-science.json', 0), ('0007-first-science-v1.json', 0), ('0008-pdf-runtime-locations.json', 0), ('0009-clean-replay.json', 0), ('0010-read-produced-results.json', 0), ('0011-existing-output-refused.json', 1), ('0012-author-check.json', 0), ('0013-pdf-artifact-marker.json', 0), ('0014-build-report.json', 0), ('0015-render-pdf.json', 0), ('0016-read-final-body.json', 0), ('0017-finalize-delivery.json', 0)]\r\nFINAL_ARTIFACTS [('REPORT.md', 31844, '60d43b7e8a46c893941758dbc8a0bd783ac901ecac01c49e2707bf1023fd5c5f'), ('REPORT.pdf', 1054515, 'daa8e92958ca45a2a75de4b594f6f12d9b1588519a50bbc4ca547ef894ef8c1f'), ('prospective-freeze.json', 15662, 'e570fedf6a64f1b25a9e6a4b0c3c2c51fed85f5fbf4a5e752438efbcae98895f'), ('result.json', 2687, '9b480da1031965cef4c7520ae58c6ecdfd06bdb7d832b2105dd1ec8e1fe3f229')]\r\nNo pending command sessions. Final read-only verification completes before root freeze.\r\n",
+  "stderr": "",
+  "stdout_base64": "UFJJT1JfVEVSTUlOQUxfQ09NTUFORFMgMTcNCkVYSVRTIFsoJzAwMDEtcmVhZC1hdXRob3JpemVkLXNvdXJjZXMuanNvbicsIDApLCAoJzAwMDItcmVhZC1pbXBsZW1lbnRhdGlvbi5qc29uJywgMSksICgnMDAwMy1yZWFkLXNjaWVuY2Utc291cmNlLmpzb24nLCAwKSwgKCcwMDA0LXJlYWQtbGluZWFnZS5qc29uJywgMCksICgnMDAwNS1yZWFkLWNvbnRyYWN0LWFuZC1yZWZlcmVuY2VzLmpzb24nLCAwKSwgKCcwMDA2LWZyZWV6ZS1zY2llbmNlLmpzb24nLCAwKSwgKCcwMDA3LWZpcnN0LXNjaWVuY2UtdjEuanNvbicsIDApLCAoJzAwMDgtcGRmLXJ1bnRpbWUtbG9jYXRpb25zLmpzb24nLCAwKSwgKCcwMDA5LWNsZWFuLXJlcGxheS5qc29uJywgMCksICgnMDAxMC1yZWFkLXByb2R1Y2VkLXJlc3VsdHMuanNvbicsIDApLCAoJzAwMTEtZXhpc3Rpbmctb3V0cHV0LXJlZnVzZWQuanNvbicsIDEpLCAoJzAwMTItYXV0aG9yLWNoZWNrLmpzb24nLCAwKSwgKCcwMDEzLXBkZi1hcnRpZmFjdC1tYXJrZXIuanNvbicsIDApLCAoJzAwMTQtYnVpbGQtcmVwb3J0Lmpzb24nLCAwKSwgKCcwMDE1LXJlbmRlci1wZGYuanNvbicsIDApLCAoJzAwMTYtcmVhZC1maW5hbC1ib2R5Lmpzb24nLCAwKSwgKCcwMDE3LWZpbmFsaXplLWRlbGl2ZXJ5Lmpzb24nLCAwKV0NCkZJTkFMX0FSVElGQUNUUyBbKCdSRVBPUlQubWQnLCAzMTg0NCwgJzYwZDQzYjdlOGE0NmM4OTM5NDE3NThkYmM4YTBiZDc4M2FjOTAxZWNhYzAxYzQ5ZTI3MDdiZjEwMjNmZDVjNWYnKSwgKCdSRVBPUlQucGRmJywgMTA1NDUxNSwgJ2RhYThlOTI5NThjYTQ1YTJhNzVkZTRiNTk0ZjZmMTJkOWIxNTg4NTE5YTUwYmJjNGNhNTQ3ZWY4OTRlZjhjMWYnKSwgKCdwcm9zcGVjdGl2ZS1mcmVlemUuanNvbicsIDE1NjYyLCAnZTU3MGZlZGY2YTY0ZjFiMjVhOWU2YTRiMGMzYzJjNTFmZWQ4NWY1ZmJmNGE1ZTc1MjQzOGVmYmNhZTk4ODk1ZicpLCAoJ3Jlc3VsdC5qc29uJywgMjY4NywgJzliNDgwZGExMDMxOTY1Y2VmNGM3NTIwYWU1OGM2ZWNkZmQwNmJkYjdkODMyYjIxMDVkZDFlYzhlMWZlM2YyMjknKV0NCk5vIHBlbmRpbmcgY29tbWFuZCBzZXNzaW9ucy4gRmluYWwgcmVhZC1vbmx5IHZlcmlmaWNhdGlvbiBjb21wbGV0ZXMgYmVmb3JlIHJvb3QgZnJlZXplLg0K",
+  "stderr_base64": ""
+}

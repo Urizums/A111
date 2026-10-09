@@ -1,0 +1,26 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "powershell",
+    "-NoProfile",
+    "-Command",
+    "Get-Content -Raw -Encoding UTF8 runs/R22/execution-lock.json | ConvertFrom-Json | ForEach-Object { $_.files } | Where-Object { $_.path -match \"^runs/R22/execution/report-v1/figures/\" } | Select-Object path,size_bytes,sha256 | ConvertTo-Json -Depth 3"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:44:14.157871+00:00",
+    "monotonic_ns": 158483953000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:44:14.354960+00:00",
+    "monotonic_ns": 158484140000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "[\r\n    {\r\n        \"path\":  \"runs/R22/execution/report-v1/figures/01_overview.png\",\r\n        \"size_bytes\":  58650,\r\n        \"sha256\":  \"2149273da998c8a65159f592626b82b75cc3e57a23abed8d38fdc675d24b9fd5\"\r\n    },\r\n    {\r\n        \"path\":  \"runs/R22/execution/report-v1/figures/02_bands.png\",\r\n        \"size_bytes\":  286074,\r\n        \"sha256\":  \"6e299d3a9c0e2a0d3577f81b53e90fceffecf8922cea66702cacfe6dc061dc70\"\r\n    },\r\n    {\r\n        \"path\":  \"runs/R22/execution/report-v1/figures/03_intervals.png\",\r\n        \"size_bytes\":  96990,\r\n        \"sha256\":  \"6354cf928d6551206b5bed707c9736c69420fa67204017f0a80eee5d8564c600\"\r\n    },\r\n    {\r\n        \"path\":  \"runs/R22/execution/report-v1/figures/04_daily_pair.png\",\r\n        \"size_bytes\":  180247,\r\n        \"sha256\":  \"057e049929b4d2f4ea9e57fd06c847784418b904acb53182541d57c71bbf27ce\"\r\n    },\r\n    {\r\n        \"path\":  \"runs/R22/execution/report-v1/figures/05_activity_support.png\",\r\n        \"size_bytes\":  54354,\r\n        \"sha256\":  \"21f073e5e7a010550a44c8041dfdb4b4cd5b2901fff4f818cfce530211a5af4d\"\r\n    },\r\n    {\r\n        \"path\":  \"runs/R22/execution/report-v1/figures/06_store_item.png\",\r\n        \"size_bytes\":  108265,\r\n        \"sha256\":  \"3ea8fdc58607c70b71d42622fab38368ac34edb7eac82ce5fb8fdb765ea925dd\"\r\n    }\r\n]\r\n",
+  "stderr": "",
+  "stdout_base64": "Ww0KICAgIHsNCiAgICAgICAgInBhdGgiOiAgInJ1bnMvUjIyL2V4ZWN1dGlvbi9yZXBvcnQtdjEvZmlndXJlcy8wMV9vdmVydmlldy5wbmciLA0KICAgICAgICAic2l6ZV9ieXRlcyI6ICA1ODY1MCwNCiAgICAgICAgInNoYTI1NiI6ICAiMjE0OTI3M2RhOTk4YzhhNjUxNTlmNTkyNjI2YjgyYjc1Y2MzZTU3YTIzYWJlZDhkMzhmZGM2NzVkMjRiOWZkNSINCiAgICB9LA0KICAgIHsNCiAgICAgICAgInBhdGgiOiAgInJ1bnMvUjIyL2V4ZWN1dGlvbi9yZXBvcnQtdjEvZmlndXJlcy8wMl9iYW5kcy5wbmciLA0KICAgICAgICAic2l6ZV9ieXRlcyI6ICAyODYwNzQsDQogICAgICAgICJzaGEyNTYiOiAgIjZlMjk5ZDNhOWMwZTJhMGQzNTc3ZjgxYjUzZTkwZmNlZmZlY2Y4OTIyY2VhNjY3MDJjYWNmZTZkYzA2MWRjNzAiDQogICAgfSwNCiAgICB7DQogICAgICAgICJwYXRoIjogICJydW5zL1IyMi9leGVjdXRpb24vcmVwb3J0LXYxL2ZpZ3VyZXMvMDNfaW50ZXJ2YWxzLnBuZyIsDQogICAgICAgICJzaXplX2J5dGVzIjogIDk2OTkwLA0KICAgICAgICAic2hhMjU2IjogICI2MzU0Y2Y5MjhkNjU1MTIwNmI1YmVkNzA3Yzk3MzZjNjk0MjBmYTY3MjA0MDE3ZjBhODBlZWU1ZDg1NjRjNjAwIg0KICAgIH0sDQogICAgew0KICAgICAgICAicGF0aCI6ICAicnVucy9SMjIvZXhlY3V0aW9uL3JlcG9ydC12MS9maWd1cmVzLzA0X2RhaWx5X3BhaXIucG5nIiwNCiAgICAgICAgInNpemVfYnl0ZXMiOiAgMTgwMjQ3LA0KICAgICAgICAic2hhMjU2IjogICIwNTdlMDQ5OTI5YjRkMmY0ZWE5ZTU3ZmQwNmM4NDc3ODQ0MThiOTA0YWNiNTMxODI1NDFkNTdjNzFiYmYyN2NlIg0KICAgIH0sDQogICAgew0KICAgICAgICAicGF0aCI6ICAicnVucy9SMjIvZXhlY3V0aW9uL3JlcG9ydC12MS9maWd1cmVzLzA1X2FjdGl2aXR5X3N1cHBvcnQucG5nIiwNCiAgICAgICAgInNpemVfYnl0ZXMiOiAgNTQzNTQsDQogICAgICAgICJzaGEyNTYiOiAgIjIxZjA3M2U1ZTdhMDEwNTUwYTQ0YzgwNDFkZmRiNGI0Y2Q1YjI5MDFmZmY0ZjgxOGNmY2U1MzAyMTFhNWFmNGQiDQogICAgfSwNCiAgICB7DQogICAgICAgICJwYXRoIjogICJydW5zL1IyMi9leGVjdXRpb24vcmVwb3J0LXYxL2ZpZ3VyZXMvMDZfc3RvcmVfaXRlbS5wbmciLA0KICAgICAgICAic2l6ZV9ieXRlcyI6ICAxMDgyNjUsDQogICAgICAgICJzaGEyNTYiOiAgIjNlYThmZGM1ODYwN2M3MGI3MWQ0MjYyMmZhYjM4MzY4YWMzNGVkYjdlYWM4MmNlNWZiOGZkYjc2NWVhOTI1ZGQiDQogICAgfQ0KXQ0K",
+  "stderr_base64": ""
+}

@@ -1,0 +1,4710 @@
+{
+  "schema": "r22-v3-report-independent-data-audit/1",
+  "v3_source_and_report_paths": [
+    "runs/R22/execution/correction-v3/source/build_report_v3.py",
+    "runs/R22/execution/correction-v3/report/REPORT.md",
+    "runs/R22/execution/correction-v3/report/REPORT.pdf",
+    "runs/R22/execution/correction-v3/report/document-data-bindings.json",
+    "runs/R22/execution/correction-v3/report/figures/"
+  ],
+  "data_binding_csv_count": 15,
+  "data_binding_hash_failures": [],
+  "markdown_table_count": 15,
+  "expected_table_count": 15,
+  "table_checks": [
+    {
+      "table": "table1",
+      "caption": "表1 三窗训练与目标边界（均为当地时间）",
+      "expected_rows": 3,
+      "actual_rows": 3,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "table2",
+      "caption": "表2 点预测与区间（误差、偏差、宽度、评分：件/键；覆盖：%）",
+      "expected_rows": 6,
+      "actual_rows": 6,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "table3",
+      "caption": "表3 每日网络决策结果（缺货/报废/总损失/采购：元/日；备货：件/日）",
+      "expected_rows": 6,
+      "actual_rows": 6,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "table4",
+      "caption": "表4 早期1-14日与远期15-42日；每个值按本组日期/键计算",
+      "expected_rows": 12,
+      "actual_rows": 12,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "table5",
+      "caption": "表5 活动与普通日的描述性分层；活动各窗仅4日、384键",
+      "expected_rows": 12,
+      "actual_rows": 12,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "table6",
+      "caption": "表6 活动×步长带支持数，两路线相同；空格为不可估计",
+      "expected_rows": 3,
+      "actual_rows": 3,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "table7",
+      "caption": "表7 前两个非重叠窗的84日描述性合并",
+      "expected_rows": 2,
+      "actual_rows": 2,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "table8",
+      "caption": "表8 每日资源松弛（容量：件；预算：元）",
+      "expected_rows": 6,
+      "actual_rows": 6,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "store-2026-07-22",
+      "caption": "2026-07-22门店分层",
+      "expected_rows": 12,
+      "actual_rows": 12,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "store-2026-09-02",
+      "caption": "2026-09-02门店分层",
+      "expected_rows": 12,
+      "actual_rows": 12,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "store-2026-09-19",
+      "caption": "2026-09-19门店分层",
+      "expected_rows": 12,
+      "actual_rows": 12,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "item-2026-07-22",
+      "caption": "2026-07-22商品分层",
+      "expected_rows": 8,
+      "actual_rows": 8,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "item-2026-09-02",
+      "caption": "2026-09-02商品分层",
+      "expected_rows": 8,
+      "actual_rows": 8,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "item-2026-09-19",
+      "caption": "2026-09-19商品分层",
+      "expected_rows": 8,
+      "actual_rows": 8,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    },
+    {
+      "table": "tableC",
+      "caption": "活动×早晚：空样本数为0，指标明确不可估计",
+      "expected_rows": 12,
+      "actual_rows": 12,
+      "headers_match": true,
+      "all_cells_match_locked_csv_decimal_format": true,
+      "mismatches": []
+    }
+  ],
+  "table_mismatches": [],
+  "financial_reconstruction": {
+    "key_rows": 24192,
+    "raw_items_cost_recomputed_fields": [
+      "shortage_yuan",
+      "waste_yuan",
+      "procurement_yuan"
+    ],
+    "per_key_exact_mismatches": 5785,
+    "group_daily_amount_checks": 378,
+    "group_daily_amount_mismatches": 0,
+    "mismatch_examples": [
+      "key row 8 waste_yuan: CSV=1.8000000000 raw-cost-recomputed=1.7999999999999998",
+      "key row 10 waste_yuan: CSV=2.7000000000 raw-cost-recomputed=2.6999999999999997",
+      "key row 11 waste_yuan: CSV=4.2000000000 raw-cost-recomputed=4.1999999999999992",
+      "key row 16 waste_yuan: CSV=1.8000000000 raw-cost-recomputed=1.7999999999999998",
+      "key row 18 waste_yuan: CSV=6.3000000000 raw-cost-recomputed=6.2999999999999993",
+      "key row 19 waste_yuan: CSV=4.2000000000 raw-cost-recomputed=4.1999999999999992",
+      "key row 24 waste_yuan: CSV=3.6000000000 raw-cost-recomputed=3.5999999999999996",
+      "key row 26 waste_yuan: CSV=2.7000000000 raw-cost-recomputed=2.6999999999999997",
+      "key row 32 waste_yuan: CSV=3.6000000000 raw-cost-recomputed=3.5999999999999996",
+      "key row 34 waste_yuan: CSV=2.7000000000 raw-cost-recomputed=2.6999999999999997",
+      "key row 40 waste_yuan: CSV=5.4000000000 raw-cost-recomputed=5.3999999999999994",
+      "key row 42 waste_yuan: CSV=0.9000000000 raw-cost-recomputed=0.8999999999999999",
+      "key row 43 waste_yuan: CSV=2.1000000000 raw-cost-recomputed=2.0999999999999996",
+      "key row 48 waste_yuan: CSV=7.2000000000 raw-cost-recomputed=7.1999999999999992",
+      "key row 50 waste_yuan: CSV=0.9000000000 raw-cost-recomputed=0.8999999999999999",
+      "key row 59 waste_yuan: CSV=2.1000000000 raw-cost-recomputed=2.0999999999999996",
+      "key row 64 waste_yuan: CSV=5.4000000000 raw-cost-recomputed=5.3999999999999994",
+      "key row 66 waste_yuan: CSV=4.5000000000 raw-cost-recomputed=4.4999999999999995",
+      "key row 67 waste_yuan: CSV=3.1500000000 raw-cost-recomputed=3.1499999999999994",
+      "key row 74 waste_yuan: CSV=2.7000000000 raw-cost-recomputed=2.6999999999999997"
+    ],
+    "summary_checks": [
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "366.0452380952",
+        "raw_items_cost_recomputed": "366.0452380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "323.3464285714",
+        "raw_items_cost_recomputed": "323.3464285714285557166666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "5173.9523809524",
+        "raw_items_cost_recomputed": "5173.952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "425.7476190476",
+        "raw_items_cost_recomputed": "425.7476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "312.8392857143",
+        "raw_items_cost_recomputed": "312.8392857142856990880952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "5124.8571428571",
+        "raw_items_cost_recomputed": "5124.857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "350.0000000000",
+        "raw_items_cost_recomputed": "350.0",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "271.5214285714",
+        "raw_items_cost_recomputed": "271.5214285714285582285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "5123.5714285714",
+        "raw_items_cost_recomputed": "5123.571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "363.1666666667",
+        "raw_items_cost_recomputed": "363.1666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "320.0321428571",
+        "raw_items_cost_recomputed": "320.0321428571428415261904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "5240.4285714286",
+        "raw_items_cost_recomputed": "5240.428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "350.9642857143",
+        "raw_items_cost_recomputed": "350.9642857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "283.1964285714",
+        "raw_items_cost_recomputed": "283.1964285714285575428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "5168.5476190476",
+        "raw_items_cost_recomputed": "5168.547619047619047619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "337.7142857143",
+        "raw_items_cost_recomputed": "337.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "340.0750000000",
+        "raw_items_cost_recomputed": "340.0749999999999832857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_overall.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "5327.4285714286",
+        "raw_items_cost_recomputed": "5327.428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "29.1642857143",
+        "raw_items_cost_recomputed": "29.16428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.1714285714",
+        "raw_items_cost_recomputed": "24.17142857142857030238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "345.1904761905",
+        "raw_items_cost_recomputed": "345.1904761904761904761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "23.5714285714",
+        "raw_items_cost_recomputed": "23.57142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.6821428571",
+        "raw_items_cost_recomputed": "27.68214285714285550238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "373.1190476190",
+        "raw_items_cost_recomputed": "373.1190476190476190476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "22.8690476190",
+        "raw_items_cost_recomputed": "22.86904761904761904761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "29.2500000000",
+        "raw_items_cost_recomputed": "29.24999999999999798571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "389.7619047619",
+        "raw_items_cost_recomputed": "389.7619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "21.7714285714",
+        "raw_items_cost_recomputed": "21.77142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "30.7642857143",
+        "raw_items_cost_recomputed": "30.76428571428571290238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "408.7619047619",
+        "raw_items_cost_recomputed": "408.7619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "26.6690476190",
+        "raw_items_cost_recomputed": "26.66904761904761904761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "29.7285714286",
+        "raw_items_cost_recomputed": "29.72857142857142733333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "429.5238095238",
+        "raw_items_cost_recomputed": "429.5238095238095238095238095",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "27.4976190476",
+        "raw_items_cost_recomputed": "27.49761904761904761904761905",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.3000000000",
+        "raw_items_cost_recomputed": "25.29999999999999869761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "421.9761904762",
+        "raw_items_cost_recomputed": "421.9761904761904761904761905",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.0880952381",
+        "raw_items_cost_recomputed": "34.08809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.0535714286",
+        "raw_items_cost_recomputed": "25.05357142857142776904761905",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "433.6666666667",
+        "raw_items_cost_recomputed": "433.6666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "33.4142857143",
+        "raw_items_cost_recomputed": "33.41428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.2357142857",
+        "raw_items_cost_recomputed": "24.23571428571428494047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "448.6190476190",
+        "raw_items_cost_recomputed": "448.6190476190476190476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "31.7666666667",
+        "raw_items_cost_recomputed": "31.76666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.2500000000",
+        "raw_items_cost_recomputed": "25.24999999999999855238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "458.4047619048",
+        "raw_items_cost_recomputed": "458.4047619047619047619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "39.3166666667",
+        "raw_items_cost_recomputed": "39.31666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "26.4571428571",
+        "raw_items_cost_recomputed": "26.45714285714285617857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "479.1666666667",
+        "raw_items_cost_recomputed": "479.1666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "42.0095238095",
+        "raw_items_cost_recomputed": "42.00952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "28.3928571429",
+        "raw_items_cost_recomputed": "28.39285714285714131666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "492.3333333333",
+        "raw_items_cost_recomputed": "492.3333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "33.9071428571",
+        "raw_items_cost_recomputed": "33.90714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.0607142857",
+        "raw_items_cost_recomputed": "27.06071428571428423571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "493.4285714286",
+        "raw_items_cost_recomputed": "493.4285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "32.9571428571",
+        "raw_items_cost_recomputed": "32.95714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.3857142857",
+        "raw_items_cost_recomputed": "24.38571428571428468809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "341.8571428571",
+        "raw_items_cost_recomputed": "341.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "26.9928571429",
+        "raw_items_cost_recomputed": "26.99285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.6285714286",
+        "raw_items_cost_recomputed": "27.62857142857142674285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "369.2857142857",
+        "raw_items_cost_recomputed": "369.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "28.9047619048",
+        "raw_items_cost_recomputed": "28.90476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.3071428571",
+        "raw_items_cost_recomputed": "27.30714285714285509047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "382.0000000000",
+        "raw_items_cost_recomputed": "382",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "28.5142857143",
+        "raw_items_cost_recomputed": "28.51428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "28.3357142857",
+        "raw_items_cost_recomputed": "28.33571428571428431190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "401.8571428571",
+        "raw_items_cost_recomputed": "401.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "31.2642857143",
+        "raw_items_cost_recomputed": "31.26428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "30.3607142857",
+        "raw_items_cost_recomputed": "30.36071428571428452857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "430.1428571429",
+        "raw_items_cost_recomputed": "430.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "38.2761904762",
+        "raw_items_cost_recomputed": "38.27619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "22.6785714286",
+        "raw_items_cost_recomputed": "22.67857142857142736666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "409.7142857143",
+        "raw_items_cost_recomputed": "409.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "39.1952380952",
+        "raw_items_cost_recomputed": "39.19523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.5178571429",
+        "raw_items_cost_recomputed": "25.51785714285714208333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "432.8571428571",
+        "raw_items_cost_recomputed": "432.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "38.7595238095",
+        "raw_items_cost_recomputed": "38.75952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.7107142857",
+        "raw_items_cost_recomputed": "24.71071428571428497380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "448.2857142857",
+        "raw_items_cost_recomputed": "448.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.9714285714",
+        "raw_items_cost_recomputed": "34.97142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.6285714286",
+        "raw_items_cost_recomputed": "25.62857142857142713095238095",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "457.8571428571",
+        "raw_items_cost_recomputed": "457.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "46.1309523810",
+        "raw_items_cost_recomputed": "46.13095238095238095238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.7678571429",
+        "raw_items_cost_recomputed": "24.76785714285714201904761905",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "472.0000000000",
+        "raw_items_cost_recomputed": "472",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "42.0738095238",
+        "raw_items_cost_recomputed": "42.07380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "26.9107142857",
+        "raw_items_cost_recomputed": "26.91071428571428437619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "492.1428571429",
+        "raw_items_cost_recomputed": "492.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "37.7071428571",
+        "raw_items_cost_recomputed": "37.70714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.6071428571",
+        "raw_items_cost_recomputed": "24.60714285714285577619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "486.8571428571",
+        "raw_items_cost_recomputed": "486.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "26.2190476190",
+        "raw_items_cost_recomputed": "26.21904761904761904761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "21.9357142857",
+        "raw_items_cost_recomputed": "21.93571428571428487380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "349.2857142857",
+        "raw_items_cost_recomputed": "349.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "31.8833333333",
+        "raw_items_cost_recomputed": "31.88333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "20.1857142857",
+        "raw_items_cost_recomputed": "20.18571428571428494285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "354.3095238095",
+        "raw_items_cost_recomputed": "354.3095238095238095238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.7904761905",
+        "raw_items_cost_recomputed": "34.79047619047619047619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "19.8535714286",
+        "raw_items_cost_recomputed": "19.85357142857142765714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "363.8571428571",
+        "raw_items_cost_recomputed": "363.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "23.5309523810",
+        "raw_items_cost_recomputed": "23.53095238095238095238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "22.4714285714",
+        "raw_items_cost_recomputed": "22.47142857142857044761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "391.6428571429",
+        "raw_items_cost_recomputed": "391.6428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "29.3952380952",
+        "raw_items_cost_recomputed": "29.39523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "20.8750000000",
+        "raw_items_cost_recomputed": "20.87499999999999897619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "408.8333333333",
+        "raw_items_cost_recomputed": "408.8333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "29.4119047619",
+        "raw_items_cost_recomputed": "29.41190476190476190476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "22.2571428571",
+        "raw_items_cost_recomputed": "22.25714285714285614285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "417.4047619048",
+        "raw_items_cost_recomputed": "417.4047619047619047619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "30.1095238095",
+        "raw_items_cost_recomputed": "30.10952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "23.1892857143",
+        "raw_items_cost_recomputed": "23.18928571428571319523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "431.9285714286",
+        "raw_items_cost_recomputed": "431.9285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "25.3285714286",
+        "raw_items_cost_recomputed": "25.32857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.4035714286",
+        "raw_items_cost_recomputed": "25.40357142857142712142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "451.0952380952",
+        "raw_items_cost_recomputed": "451.0952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "33.0619047619",
+        "raw_items_cost_recomputed": "33.06190476190476190476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "19.0642857143",
+        "raw_items_cost_recomputed": "19.06428571428571333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "459.3333333333",
+        "raw_items_cost_recomputed": "459.3333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "25.0976190476",
+        "raw_items_cost_recomputed": "25.09761904761904761904761905",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.0500000000",
+        "raw_items_cost_recomputed": "25.04999999999999861904761905",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "483.0238095238",
+        "raw_items_cost_recomputed": "483.0238095238095238095238095",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "23.2857142857",
+        "raw_items_cost_recomputed": "23.28571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.7250000000",
+        "raw_items_cost_recomputed": "27.72499999999999847142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "506.5952380952",
+        "raw_items_cost_recomputed": "506.5952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "37.8857142857",
+        "raw_items_cost_recomputed": "37.88571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "23.5107142857",
+        "raw_items_cost_recomputed": "23.51071428571428444761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "506.2619047619",
+        "raw_items_cost_recomputed": "506.2619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "24.0047619048",
+        "raw_items_cost_recomputed": "24.00476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.4750000000",
+        "raw_items_cost_recomputed": "27.47499999999999892142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "362.8571428571",
+        "raw_items_cost_recomputed": "362.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "31.0666666667",
+        "raw_items_cost_recomputed": "31.06666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "22.9107142857",
+        "raw_items_cost_recomputed": "22.91071428571428475714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "362.0000000000",
+        "raw_items_cost_recomputed": "362",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "36.7071428571",
+        "raw_items_cost_recomputed": "36.70714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "22.7357142857",
+        "raw_items_cost_recomputed": "22.73571428571428472380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "371.0000000000",
+        "raw_items_cost_recomputed": "371",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "26.5738095238",
+        "raw_items_cost_recomputed": "26.57380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "26.7357142857",
+        "raw_items_cost_recomputed": "26.73571428571428470952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "401.1428571429",
+        "raw_items_cost_recomputed": "401.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "30.4928571429",
+        "raw_items_cost_recomputed": "30.49285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "26.1392857143",
+        "raw_items_cost_recomputed": "26.13928571428571315",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "423.0000000000",
+        "raw_items_cost_recomputed": "423",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "30.3142857143",
+        "raw_items_cost_recomputed": "30.31428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "26.2321428571",
+        "raw_items_cost_recomputed": "26.23214285714285597619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "428.5714285714",
+        "raw_items_cost_recomputed": "428.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "30.9261904762",
+        "raw_items_cost_recomputed": "30.92619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "28.1785714286",
+        "raw_items_cost_recomputed": "28.17857142857142725238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "443.7142857143",
+        "raw_items_cost_recomputed": "443.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "26.1095238095",
+        "raw_items_cost_recomputed": "26.10952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "30.3535714286",
+        "raw_items_cost_recomputed": "30.35357142857142677142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "465.5714285714",
+        "raw_items_cost_recomputed": "465.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "36.1833333333",
+        "raw_items_cost_recomputed": "36.18333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "22.7678571429",
+        "raw_items_cost_recomputed": "22.76785714285714175476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "464.4285714286",
+        "raw_items_cost_recomputed": "464.4285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "24.0404761905",
+        "raw_items_cost_recomputed": "24.04047619047619047619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "29.8142857143",
+        "raw_items_cost_recomputed": "29.81428571428571250952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "493.8571428571",
+        "raw_items_cost_recomputed": "493.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "26.0142857143",
+        "raw_items_cost_recomputed": "26.01428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "30.9857142857",
+        "raw_items_cost_recomputed": "30.98571428571428396428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "514.0000000000",
+        "raw_items_cost_recomputed": "514",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "40.7333333333",
+        "raw_items_cost_recomputed": "40.73333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.7035714286",
+        "raw_items_cost_recomputed": "25.70357142857142703571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "510.2857142857",
+        "raw_items_cost_recomputed": "510.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "30.1857142857",
+        "raw_items_cost_recomputed": "30.18571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "21.7571428571",
+        "raw_items_cost_recomputed": "21.75714285714285615",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "346.2857142857",
+        "raw_items_cost_recomputed": "346.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "30.9380952381",
+        "raw_items_cost_recomputed": "30.93809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "21.3428571429",
+        "raw_items_cost_recomputed": "21.34285714285714189523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "355.3809523810",
+        "raw_items_cost_recomputed": "355.3809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "33.0809523810",
+        "raw_items_cost_recomputed": "33.08095238095238095238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "20.6357142857",
+        "raw_items_cost_recomputed": "20.63571428571428461428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "365.8571428571",
+        "raw_items_cost_recomputed": "365.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "19.4761904762",
+        "raw_items_cost_recomputed": "19.47619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.7750000000",
+        "raw_items_cost_recomputed": "24.77499999999999886666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "394.5476190476",
+        "raw_items_cost_recomputed": "394.5476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "28.4357142857",
+        "raw_items_cost_recomputed": "28.43571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "21.6785714286",
+        "raw_items_cost_recomputed": "21.67857142857142748333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "411.7380952381",
+        "raw_items_cost_recomputed": "411.7380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "27.8571428571",
+        "raw_items_cost_recomputed": "27.85714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "23.1071428571",
+        "raw_items_cost_recomputed": "23.10714285714285615476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "422.6428571429",
+        "raw_items_cost_recomputed": "422.6428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.2357142857",
+        "raw_items_cost_recomputed": "34.23571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "21.4285714286",
+        "raw_items_cost_recomputed": "21.42857142857142764761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "435.3333333333",
+        "raw_items_cost_recomputed": "435.3333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "23.7452380952",
+        "raw_items_cost_recomputed": "23.74523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "29.9392857143",
+        "raw_items_cost_recomputed": "29.93928571428571272619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "459.6904761905",
+        "raw_items_cost_recomputed": "459.6904761904761904761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "36.8380952381",
+        "raw_items_cost_recomputed": "36.83809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "20.8464285714",
+        "raw_items_cost_recomputed": "20.84642857142857039047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S09"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "465.9523809524",
+        "raw_items_cost_recomputed": "465.9523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "28.0738095238",
+        "raw_items_cost_recomputed": "28.07380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.0571428571",
+        "raw_items_cost_recomputed": "25.05714285714285577857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "489.0000000000",
+        "raw_items_cost_recomputed": "489",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "25.6928571429",
+        "raw_items_cost_recomputed": "25.69285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "28.1035714286",
+        "raw_items_cost_recomputed": "28.10357142857142708095238095",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S11"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "508.0476190476",
+        "raw_items_cost_recomputed": "508.0476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "32.4047619048",
+        "raw_items_cost_recomputed": "32.40476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.5250000000",
+        "raw_items_cost_recomputed": "24.52499999999999875476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "S12"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "514.0714285714",
+        "raw_items_cost_recomputed": "514.0714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "25.5071428571",
+        "raw_items_cost_recomputed": "25.50714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.0071428571",
+        "raw_items_cost_recomputed": "27.00714285714285580238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "362.7142857143",
+        "raw_items_cost_recomputed": "362.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "27.5428571429",
+        "raw_items_cost_recomputed": "27.54285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.8857142857",
+        "raw_items_cost_recomputed": "27.88571428571428442142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "375.7142857143",
+        "raw_items_cost_recomputed": "375.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "31.4047619048",
+        "raw_items_cost_recomputed": "31.40476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.1892857143",
+        "raw_items_cost_recomputed": "25.18928571428571294523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "378.5714285714",
+        "raw_items_cost_recomputed": "378.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "21.1666666667",
+        "raw_items_cost_recomputed": "21.16666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "30.1000000000",
+        "raw_items_cost_recomputed": "30.09999999999999872857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "407.5714285714",
+        "raw_items_cost_recomputed": "407.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "29.1333333333",
+        "raw_items_cost_recomputed": "29.13333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "26.4500000000",
+        "raw_items_cost_recomputed": "26.44999999999999866190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "424.0000000000",
+        "raw_items_cost_recomputed": "424",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "24.6833333333",
+        "raw_items_cost_recomputed": "24.68333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "28.9071428571",
+        "raw_items_cost_recomputed": "28.90714285714285592380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "442.0000000000",
+        "raw_items_cost_recomputed": "442",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "32.7642857143",
+        "raw_items_cost_recomputed": "32.76428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "26.6214285714",
+        "raw_items_cost_recomputed": "26.62142857142857027857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "450.4285714286",
+        "raw_items_cost_recomputed": "450.4285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "23.6476190476",
+        "raw_items_cost_recomputed": "23.64761904761904761904761905",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "35.1928571429",
+        "raw_items_cost_recomputed": "35.19285714285714093809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "474.2857142857",
+        "raw_items_cost_recomputed": "474.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.8238095238",
+        "raw_items_cost_recomputed": "34.82380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.9214285714",
+        "raw_items_cost_recomputed": "24.92142857142857025476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S09"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "477.1428571429",
+        "raw_items_cost_recomputed": "477.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "27.8071428571",
+        "raw_items_cost_recomputed": "27.80714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "28.8928571429",
+        "raw_items_cost_recomputed": "28.89285714285714120952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S10"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "498.1428571429",
+        "raw_items_cost_recomputed": "498.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "27.2761904762",
+        "raw_items_cost_recomputed": "27.27619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "31.7178571429",
+        "raw_items_cost_recomputed": "31.71785714285714123333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S11"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "516.2857142857",
+        "raw_items_cost_recomputed": "516.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "31.9571428571",
+        "raw_items_cost_recomputed": "31.95714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.1892857143",
+        "raw_items_cost_recomputed": "27.18928571428571288809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_store.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "S12"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "520.5714285714",
+        "raw_items_cost_recomputed": "520.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "42.1452380952",
+        "raw_items_cost_recomputed": "42.14523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "20.4821428571",
+        "raw_items_cost_recomputed": "20.48214285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "410.5714285714",
+        "raw_items_cost_recomputed": "410.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "31.5380952381",
+        "raw_items_cost_recomputed": "31.53809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.6928571429",
+        "raw_items_cost_recomputed": "25.69285714285714000238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "585.0476190476",
+        "raw_items_cost_recomputed": "585.0476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "48.1190476190",
+        "raw_items_cost_recomputed": "48.11904761904761904761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.5500000000",
+        "raw_items_cost_recomputed": "24.54999999999999532380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "795.7142857143",
+        "raw_items_cost_recomputed": "795.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "48.5333333333",
+        "raw_items_cost_recomputed": "48.53333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "31.5714285714",
+        "raw_items_cost_recomputed": "31.57142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "340.0000000000",
+        "raw_items_cost_recomputed": "340",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "37.7142857143",
+        "raw_items_cost_recomputed": "37.71428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "45.9964285714",
+        "raw_items_cost_recomputed": "45.99642857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "606.6428571429",
+        "raw_items_cost_recomputed": "606.6428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "54.0285714286",
+        "raw_items_cost_recomputed": "54.02857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "45.2857142857",
+        "raw_items_cost_recomputed": "45.28571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "811.0476190476",
+        "raw_items_cost_recomputed": "811.0476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "57.9071428571",
+        "raw_items_cost_recomputed": "57.90714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "56.1392857143",
+        "raw_items_cost_recomputed": "56.13928571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "1136.7857142857",
+        "raw_items_cost_recomputed": "1136.785714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "46.0595238095",
+        "raw_items_cost_recomputed": "46.05952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "73.6285714286",
+        "raw_items_cost_recomputed": "73.62857142857142039047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "488.1428571429",
+        "raw_items_cost_recomputed": "488.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.1738095238",
+        "raw_items_cost_recomputed": "34.17380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "21.6607142857",
+        "raw_items_cost_recomputed": "21.66071428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "423.0000000000",
+        "raw_items_cost_recomputed": "423",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "32.5071428571",
+        "raw_items_cost_recomputed": "32.50714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.4357142857",
+        "raw_items_cost_recomputed": "25.43571428571428288809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "582.8571428571",
+        "raw_items_cost_recomputed": "582.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "56.3095238095",
+        "raw_items_cost_recomputed": "56.30952380952380952380952381",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "25.5000000000",
+        "raw_items_cost_recomputed": "25.49999999999999514285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "790.7142857143",
+        "raw_items_cost_recomputed": "790.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "57.4000000000",
+        "raw_items_cost_recomputed": "57.4",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "32.0285714286",
+        "raw_items_cost_recomputed": "32.02857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "337.1428571429",
+        "raw_items_cost_recomputed": "337.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "47.6666666667",
+        "raw_items_cost_recomputed": "47.66666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "43.9071428571",
+        "raw_items_cost_recomputed": "43.90714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "596.5714285714",
+        "raw_items_cost_recomputed": "596.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "61.1452380952",
+        "raw_items_cost_recomputed": "61.14523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "44.8214285714",
+        "raw_items_cost_recomputed": "44.82142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "805.1428571429",
+        "raw_items_cost_recomputed": "805.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "72.5833333333",
+        "raw_items_cost_recomputed": "72.58333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "51.8571428571",
+        "raw_items_cost_recomputed": "51.85714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "1112.8571428571",
+        "raw_items_cost_recomputed": "1112.857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "63.9619047619",
+        "raw_items_cost_recomputed": "63.96190476190476190476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "67.6285714286",
+        "raw_items_cost_recomputed": "67.62857142857142105714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-07-22T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "476.5714285714",
+        "raw_items_cost_recomputed": "476.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "30.1142857143",
+        "raw_items_cost_recomputed": "30.11428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "17.2500000000",
+        "raw_items_cost_recomputed": "17.25",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "422.3571428571",
+        "raw_items_cost_recomputed": "422.3571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "31.5380952381",
+        "raw_items_cost_recomputed": "31.53809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "19.4142857143",
+        "raw_items_cost_recomputed": "19.41428571428571212857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "561.2380952381",
+        "raw_items_cost_recomputed": "561.2380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "44.1261904762",
+        "raw_items_cost_recomputed": "44.12619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "22.1250000000",
+        "raw_items_cost_recomputed": "22.12499999999999578571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "812.5000000000",
+        "raw_items_cost_recomputed": "812.5",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "38.0333333333",
+        "raw_items_cost_recomputed": "38.03333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "31.5428571429",
+        "raw_items_cost_recomputed": "31.54285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "344.0476190476",
+        "raw_items_cost_recomputed": "344.0476190476190476190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "51.5952380952",
+        "raw_items_cost_recomputed": "51.59523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "33.2678571429",
+        "raw_items_cost_recomputed": "33.26785714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "590.0714285714",
+        "raw_items_cost_recomputed": "590.0714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "43.4261904762",
+        "raw_items_cost_recomputed": "43.42619047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "44.0357142857",
+        "raw_items_cost_recomputed": "44.03571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "805.8095238095",
+        "raw_items_cost_recomputed": "805.8095238095238095238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "59.0238095238",
+        "raw_items_cost_recomputed": "59.02380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "42.4285714286",
+        "raw_items_cost_recomputed": "42.42857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "1120.1190476190",
+        "raw_items_cost_recomputed": "1120.119047619047619047619048",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "52.1428571429",
+        "raw_items_cost_recomputed": "52.14285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "61.4571428571",
+        "raw_items_cost_recomputed": "61.45714285714285031428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "467.4285714286",
+        "raw_items_cost_recomputed": "467.4285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.1000000000",
+        "raw_items_cost_recomputed": "34.1",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "19.4464285714",
+        "raw_items_cost_recomputed": "19.44642857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "427.2857142857",
+        "raw_items_cost_recomputed": "427.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "33.3000000000",
+        "raw_items_cost_recomputed": "33.3",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "22.2642857143",
+        "raw_items_cost_recomputed": "22.26428571428571181190476190",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "572.0000000000",
+        "raw_items_cost_recomputed": "572",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "42.7952380952",
+        "raw_items_cost_recomputed": "42.79523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "27.1250000000",
+        "raw_items_cost_recomputed": "27.12499999999999483333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "837.8571428571",
+        "raw_items_cost_recomputed": "837.8571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "40.7166666667",
+        "raw_items_cost_recomputed": "40.71666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "35.4285714286",
+        "raw_items_cost_recomputed": "35.42857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "349.4285714286",
+        "raw_items_cost_recomputed": "349.4285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "51.0714285714",
+        "raw_items_cost_recomputed": "51.07142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "42.2357142857",
+        "raw_items_cost_recomputed": "42.23571428571428571428571429",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "610.2857142857",
+        "raw_items_cost_recomputed": "610.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "47.0571428571",
+        "raw_items_cost_recomputed": "47.05714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "51.1071428571",
+        "raw_items_cost_recomputed": "51.10714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "822.2857142857",
+        "raw_items_cost_recomputed": "822.2857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "62.8523809524",
+        "raw_items_cost_recomputed": "62.85238095238095238095238095",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "50.6392857143",
+        "raw_items_cost_recomputed": "50.63928571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "1142.1428571429",
+        "raw_items_cost_recomputed": "1142.142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "51.2738095238",
+        "raw_items_cost_recomputed": "51.27380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "71.7857142857",
+        "raw_items_cost_recomputed": "71.78571428571427773809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-02T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "479.1428571429",
+        "raw_items_cost_recomputed": "479.1428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.8380952381",
+        "raw_items_cost_recomputed": "34.83809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "18.9821428571",
+        "raw_items_cost_recomputed": "18.98214285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "423.6428571429",
+        "raw_items_cost_recomputed": "423.6428571428571428571428571",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "36.1190476190",
+        "raw_items_cost_recomputed": "36.11904761904761904761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "20.7000000000",
+        "raw_items_cost_recomputed": "20.6999999999999977",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "564.6666666667",
+        "raw_items_cost_recomputed": "564.6666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "48.9380952381",
+        "raw_items_cost_recomputed": "48.93809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.1250000000",
+        "raw_items_cost_recomputed": "24.12499999999999540476190476",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "832.3809523810",
+        "raw_items_cost_recomputed": "832.3809523809523809523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.3000000000",
+        "raw_items_cost_recomputed": "34.3",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "33.8285714286",
+        "raw_items_cost_recomputed": "33.82857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "346.7142857143",
+        "raw_items_cost_recomputed": "346.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "50.0238095238",
+        "raw_items_cost_recomputed": "50.02380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "33.3000000000",
+        "raw_items_cost_recomputed": "33.30",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "595.2142857143",
+        "raw_items_cost_recomputed": "595.2142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "40.2309523810",
+        "raw_items_cost_recomputed": "40.23095238095238095238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "42.3214285714",
+        "raw_items_cost_recomputed": "42.32142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "802.9523809524",
+        "raw_items_cost_recomputed": "802.9523809523809523809523810",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "56.6309523810",
+        "raw_items_cost_recomputed": "56.63095238095238095238095238",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "47.0250000000",
+        "raw_items_cost_recomputed": "47.025",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "1136.5476190476",
+        "raw_items_cost_recomputed": "1136.547619047619047619047619",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "49.8833333333",
+        "raw_items_cost_recomputed": "49.88333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "62.9142857143",
+        "raw_items_cost_recomputed": "62.91428571428570729523809524",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "shared_ridge10",
+          "K08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "466.4285714286",
+        "raw_items_cost_recomputed": "466.4285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "29.0071428571",
+        "raw_items_cost_recomputed": "29.00714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "21.2678571429",
+        "raw_items_cost_recomputed": "21.26785714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K01"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "438.4285714286",
+        "raw_items_cost_recomputed": "438.4285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "34.9738095238",
+        "raw_items_cost_recomputed": "34.97380952380952380952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "24.9000000000",
+        "raw_items_cost_recomputed": "24.89999999999999723333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K02"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "584.5714285714",
+        "raw_items_cost_recomputed": "584.5714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "45.9690476190",
+        "raw_items_cost_recomputed": "45.96904761904761904761904762",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "29.3500000000",
+        "raw_items_cost_recomputed": "29.34999999999999440952380952",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K03"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "860.7142857143",
+        "raw_items_cost_recomputed": "860.7142857142857142857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "35.2333333333",
+        "raw_items_cost_recomputed": "35.23333333333333333333333333",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "39.6285714286",
+        "raw_items_cost_recomputed": "39.62857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K04"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "356.0000000000",
+        "raw_items_cost_recomputed": "356",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "53.1666666667",
+        "raw_items_cost_recomputed": "53.16666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "41.6250000000",
+        "raw_items_cost_recomputed": "41.625",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K05"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "612.0000000000",
+        "raw_items_cost_recomputed": "612",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "36.6000000000",
+        "raw_items_cost_recomputed": "36.6",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "52.1071428571",
+        "raw_items_cost_recomputed": "52.10714285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K06"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "831.4285714286",
+        "raw_items_cost_recomputed": "831.4285714285714285714285714",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "57.7476190476",
+        "raw_items_cost_recomputed": "57.74761904761904761904761905",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "55.9821428571",
+        "raw_items_cost_recomputed": "55.98214285714285714285714286",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K07"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "1162.8571428571",
+        "raw_items_cost_recomputed": "1162.857142857142857142857143",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "shortage_per_day",
+        "csv_decimal": "45.0166666667",
+        "raw_items_cost_recomputed": "45.01666666666666666666666667",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "waste_per_day",
+        "csv_decimal": "75.2142857143",
+        "raw_items_cost_recomputed": "75.21428571428570592857142857",
+        "matches_1e-8": true
+      },
+      {
+        "file": "group_item.csv",
+        "group": [
+          "2026-09-19T18:00:00",
+          "weekly_mean56",
+          "K08"
+        ],
+        "field": "procurement_per_day",
+        "csv_decimal": "481.4285714286",
+        "raw_items_cost_recomputed": "481.4285714285714285714285714",
+        "matches_1e-8": true
+      }
+    ],
+    "daily_independent_recompute_groups": 252
+  },
+  "rounding": "Decimal text quantized ROUND_HALF_UP; table cells compared exactly; row-level money recomputed from key CSV actual/q and original raw items.csv unit costs.",
+  "actual_model": null,
+  "tokens": null,
+  "cost": null
+}

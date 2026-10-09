@@ -1102,7 +1102,7 @@
     {
       "id": "R22-horizon-aligned-validation",
       "title": "对齐固定42日预测期限的验证证据",
-      "status": "in_progress",
+      "status": "done",
       "owner": "root",
       "depends_on": [
         "R21-interval-reliability"
@@ -1115,10 +1115,36 @@
       ],
       "evidence": [
         "runs/R22/PLAN.md",
-        "runs/R22/audit-lock.json"
+        "runs/R22/audit-lock.json",
+        "runs/R22/R22-02-result.json",
+        "runs/R22/R22-03-result.json",
+        "runs/R22/final-lock.json",
+        "runs/R22/successor-transition-result.json"
       ],
       "blocker": null,
-      "next_action": "同期限固定策略历史计算与独立实质接收"
+      "next_action": "R23-02: bounded autonomous validation-design probe"
+    },
+    {
+      "id": "R23-autonomous-validation-design",
+      "title": "自主推导验证范围的工作流接收探查",
+      "status": "in_progress",
+      "owner": "root",
+      "depends_on": [
+        "R22-horizon-aligned-validation"
+      ],
+      "write_paths": [
+        "runs/R23/"
+      ],
+      "acceptance": [
+        "真实新设计/消费切片及独立接收；确证源缺口才修纯文档；完成定界支线后结束"
+      ],
+      "evidence": [
+        "runs/R23/PLAN.md",
+        "runs/R23/source-lock.json",
+        "runs/R23/audit-lock.json"
+      ],
+      "blocker": null,
+      "next_action": "新上下文自主制作验证与执行工作流"
     }
   ],
   "stop_conditions": [

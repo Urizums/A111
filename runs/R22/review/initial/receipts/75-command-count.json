@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path;p=Path('runs/R22/review/initial/receipts');fs=sorted(p.glob('*.json')); rs=[json.load(open(f,encoding='utf-8')) for f in fs if f.name!='75-command-count.json']; from collections import Counter; print(json.dumps({'receipt_count_before_this_receipt':len(rs),'state_counts':dict(Counter(r.get('state') for r in rs)),'exit_code_counts':dict(Counter(str(r.get('exit_code')) for r in rs)),'nonzero':[(f.name,json.load(open(f,encoding='utf-8')).get('exit_code')) for f in fs if f.name not in {'75-command-count.json'} and json.load(open(f,encoding='utf-8')).get('exit_code') not in (0,None)],'pending':[(f.name,json.load(open(f,encoding='utf-8')).get('state')) for f in fs if f.name not in {'75-command-count.json'} and json.load(open(f,encoding='utf-8')).get('state')!='finished']},ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T09:48:26.173598+00:00",
+    "monotonic_ns": 158735968000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T09:48:26.292048+00:00",
+    "monotonic_ns": 158736078000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"receipt_count_before_this_receipt\": 75,\r\n  \"state_counts\": {\r\n    \"finished\": 75\r\n  },\r\n  \"exit_code_counts\": {\r\n    \"0\": 67,\r\n    \"1\": 8\r\n  },\r\n  \"nonzero\": [\r\n    [\r\n      \"01-permitted-source-inspection.json\",\r\n      1\r\n    ],\r\n    [\r\n      \"08-independent-reconstruction.json\",\r\n      1\r\n    ],\r\n    [\r\n      \"17-independent-reconstruction-v2.json\",\r\n      1\r\n    ],\r\n    [\r\n      \"22-independent-reconstruction-v3.json\",\r\n      1\r\n    ],\r\n    [\r\n      \"34-permitted-artifact-schemas.json\",\r\n      1\r\n    ],\r\n    [\r\n      \"52-report-trace.json\",\r\n      1\r\n    ],\r\n    [\r\n      \"60-independent-narrative-values.json\",\r\n      1\r\n    ],\r\n    [\r\n      \"64-report-crosscheck-data.json\",\r\n      1\r\n    ]\r\n  ],\r\n  \"pending\": []\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAicmVjZWlwdF9jb3VudF9iZWZvcmVfdGhpc19yZWNlaXB0IjogNzUsDQogICJzdGF0ZV9jb3VudHMiOiB7DQogICAgImZpbmlzaGVkIjogNzUNCiAgfSwNCiAgImV4aXRfY29kZV9jb3VudHMiOiB7DQogICAgIjAiOiA2NywNCiAgICAiMSI6IDgNCiAgfSwNCiAgIm5vbnplcm8iOiBbDQogICAgWw0KICAgICAgIjAxLXBlcm1pdHRlZC1zb3VyY2UtaW5zcGVjdGlvbi5qc29uIiwNCiAgICAgIDENCiAgICBdLA0KICAgIFsNCiAgICAgICIwOC1pbmRlcGVuZGVudC1yZWNvbnN0cnVjdGlvbi5qc29uIiwNCiAgICAgIDENCiAgICBdLA0KICAgIFsNCiAgICAgICIxNy1pbmRlcGVuZGVudC1yZWNvbnN0cnVjdGlvbi12Mi5qc29uIiwNCiAgICAgIDENCiAgICBdLA0KICAgIFsNCiAgICAgICIyMi1pbmRlcGVuZGVudC1yZWNvbnN0cnVjdGlvbi12My5qc29uIiwNCiAgICAgIDENCiAgICBdLA0KICAgIFsNCiAgICAgICIzNC1wZXJtaXR0ZWQtYXJ0aWZhY3Qtc2NoZW1hcy5qc29uIiwNCiAgICAgIDENCiAgICBdLA0KICAgIFsNCiAgICAgICI1Mi1yZXBvcnQtdHJhY2UuanNvbiIsDQogICAgICAxDQogICAgXSwNCiAgICBbDQogICAgICAiNjAtaW5kZXBlbmRlbnQtbmFycmF0aXZlLXZhbHVlcy5qc29uIiwNCiAgICAgIDENCiAgICBdLA0KICAgIFsNCiAgICAgICI2NC1yZXBvcnQtY3Jvc3NjaGVjay1kYXRhLmpzb24iLA0KICAgICAgMQ0KICAgIF0NCiAgXSwNCiAgInBlbmRpbmciOiBbXQ0KfQ0K",
+  "stderr_base64": ""
+}

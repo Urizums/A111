@@ -1,0 +1,254 @@
+[
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0001-read-authorized-sources.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "from pathlib import Path; import json; p=Path.cwd(); print('CWD',p); files=['AGENTS.md','scripts/record_command.py','runs/R22/protocol/PROTOCOL.md','runs/R22/protocol/acceptance.json','runs/R22/protocol-lock.json']; [(print('FILE',f),print(Path(f).read_text(encoding='utf-8'))) for f in files]"
+    ],
+    "begin_utc": "2026-10-09T09:05:15.001577+00:00",
+    "end_utc": "2026-10-09T09:05:15.079765+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0002-read-implementation.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "from pathlib import Path; fs=list(Path('runs/R20/final/candidate/C13/forge-agent-flow').rglob('*.md'))+[Path(f) for f in ['runs/R20/final/candidate/C13-lock.json','runs/R21/input-lock.json','runs/R21/execution-lock.json','runs/R21/prospective-freeze.json','runs/R21/execution/source/v1/config.json','runs/R21/execution/source/v1/reference_policy.py','runs/R21/execution/source/v1/run_science.py','runs/R21/execution/source/v1/freeze.py','C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/SKILL.md']]; [(print('FILE',str(f)),print(f.read_text(encoding='utf-8'))) for f in fs]"
+    ],
+    "begin_utc": "2026-10-09T09:05:27.611077+00:00",
+    "end_utc": "2026-10-09T09:05:27.707792+00:00",
+    "exit_code": 1
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0003-read-science-source.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "from pathlib import Path; fs=['runs/R21/execution/source/v1/config.json','runs/R21/execution/source/v1/reference_policy.py','runs/R21/execution/source/v1/run_science.py','runs/R21/execution/source/v1/freeze.py','C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/SKILL.md']; [(print('FILE',f),print(Path(f).read_text(encoding='utf-8'))) for f in fs]"
+    ],
+    "begin_utc": "2026-10-09T09:05:43.212019+00:00",
+    "end_utc": "2026-10-09T09:05:43.301881+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0004-read-lineage.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "from pathlib import Path; import json,csv; f=Path('runs/R21/execution/source/v1/run_science.py'); print(f.read_text(encoding='utf-8').split('    hist=pd.concat(hist')[0]); print('INPUTS',list(Path('runs/R21/inputs').rglob('*'))); print('PROSPECTIVE',Path('runs/R21/execution/prospective-freeze.json').read_text(encoding='utf-8')); f=Path('runs/R21/execution/science-v1/uncertainty/residual_coordinates_all.csv'); r=csv.DictReader(f.open()); print('RES HEADER',r.fieldnames); print('RES SAMPLE',[next(r) for _ in range(2)]); print('MODEL SAMPLE',next(Path('runs/R21/execution/science-v1/models').glob('coefficients_*.json')).read_text()); print('C13LOCK',Path('runs/R20/final/candidate/C13-lock.json').read_text())"
+    ],
+    "begin_utc": "2026-10-09T09:05:59.655582+00:00",
+    "end_utc": "2026-10-09T09:05:59.745087+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0005-read-contract-and-references.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "from pathlib import Path; fs=['runs/R21/inputs/PROBLEM.md','runs/R21/inputs/REQUEST.md','runs/R20/final/candidate/C13/forge-agent-flow/references/modeling.md','runs/R20/final/candidate/C13/forge-agent-flow/references/workflow-design.md','runs/R20/final/candidate/C13/forge-agent-flow/references/iteration-and-recovery.md','runs/R20/final/candidate/C13/forge-agent-flow/references/source-evaluation.md','runs/R20/final/candidate/C13/forge-agent-flow/references/frontend.md']; [(print('FILE',f),print(Path(f).read_text(encoding='utf-8'))) for f in fs]"
+    ],
+    "begin_utc": "2026-10-09T09:06:14.073485+00:00",
+    "end_utc": "2026-10-09T09:06:14.151623+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0006-freeze-science.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R22/execution/source/v1/freeze.py"
+    ],
+    "begin_utc": "2026-10-09T09:10:35.693691+00:00",
+    "end_utc": "2026-10-09T09:10:35.927606+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0007-first-science-v1.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R22/execution/source/v1/run_replay.py",
+      "--raw",
+      "runs/R21/inputs/raw",
+      "--config",
+      "runs/R22/execution/source/v1/config.json",
+      "--newout",
+      "runs/R22/execution/science-v1"
+    ],
+    "begin_utc": "2026-10-09T09:10:44.957213+00:00",
+    "end_utc": "2026-10-09T09:11:34.515181+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0008-pdf-runtime-locations.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "from pathlib import Path; paths=[Path('C:/Windows/Fonts'),Path('C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime'),Path('C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041')]; print('FONTS',[str(p) for p in paths[0].glob('*sim*')]); print('MARKER',[str(p) for root in paths[1:] for p in root.rglob('mark_artifact_operation_started.mjs')]); print('POPPLER',[str(p) for p in paths[1].rglob('pdftoppm.exe')]); print('PDFINFO',[str(p) for p in paths[1].rglob('pdfinfo.exe')])"
+    ],
+    "begin_utc": "2026-10-09T09:11:49.899747+00:00",
+    "end_utc": "2026-10-09T09:11:51.866641+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0009-clean-replay.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R22/execution/source/v1/run_replay.py",
+      "--raw",
+      "runs/R21/inputs/raw",
+      "--config",
+      "runs/R22/execution/source/v1/config.json",
+      "--newout",
+      "runs/R22/execution/clean-v1"
+    ],
+    "begin_utc": "2026-10-09T09:12:11.896255+00:00",
+    "end_utc": "2026-10-09T09:12:55.403268+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0010-read-produced-results.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "from pathlib import Path; import pandas as pd; root=Path('runs/R22/execution/science-v1'); fs=['data/audit.json','data/boundaries.csv','validation/boundaries.json','results/group_stage.csv','results/group_band.csv','results/group_activity.csv','results/group_activity_stage.csv','results/combined_first_two.csv']; [(print('FILE',f),print((root/f).read_text())) for f in fs]; s=pd.read_csv(root/'results/solver_daily.csv');print('SOLVER',s.groupby(['origin','method_id'])[['status','gap','capacity_slack','budget_slack']].agg(['min','max']).to_string()); k=pd.read_csv(root/'results/keys.csv'); print('OUTSIDE POINT',((k.point<k.lower90)|(k.point>k.upper90)).sum()); print('EMPTY',pd.read_csv(root/'results/group_activity_band.csv').query('rows==0')[['origin','method_id','holiday','band','rows','days','status']].to_string(index=False))"
+    ],
+    "begin_utc": "2026-10-09T09:12:33.555864+00:00",
+    "end_utc": "2026-10-09T09:12:34.314312+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0011-existing-output-refused.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R22/execution/source/v1/run_replay.py",
+      "--raw",
+      "runs/R21/inputs/raw",
+      "--config",
+      "runs/R22/execution/source/v1/config.json",
+      "--newout",
+      "runs/R22/execution/science-v1"
+    ],
+    "begin_utc": "2026-10-09T09:13:53.129215+00:00",
+    "end_utc": "2026-10-09T09:13:54.754354+00:00",
+    "exit_code": 1
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0012-author-check.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R22/execution/source/author_checks_v1.py"
+    ],
+    "begin_utc": "2026-10-09T09:14:05.973691+00:00",
+    "end_utc": "2026-10-09T09:14:09.985844+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0013-pdf-artifact-marker.json",
+    "argv": [
+      "C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+      "C:/Users/admin/.codex/plugins/cache/openai-primary-runtime/pdf/26.1007.11041/skills/pdf/container_tools/mark_artifact_operation_started.mjs",
+      "--operation-kind",
+      "create",
+      "--expected-output-count",
+      "1",
+      "--output-format",
+      "pdf"
+    ],
+    "begin_utc": "2026-10-09T09:20:29.201456+00:00",
+    "end_utc": "2026-10-09T09:20:30.190420+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0014-build-report.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "runs/R22/execution/source/build_report_v1.py"
+    ],
+    "begin_utc": "2026-10-09T09:20:35.740553+00:00",
+    "end_utc": "2026-10-09T09:20:39.441270+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0015-render-pdf.json",
+    "argv": [
+      "C:/Users/admin/.cache/codex-runtimes/codex-primary-runtime/dependencies/native/poppler/Library/bin/pdftoppm.exe",
+      "-r",
+      "90",
+      "-png",
+      "runs/R22/execution/report-v1/REPORT.pdf",
+      "runs/R22/execution/report-v1/page"
+    ],
+    "begin_utc": "2026-10-09T09:20:45.458129+00:00",
+    "end_utc": "2026-10-09T09:20:47.314032+00:00",
+    "exit_code": 0
+  },
+  {
+    "receipt": "runs\\R22\\execution\\receipts\\0016-read-final-body.json",
+    "argv": [
+      "py",
+      "-3.12",
+      "-X",
+      "utf8",
+      "-B",
+      "-c",
+      "from pathlib import Path; from pypdf import PdfReader; p=Path('runs/R22/execution/report-v1'); print((p/'REPORT.md').read_text(encoding='utf-8')); r=PdfReader(p/'REPORT.pdf'); print('PAGES',len(r.pages)); print('PAGEFILES',[str(f) for f in p.glob('page-*.png')]);print('PDF_TEXT_COUNTS',[len(x.extract_text()) for x in r.pages])"
+    ],
+    "begin_utc": "2026-10-09T09:20:55.951820+00:00",
+    "end_utc": "2026-10-09T09:20:56.772808+00:00",
+    "exit_code": 0
+  }
+]

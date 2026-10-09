@@ -1,0 +1,59 @@
+{
+  "task_id": "R22-02",
+  "attempt_id": "R22-02-3",
+  "requirements_hash": "981010bc85075d60fbb3e1961ac25c1fc0f83be3be4fa87242d509ba87558b67",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R22/execution-lock.json",
+        "runs/R22/initial-reception-lock.json",
+        "runs/R22/document-correction-v2-lock.json",
+        "runs/R22/document-correction-v3-lock.json",
+        "runs/R22/document-recheck-v3-lock.json",
+        "runs/R20/final/candidate/C13-lock.json",
+        "runs/R22/review/recheck-v3/result.json",
+        "runs/R22/final/reception-composition.json",
+        "runs/R22/final/receipt-audit.json",
+        "runs/R22/root-metrics-command.json"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "同期限固定策略历史计算与独立实质接收",
+    "hypothesis": "Fixed-horizon claims require actual matching evidence plus independent reception of numbers and complete exported language.",
+    "baseline": "Original 14-day historical evidence and first two failed document attempts retained.",
+    "conditions": "Three fixed same-origin historical42-day windows; unchanged R/W policies; known data; initial independent science plus informed repaired-document receiving.",
+    "observations": {
+      "first": {
+        "h1": "pass",
+        "h2": "pass",
+        "h3": "pass",
+        "h4": "pass",
+        "h5": "pass",
+        "h6": "fail"
+      },
+      "current": {
+        "h1": "pass",
+        "h2": "pass",
+        "h3": "pass",
+        "h4": "pass",
+        "h5": "pass",
+        "h6": "pass"
+      }
+    },
+    "metrics": {
+      "scored_keys": 24192,
+      "unique_dates": 101,
+      "nonoverlapping_combined_dates": 84,
+      "root_arithmetic_checks": 185384,
+      "repair_count": 2,
+      "actual_model": null,
+      "tokens": null,
+      "cost": null
+    },
+    "limits": "Synthetic known historical replay, windows overlap25dates; 4activity dates per window, unsupported activity cells and below nominal coverage retained. Not independent126dates, prize, real-business/formal-October compliance or causal skill gain."
+  },
+  "next_action": "R22-03: source-bound synthesis; retain C13 unless a general source gap is actually demonstrated."
+}

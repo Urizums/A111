@@ -9183,15 +9183,335 @@
       "owner": "root",
       "inputs": [
         "runs/R22/PLAN.md",
-        "runs/R22/source-lock.json"
+        "runs/R22/source-lock.json",
+        "runs/R22/protocol-lock.json",
+        "runs/R21/input-lock.json",
+        "runs/R21/execution-lock.json",
+        "runs/R20/final/candidate/C13-lock.json"
       ],
-      "status": "planned",
-      "evidence": [],
-      "attempts": [],
-      "repairs_used": 0,
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R22/R22-02-result.json",
+          "sha256": "115998418bda40ee5ed0267f6c8b3e83cb56657c2f0e3cd4095d0fceb924fc85"
+        },
+        {
+          "path": "runs/R22/execution-lock.json",
+          "sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247"
+        },
+        {
+          "path": "runs/R22/initial-reception-lock.json",
+          "sha256": "9c9514ba36c94947f078b779128a440387528e479935a360f592e414d868e8e3"
+        },
+        {
+          "path": "runs/R22/document-correction-v2-lock.json",
+          "sha256": "2cfd05dfd8a7019488cfb6743fe77dc7982830c0cdab22b819b01b31a808ab17"
+        },
+        {
+          "path": "runs/R22/document-correction-v3-lock.json",
+          "sha256": "1b220a30b1b57cee159162539bd1640c0756ce302d796fc94b9b5868d441890c"
+        },
+        {
+          "path": "runs/R22/document-recheck-v3-lock.json",
+          "sha256": "8e70149f8075df0c3ba7e82e79956fa552d6a5e712ef41143a8e58403de5fc88"
+        },
+        {
+          "path": "runs/R20/final/candidate/C13-lock.json",
+          "sha256": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a"
+        },
+        {
+          "path": "runs/R22/review/recheck-v3/result.json",
+          "sha256": "7f83e4e1622fa2af4778a709d30f01d2f994edfaf62262fffe6b58b0775bca97"
+        },
+        {
+          "path": "runs/R22/final/reception-composition.json",
+          "sha256": "1d64fa0fad413886275b2c59810047de4a882a284b18eda262ab9af997d5b8ba"
+        },
+        {
+          "path": "runs/R22/final/receipt-audit.json",
+          "sha256": "c054eda37e5e03d62161247db2a7415d3702ed0340f84ecb588d64e5e58b553c"
+        },
+        {
+          "path": "runs/R22/root-metrics-command.json",
+          "sha256": "d0f6baa3ac24e8c001c182781bb974e7ab372f0bb542193370ffefa15b5293c1"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R22-02-1",
+          "started_at": "2026-10-09T09:07:59.625020+00:00",
+          "requirements_hash": "981010bc85075d60fbb3e1961ac25c1fc0f83be3be4fa87242d509ba87558b67",
+          "inputs": [
+            {
+              "path": "runs/R22/PLAN.md",
+              "sha256": "278b99f45329f22ca3817473a45fca4d156748f5f5eb41f609fb4232276be34b"
+            },
+            {
+              "path": "runs/R22/source-lock.json",
+              "sha256": "27ff5bd281521567cbe51ce8fbc76352d048c0d8d5babc04620b670873653cde"
+            },
+            {
+              "path": "runs/R22/protocol-lock.json",
+              "sha256": "b4abd2298682beec6269989545e0c4dbee6e4189c2077d892bc82112d4be0f06"
+            },
+            {
+              "path": "runs/R21/input-lock.json",
+              "sha256": "dcd4f9ffd67097e6dc53cc919ed0333f9340f7dc938d7c6ea3694af7f33d53d7"
+            },
+            {
+              "path": "runs/R21/execution-lock.json",
+              "sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669"
+            },
+            {
+              "path": "runs/R20/final/candidate/C13-lock.json",
+              "sha256": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R22/execution/receipts/0001-read-authorized-sources.json",
+            "sha256": "f59234e37cc908821abdb4b1023b6feb27d5fc386b2d743258058a04a99c44ba"
+          },
+          "status": "failed",
+          "execution_policy_hash": "a26eb145d64f046ca80ee7c8c7de1709fb68dcfa0fa45e5c198ddc404c6ea260",
+          "ended_at": "2026-10-09T09:55:36.705629+00:00",
+          "result": {
+            "path": "runs/R22/R22-02-first-result.json",
+            "sha256": "f73d4a3889330db57a9d0de3b6050691af774abe5b217c946df172420453436e"
+          },
+          "evidence": [
+            {
+              "path": "runs/R22/R22-02-first-result.json",
+              "sha256": "f73d4a3889330db57a9d0de3b6050691af774abe5b217c946df172420453436e"
+            },
+            {
+              "path": "runs/R22/execution-lock.json",
+              "sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247"
+            },
+            {
+              "path": "runs/R22/initial-reception-lock.json",
+              "sha256": "9c9514ba36c94947f078b779128a440387528e479935a360f592e414d868e8e3"
+            },
+            {
+              "path": "runs/R22/review/initial/result.json",
+              "sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711"
+            },
+            {
+              "path": "runs/R22/review/initial/REVIEW.md",
+              "sha256": "0dbabdc9d7742bc1ae7ac802dc3775f7a63cf3b1d1db126839d52fbcd9f07088"
+            },
+            {
+              "path": "runs/R22/root-metrics-command.json",
+              "sha256": "d0f6baa3ac24e8c001c182781bb974e7ab372f0bb542193370ffefa15b5293c1"
+            }
+          ]
+        },
+        {
+          "id": "R22-02-2",
+          "started_at": "2026-10-09T09:57:40.209085+00:00",
+          "requirements_hash": "981010bc85075d60fbb3e1961ac25c1fc0f83be3be4fa87242d509ba87558b67",
+          "inputs": [
+            {
+              "path": "runs/R22/PLAN.md",
+              "sha256": "278b99f45329f22ca3817473a45fca4d156748f5f5eb41f609fb4232276be34b"
+            },
+            {
+              "path": "runs/R22/source-lock.json",
+              "sha256": "27ff5bd281521567cbe51ce8fbc76352d048c0d8d5babc04620b670873653cde"
+            },
+            {
+              "path": "runs/R22/protocol-lock.json",
+              "sha256": "b4abd2298682beec6269989545e0c4dbee6e4189c2077d892bc82112d4be0f06"
+            },
+            {
+              "path": "runs/R21/input-lock.json",
+              "sha256": "dcd4f9ffd67097e6dc53cc919ed0333f9340f7dc938d7c6ea3694af7f33d53d7"
+            },
+            {
+              "path": "runs/R21/execution-lock.json",
+              "sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669"
+            },
+            {
+              "path": "runs/R20/final/candidate/C13-lock.json",
+              "sha256": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R22/create-correction-command.json",
+            "sha256": "49a2c0ec0cfb38ace97cad06f1f662de17fc88287623223cbac0177f82e0d30e"
+          },
+          "status": "failed",
+          "execution_policy_hash": "a26eb145d64f046ca80ee7c8c7de1709fb68dcfa0fa45e5c198ddc404c6ea260",
+          "recovery_signature": "993ea3b06e6ad5d881600c489504cdd67b4464dec62520741f9a58c0566f2d72",
+          "recovery_note": {
+            "observation": "First independent h6 fails on inconsistent two-decimal presentation of 340.075; first verdict and all artifacts retained.",
+            "change_or_new_information": "Document-only new renderer uses a declared Decimal ROUND_HALF_UP display rule; also reconcile repeated monetary values, preserve original scientific source/config/results.",
+            "expected_check": "Informed independent h6 recheck of complete corrected Chinese MD and every final PDF page; carry h1-h5 only with original locked science identity unchanged.",
+            "category": "substantive document consistency correction, not scientific refit or reviewer tool errors",
+            "evidence": [
+              {
+                "path": "runs/R22/initial-reception-lock.json",
+                "sha256": "9c9514ba36c94947f078b779128a440387528e479935a360f592e414d868e8e3"
+              },
+              {
+                "path": "runs/R22/review/initial/result.json",
+                "sha256": "d3a06fc06e574ce84550f4b34339fdd5da9fbb549b888613d3ad5e3d6c267711"
+              },
+              {
+                "path": "runs/R22/execution-lock.json",
+                "sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247"
+              }
+            ]
+          },
+          "ended_at": "2026-10-09T10:13:27.196053+00:00",
+          "result": {
+            "path": "runs/R22/R22-02-v2-result.json",
+            "sha256": "83bd1e22c8e4bcaf7edf653f90c8ea545ea5afee76983145e2eb5bebba9ab9f4"
+          },
+          "evidence": [
+            {
+              "path": "runs/R22/R22-02-v2-result.json",
+              "sha256": "83bd1e22c8e4bcaf7edf653f90c8ea545ea5afee76983145e2eb5bebba9ab9f4"
+            },
+            {
+              "path": "runs/R22/document-correction-v2-lock.json",
+              "sha256": "2cfd05dfd8a7019488cfb6743fe77dc7982830c0cdab22b819b01b31a808ab17"
+            },
+            {
+              "path": "runs/R22/execution/correction-v2/receipts/0006-full-document-selfcheck.json",
+              "sha256": "3fb7833554ee5208cf3934da18b66be0bdbb334d5bbd359d673d7f88b3d6220e"
+            },
+            {
+              "path": "runs/R22/execution/correction-v2/derived-monetary-counterexamples.json",
+              "sha256": "dac0f4761ef261c5f52cec5e12ece68c58f196133b286d73eec36c641f2e1c12"
+            },
+            {
+              "path": "runs/R22/execution/correction-v2/ATTEMPT_STATUS.json",
+              "sha256": "504cd6b8fa76020792b600183c5ddff60db73dc6132c4d8aa9dc605233225576"
+            },
+            {
+              "path": "runs/R22/initial-reception-lock.json",
+              "sha256": "9c9514ba36c94947f078b779128a440387528e479935a360f592e414d868e8e3"
+            }
+          ]
+        },
+        {
+          "id": "R22-02-3",
+          "started_at": "2026-10-09T10:14:10.127267+00:00",
+          "requirements_hash": "981010bc85075d60fbb3e1961ac25c1fc0f83be3be4fa87242d509ba87558b67",
+          "inputs": [
+            {
+              "path": "runs/R22/PLAN.md",
+              "sha256": "278b99f45329f22ca3817473a45fca4d156748f5f5eb41f609fb4232276be34b"
+            },
+            {
+              "path": "runs/R22/source-lock.json",
+              "sha256": "27ff5bd281521567cbe51ce8fbc76352d048c0d8d5babc04620b670873653cde"
+            },
+            {
+              "path": "runs/R22/protocol-lock.json",
+              "sha256": "b4abd2298682beec6269989545e0c4dbee6e4189c2077d892bc82112d4be0f06"
+            },
+            {
+              "path": "runs/R21/input-lock.json",
+              "sha256": "dcd4f9ffd67097e6dc53cc919ed0333f9340f7dc938d7c6ea3694af7f33d53d7"
+            },
+            {
+              "path": "runs/R21/execution-lock.json",
+              "sha256": "7d8083b17136f845ccbe0d24d22bfe84d5fbfc62bef76da3822a28cc2c32f669"
+            },
+            {
+              "path": "runs/R20/final/candidate/C13-lock.json",
+              "sha256": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R22/create-correction-v3-command.json",
+            "sha256": "5b4afc2c48e5f7fb170d45373134beedcd336f8405e0b4137bc98bf127f0b820"
+          },
+          "status": "done",
+          "execution_policy_hash": "a26eb145d64f046ca80ee7c8c7de1709fb68dcfa0fa45e5c198ddc404c6ea260",
+          "recovery_signature": "3dd5aaae409bc9710e00c5e8f4f516bfe2353b3ebbdbbc1760e55b9c05f3b729",
+          "recovery_note": {
+            "observation": "v2 author check actually failed: published CSV decimal subtraction and float-first subtraction differ in a half-cent case. Original independent h6 rejection remains unchanged; no independent v2 judgment exists.",
+            "change_or_new_information": "New v3 renderer performs displayed monetary subtraction and paired means/min/max directly on original published CSV decimal text before ROUND_HALF_UP. Context-summary exposure during v2 waiting is disclosed; no scientific refit.",
+            "expected_check": "Complete author monetary audit and actual final-page inspection, followed by informed independent h6 reception. Scientific h1-h5 carried only after byte identity verification.",
+            "category": "substantive document consistency correction 2; not tool recovery or scientific tuning",
+            "evidence": [
+              {
+                "path": "runs/R22/document-correction-v2-lock.json",
+                "sha256": "2cfd05dfd8a7019488cfb6743fe77dc7982830c0cdab22b819b01b31a808ab17"
+              },
+              {
+                "path": "runs/R22/R22-02-v2-result.json",
+                "sha256": "83bd1e22c8e4bcaf7edf653f90c8ea545ea5afee76983145e2eb5bebba9ab9f4"
+              },
+              {
+                "path": "runs/R22/execution/correction-v2/derived-monetary-counterexamples.json",
+                "sha256": "dac0f4761ef261c5f52cec5e12ece68c58f196133b286d73eec36c641f2e1c12"
+              },
+              {
+                "path": "runs/R22/create-correction-v3-command.json",
+                "sha256": "5b4afc2c48e5f7fb170d45373134beedcd336f8405e0b4137bc98bf127f0b820"
+              }
+            ]
+          },
+          "ended_at": "2026-10-09T10:31:05.850199+00:00",
+          "result": {
+            "path": "runs/R22/R22-02-result.json",
+            "sha256": "115998418bda40ee5ed0267f6c8b3e83cb56657c2f0e3cd4095d0fceb924fc85"
+          },
+          "evidence": [
+            {
+              "path": "runs/R22/R22-02-result.json",
+              "sha256": "115998418bda40ee5ed0267f6c8b3e83cb56657c2f0e3cd4095d0fceb924fc85"
+            },
+            {
+              "path": "runs/R22/execution-lock.json",
+              "sha256": "6db54bc274f042f90a7df858fef56eccf7f680991daf8fd8bcfc000f02e6e247"
+            },
+            {
+              "path": "runs/R22/initial-reception-lock.json",
+              "sha256": "9c9514ba36c94947f078b779128a440387528e479935a360f592e414d868e8e3"
+            },
+            {
+              "path": "runs/R22/document-correction-v2-lock.json",
+              "sha256": "2cfd05dfd8a7019488cfb6743fe77dc7982830c0cdab22b819b01b31a808ab17"
+            },
+            {
+              "path": "runs/R22/document-correction-v3-lock.json",
+              "sha256": "1b220a30b1b57cee159162539bd1640c0756ce302d796fc94b9b5868d441890c"
+            },
+            {
+              "path": "runs/R22/document-recheck-v3-lock.json",
+              "sha256": "8e70149f8075df0c3ba7e82e79956fa552d6a5e712ef41143a8e58403de5fc88"
+            },
+            {
+              "path": "runs/R20/final/candidate/C13-lock.json",
+              "sha256": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a"
+            },
+            {
+              "path": "runs/R22/review/recheck-v3/result.json",
+              "sha256": "7f83e4e1622fa2af4778a709d30f01d2f994edfaf62262fffe6b58b0775bca97"
+            },
+            {
+              "path": "runs/R22/final/reception-composition.json",
+              "sha256": "1d64fa0fad413886275b2c59810047de4a882a284b18eda262ab9af997d5b8ba"
+            },
+            {
+              "path": "runs/R22/final/receipt-audit.json",
+              "sha256": "c054eda37e5e03d62161247db2a7415d3702ed0340f84ecb588d64e5e58b553c"
+            },
+            {
+              "path": "runs/R22/root-metrics-command.json",
+              "sha256": "d0f6baa3ac24e8c001c182781bb974e7ab372f0bb542193370ffefa15b5293c1"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 2,
       "repair_limit": null,
       "blocker": null,
-      "next_action": "同期限固定策略历史计算与独立实质接收",
+      "next_action": "R22-03: source-bound synthesis; retain C13 unless a general source gap is actually demonstrated.",
       "execution_policy": {
         "mode": "progress_guard",
         "source": {
@@ -9206,6 +9526,30 @@
         ],
         "progress_state": "ready",
         "deadline_utc": null
+      },
+      "recovery_note": {
+        "observation": "v2 author check actually failed: published CSV decimal subtraction and float-first subtraction differ in a half-cent case. Original independent h6 rejection remains unchanged; no independent v2 judgment exists.",
+        "change_or_new_information": "New v3 renderer performs displayed monetary subtraction and paired means/min/max directly on original published CSV decimal text before ROUND_HALF_UP. Context-summary exposure during v2 waiting is disclosed; no scientific refit.",
+        "expected_check": "Complete author monetary audit and actual final-page inspection, followed by informed independent h6 reception. Scientific h1-h5 carried only after byte identity verification.",
+        "category": "substantive document consistency correction 2; not tool recovery or scientific tuning",
+        "evidence": [
+          {
+            "path": "runs/R22/document-correction-v2-lock.json",
+            "sha256": "2cfd05dfd8a7019488cfb6743fe77dc7982830c0cdab22b819b01b31a808ab17"
+          },
+          {
+            "path": "runs/R22/R22-02-v2-result.json",
+            "sha256": "83bd1e22c8e4bcaf7edf653f90c8ea545ea5afee76983145e2eb5bebba9ab9f4"
+          },
+          {
+            "path": "runs/R22/execution/correction-v2/derived-monetary-counterexamples.json",
+            "sha256": "dac0f4761ef261c5f52cec5e12ece68c58f196133b286d73eec36c641f2e1c12"
+          },
+          {
+            "path": "runs/R22/create-correction-v3-command.json",
+            "sha256": "5b4afc2c48e5f7fb170d45373134beedcd336f8405e0b4137bc98bf127f0b820"
+          }
+        ]
       }
     },
     {
@@ -9233,13 +9577,91 @@
         "runs/R22/PLAN.md",
         "runs/R22/source-lock.json"
       ],
-      "status": "planned",
-      "evidence": [],
-      "attempts": [],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R22/R22-03-result.json",
+          "sha256": "5aa06c821a9b858843de0652dd69519e4a8962b084b24239b203d35a8b9ace55"
+        },
+        {
+          "path": "runs/R22/final-lock.json",
+          "sha256": "b1154ffc0784707a8da1946f269cc6ff22cbe74f717f5a6a74daf6a7f0f40818"
+        },
+        {
+          "path": "runs/R22/final/SYNTHESIS.md",
+          "sha256": "8d27de6415e5f5197d5a927363b1e6d91298af8973886f594a399df690a949fb"
+        },
+        {
+          "path": "runs/R22/final/source-decision.json",
+          "sha256": "f4a3f77c4d3f5077bf49206b59fa73b33c84902fe6e6610d9fd01783884487e3"
+        },
+        {
+          "path": "runs/R22/final/source-basis.json",
+          "sha256": "5a370056d55096510bcb137c2b1db44b8d4bf4aa3e1342689e80c8b9b28567e2"
+        },
+        {
+          "path": "runs/R22/synthesis-command.json",
+          "sha256": "3720bc96d49d2b2add4f0f46a922a370bc6c86283167d2686ff77d7414209c55"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R22-03-1",
+          "started_at": "2026-10-09T10:31:57.096752+00:00",
+          "requirements_hash": "f6876a657f79a6c0c1dd510e215eddca37e9e253a27f37a15009c31aed6b850c",
+          "inputs": [
+            {
+              "path": "runs/R22/PLAN.md",
+              "sha256": "278b99f45329f22ca3817473a45fca4d156748f5f5eb41f609fb4232276be34b"
+            },
+            {
+              "path": "runs/R22/source-lock.json",
+              "sha256": "27ff5bd281521567cbe51ce8fbc76352d048c0d8d5babc04620b670873653cde"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R22/synthesis-command.json",
+            "sha256": "3720bc96d49d2b2add4f0f46a922a370bc6c86283167d2686ff77d7414209c55"
+          },
+          "status": "done",
+          "execution_policy_hash": "a26eb145d64f046ca80ee7c8c7de1709fb68dcfa0fa45e5c198ddc404c6ea260",
+          "ended_at": "2026-10-09T10:32:41.788374+00:00",
+          "result": {
+            "path": "runs/R22/R22-03-result.json",
+            "sha256": "5aa06c821a9b858843de0652dd69519e4a8962b084b24239b203d35a8b9ace55"
+          },
+          "evidence": [
+            {
+              "path": "runs/R22/R22-03-result.json",
+              "sha256": "5aa06c821a9b858843de0652dd69519e4a8962b084b24239b203d35a8b9ace55"
+            },
+            {
+              "path": "runs/R22/final-lock.json",
+              "sha256": "b1154ffc0784707a8da1946f269cc6ff22cbe74f717f5a6a74daf6a7f0f40818"
+            },
+            {
+              "path": "runs/R22/final/SYNTHESIS.md",
+              "sha256": "8d27de6415e5f5197d5a927363b1e6d91298af8973886f594a399df690a949fb"
+            },
+            {
+              "path": "runs/R22/final/source-decision.json",
+              "sha256": "f4a3f77c4d3f5077bf49206b59fa73b33c84902fe6e6610d9fd01783884487e3"
+            },
+            {
+              "path": "runs/R22/final/source-basis.json",
+              "sha256": "5a370056d55096510bcb137c2b1db44b8d4bf4aa3e1342689e80c8b9b28567e2"
+            },
+            {
+              "path": "runs/R22/synthesis-command.json",
+              "sha256": "3720bc96d49d2b2add4f0f46a922a370bc6c86283167d2686ff77d7414209c55"
+            }
+          ]
+        }
+      ],
       "repairs_used": 0,
       "repair_limit": null,
       "blocker": null,
-      "next_action": "同期限证据综合与有依据的纯文档源迭代",
+      "next_action": "R22-next: freeze R23 neutral role inputs and reception rubric, execute actual original-CSV audit first step.",
       "execution_policy": {
         "mode": "progress_guard",
         "source": {
@@ -9280,6 +9702,383 @@
         "runs/R22/PLAN.md",
         "runs/R22/source-lock.json"
       ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R22/successor-transition-result.json",
+          "sha256": "f5117fb71297ddcb4ea171675719fd83b870273d7a3e2a2e368675e716bfb9c2"
+        },
+        {
+          "path": "runs/R23/PLAN.md",
+          "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+        },
+        {
+          "path": "runs/R23/source-lock.json",
+          "sha256": "a329c847be4168e795c62a7db1b3b00326f9265ef7c22542614d0f0a09bcd65d"
+        },
+        {
+          "path": "runs/R23/audit/first-step-command.json",
+          "sha256": "963c1efb41a010851385ead0b928e89265387f866efc99430949c3f9f16cddf5"
+        },
+        {
+          "path": "runs/R23/audit/INPUT_AUDIT.json",
+          "sha256": "c794c7620f3967232229baac19b6f2de756e2ffe8cdb97ca5e9adf4d05376588"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R22-next-1",
+          "started_at": "2026-10-09T10:33:44.741359+00:00",
+          "requirements_hash": "5cc6e8e26e40b00b2a5ff4126fc565dad7a1b8928d58f56f33a44019cdecb129",
+          "inputs": [
+            {
+              "path": "runs/R22/PLAN.md",
+              "sha256": "278b99f45329f22ca3817473a45fca4d156748f5f5eb41f609fb4232276be34b"
+            },
+            {
+              "path": "runs/R22/source-lock.json",
+              "sha256": "27ff5bd281521567cbe51ce8fbc76352d048c0d8d5babc04620b670873653cde"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R23/audit/first-step-command.json",
+            "sha256": "963c1efb41a010851385ead0b928e89265387f866efc99430949c3f9f16cddf5"
+          },
+          "status": "done",
+          "execution_policy_hash": "a26eb145d64f046ca80ee7c8c7de1709fb68dcfa0fa45e5c198ddc404c6ea260",
+          "ended_at": "2026-10-09T10:33:44.982663+00:00",
+          "result": {
+            "path": "runs/R22/successor-transition-result.json",
+            "sha256": "f5117fb71297ddcb4ea171675719fd83b870273d7a3e2a2e368675e716bfb9c2"
+          },
+          "evidence": [
+            {
+              "path": "runs/R22/successor-transition-result.json",
+              "sha256": "f5117fb71297ddcb4ea171675719fd83b870273d7a3e2a2e368675e716bfb9c2"
+            },
+            {
+              "path": "runs/R23/PLAN.md",
+              "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+            },
+            {
+              "path": "runs/R23/source-lock.json",
+              "sha256": "a329c847be4168e795c62a7db1b3b00326f9265ef7c22542614d0f0a09bcd65d"
+            },
+            {
+              "path": "runs/R23/audit/first-step-command.json",
+              "sha256": "963c1efb41a010851385ead0b928e89265387f866efc99430949c3f9f16cddf5"
+            },
+            {
+              "path": "runs/R23/audit/INPUT_AUDIT.json",
+              "sha256": "c794c7620f3967232229baac19b6f2de756e2ffe8cdb97ca5e9adf4d05376588"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "R23-02: fresh C13 workflow builder receives only neutral business task/raw sources; reception rubric withheld.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R22/PLAN.md",
+          "sha256": "278b99f45329f22ca3817473a45fca4d156748f5f5eb41f609fb4232276be34b"
+        },
+        "stop_conditions": [
+          "completion",
+          "actual host/resource boundary",
+          "user stop",
+          "unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R23-01",
+      "title": "固定交付范围与中性输入真实审计",
+      "depends_on": [
+        "R22-next"
+      ],
+      "write_paths": [
+        "runs/R23/audit/"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Frozen neutral task/raw identities and actual raw availability audit; no previous design, private truth, fitting or design-acceptance claim."
+        }
+      ],
+      "queue": "challenges",
+      "category": "autonomous_validation_design",
+      "complexity": 3,
+      "priority": 23,
+      "owner": "root",
+      "inputs": [
+        "runs/R23/PLAN.md",
+        "runs/R23/source-lock.json"
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R23/R23-01-result.json",
+          "sha256": "8954c1045e32397c7bb7a57f4fc5e6d417e7daf9b9ae851c0afd4cd5685f0ad2"
+        },
+        {
+          "path": "runs/R23/PLAN.md",
+          "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+        },
+        {
+          "path": "runs/R23/source-lock.json",
+          "sha256": "a329c847be4168e795c62a7db1b3b00326f9265ef7c22542614d0f0a09bcd65d"
+        },
+        {
+          "path": "runs/R23/audit/first-step-command.json",
+          "sha256": "963c1efb41a010851385ead0b928e89265387f866efc99430949c3f9f16cddf5"
+        },
+        {
+          "path": "runs/R23/audit/INPUT_AUDIT.json",
+          "sha256": "c794c7620f3967232229baac19b6f2de756e2ffe8cdb97ca5e9adf4d05376588"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R23-01-1",
+          "started_at": "2026-10-09T10:33:45.020128+00:00",
+          "requirements_hash": "f5948a309460298a1c9df4fff3a263cd8a8cdeedc687203c1a1bb9bcf0ba8c83",
+          "inputs": [
+            {
+              "path": "runs/R23/PLAN.md",
+              "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+            },
+            {
+              "path": "runs/R23/source-lock.json",
+              "sha256": "a329c847be4168e795c62a7db1b3b00326f9265ef7c22542614d0f0a09bcd65d"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R23/audit/first-step-command.json",
+            "sha256": "963c1efb41a010851385ead0b928e89265387f866efc99430949c3f9f16cddf5"
+          },
+          "status": "done",
+          "execution_policy_hash": "77865c2bf76f270525321f046c26e6686e1eac2e8fa75a525bc3a3895e7d8e19",
+          "ended_at": "2026-10-09T10:33:45.194289+00:00",
+          "result": {
+            "path": "runs/R23/R23-01-result.json",
+            "sha256": "8954c1045e32397c7bb7a57f4fc5e6d417e7daf9b9ae851c0afd4cd5685f0ad2"
+          },
+          "evidence": [
+            {
+              "path": "runs/R23/R23-01-result.json",
+              "sha256": "8954c1045e32397c7bb7a57f4fc5e6d417e7daf9b9ae851c0afd4cd5685f0ad2"
+            },
+            {
+              "path": "runs/R23/PLAN.md",
+              "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+            },
+            {
+              "path": "runs/R23/source-lock.json",
+              "sha256": "a329c847be4168e795c62a7db1b3b00326f9265ef7c22542614d0f0a09bcd65d"
+            },
+            {
+              "path": "runs/R23/audit/first-step-command.json",
+              "sha256": "963c1efb41a010851385ead0b928e89265387f866efc99430949c3f9f16cddf5"
+            },
+            {
+              "path": "runs/R23/audit/INPUT_AUDIT.json",
+              "sha256": "c794c7620f3967232229baac19b6f2de756e2ffe8cdb97ca5e9adf4d05376588"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "R23-02: derive workflow without a prewritten experiment protocol or previous solution.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R23/PLAN.md",
+          "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+        },
+        "stop_conditions": [
+          "completion",
+          "actual host/resource boundary",
+          "user stop",
+          "unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R23-02",
+      "title": "新上下文自主制作验证与执行工作流",
+      "depends_on": [
+        "R23-01"
+      ],
+      "write_paths": [
+        "runs/R23/design/"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Actual fresh-context C13 workflow derived from neutral task and original business inputs, with transferable decision/evidence/execution/receiving interfaces; no coordinator detailed protocol or prior diagnoses supplied."
+        }
+      ],
+      "queue": "challenges",
+      "category": "autonomous_validation_design",
+      "complexity": 3,
+      "priority": 23,
+      "owner": "root",
+      "inputs": [
+        "runs/R23/PLAN.md",
+        "runs/R23/source-lock.json"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "新上下文自主制作验证与执行工作流",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R23/PLAN.md",
+          "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+        },
+        "stop_conditions": [
+          "completion",
+          "actual host/resource boundary",
+          "user stop",
+          "unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R23-03",
+      "title": "另一消费者真实切片与独立设计接收",
+      "depends_on": [
+        "R23-02"
+      ],
+      "write_paths": [
+        "runs/R23/execution/",
+        "runs/R23/review/"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Actual meaningful designed slice plus fresh source-based j1-j4 reception, including supported scope, relevant boundary and language; slice does not establish full paper or causal performance."
+        }
+      ],
+      "queue": "challenges",
+      "category": "autonomous_validation_design",
+      "complexity": 3,
+      "priority": 23,
+      "owner": "root",
+      "inputs": [
+        "runs/R23/PLAN.md",
+        "runs/R23/source-lock.json"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "另一消费者真实切片与独立设计接收",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R23/PLAN.md",
+          "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+        },
+        "stop_conditions": [
+          "completion",
+          "actual host/resource boundary",
+          "user stop",
+          "unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R23-04",
+      "title": "设计证据综合及受影响源接收",
+      "depends_on": [
+        "R23-03"
+      ],
+      "write_paths": [
+        "runs/R23/final/",
+        "runs/R23/candidate/"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Only a confirmed general source gap causes a new pure-document revision and affected forward reception; otherwise preserve C13 and close bounded probe, no award/causal claims."
+        }
+      ],
+      "queue": "challenges",
+      "category": "autonomous_validation_design",
+      "complexity": 3,
+      "priority": 23,
+      "owner": "root",
+      "inputs": [
+        "runs/R23/PLAN.md",
+        "runs/R23/source-lock.json"
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "设计证据综合及受影响源接收",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R23/PLAN.md",
+          "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
+        },
+        "stop_conditions": [
+          "completion",
+          "actual host/resource boundary",
+          "user stop",
+          "unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R23-next",
+      "title": "启动下一阶段任务",
+      "depends_on": [
+        "R23-04"
+      ],
+      "write_paths": [
+        "runs/R24/"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Close this bounded probe explicitly when complete; only a concrete material remaining goal warrants another source-bound plan and actual first step."
+        }
+      ],
+      "queue": "challenges",
+      "category": "autonomous_validation_design",
+      "complexity": 3,
+      "priority": 23,
+      "owner": "root",
+      "inputs": [
+        "runs/R23/PLAN.md",
+        "runs/R23/source-lock.json"
+      ],
       "status": "planned",
       "evidence": [],
       "attempts": [],
@@ -9290,8 +10089,8 @@
       "execution_policy": {
         "mode": "progress_guard",
         "source": {
-          "path": "runs/R22/PLAN.md",
-          "sha256": "278b99f45329f22ca3817473a45fca4d156748f5f5eb41f609fb4232276be34b"
+          "path": "runs/R23/PLAN.md",
+          "sha256": "3b3a27dee156d50ca656547a558b3bf29316d5ac104a54fa9589ead8658c5146"
         },
         "stop_conditions": [
           "completion",
@@ -9317,7 +10116,7 @@
     "background_code_execution_verified": false,
     "session_state": "R14_diagnostic_complete_R16_original_budget_stop",
     "checkpoint_reason": "Original failures retained; no full real-paper delivery. Explicit original-case limit change pending.",
-    "coordinator_heartbeat": "2026-10-09T04:31:57.122848+00:00",
+    "coordinator_heartbeat": "2026-10-09T10:35:57.917963+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -9349,7 +10148,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-r21-prospective",
+    "current_coordinator": "root-codex-r22-horizon",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -9364,7 +10163,7 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R22/REPORT.md",
+    "current_report": "runs/R23/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
@@ -9384,7 +10183,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R22/handback.json",
+    "coordinator_release_evidence": "runs/R22/handback2.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -9727,22 +10526,400 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "R22-02 ready; no current worker or background scheduler; actual coordinator lease released.",
+    "current_task_process_state": "R23-02 ready; no current actor or background scheduler; actual R22 coordinator lease released.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R19/publication/observation-50.json",
-    "current_source_commit": "c321484c1b9e90d151eb44dd91e5f88079c406b1",
+    "current_publication": "runs/R19/publication/observation-52.json",
+    "current_source_commit": "eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467",
     "current_source_ci": [
       {
-        "conclusion": "",
-        "databaseId": 37884552560,
-        "headSha": "c321484c1b9e90d151eb44dd91e5f88079c406b1",
-        "status": "in_progress",
-        "url": "https://github.com/Urizums/A111/actions/runs/37884552560",
-        "workflowName": "Cloud delivery validation"
+        "conclusion": "success",
+        "databaseId": 37884838207,
+        "headSha": "eb8d217a4e6eb8d6f815f2735e6a38a60e9c4467",
+        "jobs": [
+          {
+            "completedAt": "2026-10-09T04:39:26Z",
+            "conclusion": "success",
+            "databaseId": 113672395666,
+            "name": "windows-preflight",
+            "startedAt": "2026-10-09T04:38:43Z",
+            "status": "completed",
+            "steps": [
+              {
+                "completedAt": "2026-10-09T04:38:45Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "startedAt": "2026-10-09T04:38:44Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:19Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "number": 2,
+                "startedAt": "2026-10-09T04:38:45Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:19Z",
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "number": 3,
+                "startedAt": "2026-10-09T04:39:19Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:22Z",
+                "conclusion": "success",
+                "name": "Read-only preflight behavior on native Windows",
+                "number": 4,
+                "startedAt": "2026-10-09T04:39:19Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:22Z",
+                "conclusion": "success",
+                "name": "Post Run actions/setup-python@v5",
+                "number": 7,
+                "startedAt": "2026-10-09T04:39:22Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:24Z",
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "number": 8,
+                "startedAt": "2026-10-09T04:39:22Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:24Z",
+                "conclusion": "success",
+                "name": "Complete job",
+                "number": 9,
+                "startedAt": "2026-10-09T04:39:24Z",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395666"
+          },
+          {
+            "completedAt": "2026-10-09T04:51:44Z",
+            "conclusion": "success",
+            "databaseId": 113672395812,
+            "name": "validate (3.10)",
+            "startedAt": "2026-10-09T04:38:42Z",
+            "status": "completed",
+            "steps": [
+              {
+                "completedAt": "2026-10-09T04:38:43Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "startedAt": "2026-10-09T04:38:42Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:00Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "number": 2,
+                "startedAt": "2026-10-09T04:38:43Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:01Z",
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "number": 3,
+                "startedAt": "2026-10-09T04:39:00Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:11Z",
+                "conclusion": "success",
+                "name": "Verify immutable evidence, revision and phase history",
+                "number": 4,
+                "startedAt": "2026-10-09T04:39:01Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:24Z",
+                "conclusion": "success",
+                "name": "Original controller regression",
+                "number": 5,
+                "startedAt": "2026-10-09T04:39:11Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:38Z",
+                "conclusion": "success",
+                "name": "C3 versioned candidate regression",
+                "number": 6,
+                "startedAt": "2026-10-09T04:39:24Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:49Z",
+                "conclusion": "success",
+                "name": "C5 versioned candidate regression",
+                "number": 7,
+                "startedAt": "2026-10-09T04:39:38Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:02Z",
+                "conclusion": "success",
+                "name": "C6 takeover candidate and restore recovery",
+                "number": 8,
+                "startedAt": "2026-10-09T04:39:49Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:14Z",
+                "conclusion": "success",
+                "name": "C7 short-entry candidate regression",
+                "number": 9,
+                "startedAt": "2026-10-09T04:40:02Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:19Z",
+                "conclusion": "success",
+                "name": "Snapshot, bounded repairs, local provider and approval regressions",
+                "number": 10,
+                "startedAt": "2026-10-09T04:40:14Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:47:01Z",
+                "conclusion": "success",
+                "name": "Handoff and recorder regression",
+                "number": 11,
+                "startedAt": "2026-10-09T04:40:19Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:47:01Z",
+                "conclusion": "success",
+                "name": "Actual support desk HTTP journey",
+                "number": 12,
+                "startedAt": "2026-10-09T04:47:01Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:48:10Z",
+                "conclusion": "success",
+                "name": "Install and exercise CLI with fresh state",
+                "number": 13,
+                "startedAt": "2026-10-09T04:47:01Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:25Z",
+                "conclusion": "success",
+                "name": "Package source and reports",
+                "number": 14,
+                "startedAt": "2026-10-09T04:48:10Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:41Z",
+                "conclusion": "success",
+                "name": "Run actions/upload-artifact@v4",
+                "number": 15,
+                "startedAt": "2026-10-09T04:51:25Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:41Z",
+                "conclusion": "success",
+                "name": "Post Run actions/setup-python@v5",
+                "number": 29,
+                "startedAt": "2026-10-09T04:51:41Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:41Z",
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "number": 30,
+                "startedAt": "2026-10-09T04:51:41Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:51:41Z",
+                "conclusion": "success",
+                "name": "Complete job",
+                "number": 31,
+                "startedAt": "2026-10-09T04:51:41Z",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395812"
+          },
+          {
+            "completedAt": "2026-10-09T04:53:55Z",
+            "conclusion": "success",
+            "databaseId": 113672395883,
+            "name": "validate (3.12)",
+            "startedAt": "2026-10-09T04:38:42Z",
+            "status": "completed",
+            "steps": [
+              {
+                "completedAt": "2026-10-09T04:38:43Z",
+                "conclusion": "success",
+                "name": "Set up job",
+                "number": 1,
+                "startedAt": "2026-10-09T04:38:42Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:02Z",
+                "conclusion": "success",
+                "name": "Run actions/checkout@v4",
+                "number": 2,
+                "startedAt": "2026-10-09T04:38:43Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:02Z",
+                "conclusion": "success",
+                "name": "Run actions/setup-python@v5",
+                "number": 3,
+                "startedAt": "2026-10-09T04:39:02Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:14Z",
+                "conclusion": "success",
+                "name": "Verify immutable evidence, revision and phase history",
+                "number": 4,
+                "startedAt": "2026-10-09T04:39:02Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:26Z",
+                "conclusion": "success",
+                "name": "Original controller regression",
+                "number": 5,
+                "startedAt": "2026-10-09T04:39:14Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:40Z",
+                "conclusion": "success",
+                "name": "C3 versioned candidate regression",
+                "number": 6,
+                "startedAt": "2026-10-09T04:39:26Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:39:51Z",
+                "conclusion": "success",
+                "name": "C5 versioned candidate regression",
+                "number": 7,
+                "startedAt": "2026-10-09T04:39:40Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:03Z",
+                "conclusion": "success",
+                "name": "C6 takeover candidate and restore recovery",
+                "number": 8,
+                "startedAt": "2026-10-09T04:39:51Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:15Z",
+                "conclusion": "success",
+                "name": "C7 short-entry candidate regression",
+                "number": 9,
+                "startedAt": "2026-10-09T04:40:03Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:40:20Z",
+                "conclusion": "success",
+                "name": "Snapshot, bounded repairs, local provider and approval regressions",
+                "number": 10,
+                "startedAt": "2026-10-09T04:40:15Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:48:47Z",
+                "conclusion": "success",
+                "name": "Handoff and recorder regression",
+                "number": 11,
+                "startedAt": "2026-10-09T04:40:20Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:48:47Z",
+                "conclusion": "success",
+                "name": "Actual support desk HTTP journey",
+                "number": 12,
+                "startedAt": "2026-10-09T04:48:47Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:50:14Z",
+                "conclusion": "success",
+                "name": "Install and exercise CLI with fresh state",
+                "number": 13,
+                "startedAt": "2026-10-09T04:48:47Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:36Z",
+                "conclusion": "success",
+                "name": "Package source and reports",
+                "number": 14,
+                "startedAt": "2026-10-09T04:50:14Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:52Z",
+                "conclusion": "success",
+                "name": "Run actions/upload-artifact@v4",
+                "number": 15,
+                "startedAt": "2026-10-09T04:53:36Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:52Z",
+                "conclusion": "success",
+                "name": "Post Run actions/setup-python@v5",
+                "number": 29,
+                "startedAt": "2026-10-09T04:53:52Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:53Z",
+                "conclusion": "success",
+                "name": "Post Run actions/checkout@v4",
+                "number": 30,
+                "startedAt": "2026-10-09T04:53:52Z",
+                "status": "completed"
+              },
+              {
+                "completedAt": "2026-10-09T04:53:53Z",
+                "conclusion": "success",
+                "name": "Complete job",
+                "number": 31,
+                "startedAt": "2026-10-09T04:53:53Z",
+                "status": "completed"
+              }
+            ],
+            "url": "https://github.com/Urizums/A111/actions/runs/37884838207/job/113672395883"
+          }
+        ],
+        "status": "completed",
+        "url": "https://github.com/Urizums/A111/actions/runs/37884838207"
       }
     ],
-    "current_source_ci_observed": "2026-10-09T04:35:55.561538+00:00",
+    "current_source_ci_observed": "2026-10-09T05:44:03.991989+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
     "R19_current_level": 4,
@@ -9964,7 +11141,7 @@
       "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
       "current_source_ci_observed": "success"
     },
-    "current_frontier_task": "R22-02",
+    "current_frontier_task": "R23-02",
     "R19_publication_status": "source_pushed_observed",
     "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
@@ -10020,7 +11197,7 @@
     "candidate_status": "C13_targeted_forward_reception_pass_scoped",
     "R19_status": "four_diagnostics_and_source_synthesis_done_successor_actually_started",
     "R20_plan": "runs/R20/PLAN.md",
-    "final_lease_release": "runs/R22/handback.json",
+    "final_lease_release": "runs/R22/handback2.json",
     "source_artifact_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
     "final_source_ci_observation": {
       "conclusion": "success",
@@ -10496,10 +11673,19 @@
           "coordinator_release_evidence": null
         },
         "note": "Actual R21 owner released after R21 closure and R22 real first step; prior aliases retained."
+      },
+      {
+        "at": "2026-10-09T08:49:16.135932+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r21-prospective",
+          "coordinator_heartbeat": "2026-10-09T04:31:57.122848+00:00",
+          "final_lease_release": "runs/R22/handback.json",
+          "coordinator_release_evidence": "runs/R22/handback.json"
+        }
       }
     ],
-    "actual_lease_pid": 367,
-    "actual_lease_session": 20564,
+    "actual_lease_pid": 267,
+    "actual_lease_session": 43407,
     "R21_prestart_binding": "New original inputs/protocol/C13 identity and derived workflow scope added before first R21-03 attempt; acceptance and old66 tasks unchanged.",
     "completed_native_R21": [
       {
@@ -10533,7 +11719,46 @@
         "actual_model": null
       }
     ],
-    "R22_status": "first_source_availability_audit_done"
+    "R22_status": "same_horizon_reception_and_source_synthesis_complete_C13_retained",
+    "completed_native_R22": [
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-2.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-2.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_executor",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_executor-completed-3.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r22_receiver",
+        "state": "completed",
+        "evidence": "runs/R22/coordination-current/r22_receiver-completed-3.json",
+        "actual_model": null
+      }
+    ],
+    "R23_status": "real_raw_first_step_done_design_not_started"
   },
   "events": [
     {
@@ -13287,6 +14512,16 @@
       "at": "2026-10-09T04:35:55.561549+00:00",
       "command": "observe_R19_main_publication",
       "evidence": "runs/R19/publication/observation-50.json"
+    },
+    {
+      "at": "2026-10-09T04:39:01.824415+00:00",
+      "command": "observe_R19_main_publication",
+      "evidence": "runs/R19/publication/observation-51.json"
+    },
+    {
+      "at": "2026-10-09T09:19:01.157658+00:00",
+      "command": "import_actual_completed_CI_receipt",
+      "evidence": "runs/R19/publication/observation-52.json"
     }
   ],
   "task_expansion_basis": [

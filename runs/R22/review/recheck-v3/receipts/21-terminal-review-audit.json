@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "import json;from pathlib import Path;from pypdf import PdfReader;p=Path('runs/R22/review/recheck-v3');fs=sorted((p/'receipts').glob('*.json')); rs=[json.loads(x.read_text(encoding='utf-8')) for x in fs]; result=json.load(open(p/'result.json',encoding='utf-8')); led=json.load(open(p/'numeric-ledger-v2.json',encoding='utf-8')); pages=list(p.glob('final-pdf-page-*.png')); print(json.dumps({'receipt_count_before_terminal_audit':len(rs),'all_prior_receipts_finished':all(x.get('state')=='finished' for x in rs),'prior_nonzero_receipts':[f.name for f,x in zip(fs,rs) if x.get('exit_code') not in (0,None)],'terminal_receipt_count_after_this_command':len(rs)+1,'h_statuses':result['criterion_statuses'],'informed_recheck':result['informed_recheck'],'pdf_pages':len(PdfReader('runs/R22/execution/correction-v3/report/REPORT.pdf').pages),'rendered_pages':len(pages),'tables_pass':led['previous_exact_text_check']['tables_all_exact_match'],'amount_over_tolerance':led['raw_items_cost_reconstruction']['over_2e_8_count'],'group_amount_mismatches':led['group_amount_reconstruction_mismatches_over_2e_8'],'claim_gaps':len(led['missing_overall_or_pair_claim_tokens'])+len(led['activity_leak_claim_gaps'])},ensure_ascii=False,indent=2))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:28:54.757242+00:00",
+    "monotonic_ns": 161164484000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:28:55.004823+00:00",
+    "monotonic_ns": 161164734000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"receipt_count_before_terminal_audit\": 20,\r\n  \"all_prior_receipts_finished\": false,\r\n  \"prior_nonzero_receipts\": [],\r\n  \"terminal_receipt_count_after_this_command\": 21,\r\n  \"h_statuses\": {\r\n    \"h1\": \"pass\",\r\n    \"h2\": \"pass\",\r\n    \"h3\": \"pass\",\r\n    \"h4\": \"pass\",\r\n    \"h5\": \"pass\",\r\n    \"h6\": \"pass\"\r\n  },\r\n  \"informed_recheck\": true,\r\n  \"pdf_pages\": 13,\r\n  \"rendered_pages\": 13,\r\n  \"tables_pass\": true,\r\n  \"amount_over_tolerance\": 0,\r\n  \"group_amount_mismatches\": 0,\r\n  \"claim_gaps\": 0\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAicmVjZWlwdF9jb3VudF9iZWZvcmVfdGVybWluYWxfYXVkaXQiOiAyMCwNCiAgImFsbF9wcmlvcl9yZWNlaXB0c19maW5pc2hlZCI6IGZhbHNlLA0KICAicHJpb3Jfbm9uemVyb19yZWNlaXB0cyI6IFtdLA0KICAidGVybWluYWxfcmVjZWlwdF9jb3VudF9hZnRlcl90aGlzX2NvbW1hbmQiOiAyMSwNCiAgImhfc3RhdHVzZXMiOiB7DQogICAgImgxIjogInBhc3MiLA0KICAgICJoMiI6ICJwYXNzIiwNCiAgICAiaDMiOiAicGFzcyIsDQogICAgImg0IjogInBhc3MiLA0KICAgICJoNSI6ICJwYXNzIiwNCiAgICAiaDYiOiAicGFzcyINCiAgfSwNCiAgImluZm9ybWVkX3JlY2hlY2siOiB0cnVlLA0KICAicGRmX3BhZ2VzIjogMTMsDQogICJyZW5kZXJlZF9wYWdlcyI6IDEzLA0KICAidGFibGVzX3Bhc3MiOiB0cnVlLA0KICAiYW1vdW50X292ZXJfdG9sZXJhbmNlIjogMCwNCiAgImdyb3VwX2Ftb3VudF9taXNtYXRjaGVzIjogMCwNCiAgImNsYWltX2dhcHMiOiAwDQp9DQo=",
+  "stderr_base64": ""
+}

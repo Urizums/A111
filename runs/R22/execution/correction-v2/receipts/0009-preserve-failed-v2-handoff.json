@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "-c",
+    "from pathlib import Path;from datetime import datetime,timezone;import json,hashlib;ex=Path('runs/R22/execution/correction-v2');rs=[];\nfor p in sorted((ex/'receipts').glob('*.json')):\n obj=json.loads(p.read_text(encoding='utf-8'))\n if obj['state']=='finished':rs.append({'path':str(p),'exit_code':obj['exit_code'],'argv':obj['argv'],'begin_utc':obj['begin']['utc'],'end_utc':obj['end']['utc']})\nlock=Path('runs/R22/execution-lock.json');l=json.loads(lock.read_text(encoding='utf-8'));assert all(hashlib.sha256(Path(f['path']).read_bytes()).hexdigest()==f['sha256'] for f in l['files']);s={'schema':'r22-document-repair-attempt/1','actual_recorded_at_utc':datetime.now(timezone.utc).isoformat(),'repair_number':1,'attempt':'renderer_v2','status':'author_document_consistency_failed_waiting_root_renderer_fix','independent':False,'main_md':str(ex/'report/REPORT.md'),'main_pdf':str(ex/'report/REPORT.pdf'),'source_freeze':str(ex/'source-freeze.json'),'original_268_bytes_unchanged':True,'science_rerun':False,'all_actual_v2_pages_viewed':13,'page_review':str(ex/'visual-qa-v2-failed.json'),'failed_check_receipt':str(ex/'receipts/0006-full-document-selfcheck.json'),'counterexamples':str(ex/'derived-monetary-counterexamples.json'),'root_renderer_not_modified':True,'terminal_commands_before_this_finalization':rs,'context_exposure':{'tool':'collaboration.list_agents','purpose':'confirm root running while waiting','unexpected_output':'inventory included completed R21 holdout and R22 first-reception summaries, beyond document-repair required scope','use':'not used in scientific source/results or report conclusions; root notified immediately','actual_not_file_read':True,'cannot_claim_entire_context_unseen_future_summary':True},'old_failures_retained_separately':['first h6 failure','author original read path recovery','author original expected output rejection','receiver 12 errors from root packet','v2 0006 author-display failure'],'model':None,'tokens':None,'cost':None};(ex/'ATTEMPT_STATUS.json').open('x',encoding='utf-8').write(json.dumps(s,ensure_ascii=False,indent=2));print('Failed v2 artifact and real page review preserved; original268 unchanged. All prior correction receipts terminal; this finalization ends before handoff.')"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:07:24.542431+00:00",
+    "monotonic_ns": 159874312000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:07:24.775049+00:00",
+    "monotonic_ns": 159874531000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "Failed v2 artifact and real page review preserved; original268 unchanged. All prior correction receipts terminal; this finalization ends before handoff.\r\n",
+  "stderr": "",
+  "stdout_base64": "RmFpbGVkIHYyIGFydGlmYWN0IGFuZCByZWFsIHBhZ2UgcmV2aWV3IHByZXNlcnZlZDsgb3JpZ2luYWwyNjggdW5jaGFuZ2VkLiBBbGwgcHJpb3IgY29ycmVjdGlvbiByZWNlaXB0cyB0ZXJtaW5hbDsgdGhpcyBmaW5hbGl6YXRpb24gZW5kcyBiZWZvcmUgaGFuZG9mZi4NCg==",
+  "stderr_base64": ""
+}

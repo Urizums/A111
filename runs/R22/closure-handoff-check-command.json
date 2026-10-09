@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/coordination/verify_handoff_composed.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T10:34:29.031729+00:00",
+    "monotonic_ns": 161498765000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T10:35:27.886546+00:00",
+    "monotonic_ns": 161557609000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\r\n  \"schema\": \"forge-handoff-check/1\",\r\n  \"ok\": true,\r\n  \"errors\": [],\r\n  \"skill_files_checked\": 91,\r\n  \"cutoff_files_checked\": 375,\r\n  \"release_files_checked\": 1063,\r\n  \"revision_files_checked\": 22918,\r\n  \"active_phase\": \"R08\",\r\n  \"next_task_id\": null,\r\n  \"scope\": \"read-only hashes, paths, phase dependency/transition invariants; not live or semantic acceptance\",\r\n  \"runtime_composition\": {\r\n    \"file_path_phase_checkpoint_link_checks\": \"Original functions/main on native Python\",\r\n    \"queue_check\": {\r\n      \"errors\": [],\r\n      \"checkpoint_sha256\": \"636995df95a62ad063e26a02be82722db840d02e718becc3974cb95d3e9517b3\",\r\n      \"state_sha256\": \"6819c4a7dc2a4b642e7d605a63f53904ef9fe4d7901a9be721474ab661c74d2d\",\r\n      \"actual_posix_runtime\": true,\r\n      \"original_predicate\": \"verify_handoff.validate_continuation\",\r\n      \"scope\": \"Original real fcntl/POSIX source reads and full queue validation; no runtime stub or monkeypatched lock.\"\r\n    },\r\n    \"source_checker_sha256\": \"d2a9b0123063ca73d20bb492ebb040d9c85b1023219aa766b9ac025956fc308b\",\r\n    \"original_checker_source_modified\": false,\r\n    \"scope\": \"Every original predicate performed; real POSIX queue delegation. Native Windows controller execution is not claimed.\"\r\n  }\r\n}\r\n",
+  "stderr": "",
+  "stdout_base64": "ew0KICAic2NoZW1hIjogImZvcmdlLWhhbmRvZmYtY2hlY2svMSIsDQogICJvayI6IHRydWUsDQogICJlcnJvcnMiOiBbXSwNCiAgInNraWxsX2ZpbGVzX2NoZWNrZWQiOiA5MSwNCiAgImN1dG9mZl9maWxlc19jaGVja2VkIjogMzc1LA0KICAicmVsZWFzZV9maWxlc19jaGVja2VkIjogMTA2MywNCiAgInJldmlzaW9uX2ZpbGVzX2NoZWNrZWQiOiAyMjkxOCwNCiAgImFjdGl2ZV9waGFzZSI6ICJSMDgiLA0KICAibmV4dF90YXNrX2lkIjogbnVsbCwNCiAgInNjb3BlIjogInJlYWQtb25seSBoYXNoZXMsIHBhdGhzLCBwaGFzZSBkZXBlbmRlbmN5L3RyYW5zaXRpb24gaW52YXJpYW50czsgbm90IGxpdmUgb3Igc2VtYW50aWMgYWNjZXB0YW5jZSIsDQogICJydW50aW1lX2NvbXBvc2l0aW9uIjogew0KICAgICJmaWxlX3BhdGhfcGhhc2VfY2hlY2twb2ludF9saW5rX2NoZWNrcyI6ICJPcmlnaW5hbCBmdW5jdGlvbnMvbWFpbiBvbiBuYXRpdmUgUHl0aG9uIiwNCiAgICAicXVldWVfY2hlY2siOiB7DQogICAgICAiZXJyb3JzIjogW10sDQogICAgICAiY2hlY2twb2ludF9zaGEyNTYiOiAiNjM2OTk1ZGY5NWE2MmFkMDYzZTI2YTAyYmU4MjcyMmRiODQwZDAyZTcxOGJlY2MzOTc0Y2I5NWQzZTk1MTdiMyIsDQogICAgICAic3RhdGVfc2hhMjU2IjogIjY4MTljNGE3ZGMyYTRiNjQyZTdkNjA1YTYzZjUzOTA0ZWY5ZmU0ZDc5MDFhOWJlNzIxNDc0YWI2NjFjNzRkMmQiLA0KICAgICAgImFjdHVhbF9wb3NpeF9ydW50aW1lIjogdHJ1ZSwNCiAgICAgICJvcmlnaW5hbF9wcmVkaWNhdGUiOiAidmVyaWZ5X2hhbmRvZmYudmFsaWRhdGVfY29udGludWF0aW9uIiwNCiAgICAgICJzY29wZSI6ICJPcmlnaW5hbCByZWFsIGZjbnRsL1BPU0lYIHNvdXJjZSByZWFkcyBhbmQgZnVsbCBxdWV1ZSB2YWxpZGF0aW9uOyBubyBydW50aW1lIHN0dWIgb3IgbW9ua2V5cGF0Y2hlZCBsb2NrLiINCiAgICB9LA0KICAgICJzb3VyY2VfY2hlY2tlcl9zaGEyNTYiOiAiZDJhOWIwMTIzMDYzY2E3M2QyMGJiNDkyZWJiMDQwZDljODViMTAyMzIxOWFhNzY2YjlhYzAyNTk1NmZjMzA4YiIsDQogICAgIm9yaWdpbmFsX2NoZWNrZXJfc291cmNlX21vZGlmaWVkIjogZmFsc2UsDQogICAgInNjb3BlIjogIkV2ZXJ5IG9yaWdpbmFsIHByZWRpY2F0ZSBwZXJmb3JtZWQ7IHJlYWwgUE9TSVggcXVldWUgZGVsZWdhdGlvbi4gTmF0aXZlIFdpbmRvd3MgY29udHJvbGxlciBleGVjdXRpb24gaXMgbm90IGNsYWltZWQuIg0KICB9DQp9DQo=",
+  "stderr_base64": ""
+}
