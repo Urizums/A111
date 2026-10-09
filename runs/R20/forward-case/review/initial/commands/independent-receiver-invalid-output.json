@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/forward-case/review/initial/receiver_audit.py",
+    "--inputs",
+    "runs/R20/forward-case/inputs",
+    "--outputs",
+    "runs/R20/forward-case/review/initial/controls/invalid-future-output"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:48:00.841567+00:00",
+    "monotonic_ns": 111912453000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:48:00.947803+00:00",
+    "monotonic_ns": 111912562000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\forward-case\\review\\initial\\receiver_audit.py\", line 175, in <module>\r\n    print(json.dumps(audit(a.inputs,a.outputs),ensure_ascii=False,indent=2))\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\forward-case\\review\\initial\\receiver_audit.py\", line 136, in audit\r\n    raise AssertionError(f\"independent receiver rejected future label: {o['decision_origin']} {c['target_date']} {c['series_id']} label available {l['available_at']}\")\r\nAssertionError: independent receiver rejected future label: 2026-05-03T18:00:00+08:00 2026-05-01 A label available 2026-05-05T09:00:00+08:00\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMFxmb3J3YXJkLWNhc2VccmV2aWV3XGluaXRpYWxccmVjZWl2ZXJfYXVkaXQucHkiLCBsaW5lIDE3NSwgaW4gPG1vZHVsZT4NCiAgICBwcmludChqc29uLmR1bXBzKGF1ZGl0KGEuaW5wdXRzLGEub3V0cHV0cyksZW5zdXJlX2FzY2lpPUZhbHNlLGluZGVudD0yKSkNCiAgICAgICAgICAgICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4NCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cRG9jdW1lbnRzXENvZGV4XDIwMjYtMTAtMDVcdXJpenVtcy1hMTExLW1haW4tY29kZXgtaGFuZG9mZi1tZFx3b3JrXEExMTFccnVuc1xSMjBcZm9yd2FyZC1jYXNlXHJldmlld1xpbml0aWFsXHJlY2VpdmVyX2F1ZGl0LnB5IiwgbGluZSAxMzYsIGluIGF1ZGl0DQogICAgcmFpc2UgQXNzZXJ0aW9uRXJyb3IoZiJpbmRlcGVuZGVudCByZWNlaXZlciByZWplY3RlZCBmdXR1cmUgbGFiZWw6IHtvWydkZWNpc2lvbl9vcmlnaW4nXX0ge2NbJ3RhcmdldF9kYXRlJ119IHtjWydzZXJpZXNfaWQnXX0gbGFiZWwgYXZhaWxhYmxlIHtsWydhdmFpbGFibGVfYXQnXX0iKQ0KQXNzZXJ0aW9uRXJyb3I6IGluZGVwZW5kZW50IHJlY2VpdmVyIHJlamVjdGVkIGZ1dHVyZSBsYWJlbDogMjAyNi0wNS0wM1QxODowMDowMCswODowMCAyMDI2LTA1LTAxIEEgbGFiZWwgYXZhaWxhYmxlIDIwMjYtMDUtMDVUMDk6MDA6MDArMDg6MDANCg=="
+}

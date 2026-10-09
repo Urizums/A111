@@ -1,0 +1,50 @@
+{
+  "task_id": "R20-next",
+  "attempt_id": "R20-next-1",
+  "requirements_hash": "3437409a156998ab2af116efd5d5964bc8324f2ba226ac7007b2539444d31bd3",
+  "criteria": [
+    {
+      "id": "t1",
+      "status": "pass",
+      "evidence": [
+        "runs/R21/PLAN.md",
+        "runs/R21/source-inputs.json",
+        "runs/R21/first-step-command.json",
+        "runs/R21/diagnostic/result.json",
+        "runs/R21/diagnostic/REPORT.md"
+      ]
+    }
+  ],
+  "effect": {
+    "target": "Justified R21 actual first step",
+    "hypothesis": "Observed interval reliability limits justify a source-bound diagnostic before a new untouched measurement.",
+    "baseline": "R20 original accepted paper/version and once-observed holdout retained.",
+    "conditions": "Frozen inputs and already observed synthetic truth; no fitting, threshold retrofitting or model selection.",
+    "observations": {
+      "first_task": "R21-01",
+      "actual_step": "Source-to-subgroup diagnostic executed",
+      "aggregate": {
+        "rows": 1344,
+        "distinct_dates": 14,
+        "covered": 1152,
+        "below": 32,
+        "above": 160,
+        "coverage": 0.8571428571428571,
+        "bias": -0.6871083377563988,
+        "MAE": 3.638453463844494,
+        "mean_width": 14.14077990902686,
+        "loss_yuan": 24871.95,
+        "shortage_yuan": 22286.4,
+        "waste_yuan": 2585.5499999999997,
+        "procurement_yuan": 78851.0,
+        "q_units": 22400
+      }
+    },
+    "limits": "First diagnostic only; not new blind evaluation, improved model or formal contest evidence.",
+    "metrics": {
+      "tokens": null,
+      "cost": null
+    }
+  },
+  "next_action": "R21-02: freeze a new untouched original measurement protocol before model variants or future truth."
+}

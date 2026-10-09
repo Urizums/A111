@@ -1,0 +1,20 @@
+{
+  "original_failure": "runs/R20/coordination/source-accepted-style-command.json",
+  "exceptions": [
+    {
+      "path": "runs/R20/forward-case/review/initial/receiver_audit.py",
+      "lock": "runs/R20/forward-case/review/initial-lock.json",
+      "size_bytes": 11458,
+      "sha256": "f9a70a2ad77a21db1a46d25c4133d005e59273bb7eea47373c93a56f8a5ac438",
+      "finding": "Extra blank EOF, nonfunctional formatting in frozen first receiving source."
+    },
+    {
+      "path": "runs/R20/forward-case/review/preparation/reconstruct_raw.py",
+      "lock": "runs/R20/forward-case/review/preparation-lock.json",
+      "size_bytes": 8948,
+      "sha256": "2165229740f01f39bfa5ee653ca0656d459851737a96591fac2294ad03bfb9a7",
+      "finding": "Extra blank EOF, nonfunctional formatting in frozen first receiving source."
+    }
+  ],
+  "scope": "Only these two exact frozen EOF findings classified. Preserve raw bytes and original failure; all remaining index files checked without relaxing global or scientific acceptance."
+}

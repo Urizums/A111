@@ -1,0 +1,29 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "wsl",
+    "-d",
+    "Ubuntu-24.04",
+    "--",
+    "python3",
+    "-c",
+    "import os,signal,json; pid=7397; args=open(f\"/proc/{pid}/cmdline\",\"rb\").read().split(b\"\\0\"); expected=[b\"python3\",b\"scripts/verify_handoff.py\",b\"--json\",b\"\"]; assert args==expected,args; cwd=os.readlink(f\"/proc/{pid}/cwd\"); assert cwd==\"/mnt/c/Users/admin/Documents/Codex/2026-10-05/urizums-a111-main-codex-handoff-md/work/A111\",cwd; os.kill(pid,signal.SIGTERM); print(json.dumps({\"pid\":pid,\"verified_own_readonly_check\":True,\"termination_requested\":\"SIGTERM\",\"reason\":\"Same full predicates completed through source-bound native/POSIX composition; slow original call retained as interrupted, never a pass.\"}))"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-09T02:23:18.271520+00:00",
+    "monotonic_ns": 132029546000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-09T02:23:18.399732+00:00",
+    "monotonic_ns": 132029671000000,
+    "boot_id": null
+  },
+  "exit_code": 0,
+  "stdout": "{\"pid\": 7397, \"verified_own_readonly_check\": true, \"termination_requested\": \"SIGTERM\", \"reason\": \"Same full predicates completed through source-bound native/POSIX composition; slow original call retained as interrupted, never a pass.\"}\n",
+  "stderr": "w\u0000s\u0000l\u0000:\u0000 \u0000�hKm0R \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006tM�n\f�FO*g\\��P0R \u0000W\u0000S\u0000L\u0000\u00020N\u0000A\u0000T\u0000 \u0000!j\u000f_\u000bN�v \u0000W\u0000S\u0000L\u0000 \u0000\rN/e\u0001c \u0000l\u0000o\u0000c\u0000a\u0000l\u0000h\u0000o\u0000s\u0000t\u0000 \u0000�N\u0006t\u00020\r\u0000\n\u0000",
+  "stdout_base64": "eyJwaWQiOiA3Mzk3LCAidmVyaWZpZWRfb3duX3JlYWRvbmx5X2NoZWNrIjogdHJ1ZSwgInRlcm1pbmF0aW9uX3JlcXVlc3RlZCI6ICJTSUdURVJNIiwgInJlYXNvbiI6ICJTYW1lIGZ1bGwgcHJlZGljYXRlcyBjb21wbGV0ZWQgdGhyb3VnaCBzb3VyY2UtYm91bmQgbmF0aXZlL1BPU0lYIGNvbXBvc2l0aW9uOyBzbG93IG9yaWdpbmFsIGNhbGwgcmV0YWluZWQgYXMgaW50ZXJydXB0ZWQsIG5ldmVyIGEgcGFzcy4ifQo=",
+  "stderr_base64": "dwBzAGwAOgAgAMBoS20wUiAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0TZFufwz/Rk8qZ1yVz1AwUiAAVwBTAEwAAjBOAEEAVAAgACFqD18LToR2IABXAFMATAAgAA1OL2UBYyAAbABvAGMAYQBsAGgAbwBzAHQAIADjTgZ0AjANAAoA"
+}

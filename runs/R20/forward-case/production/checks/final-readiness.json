@@ -1,0 +1,73 @@
+{
+  "status": "author_delivery_ready",
+  "independent": false,
+  "terminal_commands_before_this_check": [
+    {
+      "record": "evidence/001-preflight.json",
+      "actual_child_exit_code": 0,
+      "state": "finished",
+      "interpretation": "successful command"
+    },
+    {
+      "record": "evidence/002-original-run.json",
+      "actual_child_exit_code": 0,
+      "state": "finished",
+      "interpretation": "successful command"
+    },
+    {
+      "record": "evidence/003-author-receiving-check.json",
+      "actual_child_exit_code": 0,
+      "state": "finished",
+      "interpretation": "successful command"
+    },
+    {
+      "record": "evidence/004-build-rejection-fixtures.json",
+      "actual_child_exit_code": 0,
+      "state": "finished",
+      "interpretation": "successful command"
+    },
+    {
+      "record": "evidence/005-raw-conflict-rejection.json",
+      "actual_child_exit_code": 2,
+      "state": "finished",
+      "interpretation": "expected rejection"
+    },
+    {
+      "record": "evidence/006-future-label-rejection.json",
+      "actual_child_exit_code": 2,
+      "state": "finished",
+      "interpretation": "expected rejection"
+    },
+    {
+      "record": "evidence/007-clean-rerun.json",
+      "actual_child_exit_code": 0,
+      "state": "finished",
+      "interpretation": "successful command"
+    },
+    {
+      "record": "evidence/008-clean-comparison.json",
+      "actual_child_exit_code": 0,
+      "state": "finished",
+      "interpretation": "successful command"
+    },
+    {
+      "record": "evidence/009-shipped-helper-reproduction.json",
+      "actual_child_exit_code": 0,
+      "state": "finished",
+      "interpretation": "successful command"
+    },
+    {
+      "record": "evidence/010-final-source-recheck.json",
+      "actual_child_exit_code": 0,
+      "state": "finished",
+      "interpretation": "successful command"
+    }
+  ],
+  "pure_markdown_workflow_files": 3,
+  "no_invalid_publication": true,
+  "no_pycache": true,
+  "claim_limit": "Administrative and author checks only; no independent correctness/generality verdict.",
+  "model": null,
+  "tokens": null,
+  "cost": null
+}

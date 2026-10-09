@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/forward-case/review/initial/receiver_audit.py",
+    "--inputs",
+    "runs/R20/forward-case/inputs",
+    "--outputs",
+    "runs/R20/forward-case/review/initial/clean-rerun/results"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:47:00.735655+00:00",
+    "monotonic_ns": 111852359000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:47:00.834947+00:00",
+    "monotonic_ns": 111852453000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\forward-case\\review\\initial\\receiver_audit.py\", line 147, in <module>\r\n    print(json.dumps(audit(a.inputs,a.outputs),ensure_ascii=False,indent=2))\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\forward-case\\review\\initial\\receiver_audit.py\", line 114, in audit\r\n    raise AssertionError(f'results.json mismatch at top-level field {key}')\r\nAssertionError: results.json mismatch at top-level field origins\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMFxmb3J3YXJkLWNhc2VccmV2aWV3XGluaXRpYWxccmVjZWl2ZXJfYXVkaXQucHkiLCBsaW5lIDE0NywgaW4gPG1vZHVsZT4NCiAgICBwcmludChqc29uLmR1bXBzKGF1ZGl0KGEuaW5wdXRzLGEub3V0cHV0cyksZW5zdXJlX2FzY2lpPUZhbHNlLGluZGVudD0yKSkNCiAgICAgICAgICAgICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4NCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cRG9jdW1lbnRzXENvZGV4XDIwMjYtMTAtMDVcdXJpenVtcy1hMTExLW1haW4tY29kZXgtaGFuZG9mZi1tZFx3b3JrXEExMTFccnVuc1xSMjBcZm9yd2FyZC1jYXNlXHJldmlld1xpbml0aWFsXHJlY2VpdmVyX2F1ZGl0LnB5IiwgbGluZSAxMTQsIGluIGF1ZGl0DQogICAgcmFpc2UgQXNzZXJ0aW9uRXJyb3IoZidyZXN1bHRzLmpzb24gbWlzbWF0Y2ggYXQgdG9wLWxldmVsIGZpZWxkIHtrZXl9JykNCkFzc2VydGlvbkVycm9yOiByZXN1bHRzLmpzb24gbWlzbWF0Y2ggYXQgdG9wLWxldmVsIGZpZWxkIG9yaWdpbnMNCg=="
+}

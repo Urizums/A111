@@ -1,0 +1,31 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "python",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/forward-case/review/initial/receiver_audit.py",
+    "--inputs",
+    "runs/R20/forward-case/inputs",
+    "--outputs",
+    "runs/R20/forward-case/review/initial/clean-rerun/results"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:47:17.391714+00:00",
+    "monotonic_ns": 111869015000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:47:17.483587+00:00",
+    "monotonic_ns": 111869093000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\forward-case\\review\\initial\\receiver_audit.py\", line 167, in <module>\r\n    print(json.dumps(audit(a.inputs,a.outputs),ensure_ascii=False,indent=2))\r\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\forward-case\\review\\initial\\receiver_audit.py\", line 134, in audit\r\n    raise AssertionError(f'results.json mismatch at {diff[0]}: expected {diff[1]!r}; actual {diff[2]!r}')\r\nAssertionError: results.json mismatch at $.origins[0].keys: expected ['calibration_vectors', 'coordinates', 'days', 'decision_origin', 'selection_events']; actual ['calibration_vectors', 'complete_day_count', 'coordinates', 'days', 'decision_origin', 'selection_events']\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMFxmb3J3YXJkLWNhc2VccmV2aWV3XGluaXRpYWxccmVjZWl2ZXJfYXVkaXQucHkiLCBsaW5lIDE2NywgaW4gPG1vZHVsZT4NCiAgICBwcmludChqc29uLmR1bXBzKGF1ZGl0KGEuaW5wdXRzLGEub3V0cHV0cyksZW5zdXJlX2FzY2lpPUZhbHNlLGluZGVudD0yKSkNCiAgICAgICAgICAgICAgICAgICAgIF5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl4NCiAgRmlsZSAiQzpcVXNlcnNcYWRtaW5cRG9jdW1lbnRzXENvZGV4XDIwMjYtMTAtMDVcdXJpenVtcy1hMTExLW1haW4tY29kZXgtaGFuZG9mZi1tZFx3b3JrXEExMTFccnVuc1xSMjBcZm9yd2FyZC1jYXNlXHJldmlld1xpbml0aWFsXHJlY2VpdmVyX2F1ZGl0LnB5IiwgbGluZSAxMzQsIGluIGF1ZGl0DQogICAgcmFpc2UgQXNzZXJ0aW9uRXJyb3IoZidyZXN1bHRzLmpzb24gbWlzbWF0Y2ggYXQge2RpZmZbMF19OiBleHBlY3RlZCB7ZGlmZlsxXSFyfTsgYWN0dWFsIHtkaWZmWzJdIXJ9JykNCkFzc2VydGlvbkVycm9yOiByZXN1bHRzLmpzb24gbWlzbWF0Y2ggYXQgJC5vcmlnaW5zWzBdLmtleXM6IGV4cGVjdGVkIFsnY2FsaWJyYXRpb25fdmVjdG9ycycsICdjb29yZGluYXRlcycsICdkYXlzJywgJ2RlY2lzaW9uX29yaWdpbicsICdzZWxlY3Rpb25fZXZlbnRzJ107IGFjdHVhbCBbJ2NhbGlicmF0aW9uX3ZlY3RvcnMnLCAnY29tcGxldGVfZGF5X2NvdW50JywgJ2Nvb3JkaW5hdGVzJywgJ2RheXMnLCAnZGVjaXNpb25fb3JpZ2luJywgJ3NlbGVjdGlvbl9ldmVudHMnXQ0K"
+}

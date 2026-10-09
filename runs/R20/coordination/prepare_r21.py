@@ -1,0 +1,47 @@
+"""Prepare a justified diagnostic before reading or computing its subgroup results."""
+import hashlib
+import json
+from datetime import datetime, timezone
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[3]
+state = json.loads((ROOT / 'state/continuation.json').read_text(encoding='utf-8'))
+assert next(t for t in state['tasks'] if t['id'] == 'R20-05')['status'] == 'done'
+assert not state['execution']['current_native_pending']
+base = ROOT / 'runs/R21'
+assert not base.exists()
+base.mkdir()
+plan = '''# R21 区间可靠性与新测量计划
+
+依据是 R20 冻结方案在首次合成未来评价中名义90%覆盖仅85.71%，以及论文已说明的长假/信息批次外推限制。旧方案与首判不改；诊断数据已经见过，不能再次称未见测试，也不能据它挑选最优新方案。
+
+| id | owner / 写域 | 依赖 | 原要求及验收 |
+| --- | --- | --- | --- |
+| R21-01 | root / diagnostic/ | R20-next | 原锁来源到逐键重算、完整日与分组覆盖/上下端漏出/偏差/两项损失；与首次评价口径核对；中文解释描述性边界，不调参、不称因果或独立验收 |
+| R21-02 | root / protocol/、inputs/、evaluation/ | R21-01 | 根据诊断冻结尚未生成/查看真值的新原创案例与事前比较协议，时点/分组、业务损失与公平基线匹配；比较现方案及有依据的替代，零提升也可接收；新真值不开放给作者 |
+| R21-03 | 授权新执行者与独立接收者 / execution/、review/、final/ | R21-02 | 实际模型/实验/全问中文解释和最终消费、新真值仅首锁后评价；首失败与知情修复保留，源头技能只有确证缺口才另版修改和前瞻核查 |
+| R21-next | root / 下一阶段目录 | R21-03 | 依据实际证据决定是否存在合理下一目标；有则计划及真实首步，无则结束/取消，不虚构无限阶段 |
+
+第一步只读取冻结 R20 当前预测、备货、已见合成真值、items、calendar、decision 原件，并检验它们在旧源锁中的身份。按全量、14个日期、holiday、预测步长1–7/8–14、12店和8品汇总；不试调任何参数、不画选优曲线。上下端漏出分别记录。精确十进制算术，键一一对应，采购预算与原两项目标分开。原点至目标日步长由日期定义。
+
+这些分组是描述性诊断，1344店品日不代表1344独立日期；同日相关、14日少量日期、分组多重观察、当前节日与前7步重合使归因受限。节日/步长差不能被命名为节日因果效应。不存在改进承诺或追设旧验收门。
+
+阶段规则：用户授权子agent时独立上下文可接收，作者自检与root诊断不代替独立接收；本阶段没有通用两次错误停止，不改变旧受控计数，工具恢复/实质修复/研究迭代分别记录。未知模型/费用为null。C13技能候选仍纯文档，计算/实验放阶段外域。实际赛事专项AI/提交规则未知，离线研究不作正式竞赛、获奖或真实业务证据。
+'''
+(base / 'PLAN.md').write_text(plan, encoding='utf-8')
+rels = ['runs/R20/execution/delivery/results/future_predictions.csv',
+    'runs/R20/execution/delivery/results/future_replenishment.csv', 'runs/R20/evaluation/holdout_truth.csv',
+    'runs/R20/inputs/raw/items.csv', 'runs/R20/inputs/raw/calendar.csv', 'runs/R20/inputs/raw/decision.json',
+    'runs/R20/review/initial/holdout_independent_result.json']
+locks = ['runs/R20/execution-lock.json','runs/R20/evaluation-lock.json','runs/R20/input-lock.json','runs/R20/review/initial-lock.json']
+entries = {r['path']: r for rel in locks for r in json.loads((ROOT / rel).read_text(encoding='utf-8'))['files']}
+rows = []
+for rel in rels:
+    b = (ROOT / rel).read_bytes()
+    row = {'path': rel, 'size_bytes': len(b), 'sha256': hashlib.sha256(b).hexdigest()}
+    assert row == entries[rel], rel
+    rows.append(row)
+with (base / 'source-inputs.json').open('x', encoding='utf-8') as f:
+    json.dump({'planned_at': datetime.now(timezone.utc).isoformat(), 'files': rows,
+        'truth_status': 'Already observed R20 synthetic holdout; descriptive diagnostic only, no tuning or new blind evaluation.'},f, ensure_ascii=False, indent=2)
+print(json.dumps({'plan': 'runs/R21/PLAN.md', 'sources_bound': len(rows), 'first_task': 'R21-01', 'subgroups_not_computed_yet': True}))

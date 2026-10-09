@@ -1,0 +1,879 @@
+{
+  "schema": "arrival-calibration/1",
+  "label_policy": "latest_available_at_decision_inclusive",
+  "forecast_policy": "latest_available_by_fixed_forecast_origin",
+  "units": "件",
+  "timezone": "Asia/Shanghai",
+  "evaluation_label_cutoff": "2026-05-08T12:00:00+08:00",
+  "evaluation_label_cutoff_used_for_selection": false,
+  "required_coordinate_order": [
+    "A",
+    "B"
+  ],
+  "input_sha256": {
+    "raw/series.csv": "9af0594ffa1dece90f3eb6656b02544f162bf3f1ab9c60ceda90aefb86a64dfb",
+    "raw/decisions.json": "c949b73a4cfbd1875b3d7f18cfa7dfdd55310a33db9744d765e8e54d72d46d75",
+    "raw/forecasts.csv": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f",
+    "raw/labels.csv": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+  },
+  "duplicate_events": [
+    {
+      "source_file": "raw/labels.csv",
+      "source_line": 13,
+      "reason": "identical_retransmission",
+      "canonical_source_line": 2
+    }
+  ],
+  "origins": [
+    {
+      "decision_origin": "2026-05-03T18:00:00+08:00",
+      "complete_day_count": 1,
+      "coordinates": [
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-01",
+          "series_id": "A",
+          "forecast": {
+            "target_date": "2026-05-01",
+            "series_id": "A",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "10",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              2
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-01",
+            "series_id": "A",
+            "revision": "1",
+            "available_at": "2026-05-02T09:00:00+08:00",
+            "actual_units": "11",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              2,
+              13
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "1",
+          "status": "available",
+          "coordinate_available_at": "2026-05-02T09:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-01",
+          "series_id": "B",
+          "forecast": {
+            "target_date": "2026-05-01",
+            "series_id": "B",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "20",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              3
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-01",
+            "series_id": "B",
+            "revision": "1",
+            "available_at": "2026-05-03T18:00:00+08:00",
+            "actual_units": "22",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              3
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "2",
+          "status": "available",
+          "coordinate_available_at": "2026-05-03T18:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-02",
+          "series_id": "A",
+          "forecast": {
+            "target_date": "2026-05-02",
+            "series_id": "A",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "11",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              4
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-02",
+            "series_id": "A",
+            "revision": "1",
+            "available_at": "2026-05-03T09:00:00+08:00",
+            "actual_units": "12",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              4
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "1",
+          "status": "available",
+          "coordinate_available_at": "2026-05-03T09:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-02",
+          "series_id": "B",
+          "forecast": {
+            "target_date": "2026-05-02",
+            "series_id": "B",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "21",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              5
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": null,
+          "residual_units": null,
+          "status": "label_not_yet_available",
+          "coordinate_available_at": null
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-03",
+          "series_id": "A",
+          "forecast": {
+            "target_date": "2026-05-03",
+            "series_id": "A",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "12",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              6
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": null,
+          "residual_units": null,
+          "status": "label_not_yet_available",
+          "coordinate_available_at": null
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-03",
+          "series_id": "B",
+          "forecast": {
+            "target_date": "2026-05-03",
+            "series_id": "B",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "22",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              7
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": null,
+          "residual_units": null,
+          "status": "label_not_yet_available",
+          "coordinate_available_at": null
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-04",
+          "series_id": "A",
+          "forecast": {
+            "target_date": "2026-05-04",
+            "series_id": "A",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "13",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              8
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": null,
+          "residual_units": null,
+          "status": "label_not_yet_available",
+          "coordinate_available_at": null
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-04",
+          "series_id": "B",
+          "forecast": {
+            "target_date": "2026-05-04",
+            "series_id": "B",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "23",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              9
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": null,
+          "residual_units": null,
+          "status": "label_not_yet_available",
+          "coordinate_available_at": null
+        }
+      ],
+      "days": [
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-01",
+          "required_coordinates": [
+            "A",
+            "B"
+          ],
+          "available_coordinates": [
+            "A",
+            "B"
+          ],
+          "missing_coordinates": [],
+          "complete": true,
+          "calibration_eligible": true,
+          "vector_available_at": "2026-05-03T18:00:00+08:00",
+          "reason": "all_required_coordinates_known"
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-02",
+          "required_coordinates": [
+            "A",
+            "B"
+          ],
+          "available_coordinates": [
+            "A"
+          ],
+          "missing_coordinates": [
+            "B"
+          ],
+          "complete": false,
+          "calibration_eligible": false,
+          "vector_available_at": null,
+          "reason": "incomplete_day_no_imputation"
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-03",
+          "required_coordinates": [
+            "A",
+            "B"
+          ],
+          "available_coordinates": [],
+          "missing_coordinates": [
+            "A",
+            "B"
+          ],
+          "complete": false,
+          "calibration_eligible": false,
+          "vector_available_at": null,
+          "reason": "incomplete_day_no_imputation"
+        },
+        {
+          "decision_origin": "2026-05-03T18:00:00+08:00",
+          "target_date": "2026-05-04",
+          "required_coordinates": [
+            "A",
+            "B"
+          ],
+          "available_coordinates": [],
+          "missing_coordinates": [
+            "A",
+            "B"
+          ],
+          "complete": false,
+          "calibration_eligible": false,
+          "vector_available_at": null,
+          "reason": "incomplete_day_no_imputation"
+        }
+      ],
+      "calibration_vectors": [
+        {
+          "target_date": "2026-05-01",
+          "coordinate_order": [
+            "A",
+            "B"
+          ],
+          "residual_units": [
+            "1",
+            "2"
+          ],
+          "vector_available_at": "2026-05-03T18:00:00+08:00"
+        }
+      ],
+      "selection_events": [
+        {
+          "kind": "forecast",
+          "target_date": "2026-05-01",
+          "series_id": "A",
+          "revision": "2",
+          "available_at": "2026-05-04T12:00:00+08:00",
+          "source_lines": [
+            10
+          ],
+          "reason": "after_fixed_forecast_origin"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-01",
+          "series_id": "A",
+          "revision": "2",
+          "available_at": "2026-05-05T09:00:00+08:00",
+          "source_lines": [
+            10
+          ],
+          "reason": "not_known_at_decision"
+        },
+        {
+          "kind": "forecast",
+          "target_date": "2026-05-01",
+          "series_id": "B",
+          "revision": "2",
+          "available_at": "2026-05-04T12:00:00+08:00",
+          "source_lines": [
+            11
+          ],
+          "reason": "after_fixed_forecast_origin"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-01",
+          "series_id": "B",
+          "revision": "2",
+          "available_at": "2026-05-05T12:00:00+08:00",
+          "source_lines": [
+            11
+          ],
+          "reason": "not_known_at_decision"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-02",
+          "series_id": "B",
+          "revision": "1",
+          "available_at": "2026-05-04T09:00:00+08:00",
+          "source_lines": [
+            5
+          ],
+          "reason": "not_known_at_decision"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-02",
+          "series_id": "B",
+          "revision": "2",
+          "available_at": "2026-05-07T09:00:00+08:00",
+          "source_lines": [
+            12
+          ],
+          "reason": "not_known_at_decision"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-03",
+          "series_id": "A",
+          "revision": "1",
+          "available_at": "2026-05-04T09:00:00+08:00",
+          "source_lines": [
+            6
+          ],
+          "reason": "not_known_at_decision"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-03",
+          "series_id": "B",
+          "revision": "1",
+          "available_at": "2026-05-04T09:00:00+08:00",
+          "source_lines": [
+            7
+          ],
+          "reason": "not_known_at_decision"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-04",
+          "series_id": "A",
+          "revision": "1",
+          "available_at": "2026-05-05T09:00:00+08:00",
+          "source_lines": [
+            8
+          ],
+          "reason": "not_known_at_decision"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-04",
+          "series_id": "B",
+          "revision": "1",
+          "available_at": "2026-05-07T09:00:00+08:00",
+          "source_lines": [
+            9
+          ],
+          "reason": "not_known_at_decision"
+        }
+      ]
+    },
+    {
+      "decision_origin": "2026-05-06T18:00:00+08:00",
+      "complete_day_count": 3,
+      "coordinates": [
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-01",
+          "series_id": "A",
+          "forecast": {
+            "target_date": "2026-05-01",
+            "series_id": "A",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "10",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              2
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-01",
+            "series_id": "A",
+            "revision": "2",
+            "available_at": "2026-05-05T09:00:00+08:00",
+            "actual_units": "13",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              10
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "3",
+          "status": "available",
+          "coordinate_available_at": "2026-05-05T09:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-01",
+          "series_id": "B",
+          "forecast": {
+            "target_date": "2026-05-01",
+            "series_id": "B",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "20",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              3
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-01",
+            "series_id": "B",
+            "revision": "2",
+            "available_at": "2026-05-05T12:00:00+08:00",
+            "actual_units": "24",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              11
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "4",
+          "status": "available",
+          "coordinate_available_at": "2026-05-05T12:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-02",
+          "series_id": "A",
+          "forecast": {
+            "target_date": "2026-05-02",
+            "series_id": "A",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "11",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              4
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-02",
+            "series_id": "A",
+            "revision": "1",
+            "available_at": "2026-05-03T09:00:00+08:00",
+            "actual_units": "12",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              4
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "1",
+          "status": "available",
+          "coordinate_available_at": "2026-05-03T09:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-02",
+          "series_id": "B",
+          "forecast": {
+            "target_date": "2026-05-02",
+            "series_id": "B",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "21",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              5
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-02",
+            "series_id": "B",
+            "revision": "1",
+            "available_at": "2026-05-04T09:00:00+08:00",
+            "actual_units": "20",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              5
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "-1",
+          "status": "available",
+          "coordinate_available_at": "2026-05-04T09:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-03",
+          "series_id": "A",
+          "forecast": {
+            "target_date": "2026-05-03",
+            "series_id": "A",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "12",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              6
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-03",
+            "series_id": "A",
+            "revision": "1",
+            "available_at": "2026-05-04T09:00:00+08:00",
+            "actual_units": "14",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              6
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "2",
+          "status": "available",
+          "coordinate_available_at": "2026-05-04T09:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-03",
+          "series_id": "B",
+          "forecast": {
+            "target_date": "2026-05-03",
+            "series_id": "B",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "22",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              7
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-03",
+            "series_id": "B",
+            "revision": "1",
+            "available_at": "2026-05-04T09:00:00+08:00",
+            "actual_units": "23",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              7
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "1",
+          "status": "available",
+          "coordinate_available_at": "2026-05-04T09:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-04",
+          "series_id": "A",
+          "forecast": {
+            "target_date": "2026-05-04",
+            "series_id": "A",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "13",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              8
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": {
+            "target_date": "2026-05-04",
+            "series_id": "A",
+            "revision": "1",
+            "available_at": "2026-05-05T09:00:00+08:00",
+            "actual_units": "15",
+            "source_file": "raw/labels.csv",
+            "source_lines": [
+              8
+            ],
+            "source_sha256": "d5865b696449ea6662dce5aa20408f10ddc7ae5227224c9ea2093959f286de7f"
+          },
+          "residual_units": "2",
+          "status": "available",
+          "coordinate_available_at": "2026-05-05T09:00:00+08:00"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-04",
+          "series_id": "B",
+          "forecast": {
+            "target_date": "2026-05-04",
+            "series_id": "B",
+            "revision": "1",
+            "forecast_origin": "2026-04-30T18:00:00+08:00",
+            "available_at": "2026-04-30T17:00:00+08:00",
+            "prediction_units": "23",
+            "source_file": "raw/forecasts.csv",
+            "source_lines": [
+              9
+            ],
+            "source_sha256": "f0d0d63e6f2210c54bc72a315476551eb10445ed4f429f883a8a2dcead2a3b5f"
+          },
+          "label": null,
+          "residual_units": null,
+          "status": "label_not_yet_available",
+          "coordinate_available_at": null
+        }
+      ],
+      "days": [
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-01",
+          "required_coordinates": [
+            "A",
+            "B"
+          ],
+          "available_coordinates": [
+            "A",
+            "B"
+          ],
+          "missing_coordinates": [],
+          "complete": true,
+          "calibration_eligible": true,
+          "vector_available_at": "2026-05-05T12:00:00+08:00",
+          "reason": "all_required_coordinates_known"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-02",
+          "required_coordinates": [
+            "A",
+            "B"
+          ],
+          "available_coordinates": [
+            "A",
+            "B"
+          ],
+          "missing_coordinates": [],
+          "complete": true,
+          "calibration_eligible": true,
+          "vector_available_at": "2026-05-04T09:00:00+08:00",
+          "reason": "all_required_coordinates_known"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-03",
+          "required_coordinates": [
+            "A",
+            "B"
+          ],
+          "available_coordinates": [
+            "A",
+            "B"
+          ],
+          "missing_coordinates": [],
+          "complete": true,
+          "calibration_eligible": true,
+          "vector_available_at": "2026-05-04T09:00:00+08:00",
+          "reason": "all_required_coordinates_known"
+        },
+        {
+          "decision_origin": "2026-05-06T18:00:00+08:00",
+          "target_date": "2026-05-04",
+          "required_coordinates": [
+            "A",
+            "B"
+          ],
+          "available_coordinates": [
+            "A"
+          ],
+          "missing_coordinates": [
+            "B"
+          ],
+          "complete": false,
+          "calibration_eligible": false,
+          "vector_available_at": null,
+          "reason": "incomplete_day_no_imputation"
+        }
+      ],
+      "calibration_vectors": [
+        {
+          "target_date": "2026-05-01",
+          "coordinate_order": [
+            "A",
+            "B"
+          ],
+          "residual_units": [
+            "3",
+            "4"
+          ],
+          "vector_available_at": "2026-05-05T12:00:00+08:00"
+        },
+        {
+          "target_date": "2026-05-02",
+          "coordinate_order": [
+            "A",
+            "B"
+          ],
+          "residual_units": [
+            "1",
+            "-1"
+          ],
+          "vector_available_at": "2026-05-04T09:00:00+08:00"
+        },
+        {
+          "target_date": "2026-05-03",
+          "coordinate_order": [
+            "A",
+            "B"
+          ],
+          "residual_units": [
+            "2",
+            "1"
+          ],
+          "vector_available_at": "2026-05-04T09:00:00+08:00"
+        }
+      ],
+      "selection_events": [
+        {
+          "kind": "forecast",
+          "target_date": "2026-05-01",
+          "series_id": "A",
+          "revision": "2",
+          "available_at": "2026-05-04T12:00:00+08:00",
+          "source_lines": [
+            10
+          ],
+          "reason": "after_fixed_forecast_origin"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-01",
+          "series_id": "A",
+          "revision": "1",
+          "available_at": "2026-05-02T09:00:00+08:00",
+          "source_lines": [
+            2,
+            13
+          ],
+          "reason": "superseded_at_this_decision"
+        },
+        {
+          "kind": "forecast",
+          "target_date": "2026-05-01",
+          "series_id": "B",
+          "revision": "2",
+          "available_at": "2026-05-04T12:00:00+08:00",
+          "source_lines": [
+            11
+          ],
+          "reason": "after_fixed_forecast_origin"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-01",
+          "series_id": "B",
+          "revision": "1",
+          "available_at": "2026-05-03T18:00:00+08:00",
+          "source_lines": [
+            3
+          ],
+          "reason": "superseded_at_this_decision"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-02",
+          "series_id": "B",
+          "revision": "2",
+          "available_at": "2026-05-07T09:00:00+08:00",
+          "source_lines": [
+            12
+          ],
+          "reason": "not_known_at_decision"
+        },
+        {
+          "kind": "label",
+          "target_date": "2026-05-04",
+          "series_id": "B",
+          "revision": "1",
+          "available_at": "2026-05-07T09:00:00+08:00",
+          "source_lines": [
+            9
+          ],
+          "reason": "not_known_at_decision"
+        }
+      ]
+    }
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "schema": "forge-checkpoint/2",
-  "updated_at": "2026-10-08T20:30:23.770435+00:00",
+  "updated_at": "2026-10-09T02:24:13.043555+00:00",
   "active_phase": "R08",
   "next_task_id": null,
-  "next_action": "R20-05: continue original data workflow to independent reception; retain policy unknowns and old failures.",
+  "next_action": "R21-02: freeze new original inputs and prospective fair protocol; never reuse known R20 truth as a new blind test.",
   "source_lock": "state/source-lock.json",
   "phase_todo": "state/phase-todo.json",
   "native_calls_in_current_handoff": [
@@ -28,11 +28,11 @@
   "provider_tokens": null,
   "provider_cost": null,
   "luna_handoff_validation": "passed_portability_368_regressions_8_invariants; bounded_A04_only; not_fully_blind",
-  "termination": null,
+  "termination": "stage_result_and_actual_successor_first_step_saved_no_live_actor",
   "native_receipt_scope": "Original new-validator creation return recorded. Subsequent coordinator notifications are not timed receipts; this is not complete native-call telemetry.",
   "remaining_audit_checks": [],
   "github_repository": "Urizums/A111",
-  "publication_evidence": "runs/R19/publication/observation-44.json",
+  "publication_evidence": "runs/R19/publication/observation-46.json",
   "lifecycle": "active",
   "c1_audit": "completed_with_historical_gaps; efficacy remains inconclusive",
   "historical_handoff_repair_scope": "Existing functional_repairs fields describe S00 only; current candidate budgets are separate.",
@@ -161,7 +161,7 @@
     "background_code_execution_verified": false,
     "session_state": "R14_diagnostic_complete_R16_original_budget_stop",
     "checkpoint_reason": "Original failures retained; no full real-paper delivery. Explicit original-case limit change pending.",
-    "coordinator_heartbeat": "2026-10-06T18:06:17.268147+00:00",
+    "coordinator_heartbeat": "2026-10-09T02:23:54.157514+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -193,7 +193,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-r19-l3-language-resume",
+    "current_coordinator": "root-codex-r20-data-transfer",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -208,19 +208,12 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R20/REPORT.md",
+    "current_report": "runs/R21/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
-    "current_native_pending": [
-      {
-        "worker": "/root/r20_c13_forward_maker",
-        "state": "running",
-        "evidence": "runs/R20/coordination/r20_c13_forward_maker-running-1.json",
-        "actual_model": null
-      }
-    ],
+    "current_native_pending": [],
     "current_native_completed": [
       {
         "worker": "/root/r08_simple",
@@ -235,7 +228,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R16/rule-audit/lease-release.json",
+    "coordinator_release_evidence": "runs/R21/handback.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -544,7 +537,7 @@
     "current_user_steering": "Level1-4 only, sequential workflow construction/fresh execution through paper/independent substantive quality diagnosis.",
     "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
     "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
-    "current_candidate": "runs/R19/final/candidate/C12-lock.json",
+    "current_candidate": "runs/R20/final/candidate/C13-lock.json",
     "R17_policy": "runs/R17/scope-decision.json",
     "completed_native_R17": [
       {
@@ -568,14 +561,7 @@
     ],
     "R17_status": "delivered_policy_with_actual_R18_first_step",
     "next_prospective_plan": "runs/R18/PLAN.md",
-    "native_pending_current": [
-      {
-        "worker": "/root/r20_c13_forward_maker",
-        "state": "running",
-        "evidence": "runs/R20/coordination/r20_c13_forward_maker-running-1.json",
-        "actual_model": null
-      }
-    ],
+    "native_pending_current": [],
     "completed_native_R18": [
       {
         "worker": "/root/r16_original_solution",
@@ -585,22 +571,22 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "R20 original data trial; actual pending actors recorded separately.",
+    "current_task_process_state": "No live actors/processes; R21-02 ready, no background scheduler.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R19/publication/observation-44.json",
-    "current_source_commit": "87b41bb16543f038720a2798927940978818f406",
+    "current_publication": "runs/R19/publication/observation-46.json",
+    "current_source_commit": "e2efb3a00e1b86694f45d96272b758d77149bf76",
     "current_source_ci": [
       {
-        "conclusion": "failure",
-        "databaseId": 37837767684,
-        "headSha": "87b41bb16543f038720a2798927940978818f406",
+        "conclusion": "success",
+        "databaseId": 37840336969,
+        "headSha": "e2efb3a00e1b86694f45d96272b758d77149bf76",
         "status": "completed",
-        "url": "https://github.com/Urizums/A111/actions/runs/37837767684",
+        "url": "https://github.com/Urizums/A111/actions/runs/37840336969",
         "workflowName": "Cloud delivery validation"
       }
     ],
-    "current_source_ci_observed": "2026-10-08T20:17:35.638350+00:00",
+    "current_source_ci_observed": "2026-10-08T20:47:52.710497+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
     "R19_current_level": 4,
@@ -822,7 +808,7 @@
       "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
       "current_source_ci_observed": "success"
     },
-    "current_frontier_task": "R20-05",
+    "current_frontier_task": "R21-02",
     "R19_publication_status": "source_pushed_observed",
     "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
@@ -875,10 +861,10 @@
     ],
     "current_user_language_steering": "runs/R19/levels/L3/resource-language-resumption-1.json",
     "frozen_four_level_candidate": "runs/R19/candidate/C11-lock.json",
-    "candidate_status": "C12_targeted_forward_first_reception_pass_scoped",
+    "candidate_status": "C13_targeted_forward_reception_pass_scoped",
     "R19_status": "four_diagnostics_and_source_synthesis_done_successor_actually_started",
     "R20_plan": "runs/R20/PLAN.md",
-    "final_lease_release": "runs/R20/lease-release-observation.json",
+    "final_lease_release": "runs/R21/handback.json",
     "source_artifact_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
     "final_source_ci_observation": {
       "conclusion": "success",
@@ -1267,7 +1253,7 @@
     },
     "receipt_metadata_commit_pending": true,
     "R20_preparation_bridge": "One actual data generation, not separate solver runs.",
-    "R20_status": "original_data_paper_independently_accepted_scoped",
+    "R20_status": "source_synthesis_closed_successor_actually_started",
     "completed_native_R20": [
       {
         "worker": "/root/r20_acceptor",
@@ -1310,9 +1296,34 @@
         "state": "completed",
         "evidence": "runs/R20/coordination/r20_acceptor-completed-5.json",
         "actual_model": null
+      },
+      {
+        "worker": "/root/r20_c13_forward_maker",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_c13_forward_maker-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_c13_forward_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_c13_forward_acceptor-completed-1.json",
+        "actual_model": null
       }
     ],
-    "R20_design_lock": "runs/R20/design-lock.json"
+    "R20_design_lock": "runs/R20/design-lock.json",
+    "R21_status": "first_diagnostic_done_new_protocol_ready",
+    "historical_coordinator_snapshots": [
+      {
+        "at": "2026-10-09T02:23:54.157507+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r19-l3-language-resume",
+          "coordinator_heartbeat": "2026-10-06T18:06:17.268147+00:00",
+          "final_lease_release": "runs/R20/lease-release-observation.json",
+          "coordinator_release_evidence": "runs/R16/rule-audit/lease-release.json"
+        },
+        "note": "Retained inherited aliases; current release now binds the actual R20 owner and current handback."
+      }
+    ]
   },
   "historical_checkpoint": "runs/R00/baseline/checkpoint.json",
   "native_calls_in_current_revision": [
@@ -1331,14 +1342,7 @@
     "runs/future/versioned_preset_catalog/independent/completed-return.json",
     "runs/future/versioned_preset_catalog/independent/retest-completed-return.json"
   ],
-  "current_native_pending": [
-    {
-      "worker": "/root/r20_c13_forward_maker",
-      "state": "running",
-      "evidence": "runs/R20/coordination/r20_c13_forward_maker-running-1.json",
-      "actual_model": null
-    }
-  ],
+  "current_native_pending": [],
   "unpublished_work": true,
   "full_repair_audit": "runs/R06/final/repair-budget-audit.json",
   "latest_resumption": "runs/R06/scheduling/resume-20261004T072138Z/observation.json",
@@ -1488,7 +1492,7 @@
   "reviewed_protocol_research_artifact": "runs/R12/protocol/v2/evaluation-protocol.md",
   "R12_R13_published_source_commit": "a20d0de3264d53d86824f2eb06f59be61313a0cf",
   "R12_R13_publication_receipt": "runs/R13/publication/source-receipt.json",
-  "current_candidate": "runs/R19/final/candidate/C12-lock.json",
+  "current_candidate": "runs/R20/final/candidate/C13-lock.json",
   "current_R14_report": "runs/R14/REPORT.md",
   "current_R16_report": "runs/R16/REPORT.md",
   "C9_candidate": "runs/R14/candidate/C9-lock.json",
@@ -1534,7 +1538,7 @@
   "next_prospective_plan": "runs/R18/PLAN.md",
   "R18_plan": "runs/R18/PLAN.md",
   "R18_status": "actual_first_slice_only",
-  "current_report": "runs/R20/REPORT.md",
+  "current_report": "runs/R21/REPORT.md",
   "final_checks": "runs/R17/final/linux-full-regression-command.json",
   "publication": "runs/R17/publication/publication.json",
   "source_commit": "0258f31753a1a96126c66a4681c694696c3d2371",
@@ -1542,24 +1546,24 @@
   "receipt_commit_pending_at_this_snapshot": true,
   "R19_status": "closed_with_actual_R20_first_step",
   "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
-  "current_frontier_task": "R20-05",
-  "current_source_commit": "87b41bb16543f038720a2798927940978818f406",
+  "current_frontier_task": "R21-02",
+  "current_source_commit": "e2efb3a00e1b86694f45d96272b758d77149bf76",
   "current_source_ci": [
     {
-      "conclusion": "failure",
-      "databaseId": 37837767684,
-      "headSha": "87b41bb16543f038720a2798927940978818f406",
+      "conclusion": "success",
+      "databaseId": 37840336969,
+      "headSha": "e2efb3a00e1b86694f45d96272b758d77149bf76",
       "status": "completed",
-      "url": "https://github.com/Urizums/A111/actions/runs/37837767684",
+      "url": "https://github.com/Urizums/A111/actions/runs/37840336969",
       "workflowName": "Cloud delivery validation"
     }
   ],
   "current_user_language_steering": "runs/R19/levels/L3/resource-language-resumption-1.json",
   "frozen_four_level_candidate": "runs/R19/candidate/C11-lock.json",
-  "R20_status": "original_data_paper_independently_accepted_scoped",
+  "R20_status": "source_synthesis_closed_successor_actually_started",
   "candidate_status": "C12_scoped_forward_first_reception_pass",
-  "handback": "runs/R20/handback.json",
-  "actual_lease_release": "runs/R20/lease-release-observation.json",
+  "handback": "runs/R21/handback.json",
+  "actual_lease_release": "runs/R21/handback.json",
   "source_artifact_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
   "final_source_ci_observation": {
     "conclusion": "success",
@@ -1946,5 +1950,6 @@
     "status": "completed",
     "url": "https://github.com/Urizums/A111/actions/runs/37826234607"
   },
-  "terminal_source_ci_receipt": "runs/R20/source-ci-observation-2-command.json"
+  "terminal_source_ci_receipt": "runs/R20/source-ci-observation-2-command.json",
+  "R21_status": "first_diagnostic_done_new_protocol_ready"
 }

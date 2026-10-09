@@ -1,0 +1,28 @@
+{
+  "schema": "c13-forward-acceptor-preparation/2",
+  "terminal_status": "prepared_waiting_for_terminal_production_freeze",
+  "case_root": "runs/R20/forward-case",
+  "source_revision": "runs/R20/final/candidate/C13",
+  "locks": {
+    "input": "runs/R20/forward-case/input-lock.json",
+    "evaluation": "runs/R20/forward-case/evaluation-lock.json",
+    "workflow": "runs/R20/final/candidate/C13-lock.json"
+  },
+  "preparation_artifacts": [
+    "runs/R20/forward-case/review/preparation/checkpoint.md",
+    "runs/R20/forward-case/review/preparation/assertions.json",
+    "runs/R20/forward-case/review/preparation/reconstruct_raw.py",
+    "runs/R20/forward-case/review/preparation/commands/raw-reconstruction.json"
+  ],
+  "raw_reconstruction_command": {
+    "record": "runs/R20/forward-case/review/preparation/commands/raw-reconstruction.json",
+    "terminal_state": "finished",
+    "exit_code": 0,
+    "source_lock_verified": true
+  },
+  "f1_f2_f3_verdicts_assigned": false,
+  "production_accessed": false,
+  "consumer_controls_executed": false,
+  "actual_provider_model_tokens_cost": null,
+  "control_plan": "Source-derived lawful and late-arriving-coordinate controls are documented; final invocation awaits the frozen production interface."
+}

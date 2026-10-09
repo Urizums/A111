@@ -1,0 +1,29 @@
+{
+  "schema": "bounded-forward-checkpoint/1",
+  "task_id": "R20-C13-forward-calibration-production",
+  "actor": "/root/r20_c13_forward_maker",
+  "state": "production_complete_self_checked_pending_coordinator_freeze",
+  "input_lock": "runs/R20/forward-case/input-lock.json",
+  "source_lock": "runs/R20/final/candidate/C13-lock.json",
+  "write_domain": "runs/R20/forward-case/production/",
+  "authoritative_entry": "README.md",
+  "authoritative_result": "results/results.json",
+  "scientific_consumer": "results/说明.md",
+  "workflow_entry": "calibration-flow/SKILL.md",
+  "tasks": [
+    {"id": "F1", "depends": [], "owner": "producer", "acceptance": "Original requirement/schema/policy and exact source identity", "state": "done", "evidence": ["brief-and-gates.md", "checks/preflight.json"]},
+    {"id": "F2", "depends": ["F1"], "owner": "producer", "acceptance": "Portable pure Markdown workflow plus all-origin raw execution", "state": "done", "evidence": ["calibration-flow/SKILL.md", "results/results.json", "evidence/002-original-run.json"]},
+    {"id": "F3", "depends": ["F2"], "owner": "author_receiver", "acceptance": "All mandatory source/numerical interfaces, real relevant rejections, clean rerun", "state": "done", "evidence": ["checks/author-receiving-check.json", "checks/clean-reproduction.json", "checks/final-readiness.json"]},
+    {"id": "F4", "depends": ["F3"], "owner": "producer", "acceptance": "Short Chinese scientific consumer and complete evidence/code/handoff/manifest", "state": "done", "evidence": ["results/说明.md", "handoff.md", "manifest.json"]},
+    {"id": "F5-next-stage", "depends": ["F4"], "owner": "coordinator", "acceptance": "Launch another production stage only if original goal remains", "state": "cancelled", "reason": "Bounded production goal complete; coordinator freeze/independent reception is handoff, not another producer stage."}
+  ],
+  "independent_acceptance": "not claimed; separate coordinator responsibility",
+  "pending_processes": [],
+  "pending_host_calls": [],
+  "background_scheduling": false,
+  "blockers": [],
+  "next_action": "Stop producer writes after administrative manifest finalization; send completed entry and manifest hash to coordinator for freeze and fresh reception.",
+  "model": null,
+  "tokens": null,
+  "cost": null
+}

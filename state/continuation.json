@@ -8300,8 +8300,37 @@
           "assertion": "Actual new task evidence source-bound; any document-only source revision has separate identity and relevant forward reception, with original failures and limits preserved."
         }
       ],
-      "status": "in_progress",
-      "evidence": [],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R20/R20-05-result.json",
+          "sha256": "68292e238b81d141d1f2c46a7205b19cfc3759ee05a5932a5c5023c53d79b24b"
+        },
+        {
+          "path": "runs/R20/final-lock.json",
+          "sha256": "eced0f405a6e9a8d0243a46a904f6ea6e276d4e1c674acdf036b680713d5695d"
+        },
+        {
+          "path": "runs/R20/forward-case/production-lock.json",
+          "sha256": "8b7edecebe5e5421fe67db7e47e2e4e3885ce4903f32c47b43a85712002e2cf2"
+        },
+        {
+          "path": "runs/R20/forward-case/review/initial-lock.json",
+          "sha256": "cf9634bcdc9d32efad82c0d175c96d82fa40bb9de5bb59cd632b67f19f921f2d"
+        },
+        {
+          "path": "runs/R20/forward-case/review/preparation-path-error-lock.json",
+          "sha256": "52fd50e07907e480b95b188ed08c580aa1f45bd527b95fc7e1d66d7c1adfbcda"
+        },
+        {
+          "path": "runs/R20/forward-case/review/preparation-lock.json",
+          "sha256": "bfc4661b5754f64b7c22a8bd658f9fa3115d6726513e66b267a6cc69ab397924"
+        },
+        {
+          "path": "runs/R20/coordination/c13-first-reception-check-recovery-command.json",
+          "sha256": "5f56ac9a35cdeeee81e0d609b0d12fb3b76fab70274b287b8821f99008c08f09"
+        }
+      ],
       "attempts": [
         {
           "id": "R20-05-1",
@@ -8321,14 +8350,49 @@
             "path": "runs/R20/coordination/data-reception-check-command.json",
             "sha256": "8ddfc29dc6e714b7792b674659d2a556bea158e37aef89a196e1bd3bffedace7"
           },
-          "status": "in_progress",
-          "execution_policy_hash": "7141d7d2648a10428aaeb998ef6fcca632e7918d43957b5587049a1a532fc271"
+          "status": "done",
+          "execution_policy_hash": "7141d7d2648a10428aaeb998ef6fcca632e7918d43957b5587049a1a532fc271",
+          "ended_at": "2026-10-08T20:55:57.747968+00:00",
+          "result": {
+            "path": "runs/R20/R20-05-result.json",
+            "sha256": "68292e238b81d141d1f2c46a7205b19cfc3759ee05a5932a5c5023c53d79b24b"
+          },
+          "evidence": [
+            {
+              "path": "runs/R20/R20-05-result.json",
+              "sha256": "68292e238b81d141d1f2c46a7205b19cfc3759ee05a5932a5c5023c53d79b24b"
+            },
+            {
+              "path": "runs/R20/final-lock.json",
+              "sha256": "eced0f405a6e9a8d0243a46a904f6ea6e276d4e1c674acdf036b680713d5695d"
+            },
+            {
+              "path": "runs/R20/forward-case/production-lock.json",
+              "sha256": "8b7edecebe5e5421fe67db7e47e2e4e3885ce4903f32c47b43a85712002e2cf2"
+            },
+            {
+              "path": "runs/R20/forward-case/review/initial-lock.json",
+              "sha256": "cf9634bcdc9d32efad82c0d175c96d82fa40bb9de5bb59cd632b67f19f921f2d"
+            },
+            {
+              "path": "runs/R20/forward-case/review/preparation-path-error-lock.json",
+              "sha256": "52fd50e07907e480b95b188ed08c580aa1f45bd527b95fc7e1d66d7c1adfbcda"
+            },
+            {
+              "path": "runs/R20/forward-case/review/preparation-lock.json",
+              "sha256": "bfc4661b5754f64b7c22a8bd658f9fa3115d6726513e66b267a6cc69ab397924"
+            },
+            {
+              "path": "runs/R20/coordination/c13-first-reception-check-recovery-command.json",
+              "sha256": "5f56ac9a35cdeeee81e0d609b0d12fb3b76fab70274b287b8821f99008c08f09"
+            }
+          ]
         }
       ],
       "repairs_used": 0,
       "repair_limit": null,
       "blocker": null,
-      "next_action": "综合新数据任务证据与源头缺口",
+      "next_action": "R20-next: first source-bound diagnostic of known R20 future reliability, then untouched new measurement protocol.",
       "execution_policy": {
         "mode": "progress_guard",
         "source": {
@@ -8369,18 +8433,366 @@
           "assertion": "Justified successor has actual plan and task-relevant first step; no invented continuation if goal is complete or actual boundary persists."
         }
       ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R21/transition-result.json",
+          "sha256": "c2f506aed844ad9fac09477eb9b905621929838dd462150aac9eed1eb64bc512"
+        },
+        {
+          "path": "runs/R21/PLAN.md",
+          "sha256": "6d7f74e3d3d8bf6bca0a71a3bffec78fba2fd3cb81a2b4bdd6a10bff76e12ae0"
+        },
+        {
+          "path": "runs/R21/source-inputs.json",
+          "sha256": "bf633bc375b304bf1702a99eee9bee7c3aaaec56d0ee4662e6d92904daab3913"
+        },
+        {
+          "path": "runs/R21/first-step-command.json",
+          "sha256": "646ca0d660f9b058eb5b10816a52d19c866552a6459f178c75d69b7eb53b0207"
+        },
+        {
+          "path": "runs/R21/diagnostic/result.json",
+          "sha256": "2a2d6301892ad74c99a4bdf18269d3dd09552bc8d5d3c04736a586e16dde6b45"
+        },
+        {
+          "path": "runs/R21/diagnostic/REPORT.md",
+          "sha256": "e67dc3145ccadcf76aceae28626415267d2524667e141438325a8ac84cf52ae0"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R20-next-1",
+          "started_at": "2026-10-09T02:06:41.419350+00:00",
+          "requirements_hash": "3437409a156998ab2af116efd5d5964bc8324f2ba226ac7007b2539444d31bd3",
+          "inputs": [
+            {
+              "path": "runs/R20/PLAN.md",
+              "sha256": "c2b24bad90624d3d0a7567e22a6c8b1b657779a9e73f264eaba77cf0ea52d32e"
+            },
+            {
+              "path": "runs/R19/final/candidate/C12-lock.json",
+              "sha256": "4fccaa677c0319502ed0a7f5bc897757e05f0bc72cf8de799e0154d61bb39f66"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R21/first-step-command.json",
+            "sha256": "646ca0d660f9b058eb5b10816a52d19c866552a6459f178c75d69b7eb53b0207"
+          },
+          "status": "done",
+          "execution_policy_hash": "7141d7d2648a10428aaeb998ef6fcca632e7918d43957b5587049a1a532fc271",
+          "ended_at": "2026-10-09T02:06:41.565808+00:00",
+          "result": {
+            "path": "runs/R21/transition-result.json",
+            "sha256": "c2f506aed844ad9fac09477eb9b905621929838dd462150aac9eed1eb64bc512"
+          },
+          "evidence": [
+            {
+              "path": "runs/R21/transition-result.json",
+              "sha256": "c2f506aed844ad9fac09477eb9b905621929838dd462150aac9eed1eb64bc512"
+            },
+            {
+              "path": "runs/R21/PLAN.md",
+              "sha256": "6d7f74e3d3d8bf6bca0a71a3bffec78fba2fd3cb81a2b4bdd6a10bff76e12ae0"
+            },
+            {
+              "path": "runs/R21/source-inputs.json",
+              "sha256": "bf633bc375b304bf1702a99eee9bee7c3aaaec56d0ee4662e6d92904daab3913"
+            },
+            {
+              "path": "runs/R21/first-step-command.json",
+              "sha256": "646ca0d660f9b058eb5b10816a52d19c866552a6459f178c75d69b7eb53b0207"
+            },
+            {
+              "path": "runs/R21/diagnostic/result.json",
+              "sha256": "2a2d6301892ad74c99a4bdf18269d3dd09552bc8d5d3c04736a586e16dde6b45"
+            },
+            {
+              "path": "runs/R21/diagnostic/REPORT.md",
+              "sha256": "e67dc3145ccadcf76aceae28626415267d2524667e141438325a8ac84cf52ae0"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "R21-02: freeze a new untouched original measurement protocol before model variants or future truth.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R20/PLAN.md",
+          "sha256": "c2b24bad90624d3d0a7567e22a6c8b1b657779a9e73f264eaba77cf0ea52d32e"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R21-01",
+      "title": "冻结旧版本的已见真值可靠性诊断",
+      "queue": "challenges",
+      "category": "interval_reliability_transfer",
+      "complexity": 3,
+      "priority": 21,
+      "depends_on": [
+        "R20-next"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R21/diagnostic/"
+      ],
+      "inputs": [
+        "runs/R21/PLAN.md",
+        "runs/R21/source-inputs.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Raw locked sources recomputed per key and subgroup; first metrics agree, coverage/tails/bias/loss and date dependence/confounding explained in Chinese; no fitting or unseen/independent claim."
+        }
+      ],
+      "status": "done",
+      "evidence": [
+        {
+          "path": "runs/R21/R21-01-result.json",
+          "sha256": "b02179f1d9c3b1cca0ad047c0ebbabac3e761c8dbd8500b414a1fa173aa7fa18"
+        },
+        {
+          "path": "runs/R21/source-inputs.json",
+          "sha256": "bf633bc375b304bf1702a99eee9bee7c3aaaec56d0ee4662e6d92904daab3913"
+        },
+        {
+          "path": "runs/R21/first-step-command.json",
+          "sha256": "646ca0d660f9b058eb5b10816a52d19c866552a6459f178c75d69b7eb53b0207"
+        },
+        {
+          "path": "runs/R21/diagnostic/result.json",
+          "sha256": "2a2d6301892ad74c99a4bdf18269d3dd09552bc8d5d3c04736a586e16dde6b45"
+        },
+        {
+          "path": "runs/R21/diagnostic/groups.csv",
+          "sha256": "2f4a3dc7b29f746fd0098a8ad3c66d6307c3f8060dff14b9e958439dc35a5809"
+        },
+        {
+          "path": "runs/R21/diagnostic/REPORT.md",
+          "sha256": "e67dc3145ccadcf76aceae28626415267d2524667e141438325a8ac84cf52ae0"
+        }
+      ],
+      "attempts": [
+        {
+          "id": "R21-01-1",
+          "started_at": "2026-10-09T02:06:41.631480+00:00",
+          "requirements_hash": "d5563b8e19b549d3cb01923b6299362e1d8070c9f00e465ffdc960db9c507397",
+          "inputs": [
+            {
+              "path": "runs/R21/PLAN.md",
+              "sha256": "6d7f74e3d3d8bf6bca0a71a3bffec78fba2fd3cb81a2b4bdd6a10bff76e12ae0"
+            },
+            {
+              "path": "runs/R21/source-inputs.json",
+              "sha256": "bf633bc375b304bf1702a99eee9bee7c3aaaec56d0ee4662e6d92904daab3913"
+            }
+          ],
+          "start_evidence": {
+            "path": "runs/R21/first-step-command.json",
+            "sha256": "646ca0d660f9b058eb5b10816a52d19c866552a6459f178c75d69b7eb53b0207"
+          },
+          "status": "done",
+          "execution_policy_hash": "2d0950889413fc2a17c40d58706a1b8fae9e0522b5e0063a8474766028c70a8e",
+          "ended_at": "2026-10-09T02:06:41.759500+00:00",
+          "result": {
+            "path": "runs/R21/R21-01-result.json",
+            "sha256": "b02179f1d9c3b1cca0ad047c0ebbabac3e761c8dbd8500b414a1fa173aa7fa18"
+          },
+          "evidence": [
+            {
+              "path": "runs/R21/R21-01-result.json",
+              "sha256": "b02179f1d9c3b1cca0ad047c0ebbabac3e761c8dbd8500b414a1fa173aa7fa18"
+            },
+            {
+              "path": "runs/R21/source-inputs.json",
+              "sha256": "bf633bc375b304bf1702a99eee9bee7c3aaaec56d0ee4662e6d92904daab3913"
+            },
+            {
+              "path": "runs/R21/first-step-command.json",
+              "sha256": "646ca0d660f9b058eb5b10816a52d19c866552a6459f178c75d69b7eb53b0207"
+            },
+            {
+              "path": "runs/R21/diagnostic/result.json",
+              "sha256": "2a2d6301892ad74c99a4bdf18269d3dd09552bc8d5d3c04736a586e16dde6b45"
+            },
+            {
+              "path": "runs/R21/diagnostic/groups.csv",
+              "sha256": "2f4a3dc7b29f746fd0098a8ad3c66d6307c3f8060dff14b9e958439dc35a5809"
+            },
+            {
+              "path": "runs/R21/diagnostic/REPORT.md",
+              "sha256": "e67dc3145ccadcf76aceae28626415267d2524667e141438325a8ac84cf52ae0"
+            }
+          ]
+        }
+      ],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "R21-02: design new original measurement with untouched truth and fair prospective comparison.",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R21/PLAN.md",
+          "sha256": "6d7f74e3d3d8bf6bca0a71a3bffec78fba2fd3cb81a2b4bdd6a10bff76e12ae0"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R21-02",
+      "title": "冻结尚未见真值的新测量协议和原创原件",
+      "queue": "challenges",
+      "category": "interval_reliability_transfer",
+      "complexity": 3,
+      "priority": 21,
+      "depends_on": [
+        "R21-01"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R21/protocol/",
+        "runs/R21/inputs/",
+        "runs/R21/evaluation/"
+      ],
+      "inputs": [
+        "runs/R21/PLAN.md",
+        "runs/R21/source-inputs.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Diagnostic motivates a fair as-of-time source-bound protocol and explicitly original new case before production; untouched truth withheld, baselines/criteria reflect uncertainty and business loss, zero improvement allowed."
+        }
+      ],
       "status": "planned",
       "evidence": [],
       "attempts": [],
       "repairs_used": 0,
       "repair_limit": null,
       "blocker": null,
-      "next_action": "启动有依据的下一阶段任务",
+      "next_action": "冻结尚未见真值的新测量协议和原创原件",
       "execution_policy": {
         "mode": "progress_guard",
         "source": {
-          "path": "runs/R20/PLAN.md",
-          "sha256": "c2b24bad90624d3d0a7567e22a6c8b1b657779a9e73f264eaba77cf0ea52d32e"
+          "path": "runs/R21/PLAN.md",
+          "sha256": "6d7f74e3d3d8bf6bca0a71a3bffec78fba2fd3cb81a2b4bdd6a10bff76e12ae0"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R21-03",
+      "title": "新方案执行及独立接收真实新测量",
+      "queue": "challenges",
+      "category": "interval_reliability_transfer",
+      "complexity": 3,
+      "priority": 21,
+      "depends_on": [
+        "R21-02"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R21/execution/",
+        "runs/R21/review/",
+        "runs/R21/final/"
+      ],
+      "inputs": [
+        "runs/R21/PLAN.md",
+        "runs/R21/source-inputs.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "Actual execution, scientific Chinese consumer and new independent source-bound receiving completed; new truth only after first freeze, failures and informed repairs separate; any source change is document-only with relevant forward reception."
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "新方案执行及独立接收真实新测量",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R21/PLAN.md",
+          "sha256": "6d7f74e3d3d8bf6bca0a71a3bffec78fba2fd3cb81a2b4bdd6a10bff76e12ae0"
+        },
+        "stop_conditions": [
+          "actual host or permission boundary",
+          "user stop",
+          "completion",
+          "persistent unchanged path without new evidence"
+        ],
+        "progress_state": "ready",
+        "deadline_utc": null
+      }
+    },
+    {
+      "id": "R21-next",
+      "title": "根据实测边界决定并启动合理下一阶段",
+      "queue": "challenges",
+      "category": "interval_reliability_transfer",
+      "complexity": 3,
+      "priority": 21,
+      "depends_on": [
+        "R21-03"
+      ],
+      "owner": "root",
+      "write_paths": [
+        "runs/R22/"
+      ],
+      "inputs": [
+        "runs/R21/PLAN.md",
+        "runs/R21/source-inputs.json"
+      ],
+      "acceptance": [
+        {
+          "id": "t1",
+          "assertion": "A meaningful successor has source-bound plan and actual first step; completed goals or real boundaries permit explicit end/cancellation, no invented infinite tasks."
+        }
+      ],
+      "status": "planned",
+      "evidence": [],
+      "attempts": [],
+      "repairs_used": 0,
+      "repair_limit": null,
+      "blocker": null,
+      "next_action": "根据实测边界决定并启动合理下一阶段",
+      "execution_policy": {
+        "mode": "progress_guard",
+        "source": {
+          "path": "runs/R21/PLAN.md",
+          "sha256": "6d7f74e3d3d8bf6bca0a71a3bffec78fba2fd3cb81a2b4bdd6a10bff76e12ae0"
         },
         "stop_conditions": [
           "actual host or permission boundary",
@@ -8406,7 +8818,7 @@
     "background_code_execution_verified": false,
     "session_state": "R14_diagnostic_complete_R16_original_budget_stop",
     "checkpoint_reason": "Original failures retained; no full real-paper delivery. Explicit original-case limit change pending.",
-    "coordinator_heartbeat": "2026-10-06T18:06:17.268147+00:00",
+    "coordinator_heartbeat": "2026-10-09T02:23:54.157514+00:00",
     "monitor_trigger_observed": "runs/R06/scheduling/resume-20261004T072138Z/automation.json",
     "scheduled_trigger_code_execution_verified": true,
     "scheduled_execution_scope": "07:21 trigger after prior lease release resumed same retained checkout and executed state/capability checks; independent cold-start and substantive successor unverified",
@@ -8438,7 +8850,7 @@
         "state": "final notification received, list_agents returned empty; original bridge terminal reconciliation unresolved"
       }
     ],
-    "current_coordinator": "root-codex-r19-l3-language-resume",
+    "current_coordinator": "root-codex-r20-data-transfer",
     "completed_native_R07": [
       {
         "worker": "/root/luna_r07_restore_validation",
@@ -8453,19 +8865,12 @@
         "evidence": "runs/R07/flow-challenge/host/final-notifications.json"
       }
     ],
-    "current_report": "runs/R20/REPORT.md",
+    "current_report": "runs/R21/REPORT.md",
     "next_plan": "runs/R16/PLAN.md",
     "deferred_tasks": [
       "R08-ZCODE-01"
     ],
-    "current_native_pending": [
-      {
-        "worker": "/root/r20_c13_forward_maker",
-        "state": "running",
-        "evidence": "runs/R20/coordination/r20_c13_forward_maker-running-1.json",
-        "actual_model": null
-      }
-    ],
+    "current_native_pending": [],
     "current_native_completed": [
       {
         "worker": "/root/r08_simple",
@@ -8480,7 +8885,7 @@
     ],
     "R08_final_validation": "runs/R08/design/auxiliary-stable.json",
     "R08_repair_ledger": "runs/R08/validation/root-repair-ledger-2.json",
-    "coordinator_release_evidence": "runs/R16/rule-audit/lease-release.json",
+    "coordinator_release_evidence": "runs/R21/handback.json",
     "latest_scope_decision": "runs/R10/scope-decision.json",
     "completed_native_R09": [
       {
@@ -8789,7 +9194,7 @@
     "current_user_steering": "Level1-4 only, sequential workflow construction/fresh execution through paper/independent substantive quality diagnosis.",
     "R16_budget_proposal_status": "superseded_by_user_policy_change_no_numeric_increase",
     "repair_policy_review": "runs/R16/rule-audit/REPORT.md",
-    "current_candidate": "runs/R19/final/candidate/C12-lock.json",
+    "current_candidate": "runs/R20/final/candidate/C13-lock.json",
     "R17_policy": "runs/R17/scope-decision.json",
     "completed_native_R17": [
       {
@@ -8813,14 +9218,7 @@
     ],
     "R17_status": "delivered_policy_with_actual_R18_first_step",
     "next_prospective_plan": "runs/R18/PLAN.md",
-    "native_pending_current": [
-      {
-        "worker": "/root/r20_c13_forward_maker",
-        "state": "running",
-        "evidence": "runs/R20/coordination/r20_c13_forward_maker-running-1.json",
-        "actual_model": null
-      }
-    ],
+    "native_pending_current": [],
     "completed_native_R18": [
       {
         "worker": "/root/r16_original_solution",
@@ -8830,22 +9228,22 @@
       }
     ],
     "R18_status": "real_first_step_observed_full_case_incomplete",
-    "current_task_process_state": "R20 original data trial; actual pending actors recorded separately.",
+    "current_task_process_state": "No live actors/processes; R21-02 ready, no background scheduler.",
     "current_full_regression": "runs/R17/final/linux-full-regression-command.json",
     "current_regression_scope": "4742 byte-verified staged development files in local Linux export; 62 scripts tests; not general product acceptance",
-    "current_publication": "runs/R19/publication/observation-44.json",
-    "current_source_commit": "87b41bb16543f038720a2798927940978818f406",
+    "current_publication": "runs/R19/publication/observation-46.json",
+    "current_source_commit": "e2efb3a00e1b86694f45d96272b758d77149bf76",
     "current_source_ci": [
       {
-        "conclusion": "failure",
-        "databaseId": 37837767684,
-        "headSha": "87b41bb16543f038720a2798927940978818f406",
+        "conclusion": "success",
+        "databaseId": 37840336969,
+        "headSha": "e2efb3a00e1b86694f45d96272b758d77149bf76",
         "status": "completed",
-        "url": "https://github.com/Urizums/A111/actions/runs/37837767684",
+        "url": "https://github.com/Urizums/A111/actions/runs/37840336969",
         "workflowName": "Cloud delivery validation"
       }
     ],
-    "current_source_ci_observed": "2026-10-08T20:17:35.638350+00:00",
+    "current_source_ci_observed": "2026-10-08T20:47:52.710497+00:00",
     "receipt_commit_observation": "pending",
     "R19_scope": "Four new prospective trials, not replacement acceptance or reset for R14/R16/R18; historical regular-contest practice, no prize claim.",
     "R19_current_level": 4,
@@ -9067,7 +9465,7 @@
       "current_source_ci": "https://github.com/Urizums/A111/actions/runs/37572065972",
       "current_source_ci_observed": "success"
     },
-    "current_frontier_task": "R20-05",
+    "current_frontier_task": "R21-02",
     "R19_publication_status": "source_pushed_observed",
     "source_ci_scope": "Preserve actual published source observation; later working changes and paper quality are separate.",
     "R19_preparation_schedule": "runs/R19/PREPARATION_ADDENDUM.md",
@@ -9120,10 +9518,10 @@
     ],
     "current_user_language_steering": "runs/R19/levels/L3/resource-language-resumption-1.json",
     "frozen_four_level_candidate": "runs/R19/candidate/C11-lock.json",
-    "candidate_status": "C12_targeted_forward_first_reception_pass_scoped",
+    "candidate_status": "C13_targeted_forward_reception_pass_scoped",
     "R19_status": "four_diagnostics_and_source_synthesis_done_successor_actually_started",
     "R20_plan": "runs/R20/PLAN.md",
-    "final_lease_release": "runs/R20/lease-release-observation.json",
+    "final_lease_release": "runs/R21/handback.json",
     "source_artifact_commit": "ca282442b11d63cf14d4fe8128c8cb552581e040",
     "final_source_ci_observation": {
       "conclusion": "success",
@@ -9512,7 +9910,7 @@
     },
     "receipt_metadata_commit_pending": true,
     "R20_preparation_bridge": "One actual data generation, not separate solver runs.",
-    "R20_status": "original_data_paper_independently_accepted_scoped",
+    "R20_status": "source_synthesis_closed_successor_actually_started",
     "completed_native_R20": [
       {
         "worker": "/root/r20_acceptor",
@@ -9555,9 +9953,34 @@
         "state": "completed",
         "evidence": "runs/R20/coordination/r20_acceptor-completed-5.json",
         "actual_model": null
+      },
+      {
+        "worker": "/root/r20_c13_forward_maker",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_c13_forward_maker-completed-1.json",
+        "actual_model": null
+      },
+      {
+        "worker": "/root/r20_c13_forward_acceptor",
+        "state": "completed",
+        "evidence": "runs/R20/coordination/r20_c13_forward_acceptor-completed-1.json",
+        "actual_model": null
       }
     ],
-    "R20_design_lock": "runs/R20/design-lock.json"
+    "R20_design_lock": "runs/R20/design-lock.json",
+    "R21_status": "first_diagnostic_done_new_protocol_ready",
+    "historical_coordinator_snapshots": [
+      {
+        "at": "2026-10-09T02:23:54.157507+00:00",
+        "fields": {
+          "current_coordinator": "root-codex-r19-l3-language-resume",
+          "coordinator_heartbeat": "2026-10-06T18:06:17.268147+00:00",
+          "final_lease_release": "runs/R20/lease-release-observation.json",
+          "coordinator_release_evidence": "runs/R16/rule-audit/lease-release.json"
+        },
+        "note": "Retained inherited aliases; current release now binds the actual R20 owner and current handback."
+      }
+    ]
   },
   "events": [
     {
@@ -12275,6 +12698,22 @@
       "at": "2026-10-08T20:17:35.638364+00:00",
       "command": "observe_R19_main_publication",
       "evidence": "runs/R19/publication/observation-44.json"
+    },
+    {
+      "at": "2026-10-08T20:34:19.772595+00:00",
+      "command": "observe_R19_main_publication",
+      "evidence": "runs/R19/publication/observation-45.json"
+    },
+    {
+      "at": "2026-10-08T20:47:52.710510+00:00",
+      "command": "observe_R19_main_publication",
+      "evidence": "runs/R19/publication/observation-46.json"
+    },
+    {
+      "at": "2026-10-09T02:06:59.161224+00:00",
+      "command": "R20_actual_successor_transfer",
+      "evidence": "runs/R21/transition-result.json",
+      "note": "Same actual diagnostic receipt bridges transition and first task; one execution, not multiple runs."
     }
   ],
   "task_expansion_basis": [

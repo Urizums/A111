@@ -1,0 +1,26 @@
+{
+  "schema": "c13-forward-acceptor-preparation/1",
+  "terminal_status": "blocked_missing_frozen_packet",
+  "source_revision": "runs/R20/final/candidate/C13",
+  "source_lock": "runs/R20/final/candidate/C13-lock.json",
+  "inspected": [
+    "AGENTS.md",
+    "runs/R20/final/candidate/C13-lock.json",
+    "runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md",
+    "runs/R20/final/candidate/C13/forge-agent-flow/references/evaluation.md",
+    "runs/R20/final/candidate/C13/forge-agent-flow/references/source-evaluation.md",
+    "scripts/record_command.py"
+  ],
+  "missing": [
+    "runs/R20/final/candidate/C13/forward-case/inputs/",
+    "runs/R20/final/candidate/C13/forward-case/input-lock.json",
+    "runs/R20/final/candidate/C13/forward-case/evaluation/ACCEPTANCE.md",
+    "runs/R20/final/candidate/C13/forward-case/evaluation-lock.json"
+  ],
+  "case_assertions_prepared": false,
+  "execution_performed": false,
+  "provider_model_tokens_cost": null,
+  "reason": "The required frozen raw input and acceptance materials do not exist at the specified path, so f1-f3-specific assertions cannot be source-bound.",
+  "source_skill_sha256": "8128c05049d3918042c89389d8b2db73f8626b94b642fcf9491952c05944adea",
+  "source_lock_sha256": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a"
+}

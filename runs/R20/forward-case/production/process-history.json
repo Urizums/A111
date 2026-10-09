@@ -1,0 +1,46 @@
+{
+  "task_id": "R20-C13-forward-calibration-production",
+  "failure_policy": "Preserve all attempts; no universal two-error whole-task stop. Changed, evidence-backed recovery only.",
+  "preparation_events": [
+    {
+      "event": "incorrect_source_lock_path_read",
+      "classification": "tool_path_recovery",
+      "original_path": "runs/R20/final/candidate/C13/C13-lock.json",
+      "observation": "Get-Content: Cannot find path 'runs/R20/final/candidate/C13/C13-lock.json' because it does not exist.",
+      "tool_chunk_id": "8de344",
+      "tool_reported_exit_code": 0,
+      "scope": "read-only preparation, PowerShell continued to authorized input/recorder reads",
+      "changed_information": "Coordinator corrected supplied lock path to runs/R20/final/candidate/C13-lock.json; no outside source search.",
+      "recovery_evidence": "evidence/001-preflight.json",
+      "begin": null,
+      "end": null,
+      "limit": "Original tool observation retained as transcription, not a fabricated record_command receipt; preparation reads were not scientific commands."
+    }
+  ],
+  "expected_rejections": [
+    {
+      "classification": "planned_affected_interface_negative_test",
+      "record": "evidence/005-raw-conflict-rejection.json",
+      "expected_child_exit_code": 2,
+      "scope": "Same-version actual quantity conflict; parser must reject before publishing output."
+    },
+    {
+      "classification": "planned_affected_interface_negative_test",
+      "record": "evidence/006-future-label-rejection.json",
+      "expected_child_exit_code": 2,
+      "scope": "First-origin consumer output selecting a real later-arriving label; receiving check must reject."
+    }
+  ],
+  "counts": {
+    "tool_path_recovery_events": 1,
+    "expected_negative_tests": 2,
+    "unexpected_scientific_command_failures": 0,
+    "substantive_corrections": 0,
+    "research_model_iterations": 0,
+    "transient_retries": 0
+  },
+  "model": null,
+  "tokens": null,
+  "cost": null,
+  "telemetry_limit": "No authenticated model/token/cost telemetry supplied; no inferred values."
+}

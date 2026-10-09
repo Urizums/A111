@@ -16,6 +16,11 @@ for f in sorted((ROOT/'runs/R20/coordination').glob('*')):
     if f.name.endswith('command.json') and json.loads(f.read_text(encoding='utf-8')).get('state') == 'started':
         continue
     paths.append(f.relative_to(ROOT).as_posix())
+for f in sorted((ROOT/'runs/R21').glob('*')):
+    if f.is_file() and f.suffix in {'.json','.md'}:
+        if f.name.endswith('command.json') and json.loads(f.read_text(encoding='utf-8')).get('state')=='started':
+            continue
+        paths.append(f.relative_to(ROOT).as_posix())
 if paths:
     subprocess.run(['git','-c','core.longpaths=true','add','--',*paths],cwd=ROOT,check=True)
 index = json.loads((ROOT/'state/revision-locks.json').read_text(encoding='utf-8'))

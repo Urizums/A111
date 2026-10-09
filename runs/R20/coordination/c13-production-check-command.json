@@ -1,0 +1,28 @@
+{
+  "schema": "forge-command-record/1",
+  "argv": [
+    "py",
+    "-3.12",
+    "-X",
+    "utf8",
+    "-B",
+    "runs/R20/coordination/check_forward_production.py"
+  ],
+  "cwd": "C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111",
+  "begin": {
+    "utc": "2026-10-08T20:42:23.071485+00:00",
+    "monotonic_ns": 111574687000000,
+    "boot_id": null
+  },
+  "state": "finished",
+  "end": {
+    "utc": "2026-10-08T20:42:23.202642+00:00",
+    "monotonic_ns": 111574828000000,
+    "boot_id": null
+  },
+  "exit_code": 1,
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\r\n  File \"C:\\Users\\admin\\Documents\\Codex\\2026-10-05\\urizums-a111-main-codex-handoff-md\\work\\A111\\runs\\R20\\coordination\\check_forward_production.py\", line 22, in <module>\r\n    assert row['state'] == 'finished' and row['exit_code'] is not None and row['ended_at'], f\r\n                                                                           ~~~^^^^^^^^^^^^\r\nKeyError: 'ended_at'\r\n",
+  "stdout_base64": "",
+  "stderr_base64": "VHJhY2ViYWNrIChtb3N0IHJlY2VudCBjYWxsIGxhc3QpOg0KICBGaWxlICJDOlxVc2Vyc1xhZG1pblxEb2N1bWVudHNcQ29kZXhcMjAyNi0xMC0wNVx1cml6dW1zLWExMTEtbWFpbi1jb2RleC1oYW5kb2ZmLW1kXHdvcmtcQTExMVxydW5zXFIyMFxjb29yZGluYXRpb25cY2hlY2tfZm9yd2FyZF9wcm9kdWN0aW9uLnB5IiwgbGluZSAyMiwgaW4gPG1vZHVsZT4NCiAgICBhc3NlcnQgcm93WydzdGF0ZSddID09ICdmaW5pc2hlZCcgYW5kIHJvd1snZXhpdF9jb2RlJ10gaXMgbm90IE5vbmUgYW5kIHJvd1snZW5kZWRfYXQnXSwgZg0KICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfn5+Xl5eXl5eXl5eXl5eDQpLZXlFcnJvcjogJ2VuZGVkX2F0Jw0K"
+}

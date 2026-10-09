@@ -1,6 +1,6 @@
 {
   "schema": "upgrade-work-record/1",
-  "updated_at": "2026-10-08T18:34:48.012205+00:00",
+  "updated_at": "2026-10-09T02:06:59.223375+00:00",
   "goal": "完善现有skill对完整系统与agent infra的交付、持续推进和可测性能",
   "todo": [
     {
@@ -1049,7 +1049,7 @@
     {
       "id": "R20-data-workflow",
       "owner": "root",
-      "status": "in_progress",
+      "status": "done",
       "write_scope": [
         "runs/R20/"
       ],
@@ -1069,9 +1069,27 @@
         "runs/R20/R20-04-result.json",
         "runs/R20/review/initial-lock.json",
         "runs/R20/review/source-recheck-lock.json",
-        "runs/R20/final/candidate/C13-lock.json"
+        "runs/R20/final/candidate/C13-lock.json",
+        "runs/R20/R20-05-result.json",
+        "runs/R20/final-lock.json",
+        "runs/R21/transition-result.json"
       ],
-      "next_action": "R20-05: original data workflow handoff through actual independent paper reception; current policy unknowns retained."
+      "next_action": "R21-02: source-bound new measurement; current policy unknowns and all historical failures retained."
+    },
+    {
+      "id": "R21-interval-reliability",
+      "owner": "root",
+      "status": "in_progress",
+      "write_scope": [
+        "runs/R21/"
+      ],
+      "acceptance": "Source-bound reliability diagnosis followed by genuinely new fair measurement; not tuning on previously seen truth.",
+      "evidence": [
+        "runs/R21/PLAN.md",
+        "runs/R21/first-diagnostic-lock.json",
+        "runs/R21/R21-01-result.json"
+      ],
+      "next_action": "R21-02: freeze a genuinely new original case and fair measurement protocol before production; known R20 truth cannot serve as a new blind test."
     }
   ],
   "stop_conditions": [

@@ -1,0 +1,69 @@
+{
+  "schema": "c13-forward-case-independent-first-result/1",
+  "terminal_status": "first_acceptance_complete",
+  "input_revision": "runs/R20/forward-case/inputs",
+  "acceptance_revision": "runs/R20/forward-case/evaluation",
+  "workflow_revision": "runs/R20/final/candidate/C13",
+  "production_revision": "runs/R20/forward-case/production",
+  "lock_identities": {
+    "input_lock_sha256": "8ae32d1eeb05a5eaa3e7aee64aabd7b983a0162fc39c17210d5c4c218b47735a",
+    "evaluation_lock_sha256": "38515dd34511217e8f13b9b21f59f48270336ebdc5720fe64f9d704083cb6116",
+    "preparation_lock_sha256": "bfc4661b5754f64b7c22a8bd658f9fa3115d6726513e66b267a6cc69ab397924",
+    "workflow_lock_sha256": "860caeec761028fa47723410c99ef2f48db2f61fa16405c8929a0005e158af7a",
+    "production_lock_sha256": "8b7edecebe5e5421fe67db7e47e2e4e3885ce4903f32c47b43a85712002e2cf2",
+    "production_manifest_sha256": "f0a7523ad9081c56f96eb5147e7adaa326fa9eaefef566ccbd2fa713df63b093"
+  },
+  "verdicts": {
+    "f1": {
+      "verdict": "accepted",
+      "basis": "Independent reconstruction from locked raw sources and exact comparison with all frozen production result JSON, CSV and short-note values.",
+      "observations": {
+        "policy": "latest_available_at_decision_inclusive",
+        "origins": ["2026-05-03T18:00:00+08:00", "2026-05-06T18:00:00+08:00"],
+        "complete_day_counts": [1, 3],
+        "coordinate_rows_checked": 16,
+        "day_status_rows_checked": 8,
+        "vector_rows_checked": 4,
+        "prediction_backfills_after_original_forecast_origin_excluded": 2,
+        "exact_duplicate_label_retransmissions_collapsed": 1,
+        "residual_definition": "actual - original fixed prediction, units 件",
+        "mature_evaluation_cutoff_used_for_selection": false
+      },
+      "limits": ["Only this frozen synthetic case and declared visible-latest policy are established.", "The small vectors do not establish a calibrated distribution, interval coverage, forecast performance, or generalization."]
+    },
+    "f2": {
+      "verdict": "accepted",
+      "basis": "Actual clean rerun through the README-documented production entrypoint, independent raw receiver, byte comparison, and actual lawful/invalid controls.",
+      "observations": {
+        "independent_clean_rerun": {"record":"commands/independent-clean-rerun.json","terminal_state":"finished","exit_code":0},
+        "production_vs_clean_rerun": {"record":"commands/compare-production-to-independent-rerun.json","six_artifacts_byte_identical":true},
+        "main_independent_receiver": {"record":"commands/independent-receiver-main-final.json","terminal_state":"finished","exit_code":0},
+        "lawful_duplicate_control": {"production_record":"commands/lawful-duplicate-control.json","production_exit_code":0,"receiver_record":"commands/independent-receiver-lawful-final.json","receiver_exit_code":0,"semantic_vector_comparison_record":"commands/compare-lawful-control-semantics.json","vector_semantics_preserved":true,"counts":[1,3]},
+        "invalid_same_version_source_control": {"record":"commands/invalid-source-conflict-control.json","terminal_state":"finished","exit_code":2,"classification":"production entrypoint rejected controlled conflicting source version"},
+        "invalid_future_label_output_control": {"record":"commands/independent-receiver-invalid-output.json","terminal_state":"finished","exit_code":1,"classification":"independent receiver rejected a future label selected at the earlier origin; this is not a production gate"},
+        "machine_note_consistency": "The Chinese note's policy, per-origin counts/vectors, residuals, arrival/incompleteness explanation, units and limits match the locked source and independently checked machine outputs."
+      },
+      "limits": ["Controls establish only the exercised source conflict, duplicate retransmission and future-label boundary.", "The future-output rejection is performed by the independent receiver; it is not represented as a production consumer gate."]
+    },
+    "f3": {
+      "verdict": "accepted",
+      "five_source_time_assertion_classes": [
+        {"class":"fixed forecast origin and availability","evidence":"Locked forecasts.csv lines 2-9 are available by their 2026-04-30T18:00+08:00 forecast origin; lines 10-11 arrive later and are excluded in independently matched outputs/events.","limit":"One synthetic fixed forecast set."},
+        {"class":"decision-origin label availability","evidence":"The 2026-05-03T18:00+08:00 B label at equality is included; labels arriving later are omitted. At the 2026-05-06T18:00+08:00 origin, the 2026-05-07 revision is excluded.","limit":"Only the two frozen decision origins."},
+        {"class":"label revision and declared policy","evidence":"Machine metadata declares latest available at decision, inclusive; selected revisions/arrival times independently recompute from raw. The evaluation cutoff is explicitly not used for selection.","limit":"No fixed-mature policy result is claimed."},
+        {"class":"vector completeness and retransmission","evidence":"series.csv requires A and B; only complete days enter vectors. The identical raw label retransmission at source line 13 is tied to line 2 and counted once; incomplete days remain excluded.","limit":"Per-origin counts are not independent cross-origin samples."},
+        {"class":"residual, unit, arrival and lineage","evidence":"All 16 coordinate rows, source lines/hashes, residuals, coordinate availability and vector arrival are independently reconstructed; vectors use A,B order and actual minus original forecast in 件.","limit":"Arithmetic and lineage checks do not establish model quality."}
+      ],
+      "producer_command_receipts": {"record":"commands/producer-receipt-structure-audit.json","specified_receipts_checked":11,"lock_size_sha_matches":true,"schema_and_terminal_fields_valid":true,"all_state_finished":true,"stdout_stderr_text_matches_base64":true,"semantic_log_content_read_or_emitted":false},
+      "artifact_identity": {"production_lock_inventory":71,"allowed_calibration_flow_code_results_files_hash_checked":17,"production_result_files_byte_identical_to_clean_rerun":6},
+      "limits": ["Receipt validation is structural only; author log semantics and author verdicts were not used.", "The conclusion is bounded to this forward case; it is not a full paper, general superiority claim, or causal comparison of C13 with C12."]
+    }
+  },
+  "actual_model_telemetry": {"requested_configuration":"Luna/high","actual_provider":null,"actual_model":null,"tokens":null,"cost":null},
+  "reviewer_tool_recovery": [
+    {"event":"Initial independent receiver implementation omitted the production results origin field complete_day_count and failed twice on its own structural mismatch; both raw command records were retained. The checker was corrected and the final main and lawful-control receiver commands passed.","classification":"reviewer tool recovery; not a production failure"},
+    {"event":"One patch application was rejected because the context did not match; it wrote no file and launched no subprocess. The edit was applied with the current exact context.","classification":"tool construction failure; no child process"}
+  ],
+  "running_processes": 0,
+  "claims_excluded": ["full paper acceptance", "competition outcome", "general performance or superiority", "causal C13 versus C12 comparison"]
+}

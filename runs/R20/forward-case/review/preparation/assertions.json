@@ -1,0 +1,41 @@
+{
+  "schema": "c13-forward-acceptance-assertions/1",
+  "basis": {
+    "input_lock": "runs/R20/forward-case/input-lock.json",
+    "acceptance": "runs/R20/forward-case/evaluation/ACCEPTANCE.md",
+    "evaluation_lock": "runs/R20/forward-case/evaluation-lock.json",
+    "workflow": "runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md",
+    "workflow_lock": "runs/R20/final/candidate/C13-lock.json"
+  },
+  "f1": [
+    {"id":"f1-origin-prediction","assertion":"Each used prediction is bound to the original fixed forecast version; preserve forecast_origin and available_at, and reject retrospective backfill as the original prediction.","reject_if":"Any output substitutes a forecast that was only available after its declared forecast origin, or omits its source version/time."},
+    {"id":"f1-asof-label","assertion":"Every selected actual label version has available_at no later than its decision origin under the declared allowed policy; retain revision and arrival time.","reject_if":"Any later-arriving version is used early or the declared policy cannot reproduce the selected version."},
+    {"id":"f1-vector-complete","assertion":"Only include a target date when every coordinate from the locked series.csv exists for that origin and policy; exact retransmission does not create another coordinate.","reject_if":"A partial vector is padded, an exact retransmission is counted as a new coordinate, or the output silently removes a required series."},
+    {"id":"f1-residual","assertion":"Recompute residual as selected actual minus original fixed prediction in units 件; preserve per-coordinate source and times.","reject_if":"Any value differs, uses the revised/backfilled prediction, or omits units/lineage."},
+    {"id":"f1-empty-pool","assertion":"If the declared lawful policy yields no complete vector, explain the maturity/availability reason and do not report a fabricated risk estimate.","reject_if":"An empty pool is silently treated as a zero-risk or another unsupported estimate."}
+  ],
+  "f2": [
+    {"id":"f2-clean-rerun","assertion":"Run the frozen actual entrypoint from source inputs to current deliverable outputs and independently compare the results and semantics to reconstruct_raw.py.","reject_if":"Only a helper, screenshot, static description, exit code, or author pass statement is offered."},
+    {"id":"f2-lawful-control","assertion":"Run one lawful consumer control that exercises an allowed source/time/completeness condition; verify the actual consumer output.","reject_if":"Control is only described or consumer does not produce the source-consistent behavior."},
+    {"id":"f2-invalid-control","assertion":"Run one controlled invalid input/output that activates a frozen time, source, or completeness boundary; verify actual rejection or exclusion behavior.","reject_if":"Control is only static, fails to activate the selected condition, or consumer silently accepts a violating complete vector."},
+    {"id":"f2-note-consistency","assertion":"Compare machine results with the Chinese note and verify units, decision origins, policy, constraints, and limitations agree.","reject_if":"Any material difference or unsupported interpretation."}
+  ],
+  "f3": {
+    "five_source_time_assertion_classes": [
+      "original forecast origin and forecast availability",
+      "decision-origin label availability",
+      "selected label revision and declared version policy",
+      "full vector completeness and duplicate retransmission handling",
+      "residual definition, units, and source lineage"
+    ],
+    "assertion":"For each class, cite the raw source, inspect the frozen artifact and actual check, state the verdict and limit; freeze artifact identities and retain complete terminal call records.",
+    "reject_if":"Any class lacks raw-source binding or performed check; call records omit a terminal state; producer self-check is presented as independent acceptance; actual provider/model/tokens/cost are guessed instead of recorded as null when unmeasured."
+  },
+  "policy_allowance": ["visible-latest", "fixed-evaluation-mature"],
+  "vector_count_rule": "No fixed minimum or maximum vector count beyond the declared lawful policy and source completeness rules.",
+  "model_telemetry": {"requested_configuration":"Luna/high", "actual_provider":null, "actual_model":null, "tokens":null, "cost":null},
+  "control_design_pending_actual_interface": {
+    "lawful": "Use an allowed complete source vector or exact duplicate retransmission fixture, preserving version and arrival lineage; consumer must remain source-consistent and avoid counting a retransmission twice.",
+    "invalid": "Use an isolated test fixture with a coordinate's available_at shifted past the selected decision origin and a fixture-specific integrity lock; consumer must reject it or exclude the vector as incomplete. Never modify frozen inputs or production artifacts."
+  }
+}
