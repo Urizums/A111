@@ -101,6 +101,7 @@ def grade(case_root: Path, submission: Path) -> dict:
     errors=[]
     warnings=[]
     identity=oracle.get("source_identity")
+    source_identity_ok=identity is not None
     if identity is None:
         # Older generated cases remain readable, but source binding is unknown.
         warnings.append("legacy oracle lacks source binding; verify public inputs externally")
@@ -109,8 +110,10 @@ def grade(case_root: Path, submission: Path) -> dict:
             try:
                 observed=hashlib.sha256((case_root / "producer" / name).read_bytes()).hexdigest()
                 if observed != identity[name]:
+                    source_identity_ok=False
                     errors.append(f"public case material changed after generation: {name}")
             except (OSError, KeyError, TypeError) as exc:
+                source_identity_ok=False
                 errors.append(f"cannot verify source identity for {name}: {exc}")
     required={"answer.json"} if kind=="extract" else {"proposals.csv","recommendation.json"}
     actual={p.name for p in submission.iterdir() if p.is_file()} if submission.is_dir() else set()
@@ -166,7 +169,7 @@ def grade(case_root: Path, submission: Path) -> dict:
                 errors.append(f"invalid recommendation.json: {e}")
     return {"schema":"forge-r24-check/1","kind":kind,"passed":not errors,
             "errors":errors,"warnings":warnings,
-            "source_identity_checked": identity is not None and not any("source identity" in e or "public case material changed" in e for e in errors),
+            "source_identity_checked": source_identity_ok,
             "scope":"artifact correctness against frozen oracle only; not independence, efficiency, or agent capability"}
 
 
@@ -195,6 +198,7 @@ def selftest() -> dict:
         original_input=input_file.read_bytes()
         input_file.write_bytes(original_input+b" ")
         record("tampered public input rejected",not grade(c,sub)["passed"])
+        record("tampered public input loses source binding",not grade(c,sub)["source_identity_checked"])
         input_file.write_bytes(original_input)
         task_file=c/"producer"/"task.md"
         original_task=task_file.read_bytes()
@@ -207,6 +211,7 @@ def selftest() -> dict:
         record("extra process artifact warned but not failed",extra["passed"] and bool(extra["warnings"]))
         write_json(sub/"answer.json",{"city":"wrong","deadline":"bad"})
         record("incorrect extraction rejected",not grade(c,sub)["passed"])
+        record("wrong artifact does not erase intact source binding",grade(c,sub)["source_identity_checked"])
         (sub/"answer.json").write_text('{"city":"wrong","city":"right","deadline":"bad"}',encoding="utf-8")
         record("duplicate JSON keys rejected",not grade(c,sub)["passed"])
         d=root/"both"; make_case("two_methods",22,d)
@@ -231,6 +236,14 @@ def selftest() -> dict:
         _write_valid(d,root/"tmp_valid")
         write_json(root/"tmp_valid"/"recommendation.json",{"method":"invalid"})
         record("wrong objective recommendation rejected",not grade(d,root/"tmp_valid")["passed"])
+        legacy=root/"legacy"
+        make_case("extract",31,legacy)
+        legacy_oracle=read_json(legacy/"private"/"expected.json")
+        legacy_oracle.pop("source_identity")
+        write_json(legacy/"private"/"expected.json",legacy_oracle)
+        _write_valid(legacy,root/"legacy_sub")
+        legacy_result=grade(legacy,root/"legacy_sub")
+        record("legacy unbound cases are warned and not source-verified",legacy_result["passed"] and not legacy_result["source_identity_checked"] and bool(legacy_result["warnings"]))
         try:make_case("extract",11,c);record("cannot overwrite frozen case",False)
         except FileExistsError:record("cannot overwrite frozen case",True)
     return {"schema":"forge-r24-selftest/1","passed":all(x["passed"] for x in checks),"checks":checks,
