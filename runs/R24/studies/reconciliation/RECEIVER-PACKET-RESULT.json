@@ -1,0 +1,31 @@
+{
+  "schema": "forge-r24-receiver-packet-study/1",
+  "date": "2026-10-10",
+  "code_blobs": {
+    "receiver_packet.py": "0abf2370fcf6f6f1b4b38823883f104191e49878",
+    "test_receiver_packet.py": "502390e63b96e8306d529bf031ade76b275d4228",
+    "native_flow_smoke.py": "141eeeb8d29bc8b7b207d9a400d704389b0c0ef6",
+    "test_native_flow_integration.py": "ceee62754458b17ac153ba6e883aee0bb1a38f68"
+  },
+  "local": {
+    "native_unittest_passed": 6,
+    "packet_unittest_passed": 7,
+    "total": 13,
+    "packet_source_and_result_files": 8,
+    "sample_seed": 323992,
+    "source_and_output_cli_checks": "pass",
+    "zip_utf8_and_extraction_check": "pass",
+    "numeric_grade": "pass",
+    "native_flow_smoke": "pass",
+    "native_nodes_advanced": 2,
+    "independent_receiver": "blocked",
+    "business_acceptance": false
+  },
+  "scope": "Author-local deterministic test and file transfer boundary; not an Agent or independent reviewer result",
+  "caveats": [
+    "No host-level context isolation; file allowlist is not permission boundary",
+    "Hashes are not authenticated externally",
+    "In-band text contamination not automatically detected",
+    "Full repository CI has not been observed for this new commit"
+  ]
+}

@@ -25,6 +25,7 @@ def run(repo: Path) -> dict:
     sys.path.insert(0,str(study))
     from flow_builder import make_flow, verify_public_source
     from rehearsal import generate, grade
+    from receiver_packet import build as make_receiver_packet, verify as verify_receiver_packet
     with tempfile.TemporaryDirectory(prefix='forge-r24-ir-') as tmp:
         root=Path(tmp);case=root/'study'
         generate(7211,case)
@@ -87,8 +88,17 @@ def run(repo: Path) -> dict:
             return {'status':'fail','where':'source changed during review'}
         if not check['data_artifacts_passed'] or check['overall_accepted']:
             return {'status':'fail','where':'data gate or handoff overclaim','observed':check}
+        # Transfer only required originals and actual deliverables. Review is still blocked.
+        receiver_packet = root / 'receiver_packet'
+        packet_created = make_receiver_packet(public, submitted, receiver_packet,
+                                               inputs['source_bundle'])
+        packet_check = verify_receiver_packet(receiver_packet)
+        if not packet_created['passed'] or not packet_check['passed']:
+            return {'status':'fail','where':'receiver packet integrity','observed':packet_check}
         state=flowctl.advance(spec,state,{'invocation_id':issued['invocation_id'],'outcome':'ok',
-                             'artifacts':{'audit':{'data_artifacts_passed':True,'workflow_usability':'unverified'}},
+                             'artifacts':{'audit':{'data_artifacts_passed':True,'workflow_usability':'unverified',
+                                                    'receiver_packet':str(receiver_packet),
+                                                    'packet_integrity_passed':True}},
                              'evidence':['Recomputed against private deterministic oracle for researcher only']})
         after=flowctl.pending(spec,state)
         if after['status']!='blocked' or 'receiver' not in after.get('reason',''):
@@ -98,6 +108,7 @@ def run(repo: Path) -> dict:
                 'pending_receiver':'blocked', 'terminal_business_acceptance':False,
                 'wrong_invocation_rejected':True, 'duplicate_invocation_rejected':True,
                 'separate_public_source_producer':True, 'source_guard_observed':True,
+                'sanitized_receiver_packet_verified': True, 'receiver_files': packet_check['files_checked'],
                 'limitation':'Local public-source-only author producer and researcher grader; no independent Agent or real receiver' }
 
 

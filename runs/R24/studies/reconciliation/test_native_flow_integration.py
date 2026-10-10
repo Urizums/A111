@@ -52,6 +52,8 @@ class NativeFlowIntegration(unittest.TestCase):
         self.assertEqual(verdict['locally_replayed_nodes'], 2)
         self.assertEqual(verdict['pending_receiver'], 'blocked')
         self.assertFalse(verdict['terminal_business_acceptance'])
+        self.assertTrue(verdict['sanitized_receiver_packet_verified'])
+        self.assertEqual(verdict['receiver_files'], 8)
 
     def test_real_cli_validate_and_compile(self):
         source = self.root / 'flow.json'
