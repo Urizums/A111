@@ -1,5 +1,19 @@
 # C13 / C14-lean：从静态研究进入实际对照的入口
 
+## 当前执行入口：V5 来源身份检查（覆盖下文旧版命令）
+
+正式 `prepare` 现在要求同时提供已审计的真实候选文件清单及**从可信外部取得**的清单 Git Blob SHA，且在创建试验目录前核对双方所有候选 Markdown 的实际字节。见 [必要修复与测试回执](TRUSTED-CANDIDATE-PREFLIGHT.md)。
+
+```bash
+python runs/R24/studies/paired_experiment.py prepare --repo . --kind extract \\
+  --seed <FRESH_SEED> --out <NEW_TRIAL_DIRECTORY> \\
+  --source-catalog runs/R24/studies/REAL-CANDIDATE-SOURCE-CATALOG.json \\
+  --trusted-catalog-git-blob c8a6b611056a6e9ff68c6de8f91095b9ddcdf5b0
+```
+
+需要 `reconcile` 时替换 `--kind` 并使用另一个未公开的新种子。格式升级为 `forge-r24-paired-trial/4`，拒绝未记录可信源码清单的旧配对格式。**已验证 38 项内部自测与 7 项 CLI 正反例；真实 C13/C14-lean 全文件目录准备与独立 Agent 行为比较仍未运行**，无版本胜者。
+
+
 这个小工具负责为两个执行者准备**相同的原始任务和各自版本的 Skill**，把原件、候选身份和私有评分材料冻结下来，并在交付后检查结果。它本身不是 Agent、调度器或盲审环境，不应进入便携式 Skill。
 
 R24 前几轮已验证对账程序能生成、执行和被另一条代码路径复算，却没有回答最重要的问题：**换成没有预先答案的新 Agent，它会因为采用 C13 或 C14-lean 而做出不同的设计和交付吗？** 因此，这一轮不再增加对账规则，只为真正的对照准备一个不容易被事后改写的入口。

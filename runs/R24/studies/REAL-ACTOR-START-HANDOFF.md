@@ -4,6 +4,8 @@
 
 独立重跑的 V3 程序 `paired_experiment.py selftest` 在本地为 **27/27 通过**，这属于工具自测。当前容器无法直接检出私有 A111 完整仓库，并且这里没有调用真正独立 Agent 的宿主接口，**所以没有在完整真实候选树上运行 Python `prepare`，也没有真实 C13 / C14-lean 能力对照、版本赢家或独立接收结论**。切勿用来源核对、绿色 CI、程序样例充当该结论。
 
+**V5 入口更新**：正式 `prepare` 的参数已增加 `--source-catalog runs/R24/studies/REAL-CANDIDATE-SOURCE-CATALOG.json` 和 `--trusted-catalog-git-blob c8a6b611056a6e9ff68c6de8f91095b9ddcdf5b0`。在任一试验目录产生前，CLI 会核对外部可信清单及 C13/C14-lean 原件的所有 Markdown Git Blob；不匹配则失败。优先阅读 [V5 具体操作](TRUSTED-CANDIDATE-PREFLIGHT.md)，以下早期示意命令若缺上述参数已经过时。
+
 ## 具备真实隔离能力的宿主，按此启动
 
 1. 在有权限的完整 A111 checkout 中，检出上面的精确提交。对照 [候选来源清单](REAL-CANDIDATE-SOURCE-CATALOG.json)，用 `git hash-object` 验证 18 份 Skill 源码；若字节不一致，停止，另存新的研究版本，不能静默替换。

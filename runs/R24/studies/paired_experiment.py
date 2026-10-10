@@ -10,6 +10,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import re
 import random
 import subprocess
 import shutil
@@ -87,6 +88,60 @@ def copy_skill(src: Path, destination: Path) -> dict:
     return copied
 
 
+def git_blob_identity(data: bytes) -> str:
+    """Match `git hash-object` without needing Git or network access."""
+    header = b"blob " + str(len(data)).encode("ascii") + b"\0"
+    return hashlib.sha1(header + data).hexdigest()
+
+
+def verify_source_catalog(repo: Path, catalog_path: Path,
+                          trusted_catalog_blob: str) -> dict:
+    """Fail before trial creation unless 18 real Skill blobs match a pinned catalog.
+
+    The expected catalog blob must come from a trusted location OUTSIDE
+    the participant and the mutable trial workspace.
+    """
+    if not re.fullmatch(r"[0-9a-f]{40}", trusted_catalog_blob):
+        raise ValueError("trusted catalog Git Blob identity must be 40 hex characters")
+    data = safe_bytes(catalog_path, catalog_path.parent)
+    if git_blob_identity(data) != trusted_catalog_blob:
+        raise ValueError("candidate catalog differs from externally trusted Git Blob")
+    catalog = read(catalog_path)
+    if catalog.get("schema") != "forge-r24-real-candidate-source-catalog/1":
+        raise ValueError("unknown or invalid candidate source catalog")
+    if catalog.get("source_repo") != "Urizums/A111":
+        raise ValueError("wrong candidate source repository")
+    if not re.fullmatch(r"[0-9a-f]{40}", str(catalog.get("source_commit", ""))):
+        raise ValueError("source commit is not a pinned Git SHA")
+    variants = catalog.get("candidates")
+    if not isinstance(variants, dict) or set(variants) != set(SKILLS):
+        raise ValueError("candidate catalog missing or unexpected variants")
+    compared = 0
+    for variant, dirname in SKILLS.items():
+        entry = variants[variant]
+        if not isinstance(entry, dict) or entry.get("root") != dirname:
+            raise ValueError("candidate root differs from source catalog: " + variant)
+        expected = entry.get("file_blobs")
+        if not isinstance(expected, dict) or not expected or not all(
+            isinstance(k, str) and isinstance(v, str) and re.fullmatch(r"[0-9a-f]{40}", v)
+            for k, v in expected.items()
+        ):
+            raise ValueError("invalid source file blob map: " + variant)
+        source = repo / dirname
+        files = md_files(source)
+        found = {f.relative_to(source).as_posix(): f for f in files}
+        if set(found) != set(expected) or entry.get("file_count") != len(found):
+            raise ValueError("candidate file coverage differs from audited source: " + variant)
+        for rel, file in found.items():
+            if git_blob_identity(safe_bytes(file, source)) != expected[rel]:
+                raise ValueError("candidate source blob mismatch: " + variant + "/" + rel)
+        compared += len(found)
+    return {"catalog_git_blob": trusted_catalog_blob,
+            "catalog_source_commit": catalog["source_commit"],
+            "source_files_checked": compared,
+            "source_code_checks": "actual Git Blob bytes; host permissions and independent reading not attested"}
+
+
 def make_simple(seed: int, case: Path) -> None:
     rng = random.Random(seed)
     cities = ["杭州", "苏州", "武汉", "厦门", "青岛", "成都"]
@@ -109,7 +164,7 @@ def make_reconcile(seed: int, case: Path) -> None:
     generate(seed, case)
 
 
-def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
+def prepare(repo: Path, kind: str, seed: int, out: Path, source_verification: dict | None = None) -> dict:
     if out.exists() or out.is_symlink():
         raise FileExistsError("trial root already exists, cannot overwrite")
     if kind not in ("extract", "reconcile"):
@@ -162,8 +217,9 @@ def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
         arms[arm] = {"variant": version, "skill_sha256": skills,
                      "start_sha256": sha(dst / "START_HERE.md")}
     manifest = {
-        "schema": "forge-r24-paired-trial/3", "status": "prepared_not_executed",
+        "schema": "forge-r24-paired-trial/4", "status": "prepared_not_executed",
         "protocol": "skill_entry_read_required/1",
+        "source_verification": source_verification,
         "task_kind": kind, "seed": seed, "source_sha256": source_hashes,
         "oracle_sha256": oracle_hashes,
         "variant_source_sha256": variant_sources,
@@ -175,6 +231,7 @@ def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
     return {"status": "prepared_not_executed", "arms": list(arms), "kind": kind,
             "freeze_sha256_for_external_trusted_log": sha(freeze_path),
             "private_oracle": "reviewer_private must never be mounted in a worker context",
+            "source_catalog_verified": source_verification is not None,
             "worker_input_dirs": [str(out / "participants" / arm) for arm in ARMS]}
 
 
@@ -241,12 +298,18 @@ def grade(out: Path, receipt: Path, trusted_freeze_sha256: str | None = None) ->
     if trusted_freeze_sha256 is not None and sha(out / "reviewer_private" / "freeze.json") != trusted_freeze_sha256:
         raise ValueError("frozen study manifest differs from externally retained digest")
     freeze = read(out / "reviewer_private" / "freeze.json")
-    if freeze.get("schema") != "forge-r24-paired-trial/3":
-        raise ValueError("legacy or unknown trial protocol; v1 attribution and v2 optional Skill exposure are not comparable")
+    if freeze.get("schema") != "forge-r24-paired-trial/4":
+        raise ValueError("unpinned or unknown trial protocol; previous formats cannot attest real candidate source identity")
     if freeze.get("protocol") != "skill_entry_read_required/1":
         raise ValueError("required Skill exposure protocol is not frozen")
     if freeze.get("status") != "prepared_not_executed":
         raise ValueError("unrecognized frozen trial status")
+    evidence = freeze.get("source_verification")
+    if not isinstance(evidence, dict) or not re.fullmatch(r"[0-9a-f]{40}",
+                            str(evidence.get("catalog_git_blob", ""))):
+        raise ValueError("paired trial missing externally attested source catalog")
+    if not isinstance(evidence.get("source_files_checked"), int) or evidence["source_files_checked"] < 2:
+        raise ValueError("source catalog evidence is incomplete")
     # Check attribution independently of the participant's artifact contents.
     variant_sources = freeze.get("variant_source_sha256")
     snapshots = freeze.get("arm_snapshots")
@@ -307,13 +370,14 @@ def grade(out: Path, receipt: Path, trusted_freeze_sha256: str | None = None) ->
                         "nonrequired_artifacts": extra,
                         "independent_actor_verified": False}
     artifact_checks_passed = all(item["artifact_passed"] for item in results.values())
-    response = {"schema": "forge-r24-paired-grade/3", "trial_schema": freeze["schema"], "task_kind": kind,
+    response = {"schema": "forge-r24-paired-grade/4", "trial_schema": freeze["schema"], "task_kind": kind,
                 "artifact_checks_passed": artifact_checks_passed,
                 "cli_success_requires_external_freeze_and_all_artifacts": True,
                 "cases_scored": len(results), "arms": results,
                 "comparison_result": "not_established_no_independent_actor_receipts",
                 "independent_review": "not_run", "winner": None,
                 "skill_read_observed_in_independent_host_trace": False,
+                "candidate_source_catalog_attested": True,
                 "externally_frozen_manifest_checked": trusted_freeze_sha256 is not None,
                 "note": "Self-scores do not establish C13/C14-lean causal effects, cost or semantic handoff."}
     dump(receipt, response)
@@ -332,8 +396,21 @@ def selftest() -> dict:
             (p / "references").mkdir(parents=True)
             (p / "SKILL.md").write_text(f"---\nname: forge-agent-flow\ndescription: {name} trial\n---\n", encoding="utf-8")
             (p / "references" / "method.md").write_text("# Method\n", encoding="utf-8")
+        catalog_path = root / "source-catalog.json"
+        fixture_catalog = {"schema": "forge-r24-real-candidate-source-catalog/1",
+                           "source_repo": "Urizums/A111", "source_commit": "0" * 40,
+                           "candidates": {
+                               version: {"root": dirname, "file_count": len(md_files(fake_repo / dirname)),
+                                         "file_blobs": {str(f.relative_to(fake_repo / dirname)).replace("\\", "/"):
+                                                        git_blob_identity(f.read_bytes()) for f in md_files(fake_repo / dirname)}}
+                               for version, dirname in SKILLS.items()}}
+        dump(catalog_path, fixture_catalog)
+        catalog_git_sha = git_blob_identity(catalog_path.read_bytes())
+        verified_sources = verify_source_catalog(fake_repo, catalog_path, catalog_git_sha)
+        record("fixture candidate source catalog checked by exact Git Blob bytes",
+               verified_sources["source_files_checked"] == 4)
         trial = root / "trial"
-        prepare(fake_repo, "extract", 207, trial)
+        prepare(fake_repo, "extract", 207, trial, verified_sources)
         freeze = read(trial / "reviewer_private/freeze.json")
         record("both candidates copied with distinct source identities", len(freeze["arm_snapshots"]) == 2 and
                {v["variant"] for v in freeze["arm_snapshots"].values()} == set(SKILLS))
@@ -344,7 +421,7 @@ def selftest() -> dict:
         direct_trials = 0
         for seed in range(20):
             candidate = root / ("permutation-" + str(seed))
-            prepare(fake_repo, "extract", seed, candidate)
+            prepare(fake_repo, "extract", seed, candidate, verified_sources)
             frozen = read(candidate / "reviewer_private/freeze.json")
             assignment = {arm: frozen["arm_snapshots"][arm]["variant"] for arm in ARMS}
             if assignment["arm_a"] != "C13":
@@ -358,7 +435,7 @@ def selftest() -> dict:
         record("both randomized assignments exercised and actual Skill contents match declared variant",
                reversed_trials > 0 and direct_trials > 0)
         record("new frozen trial format records actual source-by-variant identity",
-               freeze.get("schema") == "forge-r24-paired-trial/3" and
+               freeze.get("schema") == "forge-r24-paired-trial/4" and
                freeze["arm_snapshots"]["arm_a"]["skill_sha256"] ==
                freeze["variant_source_sha256"][freeze["arm_snapshots"]["arm_a"]["variant"]])
         record("required entry exposure protocol frozen",
@@ -367,6 +444,31 @@ def selftest() -> dict:
                "执行前请完整阅读 skill/SKILL.md" in (trial / "participants" / arm / "START_HERE.md").read_text(encoding="utf-8")
                and "references/ 文件按本任务实际需要选读" in (trial / "participants" / arm / "START_HERE.md").read_text(encoding="utf-8")
                for arm in ARMS))
+        record("frozen experiment captures source catalog reference",
+               freeze.get("source_verification") == verified_sources)
+        expected_skill = fake_repo / SKILLS["C13"] / "SKILL.md"
+        old_skill = expected_skill.read_bytes()
+        expected_skill.write_bytes(old_skill + b" ")
+        try:
+            verify_source_catalog(fake_repo, catalog_path, catalog_git_sha)
+            record("modified candidate source is rejected before new trial", False)
+        except ValueError:
+            record("modified candidate source is rejected before new trial", True)
+        expected_skill.write_bytes(old_skill)
+        try:
+            verify_source_catalog(fake_repo, catalog_path, "f" * 40)
+            record("untrusted catalog is refused", False)
+        except ValueError:
+            record("untrusted catalog is refused", True)
+        extra = fake_repo / SKILLS["C14-lean"] / "references/unexpected.md"
+        extra.write_text("# Extra", encoding="utf-8")
+        try:
+            verify_source_catalog(fake_repo, catalog_path, catalog_git_sha)
+            record("extra candidate file is refused before trial", False)
+        except ValueError:
+            record("extra candidate file is refused before trial", True)
+        extra.unlink()
+        record("restored candidate sources re-attest", verify_source_catalog(fake_repo, catalog_path, catalog_git_sha) == verified_sources)
         record("private oracle hash frozen", bool(freeze["oracle_sha256"]))
         digest = sha(trial / "reviewer_private/freeze.json")
         record("external freeze token available", len(digest) == 64)
@@ -406,7 +508,7 @@ def selftest() -> dict:
             record("mislabelled arm cannot pass scoring", True)
         (trial / "reviewer_private/freeze.json").write_bytes(raw)
         # Explicitly refuse v1's swapped attribution and v2's optional Skill entry.
-        for old_schema in ("forge-r24-paired-trial/1", "forge-r24-paired-trial/2"):
+        for old_schema in ("forge-r24-paired-trial/1", "forge-r24-paired-trial/2", "forge-r24-paired-trial/3"):
             old_format = read(trial / "reviewer_private/freeze.json")
             old_format["schema"] = old_schema
             dump(trial / "reviewer_private/freeze.json", old_format)
@@ -455,12 +557,12 @@ def selftest() -> dict:
         except ValueError:
             record("altered private scoring truth blocks grading", True)
         try:
-            prepare(fake_repo, "extract", 207, trial)
+            prepare(fake_repo, "extract", 207, trial, verified_sources)
             record("trial root cannot overwrite", False)
         except FileExistsError:
             record("trial root cannot overwrite", True)
         second = root / "secondtrial"
-        prepare(fake_repo, "reconcile", 671, second)
+        prepare(fake_repo, "reconcile", 671, second, verified_sources)
         record("reconciliation task includes all real source documents", len(list((second / "participants/arm_a/task").iterdir())) == 5)
         r = grade(second, root / "fourth.json")
         record("missing submissions do not become passes", all(not x["artifact_passed"] for x in r["arms"].values()))
@@ -518,6 +620,10 @@ def main(argv=None) -> int:
     a.add_argument("--kind", choices=["extract", "reconcile"], required=True)
     a.add_argument("--seed", type=int, required=True)
     a.add_argument("--out", type=Path, required=True)
+    a.add_argument("--source-catalog", type=Path, required=True,
+                   help="trusted real candidate file identity catalog")
+    a.add_argument("--trusted-catalog-git-blob", required=True,
+                   help="Git Blob SHA of catalog from external trusted source")
     g = actions.add_parser("grade")
     g.add_argument("--trial", type=Path, required=True)
     g.add_argument("--receipt", type=Path, required=True)
@@ -525,7 +631,14 @@ def main(argv=None) -> int:
     actions.add_parser("selftest")
     args = p.parse_args(argv)
     try:
-        result = selftest() if args.cmd == "selftest" else prepare(args.repo, args.kind, args.seed, args.out) if args.cmd == "prepare" else grade(args.trial, args.receipt, args.trusted_freeze_sha256)
+        if args.cmd == "selftest":
+            result = selftest()
+        elif args.cmd == "prepare":
+            # Explicit source attestation must finish before any trial path exists.
+            evidence = verify_source_catalog(args.repo, args.source_catalog, args.trusted_catalog_git_blob)
+            result = prepare(args.repo, args.kind, args.seed, args.out, evidence)
+        else:
+            result = grade(args.trial, args.receipt, args.trusted_freeze_sha256)
         print(json.dumps(result, ensure_ascii=False, indent=2))
         # Never return process success when either arm has missing/incorrect
         # artifacts or when the freeze manifest lacks a trusted external seal.
