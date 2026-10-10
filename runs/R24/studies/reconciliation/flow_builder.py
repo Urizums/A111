@@ -35,8 +35,7 @@ def _node(name: str, kind: str, reads: list[str], writes: list[str],
             'emits': {'ok': writes, 'error': [], 'blocked': []}}
 
 
-def make_flow(folder: Path, workspace_receipt: str | None = None,
-              receiver_receipt: str | None = None) -> tuple[dict, dict]:
+def make_flow(folder: Path, workspace_receipt: str | None = None) -> tuple[dict, dict]:
     folder = folder.resolve(strict=True)
     for name in SOURCE_FILES:
         if not (folder / name).is_file():
@@ -86,7 +85,7 @@ def make_flow(folder: Path, workspace_receipt: str | None = None,
                             'No new external transfers or payment mutations are authorized.'],
             'inputs': inputs, 'artifacts': arts, 'outputs': ['delivery'],
             'capabilities': {'workspace': _cap('local_file_execution', 'local_write', workspace_receipt),
-                             'receiver': _cap('independent_receiving_context', 'read', receiver_receipt)},
+                             'receiver': _cap('independent_receiving_context', 'read', None)},
             'budgets': {'max_steps': 3}, 'entry': 'produce', 'nodes': nodes}
     start_inputs = {'request': brief + '\n\n' + consumer, 'source_bundle': context}
     return spec, start_inputs
@@ -138,8 +137,7 @@ def selftest() -> dict:
         check('every required stage yields real declared artifacts',
               [n['writes'] for n in spec['nodes']] == [['tables'], ['audit'], ['delivery']])
         check('flow does not claim execution on construction', 'status' not in spec and 'trace' not in spec)
-        cap_spec, _ = make_flow(source, workspace_receipt='Actual local Python 3.13 run: case generation',
-                              receiver_receipt=None)
+        cap_spec, _ = make_flow(source, workspace_receipt='Actual local Python 3.13 run: case generation')
         check('workspace can be attested without inventing independent actor',
               cap_spec['capabilities']['workspace']['available'] and not cap_spec['capabilities']['receiver']['available'])
         original=(source/'payments.json').read_bytes()
@@ -161,7 +159,6 @@ def main(argv=None):
     g=sub.add_parser('build');g.add_argument('--public',type=Path,required=True)
     g.add_argument('--out',type=Path,required=True)
     g.add_argument('--workspace-receipt', default=None)
-    g.add_argument('--receiver-receipt',default=None)
     sub.add_parser('selftest')
     args=p.parse_args(argv)
     try:
@@ -170,7 +167,7 @@ def main(argv=None):
         else:
             if args.out.exists():
                 raise FileExistsError('Output dir already exists; preserve existing version')
-            flow, inp=make_flow(args.public,args.workspace_receipt,args.receiver_receipt)
+            flow, inp=make_flow(args.public,args.workspace_receipt)
             result=inspect(flow,inp)
             if result['passed']:
                 args.out.mkdir(parents=True)
