@@ -29,3 +29,17 @@ python runs/R24/studies/reconciliation/native_flow_smoke.py
 进一步仍需真实新执行者使用 C13 与 C14-lean 完成未见任务，并由确实隔离的另一接收者重做工作。没有这些结果，不能判定哪一版 Skill 更好。
 
 脚本本地受测与 Github Git blob 已按字节身份核对：`flow_builder.py` 为 `ad78e96776c6b3148d5cad9f3c63ee4def6da135`，`native_flow_smoke.py` 为 `29c675768c2894a33496a0c98b82daad5c4039b4`。本次审查详情见 `FLOW-IR-LOCAL-RESULT.json`。
+
+## 2026-10-10：源材料守卫与分离的公开输入生产路径
+
+本轮发现并修复了一个真正会影响交付的缝隙：把 SHA-256 写进 `source_bundle`，**不代表** `flowctl` 会自动读取磁盘并核对文件仍然一致。旧版 `flow_builder.py` 冻结了哈希，但旧 `native_flow_smoke.py` 没有在调度前后核对这一事实。
+
+新增 `verify_public_source()`，通过预先冻结的五个文件身份检查实际字节、缺失/异常文件、超大文件与符号链接；研究适配器在创建实例时核验一次，原生集成探针计划在分派前、生产后及评估时分别调用。它只是本地瞬时一致性检查，**不是**宿主权限隔离、持久锁或平台安全承诺。
+
+另增 `public_producer.py`：只用 `producer/` 公开文件独立计算并输出两份 CSV 和方法说明；它不导入 `rehearsal.compute`，也不读取 `private/oracle.json`。这避免了生产与评分共用同一函数导致的虚假可信度，但仍由同一研发者编写，因此不属于独立审查。
+
+本地实际结果：`flow_builder.py selftest` **12/12** 通过；公开源读取的生产程序在种子 100–159 的 **60/60** 个实例中均被研究评分器接受；新增的 E2E 负例显示修改公开付款文件后守卫拒绝、恢复原始字节后通过、真实生产结果被接收、篡改供应商输出后又被拒绝。证据见 `FLOW-GUARD-V2-RESULT.json`。
+
+受测且已回读的 Git Blob：`flow_builder.py` = `b94822195df8e946088a10c469258c56c7712259`；`public_producer.py` = `691cb6d234e099911580edd4d5b94310ea101dfd`；`native_flow_smoke.py` = `312f9270bd581765d19f198ec0b4977680cce7fa`。之前的九项自测与旧代码身份保留在初次记录中，没有追溯修改历史通过结论。
+
+当前本地没有完整 `flowctl.py` 及其依赖，原生探针仍返回 `blocked`，故**原控制器实际编译及节点推进仍未过门**。GitHub 现有 CI 不自动运行此研究脚本；完整 native gate 需在获得真正的 A111 checkout 后执行。随后才值得在新独立 Agent 上比较 C13/C14-lean 与交接可复用性。

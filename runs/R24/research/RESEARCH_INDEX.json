@@ -144,6 +144,20 @@
     "native_probe_sha": "29c675768c2894a33496a0c98b82daad5c4039b4",
     "selftests": 9,
     "native_integration": "blocked_missing_checkout",
-    "independent_actor": "not_run"
+    "independent_actor": "not_run",
+    "guard_v2": {
+      "source_guard": "local byte check on five frozen public files around handoff",
+      "separate_public_producer": "runs/R24/studies/reconciliation/public_producer.py",
+      "adapter_sha": "b94822195df8e946088a10c469258c56c7712259",
+      "producer_sha": "691cb6d234e099911580edd4d5b94310ea101dfd",
+      "native_probe_sha": "312f9270bd581765d19f198ec0b4977680cce7fa",
+      "author_regressions": {
+        "adapter_selftests": "12/12",
+        "seeded_producer_grader": "60/60",
+        "tamper_and_restore": "pass"
+      },
+      "native_integration": "blocked_not_run",
+      "independent_acceptance": "not_run"
+    }
   }
 }

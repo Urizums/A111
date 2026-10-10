@@ -72,3 +72,11 @@ A third, distinct domain exercise now exists at `runs/R24/studies/reconciliation
 ## R24 research Flow IR bridge — 2026-10-10
 
 The neutral business study now has a research-only `flow_builder.py` that converts public case material into a three-node Flow IR 1.1 instance for the existing `flowctl.py`. Local author selftest 9/9 and generated JSON/metadata checks passed. Workspace and independent acceptor capabilities are unavailable by default; no arbitrary CLI flag can certify an independent receiving context. A second script, `native_flow_smoke.py`, exercises the real repository controller only if its files actually exist; the current local research-copy invocation returned blocked (exit 2) because `flowctl.py` was unavailable. Hence the native integration, new-Agent behavior comparison, and independent receiving gate are **not run**. See `runs/R24/studies/reconciliation/FLOW-IR-BRIDGE.md` and `FLOW-IR-LOCAL-RESULT.json`. Do not expand the portable Skill or falsify the research state because a blocked integration check remains.
+
+## R24 source guard / public-producer correction (2026-10-10)
+
+The prior flow adapter only *stored* SHA-256 identities; it did not check on-disk bytes around consequential execution. This has been corrected using `verify_public_source()` for the research case; the native probe is wired to call it before dispatch, after local public-input-only production, and during grading. A separate `public_producer.py` now computes from raw public inputs without importing the private research calculator.
+
+Author-local evidence: 12/12 adapter fixtures; 60/60 raw-producer seed cases (100–159); and a further direct E2E test that rejected mutated sources and tampered supplier output but accepted byte-identical restoration and the original answer. Verified code blob identities and evidence limits appear in `studies/reconciliation/FLOW-GUARD-V2-RESULT.json`.
+
+**Do not close R24-03:** no full native `flowctl` run and no genuinely separate Agent/receiving actor occurred. The repository checkout is unavailable in the current local environment; GitHub CI does not include the new native smoke script. This is an explicit remaining gate, not an excuse to add further general rules to the portable Skill.
