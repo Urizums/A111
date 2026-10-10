@@ -23,7 +23,7 @@ python runs/R24/evaluation/casebench.py grade --case /tmp/forge_case_both --subm
 
 **边界与缺口**：案例故意小而简单，只能测交付完整性与数值规则，不能证明长期预测、UI、复杂 DAG、工具调用可靠性、信息隔离或 Skill 优越性。独立对照需要真实不同执行上下文、公平的资源条件和冻结的评估者输入。旧的 R23 反例不能作为新的盲样本重新刷成功。后续如需增加其他任务，优先增加新的判别性失败模式，而不是增加固定数量的通用模板。
 
-本脚本当前内置 13 项 deterministic selftest（初版为 8 项），并能用不同种子生成变体；后续行为试验应把 seed、输入/判定 hash 与每次产物版本一起保存。
+本脚本当前内置 16 项 deterministic selftest（初版为 8 项），并能用不同种子生成变体；后续行为试验应把 seed、输入/判定 hash 与每次产物版本一起保存。
 ## Skill 结构维护检查
 
 使用 `python runs/R24/evaluation/skillcheck.py --selftest` 验证检查器的五种正常/错误输入；或 `python runs/R24/evaluation/skillcheck.py runs/R24/candidate/C14-lean/forge-agent-flow` 检查一个实际 Skill 目录。该工具只验证 SKILL.md 的基础元信息、UTF-8 可读性、相对链接是否存在和是否越出 Skill 包；不会要求固定九文件、标题模式、Agent 角色数、表格比例或特殊遣词。
@@ -34,4 +34,10 @@ python runs/R24/evaluation/casebench.py grade --case /tmp/forge_case_both --subm
 
 生成器会在接收端私有预期文件中记下 `producer/input.json` 与 `producer/task.md` 的 SHA-256，评分时逐项比较原始字节；原材料被修改或缺失即不通过。旧版生成的无绑定案例仍可查看，但会给出 `source_identity_checked=false` 和警告，不可当作经过原件核验。JSON 重复键与 CSV 隐藏额外单元格也会拒收。该做法避免评测时无意换题，**并不是宿主级隔离**；如果生产者能够打开私有 oracle，仍不构成盲测。
 
-当前源码 Git blob：`f8bd05ca83e25f69b42100bdac08939768d052d8`。新版本 13 项自测通过，并且实际生成了 seed=987230 的双方法案例，验证全量结果 PASS、缺少 beta 的交付 FAIL（四条缺项）。详见 `CHECKER-V2-RESULT.json`。这些产物是确定性程序自测，不是两个 Agent 的行为比较。
+v2 源码 Git blob：`f8bd05ca83e25f69b42100bdac08939768d052d8`，13 项自测通过，并且实际生成了 seed=987230 的双方法案例，验证全量结果 PASS、缺少 beta 的交付 FAIL（四条缺项）。详见 `CHECKER-V2-RESULT.json`。这些产物是确定性程序自测，不是两个 Agent 的行为比较。
+
+### 当前检查器 v3：分离原件身份与答案正确性
+
+最新 Git blob：`31b992b63e63b57880c646bea8a4565b8f44fb08`。原件身份核验如今是一个明确的布尔结果，不依赖匹配错误文案。即使提交答案错误，只要生成后的公开题目字节仍完整，`source_identity_checked` 仍为 `true`；若题目被改则为 `false`。无 SHA 绑定的旧案例仍可读取，但会警告来源未经绑定核验。
+
+本地执行 16/16 项确定性自测、语法编译，以及新的 seed=778100 提取题验收：合法答案 PASS，含重复 JSON 字段的答案 FAIL，后两者均保留真实原件身份声明。回执见 `CHECKER-V3-RESULT.json`。这是对评测器的验证，不是对 Agent 的正式行为评测。

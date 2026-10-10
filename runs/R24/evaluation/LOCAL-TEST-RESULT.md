@@ -12,3 +12,7 @@
 修订 `casebench.py` 后使用本地 Python 执行 `python -m py_compile`、`selftest`、全新 `two_methods` 用例生成与两个模拟提交验收。13/13 自测通过，完整提交的 `passed=true` 且 `source_identity_checked=true`；只含 alpha 行的提交为 `passed=false`，缺少四条 beta 方法行。题目 seed=987230。脚本的 `git hash-object` 与 GitHub blob 一致，为 `f8bd05ca83e25f69b42100bdac08939768d052d8`。
 
 新增负例覆盖：生成后原始输入字节被改、任务说明字节被改、JSON 重复键、CSV 多出的无名列；原样恢复后正确答案可以通过。旧八项及新五项均通过。**这只是本地 grader 验证，未调用真实 Agent/独立验收者；没有声称候选 Skill 优于 C13。**
+
+## v3 回归与真实 CLI 复跑（2026-10-10）
+
+新实现用 `source_identity_ok` 显式保存原件核验状态，不从自由文本错误消息推断。执行 `python -m py_compile`、`selftest`，16/16 通过；额外生成 seed=778100 的新提取任务，正确答案通过、重复 JSON 键的答案被拒，同时两者都正确保持来源身份标志。旧无绑定案例被标警告且 `source_identity_checked=false`。本地 `git hash-object` 与 GitHub blob 完全一致：`31b992b63e63b57880c646bea8a4565b8f44fb08`。详情 `CHECKER-V3-RESULT.json`，仍无实际新 Agent 参与。

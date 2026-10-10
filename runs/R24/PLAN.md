@@ -60,3 +60,7 @@ A second maintenance-only checker `runs/R24/evaluation/skillcheck.py` was also i
 ## Outcome checker v2 regression (2026-10-10)
 
 The scorer now hashes generated public input/task bytes in the reviewer oracle and refuses grading a modified public case; rejects duplicate JSON keys and malformed overlong CSV rows. V1 unbound cases remain inspectable with a warning and `source_identity_checked=false`, not a verified-source claim. The exact tested/committed script blob is `f8bd05ca83e25f69b42100bdac08939768d052d8`. Local CLI evidence includes 13/13 deterministic selftests, Python compilation, a newly generated case (seed 987230), and a correct vs. selected-only output check. `runs/R24/evaluation/CHECKER-V2-RESULT.json` records the limited observations. This is **not** the pending C13/C14-lean independent agent comparison; R24-03 remains not run.
+
+## Current checker v3, not a new behavior gate
+
+`casebench.py` now reports source integrity independently from answer correctness instead of matching the wording of failure messages. 16/16 local deterministic selftests, Python compilation and a fresh extract CLI/artifact pair passed/rejected as expected. Exact tested/committed blob: `31b992b63e63b57880c646bea8a4565b8f44fb08`. The sealed evaluation obligation is unchanged; R24-03 new-context candidate comparison is **not run**. Older v1/v2 tests and byte identities remain retained as historical evidence.
