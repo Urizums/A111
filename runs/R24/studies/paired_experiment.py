@@ -11,6 +11,7 @@ import argparse
 import hashlib
 import json
 import random
+import subprocess
 import shutil
 import stat
 import sys
@@ -177,6 +178,11 @@ def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
 def check_frozen(out: Path, arm: str, freeze: dict) -> list[str]:
     worker = out / "participants" / arm
     errors = []
+    # The participant root and frozen directories must be real directories,
+    # not symlinks to reviewer-side material or another participant.
+    for directory in (worker, worker / "task", worker / "skill"):
+        if directory.is_symlink() or not directory.is_dir():
+            return ["missing or unsafe frozen input directory: " + directory.name]
     expected_task = freeze["source_sha256"]
     expected_skill = freeze["arm_snapshots"][arm]["skill_sha256"]
     task_files = {f.name for f in (worker / "task").iterdir() if f.is_file()}
@@ -197,6 +203,34 @@ def check_frozen(out: Path, arm: str, freeze: dict) -> list[str]:
             errors.append("frozen file unreadable: " + f.name)
     return errors
 
+
+
+
+def check_submission(sub: Path, required_names: set[str]) -> list[str]:
+    """Reject unsafe output aliases, not ordinary extra reports.
+
+    The host still must hide private inputs; this local guard is not isolation.
+    """
+    if sub.is_symlink() or not sub.is_dir():
+        return ["missing or invalid submission directory"]
+    errors = []
+    # A symlink anywhere under submission is unacceptable, even if optional.
+    # This includes symlinked directories pointing outside the participant.
+    for item in sub.rglob("*"):
+        if item.is_symlink():
+            errors.append("submission contains symbolic link: " + item.relative_to(sub).as_posix())
+        elif item.is_file():
+            try:
+                info = item.stat()
+                if not stat.S_ISREG(info.st_mode) or info.st_size > MAX_FILE:
+                    errors.append("submission has oversized/nonregular file: " + item.relative_to(sub).as_posix())
+            except OSError:
+                errors.append("submission file unreadable: " + item.relative_to(sub).as_posix())
+    for name in required_names:
+        item = sub / name
+        if item.is_symlink() or not item.is_file():
+            errors.append("missing or unsafe required output: " + name)
+    return errors
 
 def grade(out: Path, receipt: Path, trusted_freeze_sha256: str | None = None) -> dict:
     if receipt.exists() or receipt.is_symlink():
@@ -232,14 +266,14 @@ def grade(out: Path, receipt: Path, trusted_freeze_sha256: str | None = None) ->
         if sha(private_case / name) != digest:
             raise ValueError("reviewer-side private oracle modified since freeze: " + name)
     results = {}
+    expected_names = {"answer.json"} if kind == "extract" else {"ledger.csv", "suppliers.csv", "workflow.md"}
     for arm in ARMS:
         worker = out / "participants" / arm
         problems = check_frozen(out, arm, freeze)
         sub = worker / "submission"
-        if not sub.is_dir() or sub.is_symlink():
-            problems.append("missing or invalid submission folder")
+        submission_issues = check_submission(sub, expected_names)
         score = {"passed": False, "details": None}
-        if not problems:
+        if not problems and not submission_issues:
             if kind == "extract":
                 try:
                     actual = read(sub / "answer.json")
@@ -256,18 +290,21 @@ def grade(out: Path, receipt: Path, trusted_freeze_sha256: str | None = None) ->
                          "data_passed": check["data_artifacts_passed"],
                          "workflow_semantic_usability": check["workflow_usability"],
                          "errors": check["errors"]}
-        if problems:
+        if problems or submission_issues:
             score["passed"] = False
-        expected_names = {"answer.json"} if kind == "extract" else {"ledger.csv", "suppliers.csv", "workflow.md"}
-        if sub.is_dir():
+        if sub.is_dir() and not sub.is_symlink():
             extra = sorted(p.name for p in sub.iterdir() if p.is_file() and p.name not in expected_names)
         else:
             extra = []
         results[arm] = {"variant": freeze["arm_snapshots"][arm]["variant"],
                         "artifact_passed": score["passed"], "score_details": score,
-                        "frozen_input_issues": problems, "nonrequired_artifacts": extra,
+                        "frozen_input_issues": problems, "submission_issues": submission_issues,
+                        "nonrequired_artifacts": extra,
                         "independent_actor_verified": False}
-    response = {"schema": "forge-r24-paired-grade/1", "task_kind": kind,
+    artifact_checks_passed = all(item["artifact_passed"] for item in results.values())
+    response = {"schema": "forge-r24-paired-grade/2", "task_kind": kind,
+                "artifact_checks_passed": artifact_checks_passed,
+                "cli_success_requires_external_freeze_and_all_artifacts": True,
                 "cases_scored": len(results), "arms": results,
                 "comparison_result": "not_established_no_independent_actor_receipts",
                 "independent_review": "not_run", "winner": None,
@@ -332,6 +369,16 @@ def selftest() -> dict:
             dump(output / "answer.json", {"city": source["city"], "deadline": source["deadline"]})
         r = grade(trial, root / "first.json", digest)
         record("equal correct results accept both without naming a winner", all(v["artifact_passed"] for v in r["arms"].values()) and r["winner"] is None and r["externally_frozen_manifest_checked"])
+        # A symlink to the private answer used to pass: this must now be refused.
+        answer = trial / "participants/arm_a/submission/answer.json"
+        original_answer = answer.read_bytes()
+        answer.unlink()
+        answer.symlink_to(trial / "reviewer_private/case/private/expected.json")
+        alias = grade(trial, root / "alias.json", digest)
+        record("a submission symlink to private truth cannot pass", not alias["arms"]["arm_a"]["artifact_passed"]
+               and bool(alias["arms"]["arm_a"]["submission_issues"]))
+        answer.unlink()
+        answer.write_bytes(original_answer)
         # Re-label a frozen arm without changing the actual source file hashes.
         # Even without a separate externally trusted digest, the grader must
         # refuse a self-contradictory source/label assignment.
@@ -395,6 +442,13 @@ def selftest() -> dict:
         record("reconciliation task includes all real source documents", len(list((second / "participants/arm_a/task").iterdir())) == 5)
         r = grade(second, root / "fourth.json")
         record("missing submissions do not become passes", all(not x["artifact_passed"] for x in r["arms"].values()))
+        command = [sys.executable, str(Path(__file__).resolve()), "grade", "--trial", str(second)]
+        frozen_second = sha(second / "reviewer_private/freeze.json")
+        failed_cli = subprocess.run(command + ["--receipt", str(root / "cli_missing.json"),
+                                     "--trusted-freeze-sha256", frozen_second],
+                                    capture_output=True, text=True, check=False)
+        record("CLI returns nonzero when both submissions are absent", failed_cli.returncode == 2
+               and not read(root / "cli_missing.json")["artifact_checks_passed"])
         sys.path.insert(0, str(HERE / "reconciliation"))
         from public_producer import execute as produce_public
         for arm in ARMS:
@@ -403,6 +457,15 @@ def selftest() -> dict:
         r = grade(second, root / "fifth.json")
         record("raw-input-only implementation passes both neutral task arms",
                all(x["artifact_passed"] for x in r["arms"].values()))
+        good_cli = subprocess.run(command + ["--receipt", str(root / "cli_complete.json"),
+                                   "--trusted-freeze-sha256", frozen_second],
+                                  capture_output=True, text=True, check=False)
+        record("CLI exits zero only for fully correct sealed artifact check", good_cli.returncode == 0
+               and read(root / "cli_complete.json")["artifact_checks_passed"])
+        unsealed_cli = subprocess.run(command + ["--receipt", str(root / "cli_unsealed.json")],
+                                      capture_output=True, text=True, check=False)
+        record("unsealed diagnostic grading cannot signal success to CI", unsealed_cli.returncode == 2
+               and not read(root / "cli_unsealed.json")["externally_frozen_manifest_checked"])
         extra = second / "participants/arm_a/submission/unused_summary.txt"
         extra.write_text("extra developer artifact", encoding="utf-8")
         r = grade(second, root / "sixth.json")
@@ -412,6 +475,14 @@ def selftest() -> dict:
         csv_file.write_bytes(csv_file.read_bytes().replace(b"Cedar,0", b"Cedar,1"))
         r = grade(second, root / "seventh.json")
         record("reconciliation result corruption fails affected arm", not r["arms"]["arm_b"]["artifact_passed"])
+        # Reject a frozen directory replaced by an external alias even if
+        # its contents could otherwise have the expected SHA map.
+        arm_skill = second / "participants/arm_a/skill"
+        shutil.rmtree(arm_skill)
+        arm_version = read(second / "reviewer_private/freeze.json")["arm_snapshots"]["arm_a"]["variant"]
+        arm_skill.symlink_to(fake_repo / SKILLS[arm_version], target_is_directory=True)
+        malicious = grade(second, root / "aliased_skill.json")
+        record("frozen skill directory symlink is refused", bool(malicious["arms"]["arm_a"]["frozen_input_issues"]))
         record("no independent Agent is ever claimed", r["winner"] is None and r["independent_review"] == "not_run")
     return {"passed": all(c["passed"] for c in checks), "checks": checks,
             "scope": "author-local fixture integrity, not independent agent or comparative performance"}
@@ -434,6 +505,12 @@ def main(argv=None) -> int:
     try:
         result = selftest() if args.cmd == "selftest" else prepare(args.repo, args.kind, args.seed, args.out) if args.cmd == "prepare" else grade(args.trial, args.receipt, args.trusted_freeze_sha256)
         print(json.dumps(result, ensure_ascii=False, indent=2))
+        # Never return process success when either arm has missing/incorrect
+        # artifacts or when the freeze manifest lacks a trusted external seal.
+        # Exit 0 STILL does not mean either Agent was independent or won.
+        if args.cmd == "grade":
+            return 0 if (result["artifact_checks_passed"] and
+                         result["externally_frozen_manifest_checked"]) else 2
         return 0 if result.get("passed") is not False else 2
     except (OSError, ValueError, KeyError, TypeError, json.JSONDecodeError) as exc:
         print(json.dumps({"error": type(exc).__name__ + ": " + str(exc)}, ensure_ascii=False))

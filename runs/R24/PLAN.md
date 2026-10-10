@@ -100,3 +100,7 @@ The receiving packet now has a second actual computational consumer (`studies/re
 ## Correct A/B skill attribution before any behavior trial (2026-10-10)
 
 Audit found an actual v1 trial invalidity: nominal candidate labels were shuffled, but Skill file copying used fixed arms. Reproduced 6 wrong labels among seeds 0..9. The repaired script copies by chosen variant, freezes per-variant SHA maps, validates arm attribution on grading, and rejects old schema /1. Local selftest 22/22 passed. See `studies/PAIRING-AUDIT-V2.md` and `studies/PAIRING-FIX-V2-RESULT.json`. No independent worker or receiver has run and no candidate comparison is authorized by these program checks. Preserve old v1 code and outcomes in history.
+
+## R24 paired harness V3 — programmatic gate correctness (2026-10-10)
+
+The actual V2 CLI accepted completely absent submissions with exit 0, and would follow a symlink from `answer.json` to reviewer-private truth. Both were reproduced before modification. V3 refuses submission symlinks and unsafe frozen directories, reports per-arm `submission_issues`, and returns exit 0 only when both required artifact checks pass **and** the external trusted freeze digest is provided and matches. The author ran 27/27 selftests and actual CLI negative/positive cases. Git blob `622deed823278519fb12a305737c707c3e4ebdfc`. See `studies/PAIRING-AUDIT-V3.md` and `PAIRING-V3-RESULT.json`; preserve original V2 failure evidence. This does not execute an independent model or close R24-03.

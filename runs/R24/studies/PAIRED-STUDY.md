@@ -45,3 +45,9 @@ python runs/R24/studies/paired_experiment.py grade --trial <TRIAL_DIR> \
 已改成先冻结**每个候选**的源文件 SHA-256，再随机分配角色，按实际候选名称复制文件并逐个核对。新实例使用 schema `forge-r24-paired-trial/2`；评分时强制检查候选名称与文件 SHA 是否一致，并拒绝旧版 schema。22/22 项本地确定性回归通过，包含两种 A/B 排列、错误标签和旧实例拒收。详见 [审计与修复](PAIRING-AUDIT-V2.md) 和 [本地测试回执](PAIRING-FIX-V2-RESULT.json)。
 
 此修复**并未运行真实独立 Agent 比较**，也没有证明某一候选更强。正式试验必须重新从未见新样本生成 v2 实例；不得把 v1 的归属错误掩盖或事后更改原始历史。
+
+## V3：CLI 验收与路径安全（2026-10-10）
+
+再次审计发现 V2 存在两个真正会造成误判的缺陷：**两组都未交付时 `grade` 仍以退出码 0 结束**；`submission/answer.json` 指向隐藏标准答案的符号链接仍可得到通过。V3 修复了命令行状态与提交文件边界，并要求外部可信冻结 SHA-256 才能返回成功退出码。没有冻结令牌仍可输出诊断报告，但不能向 CI 报告成功。
+
+评分结果格式为 `forge-r24-paired-grade/2`，增加 `artifact_checks_passed` 和 `submission_issues`。脚本在作者本地 **27/27** 项自测通过；真实 CLI 正反例测试了无交付退出码 2、正确双交付且冻结匹配退出码 0、无外部冻结退出码 2、符号链接指向隐藏真值退出码 2。**成功退出码仅指自动化交付检查通过，不代表真实独立 Agent 或 C14 胜出。** 原始 V2 漏判记录保留于 [V3 审计](PAIRING-AUDIT-V3.md) 及 [V3 回执](PAIRING-V3-RESULT.json)；实际原版 Skill 的公平对照仍未运行。
