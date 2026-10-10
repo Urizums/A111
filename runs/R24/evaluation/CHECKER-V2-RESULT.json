@@ -1,0 +1,55 @@
+{
+  "schema": "forge-r24-checker-regression/1",
+  "observed_at": "2026-10-10",
+  "environment": "local Python (standard library); actual model and token usage not applicable",
+  "tested_git_blob_sha": "f8bd05ca83e25f69b42100bdac08939768d052d8",
+  "original_git_blob_sha": "a76ba3e8ba28d1b70d31d0ca298ccc7a6f668c09",
+  "commands": [
+    "python -m py_compile casebench_v2.py",
+    "python casebench_v2.py selftest",
+    "python casebench_v2.py generate --kind two_methods --seed 987230 --out <temp>/fresh_case",
+    "direct grade of generated oracle with complete and alpha-only submitted artifacts"
+  ],
+  "selftest": {
+    "passed": 13,
+    "failed": 0,
+    "names": [
+      "direct extraction valid",
+      "tampered public input rejected",
+      "tampered task instructions rejected",
+      "restored public material accepted",
+      "extra process artifact warned but not failed",
+      "incorrect extraction rejected",
+      "duplicate JSON keys rejected",
+      "all requested method outputs valid",
+      "selected-only method missing other rejected",
+      "incorrect quantity rejected",
+      "extra unnamed CSV column rejected",
+      "wrong objective recommendation rejected",
+      "cannot overwrite frozen case"
+    ]
+  },
+  "sample": {
+    "kind": "two_methods",
+    "seed": 987230,
+    "source_sha256": {
+      "input_json": "f9fecd58c70bcf82f0e02c133ac1bc0f507adaceee1d57cd5db4792d027acdb5",
+      "task_md": "efc3e6f5835b16d2a04c062afd01bc87204b6a076097c526c236d35c5f64e2b7"
+    },
+    "complete_submission": {
+      "passed": true,
+      "source_identity_checked": true
+    },
+    "alpha_only_submission": {
+      "passed": false,
+      "missing_beta_rows": 4
+    },
+    "simulated": true
+  },
+  "limits": [
+    "Author local program regression only, no independent actor",
+    "No blind model evaluation or host-level private oracle isolation",
+    "Repo CI must be observed per latest commit",
+    "No behavioral superiority claim"
+  ]
+}
