@@ -8,10 +8,46 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import stat
 import tempfile
 from pathlib import Path
 
 SOURCE_FILES = ('brief.md', 'consumer.md', 'invoices.json', 'amendments.json', 'payments.json')
+
+MAX_SOURCE_BYTES = 2 * 1024 * 1024
+
+
+def verify_public_source(bundle: dict) -> dict:
+    """Check on-disk source bytes immediately before/after consequential steps.
+
+    This checks a local snapshot, not OS isolation or a protected persistent
+    lease. Do not claim the flow controller itself enforces this guard.
+    """
+    errors = []
+    if not isinstance(bundle, dict) or set(bundle) != {'base_path','source_sha256'}:
+        return {'passed': False, 'errors': ['invalid source bundle shape']}
+    base = Path(bundle['base_path'])
+    expected = bundle['source_sha256']
+    if not isinstance(expected, dict) or set(expected) != set(SOURCE_FILES):
+        return {'passed': False, 'errors': ['source list does not match public case']}
+    if not base.is_dir() or base.is_symlink():
+        return {'passed': False, 'errors': ['source directory missing or symbolic link']}
+    for name in SOURCE_FILES:
+        file = base / name
+        try:
+            if file.is_symlink():
+                errors.append(f'{name}: symbolic link not accepted')
+                continue
+            info = file.stat()
+            if not stat.S_ISREG(info.st_mode) or info.st_size > MAX_SOURCE_BYTES:
+                errors.append(f'{name}: not a bounded regular file')
+                continue
+            if _hash(file) != expected[name]:
+                errors.append(f'{name}: bytes no longer match frozen identity')
+        except (OSError, TypeError, ValueError) as exc:
+            errors.append(f'{name}: unable to verify: {exc}')
+    return {'passed': not errors, 'errors': errors,
+            'scope': 'local source guard; not authenticated host permission or OS isolation'}
 
 
 def _hash(p: Path) -> str:
@@ -51,6 +87,9 @@ def make_flow(folder: Path, workspace_receipt: str | None = None) -> tuple[dict,
         if not isinstance(data, list):
             raise ValueError(f'{name} must contain an array of records')
     context = {'base_path': str(folder), 'source_sha256': {name: _hash(folder/name) for name in SOURCE_FILES}}
+    verified = verify_public_source(context)
+    if not verified['passed']:
+        raise ValueError('Public source could not be frozen safely: ' + '; '.join(verified['errors']))
     goal = 'Reconcile invoice and supplier balances as-of the brief; hand off usable method.'
     inputs = {
         'request': {'type': 'string', 'description': 'Original business request and consumer terms.'},
@@ -145,8 +184,16 @@ def selftest() -> dict:
         _,after=make_flow(source)
         check('source revisions change frozen flow input identity',
               inp['source_bundle']['source_sha256']['payments.json'] != after['source_bundle']['source_sha256']['payments.json'])
+        check('original bundle rejects mutated source before dispatch',
+              not verify_public_source(inp['source_bundle'])['passed'])
         (source/'payments.json').write_bytes(original)
         check('source restoration restores frozen identity',make_flow(source)[1]['source_bundle']==inp['source_bundle'])
+        check('source guard permits byte-identical restoration',verify_public_source(inp['source_bundle'])['passed'])
+        (source/'payments.json').rename(source/'payments.backup')
+        (source/'payments.json').symlink_to(source/'payments.backup')
+        check('source guard rejects symbolic source files',not verify_public_source(inp['source_bundle'])['passed'])
+        (source/'payments.json').unlink()
+        (source/'payments.backup').rename(source/'payments.json')
         (source/'suppliers.csv').write_text('fake',encoding='utf-8')
         check('added file does not silently become required input',make_flow(source)[1]['source_bundle']==inp['source_bundle'])
     return {'passed': all(r['passed'] for r in results), 'checks': results,
