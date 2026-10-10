@@ -6,9 +6,8 @@ This drives two nodes with local deterministic receipts, not an actual Agent.
 """
 from __future__ import annotations
 import argparse
-import csv
-import importlib
 import json
+import subprocess
 import sys
 import tempfile
 from pathlib import Path
@@ -24,13 +23,15 @@ def run(repo: Path) -> dict:
     import flowctl
     study = Path(__file__).resolve().parent
     sys.path.insert(0,str(study))
-    from flow_builder import make_flow
-    from rehearsal import generate, compute, grade, LEDGER, SUPPLIERS
+    from flow_builder import make_flow, verify_public_source
+    from rehearsal import generate, grade
     with tempfile.TemporaryDirectory(prefix='forge-r24-ir-') as tmp:
         root=Path(tmp);case=root/'study'
         generate(7211,case)
         public=case/'producer'
         spec,inputs=make_flow(public)
+        if not verify_public_source(inputs['source_bundle'])['passed']:
+            return {'status':'fail','where':'initial frozen public input identity'}
         formal=flowctl.validate(spec)
         if not formal['valid']:
             return {'status':'fail','where':'flowctl.validate','errors':formal['errors']}
@@ -46,18 +47,22 @@ def run(repo: Path) -> dict:
         issued=flowctl.pending(spec,state)
         if issued['status']!='ready' or issued['node']!='produce':
             return {'status':'fail','where':'produce is not ready','observed':issued}
-        # The following producer is deterministic author code. It does not demonstrate LLM autonomy.
-        invoices=json.loads((public/'invoices.json').read_text(encoding='utf-8'))
-        amendments=json.loads((public/'amendments.json').read_text(encoding='utf-8'))
-        payments=json.loads((public/'payments.json').read_text(encoding='utf-8'))
-        brief=(public/'brief.md').read_text(encoding='utf-8')
-        cutoff=brief.split('as of ',1)[1].split('.',1)[0]
-        ledger,suppliers=compute(invoices,amendments,payments,cutoff)
-        submitted=root/'submission';submitted.mkdir()
-        for filename,cols,rows in [('ledger.csv',LEDGER,ledger),('suppliers.csv',SUPPLIERS,suppliers)]:
-            with (submitted/filename).open('w',encoding='utf-8',newline='') as f:
-                writer=csv.DictWriter(f,fieldnames=list(cols));writer.writeheader();writer.writerows(rows)
-        (submitted/'workflow.md').write_text('Read the business cutoff. Take only approved effective revisions and posted in-window payments. Compute every invoice; sum each supplier, including zero balances. Export and verify both CSVs.\n',encoding='utf-8')
+        # Producer is a separate public-input-only author program.  It never
+        # imports the private oracle or the grader, but is not an LLM Agent.
+        if not verify_public_source(inputs['source_bundle'])['passed']:
+            return {'status':'fail','where':'source changed before dispatch'}
+        submitted=root/'submission'
+        proc=subprocess.run([sys.executable,str(study/'public_producer.py'),
+                             '--producer',str(public),'--out',str(submitted)],
+                            text=True,capture_output=True,check=False)
+        if proc.returncode:
+            return {'status':'fail','where':'public input producer','returncode':proc.returncode,
+                    'stderr':proc.stderr[-1000:]}
+        if not verify_public_source(inputs['source_bundle'])['passed']:
+            return {'status':'fail','where':'source changed during production'}
+        first_check=grade(case,submitted)
+        if not first_check['data_artifacts_passed']:
+            return {'status':'fail','where':'produced CSV failed first gate','errors':first_check['errors']}
         reply={'invocation_id':issued['invocation_id'],'outcome':'ok',
                'artifacts':{'tables':{name:str(submitted/name) for name in ('ledger.csv','suppliers.csv','workflow.md')}},
                'evidence':['Actual two CSV and workflow files written locally from public data']}
@@ -67,11 +72,19 @@ def run(repo: Path) -> dict:
             return {'status':'fail','where':'stale invocation accepted'}
         except flowctl.FlowError:
             pass
+        previous=state
         state=flowctl.advance(spec,state,reply)
+        try:
+            flowctl.advance(spec,state,reply)
+            return {'status':'fail','where':'duplicate old invocation accepted'}
+        except flowctl.FlowError:
+            pass
         issued=flowctl.pending(spec,state)
         if issued['status']!='ready' or issued['node']!='audit_data':
             return {'status':'fail','where':'audit is not ready','observed':issued}
         check=grade(case,submitted)
+        if not verify_public_source(inputs['source_bundle'])['passed']:
+            return {'status':'fail','where':'source changed during review'}
         if not check['data_artifacts_passed'] or check['overall_accepted']:
             return {'status':'fail','where':'data gate or handoff overclaim','observed':check}
         state=flowctl.advance(spec,state,{'invocation_id':issued['invocation_id'],'outcome':'ok',
@@ -83,8 +96,9 @@ def run(repo: Path) -> dict:
         return {'status':'pass','performed_native_check':True,'native_valid':True,
                 'compiled_nodes':compiled['nodes'],'locally_replayed_nodes':2,
                 'pending_receiver':'blocked', 'terminal_business_acceptance':False,
-                'wrong_invocation_rejected':True,
-                'limitation':'Local author-coded producer/audit; no independent Agent or real receiver' }
+                'wrong_invocation_rejected':True, 'duplicate_invocation_rejected':True,
+                'separate_public_source_producer':True, 'source_guard_observed':True,
+                'limitation':'Local public-source-only author producer and researcher grader; no independent Agent or real receiver' }
 
 
 def main():
