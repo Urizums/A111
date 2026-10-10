@@ -136,5 +136,14 @@
     "data_gate": "13 tests and 60-seed consistency; one independent-from-generator implementation",
     "workflow_gate": "unverified_pending_new_consumer",
     "causal_comparison": "not_run"
+  },
+  "flow_ir_bridge": {
+    "adapter": "runs/R24/studies/reconciliation/flow_builder.py",
+    "adapter_sha": "ad78e96776c6b3148d5cad9f3c63ee4def6da135",
+    "native_probe": "runs/R24/studies/reconciliation/native_flow_smoke.py",
+    "native_probe_sha": "29c675768c2894a33496a0c98b82daad5c4039b4",
+    "selftests": 9,
+    "native_integration": "blocked_missing_checkout",
+    "independent_actor": "not_run"
   }
 }
