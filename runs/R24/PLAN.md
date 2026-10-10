@@ -80,3 +80,9 @@ The prior flow adapter only *stored* SHA-256 identities; it did not check on-dis
 Author-local evidence: 12/12 adapter fixtures; 60/60 raw-producer seed cases (100–159); and a further direct E2E test that rejected mutated sources and tampered supplier output but accepted byte-identical restoration and the original answer. Verified code blob identities and evidence limits appear in `studies/reconciliation/FLOW-GUARD-V2-RESULT.json`.
 
 **Do not close R24-03:** no full native `flowctl` run and no genuinely separate Agent/receiving actor occurred. The repository checkout is unavailable in the current local environment; GitHub CI does not include the new native smoke script. This is an explicit remaining gate, not an excuse to add further general rules to the portable Skill.
+
+## Real upstream Flow IR integration result (2026-10-10, later observation)
+
+The previous `blocked_missing_checkout` record remains intact as the initial environment failure. In this continuation, the exact upstream `flowctl.py` and `nestedcheck.py` were materialized via the GitHub connector into a minimal local repo mirror and verified against their actual Git Blob SHA IDs. The **real original controller** successfully validated and compiled the research Flow IR, advanced two locally implemented produce/audit nodes, rejected wrong/duplicate invocation IDs, and blocked the missing independent receiver. The six `test_native_flow_integration.py` native CLI/state tests passed, alongside 12 adapter and 13 data checker selftests. See `studies/reconciliation/NATIVE-FLOW-REAL-RESULT.json` and `FLOW-IR-BRIDGE.md`.
+
+This removes the local-native-integration unknown, **not** the full-checkout integration claim, independently accepted workflow or C13/C14-lean model comparison. Historical blocked logs and original C13 are unchanged. R24-03 remains not run. Next substantive gate: a genuinely separate worker and cold-start consumer under frozen new material.

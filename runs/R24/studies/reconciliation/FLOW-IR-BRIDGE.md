@@ -43,3 +43,20 @@ python runs/R24/studies/reconciliation/native_flow_smoke.py
 受测且已回读的 Git Blob：`flow_builder.py` = `b94822195df8e946088a10c469258c56c7712259`；`public_producer.py` = `691cb6d234e099911580edd4d5b94310ea101dfd`；`native_flow_smoke.py` = `312f9270bd581765d19f198ec0b4977680cce7fa`。之前的九项自测与旧代码身份保留在初次记录中，没有追溯修改历史通过结论。
 
 当前本地没有完整 `flowctl.py` 及其依赖，原生探针仍返回 `blocked`，故**原控制器实际编译及节点推进仍未过门**。GitHub 现有 CI 不自动运行此研究脚本；完整 native gate 需在获得真正的 A111 checkout 后执行。随后才值得在新独立 Agent 上比较 C13/C14-lean 与交接可复用性。
+
+## 2026-10-10 后续实测：原生 Flow 控制器已通过
+
+此前因本地缺少控制器文件而记录的 `blocked` 是**当时的真实结果**，保留不覆盖。现在已从 GitHub 连接读取完整的上游 `flowctl.py` 与 `nestedcheck.py`，在本地重建最小 A111 文件环境，并用 Git Blob SHA 确认与主干原始文件字节完全相同（`afd4df10b3406083fd9e337171a6b2b5477508ca` / `c0e221a2b16f2eda18c719cf05959d5dcea1fc16`）。
+
+真实运行 `native_flow_smoke.py --repo .` 返回 `status=pass`，经原控制器完成 Flow IR 1.1 校验、编译和两个节点的状态推进，拒绝伪造与重复调用 ID，并在无独立接收者能力时保持第三节点阻塞。新增 `test_native_flow_integration.py` 覆盖实际 `flowctl` CLI 的 validate、compile、start、next、原状态不可覆盖、失败路径和源文件身份约束，六项均通过。原测试代码 Blob 为 `ad22fe51edb3a9f8fc95d68984ba0c26ecfbb4a4`。同环境复跑研究适配器 12/12 和对账生成器 13/13 自测均通过。
+
+这次**确实执行了原版控制器**，但运行环境是哈希验证过的最小源文件镜像，非完整 GitHub checkout；没有运行仓库所有测试，也没有调用一个真实独立的 Agent。第三节点保持 `blocked` 且 `terminal_business_acceptance=false`，`workflow.md` 的冷启动可用性仍待另一实际接收者检查。C13/C14-lean 的新材料公平行为对照同样尚未进行。
+
+详细实测机器回执见 `NATIVE-FLOW-REAL-RESULT.json`。在完整 A111 checkout 中可复跑：
+
+```bash
+python -m unittest discover -s runs/R24/studies/reconciliation -p 'test_native_flow_integration.py' -v
+python runs/R24/studies/reconciliation/native_flow_smoke.py --repo .
+```
+
+这使 R24 的**本地原生集成门**获得实测通过，但不替代独立接收、运行权限或候选晋级门。避免为了一个通过的切片继续膨胀便携 Skill；优先利用新上下文开展真正的能力研究。
