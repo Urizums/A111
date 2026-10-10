@@ -1,0 +1,40 @@
+{
+  "schema": "forge-r24-overhead-deep-path-regression/1",
+  "date": "2026-10-11",
+  "current_v7_blob": "5128e41921196417e39e68759c05c9edadf3040a",
+  "fixed_v7_blob": "1640ca7d968c68167c1589244d396eda60c2eeff",
+  "actual_before": {
+    "correct_both_arms": true,
+    "added_path": "unused-reports/appendix/long-notes.md",
+    "nonrequired_artifacts": []
+  },
+  "actual_after": {
+    "python_syntax": "passed",
+    "whole_fixed_v7_selftest": {
+      "total": 46,
+      "passed": 46,
+      "failed": 0
+    },
+    "case": "nested unnecessary deliverables counted without failing valid data",
+    "subprocess_cli": {
+      "fixture_prepare": 12,
+      "fixture_grade": 12,
+      "arm_a_C13": 6,
+      "arm_a_C14_lean": 6,
+      "missing_both_outputs": "exit_2",
+      "source_mutated": "exit_2_without_partial_trial"
+    },
+    "data_artifact_correct_with_extras": true
+  },
+  "test_bundle": {
+    "name": "forge_r24_v7_overhead_integrity_fix.zip",
+    "sha256": "b7c7a75c8211e12e0a602834e81131312dd95f9b3c26d84bbec4449237399672"
+  },
+  "status": {
+    "actual_original_18_file_python_prepare": "not_run",
+    "real_separate_agents": "not_run",
+    "independent_receiver": "not_run",
+    "C14_lean_superiority": "undetermined",
+    "V7_promotion": "blocked"
+  }
+}
