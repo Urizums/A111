@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import argparse
 import csv
-import io
+import hashlib
 import json
 import random
 import sys
@@ -23,7 +23,15 @@ def write_json(path: Path, value: dict) -> None:
 
 
 def read_json(path: Path) -> dict:
-    data = json.loads(path.read_text(encoding="utf-8"))
+    # Duplicate keys are ambiguous for downstream consumers and must not silently overwrite.
+    def unique_object(pairs):
+        obj = {}
+        for key, value in pairs:
+            if key in obj:
+                raise ValueError(f"Duplicate JSON key: {key}")
+            obj[key] = value
+        return obj
+    data = json.loads(path.read_text(encoding="utf-8"), object_pairs_hook=unique_object)
     if not isinstance(data, dict):
         raise ValueError(f"Expected JSON object: {path}")
     return data
@@ -71,6 +79,11 @@ def make_case(kind: str, seed: int, root: Path) -> dict:
         raise ValueError(f"Unknown case kind: {kind}")
     (producer / "task.md").write_text(task, encoding="utf-8")
     write_json(producer / "input.json", source)
+    # Bind grading to the exact public input and task before accepting submissions.
+    expected["source_identity"] = {
+        name: hashlib.sha256((producer / name).read_bytes()).hexdigest()
+        for name in ("input.json", "task.md")
+    }
     write_json(private / "expected.json", expected)
     return {"kind":kind,"seed":seed,"producer":str(producer),"private_oracle":str(private / "expected.json")}
 
@@ -87,6 +100,18 @@ def grade(case_root: Path, submission: Path) -> dict:
     kind=oracle["kind"]
     errors=[]
     warnings=[]
+    identity=oracle.get("source_identity")
+    if identity is None:
+        # Older generated cases remain readable, but source binding is unknown.
+        warnings.append("legacy oracle lacks source binding; verify public inputs externally")
+    else:
+        for name in ("input.json", "task.md"):
+            try:
+                observed=hashlib.sha256((case_root / "producer" / name).read_bytes()).hexdigest()
+                if observed != identity[name]:
+                    errors.append(f"public case material changed after generation: {name}")
+            except (OSError, KeyError, TypeError) as exc:
+                errors.append(f"cannot verify source identity for {name}: {exc}")
     required={"answer.json"} if kind=="extract" else {"proposals.csv","recommendation.json"}
     actual={p.name for p in submission.iterdir() if p.is_file()} if submission.is_dir() else set()
     for name in sorted(required - actual):
@@ -114,6 +139,10 @@ def grade(case_root: Path, submission: Path) -> dict:
                     rows=list(reader)
                 observed={}
                 for row in rows:
+                    if None in row:
+                        raise ValueError("CSV row contains extra unnamed columns")
+                    if any(value is None for value in row.values()):
+                        raise ValueError("CSV row is missing required columns")
                     key=(row["method"],row["order_id"])
                     if key in observed:
                         errors.append(f"duplicate row: {key}")
@@ -137,6 +166,7 @@ def grade(case_root: Path, submission: Path) -> dict:
                 errors.append(f"invalid recommendation.json: {e}")
     return {"schema":"forge-r24-check/1","kind":kind,"passed":not errors,
             "errors":errors,"warnings":warnings,
+            "source_identity_checked": identity is not None and not any("source identity" in e or "public case material changed" in e for e in errors),
             "scope":"artifact correctness against frozen oracle only; not independence, efficiency, or agent capability"}
 
 
@@ -161,11 +191,24 @@ def selftest() -> dict:
         c=root/"extract"; make_case("extract",11,c)
         sub=root/"sub1";_write_valid(c,sub)
         record("direct extraction valid",grade(c,sub)["passed"])
+        input_file=c/"producer"/"input.json"
+        original_input=input_file.read_bytes()
+        input_file.write_bytes(original_input+b" ")
+        record("tampered public input rejected",not grade(c,sub)["passed"])
+        input_file.write_bytes(original_input)
+        task_file=c/"producer"/"task.md"
+        original_task=task_file.read_bytes()
+        task_file.write_bytes(original_task+b" ")
+        record("tampered task instructions rejected",not grade(c,sub)["passed"])
+        task_file.write_bytes(original_task)
+        record("restored public material accepted",grade(c,sub)["passed"])
         (sub/"README.md").write_text("unnecessary doc",encoding="utf-8")
         extra=grade(c,sub)
         record("extra process artifact warned but not failed",extra["passed"] and bool(extra["warnings"]))
         write_json(sub/"answer.json",{"city":"wrong","deadline":"bad"})
         record("incorrect extraction rejected",not grade(c,sub)["passed"])
+        (sub/"answer.json").write_text('{"city":"wrong","city":"right","deadline":"bad"}',encoding="utf-8")
+        record("duplicate JSON keys rejected",not grade(c,sub)["passed"])
         d=root/"both"; make_case("two_methods",22,d)
         sd=root/"sub2";_write_valid(d,sd)
         record("all requested method outputs valid",grade(d,sd)["passed"])
@@ -180,6 +223,11 @@ def selftest() -> dict:
         with csvpath.open("w",encoding="utf-8",newline="") as f:
             w=csv.DictWriter(f,fieldnames=["method","order_id","units"]);w.writeheader();w.writerows(rows)
         record("incorrect quantity rejected",not grade(d,sd)["passed"])
+        with csvpath.open("w",encoding="utf-8",newline="") as f:
+            f.write("method,order_id,units\n")
+            for row in read_json(d/"private"/"expected.json")["rows"]:
+                f.write(f'{row["method"]},{row["order_id"]},{row["units"]},ignored\n')
+        record("extra unnamed CSV column rejected",not grade(d,sd)["passed"])
         _write_valid(d,root/"tmp_valid")
         write_json(root/"tmp_valid"/"recommendation.json",{"method":"invalid"})
         record("wrong objective recommendation rejected",not grade(d,root/"tmp_valid")["passed"])
