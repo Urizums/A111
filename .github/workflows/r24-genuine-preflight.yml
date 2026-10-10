@@ -1,0 +1,56 @@
+name: R24 genuine checkout preflight
+on:
+  pull_request:
+    paths:
+      - 'runs/R24/**'
+      - '.github/workflows/r24-genuine-preflight.yml'
+  workflow_dispatch:
+jobs:
+  genuine-checkout:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout exact submitted head
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile actual V7 candidate and preflight
+        run: python -m py_compile runs/R24/studies/paired_experiment_v7_candidate.py runs/R24/studies/ci_genuine_checkout_preflight.py
+      - name: V7 author-side deterministic regression (not Agent comparison)
+        run: python runs/R24/studies/paired_experiment_v7_candidate.py selftest > "$RUNNER_TEMP/r24-v7-selftest.json"
+      - name: Genuine 18-file source preparation and sealed empty-submission rejection
+        run: python runs/R24/studies/ci_genuine_checkout_preflight.py > "$RUNNER_TEMP/r24-genuine-preflight.json"
+      - name: Emit human-readable gate summary
+        shell: python
+        run: |
+          import json, os
+          from pathlib import Path
+          root=Path(os.environ['RUNNER_TEMP'])
+          raw=json.loads((root/'r24-genuine-preflight.json').read_text(encoding='utf-8'))
+          tests=json.loads((root/'r24-v7-selftest.json').read_text(encoding='utf-8'))
+          checks=tests.get('checks',[])
+          assert raw['result']=='pass' and raw['genuine_source_markdown_files_checked']==18
+          assert raw['real_python_prepare_cases']==2 and raw['actor_runs']==0
+          assert checks and all(x['passed'] for x in checks)
+          with open(os.environ['GITHUB_STEP_SUMMARY'], 'a', encoding='utf-8') as f:
+              f.write('## R24 checkout gate (not a model trial)\n\n')
+              f.write(f"- Genuine Skill files: {raw['genuine_source_markdown_files_checked']}/18\n")
+              f.write(f"- Python V7 prepare cases: {raw['real_python_prepare_cases']}/2\n")
+              f.write(f"- V7 deterministic selftests: {len(checks)}/{len(checks)}\n")
+              f.write('- Independent Agent actors: **not run**; receiver: **not run**; winner: **unknown**.\n')
+      - name: Retain bounded, non-private preflight receipts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: r24-genuine-checkout-receipts
+          path: |
+            ${{ runner.temp }}/r24-v7-selftest.json
+            ${{ runner.temp }}/r24-genuine-preflight.json
+          if-no-files-found: ignore
+          retention-days: 14
