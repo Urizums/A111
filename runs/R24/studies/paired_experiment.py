@@ -113,7 +113,7 @@ def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
         raise FileExistsError("trial root already exists, cannot overwrite")
     if kind not in ("extract", "reconcile"):
         raise ValueError("unsupported task kind")
-    source_dirs = {arm: repo / SKILLS[variant] for arm, variant in ARMS.items()}
+    source_dirs = {variant: repo / relative for variant, relative in SKILLS.items()}
     # Verify candidates completely before creating case or trial directories.
     for directory in source_dirs.values():
         md_files(directory)
@@ -130,6 +130,13 @@ def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
     if {f.name for f in private_files.iterdir()} != expected_oracle:
         raise ValueError("private oracle contents are not the expected minimal set")
     oracle_hashes = {f.name: sha(f) for f in private_files.iterdir() if f.is_file()}
+    # Freeze source identities by *variant*, independently of randomized arm labels.
+    # The previous implementation copied by arm, which silently mislabelled swapped trials.
+    variant_sources = {
+        variant: {p.relative_to(directory).as_posix(): sha(p)
+                  for p in md_files(directory)}
+        for variant, directory in source_dirs.items()
+    }
     variants = list(SKILLS)
     random.Random(seed ^ 0xF06E).shuffle(variants)
     assignment = dict(zip(ARMS, variants))
@@ -142,7 +149,9 @@ def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
             f = originals / name
             dst_file = src / name
             dst_file.write_bytes(safe_bytes(f, originals))
-        skills = copy_skill(source_dirs[arm], dst / "skill")
+        skills = copy_skill(source_dirs[version], dst / "skill")
+        if skills != variant_sources[version]:
+            raise ValueError("copied Skill differs from declared variant source: " + version)
         (dst / "START_HERE.md").write_text(
             "请完成 task/ 中用户要求的真实交付，按需参考 skill/SKILL.md。"
             "只在 submission/ 中写成果；不要访问其他参与者或评分材料。"
@@ -150,9 +159,10 @@ def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
         arms[arm] = {"variant": version, "skill_sha256": skills,
                      "start_sha256": sha(dst / "START_HERE.md")}
     manifest = {
-        "schema": "forge-r24-paired-trial/1", "status": "prepared_not_executed",
+        "schema": "forge-r24-paired-trial/2", "status": "prepared_not_executed",
         "task_kind": kind, "seed": seed, "source_sha256": source_hashes,
         "oracle_sha256": oracle_hashes,
+        "variant_source_sha256": variant_sources,
         "arm_snapshots": arms,
         "note": "Only an actual host can hide reviewer_private and opposite participant roots."
     }
@@ -194,8 +204,24 @@ def grade(out: Path, receipt: Path, trusted_freeze_sha256: str | None = None) ->
     if trusted_freeze_sha256 is not None and sha(out / "reviewer_private" / "freeze.json") != trusted_freeze_sha256:
         raise ValueError("frozen study manifest differs from externally retained digest")
     freeze = read(out / "reviewer_private" / "freeze.json")
+    if freeze.get("schema") != "forge-r24-paired-trial/2":
+        raise ValueError("legacy or unknown trial schema; v1 randomized arm labels are unreliable")
     if freeze.get("status") != "prepared_not_executed":
         raise ValueError("unrecognized frozen trial status")
+    # Check attribution independently of the participant's artifact contents.
+    variant_sources = freeze.get("variant_source_sha256")
+    snapshots = freeze.get("arm_snapshots")
+    if not isinstance(variant_sources, dict) or set(variant_sources) != set(SKILLS):
+        raise ValueError("missing version-labelled Skill source hashes")
+    if not isinstance(snapshots, dict) or set(snapshots) != set(ARMS):
+        raise ValueError("incorrect number of study arms")
+    declared_versions = [snapshots[arm]["variant"] for arm in ARMS]
+    if set(declared_versions) != set(SKILLS):
+        raise ValueError("both distinct candidates must be represented")
+    for arm in ARMS:
+        snapshot = snapshots[arm]
+        if snapshot["skill_sha256"] != variant_sources[snapshot["variant"]]:
+            raise ValueError("arm Skill hashes do not match its declared candidate: " + arm)
     kind = freeze["task_kind"]
     source_case = out / "reviewer_private/case/producer"
     private_case = out / "reviewer_private/case/private"
@@ -268,6 +294,30 @@ def selftest() -> dict:
         freeze = read(trial / "reviewer_private/freeze.json")
         record("both candidates copied with distinct source identities", len(freeze["arm_snapshots"]) == 2 and
                {v["variant"] for v in freeze["arm_snapshots"].values()} == set(SKILLS))
+        # Regression for the actual v1 bug: it permuted the *label* but always
+        # copied fixed A=C13, B=C14-lean Skill files.  Both permutations are
+        # required to prove this experiment cannot attribute results backwards.
+        reversed_trials = 0
+        direct_trials = 0
+        for seed in range(20):
+            candidate = root / ("permutation-" + str(seed))
+            prepare(fake_repo, "extract", seed, candidate)
+            frozen = read(candidate / "reviewer_private/freeze.json")
+            assignment = {arm: frozen["arm_snapshots"][arm]["variant"] for arm in ARMS}
+            if assignment["arm_a"] != "C13":
+                reversed_trials += 1
+            else:
+                direct_trials += 1
+            for arm, version in assignment.items():
+                copied = candidate / "participants" / arm / "skill/SKILL.md"
+                assert f"description: {version} trial" in copied.read_text(encoding="utf-8")
+                assert frozen["arm_snapshots"][arm]["skill_sha256"] == frozen["variant_source_sha256"][version]
+        record("both randomized assignments exercised and actual Skill contents match declared variant",
+               reversed_trials > 0 and direct_trials > 0)
+        record("new frozen trial format records actual source-by-variant identity",
+               freeze.get("schema") == "forge-r24-paired-trial/2" and
+               freeze["arm_snapshots"]["arm_a"]["skill_sha256"] ==
+               freeze["variant_source_sha256"][freeze["arm_snapshots"]["arm_a"]["variant"]])
         record("private oracle hash frozen", bool(freeze["oracle_sha256"]))
         digest = sha(trial / "reviewer_private/freeze.json")
         record("external freeze token available", len(digest) == 64)
@@ -282,6 +332,30 @@ def selftest() -> dict:
             dump(output / "answer.json", {"city": source["city"], "deadline": source["deadline"]})
         r = grade(trial, root / "first.json", digest)
         record("equal correct results accept both without naming a winner", all(v["artifact_passed"] for v in r["arms"].values()) and r["winner"] is None and r["externally_frozen_manifest_checked"])
+        # Re-label a frozen arm without changing the actual source file hashes.
+        # Even without a separate externally trusted digest, the grader must
+        # refuse a self-contradictory source/label assignment.
+        raw = (trial / "reviewer_private/freeze.json").read_bytes()
+        forged = read(trial / "reviewer_private/freeze.json")
+        forged["arm_snapshots"]["arm_a"]["variant"] = (
+            "C14-lean" if forged["arm_snapshots"]["arm_a"]["variant"] == "C13" else "C13")
+        dump(trial / "reviewer_private/freeze.json", forged)
+        try:
+            grade(trial, root / "misattributed.json")
+            record("mislabelled arm cannot pass scoring", False)
+        except ValueError:
+            record("mislabelled arm cannot pass scoring", True)
+        (trial / "reviewer_private/freeze.json").write_bytes(raw)
+        # Explicitly refuse old v1 trials; v1 could attribute swapped versions wrongly.
+        old_format = read(trial / "reviewer_private/freeze.json")
+        old_format["schema"] = "forge-r24-paired-trial/1"
+        dump(trial / "reviewer_private/freeze.json", old_format)
+        try:
+            grade(trial, root / "v1.json")
+            record("legacy v1 ambiguous trial is never accepted", False)
+        except ValueError:
+            record("legacy v1 ambiguous trial is never accepted", True)
+        (trial / "reviewer_private/freeze.json").write_bytes(raw)
         try:
             grade(trial, root / "first.json")
             record("grade receipt cannot overwrite", False)
