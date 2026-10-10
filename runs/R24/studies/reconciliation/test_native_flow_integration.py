@@ -56,6 +56,7 @@ class NativeFlowIntegration(unittest.TestCase):
         self.assertEqual(verdict['receiver_files'], 8)
         self.assertTrue(verdict['cold_packet_replay_passed'])
         self.assertEqual(verdict['cold_workflow_usability'], 'unverified')
+        self.assertTrue(verdict['receiver_projection_handoff_only'])
 
     def test_real_cli_validate_and_compile(self):
         source = self.root / 'flow.json'
@@ -105,6 +106,44 @@ class NativeFlowIntegration(unittest.TestCase):
         with self.assertRaises(flowctl.FlowError):
             flowctl.advance(spec, failed, bad)
         self.assertEqual(flowctl.pending(spec, failed)['status'], 'failed')
+
+    def test_actual_pending_receiver_projection_excludes_private_audit_and_paths(self):
+        """Transport-only capability fixture. Does not launch or accept any Agent."""
+        import copy
+        spec, inputs = make_flow(self.public, workspace_receipt='test local execution')
+        spec = copy.deepcopy(spec)
+        # Authorize the receiver ONLY inside this deterministic projection test.
+        spec['capabilities']['receiver']['available'] = True
+        spec['capabilities']['receiver']['authorization'] = 'granted'
+        spec['capabilities']['receiver']['evidence'] = 'TEST-ONLY: inspect pending() projection; NOT a real Agent'
+        self.assertTrue(flowctl.validate(spec)['valid'])
+        state = flowctl.start(spec, inputs)
+        first = flowctl.pending(spec,state)
+        self.assertEqual(first['node'], 'produce')
+        state = flowctl.advance(spec,state, {'invocation_id': first['invocation_id'], 'outcome':'ok',
+            'artifacts': {'tables':{'ledger.csv':'/RESEARCHER_PRIVATE/author/ledger.csv'}},
+            'evidence':['test-only mock artifact']})
+        second = flowctl.pending(spec,state)
+        self.assertEqual(second['node'], 'audit_data')
+        state = flowctl.advance(spec,state, {'invocation_id':second['invocation_id'], 'outcome':'ok',
+            'artifacts': {'audit':{'researcher_private':'HIDDEN_RESEARCHER_SECRET',
+                                    'source_bundle':str(self.case/'private')},
+                          'handoff':{'packet_ref':'receiver_packet_mount','entry':'RECEIVE.md',
+                                     'file_count':8,'manifest_sha256':'a'*64}},
+            'evidence':['test-only audit and sanitized handoff generated']})
+        self.assertIn('audit', state['artifacts'])
+        self.assertIn('tables', state['artifacts'])
+        dispatch = flowctl.pending(spec,state)
+        self.assertEqual(dispatch['status'], 'ready', dispatch)
+        self.assertEqual(dispatch['node'], 'receive_handoff')
+        self.assertEqual(set(dispatch['inputs']), {'handoff'})
+        self.assertEqual(dispatch['inputs']['handoff']['packet_ref'], 'receiver_packet_mount')
+        projection = json.dumps(dispatch,ensure_ascii=False)
+        self.assertNotIn('HIDDEN_RESEARCHER_SECRET',projection)
+        self.assertNotIn('RESEARCHER_PRIVATE',projection)
+        self.assertNotIn(str(self.public),projection)
+        self.assertNotIn(str(self.case/'private'),projection)
+        self.assertEqual(spec['nodes'][-1]['reads'], ['handoff'])
 
     def test_public_source_changes_fail_bound_guard(self):
         self.assertTrue(verify_public_source(self.inputs['source_bundle'])['passed'])

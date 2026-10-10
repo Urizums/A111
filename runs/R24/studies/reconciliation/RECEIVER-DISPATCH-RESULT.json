@@ -1,0 +1,63 @@
+{
+  "schema": "forge-r24-receiver-projection-boundary/1",
+  "date": "2026-10-11",
+  "baseline": {
+    "flow_builder_blob": "b94822195df8e946088a10c469258c56c7712259",
+    "receiver_reads": [
+      "request",
+      "source_bundle",
+      "tables",
+      "audit"
+    ],
+    "pending_projection_carries_private_grader": true,
+    "pending_projection_carries_private_path": true,
+    "pending_projection_carries_author_source_path": true
+  },
+  "fixed": {
+    "flow_builder_blob": "680ddabe0b78e04621c160b6ce468531011b965b",
+    "native_flow_smoke_blob": "eb93a18793d3af0478d488992475118469f3902f",
+    "native_integration_test_blob": "0c876963eb8d08c6e7822d6362729c1ad7f92f2f",
+    "receiver_reads": [
+      "handoff"
+    ],
+    "receiver_visible_descriptor_fields": [
+      "packet_ref",
+      "entry",
+      "file_count",
+      "manifest_sha256"
+    ],
+    "pending_projection_carries_private_grader": false,
+    "pending_projection_carries_private_path": false,
+    "pending_projection_carries_author_source_path": false,
+    "capability_only_test_fixture": true
+  },
+  "local_tests": {
+    "flow_builder_selftest": {
+      "passed": 13,
+      "total": 13
+    },
+    "native_integration": {
+      "passed": 7,
+      "total": 7
+    },
+    "receiver_packet": {
+      "passed": 7,
+      "total": 7
+    },
+    "cold_receiver": {
+      "passed": 12,
+      "total": 12
+    },
+    "native_flow_smoke": "pass",
+    "third_receiver_node": "blocked",
+    "performed_independent_Agent": false
+  },
+  "remaining": {
+    "real_model_receiver": "not_run",
+    "host_file_mount_isolation": "not_attested",
+    "workflow_prose_independent_usability": "not_run",
+    "C13_C14_compare": "not_run",
+    "real_18_file_Python_prepare": "not_run"
+  },
+  "notes": "A graph-level projection fix, not host-level sandboxing or business acceptance."
+}

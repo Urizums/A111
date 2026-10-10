@@ -68,3 +68,7 @@ python runs/R24/studies/reconciliation/native_flow_smoke.py --repo .
 ## 仅凭接收包重新计算（2026-10-10）
 
 原生 Flow 的 `audit_data` 现在额外启动了不读取私有真值和生产函数的 [冷启动接收复算](COLD-REPLAY.md)。新复算与真实原控制器推进均已在本地通过，第三个需要独立 Agent 的节点仍正确保持 `blocked`。相应证据在 `COLD-REPLAY-RESULT.json`。此项不提升 `workflow.md` 的自然语言可用性为已验收。
+
+## 接收节点读取范围修复（2026-10-11）
+
+独立接收节点原本错误读取 `request/source_bundle/tables/audit`，原生 `flowctl.pending()` 会真实投影私有审计与作者工作区路径。现已拆分研究私有 `audit` 和安全 `handoff`，接收节点只读取后者。原生真实投影前后测试、13 项构造器检查、7 项原生集成、7 项接收包测试及 12 项数据冷复算通过；原生 Flow 第三节点保持 `blocked`。见 [审计与回执](RECEIVER-DISPATCH-AUDIT.md)。**尚无独立接收 Agent，也不具备宿主级隔离保证。**

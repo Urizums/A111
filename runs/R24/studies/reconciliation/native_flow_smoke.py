@@ -7,6 +7,7 @@ This drives two nodes with local deterministic receipts, not an actual Agent.
 from __future__ import annotations
 import argparse
 import json
+import hashlib
 import subprocess
 import sys
 import tempfile
@@ -111,11 +112,21 @@ def run(repo: Path) -> dict:
                     'observed':replay}
         state=flowctl.advance(spec,state,{'invocation_id':issued['invocation_id'],'outcome':'ok',
                              'artifacts':{'audit':{'data_artifacts_passed':True,'workflow_usability':'unverified',
-                                                    'receiver_packet':str(receiver_packet),
+                                                    'researcher_receiver_packet_path':str(receiver_packet),
                                                     'packet_integrity_passed':True,
                                                     'cold_data_replay_passed':True,
-                                                    'workflow_semantic_usability':'unverified'}},
+                                                    'workflow_semantic_usability':'unverified'},
+                                          'handoff':{'packet_ref':'receiver_packet_mount',
+                                                     'entry':'RECEIVE.md',
+                                                     'file_count':packet_check['files_checked'],
+                                                     'manifest_sha256':hashlib.sha256((receiver_packet/'manifest.json').read_bytes()).hexdigest()}},
                              'evidence':['Recomputed against private deterministic oracle for researcher only']})
+        handoff=state['artifacts']['handoff']
+        if (set(handoff) != {'packet_ref','entry','file_count','manifest_sha256'}
+                or handoff['packet_ref']!='receiver_packet_mount'
+                or handoff['entry']!='RECEIVE.md'
+                or len(handoff['manifest_sha256'])!=64):
+            return {'status':'fail','where':'unsafe receiver dispatch envelope','observed':handoff}
         after=flowctl.pending(spec,state)
         if after['status']!='blocked' or 'receiver' not in after.get('reason',''):
             return {'status':'fail','where':'independent receiving capability not enforced','observed':after}
@@ -126,6 +137,7 @@ def run(repo: Path) -> dict:
                 'separate_public_source_producer':True, 'source_guard_observed':True,
                 'sanitized_receiver_packet_verified': True, 'receiver_files': packet_check['files_checked'],
                 'cold_packet_replay_passed': True, 'cold_workflow_usability': 'unverified',
+                'receiver_projection_handoff_only':True,
                 'limitation':'Local public-source-only author producer and researcher grader; no independent Agent or real receiver' }
 
 

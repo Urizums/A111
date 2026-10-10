@@ -257,5 +257,27 @@
     "source_blob": "1640ca7d968c68167c1589244d396eda60c2eeff",
     "tests": "46/46 exact full V7 local selftest, 12 author-controlled CLI trial fixtures",
     "status": "candidate_only; real 18 source prepare and independent Agent proof not_run"
+  },
+  "receiver_dispatch_boundary_v7": {
+    "report": "runs/R24/studies/reconciliation/RECEIVER-DISPATCH-AUDIT.md",
+    "evidence": "runs/R24/studies/reconciliation/RECEIVER-DISPATCH-RESULT.json",
+    "changed_sources": {
+      "flow_builder.py": "680ddabe0b78e04621c160b6ce468531011b965b",
+      "native_flow_smoke.py": "eb93a18793d3af0478d488992475118469f3902f",
+      "test_native_flow_integration.py": "0c876963eb8d08c6e7822d6362729c1ad7f92f2f"
+    },
+    "before": "receive_handoff declared reads of request,source_bundle,tables,audit; latter contains private grader verdict/path",
+    "after": "receive_handoff declares reads handoff only; audit_data emits research-only audit plus safe handoff descriptor",
+    "actual_local_tests": {
+      "builder_selftest": 13,
+      "native_flow_integration": 7,
+      "receiver_packet": 7,
+      "cold_receiver": 12,
+      "smoke": "pass",
+      "projection": "before included secrets; after does not"
+    },
+    "independent_ai_receiver": "not_run",
+    "host_isolation": "not_attested",
+    "business_acceptance": "not_attested"
   }
 }

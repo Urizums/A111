@@ -96,7 +96,8 @@ def make_flow(folder: Path, workspace_receipt: str | None = None) -> tuple[dict,
         'source_bundle': {'type': 'object', 'description': 'Public raw-source paths and frozen SHA-256 identities.'}}
     arts = {
         'tables': {'type': 'object', 'description': 'Real ledger.csv and suppliers.csv paths, plus workflow.md path.'},
-        'audit': {'type': 'object', 'description': 'Observed numerical receiving checks and actual receipt paths.'},
+        'audit': {'type': 'object', 'description': 'Researcher-only audit verdict and private grading evidence; never dispatched to receiver.'},
+        'handoff': {'type': 'object', 'description': 'Opaque receiver packet mount handle, sanitized manifest identity and entrypoint only; no author paths or private audit.'},
         'delivery': {'type': 'object', 'description': 'Independent consumer receipt and final validated artifact pointers.'}}
     nodes = [
         _node('produce', 'agent', ['request', 'source_bundle'], ['tables'], 'workspace',
@@ -105,15 +106,16 @@ def make_flow(folder: Path, workspace_receipt: str | None = None) -> tuple[dict,
               'Do not use a private oracle; report actual file identities and failures.',
               ['Both CSV files exist and have complete schema coverage.',
                'The handoff explains source versions, cutoff, calculation, and an error/refresh path.'], 'audit_data'),
-        _node('audit_data', 'check', ['source_bundle', 'tables'], ['audit'], 'workspace',
+        _node('audit_data', 'check', ['source_bundle', 'tables'], ['audit', 'handoff'], 'workspace',
               'Recompute or independently check the original public source. Verify source hash, effective approved amendments, '
               'posted payments by cutoff, signed integer cents, all invoices and all suppliers including zero balances. '
               'Do not report a workflow.md file as proof that its instructions can be reused.',
               ['Audit uses actual raw inputs and actual CSV contents.',
                'If any required row or numerical condition fails, do not route ok.'], 'receive_handoff'),
-        _node('receive_handoff', 'check', ['request', 'source_bundle', 'tables', 'audit'], ['delivery'], 'receiver',
-              'As a genuinely separate receiving context, read only the original business requirements, public raw data and deliverables. '
-              'Cold-start reproduce the reconciliation from workflow.md without seeing author diagnoses or private oracle; '
+        _node('receive_handoff', 'check', ['handoff'], ['delivery'], 'receiver',
+              'As a genuinely separate receiving context, read ONLY the sanitized mounted receiver packet identified by the opaque handoff handle. '
+              'Open RECEIVE.md inside that isolated mount; check manifest identity, read public raw data and the actual deliverables. '
+              'Cold-start reproduce reconciliation from workflow.md without author diagnostics, private oracle or local researcher paths; '
               'check that this procedure makes the next action and failure handling understandable. '
               'Only issue ok with real replay receipts; otherwise report blocked or error.',
               ['A genuine independent recipient executed or replayed the handoff.',
@@ -174,7 +176,9 @@ def selftest() -> dict:
         check('unverified workspace blocks dispatch by default', not spec['capabilities']['workspace']['available'])
         check('unverified acceptor blocks independent completion', not spec['capabilities']['receiver']['available'])
         check('every required stage yields real declared artifacts',
-              [n['writes'] for n in spec['nodes']] == [['tables'], ['audit'], ['delivery']])
+              [n['writes'] for n in spec['nodes']] == [['tables'], ['audit', 'handoff'], ['delivery']])
+        check('receiver reads only the sanitized handoff artifact',
+              next(n for n in spec['nodes'] if n['id']=='receive_handoff')['reads'] == ['handoff'])
         check('flow does not claim execution on construction', 'status' not in spec and 'trace' not in spec)
         cap_spec, _ = make_flow(source, workspace_receipt='Actual local Python 3.13 run: case generation')
         check('workspace can be attested without inventing independent actor',
