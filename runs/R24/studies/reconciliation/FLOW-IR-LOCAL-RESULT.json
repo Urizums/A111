@@ -1,0 +1,45 @@
+{
+  "schema": "forge-r24-flow-ir-bridge-local/1",
+  "date": "2026-10-10",
+  "paths": {
+    "adapter": "runs/R24/studies/reconciliation/flow_builder.py",
+    "native_probe": "runs/R24/studies/reconciliation/native_flow_smoke.py"
+  },
+  "verified_git_blobs": {
+    "adapter": "ad78e96776c6b3148d5cad9f3c63ee4def6da135",
+    "native_probe": "29c675768c2894a33496a0c98b82daad5c4039b4"
+  },
+  "environment": "Local Python 3.13.5 research copy; no complete repository checkout",
+  "tests": {
+    "adapter_syntax_compile": "pass",
+    "adapter_selftest": {
+      "passed": 9,
+      "failed": 0
+    },
+    "example_flow_schema": "1.1",
+    "nodes": [
+      "produce",
+      "audit_data",
+      "receive_handoff"
+    ],
+    "input_source_sha256_bound": true,
+    "default_capabilities": {
+      "workspace_available": false,
+      "independent_receiver_available": false
+    },
+    "native_integration_probe": {
+      "status": "blocked",
+      "exit_code": 2,
+      "reason": "Existing flowctl.py is not present in this checkout",
+      "performed_native_check": false
+    }
+  },
+  "limits": [
+    "Local adapter tests do not establish full upstream flowctl validity",
+    "Native flowctl compilation/advance not yet executed in real checkout",
+    "No autonomous model invoked",
+    "No independent downstream replay",
+    "C13 vs C14-lean matched fresh task comparison not run"
+  ],
+  "scope": "A genuine runnable research adapter and a conditional integration probe, not a passed native host/Agent test"
+}

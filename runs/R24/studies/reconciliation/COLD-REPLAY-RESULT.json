@@ -1,0 +1,72 @@
+{
+  "schema": "forge-r24-cold-packet-replay/1",
+  "date": "2026-10-10",
+  "scope": "author local independent code path reading received packet only; NOT independent agent or trusted security isolation",
+  "tested_blob_shas": {
+    "cold_receiver": "ec93055211c09ee34678024233e8f07a51f21099",
+    "test_cold_receiver": "bf472f49d867a29ff532555046124d38c237039c",
+    "native_flow_smoke": "672113fe292c2f505103b614c4eb8260f59edc97",
+    "test_native_flow_integration": "fe55fc0ee608c2acf8e719bfcba50557f008f0df"
+  },
+  "local_tests": [
+    {
+      "name": "packet-only receiver business replay + tamper tests",
+      "passed": 12,
+      "failed": 0
+    },
+    {
+      "name": "existing upstream native flow controller CLI/state tests",
+      "passed": 6,
+      "failed": 0
+    },
+    {
+      "name": "receiver packet allowlist/integrity tests",
+      "passed": 7,
+      "failed": 0
+    }
+  ],
+  "observed": {
+    "pristine_packet_recalculated": true,
+    "invoice_count": 6,
+    "supplier_count": 3,
+    "zero_balance_supplier": "Cedar",
+    "forged_self_consistent_manifest_still_rejected_by_business_replay": true,
+    "cutoff_payment_mutation_detected": true,
+    "missing_supplier_rejected": true,
+    "duplicate_json_keys_rejected": true,
+    "empty_workflow_rejected": true,
+    "source_guidance_tamper_rejected": true,
+    "native_flow_probe": "pass",
+    "actual_controller": "original upstream flowctl.py byte-identical local mirror",
+    "native_advanced_nodes": 2,
+    "third_receiver_node": "blocked",
+    "workflow_semantic_usability": "unverified",
+    "business_acceptance": "unverified"
+  },
+  "recorded_iteration": [
+    {
+      "stage": "first regression",
+      "observation": "1 assertion failure due to incorrect expected error-message phrase; implementation was correctly rejecting changed cutoff payment"
+    },
+    {
+      "stage": "test correction",
+      "observation": "corrected assertion to match actual business mismatch; grouped 12/12 passed"
+    },
+    {
+      "stage": "combined run",
+      "observation": "one monolithic test run timed out mid-run; separate groups subsequently passed"
+    },
+    {
+      "stage": "release bundle",
+      "observation": "ZIP extracted; all names ASCII; text UTF-8; byte identity and extracted cold/native CLI replays passed"
+    }
+  ],
+  "demo_bundle_sha256": "fb319b2fa609cd4dd4f85c3735bc93e6235cbe9c89908cbb2bd5924cb31217b6",
+  "limitations": [
+    "Author authored test cases, independent producer and receiver code; no independent new LLM actor",
+    "Packet manifest has no external authentication; self-consistent hashes can be rewritten",
+    "Receiver prose not semantically accepted by another human or AI",
+    "Library transport used only to upload exact tested source; temporary files should be cleaned",
+    "Current commit GitHub CI must be checked separately"
+  ]
+}

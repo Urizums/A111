@@ -1,0 +1,37 @@
+{
+  "schema": "forge-r24-paired-exposure-audit/1",
+  "observation_date": "2026-10-10",
+  "source_previous_git_blob": "622deed823278519fb12a305737c707c3e4ebdfc",
+  "tested_new_git_blob": "dcc4602d648380b0c01cdea1b33862840c72ba63",
+  "syntax": "pass",
+  "local_selftest": {
+    "passed": 31,
+    "total": 31
+  },
+  "real_CLI_with_stub_Skills_and_author_results": [
+    {
+      "seed": 0,
+      "arm_a": "C13",
+      "arm_b": "C14-lean",
+      "real_cli_prepare_exit": 0,
+      "real_cli_grade_exit": 0,
+      "artifact_checks_passed": true,
+      "skill_read_observed_in_independent_host_trace": false
+    },
+    {
+      "seed": 3,
+      "arm_a": "C14-lean",
+      "arm_b": "C13",
+      "real_cli_prepare_exit": 0,
+      "real_cli_grade_exit": 0,
+      "artifact_checks_passed": true,
+      "skill_read_observed_in_independent_host_trace": false
+    }
+  ],
+  "real_C13_C14_source_audit": "18 Git blobs confirmed from GitHub, 23 local Markdown links resolved; actual complete source directory prepare not run",
+  "host_actor_invocation": "not_available",
+  "independent_worker_execution": "not_run",
+  "independent_receiver": "not_run",
+  "candidate_winner": null,
+  "scope": "author-local program correctness and protocol semantics; no independent model exposure receipt"
+}

@@ -1,0 +1,55 @@
+{
+  "schema": "forge-r24-neutral-handoff-study/1",
+  "as_of_date": "2026-10-10",
+  "source": "runs/R24/studies/reconciliation/rehearsal.py",
+  "tested_git_blob_sha": "9e1485d00a89eb154dc666ada0a25c6549b8470f",
+  "local_sha256": "e0b10272f9279b7437dd9236aa2eb0b2871313d170193dc37d5b5b03f1788a44",
+  "syntax_compile": "pass",
+  "generator_selftest": {
+    "passed": 10,
+    "failed": 0,
+    "categories": [
+      "complete outputs pass, workflow usability stays unverified",
+      "missing vendor",
+      "future payment",
+      "future amendment",
+      "missing supplier",
+      "fractional money",
+      "source mutation",
+      "source restoration",
+      "missing workflow",
+      "no overwrite"
+    ]
+  },
+  "multi_seed_oracle_replay": {
+    "seeds": "100..159 inclusive",
+    "count": 60,
+    "all_artifact_checks_pass": true,
+    "note": "Author program self-consistency, not 60 independent business implementations"
+  },
+  "fresh_demo": {
+    "seed": 2819,
+    "producer_source_hashes": {
+      "amendments.json": "f5c3efc2f65da2e6e2a3d6a5e62aec07ab5055057d5869708df9a69f65303ba8",
+      "brief.md": "5f69e95f7489b3f03a64b130f4b26ffee9879a3188eff401ba2640eec45f05ce",
+      "consumer.md": "511dc4a750aba63e20d58b130ccbe9831343f9c6525dbf41b7f2eec2425b0aeb",
+      "invoices.json": "a00b56a436185240459865dc396f4b153f53bd7ff58a148942fd029ac3a4d373",
+      "payments.json": "40f33f8aa758b64cf314ff37366857e6b49a292356662ef77bb7a7722be99505"
+    },
+    "author_separate_raw_input_implementation": {
+      "ledger_rows": 6,
+      "supplier_rows": 3,
+      "data_artifacts_passed": true,
+      "workflow_present": true,
+      "workflow_usability": "unverified",
+      "overall_accepted": false
+    }
+  },
+  "limitations": [
+    "No LLM Agent was invoked, so this is not autonomous design validation.",
+    "No real separate acceptor/host isolation; the author wrote a deterministic public-input implementation.",
+    "Programmatic test does not assess whether workflow prose supports cold-start reuse.",
+    "The prior first attempt at a 60-seed check had a command quoting SyntaxError; a corrected standalone script then passed all 60 seeds.",
+    "Do not reuse demo seed 2819 or selftest seed 44 as novel blind inputs."
+  ]
+}

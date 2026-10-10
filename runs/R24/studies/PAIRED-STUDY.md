@@ -1,0 +1,73 @@
+# C13 / C14-lean：从静态研究进入实际对照的入口
+
+## 当前执行入口：V5 来源身份检查（覆盖下文旧版命令）
+
+正式 `prepare` 现在要求同时提供已审计的真实候选文件清单及**从可信外部取得**的清单 Git Blob SHA，且在创建试验目录前核对双方所有候选 Markdown 的实际字节。见 [必要修复与测试回执](TRUSTED-CANDIDATE-PREFLIGHT.md)。
+
+```bash
+python runs/R24/studies/paired_experiment.py prepare --repo . --kind extract \\
+  --seed <FRESH_SEED> --out <NEW_TRIAL_DIRECTORY> \\
+  --source-catalog runs/R24/studies/REAL-CANDIDATE-SOURCE-CATALOG.json \\
+  --trusted-catalog-git-blob c8a6b611056a6e9ff68c6de8f91095b9ddcdf5b0
+```
+
+需要 `reconcile` 时替换 `--kind` 并使用另一个未公开的新种子。格式升级为 `forge-r24-paired-trial/4`，拒绝未记录可信源码清单的旧配对格式。**已验证 38 项内部自测与 7 项 CLI 正反例；真实 C13/C14-lean 全文件目录准备与独立 Agent 行为比较仍未运行**，无版本胜者。
+
+
+这个小工具负责为两个执行者准备**相同的原始任务和各自版本的 Skill**，把原件、候选身份和私有评分材料冻结下来，并在交付后检查结果。它本身不是 Agent、调度器或盲审环境，不应进入便携式 Skill。
+
+R24 前几轮已验证对账程序能生成、执行和被另一条代码路径复算，却没有回答最重要的问题：**换成没有预先答案的新 Agent，它会因为采用 C13 或 C14-lean 而做出不同的设计和交付吗？** 因此，这一轮不再增加对账规则，只为真正的对照准备一个不容易被事后改写的入口。
+
+## 在完整仓库中使用
+
+`paired_experiment.py` 直接读取原 C13 和未晋级的 C14-lean 九 Markdown 候选，**不会修改它们**。每次执行时需给出一个之前没有公开过的种子；演示/自测种子不应被当作正式未见测试。
+
+```bash
+python runs/R24/studies/paired_experiment.py selftest
+python runs/R24/studies/paired_experiment.py prepare --repo . --kind extract --seed <FRESH_SEED> --out <NEW_TRIAL_DIRECTORY>
+python runs/R24/studies/paired_experiment.py prepare --repo . --kind reconcile --seed <ANOTHER_FRESH_SEED> --out <ANOTHER_NEW_DIRECTORY>
+```
+
+`prepare` 会输出需要由**外部可信研究日志保存**的冻结清单 SHA-256。输出目录中，`participants/arm_a/` 与 `participants/arm_b/` 各自有 `task/`、`skill/` 和一份短入口；`reviewer_private/` 中保存原件、隐藏评分真值、两候选的身份映射和哈希。
+
+正式执行必须由真实宿主**只挂载其中一个参与者目录**，同时隔离另外一个参与者、评分器、工具日志、会话历史以及后续判分；仅创建不同子目录并不能提供权限隔离。两个参与者应具有相同的模型能力、工具、可用时间、资源限制以及相同的原始任务。为缓解先后次序的系统偏差，A/B 与 C13/C14-lean 的对应关系随任务种子确定性打乱，只存在于私有清单。
+
+执行者自行在各自 `submission/` 中写结果。研究方确认实际执行过程和隔离证明后，再在**只供评审使用的环境**评分：
+
+```bash
+python runs/R24/studies/paired_experiment.py grade --trial <TRIAL_DIR> \
+  --receipt <NEW_PRIVATE_GRADE_RECEIPT.json> \
+  --trusted-freeze-sha256 <DIGEST_FROM_EXTERNAL_TRUSTED_LOG>
+```
+
+`extract` 检查用户只要求的两个字段，观察是否额外制造角色和文档；`reconcile` 检查业务对账交付、数据完整性和是否留下可供复用的方法。多余产物会被记录但不是自动拒收。结果中每个参与者的完成情况与冻结文件错误分开报告，不因为一次结果差异就宣布版本胜负。
+
+**自动评分不能检验什么？** 它无法证明新执行者确实阅读、理解并迁移了 `workflow.md`，无法测量未记录的费用或时间，更不具备验收另一个 Agent 是否被作者日志污染的能力。真正的独立接收应该另建干净上下文，只读取原要求、原材料和实际产物，重新执行方法并保留首次接收回执。若缺少该环境，本研究只能停留在 `prepared_not_executed` 或作者程序自测状态，不得把 `winner: null` 更改为凭印象认定的胜者。
+
+## 本次真实验证
+
+本地对生成器、冻结与评分逻辑运行了 **18 项确定性检查**，包含两个不同任务类别、完整/错误/缺失产物、原件改动、Skill 变动、隐藏评分真值变动、外部冻结清单哈希、重复写回执及多余成果的非致命记录。这些只检验实验工具的正确性，使用的是**作者制造的假 Skill 版本和确定性测试产物**，没有真的启动两个模型。
+
+此前对账接收程序的 12 项旧测试本轮完整通过；一次顺序执行全部旧测试超过了工具执行时间限制，因此未把未完成的部分算为本轮新通过结果。原 C13/候选 C14-lean、根发行文件和历史失败不改动。
+
+本轮最重要的停止条件：没有实际隔离的 Agent 宿主时，不要继续堆叠模拟任务和自测数量。留下可复验的比较入口，下一次取得独立执行条件时直接启动实际候选对照。未来若出现自发遗漏、信息污染或额外成本，再定向修改 Skill 或评测条件。
+
+## 2026-10-10：随机归属缺陷修复（配对试验 v2）
+
+旧版程序虽改变 `arm_a/arm_b` 的候选标签，却按固定臂名复制 C13/C14-lean 文件。用种子 0–9 复现时，6/10 个实验出现 Skill 实际内容与版本标签相反；旧版的 18 项程序自测没有覆盖这一点。**旧 schema `forge-r24-paired-trial/1` 实例不得再用于版本表现归属或候选晋升**。
+
+已改成先冻结**每个候选**的源文件 SHA-256，再随机分配角色，按实际候选名称复制文件并逐个核对。新实例使用 schema `forge-r24-paired-trial/2`；评分时强制检查候选名称与文件 SHA 是否一致，并拒绝旧版 schema。22/22 项本地确定性回归通过，包含两种 A/B 排列、错误标签和旧实例拒收。详见 [审计与修复](PAIRING-AUDIT-V2.md) 和 [本地测试回执](PAIRING-FIX-V2-RESULT.json)。
+
+此修复**并未运行真实独立 Agent 比较**，也没有证明某一候选更强。正式试验必须重新从未见新样本生成 v2 实例；不得把 v1 的归属错误掩盖或事后更改原始历史。
+
+## V3：CLI 验收与路径安全（2026-10-10）
+
+再次审计发现 V2 存在两个真正会造成误判的缺陷：**两组都未交付时 `grade` 仍以退出码 0 结束**；`submission/answer.json` 指向隐藏标准答案的符号链接仍可得到通过。V3 修复了命令行状态与提交文件边界，并要求外部可信冻结 SHA-256 才能返回成功退出码。没有冻结令牌仍可输出诊断报告，但不能向 CI 报告成功。
+
+评分结果格式为 `forge-r24-paired-grade/2`，增加 `artifact_checks_passed` 和 `submission_issues`。脚本在作者本地 **27/27** 项自测通过；真实 CLI 正反例测试了无交付退出码 2、正确双交付且冻结匹配退出码 0、无外部冻结退出码 2、符号链接指向隐藏真值退出码 2。**成功退出码仅指自动化交付检查通过，不代表真实独立 Agent 或 C14 胜出。** 原始 V2 漏判记录保留于 [V3 审计](PAIRING-AUDIT-V3.md) 及 [V3 回执](PAIRING-V3-RESULT.json)；实际原版 Skill 的公平对照仍未运行。
+
+## V4：确保 Skill 干预条件一致（2026-10-10）
+
+审计发现先前 `START_HERE.md` 将 `skill/SKILL.md` 写成“按需参考”，使两个参与者可能完全跳过候选 Skill，导致任何产物差异难以归因于 C13/C14-lean。V4 要求双方**开始任务前完整阅读本臂 SKILL.md**；references 仍按任务所需选择，不增加固定角色与阶段。冻结协议升为 `forge-r24-paired-trial/3`，明确 `skill_entry_read_required/1`；旧 `/1` 与 `/2` 实例不能混用。评分回执为 `forge-r24-paired-grade/3`，`skill_read_observed_in_independent_host_trace=false` 表示读取尚无真实宿主轨迹确认，不能把入口指令当成执行证据。
+
+本地 V4 31/31 项作者自测通过；用两种 A/B 排列实际执行 CLI prepare、grade（作者生成的假 Skill 和答案），退出码均为 0 且无独立阅读证明。详见 [V4 审计](PAIRING-EXPOSURE-AUDIT-V4.md) 及 [V4 回执](PAIRING-EXPOSURE-V4-RESULT.json)。**真正隔离的执行者及接收者仍未运行**；这份协议修改不证明哪版 Skill 更有效。

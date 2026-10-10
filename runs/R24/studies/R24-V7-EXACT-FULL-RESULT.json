@@ -1,0 +1,55 @@
+{
+  "schema": "forge-r24-v7-exact-full-script-validation/1",
+  "date": "2026-10-11",
+  "tested_source": {
+    "path": "runs/R24/studies/paired_experiment_v7_candidate.py",
+    "git_blob": "5128e41921196417e39e68759c05c9edadf3040a",
+    "byte_exact": true
+  },
+  "dependencies": {
+    "reconciliation/rehearsal.py": "f1b14b5caf04e1a7d9a1a37bb93675d1237a0a55",
+    "reconciliation/public_producer.py": "691cb6d234e099911580edd4d5b94310ea101dfd"
+  },
+  "python": "3.13.5",
+  "results": {
+    "py_compile": "pass",
+    "whole_v7_selftest": {
+      "passed": 45,
+      "total": 45
+    },
+    "fixture_cli_prepare_and_grade": {
+      "prepared": 12,
+      "graded_correctly": 12,
+      "arm_a_C13": 6,
+      "arm_a_C14_lean": 6
+    },
+    "negative_cli": {
+      "no_submissions_exits_2": true,
+      "mutated_original_exits_2_no_partial_root": true
+    },
+    "zip_extract_crc_and_reexecution": "pass"
+  },
+  "first_failure": {
+    "cause": "ModuleNotFoundError: public_producer (missing local dependency on first attempt)",
+    "resolution": "restore byte-verified dependency and rerun",
+    "recorded": true
+  },
+  "bundle": {
+    "name": "forge_r24_v7_exact_full_validation.zip",
+    "sha256": "c8e5df7a3aa9cdfbafa9d00511c7d6a3ff4c2f8232fd4be6e62601a6de45a7ff",
+    "contains": "exact V7 source, two code dependencies, 45-check full selftest result, CLI fixture replay, Chinese report"
+  },
+  "limitations": [
+    "controlled stub Skill inputs, NOT genuine 18-file candidate preparation",
+    "not a genuine independent Agent or receiver",
+    "no full GitHub repository checkout mounted; full V7 code nevertheless exact byte matched",
+    "no C13/C14-lean performance verdict"
+  ],
+  "gates": {
+    "v7_full_script_regression": "passed_local",
+    "actual_18_file_prepare": "not_run",
+    "real_independent_agents": "not_run",
+    "skill_promotion": "blocked",
+    "pull_request_merge": "draft"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schema": "forge-r24-flow-boundary-check/2",
+  "date": "2026-10-10",
+  "tested_git_blobs": {
+    "flow_builder": "b94822195df8e946088a10c469258c56c7712259",
+    "public_producer": "691cb6d234e099911580edd4d5b94310ea101dfd",
+    "native_flow_smoke": "312f9270bd581765d19f198ec0b4977680cce7fa"
+  },
+  "author_local_execution": {
+    "syntax": "python -m py_compile of all three files passed",
+    "adapter_selftest": {
+      "passed": 12,
+      "failed": 0
+    },
+    "raw_public_producer_vs_private_oracle": {
+      "seed_range": "100..159",
+      "passed": 60,
+      "failed": 0,
+      "execution": "one separate public-input-only program process per fixture"
+    },
+    "direct_case": {
+      "seed": 8841,
+      "original_source_verified": true,
+      "modified_source_rejected": true,
+      "restored_source_verified": true,
+      "public_producer_exit": 0,
+      "automated_data_gate_passed": true,
+      "tampered_output_rejected": true,
+      "post_production_source_verified": true,
+      "workflow_usability": "unverified",
+      "terminal_business_acceptance": false
+    }
+  },
+  "old_record": "runs/R24/studies/reconciliation/FLOW-IR-LOCAL-RESULT.json",
+  "native_flowctl": {
+    "executed": false,
+    "status": "blocked",
+    "reason": "complete upstream checkout missing from local container; repository CI does not run this R24 script"
+  },
+  "research_limitations": [
+    "Author-built producer and author-built grader are separate code paths, not independent models",
+    "A snapshot hash guard does not provide host-level filesystem isolation",
+    "No truly cold-start receiving actor or C13/C14-lean behavioral comparison",
+    "No native flowctl.py validate/compile/advance recorded for this version"
+  ],
+  "next_gate": "Run native_flow_smoke.py inside actual A111 checkout, retain first failures, then run frozen fresh-input actor comparison with the private oracle withheld"
+}

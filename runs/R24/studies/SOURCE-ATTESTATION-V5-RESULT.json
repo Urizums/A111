@@ -1,0 +1,73 @@
+{
+  "schema": "forge-r24-source-attestation-v5/1",
+  "date": "2026-10-10",
+  "tested_git_source_sha": "30364f2c3559c264cb11199f016a2d6515fa7317",
+  "trusted_remote_catalog_git_blob": "c8a6b611056a6e9ff68c6de8f91095b9ddcdf5b0",
+  "fixture_selftest": {
+    "passed": true,
+    "checks": 38
+  },
+  "actual_cli_fixture_negative_and_positive": {
+    "passed": true,
+    "checks": 7,
+    "cases": [
+      {
+        "case": "correct externally pinned catalog",
+        "ok": true,
+        "exit": 0,
+        "status": "prepared_not_executed",
+        "source_catalog_verified": true
+      },
+      {
+        "case": "wrong external catalog blob",
+        "ok": true,
+        "exit": 2,
+        "status": null,
+        "source_catalog_verified": null
+      },
+      {
+        "case": "modified candidate bytes",
+        "ok": true,
+        "exit": 2,
+        "status": null,
+        "source_catalog_verified": null
+      },
+      {
+        "case": "extra candidate document",
+        "ok": true,
+        "exit": 2,
+        "status": null,
+        "source_catalog_verified": null
+      },
+      {
+        "case": "missing candidate document",
+        "ok": true,
+        "exit": 2,
+        "status": null,
+        "source_catalog_verified": null
+      },
+      {
+        "case": "unsubmitted paired trial is not a successful grade",
+        "ok": true,
+        "exit": 2
+      },
+      {
+        "case": "freeze contains verified catalogue identity",
+        "ok": true
+      }
+    ]
+  },
+  "actual_audited_catalog_no_checkout_trial": {
+    "exit_code": 2,
+    "reason": "real candidates unavailable to current container",
+    "trial_directory_created": false
+  },
+  "limitations": [
+    "Selftests use controlled fixture Skill contents, not original C13/C14-lean full trees",
+    "No independent Agent actor or receiving host invoked",
+    "Previous GitHub source catalog 18 blob identities are preserved and included, but neither candidate tree was copied into container",
+    "Authenticity of external catalogue SHA must be established outside participant context",
+    "No C13/C14-lean behavior verdict"
+  ],
+  "next_step": "Execute V5 CLI prepare in authenticated full checkout; then launch isolated new Agent arms and independently receive."
+}

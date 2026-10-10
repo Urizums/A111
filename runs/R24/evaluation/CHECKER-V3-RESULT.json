@@ -1,0 +1,98 @@
+{
+  "schema": "forge-r24-checker-regression/2",
+  "observed_date": "2026-10-10",
+  "tested_git_blob_sha": "31b992b63e63b57880c646bea8a4565b8f44fb08",
+  "verified_against": "git hash-object of tested Python file and matching GitHub blob",
+  "checks": {
+    "python_compile": "pass",
+    "selftest": {
+      "pass": 16,
+      "fail": 0,
+      "tests": [
+        {
+          "name": "direct extraction valid",
+          "passed": true
+        },
+        {
+          "name": "tampered public input rejected",
+          "passed": true
+        },
+        {
+          "name": "tampered public input loses source binding",
+          "passed": true
+        },
+        {
+          "name": "tampered task instructions rejected",
+          "passed": true
+        },
+        {
+          "name": "restored public material accepted",
+          "passed": true
+        },
+        {
+          "name": "extra process artifact warned but not failed",
+          "passed": true
+        },
+        {
+          "name": "incorrect extraction rejected",
+          "passed": true
+        },
+        {
+          "name": "wrong artifact does not erase intact source binding",
+          "passed": true
+        },
+        {
+          "name": "duplicate JSON keys rejected",
+          "passed": true
+        },
+        {
+          "name": "all requested method outputs valid",
+          "passed": true
+        },
+        {
+          "name": "selected-only method missing other rejected",
+          "passed": true
+        },
+        {
+          "name": "incorrect quantity rejected",
+          "passed": true
+        },
+        {
+          "name": "extra unnamed CSV column rejected",
+          "passed": true
+        },
+        {
+          "name": "wrong objective recommendation rejected",
+          "passed": true
+        },
+        {
+          "name": "legacy unbound cases are warned and not source-verified",
+          "passed": true
+        },
+        {
+          "name": "cannot overwrite frozen case",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "fresh_cli_case": {
+    "kind": "extract",
+    "seed": 778100,
+    "correct_submission": {
+      "passed": true,
+      "source_identity_checked": true
+    },
+    "duplicate_key_submission": {
+      "passed": false,
+      "source_identity_checked": true,
+      "error": "invalid answer.json: Duplicate JSON key: city"
+    }
+  },
+  "previous_fixture": "runs/R24/evaluation/CHECKER-V2-RESULT.json",
+  "limitations": [
+    "Author local program tests; no fresh independent model contexts",
+    "No verified host-level oracle segregation; subfolders alone are not isolation",
+    "No C13 versus C14 causal comparison, no live performance result"
+  ]
+}

@@ -1,0 +1,283 @@
+{
+  "schema": "forge-research-handoff-index/1",
+  "status": "research_index_not_execution_ledger",
+  "as_of": "2026-10-10",
+  "basis": {
+    "repo": "Urizums/A111",
+    "main_sha": "8fedb92c310d85adf7a516adb28de69f85514aeb",
+    "review_branch": "rd/c14-necessity-review-20261010",
+    "baseline_candidate": "runs/R20/final/candidate/C13/forge-agent-flow/SKILL.md",
+    "experimental_candidate": "runs/R24/candidate/C14-hypothesis/forge-agent-flow/SKILL.md",
+    "experimental_variants": [
+      {
+        "id": "C14-hypothesis",
+        "path": "runs/R24/candidate/C14-hypothesis/forge-agent-flow/SKILL.md",
+        "status": "text_candidate_unvalidated"
+      },
+      {
+        "id": "C14-lean",
+        "path": "runs/R24/candidate/C14-lean/forge-agent-flow/SKILL.md",
+        "status": "editorial_revision_unvalidated"
+      }
+    ]
+  },
+  "historical_frontier": {
+    "active_phase": "R08",
+    "r08_original_gate": "blocked",
+    "r23_bounded_study": "closed",
+    "r24_behavior_comparison": "not_run"
+  },
+  "research_topics": [
+    {
+      "id": "H01",
+      "priority": "P0",
+      "source": "runs/R23/REPORT.md",
+      "next_gate": "R24"
+    },
+    {
+      "id": "H02",
+      "priority": "P0",
+      "source": "runs/R23/final/SYNTHESIS.md",
+      "next_gate": "R24"
+    },
+    {
+      "id": "H03",
+      "priority": "P0",
+      "source": "runs/R22/final/SYNTHESIS.md",
+      "next_gate": "R24"
+    },
+    {
+      "id": "H04",
+      "priority": "P1",
+      "source": "runs/R19/final/SYNTHESIS.md",
+      "next_gate": "R25"
+    },
+    {
+      "id": "H05",
+      "priority": "P1",
+      "source": "runs/R20/final/SYNTHESIS.md",
+      "next_gate": "R25"
+    },
+    {
+      "id": "H06",
+      "priority": "P1",
+      "source": "runs/R17/REPORT.md",
+      "next_gate": "R26"
+    },
+    {
+      "id": "H07",
+      "priority": "P1",
+      "source": "runs/R08/REPORT.md",
+      "next_gate": "R26"
+    },
+    {
+      "id": "H08",
+      "priority": "P2",
+      "source": "runs/R14/REPORT.md",
+      "next_gate": "R28"
+    },
+    {
+      "id": "H09",
+      "priority": "P2",
+      "source": "runs/R17/REPORT.md",
+      "next_gate": "R27"
+    }
+  ],
+  "future_phases": [
+    {
+      "phase": "R24",
+      "state": "proposal_under_review",
+      "entry": "runs/R24/PLAN.md",
+      "next_gate": "new static and matched behavioral review"
+    },
+    {
+      "phase": "R25",
+      "state": "proposed_not_started",
+      "next_gate": "R24 material acceptance and actual successor start"
+    },
+    {
+      "phase": "R26",
+      "state": "proposed_not_started",
+      "next_gate": "R25 runnable flow interfaces and permitted host"
+    },
+    {
+      "phase": "R27",
+      "state": "proposed_not_started",
+      "next_gate": "R26 observed feedback and evaluable iteration"
+    },
+    {
+      "phase": "R28",
+      "state": "conditional_proposal_not_started",
+      "next_gate": "user value and actual permitted UI runtime"
+    }
+  ],
+  "notes": "Research navigation only. C13 remains the preserved method baseline. Neither C14 candidate is behavior-accepted, and no value here updates authoritative checkpoint or creates actors.",
+  "evaluation_helper": {
+    "path": "runs/R24/evaluation/casebench.py",
+    "status": "local_selftest_16_pass_plus_two_separate_cli_fixture_verifications_no_agent_evaluation",
+    "sha_git_blob": "31b992b63e63b57880c646bea8a4565b8f44fb08",
+    "kinds": [
+      "extract",
+      "two_methods"
+    ],
+    "purpose": "deterministic artifact oracle and anti-overhead warning",
+    "source_binding": "explicit source_identity_checked flag; legacy unbound warned"
+  },
+  "maintenance_helper": {
+    "path": "runs/R24/evaluation/skillcheck.py",
+    "status": "local_selftest_5_pass_not_semantic_or_agent_evaluation",
+    "sha_git_blob": "71b111758a03338ca1c523aaafe550fc653c7ecf",
+    "purpose": "frontmatter UTF-8 package-contained references without forced document layout"
+  },
+  "neutral_handoff_study": {
+    "path": "runs/R24/studies/reconciliation/rehearsal.py",
+    "source_git_blob": "f1b14b5caf04e1a7d9a1a37bb93675d1237a0a55",
+    "status": "author_local_regression_and_raw_input_replay_only",
+    "data_gate": "13 tests and 60-seed consistency; one independent-from-generator implementation",
+    "workflow_gate": "unverified_pending_new_consumer",
+    "causal_comparison": "not_run"
+  },
+  "flow_ir_bridge": {
+    "adapter": "runs/R24/studies/reconciliation/flow_builder.py",
+    "adapter_sha": "ad78e96776c6b3148d5cad9f3c63ee4def6da135",
+    "native_probe": "runs/R24/studies/reconciliation/native_flow_smoke.py",
+    "native_probe_sha": "29c675768c2894a33496a0c98b82daad5c4039b4",
+    "selftests": 9,
+    "native_integration": "blocked_missing_checkout",
+    "independent_actor": "not_run",
+    "guard_v2": {
+      "source_guard": "local byte check on five frozen public files around handoff",
+      "separate_public_producer": "runs/R24/studies/reconciliation/public_producer.py",
+      "adapter_sha": "b94822195df8e946088a10c469258c56c7712259",
+      "producer_sha": "691cb6d234e099911580edd4d5b94310ea101dfd",
+      "native_probe_sha": "312f9270bd581765d19f198ec0b4977680cce7fa",
+      "author_regressions": {
+        "adapter_selftests": "12/12",
+        "seeded_producer_grader": "60/60",
+        "tamper_and_restore": "pass"
+      },
+      "native_integration": "blocked_not_run",
+      "independent_acceptance": "not_run"
+    },
+    "native_v1": {
+      "status": "pass_local_exact_upstream_controller",
+      "test_file": "runs/R24/studies/reconciliation/test_native_flow_integration.py",
+      "test_file_git_blob": "ad22fe51edb3a9f8fc95d68984ba0c26ecfbb4a4",
+      "upstream_flowctl_sha": "afd4df10b3406083fd9e337171a6b2b5477508ca",
+      "upstream_nestedcheck_sha": "c0e221a2b16f2eda18c719cf05959d5dcea1fc16",
+      "native_probe": "pass",
+      "unittest": "6/6",
+      "builder_selftests": "12/12",
+      "reconciliation_selftests": "13/13",
+      "source_environment": "exact-code minimal mirror, not entire repo checkout",
+      "independent_receiver": "blocked",
+      "independent_agent_comparison": "not_run"
+    },
+    "receiver_packet": {
+      "path": "runs/R24/studies/reconciliation/receiver_packet.py",
+      "state": "locally_tested_packet_transfer",
+      "test_counts": {
+        "packet": 7,
+        "native": 6
+      },
+      "independent_receiver": "blocked",
+      "behavior_comparison": "not_run",
+      "evidence": "runs/R24/studies/reconciliation/RECEIVER-PACKET-RESULT.json"
+    },
+    "cold_receiver": {
+      "source": "runs/R24/studies/reconciliation/cold_receiver.py",
+      "evidence": "runs/R24/studies/reconciliation/COLD-REPLAY-RESULT.json",
+      "tests": "12 cold + 6 native + 7 packet = 25/25 grouped local pass",
+      "status": "separate_code_path_replay_passed; not independent agent",
+      "workflow_semantics": "unverified",
+      "independent_agent": "not_run"
+    }
+  },
+  "paired_candidate_study": {
+    "path": "runs/R24/studies/paired_experiment.py",
+    "notes": "runs/R24/studies/PAIRED-STUDY.md",
+    "local_evidence": "runs/R24/studies/PAIRED-LOCAL-RESULT.json",
+    "source_git_blob_sha": "30364f2c3559c264cb11199f016a2d6515fa7317",
+    "statuses": {
+      "author_selftest": "38_of_38_pass",
+      "matched_agent_trial": "not_run",
+      "independent_receiver": "not_run",
+      "winner": "undetermined",
+      "format": "forge-r24-paired-trial/3",
+      "legacy_v1_status": "invalid_attribution_not_eligible_for_candidate_comparison",
+      "grade_receipt_format": "forge-r24-paired-grade/3",
+      "unsealed_grade_exit": "nonzero",
+      "submission_symlink": "rejected",
+      "skill_exposure_protocol": "skill_entry_read_required/1",
+      "skill_read_observed_in_host_trace": false,
+      "paired_real_agent_trial": "not_run",
+      "trial_format": "forge-r24-paired-trial/4",
+      "grade_format": "forge-r24-paired-grade/4",
+      "real_source_catalog_required_for_cli_prepare": true,
+      "real_candidate_prepare_in_current_container": "blocked_incomplete_private_checkout"
+    },
+    "constraints": "True fresh tasks, separate actor contexts, withheld oracle, trusted external freeze digest, equal resources.",
+    "repair_report": "runs/R24/studies/PAIRING-AUDIT-V2.md",
+    "repair_evidence": "runs/R24/studies/PAIRING-FIX-V2-RESULT.json",
+    "cli_gate_audit": "runs/R24/studies/PAIRING-AUDIT-V3.md",
+    "cli_gate_evidence": "runs/R24/studies/PAIRING-V3-RESULT.json",
+    "v4_exposure_audit": "runs/R24/studies/PAIRING-EXPOSURE-AUDIT-V4.md",
+    "v4_exposure_evidence": "runs/R24/studies/PAIRING-EXPOSURE-V4-RESULT.json",
+    "v5_source_attestation": "runs/R24/studies/TRUSTED-CANDIDATE-PREFLIGHT.md",
+    "v5_evidence": "runs/R24/studies/SOURCE-ATTESTATION-V5-RESULT.json",
+    "frozen_tree_boundary_v6": {
+      "source_script_git_blob": "b324068ae30175fcbf6a86af7eb4601932b54513",
+      "fixed_function_git_blob": "f247390af6898e78b771e9c075a1f77d08b8979d",
+      "previous_v5_method_git_blob": "41a7cd8b075477e54cadd01d82a804bb244cc1d7",
+      "tested": "v3 baseline unchanged method + targeted patch; local 31/31 tests including 4 new boundary cases",
+      "exact_full_v6_script_selftest": "not_run_in_this_container",
+      "impact": "reject unlisted nested task/skill folders, symlink directories and participant-root additions",
+      "audit": "runs/R24/studies/PAIRING-FROZEN-TREE-AUDIT-V6.md"
+    }
+  },
+  "real_candidate_git_staging": {
+    "source": "runs/R24/studies/REAL-CANDIDATE-GIT-OBJECT-STAGING.json",
+    "report": "runs/R24/studies/REAL-CANDIDATE-GIT-OBJECT-STAGING.md",
+    "candidate_count": 2,
+    "source_file_count": 18,
+    "source_bytes": 82299,
+    "hashes": "original Git Blob SHA matches pinned catalog, independently computed per-file SHA-256",
+    "git_stage": {
+      "seed_12345": "b8561c576de48ff17a50b138c2bad325597fd3f7",
+      "seed_314159": "f0f356a26249472f4139f83645865b90de19987c"
+    },
+    "actual_python_real_source_prepare": "not_run",
+    "independent_Agent_trials": "not_run",
+    "old_download_archive_note": "incompatible summary source_catalog.json in previous ZIP; canonical catalog must be used"
+  },
+  "overhead_depth_audit_v7": {
+    "result": "runs/R24/studies/OVERHEAD-DEPTH-RESULT.json",
+    "report": "runs/R24/studies/OVERHEAD-DEPTH-AUDIT.md",
+    "candidate": "runs/R24/studies/paired_experiment_v7_overhead_fix_candidate.py",
+    "source_blob": "1640ca7d968c68167c1589244d396eda60c2eeff",
+    "tests": "46/46 exact full V7 local selftest, 12 author-controlled CLI trial fixtures",
+    "status": "candidate_only; real 18 source prepare and independent Agent proof not_run"
+  },
+  "receiver_dispatch_boundary_v7": {
+    "report": "runs/R24/studies/reconciliation/RECEIVER-DISPATCH-AUDIT.md",
+    "evidence": "runs/R24/studies/reconciliation/RECEIVER-DISPATCH-RESULT.json",
+    "changed_sources": {
+      "flow_builder.py": "680ddabe0b78e04621c160b6ce468531011b965b",
+      "native_flow_smoke.py": "eb93a18793d3af0478d488992475118469f3902f",
+      "test_native_flow_integration.py": "0c876963eb8d08c6e7822d6362729c1ad7f92f2f"
+    },
+    "before": "receive_handoff declared reads of request,source_bundle,tables,audit; latter contains private grader verdict/path",
+    "after": "receive_handoff declares reads handoff only; audit_data emits research-only audit plus safe handoff descriptor",
+    "actual_local_tests": {
+      "builder_selftest": 13,
+      "native_flow_integration": 7,
+      "receiver_packet": 7,
+      "cold_receiver": 12,
+      "smoke": "pass",
+      "projection": "before included secrets; after does not"
+    },
+    "independent_ai_receiver": "not_run",
+    "host_isolation": "not_attested",
+    "business_acceptance": "not_attested"
+  }
+}

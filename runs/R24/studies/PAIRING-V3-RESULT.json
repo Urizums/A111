@@ -1,0 +1,35 @@
+{
+  "schema": "forge-r24-pairing-cli-security-fix/3",
+  "date": "2026-10-10",
+  "baseline_script_blob": "04894ef97454fb3cdab512463907d0f744a7083e",
+  "tested_script_blob": "622deed823278519fb12a305737c707c3e4ebdfc",
+  "old_failures_reproduced": {
+    "both_missing_submissions_process_returncode": 0,
+    "both_missing_submissions_artifact_passed": false,
+    "symlinked_private_oracle_was_accepted": true
+  },
+  "new_author_local_tests": {
+    "python_compile": "pass",
+    "selftest_total": 27,
+    "selftest_passed": 27,
+    "selftest_failed": 0,
+    "real_cli_fixture": {
+      "prepare_rc": 0,
+      "missing_outputs_rc": 2,
+      "missing_outputs_all_fail": true,
+      "valid_outputs_rc": 0,
+      "valid_outputs_pass": true,
+      "valid_output_winner": null,
+      "unsealed_correct_rc": 2,
+      "unsealed_artifacts_passed": true,
+      "unsealed_external_freeze_checked": false,
+      "symlink_private_oracle_rc": 2,
+      "symlink_rejected": true
+    }
+  },
+  "assessment_boundary": "Correctness of locally authored experiment harness only, NOT separate AI actor or semantic handoff acceptance.",
+  "original_pairing_v1_bug": "Retained in PAIRING-AUDIT-V2.md",
+  "new_agent_trials": "not_run",
+  "independent_receiving_agent": "not_run",
+  "C13_vs_C14_lean_winner": null
+}

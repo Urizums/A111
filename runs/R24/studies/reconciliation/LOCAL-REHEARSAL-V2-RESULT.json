@@ -1,0 +1,47 @@
+{
+  "schema": "forge-r24-neutral-handoff-study/2",
+  "observation_date": "2026-10-10",
+  "source_git_blob": "f1b14b5caf04e1a7d9a1a37bb93675d1237a0a55",
+  "original_source_git_blob": "9e1485d00a89eb154dc666ada0a25c6549b8470f",
+  "local_execution": {
+    "syntax_compile": "pass",
+    "selftest": {
+      "passed": 13,
+      "failed": 0
+    },
+    "multi_seed_replay": {
+      "seeds": "100..159",
+      "successes": 60,
+      "failures": 0,
+      "identity": "author generated oracle then constructed matching outputs"
+    },
+    "demo": {
+      "seed": 4597,
+      "source_hashes": {
+        "amendments.json": "7858315947822c15d699443a2be0f3f384603299531e1311486103cbcbbe1181",
+        "brief.md": "f6531729973d05c90d742a3c76bf0f1403c8bce91ad96b868ab5ccc08f0729e3",
+        "consumer.md": "511dc4a750aba63e20d58b130ccbe9831343f9c6525dbf41b7f2eec2425b0aeb",
+        "invoices.json": "6b40d26f62c258d388eabef535ec20254c588961522488da9a4c5293e4267db1",
+        "payments.json": "5b943dd0bf854494c449d670cba58ebb07afd31d4dab1082eb71419827b227ad"
+      },
+      "raw_material_only_local_replay": {
+        "rows": 6,
+        "unique_vendors": 3,
+        "settled_vendor": "Cedar",
+        "settled_vendor_outstanding_cents": 0,
+        "cutoff": "2027-04-12T18:00:00Z",
+        "data_artifacts_passed": true,
+        "workflow_present": true,
+        "workflow_usability": "unverified",
+        "overall_accepted": false
+      }
+    }
+  },
+  "fixed_fixture_issue": "Initial generator promised settled-vendor coverage but did not produce any fully settled vendor. v2 activates this boundary and retains the initial trial as history.",
+  "limitations": [
+    "Author-written replay was separate from generator helper logic but NOT an independent AI context",
+    "Oracle and producer live under the same local parent; this is not permissions isolation",
+    "No C13-vs-C14-lean fresh actor execution, no complete independent workflow usability judgment",
+    "Demo seed and internal regression cases are public and not valid fresh blind material"
+  ]
+}
