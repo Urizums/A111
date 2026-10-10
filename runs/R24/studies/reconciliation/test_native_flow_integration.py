@@ -54,6 +54,8 @@ class NativeFlowIntegration(unittest.TestCase):
         self.assertFalse(verdict['terminal_business_acceptance'])
         self.assertTrue(verdict['sanitized_receiver_packet_verified'])
         self.assertEqual(verdict['receiver_files'], 8)
+        self.assertTrue(verdict['cold_packet_replay_passed'])
+        self.assertEqual(verdict['cold_workflow_usability'], 'unverified')
 
     def test_real_cli_validate_and_compile(self):
         source = self.root / 'flow.json'

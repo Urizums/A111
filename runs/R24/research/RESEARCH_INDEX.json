@@ -183,6 +183,14 @@
       "independent_receiver": "blocked",
       "behavior_comparison": "not_run",
       "evidence": "runs/R24/studies/reconciliation/RECEIVER-PACKET-RESULT.json"
+    },
+    "cold_receiver": {
+      "source": "runs/R24/studies/reconciliation/cold_receiver.py",
+      "evidence": "runs/R24/studies/reconciliation/COLD-REPLAY-RESULT.json",
+      "tests": "12 cold + 6 native + 7 packet = 25/25 grouped local pass",
+      "status": "separate_code_path_replay_passed; not independent agent",
+      "workflow_semantics": "unverified",
+      "independent_agent": "not_run"
     }
   }
 }

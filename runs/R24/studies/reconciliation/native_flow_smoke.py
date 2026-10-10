@@ -95,10 +95,26 @@ def run(repo: Path) -> dict:
         packet_check = verify_receiver_packet(receiver_packet)
         if not packet_created['passed'] or not packet_check['passed']:
             return {'status':'fail','where':'receiver packet integrity','observed':packet_check}
+        # A new interpreter reads only the sanitized receiver packet, not case/private.
+        # This is a distinct deterministic algorithm, not an independent AI consumer.
+        cold_receipt = root / 'cold_receiver_receipt.json'
+        cold = subprocess.run([sys.executable, '-I', str(study / 'cold_receiver.py'),
+                               '--packet', str(receiver_packet), '--receipt', str(cold_receipt)],
+                              cwd=root, capture_output=True, text=True, check=False)
+        if cold.returncode:
+            return {'status':'fail','where':'packet-only cold data replay',
+                    'returncode':cold.returncode, 'stderr':cold.stderr[-1200:],
+                    'stdout':cold.stdout[-1200:]}
+        replay = json.loads(cold_receipt.read_text(encoding='utf-8'))
+        if not replay.get('receiving_checks_passed') or replay.get('business_acceptance') != 'unverified':
+            return {'status':'fail','where':'cold replay falsely accepted or rejected',
+                    'observed':replay}
         state=flowctl.advance(spec,state,{'invocation_id':issued['invocation_id'],'outcome':'ok',
                              'artifacts':{'audit':{'data_artifacts_passed':True,'workflow_usability':'unverified',
                                                     'receiver_packet':str(receiver_packet),
-                                                    'packet_integrity_passed':True}},
+                                                    'packet_integrity_passed':True,
+                                                    'cold_data_replay_passed':True,
+                                                    'workflow_semantic_usability':'unverified'}},
                              'evidence':['Recomputed against private deterministic oracle for researcher only']})
         after=flowctl.pending(spec,state)
         if after['status']!='blocked' or 'receiver' not in after.get('reason',''):
@@ -109,12 +125,13 @@ def run(repo: Path) -> dict:
                 'wrong_invocation_rejected':True, 'duplicate_invocation_rejected':True,
                 'separate_public_source_producer':True, 'source_guard_observed':True,
                 'sanitized_receiver_packet_verified': True, 'receiver_files': packet_check['files_checked'],
+                'cold_packet_replay_passed': True, 'cold_workflow_usability': 'unverified',
                 'limitation':'Local public-source-only author producer and researcher grader; no independent Agent or real receiver' }
 
 
 def main():
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[4])
+    p.add_argument('--repo',type=Path,default=Path(__file__).resolve().parents[3])
     args=p.parse_args()
     try:out=run(args.repo)
     except (OSError,ValueError,KeyError,ImportError,TypeError) as e:

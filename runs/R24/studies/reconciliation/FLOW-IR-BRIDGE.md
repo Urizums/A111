@@ -64,3 +64,7 @@ python runs/R24/studies/reconciliation/native_flow_smoke.py --repo .
 ## 接收包集成（2026-10-10）
 
 原生 Flow 的数据核验完成后，现已调用 [受控接收包生成与校验](RECEIVER-PACKET.md)，向接收者只准备八份原始输入与交付文件，并额外携带接收说明和哈希清单。13 项本地测试通过；原控制器仍在缺少独立接收能力时阻塞，而不是自行标记业务成功。接收包只能约束复制了什么文件，不能保证另一个模型的上下文真正独立。详见 `RECEIVER-PACKET-RESULT.json`。
+
+## 仅凭接收包重新计算（2026-10-10）
+
+原生 Flow 的 `audit_data` 现在额外启动了不读取私有真值和生产函数的 [冷启动接收复算](COLD-REPLAY.md)。新复算与真实原控制器推进均已在本地通过，第三个需要独立 Agent 的节点仍正确保持 `blocked`。相应证据在 `COLD-REPLAY-RESULT.json`。此项不提升 `workflow.md` 的自然语言可用性为已验收。

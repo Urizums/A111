@@ -16,6 +16,8 @@
 
 对账实验现在另有 [Flow IR 接入说明](../studies/reconciliation/FLOW-IR-BRIDGE.md)，说明如何复用仓库既有控制器、什么已经验证，以及为什么真正独立的接收节点仍需要真实宿主支持。
 
+对账交接链路新增 [接收包独立程序复算](../studies/reconciliation/COLD-REPLAY.md)：能识别业务错误和伪自洽哈希，但尚不能证明真正独立 Agent 理解了自然语言工作流。
+
 相关资料按目的查阅：
 
 - [历史经验](HISTORY_AND_EVIDENCE.md)：遇到交付遗漏、数学目标偷换、交接污染或 CI 回归时，查看具体先例和原始报告。
