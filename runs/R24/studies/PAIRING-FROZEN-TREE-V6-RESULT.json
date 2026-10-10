@@ -1,0 +1,49 @@
+{
+  "schema": "forge-r24-frozen-tree-guard-v6/1",
+  "date": "2026-10-10",
+  "affected_program": "runs/R24/studies/paired_experiment.py",
+  "prior_current_commit": "1c14993d81200a01d2a8798689fa598c3ff1ad18",
+  "prior_script_git_blob": "30364f2c3559c264cb11199f016a2d6515fa7317",
+  "prior_function_git_blob": "41a7cd8b075477e54cadd01d82a804bb244cc1d7",
+  "locally_tested_baseline": "V3 script with identical unmodified check_frozen function; method SHA exactly matches V5 before patch",
+  "original_behavior": [
+    {
+      "case": "clean expected references tree",
+      "observed": []
+    },
+    {
+      "case": "extra nested task directory containing private-like payload",
+      "observed": []
+    },
+    {
+      "case": "skill directory symlink to reviewer-private directory",
+      "observed": []
+    },
+    {
+      "case": "unexpected file at participant root",
+      "observed": []
+    }
+  ],
+  "fix": {
+    "script_git_blob": "b324068ae30175fcbf6a86af7eb4601932b54513",
+    "changed_method_git_blob": "f247390af6898e78b771e9c075a1f77d08b8979d",
+    "changed_selftest_fragment_git_blob": "8161b9239aa734f12630b5e3acc10ff09168630c",
+    "check": "enumerate expected input paths including directory prefixes; reject symbolic/unfrozen/nonregular entries at any depth and unexpected participant-root entries"
+  },
+  "actual_local_tests": {
+    "python_syntax": "pass",
+    "retained_v3_selftests": 27,
+    "new_frozen_boundary_checks": 4,
+    "total": 31,
+    "passed": 31,
+    "failed": 0,
+    "verified_function_and_test_fragments_byte_identical_to_GitHub_commit": true
+  },
+  "limitations": [
+    "Exact complete V5/V6 script was not executed in a full checkout; only the directly affected function and added selftests were byte-matched to the 31-pass local V3 regression.",
+    "File path checks do not enforce OS/process/context isolation; participants still require host-enforced mounts.",
+    "Original real C13/C14-lean candidate preparation and autonomous Agent contrast not executed.",
+    "Repository Actions CI validates its configured suite, not necessarily this R24 research selftest."
+  ],
+  "next_action": "Execute paired_experiment.py selftest and fresh V6 prepare against complete pinned real candidates in a trusted checkout, then independent worker/receiver trial."
+}

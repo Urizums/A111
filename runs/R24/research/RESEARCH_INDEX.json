@@ -224,6 +224,15 @@
     "v4_exposure_audit": "runs/R24/studies/PAIRING-EXPOSURE-AUDIT-V4.md",
     "v4_exposure_evidence": "runs/R24/studies/PAIRING-EXPOSURE-V4-RESULT.json",
     "v5_source_attestation": "runs/R24/studies/TRUSTED-CANDIDATE-PREFLIGHT.md",
-    "v5_evidence": "runs/R24/studies/SOURCE-ATTESTATION-V5-RESULT.json"
+    "v5_evidence": "runs/R24/studies/SOURCE-ATTESTATION-V5-RESULT.json",
+    "frozen_tree_boundary_v6": {
+      "source_script_git_blob": "b324068ae30175fcbf6a86af7eb4601932b54513",
+      "fixed_function_git_blob": "f247390af6898e78b771e9c075a1f77d08b8979d",
+      "previous_v5_method_git_blob": "41a7cd8b075477e54cadd01d82a804bb244cc1d7",
+      "tested": "v3 baseline unchanged method + targeted patch; local 31/31 tests including 4 new boundary cases",
+      "exact_full_v6_script_selftest": "not_run_in_this_container",
+      "impact": "reject unlisted nested task/skill folders, symlink directories and participant-root additions",
+      "audit": "runs/R24/studies/PAIRING-FROZEN-TREE-AUDIT-V6.md"
+    }
   }
 }

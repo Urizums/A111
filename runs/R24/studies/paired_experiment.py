@@ -245,6 +245,31 @@ def check_frozen(out: Path, arm: str, freeze: dict) -> list[str]:
             return ["missing or unsafe frozen input directory: " + directory.name]
     expected_task = freeze["source_sha256"]
     expected_skill = freeze["arm_snapshots"][arm]["skill_sha256"]
+    # A frozen file list is not enough: hidden extra directories and directory
+    # symlinks can expose reviewer-private materials without changing the
+    # names/hashes of the expected files. Check all input paths, including dirs.
+    for entry in worker.iterdir():
+        if entry.name not in {"task", "skill", "START_HERE.md", "submission"}:
+            errors.append("unfrozen participant-root entry: " + entry.name)
+    for label, expected_files in (("task", expected_task), ("skill", expected_skill)):
+        root = worker / label
+        expected_dirs = set()
+        for relative in expected_files:
+            parts = Path(relative).parts
+            for i in range(1, len(parts)):
+                expected_dirs.add(Path(*parts[:i]).as_posix())
+        for entry in root.rglob("*"):
+            relative = entry.relative_to(root).as_posix()
+            if entry.is_symlink():
+                errors.append("symbolic frozen input: " + label + "/" + relative)
+            elif entry.is_dir():
+                if relative not in expected_dirs:
+                    errors.append("unfrozen input directory: " + label + "/" + relative)
+            elif entry.is_file():
+                if relative not in expected_files:
+                    errors.append("unfrozen input file: " + label + "/" + relative)
+            else:
+                errors.append("nonregular frozen input: " + label + "/" + relative)
     task_files = {f.name for f in (worker / "task").iterdir() if f.is_file()}
     skill_files = {f.relative_to(worker / "skill").as_posix()
                    for f in (worker / "skill").rglob("*") if f.is_file()}
@@ -476,6 +501,31 @@ def selftest() -> dict:
             sha(trial / "participants" / arm / "task/source.json") == freeze["source_sha256"]["source.json"] for arm in ARMS))
         record("private oracle absent from worker packet", all(
             not list((trial / "participants" / arm).rglob("expected.json")) for arm in ARMS))
+        # The exact frozen file hashes alone would previously miss additional
+        # directories, invisible directory links and root-level leaked notes.
+        packet = trial / "participants" / "arm_a"
+        record("clean complete frozen participant tree is accepted",
+               not check_frozen(trial, "arm_a", freeze))
+        hidden = packet / "task" / "hidden_context"
+        hidden.mkdir()
+        (hidden / "oracle.txt").write_text("private", encoding="utf-8")
+        record("unlisted task subtree is rejected",
+               any("unfrozen input" in issue for issue in check_frozen(trial, "arm_a", freeze)))
+        (hidden / "oracle.txt").unlink()
+        hidden.rmdir()
+        link = packet / "skill" / "hidden_reviewer"
+        try:
+            link.symlink_to(trial / "reviewer_private", target_is_directory=True)
+            record("directory symlink to reviewer material is rejected",
+                   any("symbolic frozen input" in issue for issue in check_frozen(trial, "arm_a", freeze)))
+            link.unlink()
+        except (OSError, NotImplementedError):
+            record("directory symlink to reviewer material is rejected", False)
+        extra_root = packet / "author_note.md"
+        extra_root.write_text("secret", encoding="utf-8")
+        record("unfrozen participant root material is rejected",
+               any("unfrozen participant-root" in issue for issue in check_frozen(trial, "arm_a", freeze)))
+        extra_root.unlink()
         for arm in ARMS:
             output = trial / "participants" / arm / "submission"
             output.mkdir()
