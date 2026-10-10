@@ -1,0 +1,34 @@
+{
+  "schema": "forge-r24-source-identity-binding-candidate/1",
+  "date": "2026-10-10",
+  "plan": "audit existing experiment source identity -> test bounded fix -> stage unpromoted candidate -> real checkout acceptance gate",
+  "current_script": "runs/R24/studies/paired_experiment.py",
+  "current_script_git_blob": "b324068ae30175fcbf6a86af7eb4601932b54513",
+  "candidate_script": "runs/R24/studies/paired_experiment_v7_candidate.py",
+  "candidate_git_blob": "5128e41921196417e39e68759c05c9edadf3040a",
+  "tested_attestation_function_git_blob": "61db761b9dfec0d9115733f446f7a8b2a29d685b",
+  "observed_tests": {
+    "existing_v6_local_baseline": {
+      "passed": 31,
+      "total": 31,
+      "scope": "V6 local baseline and extra input-tree checks, not exact entire V5/V6 current GitHub script"
+    },
+    "source_attestation_unit_probe": {
+      "passed": 6,
+      "total": 6,
+      "scope": "verified function bytes plus prepare-bound source-hash comparison in a test fixture"
+    }
+  },
+  "not_run": [
+    "whole V7 py_compile/selftest",
+    "actual V7 prepare using full C13/C14-lean real candidate checkout",
+    "real isolated Agent A/B runs",
+    "independent receiver workflow semantics"
+  ],
+  "observed_environment": {
+    "container_git_clone": "unavailable DNS",
+    "github_actions_artifact": "599367695 bytes exceeds connector 536870912-byte file size limit",
+    "agent_dispatch": "unavailable"
+  },
+  "promotion_gate": "Exact full V7 code in complete real checkout must compile, pass selftest and run the real-source prepare/grade with externally pinned bytes before replacing active harness."
+}
