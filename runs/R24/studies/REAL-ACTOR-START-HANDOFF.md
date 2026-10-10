@@ -10,7 +10,7 @@
 
 1. 在有权限的完整 A111 checkout 中，检出上面的精确提交。对照 [候选来源清单](REAL-CANDIDATE-SOURCE-CATALOG.json)，用 `git hash-object` 验证 18 份 Skill 源码；若字节不一致，停止，另存新的研究版本，不能静默替换。
 2. 在见到任何新任务结果之前冻结模型、工具权限、工作时间和预算、验收条件、停止标准；在正式运行时才选择未见新种子。公开样例种子不算正式盲测。先执行 `python runs/R24/studies/paired_experiment.py selftest`。
-3. 以独立的新种子执行 `python runs/R24/studies/paired_experiment.py prepare --repo . --kind extract --seed <FRESH_SEED> --out <NEW_DIR>`，再以另一个种子分别准备 `--kind reconcile`。每个试验开始时，把输出的 `freeze_sha256_for_external_trusted_log` 写进只供主管读取、不可由参与者篡改的记录。
+3. 先使用本分支真实来源清单 `runs/R24/studies/REAL-CANDIDATE-SOURCE-CATALOG.json`；其**外部已核验 Git Blob** 为 `c8a6b611056a6e9ff68c6de8f91095b9ddcdf5b0`，不是旧 ZIP 中名为 `source_catalog.json` 的摘要。以未公布的新种子运行 `python runs/R24/studies/paired_experiment.py prepare --repo . --kind extract --seed <FRESH_SEED> --out <NEW_DIR> --source-catalog runs/R24/studies/REAL-CANDIDATE-SOURCE-CATALOG.json --trusted-catalog-git-blob c8a6b611056a6e9ff68c6de8f91095b9ddcdf5b0`。另选新种子准备 `--kind reconcile`，参数相同。若使用尚未晋升的 `paired_experiment_v7_candidate.py`，须在受控研究环境先完整执行其 45 项自测和真实源树准备。每次准备后将 `freeze_sha256_for_external_trusted_log` 记入主管独立日志，并逐文件核对两个 `participants/*/skill/` 目录与来源 SHA-256。
 4. 在**真实隔离的两个新上下文**中分别只挂载 `participants/arm_a` 和 `participants/arm_b`。参与者不能读取 `reviewer_private`、对臂、随机版本映射或作者诊断；两组使用相同模型配置、权限和资源。仅以 `submission/` 交付，保存初次产物、失败、修复与真实运行记录，缺失的 token/cost 数据写 null。
 5. 在独立评审环境运行 `python runs/R24/studies/paired_experiment.py grade --trial <TRIAL_DIR> --receipt <FRESH_RECEIPT.json> --trusted-freeze-sha256 <EXTERNAL_DIGEST>`。CLI 退出码 0 **只说明两组自动化交付检查通过且冻结哈希匹配**，不等于独立性已验证或有胜者。
 6. 另启一个看不到作者诊断与隐藏真值的真实接收者，仅给原材料、约定交付及 `workflow.md`，观察能否在冷启动条件下重做工作，检查隐含步骤、遗漏、额外操作、失败恢复和实际维护开销。记录首次结论，与程序数值评分分开。
@@ -20,3 +20,9 @@
 **项目边界**：当前 `state/checkpoint.json` 的正式活跃阶段仍是 R08，R24 仅为 PR #4 草稿研究。R24-03A（真实双执行者首轮）现仍 `not_run`；R24-03B（独立接收）现仍 `not_run`；R24-03C（证据判断）现仍 `not_run`；最后“启动下一阶段”需在前置验收完成后实际触发，不能标记成已启动。
 
 无需再创建并行调度框架或新一批合成评测器来代替上述执行。
+
+## 2026-10-11 操作勘误与真实文件复制回读
+
+旧版下载材料 `forge_r24_real_candidate_handoff.zip` 内的 `source_catalog.json` 是摘要，缺少现行 CLI 所需的 `candidates/*/root` 与 `file_blobs` 结构，不得再拿它调用 `prepare`。应使用仓库中逐字节冻结的 [真实来源清单](REAL-CANDIDATE-SOURCE-CATALOG.json)。已制作一份新的可下载交接包，包含字节相同的原始清单和精确 V7；参考当前会话交付链接。该修正不改变 C13/C14 本体及旧包历史。
+
+参阅 [真实两版十八文件 SHA-256 与 A/B Git Tree 复制回读](REAL-CANDIDATE-GIT-OBJECT-STAGING.md)。这能证明远端 Git 对象引用原件，**不等于真实文件已装入本地 Python 环境**。曾使用公开种子 `12345` 和 `314159` 完成两种分配的 18/18 Git Blob 回读，正式模型试验应选择未见新种子。V7 精确源码已在本地单独通过 45 项回归；用修复后 ZIP 缺少原始 Skill 完整目录调用 `prepare` 时正确拒绝并不产生半成品。完整真实 Python `prepare` 与独立 Agent 试验仍标记 `not_run`。
