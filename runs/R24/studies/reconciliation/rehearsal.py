@@ -76,6 +76,10 @@ def generate(seed: int, destination: Path) -> dict:
                 approved_at=(day+timedelta(days=1)).isoformat()+'T09:00:00Z',
                 revised_total_cents=amount+930))
         if idx in (2,5):
+            if idx==5:
+                amendments.append(dict(change_id='A5older',invoice_id=inv,state='approved',
+                    approved_at=(day-timedelta(days=2)).isoformat()+'T09:00:00Z',
+                    revised_total_cents=amount+230))
             amendments.append(dict(change_id=f'A{idx}a',invoice_id=inv,state='approved',
                 approved_at=(day-timedelta(days=1)).isoformat()+'T09:00:00Z',
                 revised_total_cents=amount+470))
@@ -83,8 +87,14 @@ def generate(seed: int, destination: Path) -> dict:
             amendments.append(dict(change_id=f'A{idx}p',invoice_id=inv,state='pending',
                 approved_at=(day-timedelta(days=1)).isoformat()+'T09:00:00Z',
                 revised_total_cents=amount+2000))
+        first_paid=rng.randint(300,800)
         payments.append(dict(payment_id=f'P{idx}a',invoice_id=inv,state='posted',
-            posted_at=(day-timedelta(days=2)).isoformat()+'T09:00:00Z',cents=rng.randint(300,800)))
+            posted_at=(day-timedelta(days=2)).isoformat()+'T09:00:00Z',cents=first_paid))
+        if idx in (3,6):
+            # All Cedar invoices are fully settled; one event lands exactly at cutoff.
+            payments.append(dict(payment_id=f'P{idx}settled',invoice_id=inv,state='posted',
+                posted_at=cutoff if idx==3 else (day-timedelta(days=1)).isoformat()+'T12:00:00Z',
+                cents=amount-first_paid))
         if idx in (1,2,6):
             payments.append(dict(payment_id=f'P{idx}b',invoice_id=inv,state='posted',
                 posted_at=(day+timedelta(days=1)).isoformat()+'T09:00:00Z',cents=1500))
@@ -190,6 +200,9 @@ def selftest()->dict:
         tampered=[dict(row) for row in rows];tampered[0]['paid_cents']+=1500
         write_csv(sub/'ledger.csv',LEDGER,tampered)
         record('late payment leakage fails',not grade(base,sub)['data_artifacts_passed'])
+        tampered=[dict(row) for row in rows];tampered[2]['paid_cents']-=1
+        write_csv(sub/'ledger.csv',LEDGER,tampered)
+        record('payment posted exactly at cutoff is included',not grade(base,sub)['data_artifacts_passed'])
         write_csv(sub/'ledger.csv',LEDGER,rows)
         tampered=[dict(row) for row in rows];tampered[0]['total_cents']+=930
         write_csv(sub/'ledger.csv',LEDGER,tampered)
@@ -197,7 +210,10 @@ def selftest()->dict:
         write_csv(sub/'ledger.csv',LEDGER,rows)
         write_csv(sub/'suppliers.csv',SUPPLIERS,oracle['suppliers'][1:])
         record('missing supplier summary fails',not grade(base,sub)['data_artifacts_passed'])
+        write_csv(sub/'suppliers.csv',SUPPLIERS,[r for r in oracle['suppliers'] if r['vendor']!='Cedar'])
+        record('omitting fully settled supplier fails',not grade(base,sub)['data_artifacts_passed'])
         write_csv(sub/'suppliers.csv',SUPPLIERS,oracle['suppliers'])
+        record('fully settled supplier is in the oracle',next(r['outstanding_cents'] for r in oracle['suppliers'] if r['vendor']=='Cedar')==0)
         (sub/'ledger.csv').write_text('invoice_id,vendor,total_cents,paid_cents,outstanding_cents\n'+
               f'{rows[0]["invoice_id"]},{rows[0]["vendor"]},1.5,0,1.5\n',encoding='utf-8')
         record('fractional cents fail',not grade(base,sub)['data_artifacts_passed'])
