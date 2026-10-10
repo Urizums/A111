@@ -1,0 +1,39 @@
+# C13 / C14-lean：从静态研究进入实际对照的入口
+
+这个小工具负责为两个执行者准备**相同的原始任务和各自版本的 Skill**，把原件、候选身份和私有评分材料冻结下来，并在交付后检查结果。它本身不是 Agent、调度器或盲审环境，不应进入便携式 Skill。
+
+R24 前几轮已验证对账程序能生成、执行和被另一条代码路径复算，却没有回答最重要的问题：**换成没有预先答案的新 Agent，它会因为采用 C13 或 C14-lean 而做出不同的设计和交付吗？** 因此，这一轮不再增加对账规则，只为真正的对照准备一个不容易被事后改写的入口。
+
+## 在完整仓库中使用
+
+`paired_experiment.py` 直接读取原 C13 和未晋级的 C14-lean 九 Markdown 候选，**不会修改它们**。每次执行时需给出一个之前没有公开过的种子；演示/自测种子不应被当作正式未见测试。
+
+```bash
+python runs/R24/studies/paired_experiment.py selftest
+python runs/R24/studies/paired_experiment.py prepare --repo . --kind extract --seed <FRESH_SEED> --out <NEW_TRIAL_DIRECTORY>
+python runs/R24/studies/paired_experiment.py prepare --repo . --kind reconcile --seed <ANOTHER_FRESH_SEED> --out <ANOTHER_NEW_DIRECTORY>
+```
+
+`prepare` 会输出需要由**外部可信研究日志保存**的冻结清单 SHA-256。输出目录中，`participants/arm_a/` 与 `participants/arm_b/` 各自有 `task/`、`skill/` 和一份短入口；`reviewer_private/` 中保存原件、隐藏评分真值、两候选的身份映射和哈希。
+
+正式执行必须由真实宿主**只挂载其中一个参与者目录**，同时隔离另外一个参与者、评分器、工具日志、会话历史以及后续判分；仅创建不同子目录并不能提供权限隔离。两个参与者应具有相同的模型能力、工具、可用时间、资源限制以及相同的原始任务。为缓解先后次序的系统偏差，A/B 与 C13/C14-lean 的对应关系随任务种子确定性打乱，只存在于私有清单。
+
+执行者自行在各自 `submission/` 中写结果。研究方确认实际执行过程和隔离证明后，再在**只供评审使用的环境**评分：
+
+```bash
+python runs/R24/studies/paired_experiment.py grade --trial <TRIAL_DIR> \
+  --receipt <NEW_PRIVATE_GRADE_RECEIPT.json> \
+  --trusted-freeze-sha256 <DIGEST_FROM_EXTERNAL_TRUSTED_LOG>
+```
+
+`extract` 检查用户只要求的两个字段，观察是否额外制造角色和文档；`reconcile` 检查业务对账交付、数据完整性和是否留下可供复用的方法。多余产物会被记录但不是自动拒收。结果中每个参与者的完成情况与冻结文件错误分开报告，不因为一次结果差异就宣布版本胜负。
+
+**自动评分不能检验什么？** 它无法证明新执行者确实阅读、理解并迁移了 `workflow.md`，无法测量未记录的费用或时间，更不具备验收另一个 Agent 是否被作者日志污染的能力。真正的独立接收应该另建干净上下文，只读取原要求、原材料和实际产物，重新执行方法并保留首次接收回执。若缺少该环境，本研究只能停留在 `prepared_not_executed` 或作者程序自测状态，不得把 `winner: null` 更改为凭印象认定的胜者。
+
+## 本次真实验证
+
+本地对生成器、冻结与评分逻辑运行了 **18 项确定性检查**，包含两个不同任务类别、完整/错误/缺失产物、原件改动、Skill 变动、隐藏评分真值变动、外部冻结清单哈希、重复写回执及多余成果的非致命记录。这些只检验实验工具的正确性，使用的是**作者制造的假 Skill 版本和确定性测试产物**，没有真的启动两个模型。
+
+此前对账接收程序的 12 项旧测试本轮完整通过；一次顺序执行全部旧测试超过了工具执行时间限制，因此未把未完成的部分算为本轮新通过结果。原 C13/候选 C14-lean、根发行文件和历史失败不改动。
+
+本轮最重要的停止条件：没有实际隔离的 Agent 宿主时，不要继续堆叠模拟任务和自测数量。留下可复验的比较入口，下一次取得独立执行条件时直接启动实际候选对照。未来若出现自发遗漏、信息污染或额外成本，再定向修改 Skill 或评测条件。

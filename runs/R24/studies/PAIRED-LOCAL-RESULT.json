@@ -1,0 +1,97 @@
+{
+  "schema": "forge-r24-paired-trial-local/1",
+  "date": "2026-10-10",
+  "code_path": "runs/R24/studies/paired_experiment.py",
+  "source_sha256": "52fb4f1cf4f43858a7710a966fe1c67c54175c58d08e5eaf679e7a3b86581848",
+  "source_git_blob_sha": "85f99535d63256c08ce0a3bab480948841ff2922",
+  "tests": {
+    "count": 18,
+    "passed": 18,
+    "failed": 0,
+    "details": [
+      {
+        "name": "both candidates copied with distinct source identities",
+        "passed": true
+      },
+      {
+        "name": "private oracle hash frozen",
+        "passed": true
+      },
+      {
+        "name": "external freeze token available",
+        "passed": true
+      },
+      {
+        "name": "both arms have identical original task bytes",
+        "passed": true
+      },
+      {
+        "name": "private oracle absent from worker packet",
+        "passed": true
+      },
+      {
+        "name": "equal correct results accept both without naming a winner",
+        "passed": true
+      },
+      {
+        "name": "grade receipt cannot overwrite",
+        "passed": true
+      },
+      {
+        "name": "tampered public input rejected",
+        "passed": true
+      },
+      {
+        "name": "changed Skill version rejected",
+        "passed": true
+      },
+      {
+        "name": "externally sealed freeze digest rejects modified manifest",
+        "passed": true
+      },
+      {
+        "name": "altered private scoring truth blocks grading",
+        "passed": true
+      },
+      {
+        "name": "trial root cannot overwrite",
+        "passed": true
+      },
+      {
+        "name": "reconciliation task includes all real source documents",
+        "passed": true
+      },
+      {
+        "name": "missing submissions do not become passes",
+        "passed": true
+      },
+      {
+        "name": "raw-input-only implementation passes both neutral task arms",
+        "passed": true
+      },
+      {
+        "name": "unnecessary output is counted without retroactive rejection",
+        "passed": true
+      },
+      {
+        "name": "reconciliation result corruption fails affected arm",
+        "passed": true
+      },
+      {
+        "name": "no independent Agent is ever claimed",
+        "passed": true
+      }
+    ]
+  },
+  "scope": "local deterministic protocol preparation and result checking, not independent Agent evaluation",
+  "prior_legacy_replay": {
+    "packet_only_cold_receiver_12_tests": "completed/pass",
+    "remaining_suite": "combined execution timed out; no new verdict claimed"
+  },
+  "study_status": {
+    "C13_vs_C14_lean_model_comparison": "not_run",
+    "actor_independence": "unverified",
+    "candidate_promotion": "none"
+  },
+  "needs_host": "each participant mounted in separate actual actor context, private grader withheld, external immutable freeze digest and real receiver review"
+}
