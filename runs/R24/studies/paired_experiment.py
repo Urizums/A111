@@ -154,13 +154,16 @@ def prepare(repo: Path, kind: str, seed: int, out: Path) -> dict:
         if skills != variant_sources[version]:
             raise ValueError("copied Skill differs from declared variant source: " + version)
         (dst / "START_HERE.md").write_text(
-            "请完成 task/ 中用户要求的真实交付，按需参考 skill/SKILL.md。"
+            "执行前请完整阅读 skill/SKILL.md；其 references/ 文件按本任务实际需要选读，"
+            "不要求机械执行其中每一个示例。请完成 task/ 中用户要求的真实交付，"
             "只在 submission/ 中写成果；不要访问其他参与者或评分材料。"
-            "用实际材料核对结果。此说明不是独立性或权限证明。\n", encoding="utf-8")
+            "用实际材料核对结果。阅读是否发生必须由执行宿主轨迹另行证实；"
+            "此说明本身不是已阅读或独立性证明。\n", encoding="utf-8")
         arms[arm] = {"variant": version, "skill_sha256": skills,
                      "start_sha256": sha(dst / "START_HERE.md")}
     manifest = {
-        "schema": "forge-r24-paired-trial/2", "status": "prepared_not_executed",
+        "schema": "forge-r24-paired-trial/3", "status": "prepared_not_executed",
+        "protocol": "skill_entry_read_required/1",
         "task_kind": kind, "seed": seed, "source_sha256": source_hashes,
         "oracle_sha256": oracle_hashes,
         "variant_source_sha256": variant_sources,
@@ -238,8 +241,10 @@ def grade(out: Path, receipt: Path, trusted_freeze_sha256: str | None = None) ->
     if trusted_freeze_sha256 is not None and sha(out / "reviewer_private" / "freeze.json") != trusted_freeze_sha256:
         raise ValueError("frozen study manifest differs from externally retained digest")
     freeze = read(out / "reviewer_private" / "freeze.json")
-    if freeze.get("schema") != "forge-r24-paired-trial/2":
-        raise ValueError("legacy or unknown trial schema; v1 randomized arm labels are unreliable")
+    if freeze.get("schema") != "forge-r24-paired-trial/3":
+        raise ValueError("legacy or unknown trial protocol; v1 attribution and v2 optional Skill exposure are not comparable")
+    if freeze.get("protocol") != "skill_entry_read_required/1":
+        raise ValueError("required Skill exposure protocol is not frozen")
     if freeze.get("status") != "prepared_not_executed":
         raise ValueError("unrecognized frozen trial status")
     # Check attribution independently of the participant's artifact contents.
@@ -302,12 +307,13 @@ def grade(out: Path, receipt: Path, trusted_freeze_sha256: str | None = None) ->
                         "nonrequired_artifacts": extra,
                         "independent_actor_verified": False}
     artifact_checks_passed = all(item["artifact_passed"] for item in results.values())
-    response = {"schema": "forge-r24-paired-grade/2", "task_kind": kind,
+    response = {"schema": "forge-r24-paired-grade/3", "trial_schema": freeze["schema"], "task_kind": kind,
                 "artifact_checks_passed": artifact_checks_passed,
                 "cli_success_requires_external_freeze_and_all_artifacts": True,
                 "cases_scored": len(results), "arms": results,
                 "comparison_result": "not_established_no_independent_actor_receipts",
                 "independent_review": "not_run", "winner": None,
+                "skill_read_observed_in_independent_host_trace": False,
                 "externally_frozen_manifest_checked": trusted_freeze_sha256 is not None,
                 "note": "Self-scores do not establish C13/C14-lean causal effects, cost or semantic handoff."}
     dump(receipt, response)
@@ -352,9 +358,15 @@ def selftest() -> dict:
         record("both randomized assignments exercised and actual Skill contents match declared variant",
                reversed_trials > 0 and direct_trials > 0)
         record("new frozen trial format records actual source-by-variant identity",
-               freeze.get("schema") == "forge-r24-paired-trial/2" and
+               freeze.get("schema") == "forge-r24-paired-trial/3" and
                freeze["arm_snapshots"]["arm_a"]["skill_sha256"] ==
                freeze["variant_source_sha256"][freeze["arm_snapshots"]["arm_a"]["variant"]])
+        record("required entry exposure protocol frozen",
+               freeze.get("protocol") == "skill_entry_read_required/1")
+        record("both arms receive identical read-SKILL-first instructions", all(
+               "执行前请完整阅读 skill/SKILL.md" in (trial / "participants" / arm / "START_HERE.md").read_text(encoding="utf-8")
+               and "references/ 文件按本任务实际需要选读" in (trial / "participants" / arm / "START_HERE.md").read_text(encoding="utf-8")
+               for arm in ARMS))
         record("private oracle hash frozen", bool(freeze["oracle_sha256"]))
         digest = sha(trial / "reviewer_private/freeze.json")
         record("external freeze token available", len(digest) == 64)
@@ -393,15 +405,25 @@ def selftest() -> dict:
         except ValueError:
             record("mislabelled arm cannot pass scoring", True)
         (trial / "reviewer_private/freeze.json").write_bytes(raw)
-        # Explicitly refuse old v1 trials; v1 could attribute swapped versions wrongly.
-        old_format = read(trial / "reviewer_private/freeze.json")
-        old_format["schema"] = "forge-r24-paired-trial/1"
-        dump(trial / "reviewer_private/freeze.json", old_format)
+        # Explicitly refuse v1's swapped attribution and v2's optional Skill entry.
+        for old_schema in ("forge-r24-paired-trial/1", "forge-r24-paired-trial/2"):
+            old_format = read(trial / "reviewer_private/freeze.json")
+            old_format["schema"] = old_schema
+            dump(trial / "reviewer_private/freeze.json", old_format)
+            try:
+                grade(trial, root / (old_schema[-1] + "-obsolete.json"))
+                record("legacy " + old_schema + " trial is rejected", False)
+            except ValueError:
+                record("legacy " + old_schema + " trial is rejected", True)
+            (trial / "reviewer_private/freeze.json").write_bytes(raw)
+        bad_protocol = read(trial / "reviewer_private/freeze.json")
+        bad_protocol["protocol"] = "entry_optional"
+        dump(trial / "reviewer_private/freeze.json", bad_protocol)
         try:
-            grade(trial, root / "v1.json")
-            record("legacy v1 ambiguous trial is never accepted", False)
+            grade(trial, root / "bad-protocol.json")
+            record("forged skill exposure protocol is rejected", False)
         except ValueError:
-            record("legacy v1 ambiguous trial is never accepted", True)
+            record("forged skill exposure protocol is rejected", True)
         (trial / "reviewer_private/freeze.json").write_bytes(raw)
         try:
             grade(trial, root / "first.json")

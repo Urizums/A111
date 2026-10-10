@@ -51,3 +51,9 @@ python runs/R24/studies/paired_experiment.py grade --trial <TRIAL_DIR> \
 再次审计发现 V2 存在两个真正会造成误判的缺陷：**两组都未交付时 `grade` 仍以退出码 0 结束**；`submission/answer.json` 指向隐藏标准答案的符号链接仍可得到通过。V3 修复了命令行状态与提交文件边界，并要求外部可信冻结 SHA-256 才能返回成功退出码。没有冻结令牌仍可输出诊断报告，但不能向 CI 报告成功。
 
 评分结果格式为 `forge-r24-paired-grade/2`，增加 `artifact_checks_passed` 和 `submission_issues`。脚本在作者本地 **27/27** 项自测通过；真实 CLI 正反例测试了无交付退出码 2、正确双交付且冻结匹配退出码 0、无外部冻结退出码 2、符号链接指向隐藏真值退出码 2。**成功退出码仅指自动化交付检查通过，不代表真实独立 Agent 或 C14 胜出。** 原始 V2 漏判记录保留于 [V3 审计](PAIRING-AUDIT-V3.md) 及 [V3 回执](PAIRING-V3-RESULT.json)；实际原版 Skill 的公平对照仍未运行。
+
+## V4：确保 Skill 干预条件一致（2026-10-10）
+
+审计发现先前 `START_HERE.md` 将 `skill/SKILL.md` 写成“按需参考”，使两个参与者可能完全跳过候选 Skill，导致任何产物差异难以归因于 C13/C14-lean。V4 要求双方**开始任务前完整阅读本臂 SKILL.md**；references 仍按任务所需选择，不增加固定角色与阶段。冻结协议升为 `forge-r24-paired-trial/3`，明确 `skill_entry_read_required/1`；旧 `/1` 与 `/2` 实例不能混用。评分回执为 `forge-r24-paired-grade/3`，`skill_read_observed_in_independent_host_trace=false` 表示读取尚无真实宿主轨迹确认，不能把入口指令当成执行证据。
+
+本地 V4 31/31 项作者自测通过；用两种 A/B 排列实际执行 CLI prepare、grade（作者生成的假 Skill 和答案），退出码均为 0 且无独立阅读证明。详见 [V4 审计](PAIRING-EXPOSURE-AUDIT-V4.md) 及 [V4 回执](PAIRING-EXPOSURE-V4-RESULT.json)。**真正隔离的执行者及接收者仍未运行**；这份协议修改不证明哪版 Skill 更有效。
